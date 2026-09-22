@@ -1,0 +1,39 @@
+# XRmuseum
+
+COMP5424 Extended Reality 博物馆小组作业的 Unity 工程与协作文档。
+
+## 打开工程
+
+- Unity Editor：**2022.3.62f3c1**，所有成员使用相同完整版本。
+- Unity 工程目录：**`MuseumVR/`**。在 Unity Hub 中选择这一层，不是仓库根目录。
+- Git 仓库根目录：包含本文件、`.gitignore`、`docs/` 和 `MuseumVR/` 的目录。
+- GitHub：https://github.com/Twispra/XRmuseum
+- 目标：Windows PC VR，通过 SteamVR 或 Meta Quest Link 提供 OpenXR 运行时。
+
+详细图形界面操作见 [组员首次打开与日常协作](docs/getting-started.zh-CN.md)。
+
+打开后双击 `Assets/Museum/Scenes/MuseumStart.unity`。基础展厅包含三个占位展台、一个可抓取测试方块、传送地面和官方 XR Origin。它是后续开发的起点，尚未完成课程要求的博物馆体验与用户流程。
+
+已配置 URP 14.0.12、OpenXR 1.14.3、XR Interaction Toolkit 2.6.4、Input System 1.14.0。模拟器只在 Editor 中自动启用；接真实头显前请按操作说明关闭模拟器。
+
+## 目录
+
+```text
+XRmuseum/
+  MuseumVR/       Unity Hub 打开的工程
+    Assets/       场景、脚本、美术资源及对应 .meta
+    Packages/     package 版本与锁定文件
+    ProjectSettings/
+  docs/           协作说明、每周记录、外部资源记录
+  .gitattributes  文本文件和 Git LFS 规则
+  .gitignore      排除缓存、构建产物和本地文件
+```
+
+## 贡献与归属
+
+这是项目基础环境。Unity 官方模板、包示例以及 Codex 辅助创建的初始化内容，应与成员后续原创工作区分。
+每位成员使用自己的 GitHub 账号及已关联邮箱提交；不要把共享账号或初始化提交作为个人独立贡献证据。
+
+- [每周活动记录](docs/weekly-activity.md)
+- [外部资源与辅助工具记录](docs/external-resources.md)
+- [初始化验证结果与尚未验证的范围](docs/initialization-checks.md)

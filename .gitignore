@@ -1,0 +1,46 @@
+# Local review files and the course handout are not part of the team source project.
+/tmp/
+/COMP5424-Group-Project-Description-202627A.pdf
+/Builds/
+
+# Editor / operating-system files.
+.DS_Store
+Thumbs.db
+desktop.ini
+.vs/
+.idea/
+*.suo
+*.user
+*.log
+
+# Unity-generated folders, including projects nested beneath this repository.
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Bb]uild/
+**/[Bb]uilds/
+**/[Ll]ogs/
+**/[Uu]ser[Ss]ettings/
+**/[Mm]emoryCaptures/
+**/[Rr]ecordings/
+**/.utmp/
+**/.vsconfig
+*.csproj
+*.sln
+*.slnx
+*.pidb
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.blend1
+*.blend1.meta
+sysinfo.txt
+mono_crash.*
+
+# Local-only credentials and machine settings.
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
