@@ -4,6 +4,8 @@
 
 原报告未采集 Git 版本；来自有未提交 `ProjectSettings.asset` 差异的工作区，不能回填一个 SHA 冒充当时已绑定版本。后来新增的验证运行见 `runs/`，各次结果是否适用于当前代码需看其版本、哈希和限制，不能只取文件日期最新的一份。
 
+PR #1 的修复代码版本为 `f3548158e1a844e2cf7687ace0acc5db969ee387`；对应的 90 项检查和两张预览由后续提交 `880dd83` 保存，并随 PR #2 纳入 `runs/`。请从[修复记录与固定版本证据](../../../docs/activity/2026-09-23-pr1-review-fixes.md)查看，不要把根目录的旧报告当作新版验收结果。
+
 测试使用项目中已有的输入动作、ActionBasedController、直接抓取器、XRGrabInteractable 和物理系统。合成 XR 设备事件经过正常玩家输入更新，不直接调用选择 API。Home 使用独立虚拟键盘；RESET 按钮通过控制器抓握选中，调用场景序列化事件。测试不会保存 Play Mode 中的场景变化。
 
 验收包括十次拿起、旋转、放回、松手后的稳定性和穿透检查；每轮还要求自动复位次数为零，防止复位掩盖放置失败。另检查抓取中 Home、松开后的再次抓取、自由状态 Home、清除旧速度、RESET 按钮和掉落复位。
@@ -26,7 +28,7 @@
 
 不要添加 `-quit`：脚本需等 Play Mode 验收完成、返回 Edit Mode 并导出静态预览后才请求退出。不要添加 `-nographics`，预览需要图形设备。也可在 Unity 菜单运行 `Museum > Validate Helmet Interaction (Play Mode)`；交互验收结束后回到 Edit Mode。
 
-本轮干净 worktree 的报告和预览已完成，但 Unity 在本机原生退出阶段未自行结束，收集证据后终止了对应独立进程。脚本会请求退出；目前不能保证该环境的批处理正常返回。未来接 CI 时必须验证退出并配置合理超时，不能只凭 JSON 的 `passed` 宣称整个命令成功。详见[协作验收记录](../../../docs/activity/2026-09-23-team-collaboration.md)。
+本轮干净 worktree 的报告和预览已完成，但 Unity 在本机原生退出阶段未自行结束，收集证据后终止了对应独立进程。脚本会请求退出；目前不能保证该环境的批处理正常返回。未来接 CI 时必须验证退出并配置合理超时，不能只凭 JSON 的 `passed` 宣称整个命令成功。详见[修复记录与验收限制](../../../docs/activity/2026-09-23-pr1-review-fixes.md)及[协作验收记录](../../../docs/activity/2026-09-23-team-collaboration.md)。
 
 新报告写入 `runs/<UTC时间-唯一标识>/playmode-validation.json`；批量验收成功后的截图和 `capture.json` 写同一目录下 `preview/`。独立调用 `HelmetPrototypePreview.Capture` 也生成唯一目录。指定已有预览输出文件的目录会被拒绝，不能用复测覆写原验收图。
 

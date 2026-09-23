@@ -22,6 +22,8 @@ Home 在抓取时也可使用。复位后先松开 G，再按住 G 抓取，避�
 
 ## 验证与实机检查
 
+PR #1 审查后的工具修复及 `f354815` 版本验收，见[修复记录与固定版本证据](activity/2026-09-23-pr1-review-fixes.md)。以下根目录报告与静态图是原型阶段的历史记录。
+
 自动验证结果见 [Play Mode 检查记录](../artifacts/helmet-interaction/qa/playmode-validation.json)，资产尺寸及导入检查见 [场景建立记录](../artifacts/helmet-interaction/qa/setup.json)。自动测试通过模拟 XR 设备状态驱动工程现有的输入动作、控制器与抓取器，没有直接调用抓取选择 API 来代替输入。
 
 2026-09-23 验收通过：连续十次拿起、旋转、放回和松手；十轮均无自动复位介入。抓取中 Home、松开后再次抓取、自由状态 Home、清除旧速度、实体 RESET 按钮和掉落恢复均通过。测试运行阶段未记录 Error/Exception。后台测试的帧率节奏与虚拟键盘修正见[验收说明](../artifacts/helmet-interaction/qa/README.zh-CN.md)；启动日志中未连接头显的 OpenXR 提示不等于实机已验证。

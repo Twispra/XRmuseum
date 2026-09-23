@@ -7,12 +7,14 @@
 | 层次 | 本次核验的事实 | 对接手者的意义 |
 | --- | --- | --- |
 | 已集成主线 | `origin/main = cc7605e765100200881e4a9eb62a10f265bccba1`，9 月 22 日初始化工程 | 当时 clone main 只有基础展厅、抓取方块和 XR 环境 |
-| 头盔候选版本 | [PR #1](https://github.com/Twispra/XRmuseum/pull/1) 未合并；head `2e912aed3e5fdbe7c14dca9591821dcaf0e32013`，实现提交 `e7d819e` | Blender v02、Unity 头盔拿放/复位及证据已推送，尚不能称为全队主线已有 |
-| 本轮协作改动 | [草稿 PR #2](https://github.com/Twispra/XRmuseum/pull/2)，分支 `codex/team-collaboration-2026-09-23` 基于以上候选版本 | 根 AGENTS、状态/课程索引、Issue/PR 模板及工具保护；需要团队审查采用并合入 main，模板才对默认分支生效 |
+| 头盔候选版本 | [PR #1](https://github.com/Twispra/XRmuseum/pull/1) 未合并；head `cf1029f9e437187fc08a158e7df0e0be9f4d23a7`，已含修复代码 `3189006` / `f354815` 和操作说明 | 原型及初始化保护、验收状态修复已推送；[修复记录](activity/2026-09-23-pr1-review-fixes.md)。尚不能称为全队主线已有 |
+| 本轮协作改动 | [草稿 PR #2](https://github.com/Twispra/XRmuseum/pull/2)，分支 `codex/team-collaboration-2026-09-23` 已同步以上候选版本 | 剩余范围为根 AGENTS、状态/课程索引、Issue/PR 模板、协作说明和验证产物；工具代码已移入 PR #1。需审查采用并合入 main，模板才对默认分支生效 |
 | 仅本地环境差异 | 原工作区 `ProjectSettings.asset` 的 `preloadedAssets` 被清空，未随头盔提交 | 原头盔报告来自有此差异的环境。不得顺手提交、还原或把它当无害 UI 设置；需具体分析 XR 初始化后决定 |
 | 可执行构建 | 仅有 9 月 22 日初始化构建记录；无头盔版新构建 | 旧 exe 不能作为当前头盔版本的交付证据 |
 
 合并任一候选后，整合 PR 应更新此表并链接实际合并提交。不要把“PR 可合并”或临时 merge SHA 当成已合并。后续协作 PR 若以头盔分支为 base，先审查/合并 PR #1，再核对 diff、改 base 为 main 并重新验证受影响范围。
+
+上述顺序以 PR #1 已包含修复为前提；旧 head `2e912ae` 曾有覆盖资产与验收误报问题，旧审查结论不能直接套用到新 head。本轮只更新候选分支和交接，未合并 PR、未变更保护或审批要求。
 
 ## 当前目标与已做选择
 
