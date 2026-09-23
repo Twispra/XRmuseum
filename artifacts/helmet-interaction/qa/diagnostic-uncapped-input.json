@@ -1,0 +1,4740 @@
+{
+    "timestampUtc": "2026-09-23T08:59:19.6558995Z",
+    "unityVersion": "2022.3.62f3c1",
+    "scene": "Assets/Museum/Scenes/MuseumStart.unity",
+    "inputMethod": "InputSystem.QueueStateEvent on XRSimulatedController/HMD -> production Input Actions -> ActionBasedController -> existing XRDirectInteractor -> XRGrabInteractable and Rigidbody. Home reset uses a queued KeyboardState.",
+    "limitations": "Automated desktop simulation only. Official XR Device Simulator presence is checked, then its device writer is disabled to avoid competing states. Its mouse/keyboard navigation mappings, real headset tracking, hand comfort, and device performance still require manual testing. The test driver does not call XRI selection APIs.",
+    "status": "failed",
+    "failure": "System.InvalidOperationException: cycle 4 stable placement: {\"number\":4,\"interactor\":\"Direct Interactor / XRDirectInteractor\",\"liftMeters\":0.32645654678344729,\"rotationDegrees\":33.32325744628906,\"returnErrorMeters\":6.877846717834473,\"settlingSpeed\":0.006631526630371809,\"settlingAngularSpeed\":0.0325414203107357,\"restingJitterMeters\":0.00004400974648888223,\"deepestPenetrationMeters\":0.00009226053953170776}\r\n  at Museum.Editor.HelmetPrototypeValidation.Require (System.Boolean condition, System.String name, System.String detail) [0x0003e] in E:\\XRmuseum\\MuseumVR\\Assets\\Museum\\Editor\\HelmetPrototypeValidation.cs:398 \r\n  at Museum.Editor.HelmetPrototypeValidation+<Validate>d__42.MoveNext () [0x00a34] in E:\\XRmuseum\\MuseumVR\\Assets\\Museum\\Editor\\HelmetPrototypeValidation.cs:269 \r\n  at Museum.Editor.HelmetPrototypeValidation.Tick () [0x0014b] in E:\\XRmuseum\\MuseumVR\\Assets\\Museum\\Editor\\HelmetPrototypeValidation.cs:169 ",
+    "durationSeconds": 18.26025390625,
+    "officialSimulatorWasPresent": true,
+    "colliderCount": 4,
+    "completedCycles": 3,
+    "checks": [
+        {
+            "name": "helmet exists",
+            "passed": true,
+            "detail": "Scene object HelmetExhibit must exist."
+        },
+        {
+            "name": "runtime components",
+            "passed": true,
+            "detail": "XRGrabInteractable, Rigidbody and HelmetExhibitReset are on the root."
+        },
+        {
+            "name": "physical body",
+            "passed": true,
+            "detail": "Dynamic Rigidbody uses gravity."
+        },
+        {
+            "name": "body mass",
+            "passed": true,
+            "detail": "Prototype mass is 1.5 kg."
+        },
+        {
+            "name": "grab configuration",
+            "passed": true,
+            "detail": "VelocityTracking with dynamic attachment."
+        },
+        {
+            "name": "compound colliders",
+            "passed": true,
+            "detail": "4 active primitive colliders."
+        },
+        {
+            "name": "official simulator instantiated",
+            "passed": true,
+            "detail": "XR Device Simulator is automatically instantiated in Play Mode."
+        },
+        {
+            "name": "right action controller",
+            "passed": true,
+            "detail": "Existing XR rig Right Controller."
+        },
+        {
+            "name": "right direct interactor",
+            "passed": true,
+            "detail": "Existing direct interactor is present; tracked input will activate it."
+        },
+        {
+            "name": "select input action",
+            "passed": true,
+            "detail": "Existing select action is enabled."
+        },
+        {
+            "name": "cycle 1 input grab",
+            "passed": true,
+            "detail": "Grip action=0; hand=(0.00, 1.47, 3.50); target=(0.00, 1.47, 3.50)"
+        },
+        {
+            "name": "cycle 1 direct grab",
+            "passed": true,
+            "detail": "Direct Interactor / XRDirectInteractor"
+        },
+        {
+            "name": "cycle 1 follows pose",
+            "passed": true,
+            "detail": "Lift=0.326 m; turn=33.4 deg."
+        },
+        {
+            "name": "cycle 1 input release",
+            "passed": true,
+            "detail": "Releasing grip ends XRI selection."
+        },
+        {
+            "name": "cycle 1 stable placement",
+            "passed": true,
+            "detail": "{\"number\":1,\"interactor\":\"Direct Interactor / XRDirectInteractor\",\"liftMeters\":0.32645654678344729,\"rotationDegrees\":33.35890197753906,\"returnErrorMeters\":1.2683345573805128e-7,\"settlingSpeed\":0.0,\"settlingAngularSpeed\":0.0,\"restingJitterMeters\":0.0,\"deepestPenetrationMeters\":2.384185791015625e-7}"
+        },
+        {
+            "name": "cycle 1 no deep penetration",
+            "passed": true,
+            "detail": "Maximum static-collider overlap=0.0000 m (tolerance 0.006 m)."
+        },
+        {
+            "name": "cycle 2 input grab",
+            "passed": true,
+            "detail": "Grip action=0; hand=(0.00, 1.47, 3.50); target=(0.00, 1.47, 3.50)"
+        },
+        {
+            "name": "cycle 2 direct grab",
+            "passed": true,
+            "detail": "Direct Interactor / XRDirectInteractor"
+        },
+        {
+            "name": "cycle 2 follows pose",
+            "passed": true,
+            "detail": "Lift=0.326 m; turn=33.4 deg."
+        },
+        {
+            "name": "cycle 2 input release",
+            "passed": true,
+            "detail": "Releasing grip ends XRI selection."
+        },
+        {
+            "name": "cycle 2 stable placement",
+            "passed": true,
+            "detail": "{\"number\":2,\"interactor\":\"Direct Interactor / XRDirectInteractor\",\"liftMeters\":0.32645630836486819,\"rotationDegrees\":33.3585205078125,\"returnErrorMeters\":0.000025617950086598285,\"settlingSpeed\":0.0,\"settlingAngularSpeed\":0.0,\"restingJitterMeters\":0.0,\"deepestPenetrationMeters\":1.1920928955078126e-7}"
+        },
+        {
+            "name": "cycle 2 no deep penetration",
+            "passed": true,
+            "detail": "Maximum static-collider overlap=0.0000 m (tolerance 0.006 m)."
+        },
+        {
+            "name": "cycle 3 input grab",
+            "passed": true,
+            "detail": "Grip action=0; hand=(0.00, 1.47, 3.50); target=(0.00, 1.47, 3.50)"
+        },
+        {
+            "name": "cycle 3 direct grab",
+            "passed": true,
+            "detail": "Direct Interactor / XRDirectInteractor"
+        },
+        {
+            "name": "cycle 3 follows pose",
+            "passed": true,
+            "detail": "Lift=0.326 m; turn=33.3 deg."
+        },
+        {
+            "name": "cycle 3 input release",
+            "passed": true,
+            "detail": "Releasing grip ends XRI selection."
+        },
+        {
+            "name": "cycle 3 stable placement",
+            "passed": true,
+            "detail": "{\"number\":3,\"interactor\":\"Direct Interactor / XRDirectInteractor\",\"liftMeters\":0.3264561891555786,\"rotationDegrees\":33.341548919677737,\"returnErrorMeters\":0.000025584302420611493,\"settlingSpeed\":0.0,\"settlingAngularSpeed\":0.0,\"restingJitterMeters\":0.0,\"deepestPenetrationMeters\":0.0}"
+        },
+        {
+            "name": "cycle 3 no deep penetration",
+            "passed": true,
+            "detail": "Maximum static-collider overlap=0.0000 m (tolerance 0.006 m)."
+        },
+        {
+            "name": "cycle 4 input grab",
+            "passed": true,
+            "detail": "Grip action=0; hand=(0.00, 1.47, 3.50); target=(0.00, 1.47, 3.50)"
+        },
+        {
+            "name": "cycle 4 direct grab",
+            "passed": true,
+            "detail": "Direct Interactor / XRDirectInteractor"
+        },
+        {
+            "name": "cycle 4 follows pose",
+            "passed": true,
+            "detail": "Lift=0.326 m; turn=33.3 deg."
+        },
+        {
+            "name": "cycle 4 input release",
+            "passed": true,
+            "detail": "Releasing grip ends XRI selection."
+        },
+        {
+            "name": "cycle 4 stable placement",
+            "passed": false,
+            "detail": "{\"number\":4,\"interactor\":\"Direct Interactor / XRDirectInteractor\",\"liftMeters\":0.32645654678344729,\"rotationDegrees\":33.32325744628906,\"returnErrorMeters\":6.877846717834473,\"settlingSpeed\":0.006631526630371809,\"settlingAngularSpeed\":0.0325414203107357,\"restingJitterMeters\":0.00004400974648888223,\"deepestPenetrationMeters\":0.00009226053953170776}"
+        }
+    ],
+    "cycles": [
+        {
+            "number": 1,
+            "interactor": "Direct Interactor / XRDirectInteractor",
+            "liftMeters": 0.32645654678344729,
+            "rotationDegrees": 33.35890197753906,
+            "returnErrorMeters": 1.2683345573805128e-7,
+            "settlingSpeed": 0.0,
+            "settlingAngularSpeed": 0.0,
+            "restingJitterMeters": 0.0,
+            "deepestPenetrationMeters": 2.384185791015625e-7
+        },
+        {
+            "number": 2,
+            "interactor": "Direct Interactor / XRDirectInteractor",
+            "liftMeters": 0.32645630836486819,
+            "rotationDegrees": 33.3585205078125,
+            "returnErrorMeters": 0.000025617950086598285,
+            "settlingSpeed": 0.0,
+            "settlingAngularSpeed": 0.0,
+            "restingJitterMeters": 0.0,
+            "deepestPenetrationMeters": 1.1920928955078126e-7
+        },
+        {
+            "number": 3,
+            "interactor": "Direct Interactor / XRDirectInteractor",
+            "liftMeters": 0.3264561891555786,
+            "rotationDegrees": 33.341548919677737,
+            "returnErrorMeters": 0.000025584302420611493,
+            "settlingSpeed": 0.0,
+            "settlingAngularSpeed": 0.0,
+            "restingJitterMeters": 0.0,
+            "deepestPenetrationMeters": 0.0
+        },
+        {
+            "number": 4,
+            "interactor": "Direct Interactor / XRDirectInteractor",
+            "liftMeters": 0.32645654678344729,
+            "rotationDegrees": 33.32325744628906,
+            "returnErrorMeters": 6.877846717834473,
+            "settlingSpeed": 0.006631526630371809,
+            "settlingAngularSpeed": 0.0325414203107357,
+            "restingJitterMeters": 0.00004400974648888223,
+            "deepestPenetrationMeters": 0.00009226053953170776
+        }
+    ],
+    "errors": [],
+    "screenshots": [
+        "01-main-view.png (Game view screenshot requested)"
+    ],
+    "samples": [
+        {
+            "cycle": 0,
+            "frame": 5925,
+            "phase": "setup",
+            "time": 5.421605110168457,
+            "deltaTime": 0.015230899676680565,
+            "selected": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": 1.0
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 6242,
+            "phase": "setup",
+            "time": 5.521658897399902,
+            "deltaTime": 0.0002614000113680959,
+            "selected": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": 1.0
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 6576,
+            "phase": "setup",
+            "time": 5.6219282150268559,
+            "deltaTime": 0.0003539999888744205,
+            "selected": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": 1.0
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 6886,
+            "phase": "setup",
+            "time": 5.721973896026611,
+            "deltaTime": 0.0002381999947829172,
+            "selected": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": 1.0
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 7225,
+            "phase": "setup",
+            "time": 5.822246074676514,
+            "deltaTime": 0.0002936999953817576,
+            "selected": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": 1.0
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 7492,
+            "phase": "touch",
+            "time": 5.922322750091553,
+            "deltaTime": 0.00037369999336078763,
+            "selected": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 7804,
+            "phase": "touch",
+            "time": 6.022621154785156,
+            "deltaTime": 0.0003525000065565109,
+            "selected": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 8123,
+            "phase": "touch",
+            "time": 6.122813701629639,
+            "deltaTime": 0.00031770000350661576,
+            "selected": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 8349,
+            "phase": "touch",
+            "time": 6.223100185394287,
+            "deltaTime": 0.000453799992101267,
+            "selected": true,
+            "position": {
+                "x": 6.064400537297843e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -3.654347153769777e-7,
+                "y": 1.775265445758123e-7,
+                "z": -2.842170943040401e-14
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 8635,
+            "phase": "touch",
+            "time": 6.323211193084717,
+            "deltaTime": 0.00036800000816583633,
+            "selected": true,
+            "position": {
+                "x": 2.1107439351908398e-8,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -5.9470892210811147e-8,
+                "y": 5.940476057730848e-7,
+                "z": 2.3189443254523213e-8
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 8934,
+            "phase": "touch",
+            "time": 6.423500061035156,
+            "deltaTime": 0.0003581999917514622,
+            "selected": true,
+            "position": {
+                "x": 6.24654390435353e-8,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -9.58584678301122e-7,
+                "y": 0.0000015258590337907663,
+                "z": -3.217286348444759e-8
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 9205,
+            "phase": "lift",
+            "time": 6.523637294769287,
+            "deltaTime": 0.0003324999997857958,
+            "selected": true,
+            "position": {
+                "x": 0.010830284096300602,
+                "y": 1.182234525680542,
+                "z": 3.4867372512817385
+            },
+            "velocity": {
+                "x": 0.2105851173400879,
+                "y": 0.512474775314331,
+                "z": -0.23677349090576173
+            },
+            "hand": {
+                "x": 0.009600220248103142,
+                "y": 1.496639609336853,
+                "z": 3.493504047393799
+            },
+            "target": {
+                "x": 0.011753917671740055,
+                "y": 1.185681700706482,
+                "z": 3.486055850982666
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 9473,
+            "phase": "lift",
+            "time": 6.624045372009277,
+            "deltaTime": 0.0004869000113103539,
+            "selected": true,
+            "position": {
+                "x": 0.04790933430194855,
+                "y": 1.2658480405807496,
+                "z": 3.439725875854492
+            },
+            "velocity": {
+                "x": 0.3818836212158203,
+                "y": 0.9941339492797852,
+                "z": -0.4349946975708008
+            },
+            "hand": {
+                "x": 0.04161415621638298,
+                "y": 1.58201003074646,
+                "z": 3.4614901542663576
+            },
+            "target": {
+                "x": 0.04959733411669731,
+                "y": 1.271885871887207,
+                "z": 3.4388132095336916
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 9730,
+            "phase": "lift",
+            "time": 6.72414493560791,
+            "deltaTime": 0.00032610000926069915,
+            "selected": true,
+            "position": {
+                "x": 0.09103531390428543,
+                "y": 1.3730792999267579,
+                "z": 3.380509376525879
+            },
+            "velocity": {
+                "x": 0.38353726267814639,
+                "y": 1.0427534580230713,
+                "z": -0.44280290603637698
+            },
+            "hand": {
+                "x": 0.08105271309614182,
+                "y": 1.6871795654296876,
+                "z": 3.4220516681671144
+            },
+            "target": {
+                "x": 0.0930548757314682,
+                "y": 1.379260778427124,
+                "z": 3.3796615600585939
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 10013,
+            "phase": "lift",
+            "time": 6.824294567108154,
+            "deltaTime": 0.00033740000799298286,
+            "selected": true,
+            "position": {
+                "x": 0.12316035479307175,
+                "y": 1.4605451822280884,
+                "z": 3.3336427211761476
+            },
+            "velocity": {
+                "x": 0.24155937135219575,
+                "y": 0.6696343421936035,
+                "z": -0.2696394920349121
+            },
+            "hand": {
+                "x": 0.1119379997253418,
+                "y": 1.7695403099060059,
+                "z": 3.3911664485931398
+            },
+            "target": {
+                "x": 0.1245192363858223,
+                "y": 1.4641828536987305,
+                "z": 3.3332571983337404
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 10305,
+            "phase": "lift",
+            "time": 6.924379348754883,
+            "deltaTime": 0.00031380000291392207,
+            "selected": true,
+            "position": {
+                "x": 0.13236550986766816,
+                "y": 1.4864565134048463,
+                "z": 3.321204900741577
+            },
+            "velocity": {
+                "x": 0.00027120113372802734,
+                "y": -0.001710653305053711,
+                "z": 0.009191036224365235
+            },
+            "hand": {
+                "x": 0.12000002712011337,
+                "y": 1.791038990020752,
+                "z": 3.3831043243408205
+            },
+            "target": {
+                "x": 0.13236550986766816,
+                "y": 1.4864565134048463,
+                "z": 3.321204900741577
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 10620,
+            "phase": "lift",
+            "time": 7.0246782302856449,
+            "deltaTime": 0.00031919998582452536,
+            "selected": true,
+            "position": {
+                "x": 0.13236550986766816,
+                "y": 1.4864565134048463,
+                "z": 3.321204900741577
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.12000002712011337,
+                "y": 1.791038990020752,
+                "z": 3.3831043243408205
+            },
+            "target": {
+                "x": 0.13236550986766816,
+                "y": 1.4864565134048463,
+                "z": 3.321204900741577
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 10937,
+            "phase": "lift",
+            "time": 7.124940872192383,
+            "deltaTime": 0.00028929999098181725,
+            "selected": true,
+            "position": {
+                "x": 0.13236550986766816,
+                "y": 1.4864565134048463,
+                "z": 3.321204900741577
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.12000002712011337,
+                "y": 1.791038990020752,
+                "z": 3.3831043243408205
+            },
+            "target": {
+                "x": 0.13236550986766816,
+                "y": 1.4864565134048463,
+                "z": 3.321204900741577
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 11248,
+            "phase": "return",
+            "time": 7.225079536437988,
+            "deltaTime": 0.00031770000350661576,
+            "selected": true,
+            "position": {
+                "x": 0.13183128833770753,
+                "y": 1.484872579574585,
+                "z": 3.322235107421875
+            },
+            "velocity": {
+                "x": -0.026844441890716554,
+                "y": -0.07694363594055176,
+                "z": 0.041556358337402347
+            },
+            "hand": {
+                "x": 0.11902943253517151,
+                "y": 1.7884507179260255,
+                "z": 3.3840749263763429
+            },
+            "target": {
+                "x": 0.13142874836921693,
+                "y": 1.4837727546691895,
+                "z": 3.3226537704467775
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 11534,
+            "phase": "return",
+            "time": 7.325493335723877,
+            "deltaTime": 0.00030270000570453703,
+            "selected": true,
+            "position": {
+                "x": 0.11758597940206528,
+                "y": 1.4447529315948487,
+                "z": 3.3451545238494875
+            },
+            "velocity": {
+                "x": -0.20732656121253968,
+                "y": -0.566023588180542,
+                "z": 0.24961233139038087
+            },
+            "hand": {
+                "x": 0.10320339351892472,
+                "y": 1.7462480068206788,
+                "z": 3.3999009132385256
+            },
+            "target": {
+                "x": 0.11584889888763428,
+                "y": 1.4400984048843384,
+                "z": 3.3463523387908937
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 11821,
+            "phase": "return",
+            "time": 7.425543785095215,
+            "deltaTime": 0.0003311999898869544,
+            "selected": true,
+            "position": {
+                "x": 0.08862362802028656,
+                "y": 1.3684163093566895,
+                "z": 3.387650489807129
+            },
+            "velocity": {
+                "x": -0.31251609325408938,
+                "y": -0.8295238018035889,
+                "z": 0.3580808639526367
+            },
+            "hand": {
+                "x": 0.07474464178085327,
+                "y": 1.6703579425811768,
+                "z": 3.4283597469329836
+            },
+            "target": {
+                "x": 0.08635003119707108,
+                "y": 1.3620023727416993,
+                "z": 3.3891537189483644
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 12106,
+            "phase": "return",
+            "time": 7.5257391929626469,
+            "deltaTime": 0.000361100013833493,
+            "selected": true,
+            "position": {
+                "x": 0.05256476253271103,
+                "y": 1.2803785800933838,
+                "z": 3.4362518787384035
+            },
+            "velocity": {
+                "x": -0.3325633704662323,
+                "y": -0.8621037006378174,
+                "z": 0.3674149513244629
+            },
+            "hand": {
+                "x": 0.04234839603304863,
+                "y": 1.5839680433273316,
+                "z": 3.4607558250427248
+            },
+            "target": {
+                "x": 0.05043927580118179,
+                "y": 1.273873209953308,
+                "z": 3.4377188682556154
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 12393,
+            "phase": "return",
+            "time": 7.626054286956787,
+            "deltaTime": 0.0003257000062149018,
+            "selected": true,
+            "position": {
+                "x": 0.019317349418997766,
+                "y": 1.204100489616394,
+                "z": 3.4776034355163576
+            },
+            "velocity": {
+                "x": -0.26033344864845278,
+                "y": -0.667417049407959,
+                "z": 0.27953386306762698
+            },
+            "hand": {
+                "x": 0.014634883962571621,
+                "y": 1.5100653171539307,
+                "z": 3.488469362258911
+            },
+            "target": {
+                "x": 0.01784665137529373,
+                "y": 1.1991808414459229,
+                "z": 3.4786970615386965
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 12667,
+            "phase": "return",
+            "time": 7.726290225982666,
+            "deltaTime": 0.0004064000095240772,
+            "selected": true,
+            "position": {
+                "x": 0.0008184235775843263,
+                "y": 1.1624207496643067,
+                "z": 3.499216079711914
+            },
+            "velocity": {
+                "x": -0.0839240774512291,
+                "y": -0.2281486988067627,
+                "z": 0.08552074432373047
+            },
+            "hand": {
+                "x": 0.00045268653775565326,
+                "y": 1.4722461700439454,
+                "z": 3.5026514530181886
+            },
+            "target": {
+                "x": 0.0005581050645560026,
+                "y": 1.161209225654602,
+                "z": 3.499345064163208
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 12965,
+            "phase": "return",
+            "time": 7.826539993286133,
+            "deltaTime": 0.00032339998870156705,
+            "selected": true,
+            "position": {
+                "x": -0.000013855168617737945,
+                "y": 1.1600041389465333,
+                "z": 3.5000064373016359
+            },
+            "velocity": {
+                "x": 0.0011036585783585907,
+                "y": -0.0005698406021110714,
+                "z": -0.0011065237922593952
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 13274,
+            "phase": "return",
+            "time": 7.926546573638916,
+            "deltaTime": 0.0003826000029221177,
+            "selected": true,
+            "position": {
+                "x": -1.3339104043552653e-7,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.000010002364433603361,
+                "y": -0.0000036662888760474745,
+                "z": 5.684341886080802e-14
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 13547,
+            "phase": "return",
+            "time": 8.026801109313965,
+            "deltaTime": 0.00036750000435858965,
+            "selected": true,
+            "position": {
+                "x": -2.928800313384272e-9,
+                "y": 1.1600000858306885,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -2.034315826904276e-7,
+                "y": 0.0000059604644775390629,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 13811,
+            "phase": "return",
+            "time": 8.127142906188965,
+            "deltaTime": 0.00041840001358650625,
+            "selected": true,
+            "position": {
+                "x": 1.6763124222052284e-10,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 1.870485277777334e-8,
+                "y": -0.0000032659088446962416,
+                "z": 9.947598300641403e-14
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 14061,
+            "phase": "release",
+            "time": 8.227317810058594,
+            "deltaTime": 0.0003397999971639365,
+            "selected": false,
+            "position": {
+                "x": 3.831806338894239e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -7.092339160408301e-8,
+                "y": -4.470348358154297e-8,
+                "z": 0.0000035407306313572919
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 14340,
+            "phase": "release",
+            "time": 8.327404975891114,
+            "deltaTime": 0.0003831000067293644,
+            "selected": false,
+            "position": {
+                "x": 2.547989197410061e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -1.6770511024333246e-7,
+                "y": -2.682209014892578e-7,
+                "z": -2.897911599575309e-7
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 14619,
+            "phase": "settle",
+            "time": 8.427556037902832,
+            "deltaTime": 0.0003107000084128231,
+            "selected": false,
+            "position": {
+                "x": 3.7633128613379088e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 5.3544709999187037e-8,
+                "y": -4.470348358154297e-8,
+                "z": 0.000003314830337330932
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 14922,
+            "phase": "settle",
+            "time": 8.527832984924317,
+            "deltaTime": 0.00030029998742975295,
+            "selected": false,
+            "position": {
+                "x": 2.6032410005427665e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -2.787260768855049e-7,
+                "y": -2.5331974029541018e-7,
+                "z": -2.622036845423281e-7
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 15267,
+            "phase": "settle",
+            "time": 8.628007888793946,
+            "deltaTime": 0.00024709998979233205,
+            "selected": false,
+            "position": {
+                "x": 4.038253109683865e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 15604,
+            "phase": "settle",
+            "time": 8.728172302246094,
+            "deltaTime": 0.00028989999555051327,
+            "selected": false,
+            "position": {
+                "x": 4.038253109683865e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 15954,
+            "phase": "settle",
+            "time": 8.828455924987793,
+            "deltaTime": 0.00026500000967644155,
+            "selected": false,
+            "position": {
+                "x": 4.038253109683865e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 16303,
+            "phase": "settle",
+            "time": 8.928566932678223,
+            "deltaTime": 0.00026000000070780516,
+            "selected": false,
+            "position": {
+                "x": 4.038253109683865e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 16657,
+            "phase": "settle",
+            "time": 9.028756141662598,
+            "deltaTime": 0.00027749998844228685,
+            "selected": false,
+            "position": {
+                "x": 4.038253109683865e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 17011,
+            "phase": "settle",
+            "time": 9.128994941711426,
+            "deltaTime": 0.00029239998548291624,
+            "selected": false,
+            "position": {
+                "x": 4.038253109683865e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 17354,
+            "phase": "settle",
+            "time": 9.22920036315918,
+            "deltaTime": 0.0003372000064700842,
+            "selected": false,
+            "position": {
+                "x": 4.038253109683865e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 17707,
+            "phase": "settle",
+            "time": 9.329240798950196,
+            "deltaTime": 0.00025419998564757407,
+            "selected": false,
+            "position": {
+                "x": 4.038253109683865e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 18061,
+            "phase": "settle",
+            "time": 9.429460525512696,
+            "deltaTime": 0.0002936999953817576,
+            "selected": false,
+            "position": {
+                "x": 4.038253109683865e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 18407,
+            "phase": "settle",
+            "time": 9.5296049118042,
+            "deltaTime": 0.0002702999918255955,
+            "selected": false,
+            "position": {
+                "x": 4.038253109683865e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 18754,
+            "phase": "settle",
+            "time": 9.629624366760254,
+            "deltaTime": 0.00026870000874623656,
+            "selected": false,
+            "position": {
+                "x": 4.038253109683865e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 1,
+            "frame": 19095,
+            "phase": "settle",
+            "time": 9.729843139648438,
+            "deltaTime": 0.000304599991068244,
+            "selected": false,
+            "position": {
+                "x": 4.038253109683865e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 19439,
+            "phase": "touch",
+            "time": 9.829957008361817,
+            "deltaTime": 0.00047560001257807016,
+            "selected": false,
+            "position": {
+                "x": 4.038253109683865e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 9.685754776000977e-7,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 19765,
+            "phase": "touch",
+            "time": 9.93015193939209,
+            "deltaTime": 0.00036299999919719994,
+            "selected": false,
+            "position": {
+                "x": 4.038253109683865e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 9.685754776000977e-7,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 20103,
+            "phase": "touch",
+            "time": 10.030412673950196,
+            "deltaTime": 0.00028830001247115433,
+            "selected": false,
+            "position": {
+                "x": 4.038253109683865e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 9.685754776000977e-7,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 20412,
+            "phase": "touch",
+            "time": 10.130674362182618,
+            "deltaTime": 0.00031380000291392207,
+            "selected": true,
+            "position": {
+                "x": 4.0130544221028688e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 1.1922907106054481e-8,
+                "y": 4.24631707574008e-9,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 9.685754776000977e-7,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 20721,
+            "phase": "touch",
+            "time": 10.230729103088379,
+            "deltaTime": 0.00031999999191612005,
+            "selected": true,
+            "position": {
+                "x": 4.020554911221552e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 9.077780305233319e-9,
+                "y": 4.222670213493984e-9,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 9.685754776000977e-7,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 21029,
+            "phase": "touch",
+            "time": 10.330988883972168,
+            "deltaTime": 0.000308899994706735,
+            "selected": true,
+            "position": {
+                "x": 4.020557753392495e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 8.86188900039997e-9,
+                "y": 4.222499683237402e-9,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 9.685754776000977e-7,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 21305,
+            "phase": "lift",
+            "time": 10.431275367736817,
+            "deltaTime": 0.0003588999970816076,
+            "selected": true,
+            "position": {
+                "x": 0.010052447207272053,
+                "y": 1.1805648803710938,
+                "z": 3.4876868724823
+            },
+            "velocity": {
+                "x": 0.2041916400194168,
+                "y": 0.4951775074005127,
+                "z": -0.2297520637512207
+            },
+            "hand": {
+                "x": 0.010661744512617588,
+                "y": 1.4994677305221558,
+                "z": 3.492443561553955
+            },
+            "target": {
+                "x": 0.013041606172919274,
+                "y": 1.1885234117507935,
+                "z": 3.4845082759857179
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 21569,
+            "phase": "lift",
+            "time": 10.53145694732666,
+            "deltaTime": 0.0003470999945420772,
+            "selected": true,
+            "position": {
+                "x": 0.04661339521408081,
+                "y": 1.262812614440918,
+                "z": 3.4414381980895998
+            },
+            "velocity": {
+                "x": 0.37482401728630068,
+                "y": 0.9777069091796875,
+                "z": -0.42504072189331057
+            },
+            "hand": {
+                "x": 0.04333851858973503,
+                "y": 1.5866057872772217,
+                "z": 3.4597666263580324
+            },
+            "target": {
+                "x": 0.05157170444726944,
+                "y": 1.2765510082244874,
+                "z": 3.436244249343872
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 21832,
+            "phase": "lift",
+            "time": 10.63168716430664,
+            "deltaTime": 0.0003538999881129712,
+            "selected": true,
+            "position": {
+                "x": 0.08987389504909516,
+                "y": 1.3700265884399415,
+                "z": 3.38214373588562
+            },
+            "velocity": {
+                "x": 0.39076024293899538,
+                "y": 1.060795783996582,
+                "z": -0.4520893096923828
+            },
+            "hand": {
+                "x": 0.08275296539068222,
+                "y": 1.6917109489440919,
+                "z": 3.4203522205352785
+            },
+            "target": {
+                "x": 0.09484497457742691,
+                "y": 1.383914828300476,
+                "z": 3.3771042823791506
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 22065,
+            "phase": "lift",
+            "time": 10.731719970703125,
+            "deltaTime": 0.0006087999790906906,
+            "selected": true,
+            "position": {
+                "x": 0.12243281304836273,
+                "y": 1.4584927558898926,
+                "z": 3.334726095199585
+            },
+            "velocity": {
+                "x": 0.2459116280078888,
+                "y": 0.68168044090271,
+                "z": -0.27278661727905276
+            },
+            "hand": {
+                "x": 0.11275946348905564,
+                "y": 1.771728277206421,
+                "z": 3.390345811843872
+            },
+            "target": {
+                "x": 0.1253248006105423,
+                "y": 1.4664475917816163,
+                "z": 3.332029104232788
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 22293,
+            "phase": "lift",
+            "time": 10.832015991210938,
+            "deltaTime": 0.00031790000502951443,
+            "selected": true,
+            "position": {
+                "x": 0.13236570358276368,
+                "y": 1.4864561557769776,
+                "z": 3.3212053775787355
+            },
+            "velocity": {
+                "x": 0.00042319297790527344,
+                "y": -0.002211332321166992,
+                "z": 0.012636184692382813
+            },
+            "hand": {
+                "x": 0.12000096589326859,
+                "y": 1.791038990020752,
+                "z": 3.3831043243408205
+            },
+            "target": {
+                "x": 0.13236570358276368,
+                "y": 1.486456274986267,
+                "z": 3.3212053775787355
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 22544,
+            "phase": "lift",
+            "time": 10.93223762512207,
+            "deltaTime": 0.0005373000167310238,
+            "selected": true,
+            "position": {
+                "x": 0.13236570358276368,
+                "y": 1.4864563941955567,
+                "z": 3.3212053775787355
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0000059604644775390629,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.12000096589326859,
+                "y": 1.791038990020752,
+                "z": 3.3831043243408205
+            },
+            "target": {
+                "x": 0.13236570358276368,
+                "y": 1.486456274986267,
+                "z": 3.3212053775787355
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 22759,
+            "phase": "lift",
+            "time": 11.032709121704102,
+            "deltaTime": 0.0004084999964106828,
+            "selected": true,
+            "position": {
+                "x": 0.13236570358276368,
+                "y": 1.4864561557769776,
+                "z": 3.3212053775787355
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": -0.0000059604644775390629,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.12000096589326859,
+                "y": 1.791038990020752,
+                "z": 3.3831043243408205
+            },
+            "target": {
+                "x": 0.13236570358276368,
+                "y": 1.486456274986267,
+                "z": 3.3212053775787355
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 23008,
+            "phase": "return",
+            "time": 11.13288688659668,
+            "deltaTime": 0.0004890999989584088,
+            "selected": true,
+            "position": {
+                "x": 0.13197988271713258,
+                "y": 1.4853122234344483,
+                "z": 3.321949005126953
+            },
+            "velocity": {
+                "x": -0.019499659538269044,
+                "y": -0.05589723587036133,
+                "z": 0.030171871185302736
+            },
+            "hand": {
+                "x": 0.11871220916509628,
+                "y": 1.7876023054122925,
+                "z": 3.3843929767608644
+            },
+            "target": {
+                "x": 0.13112139701843263,
+                "y": 1.4828929901123047,
+                "z": 3.323129177093506
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 23243,
+            "phase": "return",
+            "time": 11.233253479003907,
+            "deltaTime": 0.00040580000495538116,
+            "selected": true,
+            "position": {
+                "x": 0.11822917312383652,
+                "y": 1.446515679359436,
+                "z": 3.3441884517669679
+            },
+            "velocity": {
+                "x": -0.20640380680561067,
+                "y": -0.5642116069793701,
+                "z": 0.2505302429199219
+            },
+            "hand": {
+                "x": 0.10211976617574692,
+                "y": 1.7433557510375977,
+                "z": 3.4009854793548586
+            },
+            "target": {
+                "x": 0.11476001888513565,
+                "y": 1.4371111392974854,
+                "z": 3.3479809761047365
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 23487,
+            "phase": "return",
+            "time": 11.333434104919434,
+            "deltaTime": 0.0003732999903149903,
+            "selected": true,
+            "position": {
+                "x": 0.08963844180107117,
+                "y": 1.371001958847046,
+                "z": 3.3862431049346926
+            },
+            "velocity": {
+                "x": -0.31492674350738528,
+                "y": -0.8363544940948486,
+                "z": 0.36208629608154299
+            },
+            "hand": {
+                "x": 0.07326380908489227,
+                "y": 1.6664066314697266,
+                "z": 3.4298415184020998
+            },
+            "target": {
+                "x": 0.08476142585277558,
+                "y": 1.3579528331756592,
+                "z": 3.391383171081543
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 23710,
+            "phase": "return",
+            "time": 11.433624267578125,
+            "deltaTime": 0.00035680001019500196,
+            "selected": true,
+            "position": {
+                "x": 0.05377180129289627,
+                "y": 1.2832176685333253,
+                "z": 3.434685707092285
+            },
+            "velocity": {
+                "x": -0.3318615257740021,
+                "y": -0.860905647277832,
+                "z": 0.36699771881103518
+            },
+            "hand": {
+                "x": 0.04086919128894806,
+                "y": 1.5800210237503052,
+                "z": 3.462235927581787
+            },
+            "target": {
+                "x": 0.04874083772301674,
+                "y": 1.2698674201965333,
+                "z": 3.439924478530884
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 23970,
+            "phase": "return",
+            "time": 11.533973693847657,
+            "deltaTime": 0.00036360000376589596,
+            "selected": true,
+            "position": {
+                "x": 0.020276332274079324,
+                "y": 1.206220269203186,
+                "z": 3.4764373302459719
+            },
+            "velocity": {
+                "x": -0.25753453373908999,
+                "y": -0.6631255149841309,
+                "z": 0.2753734588623047
+            },
+            "hand": {
+                "x": 0.013602235354483128,
+                "y": 1.507309079170227,
+                "z": 3.4895029067993166
+            },
+            "target": {
+                "x": 0.016600005328655244,
+                "y": 1.196407675743103,
+                "z": 3.480210065841675
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 24192,
+            "phase": "return",
+            "time": 11.634333610534668,
+            "deltaTime": 0.0004985000123269856,
+            "selected": true,
+            "position": {
+                "x": 0.0011291229166090489,
+                "y": 1.163114070892334,
+                "z": 3.4988582134246828
+            },
+            "velocity": {
+                "x": -0.08629048615694046,
+                "y": -0.23552179336547852,
+                "z": 0.08761882781982422
+            },
+            "hand": {
+                "x": 0.00026357470778748393,
+                "y": 1.4717392921447755,
+                "z": 3.5028417110443117
+            },
+            "target": {
+                "x": 0.00032387013197876513,
+                "y": 1.1607012748718262,
+                "z": 3.499620199203491
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 24448,
+            "phase": "return",
+            "time": 11.734684944152832,
+            "deltaTime": 0.00033760000951588154,
+            "selected": true,
+            "position": {
+                "x": -0.00002405469786026515,
+                "y": 1.1600148677825928,
+                "z": 3.499993085861206
+            },
+            "velocity": {
+                "x": 0.0009629173437133431,
+                "y": -0.000614287331700325,
+                "z": -0.00011074228677898645
+            },
+            "hand": {
+                "x": 9.685754776000977e-7,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 24713,
+            "phase": "return",
+            "time": 11.834809303283692,
+            "deltaTime": 0.0003912000101990998,
+            "selected": true,
+            "position": {
+                "x": -0.000023050097297527827,
+                "y": 1.1600210666656495,
+                "z": 3.4999945163726808
+            },
+            "velocity": {
+                "x": 0.0002912157215178013,
+                "y": 0.0001635721419006586,
+                "z": -0.000033121672458946705
+            },
+            "hand": {
+                "x": 9.685754776000977e-7,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 24852,
+            "phase": "return",
+            "time": 11.934974670410157,
+            "deltaTime": 0.003111999947577715,
+            "selected": true,
+            "position": {
+                "x": -0.000022549780624103732,
+                "y": 1.160029649734497,
+                "z": 3.499994993209839
+            },
+            "velocity": {
+                "x": 0.00007738661952316761,
+                "y": 0.00005017034709453583,
+                "z": 0.000004460947820916772
+            },
+            "hand": {
+                "x": 9.685754776000977e-7,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 24927,
+            "phase": "return",
+            "time": 12.036423683166504,
+            "deltaTime": 0.0010800999589264393,
+            "selected": true,
+            "position": {
+                "x": -0.000022442900444730185,
+                "y": 1.160032033920288,
+                "z": 3.499994993209839
+            },
+            "velocity": {
+                "x": 0.000018808292225003242,
+                "y": 0.000012609409168362617,
+                "z": 0.000004270870704203844
+            },
+            "hand": {
+                "x": 9.685754776000977e-7,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 25016,
+            "phase": "release",
+            "time": 12.13671588897705,
+            "deltaTime": 0.0006452000234276056,
+            "selected": false,
+            "position": {
+                "x": -0.00002571081495261751,
+                "y": 1.1600003242492676,
+                "z": 3.4999897480010988
+            },
+            "velocity": {
+                "x": 0.00008687362424097955,
+                "y": -0.0000814199447631836,
+                "z": -0.000030703318770974874
+            },
+            "hand": {
+                "x": 9.685754776000977e-7,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 25119,
+            "phase": "release",
+            "time": 12.23747730255127,
+            "deltaTime": 0.0021869000047445299,
+            "selected": false,
+            "position": {
+                "x": -0.000024140610548784025,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": -0.00001948395583895035,
+                "y": -0.000006332993507385254,
+                "z": -0.000017166212273878045
+            },
+            "hand": {
+                "x": 9.685754776000977e-7,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 25199,
+            "phase": "settle",
+            "time": 12.337736129760743,
+            "deltaTime": 0.0008933999924920499,
+            "selected": false,
+            "position": {
+                "x": -0.000024097284040180966,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 7.689947665312502e-7,
+                "y": -1.043081283569336e-7,
+                "z": 0.0000041696225707710259
+            },
+            "hand": {
+                "x": 0.6500009298324585,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 25279,
+            "phase": "settle",
+            "time": 12.438270568847657,
+            "deltaTime": 0.0010471000568941236,
+            "selected": false,
+            "position": {
+                "x": -0.00002411815512459725,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": -2.9588321126539088e-7,
+                "y": -1.7881393432617188e-7,
+                "z": 0.0000018428613657306415
+            },
+            "hand": {
+                "x": 0.6500009298324585,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 25340,
+            "phase": "settle",
+            "time": 12.540190696716309,
+            "deltaTime": 0.0008777999901212752,
+            "selected": false,
+            "position": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6500009298324585,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 25424,
+            "phase": "settle",
+            "time": 12.640766143798829,
+            "deltaTime": 0.0009188000112771988,
+            "selected": false,
+            "position": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6500009298324585,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 25461,
+            "phase": "settle",
+            "time": 12.74276351928711,
+            "deltaTime": 0.005009999964386225,
+            "selected": false,
+            "position": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6500009298324585,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 25527,
+            "phase": "settle",
+            "time": 12.843205451965332,
+            "deltaTime": 0.001513600000180304,
+            "selected": false,
+            "position": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6500009298324585,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 25587,
+            "phase": "settle",
+            "time": 12.945220947265625,
+            "deltaTime": 0.0009268000139854848,
+            "selected": false,
+            "position": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6500009298324585,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 25676,
+            "phase": "settle",
+            "time": 13.048772811889649,
+            "deltaTime": 0.0021244001109153034,
+            "selected": false,
+            "position": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6500009298324585,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 25764,
+            "phase": "settle",
+            "time": 13.149300575256348,
+            "deltaTime": 0.0004991000168956816,
+            "selected": false,
+            "position": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6500009298324585,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 25844,
+            "phase": "settle",
+            "time": 13.24984073638916,
+            "deltaTime": 0.00222219992429018,
+            "selected": false,
+            "position": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6500009298324585,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 25922,
+            "phase": "settle",
+            "time": 13.350637435913086,
+            "deltaTime": 0.0008024999988265336,
+            "selected": false,
+            "position": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6500009298324585,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 26031,
+            "phase": "settle",
+            "time": 13.450973510742188,
+            "deltaTime": 0.0009017999982461333,
+            "selected": false,
+            "position": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6500009298324585,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 26126,
+            "phase": "settle",
+            "time": 13.551399230957032,
+            "deltaTime": 0.0010113000171259046,
+            "selected": false,
+            "position": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6500009298324585,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 2,
+            "frame": 26287,
+            "phase": "settle",
+            "time": 13.651426315307618,
+            "deltaTime": 0.00038320000749081373,
+            "selected": false,
+            "position": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6500009298324585,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 26483,
+            "phase": "touch",
+            "time": 13.751805305480957,
+            "deltaTime": 0.00039969998761080205,
+            "selected": false,
+            "position": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": -0.000021651387214660645,
+                "y": 1.471039056777954,
+                "z": 3.5030956268310549
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 26705,
+            "phase": "touch",
+            "time": 13.851907730102539,
+            "deltaTime": 0.0006036999984644353,
+            "selected": false,
+            "position": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": -0.000021651387214660645,
+                "y": 1.471039056777954,
+                "z": 3.5030956268310549
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 26932,
+            "phase": "touch",
+            "time": 13.95219612121582,
+            "deltaTime": 0.00043330001062713563,
+            "selected": false,
+            "position": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": -0.000021651387214660645,
+                "y": 1.471039056777954,
+                "z": 3.5030956268310549
+            },
+            "target": {
+                "x": 4.038275847051409e-8,
+                "y": 1.1599998474121094,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 27126,
+            "phase": "touch",
+            "time": 14.052353858947754,
+            "deltaTime": 0.0004867000097874552,
+            "selected": true,
+            "position": {
+                "x": -0.000024097838831949048,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": -2.0045260384904396e-7,
+                "y": 5.654709411828662e-8,
+                "z": -2.842170943040401e-14
+            },
+            "hand": {
+                "x": -0.000021651387214660645,
+                "y": 1.471039056777954,
+                "z": 3.5030956268310549
+            },
+            "target": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 27337,
+            "phase": "touch",
+            "time": 14.152679443359375,
+            "deltaTime": 0.00041119998786598444,
+            "selected": true,
+            "position": {
+                "x": -0.000024114870029734448,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": 5.442295787361218e-7,
+                "y": 4.876571892964421e-7,
+                "z": 1.4210854715202005e-14
+            },
+            "hand": {
+                "x": -0.000021651387214660645,
+                "y": 1.471039056777954,
+                "z": 3.5030956268310549
+            },
+            "target": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 27559,
+            "phase": "touch",
+            "time": 14.252745628356934,
+            "deltaTime": 0.00035829999251291156,
+            "selected": true,
+            "position": {
+                "x": -0.000024093702450045384,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            },
+            "velocity": {
+                "x": -2.2537284394275049e-7,
+                "y": 1.9159395492351906e-7,
+                "z": 0.0
+            },
+            "hand": {
+                "x": -0.000021651387214660645,
+                "y": 1.471039056777954,
+                "z": 3.5030956268310549
+            },
+            "target": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 27780,
+            "phase": "lift",
+            "time": 14.35313892364502,
+            "deltaTime": 0.00040290001197718084,
+            "selected": true,
+            "position": {
+                "x": 0.014028270728886128,
+                "y": 1.189192533493042,
+                "z": 3.482781410217285
+            },
+            "velocity": {
+                "x": 0.23415671288967133,
+                "y": 0.5784392356872559,
+                "z": -0.2623915672302246
+            },
+            "hand": {
+                "x": 0.014879829250276089,
+                "y": 1.5107762813568116,
+                "z": 3.488194227218628
+            },
+            "target": {
+                "x": 0.01814381219446659,
+                "y": 1.1998963356018067,
+                "z": 3.4782981872558595
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 28010,
+            "phase": "lift",
+            "time": 14.453450202941895,
+            "deltaTime": 0.0005170999793335795,
+            "selected": true,
+            "position": {
+                "x": 0.05289515480399132,
+                "y": 1.2777435779571534,
+                "z": 3.4330949783325197
+            },
+            "velocity": {
+                "x": 0.3899902105331421,
+                "y": 1.0206878185272217,
+                "z": -0.44553279876708987
+            },
+            "hand": {
+                "x": 0.049760304391384128,
+                "y": 1.6037908792495728,
+                "z": 3.4533138275146486
+            },
+            "target": {
+                "x": 0.05887051671743393,
+                "y": 1.2940185070037842,
+                "z": 3.42661190032959
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 28239,
+            "phase": "lift",
+            "time": 14.553545951843262,
+            "deltaTime": 0.00034699999378062785,
+            "selected": true,
+            "position": {
+                "x": 0.09544442594051361,
+                "y": 1.3847664594650269,
+                "z": 3.374169111251831
+            },
+            "velocity": {
+                "x": 0.36881715059280398,
+                "y": 1.0077714920043946,
+                "z": -0.42322874069213869
+            },
+            "hand": {
+                "x": 0.08867894858121872,
+                "y": 1.7075738906860352,
+                "z": 3.4143950939178469
+            },
+            "target": {
+                "x": 0.10103276371955872,
+                "y": 1.4002251625061036,
+                "z": 3.3681445121765138
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 28500,
+            "phase": "lift",
+            "time": 14.653809547424317,
+            "deltaTime": 0.00038159999530762434,
+            "selected": true,
+            "position": {
+                "x": 0.1255451887845993,
+                "y": 1.4673516750335694,
+                "z": 3.3301186561584474
+            },
+            "velocity": {
+                "x": 0.21568536758422852,
+                "y": 0.5977213382720947,
+                "z": -0.23807287216186524
+            },
+            "hand": {
+                "x": 0.11583966761827469,
+                "y": 1.780002474784851,
+                "z": 3.3872344493865969
+            },
+            "target": {
+                "x": 0.12833242118358613,
+                "y": 1.475016713142395,
+                "z": 3.3273799419403078
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 28784,
+            "phase": "lift",
+            "time": 14.753942489624024,
+            "deltaTime": 0.0002673999988473952,
+            "selected": true,
+            "position": {
+                "x": 0.13234178721904756,
+                "y": 1.4864561557769776,
+                "z": 3.321197509765625
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.11997834593057633,
+                "y": 1.791038990020752,
+                "z": 3.3830957412719728
+            },
+            "target": {
+                "x": 0.13234178721904756,
+                "y": 1.4864561557769776,
+                "z": 3.321197509765625
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 29079,
+            "phase": "lift",
+            "time": 14.854001998901368,
+            "deltaTime": 0.0004557000065688044,
+            "selected": true,
+            "position": {
+                "x": 0.13234178721904756,
+                "y": 1.4864561557769776,
+                "z": 3.321197509765625
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.11997834593057633,
+                "y": 1.791038990020752,
+                "z": 3.3830957412719728
+            },
+            "target": {
+                "x": 0.13234178721904756,
+                "y": 1.4864561557769776,
+                "z": 3.321197509765625
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 29364,
+            "phase": "lift",
+            "time": 14.9542236328125,
+            "deltaTime": 0.0003457000129856169,
+            "selected": true,
+            "position": {
+                "x": 0.13234178721904756,
+                "y": 1.4864561557769776,
+                "z": 3.321197509765625
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.11997834593057633,
+                "y": 1.791038990020752,
+                "z": 3.3830957412719728
+            },
+            "target": {
+                "x": 0.13234178721904756,
+                "y": 1.4864561557769776,
+                "z": 3.321197509765625
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 29650,
+            "phase": "return",
+            "time": 15.054373741149903,
+            "deltaTime": 0.0003493000112939626,
+            "selected": true,
+            "position": {
+                "x": 0.1311303824186325,
+                "y": 1.4828760623931885,
+                "z": 3.323507308959961
+            },
+            "velocity": {
+                "x": -0.05108341574668884,
+                "y": -0.14625191688537599,
+                "z": 0.07897615432739258
+            },
+            "hand": {
+                "x": 0.11721286922693253,
+                "y": 1.783664345741272,
+                "z": 3.3858611583709719
+            },
+            "target": {
+                "x": 0.12966704368591309,
+                "y": 1.4788111448287964,
+                "z": 3.3253273963928224
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 29924,
+            "phase": "return",
+            "time": 15.154465675354004,
+            "deltaTime": 0.00035180000122636557,
+            "selected": true,
+            "position": {
+                "x": 0.11485525965690613,
+                "y": 1.4373564720153809,
+                "z": 3.3492865562438967
+            },
+            "velocity": {
+                "x": -0.22410154342651368,
+                "y": -0.6098330020904541,
+                "z": 0.2682685852050781
+            },
+            "hand": {
+                "x": 0.09810253977775574,
+                "y": 1.7327035665512086,
+                "z": 3.4049715995788576
+            },
+            "target": {
+                "x": 0.11070109903812409,
+                "y": 1.4261168241500855,
+                "z": 3.353973627090454
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 30204,
+            "phase": "return",
+            "time": 15.254804611206055,
+            "deltaTime": 0.0003952000115532428,
+            "selected": true,
+            "position": {
+                "x": 0.08461888134479523,
+                "y": 1.3583589792251588,
+                "z": 3.393230438232422
+            },
+            "velocity": {
+                "x": -0.32107383012771609,
+                "y": -0.8494317531585693,
+                "z": 0.3666996955871582
+            },
+            "hand": {
+                "x": 0.0680837631225586,
+                "y": 1.652653455734253,
+                "z": 3.434990167617798
+            },
+            "target": {
+                "x": 0.07916704565286637,
+                "y": 1.3438717126846314,
+                "z": 3.399130344390869
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 30469,
+            "phase": "return",
+            "time": 15.355108261108399,
+            "deltaTime": 0.0003490000090096146,
+            "selected": true,
+            "position": {
+                "x": 0.04843420535326004,
+                "y": 1.2707422971725464,
+                "z": 3.441519021987915
+            },
+            "velocity": {
+                "x": -0.3288591206073761,
+                "y": -0.8508443832397461,
+                "z": 0.3618955612182617
+            },
+            "hand": {
+                "x": 0.03589465841650963,
+                "y": 1.5668158531188965,
+                "z": 3.467179298400879
+            },
+            "target": {
+                "x": 0.04299873486161232,
+                "y": 1.2564795017242432,
+                "z": 3.4472830295562746
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 30748,
+            "phase": "return",
+            "time": 15.455344200134278,
+            "deltaTime": 0.00033030001213774085,
+            "selected": true,
+            "position": {
+                "x": 0.01627388782799244,
+                "y": 1.1972882747650147,
+                "z": 3.4811832904815676
+            },
+            "velocity": {
+                "x": -0.23830440640449525,
+                "y": -0.6150782108306885,
+                "z": 0.25336742401123049
+            },
+            "hand": {
+                "x": 0.010289296507835389,
+                "y": 1.498534917831421,
+                "z": 3.4927847385406496
+            },
+            "target": {
+                "x": 0.01259299274533987,
+                "y": 1.1875860691070557,
+                "z": 3.4850103855133058
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 31035,
+            "phase": "return",
+            "time": 15.555706977844239,
+            "deltaTime": 0.00028219999512657523,
+            "selected": true,
+            "position": {
+                "x": 0.00016486835374962538,
+                "y": 1.1608678102493287,
+                "z": 3.499891996383667
+            },
+            "velocity": {
+                "x": -0.05618904531002045,
+                "y": -0.1606285572052002,
+                "z": 0.05519390106201172
+            },
+            "hand": {
+                "x": -0.000021651387214660645,
+                "y": 1.471039056777954,
+                "z": 3.5030956268310549
+            },
+            "target": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 31334,
+            "phase": "return",
+            "time": 15.655953407287598,
+            "deltaTime": 0.00031259999377653003,
+            "selected": true,
+            "position": {
+                "x": -0.000025384888431290165,
+                "y": 1.160010814666748,
+                "z": 3.5000064373016359
+            },
+            "velocity": {
+                "x": 0.0003313011839054525,
+                "y": -0.00009352981578558683,
+                "z": -0.00030390347819775343
+            },
+            "hand": {
+                "x": -0.000021651387214660645,
+                "y": 1.471039056777954,
+                "z": 3.5030956268310549
+            },
+            "target": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 31643,
+            "phase": "return",
+            "time": 15.756187438964844,
+            "deltaTime": 0.0004894000012427568,
+            "selected": true,
+            "position": {
+                "x": -0.00002391585076111369,
+                "y": 1.1600114107131959,
+                "z": 3.5000033378601076
+            },
+            "velocity": {
+                "x": 0.000024143468181136996,
+                "y": 0.0000256124185398221,
+                "z": -0.00002778612542897463
+            },
+            "hand": {
+                "x": -0.000021651387214660645,
+                "y": 1.471039056777954,
+                "z": 3.5030956268310549
+            },
+            "target": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 31948,
+            "phase": "return",
+            "time": 15.856245040893555,
+            "deltaTime": 0.00031380000291392207,
+            "selected": true,
+            "position": {
+                "x": -0.000023832140868762508,
+                "y": 1.1600123643875123,
+                "z": 3.5000030994415285
+            },
+            "velocity": {
+                "x": 2.1460073185153306e-7,
+                "y": 0.0000017428537830710412,
+                "z": -8.238130249083042e-7
+            },
+            "hand": {
+                "x": -0.000021651387214660645,
+                "y": 1.471039056777954,
+                "z": 3.5030956268310549
+            },
+            "target": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 32254,
+            "phase": "release",
+            "time": 15.95648193359375,
+            "deltaTime": 0.000444200006313622,
+            "selected": false,
+            "position": {
+                "x": -0.00002380014666414354,
+                "y": 1.1600124835968018,
+                "z": 3.5000030994415285
+            },
+            "velocity": {
+                "x": 41.52339172363281,
+                "y": 101.44847106933594,
+                "z": -55.85633087158203
+            },
+            "hand": {
+                "x": -0.000021651387214660645,
+                "y": 1.471039056777954,
+                "z": 3.5030956268310549
+            },
+            "target": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 32575,
+            "phase": "release",
+            "time": 16.056516647338868,
+            "deltaTime": 0.00027129999944008887,
+            "selected": false,
+            "position": {
+                "x": 4.148008823394775,
+                "y": 11.202925682067871,
+                "z": -2.1050350666046144
+            },
+            "velocity": {
+                "x": 41.1922607421875,
+                "y": 99.66317749023438,
+                "z": -55.4109001159668
+            },
+            "hand": {
+                "x": -0.000021651387214660645,
+                "y": 1.471039056777954,
+                "z": 3.5030956268310549
+            },
+            "target": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 32896,
+            "phase": "settle",
+            "time": 16.156763076782228,
+            "deltaTime": 0.0003535999858286232,
+            "selected": false,
+            "position": {
+                "x": 8.233631134033204,
+                "y": 21.07579231262207,
+                "z": -7.66126012802124
+            },
+            "velocity": {
+                "x": 40.86376953125,
+                "y": 97.8921127319336,
+                "z": -54.969024658203128
+            },
+            "hand": {
+                "x": 0.6499783396720886,
+                "y": 1.7710390090942383,
+                "z": 3.103095531463623
+            },
+            "target": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 33218,
+            "phase": "settle",
+            "time": 16.256921768188478,
+            "deltaTime": 0.0002962999860756099,
+            "selected": false,
+            "position": {
+                "x": 12.26738452911377,
+                "y": 30.77399444580078,
+                "z": -13.154763221740723
+            },
+            "velocity": {
+                "x": 40.537899017333987,
+                "y": 96.13516998291016,
+                "z": -54.530670166015628
+            },
+            "hand": {
+                "x": 0.6499783396720886,
+                "y": 1.7710390090942383,
+                "z": 3.103095531463623
+            },
+            "target": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 33535,
+            "phase": "settle",
+            "time": 16.3569278717041,
+            "deltaTime": 0.0003167999966535717,
+            "selected": false,
+            "position": {
+                "x": 16.26344108581543,
+                "y": 40.29405975341797,
+                "z": -18.582027435302736
+            },
+            "velocity": {
+                "x": 40.214622497558597,
+                "y": 94.3922348022461,
+                "z": -54.09580993652344
+            },
+            "hand": {
+                "x": 0.6499783396720886,
+                "y": 1.7710390090942383,
+                "z": 3.103095531463623
+            },
+            "target": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 33847,
+            "phase": "settle",
+            "time": 16.457204818725587,
+            "deltaTime": 0.0002908000024035573,
+            "selected": false,
+            "position": {
+                "x": 20.233610153198243,
+                "y": 49.634864807128909,
+                "z": -23.94742202758789
+            },
+            "velocity": {
+                "x": 39.8939208984375,
+                "y": 92.6632080078125,
+                "z": -53.6644172668457
+            },
+            "hand": {
+                "x": 0.6499783396720886,
+                "y": 1.7710390090942383,
+                "z": 3.103095531463623
+            },
+            "target": {
+                "x": -0.000024096643755910918,
+                "y": 1.159999966621399,
+                "z": 3.4999914169311525
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 34170,
+            "phase": "settle",
+            "time": 16.557945251464845,
+            "deltaTime": 0.0004011999990325421,
+            "selected": false,
+            "position": {
+                "x": -7.450580596923828e-9,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499783396720886,
+                "y": 1.7710390090942383,
+                "z": 3.103095531463623
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 34493,
+            "phase": "settle",
+            "time": 16.658428192138673,
+            "deltaTime": 0.0002693000133149326,
+            "selected": false,
+            "position": {
+                "x": 3.303886941807832e-9,
+                "y": 1.160002589225769,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -9.685003306003637e-7,
+                "y": -0.000518798828125,
+                "z": 2.898001127960015e-7
+            },
+            "hand": {
+                "x": 0.6499783396720886,
+                "y": 1.7710390090942383,
+                "z": 3.103095531463623
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 34818,
+            "phase": "settle",
+            "time": 16.758502960205079,
+            "deltaTime": 0.0002886999864131212,
+            "selected": false,
+            "position": {
+                "x": 9.035039383320509e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -2.019975298139798e-9,
+                "y": -7.450580596923828e-8,
+                "z": 2.9644556320818085e-7
+            },
+            "hand": {
+                "x": 0.6499783396720886,
+                "y": 1.7710390090942383,
+                "z": 3.103095531463623
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 35139,
+            "phase": "settle",
+            "time": 16.858779907226564,
+            "deltaTime": 0.0005197999998927116,
+            "selected": false,
+            "position": {
+                "x": 8.102732707016003e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -9.879262563572411e-8,
+                "y": -8.940696716308594e-8,
+                "z": 2.8794309514523777e-7
+            },
+            "hand": {
+                "x": 0.6499783396720886,
+                "y": 1.7710390090942383,
+                "z": 3.103095531463623
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 35452,
+            "phase": "settle",
+            "time": 16.95880699157715,
+            "deltaTime": 0.00028360000578686595,
+            "selected": false,
+            "position": {
+                "x": 4.963800037671717e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499783396720886,
+                "y": 1.7710390090942383,
+                "z": 3.103095531463623
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 35802,
+            "phase": "settle",
+            "time": 17.058935165405275,
+            "deltaTime": 0.00030280000646598637,
+            "selected": false,
+            "position": {
+                "x": 4.963800037671717e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499783396720886,
+                "y": 1.7710390090942383,
+                "z": 3.103095531463623
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 36150,
+            "phase": "settle",
+            "time": 17.15897560119629,
+            "deltaTime": 0.00029299999005161226,
+            "selected": false,
+            "position": {
+                "x": 4.963800037671717e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499783396720886,
+                "y": 1.7710390090942383,
+                "z": 3.103095531463623
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 36501,
+            "phase": "settle",
+            "time": 17.259170532226564,
+            "deltaTime": 0.00030280000646598637,
+            "selected": false,
+            "position": {
+                "x": 4.963800037671717e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499783396720886,
+                "y": 1.7710390090942383,
+                "z": 3.103095531463623
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 36842,
+            "phase": "settle",
+            "time": 17.359277725219728,
+            "deltaTime": 0.0002724000078160316,
+            "selected": false,
+            "position": {
+                "x": 4.963800037671717e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499783396720886,
+                "y": 1.7710390090942383,
+                "z": 3.103095531463623
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 37179,
+            "phase": "settle",
+            "time": 17.459625244140626,
+            "deltaTime": 0.00038919999497011304,
+            "selected": false,
+            "position": {
+                "x": 4.963800037671717e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499783396720886,
+                "y": 1.7710390090942383,
+                "z": 3.103095531463623
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 3,
+            "frame": 37507,
+            "phase": "settle",
+            "time": 17.559701919555665,
+            "deltaTime": 0.0002803000097628683,
+            "selected": false,
+            "position": {
+                "x": 4.963800037671717e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6499783396720886,
+                "y": 1.7710390090942383,
+                "z": 3.103095531463623
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 37846,
+            "phase": "touch",
+            "time": 17.659931182861329,
+            "deltaTime": 0.00031159998616203666,
+            "selected": false,
+            "position": {
+                "x": 4.963800037671717e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 38173,
+            "phase": "touch",
+            "time": 17.76004409790039,
+            "deltaTime": 0.0002618999860715121,
+            "selected": false,
+            "position": {
+                "x": 4.963800037671717e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 38481,
+            "phase": "touch",
+            "time": 17.8603572845459,
+            "deltaTime": 0.0007713999948464334,
+            "selected": true,
+            "position": {
+                "x": 1.416418804467412e-8,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -6.576826194759633e-9,
+                "y": 1.6466393049086037e-7,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.963800037671717e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 38725,
+            "phase": "touch",
+            "time": 17.960561752319337,
+            "deltaTime": 0.00033340000663883984,
+            "selected": true,
+            "position": {
+                "x": 3.7991569001860628e-8,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -2.8306681087997278e-7,
+                "y": 7.585863954773231e-7,
+                "z": 4.685460908149253e-9
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 39006,
+            "phase": "touch",
+            "time": 18.06078338623047,
+            "deltaTime": 0.0003267000138293952,
+            "selected": true,
+            "position": {
+                "x": 8.562066966533166e-8,
+                "y": 1.1600000858306885,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -0.0000011833121789095458,
+                "y": 0.0000019470990082481878,
+                "z": -7.363485110545298e-8
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 39269,
+            "phase": "lift",
+            "time": 18.160860061645509,
+            "deltaTime": 0.0003471999953035265,
+            "selected": true,
+            "position": {
+                "x": 0.0000022338890630635435,
+                "y": 1.160004734992981,
+                "z": 3.49999737739563
+            },
+            "velocity": {
+                "x": 0.00010734088573371992,
+                "y": 0.00023245811462402344,
+                "z": -0.00013113021850585938
+            },
+            "hand": {
+                "x": 0.00003334637949592434,
+                "y": 1.4711278676986695,
+                "z": 3.503070831298828
+            },
+            "target": {
+                "x": 0.00004109593646717258,
+                "y": 1.1600888967514039,
+                "z": 3.4999518394470217
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 39489,
+            "phase": "lift",
+            "time": 18.26096534729004,
+            "deltaTime": 0.0007391999824903905,
+            "selected": true,
+            "position": {
+                "x": 0.019730178639292718,
+                "y": 1.2015715837478638,
+                "z": 3.475762128829956
+            },
+            "velocity": {
+                "x": 0.27590566873550417,
+                "y": 0.6912827491760254,
+                "z": -0.3093719482421875
+            },
+            "hand": {
+                "x": 0.016332106664776803,
+                "y": 1.5145912170410157,
+                "z": 3.486772060394287
+            },
+            "target": {
+                "x": 0.019889146089553834,
+                "y": 1.203736424446106,
+                "z": 3.4762094020843508
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 39715,
+            "phase": "lift",
+            "time": 18.361045837402345,
+            "deltaTime": 0.0005410999874584377,
+            "selected": true,
+            "position": {
+                "x": 0.0607101172208786,
+                "y": 1.2965008020401,
+                "z": 3.4226529598236086
+            },
+            "velocity": {
+                "x": 0.4029916822910309,
+                "y": 1.0634541511535645,
+                "z": -0.4623532295227051
+            },
+            "hand": {
+                "x": 0.051804643124341968,
+                "y": 1.6091846227645875,
+                "z": 3.4512996673583986
+            },
+            "target": {
+                "x": 0.06117335706949234,
+                "y": 1.2995080947875977,
+                "z": 3.423593759536743
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 39947,
+            "phase": "lift",
+            "time": 18.461145401000978,
+            "deltaTime": 0.00040190000436268747,
+            "selected": true,
+            "position": {
+                "x": 0.10202214121818543,
+                "y": 1.4022507667541505,
+                "z": 3.364675760269165
+            },
+            "velocity": {
+                "x": 0.35483911633491518,
+                "y": 0.9738802909851074,
+                "z": -0.40737390518188479
+            },
+            "hand": {
+                "x": 0.09049423784017563,
+                "y": 1.7123569250106812,
+                "z": 3.4126100540161135
+            },
+            "target": {
+                "x": 0.10291308909654618,
+                "y": 1.4051485061645508,
+                "z": 3.3654537200927736
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 40191,
+            "phase": "lift",
+            "time": 18.561473846435548,
+            "deltaTime": 0.00036949999048374593,
+            "selected": true,
+            "position": {
+                "x": 0.12857288122177125,
+                "y": 1.4758714437484742,
+                "z": 3.3257896900177
+            },
+            "velocity": {
+                "x": 0.17444342374801637,
+                "y": 0.48259496688842776,
+                "z": -0.1883864402770996
+            },
+            "hand": {
+                "x": 0.1166338101029396,
+                "y": 1.7820624113082886,
+                "z": 3.3864705562591554
+            },
+            "target": {
+                "x": 0.12910747528076173,
+                "y": 1.4771513938903809,
+                "z": 3.326232433319092
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 40444,
+            "phase": "lift",
+            "time": 18.66162872314453,
+            "deltaTime": 0.0003198999911546707,
+            "selected": true,
+            "position": {
+                "x": 0.13236552476882935,
+                "y": 1.4864565134048463,
+                "z": 3.321204900741577
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.12000002712011337,
+                "y": 1.791038990020752,
+                "z": 3.3831043243408205
+            },
+            "target": {
+                "x": 0.13236552476882935,
+                "y": 1.4864565134048463,
+                "z": 3.321204900741577
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 40694,
+            "phase": "lift",
+            "time": 18.761821746826173,
+            "deltaTime": 0.00030169999809004366,
+            "selected": true,
+            "position": {
+                "x": 0.13236552476882935,
+                "y": 1.4864565134048463,
+                "z": 3.321204900741577
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.12000002712011337,
+                "y": 1.791038990020752,
+                "z": 3.3831043243408205
+            },
+            "target": {
+                "x": 0.13236552476882935,
+                "y": 1.4864565134048463,
+                "z": 3.321204900741577
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 40938,
+            "phase": "lift",
+            "time": 18.862037658691408,
+            "deltaTime": 0.000388299988117069,
+            "selected": true,
+            "position": {
+                "x": 0.13236552476882935,
+                "y": 1.4864565134048463,
+                "z": 3.321204900741577
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.12000002712011337,
+                "y": 1.791038990020752,
+                "z": 3.3831043243408205
+            },
+            "target": {
+                "x": 0.13236552476882935,
+                "y": 1.4864565134048463,
+                "z": 3.321204900741577
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 41144,
+            "phase": "return",
+            "time": 18.96230697631836,
+            "deltaTime": 0.0004150999884586781,
+            "selected": true,
+            "position": {
+                "x": 0.129630908370018,
+                "y": 1.4784890413284302,
+                "z": 3.326066493988037
+            },
+            "velocity": {
+                "x": -0.08650720119476319,
+                "y": -0.2425849437713623,
+                "z": 0.11647939682006836
+            },
+            "hand": {
+                "x": 0.11663482338190079,
+                "y": 1.7820651531219483,
+                "z": 3.386469602584839
+            },
+            "target": {
+                "x": 0.1291084587574005,
+                "y": 1.47715425491333,
+                "z": 3.326231002807617
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 41393,
+            "phase": "return",
+            "time": 19.062593460083009,
+            "deltaTime": 0.00034339999547228217,
+            "selected": true,
+            "position": {
+                "x": 0.11038415133953095,
+                "y": 1.4252054691314698,
+                "z": 3.356083393096924
+            },
+            "velocity": {
+                "x": -0.24807527661323548,
+                "y": -0.671696662902832,
+                "z": 0.2944827079772949
+            },
+            "hand": {
+                "x": 0.09666051715612412,
+                "y": 1.7288002967834473,
+                "z": 3.4064438343048097
+            },
+            "target": {
+                "x": 0.10923705995082855,
+                "y": 1.4220912456512452,
+                "z": 3.3561809062957765
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 41644,
+            "phase": "return",
+            "time": 19.16277313232422,
+            "deltaTime": 0.0004298000130802393,
+            "selected": true,
+            "position": {
+                "x": 0.07852443307638169,
+                "y": 1.3430721759796143,
+                "z": 3.4016947746276857
+            },
+            "velocity": {
+                "x": -0.3271147608757019,
+                "y": -0.8618652820587158,
+                "z": 0.3700375556945801
+            },
+            "hand": {
+                "x": 0.06634294241666794,
+                "y": 1.6479535102844239,
+                "z": 3.4367613792419435
+            },
+            "target": {
+                "x": 0.07727298140525818,
+                "y": 1.3390647172927857,
+                "z": 3.401787042617798
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 41923,
+            "phase": "return",
+            "time": 19.263086318969728,
+            "deltaTime": 0.00039010000182315707,
+            "selected": true,
+            "position": {
+                "x": 0.04217606782913208,
+                "y": 1.2561429738998414,
+                "z": 3.449512004852295
+            },
+            "velocity": {
+                "x": -0.3239436149597168,
+                "y": -0.8341073989868164,
+                "z": 0.3559589385986328
+            },
+            "hand": {
+                "x": 0.03428465500473976,
+                "y": 1.562464714050293,
+                "z": 3.4688196182250978
+            },
+            "target": {
+                "x": 0.04112681373953819,
+                "y": 1.252072811126709,
+                "z": 3.449714422225952
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 42172,
+            "phase": "return",
+            "time": 19.363088607788087,
+            "deltaTime": 0.0005218000151216984,
+            "selected": true,
+            "position": {
+                "x": 0.011935321614146233,
+                "y": 1.1875412464141846,
+                "z": 3.4863638877868654
+            },
+            "velocity": {
+                "x": -0.21704263985157014,
+                "y": -0.5594432353973389,
+                "z": 0.23050308227539063
+            },
+            "hand": {
+                "x": 0.00936646107584238,
+                "y": 1.4960161447525025,
+                "z": 3.4937376976013185
+            },
+            "target": {
+                "x": 0.011469824239611626,
+                "y": 1.1850552558898926,
+                "z": 3.486396551132202
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 42441,
+            "phase": "return",
+            "time": 19.46320915222168,
+            "deltaTime": 0.00033340000663883984,
+            "selected": true,
+            "position": {
+                "x": 0.0002376976772211492,
+                "y": 1.1602835655212403,
+                "z": 3.499831438064575
+            },
+            "velocity": {
+                "x": -0.006287355907261372,
+                "y": -0.04289349541068077,
+                "z": 0.0007518837228417397
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 42738,
+            "phase": "return",
+            "time": 19.563444137573243,
+            "deltaTime": 0.00032479999936185777,
+            "selected": true,
+            "position": {
+                "x": -8.877069035406748e-7,
+                "y": 1.160000205039978,
+                "z": 3.5000011920928957
+            },
+            "velocity": {
+                "x": 0.00008294031431432813,
+                "y": -0.00003417946209083311,
+                "z": -0.00008669207454659045
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 43033,
+            "phase": "return",
+            "time": 19.663551330566408,
+            "deltaTime": 0.00031790000502951443,
+            "selected": true,
+            "position": {
+                "x": -1.2689969253187884e-7,
+                "y": 1.1600000858306885,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0000013814055819239002,
+                "y": 6.04530669079395e-7,
+                "z": 7.775283279443102e-7
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 43322,
+            "phase": "return",
+            "time": 19.763816833496095,
+            "deltaTime": 0.00030499999411404133,
+            "selected": true,
+            "position": {
+                "x": -1.2469777743717715e-7,
+                "y": 1.1600000858306885,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 8.328388503286988e-7,
+                "y": 0.0000012311602404224687,
+                "z": 4.5584764052364337e-7
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 43628,
+            "phase": "release",
+            "time": 19.863964080810548,
+            "deltaTime": 0.00029070000164210796,
+            "selected": false,
+            "position": {
+                "x": -1.0302820205688477,
+                "y": 1.4182838201522828,
+                "z": 4.922386169433594
+            },
+            "velocity": {
+                "x": -40.58721160888672,
+                "y": 5.623626708984375,
+                "z": 46.015106201171878
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 43939,
+            "phase": "release",
+            "time": 19.96413230895996,
+            "deltaTime": 0.0002877000079024583,
+            "selected": false,
+            "position": {
+                "x": -4.494294166564941,
+                "y": 1.7416409254074097,
+                "z": 8.805787086486817
+            },
+            "velocity": {
+                "x": -40.263545989990237,
+                "y": 4.602479934692383,
+                "z": 0.45900726318359377
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 44260,
+            "phase": "settle",
+            "time": 20.06431770324707,
+            "deltaTime": 0.00029490000451914966,
+            "selected": false,
+            "position": {
+                "x": -5.665177822113037,
+                "y": 1.9745115041732789,
+                "z": 8.7445068359375
+            },
+            "velocity": {
+                "x": -0.6033942699432373,
+                "y": 2.4889719486236574,
+                "z": -0.8963364958763123
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 44585,
+            "phase": "settle",
+            "time": 20.164379119873048,
+            "deltaTime": 0.0003029000072274357,
+            "selected": false,
+            "position": {
+                "x": -5.623354911804199,
+                "y": 2.0912017822265627,
+                "z": 8.596592903137207
+            },
+            "velocity": {
+                "x": 0.5580583810806274,
+                "y": 0.66402268409729,
+                "z": -0.34312957525253298
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 44905,
+            "phase": "settle",
+            "time": 20.264528274536134,
+            "deltaTime": 0.0003878000134136528,
+            "selected": false,
+            "position": {
+                "x": -5.500030040740967,
+                "y": 2.1271114349365236,
+                "z": 8.541563034057618
+            },
+            "velocity": {
+                "x": 0.5536080002784729,
+                "y": -0.31757378578186037,
+                "z": -0.3403932750225067
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 45222,
+            "phase": "settle",
+            "time": 20.364582061767579,
+            "deltaTime": 0.000287600007141009,
+            "selected": false,
+            "position": {
+                "x": -5.396695613861084,
+                "y": 2.080954074859619,
+                "z": 8.479229927062989
+            },
+            "velocity": {
+                "x": 0.5491932034492493,
+                "y": -1.2913424968719483,
+                "z": -0.33767879009246828
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 45527,
+            "phase": "settle",
+            "time": 20.464828491210939,
+            "deltaTime": 0.0003453000099398196,
+            "selected": false,
+            "position": {
+                "x": -5.315003395080566,
+                "y": 1.9457238912582398,
+                "z": 8.41415023803711
+            },
+            "velocity": {
+                "x": 0.5448136329650879,
+                "y": -2.257345676422119,
+                "z": -0.33498597145080569
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 45821,
+            "phase": "settle",
+            "time": 20.56504249572754,
+            "deltaTime": 0.0002730000123847276,
+            "selected": false,
+            "position": {
+                "x": -5.253588676452637,
+                "y": 1.7156853675842286,
+                "z": 8.34993839263916
+            },
+            "velocity": {
+                "x": 0.5404689311981201,
+                "y": -3.2156448364257814,
+                "z": -0.3323145806789398
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 46121,
+            "phase": "settle",
+            "time": 20.66526985168457,
+            "deltaTime": 0.00037029999657534063,
+            "selected": false,
+            "position": {
+                "x": -5.209331512451172,
+                "y": 1.3868038654327393,
+                "z": 8.289116859436036
+            },
+            "velocity": {
+                "x": 0.5361589193344116,
+                "y": -4.16630220413208,
+                "z": -0.32966452836990359
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 46432,
+            "phase": "settle",
+            "time": 20.765392303466798,
+            "deltaTime": 0.0002767000114545226,
+            "selected": false,
+            "position": {
+                "x": -5.178355693817139,
+                "y": 0.9567375183105469,
+                "z": 8.233192443847657
+            },
+            "velocity": {
+                "x": 0.531883180141449,
+                "y": -5.109378814697266,
+                "z": -0.3270356059074402
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 46754,
+            "phase": "settle",
+            "time": 20.865493774414064,
+            "deltaTime": 0.0004200999974273145,
+            "selected": false,
+            "position": {
+                "x": -5.156737804412842,
+                "y": 0.42459776997566225,
+                "z": 8.18282699584961
+            },
+            "velocity": {
+                "x": 0.5276416540145874,
+                "y": -6.044934272766113,
+                "z": -0.32442760467529299
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 47067,
+            "phase": "settle",
+            "time": 20.965662002563478,
+            "deltaTime": 0.00029719999292865396,
+            "selected": false,
+            "position": {
+                "x": -5.132379055023193,
+                "y": 0.33564820885658266,
+                "z": 8.136739730834961
+            },
+            "velocity": {
+                "x": 0.22519466280937196,
+                "y": -0.1650458723306656,
+                "z": -0.3657778799533844
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 47391,
+            "phase": "settle",
+            "time": 21.065898895263673,
+            "deltaTime": 0.00035230000503361225,
+            "selected": false,
+            "position": {
+                "x": -5.097675800323486,
+                "y": 0.2594659924507141,
+                "z": 8.07072639465332
+            },
+            "velocity": {
+                "x": 0.2748349606990814,
+                "y": -0.4343488812446594,
+                "z": -0.570913553237915
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 47720,
+            "phase": "settle",
+            "time": 21.166088104248048,
+            "deltaTime": 0.00029570001061074436,
+            "selected": false,
+            "position": {
+                "x": -5.066429138183594,
+                "y": 0.20473413169384004,
+                "z": 8.040702819824219
+            },
+            "velocity": {
+                "x": 0.07713709771633148,
+                "y": 0.036284543573856357,
+                "z": 0.020926883444190027
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 48042,
+            "phase": "settle",
+            "time": 21.266103744506837,
+            "deltaTime": 0.00030750001315027475,
+            "selected": false,
+            "position": {
+                "x": -5.072979927062988,
+                "y": 0.20648811757564546,
+                "z": 8.045801162719727
+            },
+            "velocity": {
+                "x": -0.003886707127094269,
+                "y": -0.009090065956115723,
+                "z": -0.002755243331193924
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 48359,
+            "phase": "settle",
+            "time": 21.366300582885743,
+            "deltaTime": 0.0002795000036712736,
+            "selected": false,
+            "position": {
+                "x": -5.072606563568115,
+                "y": 0.20612592995166779,
+                "z": 8.045683860778809
+            },
+            "velocity": {
+                "x": -0.000563432346098125,
+                "y": -0.0003650784492492676,
+                "z": 0.0001837516319938004
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 4,
+            "frame": 48685,
+            "phase": "settle",
+            "time": 21.46630096435547,
+            "deltaTime": 0.0002880000101868063,
+            "selected": false,
+            "position": {
+                "x": -5.072621822357178,
+                "y": 0.20613177120685578,
+                "z": 8.04568099975586
+            },
+            "velocity": {
+                "x": 0.0000073502937993907839,
+                "y": -0.00009414553642272949,
+                "z": 0.00003521904000081122
+            },
+            "hand": {
+                "x": 0.6499999761581421,
+                "y": 1.7710390090942383,
+                "z": 3.1031041145324709
+            },
+            "target": {
+                "x": 4.96379293224436e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        }
+    ]
+}

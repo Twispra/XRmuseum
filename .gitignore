@@ -2,6 +2,12 @@
 /tmp/
 /COMP5424-Group-Project-Description-202627A.pdf
 /Builds/
+/project-resource/
+
+# Local research copies and session diagnostics; provenance is recorded in docs.
+/artifacts/helmet-prototype/references/
+/artifacts/helmet-prototype/RECOVERY-*.md
+/artifacts/helmet-prototype/renders/*.png
 
 # Editor / operating-system files.
 .DS_Store
