@@ -22,6 +22,8 @@ Home 在抓取时也可使用。复位后先松开 G，再按住 G 抓取，避�
 
 ## 验证与实机检查
 
+PR #1 审查后的工具修复及 `f354815` 版本验收，见[修复记录与固定版本证据](activity/2026-09-23-pr1-review-fixes.md)。以下根目录报告与静态图是原型阶段的历史记录。
+
 自动验证结果见 [Play Mode 检查记录](../artifacts/helmet-interaction/qa/playmode-validation.json)，资产尺寸及导入检查见 [场景建立记录](../artifacts/helmet-interaction/qa/setup.json)。自动测试通过模拟 XR 设备状态驱动工程现有的输入动作、控制器与抓取器，没有直接调用抓取选择 API 来代替输入。
 
 2026-09-23 验收通过：连续十次拿起、旋转、放回和松手；十轮均无自动复位介入。抓取中 Home、松开后再次抓取、自由状态 Home、清除旧速度、实体 RESET 按钮和掉落恢复均通过。测试运行阶段未记录 Error/Exception。后台测试的帧率节奏与虚拟键盘修正见[验收说明](../artifacts/helmet-interaction/qa/README.zh-CN.md)；启动日志中未连接头显的 OpenXR 提示不等于实机已验证。
@@ -34,7 +36,7 @@ Home 在抓取时也可使用。复位后先松开 G，再按住 G 抓取，避�
 
 - [头盔 Prefab](../MuseumVR/Assets/Museum/Prefabs/HelmetExhibit.prefab)
 - [运行时复位逻辑](../MuseumVR/Assets/Museum/Scripts/HelmetExhibitReset.cs)
-- [场景与 Prefab 生成工具](../MuseumVR/Assets/Museum/Editor/HelmetPrototypeSetup.cs)：Unity 菜单 `Museum > Build Helmet Interaction Prototype`。会重建本轮头盔站点，先保留你手动修改的站点设置。
+- [历史初始化工具](../MuseumVR/Assets/Museum/Editor/HelmetPrototypeSetup.cs)：菜单 `Museum > Historical Tools > Initialize Helmet Prototype (First Time Only)`。已有头盔成果时拒绝执行，防止覆盖后续人工修改。打开、预览和验收均不需要运行它；需要重建时另立明确范围的任务并使用隔离副本。
 - [自动验证工具](../MuseumVR/Assets/Museum/Editor/HelmetPrototypeValidation.cs)：Unity 菜单 `Museum > Validate Helmet Interaction (Play Mode)`。
 - [模型原型及参考依据](../artifacts/helmet-prototype/README.zh-CN.md)
 
