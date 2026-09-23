@@ -1,5 +1,7 @@
 # 组员首次打开与日常协作
 
+先看[项目状态](project-state.md)，确认所需功能已经合入主线还是仍在 PR。PR #1 已于 2026-09-23 合入 main（`545229e`），以下头盔操作适用于该版本及后续版本；9 月 22 日初始化提交 `cc7605e` 只有抓取方块。
+
 ## 1. 为什么工程放在 MuseumVR 子目录
 
 `E:\XRmuseum` 是整项作业的 Git 仓库根目录。Unity 工程放在 `E:\XRmuseum\MuseumVR`，这样报告、课程资料、每周记录不会进入 Unity 的 Assets 导入流程。
@@ -21,6 +23,8 @@
 4. 选择 `Twispra/XRmuseum`；也可以在 URL 标签页输入 `https://github.com/Twispra/XRmuseum.git`。
 5. 选择一个尚未存在或为空的本地目标目录，例如 `D:\CourseProjects\XRmuseum`。不要选其他已有 Unity 工程的目录。
 6. 点击 **Clone**，等待普通文件与 LFS 文件下载完毕。
+
+创建 Codex worktree 后也要检查 LFS：有的工作副本最初仅含几百字节的指针。打开 Unity 前在该仓库运行 `git lfs pull`（下载缺少的对象）和 `git lfs checkout`（展开已有对象）；确认模型/音频是真实文件。`git lfs ls-files` 的 `*` 表示工作区有完整对象，`-` 表示指针；`git lfs fsck` 不能代替此检查。曾有工作副本物理拿放通过、模型却因指针无法导入，故验收现在额外检查有效可见网格。
 
 不要用 Download ZIP 作为团队开发工作副本，因为 ZIP 不带 Git 历史和远程配置。
 
@@ -65,26 +69,64 @@ Unity 工程可以直接由 Git 管理，因此现在的文件已经能连接 Gi
 
 ## 5. 每次开始和结束开发
 
-1. 开始前先保存现有改动。需要切换分支、拉取包含场景或 package 的改动时，建议先关闭 Unity。
-2. 在 GitHub Desktop 点击 **Fetch origin**，有更新时点击 **Pull origin**。
-3. 从最新 `main` 创建自己的分支，例如 `feature/名字-exhibit-interaction`。
-4. 在 Unity 内完成修改并保存 Scene、Prefab 等资源。
-5. 回到 GitHub Desktop 的 Changes，检查每个文件是否属于本次任务，确认新资源的 `.meta` 也已包含。
-6. 写清楚改动内容，点击 **Commit to 当前分支**。Commit 只保存到本地。
-7. 点击 **Push origin**（新分支可能显示 Publish branch），把提交同步到 GitHub。
-8. 点击 **Create Pull Request**，说明改了什么、怎样验证，再由另一位组员检查后合并。
+### 共同的记录入口
+
+| 内容 | 唯一主要位置 | 何时更新 |
+| --- | --- | --- |
+| 稳定的 AI 工作边界 | 根 [AGENTS.md](../AGENTS.md) | 工作规则改变时，单独说明原因 |
+| 当前成果、限制、目标和重要决定 | [project-state.md](project-state.md) | 合并使状态或方向改变时，由整合人归并 |
+| 正在做的任务、负责人、路径和依赖 | [GitHub Issues](https://github.com/Twispra/XRmuseum/issues) | 认领、范围变化、阻塞或状态变化时 |
+| 本次改动、验收和接手步骤 | 对应 PR 的模板 / 交接段 | 推送、换人、暂停或准备审查时 |
+| 已发生工作与课程证据 | 独立 `docs/activity/` 文件 + [周索引](weekly-activity.md) | 实质工作完成时；每周由一人汇总 |
+| 资源来源与 AI 辅助范围 | [external-resources.md](external-resources.md) | 使用新资源或辅助范围改变时 |
+
+不另建六份总任务表、共享长聊天或统一巨大 prompt。PR 尚未建立时把交接写在原 Issue；离线中断可先保存独立活动文件，联网后提交并链接。任何仅本地且未推送的文件，对队友都不可用。
+
+### 认领和开工
+
+1. 成员先读 AGENTS、状态页和相关说明，在 GitHub 确认已有任务，避免重复创建。每项任务设置一位实际负责人及明确验收条件，写出预计修改路径、基础版本与未合并依赖。使用 [任务模板](../.github/ISSUE_TEMPLATE/task.md)，小型独立修订可直接在 PR 说明用户授权和范围。
+2. 查看其他进行中的任务是否涉及同一路径。高冲突资源由一位轮值整合人在 Issue 确认写入者和顺序，再开始该部分。认领留言或 Assignee 不是原子文件锁；两人发生重叠时由整合人协调，不以两个 AI 都“已认领”作为依据。整合人不是必须承担全部开发的人。
+3. 每人使用自己的 clone 和 Git 身份。一人同时开多个 Codex 修改任务也要用独立 worktree / clone，不能共用一个可写工程目录。Unity 同一项目一次只开一个 Editor；后台子任务只改已划清边界的文件。
+4. 检查分支、HEAD 和 Changes，记下开工前已有改动的归属。先保存自己明确负责的资源；不要让 AI 自动清理别人的改动。切换分支或拉取场景/package 更新前关闭 Unity；有重叠未提交改动时先协调保存，不直接 Pull 或 reset。
+5. **Fetch origin** 后确认主线状态。正常任务从最新 `main` 建分支，例如 `codex/issue-12-reset-feedback`；已授权依赖未合并 PR 时，明确写出依赖及基准 commit。不要把他人浮动功能分支当长期公共主线。
+
+共享范围的协调信息写在对应 Issue：由整合人确认“当前写入者、具体路径、开始顺序”，完成后记录“已合并/已交接/已撤销，现已释放”。中断或待审查不自动释放；先推送已有工作并写明接手版本，再由整合人确认下一位，避免前任恢复会话后继续写入。两个 Issue 涉及同一路径时互相链接，后一个写明等待前一个释放；不额外维护分支里的认领表。
+
+### 开发、提交和合并
+
+1. 在约定路径开发并保存 Scene / Prefab。发现目标改变或需要改共享文件，先更新任务范围并解决重叠；可继续独立部分，无需对已授权小步骤重复询问。
+2. 按受影响行为验证，留下版本与证据。共享场景或 XR 配置改变后需要相应 Unity 检查；文档修订只检查事实、链接和差异即可。
+3. 在 GitHub Desktop **Changes** 逐文件审查并勾选属于本任务的内容，包含相关 `.meta`。确认未纳入开工前未知改动、缓存、大量重导入噪声或私人资料。写清 commit 内容；提交后 **Push origin**。
+4. 建立 PR，填写 [PR 模板](../.github/pull_request_template.md) 的结果、被测版本、验证限制及交接。工作未完成可开 Draft PR 保存已推送的进度，不能把草稿当验收完成。
+5. 另一位成员看实际 diff、资产与验证证据；同一共享路径一次合并一项。合并前同步最新目标分支并解决冲突：保留 GUID、逐项检查场景/Prefab 引用；不要整文件接受 ours/theirs。同步改变被测内容时重新验证受影响行为。
+6. 整合人合并后关闭任务，按需更新项目状态、决定及周索引。其他成员 Fetch 并检查依赖，再开始下一项。阶段交付额外记录构建来源 commit、构建产物和人工设备结果。
+
+目前六人身份和整合人尚未确认，未创建虚构的任务分配，也未启用强制审批。团队采用后可由仓库管理员在权限/套餐支持时设置 `main` 经 PR、至少一位其他成员审批、禁止强推；设置前后都按上面流程协作。文档、模板和 LFS 本身均不能强制执行这些权限。
+
+### 让新 Codex 任务接上进度
+
+可以给自己的 Codex 这样一句话，并填入真实任务链接：
+
+> 请先读仓库根 AGENTS.md 和 docs/project-state.md，再读取 Issue #编号 及相关 PR。核对分支、HEAD、当前改动和任务认领范围，继续该任务；从交接记录中尚未完成的最小步骤开始，保留现有未知改动。结束时按 PR 模板记录证据和下一步。
+
+Codex 官方说明它会在运行开始时读取适用的 AGENTS 指令；根到当前工作目录的更近层规则可能覆盖前面的规则。因此保持根文件简短，避免在子目录放互相矛盾的版本。已有会话拉到新规则后显式读文件或开始新会话，不能假设其他人的 AI 已自动刷新。[OpenAI 官方说明](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
+
+GitHub 的 Issue / PR 模板合入默认分支后才成为团队默认入口；本轮仍在功能分支时可以手动复制模板，不能认为全队已经自动启用。[GitHub 官方说明](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/about-issue-and-pull-request-templates)
 
 ## 6. Unity 协作约定
 
 - 将团队新资源放在 `Assets/Museum/` 下，按 Scenes、Scripts、Prefabs、Materials、Models、Audio、UI 等分类。
 - 在 Unity 内移动或重命名资源，使 `.meta` 和资源 GUID 一起保留。
-- 两人尽量不要同时修改同一个 `.unity` 场景；按展区分工，或把展品制作成独立 Prefab 再由场景负责人整合。
+- 同一 `.unity`、Prefab 或 `.blend` / FBX 在同一时段安排一个写入者。优先制作独立展品 Prefab、脚本、模型或测试场景，再由整合人接入 `MuseumStart.unity`。公共 XR Origin、Input Actions、`Packages/` 和 `ProjectSettings/` 同样需要先协调范围。
 - 提交 `Assets`、`Packages/manifest.json`、`Packages/packages-lock.json`、`ProjectSettings`。
 - 不提交 `Library`、`Temp`、`Logs`、`UserSettings` 或构建输出。`.gitignore` 已排除这些目录。
 - `.gitattributes` 为 FBX、Blend、PSD、WAV、MP4 等二进制文件配置了 LFS。导入新的大文件类型前检查是否需要增加规则，并让所有成员安装 LFS。
+- 当前没有配置 LFS 文件锁。LFS 是存储方式，不能防止两人覆盖同一二进制资产；依靠任务认领与串行整合。后续确需锁定时先验证团队远程和客户端支持，再制定释放/接手规则。
 - 不要把 `.unity`、`.prefab` 或 `.meta` 整体改成 LFS；它们需要可读的差异与稳定的引用。
 - 不把 Unity 缓存、密钥、访问令牌或账号密码放进仓库。
-- 每周更新 `docs/weekly-activity.md`，记录实际任务、负责人、问题和 commit/PR 链接。
+- Blender 01–09 原型脚本保留原机器输出路径，重跑前应在隔离副本中适配并使用新输出目录/版本。灰模的导出 FBX 与 Unity 使用副本更新时校验相同，保留目标 `.meta`。
+- 不把初始化工具当作“修复工程”按钮。`HelmetPrototypeSetup.Build` 会配置导入器、材质、Prefab、场景和 XR Rig，现检测已有成果即拒绝；日常打开和验证直接使用已保存资产。确需重建时作为明确任务处理，不删资产来绕过保护。
+- 新测试和预览写唯一运行目录，不覆盖已引用证据。报告需说明源码 commit、dirty 文件及环境；自动模拟通过、真实设备通过、用户评价和可执行构建是不同验证层级。
 
 ## 7. 设备验证与提交范围
 
@@ -92,7 +134,7 @@ Editor 能打开或进入 Play Mode，不代表头显跟踪、控制器输入、
 提交阶段 2 前，需要在课程目标设备上完成至少一条完整用户流程，并提供可运行的 Windows 构建、技术说明及每周记录。
 最终构建放在仓库外或根目录的 `Builds/`（该目录已忽略），按照 Canvas 指定方式交付。
 
-本次已生成基础场景的 Windows Development 构建：`E:\XRmuseum\Builds\Windows\MuseumVR.exe`。它依赖同目录的其他文件，不能只发送单个 exe；真实 VR 运行需要接入对应设备和 runtime。当前初始化验证见 [验证记录](initialization-checks.md)。
+2026-09-22 曾生成初始化场景的 Windows Development 构建，本机位置 `E:\XRmuseum\Builds\Windows\MuseumVR.exe`。它不含随后开发的头盔成果，且不会随 clone 下载；不能当作当前版本交付。构建依赖同目录的其他文件，不能只发送单个 exe；真实 VR 运行需要对应设备和 runtime。[初始化历史验证](initialization-checks.md)
 
 ## 8. 本机初始化记录
 
@@ -105,7 +147,7 @@ Editor 能打开或进入 Play Mode，不代表头显跟踪、控制器输入、
 - URP、线性色彩空间、4x MSAA、Windows 64 位 / Direct3D 11、OpenXR Single Pass Instanced 已配置。
 - Unity 资源使用 Force Text 和 Visible Meta Files，便于 Git 查看差异和保留引用。
 - 官方 XRI 2.6.4 的 Starter Assets 与 XR Device Simulator 保存在 Assets/Samples；TextMesh Pro 必需资源保留在 Assets/TextMesh Pro。
-- 展厅与测试 Prefab 保存在 Assets/Museum。三个几何体是占位资源，不能作为已完成的正式展品申报。
+- 9 月 22 日初始化展厅的三个几何体是占位资源。随后头盔候选版本替换了中央方块，另外两处仍是占位展台；当前可用范围以所在分支和[状态页](project-state.md)为准。
 
 ## 参考
 

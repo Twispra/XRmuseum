@@ -1,0 +1,57 @@
+{
+    "utc": "2026-09-23T11:10:12.7088424Z",
+    "scene": "Assets/Museum/Scenes/MuseumStart.unity",
+    "unityVersion": "2022.3.62f3c1",
+    "graphicsDevice": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "pipeline": "MuseumURP",
+    "status": "passed",
+    "error": "",
+    "renderMethod": "RenderPipeline.SubmitRenderRequest / UniversalRenderPipeline.SingleCameraRequest -> temporary RenderTexture -> RGB JPEG",
+    "note": "Player-start view uses the saved Main Camera world pose and field of view. Actual headset tracking can change eye height and orientation. Close-up is a separate inspection camera. Scene content, lighting and materials are unchanged; no scene or asset is saved.",
+    "views": [
+        {
+            "path": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\museum-collaboration-check\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20260923T110920734Z-ff79775fb2124eb7af5680d7e4688a64\\preview\\01-player-start.jpg",
+            "description": "Initial player view: saved Main Camera world position, rotation and field of view.",
+            "cameraPosition": {
+                "x": 0.0,
+                "y": 1.3614399433135987,
+                "z": 2.200000047683716
+            },
+            "cameraEulerAngles": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "fieldOfViewDegrees": 60.0,
+            "aspect": 1.3333333730697632,
+            "minLuminance": 0.018506666645407678,
+            "maxLuminance": 1.0,
+            "meanLuminance": 0.2504231333732605,
+            "width": 960,
+            "height": 720,
+            "bytes": 66651
+        },
+        {
+            "path": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\museum-collaboration-check\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20260923T110920734Z-ff79775fb2124eb7af5680d7e4688a64\\preview\\02-helmet-and-reset.jpg",
+            "description": "Three-quarter inspection view including helmet, display surface and the RESET button.",
+            "cameraPosition": {
+                "x": 1.1556237936019898,
+                "y": 1.8886559009552003,
+                "z": 1.9064422845840455
+            },
+            "cameraEulerAngles": {
+                "x": 17.08386993408203,
+                "y": 327.0613098144531,
+                "z": 8.931847332860343e-7
+            },
+            "fieldOfViewDegrees": 43.0,
+            "aspect": 1.3333333730697632,
+            "minLuminance": 0.018506666645407678,
+            "maxLuminance": 1.0,
+            "meanLuminance": 0.3192759156227112,
+            "width": 960,
+            "height": 720,
+            "bytes": 77847
+        }
+    ]
+}

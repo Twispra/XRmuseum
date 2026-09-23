@@ -2,6 +2,8 @@
 
 COMP5424 Extended Reality 博物馆小组作业的 Unity 工程与协作文档。
 
+多人 / Codex 开工：先读 [AGENTS.md](AGENTS.md) → [当前状态与下一步](docs/project-state.md) → 对应 [Issue](https://github.com/Twispra/XRmuseum/issues) / PR。当前分支的功能不一定已合入 `main`；状态页区分主线、候选成果和仅本地改动。
+
 ## 打开工程
 
 - Unity Editor：**2022.3.62f3c1**，所有成员使用相同完整版本。
@@ -38,3 +40,5 @@ XRmuseum/
 - [2026-09-23 头盔原型：实现、验证与贡献证据](docs/activity/2026-09-23-helmet-prototype.md)
 - [外部资源与辅助工具记录](docs/external-resources.md)
 - [初始化验证结果与尚未验证的范围](docs/initialization-checks.md)
+- [课程依据与团队约定的区别](docs/course-requirements.md)
+- [六人协作机制与工具保护记录](docs/activity/2026-09-23-team-collaboration.md)

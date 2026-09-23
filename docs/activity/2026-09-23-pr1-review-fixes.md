@@ -2,6 +2,8 @@
 
 用户明确要求把修复纳入 [PR #1](https://github.com/Twispra/XRmuseum/pull/1)。仓库账号为 Twispra / Git 作者 twispark；代码核验、提交迁移与本文整理由 Codex 辅助完成，未虚构其他成员审批或实测。
 
+后续状态：用户已将 PR #1 合入 main，实际合并提交为 [545229e](https://github.com/Twispra/XRmuseum/commit/545229ec2e279cb3439cd9652cd606f61bb96d4e)。以下保留修复迁移时的事实和当时下一步；PR #2 的后续整合见[协作交接更新](2026-09-23-team-collaboration.md)。
+
 ## 问题与调整
 
 - [原技术审查](https://github.com/Twispra/XRmuseum/pull/1#pullrequestreview-5290358405)针对旧 head `2e912ae`：重复初始化会覆盖已有展台和资产；普通验收入口未清除输入探针状态，可能跳过十次拿放而仍报告通过。
