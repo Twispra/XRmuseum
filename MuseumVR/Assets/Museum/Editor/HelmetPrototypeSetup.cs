@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using TMPro;
@@ -10,17 +11,34 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Museum.Editor
 {
-    /// <summary>Rebuilds only the helmet prefab and its station in the existing gallery.</summary>
+    /// <summary>
+    /// Historical first-time initialization, not a routine build or repair command.
+    /// Writes the helmet importer, prefab, materials and gallery scene, and moves the XR rig.
+    /// Existing outputs are never overwritten through this entry point. A planned rebuild
+    /// requires adapting this tool within that task and working on an isolated project copy.
+    /// </summary>
     public static class HelmetPrototypeSetup
     {
         const string ScenePath = "Assets/Museum/Scenes/MuseumStart.unity";
         const string ModelPath = "Assets/Museum/Models/Helmet/helmet-graybox-v02.fbx";
         const string PrefabPath = "Assets/Museum/Prefabs/HelmetExhibit.prefab";
+        static readonly string[] GeneratedAssetPaths = {
+            PrefabPath,
+            "Assets/Museum/Materials/Helmet Clay.mat",
+            "Assets/Museum/Materials/Helmet Trim.mat",
+            "Assets/Museum/Materials/Helmet Recess.mat",
+            "Assets/Museum/Materials/Helmet Reset Brass.mat",
+            "Assets/Museum/Materials/Helmet Plaque.mat",
+            "Assets/Museum/Materials/Helmet Contact.physicMaterial"
+        };
         static string RepoRoot => Directory.GetParent(Application.dataPath).Parent.FullName;
+        static string ProjectPath(string assetPath) => Path.Combine(Directory.GetParent(Application.dataPath).FullName, assetPath);
 
-        [MenuItem("Museum/Build Helmet Interaction Prototype")]
+        [MenuItem("Museum/Historical Tools/Initialize Helmet Prototype (First Time Only)")]
         public static void Build()
         {
+            // Must precede even the save prompt: refusing a rebuild must not save other work.
+            RequireUninitializedProject();
             if (!Application.isBatchMode && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
             Directory.CreateDirectory(Path.Combine(RepoRoot, "artifacts/helmet-interaction/qa"));
             var scene = EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Single);
@@ -129,11 +147,6 @@ namespace Museum.Editor
             // The original grab-test prefab remains available as a reference asset.
             var oldCube = GameObject.Find("Grab Test Object");
             if (oldCube != null) UnityEngine.Object.DestroyImmediate(oldCube);
-            var oldStation = GameObject.Find("Helmet Interaction Station");
-            if (oldStation != null) UnityEngine.Object.DestroyImmediate(oldStation);
-            // Grabbing unparents the helmet at runtime; remove a prior edit-time instance if needed.
-            foreach (var previous in UnityEngine.Object.FindObjectsOfType<HelmetExhibitReset>())
-                UnityEngine.Object.DestroyImmediate(previous.gameObject);
             var station = new GameObject("Helmet Interaction Station");
             var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(PrefabPath);
             var instance = (GameObject)PrefabUtility.InstantiatePrefab(prefab, scene);
@@ -193,6 +206,75 @@ namespace Museum.Editor
             if (report.missingScripts != 0) throw new InvalidOperationException("Missing scripts in scene.");
             File.WriteAllText(Path.Combine(RepoRoot,"artifacts/helmet-interaction/qa/setup.json"),JsonUtility.ToJson(report,true));
             Debug.Log("HELMET_SETUP_OK " + JsonUtility.ToJson(report));
+        }
+
+        sealed class ExistingHelmetOutputsException : InvalidOperationException
+        {
+            public ExistingHelmetOutputsException(IEnumerable<string> outputs) : base(
+                "Historical helmet initialization refused: existing work was detected:\n - " +
+                string.Join("\n - ", outputs) +
+                "\nThis tool writes the FBX importer, HelmetExhibit prefab, helmet materials, gallery station " +
+                "and XR rig pose. Use the saved assets for normal development and validation. " +
+                "For a planned rebuild, adapt the tool in that task and use an isolated project copy; " +
+                "do not delete existing outputs to bypass this guard.") { }
+        }
+
+        static void RequireUninitializedProject()
+        {
+            var existing = new List<string>();
+            foreach (var assetPath in GeneratedAssetPaths)
+            {
+                if (File.Exists(ProjectPath(assetPath)) || File.Exists(ProjectPath(assetPath + ".meta")))
+                    existing.Add(assetPath + " (asset or preserved metadata)");
+            }
+
+            // Inspect serialized text without loading/importing a scene or saving any assets.
+            // A missing or unreadable/non-text scene also stops initialization before mutation.
+            string sceneText = File.ReadAllText(ProjectPath(ScenePath));
+            if (!sceneText.StartsWith("%YAML", StringComparison.Ordinal))
+                throw new InvalidOperationException("Cannot safely inspect " + ScenePath + ": expected Unity text serialization.");
+            if (sceneText.Contains("m_Name: Helmet Interaction Station") ||
+                sceneText.Contains("m_Name: HelmetExhibit") ||
+                sceneText.Contains("m_Name: Helmet Reset Button") ||
+                sceneText.Contains("value: HelmetExhibit"))
+                existing.Add(ScenePath + " (serialized helmet objects)");
+
+            // Unsaved additions and inactive objects in already open scenes also count.
+            for (int i = 0; i < UnityEngine.SceneManagement.SceneManager.sceneCount; i++)
+            {
+                var openScene = UnityEngine.SceneManagement.SceneManager.GetSceneAt(i);
+                if (!openScene.isLoaded) continue;
+                foreach (var root in openScene.GetRootGameObjects())
+                {
+                    bool hasHelmet = root.GetComponentsInChildren<HelmetExhibitReset>(true).Length != 0 ||
+                        root.GetComponentsInChildren<Transform>(true).Any(t =>
+                            t.name == "Helmet Interaction Station" || t.name == "HelmetExhibit" ||
+                            t.name == "Helmet Reset Button");
+                    if (hasHelmet) existing.Add("open scene " + openScene.name + ": " + root.name);
+                }
+            }
+            if (existing.Count != 0) throw new ExistingHelmetOutputsException(existing);
+        }
+
+        /// <summary>
+        /// Read-only guard acceptance for this already initialized project. Does not call Build,
+        /// import assets, open/save scenes, or write reports. Batch-compatible with -quit.
+        /// </summary>
+        [MenuItem("Museum/Validate Helmet Initialization Guard (Read Only)")]
+        public static void ValidateInitializationGuard()
+        {
+            if (!File.Exists(ProjectPath(PrefabPath)))
+                throw new InvalidOperationException("Guard acceptance requires the existing " + PrefabPath + ".");
+            try
+            {
+                RequireUninitializedProject();
+            }
+            catch (ExistingHelmetOutputsException exception)
+            {
+                Debug.Log("HELMET_INITIALIZATION_GUARD_OK: refused before any writes.\n" + exception.Message);
+                return;
+            }
+            throw new InvalidOperationException("Initialization guard failed to refuse existing helmet outputs.");
         }
 
         static MeshRenderer FindRenderer(GameObject root, string name) => root.GetComponentsInChildren<MeshRenderer>().First(r => r.name == name);

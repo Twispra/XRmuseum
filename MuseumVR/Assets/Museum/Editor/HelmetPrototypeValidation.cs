@@ -4,6 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -26,6 +28,8 @@ namespace Museum.Editor
         const string BatchKey = "Museum.HelmetQA.Batch";
         const string ResultKey = "Museum.HelmetQA.ExitCode";
         const string ProbeKey = "Museum.HelmetQA.Probe";
+        const string RunIdKey = "Museum.HelmetQA.RunId";
+        const string ProvenanceKey = "Museum.HelmetQA.Provenance";
         const string ScenePath = "Assets/Museum/Scenes/MuseumStart.unity";
         static readonly Stack<IEnumerator> Routines = new Stack<IEnumerator>();
         static readonly Queue<Action> PendingInput = new Queue<Action>();
@@ -52,7 +56,29 @@ namespace Museum.Editor
         static string phase = "setup";
         static int cycleNumber;
         static float nextSample;
-        static string OutputDirectory => Path.GetFullPath(Path.Combine(Application.dataPath, "../../artifacts/helmet-interaction/qa"));
+        static string RepoRoot => Path.GetFullPath(Path.Combine(Application.dataPath, "../.."));
+        static string OutputDirectory
+        {
+            get
+            {
+                var runId = SessionState.GetString(RunIdKey, "");
+                if (string.IsNullOrEmpty(runId)) throw new InvalidOperationException("Helmet QA run ID is unavailable; refusing to overwrite historical evidence.");
+                return Path.Combine(RepoRoot, "artifacts/helmet-interaction/qa/runs", runId);
+            }
+        }
+
+        [Serializable] class FileFingerprint
+        {
+            public string path, status = "unknown", sha256 = "", error = "";
+        }
+        [Serializable] class Provenance
+        {
+            public string runId, capturedAtUtc, unityVersion;
+            public string gitCommit = "unknown", gitBranch = "unknown", workingTreeState = "unknown", gitStatusPorcelain = "";
+            public string note = "Snapshot taken before Play Mode. Git status includes tracked changes and untracked paths, not file contents. A passed simulation does not establish a clean checkout, a merged main branch, or hardware validation.";
+            public List<FileFingerprint> files = new List<FileFingerprint>();
+            public List<string> errors = new List<string>();
+        }
 
         [Serializable] class Check { public string name; public bool passed; public string detail; }
         [Serializable] class Cycle
@@ -75,6 +101,7 @@ namespace Museum.Editor
         [Serializable] class Report
         {
             public string timestampUtc, unityVersion, scene, inputMethod, limitations, status = "running", failure = "";
+            public Provenance provenance;
             public float durationSeconds;
             public bool officialSimulatorWasPresent;
             public int colliderCount, completedCycles;
@@ -92,7 +119,7 @@ namespace Museum.Editor
         }
 
         [MenuItem("Museum/Validate Helmet Interaction (Play Mode)")]
-        public static void RunInEditor() => Begin(false);
+        public static void RunInEditor() { SessionState.SetBool(ProbeKey, false); Begin(false); }
         public static void RunBatch() { SessionState.SetBool(ProbeKey, false); Begin(true); }
         public static void RunInputProbe() { SessionState.SetBool(ProbeKey, true); Begin(true); }
 
@@ -116,10 +143,146 @@ namespace Museum.Editor
             // Do not save a user's dirty scene as a side effect of an acceptance test.
             if (!batch && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
             EditorSceneManager.OpenScene(ScenePath);
+            var runId = DateTime.UtcNow.ToString("yyyyMMddTHHmmssfffZ") + "-" + Guid.NewGuid().ToString("N");
+            SessionState.SetString(RunIdKey, runId);
+            SessionState.SetString(ProvenanceKey, JsonUtility.ToJson(CaptureProvenance(runId)));
+            Directory.CreateDirectory(OutputDirectory);
+            Debug.Log("Helmet QA run " + runId + ": " + OutputDirectory);
             SessionState.SetBool(ActiveKey, true);
             SessionState.SetBool(BatchKey, batch);
             SessionState.SetInt(ResultKey, -1);
             EditorApplication.EnterPlaymode();
+        }
+
+        static Provenance CaptureProvenance(string runId)
+        {
+            var snapshot = new Provenance
+            {
+                runId = runId, capturedAtUtc = DateTime.UtcNow.ToString("o"), unityVersion = Application.unityVersion
+            };
+            if (!Directory.Exists(Path.Combine(RepoRoot, ".git")) && !File.Exists(Path.Combine(RepoRoot, ".git")))
+                snapshot.errors.Add("The expected repository root has no .git directory or worktree file; Git state is unknown.");
+            else
+            {
+                if (TryReadGit("rev-parse --verify HEAD", out var commit, out var commitError) && !string.IsNullOrWhiteSpace(commit))
+                    snapshot.gitCommit = commit.Trim();
+                else snapshot.errors.Add("Git commit: " + (string.IsNullOrEmpty(commitError) ? "empty output" : commitError));
+
+                if (TryReadGit("branch --show-current", out var branch, out var branchError))
+                    snapshot.gitBranch = string.IsNullOrWhiteSpace(branch) ? "(detached HEAD)" : branch.Trim();
+                else snapshot.errors.Add("Git branch: " + branchError);
+
+                if (TryReadGit("-c core.quotepath=false status --porcelain=v1 --untracked-files=all", out var status, out var statusError))
+                {
+                    snapshot.gitStatusPorcelain = status;
+                    snapshot.workingTreeState = string.IsNullOrEmpty(status) ? "clean" : "dirty";
+                }
+                else snapshot.errors.Add("Git status: " + statusError);
+            }
+
+            var paths = new[]
+            {
+                "MuseumVR/Packages/manifest.json",
+                "MuseumVR/Packages/packages-lock.json",
+                "MuseumVR/ProjectSettings/ProjectSettings.asset",
+                "MuseumVR/ProjectSettings/ProjectVersion.txt",
+                "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/XRI Default Input Actions.inputactions",
+                "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/XR Device Simulator/XR Device Simulator Controls.inputactions",
+                "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/XR Device Simulator/XR Device Controller Controls.inputactions",
+                "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/XR Device Simulator/XR Device Hand Controls.inputactions",
+                "MuseumVR/Assets/XRI/Settings/Resources/XRDeviceSimulatorSettings.asset",
+                "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+                "MuseumVR/Assets/Museum/Prefabs/HelmetExhibit.prefab",
+                "MuseumVR/Assets/Museum/Scripts/HelmetExhibitReset.cs",
+                "MuseumVR/Assets/Museum/Editor/HelmetPrototypeValidation.cs"
+            };
+            foreach (var relativePath in paths)
+            {
+                var fingerprint = new FileFingerprint { path = relativePath };
+                try
+                {
+                    using (var stream = File.OpenRead(Path.Combine(RepoRoot, relativePath)))
+                    using (var hash = SHA256.Create())
+                        fingerprint.sha256 = BitConverter.ToString(hash.ComputeHash(stream)).Replace("-", "").ToLowerInvariant();
+                    fingerprint.status = "captured";
+                }
+                catch (Exception exception)
+                {
+                    fingerprint.status = "unavailable";
+                    fingerprint.error = exception.GetType().Name + ": " + exception.Message;
+                }
+                snapshot.files.Add(fingerprint);
+            }
+            return snapshot;
+        }
+
+        static bool TryReadGit(string arguments, out string output, out string error)
+        {
+            output = "";
+            error = "";
+            try
+            {
+                using (var process = new System.Diagnostics.Process())
+                {
+                    process.StartInfo = new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = "git", Arguments = arguments, WorkingDirectory = RepoRoot,
+                        UseShellExecute = false, CreateNoWindow = true,
+                        WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden,
+                        RedirectStandardOutput = true, RedirectStandardError = true,
+                        StandardOutputEncoding = Encoding.UTF8, StandardErrorEncoding = Encoding.UTF8
+                    };
+                    process.StartInfo.EnvironmentVariables["GIT_OPTIONAL_LOCKS"] = "0";
+                    if (!process.Start()) { error = "Git process did not start."; return false; }
+                    // Drain both pipes asynchronously so a large status listing cannot deadlock.
+                    var stdout = process.StandardOutput.ReadToEndAsync();
+                    var stderr = process.StandardError.ReadToEndAsync();
+                    if (!process.WaitForExit(3000))
+                    {
+                        error = "Git query timed out after 3 seconds; state is unknown.";
+                        try { process.Kill(); process.WaitForExit(1000); }
+                        catch (Exception exception) { error += " " + exception.GetType().Name; }
+                        return false;
+                    }
+                    if (!stdout.Wait(1000) || !stderr.Wait(1000))
+                    {
+                        error = "Git output was not completely read; state is unknown.";
+                        return false;
+                    }
+                    if (process.ExitCode != 0)
+                    {
+                        error = "Exit " + process.ExitCode + ": " + stderr.Result.Trim();
+                        return false;
+                    }
+                    output = stdout.Result;
+                    return true;
+                }
+            }
+            catch (Exception exception)
+            {
+                error = exception.GetType().Name + ": " + exception.Message;
+                return false;
+            }
+        }
+
+        static Provenance RestoreProvenance()
+        {
+            var json = SessionState.GetString(ProvenanceKey, "");
+            if (!string.IsNullOrEmpty(json))
+            {
+                try
+                {
+                    var snapshot = JsonUtility.FromJson<Provenance>(json);
+                    if (snapshot != null) return snapshot;
+                }
+                catch (Exception exception)
+                {
+                    return new Provenance { runId = SessionState.GetString(RunIdKey, "unknown"),
+                        errors = new List<string> { "Unable to restore pre-run provenance: " + exception.Message } };
+                }
+            }
+            return new Provenance { runId = SessionState.GetString(RunIdKey, "unknown"),
+                errors = new List<string> { "Pre-run provenance is unavailable; Git state and hashes are unknown." } };
         }
 
         static void OnPlayMode(PlayModeStateChange state)
@@ -133,6 +296,7 @@ namespace Museum.Editor
                 report = new Report
                 {
                     timestampUtc = DateTime.UtcNow.ToString("o"), unityVersion = Application.unityVersion,
+                    provenance = RestoreProvenance(),
                     scene = ScenePath,
                     inputMethod = "InputSystem.QueueStateEvent in the player Dynamic input update on XRSimulatedController/HMD -> production Input Actions -> ActionBasedController -> existing XRDirectInteractor -> XRGrabInteractable and Rigidbody. Home uses a synthetic KeyboardState. Hidden batch frames are paced to approximately 90 Hz to remain above XRI 2.6's 1 ms throw-sampling cutoff.",
                     limitations = "Automated desktop simulation only. Official XR Device Simulator presence is checked, then its device writer is disabled to avoid competing states. Its mouse/keyboard navigation mappings, real headset tracking, hand comfort, and device performance still require manual testing. The test driver does not call XRI selection APIs."
@@ -150,7 +314,7 @@ namespace Museum.Editor
                 SessionState.SetBool(ActiveKey, false);
                 if (batch) EditorApplication.delayCall += () =>
                 {
-                    try { if (code == 0) HelmetPrototypePreview.Capture(); }
+                    try { if (code == 0) HelmetPrototypePreview.CaptureToDirectory(Path.Combine(OutputDirectory, "preview")); }
                     catch (Exception exception) { Debug.LogException(exception); code = 1; }
                     EditorApplication.Exit(code < 0 ? 1 : code);
                 };

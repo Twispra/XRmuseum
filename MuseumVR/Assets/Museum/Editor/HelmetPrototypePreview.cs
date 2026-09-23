@@ -42,12 +42,23 @@ namespace Museum.Editor
 
         public static void Capture()
         {
+            var runId = DateTime.UtcNow.ToString("yyyyMMddTHHmmssfffZ") + "-preview-" + Guid.NewGuid().ToString("N");
+            CaptureToDirectory(Path.GetFullPath(Path.Combine(Application.dataPath, "../../artifacts/helmet-interaction/qa/runs", runId, "preview")));
+        }
+
+        // The acceptance runner supplies its unique run directory. Standalone captures also
+        // get a new directory; historical previews are never the implicit output target.
+        public static void CaptureToDirectory(string outputDirectory)
+        {
             if (EditorApplication.isPlayingOrWillChangePlaymode)
                 throw new InvalidOperationException("Capture must be invoked from Edit Mode.");
             if (!Application.isBatchMode && UnityEngine.SceneManagement.SceneManager.GetActiveScene().isDirty)
                 throw new InvalidOperationException("Save or discard the active scene before running this read-only preview export.");
 
-            var directory = Path.GetFullPath(Path.Combine(Application.dataPath, "../../artifacts/helmet-interaction/preview"));
+            var directory = Path.GetFullPath(outputDirectory);
+            foreach (var fileName in new[] { "capture.json", "01-player-start.jpg", "02-helmet-and-reset.jpg" })
+                if (File.Exists(Path.Combine(directory, fileName)))
+                    throw new InvalidOperationException("Preview evidence already exists in this directory; choose a new output directory: " + directory);
             Directory.CreateDirectory(directory);
             var report = new CaptureRecord
             {
