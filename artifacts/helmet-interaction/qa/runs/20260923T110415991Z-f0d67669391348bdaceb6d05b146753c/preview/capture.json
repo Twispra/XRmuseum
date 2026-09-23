@@ -1,0 +1,35 @@
+{
+    "utc": "2026-09-23T11:05:10.1625033Z",
+    "scene": "Assets/Museum/Scenes/MuseumStart.unity",
+    "unityVersion": "2022.3.62f3c1",
+    "graphicsDevice": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "pipeline": "MuseumURP",
+    "status": "failed",
+    "error": "System.InvalidOperationException: HelmetExhibit has no active renderers.\r\n  at Museum.Editor.HelmetPrototypePreview.CaptureToDirectory (System.String outputDirectory) [0x002da] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\museum-collaboration-check\\XRmuseum\\MuseumVR\\Assets\\Museum\\Editor\\HelmetPrototypePreview.cs:109 ",
+    "renderMethod": "RenderPipeline.SubmitRenderRequest / UniversalRenderPipeline.SingleCameraRequest -> temporary RenderTexture -> RGB JPEG",
+    "note": "Player-start view uses the saved Main Camera world pose and field of view. Actual headset tracking can change eye height and orientation. Close-up is a separate inspection camera. Scene content, lighting and materials are unchanged; no scene or asset is saved.",
+    "views": [
+        {
+            "path": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\museum-collaboration-check\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20260923T110415991Z-f0d67669391348bdaceb6d05b146753c\\preview\\01-player-start.jpg",
+            "description": "Initial player view: saved Main Camera world position, rotation and field of view.",
+            "cameraPosition": {
+                "x": 0.0,
+                "y": 1.3614399433135987,
+                "z": 2.200000047683716
+            },
+            "cameraEulerAngles": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "fieldOfViewDegrees": 60.0,
+            "aspect": 1.3333333730697632,
+            "minLuminance": 0.03620000183582306,
+            "maxLuminance": 1.0,
+            "meanLuminance": 0.24348871409893037,
+            "width": 960,
+            "height": 720,
+            "bytes": 61816
+        }
+    ]
+}

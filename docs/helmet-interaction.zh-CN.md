@@ -34,7 +34,7 @@ Home 在抓取时也可使用。复位后先松开 G，再按住 G 抓取，避�
 
 - [头盔 Prefab](../MuseumVR/Assets/Museum/Prefabs/HelmetExhibit.prefab)
 - [运行时复位逻辑](../MuseumVR/Assets/Museum/Scripts/HelmetExhibitReset.cs)
-- [场景与 Prefab 生成工具](../MuseumVR/Assets/Museum/Editor/HelmetPrototypeSetup.cs)：Unity 菜单 `Museum > Build Helmet Interaction Prototype`。会重建本轮头盔站点，先保留你手动修改的站点设置。
+- [历史初始化工具](../MuseumVR/Assets/Museum/Editor/HelmetPrototypeSetup.cs)：菜单 `Museum > Historical Tools > Initialize Helmet Prototype (First Time Only)`。已有头盔成果时拒绝执行，防止覆盖后续人工修改。打开、预览和验收均不需要运行它；需要重建时另立明确范围的任务并使用隔离副本。
 - [自动验证工具](../MuseumVR/Assets/Museum/Editor/HelmetPrototypeValidation.cs)：Unity 菜单 `Museum > Validate Helmet Interaction (Play Mode)`。
 - [模型原型及参考依据](../artifacts/helmet-prototype/README.zh-CN.md)
 

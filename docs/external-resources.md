@@ -14,6 +14,8 @@
 | Blender 5.2 / Blender Python API | 本机 Blender；https://www.blender.org/ | 建模、程序材质、渲染、网格审计和 FBX 导出回读 | 工具许可与生成资产的权利分开；未将 Blender 程序分发进项目 | 使用工具执行本项目脚本；未修改 Blender 本体 |
 | Blender MCP，mcp-for-blender 2.0.0 | 安装包元数据指向 https://github.com/ahujasid/blender-mcp | Codex 与本机 Blender 通信，执行建模脚本 | 此次未核实安装包的具体许可证文本；未复制或分发插件代码 | 只调用现有插件；长渲染／验证通过独立 Blender 进程完成 |
 | Codex 辅助：头盔原型及本次记录 | 2026-09-23 用户发起的本地开发任务；[范围与证据](activity/2026-09-23-helmet-prototype.md) | 几何与材质脚本、法线和碎面修复、导出、Unity 配置／复位／验证脚本、技术与活动记录 | 按课程及大学 Canvas 政策声明；尚未核验 Canvas 最新政策，不声称已满足其全部条款 | 明确为 AI 辅助生成和修改；自动检查与渲染初检由 Codex 执行，未获得独立人工实机验收；不代写个人反思短文 |
+| Codex 辅助：六人协作与工具保护 | 2026-09-23 用户要求检查多人 AI 协作；[活动与验证](activity/2026-09-23-team-collaboration.md) | 仓库规则、当前状态、课程索引、任务/PR模板、初始化覆盖保护、验收版本记录与独立输出目录 | 同上，须遵守并核对 Canvas 政策；未声称六人已共同批准机制 | 由 Codex 辅助设计、实现和自动检查；团队身份/分工、人工审批和真实设备评价不由 AI 虚构 |
+| OpenAI / GitHub 官方操作文档 | [Codex AGENTS](https://learn.chatgpt.com/docs/agent-configuration/agents-md)、[GitHub Issue 与 PR 模板](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/about-issue-and-pull-request-templates) | 核对规则发现方式与模板生效位置 | 仅概括操作规则并链接来源；未复制页面媒体或代码资产 | 据本项目调整为简短根规则、一个活动任务入口和PR交接 |
 
 后续添加模型、贴图、音效、字体、脚本或插件时，应在这里记录来源、许可、用途和修改内容。
 
