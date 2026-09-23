@@ -12,7 +12,7 @@ COMP5424 Extended Reality 博物馆小组作业的 Unity 工程与协作文档�
 
 详细图形界面操作见 [组员首次打开与日常协作](docs/getting-started.zh-CN.md)。
 
-打开后双击 `Assets/Museum/Scenes/MuseumStart.unity`。基础展厅包含三个占位展台、一个可抓取测试方块、传送地面和官方 XR Origin。它是后续开发的起点，尚未完成课程要求的博物馆体验与用户流程。
+打开后双击 `Assets/Museum/Scenes/MuseumStart.unity`。展厅包含中央可抓取的潜水头盔简模、两处占位展台、传送地面和官方 XR Origin。头盔支持拿放、碰撞与复位，使用方式见[头盔抓取原型](docs/helmet-interaction.zh-CN.md)。课程要求的完整博物馆体验与用户流程仍需继续开发。
 
 已配置 URP 14.0.12、OpenXR 1.14.3、XR Interaction Toolkit 2.6.4、Input System 1.14.0。模拟器只在 Editor 中自动启用；接真实头显前请按操作说明关闭模拟器。
 
@@ -35,5 +35,6 @@ XRmuseum/
 每位成员使用自己的 GitHub 账号及已关联邮箱提交；不要把共享账号或初始化提交作为个人独立贡献证据。
 
 - [每周活动记录](docs/weekly-activity.md)
+- [2026-09-23 头盔原型：实现、验证与贡献证据](docs/activity/2026-09-23-helmet-prototype.md)
 - [外部资源与辅助工具记录](docs/external-resources.md)
 - [初始化验证结果与尚未验证的范围](docs/initialization-checks.md)

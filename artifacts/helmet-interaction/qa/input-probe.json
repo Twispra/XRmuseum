@@ -1,0 +1,581 @@
+{
+    "timestampUtc": "2026-09-23T09:09:53.9072725Z",
+    "unityVersion": "2022.3.62f3c1",
+    "scene": "Assets/Museum/Scenes/MuseumStart.unity",
+    "inputMethod": "InputSystem.QueueStateEvent in the player Dynamic input update on XRSimulatedController/HMD -> production Input Actions -> ActionBasedController -> existing XRDirectInteractor -> XRGrabInteractable and Rigidbody. Home uses a synthetic KeyboardState. Hidden batch frames are paced to approximately 90 Hz to remain above XRI 2.6's 1 ms throw-sampling cutoff.",
+    "limitations": "Automated desktop simulation only. Official XR Device Simulator presence is checked, then its device writer is disabled to avoid competing states. Its mouse/keyboard navigation mappings, real headset tracking, hand comfort, and device performance still require manual testing. The test driver does not call XRI selection APIs.",
+    "status": "failed",
+    "failure": "System.InvalidOperationException: Home while held: Reset delta=0; selected=True; error=1.299318E-07\r\n  at Museum.Editor.HelmetPrototypeValidation.Require (System.Boolean condition, System.String name, System.String detail) [0x0003e] in E:\\XRmuseum\\MuseumVR\\Assets\\Museum\\Editor\\HelmetPrototypeValidation.cs:440 \r\n  at Museum.Editor.HelmetPrototypeValidation+<Validate>d__45.MoveNext () [0x00d45] in E:\\XRmuseum\\MuseumVR\\Assets\\Museum\\Editor\\HelmetPrototypeValidation.cs:305 \r\n  at Museum.Editor.HelmetPrototypeValidation.Tick () [0x00188] in E:\\XRmuseum\\MuseumVR\\Assets\\Museum\\Editor\\HelmetPrototypeValidation.cs:183 ",
+    "durationSeconds": 3.677358627319336,
+    "officialSimulatorWasPresent": true,
+    "colliderCount": 4,
+    "completedCycles": 0,
+    "checks": [
+        {
+            "name": "helmet exists",
+            "passed": true,
+            "detail": "Scene object HelmetExhibit must exist."
+        },
+        {
+            "name": "runtime components",
+            "passed": true,
+            "detail": "XRGrabInteractable, Rigidbody and HelmetExhibitReset are on the root."
+        },
+        {
+            "name": "physical body",
+            "passed": true,
+            "detail": "Dynamic Rigidbody uses gravity."
+        },
+        {
+            "name": "body mass",
+            "passed": true,
+            "detail": "Prototype mass is 1.5 kg."
+        },
+        {
+            "name": "grab configuration",
+            "passed": true,
+            "detail": "VelocityTracking with dynamic attachment."
+        },
+        {
+            "name": "compound colliders",
+            "passed": true,
+            "detail": "4 active primitive colliders."
+        },
+        {
+            "name": "official simulator instantiated",
+            "passed": true,
+            "detail": "XR Device Simulator is automatically instantiated in Play Mode."
+        },
+        {
+            "name": "right action controller",
+            "passed": true,
+            "detail": "Existing XR rig Right Controller."
+        },
+        {
+            "name": "right direct interactor",
+            "passed": true,
+            "detail": "Existing direct interactor is present; tracked input will activate it."
+        },
+        {
+            "name": "select input action",
+            "passed": true,
+            "detail": "Existing select action is enabled."
+        },
+        {
+            "name": "grab before held reset",
+            "passed": true,
+            "detail": "Grip input selects the exhibit before reset."
+        },
+        {
+            "name": "Home while held",
+            "passed": false,
+            "detail": "Reset delta=0; selected=True; error=1.299318E-07"
+        }
+    ],
+    "cycles": [],
+    "errors": [],
+    "samples": [
+        {
+            "cycle": 0,
+            "frame": 138,
+            "phase": "setup",
+            "time": 5.5047173500061039,
+            "deltaTime": 0.024806000292301179,
+            "selected": false,
+            "resetCount": 0,
+            "homeKeyDown": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": 1.0
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 147,
+            "phase": "setup",
+            "time": 5.614383220672607,
+            "deltaTime": 0.0121970996260643,
+            "selected": false,
+            "resetCount": 0,
+            "homeKeyDown": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": 1.0
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 156,
+            "phase": "setup",
+            "time": 5.723152160644531,
+            "deltaTime": 0.012146100401878357,
+            "selected": false,
+            "resetCount": 0,
+            "homeKeyDown": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": 1.0
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 165,
+            "phase": "setup",
+            "time": 5.8330078125,
+            "deltaTime": 0.012325399555265904,
+            "selected": false,
+            "resetCount": 0,
+            "homeKeyDown": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": 1.0
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 174,
+            "phase": "setup",
+            "time": 5.940083980560303,
+            "deltaTime": 0.0110446996986866,
+            "selected": false,
+            "resetCount": 0,
+            "homeKeyDown": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": 1.0
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 182,
+            "phase": "held reset",
+            "time": 6.046433448791504,
+            "deltaTime": 0.012696499936282635,
+            "selected": false,
+            "resetCount": 0,
+            "homeKeyDown": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 191,
+            "phase": "held reset",
+            "time": 6.153298854827881,
+            "deltaTime": 0.011981000192463398,
+            "selected": false,
+            "resetCount": 0,
+            "homeKeyDown": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": 0.0,
+                "y": 1.1719999313354493,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 198,
+            "phase": "held reset",
+            "time": 6.256187915802002,
+            "deltaTime": 0.011536899954080582,
+            "selected": true,
+            "resetCount": 0,
+            "homeKeyDown": false,
+            "position": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288056424547905e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 207,
+            "phase": "held reset",
+            "time": 6.367269039154053,
+            "deltaTime": 0.012045999988913536,
+            "selected": true,
+            "resetCount": 0,
+            "homeKeyDown": false,
+            "position": {
+                "x": 3.97457045053784e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -2.6183334966844998e-7,
+                "y": 1.777861484697496e-7,
+                "z": 0.0
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 216,
+            "phase": "held reset",
+            "time": 6.476943016052246,
+            "deltaTime": 0.011541600339114666,
+            "selected": true,
+            "resetCount": 0,
+            "homeKeyDown": false,
+            "position": {
+                "x": 3.953822158564435e-8,
+                "y": 1.159999966621399,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -5.087874797027325e-7,
+                "y": 0.000001005932858788583,
+                "z": -2.7192044171897579e-8
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 225,
+            "phase": "held reset",
+            "time": 6.586491584777832,
+            "deltaTime": 0.01207290031015873,
+            "selected": true,
+            "resetCount": 0,
+            "homeKeyDown": false,
+            "position": {
+                "x": 6.536099306231336e-8,
+                "y": 1.1600000858306885,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 3.2665911930962468e-7,
+                "y": -0.0000013449566722556484,
+                "z": -2.567570618339232e-7
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 234,
+            "phase": "held reset",
+            "time": 6.693993091583252,
+            "deltaTime": 0.011535299941897393,
+            "selected": true,
+            "resetCount": 0,
+            "homeKeyDown": false,
+            "position": {
+                "x": 6.482102321569983e-8,
+                "y": 1.1600000858306885,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": -1.0375947567808908e-7,
+                "y": -0.0000010710755304899067,
+                "z": -3.0829062325210545e-7
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 243,
+            "phase": "held reset",
+            "time": 6.802879333496094,
+            "deltaTime": 0.012326699681580067,
+            "selected": true,
+            "resetCount": 0,
+            "homeKeyDown": false,
+            "position": {
+                "x": 5.6983754603834316e-8,
+                "y": 1.1600000858306885,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 1.1264387467235793e-7,
+                "y": -0.0000011985061973973644,
+                "z": -2.9084276320645588e-7
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        },
+        {
+            "cycle": 0,
+            "frame": 252,
+            "phase": "held reset",
+            "time": 6.911853790283203,
+            "deltaTime": 0.012677299790084362,
+            "selected": true,
+            "resetCount": 0,
+            "homeKeyDown": false,
+            "position": {
+                "x": 5.6317603025490828e-8,
+                "y": 1.1600000858306885,
+                "z": 3.5
+            },
+            "velocity": {
+                "x": 1.5866612557147165e-7,
+                "y": -0.0000011551969691936393,
+                "z": -2.2963267554132472e-7
+            },
+            "hand": {
+                "x": 2.9802322387695315e-8,
+                "y": 1.471039056777954,
+                "z": 3.5031042098999025
+            },
+            "target": {
+                "x": -2.9288074188116299e-9,
+                "y": 1.159999966621399,
+                "z": 3.5
+            }
+        }
+    ],
+    "inputDiagnostics": [
+        "frame=177; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=178; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=179; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=180; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=181; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=182; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=183; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=184; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=185; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=186; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=187; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=188; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=189; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=190; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=191; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=192; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=193; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=194; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=195; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=196; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=197; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=198; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=199; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=200; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=201; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=202; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=203; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=204; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=205; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=206; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=207; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=208; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=209; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=210; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=211; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=212; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=213; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=214; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=215; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=216; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=217; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=218; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=219; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=220; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=221; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=222; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=223; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=224; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=225; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=226; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=227; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=228; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=229; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=230; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=231; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=232; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=233; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=234; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=235; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=236; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=237; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=238; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=239; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=240; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=241; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=242; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=243; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=244; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=245; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=246; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=247; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=248; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=249; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=250; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=251; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=252; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=253; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=254; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=255; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0",
+        "frame=256; keyboard=Helmet QA Keyboard; id=1; added=True; enabled=False; key=False; edge=False; current=Helmet QA Keyboard; currentKey=False; resetEnabled=True; resetCount=0"
+    ]
+}

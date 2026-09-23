@@ -1,0 +1,4205 @@
+{
+  "file": "E:\\XRmuseum\\artifacts\\helmet-prototype\\helmet-study-v01.blend",
+  "blender_version": "5.2.2 LTS",
+  "scene": "XRmuseum_Helmet_Study_v01",
+  "units": "METRIC",
+  "metres_per_unit": 1.0,
+  "collections": {
+    "01_GRAYBOX_RealScale": {
+      "mesh_count": 82,
+      "bounds": {
+        "min_m": [
+          -0.46875250339508057,
+          -0.19121643900871277,
+          0.057987503707408905
+        ],
+        "max_m": [
+          -0.1512475162744522,
+          0.22788412868976593,
+          0.5533000230789185
+        ],
+        "size_mm": [
+          317.50498712062836,
+          419.1005676984787,
+          495.31251937150955
+        ]
+      },
+      "objects": {
+        "GB_Bonnet_Hollow": {
+          "base": {
+            "vertices": 2699,
+            "triangles": 5411,
+            "boundary_edges": 5,
+            "nonmanifold_edges": 5,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 8,
+            "signed_volume_m3": 0.0010470804424224263
+          },
+          "evaluated": {
+            "vertices": 5150,
+            "triangles": 10310,
+            "boundary_edges": 8,
+            "nonmanifold_edges": 8,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 2458,
+            "signed_volume_m3": 0.0010470804424224298
+          }
+        },
+        "GB_Front_PortRim": {
+          "base": {
+            "vertices": 256,
+            "triangles": 512,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 8.907793264472346e-05
+          },
+          "evaluated": {
+            "vertices": 1024,
+            "triangles": 2048,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 8.894671437443645e-05
+          }
+        },
+        "GB_Front_GlassPlaceholder": {
+          "base": {
+            "vertices": 128,
+            "triangles": 252,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.692734442795788e-05
+          },
+          "evaluated": {
+            "vertices": 128,
+            "triangles": 252,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.692734442795788e-05
+          }
+        },
+        "GB_Left_PortRim": {
+          "base": {
+            "vertices": 256,
+            "triangles": 512,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 7.021441099532287e-05
+          },
+          "evaluated": {
+            "vertices": 1024,
+            "triangles": 2048,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 7.010621649539395e-05
+          }
+        },
+        "GB_Left_GlassPlaceholder": {
+          "base": {
+            "vertices": 128,
+            "triangles": 252,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.368473481267035e-05
+          },
+          "evaluated": {
+            "vertices": 128,
+            "triangles": 252,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.368473481267035e-05
+          }
+        },
+        "GB_Right_PortRim": {
+          "base": {
+            "vertices": 256,
+            "triangles": 512,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 7.021441099532287e-05
+          },
+          "evaluated": {
+            "vertices": 1024,
+            "triangles": 2048,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 7.01062164953938e-05
+          }
+        },
+        "GB_Right_GlassPlaceholder": {
+          "base": {
+            "vertices": 128,
+            "triangles": 252,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.368473481267056e-05
+          },
+          "evaluated": {
+            "vertices": 128,
+            "triangles": 252,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.368473481267056e-05
+          }
+        },
+        "GB_Top_PortRim": {
+          "base": {
+            "vertices": 256,
+            "triangles": 512,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 4.9254943113876505e-05
+          },
+          "evaluated": {
+            "vertices": 1024,
+            "triangles": 2048,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 4.918226564092624e-05
+          }
+        },
+        "GB_Top_GlassPlaceholder": {
+          "base": {
+            "vertices": 128,
+            "triangles": 252,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.4971051617003838e-05
+          },
+          "evaluated": {
+            "vertices": 128,
+            "triangles": 252,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.4971051617003838e-05
+          }
+        },
+        "GB_Corselet_ShoulderPlate": {
+          "base": {
+            "vertices": 1728,
+            "triangles": 3456,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -0.0002455267023917699
+          },
+          "evaluated": {
+            "vertices": 2496,
+            "triangles": 4992,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -0.00024493086848804946
+          }
+        },
+        "GB_NeckLockRing": {
+          "base": {
+            "vertices": 384,
+            "triangles": 768,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 0.00024836733629578006
+          },
+          "evaluated": {
+            "vertices": 1536,
+            "triangles": 3072,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 0.0002476431061789563
+          }
+        },
+        "GB_NeckFastener_00": {
+          "base": {
+            "vertices": 24,
+            "triangles": 44,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0739485233485587e-06
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.068778556837996e-06
+          }
+        },
+        "GB_NeckFastener_01": {
+          "base": {
+            "vertices": 24,
+            "triangles": 44,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0739477837502933e-06
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0687779637525736e-06
+          }
+        },
+        "GB_NeckFastener_02": {
+          "base": {
+            "vertices": 24,
+            "triangles": 44,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0739483965837736e-06
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0687783567013722e-06
+          }
+        },
+        "GB_NeckFastener_03": {
+          "base": {
+            "vertices": 24,
+            "triangles": 44,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0739485192888754e-06
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0687784033802474e-06
+          }
+        },
+        "GB_NeckFastener_04": {
+          "base": {
+            "vertices": 24,
+            "triangles": 44,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0739483965837751e-06
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.068778356993754e-06
+          }
+        },
+        "GB_NeckFastener_05": {
+          "base": {
+            "vertices": 24,
+            "triangles": 44,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.073947783750287e-06
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0687779564089843e-06
+          }
+        },
+        "GB_NeckFastener_06": {
+          "base": {
+            "vertices": 24,
+            "triangles": 44,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0739485233485673e-06
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0687785584704063e-06
+          }
+        },
+        "GB_NeckFastener_07": {
+          "base": {
+            "vertices": 24,
+            "triangles": 44,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0739477837502876e-06
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0687779637525706e-06
+          }
+        },
+        "GB_NeckFastener_08": {
+          "base": {
+            "vertices": 24,
+            "triangles": 44,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0739483965837736e-06
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0687783567013756e-06
+          }
+        },
+        "GB_NeckFastener_09": {
+          "base": {
+            "vertices": 24,
+            "triangles": 44,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0739485192888657e-06
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0687784033181553e-06
+          }
+        },
+        "GB_NeckFastener_10": {
+          "base": {
+            "vertices": 24,
+            "triangles": 44,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.073948396583776e-06
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0687783569937523e-06
+          }
+        },
+        "GB_NeckFastener_11": {
+          "base": {
+            "vertices": 24,
+            "triangles": 44,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0739477837502914e-06
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0687779563019697e-06
+          }
+        },
+        "GB_FrontDiamondGuard": {
+          "base": {
+            "vertices": 40,
+            "triangles": 76,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.862316538747931e-06
+          },
+          "evaluated": {
+            "vertices": 160,
+            "triangles": 316,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.860054468075286e-06
+          }
+        },
+        "GB_FrontDiamondGuard.001": {
+          "base": {
+            "vertices": 40,
+            "triangles": 76,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.8623155906265616e-06
+          },
+          "evaluated": {
+            "vertices": 160,
+            "triangles": 316,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.860052672922094e-06
+          }
+        },
+        "GB_FrontDiamondGuard.002": {
+          "base": {
+            "vertices": 40,
+            "triangles": 76,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.862316623647866e-06
+          },
+          "evaluated": {
+            "vertices": 160,
+            "triangles": 316,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.860055052731959e-06
+          }
+        },
+        "GB_FrontDiamondGuard.003": {
+          "base": {
+            "vertices": 40,
+            "triangles": 76,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.862315602831119e-06
+          },
+          "evaluated": {
+            "vertices": 160,
+            "triangles": 316,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.860052821976751e-06
+          }
+        },
+        "GB_Hinge": {
+          "base": {
+            "vertices": 8,
+            "triangles": 12,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -3.257645214187663e-05
+          },
+          "evaluated": {
+            "vertices": 96,
+            "triangles": 188,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -3.212777247214285e-05
+          }
+        },
+        "GB_FrontLatch": {
+          "base": {
+            "vertices": 40,
+            "triangles": 76,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.9443769715121705e-06
+          },
+          "evaluated": {
+            "vertices": 160,
+            "triangles": 316,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.9405811911445135e-06
+          }
+        },
+        "GB_AirConnector": {
+          "base": {
+            "vertices": 40,
+            "triangles": 76,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.2433777746152724e-05
+          },
+          "evaluated": {
+            "vertices": 160,
+            "triangles": 316,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.242310149285391e-05
+          }
+        },
+        "GB_AirConnectorThread": {
+          "base": {
+            "vertices": 192,
+            "triangles": 384,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.8699820418718518e-05
+          },
+          "evaluated": {
+            "vertices": 768,
+            "triangles": 1536,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.8677447707832387e-05
+          }
+        },
+        "GB_InterpretiveLabel": {
+          "base": {
+            "vertices": 8,
+            "triangles": 12,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -1.0500863405131529e-05
+          },
+          "evaluated": {
+            "vertices": 96,
+            "triangles": 188,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -1.001616261792361e-05
+          }
+        },
+        "GB_CorseletRolledEdge": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0950221770027384e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0826604947813653e-06
+          }
+        },
+        "GB_CorseletRolledEdge.001": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0963125925951405e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0839599718352167e-06
+          }
+        },
+        "GB_CorseletRolledEdge.002": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.097989533813296e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0856584356042362e-06
+          }
+        },
+        "GB_CorseletRolledEdge.003": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0985334371510266e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0862504576420377e-06
+          }
+        },
+        "GB_CorseletRolledEdge.004": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0962886209900267e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0840884529005004e-06
+          }
+        },
+        "GB_CorseletRolledEdge.005": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.089978069697635e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0779061623810096e-06
+          }
+        },
+        "GB_CorseletRolledEdge.006": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0791368220990833e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.067234653133224e-06
+          }
+        },
+        "GB_CorseletRolledEdge.007": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.064380226885299e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0526832456276605e-06
+          }
+        },
+        "GB_CorseletRolledEdge.008": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0474266627283398e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0359493600572611e-06
+          }
+        },
+        "GB_CorseletRolledEdge.009": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0308448253458074e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0195737703190577e-06
+          }
+        },
+        "GB_CorseletRolledEdge.010": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.017569872644943e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0064587471393898e-06
+          }
+        },
+        "GB_CorseletRolledEdge.011": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0101729653424488e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.991490061830125e-07
+          }
+        },
+        "GB_CorseletRolledEdge.012": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0101728481313903e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.991492275543092e-07
+          }
+        },
+        "GB_CorseletRolledEdge.013": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0175697389099026e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0064582402157462e-06
+          }
+        },
+        "GB_CorseletRolledEdge.014": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0308450858761314e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.019573708840449e-06
+          }
+        },
+        "GB_CorseletRolledEdge.015": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0474266841178106e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0359491822009143e-06
+          }
+        },
+        "GB_CorseletRolledEdge.016": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0643800884200065e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0526834233729063e-06
+          }
+        },
+        "GB_CorseletRolledEdge.017": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0791367920848067e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.067234415940836e-06
+          }
+        },
+        "GB_CorseletRolledEdge.018": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0899781360990512e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0779050837745644e-06
+          }
+        },
+        "GB_CorseletRolledEdge.019": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0962886286219617e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.084088250609147e-06
+          }
+        },
+        "GB_CorseletRolledEdge.020": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0985334008311034e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.086250195665344e-06
+          }
+        },
+        "GB_CorseletRolledEdge.021": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0979895405933776e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0856584378404514e-06
+          }
+        },
+        "GB_CorseletRolledEdge.022": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0963125363901871e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0839590967967867e-06
+          }
+        },
+        "GB_CorseletRolledEdge.023": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0950221635110393e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0826606643241136e-06
+          }
+        },
+        "GB_CorseletRolledEdge.024": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2594810807567053e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2456998014443855e-06
+          }
+        },
+        "GB_CorseletRolledEdge.025": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.255381810098395e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2416526731784108e-06
+          }
+        },
+        "GB_CorseletRolledEdge.026": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2467091726632049e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2330884195083586e-06
+          }
+        },
+        "GB_CorseletRolledEdge.027": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2327170480688558e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2192650376131505e-06
+          }
+        },
+        "GB_CorseletRolledEdge.028": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.212725946453535e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1995071473736126e-06
+          }
+        },
+        "GB_CorseletRolledEdge.029": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1865377102507478e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1736149256149014e-06
+          }
+        },
+        "GB_CorseletRolledEdge.030": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1548141925032707e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1422419649265414e-06
+          }
+        },
+        "GB_CorseletRolledEdge.031": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1193453980469444e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1071577993325727e-06
+          }
+        },
+        "GB_CorseletRolledEdge.032": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.083131476928756e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0713326961230799e-06
+          }
+        },
+        "GB_CorseletRolledEdge.033": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0501542195760791e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0387074461451436e-06
+          }
+        },
+        "GB_CorseletRolledEdge.034": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0248162473859257e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0136390506453598e-06
+          }
+        },
+        "GB_CorseletRolledEdge.035": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0109943005443498e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.999645678921854e-07
+          }
+        },
+        "GB_CorseletRolledEdge.036": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0109942853811789e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.999643832055559e-07
+          }
+        },
+        "GB_CorseletRolledEdge.037": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0248161541531078e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0136390785263166e-06
+          }
+        },
+        "GB_CorseletRolledEdge.038": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0501540645256339e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.038707330210276e-06
+          }
+        },
+        "GB_CorseletRolledEdge.039": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0831313552937241e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0713322229202077e-06
+          }
+        },
+        "GB_CorseletRolledEdge.040": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1193454495159308e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.107158144831295e-06
+          }
+        },
+        "GB_CorseletRolledEdge.041": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1548141912762393e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1422418410391133e-06
+          }
+        },
+        "GB_CorseletRolledEdge.042": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1865376735126533e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.173614763459988e-06
+          }
+        },
+        "GB_CorseletRolledEdge.043": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2127260376608066e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1995074586760677e-06
+          }
+        },
+        "GB_CorseletRolledEdge.044": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2327170340821688e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2192647216893753e-06
+          }
+        },
+        "GB_CorseletRolledEdge.045": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2467091573119372e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.23308870558115e-06
+          }
+        },
+        "GB_CorseletRolledEdge.046": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2553817692764056e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2416527518608073e-06
+          }
+        },
+        "GB_CorseletRolledEdge.047": {
+          "base": {
+            "vertices": 20,
+            "triangles": 36,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2594810270745282e-06
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 476,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2456990676969365e-06
+          }
+        },
+        "GB_WeightAttachmentEye": {
+          "base": {
+            "vertices": 160,
+            "triangles": 320,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.3440197291511472e-06
+          },
+          "evaluated": {
+            "vertices": 640,
+            "triangles": 1280,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2884665366181475e-06
+          }
+        },
+        "GB_WeightAttachmentEye.001": {
+          "base": {
+            "vertices": 160,
+            "triangles": 320,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.3440197291514241e-06
+          },
+          "evaluated": {
+            "vertices": 640,
+            "triangles": 1280,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2884665464789196e-06
+          }
+        }
+      },
+      "evaluated_triangles": 62886,
+      "negative_volume_objects": [
+        "GB_Corselet_ShoulderPlate",
+        "GB_Hinge",
+        "GB_InterpretiveLabel"
+      ],
+      "nonmanifold_objects": [
+        "GB_Bonnet_Hollow"
+      ],
+      "degenerate_objects": [
+        "GB_Bonnet_Hollow"
+      ]
+    },
+    "02_PORTHOLE_QualitySample": {
+      "mesh_count": 124,
+      "bounds": {
+        "min_m": [
+          0.1459999978542328,
+          -0.08920000493526459,
+          0.1290000081062317
+        ],
+        "max_m": [
+          0.4339999854564667,
+          0.024879518896341324,
+          0.4169999957084656
+        ],
+        "size_mm": [
+          287.9999876022339,
+          114.07952383160591,
+          287.9999876022339
+        ]
+      },
+      "objects": {
+        "DETAIL_CurvedCopperSkin_3p8mm": {
+          "base": {
+            "vertices": 4992,
+            "triangles": 9984,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -0.00021914983379124929
+          },
+          "evaluated": {
+            "vertices": 7296,
+            "triangles": 14592,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -0.00021888334761793336
+          }
+        },
+        "DETAIL_FixedPortFlange": {
+          "base": {
+            "vertices": 1728,
+            "triangles": 3456,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 0.0005270839967927676
+          },
+          "evaluated": {
+            "vertices": 5760,
+            "triangles": 11520,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 0.0005267830846978871
+          }
+        },
+        "DETAIL_InteriorPortLiner": {
+          "base": {
+            "vertices": 512,
+            "triangles": 1024,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 0.000129331414792329
+          },
+          "evaluated": {
+            "vertices": 2048,
+            "triangles": 4096,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 0.0001292089047987224
+          }
+        },
+        "DETAIL_FlangeJointOxide": {
+          "base": {
+            "vertices": 1536,
+            "triangles": 3072,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1446507148701607e-06
+          },
+          "evaluated": {
+            "vertices": 1536,
+            "triangles": 3072,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1446507148701607e-06
+          }
+        },
+        "DETAIL_CompressedRubberSeal": {
+          "base": {
+            "vertices": 512,
+            "triangles": 1024,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.024767722547093e-05
+          },
+          "evaluated": {
+            "vertices": 2048,
+            "triangles": 4096,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.0199049777996246e-05
+          }
+        },
+        "DETAIL_MovingWindowCastFrame": {
+          "base": {
+            "vertices": 1344,
+            "triangles": 2688,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 0.00023631975555526863
+          },
+          "evaluated": {
+            "vertices": 5952,
+            "triangles": 11904,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 0.00023590697519876728
+          }
+        },
+        "DETAIL_PolishedBezelLip": {
+          "base": {
+            "vertices": 2304,
+            "triangles": 4608,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.7171330019275134e-06
+          },
+          "evaluated": {
+            "vertices": 2304,
+            "triangles": 4608,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.7171330019275134e-06
+          }
+        },
+        "DETAIL_OuterCastingHighlight": {
+          "base": {
+            "vertices": 2304,
+            "triangles": 4608,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0176949337057666e-06
+          },
+          "evaluated": {
+            "vertices": 2304,
+            "triangles": 4608,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0176949337057666e-06
+          }
+        },
+        "DETAIL_OpticalGlass_4mm": {
+          "base": {
+            "vertices": 384,
+            "triangles": 764,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 7.067323198346337e-05
+          },
+          "evaluated": {
+            "vertices": 1536,
+            "triangles": 3068,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 7.064440280604382e-05
+          }
+        },
+        "DETAIL_GlassRetainer_Back": {
+          "base": {
+            "vertices": 512,
+            "triangles": 1024,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0228931206486937e-05
+          },
+          "evaluated": {
+            "vertices": 2048,
+            "triangles": 4096,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0153137758269467e-05
+          }
+        },
+        "DETAIL_CastDiamondGuard": {
+          "base": {
+            "vertices": 48,
+            "triangles": 92,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.909848299578871e-06
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.907595167906539e-06
+          }
+        },
+        "DETAIL_CastDiamondGuard.001": {
+          "base": {
+            "vertices": 48,
+            "triangles": 92,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.909848595502806e-06
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.907595027885273e-06
+          }
+        },
+        "DETAIL_CastDiamondGuard.002": {
+          "base": {
+            "vertices": 48,
+            "triangles": 92,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.909848595502809e-06
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.907595027885272e-06
+          }
+        },
+        "DETAIL_CastDiamondGuard.003": {
+          "base": {
+            "vertices": 48,
+            "triangles": 92,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.909848299578876e-06
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.90759516790653e-06
+          }
+        },
+        "DETAIL_FrameScrew_00_Seat": {
+          "base": {
+            "vertices": 192,
+            "triangles": 384,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0023085076578055e-07
+          },
+          "evaluated": {
+            "vertices": 768,
+            "triangles": 1536,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.956655261622645e-08
+          }
+        },
+        "DETAIL_FrameScrew_00_Head": {
+          "base": {
+            "vertices": 100,
+            "triangles": 196,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.0299441137970735e-07
+          },
+          "evaluated": {
+            "vertices": 388,
+            "triangles": 772,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.0174369017026722e-07
+          }
+        },
+        "DETAIL_FrameScrew_01_Seat": {
+          "base": {
+            "vertices": 192,
+            "triangles": 384,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0023082351302648e-07
+          },
+          "evaluated": {
+            "vertices": 768,
+            "triangles": 1536,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.956652348395082e-08
+          }
+        },
+        "DETAIL_FrameScrew_01_Head": {
+          "base": {
+            "vertices": 100,
+            "triangles": 196,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.0299445986215592e-07
+          },
+          "evaluated": {
+            "vertices": 388,
+            "triangles": 772,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.0174374194457953e-07
+          }
+        },
+        "DETAIL_FrameScrew_02_Seat": {
+          "base": {
+            "vertices": 192,
+            "triangles": 384,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0023082351302653e-07
+          },
+          "evaluated": {
+            "vertices": 768,
+            "triangles": 1536,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.95665234839506e-08
+          }
+        },
+        "DETAIL_FrameScrew_02_Head": {
+          "base": {
+            "vertices": 100,
+            "triangles": 196,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.0299445986215513e-07
+          },
+          "evaluated": {
+            "vertices": 388,
+            "triangles": 772,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.0174374703037618e-07
+          }
+        },
+        "DETAIL_FrameScrew_03_Seat": {
+          "base": {
+            "vertices": 192,
+            "triangles": 384,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0023085076578036e-07
+          },
+          "evaluated": {
+            "vertices": 768,
+            "triangles": 1536,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.95665526162263e-08
+          }
+        },
+        "DETAIL_FrameScrew_03_Head": {
+          "base": {
+            "vertices": 100,
+            "triangles": 196,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.0299441137970667e-07
+          },
+          "evaluated": {
+            "vertices": 388,
+            "triangles": 772,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.0174369016898304e-07
+          }
+        },
+        "DETAIL_ConcentricMachining": {
+          "base": {
+            "vertices": 1536,
+            "triangles": 3072,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.788183453606317e-09
+          },
+          "evaluated": {
+            "vertices": 1536,
+            "triangles": 3072,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.788183453606317e-09
+          }
+        },
+        "DETAIL_ConcentricMachining.001": {
+          "base": {
+            "vertices": 1536,
+            "triangles": 3072,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.929731780729323e-09
+          },
+          "evaluated": {
+            "vertices": 1536,
+            "triangles": 3072,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.929731780729323e-09
+          }
+        },
+        "DETAIL_ConcentricMachining.002": {
+          "base": {
+            "vertices": 1536,
+            "triangles": 3072,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0071230640681606e-08
+          },
+          "evaluated": {
+            "vertices": 1536,
+            "triangles": 3072,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0071230640681606e-08
+          }
+        },
+        "DETAIL_HingeFixedKnuckle": {
+          "base": {
+            "vertices": 96,
+            "triangles": 188,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.7004182603090894e-06
+          },
+          "evaluated": {
+            "vertices": 384,
+            "triangles": 764,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.6967001929960053e-06
+          }
+        },
+        "DETAIL_HingeFixedLeaf": {
+          "base": {
+            "vertices": 8,
+            "triangles": 12,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -1.2671998676419176e-05
+          },
+          "evaluated": {
+            "vertices": 96,
+            "triangles": 188,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -1.239761837207431e-05
+          }
+        },
+        "DETAIL_HingeFixedKnuckle.001": {
+          "base": {
+            "vertices": 96,
+            "triangles": 188,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.700418260309088e-06
+          },
+          "evaluated": {
+            "vertices": 384,
+            "triangles": 764,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.6967001929960044e-06
+          }
+        },
+        "DETAIL_HingeFixedLeaf.001": {
+          "base": {
+            "vertices": 8,
+            "triangles": 12,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -1.2671998676419173e-05
+          },
+          "evaluated": {
+            "vertices": 96,
+            "triangles": 188,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -1.2397618367532665e-05
+          }
+        },
+        "DETAIL_HingeMovingKnuckle": {
+          "base": {
+            "vertices": 96,
+            "triangles": 188,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 4.6742571341293386e-06
+          },
+          "evaluated": {
+            "vertices": 384,
+            "triangles": 764,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 4.6706395184812886e-06
+          }
+        },
+        "DETAIL_HingeMovingLeaf": {
+          "base": {
+            "vertices": 8,
+            "triangles": 12,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -9.935999270967947e-06
+          },
+          "evaluated": {
+            "vertices": 96,
+            "triangles": 188,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -9.685619487747605e-06
+          }
+        },
+        "DETAIL_HingePin": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.175382480255158e-06
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.1737254249763182e-06
+          }
+        },
+        "DETAIL_HingePinCap": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.776949779657896e-07
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.7498406764229166e-07
+          }
+        },
+        "DETAIL_HingePinCap.001": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.7769497796579193e-07
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.7498406764229187e-07
+          }
+        },
+        "DETAIL_LatchFixedLug": {
+          "base": {
+            "vertices": 8,
+            "triangles": 12,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -2.221800158613919e-05
+          },
+          "evaluated": {
+            "vertices": 96,
+            "triangles": 188,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": -2.1471973507228174e-05
+          }
+        },
+        "DETAIL_LatchStem": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.66096921697407e-06
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.6573014588036263e-06
+          }
+        },
+        "DETAIL_LatchThumbWheel": {
+          "base": {
+            "vertices": 128,
+            "triangles": 252,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 6.14763366553523e-06
+          },
+          "evaluated": {
+            "vertices": 512,
+            "triangles": 1020,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 6.104436641720063e-06
+          }
+        },
+        "DETAIL_ThumbWheelEdge": {
+          "base": {
+            "vertices": 1152,
+            "triangles": 2304,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.3904966382717003e-07
+          },
+          "evaluated": {
+            "vertices": 1152,
+            "triangles": 2304,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 3.3904966382717003e-07
+          }
+        },
+        "DETAIL_ThumbWheelKnurl": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589662480178727e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.803495113884306e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.001": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589662667971888e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8034998588745594e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.002": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.858966266797149e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.803496504751747e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.003": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589653909421985e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8035003143776698e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.004": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.858966266797083e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8034943532453355e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.005": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.858966266797136e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8035051726515644e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.006": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.858966266797083e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8034905669968638e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.007": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.858966266797136e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.80350362557723e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.008": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.858966266797083e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.803494487389324e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.009": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.858966266797096e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8034998364687e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.010": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.858966266797149e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8034837344905627e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.011": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589662667971888e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.803500046141206e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.012": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.85896626679703e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8034820308154393e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.013": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589513771189538e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.801817901401172e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.014": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589382391503553e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.801805086421208e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.015": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589382391503685e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8018116220349876e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.016": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589382203651233e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8018084647826053e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.017": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.858938239150329e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8018114866945074e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.018": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.858938239150329e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.801804790575081e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.019": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589513771189406e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.801822051353224e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.020": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.858966266797043e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.803482027904839e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.021": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.858966266797202e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.803500047887102e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.022": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589662667971623e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.803483852974121e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.023": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.858966266797136e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8034997253969123e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.024": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589662667971623e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8034948234144318e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.025": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589662667971623e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.80350351450583e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.026": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589662667971755e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8034906854314713e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.027": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589662667970696e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.80350517439685e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.028": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.858966266797083e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8034943503353315e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.029": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589653909421852e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.803500191257433e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.030": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589662667971623e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8034965777879893e-09
+          }
+        },
+        "DETAIL_ThumbWheelKnurl.031": {
+          "base": {
+            "vertices": 16,
+            "triangles": 28,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.8589662667972285e-09
+          },
+          "evaluated": {
+            "vertices": 192,
+            "triangles": 380,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 2.803499897978355e-09
+          }
+        },
+        "DETAIL_SkinRivet_00": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.010351833158625e-07
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.114011504374925e-08
+          }
+        },
+        "DETAIL_RivetOxide_00": {
+          "base": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993027511075412e-09
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993027511075412e-09
+          }
+        },
+        "DETAIL_SkinRivet_01": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0103497293475764e-07
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.113989575849188e-08
+          }
+        },
+        "DETAIL_RivetOxide_01": {
+          "base": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993024495875615e-09
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993024495875615e-09
+          }
+        },
+        "DETAIL_SkinRivet_02": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0103518331586268e-07
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.114011504374957e-08
+          }
+        },
+        "DETAIL_RivetOxide_02": {
+          "base": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993027511075106e-09
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993027511075106e-09
+          }
+        },
+        "DETAIL_SkinRivet_03": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0103518331586348e-07
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.114011504374981e-08
+          }
+        },
+        "DETAIL_RivetOxide_03": {
+          "base": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993027511075232e-09
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993027511075232e-09
+          }
+        },
+        "DETAIL_SkinRivet_04": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0103497293475828e-07
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.113989575849127e-08
+          }
+        },
+        "DETAIL_RivetOxide_04": {
+          "base": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993024495875205e-09
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993024495875205e-09
+          }
+        },
+        "DETAIL_SkinRivet_05": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0103518331586235e-07
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.114011504375005e-08
+          }
+        },
+        "DETAIL_RivetOxide_05": {
+          "base": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.9930275110754934e-09
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.9930275110754934e-09
+          }
+        },
+        "DETAIL_SkinRivet_06": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0103518331586246e-07
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.11401150437493e-08
+          }
+        },
+        "DETAIL_RivetOxide_06": {
+          "base": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993027511075439e-09
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993027511075439e-09
+          }
+        },
+        "DETAIL_SkinRivet_07": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0103497293475755e-07
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.113989575849156e-08
+          }
+        },
+        "DETAIL_RivetOxide_07": {
+          "base": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.9930244958756384e-09
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.9930244958756384e-09
+          }
+        },
+        "DETAIL_SkinRivet_08": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0103518331586276e-07
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.114011504374957e-08
+          }
+        },
+        "DETAIL_RivetOxide_08": {
+          "base": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993027511075163e-09
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993027511075163e-09
+          }
+        },
+        "DETAIL_SkinRivet_09": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0103518331586322e-07
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.114011504374954e-08
+          }
+        },
+        "DETAIL_RivetOxide_09": {
+          "base": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993027511075126e-09
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993027511075126e-09
+          }
+        },
+        "DETAIL_SkinRivet_10": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0103497293475838e-07
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.113989575849148e-08
+          }
+        },
+        "DETAIL_RivetOxide_10": {
+          "base": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.9930244958751785e-09
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.9930244958751785e-09
+          }
+        },
+        "DETAIL_SkinRivet_11": {
+          "base": {
+            "vertices": 64,
+            "triangles": 124,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0103518331586242e-07
+          },
+          "evaluated": {
+            "vertices": 256,
+            "triangles": 508,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.114011504375e-08
+          }
+        },
+        "DETAIL_RivetOxide_11": {
+          "base": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993027511075533e-09
+          },
+          "evaluated": {
+            "vertices": 240,
+            "triangles": 480,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.993027511075533e-09
+          }
+        },
+        "DETAIL_EdgeWear": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.880398365154958e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.7028411311919e-12
+          }
+        },
+        "DETAIL_EdgeWear.001": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.695517930404023e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.588861292518709e-12
+          }
+        },
+        "DETAIL_EdgeWear.002": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.3321821353354287e-11
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.3086056880497704e-11
+          }
+        },
+        "DETAIL_EdgeWear.003": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 7.873580450501296e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 7.730494867216865e-12
+          }
+        },
+        "DETAIL_EdgeWear.004": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 6.7120288792970524e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 6.588166165839801e-12
+          }
+        },
+        "DETAIL_EdgeWear.005": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 7.548417556081266e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 7.410409892397927e-12
+          }
+        },
+        "DETAIL_EdgeWear.006": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.3553172833948776e-11
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.3313027078896331e-11
+          }
+        },
+        "DETAIL_EdgeWear.007": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.370298600576668e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 9.201365636742795e-12
+          }
+        },
+        "DETAIL_EdgeWear.008": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 8.925026023903141e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 8.763803567640445e-12
+          }
+        },
+        "DETAIL_EdgeWear.009": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.3333621875192383e-11
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.3098288355410215e-11
+          }
+        },
+        "DETAIL_EdgeWear.010": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2082291847375539e-11
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1867905815521792e-11
+          }
+        },
+        "DETAIL_EdgeWear.011": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2179380618127238e-11
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.1963053633163023e-11
+          }
+        },
+        "DETAIL_EdgeWear.012": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2677946098787536e-11
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2453231669391313e-11
+          }
+        },
+        "DETAIL_EdgeWear.013": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 7.557779699958594e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 7.419747742900202e-12
+          }
+        },
+        "DETAIL_EdgeWear.014": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.490579414735076e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.387399996161538e-12
+          }
+        },
+        "DETAIL_EdgeWear.015": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 4.6112296256288694e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 4.522846866996779e-12
+          }
+        },
+        "DETAIL_EdgeWear.016": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.3130903465977046e-11
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.289848151398524e-11
+          }
+        },
+        "DETAIL_EdgeWear.017": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 8.484964626270128e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 8.331153624508462e-12
+          }
+        },
+        "DETAIL_EdgeWear.018": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 8.479455371353128e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 8.325806404863843e-12
+          }
+        },
+        "DETAIL_EdgeWear.019": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.5313834512016837e-11
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.5044180136529123e-11
+          }
+        },
+        "DETAIL_EdgeWear.020": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2397290798808062e-11
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2177281047590816e-11
+          }
+        },
+        "DETAIL_EdgeWear.021": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.4267385647537165e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 5.3246859567121955e-12
+          }
+        },
+        "DETAIL_EdgeWear.022": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 4.2488606261227835e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 4.166747693811038e-12
+          }
+        },
+        "DETAIL_EdgeWear.023": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0340968275752525e-11
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.0155846146430459e-11
+          }
+        },
+        "DETAIL_EdgeWear.024": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2940748310339349e-11
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.2711473745586371e-11
+          }
+        },
+        "DETAIL_EdgeWear.025": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 8.233038344187878e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 8.083934231949815e-12
+          }
+        },
+        "DETAIL_EdgeWear.026": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 4.5741060004825e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 4.486249312700627e-12
+          }
+        },
+        "DETAIL_EdgeWear.027": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.516726473763762e-11
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.490041763678183e-11
+          }
+        },
+        "DETAIL_EdgeWear.028": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 8.142001517161897e-12
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 7.994308063245113e-12
+          }
+        },
+        "DETAIL_EdgeWear.029": {
+          "base": {
+            "vertices": 12,
+            "triangles": 20,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.3855180042204229e-11
+          },
+          "evaluated": {
+            "vertices": 144,
+            "triangles": 284,
+            "boundary_edges": 0,
+            "nonmanifold_edges": 0,
+            "inconsistent_edges": 0,
+            "degenerate_faces": 0,
+            "signed_volume_m3": 1.3610810542619461e-11
+          }
+        }
+      },
+      "evaluated_triangles": 126564,
+      "negative_volume_objects": [
+        "DETAIL_CurvedCopperSkin_3p8mm",
+        "DETAIL_HingeFixedLeaf",
+        "DETAIL_HingeFixedLeaf.001",
+        "DETAIL_HingeMovingLeaf",
+        "DETAIL_LatchFixedLug"
+      ],
+      "nonmanifold_objects": [],
+      "degenerate_objects": []
+    }
+  },
+  "hinge": {
+    "local_axis": "Z",
+    "angle_deg": 0.0,
+    "moving_children": 52,
+    "pivot_local_m": [
+      0.10999999940395355,
+      -0.01600000075995922,
+      0.0
+    ]
+  }
+}

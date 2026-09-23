@@ -41,7 +41,7 @@
 2. 点击顶部三角形 **Play**。先点击 **Game** 画面，使键盘输入进入游戏窗口。
 3. 本工程开启了官方 **XR Device Simulator**，只在 Editor 中自动创建。按 **Tab** 在头部与左右手之间切换，按 **U** 切换身体操作；以画面上的模拟器提示为准。
 4. **W/A/S/D** 控制当前设备的移动，**Q/E** 调整高度；按住鼠标右键操作头部视角。按 **T/Y** 切换左/右控制器操作，**G** 模拟握持键，鼠标左键模拟扳机。
-5. 中间的青色方块带有 **XR Grab Interactable**；地面带有 **Teleportation Area**，使用 XRI 的 Teleport 交互层。模拟器的 **1/3** 在摇杆输入和位置输入目标之间切换，完整映射见导入的 XR Device Simulator inputactions。
+5. 中间展台已替换为带有 **XR Grab Interactable** 的头盔简模：靠近并按住 **G** 抓取，松开后放下，按 **Home** 复位。详细说明见[头盔抓取原型](helmet-interaction.zh-CN.md)。地面带有 **Teleportation Area**，使用 XRI 的 Teleport 交互层。模拟器的 **1/3** 在摇杆输入和位置输入目标之间切换，完整映射见导入的 XR Device Simulator inputactions。
 6. 再次点击 Play 退出。**Play 期间对场景的临时改动不会自动保存到编辑状态。**
 
 这不是普通第一人称 WASD 控制器。模拟器可以帮助没有头显的组员预览与检查输入绑定，真实手柄的定位、传送和抓取仍需要设备测试。
