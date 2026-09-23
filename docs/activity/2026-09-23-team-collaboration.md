@@ -6,6 +6,8 @@
 
 头盔成果及课程记录已在[PR #1](https://github.com/Twispra/XRmuseum/pull/1)推送，但本轮核验时尚未合并。此轮使用独立 `codex/team-collaboration-2026-09-23` 分支，以 `2e912ae` 为基础，便于团队分别审查原型与协作改动。
 
+本轮审查入口为[草稿 PR #2](https://github.com/Twispra/XRmuseum/pull/2)；协作文件和验证证据提交为 [880dd83](https://github.com/Twispra/XRmuseum/commit/880dd83a5dfb6376f8124aa17cb58ff5949d1f24)。草稿表示等待团队审查采用，未合并、未代替人工审批。
+
 ## 检查结论与调整
 
 | 原流程中的问题 | 本轮调整 | 边界 |

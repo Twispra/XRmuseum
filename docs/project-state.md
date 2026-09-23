@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | 已集成主线 | `origin/main = cc7605e765100200881e4a9eb62a10f265bccba1`，9 月 22 日初始化工程 | 当时 clone main 只有基础展厅、抓取方块和 XR 环境 |
 | 头盔候选版本 | [PR #1](https://github.com/Twispra/XRmuseum/pull/1) 未合并；head `2e912aed3e5fdbe7c14dca9591821dcaf0e32013`，实现提交 `e7d819e` | Blender v02、Unity 头盔拿放/复位及证据已推送，尚不能称为全队主线已有 |
-| 本轮协作改动 | 分支 `codex/team-collaboration-2026-09-23` 基于以上候选版本 | 根 AGENTS、状态/课程索引、Issue/PR 模板及工具保护，作为后续 PR 审查；需要团队采用并合入 main，模板才对默认分支生效 |
+| 本轮协作改动 | [草稿 PR #2](https://github.com/Twispra/XRmuseum/pull/2)，分支 `codex/team-collaboration-2026-09-23` 基于以上候选版本 | 根 AGENTS、状态/课程索引、Issue/PR 模板及工具保护；需要团队审查采用并合入 main，模板才对默认分支生效 |
 | 仅本地环境差异 | 原工作区 `ProjectSettings.asset` 的 `preloadedAssets` 被清空，未随头盔提交 | 原头盔报告来自有此差异的环境。不得顺手提交、还原或把它当无害 UI 设置；需具体分析 XR 初始化后决定 |
 | 可执行构建 | 仅有 9 月 22 日初始化构建记录；无头盔版新构建 | 旧 exe 不能作为当前头盔版本的交付证据 |
 
