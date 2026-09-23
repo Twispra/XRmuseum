@@ -192,6 +192,7 @@ namespace Museum.Editor
                 "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/XR Device Simulator/XR Device Hand Controls.inputactions",
                 "MuseumVR/Assets/XRI/Settings/Resources/XRDeviceSimulatorSettings.asset",
                 "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+                "MuseumVR/Assets/Museum/Models/Helmet/helmet-graybox-v02.fbx",
                 "MuseumVR/Assets/Museum/Prefabs/HelmetExhibit.prefab",
                 "MuseumVR/Assets/Museum/Scripts/HelmetExhibitReset.cs",
                 "MuseumVR/Assets/Museum/Editor/HelmetPrototypeValidation.cs"
@@ -375,6 +376,15 @@ namespace Museum.Editor
             report.colliderCount = helmetColliders.Length;
             Require(helmetColliders.Length > 1 && helmetColliders.All(c => c is BoxCollider || c is SphereCollider || c is CapsuleCollider),
                 "compound colliders", report.colliderCount + " active primitive colliders.");
+            // A clone/worktree can contain LFS pointers while its serialized colliders still work.
+            // Reject an invisible exhibit before accepting the interaction checks.
+            var visibleMeshes = helmet.GetComponentsInChildren<MeshRenderer>();
+            Require(visibleMeshes.Length > 0 && visibleMeshes.All(renderer =>
+                renderer.enabled && renderer.GetComponent<MeshFilter>() != null &&
+                renderer.GetComponent<MeshFilter>().sharedMesh != null &&
+                renderer.GetComponent<MeshFilter>().sharedMesh.vertexCount > 0),
+                "helmet visual meshes imported", visibleMeshes.Length +
+                " active mesh renderers. If missing, hydrate Git LFS assets before opening Unity.");
             homePosition = body.position;
             homeRotation = body.rotation;
             var simulators = UnityEngine.Object.FindObjectsOfType<XRDeviceSimulator>();
