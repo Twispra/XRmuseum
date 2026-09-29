@@ -1,5 +1,7 @@
 # 项目状态与下一步
 
+**2026-09-29 功能分支交接（尚未合入 main）：** `codex/helmet-inspection-2026-09-29` 基于 fetch 后的 `origin/main = 4fe725294150a39ceba411f0d5088b51697e85ee`，已将前窗开合和剖面接入 `MuseumStart`，并按近距离试用反馈增加可调方向/深度的剖切工具、个人跟随面板和单手悬停观察。沿用原 XR 摄像头和输入映射。当前成果见[新版功能说明](helmet-advanced-inspection.zh-CN.md)、[本轮活动记录](activity/2026-09-29-advanced-inspection.md)和[小组交接](helmet-inspection-handoff.zh-CN.md)。这不表示远程 main 已包含新功能；以下 9 月 23 日表格保留为历史快照，不能据此判断当前 PR 状态。
+
 快照日期：2026-09-23。**先 fetch 并查看 GitHub，再判断当前主线。** 本文件随提交保存，不自动跟随远程变化；活动任务及负责人只在 [GitHub Issues](https://github.com/Twispra/XRmuseum/issues) 维护。
 
 ## 版本与交付状态
