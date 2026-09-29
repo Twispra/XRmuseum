@@ -1,0 +1,160 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
+
+namespace Museum.Inspection
+{
+    /// <summary>A world-space, one-hand palette. It stays still while the visitor aims or manipulates.</summary>
+    public sealed class HelmetInspectionPalette : MonoBehaviour
+    {
+        [SerializeField] HelmetInspectionController controller;
+        [SerializeField] Transform viewer;
+        [SerializeField] GameObject sectionOptions;
+        [SerializeField] TextMeshPro status;
+        [SerializeField] Vector3 viewerOffset = new Vector3(-.38f, .02f, .78f);
+        [SerializeField] bool followEnabled = true;
+        XRBaseInteractable[] controls;
+        Transform backPlate;
+        Vector3 anchorPosition;
+        Quaternion anchorYaw;
+        Vector3 destination;
+        Quaternion destinationRotation;
+        bool placed;
+        bool relocating;
+        bool layoutExpanded;
+        bool layoutDirty;
+        float outsideSince = -1;
+        int observedReset;
+
+        public Transform Viewer { get => viewer; set { viewer = value; placed = false; } }
+        public bool FollowEnabled { get => followEnabled; set => followEnabled = value; }
+        public bool IsFrozen { get; private set; }
+        public HelmetInspectionController Controller => controller;
+
+        public void Configure(HelmetInspectionController target, Transform camera, GameObject options, TextMeshPro statusText)
+        {
+            controller = target; viewer = camera; sectionOptions = options; status = statusText;
+            controls = GetComponentsInChildren<XRBaseInteractable>(true);
+            backPlate = transform.Find("Palette back");
+        }
+
+        void Start()
+        {
+            controls = GetComponentsInChildren<XRBaseInteractable>(true);
+            backPlate = transform.Find("Palette back");
+            if (!viewer && Camera.main) viewer = Camera.main.transform;
+            observedReset = controller ? controller.ResetCount : 0;
+            layoutExpanded = controller && controller.IsCutaway;
+            RecenterNow();
+        }
+
+        void LateUpdate()
+        {
+            if (!viewer || !controller) return;
+            bool selected = controller.IsHeld || controller.IsWindowHeld || controller.IsSectionHeld;
+            bool hovered = false;
+            foreach (var control in controls)
+                if (control && control.isActiveAndEnabled) { selected |= control.isSelected; hovered |= control.isHovered; }
+            bool lost = Vector3.Distance(viewer.position, transform.position) > 1.5f || Vector3.Dot(viewer.forward, transform.position - viewer.position) < -.15f;
+            IsFrozen = selected || (hovered && !lost);
+            if (layoutExpanded != controller.IsCutaway)
+            {
+                layoutExpanded = controller.IsCutaway;
+                layoutDirty = true;
+            }
+            if (sectionOptions && sectionOptions.activeSelf != controller.IsCutaway)
+                sectionOptions.SetActive(controller.IsCutaway);
+            if (backPlate)
+            {
+                backPlate.localPosition = new Vector3(0, controller.IsCutaway ? 0 : .10f, 0);
+                backPlate.localScale = new Vector3(.48f, controller.IsCutaway ? .64f : .44f, .025f);
+            }
+            if (status)
+            {
+                status.transform.localPosition = new Vector3(0,controller.IsCutaway ? -.275f : -.075f,-.025f);
+                status.text = controller.IsCutaway
+                    ? (controller.IsFloating ? "FLOATING  /  SECTION ON" : "SECTION ON") + "\nEDIT CUT: grip the cyan handle, move + twist"
+                    : "GRIP TO SELECT  /  ONE HAND\nFLOAT: pick up, turn freely, release to keep pose";
+            }
+            if (observedReset != controller.ResetCount)
+            {
+                observedReset = controller.ResetCount;
+                placed = false;
+            }
+            if (!followEnabled || IsFrozen) { outsideSince = -1; return; }
+            if (!placed) { RecenterNow(); return; }
+            if (layoutDirty)
+            {
+                anchorPosition = viewer.position; anchorYaw = Yaw();
+                ChooseDestination(); relocating = true; layoutDirty = false;
+            }
+            if (relocating)
+            {
+                float step = 1f - Mathf.Exp(-12f * Time.unscaledDeltaTime);
+                transform.position = Vector3.Lerp(transform.position, destination, step);
+                transform.rotation = Quaternion.Slerp(transform.rotation, destinationRotation, step);
+                Physics.SyncTransforms();
+                if (Vector3.Distance(transform.position, destination) < .002f && Quaternion.Angle(transform.rotation, destinationRotation) < .5f)
+                    relocating = false;
+                return;
+            }
+            var yaw = Yaw();
+            // Looking at a side button must not make it move away. Turn only after a large heading change.
+            bool outside = Vector3.Distance(viewer.position, anchorPosition) > .25f || Quaternion.Angle(yaw, anchorYaw) > 75f;
+            if (!outside) { outsideSince = -1; return; }
+            if (outsideSince < 0) outsideSince = Time.unscaledTime;
+            if (Time.unscaledTime - outsideSince > .65f)
+            { anchorPosition = viewer.position; anchorYaw = yaw; ChooseDestination(); relocating = true; outsideSince = -1; }
+        }
+
+        public void RecenterNow()
+        {
+            if (!viewer) return;
+            anchorPosition = viewer.position; anchorYaw = Yaw();
+            ChooseDestination();
+            transform.SetPositionAndRotation(destination, destinationRotation);
+            Physics.SyncTransforms();
+            outsideSince = -1; placed = true; relocating = false; layoutDirty = false;
+        }
+
+        void ChooseDestination()
+        {
+            // A seated visitor or someone beside the plinth must not have controls placed inside its collider.
+            var offsets = new[] { viewerOffset, new Vector3(.38f,.02f,.78f),
+                new Vector3(-.38f,.18f,.85f),new Vector3(.38f,.18f,.85f),
+                new Vector3(-.65f,-.16f,.35f),new Vector3(.65f,-.16f,.35f),
+                new Vector3(-.85f,-.12f,.25f),new Vector3(.85f,-.12f,.25f),
+                new Vector3(-.38f,-.12f,.20f),new Vector3(.38f,-.12f,.20f),
+                new Vector3(-.48f,.25f,.6f),new Vector3(.48f,.25f,.6f) };
+            foreach (var offset in offsets)
+            {
+                var position = anchorPosition + anchorYaw * offset;
+                var forward = Vector3.ProjectOnPlane(position - anchorPosition, Vector3.up).normalized;
+                var rotation = Quaternion.LookRotation(forward, Vector3.up);
+                // Hidden section rows must not push the compact menu above the visitor's view.
+                bool expanded = controller && controller.IsCutaway;
+                var center = position + (expanded ? Vector3.zero : Vector3.up * .10f);
+                var halfSize = new Vector3(.26f, expanded ? .34f : .24f, .05f);
+                bool blocked = false;
+                foreach (var hit in Physics.OverlapBox(center, halfSize, rotation, ~0, QueryTriggerInteraction.Ignore))
+                {
+                    if (hit.transform.IsChildOf(transform) || hit.transform.IsChildOf(viewer.root)) continue;
+                    // A portable panel must not occupy the exhibit being inspected.
+                    if (hit.attachedRigidbody && (!controller || !hit.transform.IsChildOf(controller.transform))) continue;
+                    blocked = true; break;
+                }
+                if (blocked) continue;
+                destination = position; destinationRotation = rotation; return;
+            }
+            // No arbitrary teleport across the room: retain the previous known position when locally crowded.
+            destination = placed ? transform.position : anchorPosition + anchorYaw * viewerOffset;
+            destinationRotation = placed ? transform.rotation : anchorYaw;
+        }
+
+        Quaternion Yaw()
+        {
+            var direction = Vector3.ProjectOnPlane(viewer.forward, Vector3.up);
+            return direction.sqrMagnitude > .01f ? Quaternion.LookRotation(direction, Vector3.up) : (placed ? anchorYaw : Quaternion.identity);
+        }
+    }
+}
