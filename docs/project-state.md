@@ -1,5 +1,9 @@
 # 项目状态与下一步
 
+**2026-09-30 PR #3 评论修复（仍在功能分支）：** 已复现组员指出的剖切球柄跳变，修改为保留连续局部方向及完整手腕旋转；最新源码为 `0d31e426cb97c8cd838ebb8ac050d5874e24c3bb`，见[修复、测试与复查步骤](activity/2026-09-30-section-continuity-review.md)。此次没有再改主场景、Prefab 或输入配置。原 140 项验收遗漏了该临界情况，旧通过结果不代表问题不存在。[PR #3](https://github.com/Twispra/XRmuseum/pull/3) 等待组员复查，未自动合并；真实设备与构建仍待完成。
+
+**2026-09-29 功能分支交接（尚未合入 main）：** `codex/helmet-inspection-2026-09-29` 基于 fetch 后的 `origin/main = 4fe725294150a39ceba411f0d5088b51697e85ee`，已将前窗开合和剖面接入 `MuseumStart`，并按近距离试用反馈增加可调方向/深度的剖切工具、个人跟随面板和单手悬停观察。沿用原 XR 摄像头和输入映射。当前成果见[新版功能说明](helmet-advanced-inspection.zh-CN.md)、[本轮活动记录](activity/2026-09-29-advanced-inspection.md)和[小组交接](helmet-inspection-handoff.zh-CN.md)。这不表示远程 main 已包含新功能；以下 9 月 23 日表格保留为历史快照，不能据此判断当前 PR 状态。
+
 快照日期：2026-09-23。**先 fetch 并查看 GitHub，再判断当前主线。** 本文件随提交保存，不自动跟随远程变化；活动任务及负责人只在 [GitHub Issues](https://github.com/Twispra/XRmuseum/issues) 维护。
 
 ## 版本与交付状态

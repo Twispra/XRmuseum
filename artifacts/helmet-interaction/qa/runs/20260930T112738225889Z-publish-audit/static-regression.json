@@ -1,0 +1,58 @@
+{
+  "timestampUtc": "2026-09-30T11:27:38.153557+00:00",
+  "baselineCommit": "4fe725294150a39ceba411f0d5088b51697e85ee",
+  "sourceCommit": "0d31e426cb97c8cd838ebb8ac050d5874e24c3bb",
+  "protectedPathsUnchanged": {
+    "MuseumVR/Packages": true,
+    "MuseumVR/ProjectSettings": true,
+    "MuseumVR/Assets/Samples": true,
+    "MuseumVR/Assets/Museum/Models": true,
+    "MuseumVR/Assets/Museum/Prefabs": true,
+    "MuseumVR/Assets/Museum/Scripts": true,
+    "MuseumVR/Assets/Museum/Editor": true,
+    "MuseumVR/Assets/Museum/Materials": true
+  },
+  "sceneBlocks": {
+    "baselineCount": 141,
+    "currentCount": 318,
+    "changedExisting": [
+      {
+        "fileID": "1034370601",
+        "type": 114
+      },
+      {
+        "fileID": "2055464003",
+        "type": 114
+      },
+      {
+        "fileID": "444948335",
+        "type": 4
+      },
+      {
+        "fileID": "829167121",
+        "type": 1001
+      }
+    ],
+    "deletedOldHelmetInstanceBlocks": [
+      {
+        "fileID": "1587781041",
+        "type": 1001
+      },
+      {
+        "fileID": "1587781042",
+        "type": 114
+      },
+      {
+        "fileID": "1587781043",
+        "type": 4
+      }
+    ]
+  },
+  "newMetaCount": 31,
+  "duplicateNewGuids": {},
+  "missingMeta": [],
+  "unresolvedReferencedGuids": [],
+  "sourceWorkingTreeClean": true,
+  "limitations": "Static comparison and reference lookup, not runtime, player-build, headset, rendering-equivalence or user validation. Expected scene changes are reset target, instruction plaque, Trigger query overrides and station child references. Read-only review also compared four physical collider shapes and ordinary grab/rigidbody settings.",
+  "passed": true
+}

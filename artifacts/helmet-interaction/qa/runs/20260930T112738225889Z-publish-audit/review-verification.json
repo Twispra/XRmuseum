@@ -1,0 +1,76 @@
+{
+  "sourceCommit": "0d31e426cb97c8cd838ebb8ac050d5874e24c3bb",
+  "baselineBeforeFix": {
+    "report": "artifacts/helmet-interaction/qa/runs/20260930T111524229Z-section-continuity-0c4e42876dec4c638eafb6ab5b311586/report.json",
+    "status": "failed",
+    "failedCases": 24,
+    "exitCodeObserved": 1,
+    "capture": "ExitCode read after WaitForExit in the same PowerShell process; observed in the initial baseline command output."
+  },
+  "finalRuns": {
+    "geometry": {
+      "report": "artifacts/helmet-interaction/qa/runs/20260930T112453300Z-section-continuity-a25fee620df5417e94404684444d64fd/report.json",
+      "reportSha256": "d8cfe8efdb0fea6ee02ac5136574bdfef86ae318ade143f4958e8dd55a131219",
+      "testedCommit": "a6aae95a2ca401dfd1f2a3e0648700ac99a4fa15",
+      "inputHashesMatched": 7,
+      "inputHashMismatches": [],
+      "status": "passed",
+      "durationSeconds": 0.3656851000000003,
+      "entry": "Museum.Inspection.Editor.HelmetSectionContinuityValidation.RunBatch",
+      "startedUtc": "2026-09-30T11:24:41.1284555Z",
+      "finishedUtc": "2026-09-30T11:24:54.4321406Z",
+      "exitCode": 0,
+      "timedOut": false,
+      "processCapture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+      "cases": 40,
+      "failedCases": 0
+    },
+    "main": {
+      "report": "artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/report.json",
+      "reportSha256": "cb18487769530a7117a3d30913ac2a7fc251de67d293ee373984906a904e5bee",
+      "testedCommit": "0d31e426cb97c8cd838ebb8ac050d5874e24c3bb",
+      "inputHashesMatched": 64,
+      "inputHashMismatches": [],
+      "status": "passed",
+      "durationSeconds": 75.97821807861328,
+      "entry": "Museum.Inspection.Editor.HelmetInspectionValidation.RunMainBatch",
+      "startedUtc": "2026-09-30T11:27:26.6120988Z",
+      "finishedUtc": "2026-09-30T11:28:58.9961636Z",
+      "exitCode": 0,
+      "timedOut": false,
+      "processCapture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+      "checks": 207,
+      "failedChecks": 0
+    },
+    "baseline": {
+      "report": "artifacts/helmet-interaction/qa/runs/20260930T112506617Z-7627b9c7c2bb488fba30259ae04fb68f/playmode-validation.json",
+      "reportSha256": "297d5e1ee796dd61bce957dac97927f7c6bb6871dbfa4ef7415aa46340d75f62",
+      "testedCommit": "a6aae95a2ca401dfd1f2a3e0648700ac99a4fa15",
+      "inputHashesMatched": 14,
+      "inputHashMismatches": [],
+      "status": "passed",
+      "durationSeconds": 47.719966888427734,
+      "entry": "Museum.Editor.HelmetPrototypeValidation.RunBatch",
+      "startedUtc": "2026-09-30T11:24:54.4563668Z",
+      "finishedUtc": "2026-09-30T11:25:58.1714441Z",
+      "exitCode": 0,
+      "timedOut": false,
+      "processCapture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+      "checks": 90,
+      "failedChecks": 0,
+      "completedCycles": 10
+    }
+  },
+  "staticReport": "artifacts/helmet-interaction/qa/runs/20260930T112738225889Z-publish-audit/static-regression.json",
+  "unityChangesSinceGeometryAndBaselineRuns": [
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionValidation.cs"
+  ],
+  "unitySourceWorkingTreeClean": true,
+  "observedLogWarnings": {
+    "linearVelocityOnKinematicBodyCount": 0,
+    "angularVelocityOnKinematicBodyCount": 0,
+    "velocityWarningStack": "UnityEngine.XR.Interaction.Toolkit.XRGrabInteractable.PerformVelocityTrackingUpdate (XRI 2.6.4)",
+    "shutdownLeftoverWebRequests": false,
+    "note": "Report errors=[] does not mean the whole Editor log is warning-free. The previous test fixture generated XRI velocity warnings by setting floating in the same tick as Reset; the final test waits for the reset update before configuring floating. These counts come from the final log; no XRI or floating product code was changed."
+  }
+}
