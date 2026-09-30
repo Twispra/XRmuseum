@@ -17,6 +17,8 @@ namespace Museum.Inspection
         Vector3 initialHandPosition, initialPlanePoint, initialHandlePosition;
         Quaternion initialHandRotation, initialPlaneRotation;
         Vector3 visualOffsetInPlane;
+        Vector3 guideNormalLocal, guideRightLocal;
+        bool guideFrameReady;
         bool visualOffsetCaptured, cancelling, showTool;
         public HelmetInspectionController Controller => controller;
         public bool ShowTool
@@ -55,6 +57,7 @@ namespace Museum.Inspection
         }
         public void Configure(HelmetInspectionController inspectionController)
         {
+            if (controller != inspectionController) guideFrameReady = false;
             controller = inspectionController;
             if (controller != null) controller.RegisterSection(this);
             selectMode = InteractableSelectMode.Single;
@@ -88,7 +91,10 @@ namespace Museum.Inspection
                 // Keep the initial handle-to-plane offset: a ray grab never snaps the guide onto the hand.
                 Vector3 anchor = initialHandlePosition + (position - initialHandPosition);
                 Vector3 point = anchor + delta * (initialPlanePoint - initialHandlePosition);
-                controller.SetSectionFromWorldPose(point, delta * initialPlaneRotation);
+                Quaternion rotationInWorld = delta * initialPlaneRotation;
+                controller.SetSectionFromWorldPose(point, rotationInWorld);
+                // A normal alone loses wrist roll. Keep the whole hand-driven frame for release/regrab.
+                RememberGuideFrame(rotationInWorld);
             }
             UpdateGuidePose();
         }
@@ -168,11 +174,48 @@ namespace Museum.Inspection
         }
         Quaternion PlaneRotation()
         {
+            Vector3 normal = controller.SectionNormalLocal;
+            if (!guideFrameReady)
+            {
+                // Seed once from the authored/current tool, rather than selecting a new up axis every frame.
+                guideRightLocal = Tangent(normal, controller.transform.worldToLocalMatrix.MultiplyVector(transform.right));
+                guideFrameReady = true;
+            }
+            else
+            {
+                Vector3 axis = Vector3.Cross(guideNormalLocal, normal);
+                float sine = axis.magnitude;
+                float cosine = Mathf.Clamp(Vector3.Dot(guideNormalLocal, normal), -1f, 1f);
+                if (sine > .0000001f)
+                    guideRightLocal = Quaternion.AngleAxis(Mathf.Atan2(sine, cosine) * Mathf.Rad2Deg, axis / sine) * guideRightLocal;
+                // At an exact 180-degree flip, keep the old right as the rotation axis and knob side.
+                guideRightLocal = Tangent(normal, guideRightLocal);
+            }
+            guideNormalLocal = normal;
             Vector4 plane = controller.WorldSectionPlane;
-            Vector3 forward = new Vector3(plane.x, plane.y, plane.z);
-            Vector3 up = controller.transform.up;
-            if (Mathf.Abs(Vector3.Dot(forward, up)) > .98f) up = controller.transform.forward;
-            return Quaternion.LookRotation(forward, up);
+            Vector3 forward = new Vector3(plane.x, plane.y, plane.z).normalized;
+            // Tangents transform as vectors; the controller transforms normals by inverse transpose.
+            Vector3 right = Tangent(forward, controller.transform.localToWorldMatrix.MultiplyVector(guideRightLocal));
+            return Quaternion.LookRotation(forward, Vector3.Cross(forward, right));
+        }
+        void RememberGuideFrame(Quaternion rotationInWorld)
+        {
+            guideNormalLocal = controller.SectionNormalLocal;
+            guideRightLocal = Tangent(guideNormalLocal,
+                controller.transform.worldToLocalMatrix.MultiplyVector(rotationInWorld * Vector3.right));
+            guideFrameReady = true;
+        }
+        static Vector3 Tangent(Vector3 normal, Vector3 right)
+        {
+            Vector3 tangent = Vector3.ProjectOnPlane(right, normal);
+            if (tangent.sqrMagnitude < .00000001f)
+            {
+                // Only an uninitialised/degenerate frame needs a seed. Valid transported frames keep their side.
+                Vector3 seed = Mathf.Abs(normal.x) < Mathf.Abs(normal.y) ? Vector3.right : Vector3.up;
+                if (Mathf.Abs(normal.z) < Mathf.Abs(Vector3.Dot(normal, seed))) seed = Vector3.forward;
+                tangent = Vector3.ProjectOnPlane(seed, normal);
+            }
+            return tangent.normalized;
         }
         void UpdateGuidePose()
         {

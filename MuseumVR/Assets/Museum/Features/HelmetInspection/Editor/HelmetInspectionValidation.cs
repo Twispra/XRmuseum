@@ -107,6 +107,20 @@ namespace Museum.Inspection.Editor
             public bool homeKeyDown;
             public Vector3 position, velocity, hand, target;
         }
+        [Serializable] class SectionInputStep
+        {
+            public float inputDegrees, inputDeltaDegrees, guideRotationDeltaDegrees, maximumRotationDeltaDegrees;
+            public float knobDisplacementMeters, maximumKnobDisplacementMeters;
+            public float guideRotationErrorDegrees, knobPositionErrorMeters, normalErrorDegrees, centerErrorMeters;
+            public float rootPositionErrorMeters, rootRotationErrorDegrees;
+            public bool toolSelected;
+        }
+        [Serializable] class SectionInputTrace
+        {
+            public string name;
+            public Vector3 rootEulerDegrees;
+            public List<SectionInputStep> steps = new List<SectionInputStep>();
+        }
         [Serializable] class Report
         {
             public string timestampUtc, unityVersion, scene, inputMethod, limitations, status = "running", failure = "";
@@ -119,6 +133,7 @@ namespace Museum.Inspection.Editor
             public List<string> errors = new List<string>();
             public List<Sample> samples = new List<Sample>();
             public List<string> inputDiagnostics = new List<string>();
+            public List<SectionInputTrace> sectionInputContinuity = new List<SectionInputTrace>();
         }
 
         static HelmetInspectionValidation()
@@ -791,7 +806,175 @@ namespace Museum.Inspection.Editor
             inspection.SetSectionPlane(Vector3.up,100f);
             Require(Mathf.Abs(inspection.SectionOffset)<=inspection.SectionRange+.001f,"section depth remains bounded","Explicit API clamp prevents accidental disappearance.");
             inspection.ResetSection();
+            yield return ValidateSectionInputContinuity(tool);
             palette.FollowEnabled=true;
+        }
+
+        static IEnumerator ValidateSectionInputContinuity(HelmetSectionInteractable tool)
+        {
+            // Only the fixture uses direct APIs. Every select, move, wrist rotation, release and
+            // regrab below is sent through the production controller's Input System state.
+            var rootPoses = new[] { Vector3.zero, new Vector3(25,40,17) };
+            var positive = new[] {77f,78f,78.51f,78.53f,80f,84f,88f,89.5f,90f,90.5f,92f,96f,
+                92f,90.5f,90f,89.5f,88f,84f,80f,78.53f,78.51f,78f,77f};
+            var negative = positive.Select(angle => -angle).ToArray();
+            var roll = new[] {0f,5f,15f,30f,45f,30f,15f,0f,-15f,-30f,-45f};
+            foreach (var euler in rootPoses)
+            {
+                yield return SectionInputSequence(tool,euler,"positive threshold and pole",positive,false);
+                yield return SectionInputSequence(tool,euler,"negative threshold and pole",negative,false);
+                yield return SectionInputSequence(tool,euler,"pure roll",roll,true);
+            }
+            phase="section continuity explicit API boundaries";
+            var knob=tool.colliders[0].transform;
+            var beforeFlipRotation=tool.transform.rotation;var beforeFlipKnob=knob.position;
+            inspection.FlipSection();yield return Wait(.1f);
+            inspection.FlipSection();yield return Wait(.1f);
+            Require(SectionQuaternionAngle(beforeFlipRotation,tool.transform.rotation)<.1f && Vector3.Distance(beforeFlipKnob,knob.position)<.001f,
+                "API two flips restore guide frame and knob", "Explicit API round-trip check after a nonzero XR wrist roll. "+SectionPoseDetail(tool,knob,beforeFlipRotation,beforeFlipKnob));
+            var localGuideRotation=Quaternion.Inverse(inspection.transform.rotation)*tool.transform.rotation;
+            var localKnob=inspection.transform.InverseTransformPoint(knob.position);
+            var rootBeforeHide=inspection.transform.rotation;
+            tool.ShowTool=false;
+            inspection.RotateDisplayAround(Vector3.up,35f);
+            yield return Wait(.1f);
+            tool.ShowTool=true;yield return Wait(.1f);
+            float localFrameError=SectionQuaternionAngle(localGuideRotation,Quaternion.Inverse(inspection.transform.rotation)*tool.transform.rotation);
+            float localKnobError=Vector3.Distance(localKnob,inspection.transform.InverseTransformPoint(knob.position));
+            Require(SectionQuaternionAngle(rootBeforeHide,inspection.transform.rotation)>34f && localFrameError<.1f && localKnobError<.001f,
+                "API hide rotate show preserves helmet-local frame", "Explicit API fixture check; local rotation error="+localFrameError+" degrees; local knob error="+localKnobError+" m.");
+            QueueRight(new Vector3(1,1,1),Quaternion.Euler(-80,0,0),false);
+            yield return Wait(.15f);
+            inspection.ResetInspection(); // Explicit fixture cleanup; does not count as an input test.
+            yield return Wait(.15f);
+        }
+
+        static IEnumerator SectionInputSequence(HelmetSectionInteractable tool, Vector3 euler, string label, float[] angles, bool roll)
+        {
+            phase="section XR continuity: "+label+" root "+euler;
+            var trace=new SectionInputTrace { name=label,rootEulerDegrees=euler };
+            report.sectionInputContinuity.Add(trace);
+            QueueRight(new Vector3(1,1,1),Quaternion.Euler(-80,0,0),false);
+            QueueController(leftDevice,new Vector3(-1,1,1),Quaternion.Euler(-80,0,0),false);
+            yield return Wait(.15f);
+            inspection.ResetInspection();
+            inspection.ToggleFloating();
+            var fixedRootPosition=homePosition+Vector3.up*.35f;
+            var fixedRootRotation=Quaternion.Euler(euler);
+            body.position=fixedRootPosition;body.rotation=fixedRootRotation;
+            inspection.transform.SetPositionAndRotation(fixedRootPosition,fixedRootRotation);
+            float initialTheta=roll ? 30f : angles[0];
+            float radians=initialTheta*Mathf.Deg2Rad;
+            inspection.SetSectionPlane(new Vector3(Mathf.Cos(radians),Mathf.Sin(radians),0),0f);
+            inspection.SetCutaway(true);tool.ShowTool=true;
+            Physics.SyncTransforms();
+            yield return Wait(.15f);
+            var knob=tool.colliders[0].transform;
+            var center=inspection.transform.TransformPoint(inspection.SectionPointLocal);
+            var touch=tool.colliders[0].bounds.center;
+            var initialKnob=knob.position;
+            var initialGuideRotation=tool.transform.rotation;
+            var initialNormal=tool.transform.forward;
+            var axis=roll ? initialNormal : fixedRootRotation*Vector3.forward;
+            var initialHandRotation=Quaternion.identity;
+            int resetsBefore=reset.ResetCount;
+            Require(inspection.IsFloating && body.isKinematic && !body.useGravity && tool.ShowTool,
+                phase+" floating fixture", "API setup fixes the root and initial normal; selection and wrist motion below are synthetic XR input.");
+            QueueRight(touch,initialHandRotation,false);yield return Wait(.15f);
+            QueueRight(touch,initialHandRotation,true);yield return Wait(.15f);
+            Require(tool.isSelected && tool.interactorsSelecting[0] is XRDirectInteractor && !helmet.isSelected && !window.isSelected,
+                phase+" direct grip", "Saved section collider selected by QueueRight -> InputSystem -> XRDirectInteractor.");
+            Require(SectionQuaternionAngle(initialGuideRotation,tool.transform.rotation)<.1f && Vector3.Distance(initialKnob,knob.position)<.001f,
+                phase+" grip does not jump", "Selecting a stationary handle must preserve its visual orientation and knob position.");
+            var previousGuide=tool.transform.rotation;
+            var previousKnob=knob.position;
+            var previousTargetKnob=initialKnob;
+            var lastHandRotation=initialHandRotation;
+            var lastHandPosition=touch;
+            float previousDegrees=angles[0];
+            for(int i=1;i<angles.Length;i++)
+            {
+                float degrees=angles[i]-angles[0];
+                var delta=Quaternion.AngleAxis(degrees,axis);
+                // Move the held hand on the same circular path as the saved knob. Combined
+                // translation + wrist rotation keeps the plane's canonical center stationary.
+                var targetKnob=center+delta*(initialKnob-center);
+                lastHandPosition=touch+(targetKnob-initialKnob);
+                lastHandRotation=delta*initialHandRotation;
+                QueueRight(lastHandPosition,lastHandRotation,true);
+                yield return Wait(.065f);
+                float inputDelta=Mathf.Abs(angles[i]-previousDegrees);
+                var plane=inspection.WorldSectionPlane;
+                var planeNormal=new Vector3(plane.x,plane.y,plane.z);
+                var step=new SectionInputStep
+                {
+                    inputDegrees=angles[i],inputDeltaDegrees=inputDelta,
+                    guideRotationDeltaDegrees=SectionQuaternionAngle(previousGuide,tool.transform.rotation),
+                    maximumRotationDeltaDegrees=inputDelta*1.5f+.12f,
+                    knobDisplacementMeters=Vector3.Distance(previousKnob,knob.position),
+                    maximumKnobDisplacementMeters=Vector3.Distance(previousTargetKnob,targetKnob)*2f+.001f,
+                    guideRotationErrorDegrees=SectionQuaternionAngle(delta*initialGuideRotation,tool.transform.rotation),
+                    knobPositionErrorMeters=Vector3.Distance(targetKnob,knob.position),
+                    normalErrorDegrees=Mathf.Max(Vector3.Angle(delta*initialNormal,tool.transform.forward),Vector3.Angle(planeNormal,tool.transform.forward)),
+                    centerErrorMeters=Vector3.Distance(center,tool.transform.position),
+                    rootPositionErrorMeters=Vector3.Distance(fixedRootPosition,inspection.transform.position),
+                    rootRotationErrorDegrees=SectionQuaternionAngle(fixedRootRotation,inspection.transform.rotation),
+                    toolSelected=tool.isSelected && inspection.IsSectionHeld && !helmet.isSelected && !window.isSelected
+                };
+                trace.steps.Add(step);
+                previousGuide=tool.transform.rotation;previousKnob=knob.position;previousTargetKnob=targetKnob;previousDegrees=angles[i];
+            }
+            string diagnostics=SectionTraceDiagnostics(trace);
+            Require(trace.steps.All(s=>s.toolSelected) && reset.ResetCount==resetsBefore,
+                phase+" grip stays on section",diagnostics);
+            Require(trace.steps.All(s=>s.guideRotationDeltaDegrees<=s.maximumRotationDeltaDegrees && s.knobDisplacementMeters<=s.maximumKnobDisplacementMeters),
+                phase+" visual guide and knob remain continuous",diagnostics);
+            Require(trace.steps.All(s=>s.guideRotationErrorDegrees<.15f && s.knobPositionErrorMeters<.001f && s.normalErrorDegrees<.15f && s.centerErrorMeters<.001f),
+                phase+" guide follows full wrist pose",diagnostics);
+            Require(trace.steps.All(s=>s.rootPositionErrorMeters<.001f && s.rootRotationErrorDegrees<.1f),
+                phase+" root remains fixed",diagnostics);
+            if(roll)
+                Require(Vector3.Angle(initialNormal,tool.transform.forward)<.15f && SectionQuaternionAngle(initialGuideRotation,tool.transform.rotation)>40f && Vector3.Distance(initialKnob,knob.position)>.15f,
+                    phase+" roll is visible with unchanged normal", "Normal-only behavior is insufficient: actual guide orientation and offset knob must respond to the wrist roll. "+diagnostics);
+
+            // Keep the final nonzero roll in place when releasing and approaching the same
+            // knob with a differently oriented hand. Regrabbing must establish a new relative pose.
+            var releasedGuide=tool.transform.rotation;var releasedKnob=knob.position;
+            QueueRight(lastHandPosition,lastHandRotation,false);yield return Wait(.15f);
+            Require(!tool.isSelected && body.isKinematic && inspection.IsFloating && SectionQuaternionAngle(releasedGuide,tool.transform.rotation)<.1f && Vector3.Distance(releasedKnob,knob.position)<.001f,
+                phase+" release preserves guide pose", "Release is real XR grip-up; floating removes gravity as a confounding factor. "+SectionPoseDetail(tool,knob,releasedGuide,releasedKnob));
+            var regrabRotation=Quaternion.Euler(10,40,20);
+            var regrabPosition=tool.colliders[0].bounds.center;
+            QueueRight(regrabPosition,regrabRotation,false);yield return Wait(.15f);
+            QueueRight(regrabPosition,regrabRotation,true);yield return Wait(.15f);
+            Require(tool.isSelected && tool.interactorsSelecting[0] is XRDirectInteractor && SectionQuaternionAngle(releasedGuide,tool.transform.rotation)<.1f && Vector3.Distance(releasedKnob,knob.position)<.001f,
+                phase+" regrab preserves guide pose", "New hand orientation must not reset the guide roll. "+SectionPoseDetail(tool,knob,releasedGuide,releasedKnob));
+            yield return Wait(.1f);
+            Require(tool.isSelected && SectionQuaternionAngle(releasedGuide,tool.transform.rotation)<.1f && Vector3.Distance(releasedKnob,knob.position)<.001f,
+                phase+" stationary regrab has no drift",SectionPoseDetail(tool,knob,releasedGuide,releasedKnob));
+            QueueRight(regrabPosition,regrabRotation,false);yield return Wait(.15f);
+        }
+
+        static string SectionTraceDiagnostics(SectionInputTrace trace)
+        {
+            return "root="+trace.rootEulerDegrees+"; "+string.Join(" | ",trace.steps.Select(s=>
+                "input="+s.inputDegrees+" delta="+s.inputDeltaDegrees+" guideDelta="+s.guideRotationDeltaDegrees+"/"+s.maximumRotationDeltaDegrees+
+                " knobDelta="+s.knobDisplacementMeters+"/"+s.maximumKnobDisplacementMeters+" guideError="+s.guideRotationErrorDegrees+
+                " knobError="+s.knobPositionErrorMeters+" normalError="+s.normalErrorDegrees+" centerError="+s.centerErrorMeters+
+                " rootError="+s.rootPositionErrorMeters+","+s.rootRotationErrorDegrees+" selected="+s.toolSelected));
+        }
+
+        static string SectionPoseDetail(HelmetSectionInteractable tool,Transform knob,Quaternion rotation,Vector3 position)
+        {
+            return "selected="+tool.isSelected+"; guide rotation drift="+SectionQuaternionAngle(rotation,tool.transform.rotation)+"; knob drift="+Vector3.Distance(position,knob.position);
+        }
+
+        static float SectionQuaternionAngle(Quaternion a,Quaternion b)
+        {
+            double dot=(double)a.x*b.x+(double)a.y*b.y+(double)a.z*b.z+(double)a.w*b.w;
+            double a2=(double)a.x*a.x+(double)a.y*a.y+(double)a.z*a.z+(double)a.w*a.w;
+            double b2=(double)b.x*b.x+(double)b.y*b.y+(double)b.z*b.z+(double)b.w*b.w;
+            return (float)(2*Math.Acos(Math.Min(1,Math.Abs(dot)/Math.Sqrt(a2*b2)))*180/Math.PI);
         }
 
         static void QueueHeadPose(Vector3 world,Quaternion rotation)
