@@ -828,17 +828,27 @@ namespace Museum.Inspection.Editor
             phase="section continuity explicit API boundaries";
             var knob=tool.colliders[0].transform;
             var beforeFlipRotation=tool.transform.rotation;var beforeFlipKnob=knob.position;
+            var beforeFlipNormal=inspection.SectionNormalLocal;var beforeFlipOffset=inspection.SectionOffset;
             inspection.FlipSection();yield return Wait(.1f);
+            var flippedPlane=inspection.WorldSectionPlane;
+            Require(Vector3.Dot(beforeFlipNormal,inspection.SectionNormalLocal)<-.9999f && Mathf.Abs(inspection.SectionOffset+beforeFlipOffset)<.0001f &&
+                Vector3.Angle(tool.transform.forward,new Vector3(flippedPlane.x,flippedPlane.y,flippedPlane.z))<.1f,
+                "API first flip reverses the actual plane", "Check the first flip took effect before checking its round trip.");
             inspection.FlipSection();yield return Wait(.1f);
             Require(SectionQuaternionAngle(beforeFlipRotation,tool.transform.rotation)<.1f && Vector3.Distance(beforeFlipKnob,knob.position)<.001f,
                 "API two flips restore guide frame and knob", "Explicit API round-trip check after a nonzero XR wrist roll. "+SectionPoseDetail(tool,knob,beforeFlipRotation,beforeFlipKnob));
             var localGuideRotation=Quaternion.Inverse(inspection.transform.rotation)*tool.transform.rotation;
             var localKnob=inspection.transform.InverseTransformPoint(knob.position);
             var rootBeforeHide=inspection.transform.rotation;
+            var toolRenderers=tool.GetComponentsInChildren<Renderer>(true);
             tool.ShowTool=false;
+            Require(!tool.ShowTool && tool.colliders.Count>0 && tool.colliders.All(c=>!c.enabled) && toolRenderers.Length>0 && toolRenderers.All(r=>!r.enabled),
+                "API hides guide renderers and colliders", "Hidden guide must not remain visible or selectable.");
             inspection.RotateDisplayAround(Vector3.up,35f);
             yield return Wait(.1f);
             tool.ShowTool=true;yield return Wait(.1f);
+            Require(tool.ShowTool && tool.colliders.All(c=>c.enabled && c.gameObject.activeInHierarchy) && toolRenderers.All(r=>r.enabled && r.gameObject.activeInHierarchy),
+                "API reshow restores guide renderers and colliders", "Reappearing guide must restore both visuals and interaction targets.");
             float localFrameError=SectionQuaternionAngle(localGuideRotation,Quaternion.Inverse(inspection.transform.rotation)*tool.transform.rotation);
             float localKnobError=Vector3.Distance(localKnob,inspection.transform.InverseTransformPoint(knob.position));
             Require(SectionQuaternionAngle(rootBeforeHide,inspection.transform.rotation)>34f && localFrameError<.1f && localKnobError<.001f,
