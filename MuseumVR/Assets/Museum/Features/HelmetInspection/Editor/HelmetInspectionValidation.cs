@@ -868,6 +868,8 @@ namespace Museum.Inspection.Editor
             QueueController(leftDevice,new Vector3(-1,1,1),Quaternion.Euler(-80,0,0),false);
             yield return Wait(.15f);
             inspection.ResetInspection();
+            // Let XRI consume Reset's pending target pose before the fixture makes the body kinematic.
+            yield return Wait(.15f);
             inspection.ToggleFloating();
             var fixedRootPosition=homePosition+Vector3.up*.35f;
             var fixedRootRotation=Quaternion.Euler(euler);
