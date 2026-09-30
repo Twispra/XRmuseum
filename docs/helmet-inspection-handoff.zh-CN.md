@@ -2,7 +2,9 @@
 
 这次把前窗开合、可调剖面和近距离操作接入了原来的 `MuseumStart`。访客可以单手拿近头盔、任意转动、松手悬停，再用同一只手调切面。操作菜单会在附近找空位，瞄准或抓取时保持不动。
 
-分支：`codex/helmet-inspection-2026-09-29`。开发前基准：`4fe725294150a39ceba411f0d5088b51697e85ee`。功能源码提交：`3cf6f8ddb620f1943cef416a5eb4d72134a586ec`；之后的交接提交仅加入文档和验证证据。提交账号为 `Fttt1003`，AI 辅助范围已记录，尚需另一位组员审查后合并。
+分支：`codex/helmet-inspection-2026-09-29`，[PR #3](https://github.com/Twispra/XRmuseum/pull/3)。开发前基准：`4fe725294150a39ceba411f0d5088b51697e85ee`。最新修复及验证代码：`0d31e426cb97c8cd838ebb8ac050d5874e24c3bb`。提交账号为 `Fttt1003`，AI 辅助范围已记录，修复仍待组员复查，尚未合并。
+
+9 月 30 日按 PR 评论修正了剖切球柄突然换边的问题：现在保留连续方向和手腕滚转，松手、换角度重抓或隐藏后重新显示都会保留工具方向。此次只修改切面交互脚本和测试，场景、Prefab、材质与模型没有再改动。复现、修复与本轮结果见[评论处理记录](activity/2026-09-30-section-continuity-review.md)。
 
 ## 拿到分支后怎样试
 
@@ -42,13 +44,14 @@
 
 ## 回归证据与剩余工作
 
-本轮在源码提交 `3cf6f8d` 上重新验证，源码、场景、Packages 和 ProjectSettings 没有额外未提交变化；报告中的 dirty 状态来自待交接文档和本地历史记录，不代表源码未提交。报告与选取截图见[活动记录](activity/2026-09-29-advanced-inspection.md)。静态审查和自动 XR 输入均由 AI 辅助执行，不代替组员审查。
+最新主场景验证基于 `0d31e42`，具体计数、命令、进程退出码和报告链接见[9 月 30 日记录](activity/2026-09-30-section-continuity-review.md)。报告中的 dirty 状态包含待交接文档和本地历史记录；Unity 源码已提交。原 `3cf6f8d` 的 140 项测试和效果图保留在[9 月 29 日记录](activity/2026-09-29-advanced-inspection.md)：这些测试没有覆盖此次临界角度下的球柄连续性，不能用旧的通过结果否定 PR 中复现的问题。静态审查和自动 XR 输入均由 AI 辅助执行，不代替组员审查。
 
 可重复运行的 Editor 验证入口：
 
 | 入口 | 用途 |
 | --- | --- |
 | `Museum.Inspection.Editor.HelmetInspectionValidation.RunMainBatch` | 原主场景中的前窗、剖面、悬停、近距面板和复位 |
+| `Museum.Inspection.Editor.HelmetSectionContinuityValidation.RunBatch` | 临时加载实际 Prefab，检查 4 种头盔姿态下的切面方向与球柄连续性；明确为 API 几何检查 |
 | `Museum.Editor.HelmetPrototypeValidation.RunBatch` | 未修改的旧验收：10 次拿放、旋转、Home / RESET、掉落恢复等 |
 
 批处理使用 `-batchmode -projectPath "<仓库>/MuseumVR" -executeMethod <入口> -logFile <本地日志>`，不要加 `-quit`，验证器会在结束后退出。关闭同一工程的可见 Unity 后再运行，报告写入独立的 `artifacts/helmet-interaction/qa/runs/` 目录。

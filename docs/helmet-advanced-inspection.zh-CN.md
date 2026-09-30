@@ -13,6 +13,8 @@
 
 操作沿用一套规则：近处直接握持，远处射线指向后握持。在官方电脑模拟器中，Game 获得焦点后，Y 选右手，鼠标调整方向（R 切换 Rotate/Translate），G 是握持。调工具时需要保持 G，移动模拟手柄或转动它；松 G 固定剖面。没有新增摇杆快捷键，避免与移动、传送和原抓取锚点功能冲突。
 
+剖切工具会连续跟随手腕方向，转过顶部或底部时不会突然换边。绕切面法向转动手腕时，剖切平面本身可以不变，但边框和球柄会随手腕转动；松手后保持，再抓取时以当前方向继续。9 月 30 日的修复及测试见[评论处理记录](activity/2026-09-30-section-continuity-review.md)。
+
 ## 为什么面板这样移动
 
 面板只跟随位置与大幅转身，不跟着每一次低头、抬头和视线移动。它会延迟到访客移动稳定后再调整；射线瞄准、选择按钮或抓取头盔/前窗/剖切工具时暂停跟随。低头看细节时，按钮不会追着视线跑。
@@ -29,6 +31,7 @@
 | `HelmetInspectionControls.cs` | 按钮调用；保留原枚举序号，避免旧 Prefab 绑定错位 |
 | `HelmetAdvancedInspectionSetup.cs` | 本轮升级工具；已保存的 Prefab 和主场景可直接打开，组员无需重跑 |
 | `HelmetInspectionValidation.cs` | 原功能回归及新剖面、悬停、近距/背面/坐姿面板模拟输入检查 |
+| `HelmetSectionContinuityValidation.cs` | 通过实际 Prefab 的 API 检查剖切框和球柄跨临界方向是否连续；不代替手柄输入测试 |
 
 运行代码位于 `MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/`，Editor 工具位于同功能的 `Editor/`。交接包含新 `.cs/.meta`、工具材质、`InspectableHelmet.prefab` 和原 `MuseumStart.unity` 的局部集成变化。旧原始 `HelmetExhibit.prefab`、FBX、复位脚本、Input Actions 和 XR 样例 Prefab 保留。
 

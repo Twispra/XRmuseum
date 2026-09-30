@@ -1,0 +1,1824 @@
+{
+    "runId": "20260930T112453300Z-section-continuity-a25fee620df5417e94404684444d64fd",
+    "timestampUtc": "2026-09-30T11:24:53.3062914Z",
+    "unityVersion": "2022.3.62f3c1",
+    "prefab": "Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+    "status": "passed",
+    "method": "Edit Mode only: load the saved prefab into a temporary PrefabContents scene; call SetSectionPlane(normal, 0), then invoke its actual private UpdateGuidePose by reflection. Never save prefab contents.",
+    "limitations": "Explicit geometry/API regression, not simulated XR selection, physical dragging, hardware, rendered pixels, usability, or a player build. Root scales remain the prefab's unit scale. A baseline failure is reported as failed, never converted into an expected pass.",
+    "thresholds": "Normal n(theta)=(cos(theta),sin(theta),0). Rotation <= max(0.08 degrees, 3*normal delta+0.02 degrees); knob displacement <= 3*(2*radius*sin(normal delta/2))+0.00005 m; center/plane error <=0.0001 m; forward error <=0.08 degrees; root position/scale drift <=0.000001; root rotation drift <=0.0001 degrees. These are numerical continuity checks, not comfort thresholds.",
+    "provenance": {
+        "gitCommit": "a6aae95a2ca401dfd1f2a3e0648700ac99a4fa15",
+        "gitBranch": "codex/helmet-inspection-2026-09-29",
+        "gitStatusPorcelain": " M docs/external-resources.md\n M docs/helmet-advanced-inspection.zh-CN.md\n M docs/helmet-inspection-handoff.zh-CN.md\n M docs/project-state.md\n?? MuseumVR/.vscode/extensions.json\n?? MuseumVR/.vscode/launch.json\n?? MuseumVR/.vscode/settings.json\n?? artifacts/helmet-interaction/qa/runs/20260929T123446207Z-inspection-views/01-closed.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T123446207Z-inspection-views/02-open.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T123446207Z-inspection-views/03-half-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T123446207Z-inspection-views/04-inside-shell.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T123446207Z-inspection-views/README.txt\n?? artifacts/helmet-interaction/qa/runs/20260929T123731467Z-585cf6864f8444a4a1411266a7586840/playmode-validation.json\n?? artifacts/helmet-interaction/qa/runs/20260929T123731467Z-585cf6864f8444a4a1411266a7586840/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T123731467Z-585cf6864f8444a4a1411266a7586840/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T123731467Z-585cf6864f8444a4a1411266a7586840/preview/capture.json\n?? artifacts/helmet-interaction/qa/runs/20260929T123943981Z-inspection-53028b97a6f84b0593f5dd3b55e0de18/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T124246676Z-inspection-13eea55e146b48dfa13f9f05d9c3626e/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T124423524Z-inspection-97d20b09affd4ed5a9da4826b699d03f/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T124625900Z-inspection-1f91fd4949324ce4a71e717b28c1f4be/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T124828774Z-inspection-views/01-closed.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T124828774Z-inspection-views/02-open.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T124828774Z-inspection-views/03-half-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T124828774Z-inspection-views/04-inside-shell.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T124828774Z-inspection-views/README.txt\n?? artifacts/helmet-interaction/qa/runs/20260929T125949181Z-inspection-main-5c6a3967bc05435e9c56f34081d47157/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T130442715Z-693b6d8a1c194ac4bd581835694e59fc/playmode-validation.json\n?? artifacts/helmet-interaction/qa/runs/20260929T130442715Z-693b6d8a1c194ac4bd581835694e59fc/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T130442715Z-693b6d8a1c194ac4bd581835694e59fc/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T130442715Z-693b6d8a1c194ac4bd581835694e59fc/preview/capture.json\n?? artifacts/helmet-interaction/qa/runs/20260929T133920960Z-inspection-main-c2930c570a5a4104a3fb05ca7705b8bb/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T133920960Z-inspection-main-c2930c570a5a4104a3fb05ca7705b8bb/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T133920960Z-inspection-main-c2930c570a5a4104a3fb05ca7705b8bb/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T133920960Z-inspection-main-c2930c570a5a4104a3fb05ca7705b8bb/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T133920960Z-inspection-main-c2930c570a5a4104a3fb05ca7705b8bb/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T133920960Z-inspection-main-c2930c570a5a4104a3fb05ca7705b8bb/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T134821875Z-8df191a7121c404082b77e907d45a65f/playmode-validation.json\n?? artifacts/helmet-interaction/qa/runs/20260929T134821875Z-8df191a7121c404082b77e907d45a65f/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134821875Z-8df191a7121c404082b77e907d45a65f/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134821875Z-8df191a7121c404082b77e907d45a65f/preview/capture.json\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T140049739Z-066f0203979b4461ba4df8a76fc6773f/playmode-validation.json\n?? artifacts/helmet-interaction/qa/runs/20260929T140049739Z-066f0203979b4461ba4df8a76fc6773f/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140049739Z-066f0203979b4461ba4df8a76fc6773f/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140049739Z-066f0203979b4461ba4df8a76fc6773f/preview/capture.json\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T140424021Z-c43557ea7aea481ebb11be96acdacd22/playmode-validation.json\n?? artifacts/helmet-interaction/qa/runs/20260929T140424021Z-c43557ea7aea481ebb11be96acdacd22/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140424021Z-c43557ea7aea481ebb11be96acdacd22/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140424021Z-c43557ea7aea481ebb11be96acdacd22/preview/capture.json\n?? artifacts/helmet-interaction/qa/runs/20260929T143825749Z-inspection-main-48fc041ce57e4f5b8adf814c880c7b62/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T143825749Z-inspection-main-48fc041ce57e4f5b8adf814c880c7b62/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T143825749Z-inspection-main-48fc041ce57e4f5b8adf814c880c7b62/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T143825749Z-inspection-main-48fc041ce57e4f5b8adf814c880c7b62/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T144117211Z-c6da6e32c7c2452393c5308eea11d07f/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T144117211Z-c6da6e32c7c2452393c5308eea11d07f/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T144117211Z-c6da6e32c7c2452393c5308eea11d07f/preview/capture.json\n?? artifacts/helmet-interaction/qa/runs/20260930T111524229Z-section-continuity-0c4e42876dec4c638eafb6ab5b311586/report.json\n?? artifacts/helmet-interaction/qa/runs/20260930T111758078Z-section-continuity-9b68066faf2840729757ecc615124024/report.json\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/report.json\n?? artifacts/helmet-interaction/qa/runs/20260930T112042017365Z-publish-audit/static-regression.json\n?? artifacts/helmet-interaction/qa/runs/20260930T112306440699Z-publish-audit/static-regression.json\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/report.json\n?? docs/activity/2026-09-29-helmet-inspection.md\n?? docs/activity/2026-09-29-main-gallery-inspection.md\n?? docs/helmet-inspection.zh-CN.md\n",
+        "workingTreeState": "dirty",
+        "files": [
+            {
+                "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetSectionContinuityValidation.cs",
+                "sha256": "a1d544788ac496cac4e3f7205f232089f564b960b0d810c24ce0488e4c9d5f20",
+                "error": ""
+            },
+            {
+                "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+                "sha256": "386c0333c3cf2bd286f61463cb833c7f54ec2b799872b74caca579181cffd6bb",
+                "error": ""
+            },
+            {
+                "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetSectionInteractable.cs",
+                "sha256": "1d20516b87c001f006b51a6fb0e7519f309244ad23da55027e8c1ae65e750214",
+                "error": ""
+            },
+            {
+                "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+                "sha256": "d0a9e828356cbed7271b9865379ec49eab1e264171de4a6808b1ee25cd4ee968",
+                "error": ""
+            },
+            {
+                "path": "MuseumVR/Assets/Museum/Models/Helmet/helmet-graybox-v02.fbx",
+                "sha256": "c0cefcc0fd5acc1fac0ec1ee5ed212a4813606b57e984767afc55d34080322ab",
+                "error": ""
+            },
+            {
+                "path": "MuseumVR/ProjectSettings/ProjectVersion.txt",
+                "sha256": "93eba324bad77e6764a40d1b8a2020e7b69424102a2b2f3b17b69afdf7dd67a0",
+                "error": ""
+            },
+            {
+                "path": "MuseumVR/Packages/manifest.json",
+                "sha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7",
+                "error": ""
+            }
+        ],
+        "errors": []
+    },
+    "durationSeconds": 0.3656851000000003,
+    "totalCases": 40,
+    "failedCases": 0,
+    "assertions": 49784,
+    "failures": 0,
+    "maximumRotationDeltaDegrees": 0.25003030977331827,
+    "maximumKnobDisplacementMeters": 2.811545414260763e-7,
+    "cases": [
+        {
+            "name": "positive threshold upward",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009125,
+            "maximumRotationDeltaDegrees": 0.019996733146986607,
+            "maximumForwardErrorDegrees": 0.000010334919968151891,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive threshold downward",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009125,
+            "maximumRotationDeltaDegrees": 0.019996733146986607,
+            "maximumForwardErrorDegrees": 0.000010334919968151891,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold downward",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009125,
+            "maximumRotationDeltaDegrees": 0.019996733146986607,
+            "maximumForwardErrorDegrees": 0.000010334919968151891,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold upward",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009125,
+            "maximumRotationDeltaDegrees": 0.019996733146986607,
+            "maximumForwardErrorDegrees": 0.000010334919968151891,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side below",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998502826922457,
+            "maximumRotationDeltaDegrees": 0.01999741909698098,
+            "maximumForwardErrorDegrees": 0.000005217885589590423,
+            "maximumKnobDisplacementMeters": 3.332000986233652e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.019998502826922457,
+                "rotationDeltaDegrees": 0.01999741909698098,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 3.332000986233652e-8,
+                "maximumKnobDisplacementMeters": 0.00034319335827603936
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.019998502826922457,
+                "rotationDeltaDegrees": 0.01999741909698098,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 3.332000986233652e-8,
+                "maximumKnobDisplacementMeters": 0.00034319335827603936
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side above",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019999287782939167,
+            "maximumRotationDeltaDegrees": 0.02000284768990587,
+            "maximumForwardErrorDegrees": 0.0000023909690055118365,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939167,
+                "rotationDeltaDegrees": 0.02000284768990587,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034320488339290023
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939167,
+                "rotationDeltaDegrees": 0.02000284768990587,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034320488339290023
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side below",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998502826922457,
+            "maximumRotationDeltaDegrees": 0.01999741909698098,
+            "maximumForwardErrorDegrees": 0.000005217885589590423,
+            "maximumKnobDisplacementMeters": 3.332000986233652e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.019998502826922457,
+                "rotationDeltaDegrees": 0.01999741909698098,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 3.332000986233652e-8,
+                "maximumKnobDisplacementMeters": 0.00034319335827603936
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.019998502826922457,
+                "rotationDeltaDegrees": 0.01999741909698098,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 3.332000986233652e-8,
+                "maximumKnobDisplacementMeters": 0.00034319335827603936
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side above",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019999287782939167,
+            "maximumRotationDeltaDegrees": 0.02000284768990587,
+            "maximumForwardErrorDegrees": 0.0000023909690055118365,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939167,
+                "rotationDeltaDegrees": 0.02000284768990587,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034320488339290023
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939167,
+                "rotationDeltaDegrees": 0.02000284768990587,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034320488339290023
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles increasing",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.25000767665803888,
+            "maximumRotationDeltaDegrees": 0.2500147081219369,
+            "maximumForwardErrorDegrees": 0.000013627853228009318,
+            "maximumKnobDisplacementMeters": 1.497548112183722e-7,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -93.75,
+                "toDegrees": -93.5,
+                "normalDeltaDegrees": 0.25000560242247646,
+                "rotationDeltaDegrees": 0.2500147081219369,
+                "maximumRotationDegrees": 0.7700168072674294,
+                "knobDisplacementMeters": 4.470348358154297e-8,
+                "maximumKnobDisplacementMeters": 0.0037152706645429136
+            },
+            "worstKnobStep": {
+                "fromDegrees": -109.25,
+                "toDegrees": -109.0,
+                "normalDeltaDegrees": 0.24999869389005048,
+                "rotationDeltaDegrees": 0.24999699536217527,
+                "maximumRotationDegrees": 0.7699960816701514,
+                "knobDisplacementMeters": 1.497548112183722e-7,
+                "maximumKnobDisplacementMeters": 0.003715170081704855
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles decreasing",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.25000767665803888,
+            "maximumRotationDeltaDegrees": 0.2500147081219369,
+            "maximumForwardErrorDegrees": 0.000013627853228009318,
+            "maximumKnobDisplacementMeters": 1.497548112183722e-7,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 93.75,
+                "toDegrees": 93.5,
+                "normalDeltaDegrees": 0.25000560242247646,
+                "rotationDeltaDegrees": 0.2500147081219369,
+                "maximumRotationDegrees": 0.7700168072674294,
+                "knobDisplacementMeters": 4.470348358154297e-8,
+                "maximumKnobDisplacementMeters": 0.0037152706645429136
+            },
+            "worstKnobStep": {
+                "fromDegrees": 109.25,
+                "toDegrees": 109.0,
+                "normalDeltaDegrees": 0.24999869389005048,
+                "rotationDeltaDegrees": 0.24999699536217527,
+                "maximumRotationDegrees": 0.7699960816701514,
+                "knobDisplacementMeters": 1.497548112183722e-7,
+                "maximumKnobDisplacementMeters": 0.003715170081704855
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive threshold upward",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998593295708145,
+            "maximumRotationDeltaDegrees": 0.01999325491848515,
+            "maximumForwardErrorDegrees": 0.000009583363174847523,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 1.3328003944934609e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.019998593295708145,
+                "rotationDeltaDegrees": 0.01999325491848515,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034319469705224037
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.019998593295708145,
+                "rotationDeltaDegrees": 0.01999325491848515,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034319469705224037
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive threshold downward",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998593295708145,
+            "maximumRotationDeltaDegrees": 0.01999325491848515,
+            "maximumForwardErrorDegrees": 0.000009583363174847523,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 1.3328003944934609e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.019998593295708145,
+                "rotationDeltaDegrees": 0.01999325491848515,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034319469705224037
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.019998593295708145,
+                "rotationDeltaDegrees": 0.01999325491848515,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034319469705224037
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold downward",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.01999901158322131,
+            "maximumRotationDeltaDegrees": 0.020001764188320734,
+            "maximumForwardErrorDegrees": 0.000021767325745585664,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 1.3328003944934609e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.01999901158322131,
+                "rotationDeltaDegrees": 0.020001764188320734,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034320089616812766
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.01999901158322131,
+                "rotationDeltaDegrees": 0.020001764188320734,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034320089616812766
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold upward",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.01999901158322131,
+            "maximumRotationDeltaDegrees": 0.020001764188320734,
+            "maximumForwardErrorDegrees": 0.000021767325745585664,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 1.3328003944934609e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.01999901158322131,
+                "rotationDeltaDegrees": 0.020001764188320734,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034320089616812766
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.01999901158322131,
+                "rotationDeltaDegrees": 0.020001764188320734,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034320089616812766
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side below",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019997374003161047,
+            "maximumRotationDeltaDegrees": 0.019991716372194807,
+            "maximumForwardErrorDegrees": 0.000010482524938411997,
+            "maximumKnobDisplacementMeters": 5.960464477539063e-8,
+            "maximumCenterErrorMeters": 1.3328003944934609e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.019997374003161047,
+                "rotationDeltaDegrees": 0.019991716372194807,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0003431768564041704
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.019997374003161047,
+                "rotationDeltaDegrees": 0.019991716372194807,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0003431768564041704
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side above",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.020000318091025296,
+            "maximumRotationDeltaDegrees": 0.019995493069895205,
+            "maximumForwardErrorDegrees": 0.00000834764512887794,
+            "maximumKnobDisplacementMeters": 5.960464477539063e-8,
+            "maximumCenterErrorMeters": 1.3328003944934609e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.020000318091025296,
+                "rotationDeltaDegrees": 0.019995493069895205,
+                "maximumRotationDegrees": 0.08000095427307588,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0003432199882809073
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.020000318091025296,
+                "rotationDeltaDegrees": 0.019995493069895205,
+                "maximumRotationDegrees": 0.08000095427307588,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0003432199882809073
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side below",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998813531391266,
+            "maximumRotationDeltaDegrees": 0.020003503549373377,
+            "maximumForwardErrorDegrees": 0.00001219576159480222,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 1.3328003944934609e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.019998813531391266,
+                "rotationDeltaDegrees": 0.020003503549373377,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.000343197985785082
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.019998813531391266,
+                "rotationDeltaDegrees": 0.020003503549373377,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.000343197985785082
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side above",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019999174920522716,
+            "maximumRotationDeltaDegrees": 0.0199886609505127,
+            "maximumForwardErrorDegrees": 0.000015934985793192868,
+            "maximumKnobDisplacementMeters": 1.1920928955078126e-7,
+            "maximumCenterErrorMeters": 1.3328003944934609e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.019999174920522716,
+                "rotationDeltaDegrees": 0.0199886609505127,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 1.1920928955078126e-7,
+                "maximumKnobDisplacementMeters": 0.0003432032826822251
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.019999174920522716,
+                "rotationDeltaDegrees": 0.0199886609505127,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 1.1920928955078126e-7,
+                "maximumKnobDisplacementMeters": 0.0003432032826822251
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles increasing",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.25000823989795326,
+            "maximumRotationDeltaDegrees": 0.25003030977331827,
+            "maximumForwardErrorDegrees": 0.000027875188162200563,
+            "maximumKnobDisplacementMeters": 2.4575624024691935e-7,
+            "maximumCenterErrorMeters": 1.9082797564351495e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 102.0,
+                "toDegrees": 102.25,
+                "normalDeltaDegrees": 0.2500056133221374,
+                "rotationDeltaDegrees": 0.25003030977331827,
+                "maximumRotationDegrees": 0.7700168399664122,
+                "knobDisplacementMeters": 1.3328003944934609e-7,
+                "maximumKnobDisplacementMeters": 0.0037152706645429136
+            },
+            "worstKnobStep": {
+                "fromDegrees": -58.25,
+                "toDegrees": -58.0,
+                "normalDeltaDegrees": 0.24999880178820986,
+                "rotationDeltaDegrees": 0.25000715901720518,
+                "maximumRotationDegrees": 0.7699964053646295,
+                "knobDisplacementMeters": 2.4575624024691935e-7,
+                "maximumKnobDisplacementMeters": 0.0037151717115193607
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles decreasing",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.25000823989795326,
+            "maximumRotationDeltaDegrees": 0.25003030977331827,
+            "maximumForwardErrorDegrees": 0.000027875188162200563,
+            "maximumKnobDisplacementMeters": 2.4575624024691935e-7,
+            "maximumCenterErrorMeters": 1.9082797564351495e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 102.25,
+                "toDegrees": 102.0,
+                "normalDeltaDegrees": 0.2500056133221374,
+                "rotationDeltaDegrees": 0.25003030977331827,
+                "maximumRotationDegrees": 0.7700168399664122,
+                "knobDisplacementMeters": 1.3328003944934609e-7,
+                "maximumKnobDisplacementMeters": 0.0037152706645429136
+            },
+            "worstKnobStep": {
+                "fromDegrees": -58.0,
+                "toDegrees": -58.25,
+                "normalDeltaDegrees": 0.24999880178820986,
+                "rotationDeltaDegrees": 0.25000715901720518,
+                "maximumRotationDegrees": 0.7699964053646295,
+                "knobDisplacementMeters": 2.4575624024691935e-7,
+                "maximumKnobDisplacementMeters": 0.0037151717115193607
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive threshold upward",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.020000421532877359,
+            "maximumRotationDeltaDegrees": 0.01999456396415466,
+            "maximumForwardErrorDegrees": 0.000005716345064222768,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 2.980232238769531e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.020000421532877359,
+                "rotationDeltaDegrees": 0.01999456396415466,
+                "maximumRotationDegrees": 0.08000126459863208,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034322155988775194
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.020000421532877359,
+                "rotationDeltaDegrees": 0.01999456396415466,
+                "maximumRotationDegrees": 0.08000126459863208,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034322155988775194
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive threshold downward",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.020000421532877359,
+            "maximumRotationDeltaDegrees": 0.01999456396415466,
+            "maximumForwardErrorDegrees": 0.000005716345064222768,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 2.980232238769531e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.020000421532877359,
+                "rotationDeltaDegrees": 0.01999456396415466,
+                "maximumRotationDegrees": 0.08000126459863208,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034322155988775194
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.020000421532877359,
+                "rotationDeltaDegrees": 0.01999456396415466,
+                "maximumRotationDegrees": 0.08000126459863208,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034322155988775194
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold downward",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998899102245155,
+            "maximumRotationDeltaDegrees": 0.020003416530252395,
+            "maximumForwardErrorDegrees": 0.000016703671336252623,
+            "maximumKnobDisplacementMeters": 2.384185791015625e-7,
+            "maximumCenterErrorMeters": 2.682209014892578e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.019998899102245155,
+                "rotationDeltaDegrees": 0.020003416530252395,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.384185791015625e-7,
+                "maximumKnobDisplacementMeters": 0.0003431992663536221
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.019998899102245155,
+                "rotationDeltaDegrees": 0.020003416530252395,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.384185791015625e-7,
+                "maximumKnobDisplacementMeters": 0.0003431992663536221
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold upward",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998899102245155,
+            "maximumRotationDeltaDegrees": 0.020003416530252395,
+            "maximumForwardErrorDegrees": 0.000016703671336252623,
+            "maximumKnobDisplacementMeters": 2.384185791015625e-7,
+            "maximumCenterErrorMeters": 2.682209014892578e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.019998899102245155,
+                "rotationDeltaDegrees": 0.020003416530252395,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.384185791015625e-7,
+                "maximumKnobDisplacementMeters": 0.0003431992663536221
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.019998899102245155,
+                "rotationDeltaDegrees": 0.020003416530252395,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.384185791015625e-7,
+                "maximumKnobDisplacementMeters": 0.0003431992663536221
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side below",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.01999772660312667,
+            "maximumRotationDeltaDegrees": 0.019990236123342006,
+            "maximumForwardErrorDegrees": 0.000009582880149554595,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 2.980232238769531e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.01999772660312667,
+                "rotationDeltaDegrees": 0.019990236123342006,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.0003431820368859917
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.01999772660312667,
+                "rotationDeltaDegrees": 0.019990236123342006,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.0003431820368859917
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side above",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998619397431955,
+            "maximumRotationDeltaDegrees": 0.01999976072923218,
+            "maximumForwardErrorDegrees": 0.000005716294993344249,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 2.980232238769531e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.019998619397431955,
+                "rotationDeltaDegrees": 0.01999976072923218,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.0003431951627135277
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.019998619397431955,
+                "rotationDeltaDegrees": 0.01999976072923218,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.0003431951627135277
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side below",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.0199985905276947,
+            "maximumRotationDeltaDegrees": 0.020008102051519307,
+            "maximumForwardErrorDegrees": 0.000011787088066476084,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 2.682209014892578e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.0199985905276947,
+                "rotationDeltaDegrees": 0.020008102051519307,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034319472615607083
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.0199985905276947,
+                "rotationDeltaDegrees": 0.020008102051519307,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034319472615607083
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side above",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.01999974873140986,
+            "maximumRotationDeltaDegrees": 0.020000898788006886,
+            "maximumForwardErrorDegrees": 0.0000019803469835059149,
+            "maximumKnobDisplacementMeters": 1.3328003944934609e-7,
+            "maximumCenterErrorMeters": 2.682209014892578e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.01999974873140986,
+                "rotationDeltaDegrees": 0.020000898788006886,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 1.3328003944934609e-7,
+                "maximumKnobDisplacementMeters": 0.0003432116936892271
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.01999974873140986,
+                "rotationDeltaDegrees": 0.020000898788006886,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 1.3328003944934609e-7,
+                "maximumKnobDisplacementMeters": 0.0003432116936892271
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles increasing",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.2500097750864365,
+            "maximumRotationDeltaDegrees": 0.2500209030493747,
+            "maximumForwardErrorDegrees": 0.000022598662182313197,
+            "maximumKnobDisplacementMeters": 2.811545414260763e-7,
+            "maximumCenterErrorMeters": 3.3717478231665157e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -96.0,
+                "toDegrees": -95.75,
+                "normalDeltaDegrees": 0.2500047411426726,
+                "rotationDeltaDegrees": 0.2500209030493747,
+                "maximumRotationDegrees": 0.7700142234280178,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0037152590230107309
+            },
+            "worstKnobStep": {
+                "fromDegrees": -66.5,
+                "toDegrees": -66.25,
+                "normalDeltaDegrees": 0.24999874690778935,
+                "rotationDeltaDegrees": 0.24999630442639457,
+                "maximumRotationDegrees": 0.769996240723368,
+                "knobDisplacementMeters": 2.811545414260763e-7,
+                "maximumKnobDisplacementMeters": 0.003715170780196786
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles decreasing",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.2500097750864365,
+            "maximumRotationDeltaDegrees": 0.2500209030493747,
+            "maximumForwardErrorDegrees": 0.000022598662182313197,
+            "maximumKnobDisplacementMeters": 2.811545414260763e-7,
+            "maximumCenterErrorMeters": 3.3717478231665157e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -95.75,
+                "toDegrees": -96.0,
+                "normalDeltaDegrees": 0.2500047411426726,
+                "rotationDeltaDegrees": 0.2500209030493747,
+                "maximumRotationDegrees": 0.7700142234280178,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0037152590230107309
+            },
+            "worstKnobStep": {
+                "fromDegrees": -58.25,
+                "toDegrees": -58.5,
+                "normalDeltaDegrees": 0.24999815239167684,
+                "rotationDeltaDegrees": 0.2500005704780799,
+                "maximumRotationDegrees": 0.7699944571750306,
+                "knobDisplacementMeters": 2.811545414260763e-7,
+                "maximumKnobDisplacementMeters": 0.003715162631124258
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive threshold upward",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009194,
+            "maximumRotationDeltaDegrees": 0.02000047500298368,
+            "maximumForwardErrorDegrees": 0.000015118888866853361,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 1.1920928955078126e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive threshold downward",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009194,
+            "maximumRotationDeltaDegrees": 0.02000047500298368,
+            "maximumForwardErrorDegrees": 0.000015118888866853361,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 1.1920928955078126e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold downward",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009194,
+            "maximumRotationDeltaDegrees": 0.02000047500298368,
+            "maximumForwardErrorDegrees": 0.000015118888866853361,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 1.1920928955078126e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold upward",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009194,
+            "maximumRotationDeltaDegrees": 0.02000047500298368,
+            "maximumForwardErrorDegrees": 0.000015118888866853361,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 1.1920928955078126e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side below",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998502826922533,
+            "maximumRotationDeltaDegrees": 0.02000727430586518,
+            "maximumForwardErrorDegrees": 0.000009633092106229245,
+            "maximumKnobDisplacementMeters": 5.960464477539063e-8,
+            "maximumCenterErrorMeters": 1.1920928955078126e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.019998502826922533,
+                "rotationDeltaDegrees": 0.02000727430586518,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0003431933291722089
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.019998502826922533,
+                "rotationDeltaDegrees": 0.02000727430586518,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0003431933291722089
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side above",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019999287782939237,
+            "maximumRotationDeltaDegrees": 0.019996051839531315,
+            "maximumForwardErrorDegrees": 0.000004462183328399197,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 1.1920928955078126e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939237,
+                "rotationDeltaDegrees": 0.019996051839531315,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034320485428906977
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939237,
+                "rotationDeltaDegrees": 0.019996051839531315,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034320485428906977
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side below",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998502826922533,
+            "maximumRotationDeltaDegrees": 0.02000727430586518,
+            "maximumForwardErrorDegrees": 0.000009633092106229245,
+            "maximumKnobDisplacementMeters": 5.960464477539063e-8,
+            "maximumCenterErrorMeters": 1.1920928955078126e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.019998502826922533,
+                "rotationDeltaDegrees": 0.02000727430586518,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0003431933291722089
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.019998502826922533,
+                "rotationDeltaDegrees": 0.02000727430586518,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0003431933291722089
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side above",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019999287782939237,
+            "maximumRotationDeltaDegrees": 0.019996051839531315,
+            "maximumForwardErrorDegrees": 0.000004462183328399197,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 1.1920928955078126e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939237,
+                "rotationDeltaDegrees": 0.019996051839531315,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034320485428906977
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939237,
+                "rotationDeltaDegrees": 0.019996051839531315,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034320485428906977
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles increasing",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.25000767665803938,
+            "maximumRotationDeltaDegrees": 0.25002157432522978,
+            "maximumForwardErrorDegrees": 0.000016305758831427467,
+            "maximumKnobDisplacementMeters": 1.3328003944934609e-7,
+            "maximumCenterErrorMeters": 1.6858739115832578e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -92.5,
+                "toDegrees": -92.25,
+                "normalDeltaDegrees": 0.2500053397627866,
+                "rotationDeltaDegrees": 0.25002157432522978,
+                "maximumRotationDegrees": 0.7700160192883598,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.003715266240760684
+            },
+            "worstKnobStep": {
+                "fromDegrees": -105.0,
+                "toDegrees": -104.75,
+                "normalDeltaDegrees": 0.25000006925545817,
+                "rotationDeltaDegrees": 0.24999728448245346,
+                "maximumRotationDegrees": 0.7700002077663745,
+                "knobDisplacementMeters": 1.3328003944934609e-7,
+                "maximumKnobDisplacementMeters": 0.0037151891738176347
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles decreasing",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.25000767665803938,
+            "maximumRotationDeltaDegrees": 0.25002157432522978,
+            "maximumForwardErrorDegrees": 0.000016305758831427467,
+            "maximumKnobDisplacementMeters": 1.3328003944934609e-7,
+            "maximumCenterErrorMeters": 1.6858739115832578e-7,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 92.5,
+                "toDegrees": 92.25,
+                "normalDeltaDegrees": 0.2500053397627866,
+                "rotationDeltaDegrees": 0.25002157432522978,
+                "maximumRotationDegrees": 0.7700160192883598,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.003715266240760684
+            },
+            "worstKnobStep": {
+                "fromDegrees": 75.25,
+                "toDegrees": 75.0,
+                "normalDeltaDegrees": 0.24999919785302097,
+                "rotationDeltaDegrees": 0.24999537187028876,
+                "maximumRotationDegrees": 0.7699975935590629,
+                "knobDisplacementMeters": 1.3328003944934609e-7,
+                "maximumKnobDisplacementMeters": 0.0037151763681322338
+            },
+            "failureSamples": []
+        }
+    ],
+    "errors": []
+}
