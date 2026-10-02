@@ -1,0 +1,310 @@
+using System;
+using Museum.Inspection;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Rendering;
+
+namespace Museum.Exploration
+{
+    /// <summary>Illustrative surface equipment and staged connections, not an exact historical reconstruction.</summary>
+    [DisallowMultipleComponent]
+    public sealed class HelmetConnectionDemonstration : MonoBehaviour
+    {
+        public const float Duration = 16f;
+        const int PathSamples = 41;
+        [SerializeField] HelmetInspectionController inspection;
+        [SerializeField] Renderer airConnector;
+        [SerializeField] Material airMaterial;
+        [SerializeField] Material voiceMaterial;
+        [SerializeField] Material inkMaterial;
+        GameObject visuals;
+        LineRenderer route, routeAccent, arrow, returnArrow;
+        readonly LineRenderer[] waveforms = new LineRenderer[3];
+        Transform pulse;
+        TextMeshPro sourceText, destinationText, caption;
+        HelmetDemonstrationModels models;
+        Vector3 airAnchorLocal, pathStart, pathControlA, pathControlB, pathEnd;
+        Vector3 diagramRight = Vector3.right, diagramForward = Vector3.forward;
+        readonly Vector3[] pathPoints = new Vector3[PathSamples];
+        float startedAt;
+        Transform viewer;
+        bool anchorReady;
+
+        public event Action PlaybackChanged;
+        public bool IsPlaying { get; private set; }
+        public bool IsVisible { get; private set; }
+        public HelmetExplorationController.Clue CurrentClue { get; private set; }
+        public string AnimationStage { get; private set; } = "DEMO PAUSED";
+        public int PhaseIndex { get; private set; }
+        public float NormalizedProgress => IsVisible ? Mathf.Clamp01((Time.unscaledTime - startedAt) / Duration) : 0f;
+        public Vector3 AirTargetWorld => inspection && anchorReady
+            ? inspection.transform.TransformPoint(airAnchorLocal) : Vector3.zero;
+        public Vector3 AirEndpointWorld => route && route.positionCount > 0 && CurrentClue == HelmetExplorationController.Clue.Air
+            ? route.GetPosition(route.positionCount - 1) : AirTargetWorld;
+
+        public void Configure(HelmetInspectionController target, Renderer connector, Material airMat, Material voiceMat, Material inkMat)
+        {
+            Stop();
+            if (visuals) ReleaseVisuals();
+            inspection = target; airConnector = connector;
+            airMaterial = airMat; voiceMaterial = voiceMat; inkMaterial = inkMat;
+            anchorReady = false; CaptureAnchor();
+        }
+
+        void Awake() => CaptureAnchor();
+        void OnDisable() => Stop();
+        void OnDestroy() => ReleaseVisuals();
+
+        public void Play(HelmetExplorationController.Clue clue)
+        {
+            Stop();
+            if (!isActiveAndEnabled || !inspection || !inspection.isActiveAndEnabled ||
+                !airMaterial || !voiceMaterial || !inkMaterial ||
+                (clue != HelmetExplorationController.Clue.Air && clue != HelmetExplorationController.Clue.Voice)) return;
+            CaptureAnchor();
+            if (clue == HelmetExplorationController.Clue.Air && !anchorReady) return;
+            EnsureVisuals();
+            CurrentClue = clue; startedAt = Time.unscaledTime;
+            IsPlaying = !inspection.ReduceMotion; IsVisible = true;
+            visuals.SetActive(true); models.SetMode(clue == HelmetExplorationController.Clue.Air);
+            UpdateVisuals(0f);
+            PlaybackChanged?.Invoke();
+        }
+
+        public void Stop()
+        {
+            bool changed = IsPlaying || IsVisible;
+            IsPlaying = false; IsVisible = false;
+            AnimationStage = "DEMO PAUSED";
+            if (visuals) visuals.SetActive(false);
+            if (changed) PlaybackChanged?.Invoke();
+        }
+
+        void LateUpdate()
+        {
+            if (!IsVisible) return;
+            if (!inspection || !inspection.isActiveAndEnabled) { Stop(); return; }
+            float elapsed = Time.unscaledTime - startedAt;
+            bool finished = IsPlaying && (elapsed >= Duration || inspection.ReduceMotion);
+            if (finished) IsPlaying = false;
+            int priorPhase = PhaseIndex;
+            UpdateVisuals(Mathf.Min(elapsed, Duration));
+            if (finished || priorPhase != PhaseIndex) PlaybackChanged?.Invoke();
+        }
+
+        void CaptureAnchor()
+        {
+            if (anchorReady || !inspection || !airConnector) return;
+            // Mesh vertices are baked; the fitting's Transform origin is not its location.
+            airAnchorLocal = inspection.transform.InverseTransformPoint(airConnector.bounds.center);
+            anchorReady = true;
+        }
+
+        void EnsureVisuals()
+        {
+            if (visuals) return;
+            visuals = new GameObject("Connection schematic visuals");
+            visuals.transform.SetParent(transform, false);
+            route = MakeLine(visuals.transform, "Connection route", .015f, inkMaterial);
+            route.numCapVertices = 4;
+            routeAccent = MakeLine(visuals.transform, "Hose direction guide", .003f, airMaterial);
+            arrow = MakeLine(visuals.transform, "Direction arrow", .007f, airMaterial);
+            returnArrow = MakeLine(visuals.transform, "Return direction arrow", .007f, voiceMaterial);
+            pulse = new GameObject("Travelling signal").transform;
+            pulse.SetParent(visuals.transform, false);
+            // The supplied helmet material already references a working, shaded shader.
+            // Clones in the model factory explicitly disable section/hover properties.
+            var template = airConnector && airConnector.sharedMaterial ? airConnector.sharedMaterial : inkMaterial;
+            models = new HelmetDemonstrationModels(visuals.transform, pulse, template, airMaterial, voiceMaterial);
+            for(int i=0;i<waveforms.Length;i++)
+            {
+                waveforms[i] = MakeLine(pulse, "Voice waveform " + i, .006f, voiceMaterial);
+                waveforms[i].positionCount = 31;
+            }
+            sourceText = MakeText("Source label", new Vector2(.26f,.08f), .75f);
+            destinationText = MakeText("Destination label", new Vector2(.26f,.08f), .75f);
+            caption = MakeText("Schematic caption", new Vector2(.62f,.12f), .90f);
+            if (Camera.main) viewer = Camera.main.transform;
+            visuals.SetActive(false);
+        }
+
+        void UpdateVisuals(float elapsed)
+        {
+            bool air = CurrentClue == HelmetExplorationController.Clue.Air;
+            bool staticDiagram = inspection.ReduceMotion || !IsPlaying;
+            if (!viewer && Camera.main) viewer = Camera.main.transform;
+            diagramRight = viewer ? Vector3.ProjectOnPlane(viewer.right, Vector3.up).normalized : Vector3.right;
+            if (diagramRight.sqrMagnitude < .1f) diagramRight = Vector3.right;
+            diagramForward = Vector3.Cross(diagramRight, Vector3.up).normalized;
+            Quaternion facing = Quaternion.LookRotation(diagramForward, Vector3.up);
+            Vector3 centre = inspection.transform.TransformPoint(inspection.SectionCenterLocal);
+            models.Position(centre, facing);
+            SetPhase(air, elapsed, staticDiagram);
+
+            if (air)
+            {
+                pathStart = models.AirOutlet.position; pathEnd = AirTargetWorld;
+                pathControlA = pathStart - diagramRight * .13f + Vector3.up * .07f - diagramForward * .06f;
+                pathControlB = pathEnd + diagramRight * .06f + Vector3.up * .13f;
+            }
+            else
+            {
+                pathStart = models.TelephoneOutlet.position; pathEnd = models.TransducerInlet.position;
+                pathControlA = pathStart + diagramRight * .065f - Vector3.up * .11f - diagramForward * .045f;
+                pathControlB = pathEnd - diagramRight * .04f - Vector3.up * .11f - diagramForward * .045f;
+            }
+            route.startWidth = route.endWidth = air ? .015f : .009f;
+            route.positionCount = PathSamples; routeAccent.positionCount = PathSamples;
+            routeAccent.sharedMaterial = air ? airMaterial : voiceMaterial;
+            for(int i=0;i<PathSamples;i++)
+            {
+                float t=i/(float)(PathSamples-1); pathPoints[i]=PointOnPath(t);
+                route.SetPosition(i,pathPoints[i]);
+                // A fine contrasting seam helps the cable remain readable against the equipment.
+                routeAccent.SetPosition(i,pathPoints[i]-diagramForward*.008f);
+            }
+
+            bool airFlow = air && !staticDiagram && PhaseIndex == 1;
+            bool sending = !air && !staticDiagram && PhaseIndex == 1;
+            bool replying = !air && !staticDiagram && PhaseIndex == 3;
+            models.AnimatePump(elapsed, airFlow);
+            models.AnimateVoice(elapsed, sending, replying, !staticDiagram);
+            pulse.gameObject.SetActive(airFlow || sending || replying);
+            if (air) UpdateAirPackets(elapsed - 2f, airFlow);
+            else UpdateVoicePackets(elapsed, replying, sending || replying);
+            foreach(var waveform in waveforms) waveform.gameObject.SetActive(!air && (sending || replying));
+
+            arrow.sharedMaterial = air ? airMaterial : voiceMaterial;
+            arrow.gameObject.SetActive(true);
+            bool showBoth = !air && (staticDiagram || PhaseIndex == 0 || PhaseIndex == 2 || PhaseIndex == 4);
+            returnArrow.gameObject.SetActive(showBoth);
+            SetArrow(arrow, .73f, replying ? -1f : 1f);
+            if(showBoth) SetArrow(returnArrow, .28f, -1f);
+
+            sourceText.text = air ? "MANUAL AIR PUMP" : "SURFACE TELEPHONE";
+            destinationText.text = air ? "HELMET AIR CONNECTOR" : "DIVER UNIT";
+            sourceText.transform.position = (air ? models.Pump.position : models.SurfaceTelephone.position) + Vector3.up * .31f;
+            destinationText.transform.position = air ? pathEnd + Vector3.up*.075f : models.DiverTransducer.position + Vector3.up*.24f;
+            caption.text = AnimationStage + "\nILLUSTRATIVE MODELS";
+            caption.transform.position = centre + diagramRight * .43f + Vector3.up * .47f;
+            FaceViewer(sourceText.transform); FaceViewer(destinationText.transform); FaceViewer(caption.transform);
+        }
+
+        void SetPhase(bool air,float elapsed,bool staticDiagram)
+        {
+            if (staticDiagram)
+            {
+                PhaseIndex = air ? 2 : 4;
+                AnimationStage = air ? "DEMO PAUSED / PUMP > HELMET" : "DEMO PAUSED / TWO-WAY VOICE";
+                return;
+            }
+            if (air)
+            {
+                PhaseIndex = elapsed < 2f ? 0 : elapsed < 13f ? 1 : 2;
+                AnimationStage = PhaseIndex == 0 ? "1 / FIND THE PUMP AND HOSE"
+                    : PhaseIndex == 1 ? "2 / THE PUMP SENDS AIR TO THE HELMET"
+                    : "3 / AIR COMES FROM ABOVE WATER";
+            }
+            else
+            {
+                PhaseIndex = elapsed < 2f ? 0 : elapsed < 7f ? 1 : elapsed < 9f ? 2 : elapsed < 14f ? 3 : 4;
+                switch(PhaseIndex)
+                {
+                    case 0: AnimationStage="1 / FIND BOTH ENDS OF THE TELEPHONE";break;
+                    case 1: AnimationStage="2 / SURFACE TEAM SPEAKS > DIVER";break;
+                    case 2: AnimationStage="3 / NOW THE DIVER CAN REPLY";break;
+                    case 3: AnimationStage="4 / DIVER REPLIES > SURFACE TEAM";break;
+                    default: AnimationStage="5 / A CONVERSATION NEEDS BOTH ENDS";break;
+                }
+            }
+        }
+
+        void UpdateAirPackets(float seconds,bool moving)
+        {
+            for(int i=0;i<models.AirPackets.Length;i++)
+            {
+                var packet=models.AirPackets[i];packet.gameObject.SetActive(moving);
+                if(!moving) continue;
+                float t=Mathf.Repeat(seconds*.22f+i/(float)models.AirPackets.Length,1f);
+                packet.SetPositionAndRotation(PointOnPath(t)-diagramForward*.016f,
+                    Quaternion.LookRotation(PathDirection(t),Vector3.up));
+            }
+        }
+
+        void UpdateVoicePackets(float elapsed,bool reply,bool moving)
+        {
+            if(!moving) return;
+            float phaseTime=elapsed-(reply?9f:2f);
+            for(int wave=0;wave<waveforms.Length;wave++)
+            {
+                // Each train crosses once per speaking phase. No end-to-start jump can read as a reply.
+                float progress=Mathf.Clamp01((phaseTime-wave*.65f)/3.7f);
+                float center=reply?1f-progress:progress;
+                for(int i=0;i<waveforms[wave].positionCount;i++)
+                {
+                    float u=i/(float)(waveforms[wave].positionCount-1);
+                    float t=Mathf.Clamp01(center+(u-.5f)*.22f);
+                    float envelope=Mathf.Sin(u*Mathf.PI);
+                    float amplitude=Mathf.Sin(u*Mathf.PI*8)*.014f*envelope;
+                    waveforms[wave].SetPosition(i,PointOnPath(t)+Vector3.up*amplitude-diagramForward*.014f);
+                }
+            }
+        }
+
+        Vector3 PointOnPath(float t)
+        {
+            float u=1f-t;
+            return u*u*u*pathStart+3*u*u*t*pathControlA+3*u*t*t*pathControlB+t*t*t*pathEnd;
+        }
+        Vector3 PathDirection(float t)
+        {
+            Vector3 direction=PointOnPath(Mathf.Min(1f,t+.012f))-PointOnPath(Mathf.Max(0f,t-.012f));
+            return direction.sqrMagnitude>.000001f?direction.normalized:diagramRight;
+        }
+        void SetArrow(LineRenderer line,float t,float sign)
+        {
+            Vector3 direction=PathDirection(t)*sign;
+            Vector3 across=Vector3.Cross(direction,diagramForward).normalized;
+            if(across.sqrMagnitude<.001f) across=Vector3.up;
+            Vector3 tip=PointOnPath(t)-diagramForward*.018f;
+            line.positionCount=3;
+            line.SetPosition(0,tip-direction*.028f+across*.015f);
+            line.SetPosition(1,tip);
+            line.SetPosition(2,tip-direction*.028f-across*.015f);
+        }
+
+        static LineRenderer MakeLine(Transform parent,string name,float width,Material material)
+        {
+            var line=new GameObject(name).AddComponent<LineRenderer>();line.transform.SetParent(parent,false);
+            line.useWorldSpace=true;line.sharedMaterial=material;line.startWidth=width;line.endWidth=width;
+            line.numCornerVertices=3;line.shadowCastingMode=ShadowCastingMode.Off;line.receiveShadows=false;return line;
+        }
+        TextMeshPro MakeText(string name,Vector2 size,float font)
+        {
+            var text=new GameObject(name).AddComponent<TextMeshPro>();text.transform.SetParent(visuals.transform,false);
+            text.font=TMP_Settings.defaultFontAsset;text.color=Color.white;text.alignment=TextAlignmentOptions.Center;
+            text.rectTransform.sizeDelta=size;text.enableWordWrapping=false;
+            text.enableAutoSizing=true;text.fontSizeMin=.02f;text.fontSizeMax=font;
+            text.GetComponent<Renderer>().shadowCastingMode=ShadowCastingMode.Off;
+            var backing=GameObject.CreatePrimitive(PrimitiveType.Cube);backing.name="Opaque text backing";
+            backing.transform.SetParent(text.transform,false);backing.transform.localPosition=Vector3.forward*.012f;
+            backing.transform.localScale=new Vector3(size.x+.024f,size.y+.014f,.006f);
+            var hit=backing.GetComponent<Collider>();hit.enabled=false;DestroyOwned(hit);
+            var renderer=backing.GetComponent<Renderer>();renderer.sharedMaterial=inkMaterial;
+            renderer.shadowCastingMode=ShadowCastingMode.Off;renderer.receiveShadows=false;return text;
+        }
+        void FaceViewer(Transform label)
+        {
+            if(!viewer)return;Vector3 forward=label.position-viewer.position;
+            if(forward.sqrMagnitude>.0001f)label.rotation=Quaternion.LookRotation(forward,Vector3.up);
+        }
+        void ReleaseVisuals()
+        {
+            IsPlaying=false;IsVisible=false;
+            if(visuals)DestroyOwned(visuals);
+            visuals=null;models?.Dispose();models=null;
+        }
+        static void DestroyOwned(UnityEngine.Object target)
+        {if(!target)return;if(Application.isPlaying)Destroy(target);else DestroyImmediate(target);}
+    }
+}
