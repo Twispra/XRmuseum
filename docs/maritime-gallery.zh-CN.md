@@ -1,6 +1,6 @@
 # 潜水展厅环境说明
 
-2026-10-02；对应 [Issue #4](https://github.com/Twispra/XRmuseum/issues/4)。本地实现位于 `codex/museum-atmosphere-2026-10-02`，基于 `74556aadae39607b23b8ac2b8fd35e8042019393`。本说明写入时尚未推送；不能据此认为远程分支或 main 已包含展厅。
+2026-10-02；对应 [Issue #4](https://github.com/Twispra/XRmuseum/issues/4)。本地实现位于 `codex/museum-atmosphere-2026-10-02`，基于 `74556aadae39607b23b8ac2b8fd35e8042019393`。交付分支通过 PR 审查，尚未合并 main；10 月 3 日的新回归与接手方法见[发布交接](activity/2026-10-03-gallery-release.md)。
 
 ## 设计与内容
 

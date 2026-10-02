@@ -48,6 +48,8 @@
 5. 中间展台已替换为带有 **XR Grab Interactable** 的头盔简模：靠近并按住 **G** 抓取，松开后放下，按 **Home** 复位。详细说明见[头盔抓取原型](helmet-interaction.zh-CN.md)。地面带有 **Teleportation Area**，使用 XRI 的 Teleport 交互层。模拟器的 **1/3** 在摇杆输入和位置输入目标之间切换，完整映射见导入的 XR Device Simulator inputactions。
 6. 再次点击 Play 退出。**Play 期间对场景的临时改动不会自动保存到编辑状态。**
 
+**头盔实体按钮怎么点：** 射线对准 WINDOW / SECTION / FLOAT / RESET 等按钮，按 **G 并松开**。这些按钮响应 Grip → Select；鼠标左键模拟 Trigger，不会触发它们。先点击 Game、切英文输入，并确认模拟器当前选中左/右 Controller，而不是 HMD。
+
 这不是普通第一人称 WASD 控制器。模拟器可以帮助没有头显的组员预览与检查输入绑定，真实手柄的定位、传送和抓取仍需要设备测试。
 
 ### 接真实 PC VR 头显

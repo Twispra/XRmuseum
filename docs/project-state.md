@@ -1,5 +1,7 @@
 # 项目状态与下一步
 
+**2026-10-03 发布前复测：** 展厅源码 `342cdda` 的 49 项环境、207 项主场景交互及 90 项原拿放检查全部通过，10 次拿放循环完成。交付分支为 `codex/museum-atmosphere-2026-10-02`，对应 [Issue #4](https://github.com/Twispra/XRmuseum/issues/4)，尚未合并 main；[本次证据与交接](activity/2026-10-03-gallery-release.md)包含 G 键选择说明、复跑入口和未验证范围。以下日期段落保留当时快照，不能据旧“仅本地”状态判断当前远程。
+
 **2026-10-02 核验与本地展厅开发：** fetch 后的 `origin/main = 74556aadae39607b23b8ac2b8fd35e8042019393`，GitHub 确认 PR #3 已合并，包含前窗、可调剖面及其连续性修复。下方 9 月记录保留为当时快照。当前 [Issue #4](https://github.com/Twispra/XRmuseum/issues/4) 在 `codex/museum-atmosphere-2026-10-02` 增加现代海事展厅，直接接入原 `MuseumStart`，见[环境说明](maritime-gallery.zh-CN.md)和[本轮活动](activity/2026-10-02-maritime-gallery.md)。本段写入时环境成果仅在本地，尚未推送或合并；不要据此认为远程 main 已有新环境。目标平台、XR 输入和头盔运行时逻辑保持当前主线配置，真实设备、学习效果和最终构建仍待验证。
 
 **2026-09-30 PR #3 评论修复（仍在功能分支）：** 已复现组员指出的剖切球柄跳变，修改为保留连续局部方向及完整手腕旋转；最新源码为 `0d31e426cb97c8cd838ebb8ac050d5874e24c3bb`，见[修复、测试与复查步骤](activity/2026-09-30-section-continuity-review.md)。此次没有再改主场景、Prefab 或输入配置。原 140 项验收遗漏了该临界情况，旧通过结果不代表问题不存在。[PR #3](https://github.com/Twispra/XRmuseum/pull/3) 等待组员复查，未自动合并；真实设备与构建仍待完成。
