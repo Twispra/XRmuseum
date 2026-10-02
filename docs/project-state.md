@@ -1,5 +1,11 @@
 # 项目状态与下一步
 
+**2026-10-03 探索功能发布交接：** `codex/helmet-exploration-2026-10-03` 提交可选 AIR / VOICE 探索、16 秒设备模型动画、提示与回顾，源码 `c2bf63c`。351 项动画验收的源文件仍匹配；发布前新跑原观察 207 项、原拿放 90 项均通过，错误 0、实际退出码 0。探索 PR 依赖未合并的[环境 PR #5](https://github.com/Twispra/XRmuseum/pull/5)，以环境分支为 base；先合并环境、再将探索 PR 调整到 main 并审查。没有自动合并。[版本、证据和接手步骤](activity/2026-10-03-exploration-release.md)。真实头显、用户评价与当前构建仍未验证。以下记录保留各阶段当时的状态。
+
+**2026-10-03 供气/通话模型动画：** 在同一探索分支继续完善16秒分段演示，增加双轮双缸泵、软管流动、电话箱和有线双向波列。最终351项检查通过、实际退出码0；本轮635个原文件未变，主场景和原资产未再次改写。[最新实现与交接](activity/2026-10-03-exploration-model-animation.md)。此版本仍仅本地，未推送；真实设备的清晰度、舒适性和性能未验证。
+
+**2026-10-03 自由探索本地实现：** 环境已上传 [PR #5](https://github.com/Twispra/XRmuseum/pull/5)，尚未合并；后续 [Issue #6](https://github.com/Twispra/XRmuseum/issues/6) 在 `codex/helmet-exploration-2026-10-03` 依赖其 `39bebc3` 增加同一面板的可选 AIR / VOICE 探索、按需提示和随时回顾，当前尚未推送。最终新增 282 项及原拿放 90 项检查通过、实际退出码 0；原主场景 207 项断言通过，但该轮批处理退出超时，不能写成全部批处理成功。[交接与证据](activity/2026-10-03-helmet-exploration.md)说明已修问题、退出异常和真实设备验证缺口。
+
 **2026-10-03 发布前复测：** 展厅源码 `342cdda` 的 49 项环境、207 项主场景交互及 90 项原拿放检查全部通过，10 次拿放循环完成。交付分支为 `codex/museum-atmosphere-2026-10-02`，对应 [Issue #4](https://github.com/Twispra/XRmuseum/issues/4)，尚未合并 main；[本次证据与交接](activity/2026-10-03-gallery-release.md)包含 G 键选择说明、复跑入口和未验证范围。以下日期段落保留当时快照，不能据旧“仅本地”状态判断当前远程。
 
 **2026-10-02 核验与本地展厅开发：** fetch 后的 `origin/main = 74556aadae39607b23b8ac2b8fd35e8042019393`，GitHub 确认 PR #3 已合并，包含前窗、可调剖面及其连续性修复。下方 9 月记录保留为当时快照。当前 [Issue #4](https://github.com/Twispra/XRmuseum/issues/4) 在 `codex/museum-atmosphere-2026-10-02` 增加现代海事展厅，直接接入原 `MuseumStart`，见[环境说明](maritime-gallery.zh-CN.md)和[本轮活动](activity/2026-10-02-maritime-gallery.md)。本段写入时环境成果仅在本地，尚未推送或合并；不要据此认为远程 main 已有新环境。目标平台、XR 输入和头盔运行时逻辑保持当前主线配置，真实设备、学习效果和最终构建仍待验证。

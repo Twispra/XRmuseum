@@ -1,0 +1,42 @@
+{
+  "model-animation": {
+    "entry": "Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch",
+    "startedUtc": "2026-10-02T17:30:55.3429877Z",
+    "finishedUtc": "2026-10-02T17:32:15.7680707Z",
+    "processId": 19532,
+    "exitCode": 1,
+    "timedOut": false,
+    "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+    "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\exploration-20261003-model-animation.log"
+  },
+  "model-animation-final": {
+    "entry": "Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch",
+    "startedUtc": "2026-10-02T17:33:30.4811954Z",
+    "finishedUtc": "2026-10-02T17:35:23.5347961Z",
+    "processId": 12988,
+    "exitCode": 1,
+    "timedOut": false,
+    "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+    "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\exploration-20261003-model-animation-final.log"
+  },
+  "model-animation-verified": {
+    "entry": "Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch",
+    "startedUtc": "2026-10-02T17:36:19.2771842Z",
+    "finishedUtc": "2026-10-02T17:38:12.8646269Z",
+    "processId": 28220,
+    "exitCode": 1,
+    "timedOut": false,
+    "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+    "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\exploration-20261003-model-animation-verified.log"
+  },
+  "model-animation-acceptance": {
+    "entry": "Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch",
+    "startedUtc": "2026-10-02T17:39:08.6778942Z",
+    "finishedUtc": "2026-10-02T17:41:05.1387778Z",
+    "processId": 45972,
+    "exitCode": 0,
+    "timedOut": false,
+    "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+    "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\exploration-20261003-model-animation-acceptance.log"
+  }
+}

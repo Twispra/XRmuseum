@@ -1,0 +1,3681 @@
+{
+    "utc": "2026-10-02T17:07:34.8779449Z",
+    "status": "passed",
+    "failure": "",
+    "scene": "Assets/Museum/Scenes/MuseumStart.unity",
+    "inputMethod": "InputSystem.QueueStateEvent on synthetic XR controller/HMD devices in the normal Dynamic player input update, through production Input Actions and interactors. Home uses a synthetic keyboard. No SelectEnter/SelectExit calls are made by this validator.",
+    "limitations": "Official simulator presence is checked, then its state writer is disabled. OS keyboard/mouse simulator controls, physical headset input, learning outcomes, comfort, historical accuracy, frame time and executable builds are not tested. Public-API state tests and pose fixtures are labelled separately from input-driven tests. Screenshots are monocular editor captures requiring visual review; -panel-closeup files use a temporary QA camera, not the production view. No text overflow proves only layout containment, not readability in a headset; resolved font sizes are recorded.",
+    "provenance": {
+        "utc": "2026-10-02T17:07:32.9010551Z",
+        "commit": "39bebc3a86e7f3479c0886539c67cc1389630fb3",
+        "branch": "codex/helmet-exploration-2026-10-03",
+        "dirty": "M MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionPalette.cs\n M MuseumVR/Assets/Museum/Scenes/MuseumStart.unity\n?? MuseumVR/.vscode/extensions.json\n?? MuseumVR/.vscode/launch.json\n?? MuseumVR/.vscode/settings.json\n?? MuseumVR/Assets/Museum/Features/HelmetExploration.meta\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Editor.meta\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationSetup.cs\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationSetup.cs.meta\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationValidation.cs\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationValidation.cs.meta\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Materials.meta\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/AirSignal.mat\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/AirSignal.mat.meta\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/DiagramInk.mat\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/DiagramInk.mat.meta\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/VoiceSignal.mat\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/VoiceSignal.mat.meta\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime.meta\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs.meta\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationButton.cs\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationButton.cs.meta\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationController.cs\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationController.cs.meta\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationHotspot.cs\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationHotspot.cs.meta\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationPanel.cs\n?? MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationPanel.cs.meta\n?? artifacts/helmet-exploration/qa/runs/20261002T164614357Z-exploration-9d59f0ea9c3c454b8b3e6c1ffbd66aa9/00-welcome.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T164614357Z-exploration-9d59f0ea9c3c454b8b3e6c1ffbd66aa9/01-air-right-hand.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T164614357Z-exploration-9d59f0ea9c3c454b8b3e6c1ffbd66aa9/02-voice-left-hand.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T164614357Z-exploration-9d59f0ea9c3c454b8b3e6c1ffbd66aa9/03-review.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T164614357Z-exploration-9d59f0ea9c3c454b8b3e6c1ffbd66aa9/04-moved-air-endpoint.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T164614357Z-exploration-9d59f0ea9c3c454b8b3e6c1ffbd66aa9/05-final-welcome.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T164614357Z-exploration-9d59f0ea9c3c454b8b3e6c1ffbd66aa9/report.json\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/00-welcome-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/00-welcome.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/01-air-right-hand-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/01-air-right-hand.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/02-voice-left-hand-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/02-voice-left-hand.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/02b-hint-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/02b-hint.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/03-review-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/03-review.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/04-moved-air-endpoint-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/04-moved-air-endpoint.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/04b-static-air-diagram-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/04b-static-air-diagram.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/04c-reduced-motion-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/04c-reduced-motion.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/05-final-welcome-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/05-final-welcome.jpg\n?? artifacts/helmet-exploration/qa/runs/20261002T165332521Z-exploration-629640d0ae004be18ac8c393ac2f029f/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T123446207Z-inspection-views/01-closed.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T123446207Z-inspection-views/02-open.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T123446207Z-inspection-views/03-half-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T123446207Z-inspection-views/04-inside-shell.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T123446207Z-inspection-views/README.txt\n?? artifacts/helmet-interaction/qa/runs/20260929T123731467Z-585cf6864f8444a4a1411266a7586840/playmode-validation.json\n?? artifacts/helmet-interaction/qa/runs/20260929T123731467Z-585cf6864f8444a4a1411266a7586840/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T123731467Z-585cf6864f8444a4a1411266a7586840/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T123731467Z-585cf6864f8444a4a1411266a7586840/preview/capture.json\n?? artifacts/helmet-interaction/qa/runs/20260929T123943981Z-inspection-53028b97a6f84b0593f5dd3b55e0de18/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T124246676Z-inspection-13eea55e146b48dfa13f9f05d9c3626e/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T124423524Z-inspection-97d20b09affd4ed5a9da4826b699d03f/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T124625900Z-inspection-1f91fd4949324ce4a71e717b28c1f4be/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T124828774Z-inspection-views/01-closed.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T124828774Z-inspection-views/02-open.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T124828774Z-inspection-views/03-half-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T124828774Z-inspection-views/04-inside-shell.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T124828774Z-inspection-views/README.txt\n?? artifacts/helmet-interaction/qa/runs/20260929T125949181Z-inspection-main-5c6a3967bc05435e9c56f34081d47157/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T130442715Z-693b6d8a1c194ac4bd581835694e59fc/playmode-validation.json\n?? artifacts/helmet-interaction/qa/runs/20260929T130442715Z-693b6d8a1c194ac4bd581835694e59fc/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T130442715Z-693b6d8a1c194ac4bd581835694e59fc/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T130442715Z-693b6d8a1c194ac4bd581835694e59fc/preview/capture.json\n?? artifacts/helmet-interaction/qa/runs/20260929T133920960Z-inspection-main-c2930c570a5a4104a3fb05ca7705b8bb/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T133920960Z-inspection-main-c2930c570a5a4104a3fb05ca7705b8bb/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T133920960Z-inspection-main-c2930c570a5a4104a3fb05ca7705b8bb/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T133920960Z-inspection-main-c2930c570a5a4104a3fb05ca7705b8bb/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T133920960Z-inspection-main-c2930c570a5a4104a3fb05ca7705b8bb/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T133920960Z-inspection-main-c2930c570a5a4104a3fb05ca7705b8bb/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T134821875Z-8df191a7121c404082b77e907d45a65f/playmode-validation.json\n?? artifacts/helmet-interaction/qa/runs/20260929T134821875Z-8df191a7121c404082b77e907d45a65f/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134821875Z-8df191a7121c404082b77e907d45a65f/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T134821875Z-8df191a7121c404082b77e907d45a65f/preview/capture.json\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T140049739Z-066f0203979b4461ba4df8a76fc6773f/playmode-validation.json\n?? artifacts/helmet-interaction/qa/runs/20260929T140049739Z-066f0203979b4461ba4df8a76fc6773f/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140049739Z-066f0203979b4461ba4df8a76fc6773f/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140049739Z-066f0203979b4461ba4df8a76fc6773f/preview/capture.json\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/report.json\n?? artifacts/helmet-interaction/qa/runs/20260929T140424021Z-c43557ea7aea481ebb11be96acdacd22/playmode-validation.json\n?? artifacts/helmet-interaction/qa/runs/20260929T140424021Z-c43557ea7aea481ebb11be96acdacd22/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140424021Z-c43557ea7aea481ebb11be96acdacd22/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T140424021Z-c43557ea7aea481ebb11be96acdacd22/preview/capture.json\n?? artifacts/helmet-interaction/qa/runs/20260929T143825749Z-inspection-main-48fc041ce57e4f5b8adf814c880c7b62/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T143825749Z-inspection-main-48fc041ce57e4f5b8adf814c880c7b62/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T143825749Z-inspection-main-48fc041ce57e4f5b8adf814c880c7b62/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T143825749Z-inspection-main-48fc041ce57e4f5b8adf814c880c7b62/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T144117211Z-c6da6e32c7c2452393c5308eea11d07f/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T144117211Z-c6da6e32c7c2452393c5308eea11d07f/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T144117211Z-c6da6e32c7c2452393c5308eea11d07f/preview/capture.json\n?? artifacts/helmet-interaction/qa/runs/20260930T111758078Z-section-continuity-9b68066faf2840729757ecc615124024/report.json\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/report.json\n?? artifacts/helmet-interaction/qa/runs/20260930T112042017365Z-publish-audit/static-regression.json\n?? artifacts/helmet-interaction/qa/runs/20260930T112306440699Z-publish-audit/review-verification.json\n?? artifacts/helmet-interaction/qa/runs/20260930T112306440699Z-publish-audit/static-regression.json\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/report.json\n?? artifacts/helmet-interaction/qa/runs/20260930T112506617Z-7627b9c7c2bb488fba30259ae04fb68f/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112506617Z-7627b9c7c2bb488fba30259ae04fb68f/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112506617Z-7627b9c7c2bb488fba30259ae04fb68f/preview/capture.json\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T153656245Z-inspection-main-e35acf5830d747e6a4b8021c9ffda9e0/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T153656245Z-inspection-main-e35acf5830d747e6a4b8021c9ffda9e0/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T153656245Z-inspection-main-e35acf5830d747e6a4b8021c9ffda9e0/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T153656245Z-inspection-main-e35acf5830d747e6a4b8021c9ffda9e0/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T153656245Z-inspection-main-e35acf5830d747e6a4b8021c9ffda9e0/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T153656245Z-inspection-main-e35acf5830d747e6a4b8021c9ffda9e0/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T153656245Z-inspection-main-e35acf5830d747e6a4b8021c9ffda9e0/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T153656245Z-inspection-main-e35acf5830d747e6a4b8021c9ffda9e0/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T153656245Z-inspection-main-e35acf5830d747e6a4b8021c9ffda9e0/report.json\n?? artifacts/helmet-interaction/qa/runs/20261002T154050715Z-b0c0d916486c4b03b83aea28a777d49d/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T154050715Z-b0c0d916486c4b03b83aea28a777d49d/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T154050715Z-b0c0d916486c4b03b83aea28a777d49d/preview/capture.json\n?? artifacts/helmet-interaction/qa/runs/20261002T154156178Z-inspection-main-da94292efa9449949c6ee8e82def5829/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T154156178Z-inspection-main-da94292efa9449949c6ee8e82def5829/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T154156178Z-inspection-main-da94292efa9449949c6ee8e82def5829/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T154156178Z-inspection-main-da94292efa9449949c6ee8e82def5829/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T154156178Z-inspection-main-da94292efa9449949c6ee8e82def5829/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T154156178Z-inspection-main-da94292efa9449949c6ee8e82def5829/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T154156178Z-inspection-main-da94292efa9449949c6ee8e82def5829/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T154156178Z-inspection-main-da94292efa9449949c6ee8e82def5829/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T154156178Z-inspection-main-da94292efa9449949c6ee8e82def5829/report.json\n?? artifacts/helmet-interaction/qa/runs/20261002T162513715Z-inspection-main-5cc99770046d4d14b3ab4601b2e645e4/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T162513715Z-inspection-main-5cc99770046d4d14b3ab4601b2e645e4/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T162513715Z-inspection-main-5cc99770046d4d14b3ab4601b2e645e4/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T162513715Z-inspection-main-5cc99770046d4d14b3ab4601b2e645e4/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T162513715Z-inspection-main-5cc99770046d4d14b3ab4601b2e645e4/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T162513715Z-inspection-main-5cc99770046d4d14b3ab4601b2e645e4/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T162722639Z-0cf10c0637604fd382a278b8ee22c434/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T162722639Z-0cf10c0637604fd382a278b8ee22c434/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T162722639Z-0cf10c0637604fd382a278b8ee22c434/preview/capture.json\n?? artifacts/helmet-interaction/qa/runs/20261002T165754698Z-inspection-main-4a9de0efe3444c0694d69fc1ba1e795a/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T165754698Z-inspection-main-4a9de0efe3444c0694d69fc1ba1e795a/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T165754698Z-inspection-main-4a9de0efe3444c0694d69fc1ba1e795a/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T165754698Z-inspection-main-4a9de0efe3444c0694d69fc1ba1e795a/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T165754698Z-inspection-main-4a9de0efe3444c0694d69fc1ba1e795a/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T165754698Z-inspection-main-4a9de0efe3444c0694d69fc1ba1e795a/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T165754698Z-inspection-main-4a9de0efe3444c0694d69fc1ba1e795a/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T165754698Z-inspection-main-4a9de0efe3444c0694d69fc1ba1e795a/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T165754698Z-inspection-main-4a9de0efe3444c0694d69fc1ba1e795a/report.json\n?? artifacts/helmet-interaction/qa/runs/20261002T170518769Z-9e8b9d7161614358b93a5b7223a1a0ab/playmode-validation.json\n?? artifacts/helmet-interaction/qa/runs/20261002T170518769Z-9e8b9d7161614358b93a5b7223a1a0ab/preview/01-player-start.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T170518769Z-9e8b9d7161614358b93a5b7223a1a0ab/preview/02-helmet-and-reset.jpg\n?? artifacts/helmet-interaction/qa/runs/20261002T170518769Z-9e8b9d7161614358b93a5b7223a1a0ab/preview/capture.json\n?? artifacts/maritime-gallery/qa/runs/20261002T152311922Z-baseline-6d79140f09ad4156ad5c1ed1e83f3da1/README.txt\n?? artifacts/maritime-gallery/qa/runs/20261002T152311922Z-baseline-6d79140f09ad4156ad5c1ed1e83f3da1/report.json\n?? artifacts/maritime-gallery/qa/runs/20261002T152936018Z-baseline-96eb5775f4a3468ca861ff2d3888f70c/README.txt\n?? artifacts/maritime-gallery/qa/runs/20261002T152936018Z-baseline-96eb5775f4a3468ca861ff2d3888f70c/report.json\n?? artifacts/maritime-gallery/qa/runs/20261002T152936018Z-baseline-96eb5775f4a3468ca861ff2d3888f70c/snapshot.json\n?? artifacts/maritime-gallery/qa/runs/20261002T153221651Z-validation-5d5215b1ed1042ee8a75dc35c744570c/01-startup.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153221651Z-validation-5d5215b1ed1042ee8a75dc35c744570c/02-wide-front.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153221651Z-validation-5d5215b1ed1042ee8a75dc35c744570c/03-seated.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153221651Z-validation-5d5215b1ed1042ee8a75dc35c744570c/04-left.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153221651Z-validation-5d5215b1ed1042ee8a75dc35c744570c/05-right.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153221651Z-validation-5d5215b1ed1042ee8a75dc35c744570c/06-back.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153221651Z-validation-5d5215b1ed1042ee8a75dc35c744570c/07-exhibit-from-rear.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153221651Z-validation-5d5215b1ed1042ee8a75dc35c744570c/08-ceiling.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153221651Z-validation-5d5215b1ed1042ee8a75dc35c744570c/09-floor.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153221651Z-validation-5d5215b1ed1042ee8a75dc35c744570c/README.txt\n?? artifacts/maritime-gallery/qa/runs/20261002T153221651Z-validation-5d5215b1ed1042ee8a75dc35c744570c/report.json\n?? artifacts/maritime-gallery/qa/runs/20261002T153221651Z-validation-5d5215b1ed1042ee8a75dc35c744570c/snapshot.json\n?? artifacts/maritime-gallery/qa/runs/20261002T153601466Z-validation-0a126ebc18af459bab56a9a9b83b5ab0/01-startup.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153601466Z-validation-0a126ebc18af459bab56a9a9b83b5ab0/02-wide-front.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153601466Z-validation-0a126ebc18af459bab56a9a9b83b5ab0/03-seated.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153601466Z-validation-0a126ebc18af459bab56a9a9b83b5ab0/04-left.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153601466Z-validation-0a126ebc18af459bab56a9a9b83b5ab0/05-right.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153601466Z-validation-0a126ebc18af459bab56a9a9b83b5ab0/06-back.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153601466Z-validation-0a126ebc18af459bab56a9a9b83b5ab0/07-exhibit-from-rear.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153601466Z-validation-0a126ebc18af459bab56a9a9b83b5ab0/08-ceiling.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153601466Z-validation-0a126ebc18af459bab56a9a9b83b5ab0/09-floor.png\n?? artifacts/maritime-gallery/qa/runs/20261002T153601466Z-validation-0a126ebc18af459bab56a9a9b83b5ab0/README.txt\n?? artifacts/maritime-gallery/qa/runs/20261002T153601466Z-validation-0a126ebc18af459bab56a9a9b83b5ab0/report.json\n?? artifacts/maritime-gallery/qa/runs/20261002T153601466Z-validation-0a126ebc18af459bab56a9a9b83b5ab0/snapshot.json\n?? artifacts/maritime-gallery/qa/runs/20261002T154035711Z-validation-078f7b06ede548449e6100a545f8ec14/01-startup.png\n?? artifacts/maritime-gallery/qa/runs/20261002T154035711Z-validation-078f7b06ede548449e6100a545f8ec14/02-wide-front.png\n?? artifacts/maritime-gallery/qa/runs/20261002T154035711Z-validation-078f7b06ede548449e6100a545f8ec14/03-seated.png\n?? artifacts/maritime-gallery/qa/runs/20261002T154035711Z-validation-078f7b06ede548449e6100a545f8ec14/04-left.png\n?? artifacts/maritime-gallery/qa/runs/20261002T154035711Z-validation-078f7b06ede548449e6100a545f8ec14/05-right.png\n?? artifacts/maritime-gallery/qa/runs/20261002T154035711Z-validation-078f7b06ede548449e6100a545f8ec14/06-back.png\n?? artifacts/maritime-gallery/qa/runs/20261002T154035711Z-validation-078f7b06ede548449e6100a545f8ec14/07-exhibit-from-rear.png\n?? artifacts/maritime-gallery/qa/runs/20261002T154035711Z-validation-078f7b06ede548449e6100a545f8ec14/08-ceiling.png\n?? artifacts/maritime-gallery/qa/runs/20261002T154035711Z-validation-078f7b06ede548449e6100a545f8ec14/09-floor.png\n?? artifacts/maritime-gallery/qa/runs/20261002T154035711Z-validation-078f7b06ede548449e6100a545f8ec14/README.txt\n?? artifacts/maritime-gallery/qa/runs/20261002T154035711Z-validation-078f7b06ede548449e6100a545f8ec14/report.json\n?? artifacts/maritime-gallery/qa/runs/20261002T154035711Z-validation-078f7b06ede548449e6100a545f8ec14/snapshot.json\n?? artifacts/maritime-gallery/qa/runs/20261002T162435260Z-validation-7c6d63760e8e47d39ffcf42d386ec952/01-startup.png\n?? artifacts/maritime-gallery/qa/runs/20261002T162435260Z-validation-7c6d63760e8e47d39ffcf42d386ec952/02-wide-front.png\n?? artifacts/maritime-gallery/qa/runs/20261002T162435260Z-validation-7c6d63760e8e47d39ffcf42d386ec952/03-seated.png\n?? artifacts/maritime-gallery/qa/runs/20261002T162435260Z-validation-7c6d63760e8e47d39ffcf42d386ec952/04-left.png\n?? artifacts/maritime-gallery/qa/runs/20261002T162435260Z-validation-7c6d63760e8e47d39ffcf42d386ec952/05-right.png\n?? artifacts/maritime-gallery/qa/runs/20261002T162435260Z-validation-7c6d63760e8e47d39ffcf42d386ec952/06-back.png\n?? artifacts/maritime-gallery/qa/runs/20261002T162435260Z-validation-7c6d63760e8e47d39ffcf42d386ec952/07-exhibit-from-rear.png\n?? artifacts/maritime-gallery/qa/runs/20261002T162435260Z-validation-7c6d63760e8e47d39ffcf42d386ec952/08-ceiling.png\n?? artifacts/maritime-gallery/qa/runs/20261002T162435260Z-validation-7c6d63760e8e47d39ffcf42d386ec952/09-floor.png\n?? artifacts/maritime-gallery/qa/runs/20261002T162435260Z-validation-7c6d63760e8e47d39ffcf42d386ec952/README.txt\n?? docs/activity/2026-09-29-helmet-inspection.md\n?? docs/activity/2026-09-29-main-gallery-inspection.md\n?? docs/activity/2026-10-03-helmet-exploration.md\n?? docs/helmet-exploration.zh-CN.md\n?? docs/helmet-inspection.zh-CN.md",
+        "unity": "2022.3.62f3c1",
+        "files": [
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Editor.meta",
+                "sha256": "1f47bc2f1b2cef625667e1ac316c40a9d399b1a4d41b0add854cb8826d56650c"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationSetup.cs",
+                "sha256": "d71eb77e70b9aff5ed781acaa619e2b894939b94589e7c39ed8e1656dd2af784"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationSetup.cs.meta",
+                "sha256": "522e65ed7203c1bd8b98b711f3b8e994a8f3ddc55e86dbd00096b7af0586ba3d"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationValidation.cs",
+                "sha256": "a21f41b0078b023ed43f6deae408010dc46133c7600b9bae6a7380ba4d5a8d15"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationValidation.cs.meta",
+                "sha256": "618598274cb9312c3769f29c8026d0e708c47b36bf268f24d2c1c09a8007e099"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Materials.meta",
+                "sha256": "fbc72b5f71229a339b260c0f6236ff5c3cc4caf6db96d63d2e40753e0c2dfef1"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Materials/AirSignal.mat",
+                "sha256": "2c567ff03bd4e21c5394bb70af973a63b542696006a19ef2eb183eb383af3369"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Materials/AirSignal.mat.meta",
+                "sha256": "654b45819700a2d497dbac071304102bbe047daa2698390f8a7cb0f240455823"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Materials/DiagramInk.mat",
+                "sha256": "837ad73801a720af0f216d9a2e53cbc3d083754e5ac6e0890c6ea3a15d1a58b7"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Materials/DiagramInk.mat.meta",
+                "sha256": "1c8ed0a2ee66639b6fcfa9b376238ec2620f81a97eb63d4cef5e0ec8b0aee750"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Materials/VoiceSignal.mat",
+                "sha256": "a4daff4a9f7619de45ac2ff681cd2f128850de2beb4b6a18552e2f2420728606"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Materials/VoiceSignal.mat.meta",
+                "sha256": "4636432a06b5ec455f9230195067be6ce27674fcbd3276ecde902bb5ac4b47d8"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Runtime.meta",
+                "sha256": "727a602dd46baaa947708dd44601bd5f111932c3bbd99e46a878454374bbb091"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs",
+                "sha256": "c935201f3d9b7bace321c88cf4827cc0827d9b76a81279fad10e5a777c382f7f"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs.meta",
+                "sha256": "6f555c1d319a96da0a9fe9053d5abd13445c0980278a32bf389483ed8acd109a"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationButton.cs",
+                "sha256": "e25bf2f59469fe979ae8fe80502b128837b2fb20ca4936a047d7e0f7fc700598"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationButton.cs.meta",
+                "sha256": "90b13b9a1a85bd6b43a4ebb3ab0aec7907a34ffd2d3c70223f926f92c4f35d59"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationController.cs",
+                "sha256": "416d77745d9ab24ffa67c0ec4bdcc0fd755ce38495e2408ef03720d8c2a2cf56"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationController.cs.meta",
+                "sha256": "fe51d381dfc906f275afdec481c7e9da2c3686aceea9db0ca9e7f48cd2b8ccb2"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationHotspot.cs",
+                "sha256": "21b1eeb3cfc217f04ac5baf07b4941c6597027c895c13fef48b1e9bf95ce404b"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationHotspot.cs.meta",
+                "sha256": "cb38cbaa37a0de9cc393ecdbab2cf9bf91fb3135c805e00907226e254023a551"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationPanel.cs",
+                "sha256": "269613c918cb48bcbc04cbc5656b073116885d9ad071739d22cbdb196bcadc09"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationPanel.cs.meta",
+                "sha256": "12899a90dce45f2ed77804c88af129ee2a49753f9104db7a189bf2f4e72190e0"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetInspection/Materials/Brass.mat",
+                "sha256": "625730228f20779eab50ae11c860f6d51c3e75381435ed4ce97662d8c72790a2"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetInspection/Materials/Controls.mat",
+                "sha256": "0428022bf03d4c12ce70c7d562a1fdc7330b82a7d6677eb4336a8f2557a11ba1"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetInspection/Materials/Copper.mat",
+                "sha256": "df47e6dc3a2947ae4b91c9350b79bcf10a584cba3b8d7f133da1b80ed52fb159"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetInspection/Materials/SectionTool.mat",
+                "sha256": "4397f15169b74f97e70962ff2a40366aa37a8db2ed176650253613250dbc7fe7"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetInspection/Materials/Window.mat",
+                "sha256": "1d0b2961781c944a2dfc2f484748c8c4479bea6bd69f2e78498c1d82089f6753"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+                "sha256": "386c0333c3cf2bd286f61463cb833c7f54ec2b799872b74caca579181cffd6bb"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+                "sha256": "d0a9e828356cbed7271b9865379ec49eab1e264171de4a6808b1ee25cd4ee968"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionControls.cs",
+                "sha256": "74d8bb711395ce9de997e8e6b43a640ed19ca99b8a9d9b83826504f333e16e53"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionPalette.cs",
+                "sha256": "7ab8d96acd30f7a28ce29d60dea7e257049cc677c7dd5717887e5f5642f63adf"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetSectionInteractable.cs",
+                "sha256": "1d20516b87c001f006b51a6fb0e7519f309244ad23da55027e8c1ae65e750214"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetWindowInteractable.cs",
+                "sha256": "02149f675d4bb498a309103ad1c02cb9f943b1ee7bb5c2d349893653279e5f9e"
+            },
+            {
+                "path": "Assets/Museum/Features/HelmetInspection/Shaders/InspectionShell.shader",
+                "sha256": "2076e258998f0d930bfd9296cc85fd32a303283f2eccd44a9054042aea5471f1"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Materials/Bronze.mat",
+                "sha256": "2ea003bd56b441323c89e52e7471676d3bae70c33d4b7ac165294151d010f667"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Materials/Contour.mat",
+                "sha256": "dd3d47286f1c1a5e0901b306a568a1e50a9bd24452f9c7cd824881e2d432e395"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Materials/CoolLight.mat",
+                "sha256": "f7e94b51717df51895d5123fe714930e671af530d900da14478a2910a9ce4c5e"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Materials/Floor.mat",
+                "sha256": "4c79f49e570fbbffd3283a254bd83e79bc7f38bf4256265f9b69bdd18186345f"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Materials/FloorSeam.mat",
+                "sha256": "e0c2198dbe2963f17c973d101a5c5ee68a295cc5774ab7f650efc54ed1e84bc0"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Materials/Graphite.mat",
+                "sha256": "26c80e47fa698316898285d53c261e4269812ee4e63caa70dbaaf98b50256a37"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Materials/Limestone.mat",
+                "sha256": "9c51ddd500f3684c6857bb50dfe5e1cf1585fddaf82a11ab433d0f29aeedd778"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Materials/Navy.mat",
+                "sha256": "8fdfa0b4ef33eef48634550109f39063b6df83e4d262f188fe15a1b9baeb2c01"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Materials/Ocean.mat",
+                "sha256": "bb4cc7d6422ddfaa81f194db05d967aa3daf012b449863d25df1250c72dd32ec"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Materials/Porcelain.mat",
+                "sha256": "7b635f2bcbc1821b289aed27c7b79df65e6eafcb9b4b94cb4fd4b111b01aafe8"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Materials/Walnut.mat",
+                "sha256": "52e6856aa9a07823eb1eb1cd09ef7fdb0ad2a8d02001fd78210d3fff3a6df423"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Materials/WarmLight.mat",
+                "sha256": "e58845ac570516aae80cd9d7d0e43e7512e6aacef3b2c53734b6ccf3f6414289"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-bronze__Bronze.asset",
+                "sha256": "d1d23c6bcea9cad59f5dbe51ae3f868d4237b184a84957b76ecb95d8a3dba56a"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-frame__Limestone.asset",
+                "sha256": "93292c1d3e3ba50eb62233be222d65bb3f381ae96581ab3b3d25df2690f3cf91"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-inlays__Bronze.asset",
+                "sha256": "36eee2319e0e0fee1a1be2b99d5ae78eda3cbe2e8fa4e5adfb695cc35e557f67"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-panel__Navy.asset",
+                "sha256": "3f06775a65293a0b67d5a6993f88cf6acbdbc1edb7ac0fada640fc73f96c162c"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-rhythm__CoolLight.asset",
+                "sha256": "ed39f2c7939eb704785a10d7302cb8569d670fc41f79559ddf01b82a474c15c1"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Baseboards__Graphite.asset",
+                "sha256": "8946b561468af9a708cc87df95a1bbfbaaa53bb1179e1175fdef310211856603"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Ceiling-ribs__Porcelain.asset",
+                "sha256": "9ec26fecbfa4bee840d944ea086d53c919156a24304fd6c46f0a765026747dac"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Ceiling-slots__WarmLight.asset",
+                "sha256": "d1dc666f80d11c7c0c4bb49cd3c06741da370bb19fa24cf967a80281ce893c71"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Connection-bars__CoolLight.asset",
+                "sha256": "46171bc4a7b28cb175199eddfd7e6ba578c3a60b369e70630f709c236bf05b98"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Connection-mount__Graphite.asset",
+                "sha256": "69e6485fbbd43f5ef295cb9570ffdef9dc4e95d3ecf32aa19dfaedeb10db6c81"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Connection-sign__Graphite.asset",
+                "sha256": "fca4e1e993272cef7d45e89bbbcb41c2ecc0d890a1cd9e57a73f1522e29d60b9"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Connection-strands__Bronze.asset",
+                "sha256": "3f6d1165bca4b55f5e10d819dc6b94ef5bdd097e0f0d063cd360a662eec0b6e4"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Connection-strands__CoolLight.asset",
+                "sha256": "6fb210bb0f979ddadbf040b02b83532581f50dc422bec0b005e9d61da0bd611d"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Cove-light__WarmLight.asset",
+                "sha256": "6e1eba3b97682787fdbf92389fc3f55322a69a705de4ba8df75f80da6bcb495b"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Coves__Graphite.asset",
+                "sha256": "7d9f5fb85e53dc0639e2bae5d8da1d52b085ee54448cc527ce528fd28aa8767d"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Feature-wall__Navy.asset",
+                "sha256": "f613583d894645ef0b8b7b4e5ef8ecd66a9e251907e243ccae4392c5934e7abd"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Floor-joints__FloorSeam.asset",
+                "sha256": "0e44889c6532725c90816a104a668741b5b8fa918d4ff6842979e2660f5fbde4"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Floor-perimeter__Bronze.asset",
+                "sha256": "c52e7017e3523708be4b3720413beeac3e297a29bbcee4c7ccab872df4ef0090"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Inset-cap__Bronze.asset",
+                "sha256": "8d2460e0ca4a458760b41e8acbb8544d2b284818f8a257b235b7bdf23db8778b"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Medallion-hairline__CoolLight.asset",
+                "sha256": "dd6bbbb68ab3b3cfc62a2eac4dc4a1cbf3a7018c4542130f1dfad520a34768a9"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Medallion-rim__Bronze.asset",
+                "sha256": "e0031c341bfe0538cc7fdb518e2fcab098e54d1fc7b8faa410b5292d013ece67"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Ocean-contour-relief__Contour.asset",
+                "sha256": "0c9bc0c9b95f58b68d0cde14a9f9f20a41102c7bad7bfcd0f221b04ad4294b6a"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Ocean-medallion__Ocean.asset",
+                "sha256": "fdd59d158ec9c91eeb5c05c5733bb854316c71161c47f49885d92b2aa864d9e5"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Pendant-bronze__Bronze.asset",
+                "sha256": "d4fa5f3255bb09f2ca534eda700c323ea44711a26a4d3cdf083223afab7c23cd"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Pendant-diffuser__WarmLight.asset",
+                "sha256": "ba7705d7cce37faa2006519cebb874e9091b6698760efe1202ab5bbc68fa618e"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Pendant__Graphite.asset",
+                "sha256": "1a64428a661ef73382fd8cb0a1992a22202fbebab46e3b133d8fc0068b7a56c8"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Pier-inlay__Bronze.asset",
+                "sha256": "f02bca29ba98a1c23fe4dc13e24333ebce793a7aeb7fe7feb6fb4a909c9867a4"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-base-glow__CoolLight.asset",
+                "sha256": "e908cb5a93e60a94f9b4049e99f48921a2bbc91ef1d56376e5d6d8312b1f5393"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-foot__Graphite.asset",
+                "sha256": "fba266d44fc9ff1f986f76c1c51c881c01e05b956729f777759c1f90f75cef84"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-inset__Navy.asset",
+                "sha256": "60f09bf72605c7ce1d4680d22af582af4b7a4693d283f823ea903c0c3facd133"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-trim__Bronze.asset",
+                "sha256": "2f209187d2b57707344d66f17a5ff458f5ff8a43d44cd0424099dc6436cc5e5d"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Porthole-fastener-studies__Graphite.asset",
+                "sha256": "5d4f07a0add7508963875b99fa3e4a9dad6cb5ee7d01a7549f90d6c7975ee8d5"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Porthole-inner__CoolLight.asset",
+                "sha256": "8dffaffcbb8191ff2fcf5d3a5f71337e6d35ce6a9de8fb26da40549f54274785"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Porthole-study__Bronze.asset",
+                "sha256": "5e813b93484476dda8ef0d78d92f01866602cf71c0fd836d1451e18e7efbccee"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Rear-baseboard__Graphite.asset",
+                "sha256": "44134555566f050d843db64ef61695461b7151a6082ab1b6fd73847e81251add"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Rear-cornice__Limestone.asset",
+                "sha256": "cdef891892183f4abca0fae6aa38fb169b7509eebd9cbd3a133630537293231b"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Rear-cove__WarmLight.asset",
+                "sha256": "beca545852a82dd88654ce5d16288e04c213c6d7c2dfb6798e7e60fdfbeba50e"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Rear-fins__Walnut.asset",
+                "sha256": "e55900d9bc4b5553a5f8291ea622f5ffd6e629ebf4edfd85b049716746e6edac"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Side-diagram-frames__Bronze.asset",
+                "sha256": "f785a9960e6557e808717664d264a3f5e973388f8f6298794b35b60b46529246"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Side-diagram-ink__Contour.asset",
+                "sha256": "1d4fe6f7587d877f219165626aa0a24d4fb62e790f4a40d215edc38d76189dee"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Side-inset__Navy.asset",
+                "sha256": "6162203957ede199546912ceaad4d43d94143b62dc6a453772f75eb084c215c1"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Spot-housings__Graphite.asset",
+                "sha256": "adaed3520b55642679ebd5578fefbc8907ac65c5cb3b4e53430e0c98cbc6a5ae"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Study-mounts__Graphite.asset",
+                "sha256": "8cef1c58e7d3deebd6c999837dc889a23a19e31091bca7ed75685259f822751e"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Study-stems__Bronze.asset",
+                "sha256": "a14599da0f8551722d9d39ce9c8230168c13855d98a80688ad77562725ebb216"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Suspension__Graphite.asset",
+                "sha256": "9edd79dcbc3e2ae4b2e310fab3b0f110180edac04166af5a4f5eb3cce7ceea28"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Wall-acoustic-fins__Walnut.asset",
+                "sha256": "dbc07aa81c5875ec46e8c0701979f1d8e1119550f20ab801c255932bcd594c7f"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Wall-lining__Porcelain.asset",
+                "sha256": "f552a2d534fdb9fcf58145d65ebb48ce9b3c1b2fbe7183c9576d2ba1bcb72a2d"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Wall-piers__Limestone.asset",
+                "sha256": "72bd0c8acad586b68ee361dde340fe809e49987a3493538d9174a521d162fcc9"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Window-graphic-bars__Contour.asset",
+                "sha256": "4836328cf62d65dcee5ee9b6ad936646ce7beb634d7e7f5f2f6e1f73c37830b9"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Window-graphic__CoolLight.asset",
+                "sha256": "85e575b79d92f85619e0f28b385cd0dd9fc125d01ce9cd0c267106c67ef32e3d"
+            },
+            {
+                "path": "Assets/Museum/Features/MaritimeGallery/Prefabs/MaritimeGallery.prefab",
+                "sha256": "0747df4b788e31c584ca724822d09245a81b1442d4ebfea93c34fb0884aa5488"
+            },
+            {
+                "path": "Assets/Museum/Materials/Brass.mat",
+                "sha256": "8a6b8af9189f4e3a7eafc595d512220444169f6e74ebdf447e0ace7d9ceba2e0"
+            },
+            {
+                "path": "Assets/Museum/Materials/Deep Teal.mat",
+                "sha256": "4d7434f5a79fa15090712401e0d80272c2ca4a8d65d13f35ce0fe2f2f9260584"
+            },
+            {
+                "path": "Assets/Museum/Materials/Helmet Contact.physicMaterial",
+                "sha256": "09e64e8e5767707bef1d2dbd0261d66484df9841d9bf7c090fad0bbc9303a2e3"
+            },
+            {
+                "path": "Assets/Museum/Materials/Helmet Plaque.mat",
+                "sha256": "5c0b6651c043d864a51d89f13f3def9c85286ce36f4e01c64961f4d0bef9525f"
+            },
+            {
+                "path": "Assets/Museum/Materials/Helmet Reset Brass.mat",
+                "sha256": "03439e79dee5b796337578953cb7189f16985e9f07384387543e905b7765f643"
+            },
+            {
+                "path": "Assets/Museum/Models/Helmet/helmet-graybox-v02.fbx",
+                "sha256": "c0cefcc0fd5acc1fac0ec1ee5ed212a4813606b57e984767afc55d34080322ab"
+            },
+            {
+                "path": "Assets/Museum/Scenes/MuseumStart.unity",
+                "sha256": "81ed06afb42dfa6734548971473f162be4545c2cf379c9a0798d4b4f8fd99a16"
+            },
+            {
+                "path": "Assets/Museum/Scripts/HelmetExhibitReset.cs",
+                "sha256": "e365a604ed9cfbc2535b9dd4f788c56ce228026584450737f40d2f0a1035ff2b"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Animations/ArrowBounce.anim",
+                "sha256": "ccaa5c801cfe201f6b1922dc6e5a3eb2e2b5e3c0b49e312818cc6ba25e7ee33d"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Animations/Climb Teleport Arrow.controller",
+                "sha256": "345744d768ea51fa4d10cc01fed56dc4cbf274dfdce9cc9b1a8b937ee65d37be"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/DemoSceneAssets/Sprites/Forward.png",
+                "sha256": "1f92a6985149af65bdf4ec5e829e45d6910e327d5467b716a1348f24f246295c"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/DemoSceneAssets/Sprites/LegibilityMask.png",
+                "sha256": "95530547506c0c8a54b84ba131a4eb384c257fb9cb555a087fa3445af42f3050"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Filters/AnyGazedAtTeleportAnchorFilter.asset",
+                "sha256": "d64a030b16ad8df2bd1b42cd31889771dc2eea19b29a7e6e5b91e56da4a1fe1c"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Materials/UI-NoZTest.mat",
+                "sha256": "05516dc817b6075f454fffb20efcb6ce52ffb2ee147da03b01b1334b2de66fcc"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/Primitive_Cylinder.fbx",
+                "sha256": "20915d8a19b7a3449bc67d0a013e7ac745fd0aeb4a0c8d602cdfa9389853e33a"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/Primitive_Wedge.fbx",
+                "sha256": "524ea23f5c92790b604b0cacd1ae4bffabf2711ed69c9accedd52d619e87dac2"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/Reticle_Torus.fbx",
+                "sha256": "48b086a822980ec261f87c76baa42f0b2440747d3f85d62e9486abe6280ee2b5"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/XRControllerLeft.fbx",
+                "sha256": "15a3a6081895394ba55b5564a8c96e0d6134c9d57e030ef24acd7d5ec2e215fc"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/XRControllerRight.fbx",
+                "sha256": "ad3f6aa2f60a8ba72d2d5d3ced96399922da6fe7c65c31acb374ae9e2acabaed"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Controllers/XR Controller Left.prefab",
+                "sha256": "46ab0bc0498b8c4fa608a7a1d0bf395065e0c53374897ab94a04d3230ea1a010"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Controllers/XR Controller Right.prefab",
+                "sha256": "d411483f56cd92532fd6b34ca3ca5a7720b1914478c7c89f634abeace73428cd"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Direct Interactor.prefab",
+                "sha256": "c00eb811caed28eba38d74a91e30c51e11872ad42adbb665201775168217ce09"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Gaze Interactor.prefab",
+                "sha256": "866a3c63cebe7c148490d2df94175d173b907525be17e98dd1bc539f18febe1d"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Poke Interactor.prefab",
+                "sha256": "674daf81a658bb5cf01ff76809ca1fe7b430341e9a70499f4fbc8d04d3cc298c"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Ray Interactor.prefab",
+                "sha256": "beeab61a5c7ae09dbb564e950831825fb1bab5f14b22aec6c536ddc958a3d20d"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Teleport Interactor.prefab",
+                "sha256": "902b19d9d5c70adb987c3b76736a4dfd6fa308f6ce480f398fafbde5d86fe6b9"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Blocking Teleport Reticle.prefab",
+                "sha256": "bb7dbd18a95794d135f1ca103fce3e19baa059eac8732c26d04d143871e5b339"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Climb Teleport Arrow.prefab",
+                "sha256": "e09337454cf4cbb5ad10decd8302583c8b5806dd14702e72ee2ab8636ab03a88"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Directional Teleport Reticle.prefab",
+                "sha256": "46af312d083382cf7ce9fa229b935979ab24ea6860fdf565195f548c66f6f4b1"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/XR Origin (XR Rig).prefab",
+                "sha256": "033024a6d91ada2796e5301297c98e808e981e9fdd6982b1936f7dc1603ba23f"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Scripts/ActionBasedControllerManager.cs",
+                "sha256": "4c33e360edd7b9c46b9e8707c72c42aa4b16f9d0401a9d41b3d0cfafe4dfafd5"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Scripts/ClimbTeleportDestinationIndicator.cs",
+                "sha256": "a3e32b1161b163df6e239957f4f63ceb67010ca7fcd50a1b6acb4ca73a161f48"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Scripts/DynamicMoveProvider.cs",
+                "sha256": "a537bca398d63471f6fe3580b981318478e1164263ef4c5668fcf1b22ba1b3ea"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Scripts/GazeInputManager.cs",
+                "sha256": "364ecc2b67b1cf0c97b2924e620d7c0c0d3e5a6c61a8a811d53e25e71bf63c57"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Shaders/UI-NoZTest.shader",
+                "sha256": "3f490e15785908aac877219e8fac3bcd82bc638f272a55d53d3635dade8b8f8b"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/XRI Default Input Actions.inputactions",
+                "sha256": "d51f6a0518c700cb15adb77f5a297c66cce683f13057ab47d466751cbe3b5336"
+            },
+            {
+                "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/XR Device Simulator/XR Device Controller Controls.inputactions",
+                "sha256": "e28ef1f4edb610ad5b2ff5d991a08b8bcbb3adba404b6a09905e2840c19ce967"
+            },
+            {
+                "path": "Assets/TextMesh Pro/Fonts/LiberationSans.ttf",
+                "sha256": "e5b0af421ea2bfbc1ac8d251d647268087ae82786234c57f757d1f0b90fa8b49"
+            },
+            {
+                "path": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+                "sha256": "6f33cdcd6d203e175a012087a4209442c2b6811baeebce6c875bb8c8d7c64e51"
+            },
+            {
+                "path": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
+                "sha256": "c3ff50e3133d989180b187748ffc67903f1fede099a5b85b4fcbd8cb6e8be958"
+            },
+            {
+                "path": "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+                "sha256": "5678d5bcbba60a5a43b0934d0dbdaea674f8693268d3d296da18cbc9423a7c06"
+            },
+            {
+                "path": "Packages/com.unity.inputsystem/InputSystem/Actions/InputActionAsset.cs",
+                "sha256": "5c5b1c0f7bb907fff4bc07d3b599bb4e024ef0311ed410e7533c5b91bf588213"
+            },
+            {
+                "path": "Packages/com.unity.inputsystem/InputSystem/Actions/InputActionReference.cs",
+                "sha256": "8c323199df6c4f22ba5a26ceedf4c1e062c5d71532cb5f42bb269ecb71ba5bba"
+            },
+            {
+                "path": "Packages/com.unity.inputsystem/InputSystem/Editor/AssetImporter/InputActionImporter.cs",
+                "sha256": "ec6889958a538898b1b45250883462d94859eb2963003e05482c1d9418aeea25"
+            },
+            {
+                "path": "Packages/com.unity.inputsystem/InputSystem/Editor/Icons/TrackedPoseDriver@4x.png",
+                "sha256": "48c5beb6bd98b606af6b00e95e1ce88ccbadeb6d2e3566c3910424a0f447d101"
+            },
+            {
+                "path": "Packages/com.unity.inputsystem/InputSystem/Plugins/XR/TrackedPoseDriver.cs",
+                "sha256": "26464c507f2f17cb91de52e1c3604716425722d82b2a318530910038373bbf2d"
+            },
+            {
+                "path": "Packages/com.unity.render-pipelines.universal/Editor/AssetVersion.cs",
+                "sha256": "96ed27e15286cda1fdada6923e804887b6447a905b38360e0f5561f79cd0344c"
+            },
+            {
+                "path": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Lit.mat",
+                "sha256": "f1ff1fd4d25d4ec46852e4e43848b1f601e87317db87389e056794090fa23a5b"
+            },
+            {
+                "path": "Packages/com.unity.render-pipelines.universal/Runtime/UniversalAdditionalCameraData.cs",
+                "sha256": "6f8f197a784efe69a56ef14d8d0025579b1ae59f5f5e310bf790d05566b6205f"
+            },
+            {
+                "path": "Packages/com.unity.render-pipelines.universal/Runtime/UniversalAdditionalLightData.cs",
+                "sha256": "4591216922bff9e3a62caca9d9fa2fa937b276456a3dab46fb1718526cbb0ad5"
+            },
+            {
+                "path": "Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader",
+                "sha256": "123d3d4a5f1092c1ee1566916907a44300d94723e354576b90de4dd2d1600e4a"
+            },
+            {
+                "path": "Packages/com.unity.render-pipelines.universal/Shaders/Unlit.shader",
+                "sha256": "bb500b052e684f862be56220ef187081a0c9de08265b2ffcff144a2f21817cd4"
+            },
+            {
+                "path": "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+                "sha256": "e79176d735f6e37846def5d709da60a2866af7c70576fa32d4cca2b81015a187"
+            },
+            {
+                "path": "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+                "sha256": "0aa474cb54380b566a43360ddae3b42ca8c08d195f0590a03999396f5b667830"
+            },
+            {
+                "path": "Packages/com.unity.textmeshpro/Scripts/Runtime/TMP_FontAsset.cs",
+                "sha256": "4944761e316e6c3e6053507283f4c1b310dd47312830346ef7efc4715ac403af"
+            },
+            {
+                "path": "Packages/com.unity.textmeshpro/Scripts/Runtime/TextMeshPro.cs",
+                "sha256": "c5b1965cd925f0f8ff20f80191096bad6b018deabddcfdd12e12aca78d0c745c"
+            },
+            {
+                "path": "Packages/com.unity.ugui/Runtime/UI/Core/GraphicRaycaster.cs",
+                "sha256": "a7c7eadb563eece18edc99969a570b2421ac7fee0fd39b02ccafa4a8ddd2eee2"
+            },
+            {
+                "path": "Packages/com.unity.ugui/Runtime/UI/Core/Image.cs",
+                "sha256": "351dd72516d240f5722c55f72f8e95a0a92cf71e83358bbc922eee47bdb78502"
+            },
+            {
+                "path": "Packages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs",
+                "sha256": "c98311dbbec32228456e5f18cdf5682bdb84d21592244476b8be205cb40ab612"
+            },
+            {
+                "path": "Packages/com.unity.xr.core-utils/Runtime/XROrigin.cs",
+                "sha256": "cbceaf90f43f3ffa599ed642509abec52e61f55b7bed9a186cb31074fdb044b7"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Inputs/InputActionManager.cs",
+                "sha256": "42ab0edf3f1f417ddf02d28fac2511ed355ec2b9742371fb31970316e85fb966"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Inputs/XRInputModalityManager.cs",
+                "sha256": "1d875694a2102c1e1eb9e41f753660ebb89d6a84ececb409651ef8970c906e6e"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Inputs/XRTransformStabilizer.cs",
+                "sha256": "fdd453f0ff58a7be5a550762113ca4e75b81ed8062f771406c77c0d62eaf48a3"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Controllers/ActionBasedController.cs",
+                "sha256": "b23b7048f904de703f9b5f14a964a28a5c9af42b3073eb0d90ca89b2b3ca3bb2"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactables/XRGrabInteractable.cs",
+                "sha256": "4dfc79a611346214a87b187749ec11b5ea5a4fa943d1c97fd24eda911de998cd"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactables/XRSimpleInteractable.cs",
+                "sha256": "3e32c8298ce22e9f1ea161dbffea8ea1c7d07a48bd489110025a9bb27caf007f"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/Visual/XRInteractorLineVisual.cs",
+                "sha256": "44bbe30ca970dd2b2215a877b51cfcd422f85be47c57ca049eca918308d691e0"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRDirectInteractor.cs",
+                "sha256": "8870da288ff911e8d1ab89918d1e8f9b876e49e90f481b436c75fcdcf6ba7c19"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRGazeInteractor.cs",
+                "sha256": "082289889a8f92919e76287ccd2121bd120ce1179b9bff21d53b3190915abf11"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRInteractionGroup.cs",
+                "sha256": "b6104dec84aa87fa8a446131667bd10452fa18a12e98d1ffc647948762713ae2"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRPokeInteractor.cs",
+                "sha256": "a89833cf1dfcc80cb112eeb7e82609ddd58ef6f7ae8f3812662e4e570d684352"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRRayInteractor.cs",
+                "sha256": "fc71ad3028b80d5ec2a09acc562ffeea7fc99a54d10773150421114068045156"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Overrides/XRGazeAssistance.cs",
+                "sha256": "5bc2d8924b660bad51130c9d6d1abebd5a0c52f1501c52a0df97daa68c8f07d1"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/XRInteractionManager.cs",
+                "sha256": "e103d4953736425ec32f138f86c16042ac84feab315048008d0edceeaf60ca40"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/CharacterControllerDriver.cs",
+                "sha256": "27e576c36b118cc4ef92ea9c8f8ec4ab8c841f81f0945d0ee096625caf5f9d07"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Climb/ClimbProvider.cs",
+                "sha256": "e005f8e82070983010091bfa57db98dad8404b38519f453a2d9b9c19af833567"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Climb/ClimbTeleportInteractor.cs",
+                "sha256": "5a7c880395b142763da0b9524fc6d24ef7eef47ff866f36a177738385337af6b"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Continuous/ActionBasedContinuousTurnProvider.cs",
+                "sha256": "44769f3afe5fbf83e04938979d669326b6a8ae00ec21eb4c057bafaa9e6c8c88"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Grab/GrabMoveProvider.cs",
+                "sha256": "f2c3a22ec2fe884533168caf1497ff25867c403d9d7c5115e3aae22727e6cf15"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Grab/TwoHandedGrabMoveProvider.cs",
+                "sha256": "6e41dfd1cf33efd4a7dce7a084dd931bcff6f8d478ef0227484060ee18ffe17e"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/LocomotionSystem.cs",
+                "sha256": "312c6c44a4a69de75d8788fef5d68f08c5520a2665223838113abf856c01cce4"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/SnapTurn/ActionBasedSnapTurnProvider.cs",
+                "sha256": "31ca0f5b7465c7877ee4f2646b40299c73c50e90eee2e7c620c6e834b537233e"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/GazeTeleportationAnchorFilter.cs",
+                "sha256": "df159854f1dc2041b08aa8b1f295d6afbfe4068f5da9d1cc0acc31a33b8471e7"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/TeleportationArea.cs",
+                "sha256": "76e524d98fdc655d56b96e9e2fda9f1b1e4b7487bdec3797c9343b64bff0c74c"
+            },
+            {
+                "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/TeleportationProvider.cs",
+                "sha256": "06cf2fc1d48d2bf6f74f7752d064e1896bc4ee8e3ce82fb56d6d1ada6acfd0ea"
+            },
+            {
+                "path": "Packages/manifest.json",
+                "sha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7"
+            },
+            {
+                "path": "Packages/packages-lock.json",
+                "sha256": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03"
+            },
+            {
+                "path": "ProjectSettings/ProjectSettings.asset",
+                "sha256": "6b3aa93c403f4a0697a561f117cea95e529db9965f59dcadfcb4533031e1e2b0"
+            }
+        ]
+    },
+    "durationSeconds": 31.269174575805665,
+    "batchExitSettleSeconds": 20.0,
+    "officialSimulatorWasPresent": true,
+    "checks": [
+        {
+            "kind": "structure",
+            "name": "saved main scene",
+            "detail": "Assets/Museum/Scenes/MuseumStart.unity",
+            "passed": true
+        },
+        {
+            "kind": "structure",
+            "name": "one exploration controller",
+            "detail": "Count=1",
+            "passed": true
+        },
+        {
+            "kind": "structure",
+            "name": "runtime dependencies",
+            "detail": "Exploration and original inspection components coexist.",
+            "passed": true
+        },
+        {
+            "kind": "state",
+            "name": "fresh visit starts without invented discoveries",
+            "detail": "page=Welcome; selected=Air; air=False; voice=False; hints=0; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "structure",
+            "name": "official simulator is present",
+            "detail": "Its device writer is disabled only for this automated run.",
+            "passed": true
+        },
+        {
+            "kind": "structure",
+            "name": "both production action controllers",
+            "detail": "No replacement rig is created.",
+            "passed": true
+        },
+        {
+            "kind": "state",
+            "name": "existing inspection is the initial mode",
+            "detail": "Exploration is optional.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Exploration EXPLORE",
+            "detail": "Right controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Exploration EXPLORE",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hover freezes shared palette: Exploration EXPLORE",
+            "detail": "hovered=True; frozen=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Exploration EXPLORE",
+            "detail": "hand=right; select events=1; interactor=XRRayInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "distant ray selects Exploration EXPLORE",
+            "detail": "Target is 0.55 m from the simulated hand; interactor=XRRayInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "exploration tab opens the optional page",
+            "detail": "Grip selected the shared palette tab.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "active exploration text page: 00-welcome",
+            "detail": "Only the visible optional page is checked.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "page contains text: 00-welcome",
+            "detail": "Visible TMP count=12",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 00-welcome/Exploration title",
+            "detail": "resolved font=0.3; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 00-welcome/Exploration progress",
+            "detail": "resolved font=0.2; rectangle=(0.44, 0.03); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 00-welcome/Exploration explanation",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.16); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 00-welcome/Exploration footer",
+            "detail": "resolved font=0.2; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 00-welcome/Exploration AIR label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 00-welcome/Exploration VOICE label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 00-welcome/Exploration HINT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 00-welcome/Exploration REVIEW label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 00-welcome/Exploration REPLAY label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 00-welcome/Exploration STOP label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 00-welcome/Exploration BACK label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 00-welcome/Exploration NEW VISIT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "public API",
+            "name": "empty review acknowledges no viewed clues",
+            "detail": "No clues viewed yet.\nChoose AIR or VOICE in any order.\nKeep inspecting at your own pace.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "active exploration text page: empty-review",
+            "detail": "Only the visible optional page is checked.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "page contains text: empty-review",
+            "detail": "Visible TMP count=12",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: empty-review/Exploration title",
+            "detail": "resolved font=0.3; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: empty-review/Exploration progress",
+            "detail": "resolved font=0.2; rectangle=(0.44, 0.03); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: empty-review/Exploration explanation",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.16); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: empty-review/Exploration footer",
+            "detail": "resolved font=0.2; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: empty-review/Exploration AIR label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: empty-review/Exploration VOICE label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: empty-review/Exploration HINT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: empty-review/Exploration REVIEW label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: empty-review/Exploration REPLAY label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: empty-review/Exploration STOP label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: empty-review/Exploration BACK label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: empty-review/Exploration NEW VISIT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Exploration BACK",
+            "detail": "Right controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Exploration BACK",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hover freezes shared palette: Exploration BACK",
+            "detail": "hovered=True; frozen=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Exploration BACK",
+            "detail": "hand=right; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "BACK returns to welcome without inventing discovery",
+            "detail": "page=Welcome; selected=Air; air=False; voice=False; hints=0; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "state",
+            "name": "idle does not add hints or autoplay",
+            "detail": "page=Welcome; selected=Air; air=False; voice=False; hints=0; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Exploration AIR",
+            "detail": "Right controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Exploration AIR",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hover freezes shared palette: Exploration AIR",
+            "detail": "hovered=True; frozen=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Exploration AIR",
+            "detail": "hand=right; select events=1; interactor=XRRayInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "distant ray selects Exploration AIR",
+            "detail": "Target is 0.55 m from the simulated hand; interactor=XRRayInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "right hand discovers air first",
+            "detail": "page=Air; selected=Air; air=True; voice=False; hints=0; playing=True; diagramVisible=True",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "active exploration text page: 01-air-right-hand",
+            "detail": "Only the visible optional page is checked.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "page contains text: 01-air-right-hand",
+            "detail": "Visible TMP count=12",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 01-air-right-hand/Exploration title",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 01-air-right-hand/Exploration progress",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.03); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 01-air-right-hand/Exploration explanation",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.16); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 01-air-right-hand/Exploration footer",
+            "detail": "resolved font=0.2; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 01-air-right-hand/Exploration AIR label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 01-air-right-hand/Exploration VOICE label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 01-air-right-hand/Exploration HINT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 01-air-right-hand/Exploration REVIEW label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 01-air-right-hand/Exploration REPLAY label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 01-air-right-hand/Exploration STOP label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 01-air-right-hand/Exploration BACK label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 01-air-right-hand/Exploration NEW VISIT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "diagram text fits rectangle: 01-air-right-hand/Source label",
+            "detail": "resolved font=0.35; rectangle=(0.42, 0.09)",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "diagram text fits rectangle: 01-air-right-hand/Destination label",
+            "detail": "resolved font=0.5; rectangle=(0.42, 0.09)",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "diagram text fits rectangle: 01-air-right-hand/Schematic caption",
+            "detail": "resolved font=0.4; rectangle=(0.66, 0.10)",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Exploration STOP",
+            "detail": "Right controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Exploration STOP",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hover freezes shared palette: Exploration STOP",
+            "detail": "hovered=True; frozen=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Exploration STOP",
+            "detail": "hand=right; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "right hand stops air",
+            "detail": "page=Air; selected=Air; air=True; voice=False; hints=0; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "public API",
+            "name": "partial review identifies the unviewed clue",
+            "detail": "AIR: a hose supplies air from the surface.\nVOICE: not viewed yet.\nKeep exploring when you wish.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Exploration AIR",
+            "detail": "Right controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Exploration AIR",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hover freezes shared palette: Exploration AIR",
+            "detail": "hovered=True; frozen=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Exploration AIR",
+            "detail": "hand=right; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "revisiting air does not automatically replay",
+            "detail": "page=Air; selected=Air; air=True; voice=False; hints=0; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Exploration VOICE",
+            "detail": "Left controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Exploration VOICE",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hover freezes shared palette: Exploration VOICE",
+            "detail": "hovered=True; frozen=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Exploration VOICE",
+            "detail": "hand=left; select events=1; interactor=XRRayInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "distant ray selects Exploration VOICE",
+            "detail": "Target is 0.55 m from the simulated hand; interactor=XRRayInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "left hand discovers voice without an order lock",
+            "detail": "page=Voice; selected=Voice; air=True; voice=True; hints=0; playing=True; diagramVisible=True",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "active exploration text page: 02-voice-left-hand",
+            "detail": "Only the visible optional page is checked.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "page contains text: 02-voice-left-hand",
+            "detail": "Visible TMP count=12",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02-voice-left-hand/Exploration title",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02-voice-left-hand/Exploration progress",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.03); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02-voice-left-hand/Exploration explanation",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.16); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02-voice-left-hand/Exploration footer",
+            "detail": "resolved font=0.2; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02-voice-left-hand/Exploration AIR label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02-voice-left-hand/Exploration VOICE label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02-voice-left-hand/Exploration HINT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02-voice-left-hand/Exploration REVIEW label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02-voice-left-hand/Exploration REPLAY label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02-voice-left-hand/Exploration STOP label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02-voice-left-hand/Exploration BACK label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02-voice-left-hand/Exploration NEW VISIT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "diagram text fits rectangle: 02-voice-left-hand/Source label",
+            "detail": "resolved font=0.5; rectangle=(0.42, 0.09)",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "diagram text fits rectangle: 02-voice-left-hand/Destination label",
+            "detail": "resolved font=0.8; rectangle=(0.42, 0.09)",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "diagram text fits rectangle: 02-voice-left-hand/Schematic caption",
+            "detail": "resolved font=0.35; rectangle=(0.66, 0.10)",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Exploration STOP",
+            "detail": "Left controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Exploration STOP",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hover freezes shared palette: Exploration STOP",
+            "detail": "hovered=True; frozen=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Exploration STOP",
+            "detail": "hand=left; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "left hand stops voice",
+            "detail": "page=Voice; selected=Voice; air=True; voice=True; hints=0; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Exploration REPLAY",
+            "detail": "Left controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Exploration REPLAY",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hover freezes shared palette: Exploration REPLAY",
+            "detail": "hovered=True; frozen=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Exploration REPLAY",
+            "detail": "hand=left; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "explicit replay starts selected clue",
+            "detail": "page=Voice; selected=Voice; air=True; voice=True; hints=0; playing=True; diagramVisible=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Exploration STOP",
+            "detail": "Left controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Exploration STOP",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hover freezes shared palette: Exploration STOP",
+            "detail": "hovered=True; frozen=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Exploration STOP",
+            "detail": "hand=left; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Exploration HINT",
+            "detail": "Left controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Exploration HINT",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hover freezes shared palette: Exploration HINT",
+            "detail": "hovered=True; frozen=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Exploration HINT",
+            "detail": "hand=left; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hint is explicitly requested and preserves discoveries",
+            "detail": "page=Hint; selected=Voice; air=True; voice=True; hints=1; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "active exploration text page: 02b-hint",
+            "detail": "Only the visible optional page is checked.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "page contains text: 02b-hint",
+            "detail": "Visible TMP count=12",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02b-hint/Exploration title",
+            "detail": "resolved font=0.4; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02b-hint/Exploration progress",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.03); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02b-hint/Exploration explanation",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.16); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02b-hint/Exploration footer",
+            "detail": "resolved font=0.2; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02b-hint/Exploration AIR label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02b-hint/Exploration VOICE label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02b-hint/Exploration HINT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02b-hint/Exploration REVIEW label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02b-hint/Exploration REPLAY label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02b-hint/Exploration STOP label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02b-hint/Exploration BACK label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 02b-hint/Exploration NEW VISIT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Exploration REVIEW",
+            "detail": "Right controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Exploration REVIEW",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hover freezes shared palette: Exploration REVIEW",
+            "detail": "hovered=True; frozen=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Exploration REVIEW",
+            "detail": "hand=right; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "review can be opened after either clue",
+            "detail": "AIR: a hose supplies air from the surface.\nVOICE: diver and surface team exchange messages.\nThe helmet is one part of the system.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "active exploration text page: 03-review",
+            "detail": "Only the visible optional page is checked.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "page contains text: 03-review",
+            "detail": "Visible TMP count=12",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 03-review/Exploration title",
+            "detail": "resolved font=0.3; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 03-review/Exploration progress",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.03); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 03-review/Exploration explanation",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.16); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 03-review/Exploration footer",
+            "detail": "resolved font=0.2; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 03-review/Exploration AIR label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 03-review/Exploration VOICE label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 03-review/Exploration HINT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 03-review/Exploration REVIEW label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 03-review/Exploration REPLAY label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 03-review/Exploration STOP label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 03-review/Exploration BACK label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 03-review/Exploration NEW VISIT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Exploration NEW VISIT",
+            "detail": "Left controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Exploration NEW VISIT",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hover freezes shared palette: Exploration NEW VISIT",
+            "detail": "hovered=True; frozen=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Exploration NEW VISIT",
+            "detail": "hand=left; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "new visit clears discoveries and hints",
+            "detail": "page=Welcome; selected=Air; air=False; voice=False; hints=0; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "public API",
+            "name": "hint itself does not mark clues as viewed",
+            "detail": "page=Hint; selected=Air; air=False; voice=False; hints=1; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "public API",
+            "name": "voice can be the first clue in a fresh visit",
+            "detail": "page=Voice; selected=Voice; air=False; voice=True; hints=1; playing=True; diagramVisible=True",
+            "passed": true
+        },
+        {
+            "kind": "public API",
+            "name": "voice then air completes the opposite discovery order",
+            "detail": "page=Air; selected=Air; air=True; voice=True; hints=1; playing=True; diagramVisible=True",
+            "passed": true
+        },
+        {
+            "kind": "public API",
+            "name": "repeated voice selection does not autoplay",
+            "detail": "page=Voice; selected=Voice; air=True; voice=True; hints=1; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "structure",
+            "name": "air connector hotspot exists",
+            "detail": "An optional clue target is attached to the original helmet.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Air connection clue",
+            "detail": "Right controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Air connection clue",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Air connection clue",
+            "detail": "hand=right; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hotspot selection does not grab the helmet",
+            "detail": "The child clue wins over the whole-object grab while selected.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "connector hotspot opens the air clue",
+            "detail": "page=Air; selected=Air; air=True; voice=False; hints=0; playing=True; diagramVisible=True",
+            "passed": true
+        },
+        {
+            "kind": "keyboard input",
+            "name": "model Home reset stops demonstration but preserves discovery",
+            "detail": "page=Air; selected=Air; air=True; voice=False; hints=0; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "public API + pose fixture",
+            "name": "air line follows the moved and rotated connector",
+            "detail": "endpoint=(0.37, 1.60, 3.60); target=(0.37, 1.60, 3.60)",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "active exploration text page: 04-moved-air-endpoint",
+            "detail": "Only the visible optional page is checked.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "page contains text: 04-moved-air-endpoint",
+            "detail": "Visible TMP count=12",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04-moved-air-endpoint/Exploration title",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04-moved-air-endpoint/Exploration progress",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.03); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04-moved-air-endpoint/Exploration explanation",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.16); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04-moved-air-endpoint/Exploration footer",
+            "detail": "resolved font=0.2; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04-moved-air-endpoint/Exploration AIR label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04-moved-air-endpoint/Exploration VOICE label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04-moved-air-endpoint/Exploration HINT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04-moved-air-endpoint/Exploration REVIEW label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04-moved-air-endpoint/Exploration REPLAY label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04-moved-air-endpoint/Exploration STOP label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04-moved-air-endpoint/Exploration BACK label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04-moved-air-endpoint/Exploration NEW VISIT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "diagram text fits rectangle: 04-moved-air-endpoint/Source label",
+            "detail": "resolved font=0.35; rectangle=(0.42, 0.09)",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "diagram text fits rectangle: 04-moved-air-endpoint/Destination label",
+            "detail": "resolved font=0.5; rectangle=(0.42, 0.09)",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "diagram text fits rectangle: 04-moved-air-endpoint/Schematic caption",
+            "detail": "resolved font=0.4; rectangle=(0.66, 0.10)",
+            "passed": true
+        },
+        {
+            "kind": "public API",
+            "name": "inspection reset also preserves discovery and stops playback",
+            "detail": "page=Air; selected=Air; air=True; voice=False; hints=0; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "public API + elapsed time",
+            "name": "completed animation leaves a static diagram for unhurried viewing",
+            "detail": "page=Air; selected=Air; air=True; voice=False; hints=0; playing=False; diagramVisible=True",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "active exploration text page: 04b-static-air-diagram",
+            "detail": "Only the visible optional page is checked.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "page contains text: 04b-static-air-diagram",
+            "detail": "Visible TMP count=12",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04b-static-air-diagram/Exploration title",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04b-static-air-diagram/Exploration progress",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.03); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04b-static-air-diagram/Exploration explanation",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.16); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04b-static-air-diagram/Exploration footer",
+            "detail": "resolved font=0.2; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04b-static-air-diagram/Exploration AIR label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04b-static-air-diagram/Exploration VOICE label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04b-static-air-diagram/Exploration HINT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04b-static-air-diagram/Exploration REVIEW label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04b-static-air-diagram/Exploration REPLAY label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04b-static-air-diagram/Exploration STOP label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04b-static-air-diagram/Exploration BACK label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04b-static-air-diagram/Exploration NEW VISIT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "diagram text fits rectangle: 04b-static-air-diagram/Source label",
+            "detail": "resolved font=0.35; rectangle=(0.42, 0.09)",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "diagram text fits rectangle: 04b-static-air-diagram/Destination label",
+            "detail": "resolved font=0.5; rectangle=(0.42, 0.09)",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "diagram text fits rectangle: 04b-static-air-diagram/Schematic caption",
+            "detail": "resolved font=0.4; rectangle=(0.66, 0.10)",
+            "passed": true
+        },
+        {
+            "kind": "public API",
+            "name": "STOP hides the retained diagram without erasing discoveries",
+            "detail": "page=Air; selected=Air; air=True; voice=False; hints=0; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "public API",
+            "name": "reduced motion keeps the route visible without the travelling pulse",
+            "detail": "page=Air; selected=Air; air=True; voice=False; hints=0; playing=False; diagramVisible=True",
+            "passed": true
+        },
+        {
+            "kind": "public API + elapsed time",
+            "name": "reduced-motion diagram remains still and preserves discovery",
+            "detail": "Compared line vertices over 0.45 seconds; this does not establish user comfort.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "active exploration text page: 04c-reduced-motion",
+            "detail": "Only the visible optional page is checked.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "page contains text: 04c-reduced-motion",
+            "detail": "Visible TMP count=12",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04c-reduced-motion/Exploration title",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04c-reduced-motion/Exploration progress",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.03); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04c-reduced-motion/Exploration explanation",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.16); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04c-reduced-motion/Exploration footer",
+            "detail": "resolved font=0.2; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04c-reduced-motion/Exploration AIR label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04c-reduced-motion/Exploration VOICE label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04c-reduced-motion/Exploration HINT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04c-reduced-motion/Exploration REVIEW label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04c-reduced-motion/Exploration REPLAY label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04c-reduced-motion/Exploration STOP label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04c-reduced-motion/Exploration BACK label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 04c-reduced-motion/Exploration NEW VISIT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "diagram text fits rectangle: 04c-reduced-motion/Source label",
+            "detail": "resolved font=0.35; rectangle=(0.42, 0.09)",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "diagram text fits rectangle: 04c-reduced-motion/Destination label",
+            "detail": "resolved font=0.5; rectangle=(0.42, 0.09)",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "diagram text fits rectangle: 04c-reduced-motion/Schematic caption",
+            "detail": "resolved font=0.4; rectangle=(0.66, 0.10)",
+            "passed": true
+        },
+        {
+            "kind": "public API",
+            "name": "STOP hides reduced-motion diagram",
+            "detail": "page=Air; selected=Air; air=True; voice=False; hints=0; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "structure",
+            "name": "exploration tabs are available before disable",
+            "detail": "Saved shared palette tabs.",
+            "passed": true
+        },
+        {
+            "kind": "component lifecycle",
+            "name": "disabling exploration restores inspection and hides unavailable tabs",
+            "detail": "No dead-end optional page remains visible.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Inspection WINDOW",
+            "detail": "Right controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Inspection WINDOW",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Inspection WINDOW",
+            "detail": "hand=right; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "original WINDOW works while exploration feature is disabled",
+            "detail": "Angle=95",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Inspection WINDOW",
+            "detail": "Right controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Inspection WINDOW",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Inspection WINDOW",
+            "detail": "hand=right; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "original WINDOW closes while feature is disabled",
+            "detail": "Angle=0",
+            "passed": true
+        },
+        {
+            "kind": "component lifecycle",
+            "name": "reenabling feature restores tabs and preserves visit records",
+            "detail": "page=Air; selected=Air; air=True; voice=False; hints=0; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Exploration EXPLORE",
+            "detail": "Right controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Exploration EXPLORE",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hover freezes shared palette: Exploration EXPLORE",
+            "detail": "hovered=True; frozen=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Exploration EXPLORE",
+            "detail": "hand=right; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "restored exploration tab is usable",
+            "detail": "page=Air; selected=Air; air=True; voice=False; hints=0; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Exploration INSPECT",
+            "detail": "Right controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Exploration INSPECT",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hover freezes shared palette: Exploration INSPECT",
+            "detail": "hovered=True; frozen=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Exploration INSPECT",
+            "detail": "hand=right; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "inspection mode remains reachable",
+            "detail": "Panel switched back to existing inspection controls.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Inspection WINDOW",
+            "detail": "Right controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Inspection WINDOW",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Inspection WINDOW",
+            "detail": "hand=right; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "existing WINDOW still opens",
+            "detail": "Angle=95",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Inspection SECTION",
+            "detail": "Left controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Inspection SECTION",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Inspection SECTION",
+            "detail": "hand=left; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "existing SECTION still toggles with left hand",
+            "detail": "Original inspection controller remains active.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button available: Exploration EXPLORE",
+            "detail": "Right controller",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "button collider: Exploration EXPLORE",
+            "detail": "An enabled target is required.",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "hover freezes shared palette: Exploration EXPLORE",
+            "detail": "hovered=True; frozen=True",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "grip selects Exploration EXPLORE",
+            "detail": "hand=right; select events=1; interactor=XRDirectInteractor",
+            "passed": true
+        },
+        {
+            "kind": "XR input",
+            "name": "returning to exploration preserves the visit",
+            "detail": "page=Air; selected=Air; air=True; voice=False; hints=0; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "public API",
+            "name": "clean final visit without changing saved scene",
+            "detail": "page=Welcome; selected=Air; air=False; voice=False; hints=0; playing=False; diagramVisible=False",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "active exploration text page: 05-final-welcome",
+            "detail": "Only the visible optional page is checked.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "page contains text: 05-final-welcome",
+            "detail": "Visible TMP count=12",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 05-final-welcome/Exploration title",
+            "detail": "resolved font=0.3; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 05-final-welcome/Exploration progress",
+            "detail": "resolved font=0.2; rectangle=(0.44, 0.03); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 05-final-welcome/Exploration explanation",
+            "detail": "resolved font=0.25; rectangle=(0.44, 0.16); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 05-final-welcome/Exploration footer",
+            "detail": "resolved font=0.2; rectangle=(0.44, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 05-final-welcome/Exploration AIR label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 05-final-welcome/Exploration VOICE label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 05-final-welcome/Exploration HINT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 05-final-welcome/Exploration REVIEW label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 05-final-welcome/Exploration REPLAY label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 05-final-welcome/Exploration STOP label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 05-final-welcome/Exploration BACK label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "text layout",
+            "name": "text fits rectangle: 05-final-welcome/Exploration NEW VISIT label",
+            "detail": "resolved font=0.4; rectangle=(0.21, 0.05); containment is not headset readability.",
+            "passed": true
+        },
+        {
+            "kind": "logs",
+            "name": "no Unity errors during validation",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "saved scene unchanged by validator",
+            "detail": "81ed06afb42dfa6734548971473f162be4545c2cf379c9a0798d4b4f8fd99a16",
+            "passed": true
+        }
+    ],
+    "errors": [],
+    "screenshots": [
+        "00-welcome.jpg",
+        "00-welcome-panel-closeup.jpg",
+        "01-air-right-hand.jpg",
+        "01-air-right-hand-panel-closeup.jpg",
+        "02-voice-left-hand.jpg",
+        "02-voice-left-hand-panel-closeup.jpg",
+        "02b-hint.jpg",
+        "02b-hint-panel-closeup.jpg",
+        "03-review.jpg",
+        "03-review-panel-closeup.jpg",
+        "04-moved-air-endpoint.jpg",
+        "04-moved-air-endpoint-panel-closeup.jpg",
+        "04b-static-air-diagram.jpg",
+        "04b-static-air-diagram-panel-closeup.jpg",
+        "04c-reduced-motion.jpg",
+        "04c-reduced-motion-panel-closeup.jpg",
+        "05-final-welcome.jpg",
+        "05-final-welcome-panel-closeup.jpg"
+    ],
+    "textSamples": [
+        {
+            "page": "00-welcome",
+            "label": "Exploration title",
+            "fontSize": 0.30000001192092898,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.04600000008940697
+            },
+            "overflow": false
+        },
+        {
+            "page": "00-welcome",
+            "label": "Exploration progress",
+            "fontSize": 0.20000000298023225,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.02800000086426735
+            },
+            "overflow": false
+        },
+        {
+            "page": "00-welcome",
+            "label": "Exploration explanation",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.15800000727176667
+            },
+            "overflow": false
+        },
+        {
+            "page": "00-welcome",
+            "label": "Exploration footer",
+            "fontSize": 0.20000000298023225,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.052000001072883609
+            },
+            "overflow": false
+        },
+        {
+            "page": "00-welcome",
+            "label": "Exploration AIR label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "00-welcome",
+            "label": "Exploration VOICE label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "00-welcome",
+            "label": "Exploration HINT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "00-welcome",
+            "label": "Exploration REVIEW label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "00-welcome",
+            "label": "Exploration REPLAY label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "00-welcome",
+            "label": "Exploration STOP label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "00-welcome",
+            "label": "Exploration BACK label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "00-welcome",
+            "label": "Exploration NEW VISIT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "empty-review",
+            "label": "Exploration title",
+            "fontSize": 0.30000001192092898,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.04600000008940697
+            },
+            "overflow": false
+        },
+        {
+            "page": "empty-review",
+            "label": "Exploration progress",
+            "fontSize": 0.20000000298023225,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.02800000086426735
+            },
+            "overflow": false
+        },
+        {
+            "page": "empty-review",
+            "label": "Exploration explanation",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.15800000727176667
+            },
+            "overflow": false
+        },
+        {
+            "page": "empty-review",
+            "label": "Exploration footer",
+            "fontSize": 0.20000000298023225,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.052000001072883609
+            },
+            "overflow": false
+        },
+        {
+            "page": "empty-review",
+            "label": "Exploration AIR label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "empty-review",
+            "label": "Exploration VOICE label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "empty-review",
+            "label": "Exploration HINT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "empty-review",
+            "label": "Exploration REVIEW label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "empty-review",
+            "label": "Exploration REPLAY label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "empty-review",
+            "label": "Exploration STOP label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "empty-review",
+            "label": "Exploration BACK label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "empty-review",
+            "label": "Exploration NEW VISIT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "01-air-right-hand",
+            "label": "Exploration title",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.04600000008940697
+            },
+            "overflow": false
+        },
+        {
+            "page": "01-air-right-hand",
+            "label": "Exploration progress",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.02800000086426735
+            },
+            "overflow": false
+        },
+        {
+            "page": "01-air-right-hand",
+            "label": "Exploration explanation",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.15800000727176667
+            },
+            "overflow": false
+        },
+        {
+            "page": "01-air-right-hand",
+            "label": "Exploration footer",
+            "fontSize": 0.20000000298023225,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.052000001072883609
+            },
+            "overflow": false
+        },
+        {
+            "page": "01-air-right-hand",
+            "label": "Exploration AIR label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "01-air-right-hand",
+            "label": "Exploration VOICE label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "01-air-right-hand",
+            "label": "Exploration HINT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "01-air-right-hand",
+            "label": "Exploration REVIEW label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "01-air-right-hand",
+            "label": "Exploration REPLAY label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "01-air-right-hand",
+            "label": "Exploration STOP label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "01-air-right-hand",
+            "label": "Exploration BACK label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "01-air-right-hand",
+            "label": "Exploration NEW VISIT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02-voice-left-hand",
+            "label": "Exploration title",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.04600000008940697
+            },
+            "overflow": false
+        },
+        {
+            "page": "02-voice-left-hand",
+            "label": "Exploration progress",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.02800000086426735
+            },
+            "overflow": false
+        },
+        {
+            "page": "02-voice-left-hand",
+            "label": "Exploration explanation",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.15800000727176667
+            },
+            "overflow": false
+        },
+        {
+            "page": "02-voice-left-hand",
+            "label": "Exploration footer",
+            "fontSize": 0.20000000298023225,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.052000001072883609
+            },
+            "overflow": false
+        },
+        {
+            "page": "02-voice-left-hand",
+            "label": "Exploration AIR label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02-voice-left-hand",
+            "label": "Exploration VOICE label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02-voice-left-hand",
+            "label": "Exploration HINT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02-voice-left-hand",
+            "label": "Exploration REVIEW label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02-voice-left-hand",
+            "label": "Exploration REPLAY label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02-voice-left-hand",
+            "label": "Exploration STOP label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02-voice-left-hand",
+            "label": "Exploration BACK label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02-voice-left-hand",
+            "label": "Exploration NEW VISIT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02b-hint",
+            "label": "Exploration title",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.04600000008940697
+            },
+            "overflow": false
+        },
+        {
+            "page": "02b-hint",
+            "label": "Exploration progress",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.02800000086426735
+            },
+            "overflow": false
+        },
+        {
+            "page": "02b-hint",
+            "label": "Exploration explanation",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.15800000727176667
+            },
+            "overflow": false
+        },
+        {
+            "page": "02b-hint",
+            "label": "Exploration footer",
+            "fontSize": 0.20000000298023225,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.052000001072883609
+            },
+            "overflow": false
+        },
+        {
+            "page": "02b-hint",
+            "label": "Exploration AIR label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02b-hint",
+            "label": "Exploration VOICE label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02b-hint",
+            "label": "Exploration HINT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02b-hint",
+            "label": "Exploration REVIEW label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02b-hint",
+            "label": "Exploration REPLAY label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02b-hint",
+            "label": "Exploration STOP label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02b-hint",
+            "label": "Exploration BACK label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "02b-hint",
+            "label": "Exploration NEW VISIT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "03-review",
+            "label": "Exploration title",
+            "fontSize": 0.30000001192092898,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.04600000008940697
+            },
+            "overflow": false
+        },
+        {
+            "page": "03-review",
+            "label": "Exploration progress",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.02800000086426735
+            },
+            "overflow": false
+        },
+        {
+            "page": "03-review",
+            "label": "Exploration explanation",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.15800000727176667
+            },
+            "overflow": false
+        },
+        {
+            "page": "03-review",
+            "label": "Exploration footer",
+            "fontSize": 0.20000000298023225,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.052000001072883609
+            },
+            "overflow": false
+        },
+        {
+            "page": "03-review",
+            "label": "Exploration AIR label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "03-review",
+            "label": "Exploration VOICE label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "03-review",
+            "label": "Exploration HINT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "03-review",
+            "label": "Exploration REVIEW label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "03-review",
+            "label": "Exploration REPLAY label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "03-review",
+            "label": "Exploration STOP label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "03-review",
+            "label": "Exploration BACK label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "03-review",
+            "label": "Exploration NEW VISIT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04-moved-air-endpoint",
+            "label": "Exploration title",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.04600000008940697
+            },
+            "overflow": false
+        },
+        {
+            "page": "04-moved-air-endpoint",
+            "label": "Exploration progress",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.02800000086426735
+            },
+            "overflow": false
+        },
+        {
+            "page": "04-moved-air-endpoint",
+            "label": "Exploration explanation",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.15800000727176667
+            },
+            "overflow": false
+        },
+        {
+            "page": "04-moved-air-endpoint",
+            "label": "Exploration footer",
+            "fontSize": 0.20000000298023225,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.052000001072883609
+            },
+            "overflow": false
+        },
+        {
+            "page": "04-moved-air-endpoint",
+            "label": "Exploration AIR label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04-moved-air-endpoint",
+            "label": "Exploration VOICE label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04-moved-air-endpoint",
+            "label": "Exploration HINT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04-moved-air-endpoint",
+            "label": "Exploration REVIEW label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04-moved-air-endpoint",
+            "label": "Exploration REPLAY label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04-moved-air-endpoint",
+            "label": "Exploration STOP label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04-moved-air-endpoint",
+            "label": "Exploration BACK label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04-moved-air-endpoint",
+            "label": "Exploration NEW VISIT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04b-static-air-diagram",
+            "label": "Exploration title",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.04600000008940697
+            },
+            "overflow": false
+        },
+        {
+            "page": "04b-static-air-diagram",
+            "label": "Exploration progress",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.02800000086426735
+            },
+            "overflow": false
+        },
+        {
+            "page": "04b-static-air-diagram",
+            "label": "Exploration explanation",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.15800000727176667
+            },
+            "overflow": false
+        },
+        {
+            "page": "04b-static-air-diagram",
+            "label": "Exploration footer",
+            "fontSize": 0.20000000298023225,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.052000001072883609
+            },
+            "overflow": false
+        },
+        {
+            "page": "04b-static-air-diagram",
+            "label": "Exploration AIR label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04b-static-air-diagram",
+            "label": "Exploration VOICE label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04b-static-air-diagram",
+            "label": "Exploration HINT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04b-static-air-diagram",
+            "label": "Exploration REVIEW label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04b-static-air-diagram",
+            "label": "Exploration REPLAY label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04b-static-air-diagram",
+            "label": "Exploration STOP label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04b-static-air-diagram",
+            "label": "Exploration BACK label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04b-static-air-diagram",
+            "label": "Exploration NEW VISIT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04c-reduced-motion",
+            "label": "Exploration title",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.04600000008940697
+            },
+            "overflow": false
+        },
+        {
+            "page": "04c-reduced-motion",
+            "label": "Exploration progress",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.02800000086426735
+            },
+            "overflow": false
+        },
+        {
+            "page": "04c-reduced-motion",
+            "label": "Exploration explanation",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.15800000727176667
+            },
+            "overflow": false
+        },
+        {
+            "page": "04c-reduced-motion",
+            "label": "Exploration footer",
+            "fontSize": 0.20000000298023225,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.052000001072883609
+            },
+            "overflow": false
+        },
+        {
+            "page": "04c-reduced-motion",
+            "label": "Exploration AIR label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04c-reduced-motion",
+            "label": "Exploration VOICE label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04c-reduced-motion",
+            "label": "Exploration HINT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04c-reduced-motion",
+            "label": "Exploration REVIEW label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04c-reduced-motion",
+            "label": "Exploration REPLAY label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04c-reduced-motion",
+            "label": "Exploration STOP label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04c-reduced-motion",
+            "label": "Exploration BACK label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "04c-reduced-motion",
+            "label": "Exploration NEW VISIT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "05-final-welcome",
+            "label": "Exploration title",
+            "fontSize": 0.30000001192092898,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.04600000008940697
+            },
+            "overflow": false
+        },
+        {
+            "page": "05-final-welcome",
+            "label": "Exploration progress",
+            "fontSize": 0.20000000298023225,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.02800000086426735
+            },
+            "overflow": false
+        },
+        {
+            "page": "05-final-welcome",
+            "label": "Exploration explanation",
+            "fontSize": 0.25,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.15800000727176667
+            },
+            "overflow": false
+        },
+        {
+            "page": "05-final-welcome",
+            "label": "Exploration footer",
+            "fontSize": 0.20000000298023225,
+            "rectangle": {
+                "x": 0.4359999895095825,
+                "y": 0.052000001072883609
+            },
+            "overflow": false
+        },
+        {
+            "page": "05-final-welcome",
+            "label": "Exploration AIR label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "05-final-welcome",
+            "label": "Exploration VOICE label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "05-final-welcome",
+            "label": "Exploration HINT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "05-final-welcome",
+            "label": "Exploration REVIEW label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "05-final-welcome",
+            "label": "Exploration REPLAY label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "05-final-welcome",
+            "label": "Exploration STOP label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "05-final-welcome",
+            "label": "Exploration BACK label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        },
+        {
+            "page": "05-final-welcome",
+            "label": "Exploration NEW VISIT label",
+            "fontSize": 0.4000000059604645,
+            "rectangle": {
+                "x": 0.210999995470047,
+                "y": 0.04899999871850014
+            },
+            "overflow": false
+        }
+    ]
+}
