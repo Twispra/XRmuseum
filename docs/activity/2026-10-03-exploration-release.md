@@ -1,6 +1,6 @@
 # 2026-10-03 自由探索与模型动画发布交接
 
-本次按用户确认，在复测原功能后提交 [Issue #6](https://github.com/Twispra/XRmuseum/issues/6) 的供气、通话探索和配套模型动画。产品源码提交为 `c2bf63cdc42d5730588321e103fd76752db5ea26`，交付分支为 `codex/helmet-exploration-2026-10-03`。功能和资料入口见[使用说明](../helmet-exploration.zh-CN.md)。
+本次按用户确认，在复测原功能后提交 [Issue #6](https://github.com/Twispra/XRmuseum/issues/6) 的供气、通话探索和配套模型动画。产品源码提交为 `c2bf63cdc42d5730588321e103fd76752db5ea26`，交付分支为 `codex/helmet-exploration-2026-10-03`。已推送并建立 [PR #7](https://github.com/Twispra/XRmuseum/pull/7)，等待组员审查，未合并。功能和资料入口见[使用说明](../helmet-exploration.zh-CN.md)。
 
 ## 版本与合并顺序
 

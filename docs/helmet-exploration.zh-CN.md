@@ -1,6 +1,6 @@
 # 头盔自由探索：供气、通话与按需提示
 
-对应 [Issue #6](https://github.com/Twispra/XRmuseum/issues/6)，交付分支 `codex/helmet-exploration-2026-10-03`，产品源码 `c2bf63c`。本次发布与复测见[提交交接](activity/2026-10-03-exploration-release.md)。依赖的[展厅 PR #5](https://github.com/Twispra/XRmuseum/pull/5)尚未合并；探索 PR 以展厅分支为 base，先合并环境、再调整探索 PR 的目标并审查，不能把两者当成已合入 main。
+对应 [Issue #6](https://github.com/Twispra/XRmuseum/issues/6)，已发布 [PR #7](https://github.com/Twispra/XRmuseum/pull/7)，交付分支 `codex/helmet-exploration-2026-10-03`，产品源码 `c2bf63c`。本次发布与复测见[提交交接](activity/2026-10-03-exploration-release.md)。依赖的[展厅 PR #5](https://github.com/Twispra/XRmuseum/pull/5)尚未合并；探索 PR 以展厅分支为 base，先合并环境、再调整探索 PR 的目标并审查，不能把两者当成已合入 main。
 
 这次把“戴上这顶头盔，就能独自在水下工作了吗？”作为观察问题。游客可以先看供气，也可以先看通话；不设倒计时、必经路线或强制答题。目标是让已有的转动、前窗和剖面帮助理解展品，而不是另做一套参观场景。
 
