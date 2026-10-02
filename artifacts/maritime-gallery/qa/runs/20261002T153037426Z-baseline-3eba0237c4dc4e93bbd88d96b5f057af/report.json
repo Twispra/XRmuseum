@@ -1,0 +1,720 @@
+﻿{
+    "status": "passed",
+    "mode": "baseline",
+    "utc": "2026-10-02T15:30:37.4228869Z",
+    "unity": "2022.3.62f3c1",
+    "platform": "WindowsEditor",
+    "graphicsDevice": "NVIDIA GeForce RTX 5070 Ti",
+    "graphicsApi": "Direct3D11",
+    "commit": "74556aadae39607b23b8ac2b8fd35e8042019393",
+    "branch": "codex/museum-atmosphere-2026-10-02",
+    "dirty": "?? MuseumVR/.vscode/\n?? MuseumVR/Assets/Museum/Features/MaritimeGallery.meta\n?? MuseumVR/Assets/Museum/Features/MaritimeGallery/\n?? artifacts/helmet-interaction/qa/runs/20260929T123446207Z-inspection-views/\n?? artifacts/helmet-interaction/qa/runs/20260929T123731467Z-585cf6864f8444a4a1411266a7586840/\n?? artifacts/helmet-interaction/qa/runs/20260929T123943981Z-inspection-53028b97a6f84b0593f5dd3b55e0de18/\n?? artifacts/helmet-interaction/qa/runs/20260929T124246676Z-inspection-13eea55e146b48dfa13f9f05d9c3626e/\n?? artifacts/helmet-interaction/qa/runs/20260929T124423524Z-inspection-97d20b09affd4ed5a9da4826b699d03f/\n?? artifacts/helmet-interaction/qa/runs/20260929T124625900Z-inspection-1f91fd4949324ce4a71e717b28c1f4be/\n?? artifacts/helmet-interaction/qa/runs/20260929T124828774Z-inspection-views/\n?? artifacts/helmet-interaction/qa/runs/20260929T125949181Z-inspection-main-5c6a3967bc05435e9c56f34081d47157/\n?? artifacts/helmet-interaction/qa/runs/20260929T130442715Z-693b6d8a1c194ac4bd581835694e59fc/\n?? artifacts/helmet-interaction/qa/runs/20260929T133920960Z-inspection-main-c2930c570a5a4104a3fb05ca7705b8bb/\n?? artifacts/helmet-interaction/qa/runs/20260929T134319762Z-inspection-main-1210eef66e374895be9a853897e523b9/\n?? artifacts/helmet-interaction/qa/runs/20260929T134641976Z-inspection-main-4f677f1f9e8443b8a6d453bab44445c5/\n?? artifacts/helmet-interaction/qa/runs/20260929T134821875Z-8df191a7121c404082b77e907d45a65f/\n?? artifacts/helmet-interaction/qa/runs/20260929T135914770Z-inspection-main-7f4c1c8327ca4becbb6969b036cb2fc1/\n?? artifacts/helmet-interaction/qa/runs/20260929T140049739Z-066f0203979b4461ba4df8a76fc6773f/\n?? artifacts/helmet-interaction/qa/runs/20260929T140247840Z-inspection-main-8f1aec7c2f5f421484f550146d102377/\n?? artifacts/helmet-interaction/qa/runs/20260929T140424021Z-c43557ea7aea481ebb11be96acdacd22/\n?? artifacts/helmet-interaction/qa/runs/20260929T143825749Z-inspection-main-48fc041ce57e4f5b8adf814c880c7b62/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T143825749Z-inspection-main-48fc041ce57e4f5b8adf814c880c7b62/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T143825749Z-inspection-main-48fc041ce57e4f5b8adf814c880c7b62/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T143825749Z-inspection-main-48fc041ce57e4f5b8adf814c880c7b62/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20260929T144117211Z-c6da6e32c7c2452393c5308eea11d07f/preview/\n?? artifacts/helmet-interaction/qa/runs/20260930T111758078Z-section-continuity-9b68066faf2840729757ecc615124024/\n?? artifacts/helmet-interaction/qa/runs/20260930T112040060Z-inspection-main-60940ab43936436b85d798233239e0e8/\n?? artifacts/helmet-interaction/qa/runs/20260930T112042017365Z-publish-audit/\n?? artifacts/helmet-interaction/qa/runs/20260930T112306440699Z-publish-audit/\n?? artifacts/helmet-interaction/qa/runs/20260930T112308420Z-inspection-main-12a906c9dfab431fb8d700ed410e9c14/\n?? artifacts/helmet-interaction/qa/runs/20260930T112506617Z-7627b9c7c2bb488fba30259ae04fb68f/preview/\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20260930T112740116Z-inspection-main-c2e8310b0e304bf186e94e5b93c36382/09-deeper-section.jpg\n?? artifacts/maritime-gallery/\n?? docs/activity/2026-09-29-helmet-inspection.md\n?? docs/activity/2026-09-29-main-gallery-inspection.md\n?? docs/helmet-inspection.zh-CN.md",
+    "sceneHashBefore": "07a7714748f2443041d53bed3938cfd83fc3d6eda887a9e333a046867c6655e7",
+    "sceneHashAfter": "07a7714748f2443041d53bed3938cfd83fc3d6eda887a9e333a046867c6655e7",
+    "baselineSnapshot": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\artifacts/maritime-gallery/qa/runs\\20261002T153037426Z-baseline-3eba0237c4dc4e93bbd88d96b5f057af\\snapshot.json",
+    "error": "",
+    "limitation": "Static saved-scene inspection and temporary monocular Unity URP editor renders only. No Play Mode, XR input, actual headset, stereo comfort, accessibility with users, frame-time measurement, or executable build was tested. Triangle/light counts are inventory, not measured performance.",
+    "inventory": {
+        "gameObjects": 191,
+        "renderers": 148,
+        "activeRenderers": 136,
+        "meshRenderers": 143,
+        "missingMeshes": 5,
+        "lights": 1,
+        "activeLights": 1,
+        "shadowLights": 1,
+        "colliders": 37,
+        "rigidbodies": 1,
+        "xrInteractables": 19,
+        "triangles": 68884
+    },
+    "sourceHashes": [
+        {
+            "key": "Assets/Museum/Features/HelmetInspection/Materials/Brass.mat",
+            "value": "625730228f20779eab50ae11c860f6d51c3e75381435ed4ce97662d8c72790a2"
+        },
+        {
+            "key": "Assets/Museum/Features/HelmetInspection/Materials/Controls.mat",
+            "value": "0428022bf03d4c12ce70c7d562a1fdc7330b82a7d6677eb4336a8f2557a11ba1"
+        },
+        {
+            "key": "Assets/Museum/Features/HelmetInspection/Materials/Copper.mat",
+            "value": "df47e6dc3a2947ae4b91c9350b79bcf10a584cba3b8d7f133da1b80ed52fb159"
+        },
+        {
+            "key": "Assets/Museum/Features/HelmetInspection/Materials/SectionTool.mat",
+            "value": "4397f15169b74f97e70962ff2a40366aa37a8db2ed176650253613250dbc7fe7"
+        },
+        {
+            "key": "Assets/Museum/Features/HelmetInspection/Materials/Window.mat",
+            "value": "1d0b2961781c944a2dfc2f484748c8c4479bea6bd69f2e78498c1d82089f6753"
+        },
+        {
+            "key": "Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+            "value": "386c0333c3cf2bd286f61463cb833c7f54ec2b799872b74caca579181cffd6bb"
+        },
+        {
+            "key": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+            "value": "d0a9e828356cbed7271b9865379ec49eab1e264171de4a6808b1ee25cd4ee968"
+        },
+        {
+            "key": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionControls.cs",
+            "value": "74d8bb711395ce9de997e8e6b43a640ed19ca99b8a9d9b83826504f333e16e53"
+        },
+        {
+            "key": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionPalette.cs",
+            "value": "6a72d3394323312280a88852af4df39aa60280d7d4f9ac16c2101a9f8897e200"
+        },
+        {
+            "key": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetSectionInteractable.cs",
+            "value": "1d20516b87c001f006b51a6fb0e7519f309244ad23da55027e8c1ae65e750214"
+        },
+        {
+            "key": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetWindowInteractable.cs",
+            "value": "02149f675d4bb498a309103ad1c02cb9f943b1ee7bb5c2d349893653279e5f9e"
+        },
+        {
+            "key": "Assets/Museum/Features/HelmetInspection/Shaders/InspectionShell.shader",
+            "value": "2076e258998f0d930bfd9296cc85fd32a303283f2eccd44a9054042aea5471f1"
+        },
+        {
+            "key": "Assets/Museum/Features/MaritimeGallery/Editor/MaritimeGalleryBuilder.cs",
+            "value": "b00552b556b8cfc584e11fe7d6233203ad3471443f8ebe604cac902025412371"
+        },
+        {
+            "key": "Assets/Museum/Features/MaritimeGallery/Editor/MaritimeGalleryValidation.cs",
+            "value": "b24cd821756d570c04c2485c8cbfb60eb2e9dfb62d2c2db22741564932a2c4b5"
+        },
+        {
+            "key": "Assets/Museum/Materials/Brass.mat",
+            "value": "8a6b8af9189f4e3a7eafc595d512220444169f6e74ebdf447e0ace7d9ceba2e0"
+        },
+        {
+            "key": "Assets/Museum/Materials/Deep Teal.mat",
+            "value": "4d7434f5a79fa15090712401e0d80272c2ca4a8d65d13f35ce0fe2f2f9260584"
+        },
+        {
+            "key": "Assets/Museum/Materials/Display Plinth.mat",
+            "value": "82a0f749a8e95b25248a61fa36931dcf9711720e8d625c6d092662c4d1e218b9"
+        },
+        {
+            "key": "Assets/Museum/Materials/Helmet Contact.physicMaterial",
+            "value": "09e64e8e5767707bef1d2dbd0261d66484df9841d9bf7c090fad0bbc9303a2e3"
+        },
+        {
+            "key": "Assets/Museum/Materials/Helmet Plaque.mat",
+            "value": "5c0b6651c043d864a51d89f13f3def9c85286ce36f4e01c64961f4d0bef9525f"
+        },
+        {
+            "key": "Assets/Museum/Materials/Helmet Reset Brass.mat",
+            "value": "03439e79dee5b796337578953cb7189f16985e9f07384387543e905b7765f643"
+        },
+        {
+            "key": "Assets/Museum/Materials/Stone Floor.mat",
+            "value": "60d4341939eb43d0bb7527402f89c037309fd55da76f000dfa710cee93afa612"
+        },
+        {
+            "key": "Assets/Museum/Materials/Warm Plaster.mat",
+            "value": "714d9e3f30d26aa603181ef80c64a74aaf8281bc6b12706862d4e8bc9928d23a"
+        },
+        {
+            "key": "Assets/Museum/Models/Helmet/helmet-graybox-v02.fbx",
+            "value": "c0cefcc0fd5acc1fac0ec1ee5ed212a4813606b57e984767afc55d34080322ab"
+        },
+        {
+            "key": "Assets/Museum/Scenes/MuseumStart.unity",
+            "value": "07a7714748f2443041d53bed3938cfd83fc3d6eda887a9e333a046867c6655e7"
+        },
+        {
+            "key": "Assets/Museum/Scripts/HelmetExhibitReset.cs",
+            "value": "e365a604ed9cfbc2535b9dd4f788c56ce228026584450737f40d2f0a1035ff2b"
+        },
+        {
+            "key": "Assets/Museum/Settings/MuseumRenderer.asset",
+            "value": "1f8ef9ff32de6fc6f039c9b361d9973d105daf5483e1d5e72f6ed9122402f24e"
+        },
+        {
+            "key": "Assets/Museum/Settings/MuseumURP.asset",
+            "value": "190b4844d865c3b941bf432c345c2f826ac2aaf7d91e78af537db3974e4811e8"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Animations/ArrowBounce.anim",
+            "value": "ccaa5c801cfe201f6b1922dc6e5a3eb2e2b5e3c0b49e312818cc6ba25e7ee33d"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Animations/Climb Teleport Arrow.controller",
+            "value": "345744d768ea51fa4d10cc01fed56dc4cbf274dfdce9cc9b1a8b937ee65d37be"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/DemoSceneAssets/Sprites/Forward.png",
+            "value": "1f92a6985149af65bdf4ec5e829e45d6910e327d5467b716a1348f24f246295c"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/DemoSceneAssets/Sprites/LegibilityMask.png",
+            "value": "95530547506c0c8a54b84ba131a4eb384c257fb9cb555a087fa3445af42f3050"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Filters/AnyGazedAtTeleportAnchorFilter.asset",
+            "value": "d64a030b16ad8df2bd1b42cd31889771dc2eea19b29a7e6e5b91e56da4a1fe1c"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Materials/UI-NoZTest.mat",
+            "value": "05516dc817b6075f454fffb20efcb6ce52ffb2ee147da03b01b1334b2de66fcc"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/Primitive_Cylinder.fbx",
+            "value": "20915d8a19b7a3449bc67d0a013e7ac745fd0aeb4a0c8d602cdfa9389853e33a"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/Primitive_Wedge.fbx",
+            "value": "524ea23f5c92790b604b0cacd1ae4bffabf2711ed69c9accedd52d619e87dac2"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/Reticle_Torus.fbx",
+            "value": "48b086a822980ec261f87c76baa42f0b2440747d3f85d62e9486abe6280ee2b5"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/XRControllerLeft.fbx",
+            "value": "15a3a6081895394ba55b5564a8c96e0d6134c9d57e030ef24acd7d5ec2e215fc"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/XRControllerRight.fbx",
+            "value": "ad3f6aa2f60a8ba72d2d5d3ced96399922da6fe7c65c31acb374ae9e2acabaed"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Controllers/XR Controller Left.prefab",
+            "value": "46ab0bc0498b8c4fa608a7a1d0bf395065e0c53374897ab94a04d3230ea1a010"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Controllers/XR Controller Right.prefab",
+            "value": "d411483f56cd92532fd6b34ca3ca5a7720b1914478c7c89f634abeace73428cd"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Direct Interactor.prefab",
+            "value": "c00eb811caed28eba38d74a91e30c51e11872ad42adbb665201775168217ce09"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Gaze Interactor.prefab",
+            "value": "866a3c63cebe7c148490d2df94175d173b907525be17e98dd1bc539f18febe1d"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Poke Interactor.prefab",
+            "value": "674daf81a658bb5cf01ff76809ca1fe7b430341e9a70499f4fbc8d04d3cc298c"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Ray Interactor.prefab",
+            "value": "beeab61a5c7ae09dbb564e950831825fb1bab5f14b22aec6c536ddc958a3d20d"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Teleport Interactor.prefab",
+            "value": "902b19d9d5c70adb987c3b76736a4dfd6fa308f6ce480f398fafbde5d86fe6b9"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Blocking Teleport Reticle.prefab",
+            "value": "bb7dbd18a95794d135f1ca103fce3e19baa059eac8732c26d04d143871e5b339"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Climb Teleport Arrow.prefab",
+            "value": "e09337454cf4cbb5ad10decd8302583c8b5806dd14702e72ee2ab8636ab03a88"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Directional Teleport Reticle.prefab",
+            "value": "46af312d083382cf7ce9fa229b935979ab24ea6860fdf565195f548c66f6f4b1"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/XR Origin (XR Rig).prefab",
+            "value": "033024a6d91ada2796e5301297c98e808e981e9fdd6982b1936f7dc1603ba23f"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Scripts/ActionBasedControllerManager.cs",
+            "value": "4c33e360edd7b9c46b9e8707c72c42aa4b16f9d0401a9d41b3d0cfafe4dfafd5"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Scripts/ClimbTeleportDestinationIndicator.cs",
+            "value": "a3e32b1161b163df6e239957f4f63ceb67010ca7fcd50a1b6acb4ca73a161f48"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Scripts/DynamicMoveProvider.cs",
+            "value": "a537bca398d63471f6fe3580b981318478e1164263ef4c5668fcf1b22ba1b3ea"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Scripts/GazeInputManager.cs",
+            "value": "364ecc2b67b1cf0c97b2924e620d7c0c0d3e5a6c61a8a811d53e25e71bf63c57"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Shaders/UI-NoZTest.shader",
+            "value": "3f490e15785908aac877219e8fac3bcd82bc638f272a55d53d3635dade8b8f8b"
+        },
+        {
+            "key": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/XRI Default Input Actions.inputactions",
+            "value": "d51f6a0518c700cb15adb77f5a297c66cce683f13057ab47d466751cbe3b5336"
+        },
+        {
+            "key": "Assets/TextMesh Pro/Fonts/LiberationSans.ttf",
+            "value": "e5b0af421ea2bfbc1ac8d251d647268087ae82786234c57f757d1f0b90fa8b49"
+        },
+        {
+            "key": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+            "value": "6f33cdcd6d203e175a012087a4209442c2b6811baeebce6c875bb8c8d7c64e51"
+        },
+        {
+            "key": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
+            "value": "c3ff50e3133d989180b187748ffc67903f1fede099a5b85b4fcbd8cb6e8be958"
+        },
+        {
+            "key": "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+            "value": "5678d5bcbba60a5a43b0934d0dbdaea674f8693268d3d296da18cbc9423a7c06"
+        },
+        {
+            "key": "Packages/com.unity.inputsystem/InputSystem/Actions/InputActionAsset.cs",
+            "value": "5c5b1c0f7bb907fff4bc07d3b599bb4e024ef0311ed410e7533c5b91bf588213"
+        },
+        {
+            "key": "Packages/com.unity.inputsystem/InputSystem/Actions/InputActionReference.cs",
+            "value": "8c323199df6c4f22ba5a26ceedf4c1e062c5d71532cb5f42bb269ecb71ba5bba"
+        },
+        {
+            "key": "Packages/com.unity.inputsystem/InputSystem/Editor/AssetImporter/InputActionImporter.cs",
+            "value": "ec6889958a538898b1b45250883462d94859eb2963003e05482c1d9418aeea25"
+        },
+        {
+            "key": "Packages/com.unity.inputsystem/InputSystem/Editor/Icons/TrackedPoseDriver@4x.png",
+            "value": "48c5beb6bd98b606af6b00e95e1ce88ccbadeb6d2e3566c3910424a0f447d101"
+        },
+        {
+            "key": "Packages/com.unity.inputsystem/InputSystem/Plugins/XR/TrackedPoseDriver.cs",
+            "value": "26464c507f2f17cb91de52e1c3604716425722d82b2a318530910038373bbf2d"
+        },
+        {
+            "key": "Packages/com.unity.render-pipelines.universal/Editor/AssetVersion.cs",
+            "value": "96ed27e15286cda1fdada6923e804887b6447a905b38360e0f5561f79cd0344c"
+        },
+        {
+            "key": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Lit.mat",
+            "value": "f1ff1fd4d25d4ec46852e4e43848b1f601e87317db87389e056794090fa23a5b"
+        },
+        {
+            "key": "Packages/com.unity.render-pipelines.universal/Runtime/UniversalAdditionalCameraData.cs",
+            "value": "6f8f197a784efe69a56ef14d8d0025579b1ae59f5f5e310bf790d05566b6205f"
+        },
+        {
+            "key": "Packages/com.unity.render-pipelines.universal/Runtime/UniversalAdditionalLightData.cs",
+            "value": "4591216922bff9e3a62caca9d9fa2fa937b276456a3dab46fb1718526cbb0ad5"
+        },
+        {
+            "key": "Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader",
+            "value": "123d3d4a5f1092c1ee1566916907a44300d94723e354576b90de4dd2d1600e4a"
+        },
+        {
+            "key": "Packages/com.unity.render-pipelines.universal/Shaders/Unlit.shader",
+            "value": "bb500b052e684f862be56220ef187081a0c9de08265b2ffcff144a2f21817cd4"
+        },
+        {
+            "key": "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+            "value": "e79176d735f6e37846def5d709da60a2866af7c70576fa32d4cca2b81015a187"
+        },
+        {
+            "key": "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+            "value": "0aa474cb54380b566a43360ddae3b42ca8c08d195f0590a03999396f5b667830"
+        },
+        {
+            "key": "Packages/com.unity.textmeshpro/Scripts/Runtime/TMP_FontAsset.cs",
+            "value": "4944761e316e6c3e6053507283f4c1b310dd47312830346ef7efc4715ac403af"
+        },
+        {
+            "key": "Packages/com.unity.textmeshpro/Scripts/Runtime/TextMeshPro.cs",
+            "value": "c5b1965cd925f0f8ff20f80191096bad6b018deabddcfdd12e12aca78d0c745c"
+        },
+        {
+            "key": "Packages/com.unity.ugui/Runtime/UI/Core/GraphicRaycaster.cs",
+            "value": "a7c7eadb563eece18edc99969a570b2421ac7fee0fd39b02ccafa4a8ddd2eee2"
+        },
+        {
+            "key": "Packages/com.unity.ugui/Runtime/UI/Core/Image.cs",
+            "value": "351dd72516d240f5722c55f72f8e95a0a92cf71e83358bbc922eee47bdb78502"
+        },
+        {
+            "key": "Packages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs",
+            "value": "c98311dbbec32228456e5f18cdf5682bdb84d21592244476b8be205cb40ab612"
+        },
+        {
+            "key": "Packages/com.unity.xr.core-utils/Runtime/XROrigin.cs",
+            "value": "cbceaf90f43f3ffa599ed642509abec52e61f55b7bed9a186cb31074fdb044b7"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Inputs/InputActionManager.cs",
+            "value": "42ab0edf3f1f417ddf02d28fac2511ed355ec2b9742371fb31970316e85fb966"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Inputs/XRInputModalityManager.cs",
+            "value": "1d875694a2102c1e1eb9e41f753660ebb89d6a84ececb409651ef8970c906e6e"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Inputs/XRTransformStabilizer.cs",
+            "value": "fdd453f0ff58a7be5a550762113ca4e75b81ed8062f771406c77c0d62eaf48a3"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Controllers/ActionBasedController.cs",
+            "value": "b23b7048f904de703f9b5f14a964a28a5c9af42b3073eb0d90ca89b2b3ca3bb2"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactables/XRGrabInteractable.cs",
+            "value": "4dfc79a611346214a87b187749ec11b5ea5a4fa943d1c97fd24eda911de998cd"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactables/XRSimpleInteractable.cs",
+            "value": "3e32c8298ce22e9f1ea161dbffea8ea1c7d07a48bd489110025a9bb27caf007f"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/Visual/XRInteractorLineVisual.cs",
+            "value": "44bbe30ca970dd2b2215a877b51cfcd422f85be47c57ca049eca918308d691e0"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRDirectInteractor.cs",
+            "value": "8870da288ff911e8d1ab89918d1e8f9b876e49e90f481b436c75fcdcf6ba7c19"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRGazeInteractor.cs",
+            "value": "082289889a8f92919e76287ccd2121bd120ce1179b9bff21d53b3190915abf11"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRInteractionGroup.cs",
+            "value": "b6104dec84aa87fa8a446131667bd10452fa18a12e98d1ffc647948762713ae2"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRPokeInteractor.cs",
+            "value": "a89833cf1dfcc80cb112eeb7e82609ddd58ef6f7ae8f3812662e4e570d684352"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRRayInteractor.cs",
+            "value": "fc71ad3028b80d5ec2a09acc562ffeea7fc99a54d10773150421114068045156"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Overrides/XRGazeAssistance.cs",
+            "value": "5bc2d8924b660bad51130c9d6d1abebd5a0c52f1501c52a0df97daa68c8f07d1"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/XRInteractionManager.cs",
+            "value": "e103d4953736425ec32f138f86c16042ac84feab315048008d0edceeaf60ca40"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/CharacterControllerDriver.cs",
+            "value": "27e576c36b118cc4ef92ea9c8f8ec4ab8c841f81f0945d0ee096625caf5f9d07"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Climb/ClimbProvider.cs",
+            "value": "e005f8e82070983010091bfa57db98dad8404b38519f453a2d9b9c19af833567"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Climb/ClimbTeleportInteractor.cs",
+            "value": "5a7c880395b142763da0b9524fc6d24ef7eef47ff866f36a177738385337af6b"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Continuous/ActionBasedContinuousTurnProvider.cs",
+            "value": "44769f3afe5fbf83e04938979d669326b6a8ae00ec21eb4c057bafaa9e6c8c88"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Grab/GrabMoveProvider.cs",
+            "value": "f2c3a22ec2fe884533168caf1497ff25867c403d9d7c5115e3aae22727e6cf15"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Grab/TwoHandedGrabMoveProvider.cs",
+            "value": "6e41dfd1cf33efd4a7dce7a084dd931bcff6f8d478ef0227484060ee18ffe17e"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/LocomotionSystem.cs",
+            "value": "312c6c44a4a69de75d8788fef5d68f08c5520a2665223838113abf856c01cce4"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/SnapTurn/ActionBasedSnapTurnProvider.cs",
+            "value": "31ca0f5b7465c7877ee4f2646b40299c73c50e90eee2e7c620c6e834b537233e"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/GazeTeleportationAnchorFilter.cs",
+            "value": "df159854f1dc2041b08aa8b1f295d6afbfe4068f5da9d1cc0acc31a33b8471e7"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/TeleportationArea.cs",
+            "value": "76e524d98fdc655d56b96e9e2fda9f1b1e4b7487bdec3797c9343b64bff0c74c"
+        },
+        {
+            "key": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/TeleportationProvider.cs",
+            "value": "06cf2fc1d48d2bf6f74f7752d064e1896bc4ee8e3ce82fb56d6d1ada6acfd0ea"
+        },
+        {
+            "key": "Packages/manifest.json",
+            "value": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7"
+        },
+        {
+            "key": "Packages/packages-lock.json",
+            "value": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03"
+        },
+        {
+            "key": "ProjectSettings/GraphicsSettings.asset",
+            "value": "34ce4ccf02ed829f7b299c4dee9e9a744ca5a0428d3008ace9e13e3b17d12f75"
+        },
+        {
+            "key": "ProjectSettings/ProjectSettings.asset",
+            "value": "6b3aa93c403f4a0697a561f117cea95e529db9965f59dcadfcb4533031e1e2b0"
+        },
+        {
+            "key": "ProjectSettings/QualitySettings.asset",
+            "value": "98ae67ac472dd0df80a04f389a7f434b47f1c86245d3d29533384506493639ee"
+        }
+    ],
+    "checks": [
+        {
+            "name": "edit mode",
+            "detail": "This validator does not enter Play Mode.",
+            "passed": true
+        },
+        {
+            "name": "no unsaved interactive scene",
+            "detail": "Interactive use refuses to discard an unsaved scene.",
+            "passed": true
+        },
+        {
+            "name": "no missing scripts",
+            "detail": "All saved scene objects, including inactive objects.",
+            "passed": true
+        },
+        {
+            "name": "one helmet inspection controller",
+            "detail": "Count=1",
+            "passed": true
+        },
+        {
+            "name": "helmet physical and interaction components",
+            "detail": "Helmet Interaction Station/HelmetExhibit",
+            "passed": true
+        },
+        {
+            "name": "original XR main camera",
+            "detail": "Exactly one original named rig owns Camera.main.",
+            "passed": true
+        },
+        {
+            "name": "one main camera",
+            "detail": "No environment camera replaces the production XR view.",
+            "passed": true
+        },
+        {
+            "name": "no desktop orbit controller",
+            "detail": "The production main gallery remains the XR scene.",
+            "passed": true
+        },
+        {
+            "name": "original physical RESET exists",
+            "detail": "Helmet Reset Button / XRSimpleInteractable",
+            "passed": true
+        },
+        {
+            "name": "original RESET targets current helmet",
+            "detail": "Exactly one persistent ResetToDisplay listener targets its HelmetExhibitReset.",
+            "passed": true
+        },
+        {
+            "name": "original teleport floor active",
+            "detail": "Existing Floor - Teleport Area remains active with enabled collider and TeleportationArea.",
+            "passed": true
+        },
+        {
+            "name": "teleport interaction layer retained",
+            "detail": "Teleport bit31 only; actual=-2147483648",
+            "passed": true
+        },
+        {
+            "name": "floor ray remains unobstructed 0.000000000,2.000000000,2.200000000",
+            "detail": "Gallery Blockout/Floor - Teleport Area at 0.000000000,0.000000000,2.200000000",
+            "passed": true
+        },
+        {
+            "name": "floor ray remains unobstructed -1.600000000,2.000000000,2.200000000",
+            "detail": "Gallery Blockout/Floor - Teleport Area at -1.600000000,0.000000000,2.200000000",
+            "passed": true
+        },
+        {
+            "name": "floor ray remains unobstructed 1.600000000,2.000000000,2.200000000",
+            "detail": "Gallery Blockout/Floor - Teleport Area at 1.600000000,0.000000000,2.200000000",
+            "passed": true
+        },
+        {
+            "name": "floor ray remains unobstructed 0.000000000,2.000000000,5.000000000",
+            "detail": "Gallery Blockout/Floor - Teleport Area at 0.000000000,0.000000000,5.000000000",
+            "passed": true
+        },
+        {
+            "name": "floor ray remains unobstructed 0.000000000,2.000000000,-2.000000000",
+            "detail": "Gallery Blockout/Floor - Teleport Area at 0.000000000,0.000000000,-2.000000000",
+            "passed": true
+        },
+        {
+            "name": "floor ray remains unobstructed -4.500000000,2.000000000,6.000000000",
+            "detail": "Gallery Blockout/Floor - Teleport Area at -4.500000000,0.000000000,6.000000000",
+            "passed": true
+        },
+        {
+            "name": "floor ray remains unobstructed 4.500000000,2.000000000,6.000000000",
+            "detail": "Gallery Blockout/Floor - Teleport Area at 4.500000000,0.000000000,6.000000000",
+            "passed": true
+        },
+        {
+            "name": "baseline precedes environment integration",
+            "detail": "Capture the saved original gallery before adding the new environment root.",
+            "passed": true
+        },
+        {
+            "name": "no missing render assets or error shaders",
+            "detail": "All scene renderers including inactive originals checked; actual pixels also require visual review.",
+            "passed": true
+        },
+        {
+            "name": "saved scene unchanged by validator",
+            "detail": "07a7714748f2443041d53bed3938cfd83fc3d6eda887a9e333a046867c6655e7",
+            "passed": true
+        },
+        {
+            "name": "no Unity error logs",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "captures": [
+        {
+            "file": "01-startup.png",
+            "purpose": "Saved XR startup pose, unchanged",
+            "position": {
+                "x": 0.0,
+                "y": 1.3614399433135987,
+                "z": 2.200000047683716
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "fieldOfView": 60.0
+        },
+        {
+            "file": "02-wide-front.png",
+            "purpose": "Wide gallery approach",
+            "position": {
+                "x": 0.0,
+                "y": 1.600000023841858,
+                "z": -3.0999999046325685
+            },
+            "euler": {
+                "x": 359.6279602050781,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "fieldOfView": 78.0
+        },
+        {
+            "file": "03-seated.png",
+            "purpose": "Seated eye height at the original exhibit",
+            "position": {
+                "x": 0.0,
+                "y": 1.2000000476837159,
+                "z": 2.1500000953674318
+            },
+            "euler": {
+                "x": 352.303955078125,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "fieldOfView": 76.0
+        },
+        {
+            "file": "04-left.png",
+            "purpose": "Left direction from startup",
+            "position": {
+                "x": 0.0,
+                "y": 1.3614399433135987,
+                "z": 2.200000047683716
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 270.0,
+                "z": 0.0
+            },
+            "fieldOfView": 82.0
+        },
+        {
+            "file": "05-right.png",
+            "purpose": "Right direction from startup",
+            "position": {
+                "x": 0.0,
+                "y": 1.3614399433135987,
+                "z": 2.200000047683716
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 90.0,
+                "z": 0.0
+            },
+            "fieldOfView": 82.0
+        },
+        {
+            "file": "06-back.png",
+            "purpose": "Backward direction from startup",
+            "position": {
+                "x": 0.0,
+                "y": 1.3614399433135987,
+                "z": 2.200000047683716
+            },
+            "euler": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "fieldOfView": 82.0
+        },
+        {
+            "file": "07-exhibit-from-rear.png",
+            "purpose": "Look back at all exhibits from the rear gallery",
+            "position": {
+                "x": 0.0,
+                "y": 1.600000023841858,
+                "z": 7.0
+            },
+            "euler": {
+                "x": 4.0856170654296879,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "fieldOfView": 88.0
+        },
+        {
+            "file": "08-ceiling.png",
+            "purpose": "Upward view from startup",
+            "position": {
+                "x": 0.0,
+                "y": 1.3614399433135987,
+                "z": 2.200000047683716
+            },
+            "euler": {
+                "x": 288.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "fieldOfView": 84.0
+        },
+        {
+            "file": "09-floor.png",
+            "purpose": "Downward view from startup",
+            "position": {
+                "x": 0.0,
+                "y": 1.3614399433135987,
+                "z": 2.200000047683716
+            },
+            "euler": {
+                "x": 67.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "fieldOfView": 84.0
+        }
+    ],
+    "errors": []
+}

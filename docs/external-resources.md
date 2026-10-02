@@ -1,5 +1,7 @@
 # 外部资源与辅助工具记录
 
+2026-10-02 展厅环境补充：本次根据 [BIG 的 Danish Maritime Museum](https://big.dk/projects/danish-maritime-museum-1699)、[Kossmanndejong 的 Maritime Stories of Denmark](https://kossmanndejong.nl/project/maritime-museum-denmark/) 和 [Royal Museums Greenwich 的 Sea Things](https://www.rmg.co.uk/national-maritime-museum/attractions/sea-things-gallery) 研究空间组织与展陈方法。仅使用来源链接与简短概括，没有下载或分发其图片、视频、模型、贴图，也不推断这些媒体可再利用。新环境的建筑几何、抽象图形、解释性装置和材质由 Codex 辅助程序生成；文字继续使用项目现有 TMP 字体。AI 辅助范围包括设计、Editor 工具、场景接入、测试和文档；不等于人工审查、真实用户评价或头显性能验收。侧面装置不是历史复原，后墙线纹不是测量数据，见[环境说明](maritime-gallery.zh-CN.md)。
+
 | 资源 | 来源 | 用途 | 许可/使用条件 | 修改情况 |
 | --- | --- | --- | --- | --- |
 | Unity 官方 3D 模板 | Unity Hub / 已安装编辑器的 ProjectTemplates | 初始工程 | 遵循模板随附许可；提交前核对课程要求 | 初始工程基础，不能作为小组原创功能申报 |
