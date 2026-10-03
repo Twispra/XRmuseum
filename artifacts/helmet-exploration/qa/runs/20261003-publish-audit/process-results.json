@@ -1,0 +1,22 @@
+[
+  {
+    "entry": "Museum.Inspection.Editor.HelmetInspectionValidation.RunMainBatch",
+    "startedUtc": "2026-10-02T17:48:32.1022252Z",
+    "finishedUtc": "2026-10-02T17:50:04.3729427Z",
+    "processId": 33180,
+    "exitCode": 0,
+    "timedOut": false,
+    "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+    "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\exploration-20261003-publish-interaction.log"
+  },
+  {
+    "entry": "Museum.Editor.HelmetPrototypeValidation.RunBatch",
+    "startedUtc": "2026-10-02T17:51:24.1812476Z",
+    "finishedUtc": "2026-10-02T17:52:28.4769515Z",
+    "processId": 45172,
+    "exitCode": 0,
+    "timedOut": false,
+    "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+    "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\exploration-20261003-publish-grab.log"
+  }
+]

@@ -1,0 +1,125 @@
+{
+  "utc": "2026-10-02T17:41:46.441561+00:00",
+  "baseCommit": "39bebc3a86e7f3479c0886539c67cc1389630fb3",
+  "branch": "codex/helmet-exploration-2026-10-03",
+  "baselineUtc": "2026-10-02T17:24:00.094784+00:00",
+  "protectedFilesChecked": 635,
+  "changedProtectedFiles": [],
+  "newHelperGuid": "120c6d60af7b49fd8b9c27562662a717",
+  "guidOccurrences": [
+    "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetDemonstrationModels.cs.meta"
+  ],
+  "checks": [
+    {
+      "name": "pre-existing unrelated files unchanged",
+      "passed": true
+    },
+    {
+      "name": "new helper metadata is unique",
+      "passed": true
+    }
+  ],
+  "moduleFiles": [
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Editor.meta",
+      "sha256": "1f47bc2f1b2cef625667e1ac316c40a9d399b1a4d41b0add854cb8826d56650c"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials.meta",
+      "sha256": "fbc72b5f71229a339b260c0f6236ff5c3cc4caf6db96d63d2e40753e0c2dfef1"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime.meta",
+      "sha256": "727a602dd46baaa947708dd44601bd5f111932c3bbd99e46a878454374bbb091"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationSetup.cs",
+      "sha256": "d71eb77e70b9aff5ed781acaa619e2b894939b94589e7c39ed8e1656dd2af784"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationSetup.cs.meta",
+      "sha256": "522e65ed7203c1bd8b98b711f3b8e994a8f3ddc55e86dbd00096b7af0586ba3d"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationValidation.cs",
+      "sha256": "1d600b97e99f8237f6ec5ff83b626e73b70ac025cba5a0d75c121a6d3c4813b7"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationValidation.cs.meta",
+      "sha256": "618598274cb9312c3769f29c8026d0e708c47b36bf268f24d2c1c09a8007e099"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/AirSignal.mat",
+      "sha256": "2c567ff03bd4e21c5394bb70af973a63b542696006a19ef2eb183eb383af3369"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/AirSignal.mat.meta",
+      "sha256": "654b45819700a2d497dbac071304102bbe047daa2698390f8a7cb0f240455823"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/DiagramInk.mat",
+      "sha256": "837ad73801a720af0f216d9a2e53cbc3d083754e5ac6e0890c6ea3a15d1a58b7"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/DiagramInk.mat.meta",
+      "sha256": "1c8ed0a2ee66639b6fcfa9b376238ec2620f81a97eb63d4cef5e0ec8b0aee750"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/VoiceSignal.mat",
+      "sha256": "a4daff4a9f7619de45ac2ff681cd2f128850de2beb4b6a18552e2f2420728606"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/VoiceSignal.mat.meta",
+      "sha256": "4636432a06b5ec455f9230195067be6ce27674fcbd3276ecde902bb5ac4b47d8"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs",
+      "sha256": "f4e8ba8136b5b5231c65e31c7f6caf8e47839fefd0270f085e4a92451b511e46"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs.meta",
+      "sha256": "6f555c1d319a96da0a9fe9053d5abd13445c0980278a32bf389483ed8acd109a"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetDemonstrationModels.cs",
+      "sha256": "bfd53902c18115853e705b4b631babc9147c92d0ed19f1f17d0c5b45d6608e51"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetDemonstrationModels.cs.meta",
+      "sha256": "288ddc92cc03433ba11b963b6cd9e2f785804fbe6c2195c50393be6fcea306ac"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationButton.cs",
+      "sha256": "e25bf2f59469fe979ae8fe80502b128837b2fb20ca4936a047d7e0f7fc700598"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationButton.cs.meta",
+      "sha256": "90b13b9a1a85bd6b43a4ebb3ab0aec7907a34ffd2d3c70223f926f92c4f35d59"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationController.cs",
+      "sha256": "593d716615d03a0bde1e3b25e1f8946f1d616c8da8a22929080c4ff28a6daef7"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationController.cs.meta",
+      "sha256": "fe51d381dfc906f275afdec481c7e9da2c3686aceea9db0ca9e7f48cd2b8ccb2"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationHotspot.cs",
+      "sha256": "21b1eeb3cfc217f04ac5baf07b4941c6597027c895c13fef48b1e9bf95ce404b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationHotspot.cs.meta",
+      "sha256": "cb38cbaa37a0de9cc393ecdbab2cf9bf91fb3135c805e00907226e254023a551"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationPanel.cs",
+      "sha256": "269613c918cb48bcbc04cbc5656b073116885d9ad071739d22cbdb196bcadc09"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationPanel.cs.meta",
+      "sha256": "12899a90dce45f2ed77804c88af129ee2a49753f9104db7a189bf2f4e72190e0"
+    }
+  ],
+  "limitations": "Static comparison against this turn baseline. Source hashes identify uncommitted changes; not a hardware, performance or full-project test."
+}

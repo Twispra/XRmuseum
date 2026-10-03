@@ -1,0 +1,52 @@
+{
+  "first-validation": {
+    "entry": "Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch",
+    "startedUtc": "2026-10-02T16:46:01.3431673Z",
+    "finishedUtc": "2026-10-02T16:50:01.4470223Z",
+    "processId": 25516,
+    "exitCode": null,
+    "timedOut": true,
+    "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+    "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\exploration-20261003-first-validation.log"
+  },
+  "refined-validation": {
+    "entry": "Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch",
+    "startedUtc": "2026-10-02T16:53:18.0639758Z",
+    "finishedUtc": "2026-10-02T16:57:18.1743372Z",
+    "processId": 26488,
+    "exitCode": null,
+    "timedOut": true,
+    "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+    "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\exploration-20261003-refined-validation.log"
+  },
+  "original-interaction": {
+    "entry": "Museum.Inspection.Editor.HelmetInspectionValidation.RunMainBatch",
+    "startedUtc": "2026-10-02T16:57:40.5296127Z",
+    "finishedUtc": "2026-10-02T17:01:40.6300341Z",
+    "processId": 31884,
+    "exitCode": null,
+    "timedOut": true,
+    "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+    "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\exploration-20261003-original-interaction.log"
+  },
+  "original-grab": {
+    "entry": "Museum.Editor.HelmetPrototypeValidation.RunBatch",
+    "startedUtc": "2026-10-02T17:05:05.6646105Z",
+    "finishedUtc": "2026-10-02T17:06:10.5225920Z",
+    "processId": 34380,
+    "exitCode": 0,
+    "timedOut": false,
+    "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+    "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\exploration-20261003-original-grab.log"
+  },
+  "final-validation": {
+    "entry": "Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch",
+    "startedUtc": "2026-10-02T17:07:18.9634547Z",
+    "finishedUtc": "2026-10-02T17:08:27.1479510Z",
+    "processId": 24064,
+    "exitCode": 0,
+    "timedOut": false,
+    "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+    "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\exploration-20261003-final-validation.log"
+  }
+}

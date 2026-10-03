@@ -1,0 +1,517 @@
+{
+  "utc": "2026-10-02T17:10:08.970674+00:00",
+  "baseline": "39bebc3a86e7f3479c0886539c67cc1389630fb3",
+  "currentBase": "39bebc3a86e7f3479c0886539c67cc1389630fb3",
+  "branch": "codex/helmet-exploration-2026-10-03",
+  "checks": [
+    {
+      "name": "no original scene objects removed",
+      "passed": true
+    },
+    {
+      "name": "exactly five original scene blocks extended",
+      "passed": true
+    },
+    {
+      "name": "prior protected dependencies unchanged",
+      "passed": true
+    },
+    {
+      "name": "new assets have meta files",
+      "passed": true
+    }
+  ],
+  "originalBlocks": 319,
+  "currentBlocks": 467,
+  "newBlocks": [
+    "1665228920",
+    "390391883",
+    "1665228923",
+    "684242700",
+    "1312429521",
+    "272330817",
+    "400000901",
+    "1653040312",
+    "1082910794",
+    "828987946",
+    "400000898",
+    "1312429522",
+    "1128445191",
+    "1464304434",
+    "272330811",
+    "771822380",
+    "2143935519",
+    "771822377",
+    "1639764883",
+    "1082910797",
+    "1653040315",
+    "1312429524",
+    "814423974",
+    "1463318078",
+    "684242702",
+    "621763651",
+    "897390932",
+    "1537084588",
+    "1653040314",
+    "417679646",
+    "1372236870",
+    "1463318076",
+    "1941628642",
+    "1537084589",
+    "771822379",
+    "828987947",
+    "684242705",
+    "1561771630",
+    "1537084590",
+    "1639764888",
+    "272330816",
+    "272330813",
+    "1372236872",
+    "1082910799",
+    "272330812",
+    "1190005634",
+    "771822382",
+    "1985528798",
+    "1537084591",
+    "1561771631",
+    "1082910800",
+    "1203818005",
+    "272330815",
+    "1217526737",
+    "1812418708",
+    "390391879",
+    "1203818010",
+    "2143935518",
+    "272330814",
+    "1128445192",
+    "1985528799",
+    "771822376",
+    "684242701",
+    "1464304435",
+    "1639764886",
+    "897390933",
+    "621763652",
+    "1464304433",
+    "400000900",
+    "2143935521",
+    "390391884",
+    "1203818009",
+    "179144501",
+    "1653040313",
+    "1463318077",
+    "1190005636",
+    "1639764887",
+    "1190005635",
+    "1561771632",
+    "814423973",
+    "621763654",
+    "1312429523",
+    "897390935",
+    "390391882",
+    "621763655",
+    "1082910798",
+    "1128445193",
+    "684242704",
+    "1217526738",
+    "417679645",
+    "771822381",
+    "1217526736",
+    "417679644",
+    "1639764882",
+    "1120544057",
+    "828987945",
+    "1464304432",
+    "474574409",
+    "400000899",
+    "390391885",
+    "1812418710",
+    "474574411",
+    "1639764884",
+    "621763657",
+    "1899209737",
+    "1372236871",
+    "771822378",
+    "1372236873",
+    "1665228921",
+    "1082910795",
+    "1812418711",
+    "1463318079",
+    "814423975",
+    "621763656",
+    "1190005637",
+    "1561771636",
+    "1217526739",
+    "1128445190",
+    "1899209738",
+    "400000896",
+    "474574408",
+    "1665228922",
+    "1561771635",
+    "390391881",
+    "179144502",
+    "1082910796",
+    "390391880",
+    "814423972",
+    "1203818004",
+    "1899209740",
+    "621763653",
+    "1203818007",
+    "2143935520",
+    "400000897",
+    "400000895",
+    "897390934",
+    "828987948",
+    "1812418709",
+    "1561771633",
+    "1203818006",
+    "684242703",
+    "1899209739",
+    "474574410",
+    "1203818008",
+    "1561771634",
+    "417679643",
+    "1639764885",
+    "684242706"
+  ],
+  "changedOriginalBlocks": [
+    {
+      "fileID": "1120544053",
+      "before": "--- !u!1001 &1120544053\nPrefabInstance:\n  m_ObjectHideFlags: 0\n  serializedVersion: 2\n  m_Modification:\n    serializedVersion: 3\n    m_TransformParent: {fileID: 444948335}\n    m_Modifications:\n    - target: {fileID: 2257646481026636850, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_Name\n      value: HelmetExhibit\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalPosition.x\n      value: 0\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalPosition.y\n      value: 1.1719999\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalPosition.z\n      value: 3.5\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalRotation.w\n      value: 1\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalRotation.x\n      value: -0\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalRotation.y\n      value: -0\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalRotation.z\n      value: -0\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalEulerAnglesHint.x\n      value: 0\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalEulerAnglesHint.y\n      value: 0\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalEulerAnglesHint.z\n      value: 0\n      objectReference: {fileID: 0}\n    - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: homePosition.y\n      value: 1.1719999\n      objectReference: {fileID: 0}\n    - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: homePosition.z\n      value: 3.5\n      objectReference: {fileID: 0}\n    - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: homeRotation.x\n      value: -0\n      objectReference: {fileID: 0}\n    - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: homeRotation.y\n      value: -0\n      objectReference: {fileID: 0}\n    - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: homeRotation.z\n      value: -0\n      objectReference: {fileID: 0}\n    - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: hasConfiguredHome\n      value: 1\n      objectReference: {fileID: 0}\n    m_RemovedComponents: []\n    m_RemovedGameObjects: []\n    m_AddedGameObjects: []\n    m_AddedComponents: []\n  m_SourcePrefab: {fileID: 100100000, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n",
+      "after": "--- !u!1001 &1120544053\nPrefabInstance:\n  m_ObjectHideFlags: 0\n  serializedVersion: 2\n  m_Modification:\n    serializedVersion: 3\n    m_TransformParent: {fileID: 444948335}\n    m_Modifications:\n    - target: {fileID: 2257646481026636850, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_Name\n      value: HelmetExhibit\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalPosition.x\n      value: 0\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalPosition.y\n      value: 1.1719999\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalPosition.z\n      value: 3.5\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalRotation.w\n      value: 1\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalRotation.x\n      value: -0\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalRotation.y\n      value: -0\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalRotation.z\n      value: -0\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalEulerAnglesHint.x\n      value: 0\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalEulerAnglesHint.y\n      value: 0\n      objectReference: {fileID: 0}\n    - target: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: m_LocalEulerAnglesHint.z\n      value: 0\n      objectReference: {fileID: 0}\n    - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: homePosition.y\n      value: 1.1719999\n      objectReference: {fileID: 0}\n    - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: homePosition.z\n      value: 3.5\n      objectReference: {fileID: 0}\n    - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: homeRotation.x\n      value: -0\n      objectReference: {fileID: 0}\n    - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: homeRotation.y\n      value: -0\n      objectReference: {fileID: 0}\n    - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: homeRotation.z\n      value: -0\n      objectReference: {fileID: 0}\n    - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      propertyPath: hasConfiguredHome\n      value: 1\n      objectReference: {fileID: 0}\n    m_RemovedComponents: []\n    m_RemovedGameObjects: []\n    m_AddedGameObjects:\n    - targetCorrespondingSourceObject: {fileID: 3281464335696301320, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n      insertIndex: -1\n      addedObject: {fileID: 417679644}\n    m_AddedComponents: []\n  m_SourcePrefab: {fileID: 100100000, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}\n"
+    },
+    {
+      "fileID": "1941628639",
+      "before": "--- !u!1 &1941628639\nGameObject:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  serializedVersion: 6\n  m_Component:\n  - component: {fileID: 1941628640}\n  - component: {fileID: 1941628641}\n  m_Layer: 0\n  m_Name: Personal Inspection Palette\n  m_TagString: Untagged\n  m_Icon: {fileID: 0}\n  m_NavMeshLayer: 0\n  m_StaticEditorFlags: 0\n  m_IsActive: 1\n",
+      "after": "--- !u!1 &1941628639\nGameObject:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  serializedVersion: 6\n  m_Component:\n  - component: {fileID: 1941628640}\n  - component: {fileID: 1941628641}\n  - component: {fileID: 1941628642}\n  m_Layer: 0\n  m_Name: Personal Inspection Palette\n  m_TagString: Untagged\n  m_Icon: {fileID: 0}\n  m_NavMeshLayer: 0\n  m_StaticEditorFlags: 0\n  m_IsActive: 1\n"
+    },
+    {
+      "fileID": "1941628640",
+      "before": "--- !u!4 &1941628640\nTransform:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  m_GameObject: {fileID: 1941628639}\n  serializedVersion: 2\n  m_LocalRotation: {x: -0, y: -0.22473334, z: -0, w: 0.9744203}\n  m_LocalPosition: {x: -0.38, y: 1.3814399, z: 2.98}\n  m_LocalScale: {x: 1, y: 1, z: 1}\n  m_ConstrainProportionsScale: 0\n  m_Children:\n  - {fileID: 736706835}\n  - {fileID: 2052057487}\n  - {fileID: 432517984}\n  - {fileID: 1736958362}\n  - {fileID: 1244887174}\n  - {fileID: 683240028}\n  - {fileID: 951632071}\n  - {fileID: 898826564}\n  - {fileID: 1813110567}\n  - {fileID: 888442039}\n  - {fileID: 1873559879}\n  - {fileID: 1054662912}\n  - {fileID: 721311847}\n  - {fileID: 345629527}\n  - {fileID: 551436278}\n  - {fileID: 1470653390}\n  - {fileID: 1637611588}\n  - {fileID: 1307517828}\n  - {fileID: 532486027}\n  - {fileID: 366246464}\n  - {fileID: 1016441815}\n  m_Father: {fileID: 444948335}\n  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\n",
+      "after": "--- !u!4 &1941628640\nTransform:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  m_GameObject: {fileID: 1941628639}\n  serializedVersion: 2\n  m_LocalRotation: {x: -0, y: -0.22473334, z: -0, w: 0.9744203}\n  m_LocalPosition: {x: -0.38, y: 1.3814399, z: 2.98}\n  m_LocalScale: {x: 1, y: 1, z: 1}\n  m_ConstrainProportionsScale: 0\n  m_Children:\n  - {fileID: 736706835}\n  - {fileID: 2052057487}\n  - {fileID: 432517984}\n  - {fileID: 1736958362}\n  - {fileID: 1244887174}\n  - {fileID: 683240028}\n  - {fileID: 951632071}\n  - {fileID: 898826564}\n  - {fileID: 1813110567}\n  - {fileID: 888442039}\n  - {fileID: 1873559879}\n  - {fileID: 1054662912}\n  - {fileID: 721311847}\n  - {fileID: 345629527}\n  - {fileID: 551436278}\n  - {fileID: 1470653390}\n  - {fileID: 1637611588}\n  - {fileID: 1307517828}\n  - {fileID: 532486027}\n  - {fileID: 366246464}\n  - {fileID: 1016441815}\n  - {fileID: 179144502}\n  - {fileID: 1985528799}\n  m_Father: {fileID: 444948335}\n  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}\n"
+    },
+    {
+      "fileID": "1941628641",
+      "before": "--- !u!114 &1941628641\nMonoBehaviour:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  m_GameObject: {fileID: 1941628639}\n  m_Enabled: 1\n  m_EditorHideFlags: 0\n  m_Script: {fileID: 11500000, guid: 230006ebb62261649babb3df4b41345b, type: 3}\n  m_Name: \n  m_EditorClassIdentifier: \n  controller: {fileID: 1120544054}\n  viewer: {fileID: 829167124}\n  sectionOptions: {fileID: 366246463}\n  status: {fileID: 1016441816}\n  viewerOffset: {x: -0.38, y: 0.02, z: 0.78}\n  followEnabled: 1\n",
+      "after": "--- !u!114 &1941628641\nMonoBehaviour:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  m_GameObject: {fileID: 1941628639}\n  m_Enabled: 1\n  m_EditorHideFlags: 0\n  m_Script: {fileID: 11500000, guid: 230006ebb62261649babb3df4b41345b, type: 3}\n  m_Name: \n  m_EditorClassIdentifier: \n  controller: {fileID: 1120544054}\n  viewer: {fileID: 829167124}\n  sectionOptions: {fileID: 366246463}\n  status: {fileID: 1016441816}\n  viewerOffset: {x: -0.38, y: 0.02, z: 0.78}\n  followEnabled: 1\n  additionalTopPadding: 0.085\n"
+    },
+    {
+      "fileID": "9223372036854775807",
+      "before": "--- !u!1660057539 &9223372036854775807\nSceneRoots:\n  m_ObjectHideFlags: 0\n  m_Roots:\n  - {fileID: 491581322}\n  - {fileID: 1909228438}\n  - {fileID: 1396168931}\n  - {fileID: 829167121}\n  - {fileID: 575428510}\n  - {fileID: 1114228609}\n  - {fileID: 444948335}\n  - {fileID: 1291074038}\n",
+      "after": "--- !u!1660057539 &9223372036854775807\nSceneRoots:\n  m_ObjectHideFlags: 0\n  m_Roots:\n  - {fileID: 491581322}\n  - {fileID: 1909228438}\n  - {fileID: 1396168931}\n  - {fileID: 829167121}\n  - {fileID: 575428510}\n  - {fileID: 1114228609}\n  - {fileID: 444948335}\n  - {fileID: 1291074038}\n  - {fileID: 1128445193}\n"
+    }
+  ],
+  "protectedFiles": [
+    {
+      "path": "MuseumVR/Packages/manifest.json",
+      "unchanged": true,
+      "sha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7"
+    },
+    {
+      "path": "MuseumVR/Packages/packages-lock.json",
+      "unchanged": true,
+      "sha256": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03"
+    },
+    {
+      "path": "MuseumVR/ProjectSettings/ProjectSettings.asset",
+      "unchanged": true,
+      "sha256": "6b3aa93c403f4a0697a561f117cea95e529db9965f59dcadfcb4533031e1e2b0"
+    },
+    {
+      "path": "MuseumVR/ProjectSettings/ProjectVersion.txt",
+      "unchanged": true,
+      "sha256": "93eba324bad77e6764a40d1b8a2020e7b69424102a2b2f3b17b69afdf7dd67a0"
+    },
+    {
+      "path": "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/XRI Default Input Actions.inputactions",
+      "unchanged": true,
+      "sha256": "d51f6a0518c700cb15adb77f5a297c66cce683f13057ab47d466751cbe3b5336"
+    },
+    {
+      "path": "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/XR Device Simulator/XR Device Simulator Controls.inputactions",
+      "unchanged": true,
+      "sha256": "cee50f8657ca7f46695b0e6ce5a16971acf8bdfd65ce7d7e4a50ca3d3d9ed653"
+    },
+    {
+      "path": "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/XR Device Simulator/XR Device Controller Controls.inputactions",
+      "unchanged": true,
+      "sha256": "e28ef1f4edb610ad5b2ff5d991a08b8bcbb3adba404b6a09905e2840c19ce967"
+    },
+    {
+      "path": "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/XR Device Simulator/XR Device Hand Controls.inputactions",
+      "unchanged": true,
+      "sha256": "b5a8882c2fe6286fa336fc384d678210c3612a4bbd3abd4c197c78e7f94c374a"
+    },
+    {
+      "path": "MuseumVR/Assets/XRI/Settings/Resources/XRDeviceSimulatorSettings.asset",
+      "unchanged": true,
+      "sha256": "f5308693fa345911766950f64e6fd2dea82eb786d3b6ef2f7d2583a2bda8ac1e"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Models/Helmet/helmet-graybox-v02.fbx",
+      "unchanged": true,
+      "sha256": "c0cefcc0fd5acc1fac0ec1ee5ed212a4813606b57e984767afc55d34080322ab"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Prefabs/HelmetExhibit.prefab",
+      "unchanged": true,
+      "sha256": "788ed00f8d9c3276333ed7d2bcf091cb1df09227694bc3744c1f6b8c76ab9337"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Scripts/HelmetExhibitReset.cs",
+      "unchanged": true,
+      "sha256": "e365a604ed9cfbc2535b9dd4f788c56ce228026584450737f40d2f0a1035ff2b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionValidation.cs",
+      "unchanged": true,
+      "sha256": "9f7ed270adc57f2cf661d291a211b53d088e4a600dbd254103510060a8fdf3a7"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Demo.meta",
+      "unchanged": true,
+      "sha256": "c8da83c1dd48895128844becf7b98a8c78e4d759cee201eab25ab4b0050f25cf"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Demo/HelmetInspectionDesktopPreview.cs",
+      "unchanged": true,
+      "sha256": "0a4eac233f5a94592c4d499bb09117780979aa09959b553a18c2bff361717706"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Demo/HelmetInspectionDesktopPreview.cs.meta",
+      "unchanged": true,
+      "sha256": "9acf3ec65e20401491fb2903c9eaae5a4d734ed2cde391f24d6829276d5c00f8"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor.meta",
+      "unchanged": true,
+      "sha256": "555815402af09f65c6a11f0a841e5fe78a91e27b9bea289086d504a8e6c3f7f1"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetAdvancedInspectionSetup.cs",
+      "unchanged": true,
+      "sha256": "d6641580d92a1df30f010f97987ab3fb6f55f2ab147fce4ca0d3749ac53e7589"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetAdvancedInspectionSetup.cs.meta",
+      "unchanged": true,
+      "sha256": "40e468fed6685d1bb1ef5df49daad1d0e4829ff5bd7b71efbf7b914fb206526b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionBuilder.cs",
+      "unchanged": true,
+      "sha256": "653237a0f251be940c51689d9d536876f6cc9ac81841adad3e3cc88e8822f342"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionBuilder.cs.meta",
+      "unchanged": true,
+      "sha256": "1eddef6a938005bbb70ec6583e67487697680863162857c093e11f0740514292"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionCapture.cs",
+      "unchanged": true,
+      "sha256": "09fa20efab5601ffdea9460f3bfe4d20d82135e2524f456b97d87ae6b9bc2170"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionCapture.cs.meta",
+      "unchanged": true,
+      "sha256": "2dd58b5a8c3a16f42e060fd629be1609814782d65ca49358bb1ff1901f79707c"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionValidation.cs.meta",
+      "unchanged": true,
+      "sha256": "50eacf6ff265ee15e99724c5bdfc7ff5326f515c6968e2ee57ec5f8ef8684b83"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetMainIntegration.cs",
+      "unchanged": true,
+      "sha256": "39665bfbe7e6b624cff099fe4bc8e876c9df8c4a654dd30ec280f4fe35290126"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetMainIntegration.cs.meta",
+      "unchanged": true,
+      "sha256": "e6dceb3aff635e387746a1a75f7c358280e212db1913e20081a6cb757e699bf3"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetSectionContinuityValidation.cs",
+      "unchanged": true,
+      "sha256": "a1d544788ac496cac4e3f7205f232089f564b960b0d810c24ce0488e4c9d5f20"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetSectionContinuityValidation.cs.meta",
+      "unchanged": true,
+      "sha256": "4497c86c395e2bb76932f68ca1a49454cf57e1d7e7117124aed25c2573f5c2ad"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials.meta",
+      "unchanged": true,
+      "sha256": "ba828742f7f0fdbfaa6a03cbf90bd1b5c1791d6d01b499699a5da7860c40358c"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Brass.mat",
+      "unchanged": true,
+      "sha256": "625730228f20779eab50ae11c860f6d51c3e75381435ed4ce97662d8c72790a2"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Brass.mat.meta",
+      "unchanged": true,
+      "sha256": "40829427ec07f848539f92112f44da21a82ae45f43ffa4c8859f8543a60d82e7"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Controls.mat",
+      "unchanged": true,
+      "sha256": "0428022bf03d4c12ce70c7d562a1fdc7330b82a7d6677eb4336a8f2557a11ba1"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Controls.mat.meta",
+      "unchanged": true,
+      "sha256": "1c8c46d8bb6066ffd4d6787ecf723dfe5262a9f0b8395372ba985f5e54048486"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Copper.mat",
+      "unchanged": true,
+      "sha256": "df47e6dc3a2947ae4b91c9350b79bcf10a584cba3b8d7f133da1b80ed52fb159"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Copper.mat.meta",
+      "unchanged": true,
+      "sha256": "5753aa693bbbec2a026bdeb5aa8eb441e697e300aab407a86ff78e513e3cd210"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Plinth.mat",
+      "unchanged": true,
+      "sha256": "04d8773f9362647f6e514661535a10722621c7f4a217de5999cef9ea91cd04b5"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Plinth.mat.meta",
+      "unchanged": true,
+      "sha256": "9bf86b8bed1548935e8f3ca0ebbe961bb07e2679b888b1399a6fdcdd5116a89b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/SectionTool.mat",
+      "unchanged": true,
+      "sha256": "4397f15169b74f97e70962ff2a40366aa37a8db2ed176650253613250dbc7fe7"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/SectionTool.mat.meta",
+      "unchanged": true,
+      "sha256": "a98ccd7ade63f75b1208dff34d76790b55e8f9ab46e6889431cb622f779509a8"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Studio.mat",
+      "unchanged": true,
+      "sha256": "db7a4aeb3032baa54c40f73488497f7e75215164d8d224dc9f6e830717c3c829"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Studio.mat.meta",
+      "unchanged": true,
+      "sha256": "dad3e80bb6e3a7e732fd87f8e4496c44e2ce92e6c676e3789687f34f28945ede"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Window.mat",
+      "unchanged": true,
+      "sha256": "1d0b2961781c944a2dfc2f484748c8c4479bea6bd69f2e78498c1d82089f6753"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Window.mat.meta",
+      "unchanged": true,
+      "sha256": "cc5cd7bedc25a01b1414289ce1e538ec1cd7ecbbdf41a2578f7ff71aa95be92f"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs.meta",
+      "unchanged": true,
+      "sha256": "24f1fbd91020f7f9372a15d3de89527efccbe9e4397ed03a2f1f47142776f2f0"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+      "unchanged": true,
+      "sha256": "386c0333c3cf2bd286f61463cb833c7f54ec2b799872b74caca579181cffd6bb"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab.meta",
+      "unchanged": true,
+      "sha256": "3dd5bb2d81e3680a255bfefab032457e803c16e821a5dc16d94d900b0c87fdee"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime.meta",
+      "unchanged": true,
+      "sha256": "75f94217aa099e5fb51d43273d6114170c0cac9adf0acb7c9727e7c1656ee8f0"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+      "unchanged": true,
+      "sha256": "d0a9e828356cbed7271b9865379ec49eab1e264171de4a6808b1ee25cd4ee968"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs.meta",
+      "unchanged": true,
+      "sha256": "7892725c540d87cd077cebbcc0a27447fdd562f96f042a8120ca8f26da584431"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionControls.cs",
+      "unchanged": true,
+      "sha256": "74d8bb711395ce9de997e8e6b43a640ed19ca99b8a9d9b83826504f333e16e53"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionControls.cs.meta",
+      "unchanged": true,
+      "sha256": "f0973bc89a247720159083e88eb43f566bb36fc47bfcb99deb20cac3c20689bf"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionPalette.cs.meta",
+      "unchanged": true,
+      "sha256": "ab4008ee2fdde342a2f710f8189dc9988d752c32d24b059f5bac849b16cd6bb8"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetSectionInteractable.cs",
+      "unchanged": true,
+      "sha256": "1d20516b87c001f006b51a6fb0e7519f309244ad23da55027e8c1ae65e750214"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetSectionInteractable.cs.meta",
+      "unchanged": true,
+      "sha256": "abf74df78e0c6f904975792a9f2b2733f6b12cbd03d822e153a25ff85be2e2d3"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetWindowInteractable.cs",
+      "unchanged": true,
+      "sha256": "02149f675d4bb498a309103ad1c02cb9f943b1ee7bb5c2d349893653279e5f9e"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetWindowInteractable.cs.meta",
+      "unchanged": true,
+      "sha256": "7306fa1791f9d4bf101c7fe8e420674a5f8f5300cb43927f11af7a945e213d91"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Scenes.meta",
+      "unchanged": true,
+      "sha256": "dd0406e0c39f92f08cf7fb318d26ad47b95802e3341a19c511ebdf917aa77e9e"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity",
+      "unchanged": true,
+      "sha256": "8db3b80af4a5f0cd8e0688efd47ebbb2dbeb81a10ff76ea79b6dc17c9bf7d780"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity.meta",
+      "unchanged": true,
+      "sha256": "d677df2e39b60fbd51d48255afa99e421e762a77b9dd779a06d3de8e7a0e3491"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Shaders.meta",
+      "unchanged": true,
+      "sha256": "6e1a4fc62485beb03f8f40c4ab6540d759b41dfeafe26d16e801f0d106188a06"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Shaders/InspectionShell.shader",
+      "unchanged": true,
+      "sha256": "2076e258998f0d930bfd9296cc85fd32a303283f2eccd44a9054042aea5471f1"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Shaders/InspectionShell.shader.meta",
+      "unchanged": true,
+      "sha256": "b208cad1b328bd3e0957f6ed1270bfa043647cf9206201246bff4f1b133c4267"
+    }
+  ],
+  "missingMetas": [],
+  "limitations": "Source and serialized-object comparison, not headset, usability or player-build verification. The two allowed existing source/scene changes are reviewed separately."
+}

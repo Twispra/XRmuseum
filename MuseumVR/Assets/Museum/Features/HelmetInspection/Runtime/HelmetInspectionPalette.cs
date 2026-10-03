@@ -13,6 +13,10 @@ namespace Museum.Inspection
         [SerializeField] TextMeshPro status;
         [SerializeField] Vector3 viewerOffset = new Vector3(-.38f, .02f, .78f);
         [SerializeField] bool followEnabled = true;
+        // Optional pages share this same placement, hover freeze and obstacle query.
+        // Zero padding preserves the original prefab's layout.
+        [SerializeField, Min(0f)] float additionalTopPadding;
+        bool alternatePageVisible;
         XRBaseInteractable[] controls;
         Transform backPlate;
         Vector3 anchorPosition;
@@ -30,6 +34,29 @@ namespace Museum.Inspection
         public bool FollowEnabled { get => followEnabled; set => followEnabled = value; }
         public bool IsFrozen { get; private set; }
         public HelmetInspectionController Controller => controller;
+
+        public void ConfigureAdditionalPage(float topPadding)
+        {
+            additionalTopPadding = Mathf.Clamp(topPadding, 0f, .2f);
+            controls = GetComponentsInChildren<XRBaseInteractable>(true);
+            layoutDirty = true;
+        }
+
+        public void SetAlternatePageVisible(bool visible)
+        {
+            if (alternatePageVisible == visible) return;
+            alternatePageVisible = visible;
+            layoutDirty = true;
+        }
+
+        void PanelBounds(out Vector3 center, out Vector3 size)
+        {
+            bool expanded = alternatePageVisible || (controller && controller.IsCutaway);
+            float bottom = expanded ? -.32f : -.12f;
+            float top = .32f + additionalTopPadding;
+            center = new Vector3(0f, (top + bottom) * .5f, 0f);
+            size = new Vector3(.48f, top - bottom, .025f);
+        }
 
         public void Configure(HelmetInspectionController target, Transform camera, GameObject options, TextMeshPro statusText)
         {
@@ -62,12 +89,14 @@ namespace Museum.Inspection
                 layoutExpanded = controller.IsCutaway;
                 layoutDirty = true;
             }
-            if (sectionOptions && sectionOptions.activeSelf != controller.IsCutaway)
-                sectionOptions.SetActive(controller.IsCutaway);
+            bool showSectionOptions = controller.IsCutaway && !alternatePageVisible;
+            if (sectionOptions && sectionOptions.activeSelf != showSectionOptions)
+                sectionOptions.SetActive(showSectionOptions);
             if (backPlate)
             {
-                backPlate.localPosition = new Vector3(0, controller.IsCutaway ? 0 : .10f, 0);
-                backPlate.localScale = new Vector3(.48f, controller.IsCutaway ? .64f : .44f, .025f);
+                PanelBounds(out var center, out var size);
+                backPlate.localPosition = center;
+                backPlate.localScale = size;
             }
             if (status)
             {
@@ -132,9 +161,9 @@ namespace Museum.Inspection
                 var forward = Vector3.ProjectOnPlane(position - anchorPosition, Vector3.up).normalized;
                 var rotation = Quaternion.LookRotation(forward, Vector3.up);
                 // Hidden section rows must not push the compact menu above the visitor's view.
-                bool expanded = controller && controller.IsCutaway;
-                var center = position + (expanded ? Vector3.zero : Vector3.up * .10f);
-                var halfSize = new Vector3(.26f, expanded ? .34f : .24f, .05f);
+                PanelBounds(out var localCenter, out var size);
+                var center = position + rotation * localCenter;
+                var halfSize = size * .5f + new Vector3(.02f, .02f, .0375f);
                 bool blocked = false;
                 foreach (var hit in Physics.OverlapBox(center, halfSize, rotation, ~0, QueryTriggerInteraction.Ignore))
                 {
