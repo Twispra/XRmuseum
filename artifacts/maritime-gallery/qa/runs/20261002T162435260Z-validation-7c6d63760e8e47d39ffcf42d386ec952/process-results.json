@@ -1,0 +1,37 @@
+{
+  "sourceCommit": "342cdda2b77aab781d991cbd497c994330e5e76a",
+  "processes": [
+    {
+      "entry": "Museum.MaritimeGallery.Editor.MaritimeGalleryValidation.ValidateBatch",
+      "startedUtc": "2026-10-02T16:24:21.5200687Z",
+      "finishedUtc": "2026-10-02T16:24:37.0504881Z",
+      "processId": 37380,
+      "exitCode": 0,
+      "timedOut": false,
+      "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+      "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\gallery-20261003-publish-environment.log"
+    },
+    {
+      "entry": "Museum.Inspection.Editor.HelmetInspectionValidation.RunMainBatch",
+      "startedUtc": "2026-10-02T16:25:00.6089406Z",
+      "finishedUtc": "2026-10-02T16:26:32.8022736Z",
+      "processId": 35904,
+      "exitCode": 0,
+      "timedOut": false,
+      "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+      "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\gallery-20261003-publish-interaction.log"
+    },
+    {
+      "entry": "Museum.Editor.HelmetPrototypeValidation.RunBatch",
+      "startedUtc": "2026-10-02T16:27:09.5314326Z",
+      "finishedUtc": "2026-10-02T16:28:14.3746679Z",
+      "processId": 34928,
+      "exitCode": 0,
+      "timedOut": false,
+      "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+      "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\gallery-20261003-publish-grab.log"
+    }
+  ],
+  "productDirtyFiles": [],
+  "note": "Run folder timestamps are UTC; local date Asia/Shanghai is 2026-10-03. Existing untracked local files remain recorded in the original reports."
+}
