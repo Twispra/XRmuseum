@@ -27,6 +27,9 @@ XRmuseum/
     Packages/     package 版本与锁定文件
     ProjectSettings/
   docs/           协作说明、每周记录、外部资源记录
+  artifacts/      分模块的验证证据与交接材料
+  .github/        Issue / PR 模板等仓库配置
+  AGENTS.md       协作约定与协作工具说明
   .gitattributes  文本文件和 Git LFS 规则
   .gitignore      排除缓存、构建产物和本地文件
 ```
