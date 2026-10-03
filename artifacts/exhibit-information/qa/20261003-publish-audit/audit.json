@@ -1,0 +1,113 @@
+{
+  "checkedUtc": "2026-10-03T13:41:25.786312+00:00",
+  "sourceCommit": "2504ccdbde5fcc6eba61eb456d7c9aa595243c85",
+  "baseCommit": "b40eb9f652a3935595575e6a5ec0f287c09777b5",
+  "pullRequest": "https://github.com/Twispra/XRmuseum/pull/9",
+  "note": "The existing Unity runs were not rerun at publish time. Their source hashes match working files, which map to sourceCommit through Git line-ending filters. Later release edits are documentation only.",
+  "productFiles": [
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationValidation.cs",
+      "commitBlob": "76575e166bc92f89a93a79de4c76af0ea83410ff",
+      "workingBlobAfterGitFilters": "76575e166bc92f89a93a79de4c76af0ea83410ff",
+      "workingSha256": "246b529e857297603253860c898c3924e62c767760495e6a5d3ff49c522c57fe"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetInformationLayoutSetup.cs",
+      "commitBlob": "9f51896f53f15cad949fe6e0b1faf4ff4a38e3b1",
+      "workingBlobAfterGitFilters": "9f51896f53f15cad949fe6e0b1faf4ff4a38e3b1",
+      "workingSha256": "70351e1406fe1e1c8ddfe53f423da0739dbdbf04949750a7c3e1da60cf0bdae9"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetInformationLayoutSetup.cs.meta",
+      "commitBlob": "fbdcc04e44a38ae9fed9d558030bab0d88806eda",
+      "workingBlobAfterGitFilters": "fbdcc04e44a38ae9fed9d558030bab0d88806eda",
+      "workingSha256": "7f024875cdd561fa68d83ffc50ac7dd0a83db5a9cf2df910bd4caf6e30e1c39b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/InformationControl.mat",
+      "commitBlob": "835a5e2041d6a26f76d62096fd161c3b033a636c",
+      "workingBlobAfterGitFilters": "835a5e2041d6a26f76d62096fd161c3b033a636c",
+      "workingSha256": "8459bec8ef5f18b6daaa4afafbcb7d6e6da182ec586dc0b0fd52539ad9d27b3a"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/InformationControl.mat.meta",
+      "commitBlob": "7034c54331db860eb7c920ef8a398991712f2d0f",
+      "workingBlobAfterGitFilters": "7034c54331db860eb7c920ef8a398991712f2d0f",
+      "workingSha256": "15b0badb934d0c9be8b55fc34796f0555ebfe02072c5c126bdba46aa0791ec7f"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/InformationPanel.mat",
+      "commitBlob": "955719aa52a369f6ad5957327de748bb3dd78acf",
+      "workingBlobAfterGitFilters": "955719aa52a369f6ad5957327de748bb3dd78acf",
+      "workingSha256": "3a4b40a9447389e7604b93c0f7a67e341a09ce167ab760d621b4df89f96a8934"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/InformationPanel.mat.meta",
+      "commitBlob": "c97100f1d508f9670491a45c8431438a7b6a0f5d",
+      "workingBlobAfterGitFilters": "c97100f1d508f9670491a45c8431438a7b6a0f5d",
+      "workingSha256": "c8d31b54914d445890a39cb29bd8834ab51a30e836f984a27653520e9a1d1b13"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs",
+      "commitBlob": "a0f137f72da3a2627496258cd81ee74f72ca635c",
+      "workingBlobAfterGitFilters": "a0f137f72da3a2627496258cd81ee74f72ca635c",
+      "workingSha256": "cba4181d4b4dbe69d0add9a73953d92454d6c9e2898136601c1c50d7cb536a68"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationButton.cs",
+      "commitBlob": "c3749e6f0da8dd8c663c936c047e81fd30866fc1",
+      "workingBlobAfterGitFilters": "c3749e6f0da8dd8c663c936c047e81fd30866fc1",
+      "workingSha256": "20eeeb0aaa5301307499e92b6c69355783f28e86870cb14110ff075e5925710a"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationController.cs",
+      "commitBlob": "23329b579961dbd4de537467672ed1e1261fdf23",
+      "workingBlobAfterGitFilters": "23329b579961dbd4de537467672ed1e1261fdf23",
+      "workingSha256": "b1340f083abef5f6d292777fcffc186fd059f4749b5a4830d2193f358f88238d"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationPanel.cs",
+      "commitBlob": "934fe1e7a58e65e8cec20f5770c43f13da591373",
+      "workingBlobAfterGitFilters": "934fe1e7a58e65e8cec20f5770c43f13da591373",
+      "workingSha256": "17927d15d98f8b472bbcf6439174e6887b5e9235f169ee50dc499f286d6c82e5"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionValidation.cs",
+      "commitBlob": "47883807aeb6a4f1769e88b277d11d710611716b",
+      "workingBlobAfterGitFilters": "47883807aeb6a4f1769e88b277d11d710611716b",
+      "workingSha256": "4bdb52ae61da17d01a11e33c1e35393d3d2c2c857a797117ea7116ce6000f34a"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionPalette.cs",
+      "commitBlob": "c363e8428dd2eb665a42519003f7829125e3e5bf",
+      "workingBlobAfterGitFilters": "c363e8428dd2eb665a42519003f7829125e3e5bf",
+      "workingSha256": "1fd8529318b02b071e0c217d1388ae3cc0a2e7f036e7f1bd5a92d37ef6c0fb6f"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+      "commitBlob": "f452ebd08ad27acabeae82f08600bd10820499b3",
+      "workingBlobAfterGitFilters": "f452ebd08ad27acabeae82f08600bd10820499b3",
+      "workingSha256": "af5ac92458f908faed15e3e866647829675e6d1bbfd25937d3d19b81b3cbae29"
+    }
+  ],
+  "reports": [
+    {
+      "path": "artifacts/helmet-exploration/qa/runs/20261003T131904705Z-exploration-35eccc55fdc64475904c80e6ec13ead4/report.json",
+      "sha256": "e4e60b455bf60e021fd32f32edba9971011555eb1f31b638067c24245d2b1e75",
+      "assertionsPassed": 1469,
+      "sourceFilesRechecked": 192
+    },
+    {
+      "path": "artifacts/helmet-interaction/qa/runs/20261003T132216493Z-inspection-main-765c3e4956c049b6822da05a6a92192f/report.json",
+      "sha256": "4f64943ee27b7b52a00a32d30d1dccd8d1e3cac7f60cc1df3cae36d37f9e091e",
+      "assertionsPassed": 206,
+      "sourceFilesRechecked": 64
+    },
+    {
+      "path": "artifacts/helmet-interaction/qa/runs/20261003T132401996Z-6acb5ce49e764e97ab793db79231d025/playmode-validation.json",
+      "sha256": "dc1a152805f91c53104d2d9e8ffb21042ffaaa0ab0fa42951c4cfea21ebfd441",
+      "assertionsPassed": 90,
+      "sourceFilesRechecked": 14
+    }
+  ]
+}
