@@ -14,7 +14,7 @@ namespace Museum.Localization
     public sealed class LanguageChannel : ScriptableObject
     {
         [Tooltip("进入 Play 时的初始语言。")]
-        [SerializeField] MuseumLanguage initial = MuseumLanguage.Chinese;
+        [SerializeField] MuseumLanguage initial = MuseumLanguage.English;
 
         // 运行期状态不写回资产，避免把「上次跑测试时切成了英文」提交上去。
         [NonSerialized] MuseumLanguage current;

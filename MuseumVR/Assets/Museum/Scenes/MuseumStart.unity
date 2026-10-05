@@ -969,6 +969,78 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 272330811}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &303325135
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7040005279808717193, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040005279808717193, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040005279808717193, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040005279808717193, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040005279808717193, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040005279808717193, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040005279808717193, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040005279808717193, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040005279808717193, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7040005279808717193, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8551646871586534683, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      propertyPath: m_Name
+      value: Language Selection
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 184249411636622355, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 345289352959435926, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 5903536569025065097, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 6943722413232399712, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 7391586974414576356, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: 47e8abe331f261142b8c8e553a3b32f2, type: 3}
 --- !u!1 &316233489
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,6 +1052,7 @@ GameObject:
   - component: {fileID: 316233490}
   - component: {fileID: 316233492}
   - component: {fileID: 316233491}
+  - component: {fileID: 316233493}
   m_Layer: 0
   m_Name: Museum Subtitle
   m_TagString: Untagged
@@ -1028,8 +1101,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: A SPACE TO EXPLORE
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
+  m_sharedMaterial: {fileID: -3044848435321221505, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1118,7 +1191,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -3044848435321221505, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1140,6 +1213,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &316233493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316233489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2411d0a353784927869f656eec7e94e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table: {fileID: 11400000, guid: ca262dc3d02429245991b087c7d15858, type: 2}
+  channel: {fileID: 11400000, guid: 1c39d1ee21f80bc41ae272dccf23e592, type: 2}
+  key: museum.sign.subtitle
+  applyTableFont: 1
+  logMissingKeys: 1
 --- !u!1 &345629526
 GameObject:
   m_ObjectHideFlags: 0
@@ -3173,6 +3263,7 @@ GameObject:
   - component: {fileID: 544613836}
   - component: {fileID: 544613838}
   - component: {fileID: 544613837}
+  - component: {fileID: 544613839}
   m_Layer: 0
   m_Name: Museum Title
   m_TagString: Untagged
@@ -3221,8 +3312,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: MUSEUM / XR
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
+  m_sharedMaterial: {fileID: -3044848435321221505, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3311,7 +3402,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -3044848435321221505, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3333,6 +3424,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &544613839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544613835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2411d0a353784927869f656eec7e94e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table: {fileID: 11400000, guid: ca262dc3d02429245991b087c7d15858, type: 2}
+  channel: {fileID: 11400000, guid: 1c39d1ee21f80bc41ae272dccf23e592, type: 2}
+  key: museum.sign.title
+  applyTableFont: 1
+  logMissingKeys: 1
 --- !u!1 &551436277
 GameObject:
   m_ObjectHideFlags: 0
@@ -8934,6 +9042,7 @@ GameObject:
   - component: {fileID: 1239623737}
   - component: {fileID: 1239623739}
   - component: {fileID: 1239623738}
+  - component: {fileID: 1239623740}
   m_Layer: 0
   m_Name: Welcome
   m_TagString: Untagged
@@ -8982,8 +9091,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Welcome. Take a closer look.
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
+  m_sharedMaterial: {fileID: -3044848435321221505, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9072,7 +9181,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: -3044848435321221505, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -9094,6 +9203,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1239623740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239623736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2411d0a353784927869f656eec7e94e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table: {fileID: 11400000, guid: ca262dc3d02429245991b087c7d15858, type: 2}
+  channel: {fileID: 11400000, guid: 1c39d1ee21f80bc41ae272dccf23e592, type: 2}
+  key: museum.sign.welcome
+  applyTableFont: 1
+  logMissingKeys: 1
 --- !u!1 &1244887173
 GameObject:
   m_ObjectHideFlags: 0
@@ -15648,3 +15774,4 @@ SceneRoots:
   - {fileID: 444948335}
   - {fileID: 1291074038}
   - {fileID: 1128445193}
+  - {fileID: 303325135}

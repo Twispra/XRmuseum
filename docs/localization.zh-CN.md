@@ -115,14 +115,41 @@ python Fonts/check-glyph-coverage.py   # 核对字符在字体里都有字形
 键盘路径与 XR 按钮走的是同一个语言通道，所以它能验证「切换 → 刷新」这条链路；
 **它验证不了射线交互本身**，那需要真机。
 
-## 接入主场景（由整合人执行）
+## 接入主场景
 
-本模块**刻意不修改 `MuseumStart.unity`**。接入时：
+模块**本身不修改 `MuseumStart.unity`**；接入由**独立的整合工具**完成，菜单在模块自己的 Editor 目录下：
 
-1. 给需要双语的文字对象加 `LocalizedText`，填文案表、语言通道与 key；
-2. 在欢迎步骤放两个 `LanguageButton`（或一个 `Toggle` 型按钮）；
-3. 确认这些文字对象的字体已被设成中文字体（`LocalizedText` 会自动套用表里指定的字体）；
-4. 复跑主场景既有验收，确认没有回归。
+```
+Museum  →  Localization  →  Integrate Into MuseumStart   ← 接入
+Museum  →  Localization  →  Remove From MuseumStart      ← 一键撤销
+```
+
+它做三件事，**全是"只增不改"**：
+
+1. 新增一个根物体 `Language Selection`（展示 Prefab 的实例），放在入口标识墙右前方；
+2. 给 `Museum Title` / `Museum Subtitle` / `Welcome` **只挂 `LocalizedText` 组件**，
+   不动它们的名字、位置、旋转、缩放与文字内容；
+3. 保存主场景。
+
+**安全性**（因为主场景是全组共享文件）：
+- 执行前**自动备份**到仓库外的 `<repo>/_local-backup/MuseumStart-<时间戳>.unity`
+- 处于 **Play 模式时直接拒绝执行**（否则产物会不完整而无明显报错）
+- 撤销时**只移除本工具加的那几个 key 的组件**，别人挂的组件保留
+- 找不到物体 / 没有 TMP 组件 / 已被别人绑定到别的 key → **只警告，不覆盖**
+
+**默认语言**：`LocalizationSetup.DefaultMuseumLanguage` 当前是 **English** ——
+这样接入后展厅默认外观与接入前一致，访客主动选中文才切换。
+等全馆文案补齐中文后改成 `Chinese` 更合适。
+
+### 其余文字怎么接
+
+展厅另外 37 处文字仍是英文。要把它们变双语，逐个处理即可：
+
+1. 在该文字对象上加 `LocalizedText`，填文案表、语言通道与 key；
+2. 在文案表里补上这个 key 的中文与英文（英文用原文，保持默认外观不变）；
+3. 如果新文案引入了图集里没有的汉字，按上面「文案改了之后」重烤一次字体。
+
+`LocalizedText` 会自动套用表里指定的中文字体，不需要手工改每个文字对象的字体。
 
 ## 已知限制
 

@@ -23,6 +23,16 @@ namespace Museum.Localization.EditorTools
         const string SceneFolder = Root + "/Scenes";
         const string SceneName = "LanguageDemo";
 
+        /// <summary>
+        /// 展厅的默认界面语言。
+        ///
+        /// 刻意设成**英文**：这样接入主场景后「展厅的默认外观与接入之前完全一致」，
+        /// 访客主动选择中文才会切换。目前可本地化的只有入口三处标识，
+        /// 其余 37 处文字仍是英文 —— 若默认中文，展厅会呈现"半中半英"的状态。
+        /// 等全馆文案补齐中文之后，改成 <c>MuseumLanguage.Chinese</c> 更合适。
+        /// </summary>
+        const MuseumLanguage DefaultMuseumLanguage = MuseumLanguage.English;
+
         // 源字体候选，按顺序取第一个存在的。
         //
         // 第一项是**系统原始字体**（SIL OFL 1.1），第二项是用 fontTools 从它生成的子集。
@@ -297,10 +307,27 @@ namespace Museum.Localization.EditorTools
         static LanguageChannel CreateChannel()
         {
             var channel = AssetDatabase.LoadAssetAtPath<LanguageChannel>(ChannelPath);
-            if (channel != null) return channel;
 
-            channel = ScriptableObject.CreateInstance<LanguageChannel>();
-            AssetDatabase.CreateAsset(channel, ChannelPath);
+            if (channel == null)
+            {
+                channel = ScriptableObject.CreateInstance<LanguageChannel>();
+                AssetDatabase.CreateAsset(channel, ChannelPath);
+            }
+
+            // 初始语言也一并拉回统一默认值。通道是生成出来的资产，
+            // 初始语言属于代码级决定，这样「重新执行菜单」的结果是可预期的，
+            // 不会因为某次手动改过而留下一个没人记得的状态。
+            var serialized = new SerializedObject(channel);
+            var property = serialized.FindProperty("initial");
+            if (property != null && property.enumValueIndex != (int)DefaultMuseumLanguage)
+            {
+                property.enumValueIndex = (int)DefaultMuseumLanguage;
+                serialized.ApplyModifiedPropertiesWithoutUndo();
+                EditorUtility.SetDirty(channel);
+                Debug.Log($"[LocalizationSetup] 语言通道的初始语言已设为 {DefaultMuseumLanguage}。");
+            }
+
+            AssetDatabase.SaveAssets();
             return channel;
         }
 
@@ -592,6 +619,23 @@ namespace Museum.Localization.EditorTools
                 "请选择界面语言",
                 "Choose your interface language",
                 "语言选择提示。"),
+
+            // ---- 主场景既有标识的英译中 ----
+            // 这三条的原文就是 MuseumStart.unity 里已有的英文，英文必须**逐字照抄**，
+            // 否则挂上 LocalizedText 的瞬间就会把展陈文案改掉。
+            // 中文刻意只用当前字体图集里已烤入的汉字，避免为了接入再重烤一次字体。
+            new Seed("museum.sign.title",
+                "博物馆 / XR",
+                "MUSEUM / XR",
+                "入口标识的馆名。保留「/ XR」的图形感，只把 MUSEUM 换成中文。"),
+            new Seed("museum.sign.subtitle",
+                "可以随意观看",
+                "A SPACE TO EXPLORE",
+                "入口标识的副标题。"),
+            new Seed("museum.sign.welcome",
+                "欢迎。请随意观看。",
+                "Welcome. Take a closer look.",
+                "入口标识的欢迎语。"),
             new Seed("controls.point",
                 "用手柄指向按钮，按住握把键确认。",
                 "Point with your controller and hold the grip button to confirm.",

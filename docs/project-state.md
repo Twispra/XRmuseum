@@ -1,5 +1,11 @@
 # 项目状态与下一步
 
+**2026-10-05 中英语言切换接入主场景：** 在 [PR #13](https://github.com/Twispra/XRmuseum/pull/13)（模块本身，纯新增）之上追加本 PR：新增整合工具 `Editor/MuseumIntegration.cs`（**只增不改 + 自动备份 + 一键撤销**），把语言选择面板接进 `MuseumStart.unity`，并给 `Museum Title` / `Museum Subtitle` / `Welcome` 三处既有标识挂上 `LocalizedText`。
+> 主场景 diff **+136 / −9 行**；`PrefabInstance` 3 → 4；场景内 `LocalizedText` 恰好 3 处；文案表 17 → 20 条。
+> **默认语言设为英文**（`DefaultMuseumLanguage`）—— 接入后展厅默认外观与接入前完全一致，访客主动选中文才切换；等全馆文案补齐中文后再改成中文更合适。
+> 已在编辑器内验证：按 ▶ 展厅为英文，按 `1` / 点「中文」按钮后入口三处标识与语言面板一起切到中文（`2` 切回英文，`L` 循环；**单眼渲染 + 指针输入，不是头显实测**）。**射线按钮的实际抓取确认未验证**，未做无障碍/参与者评价，未在 PQ604 构建。
+> 该 PR 基于 PR #13 的分支；PR #13 合并后基准会自动切到 `main`。详情见[活动记录](activity/2026-10-05-localization-integration.md)。
+
 **2026-10-04 中英语言切换模块（新分支）：** 新增**独立模块** `MuseumVR/Assets/Museum/Features/Localization/`：双语文案表（key → 中文 / English）、语言通道事件、`LocalizedText` 自动刷新组件、语言按钮、无头显键盘预览，以及 Editor 一键生成工具与自动校验，并额外生成一个打开即可播放的演示场景供整合人参考。**刻意不修改 `MuseumStart.unity`**。本轮新引入 **Noto Sans SC**（SIL OFL 1.1），以子集形式提交（2.32 MB）；TMP 字体资产由 Font Asset Creator 生成（Sampling 110 / Padding 6 / Atlas 2048 / 已烤 190 字形）。
 > ⚠️ **本环境的 TMP 无法用脚本或 `Unicode Range (Hex)` 生成中文字体资产**：实测脚本生成（Dynamic 与 Static 都试过）图集恒为 **0×0**；Font Asset Creator 用 `Unicode Range (Hex)` 会抛 `FormatException`。**唯一可行做法是 Font Asset Creator + Character Set 选 `Characters from File`**，且**必须先退出 Play 模式**（否则 Unity 拒绝执行、产物不完整而无明显报错）。步骤见[模块说明](localization.zh-CN.md)。
 > 已在编辑器内验证中英文渲染清晰、切换即时生效（单眼渲染 + 键盘输入，**不是头显实测**）。未做无障碍或参与者评价；未在 PQ604A/B/C 构建。文案为起步内容，非最终展陈文案。**尚未接入主场景**，按组规由整合人执行。
