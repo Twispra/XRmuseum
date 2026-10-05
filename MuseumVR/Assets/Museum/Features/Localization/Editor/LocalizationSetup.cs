@@ -620,22 +620,26 @@ namespace Museum.Localization.EditorTools
                 "Choose your interface language",
                 "语言选择提示。"),
 
-            // ---- 主场景既有标识的英译中 ----
-            // 这三条的原文就是 MuseumStart.unity 里已有的英文，英文必须**逐字照抄**，
-            // 否则挂上 LocalizedText 的瞬间就会把展陈文案改掉。
-            // 中文刻意只用当前字体图集里已烤入的汉字，避免为了接入再重烤一次字体。
-            new Seed("museum.sign.title",
-                "博物馆 / XR",
-                "MUSEUM / XR",
-                "入口标识的馆名。保留「/ XR」的图形感，只把 MUSEUM 换成中文。"),
-            new Seed("museum.sign.subtitle",
-                "可以随意观看",
-                "A SPACE TO EXPLORE",
-                "入口标识的副标题。"),
-            new Seed("museum.sign.welcome",
-                "欢迎。请随意观看。",
-                "Welcome. Take a closer look.",
-                "入口标识的欢迎语。"),
+            // ---- 主场景入口标识的英译中 ----
+            // ⚠️ 目标必须是**游客真正看得见**的标识。
+            // 第一版绑的是 Museum Title / Museum Subtitle / Welcome，但那三个是展厅改造后
+            // **保留下来的隐藏旧对象**（MeshRenderer m_Enabled = 0，被 #9 的按需显隐逻辑关掉了），
+            // 只挂组件根本不会让游客看到任何变化（Issue #17）。
+            // 现在改绑 MaritimeGallery 预制体里真正在渲染的入口标识。
+            //
+            // 英文一律**逐字照抄**场景/预制体里的原文，否则挂上组件的瞬间就等于改掉了展陈文案。
+            new Seed("museum.sign.masthead",
+                "海面之下",
+                "BENEATH THE SURFACE",
+                "展馆主标题（Gallery masthead，字号 5，实际可见）。"),
+            new Seed("museum.sign.gallery",
+                "潜水展厅",
+                "THE DIVING GALLERY",
+                "展厅名。Gallery subtitle 与 Arrival brand 两个物体共用这一条。"),
+            new Seed("museum.sign.intro",
+                "一件展品，多种看法。",
+                "One object. Many ways to explore.",
+                "入口欢迎语（Arrival introduction，实际可见）。"),
             new Seed("controls.point",
                 "用手柄指向按钮，按住握把键确认。",
                 "Point with your controller and hold the grip button to confirm.",

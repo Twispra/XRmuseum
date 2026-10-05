@@ -39,12 +39,27 @@ namespace Museum.Localization.EditorTools
         /// </summary>
         static readonly Vector3 Placement = new Vector3(2.6f, 0f, 6.2f);
 
-        /// <summary>要挂上 LocalizedText 的既有文字（物体名 → key）。</summary>
+        /// <summary>本工具添加的绑定，key 一律以这个前缀开头（用于识别与清理）。</summary>
+        const string SignKeyPrefix = "museum.sign.";
+
+        /// <summary>
+        /// 要挂上 LocalizedText 的既有文字（物体名 → key）。
+        ///
+        /// ⚠️ 必须是**游客真正看得见**的标识。第一版绑的是 Museum Title / Museum Subtitle /
+        /// Welcome，但那三个是展厅改造后保留的**隐藏旧对象**（`MeshRenderer m_Enabled = 0`，
+        /// 被 #9 的按需显隐逻辑关掉了）—— 挂上组件不会产生任何可见变化，游客看到的仍是英文
+        /// （Issue #17，组长实测复现）。现在绑的是 MaritimeGallery 里真正在渲染的入口标识。
+        ///
+        /// 这几个物体位于 `MaritimeGallery.prefab` 内。**不要改那个预制体**：
+        /// 在场景里给预制体实例的子物体加组件，Unity 会记为**场景 override**，
+        /// 因此本工具只写 `MuseumStart.unity`，符合 Issue 限定的修改范围。
+        /// </summary>
         static readonly KeyValuePair<string, string>[] Signage =
         {
-            new KeyValuePair<string, string>("Museum Title", "museum.sign.title"),
-            new KeyValuePair<string, string>("Museum Subtitle", "museum.sign.subtitle"),
-            new KeyValuePair<string, string>("Welcome", "museum.sign.welcome"),
+            new KeyValuePair<string, string>("Gallery masthead", "museum.sign.masthead"),
+            new KeyValuePair<string, string>("Gallery subtitle", "museum.sign.gallery"),
+            new KeyValuePair<string, string>("Arrival brand", "museum.sign.gallery"),
+            new KeyValuePair<string, string>("Arrival introduction", "museum.sign.intro"),
         };
 
         // ------------------------------------------------------------------ 接入
@@ -89,7 +104,17 @@ namespace Museum.Localization.EditorTools
                 report.Add($"新增「{RootName}」于 {Placement}（面向 -Z，正对参观者来向）。");
             }
 
-            // ---- 2) 给既有标识挂 LocalizedText（只加组件，不改任何其它属性）----
+            // ---- 2) 先清掉已经过时的旧绑定 ----
+            // 换过绑定目标（或改过 key）之后，旧绑定会残留在物体上，而它的 key 已经不在文案表里，
+            // 于是那个物体上会一直显示红色 [[museum.sign.xxx]] 标记（Issue #17 的连带问题）。
+            // 只清理**本工具加过的、且当前不再有效**的绑定；别人挂的组件一律不动。
+            var validKeys = new HashSet<string>(StringComparer.Ordinal);
+            foreach (var pair in Signage) validKeys.Add(pair.Value);
+            var stale = StripStaleBindings(scene, validKeys);
+            if (stale.Count > 0)
+                report.Add($"清理过时绑定 {stale.Count} 处：{string.Join("; ", stale)}");
+
+            // ---- 3) 给既有标识挂 LocalizedText（只加组件，不改任何其它属性）----
             foreach (var pair in Signage)
             {
                 var target = FindByName(scene, pair.Key);
@@ -119,9 +144,16 @@ namespace Museum.Localization.EditorTools
                         continue;
                     }
 
-                    // 别人已经挂过别的 key：不覆盖，只提醒。这是别人的内容决定，不该由本工具改。
-                    report.Add($"⚠ 「{pair.Key}」已被绑定到「{existingComponent.Key}」，未覆盖。");
-                    continue;
+                    if (!IsOurs(existingComponent.Key))
+                    {
+                        // 别人挂的组件：不覆盖，只提醒。这是别人的内容决定，不该由本工具改。
+                        report.Add($"⚠ 「{pair.Key}」已被绑定到「{existingComponent.Key}」，未覆盖。");
+                        continue;
+                    }
+
+                    // 是本工具加的、但 key 换了：拆掉重挂。
+                    UnityEngine.Object.DestroyImmediate(existingComponent);
+                    report.Add($"「{pair.Key}」的旧 key 已替换。");
                 }
 
                 var localized = target.AddComponent<LocalizedText>();
@@ -163,24 +195,12 @@ namespace Museum.Localization.EditorTools
                 report.Add($"场景里没有「{RootName}」。");
             }
 
-            foreach (var pair in Signage)
-            {
-                var target = FindByName(scene, pair.Key);
-                if (target == null) continue;
-
-                var localized = target.GetComponent<LocalizedText>();
-                if (localized == null) continue;
-
-                // 只移除本工具加的那三个 key，不动别人挂的组件。
-                if (localized.Key != pair.Value)
-                {
-                    report.Add($"「{pair.Key}」上绑的是「{localized.Key}」，不是本工具加的，保留。");
-                    continue;
-                }
-
-                UnityEngine.Object.DestroyImmediate(localized);
-                report.Add($"已从「{pair.Key}」移除 LocalizedText。");
-            }
+            // 移除本工具加过的绑定：用 key 前缀识别，**不用**当前的 Signage 列表 ——
+            // 换过绑定目标之后，旧目标上的绑定会残留在场景里，而它的 key 已不在文案表中，
+            // 于是物体上会显示红色 [[museum.sign.title]] 标记（Issue #17 的连带问题）。
+            var removed = StripOurBindings(scene);
+            if (removed.Count == 0) report.Add("场景里没有本工具加过的绑定。");
+            foreach (var item in removed) report.Add($"已移除绑定：{item}");
 
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene, ScenePath);
@@ -188,6 +208,36 @@ namespace Museum.Localization.EditorTools
         }
 
         // ------------------------------------------------------------------ 工具
+
+        /// <summary>这个 key 是不是本工具加的（用前缀识别，避免误动别人的组件）。</summary>
+        static bool IsOurs(string key)
+        {
+            return !string.IsNullOrEmpty(key) && key.StartsWith(SignKeyPrefix, StringComparison.Ordinal);
+        }
+
+        /// <summary>
+        /// 找出并移除「本工具加过、但当前已不再有效」的绑定，返回被移除物体的描述。
+        /// 别人挂的组件（key 不以本工具前缀开头）一律保留。
+        /// </summary>
+        static List<string> StripStaleBindings(
+            UnityEngine.SceneManagement.Scene scene, HashSet<string> validKeys)
+        {
+            var removed = new List<string>();
+            foreach (var root in scene.GetRootGameObjects())
+            {
+                // GetComponentsInChildren 返回的是快照，循环中销毁组件是安全的。
+                foreach (var localized in root.GetComponentsInChildren<LocalizedText>(true))
+                {
+                    if (localized == null || !IsOurs(localized.Key)) continue;
+                    if (validKeys.Contains(localized.Key)) continue;
+
+                    removed.Add($"{localized.gameObject.name}（{localized.Key}）");
+                    UnityEngine.Object.DestroyImmediate(localized);
+                }
+            }
+
+            return removed;
+        }
 
         static bool RefuseWhilePlaying()
         {

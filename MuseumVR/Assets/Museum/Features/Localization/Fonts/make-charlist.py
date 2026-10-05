@@ -27,12 +27,12 @@ for c in "中文English":
 # 说明：< 和 > 是 TMP 富文本标签的分隔符，标签会被解析掉、不绘制，
 # 所以严格说不需要字形；但一起烤进去可以让字符清单更"宽容"，
 # 万一以后有人把 < > 当普通符号用也不会缺字。
-for c in "[[ ]]<>0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,:;()%-/+=?!'\"@#&*":
+for c in "[[ ]]0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,:;()%-/+=?!'\"@#&*":
     if not c.isspace():
         chars.add(c)
 
 # TMP 内部特殊字符（下划线、删除线等），避免再报 "character used for Underline is not available"
-for c in "_\u2014\u2013":
+for c in "_\u2014":
     chars.add(c)
 
 text = "".join(sorted(chars))

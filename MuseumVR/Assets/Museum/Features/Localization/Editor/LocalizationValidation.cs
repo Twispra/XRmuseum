@@ -137,18 +137,31 @@ namespace Museum.Localization.EditorTools
             check.Ok($"key 唯一性与双语完整性（{keys.Count} 个 key）");
 
             // 3) 缺字检查 —— 最关键的一项
+            //
+            // 只核对**真正会被绘制**的字符，来源有三类：
+            //   ① 文案表里每条的中文与英文 —— 运行时会原样显示；
+            //   ② 缺 key 时显示的 [[key]] 标记 —— 标记里的 key 本身也会被画出来；
+            //   ③ 语言按钮上那两个固定标签（走 NativeName()，不经过文案表，最容易漏配字体）。
+            //
+            // 刻意**不再硬编码标点**：这里曾经追加过 `[[ ]]。，、`，
+            // 其中顿号 U+3001 既不在已保存的字体图集里、当前文案也根本不使用它，
+            // 于是已保存资产上会报一条假失败（Issue #16）。
+            // 要支持某个标点，应当把它加进字符清单并重烤字体，而不是让校验器凭空要求它。
             var missing = new List<char>();
             var seen = new HashSet<char>();
             var probe = new StringBuilder();
             foreach (var entry in table.Entries)
             {
                 probe.Append(entry.Chinese).Append(entry.English);
+                probe.Append(entry.Key);
             }
 
-            // 只核对**真正会被绘制**的字符。
-            // 富文本标签（例如 <color=#FF5555>）会被 TMP 解析后丢弃、不绘制，
-            // 因此 `<` 与 `>` 本来就不需要字形 —— 把它们算进来会误报缺字。
-            probe.Append("[[ ]]。，、");
+            probe.Append("[]");   // [[key]] 标记的方括号
+            foreach (var language in (MuseumLanguage[])System.Enum.GetValues(typeof(MuseumLanguage)))
+            {
+                probe.Append(language.NativeName());
+            }
+
 
             foreach (var character in probe.ToString())
             {
@@ -162,7 +175,7 @@ namespace Museum.Localization.EditorTools
                 check.Ok($"字体字形覆盖（核对了 {seen.Count} 个不同字符）");
             else
                 check.Fail($"字体缺少 {missing.Count} 个字形：" +
-                           string.Join("、", missing.ConvertAll(c => $"'{c}'(U+{(int)c:X4})").ToArray()));
+                           string.Join("，", missing.ConvertAll(c => $"'{c}'(U+{(int)c:X4})").ToArray()));
 
             // 4) 展示 Prefab 的接线
             var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(ShowcasePath);

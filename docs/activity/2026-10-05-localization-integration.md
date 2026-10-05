@@ -103,3 +103,33 @@ HelmetExhibit        (0, 1.17, 3.5)
 - 中文译文为**起步文案**，且受当前字体子集限制，不是最终展陈文案。
 - 语言选择面板的位置是脚本给的默认值，**具体摆放应由整合人按展厅动线确认**。
 - 本 PR 基于 **PR #13 的分支**；PR #13 合并后 GitHub 会把本 PR 的基准自动切到 `main`。
+
+## 修正：绑定目标改为实际可见的标识（回应 Issue #17）
+
+第一版把 `LocalizedText` 挂在了 `Museum Title` / `Museum Subtitle` / `Welcome` 上。
+组长实测发现这三个对象的 `MeshRenderer` 都是 `m_Enabled: 0` —— 它们是展厅改造后
+**保留下来的隐藏旧对象**（被 #9 的按需显隐逻辑关掉）。挂上翻译组件后文字确实变成中文、
+`activeInHierarchy` 也是 true，但 `Renderer.enabled` 仍为 false，
+**游客看到的入口标识依然是英文**。
+
+现在改绑 MaritimeGallery 里**真正在渲染**的入口标识：
+
+| 物体 | 英文原文 | key |
+| --- | --- | --- |
+| `Gallery masthead` | `BENEATH THE SURFACE` | `museum.sign.masthead` |
+| `Gallery subtitle` | `THE DIVING GALLERY` | `museum.sign.gallery` |
+| `Arrival brand` | `THE DIVING GALLERY` | `museum.sign.gallery` |
+| `Arrival introduction` | `One object. Many ways to explore.` | `museum.sign.intro` |
+
+这几个物体位于 `MaritimeGallery.prefab` 内，但**在场景里给预制体实例的子物体加组件**
+会被 Unity 记为**场景 override**，因此本工具仍然只写 `MuseumStart.unity`，
+符合 Issue 限定的修改范围，也不去动展厅拥有者的预制体。
+
+**没有启用那三个隐藏旧对象** —— 那会造成重复文字叠在新标识上，Issue 明确排除。
+
+工具同时补上了**自清理**：改过绑定目标后，旧组件会残留在物体上，而它的 key 已不在文案表中，
+物体上会一直显示红色 `[[museum.sign.title]]` 标记。现在按 `museum.sign.` 前缀识别，
+重新执行接入时只清理本工具加过的绑定，别人挂的组件一律不动。
+
+中文文案按自然表达写（不再局限于旧图集），**因此需要重烤一次字体资产**；
+字符清单已同步重建。
