@@ -195,12 +195,13 @@ namespace Museum.Localization.EditorTools
                 report.Add($"场景里没有「{RootName}」。");
             }
 
-            // 移除本工具加过的绑定：用 key 前缀识别，**不用**当前的 Signage 列表 ——
+            // 移除本工具加过的全部绑定：用 key 前缀识别，**不看**当前的 Signage 列表 ——
             // 换过绑定目标之后，旧目标上的绑定会残留在场景里，而它的 key 已不在文案表中，
             // 于是物体上会显示红色 [[museum.sign.title]] 标记（Issue #17 的连带问题）。
-            var removed = StripOurBindings(scene);
-            if (removed.Count == 0) report.Add("场景里没有本工具加过的绑定。");
-            foreach (var item in removed) report.Add($"已移除绑定：{item}");
+            // 撤销时应当**一个不留**，所以这里传空的 validKeys：任何本工具的绑定都算过时。
+            var stale = StripStaleBindings(scene, new HashSet<string>(StringComparer.Ordinal));
+            if (stale.Count == 0) report.Add("场景里没有本工具加过的绑定。");
+            foreach (var item in stale) report.Add($"已移除绑定：{item}");
 
             EditorSceneManager.MarkSceneDirty(scene);
             EditorSceneManager.SaveScene(scene, ScenePath);
