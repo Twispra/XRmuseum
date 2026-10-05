@@ -1,5 +1,9 @@
 # 项目状态与下一步
 
+**2026-10-04 中英语言切换模块（新分支）：** 新增**独立模块** `MuseumVR/Assets/Museum/Features/Localization/`：双语文案表（key → 中文 / English）、语言通道事件、`LocalizedText` 自动刷新组件、语言按钮、无头显键盘预览，以及 Editor 一键生成工具与自动校验，并额外生成一个打开即可播放的演示场景供整合人参考。**刻意不修改 `MuseumStart.unity`**。本轮新引入 **Noto Sans SC**（SIL OFL 1.1），以子集形式提交（2.32 MB）；TMP 字体资产由 Font Asset Creator 生成（Sampling 110 / Padding 6 / Atlas 2048 / 已烤 190 字形）。
+> ⚠️ **本环境的 TMP 无法用脚本或 `Unicode Range (Hex)` 生成中文字体资产**：实测脚本生成（Dynamic 与 Static 都试过）图集恒为 **0×0**；Font Asset Creator 用 `Unicode Range (Hex)` 会抛 `FormatException`。**唯一可行做法是 Font Asset Creator + Character Set 选 `Characters from File`**，且**必须先退出 Play 模式**（否则 Unity 拒绝执行、产物不完整而无明显报错）。步骤见[模块说明](localization.zh-CN.md)。
+> 已在编辑器内验证中英文渲染清晰、切换即时生效（单眼渲染 + 键盘输入，**不是头显实测**）。未做无障碍或参与者评价；未在 PQ604A/B/C 构建。文案为起步内容，非最终展陈文案。**尚未接入主场景**，按组规由整合人执行。
+
 **2026-10-03 探索功能发布交接：** 已发布 [PR #7](https://github.com/Twispra/XRmuseum/pull/7)，待审查。`codex/helmet-exploration-2026-10-03` 提交可选 AIR / VOICE 探索、16 秒设备模型动画、提示与回顾，源码 `c2bf63c`。351 项动画验收的源文件仍匹配；发布前新跑原观察 207 项、原拿放 90 项均通过，错误 0、实际退出码 0。探索 PR 依赖未合并的[环境 PR #5](https://github.com/Twispra/XRmuseum/pull/5)，以环境分支为 base；先合并环境、再将探索 PR 调整到 main 并审查。没有自动合并。[版本、证据和接手步骤](activity/2026-10-03-exploration-release.md)。真实头显、用户评价与当前构建仍未验证。以下记录保留各阶段当时的状态。
 
 **2026-10-03 供气/通话模型动画：** 在同一探索分支继续完善16秒分段演示，增加双轮双缸泵、软管流动、电话箱和有线双向波列。最终351项检查通过、实际退出码0；本轮635个原文件未变，主场景和原资产未再次改写。[最新实现与交接](activity/2026-10-03-exploration-model-animation.md)。此版本仍仅本地，未推送；真实设备的清晰度、舒适性和性能未验证。

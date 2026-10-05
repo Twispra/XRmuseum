@@ -1,5 +1,23 @@
 # 外部资源与辅助工具记录
 
+2026-10-04 中英语言切换模块：助手辅助实现界面语言切换系统与文档，见[模块说明](localization.zh-CN.md)与[活动记录](activity/2026-10-04-localization.md)。
+
+**新增外部资源：Noto Sans SC 字体。** 来源为本机已安装的 `C:\Windows\Fonts\NotoSansSC-VF.ttf`（Google 的 Noto Sans SC），
+许可 **SIL Open Font License 1.1**，允许自由使用、修改与再分发；该字体没有 Reserved Font Name，改名与修改后分发均被允许。
+用途是界面中文显示 —— 项目原有字体只有 LiberationSans，**没有任何中文字形**。
+
+提交进仓库的是**子集版本** `NotoSansSC-MuseumSubset.ttf`（2.32 MB）：先用 fontTools 从变量字体的 `wght` 轴取出静态
+Regular 实例，再子集化到 ASCII + GB2312 全集 + 常用标点，共 7545 个码位。**原始 16.95 MB 的变量字体不提交仓库**。
+同类候选还有 `NotoSerifSC-VF.ttf`（同许可）；`msyh.ttc` / `simhei.ttf` / `simsun.ttc` 为微软专有，**未采用**。
+
+TMP 字体资产（`NotoSansSC-MuseumSubset SDF.asset`）由 Unity 的 Font Asset Creator 生成，
+参数 Sampling 110 / Padding 6 / Atlas 2048×2048 / SDFAA / Character Set = `Characters from File`，
+共 190 个字形。生成步骤与原因见 `Assets/Museum/Features/Localization/Fonts/README.md`。
+
+AI 辅助范围：模块架构、Editor 工具、运行时脚本、字体子集化脚本、实机问题排查与文档。
+**未**新增下载模型、贴图或音频，**未**复制任何第三方素材。编辑器内预览与自动检查**不等于**真实头显测试、
+学习效果评价或组员审批。
+
 2026-10-03 模型动画补充：按用户反馈将供气/通话简图扩展为设备模型与动画。类型依据为 [RMG 手动空气泵 EQA0617](https://www.rmg.co.uk/collections/objects/rmgc-object-256836)、[SMG 双缸潜水泵 1963-71](https://collection.sciencemuseumgroup.org.uk/objects/co41152/two-cylinder-double-acting-divers-air-pump)和 [RMG 潜水电话箱 ZBA6671](https://www.rmg.co.uk/collections/objects/rmgc-object-561120)。以代码构建原创简化几何，未复制馆藏图片或第三方模型；这些不同馆藏不是已确认的 Mark V 配套型号。转轮、活塞、可见气流、信号波形、缩放及时序均为教学表达参数，不是测量数据或精确机械/电气复原。代码、资料核对、渲染与模拟测试由 Codex 辅助，详见[本轮记录](activity/2026-10-03-exploration-model-animation.md)。
 
 2026-10-03 自由探索补充：Codex 辅助实现同一观察面板的可选供气/通话探索、提示、回顾、示意动画、XR 模拟测试及文档，见[功能说明与来源](helmet-exploration.zh-CN.md)和[活动记录](activity/2026-10-03-helmet-exploration.md)。重新核验 U.S. Naval Undersea Museum 的 MK V Diving Rig 页面及 DESCO 的 Mark V 产品正文，仅用于解释水面供气与电话连接，没有导入页面照片、下载模型或音频。现有接头为简化灰模，通话是概念图；动画速度、时长、布局与交互大小为设计参数，没有冒充历史测量数据。自动测试和 AI 渲染检查不等于真实头显测试、用户研究或组员审批。

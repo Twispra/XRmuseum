@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03f5957b8824d018a8a7253aa2f70ba, type: 3}
+  m_Name: LocalizationTable
+  m_EditorClassIdentifier: 
+  entries:
+  - key: museum.title
+    chinese: "\u65E0\u969C\u788D\u535A\u7269\u9986\u4F53\u9A8C"
+    english: Accessible Museum Experience
+    note: "\u6F14\u793A\u677F\u7684\u6807\u9898\u3002"
+  - key: welcome.body
+    chinese: "\u6B22\u8FCE\u3002\u8FD9\u6BB5\u4F53\u9A8C\u53EF\u4EE5\u5750\u7740\u5B8C\u6210\uFF0C\u53EA\u9700\u5355\u624B\u64CD\u4F5C\u3002\u4F60\u53EF\u4EE5\u968F\u65F6\u56DE\u5230\u8FD9\u91CC\u5207\u6362\u8BED\u8A00\u3002"
+    english: Welcome. This experience works seated and one-handed. You can change
+      the language here at any time.
+    note: "\u6B22\u8FCE\u8BF4\u660E\uFF0C\u540C\u65F6\u70B9\u51FA\u4E24\u9879\u65E0\u969C\u788D\u627F\u8BFA\u3002\u82F1\u6587\u5B57\u6570\u523B\u610F\u538B\u5230\u4E09\u884C\u4EE5\u5185\uFF0C\u907F\u514D\u4E0E\u4E0B\u65B9\u63D0\u793A\u91CD\u53E0\u3002"
+  - key: language.prompt
+    chinese: "\u8BF7\u9009\u62E9\u754C\u9762\u8BED\u8A00"
+    english: Choose your interface language
+    note: "\u8BED\u8A00\u9009\u62E9\u63D0\u793A\u3002"
+  - key: controls.point
+    chinese: "\u7528\u624B\u67C4\u6307\u5411\u6309\u94AE\uFF0C\u6309\u4F4F\u63E1\u628A\u952E\u786E\u8BA4\u3002"
+    english: Point with your controller and hold the grip button to confirm.
+    note: "\u64CD\u4F5C\u63D0\u793A\uFF0C\u4E0E\u4E3B\u573A\u666F\u65E2\u6709\u6309\u94AE\u7684\u4EA4\u4E92\u65B9\u5F0F\u4E00\u81F4\u3002"
+  - key: journey.begin
+    chinese: "\u5F00\u59CB\u53C2\u89C2"
+    english: Begin
+    note: "\u65C5\u7A0B\u7B2C\u4E00\u6B65\u3002"
+  - key: journey.select_object
+    chinese: "\u9009\u62E9\u4E00\u4EF6\u5C55\u54C1"
+    english: Choose an object
+    note: "\u65C5\u7A0B\u7B2C\u4E8C\u6B65\u3002"
+  - key: journey.explore
+    chinese: "\u81EA\u7531\u89C2\u5BDF"
+    english: Explore freely
+    note: "\u65C5\u7A0B\u7B2C\u4E09\u6B65\u3002"
+  - key: journey.explain
+    chinese: "\u7EC6\u8282\u8BF4\u660E"
+    english: Details
+    note: "\u65C5\u7A0B\u7B2C\u56DB\u6B65\u3002"
+  - key: journey.reflect
+    chinese: "\u56DE\u987E\u4F60\u770B\u5230\u7684"
+    english: Review what you found
+    note: "\u65C5\u7A0B\u7B2C\u4E94\u6B65\u3002"
+  - key: journey.exit
+    chinese: "\u7ED3\u675F\u53C2\u89C2"
+    english: Finish
+    note: "\u65C5\u7A0B\u7B2C\u516D\u6B65\u3002"
+  - key: journey.reset
+    chinese: "\u590D\u4F4D\uFF0C\u4EA4\u7ED9\u4E0B\u4E00\u4F4D\u8BBF\u5BA2"
+    english: Reset for the next visitor
+    note: "\u5DE5\u4F5C\u4EBA\u5458\u64CD\u4F5C\uFF0C\u5BF9\u5E94\u5BA2\u6237\u5BF9\u300C\u8BB2\u4E0D\u6E05\u6216\u590D\u4F4D\u4E0D\u4E86\u300D\u7684\u62C5\u5FC3\u3002"
+  - key: sources.title
+    chinese: "\u8D44\u6599\u4E0E\u6765\u6E90"
+    english: Sources
+    note: "\u6765\u6E90\u9762\u677F\u6807\u9898\u3002"
+  - key: sources.placeholder
+    chinese: "\u6B64\u4EF6\u4E3A\u793A\u610F\u91CD\u5EFA\uFF0C\u4E0D\u662F\u5386\u53F2\u590D\u539F\u3002"
+    english: This is a schematic reconstruction, not a historical restoration.
+    note: "\u5360\u4F4D\u4E0E\u91CD\u5EFA\u8BF4\u660E\uFF0C\u5BF9\u5E94\u5BA2\u6237\u5BF9\u53F2\u6599\u53EF\u4FE1\u5EA6\u7684\u8981\u6C42\u3002"
+  - key: access.seated
+    chinese: "\u53EF\u4EE5\u5750\u7740\u4F7F\u7528"
+    english: Seated use
+    note: "\u65E0\u969C\u788D\u8BF4\u660E\u4E00\u3002"
+  - key: access.one_hand
+    chinese: "\u652F\u6301\u5355\u624B\u64CD\u4F5C"
+    english: One-handed use
+    note: "\u65E0\u969C\u788D\u8BF4\u660E\u4E8C\u3002"
+  - key: access.text_size
+    chinese: "\u6587\u5B57\u5927\u5C0F\u53EF\u8C03"
+    english: Adjustable text size
+    note: "\u65E0\u969C\u788D\u8BF4\u660E\u4E09\u3002"
+  - key: settings.language
+    chinese: "\u8BED\u8A00"
+    english: Language
+    note: "\u8BBE\u7F6E\u9879\u540D\u79F0\uFF0C\u4F9B\u540E\u7EED\u8BBE\u7F6E\u9762\u677F\u590D\u7528\u3002"
+  fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
