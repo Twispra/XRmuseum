@@ -92,12 +92,40 @@ namespace Museum.Eras
 
         void OnDisable()
         {
+            // 淡变途中被禁用时不能只是停掉协程：那样 currentIndex 已经指向新年代、材质却还停在旧年代，
+            // 淡变留下的颜色覆盖也不会被清掉；之后重选同一个年代又会因为「index 相同」提前返回，
+            // 于是永远回不到一致状态（Issue #15 第 1 条）。
+            // 这里明确把被取消的切换**完成**：套用目标年代、清掉临时覆盖、补发事件，
+            // 让材质、索引与事件通道三者一致。
+            CancelPendingSwitch(completeTarget: true);
+        }
+
+        /// <summary>
+        /// Cancels any running transition and clears the temporary colour overrides.
+        /// <paramref name="completeTarget"/> 为 true 时把目标年代落实到位（禁用等必须收敛的场合）；
+        /// 为 false 时只做清理，调用方紧接着会套用自己的结果。
+        /// </summary>
+        void CancelPendingSwitch(bool completeTarget)
+        {
             if (switchRoutine != null)
             {
                 StopCoroutine(switchRoutine);
                 switchRoutine = null;
             }
+
+            bool wasSwitching = switching;
             switching = false;
+
+            if (!completeTarget || !wasSwitching) return;
+
+            var era = CurrentEra;
+            if (era != null)
+            {
+                ApplyMaterials(era);
+                channel?.RaiseEraChanged(era);
+            }
+
+            ClearAllOverrides();
         }
 
         /// <summary>Advances to the next era, wrapping around at the end.</summary>
@@ -145,14 +173,20 @@ namespace Museum.Eras
             currentIndex = index;
             initialised = true;
 
+            // 任何新请求都必须先取消正在进行的旧转换 —— 否则旧协程会在稍后把材质改回上一个年代，
+            // 而 currentIndex 已经指向新年代（Issue #15 第 2 条）。
+            // 这一句必须在下面的瞬时分支**之前**：duration = 0 与 fadeDuringSwap = false 都走那条分支。
+            CancelPendingSwitch(completeTarget: false);
+
             if (transitionDuration <= 0f || !era.FadeDuringSwap || !isActiveAndEnabled)
             {
                 ApplyMaterials(era);
+                // 瞬时切换也要清掉可能残留的淡变覆盖，否则新材质会被旧覆盖压住。
+                ClearAllOverrides();
                 channel?.RaiseEraChanged(era);
                 return;
             }
 
-            if (switchRoutine != null) StopCoroutine(switchRoutine);
             switchRoutine = StartCoroutine(SwapWithFade(era));
         }
 

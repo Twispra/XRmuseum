@@ -99,7 +99,7 @@ namespace Museum.Eras.EditorTools
                     details = new[]
                     {
                         new DetailSeed("WINDOW", "前方圆形铰接视窗、两侧圆窗与顶部椭圆窗，共四窗。"),
-                        new DetailSeed("AIR", "后方两个鹅颈连接件，分别用于供气与排气。"),
+                        new DetailSeed("AIR", "从后方看，左侧鹅颈接头接电话，右侧接供气软管；排气阀是另一部件。"),
                         new DetailSeed("SHELL", "旋压铜壳，配件为铜合金铸件，窗片历史版本为玻璃。"),
                     },
                 },
