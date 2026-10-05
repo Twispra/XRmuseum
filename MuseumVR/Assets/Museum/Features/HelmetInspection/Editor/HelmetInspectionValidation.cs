@@ -465,7 +465,9 @@ namespace Museum.Inspection.Editor
             if (IsMainSceneRun && UnityEngine.Object.FindObjectOfType<HelmetInspectionPalette>())
             {
                 // Inspect the official simulator's actual startup pose before the test writer changes it.
-                var labels = new[] { "WINDOW", "SECTION", "FLOAT", "RESET", "TURN LEFT", "TURN RIGHT", "TILT UP", "TILT DOWN" };
+                bool concise = GameObject.Find("Exploration MORE TOOLS") != null;
+                var labels = concise ? new[] { "WINDOW", "SECTION", "FLOAT", "RESET" }
+                    : new[] { "WINDOW", "SECTION", "FLOAT", "RESET", "TURN LEFT", "TURN RIGHT", "TILT UP", "TILT DOWN" };
                 foreach (var label in labels)
                 {
                     var button = GameObject.Find("Inspection " + label);
@@ -474,6 +476,9 @@ namespace Museum.Inspection.Editor
                         "startup button visible: " + label, "Original startup camera; viewport=" + viewport + "; eye=" + Camera.main.transform.position);
                 }
                 CaptureMain("00-startup-controls");
+                if (concise)
+                    Require(GameObject.Find("Inspection TURN RIGHT") == null && GameObject.Find("Exploration MORE TOOLS") != null,
+                        "advanced tools have a visible entry", "Concise presentation starts with core controls; original turn/tilt controls are reached through More tools below.");
             }
             QueueHead();
             QueueController(leftDevice, new Vector3(-.7f, 1f, 1f), Quaternion.identity, false);
@@ -1024,6 +1029,20 @@ namespace Museum.Inspection.Editor
         static IEnumerator PressButton(string label)
         {
             var button=GameObject.Find("Inspection "+label)?.GetComponent<XRSimpleInteractable>();
+            if (!button && IsMainSceneRun && label != "MORE TOOLS")
+            {
+                var hidden = UnityEngine.Object.FindObjectsOfType<XRSimpleInteractable>(true)
+                    .FirstOrDefault(b => b.name == "Inspection " + label && !b.gameObject.activeInHierarchy);
+                if (hidden && GameObject.Find("Exploration MORE TOOLS"))
+                {
+                    // Reach the advanced controls through production input, not by unhiding test fixtures.
+                    yield return PressButton("MORE TOOLS");
+                    yield return Wait(.25f);
+                    button = GameObject.Find("Inspection " + label)?.GetComponent<XRSimpleInteractable>();
+                }
+            }
+            if (!button && label == "MORE TOOLS")
+                button = GameObject.Find("Exploration MORE TOOLS")?.GetComponent<XRSimpleInteractable>();
             if (!button && label == "RESET" && IsMainSceneRun)
                 button=GameObject.Find("Helmet Reset Button")?.GetComponent<XRSimpleInteractable>();
             Require(button,"button exists: "+label,"Independent world-space control.");

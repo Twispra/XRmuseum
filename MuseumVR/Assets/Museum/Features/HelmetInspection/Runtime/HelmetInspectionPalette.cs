@@ -17,6 +17,8 @@ namespace Museum.Inspection
         // Zero padding preserves the original prefab's layout.
         [SerializeField, Min(0f)] float additionalTopPadding;
         bool alternatePageVisible;
+        bool contentBoundsOverride;
+        float contentBottom, contentTop;
         XRBaseInteractable[] controls;
         Transform backPlate;
         Vector3 anchorPosition;
@@ -35,6 +37,24 @@ namespace Museum.Inspection
         public bool IsFrozen { get; private set; }
         public HelmetInspectionController Controller => controller;
 
+        // Optional presentation owns only the visible content bounds, never XR placement/input.
+        public void ConfigureContentBounds(float bottom, float top)
+        {
+            bottom = Mathf.Clamp(bottom, -.65f, .35f);
+            top = Mathf.Clamp(top, bottom + .08f, .65f);
+            if (contentBoundsOverride && Mathf.Approximately(contentBottom, bottom) && Mathf.Approximately(contentTop, top)) return;
+            contentBoundsOverride = true;
+            contentBottom = bottom; contentTop = top;
+            layoutDirty = true;
+        }
+
+        public void ClearContentBounds()
+        {
+            if (!contentBoundsOverride) return;
+            contentBoundsOverride = false;
+            layoutDirty = true;
+        }
+
         public void ConfigureAdditionalPage(float topPadding)
         {
             additionalTopPadding = Mathf.Clamp(topPadding, 0f, .2f);
@@ -51,6 +71,12 @@ namespace Museum.Inspection
 
         void PanelBounds(out Vector3 center, out Vector3 size)
         {
+            if (contentBoundsOverride)
+            {
+                center = new Vector3(0f, (contentTop + contentBottom) * .5f, 0f);
+                size = new Vector3(.48f, contentTop - contentBottom, .025f);
+                return;
+            }
             bool expanded = alternatePageVisible || (controller && controller.IsCutaway);
             float bottom = expanded ? -.32f : -.12f;
             float top = .32f + additionalTopPadding;
@@ -98,7 +124,7 @@ namespace Museum.Inspection
                 backPlate.localPosition = center;
                 backPlate.localScale = size;
             }
-            if (status)
+            if (status && !contentBoundsOverride)
             {
                 status.transform.localPosition = new Vector3(0,controller.IsCutaway ? -.275f : -.075f,-.025f);
                 status.text = controller.IsCutaway
@@ -149,7 +175,11 @@ namespace Museum.Inspection
         void ChooseDestination()
         {
             // A seated visitor or someone beside the plinth must not have controls placed inside its collider.
-            var offsets = new[] { viewerOffset, new Vector3(.38f,.02f,.78f),
+            // Progressive pages stay clear of the plinth and farther away, keeping their
+            // header inside the forward view. Legacy pages keep their original placement.
+            var preferred = contentBoundsOverride ? new Vector3(-.42f, .08f, .99f) : viewerOffset;
+            var opposite = contentBoundsOverride ? new Vector3(.42f, .08f, .99f) : new Vector3(.38f,.02f,.78f);
+            var offsets = new[] { preferred, opposite,
                 new Vector3(-.38f,.18f,.85f),new Vector3(.38f,.18f,.85f),
                 new Vector3(-.65f,-.16f,.35f),new Vector3(.65f,-.16f,.35f),
                 new Vector3(-.85f,-.12f,.25f),new Vector3(.85f,-.12f,.25f),
