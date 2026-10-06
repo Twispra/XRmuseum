@@ -1,3 +1,4 @@
+using Museum.Localization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -127,9 +128,9 @@ namespace Museum.Inspection
             if (status && !contentBoundsOverride)
             {
                 status.transform.localPosition = new Vector3(0,controller.IsCutaway ? -.275f : -.075f,-.025f);
-                status.text = controller.IsCutaway
+                MuseumText.Set(status, controller.IsCutaway
                     ? (controller.IsFloating ? "FLOATING  /  SECTION ON" : "SECTION ON") + "\nEDIT CUT: grip the cyan handle, move + twist"
-                    : "GRIP TO SELECT  /  ONE HAND\nFLOAT: pick up, turn freely, release to keep pose";
+                    : "GRIP TO SELECT  /  ONE HAND\nFLOAT: pick up, turn freely, release to keep pose");
             }
             if (observedReset != controller.ResetCount)
             {

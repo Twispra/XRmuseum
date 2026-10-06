@@ -94,8 +94,7 @@ namespace Museum.Localization.EditorTools
                 if (atlasCount == 0 || atlasW == 0 || atlasH == 0)
                 {
                     check.Fail("字体资产没有可用图集 —— 运行时会渲染成方块或实心矩形。" +
-                               "请删除该资产后重跑 Museum → Localization → Create Language Assets and Showcase，" +
-                               "或按 Fonts/README.md 用 Font Asset Creator 手工生成。");
+                               "请先备份并检查保存的字体与图集；按 Fonts/README.md 修复，不要删除资产或重建 meta。");
                 }
                 else
                 {
@@ -130,6 +129,7 @@ namespace Museum.Localization.EditorTools
                 if (string.IsNullOrWhiteSpace(entry.Chinese))
                     check.Fail($"缺中文：{entry.Key}");
 
+                if (string.IsNullOrWhiteSpace(entry.TraditionalChinese)) check.Fail($"缺繁体中文：{entry.Key}");
                 if (string.IsNullOrWhiteSpace(entry.English))
                     check.Fail($"缺英文：{entry.Key}");
             }
@@ -152,7 +152,7 @@ namespace Museum.Localization.EditorTools
             var probe = new StringBuilder();
             foreach (var entry in table.Entries)
             {
-                probe.Append(entry.Chinese).Append(entry.English);
+                probe.Append(entry.Chinese).Append(entry.English).Append(entry.TraditionalChinese);
                 probe.Append(entry.Key);
             }
 

@@ -14,6 +14,7 @@
 
 - Unity 工程为 `MuseumVR/`；完整编辑器版本 **2022.3.62f3c1**。Windows PC VR / OpenXR；除非任务明确包含迁移，不升级编辑器、packages 或改为 Quest 独立 Android 平台。
 - 新内容放 `Assets/Museum/`。移动资源同时保留原 `.meta` / GUID；不重建 meta 解决冲突，不整文件接受 YAML 的 ours/theirs。缓存、构建、密钥和课程原件不进 Git；二进制资产沿用 LFS。
+- 新增或修改访客文字遵循 [三语文案接入说明](docs/localization-authoring.zh-CN.md)：维护简体、繁体、英文，静态文字绑定 key，动态文字使用 MuseumText.Set；检查译文、已保存字形与三语布局，避免新代码每帧覆盖语言切换结果。
 - 新 clone / worktree 打开 Unity 前，确认 LFS 文件已展开成实际资产；必要时运行 `git lfs pull` / `git lfs checkout`。`git lfs fsck` 通过只证明对象库完整，不证明工作区 FBX 已展开；模型导入错误不能靠交互测试通过来忽略。
 - `MuseumStart.unity`、公共 XR / Input Actions、`Packages/`、`ProjectSettings/`、同一 Prefab / `.blend` / FBX 属于高冲突范围：同一时段一个写入者。优先在独立 Prefab / 测试场景开发，再由协调好的整合人接入。
 - `HelmetPrototypeSetup.Build` 和 Blender 原型 01–09 脚本是原型生成工具，不是打开、预览、验收前的常规步骤。不要为绕过保护而删资产或关掉检查。重建需明确任务范围及隔离副本；已有 Prefab、场景和资产才是当前交付，旧生成参数不能反向覆盖后续人工工作。

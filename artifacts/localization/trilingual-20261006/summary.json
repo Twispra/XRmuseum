@@ -1,0 +1,1136 @@
+{
+  "baseCommit": "b4e1886c9762a85926ef3bf58db92500a29176f3",
+  "branch": "codex/trilingual-museum-2026-10-06",
+  "scope": "Uncommitted trilingual main-scene changes; saved assets and runtime code used in the four runs.",
+  "environment": "Unity 2022.3.62f3c1 / Windows / keyboard and synthetic XR devices",
+  "limits": "No physical headset, participant study, build or measured frame-time validation. Unity simulator developer overlay is outside visitor-copy scope.",
+  "runs": {
+    "module": {
+      "status": "passed",
+      "processExitCode": 0,
+      "fullReport": "artifacts/localization/qa/runs/20261006T050702686Z-validation/report.json",
+      "fullReportSha256": "283f5de2000317e0fc3f3ad7849c98c45d0d7b20637db963bcdebb1a8a65fc6c",
+      "checks": 11,
+      "checksByKind": {
+        "asset check": 11
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "mainScene": {
+      "status": "passed",
+      "processExitCode": 0,
+      "fullReport": "artifacts/localization/qa/runs/20261006T050711879Z-integration-f856c0ca9b1640b09c4f333feef8486b/report.json",
+      "fullReportSha256": "47af10d0f548b4cace99a3ccd56b3816c5c15fd252914a488e30074441c0951a",
+      "checks": 76677,
+      "checksByKind": {
+        "saved assets": 7,
+        "saved font": 2,
+        "structure": 53,
+        "saved binding": 16,
+        "saved visibility": 7,
+        "saved layout": 1,
+        "runtime structure": 2,
+        "runtime state": 1,
+        "input fixture": 1,
+        "XR input result": 10,
+        "progressive visibility": 60,
+        "rendered text": 186,
+        "text layout": 21,
+        "legacy visibility": 30,
+        "QA camera": 6,
+        "XR input": 20,
+        "runtime lifecycle": 2,
+        "public exploration API": 1,
+        "trilingual main scene": 76004,
+        "logs": 1,
+        "source integrity": 246
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "exploration": {
+      "status": "passed",
+      "processExitCode": 0,
+      "fullReport": "artifacts/helmet-exploration/qa/runs/20261006T050838224Z-exploration-a847ca6e1d0149309ccf0647a0cda90a/report.json",
+      "fullReportSha256": "3ac095f65426f6369c5c4ce7d1a2a87a5d04136f1eedc0f7fec30fb23a1a90b5",
+      "checks": 1469,
+      "checksByKind": {
+        "structure": 8,
+        "state": 11,
+        "control visibility": 424,
+        "text layout": 523,
+        "visual hierarchy": 26,
+        "viewport": 27,
+        "XR input": 367,
+        "QA camera": 14,
+        "keyboard input": 1,
+        "public API + pose fixture": 1,
+        "public API": 7,
+        "public API + elapsed time": 2,
+        "component lifecycle": 2,
+        "animation timing": 11,
+        "visual structure": 18,
+        "animation state": 8,
+        "animation samples": 10,
+        "interaction isolation": 1,
+        "resource lifecycle": 6,
+        "logs": 1,
+        "source": 1
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "inspection": {
+      "status": "passed",
+      "processExitCode": 0,
+      "fullReport": "artifacts/helmet-interaction/qa/runs/20261006T051642253Z-inspection-main-1e090f85ec324a7994ab2b0fdb8f4d72/report.json",
+      "fullReportSha256": "b1747cdb8c789bb4cd7d66c0fedd1c16c9a3a71a3e6127af850fa23c057f80ba",
+      "checks": 206,
+      "checksByKind": {
+        "asset check": 206
+      },
+      "errors": [],
+      "warnings": []
+    }
+  },
+  "testedFiles": [
+    {
+      "path": "Assets/Museum/Features/HelmetExploration/Materials/AirSignal.mat",
+      "sha256": "2c567ff03bd4e21c5394bb70af973a63b542696006a19ef2eb183eb383af3369"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetExploration/Materials/DiagramInk.mat",
+      "sha256": "837ad73801a720af0f216d9a2e53cbc3d083754e5ac6e0890c6ea3a15d1a58b7"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetExploration/Materials/InformationControl.mat",
+      "sha256": "8459bec8ef5f18b6daaa4afafbcb7d6e6da182ec586dc0b0fd52539ad9d27b3a"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetExploration/Materials/InformationPanel.mat",
+      "sha256": "3a4b40a9447389e7604b93c0f7a67e341a09ce167ab760d621b4df89f96a8934"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetExploration/Materials/VoiceSignal.mat",
+      "sha256": "a4daff4a9f7619de45ac2ff681cd2f128850de2beb4b6a18552e2f2420728606"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs",
+      "sha256": "7ba9480d02e17dd4b028543c287db6fc7fdf7f30c6d86fcce33b951dfc8fcdb0"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationButton.cs",
+      "sha256": "20eeeb0aaa5301307499e92b6c69355783f28e86870cb14110ff075e5925710a"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationController.cs",
+      "sha256": "c8b97f12728793071f004480cb78c94b966e489b48d4c9a139935967a11a99b3"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationHotspot.cs",
+      "sha256": "fc6fd3a6a160e517f07db79eb888295c46405a71e19c540ad75f05ac2cec88d4"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationPanel.cs",
+      "sha256": "4a37a291b72d120ce47f3ff07b5f6641df0e10ad0fc56e2cf1784182c83f1252"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetInspection/Materials/Brass.mat",
+      "sha256": "625730228f20779eab50ae11c860f6d51c3e75381435ed4ce97662d8c72790a2"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetInspection/Materials/Copper.mat",
+      "sha256": "df47e6dc3a2947ae4b91c9350b79bcf10a584cba3b8d7f133da1b80ed52fb159"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetInspection/Materials/SectionTool.mat",
+      "sha256": "4397f15169b74f97e70962ff2a40366aa37a8db2ed176650253613250dbc7fe7"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetInspection/Materials/Window.mat",
+      "sha256": "1d0b2961781c944a2dfc2f484748c8c4479bea6bd69f2e78498c1d82089f6753"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+      "sha256": "386c0333c3cf2bd286f61463cb833c7f54ec2b799872b74caca579181cffd6bb"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+      "sha256": "83f7729fbd3daae11fdfd215b49aa668c946aec3d43e74fc5c03c08a5601d55d"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionControls.cs",
+      "sha256": "74d8bb711395ce9de997e8e6b43a640ed19ca99b8a9d9b83826504f333e16e53"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionPalette.cs",
+      "sha256": "489d557ef7ae20b6f15b814ae7387ff368e6500c64213d685799ea1f4cb56ab1"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetSectionInteractable.cs",
+      "sha256": "24f5c13d982ff114070d699458329bc3742e943a49a1be2c6d8cbaaa98e5ce82"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetWindowInteractable.cs",
+      "sha256": "02149f675d4bb498a309103ad1c02cb9f943b1ee7bb5c2d349893653279e5f9e"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetInspection/Shaders/InspectionShell.shader",
+      "sha256": "d8581789b275a5bd7ed158239c78ede4cbdb1b1e7352b1fe9019d723e8cc2568"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Editor.meta",
+      "sha256": "6d949b229a50ba32004ccec98f1cf0378c9402ca42b3020ed26a72d44bd1cf74"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Editor/LocalizationIntegrationValidation.cs",
+      "sha256": "96b4001888defa5c4a7917f8e64f906c5ec2455ab7d8fdc842c0d95e47f0c05d"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Editor/LocalizationIntegrationValidation.cs.meta",
+      "sha256": "0377352a8269dcc250756552e2fdb725d58d5ebe8f21e00acfa4d552c63ebfcd"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Editor/LocalizationSetup.cs",
+      "sha256": "b3d113d3073d25782df82dcc6b85e2ccfc4d388b287cb8a101f9e14d409b681f"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Editor/LocalizationSetup.cs.meta",
+      "sha256": "67f59b72e6b15fd7a24649481afe494d19714e07c872f25a10505b82f7597aae"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Editor/LocalizationValidation.cs",
+      "sha256": "e0b0c47cd808fc6929d79eed6530c4b3a191c7e1c7f38e5f11e7b3c3682deacf"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Editor/LocalizationValidation.cs.meta",
+      "sha256": "bde896c4bcfe28ddba040aecf89b17387707fc21c5cf0adf763d5dbce017f3a3"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Editor/MuseumIntegration.cs",
+      "sha256": "6881a95a630fe348765b3eb5b9d675b69c266f538f7f922c1ea7c5d74a3667ca"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Editor/MuseumIntegration.cs.meta",
+      "sha256": "d7e2092fbff4fa06915971eb62f44da37f226b71473e6693557875cf9baf4e11"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Editor/TrilingualFontBaker.cs",
+      "sha256": "46dcfd1e0a6a38138b2714bed353b3c12f238950703c01a722e5023a6d78a1e3"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Editor/TrilingualFontBaker.cs.meta",
+      "sha256": "471064ec636c9e8c325bd6245b7262c5fe64d433115c1d810d1b75f66e07597d"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Editor/TrilingualMuseumSetup.cs",
+      "sha256": "27f2663a3d5ed307ad0cff7b5acb2afae3433d58e2d9eab8956e6d1adfa6b701"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Editor/TrilingualMuseumSetup.cs.meta",
+      "sha256": "f84734e15028b4d26a1b23ecdff0de1bfd67e065055f19e69110494a0f69bf99"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Editor/TrilingualMuseumValidation.cs",
+      "sha256": "0c74d8731f1bb370a5031d3aa1ff9718e8aa2e145926cb8356cf59ee1d1fac53"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Editor/TrilingualMuseumValidation.cs.meta",
+      "sha256": "9ecdfe68fdf3f98bf495ccb6f4ee92513ba1d2b498b03f589d50bf0ab899f1ae"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts.meta",
+      "sha256": "8467d6d2127d1a06fd8e76a3c61e186b5425287652e20641a25a239358f6d439"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset",
+      "sha256": "839b905b210d3afb50f93b9e459869b36c2b669716816d42a8ef44bdd9176bd6"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset.meta",
+      "sha256": "2f2dc6a961ed5b19253cf2c459dc4d6bcdf416fdf88e2eb675baf80564a20acd"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset.ttf",
+      "sha256": "f691276f40e54b2394f9bc6dc02c06273942d731dcd235be230c9d112f0605dc"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset.ttf.meta",
+      "sha256": "1f6887dfee45e46678f897cb0b2cd34a8f7e3484efd7756956ba57828ca15f49"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/README.md",
+      "sha256": "d5d1f7aa80cef70ca6283d3b9bb5d0efe7fa8c31ad6668ba1b5bd1ce7e772deb"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/README.md.meta",
+      "sha256": "717fb04ef0d10b5cfc6da4b520dd798e29cb39a6fde045df7c75cc14fcdecc3c"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/characters-required.txt",
+      "sha256": "a51037388bb8202b6e67c3b8f3ffeb308dde5840ba84f81770b6417df8a5bb4f"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/characters-required.txt.meta",
+      "sha256": "2f33bd1ce5b61dc1e8aaa85627172c49e62262cb9860728a902946bc96f6129c"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/check-glyph-coverage.py",
+      "sha256": "779490f8ef8bb94d8b6ce2c458f5f66cd8061c559e491d3961878a41472ec64b"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/check-glyph-coverage.py.meta",
+      "sha256": "18164c0f0e66c483505a7356e8d09c2410d3231e08bad7f802202367f1091e3d"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/make-charlist.py",
+      "sha256": "8449ad7e3bcddc2237b9ebedc84c9eb0df92136ecf1caf7f54a21baebe9a0dea"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/make-charlist.py.meta",
+      "sha256": "a39bddcdc077555e105ac5add1c0e15d48261d906ee88a142201b2e2a6e9bea6"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/subset-noto-sans-sc.py",
+      "sha256": "e85da5028a9460aab4ab417c36b1b1a6a3ee6118b0fda93f0f39ec8c246e6972"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/subset-noto-sans-sc.py.meta",
+      "sha256": "c6f8372946d7715930abc52bb172b77c675f44da8c8c5aeaaec0d1783da258ee"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Materials.meta",
+      "sha256": "8c766333c11e168099fa3b70999d7978a62891b0cb222f9d420fc8bfde9225e5"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Materials/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Materials/.gitkeep.meta",
+      "sha256": "26951992898c603a2bc8b9e7996a6c3b4d6c5a854a5a76c87108c4d5e7a655b7"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Materials/Language-Board.mat",
+      "sha256": "0ce40c8d73285028acff8e2c806865c2b167b9692c896b008034f3391ce127fb"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Materials/Language-Board.mat.meta",
+      "sha256": "f3e626daf4363ae5b253ba78173941f00d25e8663be1bbda5d29016959141624"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Materials/Language-Button.mat",
+      "sha256": "e6b1adc94ae7b521aaff4edb77a471395c94598d0e158319ae5deef47626e075"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Materials/Language-Button.mat.meta",
+      "sha256": "07d445b399ee877e169d407b5d932ebe0cd893331cacecbb7881ddce04ebb3db"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Materials/Language-ButtonPressed.mat",
+      "sha256": "f984e3703d975693a10fd0cee36369f33a08e08b68bcb64be1acfca807ab2c69"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Materials/Language-ButtonPressed.mat.meta",
+      "sha256": "60b44293d501a51a7bea806cf9d3284e8db5f457a049d5d751f515784ea59cfd"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Prefabs.meta",
+      "sha256": "e2133f31db557def6fb6be837bccd66c18d03ea2668584633352e1cf08d07989"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Prefabs/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Prefabs/.gitkeep.meta",
+      "sha256": "1a79684a6d490e415f93d7e89a34562380eb58c7b9cc2ce49e148d6750673930"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Prefabs/LanguageShowcase.prefab",
+      "sha256": "5d84ce609e270341a26a2f2ed981b81923c8731c8d05c4abd8e2d0e06ea22dd1"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Prefabs/LanguageShowcase.prefab.meta",
+      "sha256": "41e56fdb496ad1b224289c832da71b76784dfaa2d00d1cfc9658505214160f8e"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime.meta",
+      "sha256": "e4938dbb08b0f5fe05bbce86aeae22b29c8c368153601e42c82fbd0031d4ea37"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/LanguageButton.cs",
+      "sha256": "e8b1a6e861dd5ad3e1b8e583afc3abac7336700b860ffc29d62ce4a2b1e13b3b"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/LanguageButton.cs.meta",
+      "sha256": "7e6642f448d61c46b131b70df56f7104b62772dba4ad1e12f23ca68cd70e424c"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/LanguageChannel.cs",
+      "sha256": "28a4de1a4018d8796aff33b659aea5e107d71523fa4c39aeeb42f708c35ac32c"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/LanguageChannel.cs.meta",
+      "sha256": "2f2ab4b64868d90502c0603bfbda49e17c51b06bcdf586f45fad85429a6836af"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/LanguagePlayModePreview.cs",
+      "sha256": "77e8c2712c71e906e86fd8ec445e49d6f066b39b30193e15863468a005930808"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/LanguagePlayModePreview.cs.meta",
+      "sha256": "8f85fa084269968958cd8dc4d1f6a54c7e99d7d3184c758b609087cece9c3ab0"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/LocalizationTable.cs",
+      "sha256": "0a778034c79203c8442de8462f62c888df56a2a49768892e80f643a8a60fad7e"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/LocalizationTable.cs.meta",
+      "sha256": "68f0218909f20b2f6e1a0c585e66ed104a71ff6cf0feed232c5f4810b7fb7987"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/LocalizedSourceText.cs",
+      "sha256": "62834489aa61faa39ec1d493829b619d4421b12bb7a2fdc32d6e9e1dbd99b02e"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/LocalizedSourceText.cs.meta",
+      "sha256": "31b7b2f2413dfce48ee3774e6725ea7b8f9100bf307c29f9a3bf73a5cc9ebe7d"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/LocalizedText.cs",
+      "sha256": "d313b975247e661cdf4433a76b4d1a770e926fb48fbe6ceaa2175bf57dfd8e0c"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/LocalizedText.cs.meta",
+      "sha256": "d6b2d46f8c5bbc0c5e99d16786682495e0c7e55b4ab663593cc1c963c18de5f9"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/MuseumLanguage.cs",
+      "sha256": "5d702a81c0973d85287e9075cb4dbf0db5c8c4464fb36684a0c8489e5a41b6f1"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/MuseumLanguage.cs.meta",
+      "sha256": "fe9f847c6869e699a3ebfba4726b6177d7ecc0e5bf938b7fae74459381e0843a"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/MuseumLocalizationRoot.cs",
+      "sha256": "1182a09d548aa03ee4041634b4bac11307fd87afd257d4eea4d776607e0a6671"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/MuseumLocalizationRoot.cs.meta",
+      "sha256": "5f3331b2d7185cab3d0576e12b44a66186bf4c084d484acfe34ad24a9a3b2603"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/MuseumText.cs",
+      "sha256": "b6acc17d1ccc2d99fe41d5cbb023d9f3a0ad7bd93d6ad8f9206019b0f7d6a537"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Runtime/MuseumText.cs.meta",
+      "sha256": "5d49ef5e914407853efaf66c3fb7b9d252b7d91dfe25e61edd5819b7ded4c312"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Scenes.meta",
+      "sha256": "2861adfe9ba085dce724a0e62ec59c2249922f0ac4a7f2ce27048ea191d80b91"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Scenes/LanguageDemo.unity",
+      "sha256": "d80c4e07d78f25eb96afa2bb7d4a4329ad948c4817e02bedd841065ecdd0a018"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Scenes/LanguageDemo.unity.meta",
+      "sha256": "150acbf2709c359009135e561b868594492fa83aa1860f8259e1291db23fae3e"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Tables.meta",
+      "sha256": "7bca6d5d4c78959db1b35828bcadaa1b785b35a1dbca35b37d8073f2f1431336"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Tables/.gitkeep",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Tables/.gitkeep.meta",
+      "sha256": "b7cfe365c2f5a4228d481605fc3b7a6d14e7b9a3fb58e72002098d4d2e38ac6f"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Tables/LanguageChannel.asset",
+      "sha256": "6daf526510bce19fd480a138a22ea18f4cc2bcd4602c75478a4c8a641d29f2fd"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Tables/LanguageChannel.asset.meta",
+      "sha256": "cf10e280aa890052372a7829db094752461965f669d6bc0fb8b6af3728d71371"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Tables/LocalizationTable.asset",
+      "sha256": "96ef755ca2bae861334769b7278d2cd575db707baf7393231e410b2a8a9f4626"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Tables/LocalizationTable.asset.meta",
+      "sha256": "77b07e030609d3a85aaed3bbcb980c321f818f846817f520122b750b6f07beea"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Tables/MuseumTranslations.json",
+      "sha256": "49761b4556928af2ca7dd68cf106b22fdc34cfadeea581fd3ff0f99512fab5e1"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Tables/MuseumTranslations.json.meta",
+      "sha256": "b9a683bb9e833a87faff4da3e474ccb063bf3904399e3bc692a190a2c89cd792"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Materials/Bronze.mat",
+      "sha256": "2ea003bd56b441323c89e52e7471676d3bae70c33d4b7ac165294151d010f667"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Materials/Contour.mat",
+      "sha256": "dd3d47286f1c1a5e0901b306a568a1e50a9bd24452f9c7cd824881e2d432e395"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Materials/CoolLight.mat",
+      "sha256": "f7e94b51717df51895d5123fe714930e671af530d900da14478a2910a9ce4c5e"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Materials/Floor.mat",
+      "sha256": "4c79f49e570fbbffd3283a254bd83e79bc7f38bf4256265f9b69bdd18186345f"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Materials/FloorSeam.mat",
+      "sha256": "e0c2198dbe2963f17c973d101a5c5ee68a295cc5774ab7f650efc54ed1e84bc0"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Materials/Graphite.mat",
+      "sha256": "26c80e47fa698316898285d53c261e4269812ee4e63caa70dbaaf98b50256a37"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Materials/Limestone.mat",
+      "sha256": "9c51ddd500f3684c6857bb50dfe5e1cf1585fddaf82a11ab433d0f29aeedd778"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Materials/Navy.mat",
+      "sha256": "8fdfa0b4ef33eef48634550109f39063b6df83e4d262f188fe15a1b9baeb2c01"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Materials/Ocean.mat",
+      "sha256": "bb4cc7d6422ddfaa81f194db05d967aa3daf012b449863d25df1250c72dd32ec"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Materials/Porcelain.mat",
+      "sha256": "7b635f2bcbc1821b289aed27c7b79df65e6eafcb9b4b94cb4fd4b111b01aafe8"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Materials/Walnut.mat",
+      "sha256": "52e6856aa9a07823eb1eb1cd09ef7fdb0ad2a8d02001fd78210d3fff3a6df423"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Materials/WarmLight.mat",
+      "sha256": "e58845ac570516aae80cd9d7d0e43e7512e6aacef3b2c53734b6ccf3f6414289"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-bronze__Bronze.asset",
+      "sha256": "d1d23c6bcea9cad59f5dbe51ae3f868d4237b184a84957b76ecb95d8a3dba56a"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-frame__Limestone.asset",
+      "sha256": "93292c1d3e3ba50eb62233be222d65bb3f381ae96581ab3b3d25df2690f3cf91"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-inlays__Bronze.asset",
+      "sha256": "36eee2319e0e0fee1a1be2b99d5ae78eda3cbe2e8fa4e5adfb695cc35e557f67"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-panel__Navy.asset",
+      "sha256": "3f06775a65293a0b67d5a6993f88cf6acbdbc1edb7ac0fada640fc73f96c162c"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-rhythm__CoolLight.asset",
+      "sha256": "ed39f2c7939eb704785a10d7302cb8569d670fc41f79559ddf01b82a474c15c1"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Baseboards__Graphite.asset",
+      "sha256": "8946b561468af9a708cc87df95a1bbfbaaa53bb1179e1175fdef310211856603"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Ceiling-ribs__Porcelain.asset",
+      "sha256": "9ec26fecbfa4bee840d944ea086d53c919156a24304fd6c46f0a765026747dac"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Ceiling-slots__WarmLight.asset",
+      "sha256": "d1dc666f80d11c7c0c4bb49cd3c06741da370bb19fa24cf967a80281ce893c71"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Connection-bars__CoolLight.asset",
+      "sha256": "46171bc4a7b28cb175199eddfd7e6ba578c3a60b369e70630f709c236bf05b98"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Connection-mount__Graphite.asset",
+      "sha256": "69e6485fbbd43f5ef295cb9570ffdef9dc4e95d3ecf32aa19dfaedeb10db6c81"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Connection-sign__Graphite.asset",
+      "sha256": "fca4e1e993272cef7d45e89bbbcb41c2ecc0d890a1cd9e57a73f1522e29d60b9"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Connection-strands__Bronze.asset",
+      "sha256": "3f6d1165bca4b55f5e10d819dc6b94ef5bdd097e0f0d063cd360a662eec0b6e4"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Connection-strands__CoolLight.asset",
+      "sha256": "6fb210bb0f979ddadbf040b02b83532581f50dc422bec0b005e9d61da0bd611d"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Cove-light__WarmLight.asset",
+      "sha256": "6e1eba3b97682787fdbf92389fc3f55322a69a705de4ba8df75f80da6bcb495b"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Coves__Graphite.asset",
+      "sha256": "7d9f5fb85e53dc0639e2bae5d8da1d52b085ee54448cc527ce528fd28aa8767d"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Feature-wall__Navy.asset",
+      "sha256": "f613583d894645ef0b8b7b4e5ef8ecd66a9e251907e243ccae4392c5934e7abd"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Floor-joints__FloorSeam.asset",
+      "sha256": "0e44889c6532725c90816a104a668741b5b8fa918d4ff6842979e2660f5fbde4"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Floor-perimeter__Bronze.asset",
+      "sha256": "c52e7017e3523708be4b3720413beeac3e297a29bbcee4c7ccab872df4ef0090"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Inset-cap__Bronze.asset",
+      "sha256": "8d2460e0ca4a458760b41e8acbb8544d2b284818f8a257b235b7bdf23db8778b"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Medallion-hairline__CoolLight.asset",
+      "sha256": "dd6bbbb68ab3b3cfc62a2eac4dc4a1cbf3a7018c4542130f1dfad520a34768a9"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Medallion-rim__Bronze.asset",
+      "sha256": "e0031c341bfe0538cc7fdb518e2fcab098e54d1fc7b8faa410b5292d013ece67"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Ocean-contour-relief__Contour.asset",
+      "sha256": "0c9bc0c9b95f58b68d0cde14a9f9f20a41102c7bad7bfcd0f221b04ad4294b6a"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Ocean-medallion__Ocean.asset",
+      "sha256": "fdd59d158ec9c91eeb5c05c5733bb854316c71161c47f49885d92b2aa864d9e5"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Pendant-bronze__Bronze.asset",
+      "sha256": "d4fa5f3255bb09f2ca534eda700c323ea44711a26a4d3cdf083223afab7c23cd"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Pendant-diffuser__WarmLight.asset",
+      "sha256": "ba7705d7cce37faa2006519cebb874e9091b6698760efe1202ab5bbc68fa618e"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Pendant__Graphite.asset",
+      "sha256": "1a64428a661ef73382fd8cb0a1992a22202fbebab46e3b133d8fc0068b7a56c8"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Pier-inlay__Bronze.asset",
+      "sha256": "f02bca29ba98a1c23fe4dc13e24333ebce793a7aeb7fe7feb6fb4a909c9867a4"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-base-glow__CoolLight.asset",
+      "sha256": "e908cb5a93e60a94f9b4049e99f48921a2bbc91ef1d56376e5d6d8312b1f5393"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-foot__Graphite.asset",
+      "sha256": "fba266d44fc9ff1f986f76c1c51c881c01e05b956729f777759c1f90f75cef84"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-inset__Navy.asset",
+      "sha256": "60f09bf72605c7ce1d4680d22af582af4b7a4693d283f823ea903c0c3facd133"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-trim__Bronze.asset",
+      "sha256": "2f209187d2b57707344d66f17a5ff458f5ff8a43d44cd0424099dc6436cc5e5d"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Porthole-fastener-studies__Graphite.asset",
+      "sha256": "5d4f07a0add7508963875b99fa3e4a9dad6cb5ee7d01a7549f90d6c7975ee8d5"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Porthole-inner__CoolLight.asset",
+      "sha256": "8dffaffcbb8191ff2fcf5d3a5f71337e6d35ce6a9de8fb26da40549f54274785"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Porthole-study__Bronze.asset",
+      "sha256": "5e813b93484476dda8ef0d78d92f01866602cf71c0fd836d1451e18e7efbccee"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Rear-baseboard__Graphite.asset",
+      "sha256": "44134555566f050d843db64ef61695461b7151a6082ab1b6fd73847e81251add"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Rear-cornice__Limestone.asset",
+      "sha256": "cdef891892183f4abca0fae6aa38fb169b7509eebd9cbd3a133630537293231b"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Rear-cove__WarmLight.asset",
+      "sha256": "beca545852a82dd88654ce5d16288e04c213c6d7c2dfb6798e7e60fdfbeba50e"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Rear-fins__Walnut.asset",
+      "sha256": "e55900d9bc4b5553a5f8291ea622f5ffd6e629ebf4edfd85b049716746e6edac"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Side-diagram-frames__Bronze.asset",
+      "sha256": "f785a9960e6557e808717664d264a3f5e973388f8f6298794b35b60b46529246"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Side-diagram-ink__Contour.asset",
+      "sha256": "1d4fe6f7587d877f219165626aa0a24d4fb62e790f4a40d215edc38d76189dee"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Side-inset__Navy.asset",
+      "sha256": "6162203957ede199546912ceaad4d43d94143b62dc6a453772f75eb084c215c1"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Spot-housings__Graphite.asset",
+      "sha256": "adaed3520b55642679ebd5578fefbc8907ac65c5cb3b4e53430e0c98cbc6a5ae"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Study-mounts__Graphite.asset",
+      "sha256": "8cef1c58e7d3deebd6c999837dc889a23a19e31091bca7ed75685259f822751e"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Study-stems__Bronze.asset",
+      "sha256": "a14599da0f8551722d9d39ce9c8230168c13855d98a80688ad77562725ebb216"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Suspension__Graphite.asset",
+      "sha256": "9edd79dcbc3e2ae4b2e310fab3b0f110180edac04166af5a4f5eb3cce7ceea28"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Wall-acoustic-fins__Walnut.asset",
+      "sha256": "dbc07aa81c5875ec46e8c0701979f1d8e1119550f20ab801c255932bcd594c7f"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Wall-lining__Porcelain.asset",
+      "sha256": "f552a2d534fdb9fcf58145d65ebb48ce9b3c1b2fbe7183c9576d2ba1bcb72a2d"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Wall-piers__Limestone.asset",
+      "sha256": "72bd0c8acad586b68ee361dde340fe809e49987a3493538d9174a521d162fcc9"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Window-graphic-bars__Contour.asset",
+      "sha256": "4836328cf62d65dcee5ee9b6ad936646ce7beb634d7e7f5f2f6e1f73c37830b9"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Meshes/Window-graphic__CoolLight.asset",
+      "sha256": "85e575b79d92f85619e0f28b385cd0dd9fc125d01ce9cd0c267106c67ef32e3d"
+    },
+    {
+      "path": "Assets/Museum/Features/MaritimeGallery/Prefabs/MaritimeGallery.prefab",
+      "sha256": "0747df4b788e31c584ca724822d09245a81b1442d4ebfea93c34fb0884aa5488"
+    },
+    {
+      "path": "Assets/Museum/Materials/Brass.mat",
+      "sha256": "8a6b8af9189f4e3a7eafc595d512220444169f6e74ebdf447e0ace7d9ceba2e0"
+    },
+    {
+      "path": "Assets/Museum/Materials/Deep Teal.mat",
+      "sha256": "4d7434f5a79fa15090712401e0d80272c2ca4a8d65d13f35ce0fe2f2f9260584"
+    },
+    {
+      "path": "Assets/Museum/Materials/Helmet Contact.physicMaterial",
+      "sha256": "09e64e8e5767707bef1d2dbd0261d66484df9841d9bf7c090fad0bbc9303a2e3"
+    },
+    {
+      "path": "Assets/Museum/Materials/Helmet Plaque.mat",
+      "sha256": "5c0b6651c043d864a51d89f13f3def9c85286ce36f4e01c64961f4d0bef9525f"
+    },
+    {
+      "path": "Assets/Museum/Models/Helmet/helmet-graybox-v02.fbx",
+      "sha256": "c0cefcc0fd5acc1fac0ec1ee5ed212a4813606b57e984767afc55d34080322ab"
+    },
+    {
+      "path": "Assets/Museum/Scenes/MuseumStart.unity",
+      "sha256": "1039c2aed4ab4e22e910b8d45f0e638ba8e538b7d69aee13d0db4a96525c6610"
+    },
+    {
+      "path": "Assets/Museum/Scripts/HelmetExhibitReset.cs",
+      "sha256": "e365a604ed9cfbc2535b9dd4f788c56ce228026584450737f40d2f0a1035ff2b"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Animations/ArrowBounce.anim",
+      "sha256": "ccaa5c801cfe201f6b1922dc6e5a3eb2e2b5e3c0b49e312818cc6ba25e7ee33d"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Animations/Climb Teleport Arrow.controller",
+      "sha256": "345744d768ea51fa4d10cc01fed56dc4cbf274dfdce9cc9b1a8b937ee65d37be"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/DemoSceneAssets/Sprites/Forward.png",
+      "sha256": "1f92a6985149af65bdf4ec5e829e45d6910e327d5467b716a1348f24f246295c"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/DemoSceneAssets/Sprites/LegibilityMask.png",
+      "sha256": "95530547506c0c8a54b84ba131a4eb384c257fb9cb555a087fa3445af42f3050"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Filters/AnyGazedAtTeleportAnchorFilter.asset",
+      "sha256": "d64a030b16ad8df2bd1b42cd31889771dc2eea19b29a7e6e5b91e56da4a1fe1c"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Materials/UI-NoZTest.mat",
+      "sha256": "05516dc817b6075f454fffb20efcb6ce52ffb2ee147da03b01b1334b2de66fcc"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/Primitive_Cylinder.fbx",
+      "sha256": "20915d8a19b7a3449bc67d0a013e7ac745fd0aeb4a0c8d602cdfa9389853e33a"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/Primitive_Wedge.fbx",
+      "sha256": "524ea23f5c92790b604b0cacd1ae4bffabf2711ed69c9accedd52d619e87dac2"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/Reticle_Torus.fbx",
+      "sha256": "48b086a822980ec261f87c76baa42f0b2440747d3f85d62e9486abe6280ee2b5"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/XRControllerLeft.fbx",
+      "sha256": "15a3a6081895394ba55b5564a8c96e0d6134c9d57e030ef24acd7d5ec2e215fc"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/XRControllerRight.fbx",
+      "sha256": "ad3f6aa2f60a8ba72d2d5d3ced96399922da6fe7c65c31acb374ae9e2acabaed"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Controllers/XR Controller Left.prefab",
+      "sha256": "46ab0bc0498b8c4fa608a7a1d0bf395065e0c53374897ab94a04d3230ea1a010"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Controllers/XR Controller Right.prefab",
+      "sha256": "d411483f56cd92532fd6b34ca3ca5a7720b1914478c7c89f634abeace73428cd"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Direct Interactor.prefab",
+      "sha256": "c00eb811caed28eba38d74a91e30c51e11872ad42adbb665201775168217ce09"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Gaze Interactor.prefab",
+      "sha256": "866a3c63cebe7c148490d2df94175d173b907525be17e98dd1bc539f18febe1d"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Poke Interactor.prefab",
+      "sha256": "674daf81a658bb5cf01ff76809ca1fe7b430341e9a70499f4fbc8d04d3cc298c"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Ray Interactor.prefab",
+      "sha256": "beeab61a5c7ae09dbb564e950831825fb1bab5f14b22aec6c536ddc958a3d20d"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Teleport Interactor.prefab",
+      "sha256": "902b19d9d5c70adb987c3b76736a4dfd6fa308f6ce480f398fafbde5d86fe6b9"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Blocking Teleport Reticle.prefab",
+      "sha256": "bb7dbd18a95794d135f1ca103fce3e19baa059eac8732c26d04d143871e5b339"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Climb Teleport Arrow.prefab",
+      "sha256": "e09337454cf4cbb5ad10decd8302583c8b5806dd14702e72ee2ab8636ab03a88"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Directional Teleport Reticle.prefab",
+      "sha256": "46af312d083382cf7ce9fa229b935979ab24ea6860fdf565195f548c66f6f4b1"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/XR Origin (XR Rig).prefab",
+      "sha256": "033024a6d91ada2796e5301297c98e808e981e9fdd6982b1936f7dc1603ba23f"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Scripts/ActionBasedControllerManager.cs",
+      "sha256": "4c33e360edd7b9c46b9e8707c72c42aa4b16f9d0401a9d41b3d0cfafe4dfafd5"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Scripts/ClimbTeleportDestinationIndicator.cs",
+      "sha256": "a3e32b1161b163df6e239957f4f63ceb67010ca7fcd50a1b6acb4ca73a161f48"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Scripts/DynamicMoveProvider.cs",
+      "sha256": "a537bca398d63471f6fe3580b981318478e1164263ef4c5668fcf1b22ba1b3ea"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Scripts/GazeInputManager.cs",
+      "sha256": "364ecc2b67b1cf0c97b2924e620d7c0c0d3e5a6c61a8a811d53e25e71bf63c57"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Shaders/UI-NoZTest.shader",
+      "sha256": "3f490e15785908aac877219e8fac3bcd82bc638f272a55d53d3635dade8b8f8b"
+    },
+    {
+      "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/XRI Default Input Actions.inputactions",
+      "sha256": "d51f6a0518c700cb15adb77f5a297c66cce683f13057ab47d466751cbe3b5336"
+    },
+    {
+      "path": "Assets/TextMesh Pro/Fonts/LiberationSans.ttf",
+      "sha256": "e5b0af421ea2bfbc1ac8d251d647268087ae82786234c57f757d1f0b90fa8b49"
+    },
+    {
+      "path": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset",
+      "sha256": "6f33cdcd6d203e175a012087a4209442c2b6811baeebce6c875bb8c8d7c64e51"
+    },
+    {
+      "path": "Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset",
+      "sha256": "c3ff50e3133d989180b187748ffc67903f1fede099a5b85b4fcbd8cb6e8be958"
+    },
+    {
+      "path": "Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader",
+      "sha256": "5678d5bcbba60a5a43b0934d0dbdaea674f8693268d3d296da18cbc9423a7c06"
+    },
+    {
+      "path": "Assets/TextMesh Pro/Shaders/TMP_SDF.shader",
+      "sha256": "21b8ea81bb6e3ef203d329f6c81afd9e4751684245d85c9b477010a157d01929"
+    },
+    {
+      "path": "Packages/com.unity.inputsystem/InputSystem/Actions/InputActionAsset.cs",
+      "sha256": "5c5b1c0f7bb907fff4bc07d3b599bb4e024ef0311ed410e7533c5b91bf588213"
+    },
+    {
+      "path": "Packages/com.unity.inputsystem/InputSystem/Actions/InputActionReference.cs",
+      "sha256": "8c323199df6c4f22ba5a26ceedf4c1e062c5d71532cb5f42bb269ecb71ba5bba"
+    },
+    {
+      "path": "Packages/com.unity.inputsystem/InputSystem/Editor/AssetImporter/InputActionImporter.cs",
+      "sha256": "ec6889958a538898b1b45250883462d94859eb2963003e05482c1d9418aeea25"
+    },
+    {
+      "path": "Packages/com.unity.inputsystem/InputSystem/Editor/Icons/TrackedPoseDriver@4x.png",
+      "sha256": "48c5beb6bd98b606af6b00e95e1ce88ccbadeb6d2e3566c3910424a0f447d101"
+    },
+    {
+      "path": "Packages/com.unity.inputsystem/InputSystem/Plugins/XR/TrackedPoseDriver.cs",
+      "sha256": "26464c507f2f17cb91de52e1c3604716425722d82b2a318530910038373bbf2d"
+    },
+    {
+      "path": "Packages/com.unity.render-pipelines.universal/Editor/AssetVersion.cs",
+      "sha256": "96ed27e15286cda1fdada6923e804887b6447a905b38360e0f5561f79cd0344c"
+    },
+    {
+      "path": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Lit.mat",
+      "sha256": "f1ff1fd4d25d4ec46852e4e43848b1f601e87317db87389e056794090fa23a5b"
+    },
+    {
+      "path": "Packages/com.unity.render-pipelines.universal/Runtime/UniversalAdditionalCameraData.cs",
+      "sha256": "6f8f197a784efe69a56ef14d8d0025579b1ae59f5f5e310bf790d05566b6205f"
+    },
+    {
+      "path": "Packages/com.unity.render-pipelines.universal/Runtime/UniversalAdditionalLightData.cs",
+      "sha256": "4591216922bff9e3a62caca9d9fa2fa937b276456a3dab46fb1718526cbb0ad5"
+    },
+    {
+      "path": "Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader",
+      "sha256": "123d3d4a5f1092c1ee1566916907a44300d94723e354576b90de4dd2d1600e4a"
+    },
+    {
+      "path": "Packages/com.unity.render-pipelines.universal/Shaders/Unlit.shader",
+      "sha256": "bb500b052e684f862be56220ef187081a0c9de08265b2ffcff144a2f21817cd4"
+    },
+    {
+      "path": "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+      "sha256": "e79176d735f6e37846def5d709da60a2866af7c70576fa32d4cca2b81015a187"
+    },
+    {
+      "path": "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+      "sha256": "0aa474cb54380b566a43360ddae3b42ca8c08d195f0590a03999396f5b667830"
+    },
+    {
+      "path": "Packages/com.unity.textmeshpro/Scripts/Runtime/TMP_FontAsset.cs",
+      "sha256": "4944761e316e6c3e6053507283f4c1b310dd47312830346ef7efc4715ac403af"
+    },
+    {
+      "path": "Packages/com.unity.textmeshpro/Scripts/Runtime/TextMeshPro.cs",
+      "sha256": "c5b1965cd925f0f8ff20f80191096bad6b018deabddcfdd12e12aca78d0c745c"
+    },
+    {
+      "path": "Packages/com.unity.ugui/Runtime/UI/Core/GraphicRaycaster.cs",
+      "sha256": "a7c7eadb563eece18edc99969a570b2421ac7fee0fd39b02ccafa4a8ddd2eee2"
+    },
+    {
+      "path": "Packages/com.unity.ugui/Runtime/UI/Core/Image.cs",
+      "sha256": "351dd72516d240f5722c55f72f8e95a0a92cf71e83358bbc922eee47bdb78502"
+    },
+    {
+      "path": "Packages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs",
+      "sha256": "c98311dbbec32228456e5f18cdf5682bdb84d21592244476b8be205cb40ab612"
+    },
+    {
+      "path": "Packages/com.unity.xr.core-utils/Runtime/XROrigin.cs",
+      "sha256": "cbceaf90f43f3ffa599ed642509abec52e61f55b7bed9a186cb31074fdb044b7"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Inputs/InputActionManager.cs",
+      "sha256": "42ab0edf3f1f417ddf02d28fac2511ed355ec2b9742371fb31970316e85fb966"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Inputs/XRInputModalityManager.cs",
+      "sha256": "1d875694a2102c1e1eb9e41f753660ebb89d6a84ececb409651ef8970c906e6e"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Inputs/XRTransformStabilizer.cs",
+      "sha256": "fdd453f0ff58a7be5a550762113ca4e75b81ed8062f771406c77c0d62eaf48a3"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Controllers/ActionBasedController.cs",
+      "sha256": "b23b7048f904de703f9b5f14a964a28a5c9af42b3073eb0d90ca89b2b3ca3bb2"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactables/XRGrabInteractable.cs",
+      "sha256": "4dfc79a611346214a87b187749ec11b5ea5a4fa943d1c97fd24eda911de998cd"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactables/XRSimpleInteractable.cs",
+      "sha256": "3e32c8298ce22e9f1ea161dbffea8ea1c7d07a48bd489110025a9bb27caf007f"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/Visual/XRInteractorLineVisual.cs",
+      "sha256": "44bbe30ca970dd2b2215a877b51cfcd422f85be47c57ca049eca918308d691e0"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRDirectInteractor.cs",
+      "sha256": "8870da288ff911e8d1ab89918d1e8f9b876e49e90f481b436c75fcdcf6ba7c19"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRGazeInteractor.cs",
+      "sha256": "082289889a8f92919e76287ccd2121bd120ce1179b9bff21d53b3190915abf11"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRInteractionGroup.cs",
+      "sha256": "b6104dec84aa87fa8a446131667bd10452fa18a12e98d1ffc647948762713ae2"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRPokeInteractor.cs",
+      "sha256": "a89833cf1dfcc80cb112eeb7e82609ddd58ef6f7ae8f3812662e4e570d684352"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRRayInteractor.cs",
+      "sha256": "fc71ad3028b80d5ec2a09acc562ffeea7fc99a54d10773150421114068045156"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Overrides/XRGazeAssistance.cs",
+      "sha256": "5bc2d8924b660bad51130c9d6d1abebd5a0c52f1501c52a0df97daa68c8f07d1"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/XRInteractionManager.cs",
+      "sha256": "e103d4953736425ec32f138f86c16042ac84feab315048008d0edceeaf60ca40"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/CharacterControllerDriver.cs",
+      "sha256": "27e576c36b118cc4ef92ea9c8f8ec4ab8c841f81f0945d0ee096625caf5f9d07"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Climb/ClimbProvider.cs",
+      "sha256": "e005f8e82070983010091bfa57db98dad8404b38519f453a2d9b9c19af833567"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Climb/ClimbTeleportInteractor.cs",
+      "sha256": "5a7c880395b142763da0b9524fc6d24ef7eef47ff866f36a177738385337af6b"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Continuous/ActionBasedContinuousTurnProvider.cs",
+      "sha256": "44769f3afe5fbf83e04938979d669326b6a8ae00ec21eb4c057bafaa9e6c8c88"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Grab/GrabMoveProvider.cs",
+      "sha256": "f2c3a22ec2fe884533168caf1497ff25867c403d9d7c5115e3aae22727e6cf15"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Grab/TwoHandedGrabMoveProvider.cs",
+      "sha256": "6e41dfd1cf33efd4a7dce7a084dd931bcff6f8d478ef0227484060ee18ffe17e"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/LocomotionSystem.cs",
+      "sha256": "312c6c44a4a69de75d8788fef5d68f08c5520a2665223838113abf856c01cce4"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/SnapTurn/ActionBasedSnapTurnProvider.cs",
+      "sha256": "31ca0f5b7465c7877ee4f2646b40299c73c50e90eee2e7c620c6e834b537233e"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/GazeTeleportationAnchorFilter.cs",
+      "sha256": "df159854f1dc2041b08aa8b1f295d6afbfe4068f5da9d1cc0acc31a33b8471e7"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/TeleportationArea.cs",
+      "sha256": "76e524d98fdc655d56b96e9e2fda9f1b1e4b7487bdec3797c9343b64bff0c74c"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/TeleportationProvider.cs",
+      "sha256": "06cf2fc1d48d2bf6f74f7752d064e1896bc4ee8e3ce82fb56d6d1ada6acfd0ea"
+    },
+    {
+      "path": "Packages/manifest.json",
+      "sha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7"
+    },
+    {
+      "path": "Packages/packages-lock.json",
+      "sha256": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03"
+    },
+    {
+      "path": "ProjectSettings/ProjectSettings.asset",
+      "sha256": "6b3aa93c403f4a0697a561f117cea95e529db9965f59dcadfcb4533031e1e2b0"
+    }
+  ],
+  "preExistingUntrackedFiles": {
+    "originalFiles": 570,
+    "changed": []
+  },
+  "font": {
+    "status": "passed",
+    "resultingCharacters": 507,
+    "width": 4096,
+    "height": 4096,
+    "identitiesPreserved": true,
+    "persistedAtlasMatchesBuffer": true,
+    "allRequestedAvailableWithoutFallback": true,
+    "fullReportSha256": "a375816cf442f94a94e40e6047e5affa44e2b4e8084b50d17ded430b94f9ec04",
+    "fullReport": "tmp/pr-completion-20261006/font-20261006T045340890Z/report.json"
+  },
+  "laterEditorOnlyChange": {
+    "file": "MuseumVR/Assets/Museum/Features/Localization/Editor/TrilingualMuseumValidation.cs",
+    "sha256": "15e6097861bc2615f6ac8ac240571bb4c4722b6d24b55782cec923eae9f0dad6",
+    "reason": "Added a 20-second settled-exit wrapper for the unchanged inspection assertions after the original immediate exit hung. The wrapper compile and inspection rerun passed with actual process exit 0; visitor runtime code and saved product assets stayed unchanged."
+  },
+  "diagnosticScreenshots": [
+    "inspection-Chinese.png",
+    "inspection-TraditionalChinese.png",
+    "inspection-English.png",
+    "help-Chinese.png",
+    "help-TraditionalChinese.png",
+    "help-English.png",
+    "demo-Air-phase1.png",
+    "demo-Voice-phase2.png"
+  ],
+  "screenshotNote": "Temporary diagnostic camera views in the actual saved main scene; not headset screenshots or rewritten scenes.",
+  "nativeKeyboardPreview": {
+    "scene": "MuseumStart",
+    "method": "Observed visible Unity Game window and pressed F6, F7, F8 using native window control",
+    "result": "Simplified, Traditional and English visibly switched together in inspection menu, masthead, welcome panel and plinth reset label; final preview left in Simplified",
+    "limits": "Desktop UI only; no physical headset or participant testing"
+  },
+  "publishAudit": {
+    "date": "2026-10-06",
+    "matchedRuntimeAndAssets": 87,
+    "preExistingFilesUnchanged": 570,
+    "reportHashesMatched": true,
+    "editorRegressionWrapperMatched": true,
+    "noExistingMetadataModelsInputPackagesOrPlatformChanges": true,
+    "note": "Reused four passing Unity runs after exact source/asset fingerprint checks; this audit does not claim a new Unity run."
+  },
+  "publication": {
+    "pullRequest": "https://github.com/Twispra/XRmuseum/pull/18",
+    "productCommit": "a46587e10aa37adf927f576b1507d24294fd8421",
+    "base": "main",
+    "status": "Published, awaiting another member review; not merged",
+    "storage": "Existing normal Git for TTF and PNG; existing LFS rules unchanged."
+  }
+}

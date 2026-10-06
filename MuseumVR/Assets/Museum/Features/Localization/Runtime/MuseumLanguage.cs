@@ -8,11 +8,13 @@ namespace Museum.Localization
     /// </summary>
     public enum MuseumLanguage
     {
-        /// <summary>简体中文。作为默认语言，因为场馆位于本地。</summary>
+        /// <summary>简体中文；初始语言由 LanguageChannel 决定。</summary>
         Chinese = 0,
 
         /// <summary>English.</summary>
         English = 1,
+
+        TraditionalChinese = 2,
     }
 
     public static class MuseumLanguageExtensions
@@ -22,7 +24,8 @@ namespace Museum.Localization
         {
             return language switch
             {
-                MuseumLanguage.Chinese => "中文",
+                MuseumLanguage.Chinese => "简体中文",
+                MuseumLanguage.TraditionalChinese => "繁體中文",
                 MuseumLanguage.English => "English",
                 _ => "?",
             };
@@ -31,7 +34,7 @@ namespace Museum.Localization
         /// <summary>表里带语言后缀的字段名，供校验工具报错时使用。</summary>
         public static string FieldName(this MuseumLanguage language)
         {
-            return language == MuseumLanguage.Chinese ? "chinese" : "english";
+            return language == MuseumLanguage.Chinese ? "chinese" : language == MuseumLanguage.TraditionalChinese ? "traditionalChinese" : "english";
         }
     }
 }
