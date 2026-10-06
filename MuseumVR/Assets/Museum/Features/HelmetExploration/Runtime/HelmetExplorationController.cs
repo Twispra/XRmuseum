@@ -34,11 +34,11 @@ namespace Museum.Exploration
             {
                 switch (CurrentPage)
                 {
-                    case Page.Air: return "WHERE DOES AIR COME FROM?";
-                    case Page.Voice: return "WHERE DOES A MESSAGE GO?";
-                    case Page.Hint: return "NEED A CLUE?";
-                    case Page.Review: return "WHAT HAVE YOU FOUND?";
-                    default: return "IS THE HELMET ENOUGH?";
+                    case Page.Air: return "Air from the surface";
+                    case Page.Voice: return "A two-way connection";
+                    case Page.Hint: return "A hint";
+                    case Page.Review: return "Your visit";
+                    default: return "Choose a connection";
                 }
             }
         }
@@ -50,31 +50,29 @@ namespace Museum.Exploration
                 switch (CurrentPage)
                 {
                     case Page.Air:
-                        return "A surface pump sends air through a hose.\nFollow the flow to the rear connector.\nModels and flow are simplified.";
+                        return "A surface pump sends air through a hose to the helmet.";
                     case Page.Voice:
-                        return "Watch the surface telephone send a message.\nThe diver replies along the cable.\nThese models show the principle, not exact equipment.";
+                        return "Diver and surface team exchange messages through a cable.";
                     case Page.Hint:
-                        if (!AirSeen) return "Turn the helmet to find its rear connector.\nGrip the marker, or choose AIR here.\nYou do not need to walk.";
-                        if (!VoiceSeen) return "How could a diver ask for help?\nChoose VOICE to follow a message and reply.\nKeep inspecting whenever you wish.";
-                        return "You have viewed both connections.\nWhy is the helmet part of a larger system?\nChoose REVIEW to collect your findings.";
+                        if (!AirSeen) return "Find the rear connector. Use Back to choose Air.";
+                        if (!VoiceSeen) return "How could a diver ask for help? Use Back to choose Voice.";
+                        return "You have seen both connections. How does the surface team support the diver?";
                     case Page.Review:
                         if (!AirSeen && !VoiceSeen)
-                            return "No clues viewed yet.\nChoose AIR or VOICE in any order.\nKeep inspecting at your own pace.";
+                            return "Air: not seen yet\nVoice: not seen yet";
                         if (AirSeen && VoiceSeen)
-                            return "AIR: a hose supplies air from the surface.\nVOICE: diver and surface team exchange messages.\nThe helmet is one part of the system.";
-                        return (AirSeen ? "AIR: a hose supplies air from the surface.\nVOICE: not viewed yet."
-                            : "VOICE: diver and surface team exchange messages.\nAIR: not viewed yet.")
-                            + "\nKeep exploring when you wish.";
+                            return "Air: seen - air arrives from the surface.\nVoice: seen - messages travel both ways.";
+                        return AirSeen ? "Air: seen - air arrives from the surface.\nVoice: not seen yet"
+                            : "Air: not seen yet\nVoice: seen - messages travel both ways.";
                     default:
-                        return "Could you work underwater alone wearing this helmet?\nExplore its connections above water.\nChoose AIR or VOICE, or inspect it yourself.";
+                        return "";
                 }
             }
         }
 
         public string Footer => IsPlaying
-            ? "Demo playing / STOP hides models"
-            : IsDiagramVisible ? "Demo paused / REPLAY or STOP"
-            : "Point + grip to choose / REPLAY is optional";
+            ? "Demo playing"
+            : IsDiagramVisible ? "Static model view" : "";
 
         public void Configure(HelmetInspectionController target, HelmetConnectionDemonstration animation)
         {

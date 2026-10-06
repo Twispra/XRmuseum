@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2fe50f936df4f0d94dd796f8b44dad2, type: 3}
+  m_Name: Era-SuperLite-17B
+  m_EditorClassIdentifier: 
+  displayName: "SuperLite 17B \u8F7B\u91CF\u5316\u5934\u76D4"
+  sortOrder: 30
+  summary: "\u4E3A\u6DF7\u5408\u6C14\u6F5C\u6C34\u8BBE\u8BA1\u7684\u8F7B\u91CF\u5316\u5934\u76D4\uFF0C\u7528\u9888\u90E8\u5BC6\u5C01\u73AF\u53D6\u4EE3\u4F20\u7EDF\u80F8\u677F\uFF0C\u662F\u5546\u4E1A\u9971\u548C\u6F5C\u6C34\u7684\u4EE3\u8868\u578B\u53F7\u3002"
+  servicePeriod: "1970 \u5E74\u4EE3\u8D77\uFF08\u5546\u4E1A\u9971\u548C\u6F5C\u6C34\uFF09"
+  operatingDepth: "\u914D\u5408\u6DF7\u5408\u6C14\u4F5C\u4E1A\uFF0C\u6DF1\u5EA6\u663E\u8457\u9AD8\u4E8E\u7A7A\u6C14\u5F0F\u88C5\u5907"
+  factSource: "\u56E2\u961F\u91C7\u7528\u7684\u516C\u5F00\u8D44\u6599\u53E3\u5F84\uFF0C\u672C\u7EC4\u672A\u53D6\u5F97\u5236\u9020\u56FE\u7EB8\uFF0C\u5177\u4F53\u53C2\u6570\u672A\u6838\u5B9E\u3002"
+  shellMaterial: {fileID: 2100000, guid: 278cb94e88fb767498df6113a8626e78, type: 2}
+  windowMaterial: {fileID: 2100000, guid: 52aebc066b0c3184eb9662f17bf304f4, type: 2}
+  fittingMaterial: {fileID: 2100000, guid: be714ea7ee396264c943f216dfca9a2b, type: 2}
+  breastplateMaterial: {fileID: 0}
+  fadeDuringSwap: 1
+  details:
+  - label: WINDOW
+    text: "\u5355\u4E00\u5927\u578B\u524D\u7A97\uFF0C\u89C6\u91CE\u6BD4\u56DB\u7A97\u5E03\u5C40\u66F4\u8FDE\u7EED\u3002"
+  - label: AIR
+    text: "\u53EF\u8FDE\u63A5\u6DF7\u5408\u6C14\u4F9B\u7ED9\uFF0C\u5E26\u5E94\u6025\u6C14\u6E90\u63A5\u53E3\u3002"
+  - label: SHELL
+    text: "\u8F7B\u91CF\u5316\u58F3\u4F53\uFF0C\u9888\u90E8\u5BC6\u5C01\u73AF\u76F4\u63A5\u4E0E\u6F5C\u6C34\u670D\u8FDE\u63A5\u3002"

@@ -1,0 +1,85 @@
+{
+  "utc": "20261003T132516Z",
+  "baseCommit": "b40eb9f652a3935595575e6a5ec0f287c09777b5",
+  "currentCommit": "b40eb9f652a3935595575e6a5ec0f287c09777b5",
+  "branch": "codex/exhibit-information-2026-10-03",
+  "note": "Local uncommitted implementation; reports match current tested source files. No headset/user/build validation.",
+  "baselineFileCount": 640,
+  "unchangedFileCount": 632,
+  "changedFiles": [
+    "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionValidation.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionPalette.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationValidation.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationButton.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationController.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationPanel.cs"
+  ],
+  "scene": {
+    "sha256": "af5ac92458f908faed15e3e866647829675e6d1bbfd25937d3d19b81b3cbae29",
+    "originalBlocks": 467,
+    "currentBlocks": 535,
+    "removedOriginalIds": [],
+    "unchangedCameraMeshAndPhysicsComponents": 80,
+    "changedProtectedComponents": []
+  },
+  "tests": [
+    {
+      "report": "artifacts/helmet-exploration/qa/runs/20261003T131904705Z-exploration-35eccc55fdc64475904c80e6ec13ead4/report.json",
+      "sha256": "e4e60b455bf60e021fd32f32edba9971011555eb1f31b638067c24245d2b1e75",
+      "checks": 1469,
+      "errors": 0,
+      "recordedSourceFiles": 192,
+      "sourceHashMismatches": []
+    },
+    {
+      "report": "artifacts/helmet-interaction/qa/runs/20261003T132216493Z-inspection-main-765c3e4956c049b6822da05a6a92192f/report.json",
+      "sha256": "4f64943ee27b7b52a00a32d30d1dccd8d1e3cac7f60cc1df3cae36d37f9e091e",
+      "checks": 206,
+      "errors": 0,
+      "recordedSourceFiles": 64,
+      "sourceHashMismatches": []
+    },
+    {
+      "report": "artifacts/helmet-interaction/qa/runs/20261003T132401996Z-6acb5ce49e764e97ab793db79231d025/playmode-validation.json",
+      "sha256": "dc1a152805f91c53104d2d9e8ffb21042ffaaa0ab0fa42951c4cfea21ebfd441",
+      "checks": 90,
+      "errors": 0,
+      "recordedSourceFiles": 14,
+      "sourceHashMismatches": []
+    }
+  ],
+  "processes": [
+    {
+      "entry": "Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch",
+      "startedUtc": "2026-10-03T13:18:54.8786691Z",
+      "finishedUtc": "2026-10-03T13:21:41.0414275Z",
+      "processId": 42820,
+      "exitCode": 0,
+      "timedOut": false,
+      "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+      "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\information-layout-20261003-exploration-delivery.log"
+    },
+    {
+      "entry": "Museum.Inspection.Editor.HelmetInspectionValidation.RunMainBatch",
+      "startedUtc": "2026-10-03T13:22:06.5047071Z",
+      "finishedUtc": "2026-10-03T13:23:36.4515532Z",
+      "processId": 32316,
+      "exitCode": 0,
+      "timedOut": false,
+      "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+      "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\information-layout-20261003-inspection-delivery.log"
+    },
+    {
+      "entry": "Museum.Editor.HelmetPrototypeValidation.RunBatch",
+      "startedUtc": "2026-10-03T13:23:52.0402303Z",
+      "finishedUtc": "2026-10-03T13:24:53.7185582Z",
+      "processId": 11692,
+      "exitCode": 0,
+      "timedOut": false,
+      "capture": "Start-Process -PassThru; WaitForExit; ExitCode read in the same PowerShell process",
+      "logFile": "C:\\Users\\Ft\\Documents\\ChatGPT\\extended reality\\XRmuseum-inspection\\tmp\\information-layout-20261003-grab-final.log"
+    }
+  ]
+}

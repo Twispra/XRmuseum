@@ -57,6 +57,13 @@ namespace Museum.Exploration.Editor
         }
         [Serializable] sealed class Check { public string kind, name, detail; public bool passed; }
         [Serializable] sealed class TextSample { public string page, label; public float fontSize; public Vector2 rectangle; public bool overflow; }
+        [Serializable] sealed class CaptureSample
+        {
+            public string file, view;
+            public Vector3 position;
+            public Quaternion rotation;
+            public float fieldOfView, aspect;
+        }
         [Serializable] sealed class AnimationSample
         {
             public string name, stage;
@@ -75,7 +82,7 @@ namespace Museum.Exploration.Editor
         {
             public string utc, status = "running", failure = "", scene = ScenePath;
             public string inputMethod = "InputSystem.QueueStateEvent on synthetic XR controller/HMD devices in the normal Dynamic player input update, through production Input Actions and interactors. Home uses a synthetic keyboard. No SelectEnter/SelectExit calls are made by this validator.";
-            public string limitations = "Official simulator presence is checked, then its state writer is disabled. OS keyboard/mouse simulator controls, physical headset input, learning outcomes, comfort, historical accuracy, frame time and executable builds are not tested. Public-API state tests and pose fixtures are labelled separately from input-driven tests. Screenshots are monocular editor captures requiring visual review; -panel-closeup and -diagram-closeup files use temporary QA cameras, not the production view. Animation QA checks an explicitly schematic mechanism, not physical airflow or an exact historical pump/telephone reconstruction. No text overflow proves only layout containment, not readability in a headset; resolved font sizes are recorded.";
+            public string limitations = "Official simulator presence is checked, then its state writer is disabled. OS keyboard/mouse simulator controls, physical headset input, learning outcomes, comfort, historical accuracy, frame time and executable builds are not tested. Public-API state tests and pose fixtures are labelled separately from input-driven tests. Screenshots are monocular editor captures requiring visual review. after-inspect, after-welcome, after-playing and after-help copy one unchanged production camera pose and field of view; no before image is recreated. -panel-closeup and -diagram-closeup files are temporary diagnostic camera views, not production views. Animation QA checks an explicitly schematic mechanism, not physical airflow or an exact historical pump/telephone reconstruction. No text overflow proves only layout containment, not readability in a headset; resolved font sizes are recorded.";
             public Provenance provenance;
             public float durationSeconds;
             public float batchExitSettleSeconds = 20f;
@@ -83,6 +90,7 @@ namespace Museum.Exploration.Editor
             public List<Check> checks = new List<Check>();
             public List<string> errors = new List<string>();
             public List<string> screenshots = new List<string>();
+            public List<CaptureSample> captureSamples = new List<CaptureSample>();
             public List<TextSample> textSamples = new List<TextSample>();
             public List<AnimationSample> animationSamples = new List<AnimationSample>();
         }
@@ -203,7 +211,7 @@ namespace Museum.Exploration.Editor
                 return;
             }
             if (!SessionState.GetBool(Prefix + "Active", false) || !EditorApplication.isPlaying || report == null || finishing) return;
-            if (EditorApplication.timeSinceStartup - started > 180) { Finish("Validation exceeded 180 seconds."); return; }
+            if (EditorApplication.timeSinceStartup - started > 240) { Finish("Validation exceeded 240 seconds."); return; }
             if (lastFrame == Time.frameCount) return;
             lastFrame = Time.frameCount;
             if (Application.isBatchMode) System.Threading.Thread.Sleep(11);
@@ -253,12 +261,33 @@ namespace Museum.Exploration.Editor
             yield return Wait(.5f);
 
             Require(!panel.IsExploring, "state", "existing inspection is the initial mode", "Exploration is optional.");
+            Require(panel.ProgressiveLayoutEnabled && !panel.IsReading && !panel.InspectionToolsExpanded,
+                "state", "saved scene starts with progressive controls collapsed", "The saved production layout is being tested.");
+            CheckButtons(true, "Exploration INSPECT", "Exploration EXPLORE", "Exploration HELP", "Exploration MORE TOOLS",
+                "Inspection WINDOW", "Inspection SECTION", "Inspection FLOAT", "Inspection RESET");
+            CheckButtons(false, "Inspection TURN LEFT", "Inspection TURN RIGHT", "Inspection TILT UP", "Inspection TILT DOWN",
+                "Inspection EDIT CUT", "Inspection DEEPER", "Exploration AIR", "Exploration NEW VISIT");
+            Capture("after-inspect");
+            yield return Press("Exploration HELP", false);
+            Require(panel.IsReading && !panel.IsExploring, "XR input", "Help opens from inspection without changing its context", Describe());
+            CheckReadingLayout("help-from-inspection");
+            CheckButtons(true, "Exploration CLOSE");
+            CheckButtons(false, "Inspection WINDOW", "Exploration REPLAY", "Exploration STOP", "Exploration NEW VISIT");
+            yield return Wait(1f);
+            Require(panel.IsReading, "state", "Help remains open until explicitly closed", "No reading timeout during the observation interval.");
+            yield return Press("Exploration CLOSE", false);
+            Require(!panel.IsReading && !panel.IsExploring && !demonstration.IsPlaying,
+                "XR input", "closing Help restores inspection without playback", Describe());
             yield return Press("Exploration EXPLORE", false, true);
             Require(panel.IsExploring, "XR input", "exploration tab opens the optional page", "Grip selected the shared palette tab.");
+            CheckWelcomeControls();
             Capture("00-welcome");
-            exploration.ShowReview();
-            Require(exploration.CurrentPage == Page.Review && !exploration.AirSeen && !exploration.VoiceSeen && exploration.Body.IndexOf("No clues viewed yet", StringComparison.OrdinalIgnoreCase) >= 0,
-                "public API", "empty review acknowledges no viewed clues", exploration.Body);
+            Capture("after-welcome");
+            yield return OpenMorePage("Exploration REVIEW", false);
+            Require(exploration.CurrentPage == Page.Review && !exploration.AirSeen && !exploration.VoiceSeen &&
+                ReviewHasUnseenClue("Air") && ReviewHasUnseenClue("Voice"),
+                "XR input", "empty review reached through More acknowledges no viewed clues", exploration.Body);
+            CheckButtons(true, "Exploration NEW VISIT");
             CheckPageText("empty-review");
             yield return Press("Exploration BACK", false);
             Require(exploration.CurrentPage == Page.Welcome && !exploration.AirSeen && !exploration.VoiceSeen,
@@ -270,30 +299,43 @@ namespace Museum.Exploration.Editor
             yield return Press("Exploration AIR", false, true);
             Require(exploration.CurrentPage == Page.Air && exploration.AirSeen && !exploration.VoiceSeen && demonstration.IsPlaying && demonstration.CurrentClue == Clue.Air,
                 "XR input", "right hand discovers air first", Describe());
+            CheckButtons(true, "Exploration STOP", "Exploration DETAILS");
+            CheckButtons(false, "Exploration REPLAY", "Exploration NEW VISIT", "Exploration AIR", "Exploration VOICE");
             Capture("01-air-right-hand");
-            yield return Press("Exploration STOP", false);
-            Require(!demonstration.IsPlaying, "XR input", "right hand stops air", Describe());
-            exploration.ShowReview();
-            Require(exploration.Body.IndexOf("VOICE: not viewed yet", StringComparison.OrdinalIgnoreCase) >= 0 && !exploration.VoiceSeen,
-                "public API", "partial review identifies the unviewed clue", exploration.Body);
+            Capture("after-playing");
+            yield return ValidateInspectHide(true);
+            yield return Press("Exploration REPLAY", false);
+            yield return ValidateReadingViews();
+            yield return OpenMorePage("Exploration REVIEW", false);
+            Require(exploration.CurrentPage == Page.Review && exploration.AirSeen && !exploration.VoiceSeen && ReviewHasUnseenClue("Voice"),
+                "XR input", "partial review identifies the unviewed clue", exploration.Body);
+            yield return Press("Exploration BACK", false);
             yield return Press("Exploration AIR", false);
             Require(!demonstration.IsPlaying && exploration.CurrentPage == Page.Air && !exploration.VoiceSeen,
                 "XR input", "revisiting air does not automatically replay", Describe());
+            CheckButtons(true, "Exploration REPLAY", "Exploration DETAILS");
+            CheckButtons(false, "Exploration STOP", "Exploration NEW VISIT");
+            yield return Press("Exploration BACK", true);
             yield return Press("Exploration VOICE", true, true);
             Require(exploration.CurrentPage == Page.Voice && exploration.AirSeen && exploration.VoiceSeen && demonstration.IsPlaying && demonstration.CurrentClue == Clue.Voice,
                 "XR input", "left hand discovers voice without an order lock", Describe());
             Capture("02-voice-left-hand");
+            yield return Press("Exploration DETAILS", true);
+            CheckReadingLayout("voice-details");
+            yield return Press("Exploration CLOSE", true);
+            Require(!panel.IsReading && exploration.CurrentPage == Page.Voice && demonstration.IsPlaying,
+                "XR input", "Voice Details returns to the same running clue", Describe());
             yield return Press("Exploration STOP", true);
             Require(!demonstration.IsPlaying, "XR input", "left hand stops voice", Describe());
             yield return Press("Exploration REPLAY", true);
             Require(demonstration.IsPlaying && demonstration.CurrentClue == Clue.Voice, "XR input", "explicit replay starts selected clue", Describe());
             yield return Press("Exploration STOP", true);
             int hints = exploration.HintRequests;
-            yield return Press("Exploration HINT", true);
+            yield return OpenMorePage("Exploration HINT", true);
             Require(exploration.HintRequests == hints + 1 && exploration.CurrentPage == Page.Hint && exploration.AirSeen && exploration.VoiceSeen,
                 "XR input", "hint is explicitly requested and preserves discoveries", Describe());
             Capture("02b-hint");
-            yield return Press("Exploration REVIEW", false);
+            yield return OpenMorePage("Exploration REVIEW", false);
             Require(exploration.CurrentPage == Page.Review && exploration.AirSeen && exploration.VoiceSeen,
                 "XR input", "review can be opened after either clue", exploration.Body);
             Capture("03-review");
@@ -301,19 +343,26 @@ namespace Museum.Exploration.Editor
             yield return Press("Exploration NEW VISIT", true);
             Require(!exploration.AirSeen && !exploration.VoiceSeen && exploration.HintRequests == 0 && exploration.CurrentPage == Page.Welcome && !demonstration.IsPlaying,
                 "XR input", "new visit clears discoveries and hints", Describe());
-            exploration.RequestHint();
+            CheckWelcomeControls();
+            yield return OpenMorePage("Exploration HINT", false);
             Require(exploration.HintRequests == 1 && !exploration.AirSeen && !exploration.VoiceSeen && !demonstration.IsPlaying,
-                "public API", "hint itself does not mark clues as viewed", Describe());
-            exploration.SelectClue(Clue.Voice);
+                "XR input", "hint itself does not mark clues as viewed", Describe());
+            yield return Press("Exploration BACK", false);
+            yield return Press("Exploration VOICE", true);
             Require(exploration.VoiceSeen && !exploration.AirSeen && demonstration.CurrentClue == Clue.Voice && demonstration.IsPlaying,
-                "public API", "voice can be the first clue in a fresh visit", Describe());
-            exploration.Stop(); exploration.SelectClue(Clue.Air);
+                "XR input", "voice can be the first clue in a fresh visit", Describe());
+            yield return Press("Exploration STOP", true);
+            yield return Press("Exploration BACK", false);
+            yield return Press("Exploration AIR", false);
             Require(exploration.AirSeen && exploration.VoiceSeen && demonstration.IsPlaying && demonstration.CurrentClue == Clue.Air,
-                "public API", "voice then air completes the opposite discovery order", Describe());
-            exploration.Stop(); exploration.SelectClue(Clue.Voice);
-            Require(!demonstration.IsPlaying, "public API", "repeated voice selection does not autoplay", Describe());
+                "XR input", "voice then air completes the opposite discovery order", Describe());
+            yield return Press("Exploration STOP", false);
+            yield return Press("Exploration BACK", false);
+            yield return Press("Exploration VOICE", true);
+            Require(!demonstration.IsPlaying, "XR input", "repeated voice selection does not autoplay", Describe());
 
-            exploration.RestartVisit();
+            yield return OpenMorePage("Exploration REVIEW", false);
+            yield return Press("Exploration NEW VISIT", true);
             var hotspot = UnityEngine.Object.FindObjectOfType<HelmetExplorationHotspot>();
             Require(hotspot, "structure", "air connector hotspot exists", "An optional clue target is attached to the original helmet.");
             yield return Press(hotspot.gameObject.name, false);
@@ -343,13 +392,28 @@ namespace Museum.Exploration.Editor
                 "public API", "inspection reset also preserves discovery and stops playback", Describe());
 
             exploration.Replay();
+            yield return Wait(.2f);
+            yield return Press("Exploration DETAILS", false);
             yield return Wait(HelmetConnectionDemonstration.Duration + .3f);
             Require(!demonstration.IsPlaying && demonstration.IsVisible && exploration.AirSeen && !exploration.VoiceSeen,
                 "public API + elapsed time", "completed animation leaves a static diagram for unhurried viewing", Describe());
+            Require(panel.IsReading, "state", "finishing playback does not close Details", Describe());
+            CheckButtons(true, "Exploration STOP", "Exploration CLOSE");
+            CheckReadingLayout("air-details-after-playback-finishes");
+            yield return Press("Exploration CLOSE", false);
             Capture("04b-static-air-diagram");
-            exploration.Stop();
+            CheckButtons(true, "Exploration REPLAY", "Exploration STOP", "Exploration DETAILS");
+            yield return Press("Exploration DETAILS", false);
+            Require(panel.IsReading && !demonstration.IsPlaying && demonstration.IsVisible,
+                "XR input", "Details opens over the retained static model", Describe());
+            CheckReadingLayout("static-air-details");
+            CheckButtons(true, "Exploration STOP", "Exploration CLOSE");
+            yield return Press("Exploration CLOSE", false);
+            Require(!panel.IsReading && !demonstration.IsPlaying && demonstration.IsVisible,
+                "XR input", "closing static Details retains the diagram without replaying", Describe());
+            yield return ValidateInspectHide(false);
             Require(!demonstration.IsPlaying && !demonstration.IsVisible && exploration.AirSeen && !exploration.VoiceSeen,
-                "public API", "STOP hides the retained diagram without erasing discoveries", Describe());
+                "XR input", "Hide demo hides the retained diagram without erasing discoveries", Describe());
 
             bool previousReduceMotion = inspection.ReduceMotion;
             inspection.ReduceMotion = true;
@@ -394,6 +458,7 @@ namespace Museum.Exploration.Editor
             Require(inspection.WindowAngle > HelmetInspectionController.MaximumWindowAngle - .5f, "XR input", "existing WINDOW still opens", "Angle=" + inspection.WindowAngle);
             yield return Press("Inspection SECTION", true);
             Require(inspection.IsCutaway, "XR input", "existing SECTION still toggles with left hand", "Original inspection controller remains active.");
+            yield return ValidateInspectionTools();
             yield return Press("Exploration EXPLORE", false);
             Require(panel.IsExploring && exploration.AirSeen && !exploration.VoiceSeen, "XR input", "returning to exploration preserves the visit", Describe());
             yield return ValidateEnrichedDemonstrations();
@@ -403,6 +468,147 @@ namespace Museum.Exploration.Editor
                 "public API", "clean final visit without changing saved scene", Describe());
             Capture("05-final-welcome");
             Require(report.errors.Count == 0, "logs", "no Unity errors during validation", string.Join("\n", report.errors));
+        }
+
+        static IEnumerator OpenMorePage(string name, bool left)
+        {
+            if (!panel.MoreExpanded) yield return Press("Exploration MORE", left);
+            Require(panel.MoreExpanded, "XR input", "More opens optional navigation", Describe());
+            CheckButtons(true, "Exploration HINT", "Exploration REVIEW");
+            CheckPaletteText("more-navigation");
+            yield return Press(name, left);
+        }
+
+        static void CheckWelcomeControls()
+        {
+            Require(exploration.CurrentPage == Page.Welcome && !panel.IsReading && !panel.MoreExpanded,
+                "state", "Welcome returns with optional navigation collapsed", Describe());
+            CheckButtons(true, "Exploration AIR", "Exploration VOICE", "Exploration MORE");
+            CheckButtons(false, "Exploration HINT", "Exploration REVIEW", "Exploration REPLAY", "Exploration STOP",
+                "Exploration DETAILS", "Exploration BACK", "Exploration NEW VISIT", "Exploration CLOSE");
+        }
+
+        static bool ReviewHasUnseenClue(string clue)
+        {
+            return exploration.Body.Split('\n').Any(line => line.StartsWith(clue + ":", StringComparison.OrdinalIgnoreCase) &&
+                line.IndexOf("not seen", StringComparison.OrdinalIgnoreCase) >= 0);
+        }
+
+        static IEnumerator ValidateReadingViews()
+        {
+            var context = exploration.CurrentPage;
+            yield return Press("Exploration DETAILS", false);
+            Require(panel.IsReading && exploration.CurrentPage == context && demonstration.IsPlaying,
+                "XR input", "Details preserves the playing clue context", Describe());
+            CheckReadingLayout("playing-air-details");
+            CheckButtons(true, "Exploration CLOSE", "Exploration STOP");
+            CheckButtons(false, "Exploration DETAILS", "Exploration REPLAY", "Exploration NEW VISIT");
+            yield return Wait(1f);
+            Require(panel.IsReading, "state", "Details stays open for reading", "No automatic close during the observation interval.");
+            float progressBeforeClose = demonstration.NormalizedProgress;
+            yield return Press("Exploration CLOSE", false);
+            Require(!panel.IsReading && panel.IsExploring && exploration.CurrentPage == context && demonstration.IsPlaying &&
+                demonstration.NormalizedProgress >= progressBeforeClose,
+                "XR input", "closing Details restores its clue without restarting playback", Describe());
+            yield return Press("Exploration HELP", true);
+            Require(panel.IsReading && exploration.CurrentPage == context, "XR input", "Help keeps the selected clue context", Describe());
+            CheckReadingLayout("help-over-playing-demo");
+            CheckButtons(true, "Exploration STOP", "Exploration CLOSE");
+            Capture("after-help");
+            yield return Press("Exploration STOP", true);
+            Require(panel.IsReading && !demonstration.IsPlaying && !demonstration.IsVisible,
+                "XR input", "Hide demo remains reachable during Help and keeps reading open", Describe());
+            CheckButtons(false, "Exploration STOP", "Exploration REPLAY");
+            CheckReadingLayout("help-after-hiding-demo");
+            yield return Wait(1f);
+            Require(panel.IsReading && !demonstration.IsPlaying, "state", "Help remains open after hiding the demo", Describe());
+            yield return Press("Exploration CLOSE", true);
+            Require(!panel.IsReading && panel.IsExploring && exploration.CurrentPage == context && !demonstration.IsPlaying && !demonstration.IsVisible,
+                "XR input", "closing Help restores the clue without automatic playback", Describe());
+            yield return Press("Exploration DETAILS", false);
+            CheckReadingLayout("hidden-air-details");
+            yield return Press("Exploration CLOSE", false);
+            Require(!panel.IsReading && exploration.CurrentPage == context && !demonstration.IsPlaying && !demonstration.IsVisible,
+                "XR input", "closing Details over a hidden demo does not start it", Describe());
+        }
+
+        static IEnumerator ValidateInspectHide(bool playing)
+        {
+            var context = exploration.CurrentPage;
+            bool airSeen = exploration.AirSeen, voiceSeen = exploration.VoiceSeen;
+            bool originalCutaway = inspection.IsCutaway, originalFloat = inspection.IsFloating;
+            yield return Press("Exploration INSPECT", false);
+            Require(!panel.IsExploring && !panel.IsReading && demonstration.IsVisible && demonstration.IsPlaying == playing,
+                "XR input", "Inspect retains the " + (playing ? "playing" : "static") + " demo until explicitly hidden", Describe());
+            CheckButtons(true, "Exploration STOP", "Inspection SECTION", "Inspection FLOAT");
+            CheckButtons(false, "Exploration AIR", "Exploration VOICE", "Exploration REPLAY", "Exploration DETAILS", "Exploration MORE", "Exploration BACK");
+            if (!originalCutaway) yield return Press("Inspection SECTION", false);
+            if (!originalFloat) yield return Press("Inspection FLOAT", true);
+            Require(inspection.IsCutaway && inspection.IsFloating, "XR input", "inspection state prepared through visible controls", "Cutaway and float are both active before Hide demo.");
+            CheckPaletteText("inspect-with-" + (playing ? "playing" : "static") + "-demo");
+            yield return Press("Exploration STOP", false);
+            Require(!demonstration.IsPlaying && !demonstration.IsVisible && inspection.IsCutaway && inspection.IsFloating &&
+                exploration.AirSeen == airSeen && exploration.VoiceSeen == voiceSeen,
+                "XR input", "Hide demo in Inspect preserves section, float and discoveries", Describe());
+            CheckButtons(false, "Exploration STOP");
+            if (!originalCutaway) yield return Press("Inspection SECTION", false);
+            if (!originalFloat) yield return Press("Inspection FLOAT", true);
+            yield return Press("Exploration EXPLORE", false);
+            Require(panel.IsExploring && !panel.IsReading && exploration.CurrentPage == context && !demonstration.IsPlaying && !demonstration.IsVisible &&
+                inspection.IsCutaway == originalCutaway && inspection.IsFloating == originalFloat,
+                "XR input", "Explore restores the clue after hiding its demo in Inspect", Describe());
+            CheckButtons(true, "Exploration REPLAY", "Exploration DETAILS");
+        }
+
+        static IEnumerator ValidateInspectionTools()
+        {
+            CheckButtons(true, "Inspection WINDOW", "Inspection SECTION", "Inspection FLOAT", "Inspection RESET",
+                "Inspection EDIT CUT", "Inspection ALIGN VIEW", "Exploration MORE TOOLS");
+            CheckButtons(false, "Inspection TURN LEFT", "Inspection TILT UP", "Inspection DEEPER", "Inspection TOP CUT");
+            yield return Press("Inspection FLOAT", false);
+            Require(inspection.IsFloating, "XR input", "FLOAT remains directly reachable", "Float stabilizes the model while checking optional rotation tools.");
+            yield return Press("Exploration MORE TOOLS", false);
+            Require(panel.InspectionToolsExpanded, "XR input", "More tools exposes optional inspection controls", "Expanded through the production button.");
+            CheckButtons(true, "Inspection TURN LEFT", "Inspection TURN RIGHT", "Inspection TILT UP", "Inspection TILT DOWN",
+                "Inspection DEEPER", "Inspection SHALLOWER", "Inspection TOP CUT", "Inspection FLIP CUT");
+            CheckPaletteText("inspection-more-tools");
+            Quaternion before = inspection.transform.rotation;
+            yield return Press("Inspection TURN LEFT", false);
+            Require(Quaternion.Angle(before, inspection.transform.rotation) > 20f,
+                "XR input", "More tools retains model turn", "Actual production TURN LEFT button changed the exhibit rotation.");
+            before = inspection.transform.rotation;
+            yield return Press("Inspection TILT UP", true);
+            Require(Quaternion.Angle(before, inspection.transform.rotation) > 10f,
+                "XR input", "More tools retains model tilt", "Actual production TILT UP button changed the exhibit rotation.");
+            float depthBefore = inspection.SectionOffset;
+            yield return Press("Inspection DEEPER", false);
+            Require(Mathf.Abs(depthBefore - inspection.SectionOffset) > .001f,
+                "XR input", "More tools retains section depth", "Section offset=" + inspection.SectionOffset);
+            yield return Press("Inspection TOP CUT", true);
+            Require(Vector3.Dot(inspection.SectionNormalLocal, Vector3.up) > .99f,
+                "XR input", "More tools retains section direction", "Section normal=" + inspection.SectionNormalLocal);
+            Vector3 normalBefore = inspection.SectionNormalLocal;
+            yield return Press("Inspection FLIP CUT", false);
+            Require(Vector3.Dot(normalBefore, inspection.SectionNormalLocal) < -.99f,
+                "XR input", "More tools retains section flip", "Section normal=" + inspection.SectionNormalLocal);
+            yield return Press("Exploration MORE TOOLS", false);
+            Require(!panel.InspectionToolsExpanded, "XR input", "More tools can collapse again", "Core controls remain available.");
+            CheckButtons(false, "Inspection TURN LEFT", "Inspection TILT UP", "Inspection DEEPER", "Inspection FLIP CUT");
+            CheckButtons(true, "Inspection EDIT CUT", "Inspection ALIGN VIEW", "Inspection RESET");
+            var sectionTool = inspection.GetComponentInChildren<HelmetSectionInteractable>(true);
+            Require(sectionTool, "structure", "original section handle still exists", "Uses the existing inspection mechanism.");
+            bool toolBefore = sectionTool.ShowTool;
+            yield return Press("Inspection EDIT CUT", false);
+            Require(sectionTool.ShowTool != toolBefore, "XR input", "EDIT CUT remains directly reachable", "Existing handle visibility toggled.");
+            yield return Press("Inspection ALIGN VIEW", true);
+            Vector4 plane = inspection.WorldSectionPlane;
+            Vector3 viewerDirection = (Camera.main.transform.position - inspection.transform.TransformPoint(inspection.SectionCenterLocal)).normalized;
+            Require(Vector3.Dot(new Vector3(plane.x, plane.y, plane.z).normalized, viewerDirection) > .99f,
+                "XR input", "ALIGN VIEW remains directly reachable", "Actual cut plane aligns to the production camera.");
+            yield return Press("Inspection RESET", false);
+            yield return Wait(.3f);
+            Require(!inspection.IsCutaway && !inspection.IsFloating && inspection.WindowAngle < .5f && exploration.AirSeen && !exploration.VoiceSeen,
+                "XR input", "direct RESET restores inspection and preserves discoveries", Describe());
         }
 
         static IEnumerator ValidateEnrichedDemonstrations()
@@ -586,8 +792,32 @@ namespace Museum.Exploration.Editor
 
         static string Describe() => "page=" + exploration.CurrentPage + "; selected=" + exploration.SelectedClue + "; air=" + exploration.AirSeen + "; voice=" + exploration.VoiceSeen + "; hints=" + exploration.HintRequests + "; playing=" + demonstration.IsPlaying + "; diagramVisible=" + demonstration.IsVisible;
 
+        static void CheckButtons(bool visible, params string[] names)
+        {
+            foreach (var name in names) CheckButtonVisibility(name, visible);
+        }
+
+        static void CheckButtonVisibility(string name, bool visible)
+        {
+            var target = panel.GetComponentsInChildren<Transform>(true).SingleOrDefault(t => t.name == name);
+            string labelName = (name.StartsWith("Inspection ", StringComparison.Ordinal) ? name.Substring("Inspection ".Length) : name) + " label";
+            var label = target ? target.parent.Find(labelName) : null;
+            var button = target ? target.GetComponent<XRSimpleInteractable>() : null;
+            var text = label ? label.GetComponent<TMPro.TMP_Text>() : null;
+            Require(button && text, "control visibility", "button and label exist: " + name, "Expected sibling label=" + labelName);
+            bool activeButton = button.isActiveAndEnabled;
+            bool activeLabel = text.isActiveAndEnabled && text.GetComponent<Renderer>().enabled;
+            var colliders = button.colliders.Where(c => c).ToArray();
+            bool selectable = colliders.Any(c => c.enabled && c.gameObject.activeInHierarchy);
+            Require(activeButton == visible && activeLabel == visible && selectable == visible,
+                "control visibility", (visible ? "visible control and label: " : "hidden control and label: ") + name,
+                "button=" + activeButton + "; label=" + activeLabel + "; enabled active collider=" + selectable);
+        }
+
         static IEnumerator Press(string objectName, bool left, bool distant = false)
         {
+            if (objectName.StartsWith("Exploration ", StringComparison.Ordinal) || objectName.StartsWith("Inspection ", StringComparison.Ordinal))
+                CheckButtonVisibility(objectName, true);
             var button = GameObject.Find(objectName)?.GetComponent<XRSimpleInteractable>();
             Require(button && button.isActiveAndEnabled, "XR input", "button available: " + objectName, left ? "Left controller" : "Right controller");
             var collider = button.colliders.FirstOrDefault(c => c && c.enabled);
@@ -650,7 +880,33 @@ namespace Museum.Exploration.Editor
 
         static void Capture(string name)
         {
-            if (panel.IsExploring) CheckPageText(name);
+            CheckPaletteText(name);
+            foreach (string labelName in new[] { "Gallery masthead", "Central question" })
+            {
+                var background = UnityEngine.Object.FindObjectsOfType<Transform>(true).Single(t => t.name == labelName);
+                Require(background.gameObject.activeSelf == !demonstration.IsVisible, "visual hierarchy",
+                    "background yields to the demonstration: " + name + "/" + labelName,
+                    "Titles return when the demonstration is hidden; no timed reading dismissal.");
+            }
+            if (name.StartsWith("after-", StringComparison.Ordinal))
+                foreach (var control in panel.GetComponentsInChildren<XRBaseInteractable>(false))
+                {
+                    var collider = control.GetComponent<Collider>();
+                    if (!collider) continue;
+                    var bounds = collider.bounds;
+                    bool visible = true;
+                    for (int i = 0; i < 8; i++)
+                    {
+                        var point = bounds.center + Vector3.Scale(bounds.extents,
+                            new Vector3((i & 1) == 0 ? -1 : 1, (i & 2) == 0 ? -1 : 1, (i & 4) == 0 ? -1 : 1));
+                        var screen = Camera.main.WorldToViewportPoint(point);
+                        visible &= screen.z > Camera.main.nearClipPlane && screen.x > .01f && screen.x < .99f && screen.y > .01f && screen.y < .99f;
+                    }
+                    if (!visible) CaptureWithCamera(name + "-viewport-failure.jpg", false);
+                    Require(visible, "viewport", "primary-view control stays in frame: " + name + "/" + control.name,
+                        "All collider bounds corners must remain inside the forward camera view. Palette=" + panel.transform.position +
+                        "; camera=" + Camera.main.transform.position + "; control centre viewport=" + Camera.main.WorldToViewportPoint(bounds.center));
+                }
             if (demonstration.IsVisible)
                 foreach (var label in demonstration.GetComponentsInChildren<TMPro.TMP_Text>(false))
                 {
@@ -659,15 +915,20 @@ namespace Museum.Exploration.Editor
                         "resolved font=" + label.fontSize + "; rectangle=" + label.rectTransform.rect.size);
                 }
             CaptureWithCamera(name + ".jpg", false);
-            if (panel.IsExploring) CaptureWithCamera(name + "-panel-closeup.jpg", true);
+            if (panel.IsExploring || panel.IsReading) CaptureWithCamera(name + "-panel-closeup.jpg", true);
         }
 
         static void CheckPageText(string sampleName)
         {
             var page = panel.transform.Find("Exploration page");
             Require(page && page.gameObject.activeInHierarchy, "text layout", "active exploration text page: " + sampleName, "Only the visible optional page is checked.");
-            var labels = page.GetComponentsInChildren<TMPro.TMP_Text>(false);
-            Require(labels.Length > 0, "text layout", "page contains text: " + sampleName, "Visible TMP count=" + labels.Length);
+            CheckPaletteText(sampleName);
+        }
+
+        static void CheckPaletteText(string sampleName)
+        {
+            var labels = panel.GetComponentsInChildren<TMPro.TMP_Text>(false);
+            Require(labels.Length > 0, "text layout", "palette contains visible text: " + sampleName, "Visible TMP count=" + labels.Length);
             foreach (var label in labels)
             {
                 label.ForceMeshUpdate(true, true);
@@ -678,9 +939,50 @@ namespace Museum.Exploration.Editor
             }
         }
 
+        static void CheckReadingLayout(string sampleName)
+        {
+            Require(panel.IsReading, "text layout", "reading layout is open: " + sampleName, Describe());
+            CheckPageText(sampleName);
+            var body = panel.GetComponentsInChildren<TMPro.TMP_Text>(false).SingleOrDefault(t => t.name == "Exploration explanation");
+            Require(body, "text layout", "reading body is visible: " + sampleName, "Check the actual production text rectangle against active controls.");
+            var corners = new Vector3[4];
+            body.rectTransform.GetWorldCorners(corners);
+            Rect bodyRect = PaletteRect(corners);
+            foreach (var button in panel.GetComponentsInChildren<XRSimpleInteractable>(false))
+            {
+                if (!button.isActiveAndEnabled) continue;
+                var box = button.colliders.OfType<BoxCollider>().FirstOrDefault(c => c.enabled && c.gameObject.activeInHierarchy);
+                Require(box, "text layout", "reading control has box geometry: " + button.name, sampleName);
+                var points = new List<Vector3>();
+                for (int x = -1; x <= 1; x += 2)
+                    for (int y = -1; y <= 1; y += 2)
+                        for (int z = -1; z <= 1; z += 2)
+                            points.Add(box.transform.TransformPoint(box.center + Vector3.Scale(box.size * .5f, new Vector3(x, y, z))));
+                Rect controlRect = PaletteRect(points);
+                Require(!RectanglesOverlap(bodyRect, controlRect), "text layout", "reading body does not overlap button: " + sampleName + "/" + button.name,
+                    "body=" + bodyRect + "; button=" + controlRect);
+                string labelName = (button.name.StartsWith("Inspection ", StringComparison.Ordinal) ? button.name.Substring("Inspection ".Length) : button.name) + " label";
+                var label = button.transform.parent.Find(labelName)?.GetComponent<TMPro.TMP_Text>();
+                Require(label && label.isActiveAndEnabled, "text layout", "reading control label is visible: " + button.name, sampleName);
+                label.rectTransform.GetWorldCorners(corners);
+                Rect labelRect = PaletteRect(corners);
+                Require(!RectanglesOverlap(bodyRect, labelRect), "text layout", "reading body does not overlap button label: " + sampleName + "/" + button.name,
+                    "body=" + bodyRect + "; label=" + labelRect);
+            }
+        }
+
+        static Rect PaletteRect(IEnumerable<Vector3> worldPoints)
+        {
+            var points = worldPoints.Select(p => panel.transform.InverseTransformPoint(p)).ToArray();
+            return Rect.MinMaxRect(points.Min(p => p.x), points.Min(p => p.y), points.Max(p => p.x), points.Max(p => p.y));
+        }
+        static bool RectanglesOverlap(Rect first, Rect second) =>
+            Mathf.Min(first.xMax, second.xMax) - Mathf.Max(first.xMin, second.xMin) > .0005f &&
+            Mathf.Min(first.yMax, second.yMax) - Mathf.Max(first.yMin, second.yMin) > .0005f;
+
         static void CaptureWithCamera(string file, bool closeup, bool diagram = false)
         {
-            // Temporary monocular camera preserves production camera pose, aspect and XR components.
+            // Copy the production pose and FOV into a 4:3 monocular capture without changing the XR camera.
             var temporary = new GameObject("Temporary Exploration QA Capture") { hideFlags = HideFlags.HideAndDontSave };
             var previous = RenderTexture.active;
             var target = RenderTexture.GetTemporary(1440, 1080, 24, RenderTextureFormat.ARGB32);
@@ -718,11 +1020,23 @@ namespace Museum.Exploration.Editor
                     camera.transform.rotation = Quaternion.LookRotation(centre - camera.transform.position, panel.transform.up);
                     camera.fieldOfView = 48f; camera.nearClipPlane = .02f;
                 }
+                if (!closeup && !diagram && file.StartsWith("after-", StringComparison.Ordinal))
+                {
+                    var baseline = report.captureSamples.FirstOrDefault(c => c.view == "production camera" && c.file.StartsWith("after-", StringComparison.Ordinal));
+                    if (baseline != null)
+                        Require(Vector3.Distance(camera.transform.position, baseline.position) < .0001f &&
+                            Quaternion.Angle(camera.transform.rotation, baseline.rotation) < .01f && Mathf.Abs(camera.fieldOfView - baseline.fieldOfView) < .001f,
+                            "QA camera", "after states use the same production viewpoint: " + file,
+                            "Matches " + baseline.file + "; the original XR camera has not been reframed.");
+                }
                 foreach (var text in UnityEngine.Object.FindObjectsOfType<TMPro.TMP_Text>()) text.ForceMeshUpdate(true);
                 UnityEngine.Rendering.RenderPipeline.SubmitRenderRequest(camera, new UnityEngine.Rendering.Universal.UniversalRenderPipeline.SingleCameraRequest { destination = target });
                 RenderTexture.active = target; pixels = new Texture2D(1440, 1080, TextureFormat.RGB24, false);
                 pixels.ReadPixels(new Rect(0, 0, 1440, 1080), 0, 0); pixels.Apply();
                 File.WriteAllBytes(Path.Combine(OutputDirectory, file), pixels.EncodeToJPG(92)); report.screenshots.Add(file);
+                report.captureSamples.Add(new CaptureSample { file = file,
+                    view = diagram ? "temporary diagram close-up" : closeup ? "temporary panel close-up" : "production camera",
+                    position = camera.transform.position, rotation = camera.transform.rotation, fieldOfView = camera.fieldOfView, aspect = camera.aspect });
             }
             finally
             {

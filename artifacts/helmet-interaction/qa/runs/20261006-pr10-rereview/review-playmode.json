@@ -1,0 +1,128 @@
+{
+    "startedUtc": "2026-10-06T00:43:18.0176320Z",
+    "finishedUtc": "2026-10-06T00:43:23.9179726Z",
+    "unityVersion": "2022.3.62f3c1",
+    "project": "C:/Users/zhaoooooo/.codex/worktrees/review-pr3/XRmuseum/MuseumVR/Assets",
+    "failure": "",
+    "scope": "Unsaved empty scene; instances of saved showcase; cloned in-memory catalogue/profiles and fresh channel. No asset saves, generators or unrelated input probe. Default API/button dispatch; one-second fade interruption by disable, duration=0, target FadeDuringSwap=false; target reselection. No physical XR input or image assertions.",
+    "checks": [
+        {
+            "name": "default era applied after Start",
+            "passed": true,
+            "detail": "index=0; channel=1839 标准潜水服头盔; materialsMatch0=True; materialsMatch1=False; materialsMatch2=False; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "default instant ShowEra(1)",
+            "passed": true,
+            "detail": "index=1; channel=Mark V 标准空气头盔; materialsMatch0=False; materialsMatch1=True; materialsMatch2=False; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "default instant ShowEra(2)",
+            "passed": true,
+            "detail": "index=2; channel=SuperLite 17B 轻量化头盔; materialsMatch0=False; materialsMatch1=False; materialsMatch2=True; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "saved next button wraps to era zero",
+            "passed": true,
+            "detail": "index=0; channel=1839 标准潜水服头盔; materialsMatch0=True; materialsMatch1=False; materialsMatch2=False; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "saved previous button wraps to era two",
+            "passed": true,
+            "detail": "index=2; channel=SuperLite 17B 轻量化头盔; materialsMatch0=False; materialsMatch1=False; materialsMatch2=True; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "saved previous button steps to era one",
+            "passed": true,
+            "detail": "index=1; channel=Mark V 标准空气头盔; materialsMatch0=False; materialsMatch1=True; materialsMatch2=False; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "saved next button steps to era two",
+            "passed": true,
+            "detail": "index=2; channel=SuperLite 17B 轻量化头盔; materialsMatch0=False; materialsMatch1=False; materialsMatch2=True; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "disable test reached an unfinished fade",
+            "passed": true,
+            "detail": "index=1; channel=1839 标准潜水服头盔; materialsMatch0=True; materialsMatch1=False; materialsMatch2=False; switching=True; propertyBlockPresent=True"
+        },
+        {
+            "name": "disable immediately completes target and clears temporary overrides",
+            "passed": true,
+            "detail": "index=1; channel=Mark V 标准空气头盔; materialsMatch0=False; materialsMatch1=True; materialsMatch2=False; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "reenable immediately retains consistent state",
+            "passed": true,
+            "detail": "index=1; channel=Mark V 标准空气头盔; materialsMatch0=False; materialsMatch1=True; materialsMatch2=False; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "same-target reselection after reenable remains clear and consistent",
+            "passed": true,
+            "detail": "index=1; channel=Mark V 标准空气头盔; materialsMatch0=False; materialsMatch1=True; materialsMatch2=False; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "disabled transition cannot write later",
+            "passed": true,
+            "detail": "index=1; channel=Mark V 标准空气头盔; materialsMatch0=False; materialsMatch1=True; materialsMatch2=False; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "duration-zero test starts settled",
+            "passed": true,
+            "detail": "index=0; channel=1839 标准潜水服头盔; materialsMatch0=True; materialsMatch1=False; materialsMatch2=False; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "duration-zero test reached an unfinished fade",
+            "passed": true,
+            "detail": "index=1; channel=1839 标准潜水服头盔; materialsMatch0=True; materialsMatch1=False; materialsMatch2=False; switching=True; propertyBlockPresent=True"
+        },
+        {
+            "name": "duration-zero request immediately replaces old transition",
+            "passed": true,
+            "detail": "index=2; channel=SuperLite 17B 轻量化头盔; materialsMatch0=False; materialsMatch1=False; materialsMatch2=True; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "duration-zero request survives old transition deadline",
+            "passed": true,
+            "detail": "index=2; channel=SuperLite 17B 轻量化头盔; materialsMatch0=False; materialsMatch1=False; materialsMatch2=True; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "same-target reselection after instant replacement has no override",
+            "passed": true,
+            "detail": "index=2; channel=SuperLite 17B 轻量化头盔; materialsMatch0=False; materialsMatch1=False; materialsMatch2=True; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "no-fade-profile test starts settled",
+            "passed": true,
+            "detail": "index=0; channel=1839 标准潜水服头盔; materialsMatch0=True; materialsMatch1=False; materialsMatch2=False; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "no-fade setting belongs to an unsaved cloned profile",
+            "passed": true,
+            "detail": "Only clone index 2 changed; saved profile remains untouched."
+        },
+        {
+            "name": "no-fade-profile test reached an unfinished fade",
+            "passed": true,
+            "detail": "index=1; channel=1839 标准潜水服头盔; materialsMatch0=True; materialsMatch1=False; materialsMatch2=False; switching=True; propertyBlockPresent=True"
+        },
+        {
+            "name": "no-fade-profile request immediately replaces old transition",
+            "passed": true,
+            "detail": "index=2; channel=SuperLite 17B 轻量化头盔; materialsMatch0=False; materialsMatch1=False; materialsMatch2=True; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "no-fade-profile request survives old transition deadline",
+            "passed": true,
+            "detail": "index=2; channel=SuperLite 17B 轻量化头盔; materialsMatch0=False; materialsMatch1=False; materialsMatch2=True; switching=False; propertyBlockPresent=False"
+        },
+        {
+            "name": "no-fade-profile same-target reselection has no override",
+            "passed": true,
+            "detail": "index=2; channel=SuperLite 17B 轻量化头盔; materialsMatch0=False; materialsMatch1=False; materialsMatch2=True; switching=False; propertyBlockPresent=False"
+        }
+    ],
+    "errors": [],
+    "passed": 23,
+    "failed": 0
+}
