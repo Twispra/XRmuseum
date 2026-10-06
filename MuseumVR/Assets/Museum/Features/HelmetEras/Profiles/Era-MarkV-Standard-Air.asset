@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2fe50f936df4f0d94dd796f8b44dad2, type: 3}
+  m_Name: Era-MarkV-Standard-Air
+  m_EditorClassIdentifier: 
+  displayName: "Mark V \u6807\u51C6\u7A7A\u6C14\u5934\u76D4"
+  sortOrder: 20
+  summary: "\u672C\u9879\u76EE\u539F\u578B\u7684\u4E3B\u8981\u53C2\u7167\u5BF9\u8C61\u3002\u56DB\u7A97\u5E03\u5C40\u6269\u5927\u4E86\u89C6\u91CE\uFF0C\u524D\u7A97\u53EF\u5F00\u5408\uFF0C\u914D\u4EF6\u4E3A\u94DC\u5408\u91D1\u94F8\u4EF6\u3002"
+  servicePeriod: "1916 \u81F3 1984\uFF08\u7F8E\u56FD\u6D77\u519B\u5236\u5F0F\uFF09"
+  operatingDepth: "\u6807\u51C6\u7A7A\u6C14\u5F0F\uFF0C\u6309\u516C\u5F00\u8D44\u6599\u4EE5\u6570\u5341\u7C73\u91CF\u7EA7\u8BA1"
+  factSource: "DESCO \u5236\u9020\u5546\u8BF4\u660E\u4E0E\u7F8E\u6D77\u519B\u6C34\u4E0B\u535A\u7269\u9986\u516C\u5F00\u8D44\u6599\uFF1B\u5916\u5305\u5C3A\u5BF8\u951A\u5B9A\u4E8E\u4E00\u4EF6\u516C\u5F00\u62CD\u5356\u8BB0\u5F55\u7684
+    0.4953 x 0.3175 x 0.4191 \u7C73\u3002"
+  shellMaterial: {fileID: 2100000, guid: 3114aaf968dbfc341874d75c50cc1768, type: 2}
+  windowMaterial: {fileID: 2100000, guid: de2d43070b7c6e347a936cdbf09ca4a4, type: 2}
+  fittingMaterial: {fileID: 2100000, guid: 0f549b146c6153143991de2a3307470c, type: 2}
+  breastplateMaterial: {fileID: 0}
+  fadeDuringSwap: 1
+  details:
+  - label: WINDOW
+    text: "\u524D\u65B9\u5706\u5F62\u94F0\u63A5\u89C6\u7A97\u3001\u4E24\u4FA7\u5706\u7A97\u4E0E\u9876\u90E8\u692D\u5706\u7A97\uFF0C\u5171\u56DB\u7A97\u3002"
+  - label: AIR
+    text: "\u4ECE\u540E\u65B9\u770B\uFF0C\u5DE6\u4FA7\u9E45\u9888\u63A5\u5934\u63A5\u7535\u8BDD\uFF0C\u53F3\u4FA7\u63A5\u4F9B\u6C14\u8F6F\u7BA1\uFF1B\u6392\u6C14\u9600\u662F\u53E6\u4E00\u90E8\u4EF6\u3002"
+  - label: SHELL
+    text: "\u65CB\u538B\u94DC\u58F3\uFF0C\u914D\u4EF6\u4E3A\u94DC\u5408\u91D1\u94F8\u4EF6\uFF0C\u7A97\u7247\u5386\u53F2\u7248\u672C\u4E3A\u73BB\u7483\u3002"

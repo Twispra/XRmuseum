@@ -6,7 +6,9 @@ namespace Museum.Exploration
     [RequireComponent(typeof(XRSimpleInteractable))]
     public sealed class HelmetExplorationButton : MonoBehaviour
     {
-        public enum Action { Explore, Inspect, Air, Voice, Hint, Review, Replay, Stop, Back, NewVisit }
+        // Append only: existing scene assets serialize these numeric values.
+        public enum Action { Explore, Inspect, Air, Voice, Hint, Review, Replay, Stop, Back, NewVisit,
+            More, Help, Details, CloseReading, InspectMore, ReduceMotion }
         [SerializeField] HelmetExplorationController controller;
         [SerializeField] HelmetExplorationPanel panel;
         [SerializeField] Action action;
@@ -15,6 +17,8 @@ namespace Museum.Exploration
         MaterialPropertyBlock block;
         bool pending;
         static readonly int BaseColor = Shader.PropertyToID("_BaseColor");
+
+        public Action Command => action;
 
         public void Configure(HelmetExplorationController target, HelmetExplorationPanel view, Action command)
         { controller = target; panel = view; action = command; }
@@ -37,6 +41,7 @@ namespace Museum.Exploration
             if (surface && surface.sharedMaterial && surface.sharedMaterial.HasProperty(BaseColor))
             {
                 var color = surface.sharedMaterial.GetColor(BaseColor);
+                if (panel && panel.IsCommandSelected(action)) color = Color.Lerp(color, Color.white, .22f);
                 block.SetColor(BaseColor, interactable.isHovered || interactable.isSelected ? Color.Lerp(color, Color.white, .35f) : color);
                 surface.SetPropertyBlock(block);
             }
@@ -58,8 +63,14 @@ namespace Museum.Exploration
                 case Action.Stop: controller.Stop(); break;
                 case Action.Back: controller.ShowWelcome(); break;
                 case Action.NewVisit: controller.RestartVisit(); break;
+                case Action.More: panel.ToggleMore(); break;
+                case Action.Help: panel.ShowHelp(); break;
+                case Action.Details: panel.ShowDetails(); break;
+                case Action.CloseReading: panel.CloseReading(); break;
+                case Action.InspectMore: panel.ToggleInspectionTools(); break;
+                case Action.ReduceMotion: panel.ToggleReduceMotion(); break;
             }
-            panel.RefreshView();
+            // Controller changes notify the panel; panel commands refresh themselves.
         }
     }
 }
