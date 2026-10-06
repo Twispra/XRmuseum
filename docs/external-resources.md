@@ -64,6 +64,8 @@ AI 辅助范围：模块架构、Editor 工具、运行时脚本、字体子集�
 
 后续添加模型、贴图、音效、字体、脚本或插件时，应在这里记录来源、许可、用途和修改内容。
 
+2026-10-06 独立照片头盔研究：Fttt1003 负责，Codex 辅助核对用户九张照片、公开制造商/博物馆资料，原创分件几何与程序基色/粗糙度/法线贴图，导出和回读检查。原照片仅作观察依据，本地保留，不再分发或作贴图；公开网页只概括并引用，没有下载外部模型/图片/音频。身份、尺寸和背部功能未确认，不将 TF12 或 Mark V 的参数套给本件。Blender 4.5.14 为本地工具；独立查看器包含 three.js 0.180.0（MIT，许可证随文件保留），esbuild 0.25.10 只用于打包，无 Unity package 改动。完整来源/限制见[模型说明](models/photo-helmet-study.md)，实际工作和 AI 辅助范围见[活动记录](activity/2026-10-06-photo-helmet-study.md)。
+
 2026-09-30 AI 辅助范围：根据 [PR #3 的实测评论](https://github.com/Twispra/XRmuseum/pull/3#discussion_r4143841614)复现并修复剖切球柄方向跳变，补充实际 Prefab 几何扫描和原主场景模拟 XR 输入测试，整理交接证据。没有引入新外部素材或 package；AI 代码检查及自动测试不等于组员审批或真实头显测试。见[处理记录](activity/2026-09-30-section-continuity-review.md)。
 
 记录依据为 Group Project Description（202627A）p12；本表记录已知许可或尚未核实之处，不赋予第三方内容新的再分发许可。头盔研究副本和课程官方 PDF 留在本地 `project-resource/`、`artifacts/helmet-prototype/references/`，不作为本组原创资产提交。今日尚无新增音效、扫描资产、下载模型或烘焙贴图。

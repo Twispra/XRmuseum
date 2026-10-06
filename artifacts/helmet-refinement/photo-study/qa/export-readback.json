@@ -1,0 +1,115 @@
+{
+  "scope": "Blender editable source and FBX/GLB readback only",
+  "unity_tested": false,
+  "device_tested": false,
+  "historical_accuracy_verified": false,
+  "checks": [
+    {
+      "mesh_parts": 103,
+      "triangles": 113976,
+      "nonfinite_vertices": 0,
+      "missing_uv_parts": [],
+      "bounds": {
+        "min": [
+          -0.20819999277591705,
+          -0.2341790497303009,
+          0.04056303948163986
+        ],
+        "max": [
+          0.20819610357284546,
+          0.22100000083446503,
+          0.4230000078678131
+        ]
+      },
+      "name": "editable source",
+      "packed_images": 6,
+      "shell_nonmanifold_edges": 0
+    },
+    {
+      "mesh_parts": 103,
+      "triangles": 113976,
+      "nonfinite_vertices": 0,
+      "missing_uv_parts": [],
+      "bounds": {
+        "min": [
+          -0.20819999277591705,
+          -0.2341790497303009,
+          0.04056307673454285
+        ],
+        "max": [
+          0.20819610357284546,
+          0.22100003063678741,
+          0.4230000078678131
+        ]
+      },
+      "name": "photo-helmet-study.fbx",
+      "bounds_max_delta_m": 3.725290298461914e-08,
+      "sha256": "d5d7af3634e65dcf317816d6b44334337af55d68fac48e6f4fc8e6ce9f74054a"
+    },
+    {
+      "mesh_parts": 103,
+      "triangles": 113976,
+      "nonfinite_vertices": 0,
+      "missing_uv_parts": [],
+      "bounds": {
+        "min": [
+          -0.20819999277591705,
+          -0.2341790497303009,
+          0.04056303948163986
+        ],
+        "max": [
+          0.20819610357284546,
+          0.22100000083446503,
+          0.4230000078678131
+        ]
+      },
+      "name": "photo-helmet-study.glb",
+      "bounds_max_delta_m": 0.0,
+      "sha256": "eaee1dcd6686cf17a08beb844dfbe923aa18d1a3f25064e7319c8038b2203e56"
+    },
+    {
+      "mesh_parts": 24,
+      "triangles": 20164,
+      "nonfinite_vertices": 0,
+      "missing_uv_parts": [],
+      "bounds": {
+        "min": [
+          -0.10199999809265137,
+          -0.19099996984004974,
+          0.12000002712011337
+        ],
+        "max": [
+          0.10199999809265137,
+          -0.13549993932247162,
+          0.3500000238418579
+        ]
+      },
+      "name": "front-window-study.fbx",
+      "bounds_max_delta_m": 4.470348358154297e-08,
+      "sha256": "8371b36561b1d4ccdba5baad269cd8fee18d321ee9788ed130c421f141b446db"
+    },
+    {
+      "mesh_parts": 24,
+      "triangles": 20164,
+      "nonfinite_vertices": 0,
+      "missing_uv_parts": [],
+      "bounds": {
+        "min": [
+          -0.10199999809265137,
+          -0.19099998474121094,
+          0.11999999731779099
+        ],
+        "max": [
+          0.10199999809265137,
+          -0.135499969124794,
+          0.3499999940395355
+        ]
+      },
+      "name": "front-window-study.glb",
+      "bounds_max_delta_m": 1.4901161193847656e-08,
+      "sha256": "c30ed307791f435fc5e1fb9a12129bf64e84732c3f8160c91ae09f5a8c7388bf"
+    }
+  ],
+  "passed": true,
+  "generator_sha256": "01670a8600e94b21a034ddae20c1ef107ba106f57a824dc940a095c1fd3d326d"
+}
