@@ -1,0 +1,136 @@
+{
+  "testedCommit": "2fcaad12d79bf65f39ab6e27b28763818fcfc94f",
+  "trackedDirty": "none",
+  "mainBase": "18d7f8a09c29bb0c757b8a80bdc245b0fe40b785",
+  "sourceHead": "b61c13c63a0b901f1002eb764140fbe1bf27fcd7",
+  "environment": "Windows / Unity 2022.3.62f3c1 / Direct3D 11",
+  "runs": {
+    "experience-retry2": {
+      "status": "passed",
+      "assertions": 76,
+      "groups": {
+        "behavior": 76
+      },
+      "errors": 0,
+      "exitCode": 0,
+      "processEvidence": "artifacts/helmet-interaction/qa/runs/20261006T132956Z-pr19-integration/experience-retry2-process.json",
+      "originalReport": "artifacts/helmet-experience/qa/runs/20261006T134107672Z/report.json",
+      "originalReportSha256": "51952974e9e1acc36c355986ef7965c212da23e07b6ce1ab1becccdc9b5f929d"
+    },
+    "inspection": {
+      "status": "passed",
+      "assertions": 206,
+      "groups": {
+        "behavior": 206
+      },
+      "errors": 0,
+      "exitCode": 0,
+      "processEvidence": "artifacts/helmet-interaction/qa/runs/20261006T132956Z-pr19-integration/inspection-process.json",
+      "originalReport": "artifacts/helmet-interaction/qa/runs/20261006T134224229Z-inspection-main-91b076ae067a4a1b875eb6b9d9f69175/report.json",
+      "originalReportSha256": "5ee874d5681ac84ad8f6f15d97563c69efcab36d4e6357cbf5d953f95be88c6e"
+    },
+    "exploration": {
+      "status": "passed",
+      "assertions": 1486,
+      "groups": {
+        "structure": 8,
+        "state": 11,
+        "control visibility": 424,
+        "text layout": 539,
+        "visual hierarchy": 26,
+        "viewport": 28,
+        "XR input": 367,
+        "QA camera": 14,
+        "keyboard input": 1,
+        "public API + pose fixture": 1,
+        "public API": 7,
+        "public API + elapsed time": 2,
+        "component lifecycle": 2,
+        "animation timing": 11,
+        "visual structure": 18,
+        "animation state": 8,
+        "animation samples": 10,
+        "interaction isolation": 1,
+        "resource lifecycle": 6,
+        "logs": 1,
+        "source": 1
+      },
+      "errors": 0,
+      "exitCode": 0,
+      "processEvidence": "artifacts/helmet-interaction/qa/runs/20261006T132956Z-pr19-integration/exploration-process.json",
+      "originalReport": "artifacts/helmet-exploration/qa/runs/20261006T134432915Z-exploration-8e02f1f2b38041fcba5f16bff21ffb9a/report.json",
+      "originalReportSha256": "b04dca66fa0e7bdb338dcaf396a8f8de1e6a8c707f8be2585cec5de008c8b050"
+    },
+    "main": {
+      "status": "passed",
+      "assertions": 84346,
+      "groups": {
+        "saved assets": 7,
+        "saved font": 2,
+        "structure": 53,
+        "saved binding": 16,
+        "saved visibility": 7,
+        "saved layout": 1,
+        "runtime structure": 2,
+        "runtime state": 1,
+        "input fixture": 1,
+        "XR input result": 10,
+        "progressive visibility": 60,
+        "rendered text": 186,
+        "text layout": 21,
+        "legacy visibility": 30,
+        "QA camera": 6,
+        "XR input": 20,
+        "runtime lifecycle": 2,
+        "public exploration API": 1,
+        "helmet hotspots": 768,
+        "trilingual main scene": 82884,
+        "logs": 1,
+        "source integrity": 267
+      },
+      "errors": 0,
+      "exitCode": 0,
+      "processEvidence": "artifacts/helmet-interaction/qa/runs/20261006T132956Z-pr19-integration/main-process.json",
+      "originalReport": "artifacts/localization/qa/runs/20261006T134740486Z-integration-84d2a4d09bfc4977a42b8d84be0ee4d2/report.json",
+      "originalReportSha256": "40dbb941dae1e319729075b83457a4e84c7e2e2c1bd37e506b8f8009639011c8"
+    },
+    "hotspot-input": {
+      "status": "passed",
+      "assertions": 768,
+      "includedInMain": true,
+      "originalReportSha256": "e7cb64d7753555e12aee310d1c60936decd67e7e252771ae4b0695632d9918c1",
+      "inputSelections": 20
+    },
+    "module": {
+      "status": "passed",
+      "exitCode": 0,
+      "originalReport": "artifacts/localization/qa/runs/20261006T134956146Z-validation/report.json",
+      "originalReportSha256": "7960585b4ed42a5869706302614f54e1f2c4bd2664239585578f1166ee6483d4",
+      "assertions": 11
+    },
+    "hotspot-tests": {
+      "exitCode": 0,
+      "passed": 12,
+      "failed": 0,
+      "result": "Passed",
+      "xmlSha256": "f8b20666c50f91d204a714cf8096b944bfa12b385e087f0fcf43d1d1b88a87db"
+    }
+  },
+  "verifiedMainInputHashes": 267,
+  "fontCharacters": 536,
+  "sourceCmap": 7660,
+  "translationRows": 205,
+  "screenshotFiles": [
+    "rear-fittings.png",
+    "window-open.png",
+    "main-zh.png",
+    "main-diagram-zh-production.png",
+    "main-initial-en-production.png",
+    "main-restored-en-production.png",
+    "main-restored-zh-production.png",
+    "main-selected-zh-hant-production.png"
+  ],
+  "screenshotReview": "Codex inspected all 8 selected final-run images: rear fittings, open window, English/Simplified/Traditional Chinese UI and restored/demo states. Existing menu occlusion, right-edge cropping and demonstration/entrance overlap remain visible. This is monocular screenshot review, not human/device acceptance.",
+  "limitations": "Synthetic XR input, component APIs, and monocular diagnostic/production-camera screenshots. No physical headset, language audit, comfort/user study, performance measurement or Player build.",
+  "note": "Hotspot/cross-module assertions are included in the main total. Repeated text/font checks are not equivalent independent test cases. Failed timing fixtures preserved separately; runtime assertions and durations unchanged."
+}

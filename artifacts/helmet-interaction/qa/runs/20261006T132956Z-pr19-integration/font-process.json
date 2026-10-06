@@ -1,0 +1,22 @@
+{
+  "name": "font",
+  "startedUtc": "2026-10-06T13:29:56.901057+00:00",
+  "arguments": [
+    "E:\\unity\\36version\\2022.3.62f3c1\\Editor\\Unity.exe",
+    "-batchmode",
+    "-projectPath",
+    "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR",
+    "-logFile",
+    "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006T132956Z-pr19-integration\\font-unity.log",
+    "-executeMethod",
+    "TrilingualFontBaker.RunBatch",
+    "-fontCompletionOutput",
+    "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006T132956Z-pr19-integration\\font-bake",
+    "-quit"
+  ],
+  "baseCommit": "18d7f8a09c29bb0c757b8a80bdc245b0fe40b785",
+  "pid": 34632,
+  "exitCode": 0,
+  "finishedUtc": "2026-10-06T13:34:17.455256+00:00",
+  "logSha256": "eb7c9c7a5d91c84991a829de966dd98a826377d54820ddf0878bd5fd45795b98"
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "name": "experience",
+    "exitCode": 1,
+    "testedCommit": "623e5a380e932062ef0491579b399a2dc774fc91",
+    "failure": "System.InvalidOperationException: window has an intermediate opening pose: 95\r\n  at Museum.Experience.EditorTools.HelmetExperienceValidation.CheckThat (System.Boolean ok, System.String name, System.String detail) [0x0003e] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\HelmetExperience\\Editor\\HelmetExperienceValidation.cs:71 \r\n  at Museum.Experience.EditorTools.HelmetExperienceValidation+<Run>d__19.MoveNext () [0x0046d] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\HelmetExperience\\Editor\\HelmetExperienceValidation.cs:103 \r\n  at Museum.Experience.EditorTools.HelmetExperienceValidation.Tick () [0x00086] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\HelmetExperience\\Editor\\HelmetExperienceValidation.cs:67 ",
+    "originalReport": "artifacts/helmet-experience/qa/runs/20261006T133636957Z/report.json",
+    "originalReportSha256": "9257d8473200842f6acd5c11dadb878b5dab22778219cb9634bb02d670609f19",
+    "lastChecks": [
+      {
+        "name": "transparent glass saved",
+        "detail": "Museum/Inspection Glass",
+        "passed": true
+      },
+      {
+        "name": "nested contours preserve cavity",
+        "detail": "hollow square section area=3; center filled=False",
+        "passed": true
+      },
+      {
+        "name": "window has an intermediate opening pose",
+        "detail": "95",
+        "passed": false
+      }
+    ]
+  },
+  {
+    "name": "experience-retry1",
+    "exitCode": 1,
+    "testedCommit": "d8425c24271b65f036ce74ec16d9fa4ad36f98e4",
+    "failure": "System.InvalidOperationException: return has an intermediate pose: \r\n  at Museum.Experience.EditorTools.HelmetExperienceValidation.CheckThat (System.Boolean ok, System.String name, System.String detail) [0x0003e] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\HelmetExperience\\Editor\\HelmetExperienceValidation.cs:71 \r\n  at Museum.Experience.EditorTools.HelmetExperienceValidation+<Run>d__19.MoveNext () [0x00bb3] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\HelmetExperience\\Editor\\HelmetExperienceValidation.cs:138 \r\n  at Museum.Experience.EditorTools.HelmetExperienceValidation.Tick () [0x00086] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\HelmetExperience\\Editor\\HelmetExperienceValidation.cs:67 ",
+    "originalReport": "artifacts/helmet-experience/qa/runs/20261006T133904163Z/report.json",
+    "originalReportSha256": "73006c11c5bb6ed5d8620420cf98a28bbc728595ed9fae190276331b954ca194",
+    "lastChecks": [
+      {
+        "name": "closing section hides all cap geometry",
+        "detail": "",
+        "passed": true
+      },
+      {
+        "name": "manual return starts at existing pose without initial teleport",
+        "detail": "",
+        "passed": true
+      },
+      {
+        "name": "return has an intermediate pose",
+        "detail": "",
+        "passed": false
+      }
+    ]
+  }
+]

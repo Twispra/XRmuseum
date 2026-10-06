@@ -1,0 +1,1037 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "requested scene loaded",
+      "passed": true,
+      "detail": "Requested=Assets/Museum/Scenes/MuseumStart.unity; actual=Assets/Museum/Scenes/MuseumStart.unity"
+    },
+    {
+      "name": "main scene has no desktop preview",
+      "passed": true,
+      "detail": "The integrated museum must use the production XR view, including during manual Play Mode."
+    },
+    {
+      "name": "main camera belongs to original XR rig",
+      "passed": true,
+      "detail": "Camera.main is the saved XR Origin camera, not a separate exhibit camera."
+    },
+    {
+      "name": "original gallery and other exhibits retained",
+      "passed": true,
+      "detail": "Gallery Blockout and the two unaffected placeholder exhibits remain active in MuseumStart."
+    },
+    {
+      "name": "one integrated inspection exhibit",
+      "passed": true,
+      "detail": "Exactly one inspection controller exists, including inactive scene objects."
+    },
+    {
+      "name": "inspection exhibit exists",
+      "passed": true,
+      "detail": "Assets/Museum/Scenes/MuseumStart.unity"
+    },
+    {
+      "name": "runtime components",
+      "passed": true,
+      "detail": "Root grab/reset/body and constrained window are present."
+    },
+    {
+      "name": "physical body",
+      "passed": true,
+      "detail": "Idle helmet retains the baseline dynamic gravity body."
+    },
+    {
+      "name": "grab configuration",
+      "passed": true,
+      "detail": "VelocityTracking and dynamic attachment remain enabled."
+    },
+    {
+      "name": "compound colliders",
+      "passed": true,
+      "detail": "4 solid root colliders."
+    },
+    {
+      "name": "window collider ownership",
+      "passed": true,
+      "detail": "Window's registered hit colliders are separate from the whole helmet grab."
+    },
+    {
+      "name": "model meshes imported",
+      "passed": true,
+      "detail": "91 mesh renderers have imported geometry."
+    },
+    {
+      "name": "official simulator instantiated",
+      "passed": true,
+      "detail": "Production rig creates the official simulator."
+    },
+    {
+      "name": "action controllers",
+      "passed": true,
+      "detail": "Both production controller components exist."
+    },
+    {
+      "name": "right direct interactor",
+      "passed": true,
+      "detail": "Tracking state drives the saved direct interactor."
+    },
+    {
+      "name": "startup button visible: WINDOW",
+      "passed": true,
+      "detail": "Original startup camera; viewport=(0.13, 0.77, 0.92); eye=(0.00, 1.36, 2.20)"
+    },
+    {
+      "name": "startup button visible: SECTION",
+      "passed": true,
+      "detail": "Original startup camera; viewport=(0.31, 0.75, 1.01); eye=(0.00, 1.36, 2.20)"
+    },
+    {
+      "name": "startup button visible: FLOAT",
+      "passed": true,
+      "detail": "Original startup camera; viewport=(0.13, 0.71, 0.92); eye=(0.00, 1.36, 2.20)"
+    },
+    {
+      "name": "startup button visible: RESET",
+      "passed": true,
+      "detail": "Original startup camera; viewport=(0.31, 0.69, 1.01); eye=(0.00, 1.36, 2.20)"
+    },
+    {
+      "name": "advanced tools have a visible entry",
+      "passed": true,
+      "detail": "Concise presentation starts with core controls; original turn/tilt controls are reached through More tools below."
+    },
+    {
+      "name": "select action enabled",
+      "passed": true,
+      "detail": "Production input actions, not direct selection calls."
+    },
+    {
+      "name": "window input select",
+      "passed": true,
+      "detail": "window=True; root=False; angle=0; hand=(0.00, 1.46, 3.31)"
+    },
+    {
+      "name": "window direct interactor",
+      "passed": true,
+      "detail": "XRDirectInteractor"
+    },
+    {
+      "name": "window stabilizes body",
+      "passed": true,
+      "detail": "Window selection temporarily pins the exhibit."
+    },
+    {
+      "name": "window click opens",
+      "passed": true,
+      "detail": "Short grip/release animates to 95 degrees and unpins the body."
+    },
+    {
+      "name": "button exists: WINDOW",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: WINDOW",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "window button closes",
+      "passed": true,
+      "detail": "World-space control closes the previously opened window."
+    },
+    {
+      "name": "distant ray selects window",
+      "passed": true,
+      "detail": "window=True; root=False; angle=0; hand=(0.00, 1.46, 2.81)"
+    },
+    {
+      "name": "window uses ray beyond direct reach",
+      "passed": true,
+      "detail": "Controller is 0.5 m from the hit target; actual selected interactor=XRRayInteractor"
+    },
+    {
+      "name": "distant ray short click opens",
+      "passed": true,
+      "detail": "Real XR ray grip/release invokes click-to-toggle without an arm arc; angle=95"
+    },
+    {
+      "name": "button exists: WINDOW",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: WINDOW",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "window closes after ray test",
+      "passed": true,
+      "detail": "Return to a known closed state through the physical button."
+    },
+    {
+      "name": "window select for drag",
+      "passed": true,
+      "detail": "window=True; root=False; angle=0; hand=(0.00, 1.46, 3.31)"
+    },
+    {
+      "name": "drag clamps at maximum",
+      "passed": true,
+      "detail": "130-degree hand arc yields 95 degree hinge; direct input."
+    },
+    {
+      "name": "whole helmet blocked during window drag",
+      "passed": true,
+      "detail": "Second hand grip cannot steal or move the pinned root."
+    },
+    {
+      "name": "drag closes",
+      "passed": true,
+      "detail": "Returning the controller arc closes the hinge; angle=0"
+    },
+    {
+      "name": "drag release is not a click",
+      "passed": true,
+      "detail": "A long drag releases without toggling the closed window."
+    },
+    {
+      "name": "button exists: SECTION",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: SECTION",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "cutaway button enables",
+      "passed": true,
+      "detail": "Real controller grip selected SECTION."
+    },
+    {
+      "name": "window selected before Home",
+      "passed": true,
+      "detail": "window=True; root=False; angle=0; hand=(0.00, 1.46, 3.31)"
+    },
+    {
+      "name": "Home cancels window and restores shell",
+      "passed": true,
+      "detail": "Reset delta=1; window=False; root=False; angle=0; hand=(0.00, 1.46, 3.31)"
+    },
+    {
+      "name": "held reset grip cannot reselect",
+      "passed": true,
+      "detail": "Same held grip remains blocked after cooldown, even over the restored window."
+    },
+    {
+      "name": "window usable after releasing reset grip",
+      "passed": true,
+      "detail": "window=True; root=False; angle=0; hand=(0.00, 1.47, 3.31)"
+    },
+    {
+      "name": "button exists: SECTION",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: SECTION",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "cutaway property blocks enabled renderer list",
+      "passed": true,
+      "detail": "At least one explicitly clipped shell renderer."
+    },
+    {
+      "name": "cutaway property blocks enabled",
+      "passed": true,
+      "detail": "78 renderer blocks match the enabled state and helmet-local cutting geometry. Pixel rendering is not tested here."
+    },
+    {
+      "name": "button exists: MORE TOOLS",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: MORE TOOLS",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "button exists: TURN RIGHT",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: TURN RIGHT",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "turn button rotates display",
+      "passed": true,
+      "detail": "Root rotation delta=30.00001"
+    },
+    {
+      "name": "cut plane follows rotated helmet renderer list",
+      "passed": true,
+      "detail": "At least one explicitly clipped shell renderer."
+    },
+    {
+      "name": "cut plane follows rotated helmet",
+      "passed": true,
+      "detail": "78 renderer blocks match the enabled state and helmet-local cutting geometry. Pixel rendering is not tested here."
+    },
+    {
+      "name": "button exists: SECTION",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: SECTION",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "cutaway property blocks disabled renderer list",
+      "passed": true,
+      "detail": "At least one explicitly clipped shell renderer."
+    },
+    {
+      "name": "cutaway property blocks disabled",
+      "passed": true,
+      "detail": "78 renderer blocks match the enabled state and helmet-local cutting geometry. Pixel rendering is not tested here."
+    },
+    {
+      "name": "button exists: WINDOW",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: WINDOW",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "button exists: RESET",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: RESET",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "inspection RESET restores full state",
+      "passed": true,
+      "detail": "World pose, closed window and full shell are restored by the physical control."
+    },
+    {
+      "name": "whole helmet input grab",
+      "passed": true,
+      "detail": "window=False; root=True; angle=0; hand=(0.00, 1.47, 3.50)"
+    },
+    {
+      "name": "whole helmet direct grab",
+      "passed": true,
+      "detail": "XRDirectInteractor"
+    },
+    {
+      "name": "window blocked during whole helmet grab",
+      "passed": true,
+      "detail": "window=False; root=True; angle=0; hand=(0.00, 1.47, 3.50)"
+    },
+    {
+      "name": "whole helmet follows pose",
+      "passed": true,
+      "detail": "Lift=0.3264565; turn=33.35888"
+    },
+    {
+      "name": "whole helmet stable release",
+      "passed": true,
+      "detail": "One real-input grab/lift/rotate/return/release cycle; no recovery masked a fall. Speed=0; angular=0"
+    },
+    {
+      "name": "placement has no deep penetration",
+      "passed": true,
+      "detail": "Maximum overlap=0 m."
+    },
+    {
+      "name": "whole helmet selected before Home",
+      "passed": true,
+      "detail": "window=False; root=True; angle=0; hand=(0.00, 1.47, 3.50)"
+    },
+    {
+      "name": "whole helmet held Home remains safe",
+      "passed": true,
+      "detail": "window=False; root=False; angle=0; hand=(0.00, 1.46, 3.31)"
+    },
+    {
+      "name": "whole helmet reset blocks transfer to window",
+      "passed": true,
+      "detail": "Grip remains pressed over the home window hit target; window=False; root=False; angle=0; hand=(0.00, 1.46, 3.31)"
+    },
+    {
+      "name": "window available after root-reset grip release",
+      "passed": true,
+      "detail": "window=True; root=False; angle=0; hand=(0.00, 1.46, 3.31)"
+    },
+    {
+      "name": "fall recovery also restores inspection",
+      "passed": true,
+      "detail": "Out-of-bounds setup is direct; recovery runs through normal component updates."
+    },
+    {
+      "name": "API rejects invalid angle",
+      "passed": true,
+      "detail": "Explicit public-API unit check, not XR input."
+    },
+    {
+      "name": "API reduced motion opens immediately",
+      "passed": true,
+      "detail": "Explicit public-API check."
+    },
+    {
+      "name": "API disable restores state",
+      "passed": true,
+      "detail": "Disabling the feature restores its display state and body."
+    },
+    {
+      "name": "advanced tools integrated",
+      "passed": true,
+      "detail": "Saved main scene includes the portable controls and section handle."
+    },
+    {
+      "name": "button exists: SECTION",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: SECTION",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "button exists: EDIT CUT",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: EDIT CUT",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "input reveals section tool",
+      "passed": true,
+      "detail": "Both commands travel through production grip input."
+    },
+    {
+      "name": "direct grip owns section tool",
+      "passed": true,
+      "detail": "Tool is selected without stealing the helmet or window."
+    },
+    {
+      "name": "section direct input pins exhibit",
+      "passed": true,
+      "detail": "Production direct interactor owns the relative-pose tool."
+    },
+    {
+      "name": "hand translation and wrist rotation edit cut",
+      "passed": true,
+      "detail": "Normal=(0.91, 0.38, -0.13); offset=0.09603401"
+    },
+    {
+      "name": "released cut remains fixed",
+      "passed": true,
+      "detail": "No continuing drift after releasing the grip."
+    },
+    {
+      "name": "button exists: ALIGN VIEW",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: ALIGN VIEW",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "align view exposes near side",
+      "passed": true,
+      "detail": "A single grip click aligns the plane to the current visitor position."
+    },
+    {
+      "name": "button exists: EDIT CUT",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: EDIT CUT",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "button exists: DEEPER",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: DEEPER",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "depth button changes cut without dragging",
+      "passed": true,
+      "detail": "Single-hand alternative to the spatial guide."
+    },
+    {
+      "name": "cut follows pitch and roll",
+      "passed": true,
+      "detail": "Explicit geometry API check; a point on the local plane remains on the world plane."
+    },
+    {
+      "name": "floating inspection holds pose",
+      "passed": true,
+      "detail": "Suspended at the current pose after release."
+    },
+    {
+      "name": "floating has no gravity drift",
+      "passed": true,
+      "detail": "Pose checked over half a second."
+    },
+    {
+      "name": "button exists: RESET",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: RESET",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "reset restores physics and hides tool",
+      "passed": true,
+      "detail": "Original RESET path restores ordinary exhibit mode."
+    },
+    {
+      "name": "button exists: FLOAT",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: FLOAT",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "floating exhibit still supports ordinary grab",
+      "passed": true,
+      "detail": "Same XRGrabInteractable, controlled by a single hand."
+    },
+    {
+      "name": "single hand lifts and turns in 3D",
+      "passed": true,
+      "detail": "Uses production grip, hand position and full rotation input."
+    },
+    {
+      "name": "one hand can release and keep inspection pose",
+      "passed": true,
+      "detail": "No throw or sag after releasing a floating exhibit."
+    },
+    {
+      "name": "button exists: RESET",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: RESET",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "button exists: SECTION",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: SECTION",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "button exists: EDIT CUT",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: EDIT CUT",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "distant ray grips section tool",
+      "passed": true,
+      "detail": "Tool can be manipulated without reaching across the exhibit."
+    },
+    {
+      "name": "ray wrist rotation changes cut",
+      "passed": true,
+      "detail": "Relative pose does not snap the cutting plane to the remote hand."
+    },
+    {
+      "name": "Home cancels held section tool",
+      "passed": true,
+      "detail": "The former grip cannot leave a stale pinned body."
+    },
+    {
+      "name": "held reset grip cannot reselect another part",
+      "passed": true,
+      "detail": "Test continues past the original 0.15 second cooldown."
+    },
+    {
+      "name": "release enables section grip again",
+      "passed": true,
+      "detail": "User can continue after releasing the previous grip."
+    },
+    {
+      "name": "button exists: RESET",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: RESET",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "palette remains reachable at view 0",
+      "passed": true,
+      "detail": "Includes close approach, the far side of the exhibit and seated eye height."
+    },
+    {
+      "name": "aiming freezes palette at view 0",
+      "passed": true,
+      "detail": "Production ray hover stops following."
+    },
+    {
+      "name": "palette does not escape aimed ray at view 0",
+      "passed": true,
+      "detail": "Head movement while targeting does not move the control."
+    },
+    {
+      "name": "ray selects section at view 0",
+      "passed": true,
+      "detail": "Real grip hits the same world-space button from this viewpoint."
+    },
+    {
+      "name": "palette remains reachable at view 1",
+      "passed": true,
+      "detail": "Includes close approach, the far side of the exhibit and seated eye height."
+    },
+    {
+      "name": "aiming freezes palette at view 1",
+      "passed": true,
+      "detail": "Production ray hover stops following."
+    },
+    {
+      "name": "palette does not escape aimed ray at view 1",
+      "passed": true,
+      "detail": "Head movement while targeting does not move the control."
+    },
+    {
+      "name": "ray selects section at view 1",
+      "passed": true,
+      "detail": "Real grip hits the same world-space button from this viewpoint."
+    },
+    {
+      "name": "palette remains reachable at view 2",
+      "passed": true,
+      "detail": "Includes close approach, the far side of the exhibit and seated eye height."
+    },
+    {
+      "name": "aiming freezes palette at view 2",
+      "passed": true,
+      "detail": "Production ray hover stops following."
+    },
+    {
+      "name": "palette does not escape aimed ray at view 2",
+      "passed": true,
+      "detail": "Head movement while targeting does not move the control."
+    },
+    {
+      "name": "ray selects section at view 2",
+      "passed": true,
+      "detail": "Real grip hits the same world-space button from this viewpoint."
+    },
+    {
+      "name": "button exists: RESET",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: RESET",
+      "passed": true,
+      "detail": "Controller grip selects the saved control."
+    },
+    {
+      "name": "invalid cut inputs rejected",
+      "passed": true,
+      "detail": "Explicit API check."
+    },
+    {
+      "name": "section depth remains bounded",
+      "passed": true,
+      "detail": "Explicit API clamp prevents accidental disappearance."
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (0.00, 0.00, 0.00) floating fixture",
+      "passed": true,
+      "detail": "API setup fixes the root and initial normal; selection and wrist motion below are synthetic XR input."
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (0.00, 0.00, 0.00) direct grip",
+      "passed": true,
+      "detail": "Saved section collider selected by QueueRight -> InputSystem -> XRDirectInteractor."
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (0.00, 0.00, 0.00) grip does not jump",
+      "passed": true,
+      "detail": "Selecting a stationary handle must preserve its visual orientation and knob position."
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (0.00, 0.00, 0.00) grip stays on section",
+      "passed": true,
+      "detail": "root=(0.00, 0.00, 0.00); input=78 delta=1 guideDelta=1.000002/1.62 knobDelta=0.001894073/0.00478814 guideError=0 knobError=7.450581E-09 normalError=0 centerError=1.13551E-07 rootError=3.552714E-15,0 selected=True | input=78.51 delta=0.5100021 guideDelta=0.5100001/0.8850032 knobDelta=0.0009660308/0.002931825 guideError=4.517745E-06 knobError=1.20137E-07 normalError=0 centerError=1.135068E-07 rootError=3.552714E-15,0 selected=True | input=78.53 delta=0.01999664 guideDelta=0.02000017/0.149995 knobDelta=3.7839E-05/0.0010759 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=3.552714E-15,0 selected=True | input=80 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784218/0.006568208 guideError=9.035491E-06 knobError=1.228781E-07 normalError=0 centerError=1.133185E-07 rootError=3.552714E-15,0 selected=True | input=84 delta=4 guideDelta=3.999993/6.12 knobDelta=0.007574718/0.01614945 guideError=2.070291E-05 knobError=1.194419E-07 normalError=0 centerError=1.123877E-07 rootError=3.552714E-15,0 selected=True | input=88 delta=4 guideDelta=4.000004/6.12 knobDelta=0.00757465/0.01614954 guideError=4.18262E-06 knobError=2.980232E-08 normalError=0 centerError=1.10864E-07 rootError=3.552714E-15,0 selected=True | input=89.5 delta=1.5 guideDelta=1.499998/2.37 knobDelta=0.002841077/0.006681914 guideError=4.18262E-06 knobError=1.194419E-07 normalError=0 centerError=1.101474E-07 rootError=3.552714E-15,0 selected=True | input=90 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894015 guideError=0 knobError=1.194419E-07 normalError=0 centerError=1.098915E-07 rootError=3.552714E-15,0 selected=True | input=90.5 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894254 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=3.552714E-15,0 selected=True | input=92 delta=1.5 guideDelta=1.499996/2.37 knobDelta=0.002841075/0.006681914 guideError=1.079948E-05 knobError=1.212867E-07 normalError=0 centerError=1.087851E-07 rootError=3.552714E-15,0 selected=True | input=96 delta=4 guideDelta=4.000008/6.12 knobDelta=0.00757465/0.0161493 guideError=6.830189E-06 knobError=1.273156E-07 normalError=0 centerError=1.061914E-07 rootError=3.552714E-15,0 selected=True | input=92 delta=4 guideDelta=4.000008/6.12 knobDelta=0.00757465/0.0161493 guideError=1.079948E-05 knobError=1.212867E-07 normalError=0 centerError=1.087851E-07 rootError=3.552714E-15,0 selected=True | input=90.5 delta=1.5 guideDelta=1.499996/2.37 knobDelta=0.002841075/0.006681914 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=3.552714E-15,0 selected=True | input=90 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894254 guideError=0 knobError=1.194419E-07 normalError=0 centerError=1.098915E-07 rootError=3.552714E-15,0 selected=True | input=89.5 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894015 guideError=4.18262E-06 knobError=1.194419E-07 normalError=0 centerError=1.101474E-07 rootError=3.552714E-15,0 selected=True | input=88 delta=1.5 guideDelta=1.499998/2.37 knobDelta=0.002841077/0.006681914 guideError=4.18262E-06 knobError=2.980232E-08 normalError=0 centerError=1.10864E-07 rootError=3.552714E-15,0 selected=True | input=84 delta=4 guideDelta=4.000004/6.12 knobDelta=0.00757465/0.01614954 guideError=2.070291E-05 knobError=1.194419E-07 normalError=0 centerError=1.123877E-07 rootError=3.552714E-15,0 selected=True | input=80 delta=4 guideDelta=3.999993/6.12 knobDelta=0.007574718/0.01614945 guideError=9.035491E-06 knobError=1.228781E-07 normalError=0 centerError=1.133185E-07 rootError=3.552714E-15,0 selected=True | input=78.53 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784218/0.006568208 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=3.552714E-15,0 selected=True | input=78.51 delta=0.01999664 guideDelta=0.02000017/0.149995 knobDelta=3.7839E-05/0.0010759 guideError=4.517745E-06 knobError=1.20137E-07 normalError=0 centerError=1.135068E-07 rootError=3.552714E-15,0 selected=True | input=78 delta=0.5100021 guideDelta=0.5100001/0.8850032 knobDelta=0.0009660308/0.002931825 guideError=0 knobError=7.450581E-09 normalError=0 centerError=1.13551E-07 rootError=3.552714E-15,0 selected=True | input=77 delta=1 guideDelta=1.000002/1.62 knobDelta=0.001894073/0.00478814 guideError=0 knobError=7.450581E-09 normalError=0 centerError=1.136072E-07 rootError=3.552714E-15,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (0.00, 0.00, 0.00) visual guide and knob remain continuous",
+      "passed": true,
+      "detail": "root=(0.00, 0.00, 0.00); input=78 delta=1 guideDelta=1.000002/1.62 knobDelta=0.001894073/0.00478814 guideError=0 knobError=7.450581E-09 normalError=0 centerError=1.13551E-07 rootError=3.552714E-15,0 selected=True | input=78.51 delta=0.5100021 guideDelta=0.5100001/0.8850032 knobDelta=0.0009660308/0.002931825 guideError=4.517745E-06 knobError=1.20137E-07 normalError=0 centerError=1.135068E-07 rootError=3.552714E-15,0 selected=True | input=78.53 delta=0.01999664 guideDelta=0.02000017/0.149995 knobDelta=3.7839E-05/0.0010759 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=3.552714E-15,0 selected=True | input=80 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784218/0.006568208 guideError=9.035491E-06 knobError=1.228781E-07 normalError=0 centerError=1.133185E-07 rootError=3.552714E-15,0 selected=True | input=84 delta=4 guideDelta=3.999993/6.12 knobDelta=0.007574718/0.01614945 guideError=2.070291E-05 knobError=1.194419E-07 normalError=0 centerError=1.123877E-07 rootError=3.552714E-15,0 selected=True | input=88 delta=4 guideDelta=4.000004/6.12 knobDelta=0.00757465/0.01614954 guideError=4.18262E-06 knobError=2.980232E-08 normalError=0 centerError=1.10864E-07 rootError=3.552714E-15,0 selected=True | input=89.5 delta=1.5 guideDelta=1.499998/2.37 knobDelta=0.002841077/0.006681914 guideError=4.18262E-06 knobError=1.194419E-07 normalError=0 centerError=1.101474E-07 rootError=3.552714E-15,0 selected=True | input=90 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894015 guideError=0 knobError=1.194419E-07 normalError=0 centerError=1.098915E-07 rootError=3.552714E-15,0 selected=True | input=90.5 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894254 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=3.552714E-15,0 selected=True | input=92 delta=1.5 guideDelta=1.499996/2.37 knobDelta=0.002841075/0.006681914 guideError=1.079948E-05 knobError=1.212867E-07 normalError=0 centerError=1.087851E-07 rootError=3.552714E-15,0 selected=True | input=96 delta=4 guideDelta=4.000008/6.12 knobDelta=0.00757465/0.0161493 guideError=6.830189E-06 knobError=1.273156E-07 normalError=0 centerError=1.061914E-07 rootError=3.552714E-15,0 selected=True | input=92 delta=4 guideDelta=4.000008/6.12 knobDelta=0.00757465/0.0161493 guideError=1.079948E-05 knobError=1.212867E-07 normalError=0 centerError=1.087851E-07 rootError=3.552714E-15,0 selected=True | input=90.5 delta=1.5 guideDelta=1.499996/2.37 knobDelta=0.002841075/0.006681914 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=3.552714E-15,0 selected=True | input=90 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894254 guideError=0 knobError=1.194419E-07 normalError=0 centerError=1.098915E-07 rootError=3.552714E-15,0 selected=True | input=89.5 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894015 guideError=4.18262E-06 knobError=1.194419E-07 normalError=0 centerError=1.101474E-07 rootError=3.552714E-15,0 selected=True | input=88 delta=1.5 guideDelta=1.499998/2.37 knobDelta=0.002841077/0.006681914 guideError=4.18262E-06 knobError=2.980232E-08 normalError=0 centerError=1.10864E-07 rootError=3.552714E-15,0 selected=True | input=84 delta=4 guideDelta=4.000004/6.12 knobDelta=0.00757465/0.01614954 guideError=2.070291E-05 knobError=1.194419E-07 normalError=0 centerError=1.123877E-07 rootError=3.552714E-15,0 selected=True | input=80 delta=4 guideDelta=3.999993/6.12 knobDelta=0.007574718/0.01614945 guideError=9.035491E-06 knobError=1.228781E-07 normalError=0 centerError=1.133185E-07 rootError=3.552714E-15,0 selected=True | input=78.53 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784218/0.006568208 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=3.552714E-15,0 selected=True | input=78.51 delta=0.01999664 guideDelta=0.02000017/0.149995 knobDelta=3.7839E-05/0.0010759 guideError=4.517745E-06 knobError=1.20137E-07 normalError=0 centerError=1.135068E-07 rootError=3.552714E-15,0 selected=True | input=78 delta=0.5100021 guideDelta=0.5100001/0.8850032 knobDelta=0.0009660308/0.002931825 guideError=0 knobError=7.450581E-09 normalError=0 centerError=1.13551E-07 rootError=3.552714E-15,0 selected=True | input=77 delta=1 guideDelta=1.000002/1.62 knobDelta=0.001894073/0.00478814 guideError=0 knobError=7.450581E-09 normalError=0 centerError=1.136072E-07 rootError=3.552714E-15,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (0.00, 0.00, 0.00) guide follows full wrist pose",
+      "passed": true,
+      "detail": "root=(0.00, 0.00, 0.00); input=78 delta=1 guideDelta=1.000002/1.62 knobDelta=0.001894073/0.00478814 guideError=0 knobError=7.450581E-09 normalError=0 centerError=1.13551E-07 rootError=3.552714E-15,0 selected=True | input=78.51 delta=0.5100021 guideDelta=0.5100001/0.8850032 knobDelta=0.0009660308/0.002931825 guideError=4.517745E-06 knobError=1.20137E-07 normalError=0 centerError=1.135068E-07 rootError=3.552714E-15,0 selected=True | input=78.53 delta=0.01999664 guideDelta=0.02000017/0.149995 knobDelta=3.7839E-05/0.0010759 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=3.552714E-15,0 selected=True | input=80 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784218/0.006568208 guideError=9.035491E-06 knobError=1.228781E-07 normalError=0 centerError=1.133185E-07 rootError=3.552714E-15,0 selected=True | input=84 delta=4 guideDelta=3.999993/6.12 knobDelta=0.007574718/0.01614945 guideError=2.070291E-05 knobError=1.194419E-07 normalError=0 centerError=1.123877E-07 rootError=3.552714E-15,0 selected=True | input=88 delta=4 guideDelta=4.000004/6.12 knobDelta=0.00757465/0.01614954 guideError=4.18262E-06 knobError=2.980232E-08 normalError=0 centerError=1.10864E-07 rootError=3.552714E-15,0 selected=True | input=89.5 delta=1.5 guideDelta=1.499998/2.37 knobDelta=0.002841077/0.006681914 guideError=4.18262E-06 knobError=1.194419E-07 normalError=0 centerError=1.101474E-07 rootError=3.552714E-15,0 selected=True | input=90 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894015 guideError=0 knobError=1.194419E-07 normalError=0 centerError=1.098915E-07 rootError=3.552714E-15,0 selected=True | input=90.5 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894254 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=3.552714E-15,0 selected=True | input=92 delta=1.5 guideDelta=1.499996/2.37 knobDelta=0.002841075/0.006681914 guideError=1.079948E-05 knobError=1.212867E-07 normalError=0 centerError=1.087851E-07 rootError=3.552714E-15,0 selected=True | input=96 delta=4 guideDelta=4.000008/6.12 knobDelta=0.00757465/0.0161493 guideError=6.830189E-06 knobError=1.273156E-07 normalError=0 centerError=1.061914E-07 rootError=3.552714E-15,0 selected=True | input=92 delta=4 guideDelta=4.000008/6.12 knobDelta=0.00757465/0.0161493 guideError=1.079948E-05 knobError=1.212867E-07 normalError=0 centerError=1.087851E-07 rootError=3.552714E-15,0 selected=True | input=90.5 delta=1.5 guideDelta=1.499996/2.37 knobDelta=0.002841075/0.006681914 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=3.552714E-15,0 selected=True | input=90 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894254 guideError=0 knobError=1.194419E-07 normalError=0 centerError=1.098915E-07 rootError=3.552714E-15,0 selected=True | input=89.5 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894015 guideError=4.18262E-06 knobError=1.194419E-07 normalError=0 centerError=1.101474E-07 rootError=3.552714E-15,0 selected=True | input=88 delta=1.5 guideDelta=1.499998/2.37 knobDelta=0.002841077/0.006681914 guideError=4.18262E-06 knobError=2.980232E-08 normalError=0 centerError=1.10864E-07 rootError=3.552714E-15,0 selected=True | input=84 delta=4 guideDelta=4.000004/6.12 knobDelta=0.00757465/0.01614954 guideError=2.070291E-05 knobError=1.194419E-07 normalError=0 centerError=1.123877E-07 rootError=3.552714E-15,0 selected=True | input=80 delta=4 guideDelta=3.999993/6.12 knobDelta=0.007574718/0.01614945 guideError=9.035491E-06 knobError=1.228781E-07 normalError=0 centerError=1.133185E-07 rootError=3.552714E-15,0 selected=True | input=78.53 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784218/0.006568208 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=3.552714E-15,0 selected=True | input=78.51 delta=0.01999664 guideDelta=0.02000017/0.149995 knobDelta=3.7839E-05/0.0010759 guideError=4.517745E-06 knobError=1.20137E-07 normalError=0 centerError=1.135068E-07 rootError=3.552714E-15,0 selected=True | input=78 delta=0.5100021 guideDelta=0.5100001/0.8850032 knobDelta=0.0009660308/0.002931825 guideError=0 knobError=7.450581E-09 normalError=0 centerError=1.13551E-07 rootError=3.552714E-15,0 selected=True | input=77 delta=1 guideDelta=1.000002/1.62 knobDelta=0.001894073/0.00478814 guideError=0 knobError=7.450581E-09 normalError=0 centerError=1.136072E-07 rootError=3.552714E-15,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (0.00, 0.00, 0.00) root remains fixed",
+      "passed": true,
+      "detail": "root=(0.00, 0.00, 0.00); input=78 delta=1 guideDelta=1.000002/1.62 knobDelta=0.001894073/0.00478814 guideError=0 knobError=7.450581E-09 normalError=0 centerError=1.13551E-07 rootError=3.552714E-15,0 selected=True | input=78.51 delta=0.5100021 guideDelta=0.5100001/0.8850032 knobDelta=0.0009660308/0.002931825 guideError=4.517745E-06 knobError=1.20137E-07 normalError=0 centerError=1.135068E-07 rootError=3.552714E-15,0 selected=True | input=78.53 delta=0.01999664 guideDelta=0.02000017/0.149995 knobDelta=3.7839E-05/0.0010759 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=3.552714E-15,0 selected=True | input=80 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784218/0.006568208 guideError=9.035491E-06 knobError=1.228781E-07 normalError=0 centerError=1.133185E-07 rootError=3.552714E-15,0 selected=True | input=84 delta=4 guideDelta=3.999993/6.12 knobDelta=0.007574718/0.01614945 guideError=2.070291E-05 knobError=1.194419E-07 normalError=0 centerError=1.123877E-07 rootError=3.552714E-15,0 selected=True | input=88 delta=4 guideDelta=4.000004/6.12 knobDelta=0.00757465/0.01614954 guideError=4.18262E-06 knobError=2.980232E-08 normalError=0 centerError=1.10864E-07 rootError=3.552714E-15,0 selected=True | input=89.5 delta=1.5 guideDelta=1.499998/2.37 knobDelta=0.002841077/0.006681914 guideError=4.18262E-06 knobError=1.194419E-07 normalError=0 centerError=1.101474E-07 rootError=3.552714E-15,0 selected=True | input=90 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894015 guideError=0 knobError=1.194419E-07 normalError=0 centerError=1.098915E-07 rootError=3.552714E-15,0 selected=True | input=90.5 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894254 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=3.552714E-15,0 selected=True | input=92 delta=1.5 guideDelta=1.499996/2.37 knobDelta=0.002841075/0.006681914 guideError=1.079948E-05 knobError=1.212867E-07 normalError=0 centerError=1.087851E-07 rootError=3.552714E-15,0 selected=True | input=96 delta=4 guideDelta=4.000008/6.12 knobDelta=0.00757465/0.0161493 guideError=6.830189E-06 knobError=1.273156E-07 normalError=0 centerError=1.061914E-07 rootError=3.552714E-15,0 selected=True | input=92 delta=4 guideDelta=4.000008/6.12 knobDelta=0.00757465/0.0161493 guideError=1.079948E-05 knobError=1.212867E-07 normalError=0 centerError=1.087851E-07 rootError=3.552714E-15,0 selected=True | input=90.5 delta=1.5 guideDelta=1.499996/2.37 knobDelta=0.002841075/0.006681914 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=3.552714E-15,0 selected=True | input=90 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894254 guideError=0 knobError=1.194419E-07 normalError=0 centerError=1.098915E-07 rootError=3.552714E-15,0 selected=True | input=89.5 delta=0.5 guideDelta=0.4999999/0.87 knobDelta=0.0009470075/0.002894015 guideError=4.18262E-06 knobError=1.194419E-07 normalError=0 centerError=1.101474E-07 rootError=3.552714E-15,0 selected=True | input=88 delta=1.5 guideDelta=1.499998/2.37 knobDelta=0.002841077/0.006681914 guideError=4.18262E-06 knobError=2.980232E-08 normalError=0 centerError=1.10864E-07 rootError=3.552714E-15,0 selected=True | input=84 delta=4 guideDelta=4.000004/6.12 knobDelta=0.00757465/0.01614954 guideError=2.070291E-05 knobError=1.194419E-07 normalError=0 centerError=1.123877E-07 rootError=3.552714E-15,0 selected=True | input=80 delta=4 guideDelta=3.999993/6.12 knobDelta=0.007574718/0.01614945 guideError=9.035491E-06 knobError=1.228781E-07 normalError=0 centerError=1.133185E-07 rootError=3.552714E-15,0 selected=True | input=78.53 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784218/0.006568208 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=3.552714E-15,0 selected=True | input=78.51 delta=0.01999664 guideDelta=0.02000017/0.149995 knobDelta=3.7839E-05/0.0010759 guideError=4.517745E-06 knobError=1.20137E-07 normalError=0 centerError=1.135068E-07 rootError=3.552714E-15,0 selected=True | input=78 delta=0.5100021 guideDelta=0.5100001/0.8850032 knobDelta=0.0009660308/0.002931825 guideError=0 knobError=7.450581E-09 normalError=0 centerError=1.13551E-07 rootError=3.552714E-15,0 selected=True | input=77 delta=1 guideDelta=1.000002/1.62 knobDelta=0.001894073/0.00478814 guideError=0 knobError=7.450581E-09 normalError=0 centerError=1.136072E-07 rootError=3.552714E-15,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (0.00, 0.00, 0.00) release preserves guide pose",
+      "passed": true,
+      "detail": "Release is real XR grip-up; floating removes gravity as a confounding factor. selected=False; guide rotation drift=0; knob drift=0"
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (0.00, 0.00, 0.00) regrab preserves guide pose",
+      "passed": true,
+      "detail": "New hand orientation must not reset the guide roll. selected=True; guide rotation drift=0; knob drift=0"
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (0.00, 0.00, 0.00) stationary regrab has no drift",
+      "passed": true,
+      "detail": "selected=True; guide rotation drift=0; knob drift=0"
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (0.00, 0.00, 0.00) floating fixture",
+      "passed": true,
+      "detail": "API setup fixes the root and initial normal; selection and wrist motion below are synthetic XR input."
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (0.00, 0.00, 0.00) direct grip",
+      "passed": true,
+      "detail": "Saved section collider selected by QueueRight -> InputSystem -> XRDirectInteractor."
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (0.00, 0.00, 0.00) grip does not jump",
+      "passed": true,
+      "detail": "Selecting a stationary handle must preserve its visual orientation and knob position."
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (0.00, 0.00, 0.00) grip stays on section",
+      "passed": true,
+      "detail": "root=(0.00, 0.00, 0.00); input=-78 delta=1 guideDelta=0.9999994/1.62 knobDelta=0.00189396/0.00478814 guideError=4.18262E-06 knobError=2.235174E-08 normalError=0 centerError=1.13551E-07 rootError=0,0 selected=True | input=-78.51 delta=0.5100021 guideDelta=0.510001/0.8850032 knobDelta=0.0009658959/0.002931825 guideError=1.024528E-05 knobError=5.960464E-08 normalError=0 centerError=1.135068E-07 rootError=0,0 selected=True | input=-78.53 delta=0.01999664 guideDelta=0.01999655/0.149995 knobDelta=3.795284E-05/0.0010759 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=0,0 selected=True | input=-80 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784107/0.006568208 guideError=5.399739E-06 knobError=2.980232E-08 normalError=0 centerError=1.133185E-07 rootError=0,0 selected=True | input=-84 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574841/0.01614945 guideError=8.009107E-06 knobError=1.248945E-07 normalError=0 centerError=1.123877E-07 rootError=0,0 selected=True | input=-88 delta=4 guideDelta=4/6.12 knobDelta=0.007574651/0.01614954 guideError=5.399739E-06 knobError=4.470348E-08 normalError=0 centerError=1.10864E-07 rootError=0,0 selected=True | input=-89.5 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002840957/0.006681914 guideError=1.052603E-05 knobError=4.470348E-08 normalError=0 centerError=1.101474E-07 rootError=0,0 selected=True | input=-90 delta=0.5 guideDelta=0.4999925/0.87 knobDelta=0.0009471269/0.002894015 guideError=7.24451E-06 knobError=1.248945E-07 normalError=0 centerError=1.098915E-07 rootError=0,0 selected=True | input=-90.5 delta=0.5 guideDelta=0.5000019/0.87 knobDelta=0.0009470074/0.002894254 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=0,0 selected=True | input=-92 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002841077/0.006681914 guideError=7.24451E-06 knobError=1.273156E-07 normalError=0 centerError=1.087851E-07 rootError=0,0 selected=True | input=-96 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574651/0.01614954 guideError=1.243113E-05 knobError=3.72529E-08 normalError=0 centerError=1.061914E-07 rootError=0,0 selected=True | input=-92 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574651/0.01614954 guideError=7.24451E-06 knobError=1.273156E-07 normalError=0 centerError=1.087851E-07 rootError=0,0 selected=True | input=-90.5 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002841077/0.006681914 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=0,0 selected=True | input=-90 delta=0.5 guideDelta=0.5000019/0.87 knobDelta=0.0009470074/0.002894254 guideError=7.24451E-06 knobError=1.248945E-07 normalError=0 centerError=1.098915E-07 rootError=0,0 selected=True | input=-89.5 delta=0.5 guideDelta=0.4999925/0.87 knobDelta=0.0009471269/0.002894015 guideError=1.052603E-05 knobError=4.470348E-08 normalError=0 centerError=1.101474E-07 rootError=0,0 selected=True | input=-88 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002840957/0.006681914 guideError=5.399739E-06 knobError=4.470348E-08 normalError=0 centerError=1.10864E-07 rootError=0,0 selected=True | input=-84 delta=4 guideDelta=4/6.12 knobDelta=0.007574651/0.01614954 guideError=8.009107E-06 knobError=1.248945E-07 normalError=0 centerError=1.123877E-07 rootError=0,0 selected=True | input=-80 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574841/0.01614945 guideError=5.399739E-06 knobError=2.980232E-08 normalError=0 centerError=1.133185E-07 rootError=0,0 selected=True | input=-78.53 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784107/0.006568208 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=0,0 selected=True | input=-78.51 delta=0.01999664 guideDelta=0.01999655/0.149995 knobDelta=3.795284E-05/0.0010759 guideError=1.024528E-05 knobError=5.960464E-08 normalError=0 centerError=1.135068E-07 rootError=0,0 selected=True | input=-78 delta=0.5100021 guideDelta=0.510001/0.8850032 knobDelta=0.0009658959/0.002931825 guideError=4.18262E-06 knobError=2.235174E-08 normalError=0 centerError=1.13551E-07 rootError=0,0 selected=True | input=-77 delta=1 guideDelta=0.9999994/1.62 knobDelta=0.00189396/0.00478814 guideError=3.415095E-06 knobError=1.194419E-07 normalError=0 centerError=1.136072E-07 rootError=0,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (0.00, 0.00, 0.00) visual guide and knob remain continuous",
+      "passed": true,
+      "detail": "root=(0.00, 0.00, 0.00); input=-78 delta=1 guideDelta=0.9999994/1.62 knobDelta=0.00189396/0.00478814 guideError=4.18262E-06 knobError=2.235174E-08 normalError=0 centerError=1.13551E-07 rootError=0,0 selected=True | input=-78.51 delta=0.5100021 guideDelta=0.510001/0.8850032 knobDelta=0.0009658959/0.002931825 guideError=1.024528E-05 knobError=5.960464E-08 normalError=0 centerError=1.135068E-07 rootError=0,0 selected=True | input=-78.53 delta=0.01999664 guideDelta=0.01999655/0.149995 knobDelta=3.795284E-05/0.0010759 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=0,0 selected=True | input=-80 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784107/0.006568208 guideError=5.399739E-06 knobError=2.980232E-08 normalError=0 centerError=1.133185E-07 rootError=0,0 selected=True | input=-84 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574841/0.01614945 guideError=8.009107E-06 knobError=1.248945E-07 normalError=0 centerError=1.123877E-07 rootError=0,0 selected=True | input=-88 delta=4 guideDelta=4/6.12 knobDelta=0.007574651/0.01614954 guideError=5.399739E-06 knobError=4.470348E-08 normalError=0 centerError=1.10864E-07 rootError=0,0 selected=True | input=-89.5 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002840957/0.006681914 guideError=1.052603E-05 knobError=4.470348E-08 normalError=0 centerError=1.101474E-07 rootError=0,0 selected=True | input=-90 delta=0.5 guideDelta=0.4999925/0.87 knobDelta=0.0009471269/0.002894015 guideError=7.24451E-06 knobError=1.248945E-07 normalError=0 centerError=1.098915E-07 rootError=0,0 selected=True | input=-90.5 delta=0.5 guideDelta=0.5000019/0.87 knobDelta=0.0009470074/0.002894254 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=0,0 selected=True | input=-92 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002841077/0.006681914 guideError=7.24451E-06 knobError=1.273156E-07 normalError=0 centerError=1.087851E-07 rootError=0,0 selected=True | input=-96 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574651/0.01614954 guideError=1.243113E-05 knobError=3.72529E-08 normalError=0 centerError=1.061914E-07 rootError=0,0 selected=True | input=-92 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574651/0.01614954 guideError=7.24451E-06 knobError=1.273156E-07 normalError=0 centerError=1.087851E-07 rootError=0,0 selected=True | input=-90.5 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002841077/0.006681914 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=0,0 selected=True | input=-90 delta=0.5 guideDelta=0.5000019/0.87 knobDelta=0.0009470074/0.002894254 guideError=7.24451E-06 knobError=1.248945E-07 normalError=0 centerError=1.098915E-07 rootError=0,0 selected=True | input=-89.5 delta=0.5 guideDelta=0.4999925/0.87 knobDelta=0.0009471269/0.002894015 guideError=1.052603E-05 knobError=4.470348E-08 normalError=0 centerError=1.101474E-07 rootError=0,0 selected=True | input=-88 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002840957/0.006681914 guideError=5.399739E-06 knobError=4.470348E-08 normalError=0 centerError=1.10864E-07 rootError=0,0 selected=True | input=-84 delta=4 guideDelta=4/6.12 knobDelta=0.007574651/0.01614954 guideError=8.009107E-06 knobError=1.248945E-07 normalError=0 centerError=1.123877E-07 rootError=0,0 selected=True | input=-80 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574841/0.01614945 guideError=5.399739E-06 knobError=2.980232E-08 normalError=0 centerError=1.133185E-07 rootError=0,0 selected=True | input=-78.53 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784107/0.006568208 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=0,0 selected=True | input=-78.51 delta=0.01999664 guideDelta=0.01999655/0.149995 knobDelta=3.795284E-05/0.0010759 guideError=1.024528E-05 knobError=5.960464E-08 normalError=0 centerError=1.135068E-07 rootError=0,0 selected=True | input=-78 delta=0.5100021 guideDelta=0.510001/0.8850032 knobDelta=0.0009658959/0.002931825 guideError=4.18262E-06 knobError=2.235174E-08 normalError=0 centerError=1.13551E-07 rootError=0,0 selected=True | input=-77 delta=1 guideDelta=0.9999994/1.62 knobDelta=0.00189396/0.00478814 guideError=3.415095E-06 knobError=1.194419E-07 normalError=0 centerError=1.136072E-07 rootError=0,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (0.00, 0.00, 0.00) guide follows full wrist pose",
+      "passed": true,
+      "detail": "root=(0.00, 0.00, 0.00); input=-78 delta=1 guideDelta=0.9999994/1.62 knobDelta=0.00189396/0.00478814 guideError=4.18262E-06 knobError=2.235174E-08 normalError=0 centerError=1.13551E-07 rootError=0,0 selected=True | input=-78.51 delta=0.5100021 guideDelta=0.510001/0.8850032 knobDelta=0.0009658959/0.002931825 guideError=1.024528E-05 knobError=5.960464E-08 normalError=0 centerError=1.135068E-07 rootError=0,0 selected=True | input=-78.53 delta=0.01999664 guideDelta=0.01999655/0.149995 knobDelta=3.795284E-05/0.0010759 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=0,0 selected=True | input=-80 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784107/0.006568208 guideError=5.399739E-06 knobError=2.980232E-08 normalError=0 centerError=1.133185E-07 rootError=0,0 selected=True | input=-84 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574841/0.01614945 guideError=8.009107E-06 knobError=1.248945E-07 normalError=0 centerError=1.123877E-07 rootError=0,0 selected=True | input=-88 delta=4 guideDelta=4/6.12 knobDelta=0.007574651/0.01614954 guideError=5.399739E-06 knobError=4.470348E-08 normalError=0 centerError=1.10864E-07 rootError=0,0 selected=True | input=-89.5 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002840957/0.006681914 guideError=1.052603E-05 knobError=4.470348E-08 normalError=0 centerError=1.101474E-07 rootError=0,0 selected=True | input=-90 delta=0.5 guideDelta=0.4999925/0.87 knobDelta=0.0009471269/0.002894015 guideError=7.24451E-06 knobError=1.248945E-07 normalError=0 centerError=1.098915E-07 rootError=0,0 selected=True | input=-90.5 delta=0.5 guideDelta=0.5000019/0.87 knobDelta=0.0009470074/0.002894254 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=0,0 selected=True | input=-92 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002841077/0.006681914 guideError=7.24451E-06 knobError=1.273156E-07 normalError=0 centerError=1.087851E-07 rootError=0,0 selected=True | input=-96 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574651/0.01614954 guideError=1.243113E-05 knobError=3.72529E-08 normalError=0 centerError=1.061914E-07 rootError=0,0 selected=True | input=-92 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574651/0.01614954 guideError=7.24451E-06 knobError=1.273156E-07 normalError=0 centerError=1.087851E-07 rootError=0,0 selected=True | input=-90.5 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002841077/0.006681914 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=0,0 selected=True | input=-90 delta=0.5 guideDelta=0.5000019/0.87 knobDelta=0.0009470074/0.002894254 guideError=7.24451E-06 knobError=1.248945E-07 normalError=0 centerError=1.098915E-07 rootError=0,0 selected=True | input=-89.5 delta=0.5 guideDelta=0.4999925/0.87 knobDelta=0.0009471269/0.002894015 guideError=1.052603E-05 knobError=4.470348E-08 normalError=0 centerError=1.101474E-07 rootError=0,0 selected=True | input=-88 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002840957/0.006681914 guideError=5.399739E-06 knobError=4.470348E-08 normalError=0 centerError=1.10864E-07 rootError=0,0 selected=True | input=-84 delta=4 guideDelta=4/6.12 knobDelta=0.007574651/0.01614954 guideError=8.009107E-06 knobError=1.248945E-07 normalError=0 centerError=1.123877E-07 rootError=0,0 selected=True | input=-80 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574841/0.01614945 guideError=5.399739E-06 knobError=2.980232E-08 normalError=0 centerError=1.133185E-07 rootError=0,0 selected=True | input=-78.53 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784107/0.006568208 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=0,0 selected=True | input=-78.51 delta=0.01999664 guideDelta=0.01999655/0.149995 knobDelta=3.795284E-05/0.0010759 guideError=1.024528E-05 knobError=5.960464E-08 normalError=0 centerError=1.135068E-07 rootError=0,0 selected=True | input=-78 delta=0.5100021 guideDelta=0.510001/0.8850032 knobDelta=0.0009658959/0.002931825 guideError=4.18262E-06 knobError=2.235174E-08 normalError=0 centerError=1.13551E-07 rootError=0,0 selected=True | input=-77 delta=1 guideDelta=0.9999994/1.62 knobDelta=0.00189396/0.00478814 guideError=3.415095E-06 knobError=1.194419E-07 normalError=0 centerError=1.136072E-07 rootError=0,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (0.00, 0.00, 0.00) root remains fixed",
+      "passed": true,
+      "detail": "root=(0.00, 0.00, 0.00); input=-78 delta=1 guideDelta=0.9999994/1.62 knobDelta=0.00189396/0.00478814 guideError=4.18262E-06 knobError=2.235174E-08 normalError=0 centerError=1.13551E-07 rootError=0,0 selected=True | input=-78.51 delta=0.5100021 guideDelta=0.510001/0.8850032 knobDelta=0.0009658959/0.002931825 guideError=1.024528E-05 knobError=5.960464E-08 normalError=0 centerError=1.135068E-07 rootError=0,0 selected=True | input=-78.53 delta=0.01999664 guideDelta=0.01999655/0.149995 knobDelta=3.795284E-05/0.0010759 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=0,0 selected=True | input=-80 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784107/0.006568208 guideError=5.399739E-06 knobError=2.980232E-08 normalError=0 centerError=1.133185E-07 rootError=0,0 selected=True | input=-84 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574841/0.01614945 guideError=8.009107E-06 knobError=1.248945E-07 normalError=0 centerError=1.123877E-07 rootError=0,0 selected=True | input=-88 delta=4 guideDelta=4/6.12 knobDelta=0.007574651/0.01614954 guideError=5.399739E-06 knobError=4.470348E-08 normalError=0 centerError=1.10864E-07 rootError=0,0 selected=True | input=-89.5 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002840957/0.006681914 guideError=1.052603E-05 knobError=4.470348E-08 normalError=0 centerError=1.101474E-07 rootError=0,0 selected=True | input=-90 delta=0.5 guideDelta=0.4999925/0.87 knobDelta=0.0009471269/0.002894015 guideError=7.24451E-06 knobError=1.248945E-07 normalError=0 centerError=1.098915E-07 rootError=0,0 selected=True | input=-90.5 delta=0.5 guideDelta=0.5000019/0.87 knobDelta=0.0009470074/0.002894254 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=0,0 selected=True | input=-92 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002841077/0.006681914 guideError=7.24451E-06 knobError=1.273156E-07 normalError=0 centerError=1.087851E-07 rootError=0,0 selected=True | input=-96 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574651/0.01614954 guideError=1.243113E-05 knobError=3.72529E-08 normalError=0 centerError=1.061914E-07 rootError=0,0 selected=True | input=-92 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574651/0.01614954 guideError=7.24451E-06 knobError=1.273156E-07 normalError=0 centerError=1.087851E-07 rootError=0,0 selected=True | input=-90.5 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002841077/0.006681914 guideError=3.415095E-06 knobError=7.450581E-09 normalError=0 centerError=1.096273E-07 rootError=0,0 selected=True | input=-90 delta=0.5 guideDelta=0.5000019/0.87 knobDelta=0.0009470074/0.002894254 guideError=7.24451E-06 knobError=1.248945E-07 normalError=0 centerError=1.098915E-07 rootError=0,0 selected=True | input=-89.5 delta=0.5 guideDelta=0.4999925/0.87 knobDelta=0.0009471269/0.002894015 guideError=1.052603E-05 knobError=4.470348E-08 normalError=0 centerError=1.101474E-07 rootError=0,0 selected=True | input=-88 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002840957/0.006681914 guideError=5.399739E-06 knobError=4.470348E-08 normalError=0 centerError=1.10864E-07 rootError=0,0 selected=True | input=-84 delta=4 guideDelta=4/6.12 knobDelta=0.007574651/0.01614954 guideError=8.009107E-06 knobError=1.248945E-07 normalError=0 centerError=1.123877E-07 rootError=0,0 selected=True | input=-80 delta=4 guideDelta=4.000003/6.12 knobDelta=0.007574841/0.01614945 guideError=5.399739E-06 knobError=2.980232E-08 normalError=0 centerError=1.133185E-07 rootError=0,0 selected=True | input=-78.53 delta=1.470001 guideDelta=1.470003/2.325002 knobDelta=0.002784107/0.006568208 guideError=9.659346E-06 knobError=4.470348E-08 normalError=0 centerError=1.135049E-07 rootError=0,0 selected=True | input=-78.51 delta=0.01999664 guideDelta=0.01999655/0.149995 knobDelta=3.795284E-05/0.0010759 guideError=1.024528E-05 knobError=5.960464E-08 normalError=0 centerError=1.135068E-07 rootError=0,0 selected=True | input=-78 delta=0.5100021 guideDelta=0.510001/0.8850032 knobDelta=0.0009658959/0.002931825 guideError=4.18262E-06 knobError=2.235174E-08 normalError=0 centerError=1.13551E-07 rootError=0,0 selected=True | input=-77 delta=1 guideDelta=0.9999994/1.62 knobDelta=0.00189396/0.00478814 guideError=3.415095E-06 knobError=1.194419E-07 normalError=0 centerError=1.136072E-07 rootError=0,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (0.00, 0.00, 0.00) release preserves guide pose",
+      "passed": true,
+      "detail": "Release is real XR grip-up; floating removes gravity as a confounding factor. selected=False; guide rotation drift=0; knob drift=0"
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (0.00, 0.00, 0.00) regrab preserves guide pose",
+      "passed": true,
+      "detail": "New hand orientation must not reset the guide roll. selected=True; guide rotation drift=1.052603E-05; knob drift=1.228781E-07"
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (0.00, 0.00, 0.00) stationary regrab has no drift",
+      "passed": true,
+      "detail": "selected=True; guide rotation drift=1.052603E-05; knob drift=1.228781E-07"
+    },
+    {
+      "name": "section XR continuity: pure roll root (0.00, 0.00, 0.00) floating fixture",
+      "passed": true,
+      "detail": "API setup fixes the root and initial normal; selection and wrist motion below are synthetic XR input."
+    },
+    {
+      "name": "section XR continuity: pure roll root (0.00, 0.00, 0.00) direct grip",
+      "passed": true,
+      "detail": "Saved section collider selected by QueueRight -> InputSystem -> XRDirectInteractor."
+    },
+    {
+      "name": "section XR continuity: pure roll root (0.00, 0.00, 0.00) grip does not jump",
+      "passed": true,
+      "detail": "Selecting a stationary handle must preserve its visual orientation and knob position."
+    },
+    {
+      "name": "section XR continuity: pure roll root (0.00, 0.00, 0.00) grip stays on section",
+      "passed": true,
+      "detail": "root=(0.00, 0.00, 0.00); input=5 delta=5 guideDelta=5/7.62 knobDelta=0.02442692/0.04985382 guideError=1.527277E-05 knobError=3.72529E-08 normalError=0 centerError=1.360805E-07 rootError=0,0 selected=True | input=15 delta=10 guideDelta=10.00001/15.12 knobDelta=0.04880726/0.09861436 guideError=8.706817E-06 knobError=1.228781E-07 normalError=0 centerError=1.33457E-07 rootError=0,0 selected=True | input=30 delta=15 guideDelta=14.99999/22.62 knobDelta=0.07309452/0.1471892 guideError=5.915118E-06 knobError=2.235174E-08 normalError=0 centerError=1.192447E-07 rootError=0,0 selected=True | input=45 delta=15 guideDelta=15/22.62 knobDelta=0.07309487/0.1471892 guideError=3.415095E-06 knobError=2.669763E-07 normalError=0 centerError=3.542208E-08 rootError=0,0 selected=True | input=30 delta=15 guideDelta=15/22.62 knobDelta=0.07309487/0.1471892 guideError=5.915118E-06 knobError=2.235174E-08 normalError=0 centerError=1.192447E-07 rootError=0,0 selected=True | input=15 delta=15 guideDelta=14.99999/22.62 knobDelta=0.07309452/0.1471892 guideError=8.706817E-06 knobError=1.228781E-07 normalError=0 centerError=1.33457E-07 rootError=0,0 selected=True | input=0 delta=15 guideDelta=15/22.62 knobDelta=0.07309479/0.1471894 guideError=6.830189E-06 knobError=1.862645E-08 normalError=0 centerError=1.371662E-07 rootError=0,0 selected=True | input=-15 delta=15 guideDelta=15/22.62 knobDelta=0.07309461/0.1471892 guideError=5.915118E-06 knobError=1.862645E-08 normalError=0 centerError=1.399704E-07 rootError=0,0 selected=True | input=-30 delta=15 guideDelta=15/22.62 knobDelta=0.07309469/0.1471894 guideError=8.009107E-06 knobError=2.387748E-07 normalError=0 centerError=1.378617E-07 rootError=0,0 selected=True | input=-45 delta=15 guideDelta=15.00001/22.62 knobDelta=0.07309473/0.1471893 guideError=7.636384E-06 knobError=4.842877E-08 normalError=0 centerError=1.38693E-07 rootError=0,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: pure roll root (0.00, 0.00, 0.00) visual guide and knob remain continuous",
+      "passed": true,
+      "detail": "root=(0.00, 0.00, 0.00); input=5 delta=5 guideDelta=5/7.62 knobDelta=0.02442692/0.04985382 guideError=1.527277E-05 knobError=3.72529E-08 normalError=0 centerError=1.360805E-07 rootError=0,0 selected=True | input=15 delta=10 guideDelta=10.00001/15.12 knobDelta=0.04880726/0.09861436 guideError=8.706817E-06 knobError=1.228781E-07 normalError=0 centerError=1.33457E-07 rootError=0,0 selected=True | input=30 delta=15 guideDelta=14.99999/22.62 knobDelta=0.07309452/0.1471892 guideError=5.915118E-06 knobError=2.235174E-08 normalError=0 centerError=1.192447E-07 rootError=0,0 selected=True | input=45 delta=15 guideDelta=15/22.62 knobDelta=0.07309487/0.1471892 guideError=3.415095E-06 knobError=2.669763E-07 normalError=0 centerError=3.542208E-08 rootError=0,0 selected=True | input=30 delta=15 guideDelta=15/22.62 knobDelta=0.07309487/0.1471892 guideError=5.915118E-06 knobError=2.235174E-08 normalError=0 centerError=1.192447E-07 rootError=0,0 selected=True | input=15 delta=15 guideDelta=14.99999/22.62 knobDelta=0.07309452/0.1471892 guideError=8.706817E-06 knobError=1.228781E-07 normalError=0 centerError=1.33457E-07 rootError=0,0 selected=True | input=0 delta=15 guideDelta=15/22.62 knobDelta=0.07309479/0.1471894 guideError=6.830189E-06 knobError=1.862645E-08 normalError=0 centerError=1.371662E-07 rootError=0,0 selected=True | input=-15 delta=15 guideDelta=15/22.62 knobDelta=0.07309461/0.1471892 guideError=5.915118E-06 knobError=1.862645E-08 normalError=0 centerError=1.399704E-07 rootError=0,0 selected=True | input=-30 delta=15 guideDelta=15/22.62 knobDelta=0.07309469/0.1471894 guideError=8.009107E-06 knobError=2.387748E-07 normalError=0 centerError=1.378617E-07 rootError=0,0 selected=True | input=-45 delta=15 guideDelta=15.00001/22.62 knobDelta=0.07309473/0.1471893 guideError=7.636384E-06 knobError=4.842877E-08 normalError=0 centerError=1.38693E-07 rootError=0,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: pure roll root (0.00, 0.00, 0.00) guide follows full wrist pose",
+      "passed": true,
+      "detail": "root=(0.00, 0.00, 0.00); input=5 delta=5 guideDelta=5/7.62 knobDelta=0.02442692/0.04985382 guideError=1.527277E-05 knobError=3.72529E-08 normalError=0 centerError=1.360805E-07 rootError=0,0 selected=True | input=15 delta=10 guideDelta=10.00001/15.12 knobDelta=0.04880726/0.09861436 guideError=8.706817E-06 knobError=1.228781E-07 normalError=0 centerError=1.33457E-07 rootError=0,0 selected=True | input=30 delta=15 guideDelta=14.99999/22.62 knobDelta=0.07309452/0.1471892 guideError=5.915118E-06 knobError=2.235174E-08 normalError=0 centerError=1.192447E-07 rootError=0,0 selected=True | input=45 delta=15 guideDelta=15/22.62 knobDelta=0.07309487/0.1471892 guideError=3.415095E-06 knobError=2.669763E-07 normalError=0 centerError=3.542208E-08 rootError=0,0 selected=True | input=30 delta=15 guideDelta=15/22.62 knobDelta=0.07309487/0.1471892 guideError=5.915118E-06 knobError=2.235174E-08 normalError=0 centerError=1.192447E-07 rootError=0,0 selected=True | input=15 delta=15 guideDelta=14.99999/22.62 knobDelta=0.07309452/0.1471892 guideError=8.706817E-06 knobError=1.228781E-07 normalError=0 centerError=1.33457E-07 rootError=0,0 selected=True | input=0 delta=15 guideDelta=15/22.62 knobDelta=0.07309479/0.1471894 guideError=6.830189E-06 knobError=1.862645E-08 normalError=0 centerError=1.371662E-07 rootError=0,0 selected=True | input=-15 delta=15 guideDelta=15/22.62 knobDelta=0.07309461/0.1471892 guideError=5.915118E-06 knobError=1.862645E-08 normalError=0 centerError=1.399704E-07 rootError=0,0 selected=True | input=-30 delta=15 guideDelta=15/22.62 knobDelta=0.07309469/0.1471894 guideError=8.009107E-06 knobError=2.387748E-07 normalError=0 centerError=1.378617E-07 rootError=0,0 selected=True | input=-45 delta=15 guideDelta=15.00001/22.62 knobDelta=0.07309473/0.1471893 guideError=7.636384E-06 knobError=4.842877E-08 normalError=0 centerError=1.38693E-07 rootError=0,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: pure roll root (0.00, 0.00, 0.00) root remains fixed",
+      "passed": true,
+      "detail": "root=(0.00, 0.00, 0.00); input=5 delta=5 guideDelta=5/7.62 knobDelta=0.02442692/0.04985382 guideError=1.527277E-05 knobError=3.72529E-08 normalError=0 centerError=1.360805E-07 rootError=0,0 selected=True | input=15 delta=10 guideDelta=10.00001/15.12 knobDelta=0.04880726/0.09861436 guideError=8.706817E-06 knobError=1.228781E-07 normalError=0 centerError=1.33457E-07 rootError=0,0 selected=True | input=30 delta=15 guideDelta=14.99999/22.62 knobDelta=0.07309452/0.1471892 guideError=5.915118E-06 knobError=2.235174E-08 normalError=0 centerError=1.192447E-07 rootError=0,0 selected=True | input=45 delta=15 guideDelta=15/22.62 knobDelta=0.07309487/0.1471892 guideError=3.415095E-06 knobError=2.669763E-07 normalError=0 centerError=3.542208E-08 rootError=0,0 selected=True | input=30 delta=15 guideDelta=15/22.62 knobDelta=0.07309487/0.1471892 guideError=5.915118E-06 knobError=2.235174E-08 normalError=0 centerError=1.192447E-07 rootError=0,0 selected=True | input=15 delta=15 guideDelta=14.99999/22.62 knobDelta=0.07309452/0.1471892 guideError=8.706817E-06 knobError=1.228781E-07 normalError=0 centerError=1.33457E-07 rootError=0,0 selected=True | input=0 delta=15 guideDelta=15/22.62 knobDelta=0.07309479/0.1471894 guideError=6.830189E-06 knobError=1.862645E-08 normalError=0 centerError=1.371662E-07 rootError=0,0 selected=True | input=-15 delta=15 guideDelta=15/22.62 knobDelta=0.07309461/0.1471892 guideError=5.915118E-06 knobError=1.862645E-08 normalError=0 centerError=1.399704E-07 rootError=0,0 selected=True | input=-30 delta=15 guideDelta=15/22.62 knobDelta=0.07309469/0.1471894 guideError=8.009107E-06 knobError=2.387748E-07 normalError=0 centerError=1.378617E-07 rootError=0,0 selected=True | input=-45 delta=15 guideDelta=15.00001/22.62 knobDelta=0.07309473/0.1471893 guideError=7.636384E-06 knobError=4.842877E-08 normalError=0 centerError=1.38693E-07 rootError=0,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: pure roll root (0.00, 0.00, 0.00) roll is visible with unchanged normal",
+      "passed": true,
+      "detail": "Normal-only behavior is insufficient: actual guide orientation and offset knob must respond to the wrist roll. root=(0.00, 0.00, 0.00); input=5 delta=5 guideDelta=5/7.62 knobDelta=0.02442692/0.04985382 guideError=1.527277E-05 knobError=3.72529E-08 normalError=0 centerError=1.360805E-07 rootError=0,0 selected=True | input=15 delta=10 guideDelta=10.00001/15.12 knobDelta=0.04880726/0.09861436 guideError=8.706817E-06 knobError=1.228781E-07 normalError=0 centerError=1.33457E-07 rootError=0,0 selected=True | input=30 delta=15 guideDelta=14.99999/22.62 knobDelta=0.07309452/0.1471892 guideError=5.915118E-06 knobError=2.235174E-08 normalError=0 centerError=1.192447E-07 rootError=0,0 selected=True | input=45 delta=15 guideDelta=15/22.62 knobDelta=0.07309487/0.1471892 guideError=3.415095E-06 knobError=2.669763E-07 normalError=0 centerError=3.542208E-08 rootError=0,0 selected=True | input=30 delta=15 guideDelta=15/22.62 knobDelta=0.07309487/0.1471892 guideError=5.915118E-06 knobError=2.235174E-08 normalError=0 centerError=1.192447E-07 rootError=0,0 selected=True | input=15 delta=15 guideDelta=14.99999/22.62 knobDelta=0.07309452/0.1471892 guideError=8.706817E-06 knobError=1.228781E-07 normalError=0 centerError=1.33457E-07 rootError=0,0 selected=True | input=0 delta=15 guideDelta=15/22.62 knobDelta=0.07309479/0.1471894 guideError=6.830189E-06 knobError=1.862645E-08 normalError=0 centerError=1.371662E-07 rootError=0,0 selected=True | input=-15 delta=15 guideDelta=15/22.62 knobDelta=0.07309461/0.1471892 guideError=5.915118E-06 knobError=1.862645E-08 normalError=0 centerError=1.399704E-07 rootError=0,0 selected=True | input=-30 delta=15 guideDelta=15/22.62 knobDelta=0.07309469/0.1471894 guideError=8.009107E-06 knobError=2.387748E-07 normalError=0 centerError=1.378617E-07 rootError=0,0 selected=True | input=-45 delta=15 guideDelta=15.00001/22.62 knobDelta=0.07309473/0.1471893 guideError=7.636384E-06 knobError=4.842877E-08 normalError=0 centerError=1.38693E-07 rootError=0,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: pure roll root (0.00, 0.00, 0.00) release preserves guide pose",
+      "passed": true,
+      "detail": "Release is real XR grip-up; floating removes gravity as a confounding factor. selected=False; guide rotation drift=0; knob drift=0"
+    },
+    {
+      "name": "section XR continuity: pure roll root (0.00, 0.00, 0.00) regrab preserves guide pose",
+      "passed": true,
+      "detail": "New hand orientation must not reset the guide roll. selected=True; guide rotation drift=0; knob drift=7.450581E-09"
+    },
+    {
+      "name": "section XR continuity: pure roll root (0.00, 0.00, 0.00) stationary regrab has no drift",
+      "passed": true,
+      "detail": "selected=True; guide rotation drift=0; knob drift=7.450581E-09"
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (25.00, 40.00, 17.00) floating fixture",
+      "passed": true,
+      "detail": "API setup fixes the root and initial normal; selection and wrist motion below are synthetic XR input."
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (25.00, 40.00, 17.00) direct grip",
+      "passed": true,
+      "detail": "Saved section collider selected by QueueRight -> InputSystem -> XRDirectInteractor."
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (25.00, 40.00, 17.00) grip does not jump",
+      "passed": true,
+      "detail": "Selecting a stationary handle must preserve its visual orientation and knob position."
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (25.00, 40.00, 17.00) grip stays on section",
+      "passed": true,
+      "detail": "root=(25.00, 40.00, 17.00); input=78 delta=1 guideDelta=1.000007/1.62 knobDelta=0.001846131/0.004692282 guideError=6.830189E-06 knobError=4.470348E-08 normalError=0 centerError=1.019798E-07 rootError=1.192238E-07,0 selected=True | input=78.51 delta=0.5100021 guideDelta=0.5099942/0.8850032 knobDelta=0.0009415665/0.002883157 guideError=8.365239E-06 knobError=2.674956E-07 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=78.53 delta=0.01999664 guideDelta=0.01999575/0.149995 knobDelta=3.694724E-05/0.001073854 guideError=9.352621E-06 knobError=0 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=80 delta=1.470001 guideDelta=1.469999/2.325002 knobDelta=0.002713772/0.00642754 guideError=1.277811E-05 knobError=1.117587E-08 normalError=0.01978234 centerError=1.033768E-07 rootError=1.192238E-07,0 selected=True | input=84 delta=4 guideDelta=4/6.12 knobDelta=0.007383214/0.01576643 guideError=1.564993E-05 knobError=1.117587E-08 normalError=0 centerError=1.108274E-07 rootError=1.192238E-07,0 selected=True | input=88 delta=4 guideDelta=4.000009/6.12 knobDelta=0.007383236/0.01576627 guideError=8.009107E-06 knobError=2.466862E-07 normalError=0 centerError=1.136214E-07 rootError=1.192238E-07,0 selected=True | input=89.5 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002769149/0.006538521 guideError=5.915118E-06 knobError=2.607703E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=90 delta=0.5 guideDelta=0.4999908/0.87 knobDelta=0.0009231279/0.002846262 guideError=1.870524E-05 knobError=4.842877E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=90.5 delta=0.5 guideDelta=0.5000014/0.87 knobDelta=0.0009230573/0.002846108 guideError=1.010199E-05 knobError=5.587935E-08 normalError=0 centerError=1.15484E-07 rootError=1.192238E-07,0 selected=True | input=92 delta=1.5 guideDelta=1.500008/2.37 knobDelta=0.002769151/0.006538304 guideError=1.619922E-05 knobError=1.862645E-08 normalError=0 centerError=1.16881E-07 rootError=1.192238E-07,0 selected=True | input=96 delta=4 guideDelta=4/6.12 knobDelta=0.007383218/0.01576643 guideError=2.426881E-05 knobError=6.332994E-08 normalError=0 centerError=1.243316E-07 rootError=1.192238E-07,0 selected=True | input=92 delta=4 guideDelta=4/6.12 knobDelta=0.007383218/0.01576643 guideError=1.619922E-05 knobError=1.862645E-08 normalError=0 centerError=1.16881E-07 rootError=1.192238E-07,0 selected=True | input=90.5 delta=1.5 guideDelta=1.500008/2.37 knobDelta=0.002769151/0.006538304 guideError=1.010199E-05 knobError=5.587935E-08 normalError=0 centerError=1.15484E-07 rootError=1.192238E-07,0 selected=True | input=90 delta=0.5 guideDelta=0.5000014/0.87 knobDelta=0.0009230573/0.002846108 guideError=1.870524E-05 knobError=4.842877E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=89.5 delta=0.5 guideDelta=0.4999908/0.87 knobDelta=0.0009231279/0.002846262 guideError=5.915118E-06 knobError=2.607703E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=88 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002769149/0.006538521 guideError=8.009107E-06 knobError=2.466862E-07 normalError=0 centerError=1.136214E-07 rootError=1.192238E-07,0 selected=True | input=84 delta=4 guideDelta=4.000009/6.12 knobDelta=0.007383236/0.01576627 guideError=1.564993E-05 knobError=1.117587E-08 normalError=0 centerError=1.108274E-07 rootError=1.192238E-07,0 selected=True | input=80 delta=4 guideDelta=4/6.12 knobDelta=0.007383214/0.01576643 guideError=1.277811E-05 knobError=1.117587E-08 normalError=0.01978234 centerError=1.033768E-07 rootError=1.192238E-07,0 selected=True | input=78.53 delta=1.470001 guideDelta=1.469999/2.325002 knobDelta=0.002713772/0.00642754 guideError=9.352621E-06 knobError=0 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=78.51 delta=0.01999664 guideDelta=0.01999575/0.149995 knobDelta=3.694724E-05/0.001073854 guideError=8.365239E-06 knobError=2.674956E-07 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=78 delta=0.5100021 guideDelta=0.5099942/0.8850032 knobDelta=0.0009415665/0.002883157 guideError=6.830189E-06 knobError=4.470348E-08 normalError=0 centerError=1.019798E-07 rootError=1.192238E-07,0 selected=True | input=77 delta=1 guideDelta=1.000007/1.62 knobDelta=0.001846131/0.004692282 guideError=5.399739E-06 knobError=0 normalError=0 centerError=1.015142E-07 rootError=1.192238E-07,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (25.00, 40.00, 17.00) visual guide and knob remain continuous",
+      "passed": true,
+      "detail": "root=(25.00, 40.00, 17.00); input=78 delta=1 guideDelta=1.000007/1.62 knobDelta=0.001846131/0.004692282 guideError=6.830189E-06 knobError=4.470348E-08 normalError=0 centerError=1.019798E-07 rootError=1.192238E-07,0 selected=True | input=78.51 delta=0.5100021 guideDelta=0.5099942/0.8850032 knobDelta=0.0009415665/0.002883157 guideError=8.365239E-06 knobError=2.674956E-07 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=78.53 delta=0.01999664 guideDelta=0.01999575/0.149995 knobDelta=3.694724E-05/0.001073854 guideError=9.352621E-06 knobError=0 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=80 delta=1.470001 guideDelta=1.469999/2.325002 knobDelta=0.002713772/0.00642754 guideError=1.277811E-05 knobError=1.117587E-08 normalError=0.01978234 centerError=1.033768E-07 rootError=1.192238E-07,0 selected=True | input=84 delta=4 guideDelta=4/6.12 knobDelta=0.007383214/0.01576643 guideError=1.564993E-05 knobError=1.117587E-08 normalError=0 centerError=1.108274E-07 rootError=1.192238E-07,0 selected=True | input=88 delta=4 guideDelta=4.000009/6.12 knobDelta=0.007383236/0.01576627 guideError=8.009107E-06 knobError=2.466862E-07 normalError=0 centerError=1.136214E-07 rootError=1.192238E-07,0 selected=True | input=89.5 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002769149/0.006538521 guideError=5.915118E-06 knobError=2.607703E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=90 delta=0.5 guideDelta=0.4999908/0.87 knobDelta=0.0009231279/0.002846262 guideError=1.870524E-05 knobError=4.842877E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=90.5 delta=0.5 guideDelta=0.5000014/0.87 knobDelta=0.0009230573/0.002846108 guideError=1.010199E-05 knobError=5.587935E-08 normalError=0 centerError=1.15484E-07 rootError=1.192238E-07,0 selected=True | input=92 delta=1.5 guideDelta=1.500008/2.37 knobDelta=0.002769151/0.006538304 guideError=1.619922E-05 knobError=1.862645E-08 normalError=0 centerError=1.16881E-07 rootError=1.192238E-07,0 selected=True | input=96 delta=4 guideDelta=4/6.12 knobDelta=0.007383218/0.01576643 guideError=2.426881E-05 knobError=6.332994E-08 normalError=0 centerError=1.243316E-07 rootError=1.192238E-07,0 selected=True | input=92 delta=4 guideDelta=4/6.12 knobDelta=0.007383218/0.01576643 guideError=1.619922E-05 knobError=1.862645E-08 normalError=0 centerError=1.16881E-07 rootError=1.192238E-07,0 selected=True | input=90.5 delta=1.5 guideDelta=1.500008/2.37 knobDelta=0.002769151/0.006538304 guideError=1.010199E-05 knobError=5.587935E-08 normalError=0 centerError=1.15484E-07 rootError=1.192238E-07,0 selected=True | input=90 delta=0.5 guideDelta=0.5000014/0.87 knobDelta=0.0009230573/0.002846108 guideError=1.870524E-05 knobError=4.842877E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=89.5 delta=0.5 guideDelta=0.4999908/0.87 knobDelta=0.0009231279/0.002846262 guideError=5.915118E-06 knobError=2.607703E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=88 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002769149/0.006538521 guideError=8.009107E-06 knobError=2.466862E-07 normalError=0 centerError=1.136214E-07 rootError=1.192238E-07,0 selected=True | input=84 delta=4 guideDelta=4.000009/6.12 knobDelta=0.007383236/0.01576627 guideError=1.564993E-05 knobError=1.117587E-08 normalError=0 centerError=1.108274E-07 rootError=1.192238E-07,0 selected=True | input=80 delta=4 guideDelta=4/6.12 knobDelta=0.007383214/0.01576643 guideError=1.277811E-05 knobError=1.117587E-08 normalError=0.01978234 centerError=1.033768E-07 rootError=1.192238E-07,0 selected=True | input=78.53 delta=1.470001 guideDelta=1.469999/2.325002 knobDelta=0.002713772/0.00642754 guideError=9.352621E-06 knobError=0 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=78.51 delta=0.01999664 guideDelta=0.01999575/0.149995 knobDelta=3.694724E-05/0.001073854 guideError=8.365239E-06 knobError=2.674956E-07 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=78 delta=0.5100021 guideDelta=0.5099942/0.8850032 knobDelta=0.0009415665/0.002883157 guideError=6.830189E-06 knobError=4.470348E-08 normalError=0 centerError=1.019798E-07 rootError=1.192238E-07,0 selected=True | input=77 delta=1 guideDelta=1.000007/1.62 knobDelta=0.001846131/0.004692282 guideError=5.399739E-06 knobError=0 normalError=0 centerError=1.015142E-07 rootError=1.192238E-07,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (25.00, 40.00, 17.00) guide follows full wrist pose",
+      "passed": true,
+      "detail": "root=(25.00, 40.00, 17.00); input=78 delta=1 guideDelta=1.000007/1.62 knobDelta=0.001846131/0.004692282 guideError=6.830189E-06 knobError=4.470348E-08 normalError=0 centerError=1.019798E-07 rootError=1.192238E-07,0 selected=True | input=78.51 delta=0.5100021 guideDelta=0.5099942/0.8850032 knobDelta=0.0009415665/0.002883157 guideError=8.365239E-06 knobError=2.674956E-07 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=78.53 delta=0.01999664 guideDelta=0.01999575/0.149995 knobDelta=3.694724E-05/0.001073854 guideError=9.352621E-06 knobError=0 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=80 delta=1.470001 guideDelta=1.469999/2.325002 knobDelta=0.002713772/0.00642754 guideError=1.277811E-05 knobError=1.117587E-08 normalError=0.01978234 centerError=1.033768E-07 rootError=1.192238E-07,0 selected=True | input=84 delta=4 guideDelta=4/6.12 knobDelta=0.007383214/0.01576643 guideError=1.564993E-05 knobError=1.117587E-08 normalError=0 centerError=1.108274E-07 rootError=1.192238E-07,0 selected=True | input=88 delta=4 guideDelta=4.000009/6.12 knobDelta=0.007383236/0.01576627 guideError=8.009107E-06 knobError=2.466862E-07 normalError=0 centerError=1.136214E-07 rootError=1.192238E-07,0 selected=True | input=89.5 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002769149/0.006538521 guideError=5.915118E-06 knobError=2.607703E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=90 delta=0.5 guideDelta=0.4999908/0.87 knobDelta=0.0009231279/0.002846262 guideError=1.870524E-05 knobError=4.842877E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=90.5 delta=0.5 guideDelta=0.5000014/0.87 knobDelta=0.0009230573/0.002846108 guideError=1.010199E-05 knobError=5.587935E-08 normalError=0 centerError=1.15484E-07 rootError=1.192238E-07,0 selected=True | input=92 delta=1.5 guideDelta=1.500008/2.37 knobDelta=0.002769151/0.006538304 guideError=1.619922E-05 knobError=1.862645E-08 normalError=0 centerError=1.16881E-07 rootError=1.192238E-07,0 selected=True | input=96 delta=4 guideDelta=4/6.12 knobDelta=0.007383218/0.01576643 guideError=2.426881E-05 knobError=6.332994E-08 normalError=0 centerError=1.243316E-07 rootError=1.192238E-07,0 selected=True | input=92 delta=4 guideDelta=4/6.12 knobDelta=0.007383218/0.01576643 guideError=1.619922E-05 knobError=1.862645E-08 normalError=0 centerError=1.16881E-07 rootError=1.192238E-07,0 selected=True | input=90.5 delta=1.5 guideDelta=1.500008/2.37 knobDelta=0.002769151/0.006538304 guideError=1.010199E-05 knobError=5.587935E-08 normalError=0 centerError=1.15484E-07 rootError=1.192238E-07,0 selected=True | input=90 delta=0.5 guideDelta=0.5000014/0.87 knobDelta=0.0009230573/0.002846108 guideError=1.870524E-05 knobError=4.842877E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=89.5 delta=0.5 guideDelta=0.4999908/0.87 knobDelta=0.0009231279/0.002846262 guideError=5.915118E-06 knobError=2.607703E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=88 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002769149/0.006538521 guideError=8.009107E-06 knobError=2.466862E-07 normalError=0 centerError=1.136214E-07 rootError=1.192238E-07,0 selected=True | input=84 delta=4 guideDelta=4.000009/6.12 knobDelta=0.007383236/0.01576627 guideError=1.564993E-05 knobError=1.117587E-08 normalError=0 centerError=1.108274E-07 rootError=1.192238E-07,0 selected=True | input=80 delta=4 guideDelta=4/6.12 knobDelta=0.007383214/0.01576643 guideError=1.277811E-05 knobError=1.117587E-08 normalError=0.01978234 centerError=1.033768E-07 rootError=1.192238E-07,0 selected=True | input=78.53 delta=1.470001 guideDelta=1.469999/2.325002 knobDelta=0.002713772/0.00642754 guideError=9.352621E-06 knobError=0 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=78.51 delta=0.01999664 guideDelta=0.01999575/0.149995 knobDelta=3.694724E-05/0.001073854 guideError=8.365239E-06 knobError=2.674956E-07 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=78 delta=0.5100021 guideDelta=0.5099942/0.8850032 knobDelta=0.0009415665/0.002883157 guideError=6.830189E-06 knobError=4.470348E-08 normalError=0 centerError=1.019798E-07 rootError=1.192238E-07,0 selected=True | input=77 delta=1 guideDelta=1.000007/1.62 knobDelta=0.001846131/0.004692282 guideError=5.399739E-06 knobError=0 normalError=0 centerError=1.015142E-07 rootError=1.192238E-07,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (25.00, 40.00, 17.00) root remains fixed",
+      "passed": true,
+      "detail": "root=(25.00, 40.00, 17.00); input=78 delta=1 guideDelta=1.000007/1.62 knobDelta=0.001846131/0.004692282 guideError=6.830189E-06 knobError=4.470348E-08 normalError=0 centerError=1.019798E-07 rootError=1.192238E-07,0 selected=True | input=78.51 delta=0.5100021 guideDelta=0.5099942/0.8850032 knobDelta=0.0009415665/0.002883157 guideError=8.365239E-06 knobError=2.674956E-07 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=78.53 delta=0.01999664 guideDelta=0.01999575/0.149995 knobDelta=3.694724E-05/0.001073854 guideError=9.352621E-06 knobError=0 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=80 delta=1.470001 guideDelta=1.469999/2.325002 knobDelta=0.002713772/0.00642754 guideError=1.277811E-05 knobError=1.117587E-08 normalError=0.01978234 centerError=1.033768E-07 rootError=1.192238E-07,0 selected=True | input=84 delta=4 guideDelta=4/6.12 knobDelta=0.007383214/0.01576643 guideError=1.564993E-05 knobError=1.117587E-08 normalError=0 centerError=1.108274E-07 rootError=1.192238E-07,0 selected=True | input=88 delta=4 guideDelta=4.000009/6.12 knobDelta=0.007383236/0.01576627 guideError=8.009107E-06 knobError=2.466862E-07 normalError=0 centerError=1.136214E-07 rootError=1.192238E-07,0 selected=True | input=89.5 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002769149/0.006538521 guideError=5.915118E-06 knobError=2.607703E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=90 delta=0.5 guideDelta=0.4999908/0.87 knobDelta=0.0009231279/0.002846262 guideError=1.870524E-05 knobError=4.842877E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=90.5 delta=0.5 guideDelta=0.5000014/0.87 knobDelta=0.0009230573/0.002846108 guideError=1.010199E-05 knobError=5.587935E-08 normalError=0 centerError=1.15484E-07 rootError=1.192238E-07,0 selected=True | input=92 delta=1.5 guideDelta=1.500008/2.37 knobDelta=0.002769151/0.006538304 guideError=1.619922E-05 knobError=1.862645E-08 normalError=0 centerError=1.16881E-07 rootError=1.192238E-07,0 selected=True | input=96 delta=4 guideDelta=4/6.12 knobDelta=0.007383218/0.01576643 guideError=2.426881E-05 knobError=6.332994E-08 normalError=0 centerError=1.243316E-07 rootError=1.192238E-07,0 selected=True | input=92 delta=4 guideDelta=4/6.12 knobDelta=0.007383218/0.01576643 guideError=1.619922E-05 knobError=1.862645E-08 normalError=0 centerError=1.16881E-07 rootError=1.192238E-07,0 selected=True | input=90.5 delta=1.5 guideDelta=1.500008/2.37 knobDelta=0.002769151/0.006538304 guideError=1.010199E-05 knobError=5.587935E-08 normalError=0 centerError=1.15484E-07 rootError=1.192238E-07,0 selected=True | input=90 delta=0.5 guideDelta=0.5000014/0.87 knobDelta=0.0009230573/0.002846108 guideError=1.870524E-05 knobError=4.842877E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=89.5 delta=0.5 guideDelta=0.4999908/0.87 knobDelta=0.0009231279/0.002846262 guideError=5.915118E-06 knobError=2.607703E-08 normalError=0 centerError=1.150183E-07 rootError=1.192238E-07,0 selected=True | input=88 delta=1.5 guideDelta=1.500001/2.37 knobDelta=0.002769149/0.006538521 guideError=8.009107E-06 knobError=2.466862E-07 normalError=0 centerError=1.136214E-07 rootError=1.192238E-07,0 selected=True | input=84 delta=4 guideDelta=4.000009/6.12 knobDelta=0.007383236/0.01576627 guideError=1.564993E-05 knobError=1.117587E-08 normalError=0 centerError=1.108274E-07 rootError=1.192238E-07,0 selected=True | input=80 delta=4 guideDelta=4/6.12 knobDelta=0.007383214/0.01576643 guideError=1.277811E-05 knobError=1.117587E-08 normalError=0.01978234 centerError=1.033768E-07 rootError=1.192238E-07,0 selected=True | input=78.53 delta=1.470001 guideDelta=1.469999/2.325002 knobDelta=0.002713772/0.00642754 guideError=9.352621E-06 knobError=0 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=78.51 delta=0.01999664 guideDelta=0.01999575/0.149995 knobDelta=3.694724E-05/0.001073854 guideError=8.365239E-06 knobError=2.674956E-07 normalError=0 centerError=1.024455E-07 rootError=1.192238E-07,0 selected=True | input=78 delta=0.5100021 guideDelta=0.5099942/0.8850032 knobDelta=0.0009415665/0.002883157 guideError=6.830189E-06 knobError=4.470348E-08 normalError=0 centerError=1.019798E-07 rootError=1.192238E-07,0 selected=True | input=77 delta=1 guideDelta=1.000007/1.62 knobDelta=0.001846131/0.004692282 guideError=5.399739E-06 knobError=0 normalError=0 centerError=1.015142E-07 rootError=1.192238E-07,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (25.00, 40.00, 17.00) release preserves guide pose",
+      "passed": true,
+      "detail": "Release is real XR grip-up; floating removes gravity as a confounding factor. selected=False; guide rotation drift=0; knob drift=0"
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (25.00, 40.00, 17.00) regrab preserves guide pose",
+      "passed": true,
+      "detail": "New hand orientation must not reset the guide roll. selected=True; guide rotation drift=1.646699E-05; knob drift=4.470348E-08"
+    },
+    {
+      "name": "section XR continuity: positive threshold and pole root (25.00, 40.00, 17.00) stationary regrab has no drift",
+      "passed": true,
+      "detail": "selected=True; guide rotation drift=1.646699E-05; knob drift=4.470348E-08"
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (25.00, 40.00, 17.00) floating fixture",
+      "passed": true,
+      "detail": "API setup fixes the root and initial normal; selection and wrist motion below are synthetic XR input."
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (25.00, 40.00, 17.00) direct grip",
+      "passed": true,
+      "detail": "Saved section collider selected by QueueRight -> InputSystem -> XRDirectInteractor."
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (25.00, 40.00, 17.00) grip does not jump",
+      "passed": true,
+      "detail": "Selecting a stationary handle must preserve its visual orientation and knob position."
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (25.00, 40.00, 17.00) grip stays on section",
+      "passed": true,
+      "detail": "root=(25.00, 40.00, 17.00); input=-78 delta=1 guideDelta=0.9999935/1.62 knobDelta=0.001846092/0.004692356 guideError=8.365239E-06 knobError=1.192093E-07 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78.51 delta=0.5100021 guideDelta=0.5100143/0.8850032 knobDelta=0.0009416697/0.002883146 guideError=1.690386E-05 knobError=1.490116E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78.53 delta=0.01999664 guideDelta=0.01999279/0.149995 knobDelta=3.686528E-05/0.001073742 guideError=9.956626E-06 knobError=2.980232E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-80 delta=1.470001 guideDelta=1.469994/2.325002 knobDelta=0.002713791/0.006427766 guideError=7.636384E-06 knobError=1.192093E-07 normalError=0 centerError=1.318545E-07 rootError=1.192238E-07,0 selected=True | input=-84 delta=4 guideDelta=3.999995/6.12 knobDelta=0.007383364/0.01576607 guideError=9.956626E-06 knobError=2.682209E-07 normalError=0 centerError=5.448237E-08 rootError=1.192238E-07,0 selected=True | input=-88 delta=4 guideDelta=4.000006/6.12 knobDelta=0.007383117/0.01576643 guideError=1.277811E-05 knobError=2.40274E-07 normalError=0 centerError=6.193295E-08 rootError=1.192238E-07,0 selected=True | input=-89.5 delta=1.5 guideDelta=1.500002/2.37 knobDelta=0.002769256/0.006538547 guideError=5.122642E-06 knobError=1.228781E-07 normalError=0 centerError=6.286427E-08 rootError=1.192238E-07,0 selected=True | input=-90 delta=0.5 guideDelta=0.5000016/0.87 knobDelta=0.0009230531/0.002846107 guideError=6.389057E-06 knobError=1.20137E-07 normalError=0 centerError=6.332994E-08 rootError=1.192238E-07,0 selected=True | input=-90.5 delta=0.5 guideDelta=0.4999994/0.87 knobDelta=0.0009231297/0.002846233 guideError=7.24451E-06 knobError=2.388838E-07 normalError=0 centerError=6.37956E-08 rootError=1.192238E-07,0 selected=True | input=-92 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002769144/0.006538313 guideError=1.387218E-05 knobError=1.228781E-07 normalError=0 centerError=6.472692E-08 rootError=1.192238E-07,0 selected=True | input=-96 delta=4 guideDelta=3.999997/6.12 knobDelta=0.007383135/0.01576648 guideError=9.352621E-06 knobError=0 normalError=0.02797646 centerError=6.658956E-08 rootError=1.192238E-07,0 selected=True | input=-92 delta=4 guideDelta=3.999997/6.12 knobDelta=0.007383135/0.01576648 guideError=1.387218E-05 knobError=1.228781E-07 normalError=0 centerError=6.472692E-08 rootError=1.192238E-07,0 selected=True | input=-90.5 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002769144/0.006538313 guideError=7.24451E-06 knobError=2.388838E-07 normalError=0 centerError=6.37956E-08 rootError=1.192238E-07,0 selected=True | input=-90 delta=0.5 guideDelta=0.4999994/0.87 knobDelta=0.0009231297/0.002846233 guideError=6.389057E-06 knobError=1.20137E-07 normalError=0 centerError=6.332994E-08 rootError=1.192238E-07,0 selected=True | input=-89.5 delta=0.5 guideDelta=0.5000016/0.87 knobDelta=0.0009230531/0.002846107 guideError=5.122642E-06 knobError=1.228781E-07 normalError=0 centerError=6.286427E-08 rootError=1.192238E-07,0 selected=True | input=-88 delta=1.5 guideDelta=1.500002/2.37 knobDelta=0.002769256/0.006538547 guideError=1.277811E-05 knobError=2.40274E-07 normalError=0 centerError=6.193295E-08 rootError=1.192238E-07,0 selected=True | input=-84 delta=4 guideDelta=4.000006/6.12 knobDelta=0.007383117/0.01576643 guideError=9.956626E-06 knobError=2.682209E-07 normalError=0 centerError=5.448237E-08 rootError=1.192238E-07,0 selected=True | input=-80 delta=4 guideDelta=3.999995/6.12 knobDelta=0.007383364/0.01576607 guideError=7.636384E-06 knobError=1.192093E-07 normalError=0 centerError=1.318545E-07 rootError=1.192238E-07,0 selected=True | input=-78.53 delta=1.470001 guideDelta=1.469994/2.325002 knobDelta=0.002713791/0.006427766 guideError=9.956626E-06 knobError=2.980232E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78.51 delta=0.01999664 guideDelta=0.01999279/0.149995 knobDelta=3.686528E-05/0.001073742 guideError=1.690386E-05 knobError=1.490116E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78 delta=0.5100021 guideDelta=0.5100143/0.8850032 knobDelta=0.0009416697/0.002883146 guideError=8.365239E-06 knobError=1.192093E-07 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-77 delta=1 guideDelta=0.9999935/1.62 knobDelta=0.001846092/0.004692356 guideError=9.352621E-06 knobError=5.960464E-08 normalError=0 centerError=1.304949E-07 rootError=1.192238E-07,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (25.00, 40.00, 17.00) visual guide and knob remain continuous",
+      "passed": true,
+      "detail": "root=(25.00, 40.00, 17.00); input=-78 delta=1 guideDelta=0.9999935/1.62 knobDelta=0.001846092/0.004692356 guideError=8.365239E-06 knobError=1.192093E-07 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78.51 delta=0.5100021 guideDelta=0.5100143/0.8850032 knobDelta=0.0009416697/0.002883146 guideError=1.690386E-05 knobError=1.490116E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78.53 delta=0.01999664 guideDelta=0.01999279/0.149995 knobDelta=3.686528E-05/0.001073742 guideError=9.956626E-06 knobError=2.980232E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-80 delta=1.470001 guideDelta=1.469994/2.325002 knobDelta=0.002713791/0.006427766 guideError=7.636384E-06 knobError=1.192093E-07 normalError=0 centerError=1.318545E-07 rootError=1.192238E-07,0 selected=True | input=-84 delta=4 guideDelta=3.999995/6.12 knobDelta=0.007383364/0.01576607 guideError=9.956626E-06 knobError=2.682209E-07 normalError=0 centerError=5.448237E-08 rootError=1.192238E-07,0 selected=True | input=-88 delta=4 guideDelta=4.000006/6.12 knobDelta=0.007383117/0.01576643 guideError=1.277811E-05 knobError=2.40274E-07 normalError=0 centerError=6.193295E-08 rootError=1.192238E-07,0 selected=True | input=-89.5 delta=1.5 guideDelta=1.500002/2.37 knobDelta=0.002769256/0.006538547 guideError=5.122642E-06 knobError=1.228781E-07 normalError=0 centerError=6.286427E-08 rootError=1.192238E-07,0 selected=True | input=-90 delta=0.5 guideDelta=0.5000016/0.87 knobDelta=0.0009230531/0.002846107 guideError=6.389057E-06 knobError=1.20137E-07 normalError=0 centerError=6.332994E-08 rootError=1.192238E-07,0 selected=True | input=-90.5 delta=0.5 guideDelta=0.4999994/0.87 knobDelta=0.0009231297/0.002846233 guideError=7.24451E-06 knobError=2.388838E-07 normalError=0 centerError=6.37956E-08 rootError=1.192238E-07,0 selected=True | input=-92 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002769144/0.006538313 guideError=1.387218E-05 knobError=1.228781E-07 normalError=0 centerError=6.472692E-08 rootError=1.192238E-07,0 selected=True | input=-96 delta=4 guideDelta=3.999997/6.12 knobDelta=0.007383135/0.01576648 guideError=9.352621E-06 knobError=0 normalError=0.02797646 centerError=6.658956E-08 rootError=1.192238E-07,0 selected=True | input=-92 delta=4 guideDelta=3.999997/6.12 knobDelta=0.007383135/0.01576648 guideError=1.387218E-05 knobError=1.228781E-07 normalError=0 centerError=6.472692E-08 rootError=1.192238E-07,0 selected=True | input=-90.5 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002769144/0.006538313 guideError=7.24451E-06 knobError=2.388838E-07 normalError=0 centerError=6.37956E-08 rootError=1.192238E-07,0 selected=True | input=-90 delta=0.5 guideDelta=0.4999994/0.87 knobDelta=0.0009231297/0.002846233 guideError=6.389057E-06 knobError=1.20137E-07 normalError=0 centerError=6.332994E-08 rootError=1.192238E-07,0 selected=True | input=-89.5 delta=0.5 guideDelta=0.5000016/0.87 knobDelta=0.0009230531/0.002846107 guideError=5.122642E-06 knobError=1.228781E-07 normalError=0 centerError=6.286427E-08 rootError=1.192238E-07,0 selected=True | input=-88 delta=1.5 guideDelta=1.500002/2.37 knobDelta=0.002769256/0.006538547 guideError=1.277811E-05 knobError=2.40274E-07 normalError=0 centerError=6.193295E-08 rootError=1.192238E-07,0 selected=True | input=-84 delta=4 guideDelta=4.000006/6.12 knobDelta=0.007383117/0.01576643 guideError=9.956626E-06 knobError=2.682209E-07 normalError=0 centerError=5.448237E-08 rootError=1.192238E-07,0 selected=True | input=-80 delta=4 guideDelta=3.999995/6.12 knobDelta=0.007383364/0.01576607 guideError=7.636384E-06 knobError=1.192093E-07 normalError=0 centerError=1.318545E-07 rootError=1.192238E-07,0 selected=True | input=-78.53 delta=1.470001 guideDelta=1.469994/2.325002 knobDelta=0.002713791/0.006427766 guideError=9.956626E-06 knobError=2.980232E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78.51 delta=0.01999664 guideDelta=0.01999279/0.149995 knobDelta=3.686528E-05/0.001073742 guideError=1.690386E-05 knobError=1.490116E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78 delta=0.5100021 guideDelta=0.5100143/0.8850032 knobDelta=0.0009416697/0.002883146 guideError=8.365239E-06 knobError=1.192093E-07 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-77 delta=1 guideDelta=0.9999935/1.62 knobDelta=0.001846092/0.004692356 guideError=9.352621E-06 knobError=5.960464E-08 normalError=0 centerError=1.304949E-07 rootError=1.192238E-07,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (25.00, 40.00, 17.00) guide follows full wrist pose",
+      "passed": true,
+      "detail": "root=(25.00, 40.00, 17.00); input=-78 delta=1 guideDelta=0.9999935/1.62 knobDelta=0.001846092/0.004692356 guideError=8.365239E-06 knobError=1.192093E-07 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78.51 delta=0.5100021 guideDelta=0.5100143/0.8850032 knobDelta=0.0009416697/0.002883146 guideError=1.690386E-05 knobError=1.490116E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78.53 delta=0.01999664 guideDelta=0.01999279/0.149995 knobDelta=3.686528E-05/0.001073742 guideError=9.956626E-06 knobError=2.980232E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-80 delta=1.470001 guideDelta=1.469994/2.325002 knobDelta=0.002713791/0.006427766 guideError=7.636384E-06 knobError=1.192093E-07 normalError=0 centerError=1.318545E-07 rootError=1.192238E-07,0 selected=True | input=-84 delta=4 guideDelta=3.999995/6.12 knobDelta=0.007383364/0.01576607 guideError=9.956626E-06 knobError=2.682209E-07 normalError=0 centerError=5.448237E-08 rootError=1.192238E-07,0 selected=True | input=-88 delta=4 guideDelta=4.000006/6.12 knobDelta=0.007383117/0.01576643 guideError=1.277811E-05 knobError=2.40274E-07 normalError=0 centerError=6.193295E-08 rootError=1.192238E-07,0 selected=True | input=-89.5 delta=1.5 guideDelta=1.500002/2.37 knobDelta=0.002769256/0.006538547 guideError=5.122642E-06 knobError=1.228781E-07 normalError=0 centerError=6.286427E-08 rootError=1.192238E-07,0 selected=True | input=-90 delta=0.5 guideDelta=0.5000016/0.87 knobDelta=0.0009230531/0.002846107 guideError=6.389057E-06 knobError=1.20137E-07 normalError=0 centerError=6.332994E-08 rootError=1.192238E-07,0 selected=True | input=-90.5 delta=0.5 guideDelta=0.4999994/0.87 knobDelta=0.0009231297/0.002846233 guideError=7.24451E-06 knobError=2.388838E-07 normalError=0 centerError=6.37956E-08 rootError=1.192238E-07,0 selected=True | input=-92 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002769144/0.006538313 guideError=1.387218E-05 knobError=1.228781E-07 normalError=0 centerError=6.472692E-08 rootError=1.192238E-07,0 selected=True | input=-96 delta=4 guideDelta=3.999997/6.12 knobDelta=0.007383135/0.01576648 guideError=9.352621E-06 knobError=0 normalError=0.02797646 centerError=6.658956E-08 rootError=1.192238E-07,0 selected=True | input=-92 delta=4 guideDelta=3.999997/6.12 knobDelta=0.007383135/0.01576648 guideError=1.387218E-05 knobError=1.228781E-07 normalError=0 centerError=6.472692E-08 rootError=1.192238E-07,0 selected=True | input=-90.5 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002769144/0.006538313 guideError=7.24451E-06 knobError=2.388838E-07 normalError=0 centerError=6.37956E-08 rootError=1.192238E-07,0 selected=True | input=-90 delta=0.5 guideDelta=0.4999994/0.87 knobDelta=0.0009231297/0.002846233 guideError=6.389057E-06 knobError=1.20137E-07 normalError=0 centerError=6.332994E-08 rootError=1.192238E-07,0 selected=True | input=-89.5 delta=0.5 guideDelta=0.5000016/0.87 knobDelta=0.0009230531/0.002846107 guideError=5.122642E-06 knobError=1.228781E-07 normalError=0 centerError=6.286427E-08 rootError=1.192238E-07,0 selected=True | input=-88 delta=1.5 guideDelta=1.500002/2.37 knobDelta=0.002769256/0.006538547 guideError=1.277811E-05 knobError=2.40274E-07 normalError=0 centerError=6.193295E-08 rootError=1.192238E-07,0 selected=True | input=-84 delta=4 guideDelta=4.000006/6.12 knobDelta=0.007383117/0.01576643 guideError=9.956626E-06 knobError=2.682209E-07 normalError=0 centerError=5.448237E-08 rootError=1.192238E-07,0 selected=True | input=-80 delta=4 guideDelta=3.999995/6.12 knobDelta=0.007383364/0.01576607 guideError=7.636384E-06 knobError=1.192093E-07 normalError=0 centerError=1.318545E-07 rootError=1.192238E-07,0 selected=True | input=-78.53 delta=1.470001 guideDelta=1.469994/2.325002 knobDelta=0.002713791/0.006427766 guideError=9.956626E-06 knobError=2.980232E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78.51 delta=0.01999664 guideDelta=0.01999279/0.149995 knobDelta=3.686528E-05/0.001073742 guideError=1.690386E-05 knobError=1.490116E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78 delta=0.5100021 guideDelta=0.5100143/0.8850032 knobDelta=0.0009416697/0.002883146 guideError=8.365239E-06 knobError=1.192093E-07 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-77 delta=1 guideDelta=0.9999935/1.62 knobDelta=0.001846092/0.004692356 guideError=9.352621E-06 knobError=5.960464E-08 normalError=0 centerError=1.304949E-07 rootError=1.192238E-07,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (25.00, 40.00, 17.00) root remains fixed",
+      "passed": true,
+      "detail": "root=(25.00, 40.00, 17.00); input=-78 delta=1 guideDelta=0.9999935/1.62 knobDelta=0.001846092/0.004692356 guideError=8.365239E-06 knobError=1.192093E-07 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78.51 delta=0.5100021 guideDelta=0.5100143/0.8850032 knobDelta=0.0009416697/0.002883146 guideError=1.690386E-05 knobError=1.490116E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78.53 delta=0.01999664 guideDelta=0.01999279/0.149995 knobDelta=3.686528E-05/0.001073742 guideError=9.956626E-06 knobError=2.980232E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-80 delta=1.470001 guideDelta=1.469994/2.325002 knobDelta=0.002713791/0.006427766 guideError=7.636384E-06 knobError=1.192093E-07 normalError=0 centerError=1.318545E-07 rootError=1.192238E-07,0 selected=True | input=-84 delta=4 guideDelta=3.999995/6.12 knobDelta=0.007383364/0.01576607 guideError=9.956626E-06 knobError=2.682209E-07 normalError=0 centerError=5.448237E-08 rootError=1.192238E-07,0 selected=True | input=-88 delta=4 guideDelta=4.000006/6.12 knobDelta=0.007383117/0.01576643 guideError=1.277811E-05 knobError=2.40274E-07 normalError=0 centerError=6.193295E-08 rootError=1.192238E-07,0 selected=True | input=-89.5 delta=1.5 guideDelta=1.500002/2.37 knobDelta=0.002769256/0.006538547 guideError=5.122642E-06 knobError=1.228781E-07 normalError=0 centerError=6.286427E-08 rootError=1.192238E-07,0 selected=True | input=-90 delta=0.5 guideDelta=0.5000016/0.87 knobDelta=0.0009230531/0.002846107 guideError=6.389057E-06 knobError=1.20137E-07 normalError=0 centerError=6.332994E-08 rootError=1.192238E-07,0 selected=True | input=-90.5 delta=0.5 guideDelta=0.4999994/0.87 knobDelta=0.0009231297/0.002846233 guideError=7.24451E-06 knobError=2.388838E-07 normalError=0 centerError=6.37956E-08 rootError=1.192238E-07,0 selected=True | input=-92 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002769144/0.006538313 guideError=1.387218E-05 knobError=1.228781E-07 normalError=0 centerError=6.472692E-08 rootError=1.192238E-07,0 selected=True | input=-96 delta=4 guideDelta=3.999997/6.12 knobDelta=0.007383135/0.01576648 guideError=9.352621E-06 knobError=0 normalError=0.02797646 centerError=6.658956E-08 rootError=1.192238E-07,0 selected=True | input=-92 delta=4 guideDelta=3.999997/6.12 knobDelta=0.007383135/0.01576648 guideError=1.387218E-05 knobError=1.228781E-07 normalError=0 centerError=6.472692E-08 rootError=1.192238E-07,0 selected=True | input=-90.5 delta=1.5 guideDelta=1.5/2.37 knobDelta=0.002769144/0.006538313 guideError=7.24451E-06 knobError=2.388838E-07 normalError=0 centerError=6.37956E-08 rootError=1.192238E-07,0 selected=True | input=-90 delta=0.5 guideDelta=0.4999994/0.87 knobDelta=0.0009231297/0.002846233 guideError=6.389057E-06 knobError=1.20137E-07 normalError=0 centerError=6.332994E-08 rootError=1.192238E-07,0 selected=True | input=-89.5 delta=0.5 guideDelta=0.5000016/0.87 knobDelta=0.0009230531/0.002846107 guideError=5.122642E-06 knobError=1.228781E-07 normalError=0 centerError=6.286427E-08 rootError=1.192238E-07,0 selected=True | input=-88 delta=1.5 guideDelta=1.500002/2.37 knobDelta=0.002769256/0.006538547 guideError=1.277811E-05 knobError=2.40274E-07 normalError=0 centerError=6.193295E-08 rootError=1.192238E-07,0 selected=True | input=-84 delta=4 guideDelta=4.000006/6.12 knobDelta=0.007383117/0.01576643 guideError=9.956626E-06 knobError=2.682209E-07 normalError=0 centerError=5.448237E-08 rootError=1.192238E-07,0 selected=True | input=-80 delta=4 guideDelta=3.999995/6.12 knobDelta=0.007383364/0.01576607 guideError=7.636384E-06 knobError=1.192093E-07 normalError=0 centerError=1.318545E-07 rootError=1.192238E-07,0 selected=True | input=-78.53 delta=1.470001 guideDelta=1.469994/2.325002 knobDelta=0.002713791/0.006427766 guideError=9.956626E-06 knobError=2.980232E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78.51 delta=0.01999664 guideDelta=0.01999279/0.149995 knobDelta=3.686528E-05/0.001073742 guideError=1.690386E-05 knobError=1.490116E-08 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-78 delta=0.5100021 guideDelta=0.5100143/0.8850032 knobDelta=0.0009416697/0.002883146 guideError=8.365239E-06 knobError=1.192093E-07 normalError=0 centerError=1.312636E-07 rootError=1.192238E-07,0 selected=True | input=-77 delta=1 guideDelta=0.9999935/1.62 knobDelta=0.001846092/0.004692356 guideError=9.352621E-06 knobError=5.960464E-08 normalError=0 centerError=1.304949E-07 rootError=1.192238E-07,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (25.00, 40.00, 17.00) release preserves guide pose",
+      "passed": true,
+      "detail": "Release is real XR grip-up; floating removes gravity as a confounding factor. selected=False; guide rotation drift=0; knob drift=0"
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (25.00, 40.00, 17.00) regrab preserves guide pose",
+      "passed": true,
+      "detail": "New hand orientation must not reset the guide roll. selected=True; guide rotation drift=6.156649E-06; knob drift=2.767768E-07"
+    },
+    {
+      "name": "section XR continuity: negative threshold and pole root (25.00, 40.00, 17.00) stationary regrab has no drift",
+      "passed": true,
+      "detail": "selected=True; guide rotation drift=6.156649E-06; knob drift=2.767768E-07"
+    },
+    {
+      "name": "section XR continuity: pure roll root (25.00, 40.00, 17.00) floating fixture",
+      "passed": true,
+      "detail": "API setup fixes the root and initial normal; selection and wrist motion below are synthetic XR input."
+    },
+    {
+      "name": "section XR continuity: pure roll root (25.00, 40.00, 17.00) direct grip",
+      "passed": true,
+      "detail": "Saved section collider selected by QueueRight -> InputSystem -> XRDirectInteractor."
+    },
+    {
+      "name": "section XR continuity: pure roll root (25.00, 40.00, 17.00) grip does not jump",
+      "passed": true,
+      "detail": "Selecting a stationary handle must preserve its visual orientation and knob position."
+    },
+    {
+      "name": "section XR continuity: pure roll root (25.00, 40.00, 17.00) grip stays on section",
+      "passed": true,
+      "detail": "root=(25.00, 40.00, 17.00); input=5 delta=5 guideDelta=4.999999/7.62 knobDelta=0.02442685/0.04985359 guideError=1.277811E-05 knobError=1.228781E-07 normalError=0 centerError=1.271528E-07 rootError=1.192238E-07,0 selected=True | input=15 delta=10 guideDelta=10/15.12 knobDelta=0.04880725/0.09861466 guideError=1.311592E-05 knobError=2.980232E-08 normalError=0 centerError=1.237091E-07 rootError=1.192238E-07,0 selected=True | input=30 delta=15 guideDelta=15/22.62 knobDelta=0.0730946/0.1471892 guideError=1.583514E-05 knobError=2.980232E-08 normalError=0 centerError=1.20448E-07 rootError=1.192238E-07,0 selected=True | input=45 delta=15 guideDelta=15/22.62 knobDelta=0.07309482/0.1471895 guideError=7.443026E-06 knobError=1.228781E-07 normalError=0 centerError=0 rootError=1.192238E-07,0 selected=True | input=30 delta=15 guideDelta=15/22.62 knobDelta=0.07309482/0.1471895 guideError=1.583514E-05 knobError=2.980232E-08 normalError=0 centerError=1.20448E-07 rootError=1.192238E-07,0 selected=True | input=15 delta=15 guideDelta=15/22.62 knobDelta=0.0730946/0.1471892 guideError=1.311592E-05 knobError=2.980232E-08 normalError=0 centerError=1.237091E-07 rootError=1.192238E-07,0 selected=True | input=0 delta=15 guideDelta=15/22.62 knobDelta=0.07309469/0.1471894 guideError=8.537737E-06 knobError=8.940697E-08 normalError=0 centerError=1.281516E-07 rootError=1.192238E-07,0 selected=True | input=-15 delta=15 guideDelta=15/22.62 knobDelta=0.07309463/0.1471893 guideError=9.035491E-06 knobError=1.005828E-07 normalError=0 centerError=1.322552E-07 rootError=1.192238E-07,0 selected=True | input=-30 delta=15 guideDelta=15.00001/22.62 knobDelta=0.07309467/0.1471893 guideError=1.707547E-06 knobError=9.033829E-08 normalError=0 centerError=1.339106E-07 rootError=1.192238E-07,0 selected=True | input=-45 delta=15 guideDelta=15/22.62 knobDelta=0.07309473/0.1471894 guideError=1.207418E-05 knobError=2.235174E-08 normalError=0 centerError=1.3328E-07 rootError=1.192238E-07,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: pure roll root (25.00, 40.00, 17.00) visual guide and knob remain continuous",
+      "passed": true,
+      "detail": "root=(25.00, 40.00, 17.00); input=5 delta=5 guideDelta=4.999999/7.62 knobDelta=0.02442685/0.04985359 guideError=1.277811E-05 knobError=1.228781E-07 normalError=0 centerError=1.271528E-07 rootError=1.192238E-07,0 selected=True | input=15 delta=10 guideDelta=10/15.12 knobDelta=0.04880725/0.09861466 guideError=1.311592E-05 knobError=2.980232E-08 normalError=0 centerError=1.237091E-07 rootError=1.192238E-07,0 selected=True | input=30 delta=15 guideDelta=15/22.62 knobDelta=0.0730946/0.1471892 guideError=1.583514E-05 knobError=2.980232E-08 normalError=0 centerError=1.20448E-07 rootError=1.192238E-07,0 selected=True | input=45 delta=15 guideDelta=15/22.62 knobDelta=0.07309482/0.1471895 guideError=7.443026E-06 knobError=1.228781E-07 normalError=0 centerError=0 rootError=1.192238E-07,0 selected=True | input=30 delta=15 guideDelta=15/22.62 knobDelta=0.07309482/0.1471895 guideError=1.583514E-05 knobError=2.980232E-08 normalError=0 centerError=1.20448E-07 rootError=1.192238E-07,0 selected=True | input=15 delta=15 guideDelta=15/22.62 knobDelta=0.0730946/0.1471892 guideError=1.311592E-05 knobError=2.980232E-08 normalError=0 centerError=1.237091E-07 rootError=1.192238E-07,0 selected=True | input=0 delta=15 guideDelta=15/22.62 knobDelta=0.07309469/0.1471894 guideError=8.537737E-06 knobError=8.940697E-08 normalError=0 centerError=1.281516E-07 rootError=1.192238E-07,0 selected=True | input=-15 delta=15 guideDelta=15/22.62 knobDelta=0.07309463/0.1471893 guideError=9.035491E-06 knobError=1.005828E-07 normalError=0 centerError=1.322552E-07 rootError=1.192238E-07,0 selected=True | input=-30 delta=15 guideDelta=15.00001/22.62 knobDelta=0.07309467/0.1471893 guideError=1.707547E-06 knobError=9.033829E-08 normalError=0 centerError=1.339106E-07 rootError=1.192238E-07,0 selected=True | input=-45 delta=15 guideDelta=15/22.62 knobDelta=0.07309473/0.1471894 guideError=1.207418E-05 knobError=2.235174E-08 normalError=0 centerError=1.3328E-07 rootError=1.192238E-07,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: pure roll root (25.00, 40.00, 17.00) guide follows full wrist pose",
+      "passed": true,
+      "detail": "root=(25.00, 40.00, 17.00); input=5 delta=5 guideDelta=4.999999/7.62 knobDelta=0.02442685/0.04985359 guideError=1.277811E-05 knobError=1.228781E-07 normalError=0 centerError=1.271528E-07 rootError=1.192238E-07,0 selected=True | input=15 delta=10 guideDelta=10/15.12 knobDelta=0.04880725/0.09861466 guideError=1.311592E-05 knobError=2.980232E-08 normalError=0 centerError=1.237091E-07 rootError=1.192238E-07,0 selected=True | input=30 delta=15 guideDelta=15/22.62 knobDelta=0.0730946/0.1471892 guideError=1.583514E-05 knobError=2.980232E-08 normalError=0 centerError=1.20448E-07 rootError=1.192238E-07,0 selected=True | input=45 delta=15 guideDelta=15/22.62 knobDelta=0.07309482/0.1471895 guideError=7.443026E-06 knobError=1.228781E-07 normalError=0 centerError=0 rootError=1.192238E-07,0 selected=True | input=30 delta=15 guideDelta=15/22.62 knobDelta=0.07309482/0.1471895 guideError=1.583514E-05 knobError=2.980232E-08 normalError=0 centerError=1.20448E-07 rootError=1.192238E-07,0 selected=True | input=15 delta=15 guideDelta=15/22.62 knobDelta=0.0730946/0.1471892 guideError=1.311592E-05 knobError=2.980232E-08 normalError=0 centerError=1.237091E-07 rootError=1.192238E-07,0 selected=True | input=0 delta=15 guideDelta=15/22.62 knobDelta=0.07309469/0.1471894 guideError=8.537737E-06 knobError=8.940697E-08 normalError=0 centerError=1.281516E-07 rootError=1.192238E-07,0 selected=True | input=-15 delta=15 guideDelta=15/22.62 knobDelta=0.07309463/0.1471893 guideError=9.035491E-06 knobError=1.005828E-07 normalError=0 centerError=1.322552E-07 rootError=1.192238E-07,0 selected=True | input=-30 delta=15 guideDelta=15.00001/22.62 knobDelta=0.07309467/0.1471893 guideError=1.707547E-06 knobError=9.033829E-08 normalError=0 centerError=1.339106E-07 rootError=1.192238E-07,0 selected=True | input=-45 delta=15 guideDelta=15/22.62 knobDelta=0.07309473/0.1471894 guideError=1.207418E-05 knobError=2.235174E-08 normalError=0 centerError=1.3328E-07 rootError=1.192238E-07,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: pure roll root (25.00, 40.00, 17.00) root remains fixed",
+      "passed": true,
+      "detail": "root=(25.00, 40.00, 17.00); input=5 delta=5 guideDelta=4.999999/7.62 knobDelta=0.02442685/0.04985359 guideError=1.277811E-05 knobError=1.228781E-07 normalError=0 centerError=1.271528E-07 rootError=1.192238E-07,0 selected=True | input=15 delta=10 guideDelta=10/15.12 knobDelta=0.04880725/0.09861466 guideError=1.311592E-05 knobError=2.980232E-08 normalError=0 centerError=1.237091E-07 rootError=1.192238E-07,0 selected=True | input=30 delta=15 guideDelta=15/22.62 knobDelta=0.0730946/0.1471892 guideError=1.583514E-05 knobError=2.980232E-08 normalError=0 centerError=1.20448E-07 rootError=1.192238E-07,0 selected=True | input=45 delta=15 guideDelta=15/22.62 knobDelta=0.07309482/0.1471895 guideError=7.443026E-06 knobError=1.228781E-07 normalError=0 centerError=0 rootError=1.192238E-07,0 selected=True | input=30 delta=15 guideDelta=15/22.62 knobDelta=0.07309482/0.1471895 guideError=1.583514E-05 knobError=2.980232E-08 normalError=0 centerError=1.20448E-07 rootError=1.192238E-07,0 selected=True | input=15 delta=15 guideDelta=15/22.62 knobDelta=0.0730946/0.1471892 guideError=1.311592E-05 knobError=2.980232E-08 normalError=0 centerError=1.237091E-07 rootError=1.192238E-07,0 selected=True | input=0 delta=15 guideDelta=15/22.62 knobDelta=0.07309469/0.1471894 guideError=8.537737E-06 knobError=8.940697E-08 normalError=0 centerError=1.281516E-07 rootError=1.192238E-07,0 selected=True | input=-15 delta=15 guideDelta=15/22.62 knobDelta=0.07309463/0.1471893 guideError=9.035491E-06 knobError=1.005828E-07 normalError=0 centerError=1.322552E-07 rootError=1.192238E-07,0 selected=True | input=-30 delta=15 guideDelta=15.00001/22.62 knobDelta=0.07309467/0.1471893 guideError=1.707547E-06 knobError=9.033829E-08 normalError=0 centerError=1.339106E-07 rootError=1.192238E-07,0 selected=True | input=-45 delta=15 guideDelta=15/22.62 knobDelta=0.07309473/0.1471894 guideError=1.207418E-05 knobError=2.235174E-08 normalError=0 centerError=1.3328E-07 rootError=1.192238E-07,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: pure roll root (25.00, 40.00, 17.00) roll is visible with unchanged normal",
+      "passed": true,
+      "detail": "Normal-only behavior is insufficient: actual guide orientation and offset knob must respond to the wrist roll. root=(25.00, 40.00, 17.00); input=5 delta=5 guideDelta=4.999999/7.62 knobDelta=0.02442685/0.04985359 guideError=1.277811E-05 knobError=1.228781E-07 normalError=0 centerError=1.271528E-07 rootError=1.192238E-07,0 selected=True | input=15 delta=10 guideDelta=10/15.12 knobDelta=0.04880725/0.09861466 guideError=1.311592E-05 knobError=2.980232E-08 normalError=0 centerError=1.237091E-07 rootError=1.192238E-07,0 selected=True | input=30 delta=15 guideDelta=15/22.62 knobDelta=0.0730946/0.1471892 guideError=1.583514E-05 knobError=2.980232E-08 normalError=0 centerError=1.20448E-07 rootError=1.192238E-07,0 selected=True | input=45 delta=15 guideDelta=15/22.62 knobDelta=0.07309482/0.1471895 guideError=7.443026E-06 knobError=1.228781E-07 normalError=0 centerError=0 rootError=1.192238E-07,0 selected=True | input=30 delta=15 guideDelta=15/22.62 knobDelta=0.07309482/0.1471895 guideError=1.583514E-05 knobError=2.980232E-08 normalError=0 centerError=1.20448E-07 rootError=1.192238E-07,0 selected=True | input=15 delta=15 guideDelta=15/22.62 knobDelta=0.0730946/0.1471892 guideError=1.311592E-05 knobError=2.980232E-08 normalError=0 centerError=1.237091E-07 rootError=1.192238E-07,0 selected=True | input=0 delta=15 guideDelta=15/22.62 knobDelta=0.07309469/0.1471894 guideError=8.537737E-06 knobError=8.940697E-08 normalError=0 centerError=1.281516E-07 rootError=1.192238E-07,0 selected=True | input=-15 delta=15 guideDelta=15/22.62 knobDelta=0.07309463/0.1471893 guideError=9.035491E-06 knobError=1.005828E-07 normalError=0 centerError=1.322552E-07 rootError=1.192238E-07,0 selected=True | input=-30 delta=15 guideDelta=15.00001/22.62 knobDelta=0.07309467/0.1471893 guideError=1.707547E-06 knobError=9.033829E-08 normalError=0 centerError=1.339106E-07 rootError=1.192238E-07,0 selected=True | input=-45 delta=15 guideDelta=15/22.62 knobDelta=0.07309473/0.1471894 guideError=1.207418E-05 knobError=2.235174E-08 normalError=0 centerError=1.3328E-07 rootError=1.192238E-07,0 selected=True"
+    },
+    {
+      "name": "section XR continuity: pure roll root (25.00, 40.00, 17.00) release preserves guide pose",
+      "passed": true,
+      "detail": "Release is real XR grip-up; floating removes gravity as a confounding factor. selected=False; guide rotation drift=0; knob drift=0"
+    },
+    {
+      "name": "section XR continuity: pure roll root (25.00, 40.00, 17.00) regrab preserves guide pose",
+      "passed": true,
+      "detail": "New hand orientation must not reset the guide roll. selected=True; guide rotation drift=0; knob drift=1.490116E-08"
+    },
+    {
+      "name": "section XR continuity: pure roll root (25.00, 40.00, 17.00) stationary regrab has no drift",
+      "passed": true,
+      "detail": "selected=True; guide rotation drift=0; knob drift=1.490116E-08"
+    },
+    {
+      "name": "API first flip reverses the actual plane",
+      "passed": true,
+      "detail": "Check the first flip took effect before checking its round trip."
+    },
+    {
+      "name": "API two flips restore guide frame and knob",
+      "passed": true,
+      "detail": "Explicit API round-trip check after a nonzero XR wrist roll. selected=False; guide rotation drift=0; knob drift=0"
+    },
+    {
+      "name": "API hides guide renderers and colliders",
+      "passed": true,
+      "detail": "Hidden guide must not remain visible or selectable."
+    },
+    {
+      "name": "API reshow restores guide renderers and colliders",
+      "passed": true,
+      "detail": "Reappearing guide must restore both visuals and interaction targets."
+    },
+    {
+      "name": "API hide rotate show preserves helmet-local frame",
+      "passed": true,
+      "detail": "Explicit API fixture check; local rotation error=6.389057E-06 degrees; local knob error=1.826532E-07 m."
+    },
+    {
+      "name": "no runtime errors",
+      "passed": true,
+      "detail": ""
+    }
+  ],
+  "originalReportSha256": "5ee874d5681ac84ad8f6f15d97563c69efcab36d4e6357cbf5d953f95be88c6e",
+  "originalReport": "artifacts/helmet-interaction/qa/runs/20261006T134224229Z-inspection-main-91b076ae067a4a1b875eb6b9d9f69175/report.json"
+}

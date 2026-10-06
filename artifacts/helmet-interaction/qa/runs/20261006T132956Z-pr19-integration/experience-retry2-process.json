@@ -1,0 +1,19 @@
+{
+  "name": "experience-retry2",
+  "startedUtc": "2026-10-06T13:40:39.664360+00:00",
+  "arguments": [
+    "E:\\unity\\36version\\2022.3.62f3c1\\Editor\\Unity.exe",
+    "-batchmode",
+    "-projectPath",
+    "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR",
+    "-logFile",
+    "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006T132956Z-pr19-integration\\experience-retry2-unity.log",
+    "-executeMethod",
+    "Museum.Experience.EditorTools.HelmetExperienceValidation.RunBatch"
+  ],
+  "baseCommit": "2fcaad12d79bf65f39ab6e27b28763818fcfc94f",
+  "pid": 25752,
+  "exitCode": 0,
+  "finishedUtc": "2026-10-06T13:41:59.125081+00:00",
+  "logSha256": "83cfad9c3678665110df9d7d61a97f2ec0beea68e49222dbc92ad3170dd5dafc"
+}

@@ -1,0 +1,33 @@
+{
+  "main": "18d7f8a",
+  "source": "b61c13c",
+  "mainRows": 202,
+  "sourceRows": 196,
+  "mergedRows": 205,
+  "addedKeys": [
+    "experience.sound.on",
+    "experience.sound.off",
+    "experience.telephone.connection"
+  ],
+  "existingMainRowsUnchanged": true,
+  "mainCmap": 7659,
+  "sourceCmap": 7652,
+  "resultingCmap": 7660,
+  "newCodepoints": [
+    "U+8072"
+  ],
+  "mainAtlasCharacters": 533,
+  "sourceAtlasCharacters": 510,
+  "bakeAdditionalCharacters": [
+    "U+58F0",
+    "U+8072",
+    "U+97F3"
+  ],
+  "requiredCharacters": 526,
+  "persistentIds": [
+    "--- !u!28 &-7840310081897550815",
+    "--- !u!21 &-3044848435321221505",
+    "--- !u!114 &11400000"
+  ],
+  "sourceFontSha256": "4e1cf9418518daba92857db7d08b4e19074baeb609f299fa39ef66b689435bf2"
+}

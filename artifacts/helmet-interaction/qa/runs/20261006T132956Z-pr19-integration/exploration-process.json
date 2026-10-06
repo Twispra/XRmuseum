@@ -1,0 +1,19 @@
+{
+  "name": "exploration",
+  "startedUtc": "2026-10-06T13:44:07.759710+00:00",
+  "arguments": [
+    "E:\\unity\\36version\\2022.3.62f3c1\\Editor\\Unity.exe",
+    "-batchmode",
+    "-projectPath",
+    "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR",
+    "-logFile",
+    "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006T132956Z-pr19-integration\\exploration-unity.log",
+    "-executeMethod",
+    "Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch"
+  ],
+  "baseCommit": "2fcaad12d79bf65f39ab6e27b28763818fcfc94f",
+  "pid": 19260,
+  "exitCode": 0,
+  "finishedUtc": "2026-10-06T13:47:14.192349+00:00",
+  "logSha256": "e0bf4996ebda1d91ae531b4ae571fbade1b015b1c49daf3d95345f623cb3447a"
+}
