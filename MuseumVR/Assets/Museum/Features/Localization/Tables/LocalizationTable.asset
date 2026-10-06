@@ -16,86 +16,1093 @@ MonoBehaviour:
   - key: museum.title
     chinese: "\u65E0\u969C\u788D\u535A\u7269\u9986\u4F53\u9A8C"
     english: Accessible Museum Experience
-    note: "\u6F14\u793A\u677F\u7684\u6807\u9898\u3002"
+    traditionalChinese: "\u7121\u969C\u7919\u535A\u7269\u9928\u9AD4\u9A57"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: welcome.body
     chinese: "\u6B22\u8FCE\u3002\u8FD9\u6BB5\u4F53\u9A8C\u53EF\u4EE5\u5750\u7740\u5B8C\u6210\uFF0C\u53EA\u9700\u5355\u624B\u64CD\u4F5C\u3002\u4F60\u53EF\u4EE5\u968F\u65F6\u56DE\u5230\u8FD9\u91CC\u5207\u6362\u8BED\u8A00\u3002"
     english: Welcome. This experience works seated and one-handed. You can change
       the language here at any time.
-    note: "\u6B22\u8FCE\u8BF4\u660E\uFF0C\u540C\u65F6\u70B9\u51FA\u4E24\u9879\u65E0\u969C\u788D\u627F\u8BFA\u3002\u82F1\u6587\u5B57\u6570\u523B\u610F\u538B\u5230\u4E09\u884C\u4EE5\u5185\uFF0C\u907F\u514D\u4E0E\u4E0B\u65B9\u63D0\u793A\u91CD\u53E0\u3002"
+    traditionalChinese: "\u6B61\u8FCE\u3002\u9019\u6BB5\u9AD4\u9A57\u53EF\u4EE5\u5750\u7740\u5B8C\u6210\uFF0C\u53EA\u9700\u55AE\u624B\u64CD\u4F5C\u3002\u4F60\u53EF\u4EE5\u96A8\u6642\u56DE\u5230\u9019\u88CF\u5207\u63DB\u8A9E\u8A00\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: language.prompt
     chinese: "\u8BF7\u9009\u62E9\u754C\u9762\u8BED\u8A00"
     english: Choose your interface language
-    note: "\u8BED\u8A00\u9009\u62E9\u63D0\u793A\u3002"
+    traditionalChinese: "\u8ACB\u9078\u64C7\u754C\u9762\u8A9E\u8A00"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: museum.sign.masthead
-    chinese: "海面之下"
+    chinese: "\u6D77\u9762\u4E4B\u4E0B"
     english: Beneath the surface
-    note: "Gallery masthead; preserves the current main English and demonstration visibility."
+    traditionalChinese: "\u6D77\u9762\u4E4B\u4E0B"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: museum.sign.gallery
-    chinese: "潜水展厅"
+    chinese: "\u6F5C\u6C34\u5C55\u5385"
     english: THE DIVING GALLERY
-    note: "Gallery subtitle remains hidden under the main layout."
+    traditionalChinese: "\u6F5B\u6C34\u5C55\u5EF3"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: museum.sign.arrival_brand
-    chinese: "潜水展厅"
+    chinese: "\u6F5C\u6C34\u5C55\u5385"
     english: The diving gallery
-    note: "Arrival brand uses its own key to preserve the current sentence case."
+    traditionalChinese: "\u6F5B\u6C34\u5C55\u5EF3"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: museum.sign.intro
-    chinese: "一件展品，多种看法。"
+    chinese: "\u4E00\u4EF6\u5C55\u54C1\uFF0C\u591A\u79CD\u770B\u6CD5\u3002"
     english: One object. Many ways to explore.
-    note: "Arrival introduction remains hidden under the main layout."
+    traditionalChinese: "\u4E00\u4EF6\u5C55\u54C1\uFF0C\u591A\u7A2E\u770B\u6CD5\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: controls.point
     chinese: "\u7528\u624B\u67C4\u6307\u5411\u6309\u94AE\uFF0C\u6309\u4F4F\u63E1\u628A\u952E\u786E\u8BA4\u3002"
     english: Point with your controller and hold the grip button to confirm.
-    note: "\u64CD\u4F5C\u63D0\u793A\uFF0C\u4E0E\u4E3B\u573A\u666F\u65E2\u6709\u6309\u94AE\u7684\u4EA4\u4E92\u65B9\u5F0F\u4E00\u81F4\u3002"
+    traditionalChinese: "\u7528\u624B\u67C4\u6307\u5411\u6309\u9215\uFF0C\u6309\u4F4F\u63E1\u628A\u9375\u78BA\u8A8D\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: journey.begin
     chinese: "\u5F00\u59CB\u53C2\u89C2"
     english: Begin
-    note: "\u65C5\u7A0B\u7B2C\u4E00\u6B65\u3002"
+    traditionalChinese: "\u958B\u59CB\u53C3\u89C0"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: journey.select_object
     chinese: "\u9009\u62E9\u4E00\u4EF6\u5C55\u54C1"
     english: Choose an object
-    note: "\u65C5\u7A0B\u7B2C\u4E8C\u6B65\u3002"
+    traditionalChinese: "\u9078\u64C7\u4E00\u4EF6\u5C55\u54C1"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: journey.explore
     chinese: "\u81EA\u7531\u89C2\u5BDF"
     english: Explore freely
-    note: "\u65C5\u7A0B\u7B2C\u4E09\u6B65\u3002"
+    traditionalChinese: "\u81EA\u7531\u89C0\u5BDF"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: journey.explain
     chinese: "\u7EC6\u8282\u8BF4\u660E"
     english: Details
-    note: "\u65C5\u7A0B\u7B2C\u56DB\u6B65\u3002"
+    traditionalChinese: "\u7D30\u7BC0\u8AAA\u660E"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: journey.reflect
     chinese: "\u56DE\u987E\u4F60\u770B\u5230\u7684"
     english: Review what you found
-    note: "\u65C5\u7A0B\u7B2C\u4E94\u6B65\u3002"
+    traditionalChinese: "\u56DE\u9867\u4F60\u770B\u5230\u7684"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: journey.exit
     chinese: "\u7ED3\u675F\u53C2\u89C2"
     english: Finish
-    note: "\u65C5\u7A0B\u7B2C\u516D\u6B65\u3002"
+    traditionalChinese: "\u7D50\u675F\u53C3\u89C0"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: journey.reset
     chinese: "\u590D\u4F4D\uFF0C\u4EA4\u7ED9\u4E0B\u4E00\u4F4D\u8BBF\u5BA2"
     english: Reset for the next visitor
-    note: "\u5DE5\u4F5C\u4EBA\u5458\u64CD\u4F5C\uFF0C\u5BF9\u5E94\u5BA2\u6237\u5BF9\u300C\u8BB2\u4E0D\u6E05\u6216\u590D\u4F4D\u4E0D\u4E86\u300D\u7684\u62C5\u5FC3\u3002"
+    traditionalChinese: "\u5FA9\u4F4D\uFF0C\u4EA4\u7D66\u4E0B\u4E00\u4F4D\u8A2A\u5BA2"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: sources.title
     chinese: "\u8D44\u6599\u4E0E\u6765\u6E90"
     english: Sources
-    note: "\u6765\u6E90\u9762\u677F\u6807\u9898\u3002"
+    traditionalChinese: "\u8CC7\u6599\u8207\u4F86\u6E90"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: sources.placeholder
     chinese: "\u6B64\u4EF6\u4E3A\u793A\u610F\u91CD\u5EFA\uFF0C\u4E0D\u662F\u5386\u53F2\u590D\u539F\u3002"
     english: This is a schematic reconstruction, not a historical restoration.
-    note: "\u5360\u4F4D\u4E0E\u91CD\u5EFA\u8BF4\u660E\uFF0C\u5BF9\u5E94\u5BA2\u6237\u5BF9\u53F2\u6599\u53EF\u4FE1\u5EA6\u7684\u8981\u6C42\u3002"
+    traditionalChinese: "\u6B64\u4EF6\u7232\u793A\u610F\u91CD\u5EFA\uFF0C\u4E0D\u662F\u6B77\u53F2\u5FA9\u539F\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: access.seated
     chinese: "\u53EF\u4EE5\u5750\u7740\u4F7F\u7528"
     english: Seated use
-    note: "\u65E0\u969C\u788D\u8BF4\u660E\u4E00\u3002"
+    traditionalChinese: "\u53EF\u4EE5\u5750\u7740\u4F7F\u7528"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: access.one_hand
     chinese: "\u652F\u6301\u5355\u624B\u64CD\u4F5C"
     english: One-handed use
-    note: "\u65E0\u969C\u788D\u8BF4\u660E\u4E8C\u3002"
+    traditionalChinese: "\u652F\u6301\u55AE\u624B\u64CD\u4F5C"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: access.text_size
     chinese: "\u6587\u5B57\u5927\u5C0F\u53EF\u8C03"
     english: Adjustable text size
-    note: "\u65E0\u969C\u788D\u8BF4\u660E\u4E09\u3002"
+    traditionalChinese: "\u6587\u5B57\u5927\u5C0F\u53EF\u8ABF"
+    note: Visitor-facing exhibit copy; translated from existing English.
   - key: settings.language
     chinese: "\u8BED\u8A00"
     english: Language
-    note: "\u8BBE\u7F6E\u9879\u540D\u79F0\uFF0C\u4F9B\u540E\u7EED\u8BBE\u7F6E\u9762\u677F\u590D\u7528\u3002"
+    traditionalChinese: "\u8A9E\u8A00"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.72726d8818f6
+    chinese: "\u7B80\u4F53\u4E2D\u6587"
+    english: "\u4E2D\u6587"
+    traditionalChinese: "\u7C21\u9AD4\u4E2D\u6587"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.ba118bf7fc9c
+    chinese: English
+    english: English
+    traditionalChinese: English
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.e66d7f066c8b
+    chinese: "\u81EA\u7531\u63A2\u7D22\u7684\u7A7A\u95F4"
+    english: A SPACE TO EXPLORE
+    traditionalChinese: "\u81EA\u7531\u63A2\u7D22\u7684\u7A7A\u9593"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.c2b730a9cd28
+    chinese: "\u535A\u7269\u9986 / XR"
+    english: MUSEUM / XR
+    traditionalChinese: "\u535A\u7269\u9928 / XR"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.58967e13ac06
+    chinese: "\u6B22\u8FCE\uFF0C\u6765\u8FD1\u8DDD\u79BB\u770B\u770B\u3002"
+    english: Welcome. Take a closer look.
+    traditionalChinese: "\u6B61\u8FCE\uFF0C\u4F86\u8FD1\u8DDD\u96E2\u770B\u770B\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.e0723a86a5b9
+    chinese: "\u89C2\u5BDF"
+    english: Inspect
+    traditionalChinese: "\u89C0\u5BDF"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.3b73900b8d29
+    chinese: "\u63A2\u7D22"
+    english: Explore
+    traditionalChinese: "\u63A2\u7D22"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.b79cac926e0b
+    chinese: "\u5E2E\u52A9"
+    english: Help
+    traditionalChinese: "\u5E6B\u52A9"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.19734a1b58ca
+    chinese: "\u524D\u7A97"
+    english: Window
+    traditionalChinese: "\u524D\u7A97"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.dfca5da56b8c
+    chinese: "\u5256\u9762"
+    english: Section
+    traditionalChinese: "\u5256\u9762"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.1a693c00c40c
+    chinese: "\u60AC\u505C"
+    english: Float
+    traditionalChinese: "\u61F8\u505C"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.daee7606b339
+    chinese: "\u590D\u4F4D"
+    english: Reset
+    traditionalChinese: "\u5FA9\u4F4D"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.1aa12f92209a
+    chinese: "\u5411\u5DE6\u8F6C"
+    english: Turn left
+    traditionalChinese: "\u5411\u5DE6\u8F49"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.f00ba3f3067d
+    chinese: "\u5411\u53F3\u8F6C"
+    english: Turn right
+    traditionalChinese: "\u5411\u53F3\u8F49"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.453c4235eeb8
+    chinese: "\u5411\u4E0A\u503E\u659C"
+    english: Tilt up
+    traditionalChinese: "\u5411\u4E0A\u50BE\u659C"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.5c6d1460bb56
+    chinese: "\u5411\u4E0B\u503E\u659C"
+    english: Tilt down
+    traditionalChinese: "\u5411\u4E0B\u50BE\u659C"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.0132d4fd8cd9
+    chinese: "\u8C03\u6574\u5256\u9762"
+    english: Edit cut
+    traditionalChinese: "\u8ABF\u6574\u5256\u9762"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.027de5ef5174
+    chinese: "\u5BF9\u9F50\u89C6\u89D2"
+    english: Align view
+    traditionalChinese: "\u5C0D\u9F4A\u8996\u89D2"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.e0064f382770
+    chinese: "\u5207\u6DF1\u4E00\u70B9"
+    english: Deeper
+    traditionalChinese: "\u5207\u6DF1\u4E00\u9EDE"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.ad0e4b163d9e
+    chinese: "\u5207\u6D45\u4E00\u70B9"
+    english: Shallower
+    traditionalChinese: "\u5207\u6DFA\u4E00\u9EDE"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.17de7e6b6254
+    chinese: "\u4ECE\u9876\u90E8\u5207"
+    english: Top cut
+    traditionalChinese: "\u5F9E\u9802\u90E8\u5207"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.2f840f38cda0
+    chinese: "\u53CD\u5411\u5256\u5207"
+    english: Flip cut
+    traditionalChinese: "\u53CD\u5411\u5256\u5207"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.5918cb537c7d
+    chinese: "\u66F4\u591A\u5DE5\u5177"
+    english: More tools
+    traditionalChinese: "\u66F4\u591A\u5DE5\u5177"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.2f033ca03b8e
+    chinese: "\u6536\u8D77\u5DE5\u5177"
+    english: Fewer tools
+    traditionalChinese: "\u6536\u8D77\u5DE5\u5177"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.aa42ff595bdb
+    chinese: "\u4F9B\u6C14"
+    english: Air
+    traditionalChinese: "\u4F9B\u6C23"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.87bf2bc08589
+    chinese: "\u901A\u8BDD"
+    english: Voice
+    traditionalChinese: "\u901A\u8A71"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.69fe15b511c2
+    chinese: "\u9690\u85CF\u6F14\u793A"
+    english: Hide demo
+    traditionalChinese: "\u96B1\u85CF\u6F14\u793A"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.c8dae6371b33
+    chinese: "\u91CD\u64AD"
+    english: Replay
+    traditionalChinese: "\u91CD\u64AD"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.448d75b89b4d
+    chinese: "\u91CD\u65B0\u53C2\u89C2"
+    english: New visit
+    traditionalChinese: "\u91CD\u65B0\u53C3\u89C0"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.d47d7cb0e4f8
+    chinese: "\u66F4\u591A"
+    english: More
+    traditionalChinese: "\u66F4\u591A"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.ae5239ec63f2
+    chinese: "\u6536\u8D77"
+    english: Less
+    traditionalChinese: "\u6536\u8D77"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.76900f1bfd16
+    chinese: "\u8FD4\u56DE"
+    english: Back
+    traditionalChinese: "\u8FD4\u56DE"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.a7b4cf9f7e42
+    chinese: "\u63D0\u793A"
+    english: Hint
+    traditionalChinese: "\u63D0\u793A"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.aff0766a5290
+    chinese: "\u56DE\u987E"
+    english: Review
+    traditionalChinese: "\u56DE\u9867"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.6b0143d03864
+    chinese: "\u8FD4\u56DE\u539F\u9875\u9762"
+    english: Return
+    traditionalChinese: "\u8FD4\u56DE\u539F\u9801\u9762"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.cae7d57bc067
+    chinese: "\u505C\u6B62"
+    english: Stop
+    traditionalChinese: "\u505C\u6B62"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.7d9eb7acb13e
+    chinese: "\u5173\u95ED"
+    english: Close
+    traditionalChinese: "\u95DC\u9589"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.297ef4c79b4b
+    chinese: "\u51CF\u5C11\u52A8\u753B"
+    english: Reduce motion
+    traditionalChinese: "\u6E1B\u5C11\u52D5\u756B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.65c95a96d7e0
+    chinese: "\u52A8\u753B\uFF1A\u5173"
+    english: 'Motion: off'
+    traditionalChinese: "\u52D5\u756B\uFF1A\u95DC"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.35e8bab7306d
+    chinese: "\u52A8\u753B\uFF1A\u5F00"
+    english: 'Motion: on'
+    traditionalChinese: "\u52D5\u756B\uFF1A\u958B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.f4b90b69cb5a
+    chinese: "\u6A21\u578B\u8BF4\u660E"
+    english: About this model
+    traditionalChinese: "\u6A21\u578B\u8AAA\u660E"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.4675bdbbb0ce
+    chinese: "\u6307\u5411\u540E\u6309 G \u9009\u62E9"
+    english: Point + G to select
+    traditionalChinese: "\u6307\u5411\u5F8C\u6309 G \u9078\u64C7"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.d410e11b1b05
+    chinese: "\u6765\u81EA\u6C34\u9762\u7684\u7A7A\u6C14"
+    english: Air from the surface
+    traditionalChinese: "\u4F86\u81EA\u6C34\u9762\u7684\u7A7A\u6C23"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.33097ed03d62
+    chinese: "\u53CC\u5411\u901A\u8BDD\u8FDE\u63A5"
+    english: A two-way connection
+    traditionalChinese: "\u96D9\u5411\u901A\u8A71\u9023\u63A5"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.1e68a716d048
+    chinese: "\u4E00\u6761\u63D0\u793A"
+    english: A hint
+    traditionalChinese: "\u4E00\u689D\u63D0\u793A"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.72db071a4759
+    chinese: "\u53C2\u89C2\u56DE\u987E"
+    english: Your visit
+    traditionalChinese: "\u53C3\u89C0\u56DE\u9867"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.5d554ff71ee5
+    chinese: "\u9009\u62E9\u4E00\u79CD\u8FDE\u63A5"
+    english: Choose a connection
+    traditionalChinese: "\u9078\u64C7\u4E00\u7A2E\u9023\u63A5"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.f6e6790754a1
+    chinese: "\u6C34\u9762\u4E0A\u7684\u6CF5\u901A\u8FC7\u8F6F\u7BA1\u5411\u5934\u76D4\u4F9B\u6C14\u3002"
+    english: A surface pump sends air through a hose to the helmet.
+    traditionalChinese: "\u6C34\u9762\u4E0A\u7684\u6CF5\u901A\u904E\u8EDF\u7BA1\u5411\u982D\u76D4\u4F9B\u6C23\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.c10d4b8c9e14
+    chinese: "\u6F5C\u6C34\u5458\u901A\u8FC7\u7535\u7F06\u4E0E\u6C34\u9762\u56E2\u961F\u901A\u8BDD\u3002"
+    english: Diver and surface team exchange messages through a cable.
+    traditionalChinese: "\u6F5B\u6C34\u54E1\u901A\u904E\u96FB\u7E9C\u8207\u6C34\u9762\u5718\u968A\u901A\u8A71\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.142cb14f4beb
+    chinese: "\u627E\u627E\u5934\u76D4\u540E\u90E8\u7684\u63A5\u5934\u3002\u8FD4\u56DE\u540E\u9009\u62E9\u201C\u4F9B\u6C14\u201D\u3002"
+    english: Find the rear connector. Use Back to choose Air.
+    traditionalChinese: "\u627E\u627E\u982D\u76D4\u5F8C\u90E8\u7684\u63A5\u982D\u3002\u8FD4\u56DE\u5F8C\u9078\u64C7\u201C\u4F9B\u6C23\u201D\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.bf82fcbf088c
+    chinese: "\u6F5C\u6C34\u5458\u600E\u6837\u6C42\u52A9\uFF1F\u8FD4\u56DE\u540E\u9009\u62E9\u201C\u901A\u8BDD\u201D\u3002"
+    english: How could a diver ask for help? Use Back to choose Voice.
+    traditionalChinese: "\u6F5B\u6C34\u54E1\u600E\u6A23\u6C42\u52A9\uFF1F\u8FD4\u56DE\u5F8C\u9078\u64C7\u201C\u901A\u8A71\u201D\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.b64b8681af14
+    chinese: "\u4E24\u79CD\u8FDE\u63A5\u90FD\u770B\u8FC7\u4E86\u3002\u6C34\u9762\u56E2\u961F\u600E\u6837\u652F\u6301\u6F5C\u6C34\u5458\uFF1F"
+    english: You have seen both connections. How does the surface team support the
+      diver?
+    traditionalChinese: "\u5169\u7A2E\u9023\u63A5\u90FD\u770B\u904E\u4E86\u3002\u6C34\u9762\u5718\u968A\u600E\u6A23\u652F\u6301\u6F5B\u6C34\u54E1\uFF1F"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.f45a65102e48
+    chinese: "\u4F9B\u6C14\uFF1A\u5C1A\u672A\u67E5\u770B"
+    english: 'Air: not seen yet'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u5C1A\u672A\u67E5\u770B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.0bc09d5f116f
+    chinese: "\u901A\u8BDD\uFF1A\u5C1A\u672A\u67E5\u770B"
+    english: 'Voice: not seen yet'
+    traditionalChinese: "\u901A\u8A71\uFF1A\u5C1A\u672A\u67E5\u770B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.b8cbc17d731e
+    chinese: "\u4F9B\u6C14\uFF1A\u5DF2\u67E5\u770B\uFF0C\u7A7A\u6C14\u6765\u81EA\u6C34\u9762\u3002"
+    english: 'Air: seen - air arrives from the surface.'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u5DF2\u67E5\u770B\uFF0C\u7A7A\u6C23\u4F86\u81EA\u6C34\u9762\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.6dcb0c7ad31d
+    chinese: "\u901A\u8BDD\uFF1A\u5DF2\u67E5\u770B\uFF0C\u4FE1\u606F\u53CC\u5411\u4F20\u9012\u3002"
+    english: 'Voice: seen - messages travel both ways.'
+    traditionalChinese: "\u901A\u8A71\uFF1A\u5DF2\u67E5\u770B\uFF0C\u4FE1\u606F\u96D9\u5411\u50B3\u905E\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.0ddc454bad15
+    chinese: "\u6F14\u793A\u64AD\u653E\u4E2D"
+    english: Demo playing
+    traditionalChinese: "\u6F14\u793A\u64AD\u653E\u4E2D"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.210f91871815
+    chinese: "\u9759\u6001\u6A21\u578B\u5C55\u793A"
+    english: Static model view
+    traditionalChinese: "\u975C\u614B\u6A21\u578B\u5C55\u793A"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.8770d31cdd92
+    chinese: "\u6F14\u793A\u5DF2\u9690\u85CF"
+    english: Demo hidden
+    traditionalChinese: "\u6F14\u793A\u5DF2\u96B1\u85CF"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.c437d47a1785
+    chinese: "\u4F9B\u6C14\u6CF5"
+    english: Air pump
+    traditionalChinese: "\u4F9B\u6C23\u6CF5"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.9d6d976aa257
+    chinese: "\u6C34\u9762\u7535\u8BDD"
+    english: Surface telephone
+    traditionalChinese: "\u6C34\u9762\u96FB\u8A71"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.f6d7aa85149d
+    chinese: "\u4F9B\u6C14\u63A5\u5934"
+    english: Air inlet
+    traditionalChinese: "\u4F9B\u6C23\u63A5\u982D"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.cde2ee7d4287
+    chinese: "\u6F5C\u6C34\u5458\u7AEF"
+    english: Diver unit
+    traditionalChinese: "\u6F5B\u6C34\u54E1\u7AEF"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.a076cb0bf0dc
+    chinese: "\u6559\u5B66\u793A\u610F\u6A21\u578B"
+    english: Illustrative model
+    traditionalChinese: "\u6559\u5B78\u793A\u610F\u6A21\u578B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.e0fcd7bf74de
+    chinese: "\u4F9B\u6C14\u6CF5 \u2192 \u5934\u76D4 / \u9759\u6001\u5C55\u793A"
+    english: Pump > helmet / static view
+    traditionalChinese: "\u4F9B\u6C23\u6CF5 \u2192 \u982D\u76D4 / \u975C\u614B\u5C55\u793A"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.eb7463f6a08d
+    chinese: "\u53CC\u5411\u901A\u8BDD / \u9759\u6001\u5C55\u793A"
+    english: Two-way voice / static view
+    traditionalChinese: "\u96D9\u5411\u901A\u8A71 / \u975C\u614B\u5C55\u793A"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.58ac639fe309
+    chinese: "\u4F9B\u6C14\u6CF5\u4E0E\u8F6F\u7BA1"
+    english: Pump and hose
+    traditionalChinese: "\u4F9B\u6C23\u6CF5\u8207\u8EDF\u7BA1"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.91cdecce894a
+    chinese: "\u4F9B\u6C14\uFF1A\u6CF5 \u2192 \u5934\u76D4"
+    english: 'Air: pump > helmet'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u6CF5 \u2192 \u982D\u76D4"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.41dbb1e6ea3d
+    chinese: "\u7A7A\u6C14\u7531\u6C34\u9762\u4F9B\u5E94"
+    english: Air supplied from the surface
+    traditionalChinese: "\u7A7A\u6C23\u7531\u6C34\u9762\u4F9B\u61C9"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.ac5f71ef709d
+    chinese: "\u6C34\u9762\u7AEF\u4E0E\u6F5C\u6C34\u5458\u7AEF"
+    english: Surface and diver
+    traditionalChinese: "\u6C34\u9762\u7AEF\u8207\u6F5B\u6C34\u54E1\u7AEF"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.dcbe370579b6
+    chinese: "\u53D1\u8BDD\uFF1A\u6C34\u9762 \u2192 \u6F5C\u6C34\u5458"
+    english: 'Message: surface > diver'
+    traditionalChinese: "\u767C\u8A71\uFF1A\u6C34\u9762 \u2192 \u6F5B\u6C34\u54E1"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.b55c4b4242fc
+    chinese: "\u7B49\u5F85\u56DE\u590D"
+    english: Waiting for a reply
+    traditionalChinese: "\u7B49\u5F85\u56DE\u8986"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.e7127dc7b1c8
+    chinese: "\u56DE\u590D\uFF1A\u6F5C\u6C34\u5458 \u2192 \u6C34\u9762"
+    english: 'Reply: diver > surface'
+    traditionalChinese: "\u56DE\u8986\uFF1A\u6F5B\u6C34\u54E1 \u2192 \u6C34\u9762"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.1d8837881977
+    chinese: "\u4F9B\u6C14\u63A5\u5934"
+    english: AIR CONNECTOR
+    traditionalChinese: "\u4F9B\u6C23\u63A5\u982D"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.14aa6cf7d438
+    chinese: "\u6309\u63E1\u6301\u952E\u63A2\u7D22"
+    english: Grip to explore
+    traditionalChinese: "\u6309\u63E1\u6301\u9375\u63A2\u7D22"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.ec5739470246
+    chinese: "\u8DDF\u968F\u4F60\u7684\u4F4D\u7F6E\uFF1B\u7784\u51C6\u65F6\u4FDD\u6301\u4E0D\u52A8"
+    english: Follows your position / stays still while aiming
+    traditionalChinese: "\u8DDF\u96A8\u4F60\u7684\u4F4D\u7F6E\uFF1B\u7784\u6E96\u6642\u4FDD\u6301\u4E0D\u52D5"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.7af153d31e3d
+    chinese: "\u6309\u63E1\u6301\u952E\u9009\u62E9 / \u5355\u624B\u64CD\u4F5C"
+    english: GRIP TO SELECT  /  ONE HAND
+    traditionalChinese: "\u6309\u63E1\u6301\u9375\u9078\u64C7 / \u55AE\u624B\u64CD\u4F5C"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.5903c4cc5a5a
+    chinese: "\u60AC\u505C\uFF1A\u62FF\u8D77\u5E76\u8F6C\u52A8\uFF0C\u677E\u624B\u540E\u4FDD\u6301\u59FF\u6001"
+    english: 'FLOAT: pick up, turn freely, release to keep pose'
+    traditionalChinese: "\u61F8\u505C\uFF1A\u62FF\u8D77\u4E26\u8F49\u52D5\uFF0C\u9B06\u624B\u5F8C\u4FDD\u6301\u59FF\u614B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.dd71e75d28ea
+    chinese: "\u5DF2\u60AC\u505C / \u5256\u9762\u5DF2\u5F00\u542F"
+    english: FLOATING  /  SECTION ON
+    traditionalChinese: "\u5DF2\u61F8\u505C / \u5256\u9762\u5DF2\u958B\u5553"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.51a5f0339c91
+    chinese: "\u5256\u9762\u5DF2\u5F00\u542F"
+    english: SECTION ON
+    traditionalChinese: "\u5256\u9762\u5DF2\u958B\u5553"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.f787d640d5f0
+    chinese: "\u8C03\u6574\u5256\u9762\uFF1A\u63E1\u4F4F\u9752\u8272\u7403\u67C4\uFF0C\u79FB\u52A8\u5E76\u8F6C\u52A8"
+    english: 'EDIT CUT: grip the cyan handle, move + twist'
+    traditionalChinese: "\u8ABF\u6574\u5256\u9762\uFF1A\u63E1\u4F4F\u9752\u8272\u7403\u67C4\uFF0C\u79FB\u52D5\u4E26\u8F49\u52D5"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.dfc96be06422
+    chinese: "\u6309\u63E1\u6301\u952E\u9009\u62E9\u3002\u53EF\u6309\u9700\u67E5\u770B\u63D0\u793A\uFF0C\u9009\u62E9\u201C\u89C2\u5BDF\u201D\u8FD4\u56DE\u5DE5\u5177\u3002"
+    english: Grip to select. HINT is optional. INSPECT returns to the tools.
+    traditionalChinese: "\u6309\u63E1\u6301\u9375\u9078\u64C7\u3002\u53EF\u6309\u9700\u67E5\u770B\u63D0\u793A\uFF0C\u9078\u64C7\u201C\u89C0\u5BDF\u201D\u8FD4\u56DE\u5DE5\u5177\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.916cba48335e
+    chinese: "\u6309\u81EA\u5DF1\u7684\u8282\u594F\u63A2\u7D22"
+    english: EXPLORE AT YOUR PACE
+    traditionalChinese: "\u6309\u81EA\u5DF1\u7684\u7BC0\u594F\u63A2\u7D22"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.068bb7069a0a
+    chinese: "\u5750\u59FF\u6216\u7AD9\u59FF\u53C2\u89C2 / \u5355\u624B\u64CD\u4F5C"
+    english: EXPLORE SEATED OR STANDING  /  ONE HAND
+    traditionalChinese: "\u5750\u59FF\u6216\u7AD9\u59FF\u53C3\u89C0 / \u55AE\u624B\u64CD\u4F5C"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.181c06d68afa
+    chinese: "\u6234\u4E0A\u8FD9\u9876\u5934\u76D4\uFF0C\u5C31\u80FD\u72EC\u81EA\u5728\u6C34\u4E0B\u5DE5\u4F5C\u4E86\u5417\uFF1F"
+    english: Could a diver work alone in this helmet?
+    traditionalChinese: "\u6234\u4E0A\u9019\u9802\u982D\u76D4\uFF0C\u5C31\u80FD\u7368\u81EA\u5728\u6C34\u4E0B\u5DE5\u4F5C\u4E86\u55CE\uFF1F"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.0476b3716ee2
+    chinese: "\u8F6C\u52A8\u770B\u770B\uFF0C\u53EF\u4EFB\u610F\u9009\u62E9\u201C\u4F9B\u6C14\u201D\u6216\u201C\u901A\u8BDD\u201D\u3002"
+    english: Look around it. Choose AIR or VOICE in any order.
+    traditionalChinese: "\u8F49\u52D5\u770B\u770B\uFF0C\u53EF\u4EFB\u610F\u9078\u64C7\u201C\u4F9B\u6C23\u201D\u6216\u201C\u901A\u8A71\u201D\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.a45217ab9c5f
+    chinese: "\u6234\u4E0A\u8FD9\u9876\u5934\u76D4\uFF0C\n\u5C31\u80FD\u72EC\u81EA\u5DE5\u4F5C\u4E86\u5417\uFF1F"
+    english: 'Could you work alone
+
+      in this helmet?'
+    traditionalChinese: "\u6234\u4E0A\u9019\u9802\u982D\u76D4\uFF0C\n\u5C31\u80FD\u7368\u81EA\u5DE5\u4F5C\u4E86\u55CE\uFF1F"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.873b9302d666
+    chinese: "\u6F5C\u6C34\u5934\u76D4"
+    english: Diving helmet
+    traditionalChinese: "\u6F5B\u6C34\u982D\u76D4"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.3f25263a306e
+    chinese: "\u6F5C\u6C34\u5934\u76D4"
+    english: DIVING HELMET
+    traditionalChinese: "\u6F5B\u6C34\u982D\u76D4"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.2fbd091cab43
+    chinese: "\u53C2\u8003 Mark V \u7684\u7814\u7A76\u6A21\u578B"
+    english: Mark V-inspired study
+    traditionalChinese: "\u53C3\u8003 Mark V \u7684\u7814\u7A76\u6A21\u578B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.e7bbe469a0e3
+    chinese: "\u53C2\u8003 Mark V \u7684\u7814\u7A76\u6A21\u578B"
+    english: MARK V-INSPIRED STUDY
+    traditionalChinese: "\u53C3\u8003 Mark V \u7684\u7814\u7A76\u6A21\u578B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.b9042124d9c3
+    chinese: "\u89E3\u91CA\u6027\u5C55\u9648"
+    english: INTERPRETIVE DISPLAY
+    traditionalChinese: "\u89E3\u91CB\u6027\u5C55\u9673"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.c9f28d973996
+    chinese: "\u8FD1\u8DDD\u79BB\u89C2\u5BDF"
+    english: LOOK CLOSER
+    traditionalChinese: "\u8FD1\u8DDD\u96E2\u89C0\u5BDF"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.53dd9f0405a5
+    chinese: "\u4E0E\u6C34\u9762\u4FDD\u6301\u8FDE\u63A5"
+    english: STAY CONNECTED
+    traditionalChinese: "\u8207\u6C34\u9762\u4FDD\u6301\u9023\u63A5"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.781575270ef4
+    chinese: "\u4F9B\u6C14 / \u901A\u8BDD"
+    english: AIR  /  VOICE
+    traditionalChinese: "\u4F9B\u6C23 / \u901A\u8A71"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.b9c40973a4cc
+    chinese: "\u5934\u76D4\u5185\u90E8"
+    english: Inside the helmet
+    traditionalChinese: "\u982D\u76D4\u5167\u90E8"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.44fc6ddc6452
+    chinese: "\u8FDE\u63A5\u6C34\u9762"
+    english: Connected to the surface
+    traditionalChinese: "\u9023\u63A5\u6C34\u9762"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.83d513cc1804
+    chinese: "01 / \u89C2\u5BDF"
+    english: 01 / OBSERVE
+    traditionalChinese: "01 / \u89C0\u5BDF"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.ece8dcc38b2a
+    chinese: "02 / \u8FDE\u63A5"
+    english: 02 / CONNECT
+    traditionalChinese: "02 / \u9023\u63A5"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.805b59527b6f
+    chinese: "\u6162\u6162\u770B\uFF0C\n\u4E0D\u7740\u6025"
+    english: 'TAKE YOUR
+
+      TIME'
+    traditionalChinese: "\u6162\u6162\u770B\uFF0C\n\u4E0D\u7740\u6025"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.e6216fc88aa2
+    chinese: "\u4ECE\u4E0D\u540C\u65B9\u5411\u89C2\u5BDF\u5C55\u54C1\uFF0C\n\u627E\u627E\u4F53\u73B0\u7528\u9014\u7684\u7EC6\u8282\u3002"
+    english: 'Look around the object.
+
+      Find the details that reveal its purpose.'
+    traditionalChinese: "\u5F9E\u4E0D\u540C\u65B9\u5411\u89C0\u5BDF\u5C55\u54C1\uFF0C\n\u627E\u627E\u9AD4\u73FE\u7528\u9014\u7684\u7D30\u7BC0\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.6f3f70818f2f
+    chinese: "\u505C\u4E00\u505C\uFF0C\u518D\u770B\u770B\uFF0C\n\u8DDF\u968F\u81EA\u5DF1\u7684\u597D\u5947\u5FC3\u3002"
+    english: 'Pause. Look again.
+
+      Follow your curiosity.'
+    traditionalChinese: "\u505C\u4E00\u505C\uFF0C\u518D\u770B\u770B\uFF0C\n\u8DDF\u96A8\u81EA\u5DF1\u7684\u597D\u5947\u5FC3\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.0faf9ce6e87b
+    chinese: "\u4ECE\u5934\u76D4\u5F00\u59CB\uFF0C\n\u79FB\u8FD1\u3001\u8F6C\u52A8\uFF0C\u518D\u770B\u770B\u5185\u90E8\u3002"
+    english: 'Start with the helmet.
+
+      Bring it closer, turn it, and look inside.'
+    traditionalChinese: "\u5F9E\u982D\u76D4\u958B\u59CB\uFF0C\n\u79FB\u8FD1\u3001\u8F49\u52D5\uFF0C\u518D\u770B\u770B\u5167\u90E8\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.eb8d868177bb
+    chinese: "\u5916\u58F3\u3002\n\u89C6\u7A97\u3002\n\u5185\u90E8\u89C6\u91CE\u3002"
+    english: 'The shell.
+
+      The window.
+
+      The view within.'
+    traditionalChinese: "\u5916\u6BBC\u3002\n\u8996\u7A97\u3002\n\u5167\u90E8\u8996\u91CE\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.35ea5649c376
+    chinese: "\u4F9B\u6C14\u3001\u901A\u8BDD\u4E0E\u652F\u6301\u3002\n\u5934\u76D4\u662F\u6574\u5957\u88C5\u5907\u7684\u4E00\u90E8\u5206\u3002"
+    english: 'Air. Communication. Support.
+
+      A helmet is part of a larger story.'
+    traditionalChinese: "\u4F9B\u6C23\u3001\u901A\u8A71\u8207\u652F\u6301\u3002\n\u982D\u76D4\u662F\u6574\u5957\u88DD\u5099\u7684\u4E00\u90E8\u5206\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.a12d34eb0795
+    chinese: "\u7A7A\u6C14\u4ECE\u54EA\u91CC\u6765\uFF1F\n\u4FE1\u606F\u600E\u6837\u4F20\u9012\uFF1F"
+    english: 'Where does air come from?
+
+      How does a message travel?'
+    traditionalChinese: "\u7A7A\u6C23\u5F9E\u54EA\u88CF\u4F86\uFF1F\n\u4FE1\u606F\u600E\u6A23\u50B3\u905E\uFF1F"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.5a418305a621
+    chinese: "\u5148\u70B9\u51FB Game \u753B\u9762\u3002\nT / Y\uFF1A\u9009\u62E9\u5DE6
+      / \u53F3\u63A7\u5236\u5668\u3002\n\u6307\u5411\u540E\u6309 G\uFF1A\u9009\u62E9\u6309\u94AE\u3002\n\u6309\u4F4F
+      G \u6293\u53D6\uFF0C\u677E\u5F00\u5373\u53EF\u653E\u4E0B\u3002\nHome\uFF1A\u5934\u76D4\u590D\u4F4D\u3002"
+    english: 'Click Game to focus.
+
+      T / Y: choose a controller.
+
+      Point
+      + G: select a button.
+
+      Hold G: grab; release to let go.
+
+      Home:
+      reset the helmet.'
+    traditionalChinese: "\u5148\u9EDE\u64CA Game \u756B\u9762\u3002\nT / Y\uFF1A\u9078\u64C7\u5DE6
+      / \u53F3\u63A7\u5236\u5668\u3002\n\u6307\u5411\u5F8C\u6309 G\uFF1A\u9078\u64C7\u6309\u9215\u3002\n\u6309\u4F4F
+      G \u6293\u53D6\uFF0C\u9B06\u958B\u5373\u53EF\u653E\u4E0B\u3002\nHome\uFF1A\u982D\u76D4\u5FA9\u4F4D\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.cbda5237f43b
+    chinese: "\u8BBE\u5907\u7C7B\u578B\u7ECF\u8FC7\u6559\u5B66\u7B80\u5316\u3002\n\u4E0D\u662F\u7CBE\u786E\u914D\u5957\u88C5\u5907\u7684\u590D\u539F\u3002\n\u672A\u91CD\u5EFA\u771F\u5B9E\u5934\u76D4\u7684\u5B8C\u6574\u5185\u90E8\u6784\u9020\u3002\n\n"
+    english: 'Equipment types, simplified.
+
+      Not an exact matched rig.
+
+      No
+      helmet interior is reconstructed.
+
+
+'
+    traditionalChinese: "\u8A2D\u5099\u985E\u578B\u7D93\u904E\u6559\u5B78\u7C21\u5316\u3002\n\u4E0D\u662F\u7CBE\u78BA\u914D\u5957\u88DD\u5099\u7684\u5FA9\u539F\u3002\n\u672A\u91CD\u5EFA\u771F\u5BE6\u982D\u76D4\u7684\u5B8C\u6574\u5167\u90E8\u69CB\u9020\u3002\n\n"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.ad92dd6bd260
+    chinese: "\u6765\u6E90\uFF1A\u7F8E\u56FD\u6D77\u519B\u6C34\u4E0B\u535A\u7269\u9986\uFF0CMK
+      V\n\u82F1\u56FD\u7687\u5BB6\u683C\u6797\u5C3C\u6CBB\u535A\u7269\u9986\uFF0CEQA0617\n\u82F1\u56FD\u79D1\u5B66\u535A\u7269\u9986\u96C6\u56E2\uFF0C1963\u201371"
+    english: 'Sources: Naval Undersea Museum, MK V
+
+      Royal Museums Greenwich,
+      EQA0617
+
+      Science Museum Group, 1963-71'
+    traditionalChinese: "\u4F86\u6E90\uFF1A\u7F8E\u570B\u6D77\u8ECD\u6C34\u4E0B\u535A\u7269\u9928\uFF0CMK
+      V\n\u82F1\u570B\u7687\u5BB6\u683C\u6797\u5C3C\u6CBB\u535A\u7269\u9928\uFF0CEQA0617\n\u82F1\u570B\u79D1\u5B78\u535A\u7269\u9928\u96C6\u5718\uFF0C1963\u201371"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.1ea48a42a2b3
+    chinese: "\u6765\u6E90\uFF1A\u7F8E\u56FD\u6D77\u519B\u6C34\u4E0B\u535A\u7269\u9986\uFF0CMK
+      V\n\u82F1\u56FD\u7687\u5BB6\u683C\u6797\u5C3C\u6CBB\u535A\u7269\u9986\uFF0CZBA6671"
+    english: 'Sources: Naval Undersea Museum, MK V
+
+      Royal Museums Greenwich,
+      ZBA6671'
+    traditionalChinese: "\u4F86\u6E90\uFF1A\u7F8E\u570B\u6D77\u8ECD\u6C34\u4E0B\u535A\u7269\u9928\uFF0CMK
+      V\n\u82F1\u570B\u7687\u5BB6\u683C\u6797\u5C3C\u6CBB\u535A\u7269\u9928\uFF0CZBA6671"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.2480270a0563
+    chinese: "\u524D\u7A97"
+    english: WINDOW
+    traditionalChinese: "\u524D\u7A97"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.f069afe77ee4
+    chinese: "\u5256\u9762"
+    english: SECTION
+    traditionalChinese: "\u5256\u9762"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.403860c81c53
+    chinese: "\u60AC\u505C"
+    english: FLOAT
+    traditionalChinese: "\u61F8\u505C"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.7ef2fad58d1f
+    chinese: "\u590D\u4F4D"
+    english: RESET
+    traditionalChinese: "\u5FA9\u4F4D"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.b4b2cfcf7329
+    chinese: "\u5411\u5DE6\u8F6C"
+    english: TURN LEFT
+    traditionalChinese: "\u5411\u5DE6\u8F49"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.75cf34e2bbba
+    chinese: "\u5411\u53F3\u8F6C"
+    english: TURN RIGHT
+    traditionalChinese: "\u5411\u53F3\u8F49"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.f82eaabe96a5
+    chinese: "\u5411\u4E0A\u503E\u659C"
+    english: TILT UP
+    traditionalChinese: "\u5411\u4E0A\u50BE\u659C"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.28341b0c9c75
+    chinese: "\u5411\u4E0B\u503E\u659C"
+    english: TILT DOWN
+    traditionalChinese: "\u5411\u4E0B\u50BE\u659C"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.b8cf71d09821
+    chinese: "\u8C03\u6574\u5256\u9762"
+    english: EDIT CUT
+    traditionalChinese: "\u8ABF\u6574\u5256\u9762"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.20bde51ebfaa
+    chinese: "\u5BF9\u9F50\u89C6\u89D2"
+    english: ALIGN VIEW
+    traditionalChinese: "\u5C0D\u9F4A\u8996\u89D2"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.b7f7d1d60c76
+    chinese: "\u5207\u6DF1\u4E00\u70B9"
+    english: DEEPER
+    traditionalChinese: "\u5207\u6DF1\u4E00\u9EDE"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.d05640c14adb
+    chinese: "\u5207\u6D45\u4E00\u70B9"
+    english: SHALLOWER
+    traditionalChinese: "\u5207\u6DFA\u4E00\u9EDE"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.7dcd3a425474
+    chinese: "\u4ECE\u9876\u90E8\u5207"
+    english: TOP CUT
+    traditionalChinese: "\u5F9E\u9802\u90E8\u5207"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.8bee6fd82ee8
+    chinese: "\u53CD\u5411\u5256\u5207"
+    english: FLIP CUT
+    traditionalChinese: "\u53CD\u5411\u5256\u5207"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.52688800e0e4
+    chinese: "\u89C2\u5BDF"
+    english: INSPECT
+    traditionalChinese: "\u89C0\u5BDF"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.c8fbce667415
+    chinese: "\u63A2\u7D22"
+    english: EXPLORE
+    traditionalChinese: "\u63A2\u7D22"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.37a6760fa43c
+    chinese: "\u5E2E\u52A9"
+    english: HELP
+    traditionalChinese: "\u5E6B\u52A9"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.9e0d5d5acc31
+    chinese: "\u4F9B\u6C14"
+    english: AIR
+    traditionalChinese: "\u4F9B\u6C23"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.a430e6d293d0
+    chinese: "\u901A\u8BDD"
+    english: VOICE
+    traditionalChinese: "\u901A\u8A71"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.14fdc0f6c77f
+    chinese: "\u8BE6\u7EC6\u8BF4\u660E"
+    english: DETAILS
+    traditionalChinese: "\u8A73\u7D30\u8AAA\u660E"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.92d23f5381ea
+    chinese: "\u91CD\u64AD"
+    english: REPLAY
+    traditionalChinese: "\u91CD\u64AD"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.006a701e2584
+    chinese: "\u91CD\u65B0\u53C2\u89C2"
+    english: NEW VISIT
+    traditionalChinese: "\u91CD\u65B0\u53C3\u89C0"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.036a27cbfee4
+    chinese: "\u66F4\u591A"
+    english: MORE
+    traditionalChinese: "\u66F4\u591A"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.639807a2e018
+    chinese: "\u8FD4\u56DE"
+    english: BACK
+    traditionalChinese: "\u8FD4\u56DE"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.fc1b8229a4cd
+    chinese: "\u63D0\u793A"
+    english: HINT
+    traditionalChinese: "\u63D0\u793A"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.182e499256be
+    chinese: "\u56DE\u987E"
+    english: REVIEW
+    traditionalChinese: "\u56DE\u9867"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.04dedf8afeb8
+    chinese: "\u505C\u6B62"
+    english: STOP
+    traditionalChinese: "\u505C\u6B62"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.f13a1ed0cf3c
+    chinese: "\u5173\u95ED"
+    english: CLOSE
+    traditionalChinese: "\u95DC\u9589"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.08aefcff727f
+    chinese: "\u51CF\u5C11\u52A8\u753B"
+    english: REDUCE MOTION
+    traditionalChinese: "\u6E1B\u5C11\u52D5\u756B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.7c34c7fa83ee
+    chinese: "\u4F9B\u6C14\uFF1A\u5DF2\u67E5\u770B / \u901A\u8BDD\uFF1A\u5DF2\u67E5\u770B"
+    english: 'AIR: seen   /   VOICE: seen'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u5DF2\u67E5\u770B / \u901A\u8A71\uFF1A\u5DF2\u67E5\u770B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.13241230a31e
+    chinese: "\u4F9B\u6C14\uFF1A\u5DF2\u67E5\u770B / \u901A\u8BDD\uFF1A\u5C1A\u672A\u67E5\u770B"
+    english: 'AIR: seen   /   VOICE: not seen'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u5DF2\u67E5\u770B / \u901A\u8A71\uFF1A\u5C1A\u672A\u67E5\u770B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.b8b27fbf06f1
+    chinese: "\u4F9B\u6C14\uFF1A\u5DF2\u67E5\u770B / \u901A\u8BDD\uFF1A\u5C1A\u672A\u63A2\u7D22"
+    english: 'AIR: seen   /   VOICE: unexplored'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u5DF2\u67E5\u770B / \u901A\u8A71\uFF1A\u5C1A\u672A\u63A2\u7D22"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.c9156b55d2de
+    chinese: "\u4F9B\u6C14\uFF1A\u5C1A\u672A\u67E5\u770B / \u901A\u8BDD\uFF1A\u5DF2\u67E5\u770B"
+    english: 'AIR: not seen   /   VOICE: seen'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u5C1A\u672A\u67E5\u770B / \u901A\u8A71\uFF1A\u5DF2\u67E5\u770B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.0dc806513dcf
+    chinese: "\u4F9B\u6C14\uFF1A\u5C1A\u672A\u67E5\u770B / \u901A\u8BDD\uFF1A\u5C1A\u672A\u67E5\u770B"
+    english: 'AIR: not seen   /   VOICE: not seen'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u5C1A\u672A\u67E5\u770B / \u901A\u8A71\uFF1A\u5C1A\u672A\u67E5\u770B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.010110b25157
+    chinese: "\u4F9B\u6C14\uFF1A\u5C1A\u672A\u67E5\u770B / \u901A\u8BDD\uFF1A\u5C1A\u672A\u63A2\u7D22"
+    english: 'AIR: not seen   /   VOICE: unexplored'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u5C1A\u672A\u67E5\u770B / \u901A\u8A71\uFF1A\u5C1A\u672A\u63A2\u7D22"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.598048355240
+    chinese: "\u4F9B\u6C14\uFF1A\u5C1A\u672A\u63A2\u7D22 / \u901A\u8BDD\uFF1A\u5DF2\u67E5\u770B"
+    english: 'AIR: unexplored   /   VOICE: seen'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u5C1A\u672A\u63A2\u7D22 / \u901A\u8A71\uFF1A\u5DF2\u67E5\u770B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.123edab0416b
+    chinese: "\u4F9B\u6C14\uFF1A\u5C1A\u672A\u63A2\u7D22 / \u901A\u8BDD\uFF1A\u5C1A\u672A\u67E5\u770B"
+    english: 'AIR: unexplored   /   VOICE: not seen'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u5C1A\u672A\u63A2\u7D22 / \u901A\u8A71\uFF1A\u5C1A\u672A\u67E5\u770B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.93ee593860aa
+    chinese: "\u4F9B\u6C14\uFF1A\u5C1A\u672A\u63A2\u7D22 / \u901A\u8BDD\uFF1A\u5C1A\u672A\u63A2\u7D22"
+    english: 'AIR: unexplored   /   VOICE: unexplored'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u5C1A\u672A\u63A2\u7D22 / \u901A\u8A71\uFF1A\u5C1A\u672A\u63A2\u7D22"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.7f8cc101f5be
+    chinese: "\u8BBE\u5907\u7C7B\u578B\u7ECF\u8FC7\u6559\u5B66\u7B80\u5316\u3002\n\u4E0D\u662F\u7CBE\u786E\u914D\u5957\u88C5\u5907\u7684\u590D\u539F\u3002\n\u672A\u91CD\u5EFA\u771F\u5B9E\u5934\u76D4\u7684\u5B8C\u6574\u5185\u90E8\u6784\u9020\u3002\n\n\u6765\u6E90\uFF1A\u7F8E\u56FD\u6D77\u519B\u6C34\u4E0B\u535A\u7269\u9986\uFF0CMK
+      V\n\u82F1\u56FD\u7687\u5BB6\u683C\u6797\u5C3C\u6CBB\u535A\u7269\u9986\uFF0CEQA0617\n\u82F1\u56FD\u79D1\u5B66\u535A\u7269\u9986\u96C6\u56E2\uFF0C1963\u201371"
+    english: 'Equipment types, simplified.
+
+      Not an exact matched rig.
+
+      No
+      helmet interior is reconstructed.
+
+
+      Sources: Naval Undersea Museum, MK
+      V
+
+      Royal Museums Greenwich, EQA0617
+
+      Science Museum Group, 1963-71'
+    traditionalChinese: "\u8A2D\u5099\u985E\u578B\u7D93\u904E\u6559\u5B78\u7C21\u5316\u3002\n\u4E0D\u662F\u7CBE\u78BA\u914D\u5957\u88DD\u5099\u7684\u5FA9\u539F\u3002\n\u672A\u91CD\u5EFA\u771F\u5BE6\u982D\u76D4\u7684\u5B8C\u6574\u5167\u90E8\u69CB\u9020\u3002\n\n\u4F86\u6E90\uFF1A\u7F8E\u570B\u6D77\u8ECD\u6C34\u4E0B\u535A\u7269\u9928\uFF0CMK
+      V\n\u82F1\u570B\u7687\u5BB6\u683C\u6797\u5C3C\u6CBB\u535A\u7269\u9928\uFF0CEQA0617\n\u82F1\u570B\u79D1\u5B78\u535A\u7269\u9928\u96C6\u5718\uFF0C1963\u201371"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.6359b9d9aacb
+    chinese: "\u8BBE\u5907\u7C7B\u578B\u7ECF\u8FC7\u6559\u5B66\u7B80\u5316\u3002\n\u4E0D\u662F\u7CBE\u786E\u914D\u5957\u88C5\u5907\u7684\u590D\u539F\u3002\n\u672A\u91CD\u5EFA\u771F\u5B9E\u5934\u76D4\u7684\u5B8C\u6574\u5185\u90E8\u6784\u9020\u3002\n\n\u6765\u6E90\uFF1A\u7F8E\u56FD\u6D77\u519B\u6C34\u4E0B\u535A\u7269\u9986\uFF0CMK
+      V\n\u82F1\u56FD\u7687\u5BB6\u683C\u6797\u5C3C\u6CBB\u535A\u7269\u9986\uFF0CZBA6671"
+    english: 'Equipment types, simplified.
+
+      Not an exact matched rig.
+
+      No
+      helmet interior is reconstructed.
+
+
+      Sources: Naval Undersea Museum, MK
+      V
+
+      Royal Museums Greenwich, ZBA6671'
+    traditionalChinese: "\u8A2D\u5099\u985E\u578B\u7D93\u904E\u6559\u5B78\u7C21\u5316\u3002\n\u4E0D\u662F\u7CBE\u78BA\u914D\u5957\u88DD\u5099\u7684\u5FA9\u539F\u3002\n\u672A\u91CD\u5EFA\u771F\u5BE6\u982D\u76D4\u7684\u5B8C\u6574\u5167\u90E8\u69CB\u9020\u3002\n\n\u4F86\u6E90\uFF1A\u7F8E\u570B\u6D77\u8ECD\u6C34\u4E0B\u535A\u7269\u9928\uFF0CMK
+      V\n\u82F1\u570B\u7687\u5BB6\u683C\u6797\u5C3C\u6CBB\u535A\u7269\u9928\uFF0CZBA6671"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.00fac4bc0d1b
+    chinese: "\u4F9B\u6C14\uFF1A\u5C1A\u672A\u67E5\u770B\n\u901A\u8BDD\uFF1A\u5C1A\u672A\u67E5\u770B"
+    english: 'Air: not seen yet
+
+      Voice: not seen yet'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u5C1A\u672A\u67E5\u770B\n\u901A\u8A71\uFF1A\u5C1A\u672A\u67E5\u770B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.0451ccf72d4d
+    chinese: "\u4F9B\u6C14\uFF1A\u5C1A\u672A\u67E5\u770B\n\u901A\u8BDD\uFF1A\u5DF2\u67E5\u770B\uFF0C\u4FE1\u606F\u53CC\u5411\u4F20\u9012\u3002"
+    english: 'Air: not seen yet
+
+      Voice: seen - messages travel both ways.'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u5C1A\u672A\u67E5\u770B\n\u901A\u8A71\uFF1A\u5DF2\u67E5\u770B\uFF0C\u4FE1\u606F\u96D9\u5411\u50B3\u905E\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.d37da505faee
+    chinese: "\u4F9B\u6C14\uFF1A\u5DF2\u67E5\u770B\uFF0C\u7A7A\u6C14\u6765\u81EA\u6C34\u9762\u3002\n\u901A\u8BDD\uFF1A\u5C1A\u672A\u67E5\u770B"
+    english: 'Air: seen - air arrives from the surface.
+
+      Voice: not seen yet'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u5DF2\u67E5\u770B\uFF0C\u7A7A\u6C23\u4F86\u81EA\u6C34\u9762\u3002\n\u901A\u8A71\uFF1A\u5C1A\u672A\u67E5\u770B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.42fe3f276382
+    chinese: "\u4F9B\u6C14\uFF1A\u5DF2\u67E5\u770B\uFF0C\u7A7A\u6C14\u6765\u81EA\u6C34\u9762\u3002\n\u901A\u8BDD\uFF1A\u5DF2\u67E5\u770B\uFF0C\u4FE1\u606F\u53CC\u5411\u4F20\u9012\u3002"
+    english: 'Air: seen - air arrives from the surface.
+
+      Voice: seen - messages
+      travel both ways.'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u5DF2\u67E5\u770B\uFF0C\u7A7A\u6C23\u4F86\u81EA\u6C34\u9762\u3002\n\u901A\u8A71\uFF1A\u5DF2\u67E5\u770B\uFF0C\u4FE1\u606F\u96D9\u5411\u50B3\u905E\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.df3412a623d6
+    chinese: "\u5DF2\u60AC\u505C / \u5256\u9762\u5DF2\u5F00\u542F\n\u8C03\u6574\u5256\u9762\uFF1A\u63E1\u4F4F\u9752\u8272\u7403\u67C4\uFF0C\u79FB\u52A8\u5E76\u8F6C\u52A8"
+    english: 'FLOATING  /  SECTION ON
+
+      EDIT CUT: grip the cyan handle, move
+      + twist'
+    traditionalChinese: "\u5DF2\u61F8\u505C / \u5256\u9762\u5DF2\u958B\u5553\n\u8ABF\u6574\u5256\u9762\uFF1A\u63E1\u4F4F\u9752\u8272\u7403\u67C4\uFF0C\u79FB\u52D5\u4E26\u8F49\u52D5"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.98a9e457b6e9
+    chinese: "\u5256\u9762\u5DF2\u5F00\u542F\n\u8C03\u6574\u5256\u9762\uFF1A\u63E1\u4F4F\u9752\u8272\u7403\u67C4\uFF0C\u79FB\u52A8\u5E76\u8F6C\u52A8"
+    english: 'SECTION ON
+
+      EDIT CUT: grip the cyan handle, move + twist'
+    traditionalChinese: "\u5256\u9762\u5DF2\u958B\u5553\n\u8ABF\u6574\u5256\u9762\uFF1A\u63E1\u4F4F\u9752\u8272\u7403\u67C4\uFF0C\u79FB\u52D5\u4E26\u8F49\u52D5"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.7c605a408f85
+    chinese: "\u6309\u63E1\u6301\u952E\u9009\u62E9 / \u5355\u624B\u64CD\u4F5C\n\u60AC\u505C\uFF1A\u62FF\u8D77\u5E76\u8F6C\u52A8\uFF0C\u677E\u624B\u540E\u4FDD\u6301\u59FF\u6001"
+    english: 'GRIP TO SELECT  /  ONE HAND
+
+      FLOAT: pick up, turn freely, release
+      to keep pose'
+    traditionalChinese: "\u6309\u63E1\u6301\u9375\u9078\u64C7 / \u55AE\u624B\u64CD\u4F5C\n\u61F8\u505C\uFF1A\u62FF\u8D77\u4E26\u8F49\u52D5\uFF0C\u9B06\u624B\u5F8C\u4FDD\u6301\u59FF\u614B"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.03bb9dba3f02
+    chinese: "\u6234\u4E0A\u8FD9\u9876\u5934\u76D4\uFF0C\u5C31\u80FD\u72EC\u81EA\u5728\u6C34\u4E0B\u5DE5\u4F5C\u4E86\u5417\uFF1F\n\u8F6C\u52A8\u770B\u770B\uFF0C\u53EF\u4EFB\u610F\u9009\u62E9\u201C\u4F9B\u6C14\u201D\u6216\u201C\u901A\u8BDD\u201D\u3002"
+    english: 'Could a diver work alone in this helmet?
+
+      Look around it. Choose
+      AIR or VOICE in any order.'
+    traditionalChinese: "\u6234\u4E0A\u9019\u9802\u982D\u76D4\uFF0C\u5C31\u80FD\u7368\u81EA\u5728\u6C34\u4E0B\u5DE5\u4F5C\u4E86\u55CE\uFF1F\n\u8F49\u52D5\u770B\u770B\uFF0C\u53EF\u4EFB\u610F\u9078\u64C7\u201C\u4F9B\u6C23\u201D\u6216\u201C\u901A\u8A71\u201D\u3002"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.0f8f053e4cf8
+    chinese: "\u4F9B\u6C14\u63A5\u5934\n\u6309\u63E1\u6301\u952E\u63A2\u7D22"
+    english: 'AIR CONNECTOR
+
+      Grip to explore'
+    traditionalChinese: "\u4F9B\u6C23\u63A5\u982D\n\u6309\u63E1\u6301\u9375\u63A2\u7D22"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.8131aca398c4
+    chinese: "\u6F5C\u6C34\u5934\u76D4\n<size=62%>\u53C2\u8003 Mark V \u7684\u7814\u7A76\u6A21\u578B</size>"
+    english: 'Diving helmet
+
+      <size=62%>Mark V-inspired study</size>'
+    traditionalChinese: "\u6F5B\u6C34\u982D\u76D4\n<size=62%>\u53C3\u8003 Mark V
+      \u7684\u7814\u7A76\u6A21\u578B</size>"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.7ffcdd12f7e9
+    chinese: "\u4F9B\u6C14\u6CF5 \u2192 \u5934\u76D4 / \u9759\u6001\u5C55\u793A\n<size=75%>\u6559\u5B66\u793A\u610F\u6A21\u578B</size>"
+    english: 'Pump > helmet / static view
+
+      <size=75%>Illustrative model</size>'
+    traditionalChinese: "\u4F9B\u6C23\u6CF5 \u2192 \u982D\u76D4 / \u975C\u614B\u5C55\u793A\n<size=75%>\u6559\u5B78\u793A\u610F\u6A21\u578B</size>"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.fbefc6875cd4
+    chinese: "\u53CC\u5411\u901A\u8BDD / \u9759\u6001\u5C55\u793A\n<size=75%>\u6559\u5B66\u793A\u610F\u6A21\u578B</size>"
+    english: 'Two-way voice / static view
+
+      <size=75%>Illustrative model</size>'
+    traditionalChinese: "\u96D9\u5411\u901A\u8A71 / \u975C\u614B\u5C55\u793A\n<size=75%>\u6559\u5B78\u793A\u610F\u6A21\u578B</size>"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.8cfcc776230f
+    chinese: "\u4F9B\u6C14\u6CF5\u4E0E\u8F6F\u7BA1\n<size=75%>\u6559\u5B66\u793A\u610F\u6A21\u578B</size>"
+    english: 'Pump and hose
+
+      <size=75%>Illustrative model</size>'
+    traditionalChinese: "\u4F9B\u6C23\u6CF5\u8207\u8EDF\u7BA1\n<size=75%>\u6559\u5B78\u793A\u610F\u6A21\u578B</size>"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.3e27127af61a
+    chinese: "\u4F9B\u6C14\uFF1A\u6CF5 \u2192 \u5934\u76D4\n<size=75%>\u6559\u5B66\u793A\u610F\u6A21\u578B</size>"
+    english: 'Air: pump > helmet
+
+      <size=75%>Illustrative model</size>'
+    traditionalChinese: "\u4F9B\u6C23\uFF1A\u6CF5 \u2192 \u982D\u76D4\n<size=75%>\u6559\u5B78\u793A\u610F\u6A21\u578B</size>"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.cf67f9fd6d9c
+    chinese: "\u7A7A\u6C14\u7531\u6C34\u9762\u4F9B\u5E94\n<size=75%>\u6559\u5B66\u793A\u610F\u6A21\u578B</size>"
+    english: 'Air supplied from the surface
+
+      <size=75%>Illustrative model</size>'
+    traditionalChinese: "\u7A7A\u6C23\u7531\u6C34\u9762\u4F9B\u61C9\n<size=75%>\u6559\u5B78\u793A\u610F\u6A21\u578B</size>"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.e8005f33fbb1
+    chinese: "\u6C34\u9762\u7AEF\u4E0E\u6F5C\u6C34\u5458\u7AEF\n<size=75%>\u6559\u5B66\u793A\u610F\u6A21\u578B</size>"
+    english: 'Surface and diver
+
+      <size=75%>Illustrative model</size>'
+    traditionalChinese: "\u6C34\u9762\u7AEF\u8207\u6F5B\u6C34\u54E1\u7AEF\n<size=75%>\u6559\u5B78\u793A\u610F\u6A21\u578B</size>"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.21f0cb9529f4
+    chinese: "\u53D1\u8BDD\uFF1A\u6C34\u9762 \u2192 \u6F5C\u6C34\u5458\n<size=75%>\u6559\u5B66\u793A\u610F\u6A21\u578B</size>"
+    english: 'Message: surface > diver
+
+      <size=75%>Illustrative model</size>'
+    traditionalChinese: "\u767C\u8A71\uFF1A\u6C34\u9762 \u2192 \u6F5B\u6C34\u54E1\n<size=75%>\u6559\u5B78\u793A\u610F\u6A21\u578B</size>"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.65a093c4dc86
+    chinese: "\u7B49\u5F85\u56DE\u590D\n<size=75%>\u6559\u5B66\u793A\u610F\u6A21\u578B</size>"
+    english: 'Waiting for a reply
+
+      <size=75%>Illustrative model</size>'
+    traditionalChinese: "\u7B49\u5F85\u56DE\u8986\n<size=75%>\u6559\u5B78\u793A\u610F\u6A21\u578B</size>"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.78232cecdca4
+    chinese: "\u56DE\u590D\uFF1A\u6F5C\u6C34\u5458 \u2192 \u6C34\u9762\n<size=75%>\u6559\u5B66\u793A\u610F\u6A21\u578B</size>"
+    english: 'Reply: diver > surface
+
+      <size=75%>Illustrative model</size>'
+    traditionalChinese: "\u56DE\u8986\uFF1A\u6F5B\u6C34\u54E1 \u2192 \u6C34\u9762\n<size=75%>\u6559\u5B78\u793A\u610F\u6A21\u578B</size>"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.b8b017494414
+    chinese: "\u53CC\u5411\u901A\u8BDD\u8FDE\u63A5\n<size=75%>\u6559\u5B66\u793A\u610F\u6A21\u578B</size>"
+    english: 'A two-way connection
+
+      <size=75%>Illustrative model</size>'
+    traditionalChinese: "\u96D9\u5411\u901A\u8A71\u9023\u63A5\n<size=75%>\u6559\u5B78\u793A\u610F\u6A21\u578B</size>"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.9937e365aaf3
+    chinese: "\u7B80\u4F53\u4E2D\u6587"
+    english: "\u7B80\u4F53\u4E2D\u6587"
+    traditionalChinese: "\u7B80\u4F53\u4E2D\u6587"
+    note: Visitor-facing exhibit copy; translated from existing English.
+  - key: text.1c95ab9b144e
+    chinese: "\u7E41\u9AD4\u4E2D\u6587"
+    english: "\u7E41\u9AD4\u4E2D\u6587"
+    traditionalChinese: "\u7E41\u9AD4\u4E2D\u6587"
+    note: Visitor-facing exhibit copy; translated from existing English.
   fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}

@@ -123,7 +123,7 @@ namespace Museum.Localization.EditorTools
                 Require(table.ContainsKey(Keys[index]) && table.Get(Keys[index], MuseumLanguage.English) == English[index] &&
                     table.Get(Keys[index], MuseumLanguage.Chinese) == Chinese[index], "saved assets", "exact accepted bilingual text: " + Keys[index],
                     "EN=" + table.Get(Keys[index], MuseumLanguage.English) + "; ZH=" + table.Get(Keys[index], MuseumLanguage.Chinese));
-            string glyphs = string.Concat(table.Entries.Select(entry => entry.Key + entry.Chinese + entry.English)) + "[]" + MuseumLanguage.Chinese.NativeName() + MuseumLanguage.English.NativeName();
+            string glyphs = string.Concat(table.Entries.Select(entry => entry.Key + entry.Chinese + entry.TraditionalChinese + entry.English)) + "[]" + MuseumLanguage.Chinese.NativeName() + MuseumLanguage.English.NativeName();
             var missing = glyphs.Where(character => !char.IsWhiteSpace(character)).Distinct().Where(character => !table.FontAsset.HasCharacter(character, false, false)).ToArray();
             Require(missing.Length == 0, "saved font", "all current table and native-label glyphs already stored", string.Join(", ", missing.Select(c => "U+" + ((int)c).ToString("X4"))));
             Require(table.FontAsset.atlasTextures != null && table.FontAsset.atlasTextures.Length > 0 &&
@@ -254,6 +254,9 @@ namespace Museum.Localization.EditorTools
             CheckVisible("switch-zh-during-diagram", MuseumLanguage.Chinese, true);
             exploration.Stop(); yield return Wait(.2f);
             CheckVisible("restored-zh", MuseumLanguage.Chinese, false); CaptureAll("restored-zh");
+            yield return Press(languageButtons.Single(b => b.Action == LanguageButton.Choice.TraditionalChinese), false);
+            CheckVisible("selected-zh-hant", MuseumLanguage.TraditionalChinese, false); CaptureAll("selected-zh-hant");
+            yield return TrilingualMuseumValidation.Run(table, channel, progressive, exploration, demonstration, Require);
             yield return Press(englishButton, false);
             foreach (int index in new[] { 1, 3 })
             {
@@ -285,7 +288,7 @@ namespace Museum.Localization.EditorTools
         static void CheckText(int index, MuseumLanguage language, string phase)
         {
             var label = signs[index]; label.ForceMeshUpdate(true, true);
-            string expected = language == MuseumLanguage.English ? English[index] : Chinese[index];
+            string expected = table.Get(Keys[index], language);
             Require(label.text == expected && label.font == table.FontAsset, "rendered text", phase + "/" + Names[index], "expected=" + expected + "; actual=" + label.text + "; font=" + label.font.name);
             Require(!label.isTextOverflowing, "text layout", "no text overflow: " + phase + "/" + Names[index], "Containment only; screenshots need visual review.");
             foreach (char character in expected.Where(c => !char.IsWhiteSpace(c)).Distinct())

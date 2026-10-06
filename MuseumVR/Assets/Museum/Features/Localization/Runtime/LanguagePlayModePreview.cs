@@ -19,11 +19,11 @@ namespace Museum.Localization
         [Tooltip("开启键盘预览。正式演示时可关闭，避免误触。")]
         [SerializeField] bool enableKeyboardPreview = true;
 
-        [Tooltip("循环切换中英。")]
+        [Tooltip("L 循环切换英文、简体中文、繁体中文；F6 / F7 / F8 直接选择。")]
         [SerializeField] KeyCode toggleKey = KeyCode.L;
 
-        [Tooltip("数字键 1 / 2 直接选中文 / 英文，方便截图对比同一个界面。")]
-        [SerializeField] bool enableNumberKeys = true;
+        [Tooltip("旧演示的 1 / 2 快捷键。主场景须关闭，避免与 XR 模拟器冲突。")]
+        [SerializeField] bool enableNumberKeys = false;
 
         public LanguageChannel Channel => channel;
 
@@ -44,6 +44,10 @@ namespace Museum.Localization
                 return;
             }
 
+            // F6/F7/F8 avoid the XR simulator 1/3 input-mode shortcuts.
+            if (Input.GetKeyDown(KeyCode.F6)) channel.SetLanguage(MuseumLanguage.Chinese);
+            if (Input.GetKeyDown(KeyCode.F7)) channel.SetLanguage(MuseumLanguage.TraditionalChinese);
+            if (Input.GetKeyDown(KeyCode.F8)) channel.SetLanguage(MuseumLanguage.English);
             if (!enableNumberKeys) return;
 
             if (Input.GetKeyDown(KeyCode.Alpha1))

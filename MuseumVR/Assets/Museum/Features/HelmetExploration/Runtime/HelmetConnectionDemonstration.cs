@@ -1,5 +1,6 @@
 using System;
 using Museum.Inspection;
+using Museum.Localization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -181,11 +182,11 @@ namespace Museum.Exploration
             SetArrow(arrow, .73f, replying ? -1f : 1f);
             if(showBoth) SetArrow(returnArrow, .28f, -1f);
 
-            sourceText.text = air ? "Air pump" : "Surface telephone";
-            destinationText.text = air ? "Air inlet" : "Diver unit";
+            MuseumText.Set(sourceText, air ? "Air pump" : "Surface telephone");
+            MuseumText.Set(destinationText, air ? "Air inlet" : "Diver unit");
             sourceText.transform.position = (air ? models.Pump.position : models.SurfaceTelephone.position) + Vector3.up * .31f;
             destinationText.transform.position = air ? pathEnd + Vector3.up*.075f : models.DiverTransducer.position + Vector3.up*.24f;
-            caption.text = AnimationStage + "\n<size=75%>Illustrative model</size>";
+            MuseumText.Set(caption, AnimationStage + "\n<size=75%>Illustrative model</size>");
             caption.transform.position = centre + diagramRight * .43f + Vector3.up * .43f;
             FaceViewer(sourceText.transform); FaceViewer(destinationText.transform); FaceViewer(caption.transform);
         }

@@ -20,11 +20,13 @@ namespace Museum.Localization
             [SerializeField] string key;
             [SerializeField] string chinese;
             [SerializeField] string english;
+            [SerializeField] string traditionalChinese;
             [SerializeField] string note;
 
             public string Key => key;
             public string Chinese => chinese;
             public string English => english;
+            public string TraditionalChinese => traditionalChinese;
             public string Note => note;
 
             /// <summary>取该语言的文案。未知语言返回空串而不是乱猜。</summary>
@@ -34,6 +36,7 @@ namespace Museum.Localization
                 {
                     MuseumLanguage.Chinese => chinese,
                     MuseumLanguage.English => english,
+                    MuseumLanguage.TraditionalChinese => traditionalChinese,
                     _ => string.Empty,
                 };
             }
@@ -47,6 +50,7 @@ namespace Museum.Localization
 
         // 运行时查找表。用 [NonSerialized] 保证不写回资产文件。
         [NonSerialized] Dictionary<string, int> index;
+        [NonSerialized] Dictionary<string, int> englishIndex;
 
         public TMP_FontAsset FontAsset => fontAsset;
         public IReadOnlyList<Entry> Entries => entries;
@@ -54,7 +58,15 @@ namespace Museum.Localization
         void OnEnable()
         {
             // 编辑器里改过资产后要重建索引，否则会用到旧的 key 列表。
-            index = null;
+            index = null; englishIndex = null;
+        }
+
+        void OnValidate() { index = null; englishIndex = null; }
+
+        public bool ContainsEnglish(string source)
+        {
+            EnsureIndex();
+            return !string.IsNullOrEmpty(source) && englishIndex.ContainsKey(source);
         }
 
         /// <summary>
@@ -80,6 +92,19 @@ namespace Museum.Localization
             return !string.IsNullOrEmpty(text);
         }
 
+        public string TranslateEnglish(string english, MuseumLanguage language)
+        {
+            if (string.IsNullOrEmpty(english) || language == MuseumLanguage.English) return english ?? "";
+            EnsureIndex();
+            if (englishIndex.TryGetValue(english, out int slot))
+            {
+                var translated = entries[slot].For(language);
+                return string.IsNullOrEmpty(translated) ? english : translated;
+            }
+            // Numeric exhibit IDs and historical proper names remain literal; known sentences use full entries.
+            return english;
+        }
+
         /// <summary>key 是否登记在表里（不要求该语言一定有译文）。</summary>
         public bool ContainsKey(string key)
         {
@@ -93,12 +118,15 @@ namespace Museum.Localization
             if (index != null) return;
 
             index = new Dictionary<string, int>(entries.Count, StringComparer.Ordinal);
+            englishIndex = new Dictionary<string, int>(entries.Count, StringComparer.Ordinal);
             for (int i = 0; i < entries.Count; i++)
             {
                 var entryKey = entries[i].Key;
                 if (string.IsNullOrEmpty(entryKey)) continue;
                 if (index.ContainsKey(entryKey)) continue; // 重复 key 由校验工具报出，这里保留第一条
                 index.Add(entryKey, i);
+                if (!string.IsNullOrEmpty(entries[i].English) && !englishIndex.ContainsKey(entries[i].English))
+                    englishIndex.Add(entries[i].English, i);
             }
         }
 
@@ -110,6 +138,7 @@ namespace Museum.Localization
             {
                 builder.Append(entry.Chinese);
                 builder.Append(entry.English);
+                builder.Append(entry.TraditionalChinese);
             }
             return builder.ToString();
         }

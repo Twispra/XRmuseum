@@ -23,14 +23,7 @@ namespace Museum.Localization.EditorTools
         const string SceneFolder = Root + "/Scenes";
         const string SceneName = "LanguageDemo";
 
-        /// <summary>
-        /// 展厅的默认界面语言。
-        ///
-        /// 刻意设成**英文**：这样接入主场景后「展厅的默认外观与接入之前完全一致」，
-        /// 访客主动选择中文才会切换。目前可本地化的只有入口三处标识，
-        /// 其余 37 处文字仍是英文 —— 若默认中文，展厅会呈现"半中半英"的状态。
-        /// 等全馆文案补齐中文之后，改成 <c>MuseumLanguage.Chinese</c> 更合适。
-        /// </summary>
+        // Retain the accepted English initial language. All visitor text can now switch.
         const MuseumLanguage DefaultMuseumLanguage = MuseumLanguage.English;
 
         // 源字体候选，按顺序取第一个存在的。
@@ -274,15 +267,17 @@ namespace Museum.Localization.EditorTools
                 }
             }
 
-            foreach (var seed in Seeds)
+            foreach (var seed in TrilingualMuseumSetup.ReadCopy().entries)
             {
-                Add(seed.zh);
-                Add(seed.en);
+                Add(seed.chinese);
+                Add(seed.traditionalChinese);
+                Add(seed.english);
             }
 
             // 语言按钮标签用各自的原生名称，不随语言切换
             Add(MuseumLanguage.Chinese.NativeName());
             Add(MuseumLanguage.English.NativeName());
+            Add(MuseumLanguage.TraditionalChinese.NativeName());
 
             // 缺 key 时的标记 [[key]]，以及兜底用的 ASCII
             Add("[[ ]]0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,:;()%-/+=?!'\"@#&*");
@@ -340,24 +335,7 @@ namespace Museum.Localization.EditorTools
                 AssetDatabase.CreateAsset(table, TablePath);
             }
 
-            var so = new SerializedObject(table);
-
-            so.FindProperty("fontAsset").objectReferenceValue = font;
-
-            var entries = so.FindProperty("entries");
-            entries.arraySize = Seeds.Length;
-            for (int i = 0; i < Seeds.Length; i++)
-            {
-                var element = entries.GetArrayElementAtIndex(i);
-                element.FindPropertyRelative("key").stringValue = Seeds[i].key;
-                element.FindPropertyRelative("chinese").stringValue = Seeds[i].zh;
-                element.FindPropertyRelative("english").stringValue = Seeds[i].en;
-                element.FindPropertyRelative("note").stringValue = Seeds[i].note;
-            }
-
-            so.ApplyModifiedPropertiesWithoutUndo();
-            EditorUtility.SetDirty(table);
-            AssetDatabase.SaveAssets();
+            TrilingualMuseumSetup.ApplyTable(table, font);
             return table;
         }
 
@@ -428,6 +406,8 @@ namespace Museum.Localization.EditorTools
                 CreateLanguageButton(root.transform, table, channel, materials, "Language Button - English",
                     LanguageButton.Choice.English, "English", new Vector3(0.44f, 0.92f, 0.545f));
 
+                TrilingualMuseumSetup.UpgradeSelector(root, table, channel);
+                TrilingualMuseumSetup.FitLabels(root.GetComponentsInChildren<TMP_Text>(true));
                 root.AddComponent<LanguagePlayModePreview>().Configure(channel);
 
                 var prefab = PrefabUtility.SaveAsPrefabAsset(root, path);
@@ -585,115 +565,5 @@ namespace Museum.Localization.EditorTools
         }
 
 
-        struct Seed
-        {
-            public string key;
-            public string zh;
-            public string en;
-            public string note;
-
-            public Seed(string key, string zh, string en, string note)
-            {
-                this.key = key;
-                this.zh = zh;
-                this.en = en;
-                this.note = note;
-            }
-        }
-
-        /// <summary>
-        /// 起步文案。覆盖用户旅程的开头与无障碍说明，**不是最终展陈文案**——
-        /// 展陈内容应由 B 角色在试点评价后替换，这里只保证切换链路可用、可演示。
-        /// </summary>
-        static readonly Seed[] Seeds =
-        {
-            new Seed("museum.title",
-                "无障碍博物馆体验",
-                "Accessible Museum Experience",
-                "演示板的标题。"),
-            new Seed("welcome.body",
-                "欢迎。这段体验可以坐着完成，只需单手操作。你可以随时回到这里切换语言。",
-                "Welcome. This experience works seated and one-handed. You can change the language here at any time.",
-                "欢迎说明，同时点出两项无障碍承诺。英文字数刻意压到三行以内，避免与下方提示重叠。"),
-            new Seed("language.prompt",
-                "请选择界面语言",
-                "Choose your interface language",
-                "语言选择提示。"),
-
-            // Entrance copy mirrors main after PR #9, including its different capitalization.
-            // Subtitle and introduction stay hidden; binding localization must not enable them.
-            new Seed("museum.sign.masthead",
-                "海面之下",
-                "Beneath the surface",
-                "Gallery masthead; preserves the current main English and demonstration visibility."),
-            new Seed("museum.sign.gallery",
-                "潜水展厅",
-                "THE DIVING GALLERY",
-                "Gallery subtitle remains hidden under the main layout."),
-            new Seed("museum.sign.arrival_brand",
-                "潜水展厅",
-                "The diving gallery",
-                "Arrival brand uses its own key to preserve the current sentence case."),
-            new Seed("museum.sign.intro",
-                "一件展品，多种看法。",
-                "One object. Many ways to explore.",
-                "Arrival introduction remains hidden under the main layout."),
-            new Seed("controls.point",
-                "用手柄指向按钮，按住握把键确认。",
-                "Point with your controller and hold the grip button to confirm.",
-                "操作提示，与主场景既有按钮的交互方式一致。"),
-            new Seed("journey.begin",
-                "开始参观",
-                "Begin",
-                "旅程第一步。"),
-            new Seed("journey.select_object",
-                "选择一件展品",
-                "Choose an object",
-                "旅程第二步。"),
-            new Seed("journey.explore",
-                "自由观察",
-                "Explore freely",
-                "旅程第三步。"),
-            new Seed("journey.explain",
-                "细节说明",
-                "Details",
-                "旅程第四步。"),
-            new Seed("journey.reflect",
-                "回顾你看到的",
-                "Review what you found",
-                "旅程第五步。"),
-            new Seed("journey.exit",
-                "结束参观",
-                "Finish",
-                "旅程第六步。"),
-            new Seed("journey.reset",
-                "复位，交给下一位访客",
-                "Reset for the next visitor",
-                "工作人员操作，对应客户对「讲不清或复位不了」的担心。"),
-            new Seed("sources.title",
-                "资料与来源",
-                "Sources",
-                "来源面板标题。"),
-            new Seed("sources.placeholder",
-                "此件为示意重建，不是历史复原。",
-                "This is a schematic reconstruction, not a historical restoration.",
-                "占位与重建说明，对应客户对史料可信度的要求。"),
-            new Seed("access.seated",
-                "可以坐着使用",
-                "Seated use",
-                "无障碍说明一。"),
-            new Seed("access.one_hand",
-                "支持单手操作",
-                "One-handed use",
-                "无障碍说明二。"),
-            new Seed("access.text_size",
-                "文字大小可调",
-                "Adjustable text size",
-                "无障碍说明三。"),
-            new Seed("settings.language",
-                "语言",
-                "Language",
-                "设置项名称，供后续设置面板复用。"),
-        };
     }
 }

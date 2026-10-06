@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using Museum.Inspection;
+using Museum.Localization;
 using Command = Museum.Exploration.HelmetExplorationButton.Action;
 
 namespace Museum.Exploration
@@ -61,10 +62,12 @@ namespace Museum.Exploration
                     var size = button.transform.localScale; size.x = width; button.transform.localScale = size;
                 }
                 if (!label) return;
-                label.text = caption;
+                MuseumText.Set(label, caption);
                 label.transform.localPosition = new Vector3(x, y, -.043f);
                 label.rectTransform.sizeDelta = new Vector2(width - .011f, .049f);
                 SetFont(label, .4f, false);
+                label.enableAutoSizing = true;
+                label.fontSizeMin = .28f; label.fontSizeMax = .4f;
             }
         }
 
@@ -94,7 +97,7 @@ namespace Museum.Exploration
                 if (!item) return;
                 item.transform.localPosition = position; item.transform.localScale = scale; item.SetActive(active);
                 if (!label) return;
-                label.rectTransform.sizeDelta = size; label.rectTransform.pivot = pivot; label.text = text;
+                label.rectTransform.sizeDelta = size; label.rectTransform.pivot = pivot; MuseumText.Set(label, text);
                 label.fontSize = fontSize; label.fontSizeMin = fontMin; label.fontSizeMax = fontMax;
                 label.enableAutoSizing = autoSize; label.enableWordWrapping = wrap; label.alignment = alignment;
             }
@@ -147,7 +150,13 @@ namespace Museum.Exploration
             RefreshView();
         }
 
-        void OnEnable() { Subscribe(); availabilityKnown = false; UpdateAvailability(); }
+        LanguageChannel subscribedLanguage;
+        void OnEnable()
+        {
+            subscribedLanguage = MuseumText.Channel;
+            if (subscribedLanguage) subscribedLanguage.LanguageChanged += OnLanguageChanged;
+            Subscribe(); availabilityKnown = false; UpdateAvailability();
+        }
         void Start() { ShowInspection(); }
         void Update()
         {
@@ -169,6 +178,8 @@ namespace Museum.Exploration
         }
         void OnDisable()
         {
+            if (subscribedLanguage) subscribedLanguage.LanguageChanged -= OnLanguageChanged;
+            subscribedLanguage = null;
             Unsubscribe(); ShowInspection();
             if (tabs) tabs.SetActive(false);
             if (palette) { palette.ClearContentBounds(); palette.ConfigureAdditionalPage(0f); }
@@ -185,6 +196,7 @@ namespace Museum.Exploration
             { exploration.Changed -= RefreshView; exploration.ClueOpened -= OnClue; }
             subscribed = false;
         }
+        void OnLanguageChanged(MuseumLanguage _) { RefreshView(); }
         void OnClue(HelmetExplorationController.Clue clue) { ShowExploration(); }
 
         public void ShowExploration()
@@ -329,11 +341,11 @@ namespace Museum.Exploration
             if (!exploration) return;
             if (!UseProgressiveLayout)
             {
-                if (title) title.text = exploration.Title;
-                if (body) body.text = exploration.Body;
-                if (progress) progress.text = "AIR: " + (exploration.AirSeen ? "seen" : "not seen") +
-                    "   /   VOICE: " + (exploration.VoiceSeen ? "seen" : "not seen");
-                if (footer) footer.text = exploration.Footer;
+                if (title) MuseumText.Set(title, exploration.Title);
+                if (body) MuseumText.Set(body, exploration.Body);
+                if (progress) MuseumText.Set(progress, "AIR: " + (exploration.AirSeen ? "seen" : "not seen") +
+                    "   /   VOICE: " + (exploration.VoiceSeen ? "seen" : "not seen"));
+                if (footer) MuseumText.Set(footer, exploration.Footer);
                 FitLegacyText(title, .8f, true); FitLegacyText(body, .52f, true);
                 FitLegacyText(progress, .44f, false); FitLegacyText(footer, .44f, true);
                 return;
@@ -464,13 +476,13 @@ namespace Museum.Exploration
         float LayoutBody(string value, float top)
         {
             if (!body) return top - .07f;
-            body.gameObject.SetActive(true); body.text = value;
+            body.gameObject.SetActive(true); MuseumText.Set(body, value);
             SetFont(body, .28f, true);
             body.alignment = TextAlignmentOptions.TopLeft;
             body.rectTransform.pivot = new Vector2(.5f, .5f);
             body.rectTransform.sizeDelta = new Vector2(.436f, 1f);
             body.ForceMeshUpdate(true);
-            float height = Mathf.Max(.05f, body.GetPreferredValues(value, .436f, Mathf.Infinity).y + .012f);
+            float height = Mathf.Max(.05f, body.GetPreferredValues(body.text, .436f, Mathf.Infinity).y + .012f);
             body.rectTransform.sizeDelta = new Vector2(.436f, height);
             body.transform.localPosition = new Vector3(0, top - height * .5f, -.043f);
             return top - height;
@@ -478,7 +490,7 @@ namespace Museum.Exploration
         static void LayoutText(TextMeshPro text, string value, float y, float height, float font, bool wrap)
         {
             if (!text) return;
-            text.gameObject.SetActive(true); text.text = value;
+            text.gameObject.SetActive(true); MuseumText.Set(text, value);
             text.rectTransform.pivot = new Vector2(.5f, .5f);
             text.rectTransform.sizeDelta = new Vector2(.436f, height);
             text.transform.localPosition = new Vector3(0, y, -.043f);

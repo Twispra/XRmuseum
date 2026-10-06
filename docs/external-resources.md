@@ -55,3 +55,6 @@ AI 辅助范围：模块架构、Editor 工具、运行时脚本、字体子集�
 2026-09-30 AI 辅助范围：根据 [PR #3 的实测评论](https://github.com/Twispra/XRmuseum/pull/3#discussion_r4143841614)复现并修复剖切球柄方向跳变，补充实际 Prefab 几何扫描和原主场景模拟 XR 输入测试，整理交接证据。没有引入新外部素材或 package；AI 代码检查及自动测试不等于组员审批或真实头显测试。见[处理记录](activity/2026-09-30-section-continuity-review.md)。
 
 记录依据为 Group Project Description（202627A）p12；本表记录已知许可或尚未核实之处，不赋予第三方内容新的再分发许可。头盔研究副本和课程官方 PDF 留在本地 `project-resource/`、`artifacts/helmet-prototype/references/`，不作为本组原创资产提交。今日尚无新增音效、扫描资产、下载模型或烘焙贴图。
+
+
+2026-10-06 三语改动：Codex 辅助整理 193 条三语文案、连接静态与动态文字、扩展字形及自动验收。繁体初稿使用 OpenCC 的 s2t 转换，本地工具未放进 Unity 或运行时依赖；术语、提示和历史边界由本轮代码／文案检查复核，尚无独立语言审校。源字体仍为本机 Noto Sans SC 变量字体（OFL 1.1），使用 fontTools 静态实例化并子集化，新增繁体所需码位，不引入新模型、图片、音频或 package。许可保留，官方来源 https://github.com/google/fonts/tree/main/ofl/notosanssc 。功能和限制见 [三语记录](activity/2026-10-06-trilingual-museum.md)；自动检查不等于真实用户或头显验证。

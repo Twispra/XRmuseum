@@ -1,0 +1,1355 @@
+{
+  "entries": [
+    {
+      "key": "museum.title",
+      "english": "Accessible Museum Experience",
+      "chinese": "无障碍博物馆体验",
+      "traditionalChinese": "無障礙博物館體驗",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "welcome.body",
+      "english": "Welcome. This experience works seated and one-handed. You can change the language here at any time.",
+      "chinese": "欢迎。这段体验可以坐着完成，只需单手操作。你可以随时回到这里切换语言。",
+      "traditionalChinese": "歡迎。這段體驗可以坐着完成，只需單手操作。你可以隨時回到這裏切換語言。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "language.prompt",
+      "english": "Choose your interface language",
+      "chinese": "请选择界面语言",
+      "traditionalChinese": "請選擇界面語言",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "museum.sign.masthead",
+      "english": "Beneath the surface",
+      "chinese": "海面之下",
+      "traditionalChinese": "海面之下",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "museum.sign.gallery",
+      "english": "THE DIVING GALLERY",
+      "chinese": "潜水展厅",
+      "traditionalChinese": "潛水展廳",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "museum.sign.arrival_brand",
+      "english": "The diving gallery",
+      "chinese": "潜水展厅",
+      "traditionalChinese": "潛水展廳",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "museum.sign.intro",
+      "english": "One object. Many ways to explore.",
+      "chinese": "一件展品，多种看法。",
+      "traditionalChinese": "一件展品，多種看法。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "controls.point",
+      "english": "Point with your controller and hold the grip button to confirm.",
+      "chinese": "用手柄指向按钮，按住握把键确认。",
+      "traditionalChinese": "用手柄指向按鈕，按住握把鍵確認。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "journey.begin",
+      "english": "Begin",
+      "chinese": "开始参观",
+      "traditionalChinese": "開始參觀",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "journey.select_object",
+      "english": "Choose an object",
+      "chinese": "选择一件展品",
+      "traditionalChinese": "選擇一件展品",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "journey.explore",
+      "english": "Explore freely",
+      "chinese": "自由观察",
+      "traditionalChinese": "自由觀察",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "journey.explain",
+      "english": "Details",
+      "chinese": "细节说明",
+      "traditionalChinese": "細節說明",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "journey.reflect",
+      "english": "Review what you found",
+      "chinese": "回顾你看到的",
+      "traditionalChinese": "回顧你看到的",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "journey.exit",
+      "english": "Finish",
+      "chinese": "结束参观",
+      "traditionalChinese": "結束參觀",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "journey.reset",
+      "english": "Reset for the next visitor",
+      "chinese": "复位，交给下一位访客",
+      "traditionalChinese": "復位，交給下一位訪客",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "sources.title",
+      "english": "Sources",
+      "chinese": "资料与来源",
+      "traditionalChinese": "資料與來源",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "sources.placeholder",
+      "english": "This is a schematic reconstruction, not a historical restoration.",
+      "chinese": "此件为示意重建，不是历史复原。",
+      "traditionalChinese": "此件爲示意重建，不是歷史復原。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "access.seated",
+      "english": "Seated use",
+      "chinese": "可以坐着使用",
+      "traditionalChinese": "可以坐着使用",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "access.one_hand",
+      "english": "One-handed use",
+      "chinese": "支持单手操作",
+      "traditionalChinese": "支持單手操作",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "access.text_size",
+      "english": "Adjustable text size",
+      "chinese": "文字大小可调",
+      "traditionalChinese": "文字大小可調",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "settings.language",
+      "english": "Language",
+      "chinese": "语言",
+      "traditionalChinese": "語言",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.72726d8818f6",
+      "english": "中文",
+      "chinese": "简体中文",
+      "traditionalChinese": "簡體中文",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.ba118bf7fc9c",
+      "english": "English",
+      "chinese": "English",
+      "traditionalChinese": "English",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.e66d7f066c8b",
+      "english": "A SPACE TO EXPLORE",
+      "chinese": "自由探索的空间",
+      "traditionalChinese": "自由探索的空間",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.c2b730a9cd28",
+      "english": "MUSEUM / XR",
+      "chinese": "博物馆 / XR",
+      "traditionalChinese": "博物館 / XR",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.58967e13ac06",
+      "english": "Welcome. Take a closer look.",
+      "chinese": "欢迎，来近距离看看。",
+      "traditionalChinese": "歡迎，來近距離看看。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.e0723a86a5b9",
+      "english": "Inspect",
+      "chinese": "观察",
+      "traditionalChinese": "觀察",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.3b73900b8d29",
+      "english": "Explore",
+      "chinese": "探索",
+      "traditionalChinese": "探索",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.b79cac926e0b",
+      "english": "Help",
+      "chinese": "帮助",
+      "traditionalChinese": "幫助",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.19734a1b58ca",
+      "english": "Window",
+      "chinese": "前窗",
+      "traditionalChinese": "前窗",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.dfca5da56b8c",
+      "english": "Section",
+      "chinese": "剖面",
+      "traditionalChinese": "剖面",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.1a693c00c40c",
+      "english": "Float",
+      "chinese": "悬停",
+      "traditionalChinese": "懸停",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.daee7606b339",
+      "english": "Reset",
+      "chinese": "复位",
+      "traditionalChinese": "復位",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.1aa12f92209a",
+      "english": "Turn left",
+      "chinese": "向左转",
+      "traditionalChinese": "向左轉",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.f00ba3f3067d",
+      "english": "Turn right",
+      "chinese": "向右转",
+      "traditionalChinese": "向右轉",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.453c4235eeb8",
+      "english": "Tilt up",
+      "chinese": "向上倾斜",
+      "traditionalChinese": "向上傾斜",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.5c6d1460bb56",
+      "english": "Tilt down",
+      "chinese": "向下倾斜",
+      "traditionalChinese": "向下傾斜",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.0132d4fd8cd9",
+      "english": "Edit cut",
+      "chinese": "调整剖面",
+      "traditionalChinese": "調整剖面",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.027de5ef5174",
+      "english": "Align view",
+      "chinese": "对齐视角",
+      "traditionalChinese": "對齊視角",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.e0064f382770",
+      "english": "Deeper",
+      "chinese": "切深一点",
+      "traditionalChinese": "切深一點",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.ad0e4b163d9e",
+      "english": "Shallower",
+      "chinese": "切浅一点",
+      "traditionalChinese": "切淺一點",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.17de7e6b6254",
+      "english": "Top cut",
+      "chinese": "从顶部切",
+      "traditionalChinese": "從頂部切",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.2f840f38cda0",
+      "english": "Flip cut",
+      "chinese": "反向剖切",
+      "traditionalChinese": "反向剖切",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.5918cb537c7d",
+      "english": "More tools",
+      "chinese": "更多工具",
+      "traditionalChinese": "更多工具",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.2f033ca03b8e",
+      "english": "Fewer tools",
+      "chinese": "收起工具",
+      "traditionalChinese": "收起工具",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.aa42ff595bdb",
+      "english": "Air",
+      "chinese": "供气",
+      "traditionalChinese": "供氣",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.87bf2bc08589",
+      "english": "Voice",
+      "chinese": "通话",
+      "traditionalChinese": "通話",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.69fe15b511c2",
+      "english": "Hide demo",
+      "chinese": "隐藏演示",
+      "traditionalChinese": "隱藏演示",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.c8dae6371b33",
+      "english": "Replay",
+      "chinese": "重播",
+      "traditionalChinese": "重播",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.448d75b89b4d",
+      "english": "New visit",
+      "chinese": "重新参观",
+      "traditionalChinese": "重新參觀",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.d47d7cb0e4f8",
+      "english": "More",
+      "chinese": "更多",
+      "traditionalChinese": "更多",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.ae5239ec63f2",
+      "english": "Less",
+      "chinese": "收起",
+      "traditionalChinese": "收起",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.76900f1bfd16",
+      "english": "Back",
+      "chinese": "返回",
+      "traditionalChinese": "返回",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.a7b4cf9f7e42",
+      "english": "Hint",
+      "chinese": "提示",
+      "traditionalChinese": "提示",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.aff0766a5290",
+      "english": "Review",
+      "chinese": "回顾",
+      "traditionalChinese": "回顧",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.6b0143d03864",
+      "english": "Return",
+      "chinese": "返回原页面",
+      "traditionalChinese": "返回原頁面",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.cae7d57bc067",
+      "english": "Stop",
+      "chinese": "停止",
+      "traditionalChinese": "停止",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.7d9eb7acb13e",
+      "english": "Close",
+      "chinese": "关闭",
+      "traditionalChinese": "關閉",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.297ef4c79b4b",
+      "english": "Reduce motion",
+      "chinese": "减少动画",
+      "traditionalChinese": "減少動畫",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.65c95a96d7e0",
+      "english": "Motion: off",
+      "chinese": "动画：关",
+      "traditionalChinese": "動畫：關",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.35e8bab7306d",
+      "english": "Motion: on",
+      "chinese": "动画：开",
+      "traditionalChinese": "動畫：開",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.f4b90b69cb5a",
+      "english": "About this model",
+      "chinese": "模型说明",
+      "traditionalChinese": "模型說明",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.4675bdbbb0ce",
+      "english": "Point + G to select",
+      "chinese": "指向后按 G 选择",
+      "traditionalChinese": "指向後按 G 選擇",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.d410e11b1b05",
+      "english": "Air from the surface",
+      "chinese": "来自水面的空气",
+      "traditionalChinese": "來自水面的空氣",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.33097ed03d62",
+      "english": "A two-way connection",
+      "chinese": "双向通话连接",
+      "traditionalChinese": "雙向通話連接",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.1e68a716d048",
+      "english": "A hint",
+      "chinese": "一条提示",
+      "traditionalChinese": "一條提示",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.72db071a4759",
+      "english": "Your visit",
+      "chinese": "参观回顾",
+      "traditionalChinese": "參觀回顧",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.5d554ff71ee5",
+      "english": "Choose a connection",
+      "chinese": "选择一种连接",
+      "traditionalChinese": "選擇一種連接",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.f6e6790754a1",
+      "english": "A surface pump sends air through a hose to the helmet.",
+      "chinese": "水面上的泵通过软管向头盔供气。",
+      "traditionalChinese": "水面上的泵通過軟管向頭盔供氣。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.c10d4b8c9e14",
+      "english": "Diver and surface team exchange messages through a cable.",
+      "chinese": "潜水员通过电缆与水面团队通话。",
+      "traditionalChinese": "潛水員通過電纜與水面團隊通話。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.142cb14f4beb",
+      "english": "Find the rear connector. Use Back to choose Air.",
+      "chinese": "找找头盔后部的接头。返回后选择“供气”。",
+      "traditionalChinese": "找找頭盔後部的接頭。返回後選擇“供氣”。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.bf82fcbf088c",
+      "english": "How could a diver ask for help? Use Back to choose Voice.",
+      "chinese": "潜水员怎样求助？返回后选择“通话”。",
+      "traditionalChinese": "潛水員怎樣求助？返回後選擇“通話”。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.b64b8681af14",
+      "english": "You have seen both connections. How does the surface team support the diver?",
+      "chinese": "两种连接都看过了。水面团队怎样支持潜水员？",
+      "traditionalChinese": "兩種連接都看過了。水面團隊怎樣支持潛水員？",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.f45a65102e48",
+      "english": "Air: not seen yet",
+      "chinese": "供气：尚未查看",
+      "traditionalChinese": "供氣：尚未查看",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.0bc09d5f116f",
+      "english": "Voice: not seen yet",
+      "chinese": "通话：尚未查看",
+      "traditionalChinese": "通話：尚未查看",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.b8cbc17d731e",
+      "english": "Air: seen - air arrives from the surface.",
+      "chinese": "供气：已查看，空气来自水面。",
+      "traditionalChinese": "供氣：已查看，空氣來自水面。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.6dcb0c7ad31d",
+      "english": "Voice: seen - messages travel both ways.",
+      "chinese": "通话：已查看，信息双向传递。",
+      "traditionalChinese": "通話：已查看，信息雙向傳遞。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.0ddc454bad15",
+      "english": "Demo playing",
+      "chinese": "演示播放中",
+      "traditionalChinese": "演示播放中",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.210f91871815",
+      "english": "Static model view",
+      "chinese": "静态模型展示",
+      "traditionalChinese": "靜態模型展示",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.8770d31cdd92",
+      "english": "Demo hidden",
+      "chinese": "演示已隐藏",
+      "traditionalChinese": "演示已隱藏",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.c437d47a1785",
+      "english": "Air pump",
+      "chinese": "供气泵",
+      "traditionalChinese": "供氣泵",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.9d6d976aa257",
+      "english": "Surface telephone",
+      "chinese": "水面电话",
+      "traditionalChinese": "水面電話",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.f6d7aa85149d",
+      "english": "Air inlet",
+      "chinese": "供气接头",
+      "traditionalChinese": "供氣接頭",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.cde2ee7d4287",
+      "english": "Diver unit",
+      "chinese": "潜水员端",
+      "traditionalChinese": "潛水員端",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.a076cb0bf0dc",
+      "english": "Illustrative model",
+      "chinese": "教学示意模型",
+      "traditionalChinese": "教學示意模型",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.e0fcd7bf74de",
+      "english": "Pump > helmet / static view",
+      "chinese": "供气泵 → 头盔 / 静态展示",
+      "traditionalChinese": "供氣泵 → 頭盔 / 靜態展示",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.eb7463f6a08d",
+      "english": "Two-way voice / static view",
+      "chinese": "双向通话 / 静态展示",
+      "traditionalChinese": "雙向通話 / 靜態展示",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.58ac639fe309",
+      "english": "Pump and hose",
+      "chinese": "供气泵与软管",
+      "traditionalChinese": "供氣泵與軟管",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.91cdecce894a",
+      "english": "Air: pump > helmet",
+      "chinese": "供气：泵 → 头盔",
+      "traditionalChinese": "供氣：泵 → 頭盔",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.41dbb1e6ea3d",
+      "english": "Air supplied from the surface",
+      "chinese": "空气由水面供应",
+      "traditionalChinese": "空氣由水面供應",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.ac5f71ef709d",
+      "english": "Surface and diver",
+      "chinese": "水面端与潜水员端",
+      "traditionalChinese": "水面端與潛水員端",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.dcbe370579b6",
+      "english": "Message: surface > diver",
+      "chinese": "发话：水面 → 潜水员",
+      "traditionalChinese": "發話：水面 → 潛水員",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.b55c4b4242fc",
+      "english": "Waiting for a reply",
+      "chinese": "等待回复",
+      "traditionalChinese": "等待回覆",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.e7127dc7b1c8",
+      "english": "Reply: diver > surface",
+      "chinese": "回复：潜水员 → 水面",
+      "traditionalChinese": "回覆：潛水員 → 水面",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.1d8837881977",
+      "english": "AIR CONNECTOR",
+      "chinese": "供气接头",
+      "traditionalChinese": "供氣接頭",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.14aa6cf7d438",
+      "english": "Grip to explore",
+      "chinese": "按握持键探索",
+      "traditionalChinese": "按握持鍵探索",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.ec5739470246",
+      "english": "Follows your position / stays still while aiming",
+      "chinese": "跟随你的位置；瞄准时保持不动",
+      "traditionalChinese": "跟隨你的位置；瞄準時保持不動",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.7af153d31e3d",
+      "english": "GRIP TO SELECT  /  ONE HAND",
+      "chinese": "按握持键选择 / 单手操作",
+      "traditionalChinese": "按握持鍵選擇 / 單手操作",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.5903c4cc5a5a",
+      "english": "FLOAT: pick up, turn freely, release to keep pose",
+      "chinese": "悬停：拿起并转动，松手后保持姿态",
+      "traditionalChinese": "懸停：拿起並轉動，鬆手後保持姿態",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.dd71e75d28ea",
+      "english": "FLOATING  /  SECTION ON",
+      "chinese": "已悬停 / 剖面已开启",
+      "traditionalChinese": "已懸停 / 剖面已開啓",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.51a5f0339c91",
+      "english": "SECTION ON",
+      "chinese": "剖面已开启",
+      "traditionalChinese": "剖面已開啓",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.f787d640d5f0",
+      "english": "EDIT CUT: grip the cyan handle, move + twist",
+      "chinese": "调整剖面：握住青色球柄，移动并转动",
+      "traditionalChinese": "調整剖面：握住青色球柄，移動並轉動",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.dfc96be06422",
+      "english": "Grip to select. HINT is optional. INSPECT returns to the tools.",
+      "chinese": "按握持键选择。可按需查看提示，选择“观察”返回工具。",
+      "traditionalChinese": "按握持鍵選擇。可按需查看提示，選擇“觀察”返回工具。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.916cba48335e",
+      "english": "EXPLORE AT YOUR PACE",
+      "chinese": "按自己的节奏探索",
+      "traditionalChinese": "按自己的節奏探索",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.068bb7069a0a",
+      "english": "EXPLORE SEATED OR STANDING  /  ONE HAND",
+      "chinese": "坐姿或站姿参观 / 单手操作",
+      "traditionalChinese": "坐姿或站姿參觀 / 單手操作",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.181c06d68afa",
+      "english": "Could a diver work alone in this helmet?",
+      "chinese": "戴上这顶头盔，就能独自在水下工作了吗？",
+      "traditionalChinese": "戴上這頂頭盔，就能獨自在水下工作了嗎？",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.0476b3716ee2",
+      "english": "Look around it. Choose AIR or VOICE in any order.",
+      "chinese": "转动看看，可任意选择“供气”或“通话”。",
+      "traditionalChinese": "轉動看看，可任意選擇“供氣”或“通話”。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.a45217ab9c5f",
+      "english": "Could you work alone\nin this helmet?",
+      "chinese": "戴上这顶头盔，\n就能独自工作了吗？",
+      "traditionalChinese": "戴上這頂頭盔，\n就能獨自工作了嗎？",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.873b9302d666",
+      "english": "Diving helmet",
+      "chinese": "潜水头盔",
+      "traditionalChinese": "潛水頭盔",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.3f25263a306e",
+      "english": "DIVING HELMET",
+      "chinese": "潜水头盔",
+      "traditionalChinese": "潛水頭盔",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.2fbd091cab43",
+      "english": "Mark V-inspired study",
+      "chinese": "参考 Mark V 的研究模型",
+      "traditionalChinese": "參考 Mark V 的研究模型",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.e7bbe469a0e3",
+      "english": "MARK V-INSPIRED STUDY",
+      "chinese": "参考 Mark V 的研究模型",
+      "traditionalChinese": "參考 Mark V 的研究模型",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.b9042124d9c3",
+      "english": "INTERPRETIVE DISPLAY",
+      "chinese": "解释性展陈",
+      "traditionalChinese": "解釋性展陳",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.c9f28d973996",
+      "english": "LOOK CLOSER",
+      "chinese": "近距离观察",
+      "traditionalChinese": "近距離觀察",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.53dd9f0405a5",
+      "english": "STAY CONNECTED",
+      "chinese": "与水面保持连接",
+      "traditionalChinese": "與水面保持連接",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.781575270ef4",
+      "english": "AIR  /  VOICE",
+      "chinese": "供气 / 通话",
+      "traditionalChinese": "供氣 / 通話",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.b9c40973a4cc",
+      "english": "Inside the helmet",
+      "chinese": "头盔内部",
+      "traditionalChinese": "頭盔內部",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.44fc6ddc6452",
+      "english": "Connected to the surface",
+      "chinese": "连接水面",
+      "traditionalChinese": "連接水面",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.83d513cc1804",
+      "english": "01 / OBSERVE",
+      "chinese": "01 / 观察",
+      "traditionalChinese": "01 / 觀察",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.ece8dcc38b2a",
+      "english": "02 / CONNECT",
+      "chinese": "02 / 连接",
+      "traditionalChinese": "02 / 連接",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.805b59527b6f",
+      "english": "TAKE YOUR\nTIME",
+      "chinese": "慢慢看，\n不着急",
+      "traditionalChinese": "慢慢看，\n不着急",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.e6216fc88aa2",
+      "english": "Look around the object.\nFind the details that reveal its purpose.",
+      "chinese": "从不同方向观察展品，\n找找体现用途的细节。",
+      "traditionalChinese": "從不同方向觀察展品，\n找找體現用途的細節。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.6f3f70818f2f",
+      "english": "Pause. Look again.\nFollow your curiosity.",
+      "chinese": "停一停，再看看，\n跟随自己的好奇心。",
+      "traditionalChinese": "停一停，再看看，\n跟隨自己的好奇心。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.0faf9ce6e87b",
+      "english": "Start with the helmet.\nBring it closer, turn it, and look inside.",
+      "chinese": "从头盔开始，\n移近、转动，再看看内部。",
+      "traditionalChinese": "從頭盔開始，\n移近、轉動，再看看內部。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.eb8d868177bb",
+      "english": "The shell.\nThe window.\nThe view within.",
+      "chinese": "外壳。\n视窗。\n内部视野。",
+      "traditionalChinese": "外殼。\n視窗。\n內部視野。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.35ea5649c376",
+      "english": "Air. Communication. Support.\nA helmet is part of a larger story.",
+      "chinese": "供气、通话与支持。\n头盔是整套装备的一部分。",
+      "traditionalChinese": "供氣、通話與支持。\n頭盔是整套裝備的一部分。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.a12d34eb0795",
+      "english": "Where does air come from?\nHow does a message travel?",
+      "chinese": "空气从哪里来？\n信息怎样传递？",
+      "traditionalChinese": "空氣從哪裏來？\n信息怎樣傳遞？",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.5a418305a621",
+      "english": "Click Game to focus.\nT / Y: choose a controller.\nPoint + G: select a button.\nHold G: grab; release to let go.\nHome: reset the helmet.",
+      "chinese": "先点击 Game 画面。\nT / Y：选择左 / 右控制器。\n指向后按 G：选择按钮。\n按住 G 抓取，松开即可放下。\nHome：头盔复位。",
+      "traditionalChinese": "先點擊 Game 畫面。\nT / Y：選擇左 / 右控制器。\n指向後按 G：選擇按鈕。\n按住 G 抓取，鬆開即可放下。\nHome：頭盔復位。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.cbda5237f43b",
+      "english": "Equipment types, simplified.\nNot an exact matched rig.\nNo helmet interior is reconstructed.\n\n",
+      "chinese": "设备类型经过教学简化。\n不是精确配套装备的复原。\n未重建真实头盔的完整内部构造。\n\n",
+      "traditionalChinese": "設備類型經過教學簡化。\n不是精確配套裝備的復原。\n未重建真實頭盔的完整內部構造。\n\n",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.ad92dd6bd260",
+      "english": "Sources: Naval Undersea Museum, MK V\nRoyal Museums Greenwich, EQA0617\nScience Museum Group, 1963-71",
+      "chinese": "来源：美国海军水下博物馆，MK V\n英国皇家格林尼治博物馆，EQA0617\n英国科学博物馆集团，1963–71",
+      "traditionalChinese": "來源：美國海軍水下博物館，MK V\n英國皇家格林尼治博物館，EQA0617\n英國科學博物館集團，1963–71",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.1ea48a42a2b3",
+      "english": "Sources: Naval Undersea Museum, MK V\nRoyal Museums Greenwich, ZBA6671",
+      "chinese": "来源：美国海军水下博物馆，MK V\n英国皇家格林尼治博物馆，ZBA6671",
+      "traditionalChinese": "來源：美國海軍水下博物館，MK V\n英國皇家格林尼治博物館，ZBA6671",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.2480270a0563",
+      "english": "WINDOW",
+      "chinese": "前窗",
+      "traditionalChinese": "前窗",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.f069afe77ee4",
+      "english": "SECTION",
+      "chinese": "剖面",
+      "traditionalChinese": "剖面",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.403860c81c53",
+      "english": "FLOAT",
+      "chinese": "悬停",
+      "traditionalChinese": "懸停",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.7ef2fad58d1f",
+      "english": "RESET",
+      "chinese": "复位",
+      "traditionalChinese": "復位",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.b4b2cfcf7329",
+      "english": "TURN LEFT",
+      "chinese": "向左转",
+      "traditionalChinese": "向左轉",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.75cf34e2bbba",
+      "english": "TURN RIGHT",
+      "chinese": "向右转",
+      "traditionalChinese": "向右轉",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.f82eaabe96a5",
+      "english": "TILT UP",
+      "chinese": "向上倾斜",
+      "traditionalChinese": "向上傾斜",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.28341b0c9c75",
+      "english": "TILT DOWN",
+      "chinese": "向下倾斜",
+      "traditionalChinese": "向下傾斜",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.b8cf71d09821",
+      "english": "EDIT CUT",
+      "chinese": "调整剖面",
+      "traditionalChinese": "調整剖面",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.20bde51ebfaa",
+      "english": "ALIGN VIEW",
+      "chinese": "对齐视角",
+      "traditionalChinese": "對齊視角",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.b7f7d1d60c76",
+      "english": "DEEPER",
+      "chinese": "切深一点",
+      "traditionalChinese": "切深一點",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.d05640c14adb",
+      "english": "SHALLOWER",
+      "chinese": "切浅一点",
+      "traditionalChinese": "切淺一點",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.7dcd3a425474",
+      "english": "TOP CUT",
+      "chinese": "从顶部切",
+      "traditionalChinese": "從頂部切",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.8bee6fd82ee8",
+      "english": "FLIP CUT",
+      "chinese": "反向剖切",
+      "traditionalChinese": "反向剖切",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.52688800e0e4",
+      "english": "INSPECT",
+      "chinese": "观察",
+      "traditionalChinese": "觀察",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.c8fbce667415",
+      "english": "EXPLORE",
+      "chinese": "探索",
+      "traditionalChinese": "探索",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.37a6760fa43c",
+      "english": "HELP",
+      "chinese": "帮助",
+      "traditionalChinese": "幫助",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.9e0d5d5acc31",
+      "english": "AIR",
+      "chinese": "供气",
+      "traditionalChinese": "供氣",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.a430e6d293d0",
+      "english": "VOICE",
+      "chinese": "通话",
+      "traditionalChinese": "通話",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.14fdc0f6c77f",
+      "english": "DETAILS",
+      "chinese": "详细说明",
+      "traditionalChinese": "詳細說明",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.92d23f5381ea",
+      "english": "REPLAY",
+      "chinese": "重播",
+      "traditionalChinese": "重播",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.006a701e2584",
+      "english": "NEW VISIT",
+      "chinese": "重新参观",
+      "traditionalChinese": "重新參觀",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.036a27cbfee4",
+      "english": "MORE",
+      "chinese": "更多",
+      "traditionalChinese": "更多",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.639807a2e018",
+      "english": "BACK",
+      "chinese": "返回",
+      "traditionalChinese": "返回",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.fc1b8229a4cd",
+      "english": "HINT",
+      "chinese": "提示",
+      "traditionalChinese": "提示",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.182e499256be",
+      "english": "REVIEW",
+      "chinese": "回顾",
+      "traditionalChinese": "回顧",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.04dedf8afeb8",
+      "english": "STOP",
+      "chinese": "停止",
+      "traditionalChinese": "停止",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.f13a1ed0cf3c",
+      "english": "CLOSE",
+      "chinese": "关闭",
+      "traditionalChinese": "關閉",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.08aefcff727f",
+      "english": "REDUCE MOTION",
+      "chinese": "减少动画",
+      "traditionalChinese": "減少動畫",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.7c34c7fa83ee",
+      "english": "AIR: seen   /   VOICE: seen",
+      "chinese": "供气：已查看 / 通话：已查看",
+      "traditionalChinese": "供氣：已查看 / 通話：已查看",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.13241230a31e",
+      "english": "AIR: seen   /   VOICE: not seen",
+      "chinese": "供气：已查看 / 通话：尚未查看",
+      "traditionalChinese": "供氣：已查看 / 通話：尚未查看",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.b8b27fbf06f1",
+      "english": "AIR: seen   /   VOICE: unexplored",
+      "chinese": "供气：已查看 / 通话：尚未探索",
+      "traditionalChinese": "供氣：已查看 / 通話：尚未探索",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.c9156b55d2de",
+      "english": "AIR: not seen   /   VOICE: seen",
+      "chinese": "供气：尚未查看 / 通话：已查看",
+      "traditionalChinese": "供氣：尚未查看 / 通話：已查看",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.0dc806513dcf",
+      "english": "AIR: not seen   /   VOICE: not seen",
+      "chinese": "供气：尚未查看 / 通话：尚未查看",
+      "traditionalChinese": "供氣：尚未查看 / 通話：尚未查看",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.010110b25157",
+      "english": "AIR: not seen   /   VOICE: unexplored",
+      "chinese": "供气：尚未查看 / 通话：尚未探索",
+      "traditionalChinese": "供氣：尚未查看 / 通話：尚未探索",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.598048355240",
+      "english": "AIR: unexplored   /   VOICE: seen",
+      "chinese": "供气：尚未探索 / 通话：已查看",
+      "traditionalChinese": "供氣：尚未探索 / 通話：已查看",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.123edab0416b",
+      "english": "AIR: unexplored   /   VOICE: not seen",
+      "chinese": "供气：尚未探索 / 通话：尚未查看",
+      "traditionalChinese": "供氣：尚未探索 / 通話：尚未查看",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.93ee593860aa",
+      "english": "AIR: unexplored   /   VOICE: unexplored",
+      "chinese": "供气：尚未探索 / 通话：尚未探索",
+      "traditionalChinese": "供氣：尚未探索 / 通話：尚未探索",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.7f8cc101f5be",
+      "english": "Equipment types, simplified.\nNot an exact matched rig.\nNo helmet interior is reconstructed.\n\nSources: Naval Undersea Museum, MK V\nRoyal Museums Greenwich, EQA0617\nScience Museum Group, 1963-71",
+      "chinese": "设备类型经过教学简化。\n不是精确配套装备的复原。\n未重建真实头盔的完整内部构造。\n\n来源：美国海军水下博物馆，MK V\n英国皇家格林尼治博物馆，EQA0617\n英国科学博物馆集团，1963–71",
+      "traditionalChinese": "設備類型經過教學簡化。\n不是精確配套裝備的復原。\n未重建真實頭盔的完整內部構造。\n\n來源：美國海軍水下博物館，MK V\n英國皇家格林尼治博物館，EQA0617\n英國科學博物館集團，1963–71",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.6359b9d9aacb",
+      "english": "Equipment types, simplified.\nNot an exact matched rig.\nNo helmet interior is reconstructed.\n\nSources: Naval Undersea Museum, MK V\nRoyal Museums Greenwich, ZBA6671",
+      "chinese": "设备类型经过教学简化。\n不是精确配套装备的复原。\n未重建真实头盔的完整内部构造。\n\n来源：美国海军水下博物馆，MK V\n英国皇家格林尼治博物馆，ZBA6671",
+      "traditionalChinese": "設備類型經過教學簡化。\n不是精確配套裝備的復原。\n未重建真實頭盔的完整內部構造。\n\n來源：美國海軍水下博物館，MK V\n英國皇家格林尼治博物館，ZBA6671",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.00fac4bc0d1b",
+      "english": "Air: not seen yet\nVoice: not seen yet",
+      "chinese": "供气：尚未查看\n通话：尚未查看",
+      "traditionalChinese": "供氣：尚未查看\n通話：尚未查看",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.0451ccf72d4d",
+      "english": "Air: not seen yet\nVoice: seen - messages travel both ways.",
+      "chinese": "供气：尚未查看\n通话：已查看，信息双向传递。",
+      "traditionalChinese": "供氣：尚未查看\n通話：已查看，信息雙向傳遞。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.d37da505faee",
+      "english": "Air: seen - air arrives from the surface.\nVoice: not seen yet",
+      "chinese": "供气：已查看，空气来自水面。\n通话：尚未查看",
+      "traditionalChinese": "供氣：已查看，空氣來自水面。\n通話：尚未查看",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.42fe3f276382",
+      "english": "Air: seen - air arrives from the surface.\nVoice: seen - messages travel both ways.",
+      "chinese": "供气：已查看，空气来自水面。\n通话：已查看，信息双向传递。",
+      "traditionalChinese": "供氣：已查看，空氣來自水面。\n通話：已查看，信息雙向傳遞。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.df3412a623d6",
+      "english": "FLOATING  /  SECTION ON\nEDIT CUT: grip the cyan handle, move + twist",
+      "chinese": "已悬停 / 剖面已开启\n调整剖面：握住青色球柄，移动并转动",
+      "traditionalChinese": "已懸停 / 剖面已開啓\n調整剖面：握住青色球柄，移動並轉動",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.98a9e457b6e9",
+      "english": "SECTION ON\nEDIT CUT: grip the cyan handle, move + twist",
+      "chinese": "剖面已开启\n调整剖面：握住青色球柄，移动并转动",
+      "traditionalChinese": "剖面已開啓\n調整剖面：握住青色球柄，移動並轉動",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.7c605a408f85",
+      "english": "GRIP TO SELECT  /  ONE HAND\nFLOAT: pick up, turn freely, release to keep pose",
+      "chinese": "按握持键选择 / 单手操作\n悬停：拿起并转动，松手后保持姿态",
+      "traditionalChinese": "按握持鍵選擇 / 單手操作\n懸停：拿起並轉動，鬆手後保持姿態",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.03bb9dba3f02",
+      "english": "Could a diver work alone in this helmet?\nLook around it. Choose AIR or VOICE in any order.",
+      "chinese": "戴上这顶头盔，就能独自在水下工作了吗？\n转动看看，可任意选择“供气”或“通话”。",
+      "traditionalChinese": "戴上這頂頭盔，就能獨自在水下工作了嗎？\n轉動看看，可任意選擇“供氣”或“通話”。",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.0f8f053e4cf8",
+      "english": "AIR CONNECTOR\nGrip to explore",
+      "chinese": "供气接头\n按握持键探索",
+      "traditionalChinese": "供氣接頭\n按握持鍵探索",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.8131aca398c4",
+      "english": "Diving helmet\n<size=62%>Mark V-inspired study</size>",
+      "chinese": "潜水头盔\n<size=62%>参考 Mark V 的研究模型</size>",
+      "traditionalChinese": "潛水頭盔\n<size=62%>參考 Mark V 的研究模型</size>",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.7ffcdd12f7e9",
+      "english": "Pump > helmet / static view\n<size=75%>Illustrative model</size>",
+      "chinese": "供气泵 → 头盔 / 静态展示\n<size=75%>教学示意模型</size>",
+      "traditionalChinese": "供氣泵 → 頭盔 / 靜態展示\n<size=75%>教學示意模型</size>",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.fbefc6875cd4",
+      "english": "Two-way voice / static view\n<size=75%>Illustrative model</size>",
+      "chinese": "双向通话 / 静态展示\n<size=75%>教学示意模型</size>",
+      "traditionalChinese": "雙向通話 / 靜態展示\n<size=75%>教學示意模型</size>",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.8cfcc776230f",
+      "english": "Pump and hose\n<size=75%>Illustrative model</size>",
+      "chinese": "供气泵与软管\n<size=75%>教学示意模型</size>",
+      "traditionalChinese": "供氣泵與軟管\n<size=75%>教學示意模型</size>",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.3e27127af61a",
+      "english": "Air: pump > helmet\n<size=75%>Illustrative model</size>",
+      "chinese": "供气：泵 → 头盔\n<size=75%>教学示意模型</size>",
+      "traditionalChinese": "供氣：泵 → 頭盔\n<size=75%>教學示意模型</size>",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.cf67f9fd6d9c",
+      "english": "Air supplied from the surface\n<size=75%>Illustrative model</size>",
+      "chinese": "空气由水面供应\n<size=75%>教学示意模型</size>",
+      "traditionalChinese": "空氣由水面供應\n<size=75%>教學示意模型</size>",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.e8005f33fbb1",
+      "english": "Surface and diver\n<size=75%>Illustrative model</size>",
+      "chinese": "水面端与潜水员端\n<size=75%>教学示意模型</size>",
+      "traditionalChinese": "水面端與潛水員端\n<size=75%>教學示意模型</size>",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.21f0cb9529f4",
+      "english": "Message: surface > diver\n<size=75%>Illustrative model</size>",
+      "chinese": "发话：水面 → 潜水员\n<size=75%>教学示意模型</size>",
+      "traditionalChinese": "發話：水面 → 潛水員\n<size=75%>教學示意模型</size>",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.65a093c4dc86",
+      "english": "Waiting for a reply\n<size=75%>Illustrative model</size>",
+      "chinese": "等待回复\n<size=75%>教学示意模型</size>",
+      "traditionalChinese": "等待回覆\n<size=75%>教學示意模型</size>",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.78232cecdca4",
+      "english": "Reply: diver > surface\n<size=75%>Illustrative model</size>",
+      "chinese": "回复：潜水员 → 水面\n<size=75%>教学示意模型</size>",
+      "traditionalChinese": "回覆：潛水員 → 水面\n<size=75%>教學示意模型</size>",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.b8b017494414",
+      "english": "A two-way connection\n<size=75%>Illustrative model</size>",
+      "chinese": "双向通话连接\n<size=75%>教学示意模型</size>",
+      "traditionalChinese": "雙向通話連接\n<size=75%>教學示意模型</size>",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.9937e365aaf3",
+      "english": "简体中文",
+      "chinese": "简体中文",
+      "traditionalChinese": "简体中文",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    },
+    {
+      "key": "text.1c95ab9b144e",
+      "english": "繁體中文",
+      "chinese": "繁體中文",
+      "traditionalChinese": "繁體中文",
+      "note": "Visitor-facing exhibit copy; translated from existing English."
+    }
+  ]
+}

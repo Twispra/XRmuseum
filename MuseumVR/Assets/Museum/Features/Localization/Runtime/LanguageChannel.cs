@@ -36,6 +36,7 @@ namespace Museum.Localization
 
         public void SetLanguage(MuseumLanguage language)
         {
+            if (!Enum.IsDefined(typeof(MuseumLanguage), language)) return;
             EnsureInitialised();
             if (current == language) return;
 
@@ -45,9 +46,8 @@ namespace Museum.Localization
 
         public void Toggle()
         {
-            SetLanguage(Current == MuseumLanguage.Chinese
-                ? MuseumLanguage.English
-                : MuseumLanguage.Chinese);
+            SetLanguage(Current == MuseumLanguage.English ? MuseumLanguage.Chinese
+                : Current == MuseumLanguage.Chinese ? MuseumLanguage.TraditionalChinese : MuseumLanguage.English);
         }
 
         void EnsureInitialised()

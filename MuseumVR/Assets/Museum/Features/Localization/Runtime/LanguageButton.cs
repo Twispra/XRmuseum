@@ -25,6 +25,7 @@ namespace Museum.Localization
 
             /// <summary>在中英之间来回切，用于只有一个按钮的简化面板。</summary>
             Toggle = 2,
+            TraditionalChinese = 3,
         }
 
         [Header("行为")]
@@ -90,6 +91,9 @@ namespace Museum.Localization
                 case Choice.Chinese:
                     channel.SetLanguage(MuseumLanguage.Chinese);
                     break;
+                case Choice.TraditionalChinese:
+                    channel.SetLanguage(MuseumLanguage.TraditionalChinese);
+                    break;
                 case Choice.English:
                     channel.SetLanguage(MuseumLanguage.English);
                     break;
@@ -113,7 +117,8 @@ namespace Museum.Localization
             {
                 Choice.Chinese => MuseumLanguage.Chinese.NativeName(),
                 Choice.English => MuseumLanguage.English.NativeName(),
-                _ => "中 / EN",
+                Choice.TraditionalChinese => MuseumLanguage.TraditionalChinese.NativeName(),
+                _ => "简 / 繁 / EN",
             };
             label.ForceMeshUpdate();
         }

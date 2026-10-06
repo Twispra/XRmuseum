@@ -1,3 +1,4 @@
+using Museum.Localization;
 using System.Collections.Generic;
 using Museum.Inspection;
 using TMPro;
@@ -176,7 +177,7 @@ namespace Museum.Exploration
                 hoverText.transform.SetParent(transform, false);
                 hoverText.transform.localPosition = Vector3.up * .085f;
                 hoverText.font = TMP_Settings.defaultFontAsset;
-                hoverText.text = "AIR CONNECTOR\nGrip to explore";
+                MuseumText.Set(hoverText, "AIR CONNECTOR\nGrip to explore");
                 hoverText.color = Color.white;
                 hoverText.alignment = TextAlignmentOptions.Center;
                 hoverText.rectTransform.sizeDelta = new Vector2(.34f, .085f);
