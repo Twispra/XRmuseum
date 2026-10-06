@@ -1,5 +1,11 @@
 # 项目状态与下一步
 
+**2026-10-06 本地化模块整合：** #10 已合入 main `175f478`，#9/#12 也已包含。本提交同步 #13 与主线，保留双方记录；Issue #16 的实际字符覆盖修复在 `8a32c83` 上通过 Unity 11/11 校验，退出码 0。#13 是独立本地化模块，#14 的主场景接入仍需补齐并另行验收。本提交准备合并 #13，实际状态以 GitHub 为准。[本轮记录](activity/2026-10-06-pr13-completion.md)。以下为历史快照。
+
+**2026-10-04 中英语言切换模块（新分支）：** 新增**独立模块** `MuseumVR/Assets/Museum/Features/Localization/`：双语文案表（key → 中文 / English）、语言通道事件、`LocalizedText` 自动刷新组件、语言按钮、无头显键盘预览，以及 Editor 一键生成工具与自动校验，并额外生成一个打开即可播放的演示场景供整合人参考。**刻意不修改 `MuseumStart.unity`**。本轮新引入 **Noto Sans SC**（SIL OFL 1.1），以子集形式提交（2.32 MB）；TMP 字体资产由 Font Asset Creator 生成（Sampling 110 / Padding 6 / Atlas 2048 / 已烤 190 字形）。
+> ⚠️ **本环境的 TMP 无法用脚本或 `Unicode Range (Hex)` 生成中文字体资产**：实测脚本生成（Dynamic 与 Static 都试过）图集恒为 **0×0**；Font Asset Creator 用 `Unicode Range (Hex)` 会抛 `FormatException`。**唯一可行做法是 Font Asset Creator + Character Set 选 `Characters from File`**，且**必须先退出 Play 模式**（否则 Unity 拒绝执行、产物不完整而无明显报错）。步骤见[模块说明](localization.zh-CN.md)。
+> 已在编辑器内验证中英文渲染清晰、切换即时生效（单眼渲染 + 键盘输入，**不是头显实测**）。未做无障碍或参与者评价；未在 PQ604A/B/C 构建。文案为起步内容，非最终展陈文案。**尚未接入主场景**，按组规由整合人执行。
+
 **2026-10-06 年代模块整合：** PR #9、#12 已合入实际 main `97b8810`。本提交将 #10 同步到该主线，保留双方文档；Issue #15 的淡变取消、瞬时替换与 Mark V 文案修复已在 `1734815` 复测，23 项通过、退出码 0。模块仍独立，未接入主场景；本提交准备合并 #10，实际合并状态以 GitHub 为准。[本轮记录](activity/2026-10-06-pr10-completion.md)。以下为各阶段历史快照。
 
 **2026-10-03 年代切换模块（新分支）：** `codex/helmet-eras-2026-10-03` 基于 fetch 后的 `origin/main = 8e75e71`，新增**独立模块** `MuseumVR/Assets/Museum/Features/HelmetEras/`：数据驱动（ScriptableObject）的头盔年代切换、事件通道、Editor 一键生成工具、自动校验工具，以及无头显时的键盘预览。**刻意不修改 `MuseumStart.unity`**，展示 Prefab 不引用主场景任何对象，接入由整合人执行。已在编辑器内验证三个年代外观切换正常（Unity 单眼渲染 + 键盘 / 组件右键菜单，**不是头显实测**）；排查中修复了 1 个编译错误、1 个「年代未配置材质」和 1 个「淡变把物体刷白」的实现缺陷。三个年代目前的差异**只有占位材质颜色，还没有造型差异**。自动化校验工具已实现但本轮未运行，因此没有 QA 报告。真实头显、无障碍评价与 PQ604A/B/C 构建仍未验证。详见[模块说明](helmet-eras.zh-CN.md)与[活动记录](activity/2026-10-03-helmet-eras.md)。

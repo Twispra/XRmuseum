@@ -1,5 +1,23 @@
 # 外部资源与辅助工具记录
 
+2026-10-04 中英语言切换模块：助手辅助实现界面语言切换系统与文档，见[模块说明](localization.zh-CN.md)与[活动记录](activity/2026-10-04-localization.md)。
+
+**新增外部资源：Noto Sans SC 字体。** 来源为本机已安装的 `C:\Windows\Fonts\NotoSansSC-VF.ttf`（Google 的 Noto Sans SC），
+许可 **SIL Open Font License 1.1**，允许自由使用、修改与再分发；该字体没有 Reserved Font Name，改名与修改后分发均被允许。
+用途是界面中文显示 —— 项目原有字体只有 LiberationSans，**没有任何中文字形**。
+
+提交进仓库的是**子集版本** `NotoSansSC-MuseumSubset.ttf`（2.32 MB）：先用 fontTools 从变量字体的 `wght` 轴取出静态
+Regular 实例，再子集化到 ASCII + GB2312 全集 + 常用标点，共 7545 个码位。**原始 16.95 MB 的变量字体不提交仓库**。
+同类候选还有 `NotoSerifSC-VF.ttf`（同许可）；`msyh.ttc` / `simhei.ttf` / `simsun.ttc` 为微软专有，**未采用**。
+
+TMP 字体资产（`NotoSansSC-MuseumSubset SDF.asset`）由 Unity 的 Font Asset Creator 生成，
+参数 Sampling 110 / Padding 6 / Atlas 2048×2048 / SDFAA / Character Set = `Characters from File`，
+共 190 个字形。生成步骤与原因见 `Assets/Museum/Features/Localization/Fonts/README.md`。
+
+AI 辅助范围：模块架构、Editor 工具、运行时脚本、字体子集化脚本、实机问题排查与文档。
+**未**新增下载模型、贴图或音频，**未**复制任何第三方素材。编辑器内预览与自动检查**不等于**真实头显测试、
+学习效果评价或组员审批。
+
 2026-10-03 年代切换模块：Codex 辅助实现头盔「历史年代切换」系统及文档，见[模块说明](helmet-eras.zh-CN.md)与[活动记录](activity/2026-10-03-helmet-eras.md)。三个年代的年代与结构描述沿用[模型依据](helmet-prototype-reference.md)中已记录的公开来源口径（DESCO、U.S. Naval Undersea Museum、Royal Museums Greenwich 等），**没有新增下载资产**。9 套材质是程序生成的纯色占位材质，**不是历史外观复原**，未使用任何第三方贴图或模型，也未复制馆藏媒体。AI 辅助范围包括架构设计、Editor 工具、运行时脚本、实机问题排查与文档；编辑器内预览与自动检查**不等于**真实头显测试、用户研究或组员审批。
 
 2026-10-03 信息安排调研：参考 [V&A 展签写作指南](https://www.vam.ac.uk/blog/wp-content/uploads/VA_Gallery-Text-Writing-Guidelines_online_Web.pdf)、[NPS 展板写作](https://www.nps.gov/subjects/hfc/wayside-exhibit-writing.htm)、[NN/G 渐进式展示](https://www.nngroup.com/articles/progressive-disclosure/)与 [Apple Ornaments](https://developer.apple.com/design/human-interface-guidelines/ornaments)。仅引用组织原则与链接，未导入媒体、字体或UI资产；按钮分组、文案和布局是本项目设计，未把实体展板或 visionOS 尺寸套成 VR 标准。Codex 辅助文案、面板状态、限定场景更新与验证，见[信息安排方案](exhibit-information.zh-CN.md)。
