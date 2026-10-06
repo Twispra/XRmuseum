@@ -1,0 +1,1173 @@
+{
+  "startedUtc": "2026-10-06T09:03:41.3913532Z",
+  "finishedUtc": "2026-10-06T09:04:34.9826849Z",
+  "commit": "d432a37d1107f4b4f1ca2aa64c7819f229549dab",
+  "branch": "codex/helmet-experience-polish-2026-10-06",
+  "unity": "2022.3.62f3c1",
+  "status": "passed",
+  "failure": "",
+  "inputMethod": "Queued synthetic XR controller/HMD states in the normal Dynamic input update; production Input Actions, ray interactors and saved LanguageButton selectEntered handlers. No SelectEnter/SelectExit or TriggerProgrammatically calls. The existing simulator device writer is temporarily disabled.",
+  "limitations": "XR controller poses are automated fixtures, not physical headset/controller, reachability or OS keyboard/mouse simulator testing. Demonstration start/stop uses the public exploration API and is labelled separately. Hidden labels are enabled only in a temporary Play Mode lifecycle fixture, then restored. PNGs are monocular captures: production view and separately labelled fixed diagnostic close-ups. No comfort, user study, historical accuracy or executable build claim.",
+  "errors": [],
+  "warnings": [],
+  "samples": [
+    {
+      "phase": "initial-en",
+      "name": "Gallery masthead",
+      "text": "Beneath the surface",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "initial-en",
+      "name": "Gallery subtitle",
+      "text": "THE DIVING GALLERY",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "initial-en",
+      "name": "Arrival brand",
+      "text": "The diving gallery",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "initial-en",
+      "name": "Arrival introduction",
+      "text": "One object. Many ways to explore.",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "selected-zh",
+      "name": "Gallery masthead",
+      "text": "海面之下",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "selected-zh",
+      "name": "Gallery subtitle",
+      "text": "THE DIVING GALLERY",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "selected-zh",
+      "name": "Arrival brand",
+      "text": "潜水展厅",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "selected-zh",
+      "name": "Arrival introduction",
+      "text": "One object. Many ways to explore.",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "hidden-fixtures-restored",
+      "name": "Gallery masthead",
+      "text": "海面之下",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "hidden-fixtures-restored",
+      "name": "Gallery subtitle",
+      "text": "潜水展厅",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "hidden-fixtures-restored",
+      "name": "Arrival brand",
+      "text": "潜水展厅",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "hidden-fixtures-restored",
+      "name": "Arrival introduction",
+      "text": "一件展品，多种看法。",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "diagram-zh",
+      "name": "Gallery masthead",
+      "text": "海面之下",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "diagram-zh",
+      "name": "Gallery subtitle",
+      "text": "潜水展厅",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "diagram-zh",
+      "name": "Arrival brand",
+      "text": "潜水展厅",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "diagram-zh",
+      "name": "Arrival introduction",
+      "text": "一件展品，多种看法。",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "switch-en-during-diagram",
+      "name": "Gallery masthead",
+      "text": "海面之下",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "switch-en-during-diagram",
+      "name": "Gallery subtitle",
+      "text": "潜水展厅",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "switch-en-during-diagram",
+      "name": "Arrival brand",
+      "text": "The diving gallery",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "switch-en-during-diagram",
+      "name": "Arrival introduction",
+      "text": "一件展品，多种看法。",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "restored-en",
+      "name": "Gallery masthead",
+      "text": "Beneath the surface",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "restored-en",
+      "name": "Gallery subtitle",
+      "text": "潜水展厅",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "restored-en",
+      "name": "Arrival brand",
+      "text": "The diving gallery",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "restored-en",
+      "name": "Arrival introduction",
+      "text": "一件展品，多种看法。",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "switch-zh-during-diagram",
+      "name": "Gallery masthead",
+      "text": "Beneath the surface",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "switch-zh-during-diagram",
+      "name": "Gallery subtitle",
+      "text": "潜水展厅",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "switch-zh-during-diagram",
+      "name": "Arrival brand",
+      "text": "潜水展厅",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "switch-zh-during-diagram",
+      "name": "Arrival introduction",
+      "text": "一件展品，多种看法。",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "restored-zh",
+      "name": "Gallery masthead",
+      "text": "海面之下",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "restored-zh",
+      "name": "Gallery subtitle",
+      "text": "潜水展厅",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "restored-zh",
+      "name": "Arrival brand",
+      "text": "潜水展厅",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "restored-zh",
+      "name": "Arrival introduction",
+      "text": "一件展品，多种看法。",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "selected-zh-hant",
+      "name": "Gallery masthead",
+      "text": "海面之下",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "selected-zh-hant",
+      "name": "Gallery subtitle",
+      "text": "潜水展厅",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "selected-zh-hant",
+      "name": "Arrival brand",
+      "text": "潛水展廳",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "selected-zh-hant",
+      "name": "Arrival introduction",
+      "text": "一件展品，多种看法。",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "final-en",
+      "name": "Gallery masthead",
+      "text": "Beneath the surface",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "final-en",
+      "name": "Gallery subtitle",
+      "text": "THE DIVING GALLERY",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "final-en",
+      "name": "Arrival brand",
+      "text": "The diving gallery",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": true,
+      "activeInHierarchy": true,
+      "rendererEnabled": true,
+      "overflow": false
+    },
+    {
+      "phase": "final-en",
+      "name": "Arrival introduction",
+      "text": "One object. Many ways to explore.",
+      "font": "NotoSansSC-MuseumSubset SDF",
+      "activeSelf": false,
+      "activeInHierarchy": false,
+      "rendererEnabled": true,
+      "overflow": false
+    }
+  ],
+  "captures": [
+    {
+      "file": "initial-en-production.png",
+      "view": {
+        "name": "production camera pose",
+        "position": {
+          "x": 0.0,
+          "y": 1.3614399433135986,
+          "z": 2.200000047683716
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "fieldOfView": 60.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "initial-en-masthead-closeup.png",
+      "view": {
+        "name": "fixed diagnostic close-up: Gallery masthead",
+        "position": {
+          "x": 0.008155465126037598,
+          "y": 3.349433422088623,
+          "z": 5.508723735809326
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "fieldOfView": 48.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "initial-en-arrival-closeup.png",
+      "view": {
+        "name": "fixed diagnostic close-up: Arrival brand",
+        "position": {
+          "x": -0.0023766332305967808,
+          "y": 3.1369829177856445,
+          "z": -2.156334161758423
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 1.0,
+          "z": 0.0,
+          "w": -4.3719040832002065e-08
+        },
+        "fieldOfView": 48.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "selected-zh-production.png",
+      "view": {
+        "name": "production camera pose",
+        "position": {
+          "x": 0.0,
+          "y": 1.3614399433135986,
+          "z": 2.200000047683716
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "fieldOfView": 60.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "selected-zh-masthead-closeup.png",
+      "view": {
+        "name": "fixed diagnostic close-up: Gallery masthead",
+        "position": {
+          "x": 0.008155465126037598,
+          "y": 3.349433422088623,
+          "z": 5.508723735809326
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "fieldOfView": 48.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "selected-zh-arrival-closeup.png",
+      "view": {
+        "name": "fixed diagnostic close-up: Arrival brand",
+        "position": {
+          "x": -0.0023766332305967808,
+          "y": 3.1369829177856445,
+          "z": -2.156334161758423
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 1.0,
+          "z": 0.0,
+          "w": -4.3719040832002065e-08
+        },
+        "fieldOfView": 48.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "diagram-zh-production.png",
+      "view": {
+        "name": "production camera pose",
+        "position": {
+          "x": 0.0,
+          "y": 1.3614399433135986,
+          "z": 2.200000047683716
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "fieldOfView": 60.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "diagram-zh-masthead-closeup.png",
+      "view": {
+        "name": "fixed diagnostic close-up: Gallery masthead",
+        "position": {
+          "x": 0.008155465126037598,
+          "y": 3.349433422088623,
+          "z": 5.508723735809326
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "fieldOfView": 48.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "diagram-zh-arrival-closeup.png",
+      "view": {
+        "name": "fixed diagnostic close-up: Arrival brand",
+        "position": {
+          "x": -0.0023766332305967808,
+          "y": 3.1369829177856445,
+          "z": -2.156334161758423
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 1.0,
+          "z": 0.0,
+          "w": -4.3719040832002065e-08
+        },
+        "fieldOfView": 48.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "restored-en-production.png",
+      "view": {
+        "name": "production camera pose",
+        "position": {
+          "x": 0.0,
+          "y": 1.3614399433135986,
+          "z": 2.200000047683716
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "fieldOfView": 60.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "restored-en-masthead-closeup.png",
+      "view": {
+        "name": "fixed diagnostic close-up: Gallery masthead",
+        "position": {
+          "x": 0.008155465126037598,
+          "y": 3.349433422088623,
+          "z": 5.508723735809326
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "fieldOfView": 48.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "restored-en-arrival-closeup.png",
+      "view": {
+        "name": "fixed diagnostic close-up: Arrival brand",
+        "position": {
+          "x": -0.0023766332305967808,
+          "y": 3.1369829177856445,
+          "z": -2.156334161758423
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 1.0,
+          "z": 0.0,
+          "w": -4.3719040832002065e-08
+        },
+        "fieldOfView": 48.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "restored-zh-production.png",
+      "view": {
+        "name": "production camera pose",
+        "position": {
+          "x": 0.0,
+          "y": 1.3614399433135986,
+          "z": 2.200000047683716
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "fieldOfView": 60.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "restored-zh-masthead-closeup.png",
+      "view": {
+        "name": "fixed diagnostic close-up: Gallery masthead",
+        "position": {
+          "x": 0.008155465126037598,
+          "y": 3.349433422088623,
+          "z": 5.508723735809326
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "fieldOfView": 48.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "restored-zh-arrival-closeup.png",
+      "view": {
+        "name": "fixed diagnostic close-up: Arrival brand",
+        "position": {
+          "x": -0.0023766332305967808,
+          "y": 3.1369829177856445,
+          "z": -2.156334161758423
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 1.0,
+          "z": 0.0,
+          "w": -4.3719040832002065e-08
+        },
+        "fieldOfView": 48.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "selected-zh-hant-production.png",
+      "view": {
+        "name": "production camera pose",
+        "position": {
+          "x": 0.0,
+          "y": 1.3614399433135986,
+          "z": 2.200000047683716
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "fieldOfView": 60.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "selected-zh-hant-masthead-closeup.png",
+      "view": {
+        "name": "fixed diagnostic close-up: Gallery masthead",
+        "position": {
+          "x": 0.008155465126037598,
+          "y": 3.349433422088623,
+          "z": 5.508723735809326
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 0.0,
+          "z": 0.0,
+          "w": 1.0
+        },
+        "fieldOfView": 48.0,
+        "aspect": 1.3333333730697632
+      }
+    },
+    {
+      "file": "selected-zh-hant-arrival-closeup.png",
+      "view": {
+        "name": "fixed diagnostic close-up: Arrival brand",
+        "position": {
+          "x": -0.0023766332305967808,
+          "y": 3.1369829177856445,
+          "z": -2.156334161758423
+        },
+        "rotation": {
+          "x": 0.0,
+          "y": 1.0,
+          "z": 0.0,
+          "w": -4.3719040832002065e-08
+        },
+        "fieldOfView": 48.0,
+        "aspect": 1.3333333730697632
+      }
+    }
+  ],
+  "sourceReport": "artifacts/localization/qa/runs/20261006T090341382Z-integration-f6b8bf5d3b484e09a4b65902206e588b/report.json",
+  "sourceSha256": "b2295be112df6d9c048030578cbe23601cd40d7272daf1c8c3e0aacc49541167",
+  "processExitCode": 0,
+  "testedBaseCommit": "d432a37d1107f4b4f1ca2aa64c7819f229549dab",
+  "dirtyTrackedAtTest": [
+    "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetDemonstrationModels.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationButton.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationPanel.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Window.mat",
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionControls.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Shaders/InspectionShell.shader",
+    "MuseumVR/Assets/Museum/Features/Localization/Editor/TrilingualMuseumValidation.cs",
+    "MuseumVR/Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset",
+    "MuseumVR/Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset.ttf",
+    "MuseumVR/Assets/Museum/Features/Localization/Fonts/README.md",
+    "MuseumVR/Assets/Museum/Features/Localization/Fonts/characters-required.txt",
+    "MuseumVR/Assets/Museum/Features/Localization/Tables/LocalizationTable.asset",
+    "MuseumVR/Assets/Museum/Features/Localization/Tables/MuseumTranslations.json",
+    "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+    "MuseumVR/Assets/Museum/Scripts/HelmetExhibitReset.cs",
+    "docs/external-resources.md",
+    "docs/project-state.md"
+  ],
+  "checkCount": 78760,
+  "failedChecks": [],
+  "evidenceNote": "Derived from the unchanged full local report. Large untracked-file inventories omitted. Not a new Unity run. Repeated passing text/glyph assertions summarized by kind; only first/last 30 retained as examples.",
+  "assertionsByKind": {
+    "saved assets": 7,
+    "saved font": 2,
+    "structure": 53,
+    "saved binding": 16,
+    "saved visibility": 7,
+    "saved layout": 1,
+    "runtime structure": 2,
+    "runtime state": 1,
+    "input fixture": 1,
+    "XR input result": 10,
+    "progressive visibility": 60,
+    "rendered text": 186,
+    "text layout": 21,
+    "legacy visibility": 30,
+    "QA camera": 6,
+    "XR input": 20,
+    "runtime lifecycle": 2,
+    "public exploration API": 1,
+    "trilingual main scene": 78077,
+    "logs": 1,
+    "source integrity": 256
+  },
+  "checkSamples": [
+    {
+      "kind": "saved assets",
+      "name": "table, channel and font exist",
+      "detail": "No assets are generated.",
+      "passed": true
+    },
+    {
+      "kind": "saved assets",
+      "name": "English initial language",
+      "detail": "English",
+      "passed": true
+    },
+    {
+      "kind": "saved assets",
+      "name": "unique keys",
+      "detail": "entries=196",
+      "passed": true
+    },
+    {
+      "kind": "saved assets",
+      "name": "exact accepted bilingual text: museum.sign.masthead",
+      "detail": "EN=Beneath the surface; ZH=海面之下",
+      "passed": true
+    },
+    {
+      "kind": "saved assets",
+      "name": "exact accepted bilingual text: museum.sign.gallery",
+      "detail": "EN=THE DIVING GALLERY; ZH=潜水展厅",
+      "passed": true
+    },
+    {
+      "kind": "saved assets",
+      "name": "exact accepted bilingual text: museum.sign.arrival_brand",
+      "detail": "EN=The diving gallery; ZH=潜水展厅",
+      "passed": true
+    },
+    {
+      "kind": "saved assets",
+      "name": "exact accepted bilingual text: museum.sign.intro",
+      "detail": "EN=One object. Many ways to explore.; ZH=一件展品，多种看法。",
+      "passed": true
+    },
+    {
+      "kind": "saved font",
+      "name": "all current table and native-label glyphs already stored",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "kind": "saved font",
+      "name": "saved atlas textures exist",
+      "detail": "No tryAddCharacter, dynamic baking or fallback lookup is used by this check.",
+      "passed": true
+    },
+    {
+      "kind": "structure",
+      "name": "unique object: Gallery masthead",
+      "detail": "count=1",
+      "passed": true
+    },
+    {
+      "kind": "structure",
+      "name": "unique object: Gallery subtitle",
+      "detail": "count=1",
+      "passed": true
+    },
+    {
+      "kind": "structure",
+      "name": "unique object: Arrival brand",
+      "detail": "count=1",
+      "passed": true
+    },
+    {
+      "kind": "structure",
+      "name": "unique object: Arrival introduction",
+      "detail": "count=1",
+      "passed": true
+    },
+    {
+      "kind": "saved binding",
+      "name": "Gallery masthead",
+      "detail": "museum.sign.masthead",
+      "passed": true
+    },
+    {
+      "kind": "saved binding",
+      "name": "references and bilingual font enabled: Gallery masthead",
+      "detail": "museum.sign.masthead",
+      "passed": true
+    },
+    {
+      "kind": "saved binding",
+      "name": "saved English and font: Gallery masthead",
+      "detail": "Beneath the surface",
+      "passed": true
+    },
+    {
+      "kind": "saved visibility",
+      "name": "main layout retained: Gallery masthead",
+      "detail": "active=True",
+      "passed": true
+    },
+    {
+      "kind": "saved binding",
+      "name": "Gallery subtitle",
+      "detail": "museum.sign.gallery",
+      "passed": true
+    },
+    {
+      "kind": "saved binding",
+      "name": "references and bilingual font enabled: Gallery subtitle",
+      "detail": "museum.sign.gallery",
+      "passed": true
+    },
+    {
+      "kind": "saved binding",
+      "name": "saved English and font: Gallery subtitle",
+      "detail": "THE DIVING GALLERY",
+      "passed": true
+    },
+    {
+      "kind": "saved visibility",
+      "name": "main layout retained: Gallery subtitle",
+      "detail": "active=False",
+      "passed": true
+    },
+    {
+      "kind": "saved binding",
+      "name": "Arrival brand",
+      "detail": "museum.sign.arrival_brand",
+      "passed": true
+    },
+    {
+      "kind": "saved binding",
+      "name": "references and bilingual font enabled: Arrival brand",
+      "detail": "museum.sign.arrival_brand",
+      "passed": true
+    },
+    {
+      "kind": "saved binding",
+      "name": "saved English and font: Arrival brand",
+      "detail": "The diving gallery",
+      "passed": true
+    },
+    {
+      "kind": "saved visibility",
+      "name": "main layout retained: Arrival brand",
+      "detail": "active=True",
+      "passed": true
+    },
+    {
+      "kind": "saved binding",
+      "name": "Arrival introduction",
+      "detail": "museum.sign.intro",
+      "passed": true
+    },
+    {
+      "kind": "saved binding",
+      "name": "references and bilingual font enabled: Arrival introduction",
+      "detail": "museum.sign.intro",
+      "passed": true
+    },
+    {
+      "kind": "saved binding",
+      "name": "saved English and font: Arrival introduction",
+      "detail": "One object. Many ways to explore.",
+      "passed": true
+    },
+    {
+      "kind": "saved visibility",
+      "name": "main layout retained: Arrival introduction",
+      "detail": "active=False",
+      "passed": true
+    },
+    {
+      "kind": "structure",
+      "name": "unique object: Museum Title",
+      "detail": "count=1",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs",
+      "detail": "c98311dbbec32228456e5f18cdf5682bdb84d21592244476b8be205cb40ab612",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.core-utils/Runtime/XROrigin.cs",
+      "detail": "cbceaf90f43f3ffa599ed642509abec52e61f55b7bed9a186cb31074fdb044b7",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Inputs/InputActionManager.cs",
+      "detail": "42ab0edf3f1f417ddf02d28fac2511ed355ec2b9742371fb31970316e85fb966",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Inputs/XRInputModalityManager.cs",
+      "detail": "1d875694a2102c1e1eb9e41f753660ebb89d6a84ececb409651ef8970c906e6e",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Inputs/XRTransformStabilizer.cs",
+      "detail": "fdd453f0ff58a7be5a550762113ca4e75b81ed8062f771406c77c0d62eaf48a3",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Controllers/ActionBasedController.cs",
+      "detail": "b23b7048f904de703f9b5f14a964a28a5c9af42b3073eb0d90ca89b2b3ca3bb2",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactables/XRGrabInteractable.cs",
+      "detail": "4dfc79a611346214a87b187749ec11b5ea5a4fa943d1c97fd24eda911de998cd",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactables/XRSimpleInteractable.cs",
+      "detail": "3e32c8298ce22e9f1ea161dbffea8ea1c7d07a48bd489110025a9bb27caf007f",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/Visual/XRInteractorLineVisual.cs",
+      "detail": "44bbe30ca970dd2b2215a877b51cfcd422f85be47c57ca049eca918308d691e0",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRDirectInteractor.cs",
+      "detail": "8870da288ff911e8d1ab89918d1e8f9b876e49e90f481b436c75fcdcf6ba7c19",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRGazeInteractor.cs",
+      "detail": "082289889a8f92919e76287ccd2121bd120ce1179b9bff21d53b3190915abf11",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRInteractionGroup.cs",
+      "detail": "b6104dec84aa87fa8a446131667bd10452fa18a12e98d1ffc647948762713ae2",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRPokeInteractor.cs",
+      "detail": "a89833cf1dfcc80cb112eeb7e82609ddd58ef6f7ae8f3812662e4e570d684352",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRRayInteractor.cs",
+      "detail": "fc71ad3028b80d5ec2a09acc562ffeea7fc99a54d10773150421114068045156",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Overrides/XRGazeAssistance.cs",
+      "detail": "5bc2d8924b660bad51130c9d6d1abebd5a0c52f1501c52a0df97daa68c8f07d1",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/XRInteractionManager.cs",
+      "detail": "e103d4953736425ec32f138f86c16042ac84feab315048008d0edceeaf60ca40",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/CharacterControllerDriver.cs",
+      "detail": "27e576c36b118cc4ef92ea9c8f8ec4ab8c841f81f0945d0ee096625caf5f9d07",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Climb/ClimbProvider.cs",
+      "detail": "e005f8e82070983010091bfa57db98dad8404b38519f453a2d9b9c19af833567",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Climb/ClimbTeleportInteractor.cs",
+      "detail": "5a7c880395b142763da0b9524fc6d24ef7eef47ff866f36a177738385337af6b",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Continuous/ActionBasedContinuousTurnProvider.cs",
+      "detail": "44769f3afe5fbf83e04938979d669326b6a8ae00ec21eb4c057bafaa9e6c8c88",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Grab/GrabMoveProvider.cs",
+      "detail": "f2c3a22ec2fe884533168caf1497ff25867c403d9d7c5115e3aae22727e6cf15",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Grab/TwoHandedGrabMoveProvider.cs",
+      "detail": "6e41dfd1cf33efd4a7dce7a084dd931bcff6f8d478ef0227484060ee18ffe17e",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/LocomotionSystem.cs",
+      "detail": "312c6c44a4a69de75d8788fef5d68f08c5520a2665223838113abf856c01cce4",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/SnapTurn/ActionBasedSnapTurnProvider.cs",
+      "detail": "31ca0f5b7465c7877ee4f2646b40299c73c50e90eee2e7c620c6e834b537233e",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/GazeTeleportationAnchorFilter.cs",
+      "detail": "df159854f1dc2041b08aa8b1f295d6afbfe4068f5da9d1cc0acc31a33b8471e7",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/TeleportationArea.cs",
+      "detail": "76e524d98fdc655d56b96e9e2fda9f1b1e4b7487bdec3797c9343b64bff0c74c",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/TeleportationProvider.cs",
+      "detail": "06cf2fc1d48d2bf6f74f7752d064e1896bc4ee8e3ce82fb56d6d1ada6acfd0ea",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/manifest.json",
+      "detail": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/packages-lock.json",
+      "detail": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: ProjectSettings/ProjectSettings.asset",
+      "detail": "6b3aa93c403f4a0697a561f117cea95e529db9965f59dcadfcb4533031e1e2b0",
+      "passed": true
+    }
+  ]
+}

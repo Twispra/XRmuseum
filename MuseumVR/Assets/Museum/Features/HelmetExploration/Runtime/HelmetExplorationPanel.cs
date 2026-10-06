@@ -24,7 +24,7 @@ namespace Museum.Exploration
         // even after the upgraded scene has been saved and loaded again.
         [SerializeField] SavedElement[] originalLayout = new SavedElement[0];
         bool subscribed, availabilityKnown, lastAvailable, lastCutaway, lastReduceMotion;
-        bool moreExpanded, inspectionToolsExpanded, readingFromExploration;
+        bool moreExpanded, inspectionToolsExpanded, readingFromExploration, lastSound;
         Reading reading;
         HelmetExplorationController.Page lastPage;
         ButtonSlot[] buttons;
@@ -163,8 +163,8 @@ namespace Museum.Exploration
             UpdateAvailability();
             if (!UseProgressiveLayout || !palette || !palette.Controller) return;
             var controller = palette.Controller;
-            if (lastCutaway == controller.IsCutaway && lastReduceMotion == controller.ReduceMotion) return;
-            lastCutaway = controller.IsCutaway; lastReduceMotion = controller.ReduceMotion;
+            if (lastCutaway == controller.IsCutaway && lastReduceMotion == controller.ReduceMotion && lastSound == controller.SoundEnabled) return;
+            lastCutaway = controller.IsCutaway; lastReduceMotion = controller.ReduceMotion; lastSound=controller.SoundEnabled;
             RefreshView();
         }
         void UpdateAvailability()
@@ -256,6 +256,12 @@ namespace Museum.Exploration
             lastReduceMotion = palette.Controller.ReduceMotion;
             RefreshView();
         }
+        public void ToggleSound()
+        {
+            if(!palette || !palette.Controller)return;
+            palette.Controller.SoundEnabled=!palette.Controller.SoundEnabled;
+            lastSound=palette.Controller.SoundEnabled;RefreshView();
+        }
         public bool IsCommandSelected(Command command)
         {
             if (!UseProgressiveLayout) return false;
@@ -286,7 +292,7 @@ namespace Museum.Exploration
         void CacheControls()
         {
             if (buttons != null) return;
-            buttons = new ButtonSlot[16];
+            buttons = new ButtonSlot[Enum.GetValues(typeof(Command)).Length];
             foreach (var button in GetComponentsInChildren<HelmetExplorationButton>(true))
             {
                 var labelTransform = button.transform.parent.Find(button.name + " label");
@@ -459,7 +465,9 @@ namespace Museum.Exploration
             if (help)
             {
                 bool reduced = palette && palette.Controller && palette.Controller.ReduceMotion;
-                Place(Command.ReduceMotion, reduced ? "Motion: off" : "Motion: on", 0, y); y -= Row;
+                Place(Command.ReduceMotion, reduced ? "Motion: off" : "Motion: on", -.12f, y);
+                bool sound=palette && palette.Controller && palette.Controller.SoundEnabled;
+                Place(Command.Sound, sound ? "Sound: on" : "Sound: off", .12f, y); y -= Row;
             }
             bool visible = exploration.IsDiagramVisible;
             Place(Command.CloseReading, "Return", visible ? -.12f : 0f, y);

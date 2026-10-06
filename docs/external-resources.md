@@ -1,5 +1,9 @@
 # 外部资源与辅助工具记录
 
+2026-10-06 背部电话接头（本地）：Codex 辅助独立程序网格、Prefab 上的接头布局校正、两条连接锚点、通话到达／回复反馈和模拟检查，见 [交接](activity/2026-10-06-rear-telephone-connection.md)。左右用途依据 [美国海军水下博物馆说明](https://navalunderseamuseum.org/mk-v/)；曲线、局部尺寸、壁厚和视觉响应属于原型设计，非历史测绘数据。没有下载照片、外部模型或音频；程序 Mesh 保存为新增资产，原 FBX 未改。新增三語标签使用已有字形，不引入新字体。
+
+2026-10-06 体验细节完善（本地）：Codex 辅助玻璃／截面 shader、已有网格截面算法、前窗缓动、设备方向强调、短返回动画、程序机械音效和模拟验收，见 [交接](activity/2026-10-06-helmet-experience-polish.md)。没有下载或引入外部音频、图片、模型、贴图或新 package；音效在 HelmetMechanicalFeedback 中由确定性的振荡／噪声及包络合成，不是历史设备录音。字体沿用既有 Noto Sans SC／OFL 来源，补充声音按钮所需字形与三语文案；不增加新字体来源。新画面和声音不构成精确历史复原、设备实测或用户研究。
+
 2026-10-06 PR #10/#13/#14 补齐：Codex 辅助冲突整合、保存文案与四组场景绑定、字体缺字重烤、源文件和像素核对、模拟 XR 输入/演示回归、截图复核及交接记录，见[本轮记录](activity/2026-10-06-pr14-completion.md)。沿用既有源 TTF，静态 TMP 图集由 190 增至 198 字符；没有新增模型、贴图、音频或 package。补入 [Noto Sans SC 官方 OFL 文件](https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/OFL.txt)至 [docs/licenses/noto-sans-sc-OFL.txt](licenses/noto-sans-sc-OFL.txt)，SHA256 `1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9`。字体 name 表与该文件均注明 Adobe 2014–2021 版权及保留字体名 `Source`；当前 subset 的字体族名为 Noto Sans SC。以下旧版本字形数量为历史记录。自动验证和 AI 复核不代替成员人工审批、真实头显或用户研究。
 
 2026-10-04 中英语言切换模块：助手辅助实现界面语言切换系统与文档，见[模块说明](localization.zh-CN.md)与[活动记录](activity/2026-10-04-localization.md)。
