@@ -98,6 +98,10 @@ namespace Museum.Experience.EditorTools
             CheckHollowGeometry();
             inspection.ResetInspection();inspection.ToggleFloating();
             Capture(inspection,"01-window-closed",new Vector3(-.45f,.12f,-.90f));
+            // Synchronous rendering can compile shaders and stall this frame. Start
+            // the time-based action on a fresh frame so the capture's elapsed time
+            // is not counted as window animation time before its first update.
+            yield return null;
             inspection.SetWindowOpen(true);float last=inspection.WindowAngle;
             until=Time.realtimeSinceStartup+.22f;while(Time.realtimeSinceStartup<until)yield return null;
             CheckThat(inspection.WindowAngle>last && inspection.WindowAngle<HelmetInspectionController.MaximumWindowAngle,"window has an intermediate opening pose",inspection.WindowAngle.ToString());
