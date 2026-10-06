@@ -1125,5 +1125,12 @@
     "editorRegressionWrapperMatched": true,
     "noExistingMetadataModelsInputPackagesOrPlatformChanges": true,
     "note": "Reused four passing Unity runs after exact source/asset fingerprint checks; this audit does not claim a new Unity run."
+  },
+  "publication": {
+    "pullRequest": "https://github.com/Twispra/XRmuseum/pull/18",
+    "productCommit": "a46587e10aa37adf927f576b1507d24294fd8421",
+    "base": "main",
+    "status": "Published, awaiting another member review; not merged",
+    "storage": "Existing normal Git for TTF and PNG; existing LFS rules unchanged."
   }
 }
