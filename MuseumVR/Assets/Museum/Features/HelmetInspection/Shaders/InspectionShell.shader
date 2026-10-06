@@ -8,6 +8,9 @@ Shader "Museum/Inspection Shell"
         _CutEnabled ("Cut enabled", Float) = 0
         _CutPlane ("World cut plane", Vector) = (1,0,0,0)
         _Hover ("Hover highlight", Float) = 0
+        _Focus ("Interpretive attention", Float) = 0
+        _ShellCenter ("Hollow shell center (object space)", Vector) = (0,0,0,0)
+        _ShellInterior ("Distinguish actual inner surfaces", Float) = 0
     }
     SubShader
     {
@@ -25,8 +28,8 @@ Shader "Museum/Inspection Shell"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             CBUFFER_START(UnityPerMaterial)
                 half4 _BaseColor, _InsideColor, _CutColor;
-                float4 _CutPlane;
-                float _CutEnabled, _Hover;
+                float4 _CutPlane, _ShellCenter;
+                float _CutEnabled, _Hover, _Focus, _ShellInterior;
             CBUFFER_END
             struct Attributes { float4 positionOS:POSITION; float3 normalOS:NORMAL; UNITY_VERTEX_INPUT_INSTANCE_ID };
             struct Varyings { float4 positionCS:SV_POSITION; float3 positionWS:TEXCOORD0; half3 normalWS:TEXCOORD1; UNITY_VERTEX_OUTPUT_STEREO };
@@ -51,10 +54,14 @@ Shader "Museum/Inspection Shell"
                 half3 view = GetWorldSpaceNormalizeViewDir(i.positionWS);
                 half spec = pow(saturate(dot(normal, normalize(light.direction + view))), 42) * .22;
                 half3 color = IS_FRONT_VFACE(face, _BaseColor.rgb, _InsideColor.rgb);
+                // The original hollow mesh has inward-facing inner normals; distinguish these existing surfaces.
+                if(_ShellInterior>.5 && dot(i.normalWS,i.positionWS-TransformObjectToWorld(_ShellCenter.xyz))<-.001)
+                    color=lerp(_BaseColor.rgb,half3(.29,.23,.17),.55);
                 color = color * shade + spec;
                 // A narrow coloured rim marks the removed half. It is a visual aid, not measured wall thickness.
                 if (_CutEnabled > .5 && abs(distance) < .0018) color = _CutColor.rgb;
                 color = lerp(color, half3(.12,.9,.9), saturate(_Hover)*.5);
+                color += half3(.26,.22,.12) * saturate(_Focus);
                 return half4(color,1);
             }
             ENDHLSL

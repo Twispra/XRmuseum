@@ -17,6 +17,9 @@ namespace Museum.Exploration
         Transform pistonA, pistonB, wheelA, wheelB, crankA, crankB, rodA, rodB;
         Transform surfaceDiaphragm, diverDiaphragm;
         Vector3 pistonAHome, pistonBHome, surfaceDiaphragmHome, diverDiaphragmHome;
+        Renderer[] pumpSurfaces,telephoneSurfaces,diverSurfaces;
+        readonly MaterialPropertyBlock attentionBlock=new MaterialPropertyBlock();
+        static readonly int FocusId=Shader.PropertyToID("_Focus");
 
         public Transform AirRoot { get; private set; }
         public Transform VoiceRoot { get; private set; }
@@ -42,6 +45,9 @@ namespace Museum.Exploration
             AirRoot = Node(parent, "Air equipment diorama");
             VoiceRoot = Node(parent, "Voice equipment diorama");
             BuildPump(); BuildTelephone(); BuildTransducer();
+            pumpSurfaces=Pump.GetComponentsInChildren<Renderer>(true);
+            telephoneSurfaces=SurfaceTelephone.GetComponentsInChildren<Renderer>(true);
+            diverSurfaces=DiverTransducer.GetComponentsInChildren<Renderer>(true);
             for (int i=0;i<airPackets.Length;i++)
             {
                 airPackets[i] = MeshPart(signalParent, "Air packet " + i, arrowMesh, airSignal);
@@ -162,6 +168,21 @@ namespace Museum.Exploration
             DiverTransducer.SetPositionAndRotation(centre+right*.67f+Vector3.up*.045f,facing);
         }
 
+        public void SetAttention(bool air,float source,float destination)
+        {
+            ApplyFocus(pumpSurfaces,air?source:0);
+            ApplyFocus(telephoneSurfaces,air?0:source);
+            ApplyFocus(diverSurfaces,air?0:destination);
+        }
+        void ApplyFocus(Renderer[] renderers,float value)
+        {
+            foreach(var renderer in renderers)
+            {
+                if(!renderer || !renderer.sharedMaterial || !renderer.sharedMaterial.HasProperty(FocusId))continue;
+                renderer.GetPropertyBlock(attentionBlock);attentionBlock.SetFloat(FocusId,value);renderer.SetPropertyBlock(attentionBlock);
+            }
+        }
+
         public void AnimatePump(float seconds,bool moving)
         {
             float cycle=moving?seconds*3.9f:0f;
@@ -177,6 +198,13 @@ namespace Museum.Exploration
         {
             AnimateDiaphragm(surfaceDiaphragm,surfaceDiaphragmHome,surfaceWaves,seconds,surfaceSpeaking&&moving);
             AnimateDiaphragm(diverDiaphragm,diverDiaphragmHome,diverWaves,seconds,diverSpeaking&&moving);
+        }
+
+        public void AnimateReception(float seconds,bool surfaceReceiving,bool diverReceiving)
+        {
+            // A small receiver response has no outward speech waves or new historical mechanism claim.
+            if(surfaceReceiving)surfaceDiaphragm.localPosition=surfaceDiaphragmHome+Vector3.forward*(Mathf.Sin(seconds*16f)*.0015f);
+            if(diverReceiving)diverDiaphragm.localPosition=diverDiaphragmHome+Vector3.forward*(Mathf.Sin(seconds*16f)*.0015f);
         }
 
         static void AnimateDiaphragm(Transform diaphragm,Vector3 home,Transform[] waves,float seconds,bool speaking)
@@ -207,6 +235,7 @@ namespace Museum.Exploration
             if(material.HasProperty("_InsideColor"))material.SetColor("_InsideColor",color*.8f);
             if(material.HasProperty("_CutEnabled"))material.SetFloat("_CutEnabled",0);
             if(material.HasProperty("_Hover"))material.SetFloat("_Hover",0);
+            if(material.HasProperty("_Focus"))material.SetFloat("_Focus",0);
             if(material.HasProperty("_Metallic"))material.SetFloat("_Metallic",.32f);
             if(material.HasProperty("_Smoothness"))material.SetFloat("_Smoothness",.4f);
             materials.Add(material);return material;

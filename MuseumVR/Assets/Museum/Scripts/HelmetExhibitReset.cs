@@ -25,6 +25,13 @@ namespace Museum
         float outsideSince = -1f;
         float selectionBlockedUntil;
         bool resetting;
+        bool returning, initialKinematic, initialGravity;
+        Vector3 returnFrom;
+        Quaternion returnRotation;
+        float returnStartedAt;
+        const float ReturnDuration=.30f;
+        public bool IsReturning => returning;
+        public float ReturnProgress => returning?Mathf.Clamp01((Time.unscaledTime-returnStartedAt)/ReturnDuration):1;
 
         public int ResetCount { get; private set; }
         public bool IsHeld => grab != null && grab.isSelected;
@@ -34,6 +41,7 @@ namespace Museum
         void Awake()
         {
             EnsureReferencesAndHome();
+            initialKinematic=body.isKinematic;initialGravity=body.useGravity;
         }
 
         void OnEnable()
@@ -44,6 +52,7 @@ namespace Museum
 
         void OnDisable()
         {
+            if(returning)FinishReturn(false);
             if (grab != null)
                 grab.selectFilters.Remove(this);
             outsideSince = -1f;
@@ -56,8 +65,22 @@ namespace Museum
 
             if (keyboardHomeReset && Keyboard.current != null && Keyboard.current.homeKey.wasPressedThisFrame)
             {
-                ResetToDisplay();
+                RequestResetToDisplay();
                 return;
+            }
+
+            if(returning)
+            {
+                var inspection=GetComponent<Inspection.HelmetInspectionController>();
+                float t=ReturnProgress;
+                if(t>=1 || (inspection && inspection.ReduceMotion)) {FinishReturn(true);return;}
+                float eased=t*t*(3-2*t);
+                Vector3 position=Vector3.Lerp(returnFrom,homePosition,eased);
+                // Small clearance arc; the headset/camera never moves with this return.
+                position+=Vector3.up*(Mathf.Sin(t*Mathf.PI)*.06f);
+                transform.SetPositionAndRotation(position,Quaternion.Slerp(returnRotation,homeRotation,eased));
+                body.position=transform.position;body.rotation=transform.rotation;
+                MaintainReturnPhysics();Physics.SyncTransforms();return;
             }
 
             if (IsHeld)
@@ -96,6 +119,8 @@ namespace Museum
             if (resetting)
                 return;
 
+            if(returning)FinishReturn(false);
+
             EnsureReferencesAndHome();
             resetting = true;
             bool previousThrowOnDetach = grab.throwOnDetach;
@@ -129,6 +154,8 @@ namespace Museum
                     body.Sleep();
                 }
                 Physics.SyncTransforms();
+                // Consume the one-shot target while still at home, before optional return presentation pins physics.
+                if(Application.isPlaying)grab.ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase.Dynamic);
                 outsideSince = -1f;
                 ResetCount++;
             }
@@ -139,9 +166,41 @@ namespace Museum
             }
         }
 
+        /// <summary>Short, optional presentation return; automatic out-of-bounds recovery remains immediate.</summary>
+        public void RequestResetToDisplay()
+        {
+            if(returning)return;
+            EnsureReferencesAndHome();
+            var inspection=GetComponent<Inspection.HelmetInspectionController>();
+            bool reduced=inspection && inspection.ReduceMotion;
+            Vector3 from=transform.position;Quaternion rotation=transform.rotation;
+            float distance=Vector3.Distance(from,homePosition);
+            // Far/out-of-bounds positions use safe immediate recovery, without crossing the gallery.
+            if(!Application.isPlaying || !isActiveAndEnabled || reduced || distance>2 || from.y<fallY ||
+                (distance<.015f && Quaternion.Angle(rotation,homeRotation)<2)) {ResetToDisplay();return;}
+            // Keep the proven release/queued-detach/reset-count behavior before presenting the return.
+            ResetToDisplay();returning=true;returnStartedAt=Time.unscaledTime;returnFrom=from;returnRotation=rotation;
+            transform.SetPositionAndRotation(from,rotation);body.position=from;body.rotation=rotation;
+            MaintainReturnPhysics();Physics.SyncTransforms();
+        }
+        public void MaintainReturnPhysics()
+        {
+            if(!returning || !body)return;
+            if(!body.isKinematic){body.velocity=Vector3.zero;body.angularVelocity=Vector3.zero;}
+            body.isKinematic=true;body.useGravity=false;
+        }
+        void FinishReturn(bool sound)
+        {
+            returning=false;transform.SetPositionAndRotation(homePosition,homeRotation);body.position=homePosition;body.rotation=homeRotation;
+            body.isKinematic=initialKinematic;body.useGravity=initialGravity;
+            if(!body.isKinematic){body.velocity=Vector3.zero;body.angularVelocity=Vector3.zero;body.Sleep();}
+            grab.SetTargetPose(HomePose);Physics.SyncTransforms();outsideSince=-1;
+            var feedback=GetComponent<Experience.HelmetMechanicalFeedback>();if(sound && feedback)feedback.ReturnCompleted();
+        }
+
         bool IXRSelectFilter.Process(IXRSelectInteractor interactor, IXRSelectInteractable interactable)
         {
-            return !resetting && Time.unscaledTime >= selectionBlockedUntil &&
+            return !resetting && !returning && Time.unscaledTime >= selectionBlockedUntil &&
                    !releasedInteractors.Contains(interactor);
         }
 
