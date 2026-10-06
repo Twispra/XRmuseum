@@ -130,6 +130,10 @@ namespace Museum.Experience.EditorTools
             inspection.SetWindowAngle(35);surface.Refresh();CheckThat(surface.RebuildCount>rebuild,"moving articulated parts updates section faces");
             inspection.SetCutaway(false);surface.Refresh();CheckThat(!inspection.GetComponentsInChildren<MeshRenderer>(true).Any(r=>r.name.StartsWith("Section face -") && r.gameObject.activeInHierarchy),"closing section hides all cap geometry");
             inspection.ResetInspection();
+            // The section captures above can also stall this frame before a
+            // time-based return starts. Refresh its clock without changing the
+            // intermediate-pose assertion or the product's return duration.
+            yield return null;
             var home=reset.HomePose;body.isKinematic=true;body.useGravity=false;
             body.position=home.position+new Vector3(.5f,.2f,-.25f);body.rotation=Quaternion.Euler(25,70,5);inspection.transform.SetPositionAndRotation(body.position,body.rotation);
             Vector3 from=body.position;reset.RequestResetToDisplay();
