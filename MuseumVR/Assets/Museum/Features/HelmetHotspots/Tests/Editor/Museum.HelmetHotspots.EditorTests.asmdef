@@ -1,0 +1,16 @@
+{
+  "name": "Museum.HelmetHotspots.EditorTests",
+  "rootNamespace": "Museum.Hotspots.Tests",
+  "references": [
+    "Museum.HelmetHotspots",
+    "Unity.TextMeshPro",
+    "Unity.XR.Interaction.Toolkit"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "optionalUnityReferences": [
+    "TestAssemblies"
+  ],
+  "autoReferenced": false
+}
