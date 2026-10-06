@@ -11,7 +11,8 @@
       "checks": 76,
       "processExitCode": 0,
       "publishedEvidence": "artifacts/helmet-experience/rear-delivery-20261006/features-checks.json",
-      "publishedEvidenceSha256": "2cb62024fade7448609a7ea30de58e8f7d30748f8802db1cce8d903810e433c4"
+      "publishedEvidenceSha256": "8dba12351c1adbc6e79c4ffbe432fa943e7d333ca791e7bfdef505825f7c12cc",
+      "publishedEvidenceHashKind": "SHA256 of committed Git blob; JSON line endings are LF"
     },
     "localization": {
       "report": "artifacts/localization/qa/runs/20261006T090341382Z-integration-f6b8bf5d3b484e09a4b65902206e588b/report.json",
@@ -20,7 +21,8 @@
       "checks": 78760,
       "processExitCode": 0,
       "publishedEvidence": "artifacts/helmet-experience/rear-delivery-20261006/localization-checks.json",
-      "publishedEvidenceSha256": "9481073850255931663e0af0b49bffcaa9ecc5a915f48f195055b461f71ffc7d"
+      "publishedEvidenceSha256": "29b9a6dc8986edf0544e1fd06374834493a0bc5e1e0f1173f1f44008748060cc",
+      "publishedEvidenceHashKind": "SHA256 of committed Git blob; JSON line endings are LF"
     },
     "exploration": {
       "report": "artifacts/helmet-exploration/qa/runs/20261006T090506143Z-exploration-3ec5e6d99d0b42f59b9b9847b8e44cca/report.json",
@@ -29,7 +31,8 @@
       "checks": 1486,
       "processExitCode": 0,
       "publishedEvidence": "artifacts/helmet-experience/rear-delivery-20261006/exploration-checks.json",
-      "publishedEvidenceSha256": "ec35184489510e5974f02c6df732f7f1daa93588c78bbce70b81598b67769881"
+      "publishedEvidenceSha256": "33228386b16d6f3b1941cd5d86ef7b0bf96e4d8e01bf1f00df0eaf00f9d5729d",
+      "publishedEvidenceHashKind": "SHA256 of committed Git blob; JSON line endings are LF"
     },
     "inspection": {
       "report": "artifacts/helmet-interaction/qa/runs/20261006T090053550Z-inspection-main-74766e676b544dbfb10189e47061a143/report.json",
@@ -38,7 +41,8 @@
       "checks": 206,
       "processExitCode": 0,
       "publishedEvidence": "artifacts/helmet-experience/rear-delivery-20261006/inspection-checks.json",
-      "publishedEvidenceSha256": "8e932c4659f78c29a97a58219a26f6ce824a19fc1c5bb33a7ade3f8204d65eb4"
+      "publishedEvidenceSha256": "9b2e64e96abb05cbe62a06e19d1e84b2b011f82ba15f2a99f3a72d14a4db9946",
+      "publishedEvidenceHashKind": "SHA256 of committed Git blob; JSON line endings are LF"
     }
   },
   "testedFiles": [

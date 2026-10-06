@@ -1014,5 +1014,29 @@
   "date": "2026-10-06",
   "preExisting570Unchanged": true,
   "verifiedNewAssetReferences": 14,
-  "noUnityRerunClaim": true
+  "noUnityRerunClaim": true,
+  "portableEvidence": [
+    {
+      "path": "artifacts/helmet-experience/rear-delivery-20261006/features-checks.json",
+      "sha256": "8dba12351c1adbc6e79c4ffbe432fa943e7d333ca791e7bfdef505825f7c12cc",
+      "gitBlob": "050a687040f231234e7316666c4df79b04542d8f"
+    },
+    {
+      "path": "artifacts/helmet-experience/rear-delivery-20261006/localization-checks.json",
+      "sha256": "29b9a6dc8986edf0544e1fd06374834493a0bc5e1e0f1173f1f44008748060cc",
+      "gitBlob": "3c974cade3f3af9810f34e4de14b6f3382fb4c26"
+    },
+    {
+      "path": "artifacts/helmet-experience/rear-delivery-20261006/exploration-checks.json",
+      "sha256": "33228386b16d6f3b1941cd5d86ef7b0bf96e4d8e01bf1f00df0eaf00f9d5729d",
+      "gitBlob": "cb79bda3153828621b76cede2b71501fda4dd9c0"
+    },
+    {
+      "path": "artifacts/helmet-experience/rear-delivery-20261006/inspection-checks.json",
+      "sha256": "9b2e64e96abb05cbe62a06e19d1e84b2b011f82ba15f2a99f3a72d14a4db9946",
+      "gitBlob": "92fffed1c132fe4edc643233fa59c548be5f6ec6"
+    }
+  ],
+  "releaseDocumentationLinksVerified": 20,
+  "portableEvidenceNote": "Published derived-report hashes use committed LF blobs. Full original-report and tested-file SHA256 values continue to identify original developer worktree bytes; committed product blobs are mapped above."
 }
