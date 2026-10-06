@@ -1,0 +1,10 @@
+{
+  "pid": 4832,
+  "startedUtc": "2026-10-06T01:05:05.7878028Z",
+  "finishedUtc": "2026-10-06T01:08:16.2728767Z",
+  "exitCode": 0,
+  "testedCommit": "4d84e175b3d6ec9a0721dba5224419a01c39ee5d",
+  "extraSource": "Assets/Museum/Editor/CompletionRegression.cs",
+  "command": "Unity.exe -batchmode -projectPath MuseumVR -executeMethod CompletionRegression.RunBatch",
+  "log": "regression-unity.log"
+}

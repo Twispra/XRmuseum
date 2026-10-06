@@ -28,6 +28,6 @@
 
 ## 源字体、子集与许可
 
-原始来源是本机安装的 Noto Sans SC 变量字体，Google，**SIL Open Font License 1.1**。`subset-noto-sans-sc.py` 的原始流程在 wght 轴取 Regular (400)，再保留 ASCII、GB2312 汉字/符号与常用标点，约 7545 码位。原约 16.95 MB 的变量字体不提交；当前提交副本属于经静态实例化和子集化的修改版本。OFL 许可文件随字体保留，资源声明见 docs/external-resources.md。
+原始来源是本机安装的 Noto Sans SC 变量字体，**SIL Open Font License 1.1**。`subset-noto-sans-sc.py` 的原始流程在 wght 轴取 Regular (400)，再保留 ASCII、GB2312 汉字/符号与常用标点，约 7545 码位。原约 16.95 MB 的变量字体不提交；当前提交副本属于经静态实例化和子集化的修改版本。TTF 内嵌 Adobe 2014–2021 版权、保留字体名 `Source` 和许可摘要；完整 [OFL 文件](../../../../../../docs/licenses/noto-sans-sc-OFL.txt)于 2026-10-06 从 Google Fonts 的 Noto Sans SC 官方目录补入，其版权行与 TTF 一致。资源声明见 docs/external-resources.md。
 
 源 TTF 的码位覆盖与 TMP 已烤入图集的 198 字符是两件事：即使 TTF 有该字，也必须确认静态图集已烤入。没有 GB18030 扩展字、日文或韩文完整支持的承诺。旧 check-glyph-coverage.py / subset-noto-sans-sc.py 保留原始来源流程，含作者环境路径，不作为当前保存资产验收入口。
