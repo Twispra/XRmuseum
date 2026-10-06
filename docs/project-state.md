@@ -1,93 +1,66 @@
 # 项目状态与下一步
 
-**2026-10-06 PR #19 主线整合验收完成（[Issue #23](https://github.com/Twispra/XRmuseum/issues/23) · [PR #24](https://github.com/Twispra/XRmuseum/pull/24)）：** 基于实际 main `18d7f8a`，整合 Fttt1003 的 #19 产品/交接 `b61c13c`，保留 #21 热点修复与原作者历史。205 条三语文案、536 保存字形，新增平滑复位/热点进度共存回归。被测 `2fcaad1` 六组验收通过并实际退出 0（76/206/1486/84346 次断言/11/12），267 个输入哈希匹配；本提交准备按用户授权合入 main，实际状态以 PR #24 为准。[本轮记录](activity/2026-10-06-pr19-main-integration.md)。未改模型、公共输入、Packages 或平台；实机、人工试听、性能、用户和构建未验证。以下“#18 未合并/#19 待审查/旧热点待接入”等均为源分支历史快照。
+2026-10-06 主线整合快照：已 fetch 并同步文档 PR #22 的 main `7f1a2b8f548078eee50cd83051e86e68769a07b9`；本轮按用户要求通过 [PR #24](https://github.com/Twispra/XRmuseum/pull/24) 将 #19 成果整合到该基准，保留 #21。代码/保存资产已在 `2fcaad1` 完成六组验收，后续仅文档/证据变化；PR #24 的实际 merged 状态及 merge SHA 为最终主线依据。接手前仍应 fetch 和查看 GitHub。
 
-**2026-10-06 头盔体验与背部接头（已发布 [PR #19](https://github.com/Twispra/XRmuseum/pull/19)，待成员审查，未合并）：** 产品提交 `484c5d4`，分支 `codex/helmet-experience-polish-2026-10-06`，依赖未合并三语 #18；PR base 是三语分支。前窗玻璃／缓动／静音、保留空腔的网格切口、供气／通话收发强调、连续复位及背部左电话／右供气均在原保存主场景。最终四组检查通过（76／206／1486 项、78760 次三语重复断言，实际退出均为 0），发布核对 186 个被测文件与产品提交匹配。既有 570 个未知未提交文件原样保留、未上传；原模型、输入、包、平台和既有 GUID 保留。未做实机、用户、声音舒适性、性能或构建验证。[版本与接手步骤](activity/2026-10-06-helmet-experience-release.md)。先合并 #18，再由整合人调整 #19 base 到 main 并审查；另有旧基线热点分支待单独协调。**以下为此前阶段的历史快照，其中“仅本地／未提交”不代表本次远程状态。**
-
-**2026-10-06 背部电话接头补齐（仅本地，未提交／推送）：** 在同一体验细节分支继续追加保存的电话鹅颈和出口锚点，从背后看左电话、右供气；通话电缆与收发反馈跟随电话实体接头。接头采用已有黄铜材质与铜壳区分，新增网格参与剖切，原工具中心／操作范围保留。新体验 76 项、原头盔 206 项、探索 1486 项、三语重复断言 78760 次通过，实际进程均退出 0。新增一条三语标签，共 196 条；字体、原 FBX、输入、Packages／平台与既有 metadata 不变。原剖切中心偏移的发现与修复、实际截图、资料边界和接手说明见 [本轮交接](activity/2026-10-06-rear-telephone-connection.md)。以下段落为之前阶段的记录。
-
-**2026-10-06 头盔体验细节（仅本地，未提交／推送）：** 分支 `codex/helmet-experience-polish-2026-10-06`，基准 `d432a37`，依赖下述三语 PR #18。原保存主场景加入前窗透明玻璃、缓动与可静音的程序反馈；从已有网格生成保留空腔的金属截面；供气／通话按发送、传输、到达顺序突出对应端；手动复位平滑返回，自动安全恢复仍即时执行。冻结产品的新功能 60 项、三语重复断言 79001 次、原探索 1486 项、原头盔操作 206 项通过，实际进程均退出 0。既有未提交文件、模型、输入、包与平台配置保留；真实头显、人工声音舒适性、性能与构建未验证。[使用与接手](helmet-experience-polish.zh-CN.md) · [测试、截图与限制](activity/2026-10-06-helmet-experience-polish.md)。
-
-**2026-10-06 三语版本（已发布 [PR #18](https://github.com/Twispra/XRmuseum/pull/18)，待成员审查）：** 产品提交 `a46587e`，基于已同步 main `b4e1886`，分支 `codex/trilingual-museum-2026-10-06`。现有主场景访客文字已补全简体、繁体、英文，含观察／剖面菜单和供气／通话动态字幕；193 条文案，507 字符静态字体。模块、三语主场景、原有探索和头盔交互检查通过，验收进程退出 0（头盔验收经只含 Editor 代码的延迟退出入口复测）。发布前核对 87 个被测运行时代码和产品资产哈希一致，原有 570 个未提交文件保留。未改模型、输入、packages 或平台，未做真实头显／用户／构建验证。新增文字遵循 [维护说明](localization-authoring.zh-CN.md)，结果与失败路径见 [活动记录](activity/2026-10-06-trilingual-museum.md)。以下为历史快照。
-
-**2026-10-06 双语入口补齐验收：** #10、#13 已合入 main（`175f478`、`9457f9b`）；#14 已同步该主线并完成 Issue #17 的保存表、198 字符静态字体和当前四组入口绑定。产品提交 `4d84e175` 的本地化主场景 627 项、本地化模块 11 项、主线探索 1469 项均通过；实际进程退出和证据见[本轮记录](activity/2026-10-06-pr14-completion.md)。默认英文及 #9 的隐藏策略保留，演示中切换语言后能正确恢复；日常预览直接打开保存资产，无需生成器。字体 OFL 文件与保留字体名记录已补正。原布局仍有部分视角遮挡，真实头显、动线、舒适性和构建未验证。本提交准备按用户授权合并 #14，实时状态以 GitHub 为准。**以下是历史快照，其中旧三处绑定、190 字符、生成方式和未合并状态不代表当前交付。**
-
-**2026-10-05 中英语言切换接入主场景：** 在 [PR #13](https://github.com/Twispra/XRmuseum/pull/13)（模块本身，纯新增）之上追加本 PR：新增整合工具 `Editor/MuseumIntegration.cs`（**只增不改 + 自动备份 + 一键撤销**），把语言选择面板接进 `MuseumStart.unity`，并给 `Museum Title` / `Museum Subtitle` / `Welcome` 三处既有标识挂上 `LocalizedText`。
-> 主场景 diff **+136 / −9 行**；`PrefabInstance` 3 → 4；场景内 `LocalizedText` 恰好 3 处；文案表 17 → 20 条。
-> **默认语言设为英文**（`DefaultMuseumLanguage`）—— 接入后展厅默认外观与接入前完全一致，访客主动选中文才切换；等全馆文案补齐中文后再改成中文更合适。
-> 已在编辑器内验证：按 ▶ 展厅为英文，按 `1` / 点「中文」按钮后入口三处标识与语言面板一起切到中文（`2` 切回英文，`L` 循环；**单眼渲染 + 指针输入，不是头显实测**）。**射线按钮的实际抓取确认未验证**，未做无障碍/参与者评价，未在 PQ604 构建。
-> 该 PR 基于 PR #13 的分支；PR #13 合并后基准会自动切到 `main`。详情见[活动记录](activity/2026-10-05-localization-integration.md)。
-
-**2026-10-06 本地化模块整合：** #10 已合入 main `175f478`，#9/#12 也已包含。本提交同步 #13 与主线，保留双方记录；Issue #16 的实际字符覆盖修复在 `8a32c83` 上通过 Unity 11/11 校验，退出码 0。#13 是独立本地化模块，#14 的主场景接入仍需补齐并另行验收。本提交准备合并 #13，实际状态以 GitHub 为准。[本轮记录](activity/2026-10-06-pr13-completion.md)。以下为历史快照。
-
-**2026-10-04 中英语言切换模块（新分支）：** 新增**独立模块** `MuseumVR/Assets/Museum/Features/Localization/`：双语文案表（key → 中文 / English）、语言通道事件、`LocalizedText` 自动刷新组件、语言按钮、无头显键盘预览，以及 Editor 一键生成工具与自动校验，并额外生成一个打开即可播放的演示场景供整合人参考。**刻意不修改 `MuseumStart.unity`**。本轮新引入 **Noto Sans SC**（SIL OFL 1.1），以子集形式提交（2.32 MB）；TMP 字体资产由 Font Asset Creator 生成（Sampling 110 / Padding 6 / Atlas 2048 / 已烤 190 字形）。
-> ⚠️ **本环境的 TMP 无法用脚本或 `Unicode Range (Hex)` 生成中文字体资产**：实测脚本生成（Dynamic 与 Static 都试过）图集恒为 **0×0**；Font Asset Creator 用 `Unicode Range (Hex)` 会抛 `FormatException`。**唯一可行做法是 Font Asset Creator + Character Set 选 `Characters from File`**，且**必须先退出 Play 模式**（否则 Unity 拒绝执行、产物不完整而无明显报错）。步骤见[模块说明](localization.zh-CN.md)。
-> 已在编辑器内验证中英文渲染清晰、切换即时生效（单眼渲染 + 键盘输入，**不是头显实测**）。未做无障碍或参与者评价；未在 PQ604A/B/C 构建。文案为起步内容，非最终展陈文案。**尚未接入主场景**，按组规由整合人执行。
-
-**2026-10-06 年代模块整合：** PR #9、#12 已合入实际 main `97b8810`。本提交将 #10 同步到该主线，保留双方文档；Issue #15 的淡变取消、瞬时替换与 Mark V 文案修复已在 `1734815` 复测，23 项通过、退出码 0。模块仍独立，未接入主场景；本提交准备合并 #10，实际合并状态以 GitHub 为准。[本轮记录](activity/2026-10-06-pr10-completion.md)。以下为各阶段历史快照。
-
-**2026-10-03 年代切换模块（新分支）：** `codex/helmet-eras-2026-10-03` 基于 fetch 后的 `origin/main = 8e75e71`，新增**独立模块** `MuseumVR/Assets/Museum/Features/HelmetEras/`：数据驱动（ScriptableObject）的头盔年代切换、事件通道、Editor 一键生成工具、自动校验工具，以及无头显时的键盘预览。**刻意不修改 `MuseumStart.unity`**，展示 Prefab 不引用主场景任何对象，接入由整合人执行。已在编辑器内验证三个年代外观切换正常（Unity 单眼渲染 + 键盘 / 组件右键菜单，**不是头显实测**）；排查中修复了 1 个编译错误、1 个「年代未配置材质」和 1 个「淡变把物体刷白」的实现缺陷。三个年代目前的差异**只有占位材质颜色，还没有造型差异**。自动化校验工具已实现但本轮未运行，因此没有 QA 报告。真实头显、无障碍评价与 PQ604A/B/C 构建仍未验证。详见[模块说明](helmet-eras.zh-CN.md)与[活动记录](activity/2026-10-03-helmet-eras.md)。
-
-**2026-10-03 信息安排调整（已发布待审查）：** 开工 fetch 后 `origin/main = b40eb9f652a3935595575e6a5ec0f287c09777b5`，PR #5 和 #7 已合并。[Issue #8](https://github.com/Twispra/XRmuseum/issues/8) 在 `codex/exhibit-information-2026-10-03` 完成原主场景的信息分层、按需详情与高级工具、演示期间背景文字避让，保持原键盘输入。最终探索／布局 1469 项、原观察 206 项、原拿放 90 项均通过，错误 0、退出码 0；源码哈希匹配，真实头显和用户测试未做。源码 `2504ccd` 已推送，[PR #9](https://github.com/Twispra/XRmuseum/pull/9) 指向 main，未合并；[发布哈希核对](../artifacts/exhibit-information/qa/20261003-publish-audit/audit.json)确认与被测文件一致。[方案](exhibit-information.zh-CN.md) · [实际截图、证据与交接](activity/2026-10-03-exhibit-information.md)。以下“待合并”文字均保留为历史快照。
-
-**2026-10-03 探索功能发布交接：** 已发布 [PR #7](https://github.com/Twispra/XRmuseum/pull/7)，待审查。`codex/helmet-exploration-2026-10-03` 提交可选 AIR / VOICE 探索、16 秒设备模型动画、提示与回顾，源码 `c2bf63c`。351 项动画验收的源文件仍匹配；发布前新跑原观察 207 项、原拿放 90 项均通过，错误 0、实际退出码 0。探索 PR 依赖未合并的[环境 PR #5](https://github.com/Twispra/XRmuseum/pull/5)，以环境分支为 base；先合并环境、再将探索 PR 调整到 main 并审查。没有自动合并。[版本、证据和接手步骤](activity/2026-10-03-exploration-release.md)。真实头显、用户评价与当前构建仍未验证。以下记录保留各阶段当时的状态。
-
-**2026-10-03 供气/通话模型动画：** 在同一探索分支继续完善16秒分段演示，增加双轮双缸泵、软管流动、电话箱和有线双向波列。最终351项检查通过、实际退出码0；本轮635个原文件未变，主场景和原资产未再次改写。[最新实现与交接](activity/2026-10-03-exploration-model-animation.md)。此版本仍仅本地，未推送；真实设备的清晰度、舒适性和性能未验证。
-
-**2026-10-03 自由探索本地实现：** 环境已上传 [PR #5](https://github.com/Twispra/XRmuseum/pull/5)，尚未合并；后续 [Issue #6](https://github.com/Twispra/XRmuseum/issues/6) 在 `codex/helmet-exploration-2026-10-03` 依赖其 `39bebc3` 增加同一面板的可选 AIR / VOICE 探索、按需提示和随时回顾，当前尚未推送。最终新增 282 项及原拿放 90 项检查通过、实际退出码 0；原主场景 207 项断言通过，但该轮批处理退出超时，不能写成全部批处理成功。[交接与证据](activity/2026-10-03-helmet-exploration.md)说明已修问题、退出异常和真实设备验证缺口。
-
-**2026-10-03 发布前复测：** 展厅源码 `342cdda` 的 49 项环境、207 项主场景交互及 90 项原拿放检查全部通过，10 次拿放循环完成。交付分支为 `codex/museum-atmosphere-2026-10-02`，对应 [Issue #4](https://github.com/Twispra/XRmuseum/issues/4)，尚未合并 main；[本次证据与交接](activity/2026-10-03-gallery-release.md)包含 G 键选择说明、复跑入口和未验证范围。以下日期段落保留当时快照，不能据旧“仅本地”状态判断当前远程。
-
-**2026-10-02 核验与本地展厅开发：** fetch 后的 `origin/main = 74556aadae39607b23b8ac2b8fd35e8042019393`，GitHub 确认 PR #3 已合并，包含前窗、可调剖面及其连续性修复。下方 9 月记录保留为当时快照。当前 [Issue #4](https://github.com/Twispra/XRmuseum/issues/4) 在 `codex/museum-atmosphere-2026-10-02` 增加现代海事展厅，直接接入原 `MuseumStart`，见[环境说明](maritime-gallery.zh-CN.md)和[本轮活动](activity/2026-10-02-maritime-gallery.md)。本段写入时环境成果仅在本地，尚未推送或合并；不要据此认为远程 main 已有新环境。目标平台、XR 输入和头盔运行时逻辑保持当前主线配置，真实设备、学习效果和最终构建仍待验证。
-
-**2026-09-30 PR #3 评论修复（仍在功能分支）：** 已复现组员指出的剖切球柄跳变，修改为保留连续局部方向及完整手腕旋转；最新源码为 `0d31e426cb97c8cd838ebb8ac050d5874e24c3bb`，见[修复、测试与复查步骤](activity/2026-09-30-section-continuity-review.md)。此次没有再改主场景、Prefab 或输入配置。原 140 项验收遗漏了该临界情况，旧通过结果不代表问题不存在。[PR #3](https://github.com/Twispra/XRmuseum/pull/3) 等待组员复查，未自动合并；真实设备与构建仍待完成。
-
-**2026-09-29 功能分支交接（尚未合入 main）：** `codex/helmet-inspection-2026-09-29` 基于 fetch 后的 `origin/main = 4fe725294150a39ceba411f0d5088b51697e85ee`，已将前窗开合和剖面接入 `MuseumStart`，并按近距离试用反馈增加可调方向/深度的剖切工具、个人跟随面板和单手悬停观察。沿用原 XR 摄像头和输入映射。当前成果见[新版功能说明](helmet-advanced-inspection.zh-CN.md)、[本轮活动记录](activity/2026-09-29-advanced-inspection.md)和[小组交接](helmet-inspection-handoff.zh-CN.md)。这不表示远程 main 已包含新功能；以下 9 月 23 日表格保留为历史快照，不能据此判断当前 PR 状态。
-
-快照日期：2026-09-23。**先 fetch 并查看 GitHub，再判断当前主线。** 本文件随提交保存，不自动跟随远程变化；活动任务及负责人只在 [GitHub Issues](https://github.com/Twispra/XRmuseum/issues) 维护。
+当前 main 已包含头盔拿放、前窗开合、可调剖面与悬停、海事展厅、AIR / VOICE 探索、信息分层、模拟器空格误触修复、简繁英切换及三个观察热点的修复。本次 #24 将 #19 的透明前窗/声音/缓动、空腔截面、背部电话接头、收发强调和平滑复位补入同一保存主场景。年代模块仍未接入主场景。 详细贡献、问题处理与核对边界见[本次记录](activity/2026-10-06-project-records-audit.md)和[每周索引](weekly-activity.md)。
 
 ## 版本与交付状态
 
-| 层次 | 本次核验的事实 | 对接手者的意义 |
+| 层次 | 已核实状态 | 接手注意事项 |
 | --- | --- | --- |
-| 已集成主线 | `origin/main = 545229ec2e279cb3439cd9652cd606f61bb96d4e`，即 [PR #1 合并提交](https://github.com/Twispra/XRmuseum/commit/545229ec2e279cb3439cd9652cd606f61bb96d4e) | 主线已包含头盔原型、初始化防覆盖与验收状态修复 |
-| 头盔实现与修复 | [PR #1](https://github.com/Twispra/XRmuseum/pull/1) 已合并，原 head `cf1029f`；修复代码 `3189006` / `f354815` 及操作说明已保留 | 可从最新 main 获取原型；[修复与验证范围](activity/2026-09-23-pr1-review-fixes.md)。合并不等于实机或课程验收通过 |
-| 本轮协作改动 | [PR #2](https://github.com/Twispra/XRmuseum/pull/2)，分支 `codex/team-collaboration-2026-09-23` 已同步主线，目标为 main，待审查合并 | 剩余范围为根 AGENTS、状态/课程索引、Issue/PR 模板、协作说明和验证产物；无 Unity 产品文件变更。合入 main 后模板才对默认分支生效 |
-| 仅本地环境差异 | 原工作区 `ProjectSettings.asset` 的 `preloadedAssets` 被清空，未随头盔提交 | 原头盔报告来自有此差异的环境。不得顺手提交、还原或把它当无害 UI 设置；需具体分析 XR 初始化后决定 |
-| 可执行构建 | 仅有 9 月 22 日初始化构建记录；无头盔版新构建 | 旧 exe 不能作为当前头盔版本的交付证据 |
+| 已集成 main | PR [#1](https://github.com/Twispra/XRmuseum/pull/1)、[#2](https://github.com/Twispra/XRmuseum/pull/2)、[#3](https://github.com/Twispra/XRmuseum/pull/3)、[#5](https://github.com/Twispra/XRmuseum/pull/5)、[#7](https://github.com/Twispra/XRmuseum/pull/7)、[#9](https://github.com/Twispra/XRmuseum/pull/9)、[#10](https://github.com/Twispra/XRmuseum/pull/10)、[#12](https://github.com/Twispra/XRmuseum/pull/12)、[#13](https://github.com/Twispra/XRmuseum/pull/13)、[#14](https://github.com/Twispra/XRmuseum/pull/14)、[#18](https://github.com/Twispra/XRmuseum/pull/18)、[#21](https://github.com/Twispra/XRmuseum/pull/21)、[#22](https://github.com/Twispra/XRmuseum/pull/22) 的实际合并提交均为主线祖先；#19 本次整合见 #24 | 合并不等于真实设备、用户研究或课程交付验收 |
+| 本次整合三语与热点 | #18 产品 a46587e；Aragorn-cyber 的热点接入 [d84c93f](https://github.com/Twispra/XRmuseum/commit/d84c93f352541949db246440adb857361ec80ecd)；#21 修复 4b01e6c，合并于 20:58 | #24 保存表 205 条三语文案、静态字体 536 字形；沿用默认英文。三个热点支持 Direct / Ray，修复状态复位、选择、三语及信息卡布局 |
+| 独立年代模块 | #10 已于 08:52 合入 main，淡变修复已有 23 项定向验证 | 仍是独立 Prefab / 演示；三个年代只以占位材质颜色区分，未完成历史造型或主场景接线。[模块说明](helmet-eras.zh-CN.md) |
+| #19 主线整合 | 原 [#19](https://github.com/Twispra/XRmuseum/pull/19) 于 19:08 合入功能分支；本次 [PR #24](https://github.com/Twispra/XRmuseum/pull/24) 基于 `7f1a2b8` 完成整合，原作者 Fttt1003 产品 `484c5d4` / 源 head `b61c13c` 与提交历史保留 | 逐项解决文案/TTF/SDF 冲突；保留 main #21 热点运行时与 Prefab、原 GUID。六组验收/退出 0；[本轮整合与证据](activity/2026-10-06-pr19-main-integration.md)，实际主线合并状态以 #24 为准 |
+| 远程分支后续提交 | 年代分支 [65378b9](https://github.com/Twispra/XRmuseum/commit/65378b93e5155329c3f88eac23028e5fda2baa10) 新增回归探针，未进 main；旧热点分支仍存在 | 探针是否保留需团队判断。旧热点成果已经以 d84c93f 接入并经 #21 修复，不应再整份合并旧场景覆盖修复 |
+| 已关闭但未合并 | [#11](https://github.com/Twispra/XRmuseum/pull/11) 因重复关闭；同等 README 目录内容已由 [b40eb9f](https://github.com/Twispra/XRmuseum/commit/b40eb9f652a3935595575e6a5ec0f287c09777b5) 直接进入 main | 不把 #11 的临时 merge_commit_sha 当成合并证据 |
+| 原目录未提交资料 | 本次开工主 checkout 位于 `b4e1886`，ProjectSettings.asset 和未跟踪审查/活动文件保留 | 整合使用独立 worktree；原设置/资料未纳入 PR。合并后原目录只能在确认无路径重叠后安全快进；其他成员本机进展未知 |
+| 构建 | 只有 2026-09-22 初始化 Windows 构建的历史记录 | 没有当前头盔/三语/热点版本的可执行构建证据；旧 exe 不能作为本阶段交付 |
 
-PR #1 的依赖已完成，当前剩余整合项为 PR #2。合并后应链接实际合并提交并更新此表；不要把“PR 可合并”或临时 merge SHA 当成已合并。本轮未代用户合并 PR #2，也未变更保护或审批要求。
+上述 21:05 历史核对包含 14 个 PR、7 个普通 Issue；13 个 PR merged，其中 #19 目标为功能分支。之后仅文档 #22 已于 21:31 合 main，本轮新增 Issue #23 / PR #24。原审计计数保留为历史，不是当前开放任务总数；关闭记录也不代表所有产品待办完成。
 
-## 当前目标与已做选择
+## 当前目标与已采用选择
 
-课程方向是可访问的博物馆 XR 体验：让观众有目的地探索对象，工作人员能够启动、监督及复位。潜水头盔是我们当前选用的原型，不是官方必选展品；目标受众、具体学习目标和完整访客流程还需团队确认。[官方依据及边界](course-requirements.md)
+课程方向仍为可访问的博物馆 XR 体验：观众能够理解、探索对象，工作人员能够启动、监督和复位。潜水头盔为当前原型；目标访客、具体学习目标、成功条件和完整流程仍待团队确认。[课程依据及边界](course-requirements.md)
 
-| 已采用的项目选择 | 理由 / 边界 | 依据 |
+- Windows PC VR、Unity 2022.3.62f3c1、OpenXR / XRI 2.6.4；未决定迁移为 Quest 独立 APK。
+- 灰模的尺度、1.5 kg 交互质量及动画参数须区分公开实物依据与原型假设。[模型依据](helmet-prototype-reference.md)
+- #3 已用现有灰模实现 Unity 前窗开合；Blender 独立精修前窗样件仍未接入，不能混为同一成果。
+- 新访客文字沿用[三语维护流程](localization-authoring.zh-CN.md)，同时维护 JSON、保存表、字体与静态/动态绑定；独立年代演示和开发叠层不属于已经补全的主场景访客文案。
+- 共享场景、Prefab、字体及公共输入仍按 Issue 协调单一写入者。账号与贡献按实际证据记录；已核实五个参与账号，六人完整姓名映射和正式轮值安排仍待确认。合并者不自动取得原创贡献。
+
+## 问题、验证覆盖与限制
+
+| 问题 | 当前结论与证据 | 尚缺内容 |
 | --- | --- | --- |
-| Windows PC VR，Unity 2022.3.62f3c1，OpenXR / XRI 2.6.4 | 六人使用一致环境；暂未决定独立 Quest APK | [环境指南](getting-started.zh-CN.md) |
-| 真实尺度灰模优先，先做单手拿放与可靠复位 | 验证核心交互后再投入精修；1.5 kg 是交互参数，非历史重量 | [当日决策与证据](activity/2026-09-23-helmet-prototype.md) |
-| 精修前窗保留为独立 Blender 样件 | 尚未接入 Unity，不能宣传开合已经完成 | [模型范围与来源](helmet-prototype-reference.md) |
-| 产品事实、原型假设与评估结果分开 | 不是实物扫描或经馆方确认的精确复原 | [来源记录](external-resources.md) |
+| 平滑返回与热点进度共存 / QA 截图后旧帧时间 | #24 新增生产输入下 1/3 热点访问状态回归，322 次共存断言通过；两次体验失败经 Editor 帧等待修复后 76 项通过，未改运行时或放宽断言。[本轮整合与证据](activity/2026-10-06-pr19-main-integration.md) | 真实握持/返回舒适性、其他视角遮挡和声音尚待人工设备检查 |
+| 剖切球柄临界方向跳变 | #3 评论后复现约 39.6 cm 跳变；61db42c 修复，40/40 连续性及原交互/拿放通过。[修复过程](activity/2026-09-30-section-continuity-review.md) | 真实手柄手感、非均匀缩放和设备性能未验证 |
+| 年代淡变取消 / 旧转换覆盖 / Mark V 文案 | [#15](https://github.com/Twispra/XRmuseum/issues/15) 已关闭；1734815 修复，23 项/退出 0。[证据](activity/2026-10-06-pr10-completion.md) | 独立模块结果，不代表主场景接入完成 |
+| 字形误报与入口未实际绑定 | [#16](https://github.com/Twispra/XRmuseum/issues/16)、[#17](https://github.com/Twispra/XRmuseum/issues/17) 已关闭；实际字符校验、保存表、四组入口与字体已补齐，随后 #18 扩为三语。[模块](activity/2026-10-06-pr13-completion.md) / [场景](activity/2026-10-06-pr14-completion.md) | 繁体独立审校、头显阅读和空间遮挡检查仍需人工完成 |
+| 热点颜色复位、近距误抓、英文残留、信息卡遮挡 | [#20](https://github.com/Twispra/XRmuseum/issues/20) 经 #21 关闭；12 项生命周期测试、381 项热点集成检查及原探索回归通过，四进程退出 0。[修复及报告](activity/2026-10-06-hotspot-repair.md) | 结果只覆盖记录中的保存资产、模拟输入和单眼截图，未排除其他视角的旧菜单遮挡 |
+| Unity 批处理退出挂住 | 早期及 #18 一次运行出现退出异常；#18 改用 Editor 延迟退出包装后复测成功，#21 四进程也正常退出 | 只能说明指定后续运行退出正常，不能认定所有原生退出异常的根因已解决 |
+| 历史截图元数据含机器绝对路径 | #2 合并后的 Copilot 评论指出，当前旧 capture.json 仍保留该路径；见[核对记录](activity/2026-10-06-project-records-audit.md) | 保留原报告；可另补相对路径说明，不覆盖历史产物 |
 
-新决定在对应任务/PR 写明原因及取代的旧决定，合并时更新本节或链接专项设计说明。不能根据旧聊天中的“假设方案”认定六人已同意分工。
+文档 #22 的审计只读并复核历史证据；本次 #24 在 Unity 2022.3.62f3c1 / Windows 实际重跑六组：体验 76、观察 206、探索 1486、主场景 84346 次断言、本地化模块 11、热点 EditMode 12，六进程均退出 0，267 个输入哈希匹配。主场景含热点 768 次（其中跨功能 322 次）及大量重复三语文本检查，不能相加或当作独立用例总数。[本轮整合与证据](activity/2026-10-06-pr19-main-integration.md)。此前 #21 的数值继续按其报告保留。GitHub Copilot 运行不是 Unity CI；未把 AI 初检或合并操作写成另一位成员 APPROVED 批准。
 
-## 验证覆盖与缺口
+真实头显/双眼、坐姿触达、舒适性、可访问性、用户学习评价、设备帧率、当前 Windows 构建和完整用户流程均未获得本次可核验证据。LFS 展开与有效网格检查仍适用于后续打开工程，不能凭对象库 fsck 或旧测试通过忽略模型导入问题。
 
-- 头盔 v02 几何 / FBX 回读通过；Unity 旧验收 89 项检查、10 次拿放通过，含 Home、实体 RESET、掉落恢复。[原报告和环境限制](../artifacts/helmet-interaction/qa/README.zh-CN.md)
-- 旧报告没有记录当时 git SHA，不能事后伪造；新验证器会写独立运行目录、版本状态和输入哈希。本轮复测结果由[协作改动活动记录](activity/2026-09-23-team-collaboration.md)链接。
-- 本轮在提交 `f354815` 的干净 worktree 上展开 LFS 后，通过 90 项检查、10 次拿放和两张静态预览；比原验收增加模型有效网格检查。该代码现已合入主线，记录来自此前的模拟测试，不能当作合并后新跑的测试或实机验收。
-- 新 worktree 曾只含 LFS 指针，物理测试通过但预览失败；现已补充开工检查和网格断言。成员应检查实际资产已展开，不能仅凭 `git lfs fsck` 成功判断可运行。
-- 未完成真实头显/手柄验收、完整官方模拟器键鼠人工测试、学习效果/舒适性/无障碍评价、当前版本 Windows 构建和真实参与者研究。
-- 手模型、双手承托、Unity 前窗开合、烘焙/LOD/设备性能优化仍是候选工作，不是已经排定的六人任务。
+## 待办入口与最小下一步
 
-## 建议的下一批任务（尚未认领）
+任务认领继续使用 [GitHub Issues](https://github.com/Twispra/XRmuseum/issues)，不另建总任务表。以下保留有来源的未完成事项及本轮整合交接；负责人未知时留待团队认领。没有因本次整合自动认领实机、课程提交或年代接入。
 
-1. 在已合入 main 的头盔版本和明确 XR 设置上进行真实设备检查；分析本地 `preloadedAssets` 差异，决定应保留哪种配置，并记录设备结果和对应构建。
-2. 六人确认目标受众、一个完整学习任务、成功条件与可访问性需求，再拆成互不重叠的任务。先做能从进入、理解、操作到离开/复位的完整流程。
-3. 按设备和学习流程反馈决定下一项功能；前窗、手模型、性能优化分别建任务，避免六个 AI 自动都去精修模型。
+| 事项与来源 | 性质 / 依赖 | 最小下一步与验收目标 |
+| --- | --- | --- |
+| #19 主线整合交接 | 本轮已完成冲突整合与六组验收；Issue #23 / PR #24 | 核对 #24 实际合并版本、fetch main 并按 Issue 释放共享路径；使用已保存场景进行实机/试听与完整流程检查，不再重复整份合并旧 #19 分支 |
+| 实机完整流程与当前 Windows 构建 | 课程要求及既有记录中的验证缺口；先确认稳定的整合版本、目标设备和 XR 设置 | 团队认领设备验证，绑定 commit 记录进入→理解→操作→回顾/离开→工作人员复位；提供对应构建、设备/runtime与结果 |
+| 繁体语言审校、阅读/布局/声音舒适性 | #18/#19/#21 已明确限制；#24 整合交付后仍需声音人工检查 | 由实际成员人工检查术语、三语换行及不同视角/坐姿可读性，记录问题与版本；不以字体覆盖推断体验合格 |
+| 年代接入与历史造型 | #10 仍为独立占位模块；主场景接线与造型未接受为本次整理任务 | 先由团队决定是否纳入学习流程，明确历史依据、资源及验收，再建任务；判断分支探针 65378b9 是否适合保留 |
+| 历史证据可移植性 | #2 评论仍有未处理项；旧报告不得覆盖 | 建议另补相对入口映射和缺失本机日志说明，检查 clone 后可访问证据；优先级为本次 AI 建议 |
+| 课程资料、Canvas 最新 AI 政策及教师访问 | [课程依据索引](course-requirements.md)中的未核验事项 | 有课程权限的成员核对正式要求及访问安排；本次无法从 GitHub 推断 Canvas 已提交或 AI 使用已获批准 |
+| 受众/学习目标、手模型/双手承托、精修与性能 | 既有候选方向，未形成已认领任务 | 先确认受众、成功条件和设备反馈，再取舍；不自动分配六个人或把候选写成需求 |
 
-团队尚未提供六位 GitHub 身份或轮值整合人，未自动分配负责人、设置 CODEOWNERS 或修改分支保护。首轮共同采用机制时应确认整合人、每人一个当前任务、共享文件的写入顺序及官方资料访问渠道。
+## 历史与接手入口
 
-## 接手入口
+此前逐段“仅本地 / 待审查 / 准备合并”的状态保存在[本次整理前的状态页](https://github.com/Twispra/XRmuseum/blob/18d7f8a09c29bb0c757b8a80bdc245b0fe40b785/docs/project-state.md)，原活动记录和验收报告未覆盖。日期快照只描述当时状态，当前结论以本页上方核对版本为准。
 
-[AGENTS](../AGENTS.md) → 本状态 → 对应 Issue / PR → [操作与协作指南](getting-started.zh-CN.md)。已有功能见[头盔使用说明](helmet-interaction.zh-CN.md)；历史工作见[周记录](weekly-activity.md)。不要从完整旧聊天恢复工程状态，也不要为预览而重跑生成脚本。
+[AGENTS](../AGENTS.md) → 对应 Issue / PR → [协作指南](getting-started.zh-CN.md) → [每周记录](weekly-activity.md)。日常打开已保存的 MuseumStart，不重跑旧生成器。当前分支保护的管理员回读接口在本次返回 403，无法独立确认最新设置；本机 19:43/19:51 的配置记录仅是当时本地证据，不能据指南旧句断言远程仍未启用保护。本次未更改任何保护或账号权限。

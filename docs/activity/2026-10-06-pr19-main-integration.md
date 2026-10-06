@@ -8,7 +8,7 @@
 
 开工原目录 `E:/XRmuseum` 位于 main `b4e1886c9762a85926ef3bf58db92500a29176f3`，有未知 ProjectSettings 改动与未跟踪活动/审查材料，原样保留。fetch 后实际 main 为 `18d7f8a09c29bb0c757b8a80bdc245b0fe40b785`，已含 #21 热点修复。整合分支 `codex/integrate-pr19-main-2026-10-06`；双父合并 `623e5a3` 保留双方提交与原作者；没有把全部源成果改写为整合者原创。
 
-共享 Scene、头盔 Prefab、文案和字体由 Issue #23 协调，本次一位写入者。并行辅助只有一个指定 Editor 回归文件可编辑，其余为只读复核。未改 Packages、ProjectSettings、公共 XR 输入、Models、Blender/FBX 或目标平台；现有 LFS 15 个文件已展开，未以 fsck 代替工作区检查。独立的仅文档 PR #22 不自动合并。
+共享 Scene、头盔 Prefab、文案和字体由 Issue #23 协调，本次一位写入者。并行辅助只有一个指定 Editor 回归文件可编辑，其余为只读复核。未改 Packages、ProjectSettings、公共 XR 输入、Models、Blender/FBX 或目标平台；现有 LFS 15 个文件已展开，未以 fsck 代替工作区检查。验收后 fetch 发现用户侧已于 21:31 合并仅文档 #22，main 前进到 `7f1a2b8f548078eee50cd83051e86e68769a07b9`；本轮保留其贡献/问题/周索引并增量更新。该次 main 变化只有 5 个文档，产品代码/资产与被测版本完全一致，无需重复 Unity 验收。
 
 ## 整合结果与发现
 
@@ -41,4 +41,4 @@ Codex 复核 8 张本轮截图；可见近处菜单遮挡、右缘裁切和演�
 
 完成：#19 与 #21 保存成果兼容整合、三语/字体冲突、共存回归、六组验收与新证据。按用户授权通过 PR #24 合入 main；实际合并后在 Issue #23 记录 merge SHA 并释放共享路径。当前无自动验收阻碍；需组员后续实机和人工检查，不能宣称已取得成员审查批准。
 
-日常打开保存的 MuseumStart 即可，不运行 HelmetPrototypeSetup/HelmetExperienceSetup 或展厅 Builder。未来接手先 fetch main、核对实际 SHA 和 Issues；原目录的未知 ProjectSettings 与未跟踪资料继续保留，不纳入本 PR。贡献/问题的全面索引仍由独立文档 PR #22 更新，合入新的 main 后应同步该 PR 的旧快照状态。
+日常打开保存的 MuseumStart 即可，不运行 HelmetPrototypeSetup/HelmetExperienceSetup 或展厅 Builder。未来接手先 fetch main、核对实际 SHA 和 Issues；原目录的未知 ProjectSettings 与未跟踪资料继续保留，不纳入本 PR。已保留 #22 的全面贡献/问题/周索引，更新 #19 的本轮整合与验收状态；21:05 原审计和各历史报告不覆盖。
