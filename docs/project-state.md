@@ -1,5 +1,9 @@
 # 项目状态与下一步
 
+**2026-10-06 年代模块整合：** PR #9、#12 已合入实际 main `97b8810`。本提交将 #10 同步到该主线，保留双方文档；Issue #15 的淡变取消、瞬时替换与 Mark V 文案修复已在 `1734815` 复测，23 项通过、退出码 0。模块仍独立，未接入主场景；本提交准备合并 #10，实际合并状态以 GitHub 为准。[本轮记录](activity/2026-10-06-pr10-completion.md)。以下为各阶段历史快照。
+
+**2026-10-03 年代切换模块（新分支）：** `codex/helmet-eras-2026-10-03` 基于 fetch 后的 `origin/main = 8e75e71`，新增**独立模块** `MuseumVR/Assets/Museum/Features/HelmetEras/`：数据驱动（ScriptableObject）的头盔年代切换、事件通道、Editor 一键生成工具、自动校验工具，以及无头显时的键盘预览。**刻意不修改 `MuseumStart.unity`**，展示 Prefab 不引用主场景任何对象，接入由整合人执行。已在编辑器内验证三个年代外观切换正常（Unity 单眼渲染 + 键盘 / 组件右键菜单，**不是头显实测**）；排查中修复了 1 个编译错误、1 个「年代未配置材质」和 1 个「淡变把物体刷白」的实现缺陷。三个年代目前的差异**只有占位材质颜色，还没有造型差异**。自动化校验工具已实现但本轮未运行，因此没有 QA 报告。真实头显、无障碍评价与 PQ604A/B/C 构建仍未验证。详见[模块说明](helmet-eras.zh-CN.md)与[活动记录](activity/2026-10-03-helmet-eras.md)。
+
 **2026-10-03 信息安排调整（已发布待审查）：** 开工 fetch 后 `origin/main = b40eb9f652a3935595575e6a5ec0f287c09777b5`，PR #5 和 #7 已合并。[Issue #8](https://github.com/Twispra/XRmuseum/issues/8) 在 `codex/exhibit-information-2026-10-03` 完成原主场景的信息分层、按需详情与高级工具、演示期间背景文字避让，保持原键盘输入。最终探索／布局 1469 项、原观察 206 项、原拿放 90 项均通过，错误 0、退出码 0；源码哈希匹配，真实头显和用户测试未做。源码 `2504ccd` 已推送，[PR #9](https://github.com/Twispra/XRmuseum/pull/9) 指向 main，未合并；[发布哈希核对](../artifacts/exhibit-information/qa/20261003-publish-audit/audit.json)确认与被测文件一致。[方案](exhibit-information.zh-CN.md) · [实际截图、证据与交接](activity/2026-10-03-exhibit-information.md)。以下“待合并”文字均保留为历史快照。
 
 **2026-10-03 探索功能发布交接：** 已发布 [PR #7](https://github.com/Twispra/XRmuseum/pull/7)，待审查。`codex/helmet-exploration-2026-10-03` 提交可选 AIR / VOICE 探索、16 秒设备模型动画、提示与回顾，源码 `c2bf63c`。351 项动画验收的源文件仍匹配；发布前新跑原观察 207 项、原拿放 90 项均通过，错误 0、实际退出码 0。探索 PR 依赖未合并的[环境 PR #5](https://github.com/Twispra/XRmuseum/pull/5)，以环境分支为 base；先合并环境、再将探索 PR 调整到 main 并审查。没有自动合并。[版本、证据和接手步骤](activity/2026-10-03-exploration-release.md)。真实头显、用户评价与当前构建仍未验证。以下记录保留各阶段当时的状态。

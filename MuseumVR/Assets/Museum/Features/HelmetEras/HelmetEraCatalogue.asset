@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3393d76ef0f6493c8801e5e9428d3212, type: 3}
+  m_Name: HelmetEraCatalogue
+  m_EditorClassIdentifier: 
+  eras:
+  - {fileID: 11400000, guid: d075f04541d56b24ca3d3a9e29e4d7ae, type: 2}
+  - {fileID: 11400000, guid: d8b9ec9dc4402894c84db6ee54b8fbde, type: 2}
+  - {fileID: 11400000, guid: 47d37e5e00422ff4a8928e7275598797, type: 2}
+  defaultIndex: 0
