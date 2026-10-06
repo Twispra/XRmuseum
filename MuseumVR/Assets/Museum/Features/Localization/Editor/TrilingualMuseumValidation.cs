@@ -54,6 +54,8 @@ namespace Museum.Localization.EditorTools
                 inspection.SetCutaway(true); yield return Wait(.15f); Audit("section " + language);
                 inspection.SetCutaway(false); panel.ShowHelp(); yield return Wait(.15f);
                 Audit("help " + language); Capture(panel.transform, "help-" + language);
+                panel.ToggleSound(); yield return Wait(.1f); Audit("help sound toggle " + language);
+                panel.ToggleSound(); yield return Wait(.1f); Audit("help sound restored " + language);
                 panel.CloseReading(); panel.ShowExploration(); yield return Wait(.1f); Audit("welcome " + language);
                 exploration.RequestHint(); yield return Wait(.1f); Audit("initial hint " + language);
                 exploration.ShowReview(); yield return Wait(.1f); Audit("empty review " + language);

@@ -1,0 +1,1042 @@
+{
+  "baseCommit": "d432a37d1107f4b4f1ca2aa64c7819f229549dab",
+  "stagedFileCount": 78,
+  "matchedCommittedTestFiles": 186,
+  "testFilesNotIncludedInCommit": [],
+  "matchedFiles": [
+    {
+      "path": "MuseumVR/Assets/Museum/Editor/HelmetPrototypePreview.cs",
+      "worktreeSha256": "e75a928d85e25d47a5ee8a38b3d85b08c1bdb8ed20cf3a58e4c38343d652c9cf",
+      "indexBlob": "90088fd3980da90c40e6bcfe642b8a42eba16969"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Editor/HelmetPrototypeSetup.cs",
+      "worktreeSha256": "5e0109543336bbfb6310993c232822a6d8b0e761ba374fb925d1c281565dd99d",
+      "indexBlob": "54c94975253f2e738e43ebda3d22a9821f52e96c"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Editor/HelmetPrototypeValidation.cs",
+      "worktreeSha256": "8ae8f07a1f5fd4f4e0cc2a7845995845089c6cdf25640e653caaffc9d03f1567",
+      "indexBlob": "6ec2cf477a7fffd21531228d16fbbaecf9d7b699"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Materials/Brass.mat",
+      "worktreeSha256": "8a6b8af9189f4e3a7eafc595d512220444169f6e74ebdf447e0ace7d9ceba2e0",
+      "indexBlob": "b6ac12e83af0004679099665a3705952e43ca996"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Materials/Deep Teal.mat",
+      "worktreeSha256": "4d7434f5a79fa15090712401e0d80272c2ca4a8d65d13f35ce0fe2f2f9260584",
+      "indexBlob": "554c3f9e3e18385fc92827a8bb549cfaf2a7e04d"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Materials/Display Plinth.mat",
+      "worktreeSha256": "82a0f749a8e95b25248a61fa36931dcf9711720e8d625c6d092662c4d1e218b9",
+      "indexBlob": "9076661372dde600ad484727c0abe7dd8fd3ee68"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Materials/Helmet Clay.mat",
+      "worktreeSha256": "c0325f449fb1f33ab8e30450f16b53e6dc5f77c2a2b1b93553db608e7a331fbb",
+      "indexBlob": "c5f3ca8017483f485a133fe43f27dbf2407dc524"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Materials/Helmet Plaque.mat",
+      "worktreeSha256": "5c0b6651c043d864a51d89f13f3def9c85286ce36f4e01c64961f4d0bef9525f",
+      "indexBlob": "305aff2ee341603f75bfb330f3fda2b040a53128"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Materials/Helmet Recess.mat",
+      "worktreeSha256": "e9d146609472000e00e0944572098af0810a722e65519a7d1762bc5ce7793a51",
+      "indexBlob": "cb3e2f0c77a937fb38618feaa0e926303204257c"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Materials/Helmet Reset Brass.mat",
+      "worktreeSha256": "03439e79dee5b796337578953cb7189f16985e9f07384387543e905b7765f643",
+      "indexBlob": "b1c0a32e41bf930070068afe8d372dde1787365b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Materials/Helmet Trim.mat",
+      "worktreeSha256": "8e6e8d2eea8ab1978c5593aa9a6f97d5ed0846208b99ad1439c098161fd945db",
+      "indexBlob": "ddb13fa8ea1c32edfbe40e24e9e33b6761639738"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Materials/Stone Floor.mat",
+      "worktreeSha256": "60d4341939eb43d0bb7527402f89c037309fd55da76f000dfa710cee93afa612",
+      "indexBlob": "9faad4ae1bd423a40649bc47e12fa7eb72f7866c"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Materials/Test Object Teal.mat",
+      "worktreeSha256": "ff1596b51da0e6a417269eafb7558f906e41b3cf440ba221377a6044780a9d4b",
+      "indexBlob": "47309e777880c00a40f2da056871ad59749d8aa1"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Materials/Warm Plaster.mat",
+      "worktreeSha256": "714d9e3f30d26aa603181ef80c64a74aaf8281bc6b12706862d4e8bc9928d23a",
+      "indexBlob": "05981a64d92ef2c9be6f01d43d7c5e699bc8c259"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Prefabs/GrabTestObject.prefab",
+      "worktreeSha256": "80ab506321a35cb429720a47e9c8c285254eef503323f6b2d2037c4cbd1c6d4a",
+      "indexBlob": "040857bb9dac7b71a4113387a58446f2ca01b0a6"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Prefabs/HelmetExhibit.prefab",
+      "worktreeSha256": "788ed00f8d9c3276333ed7d2bcf091cb1df09227694bc3744c1f6b8c76ab9337",
+      "indexBlob": "1bc4fa2923d0395d7e5c305b7c5009a0188b5a05"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+      "worktreeSha256": "f73911eb22ee19b2cbee92018c1a3741611bd11be048cd4024ec185dabecc914",
+      "indexBlob": "3a0deb8abd0ba718f59a9e21ef9ed4d8c8e35642"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Scripts/HelmetExhibitReset.cs",
+      "worktreeSha256": "7b0ed74a93cb2c6311a28dda061064293f99ee808aecdc361356028d59f07761",
+      "indexBlob": "cd781983a2409a30736b6e9de14fbf0dda1397ca"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Settings/MuseumRenderer.asset",
+      "worktreeSha256": "1f8ef9ff32de6fc6f039c9b361d9973d105daf5483e1d5e72f6ed9122402f24e",
+      "indexBlob": "569456fe3f239478b31f2bbb6d5e651dae2d0676"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Settings/MuseumURP.asset",
+      "worktreeSha256": "190b4844d865c3b941bf432c345c2f826ac2aaf7d91e78af537db3974e4811e8",
+      "indexBlob": "758e252442cf7e981529699b09451dfcbfe3ea2c"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Settings/XRGeneralSettings.asset",
+      "worktreeSha256": "df714e06983a3f2079b129c12d672c7a70a88e1e95bf8f098f207fdf0f550c59",
+      "indexBlob": "cf3853ce81a41f279fb11e1b300f32df01741993"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/HelmetEraCatalogue.asset",
+      "worktreeSha256": "3d21e7b9104238962d5a10eccac78425ae6aba27fdd53d90d9bd32c5b44b08ba",
+      "indexBlob": "f49a87f1d3ef1ff1a6d1a9fc1cd678c7186ec481"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/HelmetEraChannel.asset",
+      "worktreeSha256": "a926f7f7e235795564fef70f84593edb5f805c7a882fdc2f6250e3ad8c5db87a",
+      "indexBlob": "7599bd1be5e8217b6f0da68deefb1326913bd4e4"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Editor/HelmetEraSetup.cs",
+      "worktreeSha256": "5fc639496ed78463cfb0d3e14e0125dee2146bbaee9b7c92d672c0a8566697e7",
+      "indexBlob": "651a46015191efb7a977fa2ac4bb29615e6a0532"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Editor/HelmetEraValidation.cs",
+      "worktreeSha256": "54ec4e808a024fd5959a572773f57f96babda40829689b89fc53f94a1b0b12cb",
+      "indexBlob": "825afb964beb7ed05a03fdaad76c5f78bb667fbe"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/1839-Fitting.mat",
+      "worktreeSha256": "92a95ece7c56b9bcb4a6728078c1d36f68864ecf2bcb56dc8d2fb8c59264a410",
+      "indexBlob": "c48dc52cf91f1e6d6ca085319c2eec4a9ad0f3a7"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/1839-Shell.mat",
+      "worktreeSha256": "f218950819e8d05a1a44371e66fd44802a8abb1525df280df55358e994292b16",
+      "indexBlob": "1b7381282caa24c3e149a5ba39d8e5a0890a9217"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/1839-Window.mat",
+      "worktreeSha256": "4d0b180f285f1367fd8ef9d3097c75dd02e70c863caac64f2ebd792c79594923",
+      "indexBlob": "58c77b46db1ffa9b2235314f524dbd78fa50ece2"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/MarkV-Fitting.mat",
+      "worktreeSha256": "8d499cbf83e815f4a9b61c1735623843e093e2b0924d996f5989d26a7f4f6847",
+      "indexBlob": "b6fdbaf2bedcd677f8e265ce71a516980ba374b7"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/MarkV-Shell.mat",
+      "worktreeSha256": "af24db71049f67c02d05eecff62d56ed33b04c6d193a2d22b4be412fcc81a232",
+      "indexBlob": "90cb4e2e1f7f49d29faba7c689cebe8bc46af7ca"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/MarkV-Window.mat",
+      "worktreeSha256": "2a82653e0843c390d5351c6af1e5623888f6d3a7536d9e4bee054b1e3e20deed",
+      "indexBlob": "0eeebaf7944c0a7276b12ef1380107b137594643"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/SuperLite-Fitting.mat",
+      "worktreeSha256": "e60549729caf62e39ba7f8c4970b459dc798bab43d752c40bea39c161c5d75ad",
+      "indexBlob": "fc7309cfc54965d009623027f62b2604c7eb7493"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/SuperLite-Shell.mat",
+      "worktreeSha256": "4fa57cb056498d86c6f7bc34266f511d32d6fb9d7229f2c88ec5a8fc2370a442",
+      "indexBlob": "4dd2ee2e495d4e7d903f4fb9f4d37492d70628c8"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/SuperLite-Window.mat",
+      "worktreeSha256": "537a3ef841daee56939c690fbb8101798e0d5d34c96fe613c265be6579bcf0ed",
+      "indexBlob": "9ddac9445e596d8c93da83094ded0463ab3a3aa2"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Prefabs/HelmetEraShowcase.prefab",
+      "worktreeSha256": "6270d5a5a3ff98eb2f82778b3d18fdc6e41d79f775ad95bdb4d927651358206e",
+      "indexBlob": "8af05c32e9ba3ed542e05bb6436b1211ece25500"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Profiles/Era-1839-Standard-Dress.asset",
+      "worktreeSha256": "17e194822644cc5105e28745211b4953662ca6e039b74f480b3a5d6add273159",
+      "indexBlob": "9cbe96d905aecb234c887794307f44ed269d3530"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Profiles/Era-MarkV-Standard-Air.asset",
+      "worktreeSha256": "d691ae110cb5cf4b83b7daaf7bf1ed937bf06481bdd8670318863328b9e37620",
+      "indexBlob": "1b3df663dd15aaf4c91f79a23a71dd4a259837a4"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Profiles/Era-SuperLite-17B.asset",
+      "worktreeSha256": "f7b0e44b98a99c66c91e6ab7a8e5c10438ba9e3f3f74a7dccf83b2b66c05272b",
+      "indexBlob": "e386c0bfb38455f4c90267b65e05b431902962c9"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Runtime/HelmetEraButton.cs",
+      "worktreeSha256": "b660635392ae92befcca92dcd36fd882d0494bed8b05ba8821e6dd02cadd0e0b",
+      "indexBlob": "d842db0b0887b7060806502e5cc2e74fd2d0f407"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Runtime/HelmetEraCatalogue.cs",
+      "worktreeSha256": "09cd843a85a758396a842c98b0776f7a0ec9e78e8c72d0be0cb6a87c0a386cdb",
+      "indexBlob": "41bfbb9a742d4763b1b026e0118cec73af853ebc"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Runtime/HelmetEraChannel.cs",
+      "worktreeSha256": "b1a56ea44bf62b2e941e3a986d20657fc0fc578267acc557831cc9517ce0f850",
+      "indexBlob": "7c84ef43dca87bdabfe75c51adb942d2e89bc739"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Runtime/HelmetEraPlayModePreview.cs",
+      "worktreeSha256": "31cd2bceed3b63fc652f243083bce7f90b359d7950a6d98f0d787c764b2547ec",
+      "indexBlob": "b5e9e063c9b381fc64795cf6d8f32d77611baa97"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Runtime/HelmetEraProfile.cs",
+      "worktreeSha256": "d147e828a7aceabdfada36577052930c4225abd5ba391f9367e745169df5c113",
+      "indexBlob": "91a794c4bf58185924ef4be4591d8e0247b71a2b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Runtime/HelmetEraSwitcher.cs",
+      "worktreeSha256": "aeb65fae36e3988d6fe9ca4ca8dfe93980ddc5545a6a4c5baee91544e650e718",
+      "indexBlob": "9049c4675804348ab0e2181146d3221ce264d775"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Data/SectionMeshData.asset",
+      "worktreeSha256": "1460f4a12159f3b4ba34f0f21c431ef526401eb1afa7f1c7df8016a1b8e08210",
+      "indexBlob": "a187b3557714a6b427a58a0d3399d178e1d9e8fd"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Editor/HelmetExperiencePreview.cs",
+      "worktreeSha256": "141b998fcee2effabfb5219b28d0ecd51ad12a24c7891327a9e61ef9f22d2af8",
+      "indexBlob": "182f109d538cffec3695436d52f748d6932a8f65"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Editor/HelmetExperienceSetup.cs",
+      "worktreeSha256": "63a64192691148a644b6704ef2e4bb0ddd34d70680e7bb8286c9c7881fe1f84c",
+      "indexBlob": "dd1746578ded432ab24e40418bdcd7520dc1b9fe"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Editor/HelmetExperienceValidation.cs",
+      "worktreeSha256": "ccbb5c7ea280ac8810699123360755d81bd8f7153f0546cfadc657ad78beb510",
+      "indexBlob": "6582306b4aaa428ef285db1223b84d7af5d293aa"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Editor/HelmetRearConnectionsSetup.cs",
+      "worktreeSha256": "16443aa1189ec45191d27bf3d91e2248132eb492f99e1d338e5c74952f1a40c8",
+      "indexBlob": "9f5a77721d335f57740aaf6e02c1c74c340b728a"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Materials/SectionFace.mat",
+      "worktreeSha256": "ded98da7a9113fdbdb2e5bf445f26309c4b6055677c83662765a9f38c39b5732",
+      "indexBlob": "4ca1b0a1152e810fccecc251786f049a2716316a"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Meshes/TelephoneGooseneck.asset",
+      "worktreeSha256": "3d565c1a29a3a260aada033dc151f6259eded02106f62804684e5526adf14555",
+      "indexBlob": "5ee9a8b80e7f5cdfb590be3407572e36ac77eb31"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Meshes/TelephoneResponseRing.asset",
+      "worktreeSha256": "d2bf1cefbcc224c517e6e568d6eba1f82c3bf69c1cc99e1ed730c18a17e90e1f",
+      "indexBlob": "6f80c71af4e5383e43f8511d7b758874b216b30d"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/HelmetMechanicalFeedback.cs",
+      "worktreeSha256": "dff2038a60fccd8705402a3235cd1f6415e19a6d922c9d7b5ea89bb9520d7bb5",
+      "indexBlob": "6ca1279079ec5e285c4034843cc515e4292c1725"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/HelmetRearConnections.cs",
+      "worktreeSha256": "8fd221ad9409e9a25fa71896951d76d60c60d083923dda64cc0c7713ebcfb3e1",
+      "indexBlob": "ec8a314027de58d89b2f6f7f00aefa53f58340d5"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/HelmetSectionMeshData.cs",
+      "worktreeSha256": "06418f464fbec78e08e43707ef48584fa76f18bc35aedfc8145067f7ebb50ff4",
+      "indexBlob": "3006816e455251aaa6fd82fd8e2d83299e7a7d7d"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/HelmetSectionSurface.cs",
+      "worktreeSha256": "bb1d8b54c878ea09207233b45e81346cbeae4294f9089bf95a80c5476390d65a",
+      "indexBlob": "e5bd200f3706b9c3e2aab424d544b71dc7917c26"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/SectionCapGeometry.cs",
+      "worktreeSha256": "181bf051dbeb0dcbb9cea6ed208e27d98245fd743170d468c04f98e7711f2723",
+      "indexBlob": "dd37be71fc06c102adce3972c5ed7a48ce0d056a"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Shaders/InspectionGlass.shader",
+      "worktreeSha256": "57217f1f4e5229179047fb8c5cd1b21cb9f9b41ec5a8feebd3d701c44d9202b0",
+      "indexBlob": "2bf3e19db5306a90a55f8cc90e8ea804a23d201a"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Shaders/SectionFace.shader",
+      "worktreeSha256": "d4d1b650c6b5bc84c32c845a73ee212930e1cb5b1f7da16a6e558a3e972c126f",
+      "indexBlob": "b51d483093940dd6e9b46d3e7042b148a7f11ed5"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationSetup.cs",
+      "worktreeSha256": "d71eb77e70b9aff5ed781acaa619e2b894939b94589e7c39ed8e1656dd2af784",
+      "indexBlob": "fb6b95b126a6b75866ec95c7ecf438bba3e456ab"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationValidation.cs",
+      "worktreeSha256": "0911c2a00b5b6b508ebe32e050ad0d76110d6b5c5176220de0a62c8d529ab4d8",
+      "indexBlob": "76575e166bc92f89a93a79de4c76af0ea83410ff"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetInformationLayoutSetup.cs",
+      "worktreeSha256": "70351e1406fe1e1c8ddfe53f423da0739dbdbf04949750a7c3e1da60cf0bdae9",
+      "indexBlob": "9f51896f53f15cad949fe6e0b1faf4ff4a38e3b1"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/AirSignal.mat",
+      "worktreeSha256": "2c567ff03bd4e21c5394bb70af973a63b542696006a19ef2eb183eb383af3369",
+      "indexBlob": "8250db1bca0989332491f78e7355a685cb82e5bf"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/DiagramInk.mat",
+      "worktreeSha256": "837ad73801a720af0f216d9a2e53cbc3d083754e5ac6e0890c6ea3a15d1a58b7",
+      "indexBlob": "81e0d8f39f6ca474e0cd46c7b43dfcf5b037bafe"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/InformationControl.mat",
+      "worktreeSha256": "8459bec8ef5f18b6daaa4afafbcb7d6e6da182ec586dc0b0fd52539ad9d27b3a",
+      "indexBlob": "835a5e2041d6a26f76d62096fd161c3b033a636c"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/InformationPanel.mat",
+      "worktreeSha256": "3a4b40a9447389e7604b93c0f7a67e341a09ce167ab760d621b4df89f96a8934",
+      "indexBlob": "955719aa52a369f6ad5957327de748bb3dd78acf"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/VoiceSignal.mat",
+      "worktreeSha256": "a4daff4a9f7619de45ac2ff681cd2f128850de2beb4b6a18552e2f2420728606",
+      "indexBlob": "f350f2cfb3b9be5d43fd1ace7fa1433a7c3e8b63"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs",
+      "worktreeSha256": "a079a28bab3a19e9df6ed463b02ffe9594e167e212dfd2bf351b84845283d543",
+      "indexBlob": "8b01396d67c21e643767f631bba4b2a181d94585"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetDemonstrationModels.cs",
+      "worktreeSha256": "9dbe6768ec09d68f84d6920513f7299945a741c8996cf8ed2787f428025f6e1a",
+      "indexBlob": "db0c1fb96cae33769b700a52a99c33cb1c19ae62"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationButton.cs",
+      "worktreeSha256": "c93f7f06dbc02a46c41c429ebd247bb35dea912cc43e4aeb3e24fc51eee0cb86",
+      "indexBlob": "1136ba00ccc21a7f0acf08209096f3783f41f323"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationController.cs",
+      "worktreeSha256": "c8b97f12728793071f004480cb78c94b966e489b48d4c9a139935967a11a99b3",
+      "indexBlob": "23329b579961dbd4de537467672ed1e1261fdf23"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationHotspot.cs",
+      "worktreeSha256": "fc6fd3a6a160e517f07db79eb888295c46405a71e19c540ad75f05ac2cec88d4",
+      "indexBlob": "6a17424575b9670a2c53ae9925d1a1d020cde13a"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationPanel.cs",
+      "worktreeSha256": "064dcfda75a704d7e8cf72b76c64332e89e7d9a840a312166a8094efa294b3c0",
+      "indexBlob": "47d1b1bca6d7b2e502c5f7da00c56401a36ec5aa"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Demo/HelmetInspectionDesktopPreview.cs",
+      "worktreeSha256": "0a4eac233f5a94592c4d499bb09117780979aa09959b553a18c2bff361717706",
+      "indexBlob": "a3f8c37e6f74d34a631f392096e64359c923cb23"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetAdvancedInspectionSetup.cs",
+      "worktreeSha256": "d6641580d92a1df30f010f97987ab3fb6f55f2ab147fce4ca0d3749ac53e7589",
+      "indexBlob": "10e1484196b6fb50844cf279901fec2b08f38e27"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionBuilder.cs",
+      "worktreeSha256": "653237a0f251be940c51689d9d536876f6cc9ac81841adad3e3cc88e8822f342",
+      "indexBlob": "877e56cc21e903a31dd2db98f157728918fb8de6"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionCapture.cs",
+      "worktreeSha256": "09fa20efab5601ffdea9460f3bfe4d20d82135e2524f456b97d87ae6b9bc2170",
+      "indexBlob": "79e68fa92418babd95e2f33182de4e545991d5ef"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionValidation.cs",
+      "worktreeSha256": "68bb365c7043ecec1aa4b74693cd633c43dc2880ed906adca99054fe10e7ad29",
+      "indexBlob": "47883807aeb6a4f1769e88b277d11d710611716b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetMainIntegration.cs",
+      "worktreeSha256": "39665bfbe7e6b624cff099fe4bc8e876c9df8c4a654dd30ec280f4fe35290126",
+      "indexBlob": "2e94e82ca5fb79994163dc644806cf55fd0d7611"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetSectionContinuityValidation.cs",
+      "worktreeSha256": "a1d544788ac496cac4e3f7205f232089f564b960b0d810c24ce0488e4c9d5f20",
+      "indexBlob": "d409a9e8e9fb767d7b1d616b3f99e1e5a4821839"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Brass.mat",
+      "worktreeSha256": "625730228f20779eab50ae11c860f6d51c3e75381435ed4ce97662d8c72790a2",
+      "indexBlob": "9c3cca1a29cda5c41270badd7917944e88d4e76b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Controls.mat",
+      "worktreeSha256": "0428022bf03d4c12ce70c7d562a1fdc7330b82a7d6677eb4336a8f2557a11ba1",
+      "indexBlob": "8e99f09c8cf27d57ac6fd6c0227b8729f077c469"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Copper.mat",
+      "worktreeSha256": "df47e6dc3a2947ae4b91c9350b79bcf10a584cba3b8d7f133da1b80ed52fb159",
+      "indexBlob": "3d15c0f0d0837b4178d6190fad48cb482f23e9d7"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Plinth.mat",
+      "worktreeSha256": "04d8773f9362647f6e514661535a10722621c7f4a217de5999cef9ea91cd04b5",
+      "indexBlob": "6794565c694adffd551807d49405e356c54a3ec4"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/SectionTool.mat",
+      "worktreeSha256": "4397f15169b74f97e70962ff2a40366aa37a8db2ed176650253613250dbc7fe7",
+      "indexBlob": "c23f719a4cae087ff3bd202d4466f8a16e2d312e"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Studio.mat",
+      "worktreeSha256": "db7a4aeb3032baa54c40f73488497f7e75215164d8d224dc9f6e830717c3c829",
+      "indexBlob": "05425eb926a5576fe3c8be8ada20651ef0015540"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Window.mat",
+      "worktreeSha256": "d2b4f0ec55366d01c681ab302dc09bad92824ebbb9be17930f4a9bb5348c9689",
+      "indexBlob": "10828d244fa2a078548b3a0eea1465bccb3a55d7"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+      "worktreeSha256": "4c2f5b43b7a700fd43a93db5074f75b83e2b0fcebc7caaa49898ae3cf478679e",
+      "indexBlob": "d2ac683edc631b0e2832463fc99c7e57355453c6"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+      "worktreeSha256": "298ddae6a9c80005bba17e2523a09ea3eaa66f115ba5091fa304b9a4049e3bc9",
+      "indexBlob": "4bbeddb12fd2810ac3063a46522e0e0c249fc081"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionControls.cs",
+      "worktreeSha256": "c9543448b80d98b3337653a1e9db9ce56288ed81fdef90618c38be10f7998eb3",
+      "indexBlob": "5f666686e6e3a0a85e5b20275df4ca77d092f04b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionPalette.cs",
+      "worktreeSha256": "489d557ef7ae20b6f15b814ae7387ff368e6500c64213d685799ea1f4cb56ab1",
+      "indexBlob": "aac17adb3940e5ce789e8471dcf7fd22ca314281"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetSectionInteractable.cs",
+      "worktreeSha256": "24f5c13d982ff114070d699458329bc3742e943a49a1be2c6d8cbaaa98e5ce82",
+      "indexBlob": "fdaf17bab6e095d3f10aa786d23c9d9e3ca1ed8b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetWindowInteractable.cs",
+      "worktreeSha256": "02149f675d4bb498a309103ad1c02cb9f943b1ee7bb5c2d349893653279e5f9e",
+      "indexBlob": "a49ae218778d0eb96a7d4acf53cd9b4065a38781"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity",
+      "worktreeSha256": "8db3b80af4a5f0cd8e0688efd47ebbb2dbeb81a10ff76ea79b6dc17c9bf7d780",
+      "indexBlob": "93e9b04def3ab4da7fa0c9fc8a53f52e51660cb8"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Shaders/InspectionShell.shader",
+      "worktreeSha256": "4a902387e648eabc269f74706797489967529b7c1bdf63b90535a4132be7dcb3",
+      "indexBlob": "74a53abf1ac83c89c0254d4429c50f83f99ac339"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/LocalizationIntegrationValidation.cs",
+      "worktreeSha256": "96b4001888defa5c4a7917f8e64f906c5ec2455ab7d8fdc842c0d95e47f0c05d",
+      "indexBlob": "a4b45bca9a7d4bedc559c2bd5c1fb97ef70b2ffb"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/LocalizationSetup.cs",
+      "worktreeSha256": "b3d113d3073d25782df82dcc6b85e2ccfc4d388b287cb8a101f9e14d409b681f",
+      "indexBlob": "c3d91f14839a967fdbf4a9be32a014d8d470d884"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/LocalizationValidation.cs",
+      "worktreeSha256": "e0b0c47cd808fc6929d79eed6530c4b3a191c7e1c7f38e5f11e7b3c3682deacf",
+      "indexBlob": "c671ab2f5e807e9c9374a5d4a8049737b6bbe5ca"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/MuseumIntegration.cs",
+      "worktreeSha256": "6881a95a630fe348765b3eb5b9d675b69c266f538f7f922c1ea7c5d74a3667ca",
+      "indexBlob": "532e626bbfcb97c2952d1351a65980fbb58ff33d"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/TrilingualFontBaker.cs",
+      "worktreeSha256": "46dcfd1e0a6a38138b2714bed353b3c12f238950703c01a722e5023a6d78a1e3",
+      "indexBlob": "fe94ddee789917998b025bd8e3e2c5008d507e6b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/TrilingualMuseumSetup.cs",
+      "worktreeSha256": "27f2663a3d5ed307ad0cff7b5acb2afae3433d58e2d9eab8956e6d1adfa6b701",
+      "indexBlob": "4756c26f4cb44c947fb9b812a22ebbb97eb05a8b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/TrilingualMuseumValidation.cs",
+      "worktreeSha256": "b883460e2a7f620f3b7e0f20054648503025ed1728be207393d313bca7ad67a9",
+      "indexBlob": "2e0b33fc3d472408cc4e6211b53b6ef7825dd5f7"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset",
+      "worktreeSha256": "d9f037be73f430e50b221ffc8af6d1c3a81f1604fd09ea29854b6f4c1f095fed",
+      "indexBlob": "258683f92a767349a1a864111e976da0a07a9d00"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset.ttf",
+      "worktreeSha256": "2d6bbfb2eefb349545599597bb014979c3ef3989503c390d72342e99670d2482",
+      "indexBlob": "ffcd7343af051f7994050fd8205bad9d747a0d55"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Materials/Language-Board.mat",
+      "worktreeSha256": "0ce40c8d73285028acff8e2c806865c2b167b9692c896b008034f3391ce127fb",
+      "indexBlob": "212c4d6fc1c89c882cda8c0e4d00f6290dd9d223"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Materials/Language-Button.mat",
+      "worktreeSha256": "e6b1adc94ae7b521aaff4edb77a471395c94598d0e158319ae5deef47626e075",
+      "indexBlob": "7ec65a4e5a50cc5add7795a7b190b554c3681979"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Materials/Language-ButtonPressed.mat",
+      "worktreeSha256": "f984e3703d975693a10fd0cee36369f33a08e08b68bcb64be1acfca807ab2c69",
+      "indexBlob": "09c991bb549943caa464d492b5d16ceb05faafda"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Prefabs/LanguageShowcase.prefab",
+      "worktreeSha256": "5d84ce609e270341a26a2f2ed981b81923c8731c8d05c4abd8e2d0e06ea22dd1",
+      "indexBlob": "67c9dffef0f9783f1584c7bcf7d9b32085dac41a"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/LanguageButton.cs",
+      "worktreeSha256": "e8b1a6e861dd5ad3e1b8e583afc3abac7336700b860ffc29d62ce4a2b1e13b3b",
+      "indexBlob": "b95aab288124444550adc6dc71986ca7f29ab6c2"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/LanguageChannel.cs",
+      "worktreeSha256": "28a4de1a4018d8796aff33b659aea5e107d71523fa4c39aeeb42f708c35ac32c",
+      "indexBlob": "b4815c4f240cd82d1af482b284ab4a558779f9fa"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/LanguagePlayModePreview.cs",
+      "worktreeSha256": "77e8c2712c71e906e86fd8ec445e49d6f066b39b30193e15863468a005930808",
+      "indexBlob": "3df9d9b3ede0c2f8148cc87f28d5e7105c60ec19"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/LocalizationTable.cs",
+      "worktreeSha256": "0a778034c79203c8442de8462f62c888df56a2a49768892e80f643a8a60fad7e",
+      "indexBlob": "ed5ac63bc787ca8f8a26b415ea68964e1af32dd8"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/LocalizedSourceText.cs",
+      "worktreeSha256": "62834489aa61faa39ec1d493829b619d4421b12bb7a2fdc32d6e9e1dbd99b02e",
+      "indexBlob": "6c5702cddb5f228bab2adf0082dc69d57ec3a81e"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/LocalizedText.cs",
+      "worktreeSha256": "d313b975247e661cdf4433a76b4d1a770e926fb48fbe6ceaa2175bf57dfd8e0c",
+      "indexBlob": "e949e2f12f04d36e19483bdef62f318af118342a"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/MuseumLanguage.cs",
+      "worktreeSha256": "5d702a81c0973d85287e9075cb4dbf0db5c8c4464fb36684a0c8489e5a41b6f1",
+      "indexBlob": "e2dd5a6c5413890755b2e8628427ad502755450e"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/MuseumLocalizationRoot.cs",
+      "worktreeSha256": "1182a09d548aa03ee4041634b4bac11307fd87afd257d4eea4d776607e0a6671",
+      "indexBlob": "435af02ed41d7fd2e6bcb0c905986d93a4274f0b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/MuseumText.cs",
+      "worktreeSha256": "b6acc17d1ccc2d99fe41d5cbb023d9f3a0ad7bd93d6ad8f9206019b0f7d6a537",
+      "indexBlob": "47d3bbce8a62efdc60dadbb901903515c4274644"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Scenes/LanguageDemo.unity",
+      "worktreeSha256": "d80c4e07d78f25eb96afa2bb7d4a4329ad948c4817e02bedd841065ecdd0a018",
+      "indexBlob": "b7f3f93f2a1395fcb1af6c8b86a8968ea4c7e270"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Tables/LanguageChannel.asset",
+      "worktreeSha256": "6daf526510bce19fd480a138a22ea18f4cc2bcd4602c75478a4c8a641d29f2fd",
+      "indexBlob": "3444e097dffe331f535c067908f17a5ab19df4b1"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Tables/LocalizationTable.asset",
+      "worktreeSha256": "57c991bd3180964dd4acaf37842a3d838d9c4f91ee52ac13ca0e56b4c09bb94d",
+      "indexBlob": "f802ecc7df047f424e83ae8e6314183f5ea8c395"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Editor/MaritimeGalleryBuilder.cs",
+      "worktreeSha256": "9a1352068f767fa6162b3b415ee85901d2b651d36d91573e540b8b5cb3ba2aec",
+      "indexBlob": "8a58134c32a3d3b33e6098f98d493fccaccead59"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Editor/MaritimeGalleryValidation.cs",
+      "worktreeSha256": "d1533d599e42b4ec5b70e30d614d8891e7de4208639d3ff49438f460df7a7b52",
+      "indexBlob": "f90478ca3aa8f2aaf7adf968dcdbd02082720f0e"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Bronze.mat",
+      "worktreeSha256": "2ea003bd56b441323c89e52e7471676d3bae70c33d4b7ac165294151d010f667",
+      "indexBlob": "01a8d0871a526207620dad4250640fd2cc2aa945"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Contour.mat",
+      "worktreeSha256": "dd3d47286f1c1a5e0901b306a568a1e50a9bd24452f9c7cd824881e2d432e395",
+      "indexBlob": "b5ed7937213d92fdfc73443f784d3c60f541b8a8"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/CoolLight.mat",
+      "worktreeSha256": "f7e94b51717df51895d5123fe714930e671af530d900da14478a2910a9ce4c5e",
+      "indexBlob": "43fba1d350c8f1062e0b721fe956b71481098b50"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Floor.mat",
+      "worktreeSha256": "4c79f49e570fbbffd3283a254bd83e79bc7f38bf4256265f9b69bdd18186345f",
+      "indexBlob": "364501ed6de1a7c0e7de5905aa95bc922a47d5fa"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/FloorSeam.mat",
+      "worktreeSha256": "e0c2198dbe2963f17c973d101a5c5ee68a295cc5774ab7f650efc54ed1e84bc0",
+      "indexBlob": "57445ab600633b532fd01ed39231abe202b567d4"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Graphite.mat",
+      "worktreeSha256": "26c80e47fa698316898285d53c261e4269812ee4e63caa70dbaaf98b50256a37",
+      "indexBlob": "d9df3afb5c7def8e155a85768b5664ef245c665e"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Ink.mat",
+      "worktreeSha256": "a377f84cbc39f9500af289c5e7441677fd1a70d8f9bcf5b7424c018eda78b02c",
+      "indexBlob": "5cad90d747e54f8adf25c03bd3ecb49a5b3ccb54"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Limestone.mat",
+      "worktreeSha256": "9c51ddd500f3684c6857bb50dfe5e1cf1585fddaf82a11ab433d0f29aeedd778",
+      "indexBlob": "aa5801dff49a944ff634aae776fa656b0fc01814"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Navy.mat",
+      "worktreeSha256": "8fdfa0b4ef33eef48634550109f39063b6df83e4d262f188fe15a1b9baeb2c01",
+      "indexBlob": "ead051f7d3df5e902236fb915e92b4fbaf04ea01"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Ocean.mat",
+      "worktreeSha256": "bb4cc7d6422ddfaa81f194db05d967aa3daf012b449863d25df1250c72dd32ec",
+      "indexBlob": "d65078d0023056633ef702d135dbd5b64cb29d24"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Porcelain.mat",
+      "worktreeSha256": "7b635f2bcbc1821b289aed27c7b79df65e6eafcb9b4b94cb4fd4b111b01aafe8",
+      "indexBlob": "922e20363625ce5ab7ddbc6a12d59eaea83d550f"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Walnut.mat",
+      "worktreeSha256": "52e6856aa9a07823eb1eb1cd09ef7fdb0ad2a8d02001fd78210d3fff3a6df423",
+      "indexBlob": "41ca4e3cc783163ecce63ea83f83356db781fd79"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/WarmLight.mat",
+      "worktreeSha256": "e58845ac570516aae80cd9d7d0e43e7512e6aacef3b2c53734b6ccf3f6414289",
+      "indexBlob": "f0433c2d9a624c3c3b6c3fdc03f0fc3619a7eb33"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-bronze__Bronze.asset",
+      "worktreeSha256": "d1d23c6bcea9cad59f5dbe51ae3f868d4237b184a84957b76ecb95d8a3dba56a",
+      "indexBlob": "01772b7cd778e4b63b8f53810440f74cec7badc0"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-frame__Limestone.asset",
+      "worktreeSha256": "93292c1d3e3ba50eb62233be222d65bb3f381ae96581ab3b3d25df2690f3cf91",
+      "indexBlob": "1d8f2b9c48f675d7d0887c1134f152676d5aa24d"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-inlays__Bronze.asset",
+      "worktreeSha256": "36eee2319e0e0fee1a1be2b99d5ae78eda3cbe2e8fa4e5adfb695cc35e557f67",
+      "indexBlob": "868220f05ada00df29e4c603446db14dd2a39eac"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-panel__Navy.asset",
+      "worktreeSha256": "3f06775a65293a0b67d5a6993f88cf6acbdbc1edb7ac0fada640fc73f96c162c",
+      "indexBlob": "1af57ee5dd95aad982b8f47a0001fe938d502d2c"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-rhythm__CoolLight.asset",
+      "worktreeSha256": "ed39f2c7939eb704785a10d7302cb8569d670fc41f79559ddf01b82a474c15c1",
+      "indexBlob": "ddcddf249d4e561185588e8d664d6757110971ad"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Baseboards__Graphite.asset",
+      "worktreeSha256": "8946b561468af9a708cc87df95a1bbfbaaa53bb1179e1175fdef310211856603",
+      "indexBlob": "40bec12cae3908971a27765c3e440c00b4ba3aed"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Ceiling-ribs__Porcelain.asset",
+      "worktreeSha256": "9ec26fecbfa4bee840d944ea086d53c919156a24304fd6c46f0a765026747dac",
+      "indexBlob": "b03916deb56a68b4183b773b9e5226298d9e18e0"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Ceiling-slots__WarmLight.asset",
+      "worktreeSha256": "d1dc666f80d11c7c0c4bb49cd3c06741da370bb19fa24cf967a80281ce893c71",
+      "indexBlob": "e1555adccd4f01fb4ae24f6bfe3323caebf9304b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Connection-bars__CoolLight.asset",
+      "worktreeSha256": "46171bc4a7b28cb175199eddfd7e6ba578c3a60b369e70630f709c236bf05b98",
+      "indexBlob": "4b6ee2ccad1c650d0817e8fb27a5e4c7a5aa6693"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Connection-mount__Graphite.asset",
+      "worktreeSha256": "69e6485fbbd43f5ef295cb9570ffdef9dc4e95d3ecf32aa19dfaedeb10db6c81",
+      "indexBlob": "5259b9d6538a5c7acad1455cd7e13970f0ddfb51"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Connection-sign__Graphite.asset",
+      "worktreeSha256": "fca4e1e993272cef7d45e89bbbcb41c2ecc0d890a1cd9e57a73f1522e29d60b9",
+      "indexBlob": "164be81b74b75000eb0755a98fe9fd58125e2d68"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Connection-strands__Bronze.asset",
+      "worktreeSha256": "3f6d1165bca4b55f5e10d819dc6b94ef5bdd097e0f0d063cd360a662eec0b6e4",
+      "indexBlob": "97a7b1f9c76a4e40008c79a83e43e4fe89898e84"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Connection-strands__CoolLight.asset",
+      "worktreeSha256": "6fb210bb0f979ddadbf040b02b83532581f50dc422bec0b005e9d61da0bd611d",
+      "indexBlob": "c2de089771aca4cc550081c0ee9ef4b6981d167b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Cove-light__WarmLight.asset",
+      "worktreeSha256": "6e1eba3b97682787fdbf92389fc3f55322a69a705de4ba8df75f80da6bcb495b",
+      "indexBlob": "56817dbd02c1a6ddb8ed2ffcf255e19206e1c787"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Coves__Graphite.asset",
+      "worktreeSha256": "7d9f5fb85e53dc0639e2bae5d8da1d52b085ee54448cc527ce528fd28aa8767d",
+      "indexBlob": "5e1c873746e701eb8e40ceb37ec5b24571eb5c16"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Feature-wall__Navy.asset",
+      "worktreeSha256": "f613583d894645ef0b8b7b4e5ef8ecd66a9e251907e243ccae4392c5934e7abd",
+      "indexBlob": "39e331357e7def1c23cf2ecca7a4b9afd6c98512"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Floor-joints__FloorSeam.asset",
+      "worktreeSha256": "0e44889c6532725c90816a104a668741b5b8fa918d4ff6842979e2660f5fbde4",
+      "indexBlob": "7f144c3d6c6c8b486fc81bb1c46f46a2257f7fee"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Floor-perimeter__Bronze.asset",
+      "worktreeSha256": "c52e7017e3523708be4b3720413beeac3e297a29bbcee4c7ccab872df4ef0090",
+      "indexBlob": "8ab4c4394df8cb1c7769cb9c3446a35be1b4aa60"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Inset-cap__Bronze.asset",
+      "worktreeSha256": "8d2460e0ca4a458760b41e8acbb8544d2b284818f8a257b235b7bdf23db8778b",
+      "indexBlob": "fe278a546a54b2e31976e196628948c719431a77"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Medallion-hairline__CoolLight.asset",
+      "worktreeSha256": "dd6bbbb68ab3b3cfc62a2eac4dc4a1cbf3a7018c4542130f1dfad520a34768a9",
+      "indexBlob": "88d03fa03565db8026fc6710051b8812e8017ace"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Medallion-rim__Bronze.asset",
+      "worktreeSha256": "e0031c341bfe0538cc7fdb518e2fcab098e54d1fc7b8faa410b5292d013ece67",
+      "indexBlob": "4c556d9595a8c4825aa0a744b94d49267175fd1a"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Ocean-contour-relief__Contour.asset",
+      "worktreeSha256": "0c9bc0c9b95f58b68d0cde14a9f9f20a41102c7bad7bfcd0f221b04ad4294b6a",
+      "indexBlob": "c451f3efc1259bcb1a2b9ffc12771ec311820749"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Ocean-medallion__Ocean.asset",
+      "worktreeSha256": "fdd59d158ec9c91eeb5c05c5733bb854316c71161c47f49885d92b2aa864d9e5",
+      "indexBlob": "87f836be872181c64fc5875b6d6382124c36ef4f"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Pendant-bronze__Bronze.asset",
+      "worktreeSha256": "d4fa5f3255bb09f2ca534eda700c323ea44711a26a4d3cdf083223afab7c23cd",
+      "indexBlob": "ccf52fee9078462bb2a6f86e72c6b84217f52797"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Pendant-diffuser__WarmLight.asset",
+      "worktreeSha256": "ba7705d7cce37faa2006519cebb874e9091b6698760efe1202ab5bbc68fa618e",
+      "indexBlob": "ed9c069736e40277daff08b452c0e43a7fbcc7c4"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Pendant__Graphite.asset",
+      "worktreeSha256": "1a64428a661ef73382fd8cb0a1992a22202fbebab46e3b133d8fc0068b7a56c8",
+      "indexBlob": "f077816eaf4ac2d442e55945982c00c41d1cf3ed"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Pier-inlay__Bronze.asset",
+      "worktreeSha256": "f02bca29ba98a1c23fe4dc13e24333ebce793a7aeb7fe7feb6fb4a909c9867a4",
+      "indexBlob": "5ee0a013976154903f80b8d897864dc18a140fb0"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-base-glow__CoolLight.asset",
+      "worktreeSha256": "e908cb5a93e60a94f9b4049e99f48921a2bbc91ef1d56376e5d6d8312b1f5393",
+      "indexBlob": "4b7cec85b224c9df04b356575896c76b72d68c07"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-foot__Graphite.asset",
+      "worktreeSha256": "fba266d44fc9ff1f986f76c1c51c881c01e05b956729f777759c1f90f75cef84",
+      "indexBlob": "70ef9957d840d06d6f286baa84c6a7557464d37e"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-inset__Navy.asset",
+      "worktreeSha256": "60f09bf72605c7ce1d4680d22af582af4b7a4693d283f823ea903c0c3facd133",
+      "indexBlob": "a3980921c9c86faba5454e129b68e21cf4a24d32"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-trim__Bronze.asset",
+      "worktreeSha256": "2f209187d2b57707344d66f17a5ff458f5ff8a43d44cd0424099dc6436cc5e5d",
+      "indexBlob": "b837b85ba6025cbd73747b04a0657abe438314ce"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Porthole-fastener-studies__Graphite.asset",
+      "worktreeSha256": "5d4f07a0add7508963875b99fa3e4a9dad6cb5ee7d01a7549f90d6c7975ee8d5",
+      "indexBlob": "7ee5d62d35f7f66a127bbfa4c4cdf7ae0064e5de"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Porthole-inner__CoolLight.asset",
+      "worktreeSha256": "8dffaffcbb8191ff2fcf5d3a5f71337e6d35ce6a9de8fb26da40549f54274785",
+      "indexBlob": "f9de4711e656506d277e0ee3fcc8035a4270cb62"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Porthole-study__Bronze.asset",
+      "worktreeSha256": "5e813b93484476dda8ef0d78d92f01866602cf71c0fd836d1451e18e7efbccee",
+      "indexBlob": "33ffc04d8b094b1df5ece34d6b16113588d262c6"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Rear-baseboard__Graphite.asset",
+      "worktreeSha256": "44134555566f050d843db64ef61695461b7151a6082ab1b6fd73847e81251add",
+      "indexBlob": "a5b441fc12d1ae287374d1892862ea8f03b6cfe5"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Rear-cornice__Limestone.asset",
+      "worktreeSha256": "cdef891892183f4abca0fae6aa38fb169b7509eebd9cbd3a133630537293231b",
+      "indexBlob": "87abd05851817393b123bd32bb66f71dfc8c95d8"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Rear-cove__WarmLight.asset",
+      "worktreeSha256": "beca545852a82dd88654ce5d16288e04c213c6d7c2dfb6798e7e60fdfbeba50e",
+      "indexBlob": "920cca53d28c66958845b9ca20ffd6b623dbd870"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Rear-fins__Walnut.asset",
+      "worktreeSha256": "e55900d9bc4b5553a5f8291ea622f5ffd6e629ebf4edfd85b049716746e6edac",
+      "indexBlob": "ea1433a1beb7e389998f8cd49ce59406d762ac6a"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Side-diagram-frames__Bronze.asset",
+      "worktreeSha256": "f785a9960e6557e808717664d264a3f5e973388f8f6298794b35b60b46529246",
+      "indexBlob": "3c7a20025942d1639137c76ab0089158cf4cd2ff"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Side-diagram-ink__Contour.asset",
+      "worktreeSha256": "1d4fe6f7587d877f219165626aa0a24d4fb62e790f4a40d215edc38d76189dee",
+      "indexBlob": "8e98f6cec70004bb575c862ad6f30fd87a7ec024"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Side-inset__Navy.asset",
+      "worktreeSha256": "6162203957ede199546912ceaad4d43d94143b62dc6a453772f75eb084c215c1",
+      "indexBlob": "220624fc9799f3470d21a1f2dda4af9699e2db6b"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Spot-housings__Graphite.asset",
+      "worktreeSha256": "adaed3520b55642679ebd5578fefbc8907ac65c5cb3b4e53430e0c98cbc6a5ae",
+      "indexBlob": "c5d2ee1ca689bed288575c1edca1828edac66c70"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Study-mounts__Graphite.asset",
+      "worktreeSha256": "8cef1c58e7d3deebd6c999837dc889a23a19e31091bca7ed75685259f822751e",
+      "indexBlob": "3d72d64741f397ab408776fc10c42409d6ce2627"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Study-stems__Bronze.asset",
+      "worktreeSha256": "a14599da0f8551722d9d39ce9c8230168c13855d98a80688ad77562725ebb216",
+      "indexBlob": "2f6d8d1214bbad678a0c8b4c11aa38daaeeb1808"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Suspension__Graphite.asset",
+      "worktreeSha256": "9edd79dcbc3e2ae4b2e310fab3b0f110180edac04166af5a4f5eb3cce7ceea28",
+      "indexBlob": "701a49296cb438d67981106d135d900c95c1ca14"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Wall-acoustic-fins__Walnut.asset",
+      "worktreeSha256": "dbc07aa81c5875ec46e8c0701979f1d8e1119550f20ab801c255932bcd594c7f",
+      "indexBlob": "53aac491603d267551e1b8da104a2830d6687776"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Wall-lining__Porcelain.asset",
+      "worktreeSha256": "f552a2d534fdb9fcf58145d65ebb48ce9b3c1b2fbe7183c9576d2ba1bcb72a2d",
+      "indexBlob": "7e6a3f80ffdd50620f3b38e7441aab8910bbe037"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Wall-piers__Limestone.asset",
+      "worktreeSha256": "72bd0c8acad586b68ee361dde340fe809e49987a3493538d9174a521d162fcc9",
+      "indexBlob": "5566fccaa10a63de1727402a2ff4f6b8c6f00312"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Window-graphic-bars__Contour.asset",
+      "worktreeSha256": "4836328cf62d65dcee5ee9b6ad936646ce7beb634d7e7f5f2f6e1f73c37830b9",
+      "indexBlob": "c503874057b36a3ca93b8db8826a9f8f2e28d056"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Window-graphic__CoolLight.asset",
+      "worktreeSha256": "85e575b79d92f85619e0f28b385cd0dd9fc125d01ce9cd0c267106c67ef32e3d",
+      "indexBlob": "76cb40673f6ed2a147c69559829d86dfcea26f60"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Prefabs/MaritimeGallery.prefab",
+      "worktreeSha256": "0747df4b788e31c584ca724822d09245a81b1442d4ebfea93c34fb0884aa5488",
+      "indexBlob": "d89447f55be8bb2c94acfdd67780dd7f12b9dfff"
+    }
+  ],
+  "newAssetReferences": [
+    {
+      "from": "MuseumVR/Assets/Museum/Features/HelmetExperience/Data/SectionMeshData.asset",
+      "targetMeta": "MuseumVR/Assets/Museum/Features/HelmetExperience/Meshes/TelephoneGooseneck.asset.meta",
+      "guid": "846287c32b5f03240aa5465d3fe9b1b2"
+    },
+    {
+      "from": "MuseumVR/Assets/Museum/Features/HelmetExperience/Data/SectionMeshData.asset",
+      "targetMeta": "MuseumVR/Assets/Museum/Models/Helmet/helmet-graybox-v02.fbx.meta",
+      "guid": "9a1f7900c9bdf714f8ba2209624c8442"
+    },
+    {
+      "from": "MuseumVR/Assets/Museum/Features/HelmetExperience/Data/SectionMeshData.asset",
+      "targetMeta": "MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/HelmetSectionMeshData.cs.meta",
+      "guid": "d3cd6b9bb16786247aaf01ff800fc6ee"
+    },
+    {
+      "from": "MuseumVR/Assets/Museum/Features/HelmetExperience/Materials/SectionFace.mat",
+      "targetMeta": "MuseumVR/Assets/Museum/Features/HelmetExperience/Shaders/SectionFace.shader.meta",
+      "guid": "f6d161e5ef5c8cb4f8452dd12fd51025"
+    },
+    {
+      "from": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Window.mat",
+      "targetMeta": "MuseumVR/Assets/Museum/Features/HelmetExperience/Shaders/InspectionGlass.shader.meta",
+      "guid": "1e05defe5aeccc04ea90f6826c603920"
+    },
+    {
+      "from": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+      "targetMeta": "MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/HelmetSectionSurface.cs.meta",
+      "guid": "4324cf6afadb83a4188de01504b0f736"
+    },
+    {
+      "from": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+      "targetMeta": "MuseumVR/Assets/Museum/Features/HelmetExperience/Meshes/TelephoneResponseRing.asset.meta",
+      "guid": "725e23b975993454c8f6b3b0c48f6f4d"
+    },
+    {
+      "from": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+      "targetMeta": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/VoiceSignal.mat.meta",
+      "guid": "00fc9e04527475148ab2ecab25d28005"
+    },
+    {
+      "from": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+      "targetMeta": "MuseumVR/Assets/Museum/Features/HelmetExperience/Data/SectionMeshData.asset.meta",
+      "guid": "1b901725a1b25894681c52e72f70a4d4"
+    },
+    {
+      "from": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+      "targetMeta": "MuseumVR/Assets/Museum/Features/HelmetExperience/Meshes/TelephoneGooseneck.asset.meta",
+      "guid": "846287c32b5f03240aa5465d3fe9b1b2"
+    },
+    {
+      "from": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+      "targetMeta": "MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/HelmetMechanicalFeedback.cs.meta",
+      "guid": "8ba47b1568ea5764eaf1bcbf07232d5d"
+    },
+    {
+      "from": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+      "targetMeta": "MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/HelmetRearConnections.cs.meta",
+      "guid": "258e74e4f6b16114bbc2d0538a4ae447"
+    },
+    {
+      "from": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+      "targetMeta": "MuseumVR/Assets/Museum/Features/HelmetExperience/Materials/SectionFace.mat.meta",
+      "guid": "65163716b6504154a831d9ae6a9c432e"
+    },
+    {
+      "from": "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+      "targetMeta": "MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/HelmetRearConnections.cs.meta",
+      "guid": "258e74e4f6b16114bbc2d0538a4ae447"
+    }
+  ],
+  "note": "186 frozen tested worktree files matched SHA256 and committed Git blobs after repository text filters. Existing metadata, original model, input, packages and platform unchanged. Release documentation does not change tested product.",
+  "productCommit": "484c5d47ae6ce36aa94bfd703d36bf1290f917de",
+  "pr": "https://github.com/Twispra/XRmuseum/pull/19",
+  "baseBranch": "codex/trilingual-museum-2026-10-06",
+  "date": "2026-10-06",
+  "preExisting570Unchanged": true,
+  "verifiedNewAssetReferences": 14,
+  "noUnityRerunClaim": true,
+  "portableEvidence": [
+    {
+      "path": "artifacts/helmet-experience/rear-delivery-20261006/features-checks.json",
+      "sha256": "8dba12351c1adbc6e79c4ffbe432fa943e7d333ca791e7bfdef505825f7c12cc",
+      "gitBlob": "050a687040f231234e7316666c4df79b04542d8f"
+    },
+    {
+      "path": "artifacts/helmet-experience/rear-delivery-20261006/localization-checks.json",
+      "sha256": "29b9a6dc8986edf0544e1fd06374834493a0bc5e1e0f1173f1f44008748060cc",
+      "gitBlob": "3c974cade3f3af9810f34e4de14b6f3382fb4c26"
+    },
+    {
+      "path": "artifacts/helmet-experience/rear-delivery-20261006/exploration-checks.json",
+      "sha256": "33228386b16d6f3b1941cd5d86ef7b0bf96e4d8e01bf1f00df0eaf00f9d5729d",
+      "gitBlob": "cb79bda3153828621b76cede2b71501fda4dd9c0"
+    },
+    {
+      "path": "artifacts/helmet-experience/rear-delivery-20261006/inspection-checks.json",
+      "sha256": "9b2e64e96abb05cbe62a06e19d1e84b2b011f82ba15f2a99f3a72d14a4db9946",
+      "gitBlob": "92fffed1c132fe4edc643233fa59c548be5f6ec6"
+    }
+  ],
+  "releaseDocumentationLinksVerified": 20,
+  "portableEvidenceNote": "Published derived-report hashes use committed LF blobs. Full original-report and tested-file SHA256 values continue to identify original developer worktree bytes; committed product blobs are mapped above."
+}

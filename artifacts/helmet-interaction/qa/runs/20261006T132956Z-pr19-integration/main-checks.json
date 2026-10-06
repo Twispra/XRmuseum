@@ -1,0 +1,128 @@
+{
+  "status": "passed",
+  "groups": {
+    "saved assets": 7,
+    "saved font": 2,
+    "structure": 53,
+    "saved binding": 16,
+    "saved visibility": 7,
+    "saved layout": 1,
+    "runtime structure": 2,
+    "runtime state": 1,
+    "input fixture": 1,
+    "XR input result": 10,
+    "progressive visibility": 60,
+    "rendered text": 186,
+    "text layout": 21,
+    "legacy visibility": 30,
+    "QA camera": 6,
+    "XR input": 20,
+    "runtime lifecycle": 2,
+    "public exploration API": 1,
+    "helmet hotspots": 768,
+    "trilingual main scene": 82884,
+    "logs": 1,
+    "source integrity": 267
+  },
+  "assertions": 84346,
+  "note": "Extracted summary of repeated localization checks, not the full original report.",
+  "examples": [
+    {
+      "kind": "saved assets",
+      "name": "table, channel and font exist",
+      "detail": "No assets are generated.",
+      "passed": true
+    },
+    {
+      "kind": "saved assets",
+      "name": "English initial language",
+      "detail": "English",
+      "passed": true
+    },
+    {
+      "kind": "saved assets",
+      "name": "unique keys",
+      "detail": "entries=205",
+      "passed": true
+    },
+    {
+      "kind": "saved assets",
+      "name": "exact accepted bilingual text: museum.sign.masthead",
+      "detail": "EN=Beneath the surface; ZH=海面之下",
+      "passed": true
+    },
+    {
+      "kind": "saved assets",
+      "name": "exact accepted bilingual text: museum.sign.gallery",
+      "detail": "EN=THE DIVING GALLERY; ZH=潜水展厅",
+      "passed": true
+    },
+    {
+      "kind": "saved assets",
+      "name": "exact accepted bilingual text: museum.sign.arrival_brand",
+      "detail": "EN=The diving gallery; ZH=潜水展厅",
+      "passed": true
+    },
+    {
+      "kind": "saved assets",
+      "name": "exact accepted bilingual text: museum.sign.intro",
+      "detail": "EN=One object. Many ways to explore.; ZH=一件展品，多种看法。",
+      "passed": true
+    },
+    {
+      "kind": "saved font",
+      "name": "all current table and native-label glyphs already stored",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/LocomotionSystem.cs",
+      "detail": "312c6c44a4a69de75d8788fef5d68f08c5520a2665223838113abf856c01cce4",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/SnapTurn/ActionBasedSnapTurnProvider.cs",
+      "detail": "31ca0f5b7465c7877ee4f2646b40299c73c50e90eee2e7c620c6e834b537233e",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/GazeTeleportationAnchorFilter.cs",
+      "detail": "df159854f1dc2041b08aa8b1f295d6afbfe4068f5da9d1cc0acc31a33b8471e7",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/TeleportationArea.cs",
+      "detail": "76e524d98fdc655d56b96e9e2fda9f1b1e4b7487bdec3797c9343b64bff0c74c",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/TeleportationProvider.cs",
+      "detail": "06cf2fc1d48d2bf6f74f7752d064e1896bc4ee8e3ce82fb56d6d1ada6acfd0ea",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/manifest.json",
+      "detail": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: Packages/packages-lock.json",
+      "detail": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03",
+      "passed": true
+    },
+    {
+      "kind": "source integrity",
+      "name": "validator left saved file unchanged: ProjectSettings/ProjectSettings.asset",
+      "detail": "6b3aa93c403f4a0697a561f117cea95e529db9965f59dcadfcb4533031e1e2b0",
+      "passed": true
+    }
+  ],
+  "originalReportSha256": "40dbb941dae1e319729075b83457a4e84c7e2e2c1bd37e506b8f8009639011c8"
+}

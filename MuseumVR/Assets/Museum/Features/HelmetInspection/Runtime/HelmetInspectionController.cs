@@ -29,6 +29,8 @@ namespace Museum.Inspection
         Vector3 sectionCenterLocal;
         Vector3 sectionExtentLocal = Vector3.one * .2f;
         float sectionOffset, targetWindowAngle;
+        float windowFrom, windowStartedAt, windowDuration;
+        Museum.Experience.HelmetMechanicalFeedback feedback;
         int observedResetCount;
         bool clipDirty = true, boundsReady, filterRegistered;
         bool interactionBodyPinned, pinnedWasKinematic, pinnedUsedGravity, windowPinOwner, sectionPinOwner;
@@ -40,6 +42,12 @@ namespace Museum.Inspection
         public bool IsHeld => grab != null && grab.isSelected;
         public bool IsWindowHeld => windowInteraction != null && windowInteraction.isSelected;
         public bool IsSectionHeld => sectionInteraction != null && sectionInteraction.isSelected;
+        public bool IsReturning => exhibitReset != null && exhibitReset.IsReturning;
+        public bool SoundEnabled
+        {
+            get { EnsureReferences(); return feedback != null && feedback.SoundEnabled; }
+            set { EnsureReferences(); if(feedback != null)feedback.SoundEnabled=value; }
+        }
         public Transform WindowPivot => windowPivot;
         public bool ReduceMotion { get => reduceMotion; set => reduceMotion = value; }
         public int ResetCount => exhibitReset != null ? exhibitReset.ResetCount : 0;
@@ -90,9 +98,12 @@ namespace Museum.Inspection
                 RestoreInspectionState();
             }
             if (!IsWindowHeld && !Mathf.Approximately(WindowAngle, targetWindowAngle))
-                ApplyWindowAngle(reduceMotion ? targetWindowAngle : Mathf.MoveTowards(WindowAngle, targetWindowAngle, windowSpeed * Time.deltaTime));
+            {
+                float t=windowDuration>0 ? Mathf.Clamp01((Time.unscaledTime-windowStartedAt)/windowDuration):1;
+                ApplyWindowAngle(reduceMotion ? targetWindowAngle : Mathf.Lerp(windowFrom,targetWindowAngle,t*t*(3-2*t)),reduceMotion);
+            }
             // XRI owns physics while grabbed. Once released, the inspection pose stays put.
-            if (IsFloating && !IsHeld && !interactionBodyPinned) ApplyFloatingPhysics();
+            if (IsFloating && !IsHeld && !interactionBodyPinned && !IsReturning) ApplyFloatingPhysics();
             if (IsCutaway || clipDirty) ApplyCutawayProperties();
         }
 
@@ -113,20 +124,22 @@ namespace Museum.Inspection
         public void ToggleWindow() => SetWindowOpen(targetWindowAngle < MaximumWindowAngle * .5f);
         public void SetWindowOpen(bool open, bool immediate = false)
         {
-            if (!isActiveAndEnabled || IsWindowHeld) return;
+            if (!isActiveAndEnabled || IsWindowHeld || IsReturning) return;
+            windowFrom=WindowAngle;windowStartedAt=Time.unscaledTime;
             targetWindowAngle = open ? MaximumWindowAngle : 0f;
-            if (immediate || reduceMotion || !Application.isPlaying) ApplyWindowAngle(targetWindowAngle);
+            windowDuration=Mathf.Max(.05f,Mathf.Abs(targetWindowAngle-windowFrom)/windowSpeed);
+            if (immediate || reduceMotion || !Application.isPlaying) ApplyWindowAngle(targetWindowAngle,true);
         }
         public void SetWindowAngle(float degrees)
         {
-            if (!isActiveAndEnabled || !IsFinite(degrees)) return;
+            if (!isActiveAndEnabled || IsReturning || !IsFinite(degrees)) return;
             targetWindowAngle = Mathf.Clamp(degrees, 0f, MaximumWindowAngle);
             ApplyWindowAngle(targetWindowAngle);
         }
         public void ToggleCutaway() => SetCutaway(!IsCutaway);
         public void SetCutaway(bool enabled)
         {
-            if (!isActiveAndEnabled) return;
+            if (!isActiveAndEnabled || IsReturning) return;
             if (!enabled && sectionInteraction != null) sectionInteraction.ShowTool = false;
             IsCutaway = enabled;
             ApplyCutawayProperties();
@@ -134,7 +147,7 @@ namespace Museum.Inspection
         /// <summary>Offset is measured from mesh-bounds centre along the local unit normal.</summary>
         public void SetSectionPlane(Vector3 localNormal, float localOffset)
         {
-            if (!isActiveAndEnabled || !IsFinite(localNormal) || !IsFinite(localOffset) || localNormal.sqrMagnitude < .000001f) return;
+            if (!isActiveAndEnabled || IsReturning || !IsFinite(localNormal) || !IsFinite(localOffset) || localNormal.sqrMagnitude < .000001f) return;
             sectionNormalLocal = localNormal.normalized;
             sectionOffset = Mathf.Clamp(localOffset, -SectionRange, SectionRange);
             ApplyCutawayProperties();
@@ -182,7 +195,7 @@ namespace Museum.Inspection
         }
         public void ToggleFloating()
         {
-            if (!isActiveAndEnabled || IsHeld || IsWindowHeld || IsSectionHeld) return;
+            if (!isActiveAndEnabled || IsReturning || IsHeld || IsWindowHeld || IsSectionHeld) return;
             EnsureReferences();
             SetFloating(!IsFloating);
         }
@@ -192,7 +205,7 @@ namespace Museum.Inspection
         public void RotateDisplayAround(Vector3 worldAxis, float degrees) => RotateRoot(worldAxis, degrees, true);
         void RotateRoot(Vector3 worldAxis, float degrees, bool suspend)
         {
-            if (!isActiveAndEnabled || IsHeld || IsWindowHeld || IsSectionHeld || !IsFinite(degrees) || !IsFinite(worldAxis) || worldAxis.sqrMagnitude < .000001f) return;
+            if (!isActiveAndEnabled || IsReturning || IsHeld || IsWindowHeld || IsSectionHeld || !IsFinite(degrees) || !IsFinite(worldAxis) || worldAxis.sqrMagnitude < .000001f) return;
             EnsureReferences();
             if (suspend && !IsFloating) SetFloating(true);
             Quaternion delta = Quaternion.AngleAxis(degrees, worldAxis.normalized);
@@ -214,6 +227,14 @@ namespace Museum.Inspection
             exhibitReset.ResetToDisplay();
             observedResetCount = exhibitReset.ResetCount;
             RestoreInspectionState();
+        }
+        /// <summary>Visitor-requested return. The immediate ResetInspection API remains available for recovery/fixtures.</summary>
+        public void ReturnInspectionToDisplay()
+        {
+            EnsureReferences();
+            if(IsReturning)return;
+            CancelChildInteractions();RestoreInspectionState();
+            exhibitReset.RequestResetToDisplay();observedResetCount=exhibitReset.ResetCount;
         }
         internal void RegisterWindow(HelmetWindowInteractable interactable) => windowInteraction = interactable;
         internal void RegisterSection(HelmetSectionInteractable interactable) => sectionInteraction = interactable;
@@ -283,6 +304,7 @@ namespace Museum.Inspection
             if (exhibitReset == null) exhibitReset = GetComponent<HelmetExhibitReset>();
             if (grab == null) grab = GetComponent<XRGrabInteractable>();
             if (body == null) body = GetComponent<Rigidbody>();
+            if (feedback == null) feedback = GetComponent<Museum.Experience.HelmetMechanicalFeedback>();
             if (!initialPhysicsCaptured && body != null && grab != null)
             {
                 initialIsKinematic = body.isKinematic;
@@ -298,9 +320,12 @@ namespace Museum.Inspection
             if (boundsReady) return;
             bool found = false;
             var bounds = new Bounds();
+            var rearConnections=GetComponent<Museum.Experience.HelmetRearConnections>();
             foreach (var renderer in clippedRenderers)
             {
                 if (renderer == null) continue;
+                // Keep the original inspection centre/range stable when adding illustrative rear fittings.
+                if(rearConnections && rearConnections.IsTelephoneSurface(renderer))continue;
                 var filter = renderer.GetComponent<MeshFilter>();
                 if (filter == null || filter.sharedMesh == null) continue;
                 Bounds meshBounds = filter.sharedMesh.bounds;
@@ -364,17 +389,19 @@ namespace Museum.Inspection
         {
             if (IsFloating) SetFloating(false);
             targetWindowAngle = 0f;
-            ApplyWindowAngle(0f);
+            ApplyWindowAngle(0f,true);
             IsCutaway = false;
             if (sectionInteraction != null) sectionInteraction.ShowTool = false;
             ResetSectionGeometry();
             ApplyCutawayProperties();
             SetWindowHover(false);
+            if(exhibitReset != null && exhibitReset.IsReturning) exhibitReset.MaintainReturnPhysics();
         }
-        void ApplyWindowAngle(float degrees)
+        void ApplyWindowAngle(float degrees,bool silent=false)
         {
             WindowAngle = degrees;
             if (windowPivot != null) windowPivot.localRotation = Quaternion.AngleAxis(degrees * OpenAngleSign, Vector3.up);
+            if(feedback != null)feedback.WindowChanged(degrees,silent);
         }
         void ApplyCutawayProperties()
         {
@@ -394,6 +421,13 @@ namespace Museum.Inspection
                 renderer.GetPropertyBlock(propertyBlock);
                 propertyBlock.SetFloat(CutEnabledId, IsCutaway ? 1f : 0f);
                 propertyBlock.SetVector(CutPlaneId, plane);
+                bool hollow=renderer.name=="GB_Bonnet_Hollow" || renderer.name=="GB_Corselet_ShoulderPlate";
+                propertyBlock.SetFloat("_ShellInterior",hollow?1:0);
+                if(hollow)
+                {
+                    var mesh=renderer.GetComponent<MeshFilter>();
+                    propertyBlock.SetVector("_ShellCenter",mesh && mesh.sharedMesh?mesh.sharedMesh.bounds.center:Vector3.zero);
+                }
                 renderer.SetPropertyBlock(propertyBlock);
             }
         }

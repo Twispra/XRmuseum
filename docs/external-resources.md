@@ -1,10 +1,16 @@
 # 外部资源与辅助工具记录
 
+2026-10-06 PR #19 主线整合：Codex 辅助逐项冲突合并、现有 Noto Sans SC/OFL 字体并集与 Unity 原地补烤、生产输入共存回归、六组批处理和截图/版本证据核对；责任与限制见[本轮记录](activity/2026-10-06-pr19-main-integration.md)。205 条三语文案、536 保存字形。源字体仍来自既有 Noto Sans SC 及其许可证，不引入外部模型/音频/图片或 package。以下旧“本地”条目保留为原开发时快照。
+
 2026-10-06 项目记录核对补充：已合入 main 的 [PR #21](https://github.com/Twispra/XRmuseum/pull/21) 沿用现有 Noto Sans SC / OFL 1.1，保留原源子集码位并补入 8 字，保存静态字体为 533 字形。Codex 辅助热点生命周期/选择距离修复、九条三语文案及适配、字体扩充/烘焙、卡片布局、自动输入测试和单眼截图复核，见[修复记录](activity/2026-10-06-hotspot-repair.md)。热点原始实现的 Codex 辅助声明见[迁移记录](activity/2026-10-06-helmet-hotspots-latest.md)；原作者 Aragorn-cyber 与修复者 Twispra 分开记录，没有新增第三方模型、图片、音频或 package。
 
-PR #19 的电话几何、程序声音及体验细节仍在功能分支，尚未进入 main；其来源、原型参数与辅助范围使用[该分支固定版本的资源声明](https://github.com/Twispra/XRmuseum/blob/b61c13c63a0b901f1002eb764140fbe1bf27fcd7/docs/external-resources.md)，不能写成当前主线已接入。未来整合时再按实际纳入范围更新。
+PR #19 的电话几何、程序声音和体验细节通过本次 [#24](https://github.com/Twispra/XRmuseum/pull/24) 整合交付；来源/原型参数仍保留[源分支固定声明](https://github.com/Twispra/XRmuseum/blob/b61c13c63a0b901f1002eb764140fbe1bf27fcd7/docs/external-resources.md)，实际主线合并状态以 #24 为准。
 
-本次文档 PR 由 Codex 辅助读取现有代码/报告和 GitHub 证据、整理贡献/问题/周索引与检查链接，见[核对记录](activity/2026-10-06-project-records-audit.md)。本轮未生成或下载产品资产、未重跑 Unity、未做实机/用户研究；不代写个人反思或替代成员人工审批。以下按日期保留旧资源与字形数量快照。
+2026-10-06 背部电话接头（本地）：Codex 辅助独立程序网格、Prefab 上的接头布局校正、两条连接锚点、通话到达／回复反馈和模拟检查，见 [交接](activity/2026-10-06-rear-telephone-connection.md)。左右用途依据 [美国海军水下博物馆说明](https://navalunderseamuseum.org/mk-v/)；曲线、局部尺寸、壁厚和视觉响应属于原型设计，非历史测绘数据。没有下载照片、外部模型或音频；程序 Mesh 保存为新增资产，原 FBX 未改。新增三語标签使用已有字形，不引入新字体。
+
+2026-10-06 体验细节完善（本地）：Codex 辅助玻璃／截面 shader、已有网格截面算法、前窗缓动、设备方向强调、短返回动画、程序机械音效和模拟验收，见 [交接](activity/2026-10-06-helmet-experience-polish.md)。没有下载或引入外部音频、图片、模型、贴图或新 package；音效在 HelmetMechanicalFeedback 中由确定性的振荡／噪声及包络合成，不是历史设备录音。字体沿用既有 Noto Sans SC／OFL 来源，补充声音按钮所需字形与三语文案；不增加新字体来源。新画面和声音不构成精确历史复原、设备实测或用户研究。
+
+此前仅文档 PR #22 由 Codex 辅助读取现有代码/报告和 GitHub 证据、整理贡献/问题/周索引与检查链接，见[核对记录](activity/2026-10-06-project-records-audit.md)。该文档核对未生成或下载产品资产、未重跑 Unity、未做实机/用户研究；不代写个人反思或替代成员人工审批。以下按日期保留旧资源与字形数量快照。
 
 2026-10-06 PR #10/#13/#14 补齐：Codex 辅助冲突整合、保存文案与四组场景绑定、字体缺字重烤、源文件和像素核对、模拟 XR 输入/演示回归、截图复核及交接记录，见[本轮记录](activity/2026-10-06-pr14-completion.md)。沿用既有源 TTF，静态 TMP 图集由 190 增至 198 字符；没有新增模型、贴图、音频或 package。补入 [Noto Sans SC 官方 OFL 文件](https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/OFL.txt)至 [docs/licenses/noto-sans-sc-OFL.txt](licenses/noto-sans-sc-OFL.txt)，SHA256 `1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9`。字体 name 表与该文件均注明 Adobe 2014–2021 版权及保留字体名 `Source`；当前 subset 的字体族名为 Noto Sans SC。以下旧版本字形数量为历史记录。自动验证和 AI 复核不代替成员人工审批、真实头显或用户研究。
 

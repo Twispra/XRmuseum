@@ -1,10 +1,14 @@
 # 中文字体来源、保存资产与维护
 
+2026-10-06 PR #19 与 main 热点整合（Issue #23）：保存文案共 205 条，保留 main 原 202 条并新增声音/电话标签三条。源 TTF 保留 main 的 7659 码位并补「聲」，共 7660；fontTools 4.51.0 从同一 OFL 字体取 wght=400。原位烘焙静态 SDF 536 字符、字符清单 526，原字体/材质/图集 GUID与 localFileID 不变，像素及保存字节核验通过；仍用 4096²／110／Padding 6／SDFAA。以下按日期保留旧数字，不是当前交付。
+
+历史快照：2026-10-06 体验细节分支在下述三语版本上补充声音按钮：源 TTF 为 7652 码位，保存图集为 510 字符（当前文案清单 500 字符），原 GUID、材质和图集引用保留；4096²／110／Padding 6 参数不变。具体来源、像素校验与验收见 [本轮交接](../../../../../../docs/activity/2026-10-06-helmet-experience-polish.md)。下文 7651／507／497 数字为此前 PR #18 的版本记录。
+
 ## 当前交付
 
 - `NotoSansSC-MuseumSubset.ttf`：约 2.25 MiB，Regular 静态子集，本轮扩充繁体所需码位。
-- `NotoSansSC-MuseumSubset SDF.asset`：已保存、可直接运行的静态 TMP 字体；**533 个字符，110 点采样，Padding 6，4096×4096 单张 Alpha8 图集，SDFAA**。
-- `characters-required.txt`：523 个显示字符，按三语文案、固定标签、ASCII 与 TMP 特殊字符生成。
+- `NotoSansSC-MuseumSubset SDF.asset`：已保存、可直接运行的静态 TMP 字体；**536 个字符，110 点采样，Padding 6，4096×4096 单张 Alpha8 图集，SDFAA**。
+- `characters-required.txt`：526 个显示字符，按三语文案、固定标签、ASCII 与 TMP 特殊字符生成。
 - `make-charlist.py`：按脚本自身路径定位三语 JSON，成员不需要修改作者机器路径。
 
 日常打开工程、预览或验收**不重建字体**。直接加载保存资产，再运行 LocalizationValidation；主场景验收另用 LocalizationIntegrationValidation。

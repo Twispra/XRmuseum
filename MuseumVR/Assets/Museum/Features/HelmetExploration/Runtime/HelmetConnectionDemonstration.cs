@@ -15,6 +15,7 @@ namespace Museum.Exploration
         const int PathSamples = 41;
         [SerializeField] HelmetInspectionController inspection;
         [SerializeField] Renderer airConnector;
+        [SerializeField] Museum.Experience.HelmetRearConnections rearConnections;
         [SerializeField] Material airMaterial;
         [SerializeField] Material voiceMaterial;
         [SerializeField] Material inkMaterial;
@@ -30,6 +31,11 @@ namespace Museum.Exploration
         float startedAt;
         Transform viewer;
         bool anchorReady;
+        MaterialPropertyBlock attentionBlock;
+        static readonly int FocusId=Shader.PropertyToID("_Focus");
+        public float SourceEmphasis { get; private set; }
+        public float DestinationEmphasis { get; private set; }
+        public bool HasReachedDestination { get; private set; }
 
         public event Action PlaybackChanged;
         public bool IsPlaying { get; private set; }
@@ -38,16 +44,22 @@ namespace Museum.Exploration
         public string AnimationStage { get; private set; } = "Demo hidden";
         public int PhaseIndex { get; private set; }
         public float NormalizedProgress => IsVisible ? Mathf.Clamp01((Time.unscaledTime - startedAt) / Duration) : 0f;
-        public Vector3 AirTargetWorld => inspection && anchorReady
+        public Vector3 AirTargetWorld => rearConnections && rearConnections.AirOutlet ? rearConnections.AirOutlet.position : inspection && anchorReady
             ? inspection.transform.TransformPoint(airAnchorLocal) : Vector3.zero;
         public Vector3 AirEndpointWorld => route && route.positionCount > 0 && CurrentClue == HelmetExplorationController.Clue.Air
             ? route.GetPosition(route.positionCount - 1) : AirTargetWorld;
+        public Vector3 VoiceTargetWorld => rearConnections && rearConnections.TelephoneOutlet ? rearConnections.TelephoneOutlet.position : models != null ? models.TransducerInlet.position : Vector3.zero;
+        public Vector3 VoiceEndpointWorld => route && route.positionCount > 0 && CurrentClue == HelmetExplorationController.Clue.Voice
+            ? route.GetPosition(route.positionCount - 1) : VoiceTargetWorld;
+        public void ConfigureRearConnections(Museum.Experience.HelmetRearConnections connections)
+        { Stop(); rearConnections=connections; }
 
         public void Configure(HelmetInspectionController target, Renderer connector, Material airMat, Material voiceMat, Material inkMat)
         {
             Stop();
             if (visuals) ReleaseVisuals();
             inspection = target; airConnector = connector;
+            rearConnections = target ? target.GetComponent<Museum.Experience.HelmetRearConnections>() : null;
             airMaterial = airMat; voiceMaterial = voiceMat; inkMaterial = inkMat;
             anchorReady = false; CaptureAnchor();
         }
@@ -77,6 +89,8 @@ namespace Museum.Exploration
             bool changed = IsPlaying || IsVisible;
             IsPlaying = false; IsVisible = false;
             AnimationStage = "Demo hidden";
+            SourceEmphasis=DestinationEmphasis=0;HasReachedDestination=false;SetConnectorFocus(0);
+            if(rearConnections)rearConnections.ClearVoice();
             if (visuals) visuals.SetActive(false);
             if (changed) PlaybackChanged?.Invoke();
         }
@@ -140,6 +154,8 @@ namespace Museum.Exploration
             Quaternion facing = Quaternion.LookRotation(diagramForward, Vector3.up);
             Vector3 centre = inspection.transform.TransformPoint(inspection.SectionCenterLocal);
             models.Position(centre, facing);
+            // The real helmet fitting is the receiving end. Keep the old detached schematic only as a fallback.
+            models.DiverTransducer.gameObject.SetActive(!rearConnections);
             SetPhase(air, elapsed, staticDiagram);
 
             if (air)
@@ -150,9 +166,10 @@ namespace Museum.Exploration
             }
             else
             {
-                pathStart = models.TelephoneOutlet.position; pathEnd = models.TransducerInlet.position;
+                pathStart = models.TelephoneOutlet.position; pathEnd = VoiceTargetWorld;
                 pathControlA = pathStart + diagramRight * .065f - Vector3.up * .11f - diagramForward * .045f;
-                pathControlB = pathEnd - diagramRight * .04f - Vector3.up * .11f - diagramForward * .045f;
+                pathControlB = rearConnections ? pathEnd + inspection.transform.forward*.065f+Vector3.up*.025f
+                    : pathEnd - diagramRight * .04f - Vector3.up * .11f - diagramForward * .045f;
             }
             route.startWidth = route.endWidth = air ? .015f : .009f;
             route.positionCount = PathSamples; routeAccent.positionCount = PathSamples;
@@ -168,12 +185,15 @@ namespace Museum.Exploration
             bool airFlow = air && !staticDiagram && PhaseIndex == 1;
             bool sending = !air && !staticDiagram && PhaseIndex == 1;
             bool replying = !air && !staticDiagram && PhaseIndex == 3;
+            UpdateAttention(air,elapsed,staticDiagram);
             models.AnimatePump(elapsed, airFlow);
-            models.AnimateVoice(elapsed, sending, replying, !staticDiagram);
+            // Local speech happens at emission; after arrival it no longer competes with the receiving end.
+            models.AnimateVoice(elapsed, sending && elapsed-2f<1.8f, replying && elapsed-9f<1.8f, !staticDiagram);
+            models.AnimateReception(elapsed, replying && HasReachedDestination, sending && HasReachedDestination);
             pulse.gameObject.SetActive(airFlow || sending || replying);
             if (air) UpdateAirPackets(elapsed - 2f, airFlow);
             else UpdateVoicePackets(elapsed, replying, sending || replying);
-            foreach(var waveform in waveforms) waveform.gameObject.SetActive(!air && (sending || replying));
+            if(air || (!sending && !replying)) foreach(var waveform in waveforms) waveform.gameObject.SetActive(false);
 
             arrow.sharedMaterial = air ? airMaterial : voiceMaterial;
             arrow.gameObject.SetActive(true);
@@ -183,12 +203,46 @@ namespace Museum.Exploration
             if(showBoth) SetArrow(returnArrow, .28f, -1f);
 
             MuseumText.Set(sourceText, air ? "Air pump" : "Surface telephone");
-            MuseumText.Set(destinationText, air ? "Air inlet" : "Diver unit");
+            MuseumText.Set(destinationText, air ? "Air inlet" : rearConnections ? "Telephone connection" : "Diver unit");
             sourceText.transform.position = (air ? models.Pump.position : models.SurfaceTelephone.position) + Vector3.up * .31f;
-            destinationText.transform.position = air ? pathEnd + Vector3.up*.075f : models.DiverTransducer.position + Vector3.up*.24f;
+            destinationText.transform.position = air || rearConnections ? pathEnd + Vector3.up*.09f : models.DiverTransducer.position + Vector3.up*.24f;
             MuseumText.Set(caption, AnimationStage + "\n<size=75%>Illustrative model</size>");
             caption.transform.position = centre + diagramRight * .43f + Vector3.up * .43f;
             FaceViewer(sourceText.transform); FaceViewer(destinationText.transform); FaceViewer(caption.transform);
+        }
+
+        void UpdateAttention(bool air,float elapsed,bool stationary)
+        {
+            float phaseTime=elapsed-(air?2:PhaseIndex==3?9:2);
+            float arrival=air?.25f+1f/.22f:3.7f;
+            HasReachedDestination=!stationary && (air?PhaseIndex==1:PhaseIndex==1 || PhaseIndex==3) && phaseTime>=arrival;
+            float source=.12f,destination=.12f;
+            if(stationary || (air?PhaseIndex==2:PhaseIndex==4)){source=destination=.25f;}
+            else if(PhaseIndex==0){source=.6f;destination=.12f;}
+            else if(!air && PhaseIndex==2){source=.12f;destination=.55f;}
+            else
+            {
+                // The sender acts first; receiving attention follows the actual path traversal.
+                float sender=HasReachedDestination?.25f:.7f;
+                float receiver=HasReachedDestination?.75f:.08f;
+                if(!air && PhaseIndex==3){source=receiver;destination=sender;}
+                else{source=sender;destination=receiver;}
+            }
+            SourceEmphasis=source;DestinationEmphasis=destination;
+            models.SetAttention(air,source,destination);SetConnectorFocus(air?destination:0);
+            if(rearConnections)
+            {
+                bool responding=!air && (stationary || PhaseIndex==2 || (PhaseIndex==1 && HasReachedDestination) || (PhaseIndex==3 && phaseTime<1.8f));
+                rearConnections.ShowVoice(air?0:destination,responding,!stationary,phaseTime);
+            }
+            sourceText.color=Color.Lerp(new Color(.68f,.76f,.78f),Color.white,source);
+            destinationText.color=Color.Lerp(new Color(.68f,.76f,.78f),Color.white,destination);
+        }
+        void SetConnectorFocus(float value)
+        {
+            if(!airConnector || !airConnector.sharedMaterial || !airConnector.sharedMaterial.HasProperty(FocusId))return;
+            if(attentionBlock==null)attentionBlock=new MaterialPropertyBlock();
+            airConnector.GetPropertyBlock(attentionBlock);attentionBlock.SetFloat(FocusId,value);airConnector.SetPropertyBlock(attentionBlock);
         }
 
         void SetPhase(bool air,float elapsed,bool staticDiagram)
@@ -226,7 +280,11 @@ namespace Museum.Exploration
             {
                 var packet=models.AirPackets[i];packet.gameObject.SetActive(moving);
                 if(!moving) continue;
-                float t=Mathf.Repeat(seconds*.22f+i/(float)models.AirPackets.Length,1f);
+                // Stagger emission from the pump, instead of seeding packets along the entire hose at start.
+                float emittedAt=seconds-i*.55f;
+                packet.gameObject.SetActive(emittedAt>=.25f);
+                if(emittedAt<.25f)continue;
+                float t=Mathf.Repeat((emittedAt-.25f)*.22f,1f);
                 packet.SetPositionAndRotation(PointOnPath(t)-diagramForward*.016f,
                     Quaternion.LookRotation(PathDirection(t),Vector3.up));
             }
@@ -235,9 +293,12 @@ namespace Museum.Exploration
         void UpdateVoicePackets(float elapsed,bool reply,bool moving)
         {
             if(!moving) return;
-            float phaseTime=elapsed-(reply?9f:2f);
+                float phaseTime=elapsed-(reply?9f:2f);
             for(int wave=0;wave<waveforms.Length;wave++)
             {
+                bool active=phaseTime>=wave*.65f && phaseTime<=wave*.65f+4.1f;
+                waveforms[wave].gameObject.SetActive(active);
+                if(!active)continue;
                 // Each train crosses once per speaking phase. No end-to-start jump can read as a reply.
                 float progress=Mathf.Clamp01((phaseTime-wave*.65f)/3.7f);
                 float center=reply?1f-progress:progress;

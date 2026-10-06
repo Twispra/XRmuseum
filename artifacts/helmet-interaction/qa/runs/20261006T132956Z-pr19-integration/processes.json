@@ -1,0 +1,181 @@
+[
+  {
+    "name": "experience",
+    "startedUtc": "2026-10-06T13:35:57.388468+00:00",
+    "arguments": [
+      "E:\\unity\\36version\\2022.3.62f3c1\\Editor\\Unity.exe",
+      "-batchmode",
+      "-projectPath",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR",
+      "-logFile",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006T132956Z-pr19-integration\\experience-unity.log",
+      "-executeMethod",
+      "Museum.Experience.EditorTools.HelmetExperienceValidation.RunBatch"
+    ],
+    "baseCommit": "623e5a380e932062ef0491579b399a2dc774fc91",
+    "pid": 27732,
+    "exitCode": 1,
+    "finishedUtc": "2026-10-06T13:37:08.588698+00:00",
+    "logSha256": "cff3af0a1876c7364fa277efc410298b06a731d82bdf5d3890bdf4cfb852147d"
+  },
+  {
+    "name": "experience-retry1",
+    "startedUtc": "2026-10-06T13:38:35.480288+00:00",
+    "arguments": [
+      "E:\\unity\\36version\\2022.3.62f3c1\\Editor\\Unity.exe",
+      "-batchmode",
+      "-projectPath",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR",
+      "-logFile",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006T132956Z-pr19-integration\\experience-retry1-unity.log",
+      "-executeMethod",
+      "Museum.Experience.EditorTools.HelmetExperienceValidation.RunBatch"
+    ],
+    "baseCommit": "d8425c24271b65f036ce74ec16d9fa4ad36f98e4",
+    "pid": 29380,
+    "exitCode": 1,
+    "finishedUtc": "2026-10-06T13:39:34.243621+00:00",
+    "logSha256": "0e317b55b58bd582eac25c7eff24aa50c32fbb8434228c98df7a2e739ae72e2d"
+  },
+  {
+    "name": "experience-retry2",
+    "startedUtc": "2026-10-06T13:40:39.664360+00:00",
+    "arguments": [
+      "E:\\unity\\36version\\2022.3.62f3c1\\Editor\\Unity.exe",
+      "-batchmode",
+      "-projectPath",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR",
+      "-logFile",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006T132956Z-pr19-integration\\experience-retry2-unity.log",
+      "-executeMethod",
+      "Museum.Experience.EditorTools.HelmetExperienceValidation.RunBatch"
+    ],
+    "baseCommit": "2fcaad12d79bf65f39ab6e27b28763818fcfc94f",
+    "pid": 25752,
+    "exitCode": 0,
+    "finishedUtc": "2026-10-06T13:41:59.125081+00:00",
+    "logSha256": "83cfad9c3678665110df9d7d61a97f2ec0beea68e49222dbc92ad3170dd5dafc"
+  },
+  {
+    "name": "exploration",
+    "startedUtc": "2026-10-06T13:44:07.759710+00:00",
+    "arguments": [
+      "E:\\unity\\36version\\2022.3.62f3c1\\Editor\\Unity.exe",
+      "-batchmode",
+      "-projectPath",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR",
+      "-logFile",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006T132956Z-pr19-integration\\exploration-unity.log",
+      "-executeMethod",
+      "Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch"
+    ],
+    "baseCommit": "2fcaad12d79bf65f39ab6e27b28763818fcfc94f",
+    "pid": 19260,
+    "exitCode": 0,
+    "finishedUtc": "2026-10-06T13:47:14.192349+00:00",
+    "logSha256": "e0bf4996ebda1d91ae531b4ae571fbade1b015b1c49daf3d95345f623cb3447a"
+  },
+  {
+    "name": "font",
+    "startedUtc": "2026-10-06T13:29:56.901057+00:00",
+    "arguments": [
+      "E:\\unity\\36version\\2022.3.62f3c1\\Editor\\Unity.exe",
+      "-batchmode",
+      "-projectPath",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR",
+      "-logFile",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006T132956Z-pr19-integration\\font-unity.log",
+      "-executeMethod",
+      "TrilingualFontBaker.RunBatch",
+      "-fontCompletionOutput",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006T132956Z-pr19-integration\\font-bake",
+      "-quit"
+    ],
+    "baseCommit": "18d7f8a09c29bb0c757b8a80bdc245b0fe40b785",
+    "pid": 34632,
+    "exitCode": 0,
+    "finishedUtc": "2026-10-06T13:34:17.455256+00:00",
+    "logSha256": "eb7c9c7a5d91c84991a829de966dd98a826377d54820ddf0878bd5fd45795b98"
+  },
+  {
+    "name": "hotspot-tests",
+    "startedUtc": "2026-10-06T13:49:56.995952+00:00",
+    "arguments": [
+      "E:\\unity\\36version\\2022.3.62f3c1\\Editor\\Unity.exe",
+      "-batchmode",
+      "-projectPath",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR",
+      "-logFile",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006T132956Z-pr19-integration\\hotspot-tests-unity.log",
+      "-runTests",
+      "-testPlatform",
+      "EditMode",
+      "-testFilter",
+      "Museum.Hotspots.Tests",
+      "-testResults",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006T132956Z-pr19-integration\\hotspot-tests.xml"
+    ],
+    "baseCommit": "2fcaad12d79bf65f39ab6e27b28763818fcfc94f",
+    "pid": 29328,
+    "exitCode": 0,
+    "finishedUtc": "2026-10-06T13:50:33.006046+00:00",
+    "logSha256": "a60dae50f95147aebc1543f94049795bc4606d651737301c581778bb2416b243"
+  },
+  {
+    "name": "inspection",
+    "startedUtc": "2026-10-06T13:41:59.127081+00:00",
+    "arguments": [
+      "E:\\unity\\36version\\2022.3.62f3c1\\Editor\\Unity.exe",
+      "-batchmode",
+      "-projectPath",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR",
+      "-logFile",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006T132956Z-pr19-integration\\inspection-unity.log",
+      "-executeMethod",
+      "Museum.Localization.EditorTools.TrilingualInspectionRegression.RunBatch"
+    ],
+    "baseCommit": "2fcaad12d79bf65f39ab6e27b28763818fcfc94f",
+    "pid": 34220,
+    "exitCode": 0,
+    "finishedUtc": "2026-10-06T13:44:07.757137+00:00",
+    "logSha256": "e7fd2a01836046e1a9bcc164d80399e8623425f8f87ec89196e98f84459b30c8"
+  },
+  {
+    "name": "main",
+    "startedUtc": "2026-10-06T13:47:14.194475+00:00",
+    "arguments": [
+      "E:\\unity\\36version\\2022.3.62f3c1\\Editor\\Unity.exe",
+      "-batchmode",
+      "-projectPath",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR",
+      "-logFile",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006T132956Z-pr19-integration\\main-unity.log",
+      "-executeMethod",
+      "Museum.Localization.EditorTools.LocalizationIntegrationValidation.RunBatch"
+    ],
+    "baseCommit": "2fcaad12d79bf65f39ab6e27b28763818fcfc94f",
+    "pid": 32056,
+    "exitCode": 0,
+    "finishedUtc": "2026-10-06T13:49:31.170976+00:00",
+    "logSha256": "701df1089130c0dbf03f78083702136d6fb0e3b72cc0b966784e02a685299fbd"
+  },
+  {
+    "name": "module",
+    "startedUtc": "2026-10-06T13:49:31.171976+00:00",
+    "arguments": [
+      "E:\\unity\\36version\\2022.3.62f3c1\\Editor\\Unity.exe",
+      "-batchmode",
+      "-projectPath",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\MuseumVR",
+      "-logFile",
+      "C:\\Users\\zhaoooooo\\.codex\\worktrees\\integrate-pr19-main-2026-10-06\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006T132956Z-pr19-integration\\module-unity.log",
+      "-executeMethod",
+      "Museum.Localization.EditorTools.LocalizationValidation.RunBatch"
+    ],
+    "baseCommit": "2fcaad12d79bf65f39ab6e27b28763818fcfc94f",
+    "pid": 5872,
+    "exitCode": 0,
+    "finishedUtc": "2026-10-06T13:49:56.984434+00:00",
+    "logSha256": "1a037506589e865897b7e757fd409a77fcac21881432745e76f571cf6a1b33b1"
+  }
+]

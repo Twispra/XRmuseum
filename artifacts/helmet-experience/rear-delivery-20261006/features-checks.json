@@ -1,0 +1,419 @@
+{
+  "status": "passed",
+  "unity": "2022.3.62f3c1",
+  "baseCommit": "d432a37d1107f4b4f1ca2aa64c7819f229549dab",
+  "method": "New behavior checked through explicit component APIs in saved MuseumStart. Separate existing XR regression validates production input. Temporary diagnostic camera screenshots, no scene saves or headset/user study.",
+  "failure": "",
+  "errors": [],
+  "sourceReport": "artifacts/helmet-experience/qa/runs/20261006T090243870Z/report.json",
+  "sourceSha256": "23faadc2af81eb427a2fa5190f2813729ffb5ede31c71f68cb802421f267aa3a",
+  "processExitCode": 0,
+  "testedBaseCommit": "d432a37d1107f4b4f1ca2aa64c7819f229549dab",
+  "dirtyTrackedAtTest": [
+    "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetDemonstrationModels.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationButton.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationPanel.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Window.mat",
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionControls.cs",
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Shaders/InspectionShell.shader",
+    "MuseumVR/Assets/Museum/Features/Localization/Editor/TrilingualMuseumValidation.cs",
+    "MuseumVR/Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset",
+    "MuseumVR/Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset.ttf",
+    "MuseumVR/Assets/Museum/Features/Localization/Fonts/README.md",
+    "MuseumVR/Assets/Museum/Features/Localization/Fonts/characters-required.txt",
+    "MuseumVR/Assets/Museum/Features/Localization/Tables/LocalizationTable.asset",
+    "MuseumVR/Assets/Museum/Features/Localization/Tables/MuseumTranslations.json",
+    "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+    "MuseumVR/Assets/Museum/Scripts/HelmetExhibitReset.cs",
+    "docs/external-resources.md",
+    "docs/project-state.md"
+  ],
+  "checkCount": 76,
+  "failedChecks": [],
+  "evidenceNote": "Derived from the unchanged full local report. Large untracked-file inventories omitted. Not a new Unity run.",
+  "checks": [
+    {
+      "name": "saved prefab has section and feedback components",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "saved helmet has independent air and telephone outlet anchors",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "from rear: phone left and air right",
+      "detail": "air=(-0.06, 0.37, 0.20); phone=(0.06, 0.38, 0.22)",
+      "passed": true
+    },
+    {
+      "name": "telephone addition has saved mesh and does not add colliders",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "transparent glass saved",
+      "detail": "Museum/Inspection Glass",
+      "passed": true
+    },
+    {
+      "name": "nested contours preserve cavity",
+      "detail": "hollow square section area=3; center filled=False",
+      "passed": true
+    },
+    {
+      "name": "window has an intermediate opening pose",
+      "detail": "56.02933",
+      "passed": true
+    },
+    {
+      "name": "opening reaches limit with completion feedback",
+      "detail": "angle=94.99998; completion sounds=1",
+      "passed": true
+    },
+    {
+      "name": "mute stops sound and preserves window movement",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "nonempty section face / (1.00, 0.00, 0.00)",
+      "detail": "1142 triangles; rejected open bands=8",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_Bonnet_Hollow",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_Corselet_ShoulderPlate",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_CorseletRolledEdge.011",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_CorseletRolledEdge.012",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_CorseletRolledEdge.035",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_CorseletRolledEdge.036",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_Front_PortRim",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_InterpretiveLabel",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_NeckFastener_03",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_NeckFastener_09",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_NeckLockRing",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_Top_PortRim",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_FrontDiamondGuard",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_FrontDiamondGuard.001",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_FrontDiamondGuard.002",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_FrontDiamondGuard.003",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - Moving front window frame",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "nonempty section face / (0.00, 1.00, 0.00)",
+      "detail": "1506 triangles; rejected open bands=0",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_Bonnet_Hollow",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_Front_PortRim",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_Left_PortRim",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_Right_PortRim",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_FrontDiamondGuard",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_FrontDiamondGuard.002",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - Moving front window frame",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "nonempty section face / (0.42, 0.32, -0.85)",
+      "detail": "1810 triangles; rejected open bands=9",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_Bonnet_Hollow",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_Corselet_ShoulderPlate",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_CorseletRolledEdge.029",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_CorseletRolledEdge.047",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_Left_PortRim",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_NeckLockRing",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "section faces stay on requested local plane / Section face - GB_Right_PortRim",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "whole-helmet motion reuses existing section mesh",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "inner-surface shading center stays object-local when moved",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "moving articulated parts updates section faces",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "closing section hides all cap geometry",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "manual return starts at existing pose without initial teleport",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "return has an intermediate pose",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "return finishes at exact home with original physics",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "reduced motion returns immediately",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "help mutes synthesized feedback",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "help restores synthesized feedback",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "air goes only to air outlet and clears telephone feedback",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "air source emphasized before arrival",
+      "detail": "source=0.7; destination=0.08; visible=True",
+      "passed": true
+    },
+    {
+      "name": "air receiving connector emphasized after traversal",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "stop clears attention",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "voice cable terminates at telephone fitting, separate from air",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "telephone arrival feedback stays off before message arrives",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "telephone cable follows moved and rotated helmet",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "outgoing message starts at surface",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "outgoing message arrival emphasizes diver",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "arrival highlights and animates actual telephone fitting",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "telephone material receives staged emphasis",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "sender speech waves stop before receiver emphasis",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "reply starts at diver",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "reply begins at the helmet telephone fitting",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "reply arrival emphasizes surface",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "reply arrival releases telephone emphasis toward surface",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "reply speech waves stop before receiving surface emphasis",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "stop clears actual telephone material and response",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "reduced motion shows stable equal emphasis",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "reduced motion keeps telephone response still",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "removed telephone side hides its response ring",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "new hollow telephone fitting participates in section surfaces",
+      "detail": "",
+      "passed": true
+    },
+    {
+      "name": "reset keeps saved telephone anchor attached",
+      "detail": "",
+      "passed": true
+    }
+  ]
+}
