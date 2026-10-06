@@ -22,9 +22,15 @@ namespace Museum.Hotspots
 
         public event Action Completed;
         public event Action ResetPerformed;
+        // Optional adapters can translate the original English without coupling this
+        // standalone assembly to the museum's localization implementation.
+        public event Action<TMP_Text, string> TextChanged;
+        const string Prompt = "Select a highlighted point to inspect the helmet.";
+        string informationEnglish = Prompt;
         public int VisitedCount => visited.Count;
         public int RequiredHotspots => requiredHotspots;
         public bool IsComplete => VisitedCount >= requiredHotspots;
+        public bool HasVisited(string identifier) => identifier != null && visited.Contains(identifier);
 
         public void Configure(int required, TMP_Text information, TMP_Text progress, GameObject completion)
         {
@@ -32,7 +38,7 @@ namespace Museum.Hotspots
             informationText = information;
             progressText = progress;
             completionFeedback = completion;
-            RefreshProgress();
+            RefreshText();
         }
 
         public bool Visit(string identifier, string title, string description)
@@ -43,10 +49,8 @@ namespace Museum.Hotspots
             bool wasComplete = IsComplete;
             bool added = visited.Add(identifier);
 
-            if (informationText != null)
-                informationText.text = string.IsNullOrWhiteSpace(title) ? description : title + "\n" + description;
-
-            RefreshProgress();
+            informationEnglish = string.IsNullOrWhiteSpace(title) ? description : title + "\n" + description;
+            RefreshText();
 
             if (!wasComplete && IsComplete)
                 Completed?.Invoke();
@@ -57,9 +61,8 @@ namespace Museum.Hotspots
         public void ResetTour()
         {
             visited.Clear();
-            if (informationText != null)
-                informationText.text = "Select a highlighted point to inspect the helmet.";
-            RefreshProgress();
+            informationEnglish = Prompt;
+            RefreshText();
             ResetPerformed?.Invoke();
         }
 
@@ -67,7 +70,7 @@ namespace Museum.Hotspots
         {
             if (enableTriggerQueries)
                 EnableCompatibleInteractors();
-            RefreshProgress();
+            RefreshText();
         }
 
         void OnDisable()
@@ -111,12 +114,22 @@ namespace Museum.Hotspots
             }
         }
 
-        void RefreshProgress()
+        public void RefreshText()
         {
-            if (progressText != null)
-                progressText.text = Mathf.Min(VisitedCount, requiredHotspots) + " / " + requiredHotspots + " inspected";
+            WriteText(informationText, informationEnglish);
+            WriteText(progressText, Mathf.Min(VisitedCount, requiredHotspots) + " / " + requiredHotspots + " inspected");
             if (completionFeedback != null)
+            {
+                WriteText(completionFeedback.GetComponentInChildren<TMP_Text>(true), "Exploration complete");
                 completionFeedback.SetActive(IsComplete);
+            }
+        }
+
+        void WriteText(TMP_Text label, string english)
+        {
+            if (!label) return;
+            label.text = english;
+            TextChanged?.Invoke(label, english);
         }
     }
 }

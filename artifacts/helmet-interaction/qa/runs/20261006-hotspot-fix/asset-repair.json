@@ -1,0 +1,45 @@
+{
+    "startedUtc": "2026-10-06T12:38:16.7994706Z",
+    "finishedUtc": "2026-10-06T12:38:18.1806601Z",
+    "status": "passed",
+    "failure": "",
+    "unity": "2022.3.62f3c1",
+    "output": "E:\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006-hotspot-fix\\repair-03-assets",
+    "sceneBefore": "cf396bbd05a58d8bf89a2862ef50e3ec7e2e06c825ff52d36d410d9364befaaf",
+    "sceneAfter": "cf396bbd05a58d8bf89a2862ef50e3ec7e2e06c825ff52d36d410d9364befaaf",
+    "prefabBefore": "76d6830391546e67e32d314fe4c5a8b31dc02379eabfddd856b06ac7d4047ea8",
+    "prefabAfter": "279e499a3fffff0bd4fd0f08097b3815abe3f73d676e0b7422fc105eba62209e",
+    "tableBefore": "26a14ce8368cc2539de313f6f600ba64d593e444f4943bc9906741694a232eb6",
+    "tableAfter": "26a14ce8368cc2539de313f6f600ba64d593e444f4943bc9906741694a232eb6",
+    "sourceFontSha256": "8a8dca21ca70588f2aa841ff2d252c42dfe05f8369960b7643029816e85e10c3",
+    "fontBefore": "b0b53935106e4138b6cf4f6aa8be4ede30a761fb4acaa03831a7d9bff1a9d082",
+    "fontAfter": "b0b53935106e4138b6cf4f6aa8be4ede30a761fb4acaa03831a7d9bff1a9d082",
+    "missingStaticCharacters": "",
+    "missingSourceCharacters": "",
+    "fontRebaked": false,
+    "identitiesPreserved": true,
+    "sceneUnchanged": true,
+    "translationRows": 202,
+    "oldGlyphCount": 533,
+    "newGlyphCount": 533,
+    "panelPosition": {
+        "x": 0.0,
+        "y": 0.009999999776482582,
+        "z": -0.800000011920929
+    },
+    "frontMarkerPosition": {
+        "x": -0.10999999940395355,
+        "y": 0.30000001192092898,
+        "z": -0.23999999463558198
+    },
+    "backups": [
+        "Assets/Museum/Features/Localization/Tables/LocalizationTable.asset",
+        "Assets/Museum/Features/Localization/Tables/LocalizationTable.asset.meta",
+        "Assets/Museum/Features/HelmetHotspots/Prefabs/HelmetHotspotTour.prefab",
+        "Assets/Museum/Features/HelmetHotspots/Prefabs/HelmetHotspotTour.prefab.meta",
+        "Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset",
+        "Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset.meta",
+        "Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset.ttf",
+        "Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset.ttf.meta"
+    ]
+}

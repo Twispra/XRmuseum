@@ -3,13 +3,17 @@
 ## 当前交付
 
 - `NotoSansSC-MuseumSubset.ttf`：约 2.25 MiB，Regular 静态子集，本轮扩充繁体所需码位。
-- `NotoSansSC-MuseumSubset SDF.asset`：已保存、可直接运行的静态 TMP 字体；**507 个字符，110 点采样，Padding 6，4096×4096 单张 Alpha8 图集，SDFAA**。
-- `characters-required.txt`：497 个显示字符，按三语文案、固定标签、ASCII 与 TMP 特殊字符生成。
+- `NotoSansSC-MuseumSubset SDF.asset`：已保存、可直接运行的静态 TMP 字体；**533 个字符，110 点采样，Padding 6，4096×4096 单张 Alpha8 图集，SDFAA**。
+- `characters-required.txt`：523 个显示字符，按三语文案、固定标签、ASCII 与 TMP 特殊字符生成。
 - `make-charlist.py`：按脚本自身路径定位三语 JSON，成员不需要修改作者机器路径。
 
 日常打开工程、预览或验收**不重建字体**。直接加载保存资产，再运行 LocalizationValidation；主场景验收另用 LocalizationIntegrationValidation。
 
-## 当前三语版本：2026-10-06
+## 热点修复补字：2026-10-06
+
+Issue #20 的九条热点文案使字符清单由 497 增至 523。原位补烤 26 个字形后，静态 SDF 共 533 字符，原 GUID、材质和图集 localFileID 均保留。源 TTF 在保留全部原 7651 个码位的基础上补入「個圍圓寬標狀記邊」，现有 7659 个 cmap 码位；来源仍为同一本机完整 NotoSansSC-VF.ttf，fontTools 4.60.1、wght=400，许可不变。字体像素与保存字节已核对，相关证据见本轮热点修复活动记录。
+
+## 首次三语版本：2026-10-06（历史记录）
 
 当前源 TTF 保留原子集码位并补充三语文案所需字形：7651 个 cmap 码位。保存的静态 SDF 为 4096×4096、110 / Padding 6 / SDFAA，507 个字符；三语显示字符清单当前为 497。原字体 GUID、材质与图集 localFileID 不变。字体底层打包后逐字形检查像素，并核对保存图集字节与缓冲哈希。
 
