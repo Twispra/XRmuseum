@@ -1,84 +1,33 @@
-# Fonts — 中文字体来源与生成方式
+# 中文字体来源、保存资产与维护
 
-## 这里的文件是什么
+## 当前交付
 
-| 文件 | 说明 |
-| --- | --- |
-| `NotoSansSC-MuseumSubset.ttf` | **提交进仓库的字体**，2.32 MB。由 `subset-noto-sans-sc.py` 生成 |
-| `NotoSansSC-MuseumSource.ttf` | 系统原始变量字体（16.95 MB），**不提交**，仅保留作对照与重新生成用 |
-| `subset-noto-sans-sc.py` | 从系统字体生成子集字体的脚本，保证可复现 |
-| `check-glyph-coverage.py` | 核对源码里用到的每个字符在字体里都有字形 |
-| `make-charlist.py` | 从 `LocalizationSetup.cs` 的种子文案收集字符，生成下面的清单 |
-| `characters-required.txt` | 需要烤进 TMP 字体资产的字符清单（约 193 个），供 Font Asset Creator 读取 |
-| `NotoSansSC-MuseumSubset SDF.asset` | TMP 字体资产，**必须手工生成一次**，见下 |
+- `NotoSansSC-MuseumSubset.ttf`：约 2.32 MB，Noto Sans SC 的 Regular 静态子集，源 TTF 未在本轮改动。
+- `NotoSansSC-MuseumSubset SDF.asset`：已保存、可直接运行的静态 TMP 字体；**198 个字符，110 点采样，Padding 6，2048×2048 单张 Alpha8 图集，SDFAA**。
+- `characters-required.txt`：198 个字符，按现有文案、固定标签、ASCII 与 TMP 特殊字符生成。
+- `make-charlist.py`：按脚本自身路径定位 Setup 种子，成员不需要修改作者机器路径。
 
-## 为什么要做子集
+日常打开工程、预览或验收**不重建字体**。直接加载保存资产，再运行 LocalizationValidation；主场景验收另用 LocalizationIntegrationValidation。
 
-项目原有字体只有 `LiberationSans`（纯英文），**没有任何中文字形**，
-直接把中文放进场景会显示成方块。
+## 2026-10-06 补齐
 
-系统上可用的中文字体里，只有 **Noto Sans SC** 是 **SIL Open Font License 1.1**，
-允许自由使用、修改与再分发（`msyh.ttc` / `simhei.ttf` / `simsun.ttc` 等均为微软专有，未采用）。
+入口新文案需要「海、之、潜、水、厅、多、种、法」。本轮在原 190 字符基础上重烤为 198，沿用提交的源字体和原参数。使用 TMP 3.0.7 Font Asset Creator 的底层 FontEngine 加载、打包、字节缓冲渲染流程；在写入前检查字形像素，写入后核对磁盘图集字节与渲染缓冲相同。
 
-原始字体是**变量字体**（`wght` 轴 100–900）且体积 **16.95 MB**；
-仓库的 `.gitattributes` 也没有把 `.ttf` 纳入 LFS。因此先取静态实例、再子集化：
+原字体 GUID、图集与材质 localFileID 均保留，没有删除重建 .meta。此操作只针对已授权的字形补齐，不把一次性辅助脚本变成日常打开步骤。报告、生成脚本及诊断图由 [整合活动记录](../../../../../../docs/activity/2026-10-06-pr14-completion.md) 链接。
 
-```
-NotoSansSC-VF.ttf                    16.95 MB   ← 系统字体
-   ↓ 从 wght 轴取出 Regular (400) 静态实例
-   ↓ 子集化：ASCII + GB2312 全集 + 常用标点
-NotoSansSC-MuseumSubset.ttf           2.32 MB   ← 提交
-```
+早期 `TMP_FontAsset.CreateFontAsset` / `TryAddCharacters` 高层路径曾产生 0×0 图集；Creator 的 Unicode Range (Hex) 也曾抛 FormatException。这些是当时失败路径，不能据此要求所有成员重建当前保存字体。当前已验证底层打包/渲染可用，Font Asset Creator 的 Characters from File 仍可用于后续明确的字体更新任务。
 
-覆盖范围：ASCII、GB2312 全部汉字（7445 个）与符号，共 **7545 个码位**。
-不包含 GB18030 扩展区汉字、生僻字、日文假名/韩文。**只要用常用简体字，就不用重新生成字体文件。**
+## 文案改变后
 
----
+1. 同步保存的 LocalizationTable 与 LocalizationSetup 种子。
+2. 用 Python 执行本目录 `make-charlist.py`；核对字符差集。
+3. 在隔离 checkout、退出 Play 后重烤所需字符，保留既有字体及子资源引用。不得删除字体或重建 .meta 来绕过问题。
+4. 核对保存图集的尺寸与真实像素、字符覆盖、原引用，并运行模块和受影响场景验收。
 
-## ⚠️ TMP 字体资产必须手工生成一次
+手工 Creator 参数：Source Font 为本目录提交的 subset TTF；Custom Size 110、Padding 6、2048×2048、SDFAA、Characters from File 指向 characters-required.txt。更新前备份，保存后核对原 GUID/localFileID，不能只看内存里 HasCharacter 成功或图集尺寸存在。新增字符不一定仍为 198，以本次字符清单和实际报告为准。
 
-**不要指望菜单里的自动生成能跑通。** 在本机所用版本（Unity 2022.3.62f3c1，国内发行版）下实测：
+## 源字体、子集与许可
 
-| 做法 | 结果 |
-| --- | --- |
-| 脚本 `TMP_FontAsset.CreateFontAsset`（Dynamic） | 图集 **0×0**，一个字都烤不进去 |
-| 脚本 `TMP_FontAsset.CreateFontAsset`（Static）+ `TryAddCharacters` | 同样 0×0，**连拉丁字母都失败** |
-| Font Asset Creator，Character Set = `Unicode Range (Hex)` | **抛 `FormatException`**，点 Generate 毫无反应 |
-| Font Asset Creator，Character Set = **`Characters from File`** | ✅ **成功，192/193 个字符** |
+原始来源是本机安装的 Noto Sans SC 变量字体，**SIL Open Font License 1.1**。`subset-noto-sans-sc.py` 的原始流程在 wght 轴取 Regular (400)，再保留 ASCII、GB2312 汉字/符号与常用标点，约 7545 码位。原约 16.95 MB 的变量字体不提交；当前提交副本属于经静态实例化和子集化的修改版本。TTF 内嵌 Adobe 2014–2021 版权、保留字体名 `Source` 和许可摘要；完整 [OFL 文件](../../../../../../docs/licenses/noto-sans-sc-OFL.txt)于 2026-10-06 从 Google Fonts 的 Noto Sans SC 官方目录补入，其版权行与 TTF 一致。资源声明见 docs/external-resources.md。
 
-`Unicode Range (Hex)` 的解析在本环境有 bug；**改用「从文件读取字符」即可绕过**。
-
-### 生成步骤
-
-> ⚠️ **必须先退出 Play 模式**（点 ▶ 停止运行）。Unity 在播放状态下会拒绝 TMP 的字体生成
-> （`InvalidOperationException: This cannot be used during play mode.`），
-> 产物会不完整而界面上不会明显报错。
-
-1. 菜单 **Window → TextMeshPro → Font Asset Creator**
-2. **Source Font File**：拖入 `NotoSansSC-MuseumSubset.ttf`
-3. **Sampling Point Size**：`Custom Size` **110** ｜ **Padding**：**6**
-   （中文字体官方建议 Sampling 用 90~120：采样太小的话汉字笔画只有 1~2 像素宽，
-   距离场无法形成"实心"内部，渲染出来又细又断。）
-4. **Atlas Resolution**：**2048 × 2048** ｜ **Render Mode**：`SDFAA`
-5. **Character Set**：选 **`Characters from File`**
-   → 出现 **Character File** 格子后，拖入本目录的 `characters-required.txt`
-6. 点 **Generate Font Atlas** —— 预览区应出现汉字；窗口下方会显示
-   `Characters included: 192/193`（唯一缺的那一个是长破折号 `–`，用不到，可以忽略）
-7. 点 **Save as...** → 保存到本目录，文件名**保持默认**
-   `NotoSansSC-MuseumSubset SDF` —— **不要自己加 `.asset` 后缀**
-
-生成后：约 8 MB、图集 2048×2048、`m_PointSize = 110`、`m_AtlasPadding = 6`、含 192 个字形。
-之后菜单 **Museum → Localization → Create Language Assets and Showcase** 会**复用**它。
-
-### 文案改了之后
-
-1. 跑一次 `make-charlist.py` 更新 `characters-required.txt`；
-2. 跑一次 `check-glyph-coverage.py` 确认字符都有字形（缺字会在 Unity 里显示成方块）；
-3. 按上面的步骤**重新生成字体资产**（Character Set 仍选 `Characters from File`）。
-
-## 许可与致谢
-
-- **Noto Sans SC**，作者 Google，许可 **SIL Open Font License 1.1**（允许商用、修改与再分发）。
-- 本仓库内的副本是**修改过的版本**：已实例化为静态 Regular 并子集化。
-  该字体没有 Reserved Font Name，OFL 允许如此处理。
-- 来源与修改记录同时登记在 `docs/external-resources.md`。
+源 TTF 的码位覆盖与 TMP 已烤入图集的 198 字符是两件事：即使 TTF 有该字，也必须确认静态图集已烤入。没有 GB18030 扩展字、日文或韩文完整支持的承诺。旧 check-glyph-coverage.py / subset-noto-sans-sc.py 保留原始来源流程，含作者环境路径，不作为当前保存资产验收入口。

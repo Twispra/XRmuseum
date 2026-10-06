@@ -1,9 +1,11 @@
 # 外部资源与辅助工具记录
 
+2026-10-06 PR #10/#13/#14 补齐：Codex 辅助冲突整合、保存文案与四组场景绑定、字体缺字重烤、源文件和像素核对、模拟 XR 输入/演示回归、截图复核及交接记录，见[本轮记录](activity/2026-10-06-pr14-completion.md)。沿用既有源 TTF，静态 TMP 图集由 190 增至 198 字符；没有新增模型、贴图、音频或 package。补入 [Noto Sans SC 官方 OFL 文件](https://raw.githubusercontent.com/google/fonts/main/ofl/notosanssc/OFL.txt)至 [docs/licenses/noto-sans-sc-OFL.txt](licenses/noto-sans-sc-OFL.txt)，SHA256 `1c05c68c34f9708415aada51f17e1b0092d2cea709bf4a94cd38114f9e73d7d9`。字体 name 表与该文件均注明 Adobe 2014–2021 版权及保留字体名 `Source`；当前 subset 的字体族名为 Noto Sans SC。以下旧版本字形数量为历史记录。自动验证和 AI 复核不代替成员人工审批、真实头显或用户研究。
+
 2026-10-04 中英语言切换模块：助手辅助实现界面语言切换系统与文档，见[模块说明](localization.zh-CN.md)与[活动记录](activity/2026-10-04-localization.md)。
 
 **新增外部资源：Noto Sans SC 字体。** 来源为本机已安装的 `C:\Windows\Fonts\NotoSansSC-VF.ttf`（Google 的 Noto Sans SC），
-许可 **SIL Open Font License 1.1**，允许自由使用、修改与再分发；该字体没有 Reserved Font Name，改名与修改后分发均被允许。
+许可 **SIL Open Font License 1.1**；使用、修改与再分发须保留版权/许可并遵循其条件。2026-10-06 核对内嵌声明后纠正：保留字体名为 `Source`，并非没有 Reserved Font Name，完整许可见上方链接。
 用途是界面中文显示 —— 项目原有字体只有 LiberationSans，**没有任何中文字形**。
 
 提交进仓库的是**子集版本** `NotoSansSC-MuseumSubset.ttf`（2.32 MB）：先用 fontTools 从变量字体的 `wght` 轴取出静态

@@ -23,6 +23,16 @@ namespace Museum.Localization.EditorTools
         const string SceneFolder = Root + "/Scenes";
         const string SceneName = "LanguageDemo";
 
+        /// <summary>
+        /// 展厅的默认界面语言。
+        ///
+        /// 刻意设成**英文**：这样接入主场景后「展厅的默认外观与接入之前完全一致」，
+        /// 访客主动选择中文才会切换。目前可本地化的只有入口三处标识，
+        /// 其余 37 处文字仍是英文 —— 若默认中文，展厅会呈现"半中半英"的状态。
+        /// 等全馆文案补齐中文之后，改成 <c>MuseumLanguage.Chinese</c> 更合适。
+        /// </summary>
+        const MuseumLanguage DefaultMuseumLanguage = MuseumLanguage.English;
+
         // 源字体候选，按顺序取第一个存在的。
         //
         // 第一项是**系统原始字体**（SIL OFL 1.1），第二项是用 fontTools 从它生成的子集。
@@ -297,10 +307,27 @@ namespace Museum.Localization.EditorTools
         static LanguageChannel CreateChannel()
         {
             var channel = AssetDatabase.LoadAssetAtPath<LanguageChannel>(ChannelPath);
-            if (channel != null) return channel;
 
-            channel = ScriptableObject.CreateInstance<LanguageChannel>();
-            AssetDatabase.CreateAsset(channel, ChannelPath);
+            if (channel == null)
+            {
+                channel = ScriptableObject.CreateInstance<LanguageChannel>();
+                AssetDatabase.CreateAsset(channel, ChannelPath);
+            }
+
+            // 初始语言也一并拉回统一默认值。通道是生成出来的资产，
+            // 初始语言属于代码级决定，这样「重新执行菜单」的结果是可预期的，
+            // 不会因为某次手动改过而留下一个没人记得的状态。
+            var serialized = new SerializedObject(channel);
+            var property = serialized.FindProperty("initial");
+            if (property != null && property.enumValueIndex != (int)DefaultMuseumLanguage)
+            {
+                property.enumValueIndex = (int)DefaultMuseumLanguage;
+                serialized.ApplyModifiedPropertiesWithoutUndo();
+                EditorUtility.SetDirty(channel);
+                Debug.Log($"[LocalizationSetup] 语言通道的初始语言已设为 {DefaultMuseumLanguage}。");
+            }
+
+            AssetDatabase.SaveAssets();
             return channel;
         }
 
@@ -592,6 +619,25 @@ namespace Museum.Localization.EditorTools
                 "请选择界面语言",
                 "Choose your interface language",
                 "语言选择提示。"),
+
+            // Entrance copy mirrors main after PR #9, including its different capitalization.
+            // Subtitle and introduction stay hidden; binding localization must not enable them.
+            new Seed("museum.sign.masthead",
+                "海面之下",
+                "Beneath the surface",
+                "Gallery masthead; preserves the current main English and demonstration visibility."),
+            new Seed("museum.sign.gallery",
+                "潜水展厅",
+                "THE DIVING GALLERY",
+                "Gallery subtitle remains hidden under the main layout."),
+            new Seed("museum.sign.arrival_brand",
+                "潜水展厅",
+                "The diving gallery",
+                "Arrival brand uses its own key to preserve the current sentence case."),
+            new Seed("museum.sign.intro",
+                "一件展品，多种看法。",
+                "One object. Many ways to explore.",
+                "Arrival introduction remains hidden under the main layout."),
             new Seed("controls.point",
                 "用手柄指向按钮，按住握把键确认。",
                 "Point with your controller and hold the grip button to confirm.",

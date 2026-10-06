@@ -26,6 +26,22 @@ MonoBehaviour:
     chinese: "\u8BF7\u9009\u62E9\u754C\u9762\u8BED\u8A00"
     english: Choose your interface language
     note: "\u8BED\u8A00\u9009\u62E9\u63D0\u793A\u3002"
+  - key: museum.sign.masthead
+    chinese: "海面之下"
+    english: Beneath the surface
+    note: "Gallery masthead; preserves the current main English and demonstration visibility."
+  - key: museum.sign.gallery
+    chinese: "潜水展厅"
+    english: THE DIVING GALLERY
+    note: "Gallery subtitle remains hidden under the main layout."
+  - key: museum.sign.arrival_brand
+    chinese: "潜水展厅"
+    english: The diving gallery
+    note: "Arrival brand uses its own key to preserve the current sentence case."
+  - key: museum.sign.intro
+    chinese: "一件展品，多种看法。"
+    english: One object. Many ways to explore.
+    note: "Arrival introduction remains hidden under the main layout."
   - key: controls.point
     chinese: "\u7528\u624B\u67C4\u6307\u5411\u6309\u94AE\uFF0C\u6309\u4F4F\u63E1\u628A\u952E\u786E\u8BA4\u3002"
     english: Point with your controller and hold the grip button to confirm.
