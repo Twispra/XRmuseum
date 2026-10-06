@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -18,8 +19,9 @@ namespace Museum.Hotspots
 
         MaterialPropertyBlock propertyBlock;
         XRSimpleInteractable interactable;
+        Func<IXRInteractable, Vector3, DistanceInfo> previousDistance;
 
-        public bool IsVisited { get; private set; }
+        public bool IsVisited => tour != null && tour.HasVisited(identifier);
 
         public void Configure(HelmetHotspotTour targetTour, string id, string heading, string details, Renderer visual)
         {
@@ -32,7 +34,7 @@ namespace Museum.Hotspots
             description = details;
             targetRenderer = visual;
 
-            if (tour != null)
+            if (tour != null && isActiveAndEnabled)
                 tour.ResetPerformed += ResetState;
 
             ResetState();
@@ -43,16 +45,24 @@ namespace Museum.Hotspots
             if (tour == null)
                 return;
 
-            if (!tour.Visit(identifier, title, description) && !IsVisited)
-                return;
-            IsVisited = true;
-            ApplyColor(visitedColor);
+            tour.Visit(identifier, title, description);
+            ApplyColor(IsVisited ? visitedColor : availableColor);
         }
 
         void OnEnable()
         {
             propertyBlock = new MaterialPropertyBlock();
             interactable = GetComponent<XRSimpleInteractable>();
+            if (interactable.getDistanceOverride != HotspotDistance)
+                previousDistance = interactable.getDistanceOverride;
+            // XRI's default collider distance omits triggers, placing these small
+            // markers behind the solid helmet in a direct interactor's target list.
+            interactable.getDistanceOverride = HotspotDistance;
+            if (tour != null)
+            {
+                tour.ResetPerformed -= ResetState;
+                tour.ResetPerformed += ResetState;
+            }
             interactable.selectEntered.AddListener(OnSelected);
             interactable.activated.AddListener(OnActivated);
             interactable.hoverEntered.AddListener(OnHoverEntered);
@@ -62,8 +72,13 @@ namespace Museum.Hotspots
 
         void OnDisable()
         {
+            if (tour != null)
+                tour.ResetPerformed -= ResetState;
             if (interactable == null)
                 return;
+
+            if (interactable.getDistanceOverride == HotspotDistance)
+                interactable.getDistanceOverride = previousDistance;
 
             interactable.selectEntered.RemoveListener(OnSelected);
             interactable.activated.RemoveListener(OnActivated);
@@ -104,8 +119,21 @@ namespace Museum.Hotspots
 
         void ResetState()
         {
-            IsVisited = false;
-            ApplyColor(availableColor);
+            ApplyColor(IsVisited ? visitedColor : availableColor);
+        }
+
+        DistanceInfo HotspotDistance(IXRInteractable target, Vector3 position)
+        {
+            var nearest = new DistanceInfo { distanceSqr = float.MaxValue, point = transform.position };
+            foreach (var collider in interactable.colliders)
+            {
+                if (!collider || !collider.enabled || !collider.gameObject.activeInHierarchy) continue;
+                var point = collider.ClosestPoint(position);
+                var distance = (point - position).sqrMagnitude;
+                if (distance < nearest.distanceSqr)
+                    nearest = new DistanceInfo { point = point, distanceSqr = distance, collider = collider };
+            }
+            return nearest;
         }
 
         void ApplyColor(Color color)

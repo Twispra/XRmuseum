@@ -1,0 +1,138 @@
+[
+  {
+    "finishedUtc": "2026-10-06T12:24:24.5882304Z",
+    "startedUtc": "2026-10-06T12:23:47.7658014Z",
+    "name": "repair-01",
+    "exitCode": 0,
+    "head": "d84c93f352541949db246440adb857361ec80ecd",
+    "arguments": [
+      "-batchmode",
+      "-projectPath",
+      "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\review-pr3\\XRmuseum\\MuseumVR\"",
+      "-logFile",
+      "\"E:\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006-hotspot-fix\\repair-01-unity.log\"",
+      "-executeMethod",
+      "Museum.Localization.EditorTools.HelmetHotspotAssetRepair.RunBatch",
+      "-hotspotRepairOutput",
+      "\"E:\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006-hotspot-fix\\repair-01-assets\"",
+      "-fontCompletionOutput",
+      "\"E:\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006-hotspot-fix\\repair-01-font\""
+    ],
+    "pid": 30128
+  },
+  {
+    "pid": 26064,
+    "startedUtc": "2026-10-06T12:33:14.1384220Z",
+    "name": "repair-02",
+    "finishedUtc": "2026-10-06T12:33:46.3584540Z",
+    "head": "d84c93f352541949db246440adb857361ec80ecd",
+    "arguments": [
+      "-batchmode",
+      "-projectPath",
+      "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\review-pr3\\XRmuseum\\MuseumVR\"",
+      "-logFile",
+      "\"E:\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006-hotspot-fix\\repair-02-unity.log\"",
+      "-executeMethod",
+      "Museum.Localization.EditorTools.HelmetHotspotAssetRepair.RunBatch",
+      "-hotspotRepairOutput",
+      "\"E:\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006-hotspot-fix\\repair-02-assets\"",
+      "-fontCompletionOutput",
+      "\"E:\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006-hotspot-fix\\repair-02-font\""
+    ],
+    "exitCode": 0
+  },
+  {
+    "exitCode": 0,
+    "finishedUtc": "2026-10-06T12:38:19.1279011Z",
+    "name": "repair-03",
+    "pid": 9668,
+    "head": "d84c93f352541949db246440adb857361ec80ecd",
+    "startedUtc": "2026-10-06T12:37:43.6347725Z",
+    "arguments": [
+      "-batchmode",
+      "-projectPath",
+      "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\review-pr3\\XRmuseum\\MuseumVR\"",
+      "-logFile",
+      "\"E:\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006-hotspot-fix\\repair-03-unity.log\"",
+      "-executeMethod",
+      "Museum.Localization.EditorTools.HelmetHotspotAssetRepair.RunBatch",
+      "-hotspotRepairOutput",
+      "\"E:\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006-hotspot-fix\\repair-03-assets\"",
+      "-fontCompletionOutput",
+      "\"E:\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006-hotspot-fix\\repair-03-font\""
+    ]
+  },
+  {
+    "arguments": [
+      "-batchmode",
+      "-projectPath",
+      "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\review-pr3\\XRmuseum\\MuseumVR\"",
+      "-logFile",
+      "\"E:\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006-hotspot-fix\\tests-final-unity.log\"",
+      "-runTests",
+      "-testPlatform",
+      "EditMode",
+      "-testFilter",
+      "Museum.Hotspots.Tests",
+      "-testResults",
+      "\"E:\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006-hotspot-fix\\tests-final.xml\""
+    ],
+    "pid": 11480,
+    "exitCode": 0,
+    "finishedUtc": "2026-10-06T12:41:25.2327613Z",
+    "name": "tests-final",
+    "startedUtc": "2026-10-06T12:40:40.6719228Z",
+    "head": "d84c93f352541949db246440adb857361ec80ecd"
+  },
+  {
+    "exitCode": 0,
+    "finishedUtc": "2026-10-06T12:40:18.8546033Z",
+    "name": "main-03",
+    "pid": 26036,
+    "head": "d84c93f352541949db246440adb857361ec80ecd",
+    "startedUtc": "2026-10-06T12:38:19.4411741Z",
+    "arguments": [
+      "-batchmode",
+      "-projectPath",
+      "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\review-pr3\\XRmuseum\\MuseumVR\"",
+      "-logFile",
+      "\"E:\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006-hotspot-fix\\main-03-unity.log\"",
+      "-executeMethod",
+      "Museum.Localization.EditorTools.LocalizationIntegrationValidation.RunBatch"
+    ]
+  },
+  {
+    "arguments": [
+      "-batchmode",
+      "-projectPath",
+      "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\review-pr3\\XRmuseum\\MuseumVR\"",
+      "-logFile",
+      "\"E:\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006-hotspot-fix\\module-final-unity.log\"",
+      "-executeMethod",
+      "Museum.Localization.EditorTools.LocalizationValidation.RunBatch"
+    ],
+    "pid": 29336,
+    "exitCode": 0,
+    "finishedUtc": "2026-10-06T12:41:53.3838299Z",
+    "name": "module-final",
+    "startedUtc": "2026-10-06T12:41:25.5232726Z",
+    "head": "d84c93f352541949db246440adb857361ec80ecd"
+  },
+  {
+    "arguments": [
+      "-batchmode",
+      "-projectPath",
+      "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\review-pr3\\XRmuseum\\MuseumVR\"",
+      "-logFile",
+      "\"E:\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261006-hotspot-fix\\exploration-final-unity.log\"",
+      "-executeMethod",
+      "Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch"
+    ],
+    "pid": 29324,
+    "exitCode": 0,
+    "finishedUtc": "2026-10-06T12:45:03.6512349Z",
+    "name": "exploration-final",
+    "startedUtc": "2026-10-06T12:41:53.6575582Z",
+    "head": "d84c93f352541949db246440adb857361ec80ecd"
+  }
+]

@@ -191,7 +191,7 @@ namespace Museum.Localization.EditorTools
         {
             if (pendingExit >= 0 && EditorApplication.timeSinceStartup >= exitAt) { int code = pendingExit; pendingExit = -1; EditorApplication.Exit(code); return; }
             if (!SessionState.GetBool(Prefix + "Active", false) || !EditorApplication.isPlaying || report == null || finishing) return;
-            if (EditorApplication.timeSinceStartup - started > 150) { Finish("Runtime checks exceeded 150 seconds."); return; }
+            if (EditorApplication.timeSinceStartup - started > 210) { Finish("Runtime checks exceeded 210 seconds (including hotspot input and language coverage)."); return; }
             if (lastFrame == Time.frameCount) return;
             lastFrame = Time.frameCount;
             if (Application.isBatchMode) System.Threading.Thread.Sleep(11);
@@ -256,6 +256,8 @@ namespace Museum.Localization.EditorTools
             CheckVisible("restored-zh", MuseumLanguage.Chinese, false); CaptureAll("restored-zh");
             yield return Press(languageButtons.Single(b => b.Action == LanguageButton.Choice.TraditionalChinese), false);
             CheckVisible("selected-zh-hant", MuseumLanguage.TraditionalChinese, false); CaptureAll("selected-zh-hant");
+            yield return HelmetHotspotInteractionValidation.Run(table, channel, Require,
+                (position, rotation, grip) => QueueController(rightDevice, position, rotation, grip), ParkHands, Output);
             yield return TrilingualMuseumValidation.Run(table, channel, progressive, exploration, demonstration, Require);
             yield return Press(englishButton, false);
             foreach (int index in new[] { 1, 3 })

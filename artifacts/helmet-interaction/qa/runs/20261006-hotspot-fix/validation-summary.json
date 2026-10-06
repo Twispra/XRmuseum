@@ -1,0 +1,108 @@
+{
+  "testedBaseCommit": "d84c93f352541949db246440adb857361ec80ecd",
+  "candidateWasUncommitted": true,
+  "candidateIdentity": "All runtime/asset/validator file hashes in tested-files.json matched disk after execution.",
+  "unity": "2022.3.62f3c1",
+  "tests": {
+    "id": "2",
+    "testcasecount": "12",
+    "result": "Passed",
+    "total": "12",
+    "passed": "12",
+    "failed": "0",
+    "inconclusive": "0",
+    "skipped": "0",
+    "asserts": "0",
+    "engine-version": "3.5.0.0",
+    "clr-version": "4.0.30319.42000",
+    "start-time": "2026-10-06 12:41:21Z",
+    "end-time": "2026-10-06 12:41:23Z",
+    "duration": "2.2692798"
+  },
+  "main": {
+    "status": "passed",
+    "checks": 82319,
+    "passed": 82319,
+    "errors": [],
+    "warnings": [],
+    "fullReportSha256": "5699a78d2901410b89658191faa0edc41d37586fc7884c52122998a75d53cef6",
+    "startedUtc": "2026-10-06T12:38:47.2319546Z",
+    "finishedUtc": "2026-10-06T12:39:56.8331736Z"
+  },
+  "hotspots": {
+    "status": "passed",
+    "checks": 381,
+    "passed": 381,
+    "errors": [],
+    "warnings": [],
+    "fullReportSha256": "b89ee3733bd866e85b62e73428fb7cd72d92273ec3ea270384fd8f8558d7f6fa",
+    "startedUtc": null,
+    "finishedUtc": null
+  },
+  "exploration": {
+    "status": "passed",
+    "checks": 1469,
+    "passed": 1469,
+    "errors": [],
+    "warnings": [],
+    "fullReportSha256": "d7c55f0d565210977faf06e052e4a49f3ef0bf8bef63dba86e0cd5675b858f3e",
+    "startedUtc": null,
+    "finishedUtc": null
+  },
+  "localizationModule": {
+    "startedUtc": "2026-10-06T12:41:52.2879338Z",
+    "finishedUtc": "2026-10-06T12:41:52.2989969Z",
+    "passed": 11,
+    "failed": 0,
+    "tableEntries": 202,
+    "initialLanguage": "English",
+    "showcasePresent": true,
+    "checks": [
+      {
+        "ok": true,
+        "detail": "通过  字体资产存在（图集 1 张，4096×4096，已烤 533 个字形）"
+      },
+      {
+        "ok": true,
+        "detail": "通过  文案表存在（202 条）"
+      },
+      {
+        "ok": true,
+        "detail": "通过  语言通道存在"
+      },
+      {
+        "ok": true,
+        "detail": "通过  key 唯一性与双语完整性（202 个 key）"
+      },
+      {
+        "ok": true,
+        "detail": "通过  字体字形覆盖（核对了 513 个不同字符）"
+      },
+      {
+        "ok": true,
+        "detail": "通过  展示 Prefab 存在"
+      },
+      {
+        "ok": true,
+        "detail": "通过  展示 Prefab 内 6 处文字的缺字检查"
+      },
+      {
+        "ok": true,
+        "detail": "通过  展示 Prefab 的 3 处文字接线"
+      },
+      {
+        "ok": true,
+        "detail": "通过  展示 Prefab 的 3 个语言按钮接线"
+      },
+      {
+        "ok": true,
+        "detail": "通过  键盘预览组件存在"
+      },
+      {
+        "ok": true,
+        "detail": "通过  两种语言的文案完整度"
+      }
+    ]
+  },
+  "limitations": "Synthetic XR input and monocular editor rendering only. No physical HMD/controller, user study, comfort, historical accuracy or executable-build verification."
+}
