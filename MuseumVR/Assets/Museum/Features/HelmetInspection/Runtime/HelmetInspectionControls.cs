@@ -45,7 +45,7 @@ namespace Museum.Inspection
                 case Action.Cutaway: controller.ToggleCutaway(); break;
                 case Action.RotateLeft: controller.RotateDisplay(-30f); break;
                 case Action.RotateRight: controller.RotateDisplay(30f); break;
-                case Action.Reset: controller.ResetInspection(); break;
+                case Action.Reset: controller.ReturnInspectionToDisplay(); break;
                 case Action.Float: controller.ToggleFloating(); break;
                 case Action.TiltUp: controller.RotateDisplayAround(ViewRight(), -20f); break;
                 case Action.TiltDown: controller.RotateDisplayAround(ViewRight(), 20f); break;

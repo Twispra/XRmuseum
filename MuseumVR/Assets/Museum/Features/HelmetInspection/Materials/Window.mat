@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Window
-  m_Shader: {fileID: 4800000, guid: 10793068ec21d2d409b689e2f9aa2b9f, type: 3}
+  m_Shader: {fileID: 4800000, guid: 1e05defe5aeccc04ea90f6826c603920, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -28,7 +28,7 @@ Material:
     - _CutEnabled: 0
     - _Hover: 0
     m_Colors:
-    - _BaseColor: {r: 0.06, g: 0.15, b: 0.18, a: 1}
+    - _BaseColor: {r: 0.16, g: 0.3, b: 0.32, a: 0.16}
     - _CutColor: {r: 1, g: 0.65, b: 0.17999998, a: 1}
     - _CutPlane: {r: 1, g: 0, b: 0, a: 0}
     - _InsideColor: {r: 0.3, g: 0.4, b: 0.39, a: 1}
