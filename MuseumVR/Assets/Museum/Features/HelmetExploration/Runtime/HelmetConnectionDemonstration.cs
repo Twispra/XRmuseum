@@ -34,7 +34,7 @@ namespace Museum.Exploration
         public bool IsPlaying { get; private set; }
         public bool IsVisible { get; private set; }
         public HelmetExplorationController.Clue CurrentClue { get; private set; }
-        public string AnimationStage { get; private set; } = "DEMO PAUSED";
+        public string AnimationStage { get; private set; } = "Demo hidden";
         public int PhaseIndex { get; private set; }
         public float NormalizedProgress => IsVisible ? Mathf.Clamp01((Time.unscaledTime - startedAt) / Duration) : 0f;
         public Vector3 AirTargetWorld => inspection && anchorReady
@@ -75,7 +75,7 @@ namespace Museum.Exploration
         {
             bool changed = IsPlaying || IsVisible;
             IsPlaying = false; IsVisible = false;
-            AnimationStage = "DEMO PAUSED";
+            AnimationStage = "Demo hidden";
             if (visuals) visuals.SetActive(false);
             if (changed) PlaybackChanged?.Invoke();
         }
@@ -121,9 +121,9 @@ namespace Museum.Exploration
                 waveforms[i] = MakeLine(pulse, "Voice waveform " + i, .006f, voiceMaterial);
                 waveforms[i].positionCount = 31;
             }
-            sourceText = MakeText("Source label", new Vector2(.26f,.08f), .75f);
-            destinationText = MakeText("Destination label", new Vector2(.26f,.08f), .75f);
-            caption = MakeText("Schematic caption", new Vector2(.62f,.12f), .90f);
+            sourceText = MakeText("Source label", new Vector2(.23f,.045f), .42f);
+            destinationText = MakeText("Destination label", new Vector2(.23f,.045f), .42f);
+            caption = MakeText("Schematic caption", new Vector2(.52f,.073f), .48f);
             if (Camera.main) viewer = Camera.main.transform;
             visuals.SetActive(false);
         }
@@ -181,12 +181,12 @@ namespace Museum.Exploration
             SetArrow(arrow, .73f, replying ? -1f : 1f);
             if(showBoth) SetArrow(returnArrow, .28f, -1f);
 
-            sourceText.text = air ? "MANUAL AIR PUMP" : "SURFACE TELEPHONE";
-            destinationText.text = air ? "HELMET AIR CONNECTOR" : "DIVER UNIT";
+            sourceText.text = air ? "Air pump" : "Surface telephone";
+            destinationText.text = air ? "Air inlet" : "Diver unit";
             sourceText.transform.position = (air ? models.Pump.position : models.SurfaceTelephone.position) + Vector3.up * .31f;
             destinationText.transform.position = air ? pathEnd + Vector3.up*.075f : models.DiverTransducer.position + Vector3.up*.24f;
-            caption.text = AnimationStage + "\nILLUSTRATIVE MODELS";
-            caption.transform.position = centre + diagramRight * .43f + Vector3.up * .47f;
+            caption.text = AnimationStage + "\n<size=75%>Illustrative model</size>";
+            caption.transform.position = centre + diagramRight * .43f + Vector3.up * .43f;
             FaceViewer(sourceText.transform); FaceViewer(destinationText.transform); FaceViewer(caption.transform);
         }
 
@@ -195,26 +195,26 @@ namespace Museum.Exploration
             if (staticDiagram)
             {
                 PhaseIndex = air ? 2 : 4;
-                AnimationStage = air ? "DEMO PAUSED / PUMP > HELMET" : "DEMO PAUSED / TWO-WAY VOICE";
+                AnimationStage = air ? "Pump > helmet / static view" : "Two-way voice / static view";
                 return;
             }
             if (air)
             {
                 PhaseIndex = elapsed < 2f ? 0 : elapsed < 13f ? 1 : 2;
-                AnimationStage = PhaseIndex == 0 ? "1 / FIND THE PUMP AND HOSE"
-                    : PhaseIndex == 1 ? "2 / THE PUMP SENDS AIR TO THE HELMET"
-                    : "3 / AIR COMES FROM ABOVE WATER";
+                AnimationStage = PhaseIndex == 0 ? "Pump and hose"
+                    : PhaseIndex == 1 ? "Air: pump > helmet"
+                    : "Air supplied from the surface";
             }
             else
             {
                 PhaseIndex = elapsed < 2f ? 0 : elapsed < 7f ? 1 : elapsed < 9f ? 2 : elapsed < 14f ? 3 : 4;
                 switch(PhaseIndex)
                 {
-                    case 0: AnimationStage="1 / FIND BOTH ENDS OF THE TELEPHONE";break;
-                    case 1: AnimationStage="2 / SURFACE TEAM SPEAKS > DIVER";break;
-                    case 2: AnimationStage="3 / NOW THE DIVER CAN REPLY";break;
-                    case 3: AnimationStage="4 / DIVER REPLIES > SURFACE TEAM";break;
-                    default: AnimationStage="5 / A CONVERSATION NEEDS BOTH ENDS";break;
+                    case 0: AnimationStage="Surface and diver";break;
+                    case 1: AnimationStage="Message: surface > diver";break;
+                    case 2: AnimationStage="Waiting for a reply";break;
+                    case 3: AnimationStage="Reply: diver > surface";break;
+                    default: AnimationStage="A two-way connection";break;
                 }
             }
         }

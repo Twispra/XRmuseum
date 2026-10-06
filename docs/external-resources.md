@@ -2,6 +2,8 @@
 
 2026-10-03 年代切换模块：Codex 辅助实现头盔「历史年代切换」系统及文档，见[模块说明](helmet-eras.zh-CN.md)与[活动记录](activity/2026-10-03-helmet-eras.md)。三个年代的年代与结构描述沿用[模型依据](helmet-prototype-reference.md)中已记录的公开来源口径（DESCO、U.S. Naval Undersea Museum、Royal Museums Greenwich 等），**没有新增下载资产**。9 套材质是程序生成的纯色占位材质，**不是历史外观复原**，未使用任何第三方贴图或模型，也未复制馆藏媒体。AI 辅助范围包括架构设计、Editor 工具、运行时脚本、实机问题排查与文档；编辑器内预览与自动检查**不等于**真实头显测试、用户研究或组员审批。
 
+2026-10-03 信息安排调研：参考 [V&A 展签写作指南](https://www.vam.ac.uk/blog/wp-content/uploads/VA_Gallery-Text-Writing-Guidelines_online_Web.pdf)、[NPS 展板写作](https://www.nps.gov/subjects/hfc/wayside-exhibit-writing.htm)、[NN/G 渐进式展示](https://www.nngroup.com/articles/progressive-disclosure/)与 [Apple Ornaments](https://developer.apple.com/design/human-interface-guidelines/ornaments)。仅引用组织原则与链接，未导入媒体、字体或UI资产；按钮分组、文案和布局是本项目设计，未把实体展板或 visionOS 尺寸套成 VR 标准。Codex 辅助文案、面板状态、限定场景更新与验证，见[信息安排方案](exhibit-information.zh-CN.md)。
+
 2026-10-03 模型动画补充：按用户反馈将供气/通话简图扩展为设备模型与动画。类型依据为 [RMG 手动空气泵 EQA0617](https://www.rmg.co.uk/collections/objects/rmgc-object-256836)、[SMG 双缸潜水泵 1963-71](https://collection.sciencemuseumgroup.org.uk/objects/co41152/two-cylinder-double-acting-divers-air-pump)和 [RMG 潜水电话箱 ZBA6671](https://www.rmg.co.uk/collections/objects/rmgc-object-561120)。以代码构建原创简化几何，未复制馆藏图片或第三方模型；这些不同馆藏不是已确认的 Mark V 配套型号。转轮、活塞、可见气流、信号波形、缩放及时序均为教学表达参数，不是测量数据或精确机械/电气复原。代码、资料核对、渲染与模拟测试由 Codex 辅助，详见[本轮记录](activity/2026-10-03-exploration-model-animation.md)。
 
 2026-10-03 自由探索补充：Codex 辅助实现同一观察面板的可选供气/通话探索、提示、回顾、示意动画、XR 模拟测试及文档，见[功能说明与来源](helmet-exploration.zh-CN.md)和[活动记录](activity/2026-10-03-helmet-exploration.md)。重新核验 U.S. Naval Undersea Museum 的 MK V Diving Rig 页面及 DESCO 的 Mark V 产品正文，仅用于解释水面供气与电话连接，没有导入页面照片、下载模型或音频。现有接头为简化灰模，通话是概念图；动画速度、时长、布局与交互大小为设计参数，没有冒充历史测量数据。自动测试和 AI 渲染检查不等于真实头显测试、用户研究或组员审批。
