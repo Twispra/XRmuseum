@@ -1675,7 +1675,6 @@ GameObject:
   - component: {fileID: 316233490}
   - component: {fileID: 316233492}
   - component: {fileID: 316233491}
-  - component: {fileID: 316233493}
   m_Layer: 0
   m_Name: Museum Subtitle
   m_TagString: Untagged
@@ -1836,23 +1835,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &316233493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 316233489}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2411d0a353784927869f656eec7e94e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  table: {fileID: 11400000, guid: ca262dc3d02429245991b087c7d15858, type: 2}
-  channel: {fileID: 11400000, guid: 1c39d1ee21f80bc41ae272dccf23e592, type: 2}
-  key: museum.sign.subtitle
-  applyTableFont: 1
-  logMissingKeys: 1
 --- !u!1 &345629526
 GameObject:
   m_ObjectHideFlags: 0
@@ -4399,7 +4381,6 @@ GameObject:
   - component: {fileID: 544613836}
   - component: {fileID: 544613838}
   - component: {fileID: 544613837}
-  - component: {fileID: 544613839}
   m_Layer: 0
   m_Name: Museum Title
   m_TagString: Untagged
@@ -4560,23 +4541,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &544613839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 544613835}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2411d0a353784927869f656eec7e94e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  table: {fileID: 11400000, guid: ca262dc3d02429245991b087c7d15858, type: 2}
-  channel: {fileID: 11400000, guid: 1c39d1ee21f80bc41ae272dccf23e592, type: 2}
-  key: museum.sign.title
-  applyTableFont: 1
-  logMissingKeys: 1
 --- !u!1 &551436277
 GameObject:
   m_ObjectHideFlags: 0
@@ -10853,7 +10817,6 @@ GameObject:
   - component: {fileID: 1239623737}
   - component: {fileID: 1239623739}
   - component: {fileID: 1239623738}
-  - component: {fileID: 1239623740}
   m_Layer: 0
   m_Name: Welcome
   m_TagString: Untagged
@@ -11014,23 +10977,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &1239623740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1239623736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2411d0a353784927869f656eec7e94e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  table: {fileID: 11400000, guid: ca262dc3d02429245991b087c7d15858, type: 2}
-  channel: {fileID: 11400000, guid: 1c39d1ee21f80bc41ae272dccf23e592, type: 2}
-  key: museum.sign.welcome
-  applyTableFont: 1
-  logMissingKeys: 1
 --- !u!1 &1244887173
 GameObject:
   m_ObjectHideFlags: 0
@@ -11270,6 +11216,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1847125552230891785, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
+    - target: {fileID: 1847125552230891785, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3044848435321221505, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
     - target: {fileID: 2154949256941644393, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -11288,6 +11242,10 @@ PrefabInstance:
       propertyPath: m_fontSizeMax
       value: 2.05
       objectReference: {fileID: 0}
+    - target: {fileID: 2827967124476505969, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -3044848435321221505, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
     - target: {fileID: 2892913454711943880, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -11308,6 +11266,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4972501894641107051, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -3044848435321221505, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
     - target: {fileID: 5527196717460127238, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
       propertyPath: m_Name
       value: Maritime Gallery Environment
@@ -11333,13 +11295,37 @@ PrefabInstance:
       value: 2.75
       objectReference: {fileID: 0}
     - target: {fileID: 6191970778209389101, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
+    - target: {fileID: 6191970778209389101, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
       propertyPath: m_fontSizeMax
       value: 2.75
       objectReference: {fileID: 0}
+    - target: {fileID: 6191970778209389101, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3044848435321221505, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
+    - target: {fileID: 6295327135728848859, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -3044848435321221505, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
     - target: {fileID: 6580132602471296282, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6773778735268001381, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -3044848435321221505, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
+    - target: {fileID: 6907544838156972518, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
+    - target: {fileID: 6907544838156972518, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3044848435321221505, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
     - target: {fileID: 7651626046582328436, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
       propertyPath: m_text
       value: Connected to the surface
@@ -11373,9 +11359,17 @@ PrefabInstance:
       value: 2.6
       objectReference: {fileID: 0}
     - target: {fileID: 8505682012943423414, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
+    - target: {fileID: 8505682012943423414, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
       propertyPath: m_fontSizeMax
       value: 2.6
       objectReference: {fileID: 0}
+    - target: {fileID: 8505682012943423414, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3044848435321221505, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
     - target: {fileID: 8574079926541244412, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -11391,6 +11385,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3382256313404794302, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 3382256313404794302, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1696580061}
+    - targetCorrespondingSourceObject: {fileID: 905208361407476439, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1291074046}
     - targetCorrespondingSourceObject: {fileID: 23002034292801532, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -11403,6 +11403,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7097417362643444042, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 7097417362643444042, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1291074045}
+    - targetCorrespondingSourceObject: {fileID: 2154949256941644393, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1291074044}
     - targetCorrespondingSourceObject: {fileID: 1233314551123942087, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 0}
@@ -11432,6 +11438,72 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3382256313404794302, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
   m_PrefabInstance: {fileID: 1291074038}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1291074041 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2154949256941644393, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+  m_PrefabInstance: {fileID: 1291074038}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1291074042 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7097417362643444042, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+  m_PrefabInstance: {fileID: 1291074038}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1291074043 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 905208361407476439, guid: 241077d17842c134f866ee4c6c579aca, type: 3}
+  m_PrefabInstance: {fileID: 1291074038}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1291074044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291074041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2411d0a353784927869f656eec7e94e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table: {fileID: 11400000, guid: ca262dc3d02429245991b087c7d15858, type: 2}
+  channel: {fileID: 11400000, guid: 1c39d1ee21f80bc41ae272dccf23e592, type: 2}
+  key: museum.sign.intro
+  applyTableFont: 1
+  logMissingKeys: 1
+--- !u!114 &1291074045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291074042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2411d0a353784927869f656eec7e94e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table: {fileID: 11400000, guid: ca262dc3d02429245991b087c7d15858, type: 2}
+  channel: {fileID: 11400000, guid: 1c39d1ee21f80bc41ae272dccf23e592, type: 2}
+  key: museum.sign.arrival_brand
+  applyTableFont: 1
+  logMissingKeys: 1
+--- !u!114 &1291074046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291074043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2411d0a353784927869f656eec7e94e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table: {fileID: 11400000, guid: ca262dc3d02429245991b087c7d15858, type: 2}
+  channel: {fileID: 11400000, guid: 1c39d1ee21f80bc41ae272dccf23e592, type: 2}
+  key: museum.sign.gallery
+  applyTableFont: 1
+  logMissingKeys: 1
 --- !u!1 &1307517827
 GameObject:
   m_ObjectHideFlags: 0
@@ -15486,6 +15558,23 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1690703799}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1696580061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291074040}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2411d0a353784927869f656eec7e94e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table: {fileID: 11400000, guid: ca262dc3d02429245991b087c7d15858, type: 2}
+  channel: {fileID: 11400000, guid: 1c39d1ee21f80bc41ae272dccf23e592, type: 2}
+  key: museum.sign.masthead
+  applyTableFont: 1
+  logMissingKeys: 1
 --- !u!1 &1731489148
 GameObject:
   m_ObjectHideFlags: 0

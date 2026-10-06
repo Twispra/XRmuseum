@@ -26,19 +26,22 @@ MonoBehaviour:
     chinese: "\u8BF7\u9009\u62E9\u754C\u9762\u8BED\u8A00"
     english: Choose your interface language
     note: "\u8BED\u8A00\u9009\u62E9\u63D0\u793A\u3002"
-  - key: museum.sign.title
-    chinese: "\u535A\u7269\u9986 / XR"
-    english: MUSEUM / XR
-    note: "\u5165\u53E3\u6807\u8BC6\u7684\u9986\u540D\u3002\u4FDD\u7559\u300C/ XR\u300D\u7684\u56FE\u5F62\u611F\uFF0C\u53EA\u628A
-      MUSEUM \u6362\u6210\u4E2D\u6587\u3002"
-  - key: museum.sign.subtitle
-    chinese: "\u53EF\u4EE5\u968F\u610F\u89C2\u770B"
-    english: A SPACE TO EXPLORE
-    note: "\u5165\u53E3\u6807\u8BC6\u7684\u526F\u6807\u9898\u3002"
-  - key: museum.sign.welcome
-    chinese: "\u6B22\u8FCE\u3002\u8BF7\u968F\u610F\u89C2\u770B\u3002"
-    english: Welcome. Take a closer look.
-    note: "\u5165\u53E3\u6807\u8BC6\u7684\u6B22\u8FCE\u8BED\u3002"
+  - key: museum.sign.masthead
+    chinese: "海面之下"
+    english: Beneath the surface
+    note: "Gallery masthead; preserves the current main English and demonstration visibility."
+  - key: museum.sign.gallery
+    chinese: "潜水展厅"
+    english: THE DIVING GALLERY
+    note: "Gallery subtitle remains hidden under the main layout."
+  - key: museum.sign.arrival_brand
+    chinese: "潜水展厅"
+    english: The diving gallery
+    note: "Arrival brand uses its own key to preserve the current sentence case."
+  - key: museum.sign.intro
+    chinese: "一件展品，多种看法。"
+    english: One object. Many ways to explore.
+    note: "Arrival introduction remains hidden under the main layout."
   - key: controls.point
     chinese: "\u7528\u624B\u67C4\u6307\u5411\u6309\u94AE\uFF0C\u6309\u4F4F\u63E1\u628A\u952E\u786E\u8BA4\u3002"
     english: Point with your controller and hold the grip button to confirm.

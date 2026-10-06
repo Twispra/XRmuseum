@@ -1,318 +1,178 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using TMPro;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Museum.Localization.EditorTools
 {
-    /// <summary>
-    /// 把「语言选择」接进主场景 <c>MuseumStart.unity</c>。
-    ///
-    /// 设计原则（因为主场景是全组共享、需要串行写入的文件）：
-    /// <list type="bullet">
-    /// <item>**只增不改**：所有改动集中在一个新增根物体上；对既有物体只**挂组件**，
-    /// 不动它们的名字、位置、旋转、缩放和文字内容。</item>
-    /// <item>**执行前自动备份**主场景到仓库外的 <c>_local-backup/</c>，随时可以还原。</item>
-    /// <item>**可一键撤销**，见 <see cref="RemoveFromMuseumStart"/>。</item>
-    /// <item>**Play 模式拒绝执行**：Unity 在播放状态会拒绝场景保存，产物会不完整而无明显报错。</item>
-    /// </list>
-    ///
-    /// 挂 <c>LocalizedText</c> 的那三条文案，英文必须与场景里现有文字**逐字一致**，
-    /// 否则挂上的瞬间就等于改掉了展陈文案。
-    /// </summary>
+    /// <summary>Apply localization to the saved main scene without rebuilding assets or changing its layout.</summary>
     public static class MuseumIntegration
     {
         const string ScenePath = "Assets/Museum/Scenes/MuseumStart.unity";
-        const string PrefabPath = "Assets/Museum/Features/Localization/Prefabs/LanguageShowcase.prefab";
-        const string TablePath = "Assets/Museum/Features/Localization/Tables/LocalizationTable.asset";
-        const string ChannelPath = "Assets/Museum/Features/Localization/Tables/LanguageChannel.asset";
-
+        const string Root = "Assets/Museum/Features/Localization";
         const string RootName = "Language Selection";
-
-        /// <summary>
-        /// 语言选择面板的位置。参观者出生点在 (0, 0, 2.2) 且朝 +Z，
-        /// 入口标识墙在 z = 8.82；放在右前方 4 米处 —— 一眼看得到，又不挡住居中的馆名。
-        /// 觉得位置不合适，接入后在 Hierarchy 里直接拖这个物体即可。
-        /// </summary>
         static readonly Vector3 Placement = new Vector3(2.6f, 0f, 6.2f);
-
-        /// <summary>本工具添加的绑定，key 一律以这个前缀开头（用于识别与清理）。</summary>
-        const string SignKeyPrefix = "museum.sign.";
-
-        /// <summary>
-        /// 要挂上 LocalizedText 的既有文字（物体名 → key）。
-        ///
-        /// ⚠️ 必须是**游客真正看得见**的标识。第一版绑的是 Museum Title / Museum Subtitle /
-        /// Welcome，但那三个是展厅改造后保留的**隐藏旧对象**（`MeshRenderer m_Enabled = 0`，
-        /// 被 #9 的按需显隐逻辑关掉了）—— 挂上组件不会产生任何可见变化，游客看到的仍是英文
-        /// （Issue #17，组长实测复现）。现在绑的是 MaritimeGallery 里真正在渲染的入口标识。
-        ///
-        /// 这几个物体位于 `MaritimeGallery.prefab` 内。**不要改那个预制体**：
-        /// 在场景里给预制体实例的子物体加组件，Unity 会记为**场景 override**，
-        /// 因此本工具只写 `MuseumStart.unity`，符合 Issue 限定的修改范围。
-        /// </summary>
-        static readonly KeyValuePair<string, string>[] Signage =
+        sealed class Sign
         {
-            new KeyValuePair<string, string>("Gallery masthead", "museum.sign.masthead"),
-            new KeyValuePair<string, string>("Gallery subtitle", "museum.sign.gallery"),
-            new KeyValuePair<string, string>("Arrival brand", "museum.sign.gallery"),
-            new KeyValuePair<string, string>("Arrival introduction", "museum.sign.intro"),
+            public string name, key, english;
+            public bool active;
+            public Sign(string name, string key, string english, bool active)
+            { this.name = name; this.key = key; this.english = english; this.active = active; }
+        }
+        // These are the exact texts and visibility decisions in main after PR #9.
+        // The two hidden labels are prepared for future activation, never enabled here.
+        static readonly Sign[] Signs = {
+            new Sign("Gallery masthead", "museum.sign.masthead", "Beneath the surface", true),
+            new Sign("Gallery subtitle", "museum.sign.gallery", "THE DIVING GALLERY", false),
+            new Sign("Arrival brand", "museum.sign.arrival_brand", "The diving gallery", true),
+            new Sign("Arrival introduction", "museum.sign.intro", "One object. Many ways to explore.", false)
+        };
+        static readonly Dictionary<string, string> Legacy = new Dictionary<string, string> {
+            { "Museum Title", "museum.sign.title" },
+            { "Museum Subtitle", "museum.sign.subtitle" },
+            { "Welcome", "museum.sign.welcome" }
         };
 
-        // ------------------------------------------------------------------ 接入
-
         [MenuItem("Museum/Localization/Integrate Into MuseumStart", priority = 30)]
-        public static void IntegrateIntoMuseumStart()
+        public static void IntegrateIntoMuseumStart() => Apply();
+
+        // Use only for the explicitly authorized scene integration, never as a prerequisite to validation.
+        public static void IntegrateBatch()
         {
-            if (RefuseWhilePlaying()) return;
+            try { Apply(); if (Application.isBatchMode) EditorApplication.Exit(0); }
+            catch (Exception exception)
+            { Debug.LogException(exception); if (Application.isBatchMode) EditorApplication.Exit(1); else throw; }
+        }
 
-            var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(PrefabPath);
-            var table = AssetDatabase.LoadAssetAtPath<LocalizationTable>(TablePath);
-            var channel = AssetDatabase.LoadAssetAtPath<LanguageChannel>(ChannelPath);
-            if (prefab == null || table == null || channel == null)
+        static void Apply()
+        {
+            Require(!EditorApplication.isPlayingOrWillChangePlaymode, "Exit Play Mode before integration.");
+            RefuseDirtyScenes();
+            var table = AssetDatabase.LoadAssetAtPath<LocalizationTable>(Root + "/Tables/LocalizationTable.asset");
+            var channel = AssetDatabase.LoadAssetAtPath<LanguageChannel>(Root + "/Tables/LanguageChannel.asset");
+            var prefab = AssetDatabase.LoadAssetAtPath<GameObject>(Root + "/Prefabs/LanguageShowcase.prefab");
+            Require(table && channel && prefab && table.FontAsset, "Missing saved localization assets; prepare them explicitly before integration.");
+            Require(channel.Initial == MuseumLanguage.English, "Saved initial language must remain English.");
+            foreach (var sign in Signs)
             {
-                Debug.LogError(
-                    "[MuseumIntegration] 缺少模块资产。请先执行 " +
-                    "Museum → Localization → Create Everything and Demo Scene。");
-                return;
+                Require(table.ContainsKey(sign.key), "Missing translation key: " + sign.key);
+                Require(table.Get(sign.key, MuseumLanguage.English) == sign.english, "English must match main exactly: " + sign.key);
+                string chinese = table.Get(sign.key, MuseumLanguage.Chinese);
+                Require(!string.IsNullOrWhiteSpace(chinese), "Missing Chinese: " + sign.key);
+                foreach (char character in sign.english + chinese)
+                    if (!char.IsWhiteSpace(character))
+                        Require(table.FontAsset.HasCharacter(character, false, false),
+                            "Saved font lacks U+" + ((int)character).ToString("X4") + " for " + sign.key + "; bake it before integration.");
             }
-
-            if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
-
-            var backup = BackupScene();
-            if (backup == null) return;
 
             var scene = EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Single);
-            var report = new List<string>();
-
-            // ---- 1) 新增语言选择面板（唯一的"增"）----
-            var existing = FindRoot(scene, RootName);
-            if (existing != null)
+            var objects = scene.GetRootGameObjects().SelectMany(root => root.GetComponentsInChildren<Transform>(true)).ToArray();
+            var targets = new Dictionary<Sign, TMP_Text>();
+            foreach (var sign in Signs)
             {
-                report.Add($"已存在「{RootName}」，跳过新增（如需重来请先执行 Remove From MuseumStart）。");
+                var matches = objects.Where(item => item.name == sign.name).ToArray();
+                Require(matches.Length == 1, "Expected one target: " + sign.name + "; found " + matches.Length);
+                var target = matches[0].GetComponent<TMP_Text>();
+                Require(target && target.GetComponent<Renderer>(), "Target requires TMP and a Renderer: " + sign.name);
+                Require(target.gameObject.activeSelf == sign.active, "Unexpected main visibility: " + sign.name);
+                Require(target.GetComponent<Renderer>().enabled, "Target Renderer is disabled: " + sign.name);
+                var existing = target.GetComponent<LocalizedText>();
+                Require(!existing || (existing.Key == sign.key && existing.enabled), "Conflicting binding on " + sign.name);
+                if (!existing) Require(target.text == sign.english, "Target English differs from main: " + sign.name);
+                targets.Add(sign, target);
             }
-            else
+            var bindings = objects.Select(item => item.GetComponent<LocalizedText>()).Where(item => item).ToArray();
+            foreach (var binding in bindings)
+            {
+                if (Legacy.Values.Contains(binding.Key))
+                    Require(Legacy.TryGetValue(binding.name, out string key) && key == binding.Key,
+                        "Legacy key occurs outside its owned target; inspect manually: " + binding.name);
+                var sign = Signs.FirstOrDefault(item => item.key == binding.Key);
+                if (sign != null) Require(binding.gameObject == targets[sign].gameObject, "Duplicate sign binding: " + binding.Key);
+            }
+            var roots = scene.GetRootGameObjects().Where(item => item.name == RootName).ToArray();
+            Require(roots.Length <= 1, "Multiple Language Selection roots; inspect manually.");
+            if (roots.Length == 1)
+                Require(roots[0].GetComponentsInChildren<LanguageButton>(true).Length >= 2, "Existing language panel is incomplete.");
+
+            string backupFolder = Path.Combine(Application.temporaryCachePath, "MuseumLocalizationIntegration");
+            Directory.CreateDirectory(backupFolder);
+            string backup = Path.Combine(backupFolder, DateTime.UtcNow.ToString("yyyyMMddTHHmmssfffZ") + "-" + Guid.NewGuid().ToString("N") + ".unity");
+            File.Copy(ScenePath, backup, false);
+
+            // Keep the existing panel's transform and instance overrides intact.
+            if (roots.Length == 0)
             {
                 var instance = (GameObject)PrefabUtility.InstantiatePrefab(prefab, scene);
                 instance.name = RootName;
-                instance.transform.position = Placement;
-                instance.transform.rotation = Quaternion.identity;
+                instance.transform.SetPositionAndRotation(Placement, Quaternion.identity);
                 instance.transform.localScale = Vector3.one;
-                report.Add($"新增「{RootName}」于 {Placement}（面向 -Z，正对参观者来向）。");
             }
+            foreach (var binding in bindings)
+                if (Legacy.TryGetValue(binding.name, out string key) && key == binding.Key)
+                    UnityEngine.Object.DestroyImmediate(binding);
 
-            // ---- 2) 先清掉已经过时的旧绑定 ----
-            // 换过绑定目标（或改过 key）之后，旧绑定会残留在物体上，而它的 key 已经不在文案表里，
-            // 于是那个物体上会一直显示红色 [[museum.sign.xxx]] 标记（Issue #17 的连带问题）。
-            // 只清理**本工具加过的、且当前不再有效**的绑定；别人挂的组件一律不动。
-            var validKeys = new HashSet<string>(StringComparer.Ordinal);
-            foreach (var pair in Signage) validKeys.Add(pair.Value);
-            var stale = StripStaleBindings(scene, validKeys);
-            if (stale.Count > 0)
-                report.Add($"清理过时绑定 {stale.Count} 处：{string.Join("; ", stale)}");
-
-            // ---- 3) 给既有标识挂 LocalizedText（只加组件，不改任何其它属性）----
-            foreach (var pair in Signage)
+            channel.SetLanguage(channel.Initial); // Nonserialized state only; saved default remains untouched.
+            foreach (var pair in targets)
             {
-                var target = FindByName(scene, pair.Key);
-                if (target == null)
+                var target = pair.Value;
+                var renderer = target.GetComponent<Renderer>();
+                bool active = target.gameObject.activeSelf, enabled = renderer.enabled;
+                Vector3 position = target.transform.localPosition, scale = target.transform.localScale;
+                Quaternion rotation = target.transform.localRotation;
+                var localized = target.GetComponent<LocalizedText>() ?? target.gameObject.AddComponent<LocalizedText>();
+                // Explicitly use the saved bilingual font even if a previous binding opted out.
+                var serialized = new SerializedObject(localized);
+                serialized.FindProperty("applyTableFont").boolValue = true;
+                serialized.ApplyModifiedPropertiesWithoutUndo();
+                localized.Configure(table, channel, pair.Key.key);
+                Require(target.text == pair.Key.english && target.font == table.FontAsset,
+                    "Binding did not retain English and the saved bilingual font: " + target.name);
+                Require(target.gameObject.activeSelf == active && renderer.enabled == enabled &&
+                    target.transform.localPosition == position && target.transform.localScale == scale && target.transform.localRotation == rotation,
+                    "Integration changed visibility or transform: " + target.name);
+                foreach (UnityEngine.Object item in new UnityEngine.Object[] { localized, target, renderer })
                 {
-                    report.Add($"⚠ 场景里找不到物体「{pair.Key}」，跳过（主场景结构可能变了）。");
-                    continue;
+                    EditorUtility.SetDirty(item);
+                    PrefabUtility.RecordPrefabInstancePropertyModifications(item);
                 }
-
-                if (target.GetComponent<TMP_Text>() == null)
-                {
-                    report.Add($"⚠ 「{pair.Key}」上没有 TMP 文字组件，跳过。");
-                    continue;
-                }
-
-                var existingComponent = target.GetComponent<LocalizedText>();
-                if (existingComponent != null)
-                {
-                    if (existingComponent.Key == pair.Value)
-                    {
-                        // 已经绑好：按**当前语言**刷新一次文字。
-                        // 场景里保存的文字应当与初始语言一致 —— 例如初始语言从中文改成英文后，
-                        // 场景里不该还留着上一轮写入的中文。
-                        existingComponent.Refresh();
-                        EditorUtility.SetDirty(target);
-                        report.Add($"「{pair.Key}」已绑定 {pair.Value}，已按当前语言刷新文字。");
-                        continue;
-                    }
-
-                    if (!IsOurs(existingComponent.Key))
-                    {
-                        // 别人挂的组件：不覆盖，只提醒。这是别人的内容决定，不该由本工具改。
-                        report.Add($"⚠ 「{pair.Key}」已被绑定到「{existingComponent.Key}」，未覆盖。");
-                        continue;
-                    }
-
-                    // 是本工具加的、但 key 换了：拆掉重挂。
-                    UnityEngine.Object.DestroyImmediate(existingComponent);
-                    report.Add($"「{pair.Key}」的旧 key 已替换。");
-                }
-
-                var localized = target.AddComponent<LocalizedText>();
-                localized.Configure(table, channel, pair.Value);
-                EditorUtility.SetDirty(target);
-                report.Add($"「{pair.Key}」→ 绑定 {pair.Value}（只加了组件，文字与位置未改动）。");
             }
-
             EditorSceneManager.MarkSceneDirty(scene);
-            EditorSceneManager.SaveScene(scene, ScenePath);
-
-            Debug.Log("[MuseumIntegration] 接入完成。\n  " + string.Join("\n  ", report) +
-                      $"\n\n主场景备份：{backup}" +
-                      "\n想撤销：Museum → Localization → Remove From MuseumStart");
-
-            Selection.activeGameObject = FindRoot(scene, RootName);
-            EditorGUIUtility.PingObject(Selection.activeGameObject);
+            Require(EditorSceneManager.SaveScene(scene, ScenePath), "Could not save integrated main scene.");
+            Debug.Log("LOCALIZATION_INTEGRATION_SAVED: four bindings; hidden labels remain hidden; backup=" + backup);
         }
-
-        // ------------------------------------------------------------------ 撤销
 
         [MenuItem("Museum/Localization/Remove From MuseumStart", priority = 31)]
         public static void RemoveFromMuseumStart()
         {
-            if (RefuseWhilePlaying()) return;
-            if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
-
+            Require(!EditorApplication.isPlayingOrWillChangePlaymode, "Exit Play Mode before removal.");
+            RefuseDirtyScenes();
             var scene = EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Single);
-            var report = new List<string>();
-
-            var root = FindRoot(scene, RootName);
-            if (root != null)
+            foreach (var root in scene.GetRootGameObjects())
             {
-                UnityEngine.Object.DestroyImmediate(root);
-                report.Add($"已删除「{RootName}」。");
+                if (root.name == RootName) { UnityEngine.Object.DestroyImmediate(root); continue; }
+                foreach (var binding in root.GetComponentsInChildren<LocalizedText>(true))
+                {
+                    bool owned = Signs.Any(sign => binding.name == sign.name && binding.Key == sign.key) ||
+                        (Legacy.TryGetValue(binding.name, out string key) && binding.Key == key);
+                    if (owned) UnityEngine.Object.DestroyImmediate(binding);
+                }
             }
-            else
-            {
-                report.Add($"场景里没有「{RootName}」。");
-            }
-
-            // 移除本工具加过的全部绑定：用 key 前缀识别，**不看**当前的 Signage 列表 ——
-            // 换过绑定目标之后，旧目标上的绑定会残留在场景里，而它的 key 已不在文案表中，
-            // 于是物体上会显示红色 [[museum.sign.title]] 标记（Issue #17 的连带问题）。
-            // 撤销时应当**一个不留**，所以这里传空的 validKeys：任何本工具的绑定都算过时。
-            var stale = StripStaleBindings(scene, new HashSet<string>(StringComparer.Ordinal));
-            if (stale.Count == 0) report.Add("场景里没有本工具加过的绑定。");
-            foreach (var item in stale) report.Add($"已移除绑定：{item}");
-
             EditorSceneManager.MarkSceneDirty(scene);
-            EditorSceneManager.SaveScene(scene, ScenePath);
-            Debug.Log("[MuseumIntegration] 已撤销接入。\n  " + string.Join("\n  ", report));
+            Require(EditorSceneManager.SaveScene(scene, ScenePath), "Could not save removal.");
         }
 
-        // ------------------------------------------------------------------ 工具
-
-        /// <summary>这个 key 是不是本工具加的（用前缀识别，避免误动别人的组件）。</summary>
-        static bool IsOurs(string key)
+        static void RefuseDirtyScenes()
         {
-            return !string.IsNullOrEmpty(key) && key.StartsWith(SignKeyPrefix, StringComparison.Ordinal);
+            for (int index = 0; index < SceneManager.sceneCount; index++)
+                Require(!SceneManager.GetSceneAt(index).isDirty, "Save or close modified scenes explicitly before running this tool.");
         }
-
-        /// <summary>
-        /// 找出并移除「本工具加过、但当前已不再有效」的绑定，返回被移除物体的描述。
-        /// 别人挂的组件（key 不以本工具前缀开头）一律保留。
-        /// </summary>
-        static List<string> StripStaleBindings(
-            UnityEngine.SceneManagement.Scene scene, HashSet<string> validKeys)
-        {
-            var removed = new List<string>();
-            foreach (var root in scene.GetRootGameObjects())
-            {
-                // GetComponentsInChildren 返回的是快照，循环中销毁组件是安全的。
-                foreach (var localized in root.GetComponentsInChildren<LocalizedText>(true))
-                {
-                    if (localized == null || !IsOurs(localized.Key)) continue;
-                    if (validKeys.Contains(localized.Key)) continue;
-
-                    removed.Add($"{localized.gameObject.name}（{localized.Key}）");
-                    UnityEngine.Object.DestroyImmediate(localized);
-                }
-            }
-
-            return removed;
-        }
-
-        static bool RefuseWhilePlaying()
-        {
-            if (!Application.isPlaying) return false;
-            Debug.LogError(
-                "[MuseumIntegration] 请先退出 Play 模式（点 ▶ 停止运行）再执行本菜单。\n" +
-                "Unity 在播放状态会拒绝场景保存，产物会不完整而界面上不会明显报错。");
-            return true;
-        }
-
-        /// <summary>备份主场景到仓库外的 _local-backup/，返回备份路径；失败返回 null。</summary>
-        static string BackupScene()
-        {
-            try
-            {
-                if (!File.Exists(ScenePath))
-                {
-                    Debug.LogError($"[MuseumIntegration] 找不到 {ScenePath}。");
-                    return null;
-                }
-
-                var repoRoot = Path.GetFullPath(Path.Combine(Application.dataPath, "../.."));
-                var folder = Path.Combine(repoRoot, "_local-backup");
-                Directory.CreateDirectory(folder);
-
-                var stamp = DateTime.Now.ToString("yyyyMMdd-HHmmss");
-                var target = Path.Combine(folder, $"MuseumStart-{stamp}.unity");
-                File.Copy(ScenePath, target, true);
-
-                Debug.Log($"[MuseumIntegration] 已备份主场景：{target}");
-                return target;
-            }
-            catch (Exception exception)
-            {
-                Debug.LogError($"[MuseumIntegration] 备份失败，为安全起见中止接入：{exception.Message}");
-                return null;
-            }
-        }
-
-        static GameObject FindRoot(UnityEngine.SceneManagement.Scene scene, string name)
-        {
-            foreach (var root in scene.GetRootGameObjects())
-            {
-                if (root.name == name) return root;
-            }
-
-            return null;
-        }
-
-        /// <summary>按名字找物体（含未激活的子孙）。同名时取第一个，并在日志里说明。</summary>
-        static GameObject FindByName(UnityEngine.SceneManagement.Scene scene, string name)
-        {
-            GameObject first = null;
-            int count = 0;
-
-            foreach (var root in scene.GetRootGameObjects())
-            {
-                var all = root.GetComponentsInChildren<Transform>(true);
-                foreach (var t in all)
-                {
-                    if (t.name != name) continue;
-                    count++;
-                    if (first == null) first = t.gameObject;
-                }
-            }
-
-            if (count > 1)
-            {
-                Debug.LogWarning(
-                    $"[MuseumIntegration] 场景里有 {count} 个叫「{name}」的物体，取了第一个。" +
-                    "请确认挂对了对象。");
-            }
-
-            return first;
-        }
+        static void Require(bool condition, string message)
+        { if (!condition) throw new InvalidOperationException(message); }
     }
 }

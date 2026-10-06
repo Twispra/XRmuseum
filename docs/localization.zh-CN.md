@@ -1,162 +1,62 @@
 # 中英语言切换（Localization）
 
-面向 COMP5424 Scenario B「无障碍博物馆体验」的**界面语言切换**能力。
-对应提案里用户旅程的**第一步**（`Welcome and language choice`），
-以及需求「不依赖音频或颜色获取核心信息」中的**双语文字**要求。
+本模块提供双语文案表、语言事件通道、LocalizedText 和语言按钮，对应访客进入展厅时的语言选择。当前覆盖入口标识和语言面板；其余展陈、探索说明尚未全部翻译，不能称为全馆双语。
 
-## 这个模块解决什么
+## 使用已保存的成果
 
-展馆需要同时服务中文与英文访客，而项目原有的字体只有 `LiberationSans`（纯英文），
-直接把中文放进去会显示成方块。本模块提供两件事：
+1. 用 Unity **2022.3.62f3c1** 打开 MuseumVR，直接打开 `Assets/Museum/Scenes/MuseumStart.unity`。
+2. 进入 Play，默认英文；在语言面板选择「中文」或「English」。按钮使用 XRI 射线与选择输入；键盘预览也可用 `1` / `2` / `L`。
+3. 独立演示位于 `Assets/Museum/Features/Localization/Scenes/LanguageDemo.unity`，可直接打开运行。
+4. 日常打开、预览、验收均**不需要 Create/Setup/Integrate**；这些是明确修改任务的工具，不是修复工程按钮。
 
-1. **一份双语文案表**（key → 中文 / English），文案与摆放解耦；
-2. **一套切换链路**：任何文字对象挂上 `LocalizedText` 并填一个 key，
-   语言一变就自动刷新，不需要写代码、不需要重新摆位。
+## 保存场景里的绑定
 
-## 快速开始
+| 对象 | key | 英文 | 中文 | 显示规则 |
+| --- | --- | --- | --- | --- |
+| Gallery masthead | `museum.sign.masthead` | Beneath the surface | 海面之下 | 平时可见，探索演示期间隐藏，结束后恢复 |
+| Arrival brand | `museum.sign.arrival_brand` | The diving gallery | 潜水展厅 | 入口可见 |
+| Gallery subtitle | `museum.sign.gallery` | THE DIVING GALLERY | 潜水展厅 | 保持主线默认隐藏；将来启用时读取当前语言 |
+| Arrival introduction | `museum.sign.intro` | One object. Many ways to explore. | 一件展品，多种看法。 | 保持主线默认隐藏；将来启用时读取当前语言 |
 
-1. 打开 Unity，菜单 **Museum → Localization → Create Language Assets and Showcase**。
-2. 再执行 **Museum → Localization → Create Demo Scene**，
-   生成 `Scenes/LanguageDemo.unity` —— **打开它直接按 ▶ 就能看效果**。
-3. 进入 Play 后：按 **`1`** 切中文、**`2`** 切英文、**`L`** 循环。
-   （没有头显也能验证，见下方「无头显怎么验证」。）
-4. 可选：**Museum → Localization → Validate Localization System** 跑自动校验。
+两处展厅名称使用不同 key，保留原英文大小写。Museum Title、Museum Subtitle、Welcome 是隐藏旧标识，已移除它们的旧本地化绑定，不重新打开 Renderer。入口文案、位置和显隐遵循 PR #9；双语标识使用同一保存的 Noto Sans SC 字体。
 
-## 目录结构
+现有 Language Selection 位于 `(2.6, 0, 6.2)`，本轮保留位置与 Prefab 实例。默认语言仍为 English。语言切换不会启用被展示流程隐藏的对象；对象重新启用时 LocalizedText.OnEnable 会应用最新语言。
 
-```text
-Assets/Museum/Features/Localization/
-  Runtime/
-    MuseumLanguage.cs            语言枚举（数值固定，新语言只在末尾追加）
-    LocalizationTable.cs         文案表资产：key → 中文 / English / 备注 + 显示用字体
-    LanguageChannel.cs           语言通道资产：当前语言 + 变化事件
-    LocalizedText.cs             挂在文字对象上，绑 key 自动刷新
-    LanguageButton.cs            可抓取的「中文 / English」按钮
-    LanguagePlayModePreview.cs   无头显键盘预览
-  Editor/
-    LocalizationSetup.cs         一键生成资产 / 展示 Prefab / 演示场景；批处理入口
-    LocalizationValidation.cs    自动校验 + JSON 报告
-  Tables/     语言通道与文案表（由菜单生成）
-  Prefabs/    LanguageShowcase.prefab（由菜单生成）
-  Scenes/     LanguageDemo.unity（由菜单生成，打开即可播放）
-  Materials/  Board / Button / ButtonPressed（由菜单生成）
-  Fonts/      中文字体、子集脚本、字符清单、README
-```
+## 模块结构与扩展
 
-## 三条设计决定
+- `Runtime/LocalizationTable.cs`：key 对应中英文本；缺 key 返回红色标记。
+- `Runtime/LanguageChannel.cs`：当前语言及变化事件，默认状态在每次 Play 初始化。
+- `Runtime/LocalizedText.cs`：每个 TMP 文字对象绑定一个 key，并应用表中指定的双语字体。
+- `Runtime/LanguageButton.cs`：保存的 XRI 选择事件调用语言通道。
+- `Editor/LocalizationValidation.cs`：已保存表、字体、展示 Prefab 校验。
+- `Editor/LocalizationIntegrationValidation.cs`：已保存主场景接线、模拟 XR 输入、显隐生命周期与固定视角截图校验。
+- `Editor/MuseumIntegration.cs`：仅在已授权修改主场景时接入或移除本工具负责的绑定。
+- `Editor/LocalizationSetup.cs`：完整资产/演示生成工具；正常使用不运行。
 
-**1. 一个文字对象 = 一个 key。** 不把「一个面板 = 一串文字」做成整体，
-因为展项会增删、面板会在不同展品之间复用；逐对象绑定改动最小、冲突最少。
+新增翻译时，给目标对象单独加 LocalizedText，提供表、通道和 key；同步保存表与 Setup 种子，英文保留现有展陈原文，核对新字形。共享场景必须先在 Issue 协调写入者。没有复数或占位符替换功能。
 
-**2. 语言状态放在资产里，用事件广播。** `LanguageChannel` 是唯一权威来源，
-文字对象只订阅、按钮只调用 `SetLanguage`。加面板、加语言都不需要改已有代码。
+## 字体与字符覆盖
 
-**3. 找不到 key 时显示红色 `[[key]]` 标记，不显示空串。**
-静默返回空会让「漏了一条翻译」看起来像「设计上就没有这段字」，
-排查成本极高。标记只用 ASCII 字符，保证任何字体子集里都有字形。
+提交的源字体为 **Noto Sans SC Regular 子集**，SIL OFL 1.1；来源、子集范围与许可见 [Fonts README](../MuseumVR/Assets/Museum/Features/Localization/Fonts/README.md) 和 [资源记录](external-resources.md)。本轮没有下载新的字体或重建 .meta。
 
-## 字体：为什么必须单独处理，以及怎么生成
+保存的静态 SDF 图集为 **2048×2048、Sampling 110、Padding 6、SDFAA、198 个字符**。补齐「海、之、潜、水、厅、多、种、法」时采用 TMP Font Asset Creator 使用的底层 FontEngine 打包/渲染流程，原位更新图集，保留字体、图集、材质的 GUID/localFileID，并检查持久化像素和字符覆盖。
 
-项目原有的 `LiberationSans` 没有任何中文字形。本模块使用 **Noto Sans SC**
-（SIL Open Font License 1.1，允许自由使用、修改与再分发）。
+早期高层 CreateFontAsset/TryAddCharacters 曾产生 0×0 图集；这段历史不表示成员现在必须重新生成字体。使用已保存的资产即可。以后改文案时运行 Fonts/make-charlist.py（现在根据脚本自身位置定位），再明确重烤并验证新字形。不能只更新字符列表或内存字形表。
 
-### ⚠️ 本工程里必须用 Font Asset Creator 手工生成一次
+## 校验入口
 
-**不要**指望菜单里的自动生成能跑通。在这台机器所用版本（2022.3.62f3c1）下实测：
+菜单 `Museum → Localization → Validate Localization System` 检查保存的模块资产；批处理入口为 `Museum.Localization.EditorTools.LocalizationValidation.RunBatch`。
 
-| 做法 | 结果 |
-| --- | --- |
-| 脚本 `TMP_FontAsset.CreateFontAsset`（Dynamic） | 图集 0×0，一个字都烤不进去 |
-| 脚本 `TMP_FontAsset.CreateFontAsset`（Static）+ `TryAddCharacters` | 同样 0×0，连拉丁字母都失败 |
-| Font Asset Creator 里 **Character Set = `Unicode Range (Hex)`** | **抛 `FormatException`**，点 Generate 毫无反应 |
-| Font Asset Creator 里 **Character Set = `Characters from File`** | ✅ **成功，192/193 个字符** |
+菜单 `Museum → Localization → Validate saved main scene (Play Mode)` 检查保存主场景；批处理入口为 `Museum.Localization.EditorTools.LocalizationIntegrationValidation.RunBatch`，使用 `-batchmode -projectPath <MuseumVR> -executeMethod <入口> -logFile <独立日志>`，不要加 -quit 或 -nographics。它控制 Play 与退出，并写独立 `artifacts/localization/qa/runs/` 目录。
 
-`Unicode Range (Hex)` 的解析在本环境有 bug，**改用「从文件读取字符」即可绕过**。
+场景校验使用生产 Input Actions 和射线交互器，输入为合成控制器姿态及握持键状态；演示开始/停止单独标记为公共 API 调用。隐藏标签仅在明确的临时 Play 夹具中启用后恢复，不保存。报告核对资产哈希并输出同视角画面。这些都不是物理头显/控制器验收。
 
-### 生成步骤（一次即可，之后菜单会复用）
+## 接入工具的边界
 
-> ⚠️ **必须先退出 Play 模式**（点 ▶ 停止运行）。Unity 在播放状态下会拒绝 TMP 的字体生成
-> 与场景保存（`InvalidOperationException: This cannot be used during play mode.`），
-> 产物会不完整、界面上却不明显报错 —— 这个坑实际踩过一次（字体资产半成品 + 演示场景没更新）。
-> 生成工具里已加护栏：处于 Play 模式时直接拒绝执行并提示。
+`Integrate Into MuseumStart` / `MuseumIntegration.IntegrateBatch` 在修改前确认保存字体与四组文案、目标唯一性、当前英文和显隐。缺资产、缺字形、对象不符或存在陌生绑定时中止，不调用全量生成器。已有语言面板位置不动；只清理精确名称和旧 key 都吻合的三个旧绑定，然后保存场景。备份位于 Unity `Application.temporaryCachePath/MuseumLocalizationIntegration/` 的唯一文件。
 
-1. 菜单 **Window → TextMeshPro → Font Asset Creator**
-2. **Source Font File**：`Fonts/NotoSansSC-MuseumSubset.ttf`
-3. **Sampling Point Size**：`Custom Size` **110** ｜ **Padding**：**6**
-   （中文官方建议 Sampling 用 90~120；采样太小时汉字笔画只有 1~2 像素宽，距离场无法形成
-   "实心"内部，渲染出来**又细又断**。最初用 60 + padding 5，文字几乎无法辨认。）
-4. **Atlas Resolution**：**2048 × 2048** ｜ **Render Mode**：`SDFAA`
-5. **Character Set**：**`Characters from File`**
-   → 出现 **Character File** 格子后，拖入 `Fonts/characters-required.txt`
-6. 点 **Generate Font Atlas** → 预览区应出现汉字
-7. 点 **Save as...** → 存到 `Fonts/` 目录，文件名**保持默认**
-   `NotoSansSC-MuseumSubset SDF`（**不要自己加 `.asset`**）
+工具拒绝 Play 模式和未保存场景。Remove From MuseumStart 只移除语言面板与精确名称/key 匹配的本工具绑定，保留其他绑定；它不是场景完整回滚，也不会还原字体样式，需要完整回退时使用本轮备份或 Git 中已审查版本。
 
-生成后的资产约 8 MB、图集 2048×2048、`m_PointSize = 110`、`m_AtlasPadding = 6`、含 192 个字形。
-校验工具会检查图集是否有效。
+## 验证限制
 
-### 文案改了之后
-
-`characters-required.txt` 由 `Fonts/check-glyph-coverage.py` 与
-`Fonts/subset-noto-sans-sc.py` 同源的思路维护；实际做法：
-
-```bash
-python Fonts/make-charlist.py          # 依据 LocalizationSetup 的种子文案重新收集字符
-python Fonts/check-glyph-coverage.py   # 核对字符在字体里都有字形
-```
-
-然后按上面的步骤**重新生成一次字体资产**（Character Set 仍选 Characters from File）。
-如果只用常用简体字（GB2312 范围内），字体文件本身不需要重新生成。
-
-## 无头显怎么验证
-
-组内有人没有 Quest。搭一套 XR Origin + 模拟器只为看一眼文字切换并不划算，
-因此模块自带键盘预览：**`1` 中文 / `2` 英文 / `L` 循环**。
-键盘路径与 XR 按钮走的是同一个语言通道，所以它能验证「切换 → 刷新」这条链路；
-**它验证不了射线交互本身**，那需要真机。
-
-## 接入主场景
-
-模块**本身不修改 `MuseumStart.unity`**；接入由**独立的整合工具**完成，菜单在模块自己的 Editor 目录下：
-
-```
-Museum  →  Localization  →  Integrate Into MuseumStart   ← 接入
-Museum  →  Localization  →  Remove From MuseumStart      ← 一键撤销
-```
-
-它做三件事，**全是"只增不改"**：
-
-1. 新增一个根物体 `Language Selection`（展示 Prefab 的实例），放在入口标识墙右前方；
-2. 给 `Museum Title` / `Museum Subtitle` / `Welcome` **只挂 `LocalizedText` 组件**，
-   不动它们的名字、位置、旋转、缩放与文字内容；
-3. 保存主场景。
-
-**安全性**（因为主场景是全组共享文件）：
-- 执行前**自动备份**到仓库外的 `<repo>/_local-backup/MuseumStart-<时间戳>.unity`
-- 处于 **Play 模式时直接拒绝执行**（否则产物会不完整而无明显报错）
-- 撤销时**只移除本工具加的那几个 key 的组件**，别人挂的组件保留
-- 找不到物体 / 没有 TMP 组件 / 已被别人绑定到别的 key → **只警告，不覆盖**
-
-**默认语言**：`LocalizationSetup.DefaultMuseumLanguage` 当前是 **English** ——
-这样接入后展厅默认外观与接入前一致，访客主动选中文才切换。
-等全馆文案补齐中文后改成 `Chinese` 更合适。
-
-### 其余文字怎么接
-
-展厅另外 37 处文字仍是英文。要把它们变双语，逐个处理即可：
-
-1. 在该文字对象上加 `LocalizedText`，填文案表、语言通道与 key；
-2. 在文案表里补上这个 key 的中文与英文（英文用原文，保持默认外观不变）；
-3. 如果新文案引入了图集里没有的汉字，按上面「文案改了之后」重烤一次字体。
-
-`LocalizedText` 会自动套用表里指定的中文字体，不需要手工改每个文字对象的字体。
-
-## 已知限制
-
-- **字体资产需要手工生成一次**（原因见上）。这是本环境 TMP 的缺陷，不是设计选择。
-- 文案表只覆盖旅程开头与无障碍说明的**起步内容**，不是最终展陈文案；
-  真实内容应在试点评价后替换（对应负责人 B 的内容工作包）。
-- 每个文字对象是**一个 key**，没有做复数/占位符替换等高级本地化能力。
-- 中英文档位不同：英文为主的文字对象在切换成中文后可能偏小或换行位置变化，
-  尚未做逐语言的字号微调。文字大小可调属于后续工作。
-- 未在真实头显上验证可读性；未做无障碍或参与者评价。
+本轮范围是入口语言接线和保存字形，不新增学习内容或改变项目目标。没有真实头显可读性、舒适性、可访问性/参与者评价、全馆翻译或当前可执行构建结论。英文和中文共用布局参数，后续字号及换行优化应依据实际设备检查。版本、运行结果和可复查截图见 [2026-10-06 整合记录](activity/2026-10-06-pr14-completion.md)。

@@ -2,9 +2,10 @@
 输出成一个 .txt 供 TMP Font Asset Creator 的 "Characters from File" 使用。"""
 import os
 import re
+from pathlib import Path
 
-SETUP = r"C:\Users\lenovo\Projects\XRmuseum\MuseumVR\Assets\Museum\Features\Localization\Editor\LocalizationSetup.cs"
-OUT_DIR = r"C:\Users\lenovo\Projects\XRmuseum\MuseumVR\Assets\Museum\Features\Localization\Fonts"
+OUT_DIR = Path(__file__).resolve().parent
+SETUP = OUT_DIR.parent / "Editor" / "LocalizationSetup.cs"
 OUT = os.path.join(OUT_DIR, "characters-required.txt")
 
 with open(SETUP, encoding="utf-8") as f:
@@ -24,9 +25,7 @@ for c in "中文English":
     chars.add(c)
 
 # 缺 key 标记与兜底 ASCII
-# 说明：< 和 > 是 TMP 富文本标签的分隔符，标签会被解析掉、不绘制，
-# 所以严格说不需要字形；但一起烤进去可以让字符清单更"宽容"，
-# 万一以后有人把 < > 当普通符号用也不会缺字。
+# 富文本标签本身不渲染；这里只保留缺 key 标记与现有 ASCII 支持。
 for c in "[[ ]]0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz.,:;()%-/+=?!'\"@#&*":
     if not c.isspace():
         chars.add(c)

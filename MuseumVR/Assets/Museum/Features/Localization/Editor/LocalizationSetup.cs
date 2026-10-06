@@ -620,26 +620,24 @@ namespace Museum.Localization.EditorTools
                 "Choose your interface language",
                 "语言选择提示。"),
 
-            // ---- 主场景入口标识的英译中 ----
-            // ⚠️ 目标必须是**游客真正看得见**的标识。
-            // 第一版绑的是 Museum Title / Museum Subtitle / Welcome，但那三个是展厅改造后
-            // **保留下来的隐藏旧对象**（MeshRenderer m_Enabled = 0，被 #9 的按需显隐逻辑关掉了），
-            // 只挂组件根本不会让游客看到任何变化（Issue #17）。
-            // 现在改绑 MaritimeGallery 预制体里真正在渲染的入口标识。
-            //
-            // 英文一律**逐字照抄**场景/预制体里的原文，否则挂上组件的瞬间就等于改掉了展陈文案。
+            // Entrance copy mirrors main after PR #9, including its different capitalization.
+            // Subtitle and introduction stay hidden; binding localization must not enable them.
             new Seed("museum.sign.masthead",
                 "海面之下",
-                "BENEATH THE SURFACE",
-                "展馆主标题（Gallery masthead，字号 5，实际可见）。"),
+                "Beneath the surface",
+                "Gallery masthead; preserves the current main English and demonstration visibility."),
             new Seed("museum.sign.gallery",
                 "潜水展厅",
                 "THE DIVING GALLERY",
-                "展厅名。Gallery subtitle 与 Arrival brand 两个物体共用这一条。"),
+                "Gallery subtitle remains hidden under the main layout."),
+            new Seed("museum.sign.arrival_brand",
+                "潜水展厅",
+                "The diving gallery",
+                "Arrival brand uses its own key to preserve the current sentence case."),
             new Seed("museum.sign.intro",
                 "一件展品，多种看法。",
                 "One object. Many ways to explore.",
-                "入口欢迎语（Arrival introduction，实际可见）。"),
+                "Arrival introduction remains hidden under the main layout."),
             new Seed("controls.point",
                 "用手柄指向按钮，按住握把键确认。",
                 "Point with your controller and hold the grip button to confirm.",
