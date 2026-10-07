@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "files": 55,
+  "html_bytes": 49571412,
+  "checks": [
+    "source/export hash matches readback",
+    "context hash matches provenance",
+    "six PCM audio tracks format/hash/no clipping",
+    "GLB buffers/images internal",
+    "single HTML embeds exactly the delivered models/audio, no external script",
+    "three MIT notice included"
+  ],
+  "scope": "Working tree task assets; UI and Blender checks are separate reports"
+}

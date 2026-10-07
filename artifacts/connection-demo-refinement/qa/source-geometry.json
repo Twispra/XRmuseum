@@ -1,0 +1,47 @@
+{
+  "blender": "4.5.14 LTS",
+  "facts_bore_m": 0.10795,
+  "facts_stroke_m": 0.18415,
+  "source_metrics": [
+    {
+      "root": "Pump_ROOT",
+      "mesh_count": 307,
+      "triangles": 56340,
+      "topology_notes": [
+        {
+          "mesh": "Pump plaque",
+          "nonmanifold_edges": 0,
+          "faces_below_1e12_m2": 1
+        }
+      ],
+      "animated_nodes": 9
+    },
+    {
+      "root": "SurfaceTelephone_ROOT",
+      "mesh_count": 108,
+      "triangles": 29584,
+      "topology_notes": [
+        {
+          "mesh": "Outlet identifiers",
+          "nonmanifold_edges": 0,
+          "faces_below_1e12_m2": 6
+        },
+        {
+          "mesh": "Telephone plaque",
+          "nonmanifold_edges": 0,
+          "faces_below_1e12_m2": 3
+        }
+      ],
+      "animated_nodes": 1
+    },
+    {
+      "root": "DiverTelephone_ROOT",
+      "mesh_count": 16,
+      "triangles": 9528,
+      "topology_notes": [],
+      "animated_nodes": 1
+    }
+  ],
+  "source_sha256": "37eee802fc0b1c5fa724bbb39e4da82f87fd207150a5752c0bae2fe2b81d7719",
+  "notes": "Ten tiny faces occur only in decorative text; all mechanical mesh edges are manifold. Threshold is 1e-12 square metres, not literal zero."
+}
