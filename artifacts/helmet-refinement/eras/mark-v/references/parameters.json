@@ -1,0 +1,160 @@
+{
+  "conversion": "1 inch = 25.4 mm; 1 avoirdupois pound = 0.45359237 kg",
+  "facts_and_nominal_references": [
+    {
+      "name": "height",
+      "published_value": 20,
+      "unit": "in",
+      "source_id": "S01",
+      "scope": "upper viewport to breastplate tip",
+      "model_value": null,
+      "status": "published approximate specimen data",
+      "converted_mm": 508.0
+    },
+    {
+      "name": "width",
+      "published_value": 14,
+      "unit": "in",
+      "source_id": "S01",
+      "scope": "between side viewports",
+      "model_value": null,
+      "status": "published approximate specimen data",
+      "converted_mm": 355.59999999999997
+    },
+    {
+      "name": "depth",
+      "published_value": 15,
+      "unit": "in",
+      "source_id": "S01",
+      "scope": "faceplate to helmet back",
+      "model_value": null,
+      "status": "published approximate specimen data",
+      "converted_mm": 381.0
+    },
+    {
+      "name": "specimen_weight",
+      "published_value": 68,
+      "unit": "lb",
+      "source_id": "S01",
+      "scope": "Helmet and breastplate as described; not VR rigidbody mass",
+      "model_value": null,
+      "status": "published approximate specimen data",
+      "converted_kg": 30.84428116
+    },
+    {
+      "name": "glass_thickness",
+      "published_value": 0.5,
+      "unit": "in",
+      "source_id": "S01",
+      "scope": "Museum general statement, not each window separately measured",
+      "model_value": 0.0127,
+      "status": "published approximate specimen data",
+      "converted_mm": 12.7
+    },
+    {
+      "name": "neck_thread",
+      "published_value": {
+        "nominal_diameter_in": 9.203125,
+        "threads_per_inch": 6
+      },
+      "unit": "inch thread convention",
+      "source_id": "S03",
+      "scope": "Current manufacturer nominal specifications; not independently measured on the 1944 specimen",
+      "model_value": null,
+      "status": "published nominal interface specification",
+      "converted_mm": {
+        "nominal_diameter": 233.75937499999998,
+        "pitch": 4.233333333333333
+      }
+    },
+    {
+      "name": "air_connection_thread",
+      "published_value": {
+        "nominal_diameter_in": 1.0625,
+        "threads_per_inch": 17
+      },
+      "unit": "inch thread convention",
+      "source_id": "S03",
+      "scope": "Current manufacturer nominal specifications; not independently measured on the 1944 specimen",
+      "model_value": null,
+      "status": "published nominal interface specification",
+      "converted_mm": {
+        "nominal_diameter": 26.987499999999997,
+        "pitch": 1.4941176470588236
+      }
+    },
+    {
+      "name": "telephone_connection_thread",
+      "published_value": {
+        "nominal_diameter_in": 1.715,
+        "threads_per_inch": 11
+      },
+      "unit": "inch thread convention",
+      "source_id": "S03",
+      "scope": "Current manufacturer nominal specifications; not independently measured on the 1944 specimen",
+      "model_value": null,
+      "status": "published nominal interface specification",
+      "converted_mm": {
+        "nominal_diameter": 43.561,
+        "pitch": 2.309090909090909
+      }
+    },
+    {
+      "name": "breastplate_stud",
+      "published_value": {
+        "nominal_diameter_in": 0.5,
+        "threads_per_inch": 12
+      },
+      "unit": "inch thread convention",
+      "source_id": "S03",
+      "scope": "Current manufacturer nominal specifications; not independently measured on the 1944 specimen",
+      "model_value": null,
+      "status": "published nominal interface specification",
+      "converted_mm": {
+        "nominal_diameter": 12.7,
+        "pitch": 2.1166666666666667
+      }
+    },
+    {
+      "name": "front_toggle_bolt",
+      "published_value": {
+        "nominal_diameter_in": 0.5,
+        "threads_per_inch": 13
+      },
+      "unit": "inch thread convention",
+      "source_id": "S03",
+      "scope": "Current manufacturer nominal specifications; not independently measured on the 1944 specimen",
+      "model_value": null,
+      "status": "published nominal interface specification",
+      "converted_mm": {
+        "nominal_diameter": 12.7,
+        "pitch": 1.9538461538461538
+      }
+    },
+    {
+      "name": "neck_head_opening",
+      "published_value": 8.5625,
+      "unit": "in",
+      "source_id": "S03",
+      "scope": "Current nominal clear opening",
+      "model_value": 0.2174875,
+      "status": "published nominal interface specification",
+      "converted_mm": 217.48749999999998
+    }
+  ],
+  "modelling_assumptions": {
+    "shell_wall_thickness_m": 0.0026,
+    "front_glass_radius_m": 0.0594,
+    "front_window_centre_height_m": 0.347,
+    "side_glass_radius_m": 0.048,
+    "shell_profile": "Lofted from photograph silhouette, not traced orthographic survey",
+    "corselet_profile": "Curved saddle with estimated drop and underside",
+    "door_review_open_angle_deg": 100,
+    "glass_IOR": 1.5,
+    "thread_profile": "Rounded visible ridge; nominal pitch, no fit or manufacturing tolerances",
+    "wear": "Original synthetic maps, not scan/recovery of actual specimen wear",
+    "interior": "Historical existence supported; shape/routing is interpretive"
+  },
+  "museum_envelope_is_approximate": true,
+  "exact_specimen_replica": false
+}
