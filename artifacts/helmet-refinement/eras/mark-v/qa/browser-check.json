@@ -1,30 +1,33 @@
 {
   "date": "2026-10-07",
-  "method": "CUA-driven browser interaction and visual observation; not independent human acceptance",
+  "revision": "R2",
+  "method": "CUA-driven browser interaction and visual observation, not independent human acceptance",
   "browser": "Codex in-app browser",
-  "mode": "HTTP localhost; no remote hosting",
-  "model_sha256": "cb0dc2dd0fb423a9199aa46046da3daf9563ef2dfd51e57591ad31a2be0737b0",
-  "viewer_sha256": "e9e5d6d950670b43c6598d64c31a151dea84956ce53fc7953faa98e5b32abb44",
+  "mode": "HTTP localhost",
+  "model_sha256": "630fcd394b115ca9e4f6e41e373adc69e6e7096e3e1eb22122888d883738d64e",
+  "viewer_sha256": "f2080e3af83d9ce894bc8ba165fab6b389fb50a6c2970f5fa12835375f2ae6b5",
   "checks": [
-    "HTTP load:229 mesh parts,393700 encoded triangles",
-    "front-window open/close visible",
-    "front/rear and wearer-side view controls",
-    "mouse drag rotates and wheel zooms",
-    "all seven component filters display their matching parts",
-    "shell hide/restore displays interpretive interior warning",
-    "reset restores all components, shell and closed-window target",
-    "internal-only selection displays interpretive warning after final rebuild"
+    "loaded 255 mesh parts / 409524 encoded triangles",
+    "front view and staged opening: nut loosening, bolt swing, window opening",
+    "closing: window first, bolt return then tightening; final closed state observed",
+    "reset reverses opened state, restores all components and view",
+    "front-window, chest and interpretive-interior filters visually inspected",
+    "shell hide/restore and warning observed",
+    "rear view: two distinct connections",
+    "mouse drag rotation and wheel close-up zoom visually observed"
   ],
   "console_errors": [],
   "console_warnings": [],
-  "unverified": [
-    "file:// local file selection",
-    "Unity importer and runtime",
-    "VR device performance",
-    "user testing"
-  ],
   "screenshots": [
     "browser-overview.jpg",
     "browser-window-open.jpg"
+  ],
+  "unverified": [
+    "other component filters not separately rechecked in R2",
+    "file:// local file selection",
+    "Unity importer/runtime",
+    "real VR device performance",
+    "user testing",
+    "mechanical fit/tolerance"
   ]
 }

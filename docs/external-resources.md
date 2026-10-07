@@ -81,3 +81,8 @@ AI 辅助范围：模块架构、Editor 工具、运行时脚本、字体子集�
 本轮设备几何、六张1024px木材／金属PNG、三方案六条WAV均为原创程序生成、Codex辅助；音效不是历史录音，没有真实人声。资产沿用本项目权利安排，不为第三方素材另行授予许可。已有PR #32的本组Mark V模型只制成轻量浏览器参照副本，原源／导出不变，哈希追溯见资产qa/context-provenance.json；不声明与1916设备实际配套。
 
 浏览器使用本机已有 Three.js 0.180.0（MIT），许可全文保留于资产preview/three-LICENSE.txt并内嵌HTML。构建用本机已有 esbuild 0.25.10，建模用官方 Blender 4.5.14 LTS，音效用numpy；不向Unity增加package或工具本体。AI辅助范围为研究核查、几何材质、动画与合成音轨、代码及验证／交接；自动初检不等于人工试听、用户研究、头显性能或组员批准。
+## 2026-10-07：Mark V R2 补充资料与精修
+
+在原PR #32 / Issue #25继续，Fttt1003通过Codex辅助检索DESCO制造说明、2011年Making an Icon及前窗/锁紧件/铰链销三个现售零件页，实际核对四张零件照片。[完整URL、适用边界及改模依据](../artifacts/helmet-refinement/eras/mark-v/references/refinement-r2.zh-CN.md)，[下载记录](../artifacts/helmet-refinement/eras/mark-v/references/sources.json)。原媒体只在本机研究，不再分发、未作贴图。未新增Unity依赖、第三方模型或收费素材。
+
+Codex辅助增量改模、原创材质图、导出、渲染与自动/浏览器检查；内部走线仍为示意。资产自动检查不是成员人工批准、设备测试或精密历史复原；three.js/esbuild依赖与MIT声明沿用R1。

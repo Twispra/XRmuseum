@@ -1,8 +1,8 @@
 {
   "blender": "4.5.14 LTS",
   "identity": "DESCO Mark V Mod.1 standard air exterior study; 1944 museum specimen reference",
-  "meshes": 229,
-  "triangles": 393700,
+  "meshes": 255,
+  "triangles": 409524,
   "materials": 8,
   "parts": [
     {
@@ -86,32 +86,32 @@
     {
       "name": "Corselet_CopperSaddle_WithUnderside",
       "parent": "CorseletAssembly",
-      "vertices": 3048,
-      "triangles": 6096
+      "vertices": 3046,
+      "triangles": 6092
     },
     {
       "name": "DressCollar_DarkGasket_Approximate",
       "parent": "CorseletAssembly",
-      "vertices": 3224,
-      "triangles": 6448
+      "vertices": 3230,
+      "triangles": 6460
     },
     {
       "name": "Brail_01_CurvedClampingStrap",
       "parent": "CorseletAssembly",
-      "vertices": 890,
-      "triangles": 1776
+      "vertices": 888,
+      "triangles": 1772
     },
     {
       "name": "Brail_02_CurvedClampingStrap",
       "parent": "CorseletAssembly",
-      "vertices": 890,
-      "triangles": 1776
+      "vertices": 892,
+      "triangles": 1780
     },
     {
       "name": "Brail_03_CurvedClampingStrap",
       "parent": "CorseletAssembly",
-      "vertices": 890,
-      "triangles": 1776
+      "vertices": 892,
+      "triangles": 1780
     },
     {
       "name": "Brail_04_CurvedClampingStrap",
@@ -462,12 +462,6 @@
       "triangles": 124
     },
     {
-      "name": "BrailFastener_11_StudThread_12TPI",
-      "parent": "CorseletAssembly",
-      "vertices": 3088,
-      "triangles": 6172
-    },
-    {
       "name": "BrailFastener_11_WingnutCore",
       "parent": "CorseletAssembly",
       "vertices": 768,
@@ -582,18 +576,6 @@
       "triangles": 3072
     },
     {
-      "name": "FaceplateSeal_Rubber",
-      "parent": "FrontSeatAssembly",
-      "vertices": 1536,
-      "triangles": 3072
-    },
-    {
-      "name": "Door_CastFrame",
-      "parent": "FrontWindowPivot",
-      "vertices": 1536,
-      "triangles": 3072
-    },
-    {
       "name": "Door_HandledOuterLip",
       "parent": "FrontWindowPivot",
       "vertices": 720,
@@ -692,8 +674,8 @@
     {
       "name": "HingePin_Removable",
       "parent": "FrontSeatAssembly",
-      "vertices": 144,
-      "triangles": 284
+      "vertices": 480,
+      "triangles": 964
     },
     {
       "name": "HingePinTopButton",
@@ -727,31 +709,31 @@
     },
     {
       "name": "DoorToggleBolt_13TPI_Nominal",
-      "parent": "FrontSeatAssembly",
+      "parent": "DoorTogglePivot",
       "vertices": 64,
       "triangles": 124
     },
     {
       "name": "DoorToggleThread_13TPI",
-      "parent": "FrontSeatAssembly",
+      "parent": "DoorTogglePivot",
       "vertices": 4720,
       "triangles": 9436
     },
     {
       "name": "DoorToggleNutCore",
-      "parent": "FrontSeatAssembly",
+      "parent": "DoorToggleNutPivot",
       "vertices": 1536,
       "triangles": 3072
     },
     {
       "name": "DoorToggleWing_-1",
-      "parent": "FrontSeatAssembly",
+      "parent": "DoorToggleNutPivot",
       "vertices": 762,
       "triangles": 1520
     },
     {
       "name": "DoorToggleWing_1",
-      "parent": "FrontSeatAssembly",
+      "parent": "DoorToggleNutPivot",
       "vertices": 762,
       "triangles": 1520
     },
@@ -1344,30 +1326,6 @@
       "triangles": 1440
     },
     {
-      "name": "AirDuct_Interpretive_BackToCrown",
-      "parent": "InteriorInterpretiveAssembly",
-      "vertices": 40,
-      "triangles": 76
-    },
-    {
-      "name": "AirDuct_Interpretive_SideBranch_-1",
-      "parent": "InteriorInterpretiveAssembly",
-      "vertices": 30,
-      "triangles": 56
-    },
-    {
-      "name": "AirDuct_Interpretive_SideBranch_1",
-      "parent": "InteriorInterpretiveAssembly",
-      "vertices": 30,
-      "triangles": 56
-    },
-    {
-      "name": "AirDuct_Interpretive_TopBranch",
-      "parent": "InteriorInterpretiveAssembly",
-      "vertices": 20,
-      "triangles": 36
-    },
-    {
       "name": "TelephoneTransducer_Interpretive_NoInventedCircuit",
       "parent": "InteriorInterpretiveAssembly",
       "vertices": 128,
@@ -1378,11 +1336,303 @@
       "parent": "InteriorInterpretiveAssembly",
       "vertices": 32,
       "triangles": 60
+    },
+    {
+      "name": "FaceplateSeal_Rubber",
+      "parent": "FrontWindowPivot",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "Door_CastFrame",
+      "parent": "FrontWindowPivot",
+      "vertices": 1056,
+      "triangles": 2112
+    },
+    {
+      "name": "DoorToggle_RetainingWasher",
+      "parent": "DoorTogglePivot",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "DoorToggle_PivotPin",
+      "parent": "FrontSeatAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "DoorToggle_FixedLug_-1",
+      "parent": "FrontSeatAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "DoorToggle_PinKeeper_-1",
+      "parent": "FrontSeatAssembly",
+      "vertices": 96,
+      "triangles": 188
+    },
+    {
+      "name": "DoorToggle_FixedLug_1",
+      "parent": "FrontSeatAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "DoorToggle_PinKeeper_1",
+      "parent": "FrontSeatAssembly",
+      "vertices": 96,
+      "triangles": 188
+    },
+    {
+      "name": "HingePin_KeeperCotter",
+      "parent": "FrontSeatAssembly",
+      "vertices": 56,
+      "triangles": 112
+    },
+    {
+      "name": "BrailFastener_11_StudThread_12TPI",
+      "parent": "CorseletAssembly",
+      "vertices": 5920,
+      "triangles": 11836
+    },
+    {
+      "name": "AirDuct_Interpretive_BackToCrown",
+      "parent": "InteriorInterpretiveAssembly",
+      "vertices": 240,
+      "triangles": 476
+    },
+    {
+      "name": "AirDuct_Interpretive_SideBranch_-1",
+      "parent": "InteriorInterpretiveAssembly",
+      "vertices": 184,
+      "triangles": 364
+    },
+    {
+      "name": "AirDuct_Interpretive_SideBranch_1",
+      "parent": "InteriorInterpretiveAssembly",
+      "vertices": 184,
+      "triangles": 364
+    },
+    {
+      "name": "AirDuct_Interpretive_TopBranch",
+      "parent": "InteriorInterpretiveAssembly",
+      "vertices": 136,
+      "triangles": 268
+    },
+    {
+      "name": "DoorGuard_MountFoot_0",
+      "parent": "FrontWindowPivot",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "DoorGuard_MountFoot_1",
+      "parent": "FrontWindowPivot",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "DoorGuard_MountFoot_2",
+      "parent": "FrontWindowPivot",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "DoorGuard_MountFoot_3",
+      "parent": "FrontWindowPivot",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "SideGuard_SupportRim_-1",
+      "parent": "SideWindowsAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SideGuard_MountFoot_-1_0",
+      "parent": "SideWindowsAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "SideGuard_MountFoot_-1_1",
+      "parent": "SideWindowsAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "SideGuard_MountFoot_-1_2",
+      "parent": "SideWindowsAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "SideGuard_MountFoot_-1_3",
+      "parent": "SideWindowsAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "SideGuard_SupportRim_1",
+      "parent": "SideWindowsAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SideGuard_MountFoot_1_0",
+      "parent": "SideWindowsAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "SideGuard_MountFoot_1_1",
+      "parent": "SideWindowsAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "SideGuard_MountFoot_1_2",
+      "parent": "SideWindowsAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "SideGuard_MountFoot_1_3",
+      "parent": "SideWindowsAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "TopGuard_SupportRim",
+      "parent": "TopWindowAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "TopGuard_MountFoot_0",
+      "parent": "TopWindowAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "TopGuard_MountFoot_1",
+      "parent": "TopWindowAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "TopGuard_MountFoot_2",
+      "parent": "TopWindowAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "TopGuard_MountFoot_3",
+      "parent": "TopWindowAssembly",
+      "vertices": 64,
+      "triangles": 124
     }
   ],
   "texture_origin": "original deterministic synthetic 2048px maps; not photograph/scan",
   "unity_integrated": false,
   "device_tested": false,
   "historical_measurement_replica": false,
-  "generator_sha256": "62b3632478d40df7c6f3dde75490d19bb31e473bf18cd96ad5df807b3ac7f053"
+  "generator_sha256": "62b3632478d40df7c6f3dde75490d19bb31e473bf18cd96ad5df807b3ac7f053",
+  "revision": "R2",
+  "input_source_sha256": "49bbaf5caa5b22d28befd03e5fc4678c71e54fea2854051db4eba60ff8930492",
+  "revision_script_sha256": "aa1d68443bee2e6d5bd86c047ab99b2734d98c0d14623ee94f4079e56e6bc82a",
+  "source_sha256": "45343307e9990b2e023cd5a6be43772f48aefa2c00b8b09d56387845c8905721",
+  "changed_geometry": [
+    "FrontSeat_CastFrame",
+    "Door_CastFrame",
+    "TopSeat",
+    "SideSeat_-1",
+    "SideSeat_1",
+    "Brail_01_CurvedClampingStrap",
+    "Brail_02_CurvedClampingStrap",
+    "Brail_03_CurvedClampingStrap",
+    "Brail_04_CurvedClampingStrap",
+    "BrailFastener_01_CastWingnut",
+    "BrailFastener_01_FlangedBase",
+    "BrailFastener_01_Stud",
+    "BrailFastener_01_StudThread_12TPI",
+    "BrailFastener_01_Washer",
+    "BrailFastener_01_WingnutCore",
+    "BrailFastener_02_CastWingnut",
+    "BrailFastener_02_Stud",
+    "BrailFastener_02_StudThread_12TPI",
+    "BrailFastener_02_Washer",
+    "BrailFastener_02_WingnutCore",
+    "BrailFastener_03_CastWingnut",
+    "BrailFastener_03_Stud",
+    "BrailFastener_03_StudThread_12TPI",
+    "BrailFastener_03_Washer",
+    "BrailFastener_03_WingnutCore",
+    "BrailFastener_04_CastWingnut",
+    "BrailFastener_04_FlangedBase",
+    "BrailFastener_04_Stud",
+    "BrailFastener_04_StudThread_12TPI",
+    "BrailFastener_04_Washer",
+    "BrailFastener_04_WingnutCore",
+    "BrailFastener_05_CastWingnut",
+    "BrailFastener_05_Stud",
+    "BrailFastener_05_StudThread_12TPI",
+    "BrailFastener_05_Washer",
+    "BrailFastener_05_WingnutCore",
+    "BrailFastener_06_CastWingnut",
+    "BrailFastener_06_Stud",
+    "BrailFastener_06_StudThread_12TPI",
+    "BrailFastener_06_Washer",
+    "BrailFastener_06_WingnutCore",
+    "BrailFastener_07_CastWingnut",
+    "BrailFastener_07_FlangedBase",
+    "BrailFastener_07_Stud",
+    "BrailFastener_07_StudThread_12TPI",
+    "BrailFastener_07_Washer",
+    "BrailFastener_07_WingnutCore",
+    "BrailFastener_08_CastWingnut",
+    "BrailFastener_08_Stud",
+    "BrailFastener_08_StudThread_12TPI",
+    "BrailFastener_08_Washer",
+    "BrailFastener_08_WingnutCore",
+    "BrailFastener_09_CastWingnut",
+    "BrailFastener_09_Stud",
+    "BrailFastener_09_StudThread_12TPI",
+    "BrailFastener_09_Washer",
+    "BrailFastener_09_WingnutCore",
+    "BrailFastener_10_CastWingnut",
+    "BrailFastener_10_FlangedBase",
+    "BrailFastener_10_Stud",
+    "BrailFastener_10_StudThread_12TPI",
+    "BrailFastener_10_Washer",
+    "BrailFastener_10_WingnutCore",
+    "BrailFastener_11_CastWingnut",
+    "BrailFastener_11_Stud",
+    "BrailFastener_11_StudThread_12TPI",
+    "BrailFastener_11_Washer",
+    "BrailFastener_11_WingnutCore",
+    "BrailFastener_12_CastWingnut",
+    "BrailFastener_12_Stud",
+    "BrailFastener_12_StudThread_12TPI",
+    "BrailFastener_12_Washer",
+    "BrailFastener_12_WingnutCore",
+    "Corselet_CopperSaddle_WithUnderside",
+    "Corselet_RolledOuterEdge",
+    "DressCollar_DarkGasket_Approximate",
+    "EyePadBase_-1",
+    "EyePadBase_1",
+    "EyePadRivet_-1_-1",
+    "EyePadRivet_-1_1",
+    "EyePadRivet_1_-1",
+    "EyePadRivet_1_1",
+    "FrontEyelet_-1",
+    "FrontEyelet_1",
+    "Nameplate_WartimeFootball_Untranscribed",
+    "NameplateRivet_-1",
+    "NameplateRivet_1"
+  ],
+  "interior_status": "flattened sheet channels; routing still interpretive"
 }

@@ -100,6 +100,51 @@
       "access_date": "2026-10-07",
       "redistributed": false,
       "hash_scope": "Exact local research download; not a stable publisher version identifier"
+    },
+    {
+      "citation_id": "S08",
+      "url": "https://www.divedesco.com/commercialdiveequipment/construction",
+      "bytes": 38353,
+      "sha256": "32cc61c0f1bed36ed392ddb33bba5182415fad1c42f75359d762ccaeb8bbdc11",
+      "status": "downloaded for local research only",
+      "access_date": "2026-10-07",
+      "redistributed": false
+    },
+    {
+      "citation_id": "S09",
+      "url": "https://www.divedesco.com/divingequipment/print",
+      "bytes": 66254,
+      "sha256": "05ff3d94125c1b985fe6490d17672bffc45d553a7cf69135573bd28022ba3b3e",
+      "status": "downloaded for local research only",
+      "access_date": "2026-10-07",
+      "redistributed": false
+    },
+    {
+      "citation_id": "S10",
+      "url": "https://www.divedesco.com/P/448/FacePlateAssemblyHingedNavyMarkV",
+      "bytes": 26919,
+      "sha256": "2ef6d203468796b124d8e8bac03e7a028722336afb219febda8d34ad5cd2464b",
+      "status": "downloaded for local research only",
+      "access_date": "2026-10-07",
+      "redistributed": false
+    },
+    {
+      "citation_id": "S11",
+      "url": "https://www.divedesco.com/P/447/ToggleBoltAssemblyMarkVFrontDoor",
+      "bytes": 27341,
+      "sha256": "c24305cda73e66ab59ada6b63fbb8d56b3b70ce9c16239a68c279ac0f99f64cf",
+      "status": "downloaded for local research only",
+      "access_date": "2026-10-07",
+      "redistributed": false
+    },
+    {
+      "citation_id": "S12",
+      "url": "https://www.divedesco.com/P/471/HingepinMarkVfrontdoor",
+      "bytes": 27321,
+      "sha256": "0314b5e49301bbc7cff6436c964cc4be2cbaf4d06e3b8e5e1af40125e5b5f40a",
+      "status": "downloaded for local research only",
+      "access_date": "2026-10-07",
+      "redistributed": false
     }
   ],
   "reference_photos": [
@@ -131,5 +176,47 @@
       "used_as_texture": false
     }
   ],
-  "raw_research_media_in_repository": false
+  "raw_research_media_in_repository": false,
+  "r2_research_images": [
+    {
+      "url": "https://www.divedesco.com/Content/files/ProductImages/ecommerce0111%20008.jpg",
+      "name": "door",
+      "bytes": 580991,
+      "sha256": "b5bd3c9a31288803ab192a5a93d033680d5c7441a5cf7edd1613a5a3bbeb9475",
+      "redistributed": false,
+      "source_id": "S10",
+      "scope": "Current manufacturer parts, visually inspected; structural comparison only",
+      "used_as_texture": false
+    },
+    {
+      "url": "https://www.divedesco.com/Content/files/ProductImages/ecommerce0111%20009.jpg",
+      "name": "toggle",
+      "bytes": 530512,
+      "sha256": "189bb1e6e25f0e9b2323cd06982c7ebb5d3d7eb8a2ac5fce41ac37138196b5e7",
+      "redistributed": false,
+      "source_id": "S11",
+      "scope": "Current manufacturer parts, visually inspected; structural comparison only",
+      "used_as_texture": false
+    },
+    {
+      "url": "https://www.divedesco.com/Content/files/ProductImages/ecommerce0111%20010.jpg",
+      "name": "toggle-back",
+      "bytes": 532144,
+      "sha256": "5b7713016910f277b33fb01e52c43316f3cc13d32310f04841fb02039661baf6",
+      "redistributed": false,
+      "source_id": "S11",
+      "scope": "Current manufacturer parts, visually inspected; structural comparison only",
+      "used_as_texture": false
+    },
+    {
+      "url": "https://www.divedesco.com/Content/files/ProductImages/ecommerce0117%20008.jpg",
+      "name": "hinge",
+      "bytes": 525043,
+      "sha256": "6fca6ca5ffef0f3697a280ed21dfb72099c95c5d8efd440176fd1dd72c412867",
+      "redistributed": false,
+      "source_id": "S12",
+      "scope": "Current manufacturer parts, visually inspected; structural comparison only",
+      "used_as_texture": false
+    }
+  ]
 }

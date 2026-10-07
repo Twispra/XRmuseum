@@ -140,6 +140,36 @@
       "model_value": 0.2174875,
       "status": "published nominal interface specification",
       "converted_mm": 217.48749999999998
+    },
+    {
+      "name": "current_shell_starting_sheet",
+      "published_value": 0.064,
+      "unit": "in",
+      "source_id": "S09",
+      "converted_mm": 1.6256,
+      "model_value": null,
+      "scope": "2011 manufacturer production description; starting sheet gauge, not measured finished wall of 1944 specimen",
+      "status": "published manufacturer production description"
+    },
+    {
+      "name": "current_air_duct_sheet",
+      "published_value": 0.02,
+      "unit": "in",
+      "source_id": "S09",
+      "converted_mm": 0.508,
+      "model_value": 0.000508,
+      "scope": "2011 manufacturer production description; starting sheet gauge, not measured finished wall of 1944 specimen",
+      "status": "published manufacturer production description"
+    },
+    {
+      "name": "current_breastplate_starting_sheet",
+      "published_value": 0.046,
+      "unit": "in",
+      "source_id": "S09",
+      "converted_mm": 1.1683999999999999,
+      "model_value": null,
+      "scope": "2011 manufacturer production description; starting sheet gauge, not measured finished wall of 1944 specimen",
+      "status": "published manufacturer production description"
     }
   ],
   "modelling_assumptions": {
@@ -153,7 +183,16 @@
     "glass_IOR": 1.5,
     "thread_profile": "Rounded visible ridge; nominal pitch, no fit or manufacturing tolerances",
     "wear": "Original synthetic maps, not scan/recovery of actual specimen wear",
-    "interior": "Historical existence supported; shape/routing is interpretive"
+    "interior": "thin sheet channels supported by S09; width/height/routing interpretive",
+    "corselet_wall_thickness_m": 0.0034,
+    "door_outer_radius_m": 0.076,
+    "front_seat_outer_radius_m": 0.08,
+    "top_seat_outer_radius_m": 0.0625,
+    "seal_groove_depth_m": 0.0012,
+    "nut_review_backoff_m": 0.003,
+    "nut_review_turn_deg": 90,
+    "toggle_review_release_deg": 70,
+    "long_stud_extra_length_m": 0.0156
   },
   "museum_envelope_is_approximate": true,
   "exact_specimen_replica": false

@@ -41,6 +41,8 @@ def triangle_records(ob):
 shell_triangles=triangle_records(body)
 print('SOURCE_TOPOLOGY_DIAGNOSTIC',source['topology_issues'],flush=True)
 assert shell_issue is None,'Hollow shell topology invalid'
+if bpy.context.scene.get('refinement_revision')=='R2':
+    assert not source['topology_issues'],'R2 contains open, loose or degenerate source geometry'
 # Ray traverses the open front aperture into the cavity and reaches only the far shell.
 origin=Vector((0,-.25,.347));hit,location,normal,index=body.ray_cast(body.matrix_world.inverted()@origin,Vector((0,1,0)))
 assert hit and (body.matrix_world@location).y>.10,'Front aperture remains blocked by shell'
@@ -121,6 +123,12 @@ for path in sorted((out/'sources/parts').glob('*.blend')):
 report['independent_part_sources']=partreports
 report['generator_sha256']=hashlib.sha256(Path(__file__).with_name('build_mark_v.py').read_bytes()).hexdigest()
 assert report['generator_sha256']==json.loads((out/'qa/geometry-report.json').read_text(encoding='utf-8'))['generator_sha256'],'Generator differs from the measured asset version'
+geometry=json.loads((out/'qa/geometry-report.json').read_text(encoding='utf-8'))
+if geometry.get('revision')=='R2':
+    report['revision_script_sha256']=hashlib.sha256(Path(__file__).with_name('refine_mark_v_r2.py').read_bytes()).hexdigest()
+    assert report['revision_script_sha256']==geometry['revision_script_sha256'],'Revision script differs from measured asset version'
+    report['input_source_sha256']=geometry['input_source_sha256']
+report['checker_sha256']=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
 report['passed']=True
 (out/'qa/export-readback.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8',newline='\n')
 print('MARK_V_ASSET_CHECKS_PASSED',source['mesh_parts'],source['triangles'],source['envelope_m'],source['topology_issues'],flush=True)
