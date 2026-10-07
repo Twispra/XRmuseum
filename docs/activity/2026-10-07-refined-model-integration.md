@@ -6,7 +6,7 @@ Fttt1003 发起并负责本轮工作，Codex 辅助实现、资料边界复核�
 
 本轮先同步 `origin/main` **`afc3a9e56734d3c7230adb5b81a5dcdd7ddd016e`**（含 PR #27 主场景年代接入），在独立分支 `codex/refined-model-integration-2026-10-07` 工作。原本机 checkout 的既有改动未移入整合分支。源资产提交按原有顺序 cherry-pick 到 **`e2ee58fc42f79fc9d230d99682eeb8240aa25508`**，保留 Mark V、设备的可编辑源、历史导出、依据及旧 QA；不能把复制进入分支写成源模型重新制作。
 
-原工作入口为 [Issue #25](https://github.com/Twispra/XRmuseum/issues/25) 和 [#33](https://github.com/Twispra/XRmuseum/issues/33)；Mark V 原资产 PR 为 [#32](https://github.com/Twispra/XRmuseum/pull/32)。本轮整合 PR 链接由提交人补充，以实际 GitHub 记录为准。源阶段的[Mark V R2 记录](2026-10-07-mark-v-refinement-r2.md)和[设备精修记录](2026-10-07-connection-demo-refinement.md)中的“未接 Unity”是当时状态，本轮另记接入结果，不覆盖历史。
+原工作入口为 [Issue #25](https://github.com/Twispra/XRmuseum/issues/25) 和 [#33](https://github.com/Twispra/XRmuseum/issues/33)；Mark V 原资产 PR 为 [#32](https://github.com/Twispra/XRmuseum/pull/32)。本轮产品提交为 `a9d624a4a89e4bf0152792e3cab9fc8a9694f927`，已上传至 [整合 PR #35](https://github.com/Twispra/XRmuseum/pull/35)，等待小组审查，未自动合并 main。源阶段的[Mark V R2 记录](2026-10-07-mark-v-refinement-r2.md)和[设备精修记录](2026-10-07-connection-demo-refinement.md)中的“未接 Unity”是当时状态，本轮另记接入结果，不覆盖历史。
 
 本轮修改 saved 主场景、原头盔 Prefab 与相关绑定，新增 `Assets/Museum/Features/RefinedModels/` 运行时资源、工具和验证，更新兼容材质与截面处理。编辑器、packages、公共输入与平台方向沿用 Unity 2022.3.62f3c1／Windows PC VR；不迁移为 Quest 独立 APK。个人姓名映射、其他成员本机进展和课程提交状态不在本轮推断范围。
 
@@ -56,6 +56,6 @@ Fttt1003 发起并负责本轮工作，Codex 辅助实现、资料边界复核�
 
 ## 后续交接
 
-通过本轮测试后由提交人上传整合分支并更新原 Issue，说明已接入的资源和遗留项；不因一轮桌面回归关闭全部合作建模／设备任务，也不自动合并 main。下一位可以继续在原资产目录补两时期模型、史料和部件，在明确的 Issue 认领后更新运行时派生资源；同一源文件、Prefab 和公共场景继续协调单一写入者。
+测试后已上传整合分支。#25／#33 更新本轮接入状态、PR、查看步骤及待办，继续开放供小组审阅和后续合作。下一位可以继续在原资产目录补两时期模型、史料和部件，在明确的 Issue 认领后更新运行时派生资源；同一源文件、Prefab 和公共场景继续协调单一写入者。
 
 优先补人工外观／历史审阅、音效选择、网格批处理／LOD 与目标设备性能，再按课程要求验证完整访问流程。旧 QA、坏候选的本机诊断及原源保留各自边界；可复现的提交证据使用仓库相对路径，不依赖成员机器绝对目录。
