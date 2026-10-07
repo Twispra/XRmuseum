@@ -64,9 +64,19 @@ AI 辅助范围：模块架构、Editor 工具、运行时脚本、字体子集�
 
 后续添加模型、贴图、音效、字体、脚本或插件时，应在这里记录来源、许可、用途和修改内容。
 
+2026-10-07 Mark V精细资产候选：Fttt1003通过Codex辅助检索/对照七项公开史料、生成原创几何和两套2K金属基色/粗糙度/法线贴图、渲染、FBX/GLB回读及浏览器检查。主要外观对象为Hampton Roads Naval Museum的1944 DESCO标准空气式馆藏件；制造商当前参数、1916原始海军手册和1944件资料分开使用，局部尺寸/旧化/内部路径为估算。模型仅保存在独立资产目录，没有替换Unity模型。详见[研究与完整来源](../artifacts/helmet-refinement/eras/mark-v/references/research.zh-CN.md)及[活动记录](activity/2026-10-07-mark-v-refined.md)。
+
+本轮原始网页、馆藏照片和手册PDF仅作本机研究，仓库保留链接、访问记录和参数摘要；未复制原图、扫描贴图或第三方模型，不推断其媒体可再分发。新增资产的材质图是本项目脚本原创合成，不是测量获得的历史材质。工具为既有官方Blender4.5.14 LTS；浏览器审阅复用three.js0.180.0（MIT），许可保留于模型 `preview/three-LICENSE.txt`，打包工具为esbuild0.25.10，不引入Unity package。Codex辅助检查与渲染观察不等于其他成员人工批准、精密实物复原、VR设备测试或用户研究。两份NAVSEA PDF返回403，明确未作为已读图纸使用。
+
 2026-09-30 AI 辅助范围：根据 [PR #3 的实测评论](https://github.com/Twispra/XRmuseum/pull/3#discussion_r4143841614)复现并修复剖切球柄方向跳变，补充实际 Prefab 几何扫描和原主场景模拟 XR 输入测试，整理交接证据。没有引入新外部素材或 package；AI 代码检查及自动测试不等于组员审批或真实头显测试。见[处理记录](activity/2026-09-30-section-continuity-review.md)。
 
 记录依据为 Group Project Description（202627A）p12；本表记录已知许可或尚未核实之处，不赋予第三方内容新的再分发许可。头盔研究副本和课程官方 PDF 留在本地 `project-resource/`、`artifacts/helmet-prototype/references/`，不作为本组原创资产提交。今日尚无新增音效、扫描资产、下载模型或烘焙贴图。
 
 
 2026-10-06 三语改动：Codex 辅助整理 193 条三语文案、连接静态与动态文字、扩展字形及自动验收。繁体初稿使用 OpenCC 的 s2t 转换，本地工具未放进 Unity 或运行时依赖；术语、提示和历史边界由本轮代码／文案检查复核，尚无独立语言审校。源字体仍为本机 Noto Sans SC 变量字体（OFL 1.1），使用 fontTools 静态实例化并子集化，新增繁体所需码位，不引入新模型、图片、音频或 package。许可保留，官方来源 https://github.com/google/fonts/tree/main/ofl/notosanssc 。功能和限制见 [三语记录](activity/2026-10-06-trilingual-museum.md)；自动检查不等于真实用户或头显验证。
+
+## 2026-10-07：Mark V R2 补充资料与精修
+
+在原PR #32 / Issue #25继续，Fttt1003通过Codex辅助检索DESCO制造说明、2011年Making an Icon及前窗/锁紧件/铰链销三个现售零件页，实际核对四张零件照片。[完整URL、适用边界及改模依据](../artifacts/helmet-refinement/eras/mark-v/references/refinement-r2.zh-CN.md)，[下载记录](../artifacts/helmet-refinement/eras/mark-v/references/sources.json)。原媒体只在本机研究，不再分发、未作贴图。未新增Unity依赖、第三方模型或收费素材。
+
+Codex辅助增量改模、原创材质图、导出、渲染与自动/浏览器检查；内部走线仍为示意。资产自动检查不是成员人工批准、设备测试或精密历史复原；three.js/esbuild依赖与MIT声明沿用R1。

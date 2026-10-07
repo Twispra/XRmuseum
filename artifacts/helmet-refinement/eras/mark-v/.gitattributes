@@ -1,0 +1,9 @@
+*.glb filter=lfs diff=lfs merge=lfs -text
+preview/review.html linguist-generated=true
+textures/*.png filter=lfs diff=lfs merge=lfs -text
+*.py text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.txt text eol=lf
+.gitattributes text eol=lf
+.gitignore text eol=lf

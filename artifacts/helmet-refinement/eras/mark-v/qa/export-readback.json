@@ -1,0 +1,2189 @@
+{
+  "blender": "4.5.14 LTS",
+  "scope": "Asset source/export readback and specified geometric checks",
+  "unity_tested": false,
+  "device_tested": false,
+  "historical_survey_verified": false,
+  "checks": [
+    {
+      "mesh_parts": 255,
+      "triangles": 409524,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [],
+      "bounds": {
+        "min": [
+          -0.17759285867214203,
+          -0.20561431348323822,
+          0.012974618002772331
+        ],
+        "max": [
+          0.17759285867214203,
+          0.20561432838439941,
+          0.5145937204360962
+        ]
+      },
+      "name": "editable assembly",
+      "packed_maps": 6,
+      "envelope_m": [
+        0.35518571734428406,
+        0.41122864186763763,
+        0.5016191024333239
+      ],
+      "front_shell_aperture_clear": true,
+      "side_shell_apertures_clear": true,
+      "top_shell_aperture_clear": true,
+      "rear_connection_sides_checked": true,
+      "four_brails_twelve_wingnuts_four_glass_windows": true,
+      "window_pivot_checked": true,
+      "source_sha256": "45343307e9990b2e023cd5a6be43772f48aefa2c00b8b09d56387845c8905721"
+    },
+    {
+      "mesh_parts": 255,
+      "triangles": 409524,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [],
+      "bounds": {
+        "min": [
+          -0.17759285867214203,
+          -0.20561431348323822,
+          0.012974588200449944
+        ],
+        "max": [
+          0.17759285867214203,
+          0.20561432838439941,
+          0.514593780040741
+        ]
+      },
+      "name": "mark-v-mod1.fbx",
+      "bounds_max_delta_m": 5.960464477539063e-08,
+      "sha256": "aa3eabd7d25eb4224a97f98265ca51a5df6a29b3ec1be71b8b2b1a897cb9feeb"
+    },
+    {
+      "mesh_parts": 255,
+      "triangles": 409522,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [
+        {
+          "name": "AirGooseneck_HollowCast",
+          "nonmanifold_edges": 928,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "AirGooseneckMount",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "AirMountRivet_0",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "AirMountRivet_1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "AirMountRivet_2",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "AirNonReturnValve_OldStyleExternalBody",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "AirOutletThread_17TPI",
+          "nonmanifold_edges": 5504,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "AirSubmarineThreadCore_1and1sixteenth",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "AirValve_UpperHex",
+          "nonmanifold_edges": 218,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "Brail_01_CurvedClampingStrap",
+          "nonmanifold_edges": 16,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "Brail_02_CurvedClampingStrap",
+          "nonmanifold_edges": 16,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "Brail_03_CurvedClampingStrap",
+          "nonmanifold_edges": 16,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "Brail_04_CurvedClampingStrap",
+          "nonmanifold_edges": 12,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_01_CastWingnut",
+          "nonmanifold_edges": 232,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_01_FlangedBase",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_01_Stud",
+          "nonmanifold_edges": 136,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_01_StudThread_12TPI",
+          "nonmanifold_edges": 3498,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_01_Washer",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_01_WingnutCore",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_02_CastWingnut",
+          "nonmanifold_edges": 228,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_02_Stud",
+          "nonmanifold_edges": 136,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_02_StudThread_12TPI",
+          "nonmanifold_edges": 3498,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_02_Washer",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_02_WingnutCore",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_03_CastWingnut",
+          "nonmanifold_edges": 232,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_03_Stud",
+          "nonmanifold_edges": 136,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_03_StudThread_12TPI",
+          "nonmanifold_edges": 3498,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_03_Washer",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_03_WingnutCore",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_04_CastWingnut",
+          "nonmanifold_edges": 228,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_04_FlangedBase",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_04_Stud",
+          "nonmanifold_edges": 136,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_04_StudThread_12TPI",
+          "nonmanifold_edges": 3498,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_04_Washer",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_04_WingnutCore",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_05_CastWingnut",
+          "nonmanifold_edges": 232,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_05_Stud",
+          "nonmanifold_edges": 136,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_05_StudThread_12TPI",
+          "nonmanifold_edges": 3498,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_05_Washer",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_05_WingnutCore",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_06_CastWingnut",
+          "nonmanifold_edges": 228,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_06_Stud",
+          "nonmanifold_edges": 136,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_06_StudThread_12TPI",
+          "nonmanifold_edges": 3498,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_06_Washer",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_06_WingnutCore",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_07_CastWingnut",
+          "nonmanifold_edges": 228,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_07_FlangedBase",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_07_Stud",
+          "nonmanifold_edges": 136,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_07_StudThread_12TPI",
+          "nonmanifold_edges": 3498,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_07_Washer",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_07_WingnutCore",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_08_CastWingnut",
+          "nonmanifold_edges": 232,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_08_Stud",
+          "nonmanifold_edges": 136,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_08_StudThread_12TPI",
+          "nonmanifold_edges": 3498,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_08_Washer",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_08_WingnutCore",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_09_CastWingnut",
+          "nonmanifold_edges": 228,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_09_Stud",
+          "nonmanifold_edges": 136,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_09_StudThread_12TPI",
+          "nonmanifold_edges": 3498,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_09_Washer",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_09_WingnutCore",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_10_CastWingnut",
+          "nonmanifold_edges": 232,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_10_FlangedBase",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_10_Stud",
+          "nonmanifold_edges": 136,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_10_StudThread_12TPI",
+          "nonmanifold_edges": 3498,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_10_Washer",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_10_WingnutCore",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_11_CastWingnut",
+          "nonmanifold_edges": 228,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_11_Stud",
+          "nonmanifold_edges": 136,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_11_StudThread_12TPI",
+          "nonmanifold_edges": 1510,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_11_Washer",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_11_WingnutCore",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_12_CastWingnut",
+          "nonmanifold_edges": 232,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_12_Stud",
+          "nonmanifold_edges": 136,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_12_StudThread_12TPI",
+          "nonmanifold_edges": 3498,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_12_Washer",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BrailFastener_12_WingnutCore",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "Corselet_CopperSaddle_WithUnderside",
+          "nonmanifold_edges": 100,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "Corselet_RolledOuterEdge",
+          "nonmanifold_edges": 1088,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DressCollar_DarkGasket_Approximate",
+          "nonmanifold_edges": 100,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "EyePadBase_-1",
+          "nonmanifold_edges": 260,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "EyePadBase_1",
+          "nonmanifold_edges": 262,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "EyePadRivet_-1_-1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "EyePadRivet_-1_1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "EyePadRivet_1_-1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "EyePadRivet_1_1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "FrontEyelet_-1",
+          "nonmanifold_edges": 666,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "FrontEyelet_1",
+          "nonmanifold_edges": 666,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "Nameplate_WartimeFootball_Untranscribed",
+          "nonmanifold_edges": 284,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "NameplateRivet_-1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "NameplateRivet_1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "BananaExhaust_Hollow_SectionApproximate",
+          "nonmanifold_edges": 1052,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "ExhaustPerforatedBulb",
+          "nonmanifold_edges": 3492,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "ExhaustStarWheel_Arm_0",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "ExhaustStarWheel_Arm_1",
+          "nonmanifold_edges": 114,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "ExhaustStarWheel_Arm_2",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "ExhaustStarWheel_Arm_3",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "ExhaustStarWheel_Hub",
+          "nonmanifold_edges": 200,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "ExhaustValve_AdjusterBoss",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "ExhaustValve_Cover",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "ExhaustValve_Seat",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorToggle_FixedLug_-1",
+          "nonmanifold_edges": 102,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorToggle_FixedLug_1",
+          "nonmanifold_edges": 102,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorToggle_PinKeeper_-1",
+          "nonmanifold_edges": 70,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorToggle_PinKeeper_1",
+          "nonmanifold_edges": 70,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorToggle_PivotPin",
+          "nonmanifold_edges": 102,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorToggle_RetainingWasher",
+          "nonmanifold_edges": 464,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorToggleBolt_13TPI_Nominal",
+          "nonmanifold_edges": 136,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorToggleNutCore",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorToggleWing_-1",
+          "nonmanifold_edges": 260,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorToggleWing_1",
+          "nonmanifold_edges": 260,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorToggleThread_13TPI",
+          "nonmanifold_edges": 5340,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "FrontSeat_CastFrame",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingeKnuckle_0",
+          "nonmanifold_edges": 200,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingeKnuckle_2",
+          "nonmanifold_edges": 200,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingeKnuckle_4",
+          "nonmanifold_edges": 200,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingeLeafFixed_-0.03",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingeLeafFixed_0.03",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingePin_KeeperCotter",
+          "nonmanifold_edges": 30,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingePin_Removable",
+          "nonmanifold_edges": 480,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingePinTopButton",
+          "nonmanifold_edges": 262,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DiamondGuard_-1_-0.057",
+          "nonmanifold_edges": 216,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DiamondGuard_-1_0.057",
+          "nonmanifold_edges": 216,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DiamondGuard_1_-0.057",
+          "nonmanifold_edges": 216,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DiamondGuard_1_0.057",
+          "nonmanifold_edges": 216,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "Door_CastFrame",
+          "nonmanifold_edges": 1616,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "Door_HandledOuterLip",
+          "nonmanifold_edges": 726,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "Door_InternalFollowerRing",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuard_MountFoot_0",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuard_MountFoot_1",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuard_MountFoot_2",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuard_MountFoot_3",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuardScrew_0",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuardScrew_1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuardScrew_2",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuardScrew_3",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorToggleFork_Lower",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorToggleFork_Upper",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "FaceplateSeal_Rubber",
+          "nonmanifold_edges": 896,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "FrontGlass_12point7mm_SpecimenApproximation",
+          "nonmanifold_edges": 416,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingeKnuckle_1",
+          "nonmanifold_edges": 200,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingeKnuckle_3",
+          "nonmanifold_edges": 200,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingeLeafDoor_-0.03",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingeLeafDoor_0.03",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "AirDuct_Interpretive_BackToCrown",
+          "nonmanifold_edges": 280,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "AirDuct_Interpretive_SideBranch_-1",
+          "nonmanifold_edges": 196,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "AirDuct_Interpretive_SideBranch_1",
+          "nonmanifold_edges": 196,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "AirDuct_Interpretive_TopBranch",
+          "nonmanifold_edges": 168,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "ChinButton_Interpretive",
+          "nonmanifold_edges": 262,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "InternalChinValveStem_Interpretive",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephoneLead_Interpretive_Route",
+          "nonmanifold_edges": 64,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephoneTransducer_Interpretive_NoInventedCircuit",
+          "nonmanifold_edges": 264,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "InterruptedThread_0_0_SeatApproximation",
+          "nonmanifold_edges": 328,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "InterruptedThread_0_1_SeatApproximation",
+          "nonmanifold_edges": 328,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "InterruptedThread_1_0_SeatApproximation",
+          "nonmanifold_edges": 328,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "InterruptedThread_1_1_SeatApproximation",
+          "nonmanifold_edges": 328,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "InterruptedThread_2_0_SeatApproximation",
+          "nonmanifold_edges": 328,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "InterruptedThread_2_1_SeatApproximation",
+          "nonmanifold_edges": 328,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "InterruptedThread_3_0_SeatApproximation",
+          "nonmanifold_edges": 328,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "InterruptedThread_3_1_SeatApproximation",
+          "nonmanifold_edges": 328,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "LowerNeckRing_NominalOpening",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "NeckGasket_Leather_Interpretive",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "NeckJoint_RolledLip",
+          "nonmanifold_edges": 664,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "RearLock_BallA",
+          "nonmanifold_edges": 262,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "RearLock_BallB",
+          "nonmanifold_edges": 262,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "RearLock_CotterPin",
+          "nonmanifold_edges": 88,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "RearLock_Latch",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "RearLock_Lever",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "RearLock_Pivot",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "RearLock_StopRecess",
+          "nonmanifold_edges": 432,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SafetyChain_Link_00",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SafetyChain_Link_01",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SafetyChain_Link_02",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SafetyChain_Link_03",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SafetyChain_Link_04",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SafetyChain_Link_05",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SafetyChain_Link_06",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SafetyChain_Link_07",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SafetyChain_Link_08",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SafetyChain_Link_09",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SafetyChain_Link_10",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SafetyChain_Link_11",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SafetyChain_Link_12",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SafetyChain_Link_13",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SafetyChain_Link_14",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "UpperNeckRing_Female_Approximate",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "Bonnet_HollowCopper_TinFinish",
+          "nonmanifold_edges": 508,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGlass_-1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGlass_1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGlassRetainer_-1",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGlassRetainer_1",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_-1h-0.017",
+          "nonmanifold_edges": 212,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_-1h0.017",
+          "nonmanifold_edges": 212,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_-1v-0.017",
+          "nonmanifold_edges": 216,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_-1v0.017",
+          "nonmanifold_edges": 216,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_1h-0.017",
+          "nonmanifold_edges": 212,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_1h0.017",
+          "nonmanifold_edges": 212,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_1v-0.017",
+          "nonmanifold_edges": 216,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_1v0.017",
+          "nonmanifold_edges": 216,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_MountFoot_-1_0",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_MountFoot_-1_1",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_MountFoot_-1_2",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_MountFoot_-1_3",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_MountFoot_1_0",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_MountFoot_1_1",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_MountFoot_1_2",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_MountFoot_1_3",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_SupportRim_-1",
+          "nonmanifold_edges": 164,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuard_SupportRim_1",
+          "nonmanifold_edges": 164,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuardScrew_-1_0",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuardScrew_-1_1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuardScrew_-1_2",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuardScrew_-1_3",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuardScrew_1_0",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuardScrew_1_1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuardScrew_1_2",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideGuardScrew_1_3",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideSeat_-1",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SideSeat_1",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SpitcockBody",
+          "nonmanifold_edges": 200,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SpitcockCollar",
+          "nonmanifold_edges": 668,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SpitcockLever",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SpitcockLeverBall",
+          "nonmanifold_edges": 262,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "SpitcockSeat",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephoneCup_ClosedOuterCover",
+          "nonmanifold_edges": 360,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephoneCup_Mount",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephoneCup_UpperShoulder",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephoneCupCoverScrew_-1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephoneCupCoverScrew_1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephoneElbowThread_11TPI",
+          "nonmanifold_edges": 3446,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephoneElbowThreadCore_1point715",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephoneFemaleCoupling_HexBody",
+          "nonmanifold_edges": 218,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephoneGooseneck_HollowCast",
+          "nonmanifold_edges": 928,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephoneGooseneckMount",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephoneMountRivet_0",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephoneMountRivet_1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephoneMountRivet_2",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TelephonePlug_Recessed_Unresolved",
+          "nonmanifold_edges": 264,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopGlass",
+          "nonmanifold_edges": 328,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopGuard_H_-0.025",
+          "nonmanifold_edges": 212,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopGuard_H_0",
+          "nonmanifold_edges": 212,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopGuard_H_0.025",
+          "nonmanifold_edges": 212,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopGuard_MountFoot_0",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopGuard_MountFoot_1",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopGuard_MountFoot_2",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopGuard_MountFoot_3",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopGuard_SupportRim",
+          "nonmanifold_edges": 164,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopGuard_V_-0.024",
+          "nonmanifold_edges": 214,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopGuard_V_0.024",
+          "nonmanifold_edges": 214,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopGuardScrew_0",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopGuardScrew_1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopGuardScrew_2",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopGuardScrew_3",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopRetainer",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "TopSeat",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      ],
+      "bounds": {
+        "min": [
+          -0.17759285867214203,
+          -0.20561431348323822,
+          0.012974618002772331
+        ],
+        "max": [
+          0.17759285867214203,
+          0.20561432838439941,
+          0.5145937204360962
+        ]
+      },
+      "name": "mark-v-mod1.glb",
+      "encoded_triangles": 409524,
+      "blender_import_validation_removed_slivers": [
+        {
+          "vertices_m": [
+            [
+              0.0,
+              -0.1384008,
+              0.407
+            ],
+            [
+              2e-07,
+              -0.1384115,
+              0.4070048
+            ],
+            [
+              3e-07,
+              -0.1384008,
+              0.407
+            ]
+          ],
+          "area_m2": 1.5754337938378438e-12
+        },
+        {
+          "vertices_m": [
+            [
+              0.0,
+              -0.1225678,
+              0.4409389
+            ],
+            [
+              1e-07,
+              -0.1225779,
+              0.4409448
+            ],
+            [
+              3e-07,
+              -0.1225678,
+              0.4409389
+            ]
+          ],
+          "area_m2": 1.4722162291341823e-12
+        }
+      ],
+      "bounds_max_delta_m": 0.0,
+      "sha256": "630fcd394b115ca9e4f6e41e373adc69e6e7096e3e1eb22122888d883738d64e"
+    },
+    {
+      "mesh_parts": 23,
+      "triangles": 17876,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [],
+      "bounds": {
+        "min": [
+          -0.09742257744073868,
+          -0.18528065085411072,
+          0.27069351077079773
+        ],
+        "max": [
+          0.0949999988079071,
+          -0.1379999965429306,
+          0.42330649495124817
+        ]
+      },
+      "name": "mark-v-front-window.fbx",
+      "bounds_max_delta_m": 1.4901161193847656e-08,
+      "sha256": "3ff69635d123358992cc8bea0b7e32ade8db81351f053d8567951cb6ea11af51"
+    },
+    {
+      "mesh_parts": 23,
+      "triangles": 17876,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [
+        {
+          "name": "DiamondGuard_-1_-0.057",
+          "nonmanifold_edges": 216,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DiamondGuard_-1_0.057",
+          "nonmanifold_edges": 216,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DiamondGuard_1_-0.057",
+          "nonmanifold_edges": 216,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DiamondGuard_1_0.057",
+          "nonmanifold_edges": 216,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "Door_CastFrame",
+          "nonmanifold_edges": 1616,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "Door_HandledOuterLip",
+          "nonmanifold_edges": 726,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "Door_InternalFollowerRing",
+          "nonmanifold_edges": 816,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuard_MountFoot_0",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuard_MountFoot_1",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuard_MountFoot_2",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuard_MountFoot_3",
+          "nonmanifold_edges": 130,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuardScrew_0",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuardScrew_1",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuardScrew_2",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorGuardScrew_3",
+          "nonmanifold_edges": 344,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorToggleFork_Lower",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "DoorToggleFork_Upper",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "FaceplateSeal_Rubber",
+          "nonmanifold_edges": 896,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "FrontGlass_12point7mm_SpecimenApproximation",
+          "nonmanifold_edges": 416,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingeKnuckle_1",
+          "nonmanifold_edges": 200,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingeKnuckle_3",
+          "nonmanifold_edges": 200,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingeLeafDoor_-0.03",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        {
+          "name": "HingeLeafDoor_0.03",
+          "nonmanifold_edges": 120,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      ],
+      "bounds": {
+        "min": [
+          -0.09742257744073868,
+          -0.18528063595294952,
+          0.27069351077079773
+        ],
+        "max": [
+          0.0949999988079071,
+          -0.1379999965429306,
+          0.42330649495124817
+        ]
+      },
+      "name": "mark-v-front-window.glb",
+      "encoded_triangles": 17876,
+      "bounds_max_delta_m": 0.0,
+      "sha256": "e2f186e16ff7410506cd0dbf2ba8daaac2fe4c4503e87ba0fe44d380b2356c67"
+    }
+  ],
+  "independent_part_sources": [
+    {
+      "mesh_parts": 9,
+      "triangles": 26032,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [],
+      "bounds": {
+        "min": [
+          -0.09399999678134918,
+          0.11359178274869919,
+          0.2257012128829956
+        ],
+        "max": [
+          -0.035999998450279236,
+          0.19478461146354675,
+          0.37312862277030945
+        ]
+      },
+      "file": "AirConnectionAssembly.blend",
+      "texture_files_present": [
+        "CastBronze_OriginalInterpretation_BaseColor.png",
+        "CastBronze_OriginalInterpretation_Normal.png",
+        "CastBronze_OriginalInterpretation_Roughness.png"
+      ],
+      "sha256": "6b3cd44887ed3dc4b09eaca0893185418078006939b59c25e22c3c93036e6d2f"
+    },
+    {
+      "mesh_parts": 82,
+      "triangles": 162208,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [],
+      "bounds": {
+        "min": [
+          -0.17759285867214203,
+          -0.20561431348323822,
+          0.012974618002772331
+        ],
+        "max": [
+          0.17759285867214203,
+          0.20561432838439941,
+          0.18362003564834595
+        ]
+      },
+      "file": "CorseletAssembly.blend",
+      "texture_files_present": [
+        "AgedTin_OriginalInterpretation_BaseColor.png",
+        "AgedTin_OriginalInterpretation_Normal.png",
+        "AgedTin_OriginalInterpretation_Roughness.png",
+        "CastBronze_OriginalInterpretation_BaseColor.png",
+        "CastBronze_OriginalInterpretation_Normal.png",
+        "CastBronze_OriginalInterpretation_Roughness.png"
+      ],
+      "sha256": "b9286304deb6813cbd1b776d66be0e5237c2c1e7452499407d28f8405f899f39"
+    },
+    {
+      "mesh_parts": 10,
+      "triangles": 22738,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [],
+      "bounds": {
+        "min": [
+          -0.16087448596954346,
+          -0.1447402834892273,
+          0.2279999852180481
+        ],
+        "max": [
+          -0.0729479268193245,
+          0.12199999392032623,
+          0.29123955965042114
+        ]
+      },
+      "file": "ExhaustAssembly.blend",
+      "texture_files_present": [
+        "CastBronze_OriginalInterpretation_BaseColor.png",
+        "CastBronze_OriginalInterpretation_Normal.png",
+        "CastBronze_OriginalInterpretation_Roughness.png"
+      ],
+      "sha256": "0a7522f3f8c512e9c2a4c006eb8c12a13a32c3b150666b0b24803ea5434add00"
+    },
+    {
+      "mesh_parts": 20,
+      "triangles": 25236,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [],
+      "bounds": {
+        "min": [
+          -0.11400000751018524,
+          -0.18565000593662262,
+          0.2669999897480011
+        ],
+        "max": [
+          0.09862066060304642,
+          -0.12399998307228088,
+          0.4270000159740448
+        ]
+      },
+      "file": "FrontSeatAssembly.blend",
+      "texture_files_present": [
+        "CastBronze_OriginalInterpretation_BaseColor.png",
+        "CastBronze_OriginalInterpretation_Normal.png",
+        "CastBronze_OriginalInterpretation_Roughness.png"
+      ],
+      "sha256": "f94d9d55b1553c6247fcd82afff2c5677afe7117af142642801cf71c94fcf172"
+    },
+    {
+      "mesh_parts": 23,
+      "triangles": 17876,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [],
+      "bounds": {
+        "min": [
+          -0.09742257744073868,
+          -0.18528063595294952,
+          0.27069351077079773
+        ],
+        "max": [
+          0.0949999988079071,
+          -0.1379999965429306,
+          0.42330649495124817
+        ]
+      },
+      "file": "FrontWindowPivot.blend",
+      "texture_files_present": [
+        "CastBronze_OriginalInterpretation_BaseColor.png",
+        "CastBronze_OriginalInterpretation_Normal.png",
+        "CastBronze_OriginalInterpretation_Roughness.png"
+      ],
+      "sha256": "df2bc073f70ccce888dfc1f8d0387bbdc859116e5d3f519178aa54e97c4e67bb"
+    },
+    {
+      "mesh_parts": 8,
+      "triangles": 3588,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [],
+      "bounds": {
+        "min": [
+          -0.12793943285942078,
+          -0.09694860130548477,
+          0.25699999928474426
+        ],
+        "max": [
+          0.12793943285942078,
+          0.11955686658620834,
+          0.4880000054836273
+        ]
+      },
+      "file": "InteriorInterpretiveAssembly.blend",
+      "texture_files_present": [
+        "CastBronze_OriginalInterpretation_BaseColor.png",
+        "CastBronze_OriginalInterpretation_Normal.png",
+        "CastBronze_OriginalInterpretation_Roughness.png"
+      ],
+      "sha256": "285cc73cbf8af3bffee9ab11f38f9afa0d395cd6dfbf5542809334a07ec42815"
+    },
+    {
+      "mesh_parts": 34,
+      "triangles": 42576,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [],
+      "bounds": {
+        "min": [
+          -0.125,
+          -0.125,
+          0.14086750149726868
+        ],
+        "max": [
+          0.125,
+          0.14284999668598175,
+          0.23199999332427979
+        ]
+      },
+      "file": "NeckLockAssembly.blend",
+      "texture_files_present": [
+        "AgedTin_OriginalInterpretation_BaseColor.png",
+        "AgedTin_OriginalInterpretation_Normal.png",
+        "AgedTin_OriginalInterpretation_Roughness.png",
+        "CastBronze_OriginalInterpretation_BaseColor.png",
+        "CastBronze_OriginalInterpretation_Normal.png",
+        "CastBronze_OriginalInterpretation_Roughness.png"
+      ],
+      "sha256": "341d2c5bdbcd118f0e5701976edc0fd3e7254ce56b344bf2989f58240139b3db"
+    },
+    {
+      "mesh_parts": 1,
+      "triangles": 36338,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [],
+      "bounds": {
+        "min": [
+          -0.13878609240055084,
+          -0.14179861545562744,
+          0.19740788638591766
+        ],
+        "max": [
+          0.13878609240055084,
+          0.1442963033914566,
+          0.5070000290870667
+        ]
+      },
+      "file": "ShellAssembly.blend",
+      "texture_files_present": [
+        "AgedTin_OriginalInterpretation_BaseColor.png",
+        "AgedTin_OriginalInterpretation_Normal.png",
+        "AgedTin_OriginalInterpretation_Roughness.png"
+      ],
+      "sha256": "8f81a10e463359aebd9cb930f8f23f8fcf655b44ea3680a4f8797eea8ecd5186"
+    },
+    {
+      "mesh_parts": 32,
+      "triangles": 27352,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [],
+      "bounds": {
+        "min": [
+          -0.1764981746673584,
+          -0.0650000050663948,
+          0.2720000147819519
+        ],
+        "max": [
+          0.1764981746673584,
+          0.0650000050663948,
+          0.4020000100135803
+        ]
+      },
+      "file": "SideWindowsAssembly.blend",
+      "texture_files_present": [
+        "CastBronze_OriginalInterpretation_BaseColor.png",
+        "CastBronze_OriginalInterpretation_Normal.png",
+        "CastBronze_OriginalInterpretation_Roughness.png"
+      ],
+      "sha256": "b40d87a0ed90f33bff93f966cbb217e8ab2896392eb39104c21b8aa78d1b0297"
+    },
+    {
+      "mesh_parts": 5,
+      "triangles": 6504,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [],
+      "bounds": {
+        "min": [
+          0.08110539615154266,
+          -0.13010354340076447,
+          0.24789763987064362
+        ],
+        "max": [
+          0.1525999903678894,
+          -0.0791936069726944,
+          0.2861023545265198
+        ]
+      },
+      "file": "SpitcockAssembly.blend",
+      "texture_files_present": [
+        "CastBronze_OriginalInterpretation_BaseColor.png",
+        "CastBronze_OriginalInterpretation_Normal.png",
+        "CastBronze_OriginalInterpretation_Roughness.png"
+      ],
+      "sha256": "af162d20e8c4d69e84644ae934c4b23394230f0fa9e7c1307b9e5efa87a02875"
+    },
+    {
+      "mesh_parts": 14,
+      "triangles": 25372,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [],
+      "bounds": {
+        "min": [
+          0.035999998450279236,
+          -0.12733012437820435,
+          0.2634999752044678
+        ],
+        "max": [
+          0.11913543194532394,
+          0.1982487142086029,
+          0.46404212713241577
+        ]
+      },
+      "file": "TelephoneAssembly.blend",
+      "texture_files_present": [
+        "AgedTin_OriginalInterpretation_BaseColor.png",
+        "AgedTin_OriginalInterpretation_Normal.png",
+        "AgedTin_OriginalInterpretation_Roughness.png",
+        "CastBronze_OriginalInterpretation_BaseColor.png",
+        "CastBronze_OriginalInterpretation_Normal.png",
+        "CastBronze_OriginalInterpretation_Roughness.png"
+      ],
+      "sha256": "665e6b7f652ff08f8ea635b87cd89d6e2ba4afc7982b19405b4f646f16e6ab2c"
+    },
+    {
+      "mesh_parts": 17,
+      "triangles": 13704,
+      "invalid_coordinates": 0,
+      "missing_uv_parts": [],
+      "invalid_normals": 0,
+      "topology_issues": [],
+      "bounds": {
+        "min": [
+          -0.0901700034737587,
+          -0.14475379884243011,
+          0.4230324327945709
+        ],
+        "max": [
+          0.0901700034737587,
+          -0.03524094074964523,
+          0.5145937204360962
+        ]
+      },
+      "file": "TopWindowAssembly.blend",
+      "texture_files_present": [
+        "CastBronze_OriginalInterpretation_BaseColor.png",
+        "CastBronze_OriginalInterpretation_Normal.png",
+        "CastBronze_OriginalInterpretation_Roughness.png"
+      ],
+      "sha256": "d62352a22fe9343b5cb1c3396bdc826e8f27c3826bbaad411c1fbda907af5a80"
+    }
+  ],
+  "generator_sha256": "62b3632478d40df7c6f3dde75490d19bb31e473bf18cd96ad5df807b3ac7f053",
+  "revision_script_sha256": "aa1d68443bee2e6d5bd86c047ab99b2734d98c0d14623ee94f4079e56e6bc82a",
+  "input_source_sha256": "49bbaf5caa5b22d28befd03e5fc4678c71e54fea2854051db4eba60ff8930492",
+  "checker_sha256": "f2fb1c826f15970549b46e3f5cfa738489cf0f019cc7e7f38fc06be7233dcf94",
+  "passed": true
+}

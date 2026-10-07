@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-07",
+  "revision": "R2",
+  "method": "CUA-driven browser interaction and visual observation, not independent human acceptance",
+  "browser": "Codex in-app browser",
+  "mode": "HTTP localhost",
+  "model_sha256": "630fcd394b115ca9e4f6e41e373adc69e6e7096e3e1eb22122888d883738d64e",
+  "viewer_sha256": "f2080e3af83d9ce894bc8ba165fab6b389fb50a6c2970f5fa12835375f2ae6b5",
+  "checks": [
+    "loaded 255 mesh parts / 409524 encoded triangles",
+    "front view and staged opening: nut loosening, bolt swing, window opening",
+    "closing: window first, bolt return then tightening; final closed state observed",
+    "reset reverses opened state, restores all components and view",
+    "front-window, chest and interpretive-interior filters visually inspected",
+    "shell hide/restore and warning observed",
+    "rear view: two distinct connections",
+    "mouse drag rotation and wheel close-up zoom visually observed"
+  ],
+  "console_errors": [],
+  "console_warnings": [],
+  "screenshots": [
+    "browser-overview.jpg",
+    "browser-window-open.jpg"
+  ],
+  "unverified": [
+    "other component filters not separately rechecked in R2",
+    "file:// local file selection",
+    "Unity importer/runtime",
+    "real VR device performance",
+    "user testing",
+    "mechanical fit/tolerance"
+  ]
+}
