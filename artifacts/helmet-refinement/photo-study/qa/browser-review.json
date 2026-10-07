@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-06",
+  "environment": "Codex in-app browser, localhost HTTP, WebGL",
+  "tested_url": "http://127.0.0.1:8768/preview/review.html",
+  "results": {
+    "whole_model_loaded": true,
+    "whole_mesh_parts": 103,
+    "whole_triangles": 113976,
+    "front_local_file_chooser_loaded": true,
+    "front_mesh_parts": 24,
+    "front_triangles": 20164,
+    "front_rear_side_view_buttons": true,
+    "component_filter_and_automatic_framing": true,
+    "drag_rotation": true,
+    "wheel_zoom": true,
+    "reset": true,
+    "console_errors_or_warnings_observed": 0
+  },
+  "evidence": "browser-review.jpg",
+  "not_verified": [
+    "file:// direct opening: automation browser policy prohibits this protocol; no workaround attempted",
+    "right-button pan not exercised",
+    "other browsers, mobile layouts, final accessibility audit",
+    "Unity import, headset performance, physical measurements or historical authenticity"
+  ]
+}

@@ -1,0 +1,630 @@
+{
+  "blender": "4.5.14 LTS",
+  "identity": "unconfirmed photo01-04 object; not identified as Mark V",
+  "scale": "all numerical geometry is estimated",
+  "objects": [
+    {
+      "name": "Shell_Hollow_WallThicknessAssumed",
+      "vertices": 5024,
+      "triangles": 10056,
+      "parent": "PhotoHelmetStudy_ROOT"
+    },
+    {
+      "name": "NeckRing_Fixed",
+      "vertices": 1152,
+      "triangles": 2304,
+      "parent": "PhotoHelmetStudy_ROOT"
+    },
+    {
+      "name": "NeckRing_BrightRim",
+      "vertices": 960,
+      "triangles": 1920,
+      "parent": "PhotoHelmetStudy_ROOT"
+    },
+    {
+      "name": "NeckSeal_Illustrative",
+      "vertices": 1152,
+      "triangles": 2304,
+      "parent": "PhotoHelmetStudy_ROOT"
+    },
+    {
+      "name": "Corselet_OuterAndInnerSurfaces_Assumed",
+      "vertices": 2048,
+      "triangles": 4096,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "Corselet_RolledEdge",
+      "vertices": 6410,
+      "triangles": 12800,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_01_LayoutAssumed_Washer",
+      "vertices": 576,
+      "triangles": 1152,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_01_LayoutAssumed_HexNut",
+      "vertices": 84,
+      "triangles": 164,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_01_LayoutAssumed_Stem",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_02_LayoutAssumed_Washer",
+      "vertices": 576,
+      "triangles": 1152,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_02_LayoutAssumed_HexNut",
+      "vertices": 84,
+      "triangles": 164,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_02_LayoutAssumed_Stem",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_03_LayoutAssumed_Washer",
+      "vertices": 576,
+      "triangles": 1152,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_03_LayoutAssumed_HexNut",
+      "vertices": 84,
+      "triangles": 164,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_03_LayoutAssumed_Stem",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_04_LayoutAssumed_Washer",
+      "vertices": 576,
+      "triangles": 1152,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_04_LayoutAssumed_HexNut",
+      "vertices": 84,
+      "triangles": 164,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_04_LayoutAssumed_Stem",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_05_LayoutAssumed_Washer",
+      "vertices": 576,
+      "triangles": 1152,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_05_LayoutAssumed_HexNut",
+      "vertices": 84,
+      "triangles": 164,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_05_LayoutAssumed_Stem",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_06_LayoutAssumed_Washer",
+      "vertices": 576,
+      "triangles": 1152,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_06_LayoutAssumed_HexNut",
+      "vertices": 84,
+      "triangles": 164,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_06_LayoutAssumed_Stem",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_07_LayoutAssumed_Washer",
+      "vertices": 576,
+      "triangles": 1152,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_07_LayoutAssumed_HexNut",
+      "vertices": 84,
+      "triangles": 164,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_07_LayoutAssumed_Stem",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_08_LayoutAssumed_Washer",
+      "vertices": 576,
+      "triangles": 1152,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_08_LayoutAssumed_HexNut",
+      "vertices": 84,
+      "triangles": 164,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_08_LayoutAssumed_Stem",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_09_LayoutAssumed_Washer",
+      "vertices": 576,
+      "triangles": 1152,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_09_LayoutAssumed_HexNut",
+      "vertices": 84,
+      "triangles": 164,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_09_LayoutAssumed_Stem",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_10_LayoutAssumed_Washer",
+      "vertices": 576,
+      "triangles": 1152,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_10_LayoutAssumed_HexNut",
+      "vertices": 84,
+      "triangles": 164,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_10_LayoutAssumed_Stem",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_11_LayoutAssumed_Washer",
+      "vertices": 576,
+      "triangles": 1152,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_11_LayoutAssumed_HexNut",
+      "vertices": 84,
+      "triangles": 164,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_11_LayoutAssumed_Stem",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_12_LayoutAssumed_Washer",
+      "vertices": 576,
+      "triangles": 1152,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_12_LayoutAssumed_HexNut",
+      "vertices": 84,
+      "triangles": 164,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "PerimeterBolt_12_LayoutAssumed_Stem",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "FrontPostBase_-1",
+      "vertices": 128,
+      "triangles": 252,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "FrontPost_-1",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "FrontPostCap_-1",
+      "vertices": 128,
+      "triangles": 252,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "FrontPostBase_1",
+      "vertices": 128,
+      "triangles": 252,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "FrontPost_1",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "FrontPostCap_1",
+      "vertices": 128,
+      "triangles": 252,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "Nameplate_Blank_TextUnverified",
+      "vertices": 722,
+      "triangles": 1440,
+      "parent": "CorseletAssembly"
+    },
+    {
+      "name": "FrontSeat_Fixed",
+      "vertices": 1152,
+      "triangles": 2304,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "FrontSeal_Illustrative",
+      "vertices": 1152,
+      "triangles": 2304,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "FrontFrame_Removable",
+      "vertices": 1152,
+      "triangles": 2304,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "FrontGlass_PlaneThicknessAssumed",
+      "vertices": 192,
+      "triangles": 380,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "ClearMotif_Centre",
+      "vertices": 1152,
+      "triangles": 2304,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "ClearMotif_Satellite_1",
+      "vertices": 1152,
+      "triangles": 2304,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "ClearMotif_Link_1_-19",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "ClearMotif_Link_1_19",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "ClearMotif_Satellite_2",
+      "vertices": 1152,
+      "triangles": 2304,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "ClearMotif_Link_2_-19",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "ClearMotif_Link_2_19",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "ClearMotif_Satellite_3",
+      "vertices": 1152,
+      "triangles": 2304,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "ClearMotif_Link_3_-19",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "ClearMotif_Link_3_19",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "FrontRetainer_1",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "RetainerSlot_1",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "FrontRetainer_2",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "RetainerSlot_2",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "FrontRetainer_3",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "RetainerSlot_3",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "FrameThumbStem_0",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "FrameThumbBall_0",
+      "vertices": 482,
+      "triangles": 960,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "FrameThumbStem_1",
+      "vertices": 64,
+      "triangles": 124,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "FrameThumbBall_1",
+      "vertices": 482,
+      "triangles": 960,
+      "parent": "FrontWindowAssembly"
+    },
+    {
+      "name": "SideWindowSeat_-1",
+      "vertices": 1152,
+      "triangles": 2304,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideGlass_-1",
+      "vertices": 160,
+      "triangles": 316,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideWindowLip_-1",
+      "vertices": 960,
+      "triangles": 1920,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideGuard_V_-1_-0.015",
+      "vertices": 810,
+      "triangles": 1600,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideGuard_V_-1_0.015",
+      "vertices": 810,
+      "triangles": 1600,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideGuard_H_-1_-0.02",
+      "vertices": 810,
+      "triangles": 1600,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideGuard_H_-1_0.02",
+      "vertices": 810,
+      "triangles": 1600,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideSeatRivet_-1_0",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideSeatRivet_-1_1",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideSeatRivet_-1_2",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideSeatRivet_-1_3",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideWindowSeat_1",
+      "vertices": 1152,
+      "triangles": 2304,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideGlass_1",
+      "vertices": 160,
+      "triangles": 316,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideWindowLip_1",
+      "vertices": 960,
+      "triangles": 1920,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideGuard_V_1_-0.015",
+      "vertices": 810,
+      "triangles": 1600,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideGuard_V_1_0.015",
+      "vertices": 810,
+      "triangles": 1600,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideGuard_H_1_-0.02",
+      "vertices": 810,
+      "triangles": 1600,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideGuard_H_1_0.02",
+      "vertices": 810,
+      "triangles": 1600,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideSeatRivet_1_0",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideSeatRivet_1_1",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideSeatRivet_1_2",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "SideSeatRivet_1_3",
+      "vertices": 48,
+      "triangles": 92,
+      "parent": "SideWindowsAssembly"
+    },
+    {
+      "name": "RearUpperMount_FunctionUnverified",
+      "vertices": 1152,
+      "triangles": 2304,
+      "parent": "RearFittings_UnverifiedFunctions"
+    },
+    {
+      "name": "RearUpperBentFitting_Hollow_FunctionUnverified",
+      "vertices": 1824,
+      "triangles": 3648,
+      "parent": "RearFittings_UnverifiedFunctions"
+    },
+    {
+      "name": "RearUpperCollar",
+      "vertices": 1152,
+      "triangles": 2304,
+      "parent": "RearFittings_UnverifiedFunctions"
+    },
+    {
+      "name": "RearUpperThreadCore_ThreadPitchAssumed",
+      "vertices": 1152,
+      "triangles": 2304,
+      "parent": "RearFittings_UnverifiedFunctions"
+    },
+    {
+      "name": "RearUpperThread_VisualApproximation",
+      "vertices": 1928,
+      "triangles": 3840,
+      "parent": "RearFittings_UnverifiedFunctions"
+    },
+    {
+      "name": "RearLowerCap_FunctionUnverified",
+      "vertices": 512,
+      "triangles": 1020,
+      "parent": "RearFittings_UnverifiedFunctions"
+    },
+    {
+      "name": "RearLowerMount",
+      "vertices": 1152,
+      "triangles": 2304,
+      "parent": "RearFittings_UnverifiedFunctions"
+    },
+    {
+      "name": "RearSmallLever_ObservedShapeApproximation",
+      "vertices": 210,
+      "triangles": 400,
+      "parent": "RearFittings_UnverifiedFunctions"
+    }
+  ],
+  "triangles": 113976,
+  "materials": 6,
+  "original_images_used_as_textures": false,
+  "unity_integration": false,
+  "performance_tested": false
+}
