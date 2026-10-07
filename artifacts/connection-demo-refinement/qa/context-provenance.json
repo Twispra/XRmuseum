@@ -1,0 +1,10 @@
+{
+  "upstream_commit": "674d5a69014ea407e0e9a061d91cdc46e5af36f1",
+  "upstream_pr": 32,
+  "upstream_path": "artifacts/helmet-refinement/eras/mark-v/exports/mark-v-mod1.glb",
+  "upstream_sha256": "630fcd394b115ca9e4f6e41e373adc69e6e7096e3e1eb22122888d883738d64e",
+  "output_sha256": "83f072d4ac47c0b43d11ad5ef4533497013fac1f482972a1eb18a1c375343306",
+  "modifications": "decimate complex parts to 30%, resize images to512px; review context only",
+  "triangles": 125355,
+  "limitations": "Not accurate collision geometry, not reviewed LOD, not part of runtime or original Mark V asset"
+}

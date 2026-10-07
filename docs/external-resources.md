@@ -70,3 +70,10 @@ AI 辅助范围：模块架构、Editor 工具、运行时脚本、字体子集�
 
 
 2026-10-06 三语改动：Codex 辅助整理 193 条三语文案、连接静态与动态文字、扩展字形及自动验收。繁体初稿使用 OpenCC 的 s2t 转换，本地工具未放进 Unity 或运行时依赖；术语、提示和历史边界由本轮代码／文案检查复核，尚无独立语言审校。源字体仍为本机 Noto Sans SC 变量字体（OFL 1.1），使用 fontTools 静态实例化并子集化，新增繁体所需码位，不引入新模型、图片、音频或 package。许可保留，官方来源 https://github.com/google/fonts/tree/main/ofl/notosanssc 。功能和限制见 [三语记录](activity/2026-10-06-trilingual-museum.md)；自动检查不等于真实用户或头显验证。
+
+
+2026-10-07 供气／通话独立精修：见 [研究依据](../artifacts/connection-demo-refinement/references/research.zh-CN.md)和[本轮记录](activity/2026-10-07-connection-demo-refinement.md)。新依据为 U.S. Navy Department《Diving Manual, July 1916》的托管扫描、South Georgia Museum 的 Diver’s suit 页面、DESCO 的 Mark V construction 页面及 U.S. Naval Undersea Museum 的 MK V 页面。仅提交可查链接、页码、读取记录和有限事实摘要，不分发原扫描／馆藏媒体，不将托管扫描的来源误标为制造图纸。当前制造商信息与 1916 设备事实分开。
+
+本轮设备几何、六张1024px木材／金属PNG、三方案六条WAV均为原创程序生成、Codex辅助；音效不是历史录音，没有真实人声。资产沿用本项目权利安排，不为第三方素材另行授予许可。已有PR #32的本组Mark V模型只制成轻量浏览器参照副本，原源／导出不变，哈希追溯见资产qa/context-provenance.json；不声明与1916设备实际配套。
+
+浏览器使用本机已有 Three.js 0.180.0（MIT），许可全文保留于资产preview/three-LICENSE.txt并内嵌HTML。构建用本机已有 esbuild 0.25.10，建模用官方 Blender 4.5.14 LTS，音效用numpy；不向Unity增加package或工具本体。AI辅助范围为研究核查、几何材质、动画与合成音轨、代码及验证／交接；自动初检不等于人工试听、用户研究、头显性能或组员批准。
