@@ -1,0 +1,1388 @@
+{
+  "blender": "4.5.14 LTS",
+  "identity": "DESCO Mark V Mod.1 standard air exterior study; 1944 museum specimen reference",
+  "meshes": 229,
+  "triangles": 393700,
+  "materials": 8,
+  "parts": [
+    {
+      "name": "Bonnet_HollowCopper_TinFinish",
+      "parent": "ShellAssembly",
+      "vertices": 18163,
+      "triangles": 36338
+    },
+    {
+      "name": "LowerNeckRing_NominalOpening",
+      "parent": "NeckLockAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "UpperNeckRing_Female_Approximate",
+      "parent": "NeckLockAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "NeckJoint_RolledLip",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "NeckGasket_Leather_Interpretive",
+      "parent": "NeckLockAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "InterruptedThread_0_0_SeatApproximation",
+      "parent": "NeckLockAssembly",
+      "vertices": 296,
+      "triangles": 588
+    },
+    {
+      "name": "InterruptedThread_0_1_SeatApproximation",
+      "parent": "NeckLockAssembly",
+      "vertices": 296,
+      "triangles": 588
+    },
+    {
+      "name": "InterruptedThread_1_0_SeatApproximation",
+      "parent": "NeckLockAssembly",
+      "vertices": 296,
+      "triangles": 588
+    },
+    {
+      "name": "InterruptedThread_1_1_SeatApproximation",
+      "parent": "NeckLockAssembly",
+      "vertices": 296,
+      "triangles": 588
+    },
+    {
+      "name": "InterruptedThread_2_0_SeatApproximation",
+      "parent": "NeckLockAssembly",
+      "vertices": 296,
+      "triangles": 588
+    },
+    {
+      "name": "InterruptedThread_2_1_SeatApproximation",
+      "parent": "NeckLockAssembly",
+      "vertices": 296,
+      "triangles": 588
+    },
+    {
+      "name": "InterruptedThread_3_0_SeatApproximation",
+      "parent": "NeckLockAssembly",
+      "vertices": 296,
+      "triangles": 588
+    },
+    {
+      "name": "InterruptedThread_3_1_SeatApproximation",
+      "parent": "NeckLockAssembly",
+      "vertices": 296,
+      "triangles": 588
+    },
+    {
+      "name": "Corselet_CopperSaddle_WithUnderside",
+      "parent": "CorseletAssembly",
+      "vertices": 3048,
+      "triangles": 6096
+    },
+    {
+      "name": "DressCollar_DarkGasket_Approximate",
+      "parent": "CorseletAssembly",
+      "vertices": 3224,
+      "triangles": 6448
+    },
+    {
+      "name": "Brail_01_CurvedClampingStrap",
+      "parent": "CorseletAssembly",
+      "vertices": 890,
+      "triangles": 1776
+    },
+    {
+      "name": "Brail_02_CurvedClampingStrap",
+      "parent": "CorseletAssembly",
+      "vertices": 890,
+      "triangles": 1776
+    },
+    {
+      "name": "Brail_03_CurvedClampingStrap",
+      "parent": "CorseletAssembly",
+      "vertices": 890,
+      "triangles": 1776
+    },
+    {
+      "name": "Brail_04_CurvedClampingStrap",
+      "parent": "CorseletAssembly",
+      "vertices": 890,
+      "triangles": 1776
+    },
+    {
+      "name": "Corselet_RolledOuterEdge",
+      "parent": "CorseletAssembly",
+      "vertices": 1280,
+      "triangles": 2560
+    },
+    {
+      "name": "BrailFastener_01_Washer",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_01_Stud",
+      "parent": "CorseletAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "BrailFastener_01_StudThread_12TPI",
+      "parent": "CorseletAssembly",
+      "vertices": 3088,
+      "triangles": 6172
+    },
+    {
+      "name": "BrailFastener_01_WingnutCore",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_01_CastWingnut",
+      "parent": "CorseletAssembly",
+      "vertices": 256,
+      "triangles": 508
+    },
+    {
+      "name": "BrailFastener_01_FlangedBase",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_02_Washer",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_02_Stud",
+      "parent": "CorseletAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "BrailFastener_02_StudThread_12TPI",
+      "parent": "CorseletAssembly",
+      "vertices": 3088,
+      "triangles": 6172
+    },
+    {
+      "name": "BrailFastener_02_WingnutCore",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_02_CastWingnut",
+      "parent": "CorseletAssembly",
+      "vertices": 256,
+      "triangles": 508
+    },
+    {
+      "name": "BrailFastener_03_Washer",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_03_Stud",
+      "parent": "CorseletAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "BrailFastener_03_StudThread_12TPI",
+      "parent": "CorseletAssembly",
+      "vertices": 3088,
+      "triangles": 6172
+    },
+    {
+      "name": "BrailFastener_03_WingnutCore",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_03_CastWingnut",
+      "parent": "CorseletAssembly",
+      "vertices": 256,
+      "triangles": 508
+    },
+    {
+      "name": "BrailFastener_04_Washer",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_04_Stud",
+      "parent": "CorseletAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "BrailFastener_04_StudThread_12TPI",
+      "parent": "CorseletAssembly",
+      "vertices": 3088,
+      "triangles": 6172
+    },
+    {
+      "name": "BrailFastener_04_WingnutCore",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_04_CastWingnut",
+      "parent": "CorseletAssembly",
+      "vertices": 256,
+      "triangles": 508
+    },
+    {
+      "name": "BrailFastener_04_FlangedBase",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_05_Washer",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_05_Stud",
+      "parent": "CorseletAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "BrailFastener_05_StudThread_12TPI",
+      "parent": "CorseletAssembly",
+      "vertices": 3088,
+      "triangles": 6172
+    },
+    {
+      "name": "BrailFastener_05_WingnutCore",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_05_CastWingnut",
+      "parent": "CorseletAssembly",
+      "vertices": 256,
+      "triangles": 508
+    },
+    {
+      "name": "BrailFastener_06_Washer",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_06_Stud",
+      "parent": "CorseletAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "BrailFastener_06_StudThread_12TPI",
+      "parent": "CorseletAssembly",
+      "vertices": 3088,
+      "triangles": 6172
+    },
+    {
+      "name": "BrailFastener_06_WingnutCore",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_06_CastWingnut",
+      "parent": "CorseletAssembly",
+      "vertices": 256,
+      "triangles": 508
+    },
+    {
+      "name": "BrailFastener_07_Washer",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_07_Stud",
+      "parent": "CorseletAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "BrailFastener_07_StudThread_12TPI",
+      "parent": "CorseletAssembly",
+      "vertices": 3088,
+      "triangles": 6172
+    },
+    {
+      "name": "BrailFastener_07_WingnutCore",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_07_CastWingnut",
+      "parent": "CorseletAssembly",
+      "vertices": 256,
+      "triangles": 508
+    },
+    {
+      "name": "BrailFastener_07_FlangedBase",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_08_Washer",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_08_Stud",
+      "parent": "CorseletAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "BrailFastener_08_StudThread_12TPI",
+      "parent": "CorseletAssembly",
+      "vertices": 3088,
+      "triangles": 6172
+    },
+    {
+      "name": "BrailFastener_08_WingnutCore",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_08_CastWingnut",
+      "parent": "CorseletAssembly",
+      "vertices": 256,
+      "triangles": 508
+    },
+    {
+      "name": "BrailFastener_09_Washer",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_09_Stud",
+      "parent": "CorseletAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "BrailFastener_09_StudThread_12TPI",
+      "parent": "CorseletAssembly",
+      "vertices": 3088,
+      "triangles": 6172
+    },
+    {
+      "name": "BrailFastener_09_WingnutCore",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_09_CastWingnut",
+      "parent": "CorseletAssembly",
+      "vertices": 256,
+      "triangles": 508
+    },
+    {
+      "name": "BrailFastener_10_Washer",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_10_Stud",
+      "parent": "CorseletAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "BrailFastener_10_StudThread_12TPI",
+      "parent": "CorseletAssembly",
+      "vertices": 3088,
+      "triangles": 6172
+    },
+    {
+      "name": "BrailFastener_10_WingnutCore",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_10_CastWingnut",
+      "parent": "CorseletAssembly",
+      "vertices": 256,
+      "triangles": 508
+    },
+    {
+      "name": "BrailFastener_10_FlangedBase",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_11_Washer",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_11_Stud",
+      "parent": "CorseletAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "BrailFastener_11_StudThread_12TPI",
+      "parent": "CorseletAssembly",
+      "vertices": 3088,
+      "triangles": 6172
+    },
+    {
+      "name": "BrailFastener_11_WingnutCore",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_11_CastWingnut",
+      "parent": "CorseletAssembly",
+      "vertices": 256,
+      "triangles": 508
+    },
+    {
+      "name": "BrailFastener_12_Washer",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_12_Stud",
+      "parent": "CorseletAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "BrailFastener_12_StudThread_12TPI",
+      "parent": "CorseletAssembly",
+      "vertices": 3088,
+      "triangles": 6172
+    },
+    {
+      "name": "BrailFastener_12_WingnutCore",
+      "parent": "CorseletAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "BrailFastener_12_CastWingnut",
+      "parent": "CorseletAssembly",
+      "vertices": 256,
+      "triangles": 508
+    },
+    {
+      "name": "EyePadBase_-1",
+      "parent": "CorseletAssembly",
+      "vertices": 762,
+      "triangles": 1520
+    },
+    {
+      "name": "FrontEyelet_-1",
+      "parent": "CorseletAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "EyePadRivet_-1_-1",
+      "parent": "CorseletAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "EyePadRivet_-1_1",
+      "parent": "CorseletAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "EyePadBase_1",
+      "parent": "CorseletAssembly",
+      "vertices": 762,
+      "triangles": 1520
+    },
+    {
+      "name": "FrontEyelet_1",
+      "parent": "CorseletAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "EyePadRivet_1_-1",
+      "parent": "CorseletAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "EyePadRivet_1_1",
+      "parent": "CorseletAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "Nameplate_WartimeFootball_Untranscribed",
+      "parent": "CorseletAssembly",
+      "vertices": 400,
+      "triangles": 796
+    },
+    {
+      "name": "NameplateRivet_-1",
+      "parent": "CorseletAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "NameplateRivet_1",
+      "parent": "CorseletAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "FrontSeat_CastFrame",
+      "parent": "FrontSeatAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "FaceplateSeal_Rubber",
+      "parent": "FrontSeatAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "Door_CastFrame",
+      "parent": "FrontWindowPivot",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "Door_HandledOuterLip",
+      "parent": "FrontWindowPivot",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "Door_InternalFollowerRing",
+      "parent": "FrontWindowPivot",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "FrontGlass_12point7mm_SpecimenApproximation",
+      "parent": "FrontWindowPivot",
+      "vertices": 768,
+      "triangles": 1532
+    },
+    {
+      "name": "DiamondGuard_-1_-0.057",
+      "parent": "FrontWindowPivot",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "DiamondGuard_-1_0.057",
+      "parent": "FrontWindowPivot",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "DiamondGuard_1_-0.057",
+      "parent": "FrontWindowPivot",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "DiamondGuard_1_0.057",
+      "parent": "FrontWindowPivot",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "DoorGuardScrew_0",
+      "parent": "FrontWindowPivot",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "DoorGuardScrew_1",
+      "parent": "FrontWindowPivot",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "DoorGuardScrew_2",
+      "parent": "FrontWindowPivot",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "DoorGuardScrew_3",
+      "parent": "FrontWindowPivot",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "HingeKnuckle_0",
+      "parent": "FrontSeatAssembly",
+      "vertices": 96,
+      "triangles": 188
+    },
+    {
+      "name": "HingeKnuckle_1",
+      "parent": "FrontWindowPivot",
+      "vertices": 96,
+      "triangles": 188
+    },
+    {
+      "name": "HingeKnuckle_2",
+      "parent": "FrontSeatAssembly",
+      "vertices": 96,
+      "triangles": 188
+    },
+    {
+      "name": "HingeKnuckle_3",
+      "parent": "FrontWindowPivot",
+      "vertices": 96,
+      "triangles": 188
+    },
+    {
+      "name": "HingeKnuckle_4",
+      "parent": "FrontSeatAssembly",
+      "vertices": 96,
+      "triangles": 188
+    },
+    {
+      "name": "HingePin_Removable",
+      "parent": "FrontSeatAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "HingePinTopButton",
+      "parent": "FrontSeatAssembly",
+      "vertices": 762,
+      "triangles": 1520
+    },
+    {
+      "name": "HingeLeafFixed_-0.03",
+      "parent": "FrontSeatAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "HingeLeafDoor_-0.03",
+      "parent": "FrontWindowPivot",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "HingeLeafFixed_0.03",
+      "parent": "FrontSeatAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "HingeLeafDoor_0.03",
+      "parent": "FrontWindowPivot",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "DoorToggleBolt_13TPI_Nominal",
+      "parent": "FrontSeatAssembly",
+      "vertices": 64,
+      "triangles": 124
+    },
+    {
+      "name": "DoorToggleThread_13TPI",
+      "parent": "FrontSeatAssembly",
+      "vertices": 4720,
+      "triangles": 9436
+    },
+    {
+      "name": "DoorToggleNutCore",
+      "parent": "FrontSeatAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "DoorToggleWing_-1",
+      "parent": "FrontSeatAssembly",
+      "vertices": 762,
+      "triangles": 1520
+    },
+    {
+      "name": "DoorToggleWing_1",
+      "parent": "FrontSeatAssembly",
+      "vertices": 762,
+      "triangles": 1520
+    },
+    {
+      "name": "DoorToggleFork_Upper",
+      "parent": "FrontWindowPivot",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "DoorToggleFork_Lower",
+      "parent": "FrontWindowPivot",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "SideSeat_-1",
+      "parent": "SideWindowsAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "SideGlassRetainer_-1",
+      "parent": "SideWindowsAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "SideGlass_-1",
+      "parent": "SideWindowsAssembly",
+      "vertices": 480,
+      "triangles": 956
+    },
+    {
+      "name": "SideGuard_-1v-0.017",
+      "parent": "SideWindowsAssembly",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "SideGuard_-1h-0.017",
+      "parent": "SideWindowsAssembly",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "SideGuard_-1v0.017",
+      "parent": "SideWindowsAssembly",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "SideGuard_-1h0.017",
+      "parent": "SideWindowsAssembly",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "SideGuardScrew_-1_0",
+      "parent": "SideWindowsAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "SideGuardScrew_-1_1",
+      "parent": "SideWindowsAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "SideGuardScrew_-1_2",
+      "parent": "SideWindowsAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "SideGuardScrew_-1_3",
+      "parent": "SideWindowsAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "SideSeat_1",
+      "parent": "SideWindowsAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "SideGlassRetainer_1",
+      "parent": "SideWindowsAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "SideGlass_1",
+      "parent": "SideWindowsAssembly",
+      "vertices": 480,
+      "triangles": 956
+    },
+    {
+      "name": "SideGuard_1v-0.017",
+      "parent": "SideWindowsAssembly",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "SideGuard_1h-0.017",
+      "parent": "SideWindowsAssembly",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "SideGuard_1v0.017",
+      "parent": "SideWindowsAssembly",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "SideGuard_1h0.017",
+      "parent": "SideWindowsAssembly",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "SideGuardScrew_1_0",
+      "parent": "SideWindowsAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "SideGuardScrew_1_1",
+      "parent": "SideWindowsAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "SideGuardScrew_1_2",
+      "parent": "SideWindowsAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "SideGuardScrew_1_3",
+      "parent": "SideWindowsAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "TopSeat",
+      "parent": "TopWindowAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "TopRetainer",
+      "parent": "TopWindowAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "TopGlass",
+      "parent": "TopWindowAssembly",
+      "vertices": 160,
+      "triangles": 316
+    },
+    {
+      "name": "TopGuard_V_-0.024",
+      "parent": "TopWindowAssembly",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "TopGuard_V_0.024",
+      "parent": "TopWindowAssembly",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "TopGuard_H_-0.025",
+      "parent": "TopWindowAssembly",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "TopGuard_H_0",
+      "parent": "TopWindowAssembly",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "TopGuard_H_0.025",
+      "parent": "TopWindowAssembly",
+      "vertices": 336,
+      "triangles": 668
+    },
+    {
+      "name": "TopGuardScrew_0",
+      "parent": "TopWindowAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "TopGuardScrew_1",
+      "parent": "TopWindowAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "TopGuardScrew_2",
+      "parent": "TopWindowAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "TopGuardScrew_3",
+      "parent": "TopWindowAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "TelephoneCup_Mount",
+      "parent": "TelephoneAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "TelephoneCup_ClosedOuterCover",
+      "parent": "TelephoneAssembly",
+      "vertices": 800,
+      "triangles": 1596
+    },
+    {
+      "name": "TelephoneCup_UpperShoulder",
+      "parent": "TelephoneAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "TelephoneCupCoverScrew_-1",
+      "parent": "TelephoneAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "TelephoneCupCoverScrew_1",
+      "parent": "TelephoneAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "AirGooseneckMount",
+      "parent": "AirConnectionAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "AirMountRivet_0",
+      "parent": "AirConnectionAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "AirMountRivet_1",
+      "parent": "AirConnectionAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "AirMountRivet_2",
+      "parent": "AirConnectionAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "AirGooseneck_HollowCast",
+      "parent": "AirConnectionAssembly",
+      "vertices": 2496,
+      "triangles": 4992
+    },
+    {
+      "name": "AirValve_UpperHex",
+      "parent": "AirConnectionAssembly",
+      "vertices": 288,
+      "triangles": 576
+    },
+    {
+      "name": "AirNonReturnValve_OldStyleExternalBody",
+      "parent": "AirConnectionAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "AirSubmarineThreadCore_1and1sixteenth",
+      "parent": "AirConnectionAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "AirOutletThread_17TPI",
+      "parent": "AirConnectionAssembly",
+      "vertices": 4888,
+      "triangles": 9772
+    },
+    {
+      "name": "TelephoneGooseneckMount",
+      "parent": "TelephoneAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "TelephoneMountRivet_0",
+      "parent": "TelephoneAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "TelephoneMountRivet_1",
+      "parent": "TelephoneAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "TelephoneMountRivet_2",
+      "parent": "TelephoneAssembly",
+      "vertices": 248,
+      "triangles": 492
+    },
+    {
+      "name": "TelephoneGooseneck_HollowCast",
+      "parent": "TelephoneAssembly",
+      "vertices": 2496,
+      "triangles": 4992
+    },
+    {
+      "name": "TelephoneFemaleCoupling_HexBody",
+      "parent": "TelephoneAssembly",
+      "vertices": 288,
+      "triangles": 576
+    },
+    {
+      "name": "TelephoneElbowThreadCore_1point715",
+      "parent": "TelephoneAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "TelephoneElbowThread_11TPI",
+      "parent": "TelephoneAssembly",
+      "vertices": 3000,
+      "triangles": 5996
+    },
+    {
+      "name": "TelephonePlug_Recessed_Unresolved",
+      "parent": "TelephoneAssembly",
+      "vertices": 128,
+      "triangles": 252
+    },
+    {
+      "name": "ExhaustValve_Seat",
+      "parent": "ExhaustAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "ExhaustValve_Cover",
+      "parent": "ExhaustAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "ExhaustValve_AdjusterBoss",
+      "parent": "ExhaustAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "ExhaustStarWheel_Hub",
+      "parent": "ExhaustAssembly",
+      "vertices": 96,
+      "triangles": 188
+    },
+    {
+      "name": "ExhaustStarWheel_Arm_0",
+      "parent": "ExhaustAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "ExhaustStarWheel_Arm_1",
+      "parent": "ExhaustAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "ExhaustStarWheel_Arm_2",
+      "parent": "ExhaustAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "ExhaustStarWheel_Arm_3",
+      "parent": "ExhaustAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "BananaExhaust_Hollow_SectionApproximate",
+      "parent": "ExhaustAssembly",
+      "vertices": 3168,
+      "triangles": 6336
+    },
+    {
+      "name": "ExhaustPerforatedBulb",
+      "parent": "ExhaustAssembly",
+      "vertices": 2865,
+      "triangles": 5862
+    },
+    {
+      "name": "InternalChinValveStem_Interpretive",
+      "parent": "InteriorInterpretiveAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "ChinButton_Interpretive",
+      "parent": "InteriorInterpretiveAssembly",
+      "vertices": 762,
+      "triangles": 1520
+    },
+    {
+      "name": "SpitcockSeat",
+      "parent": "SpitcockAssembly",
+      "vertices": 1536,
+      "triangles": 3072
+    },
+    {
+      "name": "SpitcockBody",
+      "parent": "SpitcockAssembly",
+      "vertices": 96,
+      "triangles": 188
+    },
+    {
+      "name": "SpitcockCollar",
+      "parent": "SpitcockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SpitcockLever",
+      "parent": "SpitcockAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "SpitcockLeverBall",
+      "parent": "SpitcockAssembly",
+      "vertices": 762,
+      "triangles": 1520
+    },
+    {
+      "name": "RearLock_Pivot",
+      "parent": "NeckLockAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "RearLock_BallA",
+      "parent": "NeckLockAssembly",
+      "vertices": 762,
+      "triangles": 1520
+    },
+    {
+      "name": "RearLock_BallB",
+      "parent": "NeckLockAssembly",
+      "vertices": 762,
+      "triangles": 1520
+    },
+    {
+      "name": "RearLock_Lever",
+      "parent": "NeckLockAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "RearLock_StopRecess",
+      "parent": "NeckLockAssembly",
+      "vertices": 768,
+      "triangles": 1536
+    },
+    {
+      "name": "RearLock_Latch",
+      "parent": "NeckLockAssembly",
+      "vertices": 144,
+      "triangles": 284
+    },
+    {
+      "name": "RearLock_CotterPin",
+      "parent": "NeckLockAssembly",
+      "vertices": 96,
+      "triangles": 188
+    },
+    {
+      "name": "SafetyChain_Link_00",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SafetyChain_Link_01",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SafetyChain_Link_02",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SafetyChain_Link_03",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SafetyChain_Link_04",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SafetyChain_Link_05",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SafetyChain_Link_06",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SafetyChain_Link_07",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SafetyChain_Link_08",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SafetyChain_Link_09",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SafetyChain_Link_10",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SafetyChain_Link_11",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SafetyChain_Link_12",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SafetyChain_Link_13",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "SafetyChain_Link_14",
+      "parent": "NeckLockAssembly",
+      "vertices": 720,
+      "triangles": 1440
+    },
+    {
+      "name": "AirDuct_Interpretive_BackToCrown",
+      "parent": "InteriorInterpretiveAssembly",
+      "vertices": 40,
+      "triangles": 76
+    },
+    {
+      "name": "AirDuct_Interpretive_SideBranch_-1",
+      "parent": "InteriorInterpretiveAssembly",
+      "vertices": 30,
+      "triangles": 56
+    },
+    {
+      "name": "AirDuct_Interpretive_SideBranch_1",
+      "parent": "InteriorInterpretiveAssembly",
+      "vertices": 30,
+      "triangles": 56
+    },
+    {
+      "name": "AirDuct_Interpretive_TopBranch",
+      "parent": "InteriorInterpretiveAssembly",
+      "vertices": 20,
+      "triangles": 36
+    },
+    {
+      "name": "TelephoneTransducer_Interpretive_NoInventedCircuit",
+      "parent": "InteriorInterpretiveAssembly",
+      "vertices": 128,
+      "triangles": 252
+    },
+    {
+      "name": "TelephoneLead_Interpretive_Route",
+      "parent": "InteriorInterpretiveAssembly",
+      "vertices": 32,
+      "triangles": 60
+    }
+  ],
+  "texture_origin": "original deterministic synthetic 2048px maps; not photograph/scan",
+  "unity_integrated": false,
+  "device_tested": false,
+  "historical_measurement_replica": false,
+  "generator_sha256": "62b3632478d40df7c6f3dde75490d19bb31e473bf18cd96ad5df807b3ac7f053"
+}

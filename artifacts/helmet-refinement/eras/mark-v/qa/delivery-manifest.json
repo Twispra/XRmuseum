@@ -1,0 +1,267 @@
+{
+  "date": "2026-10-07",
+  "base_commit": "0c0aeee6337607bf9d8230e6575c7ed69fde75f1",
+  "scope": "Independent Mark V assets; no MuseumVR changes",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 241,
+      "sha256": "f52e374b75c9562772440437427da673efb184c8b121a32597dba90e34cdb86e"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 18,
+      "sha256": "fe1306d79989af415d424789be215ddd3ddc55c066ada5f899d8dd959cb86210"
+    },
+    {
+      "path": "exports/mark-v-front-window.fbx",
+      "bytes": 15828844,
+      "sha256": "1cf32a3b9cba3cab89b22585affee87770dcf25d0a29f289fa4cd2083048e2df"
+    },
+    {
+      "path": "exports/mark-v-front-window.glb",
+      "bytes": 15828188,
+      "sha256": "dcf593eb352d03af73bd393979076732a48dd217db781f7890c65ca6e8a30690"
+    },
+    {
+      "path": "exports/mark-v-mod1.fbx",
+      "bytes": 39996140,
+      "sha256": "9bea7ff2ef038a2b045cad424c81923a79d01e67174e074cc802796dc824111a"
+    },
+    {
+      "path": "exports/mark-v-mod1.glb",
+      "bytes": 41069716,
+      "sha256": "cb0dc2dd0fb423a9199aa46046da3daf9563ef2dfd51e57591ad31a2be0737b0"
+    },
+    {
+      "path": "preview/review.html",
+      "bytes": 600289,
+      "sha256": "e9e5d6d950670b43c6598d64c31a151dea84956ce53fc7953faa98e5b32abb44"
+    },
+    {
+      "path": "preview/three-LICENSE.txt",
+      "bytes": 1081,
+      "sha256": "bfe119ea4fd413f5f7ca3fcd63adb0c4a073ed39daa2fe7d3e6b769e21272601"
+    },
+    {
+      "path": "previews/01-overview.png",
+      "bytes": 2570924,
+      "sha256": "e98821ca047ec8f47eb575e83db4326e55bce6ba19fb0d299db447105cbf9cba"
+    },
+    {
+      "path": "previews/02-front.png",
+      "bytes": 2471454,
+      "sha256": "ec3a4e81f9e1ced6ddab096cf233d6e98686a7600e7d162294b0d3f0f5b1a5a3"
+    },
+    {
+      "path": "previews/03-wearer-left.png",
+      "bytes": 2419293,
+      "sha256": "7e6474cb161542a128c8dd49f9be479db09fb5209fe4d71376312067c055ab05"
+    },
+    {
+      "path": "previews/04-wearer-right.png",
+      "bytes": 2440651,
+      "sha256": "608fa3b2e202b2bbfc5e5ef243ec2cf2143ddad17db7229d07e7de535efee720"
+    },
+    {
+      "path": "previews/05-rear.png",
+      "bytes": 2449089,
+      "sha256": "009badb2f395c67c9d9812ccf358395783d07aadce210f3396ffc43ed6334df1"
+    },
+    {
+      "path": "previews/06-window-detail.png",
+      "bytes": 2797595,
+      "sha256": "2839a0b329c2c74489f3edddf56b5a60b325af6bdbb34936c70eddd96fd7d673"
+    },
+    {
+      "path": "previews/07-rear-connections.png",
+      "bytes": 2676001,
+      "sha256": "cadf9df7319c77354183aa0af39963e86cfd4c2624bd7d4bb9c33f74b736151d"
+    },
+    {
+      "path": "previews/08-brail-detail.png",
+      "bytes": 2647898,
+      "sha256": "785c0c72d7d9c27c533bddfdca4756dea7faa6a8af43e95bcc1e7f6f13f46a79"
+    },
+    {
+      "path": "previews/09-window-open.png",
+      "bytes": 2696962,
+      "sha256": "673151b26a09c82904ee9b4c5ccabc2b30df0bdeb1962f3b3010b79de52b4bbe"
+    },
+    {
+      "path": "previews/10-interior-interpretive.png",
+      "bytes": 2630166,
+      "sha256": "d0c188766885ac78f5d962f50e2c494a092816a31a837a7f32c8a0b0107c98ea"
+    },
+    {
+      "path": "qa/browser-check.json",
+      "bytes": 1142,
+      "sha256": "2a04657607cf2b270fc2ab7c78c978683274632919eee3d8370e388faaee589d"
+    },
+    {
+      "path": "qa/browser-overview.jpg",
+      "bytes": 71342,
+      "sha256": "8b371363e1d2506f414c8c645b2e21a72a39816374b2fb0c558951e14cad189c"
+    },
+    {
+      "path": "qa/browser-window-open.jpg",
+      "bytes": 71984,
+      "sha256": "19fe5ffbd23be0f66e1738381281a3a4375cb7f6d8e3cc1ae7b4da0bf1f4836f"
+    },
+    {
+      "path": "qa/export-readback.json",
+      "bytes": 54872,
+      "sha256": "3b4442bd593d620a209bea76e33af6071afed0335304c7fb05275a1976858ea3"
+    },
+    {
+      "path": "qa/geometry-report.json",
+      "bytes": 31933,
+      "sha256": "707b009966b9cc16c36ba44cf9ccae3645c9936aff127d75eff189f021ef0793"
+    },
+    {
+      "path": "qa/README.md",
+      "bytes": 2096,
+      "sha256": "af8e5a0ab6f6709b68556783fba80877e584ba677c29b495ad008a252f303c50"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4327,
+      "sha256": "cdaf2bb1aee0622fa31f2309d02d7ba1ca78cc272706191739996bd6614547b8"
+    },
+    {
+      "path": "references/parameters.json",
+      "bytes": 5246,
+      "sha256": "83bde044ba95d399add8f52eb1db616ece0b0fdd70ce24f9a4266cf67dd2f937"
+    },
+    {
+      "path": "references/research.zh-CN.md",
+      "bytes": 8571,
+      "sha256": "380bbde61e4e026bb8ee01b2e375ba01d66abe4b3642d02b512661a0474ad5cb"
+    },
+    {
+      "path": "references/sources.json",
+      "bytes": 6409,
+      "sha256": "64e81ac15371a3d6cdf56286e054408d003413eb5e4ec01ea1477482b4b5e8e7"
+    },
+    {
+      "path": "scripts/build_mark_v.py",
+      "bytes": 40655,
+      "sha256": "62b3632478d40df7c6f3dde75490d19bb31e473bf18cd96ad5df807b3ac7f053"
+    },
+    {
+      "path": "scripts/build_viewer.py",
+      "bytes": 908,
+      "sha256": "4ceec0c9b7f2219095c6e5ceea8c44f809f9dd70650fdcdffcb2702959975f94"
+    },
+    {
+      "path": "scripts/check_mark_v.py",
+      "bytes": 9526,
+      "sha256": "0bbf4a1194712c8a806656b41adcc801773942acb71326a870d6f75363b924d1"
+    },
+    {
+      "path": "scripts/viewer-template.html",
+      "bytes": 2970,
+      "sha256": "292057716dca7fd21a524331b243349e3e2822dbd166aee5f57984df62207d17"
+    },
+    {
+      "path": "scripts/viewer.js",
+      "bytes": 6572,
+      "sha256": "4ace53afe068eb93f8acfb6fe46f883ad7ea1900e297de584f1bf05f335d3ade"
+    },
+    {
+      "path": "sources/mark-v-mod1.blend",
+      "bytes": 45910150,
+      "sha256": "49bbaf5caa5b22d28befd03e5fc4678c71e54fea2854051db4eba60ff8930492"
+    },
+    {
+      "path": "sources/parts/AirConnectionAssembly.blend",
+      "bytes": 420176,
+      "sha256": "49e508c4bcf7fbcd4a65adb0673d5b9cc2b3e8de9a4c44445d3834e8a720bde8"
+    },
+    {
+      "path": "sources/parts/CorseletAssembly.blend",
+      "bytes": 895033,
+      "sha256": "4fa92bbc6de88bb4db4969704a551868d7b8779ae4072acbac706e00537d2c76"
+    },
+    {
+      "path": "sources/parts/ExhaustAssembly.blend",
+      "bytes": 374065,
+      "sha256": "f09c1a14d0a40679b4ac3e68247cf3442b734ce24a6ac13b6732d838e874af51"
+    },
+    {
+      "path": "sources/parts/FrontSeatAssembly.blend",
+      "bytes": 387920,
+      "sha256": "ee5dec1f044debd51fd2188c1c91f187f9e84cef0abe1c16542d457bd528254a"
+    },
+    {
+      "path": "sources/parts/FrontWindowPivot.blend",
+      "bytes": 139613,
+      "sha256": "5041ea5a5c4e1d5f69ab53947478fc48dd061cfece6742071ca92e3a49155c60"
+    },
+    {
+      "path": "sources/parts/InteriorInterpretiveAssembly.blend",
+      "bytes": 114541,
+      "sha256": "6ab9e7a2764d45537dbe1a581c76e8a34077dc28a074c674bd20f45a7c2570c1"
+    },
+    {
+      "path": "sources/parts/NeckLockAssembly.blend",
+      "bytes": 258534,
+      "sha256": "718145586c92008a0261667fd62d0dbd67b50b7e6f8165195c9578783df1d127"
+    },
+    {
+      "path": "sources/parts/ShellAssembly.blend",
+      "bytes": 752953,
+      "sha256": "5cad658fc092533727708a4cf8c4624f71462d1e9392e85360d28bca4da01424"
+    },
+    {
+      "path": "sources/parts/SideWindowsAssembly.blend",
+      "bytes": 108236,
+      "sha256": "d729eb8d9b18979435c09ae5c2d88bb9794b79c31989e4d54072b0dc7642afc3"
+    },
+    {
+      "path": "sources/parts/SpitcockAssembly.blend",
+      "bytes": 141565,
+      "sha256": "5ef5cb762ad22a0c7176fcee5c3c945c493dbde820ac2819b46d84b6938d3dc2"
+    },
+    {
+      "path": "sources/parts/TelephoneAssembly.blend",
+      "bytes": 347148,
+      "sha256": "7df5a449063c19626ae4da6bb0f679d88325764a35ad4f7a6ed115f547b583b8"
+    },
+    {
+      "path": "sources/parts/TopWindowAssembly.blend",
+      "bytes": 109101,
+      "sha256": "48dd2651f53893a9877c0008f6578ca59b5c33a58f3057971f48b10c805ecc5f"
+    },
+    {
+      "path": "textures/AgedTin_OriginalInterpretation_BaseColor.png",
+      "bytes": 4835074,
+      "sha256": "32747c243636b737fff287b12aaf4dbf4010d1212564431c42f253894daabafe"
+    },
+    {
+      "path": "textures/AgedTin_OriginalInterpretation_Normal.png",
+      "bytes": 6958989,
+      "sha256": "c2be983a3bf4a6ec49269bd6c6a41d6743e6e853589ce76535b3d1738910f5b0"
+    },
+    {
+      "path": "textures/AgedTin_OriginalInterpretation_Roughness.png",
+      "bytes": 3651347,
+      "sha256": "560faf086f770b89c79eb44102b722cdebd3ed0e08da362f049f5eab4d99b477"
+    },
+    {
+      "path": "textures/CastBronze_OriginalInterpretation_BaseColor.png",
+      "bytes": 4853902,
+      "sha256": "7813dcde68437bff6a630c225f67f6e016408b2b8271ffa8d01ea3cbc66f2b35"
+    },
+    {
+      "path": "textures/CastBronze_OriginalInterpretation_Normal.png",
+      "bytes": 6957273,
+      "sha256": "3c3929afbc6f1fcdc55825da9723142328f235acf818cd4e16b0e39efd0d37cf"
+    },
+    {
+      "path": "textures/CastBronze_OriginalInterpretation_Roughness.png",
+      "bytes": 3650276,
+      "sha256": "83d195a381f5cd7c74fd0e3e271077030d2f02164c0485f0bbc125c772f8f679"
+    }
+  ]
+}
