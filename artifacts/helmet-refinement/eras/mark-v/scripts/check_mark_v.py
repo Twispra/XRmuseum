@@ -119,6 +119,8 @@ for path in sorted((out/'sources/parts').glob('*.blend')):
     result['texture_files_present']=texture_paths
     result['sha256']=hashlib.sha256(path.read_bytes()).hexdigest();partreports.append(result)
 report['independent_part_sources']=partreports
-report['generator_sha256']=hashlib.sha256((out/'scripts/build_mark_v.py').read_bytes()).hexdigest();report['passed']=True
-(out/'qa/export-readback.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+report['generator_sha256']=hashlib.sha256(Path(__file__).with_name('build_mark_v.py').read_bytes()).hexdigest()
+assert report['generator_sha256']==json.loads((out/'qa/geometry-report.json').read_text(encoding='utf-8'))['generator_sha256'],'Generator differs from the measured asset version'
+report['passed']=True
+(out/'qa/export-readback.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8',newline='\n')
 print('MARK_V_ASSET_CHECKS_PASSED',source['mesh_parts'],source['triangles'],source['envelope_m'],source['topology_issues'],flush=True)
