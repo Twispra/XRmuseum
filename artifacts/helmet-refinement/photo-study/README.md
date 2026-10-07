@@ -1,6 +1,6 @@
 # 照片头盔：第一版外观研究
 
-任务 [#26](https://github.com/Twispra/XRmuseum/issues/26)，总任务 [#25](https://github.com/Twispra/XRmuseum/issues/25)。负责人 Fttt1003。型号、尺寸待核实，现有 Mark V 保留。
+模型协作入口 [#25](https://github.com/Twispra/XRmuseum/issues/25)，展示/资产提交 [PR #28](https://github.com/Twispra/XRmuseum/pull/28)。原任务 #26 已收拢关闭，保留历史。负责人 Fttt1003。型号、尺寸待核实，现有 Mark V 保留。
 
 ![整体](previews/01-overview.png)
 
@@ -15,3 +15,5 @@
 - `scripts/`：建模、回读检查和查看器源码。重新建模使用新输出目录，不覆盖人工修改。
 
 没有安装 Blender 时，查看器或 PNG 即可反馈。使用 Git 的组员先 `git lfs pull`；需要精修时从本任务认领部件，不直接覆盖现用模型。未知内部、性能和铭牌字样不按想象补全。
+
+资料、认领和反馈都在 #25，留言先写模型名。当前文件只在 PR #28 的工作分支，尚未汇总到资产分支或 main。

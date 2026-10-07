@@ -1,6 +1,6 @@
 # 照片实物头盔：独立外观研究样件
 
-总任务 [#25](https://github.com/Twispra/XRmuseum/issues/25)，首件制作 [#26](https://github.com/Twispra/XRmuseum/issues/26)。原作者/实际负责人为 Fttt1003；Codex 辅助来源核对、原创程序建模、导出、预览和检查。基于 `main 0c0aeee`，分支 `codex/helmet-refinement-photo-study-2026-10-06`。
+模型协作统一入口 [#25](https://github.com/Twispra/XRmuseum/issues/25)；原首件任务 [#26](https://github.com/Twispra/XRmuseum/issues/26) 于 2026-10-07 收拢关闭，仅供历史追溯。原作者/实际负责人为 Fttt1003；Codex 辅助来源核对、原创程序建模、导出、预览和检查。基于 `main 0c0aeee`，分支 `codex/helmet-refinement-photo-study-2026-10-06`。
 
 本件只是一版可共同审阅的外观研究资产。项目现有 Mark V 展品选择继续保留；本件未被鉴定为 Mark V，也没有接入 MuseumStart 或替换任何现用模型、Prefab、输入、包和设置。实际尺寸、完整内部构造、历史准确性和 VR 性能尚未验证。
 
@@ -77,9 +77,9 @@ Blender 4.5.14 回读整体与前窗的四份导出：无空几何/非有限坐�
 
 ## 组员怎样继续
 
-补资料：在 #26 写 URL/页码、对应照片/部件、是否同一实物、尺寸测量边界。采用后把资料写进本文件。看模型：说明 commit、视角、具体问题，附标注；作者回复处理结果。
+补资料：在 #25 写“照片研究样件”以及 URL/页码、对应照片/部件、是否同一实物、尺寸测量边界。采用后把资料写进本文件。看模型：说明 commit、视角、具体问题，附标注；作者回复处理结果。
 
-修改模型：先在对应 Issue 认领部件、声明文件。一个 `.blend` 同一时段一位编辑者；不同部件可另存独立源文件，再由一位装配者汇总。当前源文件由 Fttt1003 负责，尚未把其他成员指定为写入者。
+修改模型：先在 #25 认领部件、声明文件和工作分支，不再为普通部件另开 Issue。一个 `.blend` 同一时段一位编辑者；不同部件可另存独立源文件，再由一位装配者汇总。当前源文件由 Fttt1003 负责，尚未把其他成员指定为写入者。
 
 模型/分件通过审阅后先汇总到 `codex/helmet-refinement-assets`，暂时不进入 main。PR #28 保持 Draft，并指向资产汇总分支。三个时代模型完成、需要接入产品时再另建接入 Issue/PR。接入时需要重新绑定窗件、Renderers、高亮、热点与锚点，并重新生成对应网格的剖面数据；不能把本件直接覆盖现有 Mark V FBX。
 
