@@ -4,6 +4,8 @@
 
 先看 [资料、参数与版本比较](references/research.zh-CN.md)，再对照 `previews/`。已知参数、公开名义规格和建模估算分别保存在 [parameters.json](references/parameters.json)，访问记录见 [sources.json](references/sources.json)。
 
+本轮改动见[R2补充考察](references/refinement-r2.zh-CN.md)：收窄窗框、微调胸板、补密封槽/锁紧转轴/铰链销孔和一根长螺柱，重做较克制的金属外观。原R1证据保存在 `qa/runs/r1-preserved/`。
+
 ## 看效果
 
 ![模型概览](previews/01-overview.png)
@@ -32,14 +34,14 @@
 | `qa/` | 本次资产回读、几何和浏览器检查证据 |
 | `scripts/` | 制作、导出检查及查看器源码；不是 Unity 启动步骤 |
 
-Blender 坐标：Z向上、-Y朝前、+X为佩戴者左侧。FBX/GLB导出为Y向上，+Z朝前。后视左边通话、右边供气。`FrontWindowPivot` 在前视右侧的竖直铰链上；查看器示意开门100度，未据此承诺真实限位/解锁顺序。下游可以使用 `Anchor_AirOutlet`、`Anchor_TelephoneOutlet`、`Anchor_ExhaustOutlet` 等定位，但目前没有绑定运行时功能。
+Blender 坐标：Z向上、-Y朝前、+X为佩戴者左侧。FBX/GLB导出为Y向上，+Z朝前。后视左边通话、右边供气。`FrontWindowPivot` 在前视右侧的竖直铰链上；查看器先松开螺母、摆开螺栓，再示意开门100度；关闭/复位反向进行，转角与松动行程为演示估算。下游可以使用 `Anchor_AirOutlet`、`Anchor_TelephoneOutlet`、`Anchor_ExhaustOutlet` 等定位，但目前没有绑定运行时功能。
 
-制作脚本会拒绝覆盖已有总装源文件。复现时使用**全新的空输出目录**；人工修改后不能重跑生成器覆盖文件。依赖 Blender4.5 LTS；查看器打包用 three.js0.180.0 / esbuild0.25.10，MIT声明在 `preview/three-LICENSE.txt`，没有改 Unity Packages。
+制作脚本会拒绝覆盖已有总装源文件。复现时使用**全新的空输出目录**；人工修改后不能重跑生成器覆盖文件。`refine_mark_v_r2.py`只对R1已审阅源文件作增量编辑，须另存新目录；不会重新生成总装。R2之后人工修改不能再次运行它来覆盖。依赖 Blender4.5 LTS；查看器打包用 three.js0.180.0 / esbuild0.25.10，MIT声明在 `preview/three-LICENSE.txt`，没有改 Unity Packages。
 
 ## 当前边界
 
-这是可编辑、可审阅的精细资产，不是完整历史测绘复原。局部尺度、磨损、内部走线、机械间隙和螺纹牙形仍含估算；铭牌不编造序号/日期。6张原创贴图及几何可以继续优化，浏览器材质效果与 Blender 光线下渲染不同。
+这是可编辑、可审阅的精细资产，不是完整历史测绘复原。局部尺度、磨损、内部走线、机械间隙和螺纹牙形仍含估算；铭牌不编造序号/日期。薄片式内部通道、6张原创贴图及几何可以继续优化，浏览器材质效果与 Blender 光线下渲染不同。
 
 未做 Unity导入、运行时模型替换、剖切集成、碰撞体/LOD、真实VR性能或用户测试。源码/导出检查通过不能代替这些检查。先由组员核对参照对象、轮廓和配件，再决定进入资产汇总分支；未来接入 main 另做整合。
 
-当前总装229个网格、393,700个三角形、8种材质。三角形数用于评估资产复杂度，不代表VR已达性能目标。检查结果与导出回读差异见 [qa/README.md](qa/README.md)。
+当前R2总装255个网格、409,524个三角形、8种材质。三角形数用于评估资产复杂度，不代表VR已达性能目标。检查结果与导出回读差异见 [qa/README.md](qa/README.md)。

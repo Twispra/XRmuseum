@@ -74,3 +74,9 @@ AI 辅助范围：模块架构、Editor 工具、运行时脚本、字体子集�
 
 
 2026-10-06 三语改动：Codex 辅助整理 193 条三语文案、连接静态与动态文字、扩展字形及自动验收。繁体初稿使用 OpenCC 的 s2t 转换，本地工具未放进 Unity 或运行时依赖；术语、提示和历史边界由本轮代码／文案检查复核，尚无独立语言审校。源字体仍为本机 Noto Sans SC 变量字体（OFL 1.1），使用 fontTools 静态实例化并子集化，新增繁体所需码位，不引入新模型、图片、音频或 package。许可保留，官方来源 https://github.com/google/fonts/tree/main/ofl/notosanssc 。功能和限制见 [三语记录](activity/2026-10-06-trilingual-museum.md)；自动检查不等于真实用户或头显验证。
+
+## 2026-10-07：Mark V R2 补充资料与精修
+
+在原PR #32 / Issue #25继续，Fttt1003通过Codex辅助检索DESCO制造说明、2011年Making an Icon及前窗/锁紧件/铰链销三个现售零件页，实际核对四张零件照片。[完整URL、适用边界及改模依据](../artifacts/helmet-refinement/eras/mark-v/references/refinement-r2.zh-CN.md)，[下载记录](../artifacts/helmet-refinement/eras/mark-v/references/sources.json)。原媒体只在本机研究，不再分发、未作贴图。未新增Unity依赖、第三方模型或收费素材。
+
+Codex辅助增量改模、原创材质图、导出、渲染与自动/浏览器检查；内部走线仍为示意。资产自动检查不是成员人工批准、设备测试或精密历史复原；three.js/esbuild依赖与MIT声明沿用R1。
