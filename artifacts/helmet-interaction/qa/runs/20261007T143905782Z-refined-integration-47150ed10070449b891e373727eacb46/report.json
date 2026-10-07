@@ -1,0 +1,1895 @@
+{
+    "status": "passed",
+    "utc": "2026-10-07T14:39:05.7888463Z",
+    "unity": "2022.3.62f3c1",
+    "scene": "Assets/Museum/Scenes/MuseumStart.unity",
+    "commit": "e2ee58fc42f79fc9d230d99682eeb8240aa25508",
+    "branch": "codex/refined-model-integration-2026-10-07",
+    "workingTree": "M MuseumVR/Assets/Museum/Features/HelmetEras/HelmetEraCatalogue.asset\n M MuseumVR/Assets/Museum/Features/HelmetExperience/Editor/HelmetExperienceValidation.cs\n M MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/HelmetSectionSurface.cs\n M MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs\n M MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetDemonstrationModels.cs\n M MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationHotspot.cs\n M MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionValidation.cs\n M MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab\n M MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs\n M MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetSectionInteractable.cs\n M MuseumVR/Assets/Museum/Features/HelmetInspection/Shaders/InspectionShell.shader\n M MuseumVR/Assets/Museum/Scenes/MuseumStart.unity\n M docs/external-resources.md\n M docs/project-state.md\n M docs/weekly-activity.md\n?? MuseumVR/Assets/Museum/Features/RefinedModels.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Audio.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-air.wav\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-air.wav.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-voice.wav\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-voice.wav.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Data.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Data/RefinedSectionMeshes.asset\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Data/RefinedSectionMeshes.asset.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Editor.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Editor/RefinedModelSetup.cs\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Editor/RefinedModelSetup.cs.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Editor/RefinedModelValidation.cs\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Editor/RefinedModelValidation.cs.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/AgedTin_OriginalInterpretation.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/AgedTin_OriginalInterpretation.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Canvas_Interpretation.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Canvas_Interpretation.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/CastBronze_OriginalInterpretation.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/CastBronze_OriginalInterpretation.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/DialInk.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/DialInk.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/FaceSeal_Rubber_Approximate.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/FaceSeal_Rubber_Approximate.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/HandledBronze_EstimatedWear.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/HandledBronze_EstimatedWear.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/HistoricalGlass_VisualPropertiesAssumed.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/HistoricalGlass_VisualPropertiesAssumed.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/InteriorTin_Approximate.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/InteriorTin_Approximate.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/LeatherSeal_Approximate.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/LeatherSeal_Approximate.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/LeatherSeal_Interpretation.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/LeatherSeal_Interpretation.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/OriginalAshInterpretation.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/OriginalAshInterpretation.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/OriginalGunmetalInterpretation.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/OriginalGunmetalInterpretation.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/PaintedIron_VisualEstimate.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/PaintedIron_VisualEstimate.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Rubber_VisualEstimate.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Rubber_VisualEstimate.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Steel_VisualEstimate.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Steel_VisualEstimate.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/TinnedCistern_Interpretation.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/TinnedCistern_Interpretation.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/UncalibratedDial.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/UncalibratedDial.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/UnresolvedTelephoneInterior.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/UnresolvedTelephoneInterior.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/diver-telephone-runtime.fbx\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/diver-telephone-runtime.fbx.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-iii-pump-runtime.fbx\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-iii-pump-runtime.fbx.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-v-runtime.fbx\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-v-runtime.fbx.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/surface-telephone-runtime.fbx\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/surface-telephone-runtime.fbx.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Prefabs.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Prefabs/ConnectionEquipment.prefab\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Prefabs/ConnectionEquipment.prefab.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Runtime.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Runtime/RefinedConnectionEquipment.cs\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Runtime/RefinedConnectionEquipment.cs.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Runtime/RefinedHelmetBinding.cs\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Runtime/RefinedHelmetBinding.cs.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_BaseColor.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_BaseColor.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_Normal.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_Normal.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_Roughness.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_Roughness.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_BaseColor.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_BaseColor.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_Normal.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_Normal.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_Roughness.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_Roughness.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_BaseColor.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_BaseColor.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_Normal.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_Normal.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_Roughness.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_Roughness.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_BaseColor.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_BaseColor.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_Normal.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_Normal.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_Roughness.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_Roughness.png.meta\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/00-rear-two-fittings.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/01-window-closed.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/02-window-opening.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/03-window-open.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/04-section-0.00_1.00_0.00.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/04-section-0.42_0.32_-0.85.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/04-section-1.00_0.00_0.00.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/05-return-midway.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/06-help-controls.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/07-air-sender.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/08-air-receiver.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/09-voice-surface.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/10-voice-diver-received.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/10b-rear-telephone-received.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/11-voice-diver-reply.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/12-voice-surface-received.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/13-rear-telephone-section.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/report.json\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/00-welcome-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/00-welcome.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/01-air-right-hand-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/01-air-right-hand.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/02-voice-left-hand-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/02-voice-left-hand.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/02b-hint-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/02b-hint.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/03-review-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/03-review.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/04-moved-air-endpoint-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/04-moved-air-endpoint.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/04b-static-air-diagram-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/04b-static-air-diagram.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/04c-reduced-motion-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/04c-reduced-motion.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/05-final-welcome-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/05-final-welcome.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/06-air-pump-before-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/07-air-pump-after-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/08-air-summary-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/09-voice-outgoing-before-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/10-voice-outgoing-after-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/11-voice-turn-taking-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/12-voice-reply-before-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/13-voice-reply-after-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/14-voice-summary-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/15-air-reduced-motion-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/16-voice-reduced-motion-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/after-help-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/after-help.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/after-inspect.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/after-playing-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/after-playing.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/after-welcome-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/after-welcome.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T132939931Z-refined-integration-edd49f7488d845b6a520e032eb06f61e/01-refined-front-closed.png\n?? artifacts/helmet-interaction/qa/runs/20261007T132939931Z-refined-integration-edd49f7488d845b6a520e032eb06f61e/02-refined-rear-fittings.png\n?? artifacts/helmet-interaction/qa/runs/20261007T132939931Z-refined-integration-edd49f7488d845b6a520e032eb06f61e/03-saved-XR-view.png\n?? artifacts/helmet-interaction/qa/runs/20261007T132939931Z-refined-integration-edd49f7488d845b6a520e032eb06f61e/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T134507028Z-refined-integration-034fec059164430a9577df2af412646b/01-refined-front-closed.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134507028Z-refined-integration-034fec059164430a9577df2af412646b/02-refined-rear-fittings.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134507028Z-refined-integration-034fec059164430a9577df2af412646b/03-saved-XR-view.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134507028Z-refined-integration-034fec059164430a9577df2af412646b/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/01-refined-front-closed.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/02-refined-rear-fittings.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/03-saved-XR-view.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/04-refined-window-open.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/05-refined-held.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/06-section-5.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/06-section-6.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/06-section-7.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/01-refined-front-closed.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/02-refined-rear-fittings.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/03-saved-XR-view.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/04-refined-window-open.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/05-refined-held.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/06-section-5.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/06-section-6.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/06-section-7.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/09-refined-air-pump.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/01-refined-front-closed.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/02-refined-rear-fittings.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/03-saved-XR-view.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/04-refined-window-open.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/05-refined-held.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/06-section-5.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/06-section-6.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/06-section-7.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/09-refined-air-pump.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/01-refined-front-closed.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/02-refined-rear-fittings.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/03-saved-XR-view.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/04-refined-window-open.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/05-refined-held.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/06-section-5.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/06-section-6.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/06-section-7.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/09-refined-air-pump.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/10-refined-voice-surface.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/11-refined-phone-arrival.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/12-refined-reduced-motion.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/13-refined-existing-language-interface.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/14-final-reset.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T143237195Z-section-continuity-bcac92036d314124a792730000b096a6/report.json\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/diagram-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/diagram-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/diagram-zh-production.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/hotspot-interaction.json\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/hotspots-direct-progress-0-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/hotspots-direct-progress-0-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/hotspots-direct-progress-0-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/hotspots-direct-progress-3-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/hotspots-direct-progress-3-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/hotspots-direct-progress-3-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/initial-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/initial-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/initial-en-production.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/report.json\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/restored-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/restored-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/restored-en-production.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/restored-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/restored-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/restored-zh-production.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/selected-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/selected-zh-hant-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/selected-zh-hant-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/selected-zh-hant-production.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/selected-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/selected-zh-production.png\n?? artifacts/refined-model-integration/exports/diver-telephone-runtime.fbx\n?? artifacts/refined-model-integration/exports/mark-iii-pump-runtime.fbx\n?? artifacts/refined-model-integration/exports/mark-v-runtime.fbx\n?? artifacts/refined-model-integration/exports/surface-telephone-runtime.fbx\n?? artifacts/refined-model-integration/qa/asset-parity.json\n?? artifacts/refined-model-integration/qa/diaphragm-motion-readback.json\n?? artifacts/refined-model-integration/qa/diver-telephone-runtime.json\n?? artifacts/refined-model-integration/qa/mark-v-runtime.json\n?? artifacts/refined-model-integration/qa/pump-runtime.json\n?? artifacts/refined-model-integration/qa/runtime-preparation.json\n?? artifacts/refined-model-integration/qa/surface-telephone-runtime.json\n?? artifacts/refined-model-integration/scripts/check_diaphragm_motion.py\n?? artifacts/refined-model-integration/scripts/prepare_runtime.py\n?? docs/activity/2026-10-07-refined-model-integration.md\n?? docs/refined-model-integration.zh-CN.md",
+    "failure": "",
+    "inputMethod": "Queued XRSimulatedController/HMD states in Dynamic Input System updates -> saved actions, controllers and XRDirectInteractor. No SelectEnter/SelectExit, invoked button events or private-field writes. Section/era/demonstration assertions are explicitly labelled public API checks.",
+    "limitations": "Editor desktop simulation and temporary monocular URP renders only. Official simulator is checked then its input writer is disabled to prevent competing synthetic states. This is not a real headset, keyboard navigation usability, physical sound listening, historical certification, user study, build validation or device performance measurement. Other-era placeholders remain concept previews, not completed historical refined models.",
+    "refinedRenderers": 255,
+    "refinedTriangles": 141262,
+    "checks": [
+        {
+            "name": "saved main scene loaded",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "one existing helmet controller",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "integration has one helmet",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "original controllers and new binding coexist",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "Mark V starts with refined appearance",
+            "method": "runtime startup",
+            "detail": "index=1",
+            "passed": true
+        },
+        {
+            "name": "original grab settings retained",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "front-window hit targets remain independent",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet has no missing scripts",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "refined model has separate detailed parts",
+            "method": "saved asset",
+            "detail": "renderers=255",
+            "passed": true
+        },
+        {
+            "name": "refined imported meshes and materials are usable",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "refined shell and transparent window assigned",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "authored refined surface texture survives integration",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "old greybox exterior is hidden in Mark V",
+            "method": "runtime startup",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "delivered Mark V mesh stands vertically above its collar",
+            "method": "saved geometry in helmet-local coordinates",
+            "detail": "bounds center=(0.00, 0.26, 0.00); size=(0.36, 0.50, 0.41); min=(-0.18, 0.01, -0.21); max=(0.18, 0.52, 0.21)",
+            "passed": true
+        },
+        {
+            "name": "refined front glass faces original museum approach",
+            "method": "saved geometry in helmet-local coordinates",
+            "detail": "front=(0.00, 0.35, -0.16)",
+            "passed": true
+        },
+        {
+            "name": "refined air and telephone outlets occupy their respective rear sides",
+            "method": "saved geometry in helmet-local coordinates",
+            "detail": "air=(-0.07, 0.23, 0.17); telephone=(0.06, 0.26, 0.17)",
+            "passed": true
+        },
+        {
+            "name": "refined hinge is at side of vertical front window",
+            "method": "saved geometry in helmet-local coordinates",
+            "detail": "hinge=(0.09, 0.35, -0.15); front=(0.00, 0.35, -0.16)",
+            "passed": true
+        },
+        {
+            "name": "saved refined door branch belongs to preserved window pivot",
+            "method": "saved hierarchy after scene load",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "all refined window meshes belong to articulated branch",
+            "method": "saved hierarchy after scene load",
+            "detail": "window mesh count=23",
+            "passed": true
+        },
+        {
+            "name": "saved window highlight and clip list covers articulated refined geometry",
+            "method": "read-only saved binding inspection",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "two refined fittings have separate endpoints",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "official XR simulator starts in saved scene",
+            "method": "runtime startup",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing actions and direct interactor retained",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "saved XR camera remains the visitor view",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "saved control is available / WINDOW",
+            "method": "InputSystem -> XRI",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "saved control selected / WINDOW",
+            "method": "InputSystem -> XRI",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual XR button starts continuous refined opening",
+            "method": "InputSystem -> XRI",
+            "detail": "angle=57.51238",
+            "passed": true
+        },
+        {
+            "name": "refined front door follows existing window pivot",
+            "method": "InputSystem -> XRI",
+            "detail": "angle=95; closed=(0.00, 0.35, -0.16); observed=(0.11, 0.35, -0.23); expected=(0.11, 0.35, -0.23); hinge=(0.09, 0.35, -0.15); arc error=8.330002E-08",
+            "passed": true
+        },
+        {
+            "name": "refined moving glass belongs to existing articulation",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "saved control is available / WINDOW",
+            "method": "InputSystem -> XRI",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "saved control selected / WINDOW",
+            "method": "InputSystem -> XRI",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "refined front door closes to same alignment",
+            "method": "InputSystem -> XRI",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing direct grip selects refined exhibit",
+            "method": "InputSystem -> XRI",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "refined helmet moves and rotates through original physics grab",
+            "method": "InputSystem -> XRI",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "refined shell follows grabbed root",
+            "method": "InputSystem -> XRI",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "release clears original grab",
+            "method": "InputSystem -> XRI",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "refined display returns to existing home",
+            "method": "public return API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "refined cut has structural cap / (1.00, 0.00, 0.00)",
+            "method": "public section API",
+            "detail": "triangles=4428",
+            "passed": true
+        },
+        {
+            "name": "structural caps stay on requested local plane / (1.00, 0.00, 0.00)",
+            "method": "public section API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "refined metal and glass retain clip properties / (1.00, 0.00, 0.00)",
+            "method": "public section API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "refined cut has structural cap / (0.00, 1.00, 0.00)",
+            "method": "public section API",
+            "detail": "triangles=3884",
+            "passed": true
+        },
+        {
+            "name": "structural caps stay on requested local plane / (0.00, 1.00, 0.00)",
+            "method": "public section API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "refined metal and glass retain clip properties / (0.00, 1.00, 0.00)",
+            "method": "public section API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "refined cut has structural cap / (0.42, 0.32, -0.85)",
+            "method": "public section API",
+            "detail": "triangles=3490",
+            "passed": true
+        },
+        {
+            "name": "structural caps stay on requested local plane / (0.42, 0.32, -0.85)",
+            "method": "public section API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "refined metal and glass retain clip properties / (0.42, 0.32, -0.85)",
+            "method": "public section API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "rotating entire refined object reuses section geometry",
+            "method": "public rotation API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "refined articulated door updates structural section",
+            "method": "public window API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "closing cut hides all caps",
+            "method": "public section API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "all three existing era choices retained",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "era fixture starts at requested relative section depth",
+            "method": "public section API before switching",
+            "detail": "normal=(0.42, 0.32, -0.85); relative depth=0.2",
+            "passed": true
+        },
+        {
+            "name": "existing section guide remains attached",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "era visual mode / 0",
+            "method": "public era API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "era switch retains original interaction component identities / 0",
+            "method": "public era API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "era switch preserves window and visitor section state / 0",
+            "method": "public era and section APIs",
+            "detail": "normal=(0.42, 0.32, -0.85); relative depth=0.2; window=35",
+            "passed": true
+        },
+        {
+            "name": "structural section works in era / 0",
+            "method": "public era and section APIs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing section guide stays at current model's section centre / 0",
+            "method": "public era and section APIs",
+            "detail": "guide=(0.02, 1.43, 3.45); requested plane point=(0.02, 1.43, 3.45); centre error metres=0",
+            "passed": true
+        },
+        {
+            "name": "era visual mode / 2",
+            "method": "public era API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "era switch retains original interaction component identities / 2",
+            "method": "public era API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "era switch preserves window and visitor section state / 2",
+            "method": "public era and section APIs",
+            "detail": "normal=(0.42, 0.32, -0.85); relative depth=0.2; window=35",
+            "passed": true
+        },
+        {
+            "name": "structural section works in era / 2",
+            "method": "public era and section APIs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing section guide stays at current model's section centre / 2",
+            "method": "public era and section APIs",
+            "detail": "guide=(0.02, 1.43, 3.45); requested plane point=(0.02, 1.43, 3.45); centre error metres=0",
+            "passed": true
+        },
+        {
+            "name": "era visual mode / 1",
+            "method": "public era API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "era switch retains original interaction component identities / 1",
+            "method": "public era API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "era switch preserves window and visitor section state / 1",
+            "method": "public era and section APIs",
+            "detail": "normal=(0.42, 0.32, -0.85); relative depth=0.2; window=35",
+            "passed": true
+        },
+        {
+            "name": "structural section works in era / 1",
+            "method": "public era and section APIs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing section guide stays at current model's section centre / 1",
+            "method": "public era and section APIs",
+            "detail": "guide=(0.02, 1.44, 3.45); requested plane point=(0.02, 1.44, 3.45); centre error metres=0",
+            "passed": true
+        },
+        {
+            "name": "era visual mode / 0",
+            "method": "public era API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "era switch retains original interaction component identities / 0",
+            "method": "public era API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "era switch preserves window and visitor section state / 0",
+            "method": "public era and section APIs",
+            "detail": "normal=(0.42, 0.32, -0.85); relative depth=0.2; window=35",
+            "passed": true
+        },
+        {
+            "name": "structural section works in era / 0",
+            "method": "public era and section APIs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing section guide stays at current model's section centre / 0",
+            "method": "public era and section APIs",
+            "detail": "guide=(0.02, 1.43, 3.45); requested plane point=(0.02, 1.43, 3.45); centre error metres=0",
+            "passed": true
+        },
+        {
+            "name": "era visual mode / 1",
+            "method": "public era API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "era switch retains original interaction component identities / 1",
+            "method": "public era API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "era switch preserves window and visitor section state / 1",
+            "method": "public era and section APIs",
+            "detail": "normal=(0.42, 0.32, -0.85); relative depth=0.2; window=35",
+            "passed": true
+        },
+        {
+            "name": "structural section works in era / 1",
+            "method": "public era and section APIs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing section guide stays at current model's section centre / 1",
+            "method": "public era and section APIs",
+            "detail": "guide=(0.02, 1.44, 3.45); requested plane point=(0.02, 1.44, 3.45); centre error metres=0",
+            "passed": true
+        },
+        {
+            "name": "refined model has separate detailed parts",
+            "method": "saved asset",
+            "detail": "renderers=255",
+            "passed": true
+        },
+        {
+            "name": "refined imported meshes and materials are usable",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "refined shell and transparent window assigned",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "authored refined surface texture survives integration",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "old greybox exterior is hidden in Mark V",
+            "method": "runtime startup",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "saved refined equipment is actually selected",
+            "method": "public demo API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "air mode displays authored pump",
+            "method": "public demo API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "air route connects exact refined source and helmet outlets",
+            "method": "public demo API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "authored pump articulation present",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "authored pump movement follows production demo timeline",
+            "method": "public demo API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "illustrative air sound plays with original sound setting",
+            "method": "public sound API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "mute stops refined sound without stopping visual demonstration",
+            "method": "public sound API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "unmute restores refined sound",
+            "method": "public sound API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "era switch continues existing connection playback / 0",
+            "method": "public era and demo APIs",
+            "detail": "progress before=0.2169952; after=0.236613; playing=True",
+            "passed": true
+        },
+        {
+            "name": "continuous playback follows each era's current fitting without resetting root / 0",
+            "method": "public era and demo APIs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "era switch continues existing connection playback / 2",
+            "method": "public era and demo APIs",
+            "detail": "progress before=0.236613; after=0.256676; playing=True",
+            "passed": true
+        },
+        {
+            "name": "continuous playback follows each era's current fitting without resetting root / 2",
+            "method": "public era and demo APIs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "era switch continues existing connection playback / 1",
+            "method": "public era and demo APIs",
+            "detail": "progress before=0.256676; after=0.2769582; playing=True",
+            "passed": true
+        },
+        {
+            "name": "continuous playback follows each era's current fitting without resetting root / 1",
+            "method": "public era and demo APIs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "stop clears new sound and original connection emphasis",
+            "method": "public demo API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "voice mode displays authored surface telephone",
+            "method": "public demo API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "communication uses two telephone anchors",
+            "method": "public demo API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "authored telephone diaphragm present",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "authored telephone diaphragm animates in outgoing phase",
+            "method": "public demo API",
+            "detail": "sampled world displacement after display-pivot compensation=0.0005681506; sampled raw local displacement=1.26251E-05; diaphragm lossyScale=(45.00, 45.00, 45.00); parent lossyScale=(45.00, 45.00, 45.00); display lossyScale=(0.45, 0.45, 0.45)",
+            "passed": true
+        },
+        {
+            "name": "refined telephone cable follows moved and rotated helmet",
+            "method": "public rotation and demo APIs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "arrival highlights actual refined telephone fitting",
+            "method": "public demo API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "refined equipment retains reply phase",
+            "method": "public demo API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "reduced motion presents still refined equipment without sound loop",
+            "method": "public reduce-motion API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "existing localization and interpretation remain attached",
+            "method": "saved asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "live interpretation changes language with refined content / Chinese",
+            "method": "public language API",
+            "detail": "观察 | 探索 | 帮助 | 来自水面的空气 | 水面上的泵通过软管向头盔供气。 | 重播 | 返回 | 更多 | 细节说明",
+            "passed": true
+        },
+        {
+            "name": "language switch keeps refined visual and interaction state / Chinese",
+            "method": "public language API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "live interpretation changes language with refined content / TraditionalChinese",
+            "method": "public language API",
+            "detail": "觀察 | 探索 | 幫助 | 來自水面的空氣 | 水面上的泵通過軟管向頭盔供氣。 | 重播 | 返回 | 更多 | 細節說明",
+            "passed": true
+        },
+        {
+            "name": "language switch keeps refined visual and interaction state / TraditionalChinese",
+            "method": "public language API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "live interpretation changes language with refined content / English",
+            "method": "public language API",
+            "detail": "Inspect | Explore | Help | Air from the surface | A surface pump sends air through a hose to the helmet. | Replay | Back | More | Details",
+            "passed": true
+        },
+        {
+            "name": "language switch keeps refined visual and interaction state / English",
+            "method": "public language API",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "final reset restores refined resting exhibit",
+            "method": "public recovery API",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "samples": [
+        {
+            "phase": "window opening",
+            "windowAngle": 57.51237869262695,
+            "time": 5.094453811645508,
+            "point": {
+                "x": 0.04954984784126282,
+                "y": 1.5069999694824219,
+                "z": 3.2747066020965578
+            },
+            "rotation": {
+                "x": 7.510075761274493e-8,
+                "y": 0.8766746520996094,
+                "z": -1.7256670048482193e-7,
+                "w": 0.4810839593410492
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "MuseumVR/Assets/Museum/Editor/HelmetPrototypePreview.cs",
+            "sha256": "e75a928d85e25d47a5ee8a38b3d85b08c1bdb8ed20cf3a58e4c38343d652c9cf"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Editor/HelmetPrototypeSetup.cs",
+            "sha256": "5e0109543336bbfb6310993c232822a6d8b0e761ba374fb925d1c281565dd99d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Editor/HelmetPrototypeValidation.cs",
+            "sha256": "8ae8f07a1f5fd4f4e0cc2a7845995845089c6cdf25640e653caaffc9d03f1567"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels.meta",
+            "sha256": "51a76a26ef8a54877a04b2efdbbdca2498151d543982f3b6a915a242b28c84ea"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Materials/Brass.mat",
+            "sha256": "8a6b8af9189f4e3a7eafc595d512220444169f6e74ebdf447e0ace7d9ceba2e0"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Materials/Deep Teal.mat",
+            "sha256": "4d7434f5a79fa15090712401e0d80272c2ca4a8d65d13f35ce0fe2f2f9260584"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Materials/Display Plinth.mat",
+            "sha256": "82a0f749a8e95b25248a61fa36931dcf9711720e8d625c6d092662c4d1e218b9"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Materials/Helmet Clay.mat",
+            "sha256": "c0325f449fb1f33ab8e30450f16b53e6dc5f77c2a2b1b93553db608e7a331fbb"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Materials/Helmet Plaque.mat",
+            "sha256": "5c0b6651c043d864a51d89f13f3def9c85286ce36f4e01c64961f4d0bef9525f"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Materials/Helmet Recess.mat",
+            "sha256": "e9d146609472000e00e0944572098af0810a722e65519a7d1762bc5ce7793a51"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Materials/Helmet Reset Brass.mat",
+            "sha256": "03439e79dee5b796337578953cb7189f16985e9f07384387543e905b7765f643"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Materials/Helmet Trim.mat",
+            "sha256": "8e6e8d2eea8ab1978c5593aa9a6f97d5ed0846208b99ad1439c098161fd945db"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Materials/Stone Floor.mat",
+            "sha256": "60d4341939eb43d0bb7527402f89c037309fd55da76f000dfa710cee93afa612"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Materials/Test Object Teal.mat",
+            "sha256": "ff1596b51da0e6a417269eafb7558f906e41b3cf440ba221377a6044780a9d4b"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Materials/Warm Plaster.mat",
+            "sha256": "714d9e3f30d26aa603181ef80c64a74aaf8281bc6b12706862d4e8bc9928d23a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Prefabs/GrabTestObject.prefab",
+            "sha256": "80ab506321a35cb429720a47e9c8c285254eef503323f6b2d2037c4cbd1c6d4a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Prefabs/HelmetExhibit.prefab",
+            "sha256": "788ed00f8d9c3276333ed7d2bcf091cb1df09227694bc3744c1f6b8c76ab9337"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+            "sha256": "98ba461d4aac33f65662068d880fed8a3111430220b6034edb040a53c92b331d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Scripts/HelmetExhibitReset.cs",
+            "sha256": "7b0ed74a93cb2c6311a28dda061064293f99ee808aecdc361356028d59f07761"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Settings/MuseumRenderer.asset",
+            "sha256": "1f8ef9ff32de6fc6f039c9b361d9973d105daf5483e1d5e72f6ed9122402f24e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Settings/MuseumURP.asset",
+            "sha256": "190b4844d865c3b941bf432c345c2f826ac2aaf7d91e78af537db3974e4811e8"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Settings/XRGeneralSettings.asset",
+            "sha256": "df714e06983a3f2079b129c12d672c7a70a88e1e95bf8f098f207fdf0f550c59"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/HelmetEraCatalogue.asset",
+            "sha256": "0d1a1caaba1af7003428b72564234eb351ece8405cba7a3d8225758feae2c8a4"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/HelmetEraChannel.asset",
+            "sha256": "a926f7f7e235795564fef70f84593edb5f805c7a882fdc2f6250e3ad8c5db87a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Audio.meta",
+            "sha256": "c1bc3c24f10e6ae3ef3b99206d047a96b233eb10400b82f7848ad6fa37b15a1d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Data.meta",
+            "sha256": "2af0adc7146c7d8aea523f1a1032c0fc3cae2ff0c1a1406c2d57bb3c260dc9bd"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Editor.meta",
+            "sha256": "ac3db46274e2d990ff104b774256d0759f0043c65a3f7d3d967d61f725119ae5"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials.meta",
+            "sha256": "c77de536cc7f79ceb3a05e3636a162e1f6b7c429bccef8d8536c0cdbb4793a01"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Models.meta",
+            "sha256": "daace8b2b52d981fd85a31a8f9054fecc7b3c3a19a70faceae848beb282debdf"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Prefabs.meta",
+            "sha256": "97014b602f21db96622c237b70afb8e1d63c9e9bcd82487263b908ec9a8ad12f"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Runtime.meta",
+            "sha256": "1ca6813a5c38a057c6a160cfea4b9768913fe639ca4859e143c4fd0736fc6ba8"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures.meta",
+            "sha256": "37021b92a7b70729ef6fdd35fbfc4cd997b77293971c7a973b1a938d495e1814"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Editor/HelmetEraIntegration.cs",
+            "sha256": "6a73020ae5ea2ae33e18d8ebce2497c9c063b241de8d9c92e11446eab57061ce"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Editor/HelmetEraSetup.cs",
+            "sha256": "5fc639496ed78463cfb0d3e14e0125dee2146bbaee9b7c92d672c0a8566697e7"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Editor/HelmetEraValidation.cs",
+            "sha256": "54ec4e808a024fd5959a572773f57f96babda40829689b89fc53f94a1b0b12cb"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/1839-Fitting.mat",
+            "sha256": "b96450c74076ee4d88ae19d0d6ca783e31a15eed8c7cefc29ef550e5027eaf3d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/1839-Shell.mat",
+            "sha256": "76d7192aa27528388a6bcc2e69ce7030927d209fc3ca35f3594d49eb78ea1cc8"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/1839-Window.mat",
+            "sha256": "6926d5effdaecfd379990afc281862af97a16b1ce7fd13f1a30927376ede2d88"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/MarkV-Fitting.mat",
+            "sha256": "c8af3f2e2f0442f93f32206aaeb52b1caaf17e32ed7602544e5020071555a4d2"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/MarkV-Shell.mat",
+            "sha256": "ee9c28de3ed16a5e87f5d0858c60d8d444956a1abe31290127ab9e290e42e98e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/MarkV-Window.mat",
+            "sha256": "5b85f01befedd0a57def67a02fc0060046f1418656ea162e232e439998e9cdb9"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/SuperLite-Fitting.mat",
+            "sha256": "9b91ff0960de2f570f31f52afc836bd48c20b4177dbdcf37416dcc56cd1eb1bd"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/SuperLite-Shell.mat",
+            "sha256": "8c894ad81ce9d7bf89c5a1df90a5993e4860b35c71f88e4e1faa0a663a445d04"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Materials/SuperLite-Window.mat",
+            "sha256": "3b1e46d1a85021ced42e5533becebe836bbd94bc8053dd8f08422c1dc3b9ed10"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Prefabs/HelmetEraShowcase.prefab",
+            "sha256": "6270d5a5a3ff98eb2f82778b3d18fdc6e41d79f775ad95bdb4d927651358206e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Profiles/Era-1839-Standard-Dress.asset",
+            "sha256": "17e194822644cc5105e28745211b4953662ca6e039b74f480b3a5d6add273159"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Profiles/Era-MarkV-Standard-Air.asset",
+            "sha256": "d691ae110cb5cf4b83b7daaf7bf1ed937bf06481bdd8670318863328b9e37620"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Profiles/Era-SuperLite-17B.asset",
+            "sha256": "f7b0e44b98a99c66c91e6ab7a8e5c10438ba9e3f3f74a7dccf83b2b66c05272b"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Runtime/HelmetEraButton.cs",
+            "sha256": "b660635392ae92befcca92dcd36fd882d0494bed8b05ba8821e6dd02cadd0e0b"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Runtime/HelmetEraCatalogue.cs",
+            "sha256": "09cd843a85a758396a842c98b0776f7a0ec9e78e8c72d0be0cb6a87c0a386cdb"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Runtime/HelmetEraChannel.cs",
+            "sha256": "b1a56ea44bf62b2e941e3a986d20657fc0fc578267acc557831cc9517ce0f850"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Runtime/HelmetEraPlayModePreview.cs",
+            "sha256": "aca43331d067a96e1be920bfa45b002fef610107199c5291fc4981d8f96a4ac2"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Runtime/HelmetEraProfile.cs",
+            "sha256": "d147e828a7aceabdfada36577052930c4225abd5ba391f9367e745169df5c113"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Runtime/HelmetEraRegressionProbe.cs",
+            "sha256": "ceca200ebff3e5b7a35a74f7c19ebe6ca66fb59a4f0367da5021e085729f4c3f"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetEras/Runtime/HelmetEraSwitcher.cs",
+            "sha256": "aeb65fae36e3988d6fe9ca4ca8dfe93980ddc5545a6a4c5baee91544e650e718"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Data/SectionMeshData.asset",
+            "sha256": "1460f4a12159f3b4ba34f0f21c431ef526401eb1afa7f1c7df8016a1b8e08210"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Editor/HelmetExperiencePreview.cs",
+            "sha256": "141b998fcee2effabfb5219b28d0ecd51ad12a24c7891327a9e61ef9f22d2af8"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Editor/HelmetExperienceSetup.cs",
+            "sha256": "63a64192691148a644b6704ef2e4bb0ddd34d70680e7bb8286c9c7881fe1f84c"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Editor/HelmetExperienceValidation.cs",
+            "sha256": "8dea789fa5b313da83aa1828cb2b3d6e49dd8e56ac6026ae596bd302d52b40bf"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Editor/HelmetRearConnectionsSetup.cs",
+            "sha256": "16443aa1189ec45191d27bf3d91e2248132eb492f99e1d338e5c74952f1a40c8"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Materials/SectionFace.mat",
+            "sha256": "ded98da7a9113fdbdb2e5bf445f26309c4b6055677c83662765a9f38c39b5732"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Meshes/TelephoneGooseneck.asset",
+            "sha256": "3d565c1a29a3a260aada033dc151f6259eded02106f62804684e5526adf14555"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Meshes/TelephoneResponseRing.asset",
+            "sha256": "d2bf1cefbcc224c517e6e568d6eba1f82c3bf69c1cc99e1ed730c18a17e90e1f"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/HelmetMechanicalFeedback.cs",
+            "sha256": "dff2038a60fccd8705402a3235cd1f6415e19a6d922c9d7b5ea89bb9520d7bb5"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/HelmetRearConnections.cs",
+            "sha256": "8fd221ad9409e9a25fa71896951d76d60c60d083923dda64cc0c7713ebcfb3e1"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/HelmetSectionMeshData.cs",
+            "sha256": "06418f464fbec78e08e43707ef48584fa76f18bc35aedfc8145067f7ebb50ff4"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/HelmetSectionSurface.cs",
+            "sha256": "722d1657825fd5100b36d5dcbc9d7be1064155550ef5366ce04c4e9b5841accb"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/SectionCapGeometry.cs",
+            "sha256": "181bf051dbeb0dcbb9cea6ed208e27d98245fd743170d468c04f98e7711f2723"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Shaders/InspectionGlass.shader",
+            "sha256": "24b5593e08f88049f595eea37cedd4c69a4fe95f0e026a848d047dc87b796641"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExperience/Shaders/SectionFace.shader",
+            "sha256": "a63920dff99a8c45c9e078675997375038d18a958b6d9f5742cf87dcf7b23a4e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationSetup.cs",
+            "sha256": "d71eb77e70b9aff5ed781acaa619e2b894939b94589e7c39ed8e1656dd2af784"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationValidation.cs",
+            "sha256": "0911c2a00b5b6b508ebe32e050ad0d76110d6b5c5176220de0a62c8d529ab4d8"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetInformationLayoutSetup.cs",
+            "sha256": "70351e1406fe1e1c8ddfe53f423da0739dbdbf04949750a7c3e1da60cf0bdae9"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/AirSignal.mat",
+            "sha256": "2c567ff03bd4e21c5394bb70af973a63b542696006a19ef2eb183eb383af3369"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/DiagramInk.mat",
+            "sha256": "837ad73801a720af0f216d9a2e53cbc3d083754e5ac6e0890c6ea3a15d1a58b7"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/InformationControl.mat",
+            "sha256": "8459bec8ef5f18b6daaa4afafbcb7d6e6da182ec586dc0b0fd52539ad9d27b3a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/InformationPanel.mat",
+            "sha256": "3a4b40a9447389e7604b93c0f7a67e341a09ce167ab760d621b4df89f96a8934"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Materials/VoiceSignal.mat",
+            "sha256": "a4daff4a9f7619de45ac2ff681cd2f128850de2beb4b6a18552e2f2420728606"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs",
+            "sha256": "df0b0d51960953769420a34e8e65296c463f707922a1c91da17814fa3667fb38"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetDemonstrationModels.cs",
+            "sha256": "b5a4a76291995eb77d2c2cca978a29e7a7771a8dbc474249f2f698d90b5b984b"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationButton.cs",
+            "sha256": "c93f7f06dbc02a46c41c429ebd247bb35dea912cc43e4aeb3e24fc51eee0cb86"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationController.cs",
+            "sha256": "c8b97f12728793071f004480cb78c94b966e489b48d4c9a139935967a11a99b3"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationHotspot.cs",
+            "sha256": "ff6e9dfb3a7226a6cf5caafdebdb38eb90fac1b3bd867753823ea11357c242b8"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationPanel.cs",
+            "sha256": "7f110c793cf64f48eda77505cae1f9b885ad1dac5ac382e0f1690941c99eff52"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetHotspots/Editor/HelmetHotspotBuilder.cs",
+            "sha256": "2df97cfc082830cd70639f24b4f383a6f3bcb9c91da6d2b855f9a7c9da9e44d7"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetHotspots/Materials/HotspotMarker.mat",
+            "sha256": "7a39040a39fa9f06aeac3c66f185a20bcd82d1f048be4d583a37d1b0ba3406f5"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetHotspots/Materials/HotspotPanel.mat",
+            "sha256": "20e19adf8b8cad92dc10b6ac8f31aaaf533dba37f62a53ee2783092280ea0106"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetHotspots/Prefabs/HelmetHotspotTour.prefab",
+            "sha256": "279e499a3fffff0bd4fd0f08097b3815abe3f73d676e0b7422fc105eba62209e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetHotspots/Runtime/HelmetHotspot.cs",
+            "sha256": "1f75f7d2bab908ac35e9432b8681e01d78b73fc98e468749bd83e782e823a968"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetHotspots/Runtime/HelmetHotspotTour.cs",
+            "sha256": "7367d5310017216236aa6789d00ee053faa2aa4fb7ef181124e460c38a888f6f"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Demo/HelmetInspectionDesktopPreview.cs",
+            "sha256": "0a4eac233f5a94592c4d499bb09117780979aa09959b553a18c2bff361717706"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetAdvancedInspectionSetup.cs",
+            "sha256": "d6641580d92a1df30f010f97987ab3fb6f55f2ab147fce4ca0d3749ac53e7589"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionBuilder.cs",
+            "sha256": "653237a0f251be940c51689d9d536876f6cc9ac81841adad3e3cc88e8822f342"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionCapture.cs",
+            "sha256": "09fa20efab5601ffdea9460f3bfe4d20d82135e2524f456b97d87ae6b9bc2170"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionValidation.cs",
+            "sha256": "647b7a25c2a938973440b4738089096b4dfb87eafc9f0c28490b70076cb4cdd9"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetMainIntegration.cs",
+            "sha256": "39665bfbe7e6b624cff099fe4bc8e876c9df8c4a654dd30ec280f4fe35290126"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetSectionContinuityValidation.cs",
+            "sha256": "a1d544788ac496cac4e3f7205f232089f564b960b0d810c24ce0488e4c9d5f20"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Brass.mat",
+            "sha256": "625730228f20779eab50ae11c860f6d51c3e75381435ed4ce97662d8c72790a2"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Controls.mat",
+            "sha256": "0428022bf03d4c12ce70c7d562a1fdc7330b82a7d6677eb4336a8f2557a11ba1"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Copper.mat",
+            "sha256": "df47e6dc3a2947ae4b91c9350b79bcf10a584cba3b8d7f133da1b80ed52fb159"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Plinth.mat",
+            "sha256": "04d8773f9362647f6e514661535a10722621c7f4a217de5999cef9ea91cd04b5"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/SectionTool.mat",
+            "sha256": "4397f15169b74f97e70962ff2a40366aa37a8db2ed176650253613250dbc7fe7"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Studio.mat",
+            "sha256": "db7a4aeb3032baa54c40f73488497f7e75215164d8d224dc9f6e830717c3c829"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Materials/Window.mat",
+            "sha256": "d2b4f0ec55366d01c681ab302dc09bad92824ebbb9be17930f4a9bb5348c9689"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+            "sha256": "02d5b7c27e2cb1b8253ef572db3d8a0839302166a5a4b30a956bd0c14545661c"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+            "sha256": "ea6b39d44236ab4cce62b79b3149d68665b4bece508416e4ddd74c46d6d65844"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionControls.cs",
+            "sha256": "c9543448b80d98b3337653a1e9db9ce56288ed81fdef90618c38be10f7998eb3"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionPalette.cs",
+            "sha256": "d67a65e1267f3a3ec345839c9a0dd32d9463853c9a4c3eb363b7221d3184b0d0"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetSectionInteractable.cs",
+            "sha256": "f44db77e44b1c0db4f5767d461b190fff0c22a4204a87121ba62b1a2b6086fde"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetWindowInteractable.cs",
+            "sha256": "02149f675d4bb498a309103ad1c02cb9f943b1ee7bb5c2d349893653279e5f9e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity",
+            "sha256": "8db3b80af4a5f0cd8e0688efd47ebbb2dbeb81a10ff76ea79b6dc17c9bf7d780"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Shaders/InspectionShell.shader",
+            "sha256": "4126e3cb6075346d3c0a4f2f9da422ee6f6454407a90d20df2c792c5d616029a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/HelmetHotspotAssetRepair.cs",
+            "sha256": "ec6850b5722c189870f83ee2026f47c6f7185999c98ba777bc7d9b2abde88ad7"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/HelmetHotspotInteractionValidation.cs",
+            "sha256": "af0117d9e44824643dfd0f7a48dca57d6d29dba2acf59855093b87bbc6211950"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/LocalizationIntegrationValidation.cs",
+            "sha256": "6e9d302080cf4ee4db3760a934e9391e761f042379d11f5937baff012ca1fd19"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/LocalizationSetup.cs",
+            "sha256": "d1b329c2fd954c17ff10bb5135fd997f4dd0c21b4ab325c60f5998f5f048a8a0"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/LocalizationValidation.cs",
+            "sha256": "15a0c1da65731c20ba4892c1a20bed18148a1867b8eeb08c849aa463f1993296"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/MuseumIntegration.cs",
+            "sha256": "6881a95a630fe348765b3eb5b9d675b69c266f538f7f922c1ea7c5d74a3667ca"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/TrilingualFontBaker.cs",
+            "sha256": "9f545763eece940d8412c0bd9136a98d4ffdc80fa3fca7fa846219d2a0cc25d3"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/TrilingualMuseumSetup.cs",
+            "sha256": "27f2663a3d5ed307ad0cff7b5acb2afae3433d58e2d9eab8956e6d1adfa6b701"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/TrilingualMuseumValidation.cs",
+            "sha256": "b883460e2a7f620f3b7e0f20054648503025ed1728be207393d313bca7ad67a9"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset",
+            "sha256": "85258dc85d8d42fa0541ea9aa67c13c65c655952f3f84f7e2c298c2a7e34068a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Materials/Language-Board.mat",
+            "sha256": "0ce40c8d73285028acff8e2c806865c2b167b9692c896b008034f3391ce127fb"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Materials/Language-Button.mat",
+            "sha256": "e6b1adc94ae7b521aaff4edb77a471395c94598d0e158319ae5deef47626e075"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Materials/Language-ButtonPressed.mat",
+            "sha256": "f984e3703d975693a10fd0cee36369f33a08e08b68bcb64be1acfca807ab2c69"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Prefabs/LanguageShowcase.prefab",
+            "sha256": "5d84ce609e270341a26a2f2ed981b81923c8731c8d05c4abd8e2d0e06ea22dd1"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/HelmetHotspotLocalization.cs",
+            "sha256": "255210dce1986312aa54f3af76702a4061daf0e0b1e5bc5a3641160c07c6b095"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/LanguageButton.cs",
+            "sha256": "2d7fbff781e82010d9ab743f44abbbf9516fd71e6d2b0437eae711e51822ce58"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/LanguageChannel.cs",
+            "sha256": "135ed67b2aadc37fb33e208671e471e7666d9cd793ad86b63b2c5be5e3d11330"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/LanguagePlayModePreview.cs",
+            "sha256": "fd26c745c5e6b3bb821144c51b5ddd65d99a3c927ee62b91b00fea0a102cad04"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/LocalizationTable.cs",
+            "sha256": "e7ab7a78980fa1a5df06d56bbf095fd2e8649937321055c549043feb780dd863"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/LocalizedSourceText.cs",
+            "sha256": "62834489aa61faa39ec1d493829b619d4421b12bb7a2fdc32d6e9e1dbd99b02e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/LocalizedText.cs",
+            "sha256": "d313b975247e661cdf4433a76b4d1a770e926fb48fbe6ceaa2175bf57dfd8e0c"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/MuseumLanguage.cs",
+            "sha256": "34bf264da45aa512b75e7ea4285a3b20509c5be969539b0e3526ee3d8b793fb7"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/MuseumLocalizationRoot.cs",
+            "sha256": "1182a09d548aa03ee4041634b4bac11307fd87afd257d4eea4d776607e0a6671"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Runtime/MuseumText.cs",
+            "sha256": "b6acc17d1ccc2d99fe41d5cbb023d9f3a0ad7bd93d6ad8f9206019b0f7d6a537"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Scenes/LanguageDemo.unity",
+            "sha256": "d80c4e07d78f25eb96afa2bb7d4a4329ad948c4817e02bedd841065ecdd0a018"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Tables/LanguageChannel.asset",
+            "sha256": "6daf526510bce19fd480a138a22ea18f4cc2bcd4602c75478a4c8a641d29f2fd"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/Localization/Tables/LocalizationTable.asset",
+            "sha256": "f323029bc0566d2d4c94887da53d77042f0b17beaefaec187bc4f6c66113bc32"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Editor/MaritimeGalleryBuilder.cs",
+            "sha256": "9a1352068f767fa6162b3b415ee85901d2b651d36d91573e540b8b5cb3ba2aec"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Editor/MaritimeGalleryValidation.cs",
+            "sha256": "d1533d599e42b4ec5b70e30d614d8891e7de4208639d3ff49438f460df7a7b52"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Bronze.mat",
+            "sha256": "2ea003bd56b441323c89e52e7471676d3bae70c33d4b7ac165294151d010f667"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Contour.mat",
+            "sha256": "dd3d47286f1c1a5e0901b306a568a1e50a9bd24452f9c7cd824881e2d432e395"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/CoolLight.mat",
+            "sha256": "f7e94b51717df51895d5123fe714930e671af530d900da14478a2910a9ce4c5e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Floor.mat",
+            "sha256": "4c79f49e570fbbffd3283a254bd83e79bc7f38bf4256265f9b69bdd18186345f"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/FloorSeam.mat",
+            "sha256": "e0c2198dbe2963f17c973d101a5c5ee68a295cc5774ab7f650efc54ed1e84bc0"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Graphite.mat",
+            "sha256": "26c80e47fa698316898285d53c261e4269812ee4e63caa70dbaaf98b50256a37"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Ink.mat",
+            "sha256": "a377f84cbc39f9500af289c5e7441677fd1a70d8f9bcf5b7424c018eda78b02c"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Limestone.mat",
+            "sha256": "9c51ddd500f3684c6857bb50dfe5e1cf1585fddaf82a11ab433d0f29aeedd778"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Navy.mat",
+            "sha256": "8fdfa0b4ef33eef48634550109f39063b6df83e4d262f188fe15a1b9baeb2c01"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Ocean.mat",
+            "sha256": "bb4cc7d6422ddfaa81f194db05d967aa3daf012b449863d25df1250c72dd32ec"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Porcelain.mat",
+            "sha256": "7b635f2bcbc1821b289aed27c7b79df65e6eafcb9b4b94cb4fd4b111b01aafe8"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/Walnut.mat",
+            "sha256": "52e6856aa9a07823eb1eb1cd09ef7fdb0ad2a8d02001fd78210d3fff3a6df423"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Materials/WarmLight.mat",
+            "sha256": "e58845ac570516aae80cd9d7d0e43e7512e6aacef3b2c53734b6ccf3f6414289"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-bronze__Bronze.asset",
+            "sha256": "d1d23c6bcea9cad59f5dbe51ae3f868d4237b184a84957b76ecb95d8a3dba56a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-frame__Limestone.asset",
+            "sha256": "93292c1d3e3ba50eb62233be222d65bb3f381ae96581ab3b3d25df2690f3cf91"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-inlays__Bronze.asset",
+            "sha256": "36eee2319e0e0fee1a1be2b99d5ae78eda3cbe2e8fa4e5adfb695cc35e557f67"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-panel__Navy.asset",
+            "sha256": "3f06775a65293a0b67d5a6993f88cf6acbdbc1edb7ac0fada640fc73f96c162c"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Arrival-rhythm__CoolLight.asset",
+            "sha256": "ed39f2c7939eb704785a10d7302cb8569d670fc41f79559ddf01b82a474c15c1"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Baseboards__Graphite.asset",
+            "sha256": "8946b561468af9a708cc87df95a1bbfbaaa53bb1179e1175fdef310211856603"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Ceiling-ribs__Porcelain.asset",
+            "sha256": "9ec26fecbfa4bee840d944ea086d53c919156a24304fd6c46f0a765026747dac"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Ceiling-slots__WarmLight.asset",
+            "sha256": "d1dc666f80d11c7c0c4bb49cd3c06741da370bb19fa24cf967a80281ce893c71"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Connection-bars__CoolLight.asset",
+            "sha256": "46171bc4a7b28cb175199eddfd7e6ba578c3a60b369e70630f709c236bf05b98"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Connection-mount__Graphite.asset",
+            "sha256": "69e6485fbbd43f5ef295cb9570ffdef9dc4e95d3ecf32aa19dfaedeb10db6c81"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Connection-sign__Graphite.asset",
+            "sha256": "fca4e1e993272cef7d45e89bbbcb41c2ecc0d890a1cd9e57a73f1522e29d60b9"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Connection-strands__Bronze.asset",
+            "sha256": "3f6d1165bca4b55f5e10d819dc6b94ef5bdd097e0f0d063cd360a662eec0b6e4"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Connection-strands__CoolLight.asset",
+            "sha256": "6fb210bb0f979ddadbf040b02b83532581f50dc422bec0b005e9d61da0bd611d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Cove-light__WarmLight.asset",
+            "sha256": "6e1eba3b97682787fdbf92389fc3f55322a69a705de4ba8df75f80da6bcb495b"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Coves__Graphite.asset",
+            "sha256": "7d9f5fb85e53dc0639e2bae5d8da1d52b085ee54448cc527ce528fd28aa8767d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Feature-wall__Navy.asset",
+            "sha256": "f613583d894645ef0b8b7b4e5ef8ecd66a9e251907e243ccae4392c5934e7abd"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Floor-joints__FloorSeam.asset",
+            "sha256": "0e44889c6532725c90816a104a668741b5b8fa918d4ff6842979e2660f5fbde4"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Floor-perimeter__Bronze.asset",
+            "sha256": "c52e7017e3523708be4b3720413beeac3e297a29bbcee4c7ccab872df4ef0090"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Inset-cap__Bronze.asset",
+            "sha256": "8d2460e0ca4a458760b41e8acbb8544d2b284818f8a257b235b7bdf23db8778b"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Medallion-hairline__CoolLight.asset",
+            "sha256": "dd6bbbb68ab3b3cfc62a2eac4dc4a1cbf3a7018c4542130f1dfad520a34768a9"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Medallion-rim__Bronze.asset",
+            "sha256": "e0031c341bfe0538cc7fdb518e2fcab098e54d1fc7b8faa410b5292d013ece67"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Ocean-contour-relief__Contour.asset",
+            "sha256": "0c9bc0c9b95f58b68d0cde14a9f9f20a41102c7bad7bfcd0f221b04ad4294b6a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Ocean-medallion__Ocean.asset",
+            "sha256": "fdd59d158ec9c91eeb5c05c5733bb854316c71161c47f49885d92b2aa864d9e5"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Pendant-bronze__Bronze.asset",
+            "sha256": "d4fa5f3255bb09f2ca534eda700c323ea44711a26a4d3cdf083223afab7c23cd"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Pendant-diffuser__WarmLight.asset",
+            "sha256": "ba7705d7cce37faa2006519cebb874e9091b6698760efe1202ab5bbc68fa618e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Pendant__Graphite.asset",
+            "sha256": "1a64428a661ef73382fd8cb0a1992a22202fbebab46e3b133d8fc0068b7a56c8"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Pier-inlay__Bronze.asset",
+            "sha256": "f02bca29ba98a1c23fe4dc13e24333ebce793a7aeb7fe7feb6fb4a909c9867a4"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-base-glow__CoolLight.asset",
+            "sha256": "e908cb5a93e60a94f9b4049e99f48921a2bbc91ef1d56376e5d6d8312b1f5393"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-foot__Graphite.asset",
+            "sha256": "fba266d44fc9ff1f986f76c1c51c881c01e05b956729f777759c1f90f75cef84"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-inset__Navy.asset",
+            "sha256": "60f09bf72605c7ce1d4680d22af582af4b7a4693d283f823ea903c0c3facd133"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Plinth-trim__Bronze.asset",
+            "sha256": "2f209187d2b57707344d66f17a5ff458f5ff8a43d44cd0424099dc6436cc5e5d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Porthole-fastener-studies__Graphite.asset",
+            "sha256": "5d4f07a0add7508963875b99fa3e4a9dad6cb5ee7d01a7549f90d6c7975ee8d5"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Porthole-inner__CoolLight.asset",
+            "sha256": "8dffaffcbb8191ff2fcf5d3a5f71337e6d35ce6a9de8fb26da40549f54274785"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Porthole-study__Bronze.asset",
+            "sha256": "5e813b93484476dda8ef0d78d92f01866602cf71c0fd836d1451e18e7efbccee"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Rear-baseboard__Graphite.asset",
+            "sha256": "44134555566f050d843db64ef61695461b7151a6082ab1b6fd73847e81251add"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Rear-cornice__Limestone.asset",
+            "sha256": "cdef891892183f4abca0fae6aa38fb169b7509eebd9cbd3a133630537293231b"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Rear-cove__WarmLight.asset",
+            "sha256": "beca545852a82dd88654ce5d16288e04c213c6d7c2dfb6798e7e60fdfbeba50e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Rear-fins__Walnut.asset",
+            "sha256": "e55900d9bc4b5553a5f8291ea622f5ffd6e629ebf4edfd85b049716746e6edac"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Side-diagram-frames__Bronze.asset",
+            "sha256": "f785a9960e6557e808717664d264a3f5e973388f8f6298794b35b60b46529246"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Side-diagram-ink__Contour.asset",
+            "sha256": "1d4fe6f7587d877f219165626aa0a24d4fb62e790f4a40d215edc38d76189dee"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Side-inset__Navy.asset",
+            "sha256": "6162203957ede199546912ceaad4d43d94143b62dc6a453772f75eb084c215c1"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Spot-housings__Graphite.asset",
+            "sha256": "adaed3520b55642679ebd5578fefbc8907ac65c5cb3b4e53430e0c98cbc6a5ae"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Study-mounts__Graphite.asset",
+            "sha256": "8cef1c58e7d3deebd6c999837dc889a23a19e31091bca7ed75685259f822751e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Study-stems__Bronze.asset",
+            "sha256": "a14599da0f8551722d9d39ce9c8230168c13855d98a80688ad77562725ebb216"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Suspension__Graphite.asset",
+            "sha256": "9edd79dcbc3e2ae4b2e310fab3b0f110180edac04166af5a4f5eb3cce7ceea28"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Wall-acoustic-fins__Walnut.asset",
+            "sha256": "dbc07aa81c5875ec46e8c0701979f1d8e1119550f20ab801c255932bcd594c7f"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Wall-lining__Porcelain.asset",
+            "sha256": "f552a2d534fdb9fcf58145d65ebb48ce9b3c1b2fbe7183c9576d2ba1bcb72a2d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Wall-piers__Limestone.asset",
+            "sha256": "72bd0c8acad586b68ee361dde340fe809e49987a3493538d9174a521d162fcc9"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Window-graphic-bars__Contour.asset",
+            "sha256": "4836328cf62d65dcee5ee9b6ad936646ce7beb634d7e7f5f2f6e1f73c37830b9"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Meshes/Window-graphic__CoolLight.asset",
+            "sha256": "85e575b79d92f85619e0f28b385cd0dd9fc125d01ce9cd0c267106c67ef32e3d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/MaritimeGallery/Prefabs/MaritimeGallery.prefab",
+            "sha256": "0747df4b788e31c584ca724822d09245a81b1442d4ebfea93c34fb0884aa5488"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-air.wav",
+            "sha256": "3727d64d31e910b4f7a43429afadf9ea2e59a3a6bbdcc3d148b57f892950f036"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-air.wav.meta",
+            "sha256": "b0064a6e018aac551dcc8c2523469bbb1d6f69d8586adc3add9de38abf1c42e4"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-voice.wav",
+            "sha256": "033fb478255ee12e4ad0991559d6c318e12d8ffbbe5cda4eea2d3f1545488ab3"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-voice.wav.meta",
+            "sha256": "d55fd1cced16fc4129452869c49470ada452aeacfa58dcc3dc0569d8fd070555"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Data/RefinedSectionMeshes.asset",
+            "sha256": "bf455d2e0be65e3fc0943326053d244a7251b440f6e241c3161fc41dda8ba4de"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Data/RefinedSectionMeshes.asset.meta",
+            "sha256": "cff33420fde9b009b68d0e10ecc04b218e9f3d07c5fac77259231d88e356fd0b"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Editor/RefinedModelSetup.cs",
+            "sha256": "9fe3f06dc2a858a8d6359348b0ad96481e32caa09425e0228e3b8fd114ee3d15"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Editor/RefinedModelSetup.cs.meta",
+            "sha256": "3e0042936a9c1c34a177d04d9fd43c11fe294e9556a89886a4dedc9a28669022"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Editor/RefinedModelValidation.cs",
+            "sha256": "2f1f371a56f6219550b26f9b67ce87f3b74ab452ed3e8186dce2958f4aab6caf"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Editor/RefinedModelValidation.cs.meta",
+            "sha256": "de0d85f3740633c919c704b39dbd8912541ea8b1389eb1f056a4e1eed4f2b2c1"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/AgedTin_OriginalInterpretation.mat",
+            "sha256": "977d1e295fa136df6454548fb21f50474010a4f9c43f08272f86cf6e5c2e0bf4"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/AgedTin_OriginalInterpretation.mat.meta",
+            "sha256": "b2ffead1893a7f71cf002c03030a48caa0b98c5232726fbfe54c1864f1407a10"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Canvas_Interpretation.mat",
+            "sha256": "a21a70b79e04caa4a3e18bfc4f5eb6b2086396df763e60755a34c7320e1790ce"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Canvas_Interpretation.mat.meta",
+            "sha256": "c602ca2f9d12dc3aa57af51843c5d92fbaf5b8ef05b4ddb923c661089f3a3b7e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/CastBronze_OriginalInterpretation.mat",
+            "sha256": "d62cd29f5fe9fabc67245fd4b6bc66d984ca8b188d05896d12a118b9828cba2a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/CastBronze_OriginalInterpretation.mat.meta",
+            "sha256": "abf0ae69d5ebb4b638692c5b4754c4ce20fe900f5c7a6dea1a0c988e94a3c8c2"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/DialInk.mat",
+            "sha256": "c9e95aa4eccdf93daa3468a57247946fa2c197248b023a667e1c761eeb5aec7f"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/DialInk.mat.meta",
+            "sha256": "bc7865f758b121ef8743525725261cc9114e66368efa2bee80a2e0fac40a8c4d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/FaceSeal_Rubber_Approximate.mat",
+            "sha256": "8d72e2a1cfc9b867244115e7fe2515a145d5f6a1a22655d0e61bceed13ab274c"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/FaceSeal_Rubber_Approximate.mat.meta",
+            "sha256": "7be00a15776fcc1aa9344ebb125fb986bcd9b8baa818bee6ffa66af53f2a096b"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/HandledBronze_EstimatedWear.mat",
+            "sha256": "228cbc6143b5796edb9128177ff2633430e1a6093832368c31dda26ba8f08841"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/HandledBronze_EstimatedWear.mat.meta",
+            "sha256": "5e968a3217ef9ce7ce240e446a67caecd7c71a4ebd419057ceb5164947f2c4fd"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/HistoricalGlass_VisualPropertiesAssumed.mat",
+            "sha256": "3f9046507a4e1a9e1b1f7848c5a027c5d8001e02d356f09a44900fd41795c879"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/HistoricalGlass_VisualPropertiesAssumed.mat.meta",
+            "sha256": "b82291c4ba8aa4902ef4fd74c33dee2f318a900eac7b3a19c9048213979b33c3"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/InteriorTin_Approximate.mat",
+            "sha256": "f19faba3787e867b9a114ba7968a724ccef13f0f1a1e4739708d86bfe81d64ef"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/InteriorTin_Approximate.mat.meta",
+            "sha256": "3e8092acf7fecd0001bcb0559dbe1e12dad63202cbaf9da30d0c67532871d5c2"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/LeatherSeal_Approximate.mat",
+            "sha256": "3b41d828c5702bae7c06fe508b41d8dd663903c0486ed9cefd135dca169d7f71"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/LeatherSeal_Approximate.mat.meta",
+            "sha256": "77b11da963ac0166399c79da69ae94fb667df671359d234b1bc8c5f6d2cbd52a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/LeatherSeal_Interpretation.mat",
+            "sha256": "6a4b2f929353321b25eb805db6b666a7d7aa1eaba1c0ccf20eaa1423a80ca07c"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/LeatherSeal_Interpretation.mat.meta",
+            "sha256": "6298abea1ea91ac8c096829ccc75c7f5a4d0b795be6e122964438f132da8a638"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/OriginalAshInterpretation.mat",
+            "sha256": "81b04ae07358657f035e430096e94d4bd077eae7c1dff8bb59cdd6fe9145880b"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/OriginalAshInterpretation.mat.meta",
+            "sha256": "9f1791ce0bb730521646530a21840dc81ac5fcc9c31305b45ad3d851b8efb43c"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/OriginalGunmetalInterpretation.mat",
+            "sha256": "f43a66936a277569b4c90b7693c2491e141effca6de8157e525282cd90f465d1"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/OriginalGunmetalInterpretation.mat.meta",
+            "sha256": "9377d4da99fefbc0c13c0e489005b9567810982325dab26a8698056e00bf2788"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/PaintedIron_VisualEstimate.mat",
+            "sha256": "3a030b5bb759588b0a9ddfaac704b7028ef06c91e82e3709132e41939ddbd6e1"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/PaintedIron_VisualEstimate.mat.meta",
+            "sha256": "c22e9ee7b46e648e7fcb32968bde76861ff0c974f7beb00e956e780bc4cd478a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Rubber_VisualEstimate.mat",
+            "sha256": "666ed712a95f387861d955bbc414840477aa72bfe44422ce187cdb985a555524"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Rubber_VisualEstimate.mat.meta",
+            "sha256": "9b72899d5ce46981db2342488a03166a167594c01eef0626bd06af52f2f18bc2"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Steel_VisualEstimate.mat",
+            "sha256": "a66ef21f2bc88360231310c97986e6658db991728b7e9d5efba4f74beeb83be7"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Steel_VisualEstimate.mat.meta",
+            "sha256": "f65ab6f7604c1b6a57b13ed71fa4bf216a2957fa0dbdc3a45557d54a3f5ff872"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/TinnedCistern_Interpretation.mat",
+            "sha256": "b3d464f9b2876403c3ebf01bdee7576e0ef9ef528f75d71fb5b15fafbf116b97"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/TinnedCistern_Interpretation.mat.meta",
+            "sha256": "6f0276047ebbe180e30a750b684eb2ad0d14e8c3230fec62da74d6e0d6061169"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/UncalibratedDial.mat",
+            "sha256": "07256f20010bc9d22380063ab50213741542513db97b4f7365edad025844381f"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/UncalibratedDial.mat.meta",
+            "sha256": "4c87763ac257da0443519db0ef07cf33d424b854c2f3f94d4d80d18ba39ec01d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/UnresolvedTelephoneInterior.mat",
+            "sha256": "596bc88006162d5d926caa6e6ac1d651b40839cccf2d2e538c960ee2eccda824"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Materials/UnresolvedTelephoneInterior.mat.meta",
+            "sha256": "4df4abca89dcb8fae2c74932579dca896493d3fe567bdf5026f693d6bdcf2c8a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/diver-telephone-runtime.fbx",
+            "sha256": "42f9f969a9f16a585ea5c8456759b93a7414412cf4ade922d17bfc64ff3ddb6f"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/diver-telephone-runtime.fbx.meta",
+            "sha256": "a2afbd2450dd98a164403f1f1987dcd0de26087f01d2f2e3848bc59e360efbb4"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-iii-pump-runtime.fbx",
+            "sha256": "df89d323ad8c9e0b3c851391316efe7cc149ae1892fa5cdf842568b0f1cfc8b4"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-iii-pump-runtime.fbx.meta",
+            "sha256": "891722f7c5639b9d8b54f49fd0bc9029f0422f1dcb8fcf7e7cc5e265ebecfe6e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-v-runtime.fbx",
+            "sha256": "7c8633d7e90b21eaa15e57d7fe90c7d16a0315bcac443c716f18376bc511c83a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-v-runtime.fbx.meta",
+            "sha256": "16aa05fb95a88a7d1aed1b3c47e7f71e6287de438c434da7bfef5e1bfcd268cd"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/surface-telephone-runtime.fbx",
+            "sha256": "a8bec0a694084cd2759603ab4c5a8676af1db338b26f66d817532dfb13ef309f"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/surface-telephone-runtime.fbx.meta",
+            "sha256": "929cb9e9f1b873a0a02008fa79eab5e4bc3344c2de164f662ef77676f0781720"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Prefabs/ConnectionEquipment.prefab",
+            "sha256": "35cd0b54f64e5975929e513f571658595a22473f596199ca74d2fbf1b1c681b7"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Prefabs/ConnectionEquipment.prefab.meta",
+            "sha256": "21acf2be7cc86f40cd68c826be7eea7ce7afa148e068f9c6d30a36be91e844fc"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Runtime/RefinedConnectionEquipment.cs",
+            "sha256": "b078e321ce9974c98804ee7547d862b2a0f52c70ef1e7903777b1def5714ab7c"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Runtime/RefinedConnectionEquipment.cs.meta",
+            "sha256": "51eee83feda05f07b239fd2679e4d7a3c2876f23471416279a5b4ca4887adf03"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Runtime/RefinedHelmetBinding.cs",
+            "sha256": "45b8bc3e431d89ebcc6b222fc7bfc59ac36f324b628677c583c4133849d45389"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Runtime/RefinedHelmetBinding.cs.meta",
+            "sha256": "b31ea66c4e77bed3c34ba3d83e5cad7c1fccd0dfc948027a579e2a812196a9d5"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_BaseColor.png",
+            "sha256": "9d8d16471fc87de516c7a92dd61ee882f0b98d58e042929fdfa16362ce09df13"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_BaseColor.png.meta",
+            "sha256": "fe76fd570d3b7f2d853c0572c79c20a4b542928f83f9198bf2ffbf9455edb88c"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_Normal.png",
+            "sha256": "eba4c3f5eef0e26d220c74ff762346c0316944a190215f6103c84704d2dcbdd5"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_Normal.png.meta",
+            "sha256": "595bd495984688a3daf75c2c77f6819e7281fbe83923b4b288758e697247d2d4"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_Roughness.png",
+            "sha256": "3a94ac88eb1f8fb3edc15e7b5a5044c39e3e5fd2cf4405ad78ab7b3b8655103d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_Roughness.png.meta",
+            "sha256": "741e790913f220c69a18de5ee7af3c14a0f7c792f9b92274878326b05847dabe"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_BaseColor.png",
+            "sha256": "5b91461e84dba015e1ebcf93414681b32fc9b8bea315154e3374f7a1bf91cbae"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_BaseColor.png.meta",
+            "sha256": "8a9e7f15ed3a69a15905f3d968a8a33f51952f6fc4793ab7faf54783759bb051"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_Normal.png",
+            "sha256": "9c362ef0a3e146c28863b655584312c889d8f11679df4a2cd113a65a3345bc78"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_Normal.png.meta",
+            "sha256": "8cc7de3016b2f20bfc1460e13b26bf33e71c1c118965489bcfdd548ce1daedd4"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_Roughness.png",
+            "sha256": "bd569fc35ad7963057411c26287775d4359b21bfe339cc4e5cf3d37e6361f894"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_Roughness.png.meta",
+            "sha256": "575a344bb7c9f9cbd7bd4fb2d4a06672e33c5d4de0cd9c0b2ec1e5e251a90a38"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_BaseColor.png",
+            "sha256": "d3c5c74e071005594ece4adb4e564e7b1ee320fbde87c7341eb1796114648b6c"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_BaseColor.png.meta",
+            "sha256": "36c5b8730626235fb8ab1fee915bc4072ce482e9a2645e7b56c5bc034b83d58b"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_Normal.png",
+            "sha256": "8e8296be5c3a384cdf7009e890add699b32737c29d4f81de0b353dfa2615cc18"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_Normal.png.meta",
+            "sha256": "ed51893d3c998c23259292d7a3cf9c758b9a672b0bcff14f70a3bed591f33780"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_Roughness.png",
+            "sha256": "62251f0bc6457324a373e410baa23d2d87006b0059277e5e8cbed5fd63c8611c"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_Roughness.png.meta",
+            "sha256": "1bdd19e19c35221bacd05ade6b276dd3657dc1aa703791d25f5bd3b9ede1611f"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_BaseColor.png",
+            "sha256": "0177d399e86837651af71c489781ddc44c392760319d72383c8b24a8c77601aa"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_BaseColor.png.meta",
+            "sha256": "6fcba935036b4ba1b47d645db3771bcde4fd636d2341c92e2db3823b53d370eb"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_Normal.png",
+            "sha256": "4822da4463e55b2d8311f5c13c0bc648bec10cb41eba9e2c9be58fca3a04b0ee"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_Normal.png.meta",
+            "sha256": "2bb66123f830c4538d3487b2ef68648eff5b321ba27635b8b66da1596ad4e8f4"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_Roughness.png",
+            "sha256": "3e750ab7877bdce662e6f97df4b4bf62001d9d1bdf41b93ed4b19ba40e187636"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_Roughness.png.meta",
+            "sha256": "4e81d171e968a538eeff432689818d19483cd8d32a704374624ce47428178365"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetHotspots/Tests/Editor/HelmetHotspotLifecycleTests.cs",
+            "sha256": "be65f4c9a621f505fda758d84e4406ba3afc7e1cb62f54862e2507dc117a31cd"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetHotspots/Tests/Editor/HelmetHotspotTourTests.cs",
+            "sha256": "78350ab31ffc99f35ef93d65a452cd8ccb425330114c34ae6cd3186cf7a5d8ea"
+        }
+    ],
+    "errors": [],
+    "screenshots": [
+        "01-refined-front-closed.png",
+        "02-refined-rear-fittings.png",
+        "03-saved-XR-view.png",
+        "04-refined-window-open.png",
+        "05-refined-held.png",
+        "06-section-5.png",
+        "06-section-6.png",
+        "06-section-7.png",
+        "09-refined-air-pump.png",
+        "10-refined-voice-surface.png",
+        "11-refined-phone-arrival.png",
+        "12-refined-reduced-motion.png",
+        "13-refined-existing-language-interface.png",
+        "14-final-reset.png"
+    ]
+}

@@ -52,6 +52,12 @@ namespace Museum.Exploration
             }
         }
 
+        public void RebindConnector(Renderer connector)
+        {
+            airConnector = connector; anchorReady = false;
+            if (isActiveAndEnabled) EnsureTarget();
+        }
+
         protected override void Awake()
         {
             base.Awake();

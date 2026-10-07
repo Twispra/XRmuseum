@@ -438,7 +438,7 @@ namespace Museum.Inspection.Editor
             Require(window.colliders.Count > 0 && window.colliders.All(c => c && c.enabled && !helmet.colliders.Contains(c)),
                 "window collider ownership", "Window's registered hit colliders are separate from the whole helmet grab.");
             var meshes = root.GetComponentsInChildren<MeshRenderer>();
-            Require(meshes.Length > 0 && meshes.All(r => r.enabled && r.GetComponent<MeshFilter>() && r.GetComponent<MeshFilter>().sharedMesh && r.GetComponent<MeshFilter>().sharedMesh.vertexCount > 0),
+            Require(meshes.Any(r => r.enabled) && meshes.All(r => r.GetComponent<MeshFilter>() && r.GetComponent<MeshFilter>().sharedMesh && r.GetComponent<MeshFilter>().sharedMesh.vertexCount > 0),
                 "model meshes imported", meshes.Length + " mesh renderers have imported geometry.");
             homePosition = reset.HomePose.position;
             homeRotation = reset.HomePose.rotation;
@@ -900,7 +900,7 @@ namespace Museum.Inspection.Editor
             QueueRight(touch,initialHandRotation,false);yield return Wait(.15f);
             QueueRight(touch,initialHandRotation,true);yield return Wait(.15f);
             Require(tool.isSelected && tool.interactorsSelecting[0] is XRDirectInteractor && !helmet.isSelected && !window.isSelected,
-                phase+" direct grip", "Saved section collider selected by QueueRight -> InputSystem -> XRDirectInteractor.");
+                phase+" direct grip", SectionSelectionDiagnostics(tool,touch));
             Require(SectionQuaternionAngle(initialGuideRotation,tool.transform.rotation)<.1f && Vector3.Distance(initialKnob,knob.position)<.001f,
                 phase+" grip does not jump", "Selecting a stationary handle must preserve its visual orientation and knob position.");
             var previousGuide=tool.transform.rotation;
@@ -1115,6 +1115,15 @@ namespace Museum.Inspection.Editor
         static bool IsFinite(float value) => !float.IsNaN(value) && !float.IsInfinity(value);
 
         static void QueueRight(Vector3 world, Quaternion rotation, bool grip) => QueueController(rightDevice, world, rotation, grip);
+        static string SectionSelectionDiagnostics(HelmetSectionInteractable tool,Vector3 target)
+        {
+            var direct=rightController.GetComponentInChildren<XRDirectInteractor>(true);
+            var candidates=new List<IXRInteractable>();direct.GetValidTargets(candidates);
+            var sphere=direct.GetComponent<SphereCollider>();
+            var query=direct.GetAttachTransform(null).TransformPoint(sphere.center);
+            var overlaps=Physics.OverlapSphere(query,sphere.radius*direct.transform.lossyScale.x,direct.physicsLayerMask,QueryTriggerInteraction.Collide);
+            return "tool="+tool.isSelected+" hovered="+tool.isHovered+" window="+window.isSelected+" helmet="+helmet.isSelected+" input="+target+" controller="+rightController.transform.position+" query="+query+" radius="+sphere.radius+" improve="+direct.usingSphereColliderAccuracyImprovement+" knob="+tool.colliders[0].bounds.center+" collider="+tool.colliders[0].enabled+" active="+tool.colliders[0].gameObject.activeInHierarchy+" selectable="+tool.IsSelectableBy(direct)+" group="+direct.containingGroup?.activeInteractor?.transform.name+" candidates="+string.Join(",",candidates.Select(c=>c.transform.name))+" overlaps="+string.Join(",",overlaps.Select(c=>c.name));
+        }
 
         static void QueueController(XRSimulatedController device, Vector3 world, Quaternion rotation, bool grip)
         {

@@ -1,0 +1,101 @@
+{
+  "status": "passed",
+  "baseMain": "afc3a9e56734d3c7230adb5b81a5dcdd7ddd016e",
+  "testedHead": "e2ee58fc42f79fc9d230d99682eeb8240aa25508",
+  "testedWithUncommittedIntegration": true,
+  "targetedSnapshotFileCount": 291,
+  "unchangedSnapshotFiles": 290,
+  "finalProductFingerprintMismatches": [],
+  "laterTestRunnerOnlyChanges": [
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetSectionContinuityValidation.cs"
+  ],
+  "laterTestRunnerValidatedBy": "artifacts/helmet-interaction/qa/runs/20261007T144919256Z-section-continuity-6da193658b9145b1b572d63b7ed2d1bf/report.json",
+  "reports": [
+    {
+      "name": "精细模型整合",
+      "report": "artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/report.json",
+      "status": "passed",
+      "checks": 113,
+      "cases": null,
+      "assertions": null
+    },
+    {
+      "name": "原观察／模拟 XR 输入",
+      "report": "artifacts/helmet-interaction/qa/runs/20261007T144141393Z-inspection-main-3ed28223123746c29ebd307dae52e291/report.json",
+      "status": "passed",
+      "checks": 206,
+      "cases": null,
+      "assertions": null
+    },
+    {
+      "name": "前窗、剖面结构与体验",
+      "report": "artifacts/helmet-experience/qa/runs/20261007T144334012Z/report.json",
+      "status": "passed",
+      "checks": 134,
+      "cases": null,
+      "assertions": null
+    },
+    {
+      "name": "探索与演示",
+      "report": "artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/report.json",
+      "status": "passed",
+      "checks": 1486,
+      "cases": null,
+      "assertions": null
+    },
+    {
+      "name": "三语及热点",
+      "report": "artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/report.json",
+      "status": "passed",
+      "checks": 85715,
+      "cases": null,
+      "assertions": null
+    },
+    {
+      "name": "剖面连续性",
+      "report": "artifacts/helmet-interaction/qa/runs/20261007T144919256Z-section-continuity-6da193658b9145b1b572d63b7ed2d1bf/report.json",
+      "status": "passed",
+      "checks": 0,
+      "cases": 40,
+      "assertions": 49784
+    }
+  ],
+  "processes": [
+    {
+      "name": "inspection",
+      "method": "Museum.Localization.EditorTools.TrilingualInspectionRegression.RunBatch",
+      "exitCode": 0,
+      "seconds": 113.2,
+      "log": "refined-regression-inspection.log"
+    },
+    {
+      "name": "experience",
+      "method": "Museum.Experience.EditorTools.HelmetExperienceValidation.RunBatch",
+      "exitCode": 0,
+      "seconds": 60.9,
+      "log": "refined-regression-experience.log"
+    },
+    {
+      "name": "exploration",
+      "method": "Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch",
+      "exitCode": 0,
+      "seconds": 168.5,
+      "log": "refined-regression-exploration.log"
+    },
+    {
+      "name": "localization",
+      "method": "Museum.Localization.EditorTools.LocalizationIntegrationValidation.RunBatch",
+      "exitCode": 0,
+      "seconds": 117.7,
+      "log": "refined-regression-localization.log"
+    },
+    {
+      "name": "continuity",
+      "method": "Museum.Inspection.Editor.HelmetSectionContinuityValidation.RunBatch",
+      "exitCode": 0,
+      "seconds": 14.3,
+      "log": "refined-regression-continuity.log"
+    }
+  ],
+  "limitations": "Windows Unity Editor 2022.3.62f3c1. Simulated XR input, public API geometry checks and mono captures as labelled in each report; no real headset, participants, listening panel, performance claim or executable build."
+}

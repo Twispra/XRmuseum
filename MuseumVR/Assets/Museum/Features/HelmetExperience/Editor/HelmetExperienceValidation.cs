@@ -93,7 +93,8 @@ namespace Museum.Experience.EditorTools
             CheckThat(airLocal.x<-.03f && phoneLocal.x>.03f && airLocal.z>0 && phoneLocal.z>0,"from rear: phone left and air right", "air="+airLocal+"; phone="+phoneLocal);
             CheckThat(rear.TelephoneSurfaces.All(r=>r && r.GetComponent<MeshFilter>().sharedMesh) && !rear.GetComponentsInChildren<Collider>(true).Any(c=>c.name.Contains("Telephone")),"telephone addition has saved mesh and does not add colliders");
             Capture(inspection,"00-rear-two-fittings",inspection.transform.forward*.75f+Vector3.up*.13f);
-            var glass=inspection.GetComponentsInChildren<Renderer>().Single(r=>r.name=="GB_Front_GlassPlaceholder");
+            var binding=inspection.GetComponent<Museum.Refined.RefinedHelmetBinding>();
+            var glass=binding ? binding.ActiveGlass : inspection.GetComponentsInChildren<Renderer>().Single(r=>r.name=="GB_Front_GlassPlaceholder");
             CheckThat(glass.sharedMaterial.shader.name=="Museum/Inspection Glass" && glass.sharedMaterial.renderQueue>=3000,"transparent glass saved",glass.sharedMaterial.shader.name);
             CheckHollowGeometry();
             inspection.ResetInspection();inspection.ToggleFloating();
@@ -123,7 +124,7 @@ namespace Museum.Experience.EditorTools
             }
             int rebuild=surface.RebuildCount;inspection.transform.rotation*=Quaternion.Euler(9,32,2);surface.Refresh();
             CheckThat(surface.RebuildCount==rebuild,"whole-helmet motion reuses existing section mesh");
-            var shell=inspection.GetComponentsInChildren<Renderer>().Single(r=>r.name=="GB_Bonnet_Hollow");
+            var shell=binding ? binding.ActiveShell : inspection.GetComponentsInChildren<Renderer>().Single(r=>r.name=="GB_Bonnet_Hollow");
             var block=new MaterialPropertyBlock();shell.GetPropertyBlock(block);
             Vector3 stored=block.GetVector("_ShellCenter");
             CheckThat(Vector3.Distance(stored,shell.GetComponent<MeshFilter>().sharedMesh.bounds.center)<.00001f,"inner-surface shading center stays object-local when moved");
@@ -188,7 +189,7 @@ namespace Museum.Experience.EditorTools
             inspection.SetCutaway(true);inspection.SetSectionPlane(Vector3.right,0);surface.Refresh();yield return null;yield return null;
             CheckThat(!rear.VoiceResponseVisible,"removed telephone side hides its response ring");
             inspection.SetSectionPlane(Vector3.forward,phoneLocal.z-inspection.SectionCenterLocal.z-.02f);surface.Refresh();
-            CheckThat(inspection.GetComponentsInChildren<MeshRenderer>(true).Any(r=>r.name=="Section face - Telephone elbow and cable union" && r.gameObject.activeInHierarchy),"new hollow telephone fitting participates in section surfaces");
+            CheckThat(inspection.GetComponentsInChildren<MeshRenderer>(true).Any(r=>rear.TelephoneSurfaces.Any(s=>s && r.name=="Section face - "+s.name) && r.gameObject.activeInHierarchy),"new hollow telephone fitting participates in section surfaces");
             Capture(inspection,"13-rear-telephone-section",inspection.transform.forward*.75f+Vector3.up*.13f);
             demo.Stop();inspection.ReduceMotion=false;inspection.ResetInspection();yield return null;yield return null;
             CheckThat(Vector3.Distance(rear.TelephoneOutlet.position,inspection.transform.TransformPoint(phoneLocal))<.0001f,"reset keeps saved telephone anchor attached");

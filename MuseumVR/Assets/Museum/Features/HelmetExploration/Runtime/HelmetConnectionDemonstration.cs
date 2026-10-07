@@ -1,6 +1,7 @@
 using System;
 using Museum.Inspection;
 using Museum.Localization;
+using Museum.RefinedModels;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -19,6 +20,8 @@ namespace Museum.Exploration
         [SerializeField] Material airMaterial;
         [SerializeField] Material voiceMaterial;
         [SerializeField] Material inkMaterial;
+        [SerializeField] RefinedConnectionEquipment refinedEquipmentPrefab;
+        RefinedConnectionEquipment refinedEquipment;
         GameObject visuals;
         LineRenderer route, routeAccent, arrow, returnArrow;
         readonly LineRenderer[] waveforms = new LineRenderer[3];
@@ -44,15 +47,36 @@ namespace Museum.Exploration
         public string AnimationStage { get; private set; } = "Demo hidden";
         public int PhaseIndex { get; private set; }
         public float NormalizedProgress => IsVisible ? Mathf.Clamp01((Time.unscaledTime - startedAt) / Duration) : 0f;
+        public bool IsUsingRefinedEquipment => refinedEquipment && refinedEquipment.IsReady;
+        public RefinedConnectionEquipment RefinedEquipment => refinedEquipment;
+        public Vector3 AirSourceWorld => IsUsingRefinedEquipment ? refinedEquipment.AirOutlet.position : models != null ? models.AirOutlet.position : Vector3.zero;
+        public Vector3 VoiceSourceWorld => IsUsingRefinedEquipment ? refinedEquipment.TelephoneOutlet.position : models != null ? models.TelephoneOutlet.position : Vector3.zero;
         public Vector3 AirTargetWorld => rearConnections && rearConnections.AirOutlet ? rearConnections.AirOutlet.position : inspection && anchorReady
             ? inspection.transform.TransformPoint(airAnchorLocal) : Vector3.zero;
         public Vector3 AirEndpointWorld => route && route.positionCount > 0 && CurrentClue == HelmetExplorationController.Clue.Air
             ? route.GetPosition(route.positionCount - 1) : AirTargetWorld;
-        public Vector3 VoiceTargetWorld => rearConnections && rearConnections.TelephoneOutlet ? rearConnections.TelephoneOutlet.position : models != null ? models.TransducerInlet.position : Vector3.zero;
+        public Vector3 VoiceTargetWorld => rearConnections && rearConnections.TelephoneOutlet ? rearConnections.TelephoneOutlet.position
+            : IsUsingRefinedEquipment ? refinedEquipment.DiverInlet.position : models != null ? models.TransducerInlet.position : Vector3.zero;
         public Vector3 VoiceEndpointWorld => route && route.positionCount > 0 && CurrentClue == HelmetExplorationController.Clue.Voice
             ? route.GetPosition(route.positionCount - 1) : VoiceTargetWorld;
         public void ConfigureRearConnections(Museum.Experience.HelmetRearConnections connections)
         { Stop(); rearConnections=connections; }
+
+        public void RebindConnector(Renderer connector, Museum.Experience.HelmetRearConnections connections)
+        {
+            // Era changes replace geometry but do not interrupt the visitor's running sequence.
+            // Clear only the old fitting's focus; the next LateUpdate refreshes the route and attention.
+            SetConnectorFocus(0f);
+            airConnector = connector; rearConnections = connections;
+            anchorReady = false; CaptureAnchor();
+        }
+
+        public void ConfigureRefinedEquipment(RefinedConnectionEquipment prefab)
+        {
+            Stop();
+            if (visuals) ReleaseVisuals();
+            refinedEquipmentPrefab = prefab;
+        }
 
         public void Configure(HelmetInspectionController target, Renderer connector, Material airMat, Material voiceMat, Material inkMat)
         {
@@ -80,6 +104,7 @@ namespace Museum.Exploration
             CurrentClue = clue; startedAt = Time.unscaledTime;
             IsPlaying = !inspection.ReduceMotion; IsVisible = true;
             visuals.SetActive(true); models.SetMode(clue == HelmetExplorationController.Clue.Air);
+            if (IsUsingRefinedEquipment) refinedEquipment.SetMode(clue == HelmetExplorationController.Clue.Air, !rearConnections);
             UpdateVisuals(0f);
             PlaybackChanged?.Invoke();
         }
@@ -91,6 +116,7 @@ namespace Museum.Exploration
             AnimationStage = "Demo hidden";
             SourceEmphasis=DestinationEmphasis=0;HasReachedDestination=false;SetConnectorFocus(0);
             if(rearConnections)rearConnections.ClearVoice();
+            if(refinedEquipment)refinedEquipment.Stop();
             if (visuals) visuals.SetActive(false);
             if (changed) PlaybackChanged?.Invoke();
         }
@@ -131,6 +157,22 @@ namespace Museum.Exploration
             // Clones in the model factory explicitly disable section/hover properties.
             var template = airConnector && airConnector.sharedMaterial ? airConnector.sharedMaterial : inkMaterial;
             models = new HelmetDemonstrationModels(visuals.transform, pulse, template, airMaterial, voiceMaterial);
+            if (refinedEquipmentPrefab)
+            {
+                refinedEquipment = Instantiate(refinedEquipmentPrefab, visuals.transform, false);
+                refinedEquipment.name = "Refined connection equipment";
+                if (refinedEquipment.IsReady)
+                {
+                    refinedEquipment.InitializeFeedback(voiceMaterial);
+                    models.HideEquipmentRenderers();
+                }
+                else
+                {
+                    // Missing bindings keep the established apparatus operational; integration
+                    // validation separately requires that the saved prefab has all refined links.
+                    DestroyOwned(refinedEquipment.gameObject); refinedEquipment = null;
+                }
+            }
             for(int i=0;i<waveforms.Length;i++)
             {
                 waveforms[i] = MakeLine(pulse, "Voice waveform " + i, .006f, voiceMaterial);
@@ -154,19 +196,20 @@ namespace Museum.Exploration
             Quaternion facing = Quaternion.LookRotation(diagramForward, Vector3.up);
             Vector3 centre = inspection.transform.TransformPoint(inspection.SectionCenterLocal);
             models.Position(centre, facing);
+            if (IsUsingRefinedEquipment) refinedEquipment.Position(centre, facing);
             // The real helmet fitting is the receiving end. Keep the old detached schematic only as a fallback.
             models.DiverTransducer.gameObject.SetActive(!rearConnections);
             SetPhase(air, elapsed, staticDiagram);
 
             if (air)
             {
-                pathStart = models.AirOutlet.position; pathEnd = AirTargetWorld;
+                pathStart = AirSourceWorld; pathEnd = AirTargetWorld;
                 pathControlA = pathStart - diagramRight * .13f + Vector3.up * .07f - diagramForward * .06f;
                 pathControlB = pathEnd + diagramRight * .06f + Vector3.up * .13f;
             }
             else
             {
-                pathStart = models.TelephoneOutlet.position; pathEnd = VoiceTargetWorld;
+                pathStart = VoiceSourceWorld; pathEnd = VoiceTargetWorld;
                 pathControlA = pathStart + diagramRight * .065f - Vector3.up * .11f - diagramForward * .045f;
                 pathControlB = rearConnections ? pathEnd + inspection.transform.forward*.065f+Vector3.up*.025f
                     : pathEnd - diagramRight * .04f - Vector3.up * .11f - diagramForward * .045f;
@@ -190,6 +233,12 @@ namespace Museum.Exploration
             // Local speech happens at emission; after arrival it no longer competes with the receiving end.
             models.AnimateVoice(elapsed, sending && elapsed-2f<1.8f, replying && elapsed-9f<1.8f, !staticDiagram);
             models.AnimateReception(elapsed, replying && HasReachedDestination, sending && HasReachedDestination);
+            if (IsUsingRefinedEquipment)
+            {
+                refinedEquipment.Evaluate(elapsed, airFlow, sending && elapsed - 2f < 1.8f,
+                    replying && elapsed - 9f < 1.8f, replying && HasReachedDestination,
+                    sending && HasReachedDestination, !staticDiagram, inspection.SoundEnabled);
+            }
             pulse.gameObject.SetActive(airFlow || sending || replying);
             if (air) UpdateAirPackets(elapsed - 2f, airFlow);
             else UpdateVoicePackets(elapsed, replying, sending || replying);
@@ -204,8 +253,10 @@ namespace Museum.Exploration
 
             MuseumText.Set(sourceText, air ? "Air pump" : "Surface telephone");
             MuseumText.Set(destinationText, air ? "Air inlet" : rearConnections ? "Telephone connection" : "Diver unit");
-            sourceText.transform.position = (air ? models.Pump.position : models.SurfaceTelephone.position) + Vector3.up * .31f;
-            destinationText.transform.position = air || rearConnections ? pathEnd + Vector3.up*.09f : models.DiverTransducer.position + Vector3.up*.24f;
+            sourceText.transform.position = IsUsingRefinedEquipment ? refinedEquipment.SourceLabelPosition
+                : (air ? models.Pump.position : models.SurfaceTelephone.position) + Vector3.up * .31f;
+            destinationText.transform.position = air || rearConnections ? pathEnd + Vector3.up*.09f
+                : IsUsingRefinedEquipment ? refinedEquipment.DiverLabelPosition : models.DiverTransducer.position + Vector3.up*.24f;
             MuseumText.Set(caption, AnimationStage + "\n<size=75%>Illustrative model</size>");
             caption.transform.position = centre + diagramRight * .43f + Vector3.up * .43f;
             FaceViewer(sourceText.transform); FaceViewer(destinationText.transform); FaceViewer(caption.transform);
@@ -230,6 +281,7 @@ namespace Museum.Exploration
             }
             SourceEmphasis=source;DestinationEmphasis=destination;
             models.SetAttention(air,source,destination);SetConnectorFocus(air?destination:0);
+            if (IsUsingRefinedEquipment) refinedEquipment.SetAttention(air, source, destination);
             if(rearConnections)
             {
                 bool responding=!air && (stationary || PhaseIndex==2 || (PhaseIndex==1 && HasReachedDestination) || (PhaseIndex==3 && phaseTime<1.8f));
@@ -363,8 +415,9 @@ namespace Museum.Exploration
         void ReleaseVisuals()
         {
             IsPlaying=false;IsVisible=false;
+            if(refinedEquipment)refinedEquipment.Stop();
             if(visuals)DestroyOwned(visuals);
-            visuals=null;models?.Dispose();models=null;
+            visuals=null;models?.Dispose();models=null;refinedEquipment=null;
         }
         static void DestroyOwned(UnityEngine.Object target)
         {if(!target)return;if(Application.isPlaying)Destroy(target);else DestroyImmediate(target);}

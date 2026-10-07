@@ -64,6 +64,15 @@ namespace Museum.Inspection
             visualOffsetCaptured = false;
             CacheVisuals();
         }
+        /// <summary>Keep the wrist frame, but centre this authored centre-based guide
+        /// on a replacement model's plane. Called only between part selections.</summary>
+        public void RefreshGeometryCenter()
+        {
+            if (isSelected || controller == null) return;
+            visualOffsetInPlane = Vector3.zero;
+            visualOffsetCaptured = true;
+            UpdateGuidePose();
+        }
         public override bool IsSelectableBy(IXRSelectInteractor interactor)
         {
             return showTool && controller != null && controller.CanSelectSection(interactor) && !cancelling &&

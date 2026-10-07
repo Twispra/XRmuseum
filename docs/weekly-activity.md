@@ -2,7 +2,7 @@
 
 本文件是每周汇总与贡献证据索引，不作实时认领表。实质工作保存独立 docs/activity 记录；任务与共享路径继续在 [GitHub Issues](https://github.com/Twispra/XRmuseum/issues) 维护。
 
-历史核对：2026-10-06 21:05（Asia/Shanghai）核对主线 [18d7f8a](https://github.com/Twispra/XRmuseum/commit/18d7f8a09c29bb0c757b8a80bdc245b0fe40b785)，首次补齐原索引遗漏至今的工作，详见[核对范围与问题过程](activity/2026-10-06-project-records-audit.md)。周段按实际日历日期组织，不虚构教学周次、工时或个人成绩；10 月 5–11 日条目只覆盖截至 10 月 6 日已发生的工作。姓名映射和完整六人名单仍待确认。
+历史核对：2026-10-06 21:05（Asia/Shanghai）核对主线 [18d7f8a](https://github.com/Twispra/XRmuseum/commit/18d7f8a09c29bb0c757b8a80bdc245b0fe40b785)，首次补齐原索引遗漏至今的工作，详见[核对范围与问题过程](activity/2026-10-06-project-records-audit.md)。周段按实际日历日期组织，不虚构教学周次、工时或个人成绩；本轮增补 10 月 7 日精细资产整合，旧条目保留对应历史阶段。姓名映射和完整六人名单仍待确认。
 
 角色按证据分开：Twispra 是所有已合并 PR 的合并者，并有自己明确的初始化、模型/交互、补齐与热点修复工作；Fttt1003、nikoyeah830-wq、Aragorn-cyber 的原创实现保留各自归属。Ereshkigal1224 是 #12 PR 提交者，该提交的 Git 作者尚无 API 账号关联。同一成果的原作者、修复者、评审与整合者交叉链接，不算各人独立完成一套成果。相关实现/翻译/检查包含 Codex 辅助，官方样例和辅助声明见[资源记录](external-resources.md)。
 
@@ -25,7 +25,7 @@
 | 10-03 | nikoyeah830-wq，README 目录作者 | 补 artifacts、.github 和 AGENTS 目录说明 | [b40eb9f](https://github.com/Twispra/XRmuseum/commit/b40eb9f652a3935595575e6a5ec0f287c09777b5) 已在 main；[#11](https://github.com/Twispra/XRmuseum/pull/11) 10-05 因重复关闭、未合并 | 两候选 README blob 相同；不把重复 PR 记第二份成果或合并 | 后续目录变化按实际成果更新 |
 | 10-03–04 起步（修复/合并见下周段） | nikoyeah830-wq，年代及双语模块原作者；Codex 辅助 | HelmetEras 数据/占位材质/独立 Prefab；Localization 文案/事件/字体/独立演示 | [#10](https://github.com/Twispra/XRmuseum/pull/10)、[#13](https://github.com/Twispra/XRmuseum/pull/13)；[年代活动](activity/2026-10-03-helmet-eras.md)、[双语活动](activity/2026-10-04-localization.md) | 年代只以颜色区分、未接主场景；本地字体烘焙曾遇空图集/格式问题。后续修复与整合交叉引用同一成果 | 年代是否进入流程、造型与主场景接线由团队决定 |
 
-## 2026-10-05–11（截至 10-06）
+## 2026-10-05–11（截至 10-07）
 
 | 实际日期 | 成员 / 角色 | 负责事项 | 完成结果与证据 | 决策 / 问题 | 后续最小步骤 |
 | --- | --- | --- | --- | --- | --- |
@@ -39,6 +39,7 @@
 | 10-06 20:14–20:58 | Twispra，热点问题报告/修复/整合；Codex 辅助 | 保存 Prefab 复位、Direct/Ray 表面距离、三语/字体、台沿卡片布局 | [#20](https://github.com/Twispra/XRmuseum/issues/20) / [#21](https://github.com/Twispra/XRmuseum/pull/21)，20:58 合 main [18d7f8a](https://github.com/Twispra/XRmuseum/commit/18d7f8a09c29bb0c757b8a80bdc245b0fe40b785)；[修复报告/截图](activity/2026-10-06-hotspot-repair.md) | 热点 12、主场景 82319（内含热点 381）、模块 11、探索 1469 通过/四进程退出 0；202 文案、533 字形。大量重复文字断言不等于独立测试数量 | 设备/其他视角验收，与 #19 后续兼容回归；截图仅 Codex 复核 |
 | 10-06 | Twispra 发起、Codex 辅助；子任务只读核对 | 首次补齐历史贡献/角色、问题/待办和周索引，缩短当前状态并保留历史入口 | [本次活动与检查范围](activity/2026-10-06-project-records-audit.md)，仅文档 [#22](https://github.com/Twispra/XRmuseum/pull/22)，21:31 合 main `7f1a2b8` | 发现 #19 合入功能分支及年代探针未进 main；#2 绝对路径仍待处理；没有正式 APPROVED 记录，不把 AI 评论或合并算成员批准 | 以核对记录和后续 #24 增量更新；设备/构建及资料访问仍待补 |
 | 10-06 | Fttt1003 为 #19 原成果作者；Twispra/twispark 负责本轮整合，Codex 辅助 | Issue #23：将 #19 整合到当前 main，保留 #21 修复；三语/字体冲突和热点平滑复位兼容 | [PR #24](https://github.com/Twispra/XRmuseum/pull/24)、[本轮整合与证据](activity/2026-10-06-pr19-main-integration.md)；六组 76/206/1486/84346 次断言/11/12 通过且退出 0，267 输入哈希一致，205 文案/536 字形 | 双父合并保留作者历史；测试截图旧帧起点两次失败后修复；Blender/FBX/公共输入/Packages/平台不变。主场景含热点/跨功能，数量不重复累加 | 按 #24 实际合并版本交接并释放共享范围；真实头显、人工试听、用户/性能及构建验收 |
+| 10-07 | Fttt1003，精细资产与本轮整合负责人；Codex 辅助 | 在 main `afc3a9e` 接入 Mark V、精细泵／电话设备及合成声音，保留原交互；源资产历史到 `e2ee58f` | [本轮整合／验证](activity/2026-10-07-refined-model-integration.md)、[接手说明](refined-model-integration.zh-CN.md)；Blender 四资产回读通过，Unity 回归结果以新活动记录为准；源阶段见 [Mark V R2](activity/2026-10-07-mark-v-refinement-r2.md)／[演示资产](activity/2026-10-07-connection-demo-refinement.md) | 首次导入发现原生对象初始化和坐标轴问题，修复后重测；Mark V 仅索引 1，另两时期仍占位。1916 设备与 1944 头盔实际配套没有证据 | 测试通过后提交本轮 PR，并调整 #25／#33 中的接入状态和遗留项；后续另两时期造型、人工审阅／试听和设备性能 |
 
 历史测试均为各自记录中的 commit / 基准加额外产品文件，具体环境、输入哈希及退出限制以链接为准。#22 整理只读并复核旧证据；#24 的六组新运行单独列出。两者均没有真实头显或用户评价；不将各阶段通过数相加成当前版本总验收。9 月 23 日原周索引及“PR #2 待审查”等旧说法保留在[整理前快照](https://github.com/Twispra/XRmuseum/blob/18d7f8a09c29bb0c757b8a80bdc245b0fe40b785/docs/weekly-activity.md)，独立历史记录未覆盖。
 

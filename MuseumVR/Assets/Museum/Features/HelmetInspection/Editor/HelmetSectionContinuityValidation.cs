@@ -58,7 +58,7 @@ namespace Museum.Inspection.Editor
         [Serializable] sealed class Report
         {
             public string runId, timestampUtc, unityVersion, prefab = PrefabPath, status = "running";
-            public string method = "Edit Mode only: load the saved prefab into a temporary PrefabContents scene; call SetSectionPlane(normal, 0), then invoke its actual private UpdateGuidePose by reflection. Never save prefab contents.";
+            public string method = "Edit Mode only: load the saved prefab into a temporary PrefabContents scene; if present, initialize its production refined geometry binding through RefinedHelmetBinding.RefreshVisualBinding before configuring the existing guide; call SetSectionPlane(normal, 0), then invoke its actual private UpdateGuidePose by reflection. Never save prefab contents.";
             public string limitations = "Explicit geometry/API regression, not simulated XR selection, physical dragging, hardware, rendered pixels, usability, or a player build. Root scales remain the prefab's unit scale. A baseline failure is reported as failed, never converted into an expected pass.";
             public string thresholds = "Normal n(theta)=(cos(theta),sin(theta),0). Rotation <= max(0.08 degrees, 3*normal delta+0.02 degrees); knob displacement <= 3*(2*radius*sin(normal delta/2))+0.00005 m; center/plane error <=0.0001 m; forward error <=0.08 degrees; root position/scale drift <=0.000001; root rotation drift <=0.0001 degrees. These are numerical continuity checks, not comfort thresholds.";
             public Provenance provenance;
@@ -154,6 +154,10 @@ namespace Museum.Inspection.Editor
                 var controller = root.GetComponent<HelmetInspectionController>();
                 var guide = root.GetComponentInChildren<HelmetSectionInteractable>(true);
                 if (!controller || !guide) throw new InvalidOperationException("Saved prefab is missing controller or section guide.");
+                // PrefabContents does not run the play-mode binding lifecycle. Initialize the
+                // production binding so this fixture uses the same geometry as the runtime.
+                var refinedBinding = root.GetComponent<Museum.Refined.RefinedHelmetBinding>();
+                if (refinedBinding) refinedBinding.RefreshVisualBinding();
                 controller.SetSectionPlane(Vector3.right, 0f);
                 guide.Configure(controller);
                 var knob = new SerializedObject(guide).FindProperty("handle")?.objectReferenceValue as Transform;
@@ -261,6 +265,7 @@ namespace Museum.Inspection.Editor
             provenance.workingTreeState = provenance.errors.Count > 0 ? "unknown" : (string.IsNullOrEmpty(provenance.gitStatusPorcelain) ? "clean" : "dirty");
             var paths = new[] { "MuseumVR/"+RunnerPath, "MuseumVR/"+PrefabPath,
                 "MuseumVR/"+Feature+"/Runtime/HelmetSectionInteractable.cs", "MuseumVR/"+Feature+"/Runtime/HelmetInspectionController.cs",
+                "MuseumVR/Assets/Museum/Features/RefinedModels/Runtime/RefinedHelmetBinding.cs",
                 "MuseumVR/Assets/Museum/Models/Helmet/helmet-graybox-v02.fbx", "MuseumVR/ProjectSettings/ProjectVersion.txt", "MuseumVR/Packages/manifest.json" };
             foreach (var path in paths)
             {

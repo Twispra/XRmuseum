@@ -86,3 +86,11 @@ AI 辅助范围：模块架构、Editor 工具、运行时脚本、字体子集�
 在原PR #32 / Issue #25继续，Fttt1003通过Codex辅助检索DESCO制造说明、2011年Making an Icon及前窗/锁紧件/铰链销三个现售零件页，实际核对四张零件照片。[完整URL、适用边界及改模依据](../artifacts/helmet-refinement/eras/mark-v/references/refinement-r2.zh-CN.md)，[下载记录](../artifacts/helmet-refinement/eras/mark-v/references/sources.json)。原媒体只在本机研究，不再分发、未作贴图。未新增Unity依赖、第三方模型或收费素材。
 
 Codex辅助增量改模、原创材质图、导出、渲染与自动/浏览器检查；内部走线仍为示意。资产自动检查不是成员人工批准、设备测试或精密历史复原；three.js/esbuild依赖与MIT声明沿用R1。
+
+## 2026-10-07：精细资产 Unity 整合
+
+Fttt1003 发起，Codex 辅助将已有 Mark V R2 和供气／通话设备派生为 Unity 运行时资源，并接入现有主展厅。主要依据继续使用 [Mark V 研究](../artifacts/helmet-refinement/eras/mark-v/references/research.zh-CN.md)、[R2 制造商资料](../artifacts/helmet-refinement/eras/mark-v/references/refinement-r2.zh-CN.md)与[设备研究](../artifacts/connection-demo-refinement/references/research.zh-CN.md)；本轮没有新增下载第三方模型、贴图或音频，没有分发馆藏媒体／手册扫描，也没有将不同年代的展览组合声明为已确认实物配套。
+
+新增 FBX 为本组原创源模型的派生导出，Mark V 高面数静态件保守减面；设备保留动画、节点和锚点。源文件、旧导出和历史 QA 不覆盖，源哈希与 FBX 回读记录见 [运行时报告](../artifacts/refined-model-integration/qa/runtime-preparation.json)。建模／导出使用已有 Blender 4.5.14 LTS，不分发工具本体，也不增加 Unity package；Unity 仍为 2022.3.62f3c1。材质图沿用原资产的程序合成作品；运行时采用较柔和的原创 `gentle` 空气／通信 WAV，未把合成轨道当作历史录音或真实人声。
+
+AI 辅助范围为运行时导出、原功能兼容绑定、材质／截面升级、机械动画及声音接入、桌面模拟输入与渲染验证、代码审查和交接文档。具体结果以[本轮活动记录](activity/2026-10-07-refined-model-integration.md)为准；源模型回读不等于 Unity 通过，桌面模拟和 AI 初检不等于成员批准、人工试听、真实头显、用户研究、性能或构建验收。历史尺寸、局部结构、旧化、音效、可见传输与展厅缩放继续分别标明事实／估算／教学表达，课程 AI 政策仍由有访问权限的成员核对。

@@ -21,7 +21,11 @@ namespace Museum.Experience
         public int RebuildCount { get; private set; }
         public int RejectedOpenBands { get; private set; }
         sealed class Part { public Renderer source; public HelmetSectionMeshData.Entry data; public Mesh mesh; public GameObject visual; }
-        public void Configure(HelmetSectionMeshData data,Material material) { geometry=data;sectionMaterial=material; }
+        public void Configure(HelmetSectionMeshData data,Material material)
+        {
+            foreach(var p in parts){DestroyOwned(p.mesh);DestroyOwned(p.visual);}parts.Clear();
+            initialized=false;wasCut=false;geometry=data;sectionMaterial=material;
+        }
         void Awake() => controller=GetComponent<HelmetInspectionController>();
         void LateUpdate() => Refresh();
         public void Refresh()
@@ -38,7 +42,7 @@ namespace Museum.Experience
                 // Capture only existing metal meshes. Transparent glass retains its own cut shader.
                 foreach(var source in GetComponentsInChildren<MeshRenderer>(true))
                 {
-                    if(source.name.Contains("Glass") || source.GetComponentInParent<HelmetSectionInteractable>()) continue;
+                    if(source.sharedMaterial && source.sharedMaterial.shader.name=="Museum/Inspection Glass" || source.GetComponentInParent<HelmetSectionInteractable>()) continue;
                     var filter=source.GetComponent<MeshFilter>();if(!filter)continue;
                     var data=geometry.Find(filter.sharedMesh);if(data==null)continue;
                     var go=new GameObject("Section face - "+source.name);go.transform.SetParent(transform,false);
@@ -58,6 +62,7 @@ namespace Museum.Experience
             foreach(var p in parts)
             {
                 if(!p.source)continue;
+                if(!p.source.enabled || !p.source.gameObject.activeInHierarchy){p.visual.SetActive(false);continue;}
                 RejectedOpenBands+=SectionCapGeometry.Build(p.data.vertices,p.data.triangles,
                     transform.worldToLocalMatrix*p.source.transform.localToWorldMatrix,previousNormal,previousPoint,vertices,indices);
                 p.mesh.Clear();p.mesh.indexFormat=vertices.Count>65535?IndexFormat.UInt32:IndexFormat.UInt16;

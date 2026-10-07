@@ -1,0 +1,1829 @@
+{
+    "runId": "20261007T144919256Z-section-continuity-6da193658b9145b1b572d63b7ed2d1bf",
+    "timestampUtc": "2026-10-07T14:49:19.2627180Z",
+    "unityVersion": "2022.3.62f3c1",
+    "prefab": "Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+    "status": "passed",
+    "method": "Edit Mode only: load the saved prefab into a temporary PrefabContents scene; if present, initialize its production refined geometry binding through RefinedHelmetBinding.RefreshVisualBinding before configuring the existing guide; call SetSectionPlane(normal, 0), then invoke its actual private UpdateGuidePose by reflection. Never save prefab contents.",
+    "limitations": "Explicit geometry/API regression, not simulated XR selection, physical dragging, hardware, rendered pixels, usability, or a player build. Root scales remain the prefab's unit scale. A baseline failure is reported as failed, never converted into an expected pass.",
+    "thresholds": "Normal n(theta)=(cos(theta),sin(theta),0). Rotation <= max(0.08 degrees, 3*normal delta+0.02 degrees); knob displacement <= 3*(2*radius*sin(normal delta/2))+0.00005 m; center/plane error <=0.0001 m; forward error <=0.08 degrees; root position/scale drift <=0.000001; root rotation drift <=0.0001 degrees. These are numerical continuity checks, not comfort thresholds.",
+    "provenance": {
+        "gitCommit": "e2ee58fc42f79fc9d230d99682eeb8240aa25508",
+        "gitBranch": "codex/refined-model-integration-2026-10-07",
+        "gitStatusPorcelain": " M MuseumVR/Assets/Museum/Features/HelmetEras/HelmetEraCatalogue.asset\n M MuseumVR/Assets/Museum/Features/HelmetExperience/Editor/HelmetExperienceValidation.cs\n M MuseumVR/Assets/Museum/Features/HelmetExperience/Runtime/HelmetSectionSurface.cs\n M MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs\n M MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetDemonstrationModels.cs\n M MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationHotspot.cs\n M MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionValidation.cs\n M MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetSectionContinuityValidation.cs\n M MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab\n M MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs\n M MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetSectionInteractable.cs\n M MuseumVR/Assets/Museum/Features/HelmetInspection/Shaders/InspectionShell.shader\n M MuseumVR/Assets/Museum/Scenes/MuseumStart.unity\n M docs/external-resources.md\n M docs/project-state.md\n M docs/weekly-activity.md\n?? MuseumVR/Assets/Museum/Features/RefinedModels.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Audio.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-air.wav\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-air.wav.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-voice.wav\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-voice.wav.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Data.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Data/RefinedSectionMeshes.asset\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Data/RefinedSectionMeshes.asset.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Editor.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Editor/RefinedModelSetup.cs\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Editor/RefinedModelSetup.cs.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Editor/RefinedModelValidation.cs\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Editor/RefinedModelValidation.cs.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/AgedTin_OriginalInterpretation.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/AgedTin_OriginalInterpretation.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Canvas_Interpretation.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Canvas_Interpretation.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/CastBronze_OriginalInterpretation.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/CastBronze_OriginalInterpretation.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/DialInk.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/DialInk.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/FaceSeal_Rubber_Approximate.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/FaceSeal_Rubber_Approximate.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/HandledBronze_EstimatedWear.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/HandledBronze_EstimatedWear.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/HistoricalGlass_VisualPropertiesAssumed.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/HistoricalGlass_VisualPropertiesAssumed.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/InteriorTin_Approximate.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/InteriorTin_Approximate.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/LeatherSeal_Approximate.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/LeatherSeal_Approximate.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/LeatherSeal_Interpretation.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/LeatherSeal_Interpretation.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/OriginalAshInterpretation.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/OriginalAshInterpretation.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/OriginalGunmetalInterpretation.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/OriginalGunmetalInterpretation.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/PaintedIron_VisualEstimate.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/PaintedIron_VisualEstimate.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Rubber_VisualEstimate.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Rubber_VisualEstimate.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Steel_VisualEstimate.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/Steel_VisualEstimate.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/TinnedCistern_Interpretation.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/TinnedCistern_Interpretation.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/UncalibratedDial.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/UncalibratedDial.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/UnresolvedTelephoneInterior.mat\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Materials/UnresolvedTelephoneInterior.mat.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/diver-telephone-runtime.fbx\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/diver-telephone-runtime.fbx.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-iii-pump-runtime.fbx\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-iii-pump-runtime.fbx.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-v-runtime.fbx\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-v-runtime.fbx.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/surface-telephone-runtime.fbx\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Models/surface-telephone-runtime.fbx.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Prefabs.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Prefabs/ConnectionEquipment.prefab\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Prefabs/ConnectionEquipment.prefab.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Runtime.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Runtime/RefinedConnectionEquipment.cs\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Runtime/RefinedConnectionEquipment.cs.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Runtime/RefinedHelmetBinding.cs\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Runtime/RefinedHelmetBinding.cs.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_BaseColor.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_BaseColor.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_Normal.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_Normal.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_Roughness.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_Roughness.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_BaseColor.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_BaseColor.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_Normal.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_Normal.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_Roughness.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_Roughness.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_BaseColor.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_BaseColor.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_Normal.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_Normal.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_Roughness.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_Roughness.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_BaseColor.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_BaseColor.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_Normal.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_Normal.png.meta\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_Roughness.png\n?? MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_Roughness.png.meta\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/00-rear-two-fittings.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/01-window-closed.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/02-window-opening.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/03-window-open.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/04-section-0.00_1.00_0.00.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/04-section-0.42_0.32_-0.85.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/04-section-1.00_0.00_0.00.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/05-return-midway.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/06-help-controls.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/07-air-sender.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/08-air-receiver.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/09-voice-surface.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/10-voice-diver-received.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/10b-rear-telephone-received.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/11-voice-diver-reply.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/12-voice-surface-received.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/13-rear-telephone-section.png\n?? artifacts/helmet-experience/qa/runs/20261007T142652820Z/report.json\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/00-rear-two-fittings.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/01-window-closed.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/02-window-opening.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/03-window-open.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/04-section-0.00_1.00_0.00.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/04-section-0.42_0.32_-0.85.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/04-section-1.00_0.00_0.00.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/05-return-midway.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/06-help-controls.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/07-air-sender.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/08-air-receiver.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/09-voice-surface.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/10-voice-diver-received.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/10b-rear-telephone-received.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/11-voice-diver-reply.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/12-voice-surface-received.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/13-rear-telephone-section.png\n?? artifacts/helmet-experience/qa/runs/20261007T144334012Z/report.json\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/00-welcome-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/00-welcome.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/01-air-right-hand-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/01-air-right-hand.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/02-voice-left-hand-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/02-voice-left-hand.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/02b-hint-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/02b-hint.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/03-review-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/03-review.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/04-moved-air-endpoint-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/04-moved-air-endpoint.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/04b-static-air-diagram-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/04b-static-air-diagram.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/04c-reduced-motion-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/04c-reduced-motion.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/05-final-welcome-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/05-final-welcome.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/06-air-pump-before-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/07-air-pump-after-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/08-air-summary-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/09-voice-outgoing-before-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/10-voice-outgoing-after-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/11-voice-turn-taking-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/12-voice-reply-before-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/13-voice-reply-after-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/14-voice-summary-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/15-air-reduced-motion-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/16-voice-reduced-motion-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/after-help-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/after-help.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/after-inspect.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/after-playing-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/after-playing.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/after-welcome-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/after-welcome.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T142751516Z-exploration-07ea2ceae0ff45cd86792232be8ac5bb/report.json\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/00-welcome-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/00-welcome.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/01-air-right-hand-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/01-air-right-hand.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/02-voice-left-hand-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/02-voice-left-hand.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/02b-hint-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/02b-hint.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/03-review-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/03-review.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/04-moved-air-endpoint-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/04-moved-air-endpoint.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/04b-static-air-diagram-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/04b-static-air-diagram.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/04c-reduced-motion-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/04c-reduced-motion.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/05-final-welcome-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/05-final-welcome.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/06-air-pump-before-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/07-air-pump-after-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/08-air-summary-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/09-voice-outgoing-before-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/10-voice-outgoing-after-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/11-voice-turn-taking-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/12-voice-reply-before-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/13-voice-reply-after-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/14-voice-summary-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/15-air-reduced-motion-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/16-voice-reduced-motion-diagram-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/after-help-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/after-help.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/after-inspect.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/after-playing-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/after-playing.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/after-welcome-panel-closeup.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/after-welcome.jpg\n?? artifacts/helmet-exploration/qa/runs/20261007T144433357Z-exploration-a766c8e5297e47e88ea72d5b3973317d/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T132939931Z-refined-integration-edd49f7488d845b6a520e032eb06f61e/01-refined-front-closed.png\n?? artifacts/helmet-interaction/qa/runs/20261007T132939931Z-refined-integration-edd49f7488d845b6a520e032eb06f61e/02-refined-rear-fittings.png\n?? artifacts/helmet-interaction/qa/runs/20261007T132939931Z-refined-integration-edd49f7488d845b6a520e032eb06f61e/03-saved-XR-view.png\n?? artifacts/helmet-interaction/qa/runs/20261007T132939931Z-refined-integration-edd49f7488d845b6a520e032eb06f61e/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T134507028Z-refined-integration-034fec059164430a9577df2af412646b/01-refined-front-closed.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134507028Z-refined-integration-034fec059164430a9577df2af412646b/02-refined-rear-fittings.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134507028Z-refined-integration-034fec059164430a9577df2af412646b/03-saved-XR-view.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134507028Z-refined-integration-034fec059164430a9577df2af412646b/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/01-refined-front-closed.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/02-refined-rear-fittings.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/03-saved-XR-view.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/04-refined-window-open.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/05-refined-held.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/06-section-5.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/06-section-6.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/06-section-7.png\n?? artifacts/helmet-interaction/qa/runs/20261007T134944663Z-refined-integration-c9b3c28b3f354359b8e8734ae08d3d63/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/01-refined-front-closed.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/02-refined-rear-fittings.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/03-saved-XR-view.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/04-refined-window-open.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/05-refined-held.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/06-section-5.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/06-section-6.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/06-section-7.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/09-refined-air-pump.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135259020Z-refined-integration-041662914da94a1f95ed0e2b3954983d/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/01-refined-front-closed.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/02-refined-rear-fittings.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/03-saved-XR-view.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/04-refined-window-open.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/05-refined-held.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/06-section-5.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/06-section-6.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/06-section-7.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/09-refined-air-pump.png\n?? artifacts/helmet-interaction/qa/runs/20261007T135705006Z-refined-integration-dad3932456e3463297d3d402a701e8b5/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/01-refined-front-closed.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/02-refined-rear-fittings.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/03-saved-XR-view.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/04-refined-window-open.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/05-refined-held.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/06-section-5.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/06-section-6.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/06-section-7.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/09-refined-air-pump.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/10-refined-voice-surface.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/11-refined-phone-arrival.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/12-refined-reduced-motion.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/13-refined-existing-language-interface.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/14-final-reset.png\n?? artifacts/helmet-interaction/qa/runs/20261007T140142415Z-refined-integration-52af208482bb40ed88842f5ebfda90a1/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140323391Z-inspection-main-8136013708404d75950a766644ae7207/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T140714543Z-inspection-main-ba918c22039941a19b691f61110e166c/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141212659Z-inspection-main-81eb567ee410405aa5070949025d864b/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T141523409Z-inspection-main-267260c6b4c24242a8006ce02bdb32d6/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142017249Z-inspection-main-5e2c3df8fe114769af66d52f1f669ae4/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T142501049Z-inspection-main-4e532856bb0f487ab0d878e1f0106e3c/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T143237195Z-section-continuity-bcac92036d314124a792730000b096a6/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/01-refined-front-closed.png\n?? artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/02-refined-rear-fittings.png\n?? artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/03-saved-XR-view.png\n?? artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/04-refined-window-open.png\n?? artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/05-refined-held.png\n?? artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/06-section-5.png\n?? artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/06-section-6.png\n?? artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/06-section-7.png\n?? artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/09-refined-air-pump.png\n?? artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/10-refined-voice-surface.png\n?? artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/11-refined-phone-arrival.png\n?? artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/12-refined-reduced-motion.png\n?? artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/13-refined-existing-language-interface.png\n?? artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/14-final-reset.png\n?? artifacts/helmet-interaction/qa/runs/20261007T143905782Z-refined-integration-47150ed10070449b891e373727eacb46/report.json\n?? artifacts/helmet-interaction/qa/runs/20261007T144141393Z-inspection-main-3ed28223123746c29ebd307dae52e291/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T144141393Z-inspection-main-3ed28223123746c29ebd307dae52e291/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T144141393Z-inspection-main-3ed28223123746c29ebd307dae52e291/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T144141393Z-inspection-main-3ed28223123746c29ebd307dae52e291/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T144141393Z-inspection-main-3ed28223123746c29ebd307dae52e291/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T144141393Z-inspection-main-3ed28223123746c29ebd307dae52e291/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T144141393Z-inspection-main-3ed28223123746c29ebd307dae52e291/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T144141393Z-inspection-main-3ed28223123746c29ebd307dae52e291/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261007T144141393Z-inspection-main-3ed28223123746c29ebd307dae52e291/report.json\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/diagram-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/diagram-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/diagram-zh-production.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/hotspot-interaction.json\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/hotspots-direct-progress-0-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/hotspots-direct-progress-0-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/hotspots-direct-progress-0-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/hotspots-direct-progress-3-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/hotspots-direct-progress-3-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/hotspots-direct-progress-3-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/initial-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/initial-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/initial-en-production.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/report.json\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/restored-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/restored-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/restored-en-production.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/restored-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/restored-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/restored-zh-production.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/selected-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/selected-zh-hant-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/selected-zh-hant-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/selected-zh-hant-production.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/selected-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T143039194Z-integration-8eb3b2566e7d420584ca7961e7936d92/selected-zh-production.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/diagram-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/diagram-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/diagram-zh-production.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/hotspot-interaction.json\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/hotspots-direct-progress-0-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/hotspots-direct-progress-0-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/hotspots-direct-progress-0-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/hotspots-direct-progress-3-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/hotspots-direct-progress-3-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/hotspots-direct-progress-3-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/initial-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/initial-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/initial-en-production.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/report.json\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/restored-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/restored-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/restored-en-production.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/restored-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/restored-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/restored-zh-production.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/selected-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/selected-zh-hant-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/selected-zh-hant-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/selected-zh-hant-production.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/selected-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261007T144721141Z-integration-8137c8f29a38481b9a972c6bd2d8d5b7/selected-zh-production.png\n?? artifacts/refined-model-integration/exports/diver-telephone-runtime.fbx\n?? artifacts/refined-model-integration/exports/mark-iii-pump-runtime.fbx\n?? artifacts/refined-model-integration/exports/mark-v-runtime.fbx\n?? artifacts/refined-model-integration/exports/surface-telephone-runtime.fbx\n?? artifacts/refined-model-integration/qa/asset-parity.json\n?? artifacts/refined-model-integration/qa/diaphragm-motion-readback.json\n?? artifacts/refined-model-integration/qa/diver-telephone-runtime.json\n?? artifacts/refined-model-integration/qa/mark-v-runtime.json\n?? artifacts/refined-model-integration/qa/pump-runtime.json\n?? artifacts/refined-model-integration/qa/runtime-preparation.json\n?? artifacts/refined-model-integration/qa/surface-telephone-runtime.json\n?? artifacts/refined-model-integration/scripts/check_diaphragm_motion.py\n?? artifacts/refined-model-integration/scripts/prepare_runtime.py\n?? docs/activity/2026-10-07-refined-model-integration.md\n?? docs/refined-model-integration.zh-CN.md\n",
+        "workingTreeState": "dirty",
+        "files": [
+            {
+                "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetSectionContinuityValidation.cs",
+                "sha256": "8c032c1811adce9fa418cc9e8459dd41cd913284e2e1f6c689751fd9f27747ea",
+                "error": ""
+            },
+            {
+                "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+                "sha256": "02d5b7c27e2cb1b8253ef572db3d8a0839302166a5a4b30a956bd0c14545661c",
+                "error": ""
+            },
+            {
+                "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetSectionInteractable.cs",
+                "sha256": "f44db77e44b1c0db4f5767d461b190fff0c22a4204a87121ba62b1a2b6086fde",
+                "error": ""
+            },
+            {
+                "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+                "sha256": "ea6b39d44236ab4cce62b79b3149d68665b4bece508416e4ddd74c46d6d65844",
+                "error": ""
+            },
+            {
+                "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Runtime/RefinedHelmetBinding.cs",
+                "sha256": "45b8bc3e431d89ebcc6b222fc7bfc59ac36f324b628677c583c4133849d45389",
+                "error": ""
+            },
+            {
+                "path": "MuseumVR/Assets/Museum/Models/Helmet/helmet-graybox-v02.fbx",
+                "sha256": "c0cefcc0fd5acc1fac0ec1ee5ed212a4813606b57e984767afc55d34080322ab",
+                "error": ""
+            },
+            {
+                "path": "MuseumVR/ProjectSettings/ProjectVersion.txt",
+                "sha256": "93eba324bad77e6764a40d1b8a2020e7b69424102a2b2f3b17b69afdf7dd67a0",
+                "error": ""
+            },
+            {
+                "path": "MuseumVR/Packages/manifest.json",
+                "sha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7",
+                "error": ""
+            }
+        ],
+        "errors": []
+    },
+    "durationSeconds": 2.8897571000000008,
+    "totalCases": 40,
+    "failedCases": 0,
+    "assertions": 49784,
+    "failures": 0,
+    "maximumRotationDeltaDegrees": 0.25003030977331827,
+    "maximumKnobDisplacementMeters": 2.731428025981586e-7,
+    "cases": [
+        {
+            "name": "positive threshold upward",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009125,
+            "maximumRotationDeltaDegrees": 0.019996733146986607,
+            "maximumForwardErrorDegrees": 0.000010334919968151891,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive threshold downward",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009125,
+            "maximumRotationDeltaDegrees": 0.019996733146986607,
+            "maximumForwardErrorDegrees": 0.000010334919968151891,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold downward",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009125,
+            "maximumRotationDeltaDegrees": 0.019996733146986607,
+            "maximumForwardErrorDegrees": 0.000010334919968151891,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold upward",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009125,
+            "maximumRotationDeltaDegrees": 0.019996733146986607,
+            "maximumForwardErrorDegrees": 0.000010334919968151891,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009125,
+                "rotationDeltaDegrees": 0.019996733146986607,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034318797406740487
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side below",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998502826922457,
+            "maximumRotationDeltaDegrees": 0.01999741909698098,
+            "maximumForwardErrorDegrees": 0.000005217885589590423,
+            "maximumKnobDisplacementMeters": 4.214684778958144e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.019998502826922457,
+                "rotationDeltaDegrees": 0.01999741909698098,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 4.214684778958144e-8,
+                "maximumKnobDisplacementMeters": 0.00034319335827603936
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.019998502826922457,
+                "rotationDeltaDegrees": 0.01999741909698098,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 4.214684778958144e-8,
+                "maximumKnobDisplacementMeters": 0.00034319335827603936
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side above",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019999287782939167,
+            "maximumRotationDeltaDegrees": 0.02000284768990587,
+            "maximumForwardErrorDegrees": 0.0000023909690055118365,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939167,
+                "rotationDeltaDegrees": 0.02000284768990587,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034320488339290023
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939167,
+                "rotationDeltaDegrees": 0.02000284768990587,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034320488339290023
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side below",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998502826922457,
+            "maximumRotationDeltaDegrees": 0.01999741909698098,
+            "maximumForwardErrorDegrees": 0.000005217885589590423,
+            "maximumKnobDisplacementMeters": 4.214684778958144e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.019998502826922457,
+                "rotationDeltaDegrees": 0.01999741909698098,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 4.214684778958144e-8,
+                "maximumKnobDisplacementMeters": 0.00034319335827603936
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.019998502826922457,
+                "rotationDeltaDegrees": 0.01999741909698098,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 4.214684778958144e-8,
+                "maximumKnobDisplacementMeters": 0.00034319335827603936
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side above",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019999287782939167,
+            "maximumRotationDeltaDegrees": 0.02000284768990587,
+            "maximumForwardErrorDegrees": 0.0000023909690055118365,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939167,
+                "rotationDeltaDegrees": 0.02000284768990587,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034320488339290023
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939167,
+                "rotationDeltaDegrees": 0.02000284768990587,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034320488339290023
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles increasing",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.25000767665803888,
+            "maximumRotationDeltaDegrees": 0.2500147081219369,
+            "maximumForwardErrorDegrees": 0.000013627853228009318,
+            "maximumKnobDisplacementMeters": 1.4901161193847657e-7,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -93.75,
+                "toDegrees": -93.5,
+                "normalDeltaDegrees": 0.25000560242247646,
+                "rotationDeltaDegrees": 0.2500147081219369,
+                "maximumRotationDegrees": 0.7700168072674294,
+                "knobDisplacementMeters": 5.1619135632563487e-8,
+                "maximumKnobDisplacementMeters": 0.0037152706645429136
+            },
+            "worstKnobStep": {
+                "fromDegrees": -109.25,
+                "toDegrees": -109.0,
+                "normalDeltaDegrees": 0.24999869389005048,
+                "rotationDeltaDegrees": 0.24999699536217527,
+                "maximumRotationDegrees": 0.7699960816701514,
+                "knobDisplacementMeters": 1.4901161193847657e-7,
+                "maximumKnobDisplacementMeters": 0.003715170081704855
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles decreasing",
+            "rootPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.25000767665803888,
+            "maximumRotationDeltaDegrees": 0.2500147081219369,
+            "maximumForwardErrorDegrees": 0.000013627853228009318,
+            "maximumKnobDisplacementMeters": 1.4901161193847657e-7,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 93.75,
+                "toDegrees": 93.5,
+                "normalDeltaDegrees": 0.25000560242247646,
+                "rotationDeltaDegrees": 0.2500147081219369,
+                "maximumRotationDegrees": 0.7700168072674294,
+                "knobDisplacementMeters": 5.1619135632563487e-8,
+                "maximumKnobDisplacementMeters": 0.0037152706645429136
+            },
+            "worstKnobStep": {
+                "fromDegrees": 109.25,
+                "toDegrees": 109.0,
+                "normalDeltaDegrees": 0.24999869389005048,
+                "rotationDeltaDegrees": 0.24999699536217527,
+                "maximumRotationDegrees": 0.7699960816701514,
+                "knobDisplacementMeters": 1.4901161193847657e-7,
+                "maximumKnobDisplacementMeters": 0.003715170081704855
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive threshold upward",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998593295708145,
+            "maximumRotationDeltaDegrees": 0.01999325491848515,
+            "maximumForwardErrorDegrees": 0.000009583363174847523,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.019998593295708145,
+                "rotationDeltaDegrees": 0.01999325491848515,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034319469705224037
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.019998593295708145,
+                "rotationDeltaDegrees": 0.01999325491848515,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034319469705224037
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive threshold downward",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998593295708145,
+            "maximumRotationDeltaDegrees": 0.01999325491848515,
+            "maximumForwardErrorDegrees": 0.000009583363174847523,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.019998593295708145,
+                "rotationDeltaDegrees": 0.01999325491848515,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034319469705224037
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.019998593295708145,
+                "rotationDeltaDegrees": 0.01999325491848515,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.00034319469705224037
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold downward",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.01999901158322131,
+            "maximumRotationDeltaDegrees": 0.020001764188320734,
+            "maximumForwardErrorDegrees": 0.000021767325745585664,
+            "maximumKnobDisplacementMeters": 1.1920928955078126e-7,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.01999901158322131,
+                "rotationDeltaDegrees": 0.020001764188320734,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 1.1920928955078126e-7,
+                "maximumKnobDisplacementMeters": 0.00034320089616812766
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.01999901158322131,
+                "rotationDeltaDegrees": 0.020001764188320734,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 1.1920928955078126e-7,
+                "maximumKnobDisplacementMeters": 0.00034320089616812766
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold upward",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.01999901158322131,
+            "maximumRotationDeltaDegrees": 0.020001764188320734,
+            "maximumForwardErrorDegrees": 0.000021767325745585664,
+            "maximumKnobDisplacementMeters": 1.1920928955078126e-7,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.01999901158322131,
+                "rotationDeltaDegrees": 0.020001764188320734,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 1.1920928955078126e-7,
+                "maximumKnobDisplacementMeters": 0.00034320089616812766
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.01999901158322131,
+                "rotationDeltaDegrees": 0.020001764188320734,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 1.1920928955078126e-7,
+                "maximumKnobDisplacementMeters": 0.00034320089616812766
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side below",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019997374003161047,
+            "maximumRotationDeltaDegrees": 0.019991716372194807,
+            "maximumForwardErrorDegrees": 0.000010482524938411997,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.019997374003161047,
+                "rotationDeltaDegrees": 0.019991716372194807,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431768564041704
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.019997374003161047,
+                "rotationDeltaDegrees": 0.019991716372194807,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431768564041704
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side above",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.020000318091025296,
+            "maximumRotationDeltaDegrees": 0.019995493069895205,
+            "maximumForwardErrorDegrees": 0.00000834764512887794,
+            "maximumKnobDisplacementMeters": 8.429369557916289e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.020000318091025296,
+                "rotationDeltaDegrees": 0.019995493069895205,
+                "maximumRotationDegrees": 0.08000095427307588,
+                "knobDisplacementMeters": 8.429369557916289e-8,
+                "maximumKnobDisplacementMeters": 0.00034322001738473773
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.020000318091025296,
+                "rotationDeltaDegrees": 0.019995493069895205,
+                "maximumRotationDegrees": 0.08000095427307588,
+                "knobDisplacementMeters": 8.429369557916289e-8,
+                "maximumKnobDisplacementMeters": 0.00034322001738473773
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side below",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998813531391266,
+            "maximumRotationDeltaDegrees": 0.020003503549373377,
+            "maximumForwardErrorDegrees": 0.00001219576159480222,
+            "maximumKnobDisplacementMeters": 5.960464477539063e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.019998813531391266,
+                "rotationDeltaDegrees": 0.020003503549373377,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.00034319792757742107
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.019998813531391266,
+                "rotationDeltaDegrees": 0.020003503549373377,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.00034319792757742107
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side above",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019999174920522716,
+            "maximumRotationDeltaDegrees": 0.0199886609505127,
+            "maximumForwardErrorDegrees": 0.000015934985793192868,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.019999174920522716,
+                "rotationDeltaDegrees": 0.0199886609505127,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003432032244745642
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.019999174920522716,
+                "rotationDeltaDegrees": 0.0199886609505127,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003432032244745642
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles increasing",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.25000823989795326,
+            "maximumRotationDeltaDegrees": 0.25003030977331827,
+            "maximumForwardErrorDegrees": 0.000027875188162200563,
+            "maximumKnobDisplacementMeters": 1.7881393432617188e-7,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 102.0,
+                "toDegrees": 102.25,
+                "normalDeltaDegrees": 0.2500056133221374,
+                "rotationDeltaDegrees": 0.25003030977331827,
+                "maximumRotationDegrees": 0.7700168399664122,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0037152706645429136
+            },
+            "worstKnobStep": {
+                "fromDegrees": -102.25,
+                "toDegrees": -102.0,
+                "normalDeltaDegrees": 0.25000603923573336,
+                "rotationDeltaDegrees": 0.24999567059699299,
+                "maximumRotationDegrees": 0.7700181177072001,
+                "knobDisplacementMeters": 1.7881393432617188e-7,
+                "maximumKnobDisplacementMeters": 0.003715276950970292
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles decreasing",
+            "rootPosition": {
+                "x": 0.6000000238418579,
+                "y": 1.100000023841858,
+                "z": -0.4000000059604645
+            },
+            "rootEulerDegrees": {
+                "x": 23.0,
+                "y": 47.0,
+                "z": -31.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.25000823989795326,
+            "maximumRotationDeltaDegrees": 0.25003030977331827,
+            "maximumForwardErrorDegrees": 0.000027875188162200563,
+            "maximumKnobDisplacementMeters": 1.7881393432617188e-7,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 102.25,
+                "toDegrees": 102.0,
+                "normalDeltaDegrees": 0.2500056133221374,
+                "rotationDeltaDegrees": 0.25003030977331827,
+                "maximumRotationDegrees": 0.7700168399664122,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0037152706645429136
+            },
+            "worstKnobStep": {
+                "fromDegrees": -77.5,
+                "toDegrees": -77.75,
+                "normalDeltaDegrees": 0.2499990882398455,
+                "rotationDeltaDegrees": 0.2500027947376587,
+                "maximumRotationDegrees": 0.7699972647195366,
+                "knobDisplacementMeters": 1.7881393432617188e-7,
+                "maximumKnobDisplacementMeters": 0.0037151749711483719
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive threshold upward",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.020000421532877359,
+            "maximumRotationDeltaDegrees": 0.01999456396415466,
+            "maximumForwardErrorDegrees": 0.000005716345064222768,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 2.9802322387695315e-8,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.020000421532877359,
+                "rotationDeltaDegrees": 0.01999456396415466,
+                "maximumRotationDegrees": 0.08000126459863208,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003432215889915824
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.020000421532877359,
+                "rotationDeltaDegrees": 0.01999456396415466,
+                "maximumRotationDegrees": 0.08000126459863208,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003432215889915824
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive threshold downward",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.020000421532877359,
+            "maximumRotationDeltaDegrees": 0.01999456396415466,
+            "maximumForwardErrorDegrees": 0.000005716345064222768,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 2.9802322387695315e-8,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.020000421532877359,
+                "rotationDeltaDegrees": 0.01999456396415466,
+                "maximumRotationDegrees": 0.08000126459863208,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003432215889915824
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.020000421532877359,
+                "rotationDeltaDegrees": 0.01999456396415466,
+                "maximumRotationDegrees": 0.08000126459863208,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003432215889915824
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold downward",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998899102245155,
+            "maximumRotationDeltaDegrees": 0.020003416530252395,
+            "maximumForwardErrorDegrees": 0.000016703671336252623,
+            "maximumKnobDisplacementMeters": 5.960464477539063e-8,
+            "maximumCenterErrorMeters": 2.9802322387695315e-8,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.019998899102245155,
+                "rotationDeltaDegrees": 0.020003416530252395,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.00034319929545745254
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.019998899102245155,
+                "rotationDeltaDegrees": 0.020003416530252395,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.00034319929545745254
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold upward",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998899102245155,
+            "maximumRotationDeltaDegrees": 0.020003416530252395,
+            "maximumForwardErrorDegrees": 0.000016703671336252623,
+            "maximumKnobDisplacementMeters": 5.960464477539063e-8,
+            "maximumCenterErrorMeters": 2.9802322387695315e-8,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.019998899102245155,
+                "rotationDeltaDegrees": 0.020003416530252395,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.00034319929545745254
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.019998899102245155,
+                "rotationDeltaDegrees": 0.020003416530252395,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.00034319929545745254
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side below",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.01999772660312667,
+            "maximumRotationDeltaDegrees": 0.019990236123342006,
+            "maximumForwardErrorDegrees": 0.000009582880149554595,
+            "maximumKnobDisplacementMeters": 1.2287812012345967e-7,
+            "maximumCenterErrorMeters": 2.9802322387695315e-8,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.01999772660312667,
+                "rotationDeltaDegrees": 0.019990236123342006,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 1.2287812012345967e-7,
+                "maximumKnobDisplacementMeters": 0.0003431820368859917
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.01999772660312667,
+                "rotationDeltaDegrees": 0.019990236123342006,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 1.2287812012345967e-7,
+                "maximumKnobDisplacementMeters": 0.0003431820368859917
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side above",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998619397431955,
+            "maximumRotationDeltaDegrees": 0.01999976072923218,
+            "maximumForwardErrorDegrees": 0.000005716294993344249,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 2.9802322387695315e-8,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.019998619397431955,
+                "rotationDeltaDegrees": 0.01999976072923218,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.0003431951627135277
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.019998619397431955,
+                "rotationDeltaDegrees": 0.01999976072923218,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.0003431951627135277
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side below",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.0199985905276947,
+            "maximumRotationDeltaDegrees": 0.020008102051519307,
+            "maximumForwardErrorDegrees": 0.000011787088066476084,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 2.9802322387695315e-8,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.0199985905276947,
+                "rotationDeltaDegrees": 0.020008102051519307,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.0003431947552599013
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.0199985905276947,
+                "rotationDeltaDegrees": 0.020008102051519307,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.0003431947552599013
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side above",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.01999974873140986,
+            "maximumRotationDeltaDegrees": 0.020000898788006886,
+            "maximumForwardErrorDegrees": 0.0000019803469835059149,
+            "maximumKnobDisplacementMeters": 5.960464477539063e-8,
+            "maximumCenterErrorMeters": 2.9802322387695315e-8,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.01999974873140986,
+                "rotationDeltaDegrees": 0.020000898788006886,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.000343211751896888
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.01999974873140986,
+                "rotationDeltaDegrees": 0.020000898788006886,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.000343211751896888
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles increasing",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.2500097750864365,
+            "maximumRotationDeltaDegrees": 0.2500209030493747,
+            "maximumForwardErrorDegrees": 0.000022598662182313197,
+            "maximumKnobDisplacementMeters": 2.731428025981586e-7,
+            "maximumCenterErrorMeters": 2.9802322387695315e-8,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -96.0,
+                "toDegrees": -95.75,
+                "normalDeltaDegrees": 0.2500047411426726,
+                "rotationDeltaDegrees": 0.2500209030493747,
+                "maximumRotationDegrees": 0.7700142234280178,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.0037152590230107309
+            },
+            "worstKnobStep": {
+                "fromDegrees": -90.75,
+                "toDegrees": -90.5,
+                "normalDeltaDegrees": 0.24999763662782804,
+                "rotationDeltaDegrees": 0.24999683049949535,
+                "maximumRotationDegrees": 0.7699929098834841,
+                "knobDisplacementMeters": 2.731428025981586e-7,
+                "maximumKnobDisplacementMeters": 0.0037151542492210867
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles decreasing",
+            "rootPosition": {
+                "x": -1.2000000476837159,
+                "y": 0.4000000059604645,
+                "z": 2.0999999046325685
+            },
+            "rootEulerDegrees": {
+                "x": -32.0,
+                "y": 153.0,
+                "z": 71.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.2500097750864365,
+            "maximumRotationDeltaDegrees": 0.2500209030493747,
+            "maximumForwardErrorDegrees": 0.000022598662182313197,
+            "maximumKnobDisplacementMeters": 2.731428025981586e-7,
+            "maximumCenterErrorMeters": 2.9802322387695315e-8,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -95.75,
+                "toDegrees": -96.0,
+                "normalDeltaDegrees": 0.2500047411426726,
+                "rotationDeltaDegrees": 0.2500209030493747,
+                "maximumRotationDegrees": 0.7700142234280178,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.0037152590230107309
+            },
+            "worstKnobStep": {
+                "fromDegrees": -90.5,
+                "toDegrees": -90.75,
+                "normalDeltaDegrees": 0.24999763662782804,
+                "rotationDeltaDegrees": 0.24999683049949535,
+                "maximumRotationDegrees": 0.7699929098834841,
+                "knobDisplacementMeters": 2.731428025981586e-7,
+                "maximumKnobDisplacementMeters": 0.0037151542492210867
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive threshold upward",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009194,
+            "maximumRotationDeltaDegrees": 0.02000047500298368,
+            "maximumForwardErrorDegrees": 0.000015118888866853361,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.51000213623047,
+                "toDegrees": 78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive threshold downward",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009194,
+            "maximumRotationDeltaDegrees": 0.02000047500298368,
+            "maximumForwardErrorDegrees": 0.000015118888866853361,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.52999877929688,
+                "toDegrees": 78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold downward",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009194,
+            "maximumRotationDeltaDegrees": 0.02000047500298368,
+            "maximumForwardErrorDegrees": 0.000015118888866853361,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.51000213623047,
+                "toDegrees": -78.52999877929688,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative threshold upward",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998135259009194,
+            "maximumRotationDeltaDegrees": 0.02000047500298368,
+            "maximumForwardErrorDegrees": 0.000015118888866853361,
+            "maximumKnobDisplacementMeters": 0.0,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.52999877929688,
+                "toDegrees": -78.51000213623047,
+                "normalDeltaDegrees": 0.019998135259009194,
+                "rotationDeltaDegrees": 0.02000047500298368,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.0003431879449635744
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side below",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998502826922533,
+            "maximumRotationDeltaDegrees": 0.02000727430586518,
+            "maximumForwardErrorDegrees": 0.000009633092106229245,
+            "maximumKnobDisplacementMeters": 5.960464477539063e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.019998502826922533,
+                "rotationDeltaDegrees": 0.02000727430586518,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0003431933291722089
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.4800033569336,
+                "toDegrees": 78.5,
+                "normalDeltaDegrees": 0.019998502826922533,
+                "rotationDeltaDegrees": 0.02000727430586518,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0003431933291722089
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "positive same side above",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019999287782939237,
+            "maximumRotationDeltaDegrees": 0.019996051839531315,
+            "maximumForwardErrorDegrees": 0.000004462183328399197,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939237,
+                "rotationDeltaDegrees": 0.019996051839531315,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034320485428906977
+            },
+            "worstKnobStep": {
+                "fromDegrees": 78.54000091552735,
+                "toDegrees": 78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939237,
+                "rotationDeltaDegrees": 0.019996051839531315,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034320485428906977
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side below",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019998502826922533,
+            "maximumRotationDeltaDegrees": 0.02000727430586518,
+            "maximumForwardErrorDegrees": 0.000009633092106229245,
+            "maximumKnobDisplacementMeters": 5.960464477539063e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.019998502826922533,
+                "rotationDeltaDegrees": 0.02000727430586518,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0003431933291722089
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.4800033569336,
+                "toDegrees": -78.5,
+                "normalDeltaDegrees": 0.019998502826922533,
+                "rotationDeltaDegrees": 0.02000727430586518,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 5.960464477539063e-8,
+                "maximumKnobDisplacementMeters": 0.0003431933291722089
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "negative same side above",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 2,
+            "transitions": 1,
+            "assertions": 14,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.019999287782939237,
+            "maximumRotationDeltaDegrees": 0.019996051839531315,
+            "maximumForwardErrorDegrees": 0.000004462183328399197,
+            "maximumKnobDisplacementMeters": 2.9802322387695315e-8,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939237,
+                "rotationDeltaDegrees": 0.019996051839531315,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034320485428906977
+            },
+            "worstKnobStep": {
+                "fromDegrees": -78.54000091552735,
+                "toDegrees": -78.55999755859375,
+                "normalDeltaDegrees": 0.019999287782939237,
+                "rotationDeltaDegrees": 0.019996051839531315,
+                "maximumRotationDegrees": 0.08,
+                "knobDisplacementMeters": 2.9802322387695315e-8,
+                "maximumKnobDisplacementMeters": 0.00034320485428906977
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles increasing",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.25000767665803938,
+            "maximumRotationDeltaDegrees": 0.25002157432522978,
+            "maximumForwardErrorDegrees": 0.000016305758831427467,
+            "maximumKnobDisplacementMeters": 1.3328003944934609e-7,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": -92.5,
+                "toDegrees": -92.25,
+                "normalDeltaDegrees": 0.2500053397627866,
+                "rotationDeltaDegrees": 0.25002157432522978,
+                "maximumRotationDegrees": 0.7700160192883598,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.003715266240760684
+            },
+            "worstKnobStep": {
+                "fromDegrees": -108.75,
+                "toDegrees": -108.5,
+                "normalDeltaDegrees": 0.2499986827245811,
+                "rotationDeltaDegrees": 0.2500025298764682,
+                "maximumRotationDegrees": 0.7699960481737433,
+                "knobDisplacementMeters": 1.3328003944934609e-7,
+                "maximumKnobDisplacementMeters": 0.003715168684720993
+            },
+            "failureSamples": []
+        },
+        {
+            "name": "continuous sweep through both poles decreasing",
+            "rootPosition": {
+                "x": 0.30000001192092898,
+                "y": 1.399999976158142,
+                "z": 3.200000047683716
+            },
+            "rootEulerDegrees": {
+                "x": 0.0,
+                "y": 180.0,
+                "z": 0.0
+            },
+            "passed": true,
+            "samples": 881,
+            "transitions": 880,
+            "assertions": 6167,
+            "failures": 0,
+            "maximumNormalDeltaDegrees": 0.25000767665803938,
+            "maximumRotationDeltaDegrees": 0.25002157432522978,
+            "maximumForwardErrorDegrees": 0.000016305758831427467,
+            "maximumKnobDisplacementMeters": 1.3328003944934609e-7,
+            "maximumCenterErrorMeters": 0.0,
+            "maximumRootDisplacementMeters": 0.0,
+            "maximumRootRotationDegrees": 0.0,
+            "worstRotationStep": {
+                "fromDegrees": 92.5,
+                "toDegrees": 92.25,
+                "normalDeltaDegrees": 0.2500053397627866,
+                "rotationDeltaDegrees": 0.25002157432522978,
+                "maximumRotationDegrees": 0.7700160192883598,
+                "knobDisplacementMeters": 0.0,
+                "maximumKnobDisplacementMeters": 0.003715266240760684
+            },
+            "worstKnobStep": {
+                "fromDegrees": 108.75,
+                "toDegrees": 108.5,
+                "normalDeltaDegrees": 0.2499986827245811,
+                "rotationDeltaDegrees": 0.2500025298764682,
+                "maximumRotationDegrees": 0.7699960481737433,
+                "knobDisplacementMeters": 1.3328003944934609e-7,
+                "maximumKnobDisplacementMeters": 0.003715168684720993
+            },
+            "failureSamples": []
+        }
+    ],
+    "errors": []
+}
