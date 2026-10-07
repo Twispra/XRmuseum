@@ -1,5 +1,7 @@
 # 项目状态与下一步
 
+2026-10-07 年代切换装备到中央展品头盔（[PR #27](https://github.com/Twispra/XRmuseum/pull/27)，按组长复审 7 项意见修复后重推）：年代切换直接装备中央展品头盔（实例名 `HelmetExhibit`），三个年代仅换材质（1839 棕褐 / Mark V 铜色 / SuperLite 银蓝）。窗口三个年代材质改用 `Museum/Inspection Glass`（透明保留），壳体/金属件用 `Museum/Inspection Shell`，两者均带剖切/悬停属性；切换按钮置于展台顶面上方 (±0.30, 1.155, 3.05)（复审 P1：初版按钮埋在 Plinth 体内无法点击）；键盘预览改用 F9/F10 并停用数字键（复审 P2：与 XR 模拟器冲突）。`HelmetEras/Editor/HelmetEraIntegration.cs` 提供 Integrate / Remove / Verify Section Compatibility 三个菜单（自动备份、只加组件、一键撤销）。验证：三年代目视差异明显、菜单/热点/三语/抓取回归正常、剖切兼容性探针按槽位核对全部通过（Window=Glass、其余=Shell）。真机、参与者评价与构建仍未验证；Play 启动时的 XR Starter Assets 报错为 main 既有问题。详见[活动记录](activity/2026-10-06-era-switch-helmet.md)。
+
 2026-10-06 主线整合快照：已 fetch 并同步文档 PR #22 的 main `7f1a2b8f548078eee50cd83051e86e68769a07b9`；本轮按用户要求通过 [PR #24](https://github.com/Twispra/XRmuseum/pull/24) 将 #19 成果整合到该基准，保留 #21。代码/保存资产已在 `2fcaad1` 完成六组验收，后续仅文档/证据变化；PR #24 的实际 merged 状态及 merge SHA 为最终主线依据。接手前仍应 fetch 和查看 GitHub。
 
 当前 main 已包含头盔拿放、前窗开合、可调剖面与悬停、海事展厅、AIR / VOICE 探索、信息分层、模拟器空格误触修复、简繁英切换及三个观察热点的修复。本次 #24 将 #19 的透明前窗/声音/缓动、空腔截面、背部电话接头、收发强调和平滑复位补入同一保存主场景。年代模块仍未接入主场景。 详细贡献、问题处理与核对边界见[本次记录](activity/2026-10-06-project-records-audit.md)和[每周索引](weekly-activity.md)。

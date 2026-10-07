@@ -16,14 +16,14 @@ namespace Museum.Eras
         [Tooltip("开启键盘预览。正式演示时可关闭，避免误触。")]
         [SerializeField] bool enableKeyboardPreview = true;
 
-        [Tooltip("下一个年代。")]
-        [SerializeField] KeyCode nextKey = KeyCode.N;
+        [Tooltip("下一个年代。F9 —— 复审确认 N/P 与 XR 模拟器冲突，数字键被指认易误触，均已停用。")]
+        [SerializeField] KeyCode nextKey = KeyCode.F9;
 
-        [Tooltip("上一个年代。")]
-        [SerializeField] KeyCode previousKey = KeyCode.P;
+        [Tooltip("上一个年代。F10。")]
+        [SerializeField] KeyCode previousKey = KeyCode.F10;
 
-        [Tooltip("数字键 1-9 直接跳到对应年代序号。")]
-        [SerializeField] bool enableNumberKeys = true;
+        [Tooltip("数字键 1-9 直接跳年代。默认关闭：数字键与 XR 模拟器的输入目标切换冲突（PR #27 复审第 6 条）。")]
+        [SerializeField] bool enableNumberKeys = false;
 
         void Awake()
         {
