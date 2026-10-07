@@ -71,6 +71,53 @@ namespace Museum.Hotspots.Tests
         }
 
         [Test]
+        public void ExplanationFadesAfterThirtySecondsWithoutAnotherVisit()
+        {
+            var panel = new GameObject("Information Panel");
+            panel.transform.SetParent(root.transform);
+            var information = new GameObject("Information").AddComponent<TMPro.TextMeshPro>();
+            information.transform.SetParent(panel.transform);
+            tour.Configure(3, information, null, null);
+
+            tour.Visit("window", "Window", "View");
+            tour.AdvanceExplanation(30f);
+
+            Assert.That(tour.ExplanationOpacity, Is.EqualTo(1f));
+            Assert.That(information.color.a, Is.EqualTo(1f));
+
+            tour.AdvanceExplanation(.5f);
+
+            Assert.That(tour.ExplanationOpacity, Is.EqualTo(.5f).Within(.001f));
+            Assert.That(information.color.a, Is.EqualTo(.5f).Within(.001f));
+
+            tour.AdvanceExplanation(.5f);
+
+            Assert.That(tour.ExplanationOpacity, Is.Zero);
+            Assert.That(information.color.a, Is.Zero);
+        }
+
+        [Test]
+        public void AnotherVisitRestoresExplanationAndRestartsTimeout()
+        {
+            var panel = new GameObject("Information Panel");
+            panel.transform.SetParent(root.transform);
+            var information = new GameObject("Information").AddComponent<TMPro.TextMeshPro>();
+            information.transform.SetParent(panel.transform);
+            tour.Configure(3, information, null, null);
+
+            tour.Visit("window", "Window", "View");
+            tour.AdvanceExplanation(30.75f);
+            Assert.That(tour.ExplanationOpacity, Is.LessThan(1f));
+
+            tour.Visit("window", "Window", "View");
+
+            Assert.That(tour.ExplanationOpacity, Is.EqualTo(1f));
+            Assert.That(information.color.a, Is.EqualTo(1f));
+            tour.AdvanceExplanation(30f);
+            Assert.That(tour.ExplanationOpacity, Is.EqualTo(1f));
+        }
+
+        [Test]
         public void HotspotActivationMarksItVisited()
         {
             var hotspotObject = new GameObject("Window Hotspot");
@@ -132,19 +179,57 @@ namespace Museum.Hotspots.Tests
             {
                 var instanceTour = instance.GetComponent<HelmetHotspotTour>();
                 var hotspots = instance.GetComponentsInChildren<HelmetHotspot>(true);
+                var backing = instance.transform.Find("Information Panel/Panel Backing").GetComponent<Renderer>();
 
                 Assert.That(instanceTour, Is.Not.Null);
                 Assert.That(instanceTour.RequiredHotspots, Is.EqualTo(3));
                 Assert.That(hotspots.Length, Is.EqualTo(3));
+                Assert.That(backing.sharedMaterial.GetFloat("_Surface"), Is.EqualTo(1f));
                 foreach (var hotspot in hotspots)
                 {
                     Assert.That(hotspot.GetComponent<XRSimpleInteractable>(), Is.Not.Null);
                     Assert.That(hotspot.GetComponent<Collider>().isTrigger, Is.True);
+                    Assert.That(hotspot.GetComponent<Renderer>().enabled, Is.False);
                 }
             }
             finally
             {
                 Object.DestroyImmediate(instance);
+            }
+        }
+
+        [Test]
+        public void HotspotMarkersFollowHelmetRayTargetVisibility()
+        {
+            var helmet = new GameObject("Helmet");
+            root.transform.SetParent(helmet.transform);
+            var shell = GameObject.CreatePrimitive(PrimitiveType.Cube);
+            shell.transform.SetParent(helmet.transform);
+            var external = new GameObject("External");
+            var panel = new GameObject("Information Panel");
+            panel.transform.SetParent(root.transform);
+            var marker = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            marker.transform.SetParent(root.transform);
+            marker.AddComponent<XRSimpleInteractable>();
+            var hotspot = marker.AddComponent<HelmetHotspot>();
+            hotspot.Configure(tour, "window", "Window", "View", marker.GetComponent<Renderer>());
+
+            try
+            {
+                tour.SetHotspotsVisible(false);
+                Assert.That(marker.GetComponent<Renderer>().enabled, Is.False);
+                Assert.That(tour.IsHelmetTarget(shell.transform), Is.True);
+                Assert.That(tour.IsHelmetTarget(marker.transform), Is.True);
+                Assert.That(tour.IsHelmetTarget(panel.transform), Is.False);
+                Assert.That(tour.IsHelmetTarget(external.transform), Is.False);
+
+                tour.SetHotspotsVisible(true);
+                Assert.That(marker.GetComponent<Renderer>().enabled, Is.True);
+            }
+            finally
+            {
+                Object.DestroyImmediate(external);
+                Object.DestroyImmediate(helmet);
             }
         }
 

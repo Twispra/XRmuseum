@@ -49,6 +49,12 @@ namespace Museum.Hotspots
             ApplyColor(IsVisited ? visitedColor : availableColor);
         }
 
+        public void SetMarkerVisible(bool visible)
+        {
+            if (targetRenderer != null)
+                targetRenderer.enabled = visible;
+        }
+
         void OnEnable()
         {
             propertyBlock = new MaterialPropertyBlock();

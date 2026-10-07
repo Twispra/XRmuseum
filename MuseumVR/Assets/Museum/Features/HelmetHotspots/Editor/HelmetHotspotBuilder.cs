@@ -25,6 +25,7 @@ namespace Museum.Hotspots.Editor
 
             var markerMaterial = GetMaterial(MarkerMaterialPath, new Color(0.12f, 0.8f, 0.9f, 0.75f));
             var panelMaterial = GetMaterial(PanelMaterialPath, new Color(0.015f, 0.045f, 0.055f, 1f));
+            ConfigureTransparent(panelMaterial);
             var root = new GameObject("Helmet Hotspot Tour");
 
             try
@@ -124,6 +125,7 @@ namespace Museum.Hotspots.Editor
             collider.isTrigger = true;
             var renderer = hotspotObject.GetComponent<Renderer>();
             renderer.sharedMaterial = material;
+            renderer.enabled = false;
 
             var interactable = hotspotObject.AddComponent<XRSimpleInteractable>();
             interactable.interactionLayers = 1;
@@ -149,6 +151,18 @@ namespace Museum.Hotspots.Editor
             material.SetColor("_BaseColor", color);
             EditorUtility.SetDirty(material);
             return material;
+        }
+
+        static void ConfigureTransparent(Material material)
+        {
+            material.SetOverrideTag("RenderType", "Transparent");
+            material.EnableKeyword("_SURFACE_TYPE_TRANSPARENT");
+            material.SetFloat("_Surface", 1f);
+            material.SetFloat("_SrcBlend", 5f);
+            material.SetFloat("_DstBlend", 10f);
+            material.SetFloat("_ZWrite", 0f);
+            material.renderQueue = 3000;
+            EditorUtility.SetDirty(material);
         }
 
         static void EnsureFolder(string parent, string name)
