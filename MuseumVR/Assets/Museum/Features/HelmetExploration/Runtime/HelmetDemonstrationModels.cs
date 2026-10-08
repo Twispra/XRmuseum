@@ -160,6 +160,15 @@ namespace Museum.Exploration
             foreach(var packet in airPackets) packet.gameObject.SetActive(air);
         }
 
+        public void HideEquipmentRenderers()
+        {
+            // Keep the old named motion nodes for existing playback integrations and regression
+            // checks. Only the replacement FBX equipment is drawn; signal packets remain visible.
+            foreach (var surface in pumpSurfaces) if (surface) surface.enabled = false;
+            foreach (var surface in telephoneSurfaces) if (surface) surface.enabled = false;
+            foreach (var surface in diverSurfaces) if (surface) surface.enabled = false;
+        }
+
         public void Position(Vector3 centre,Quaternion facing)
         {
             Vector3 right=facing*Vector3.right;

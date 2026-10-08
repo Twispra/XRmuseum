@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "assets": [
+    {
+      "asset": "mark-v",
+      "triangles_before": 409524,
+      "triangles_after": 141502,
+      "mesh_count": 255,
+      "export_bytes": 28257852,
+      "readback": "PASS"
+    },
+    {
+      "asset": "pump",
+      "triangles_before": 56340,
+      "triangles_after": 56340,
+      "mesh_count": 307,
+      "export_bytes": 12072316,
+      "readback": "PASS"
+    },
+    {
+      "asset": "surface-telephone",
+      "triangles_before": 29584,
+      "triangles_after": 29584,
+      "mesh_count": 108,
+      "export_bytes": 9391468,
+      "readback": "PASS"
+    },
+    {
+      "asset": "diver-telephone",
+      "triangles_before": 9528,
+      "triangles_after": 9528,
+      "mesh_count": 16,
+      "export_bytes": 4228748,
+      "readback": "PASS"
+    }
+  ]
+}

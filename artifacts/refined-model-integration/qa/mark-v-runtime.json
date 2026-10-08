@@ -1,0 +1,2700 @@
+{
+  "status": "PASS",
+  "asset": "mark-v",
+  "blender": "4.5.14 LTS",
+  "script_sha256": "bfa9f8bcef2c6cbb2b108afcd1dcc23ec499aab01b69a2f4ed10f6e8609fcdf8",
+  "source": "../XRmuseum-mark-v/artifacts/helmet-refinement/eras/mark-v/sources/mark-v-mod1.blend",
+  "source_sha256": "45343307e9990b2e023cd5a6be43772f48aefa2c00b8b09d56387845c8905721",
+  "source_unchanged": true,
+  "original_root_location_blender_m": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "export": "exports/mark-v-runtime.fbx",
+  "export_sha256": "7c8633d7e90b21eaa15e57d7fe90c7d16a0315bcac443c716f18376bc511c83a",
+  "export_bytes": 28257852,
+  "before": {
+    "object_count": 275,
+    "mesh_count": 255,
+    "triangles": 409524,
+    "bounds_blender_m": [
+      [
+        -0.17759285867214203,
+        -0.20561431348323822,
+        0.012974618002772331
+      ],
+      [
+        0.17759285867214203,
+        0.20561432838439941,
+        0.5145937204360962
+      ]
+    ],
+    "materials": [
+      "AgedTin_OriginalInterpretation",
+      "CastBronze_OriginalInterpretation",
+      "FaceSeal_Rubber_Approximate",
+      "HandledBronze_EstimatedWear",
+      "HistoricalGlass_VisualPropertiesAssumed",
+      "InteriorTin_Approximate",
+      "LeatherSeal_Approximate",
+      "UnresolvedTelephoneInterior"
+    ],
+    "node_paths": [
+      "MarkVMod1_ROOT",
+      "MarkVMod1_ROOT/AirConnectionAssembly",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirGooseneckMount",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirGooseneck_HollowCast",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirMountRivet_0",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirMountRivet_1",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirMountRivet_2",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirNonReturnValve_OldStyleExternalBody",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirOutletThread_17TPI",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirSubmarineThreadCore_1and1sixteenth",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirValve_UpperHex",
+      "MarkVMod1_ROOT/Anchor_AirOutlet",
+      "MarkVMod1_ROOT/Anchor_ExhaustOutlet",
+      "MarkVMod1_ROOT/Anchor_Neck",
+      "MarkVMod1_ROOT/Anchor_TelephoneOutlet",
+      "MarkVMod1_ROOT/Anchor_WindowCentre",
+      "MarkVMod1_ROOT/CorseletAssembly",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_01_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_01_FlangedBase",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_01_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_01_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_01_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_01_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_02_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_02_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_02_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_02_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_02_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_03_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_03_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_03_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_03_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_03_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_04_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_04_FlangedBase",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_04_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_04_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_04_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_04_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_05_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_05_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_05_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_05_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_05_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_06_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_06_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_06_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_06_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_06_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_07_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_07_FlangedBase",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_07_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_07_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_07_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_07_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_08_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_08_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_08_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_08_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_08_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_09_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_09_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_09_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_09_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_09_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_10_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_10_FlangedBase",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_10_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_10_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_10_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_10_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_11_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_11_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_11_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_11_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_11_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_12_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_12_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_12_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_12_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_12_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/Brail_01_CurvedClampingStrap",
+      "MarkVMod1_ROOT/CorseletAssembly/Brail_02_CurvedClampingStrap",
+      "MarkVMod1_ROOT/CorseletAssembly/Brail_03_CurvedClampingStrap",
+      "MarkVMod1_ROOT/CorseletAssembly/Brail_04_CurvedClampingStrap",
+      "MarkVMod1_ROOT/CorseletAssembly/Corselet_CopperSaddle_WithUnderside",
+      "MarkVMod1_ROOT/CorseletAssembly/Corselet_RolledOuterEdge",
+      "MarkVMod1_ROOT/CorseletAssembly/DressCollar_DarkGasket_Approximate",
+      "MarkVMod1_ROOT/CorseletAssembly/EyePadBase_-1",
+      "MarkVMod1_ROOT/CorseletAssembly/EyePadBase_1",
+      "MarkVMod1_ROOT/CorseletAssembly/EyePadRivet_-1_-1",
+      "MarkVMod1_ROOT/CorseletAssembly/EyePadRivet_-1_1",
+      "MarkVMod1_ROOT/CorseletAssembly/EyePadRivet_1_-1",
+      "MarkVMod1_ROOT/CorseletAssembly/EyePadRivet_1_1",
+      "MarkVMod1_ROOT/CorseletAssembly/FrontEyelet_-1",
+      "MarkVMod1_ROOT/CorseletAssembly/FrontEyelet_1",
+      "MarkVMod1_ROOT/CorseletAssembly/NameplateRivet_-1",
+      "MarkVMod1_ROOT/CorseletAssembly/NameplateRivet_1",
+      "MarkVMod1_ROOT/CorseletAssembly/Nameplate_WartimeFootball_Untranscribed",
+      "MarkVMod1_ROOT/ExhaustAssembly",
+      "MarkVMod1_ROOT/ExhaustAssembly/BananaExhaust_Hollow_SectionApproximate",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustPerforatedBulb",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustStarWheel_Arm_0",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustStarWheel_Arm_1",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustStarWheel_Arm_2",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustStarWheel_Arm_3",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustStarWheel_Hub",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustValve_AdjusterBoss",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustValve_Cover",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustValve_Seat",
+      "MarkVMod1_ROOT/FrontSeatAssembly",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot/DoorToggleBolt_13TPI_Nominal",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot/DoorToggleNutPivot",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot/DoorToggleNutPivot/DoorToggleNutCore",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot/DoorToggleNutPivot/DoorToggleWing_-1",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot/DoorToggleNutPivot/DoorToggleWing_1",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot/DoorToggleThread_13TPI",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot/DoorToggle_RetainingWasher",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorToggle_FixedLug_-1",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorToggle_FixedLug_1",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorToggle_PinKeeper_-1",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorToggle_PinKeeper_1",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorToggle_PivotPin",
+      "MarkVMod1_ROOT/FrontSeatAssembly/FrontSeat_CastFrame",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingeKnuckle_0",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingeKnuckle_2",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingeKnuckle_4",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingeLeafFixed_-0.03",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingeLeafFixed_0.03",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingePinTopButton",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingePin_KeeperCotter",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingePin_Removable",
+      "MarkVMod1_ROOT/FrontWindowPivot",
+      "MarkVMod1_ROOT/FrontWindowPivot/DiamondGuard_-1_-0.057",
+      "MarkVMod1_ROOT/FrontWindowPivot/DiamondGuard_-1_0.057",
+      "MarkVMod1_ROOT/FrontWindowPivot/DiamondGuard_1_-0.057",
+      "MarkVMod1_ROOT/FrontWindowPivot/DiamondGuard_1_0.057",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuardScrew_0",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuardScrew_1",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuardScrew_2",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuardScrew_3",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuard_MountFoot_0",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuard_MountFoot_1",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuard_MountFoot_2",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuard_MountFoot_3",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorToggleFork_Lower",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorToggleFork_Upper",
+      "MarkVMod1_ROOT/FrontWindowPivot/Door_CastFrame",
+      "MarkVMod1_ROOT/FrontWindowPivot/Door_HandledOuterLip",
+      "MarkVMod1_ROOT/FrontWindowPivot/Door_InternalFollowerRing",
+      "MarkVMod1_ROOT/FrontWindowPivot/FaceplateSeal_Rubber",
+      "MarkVMod1_ROOT/FrontWindowPivot/FrontGlass_12point7mm_SpecimenApproximation",
+      "MarkVMod1_ROOT/FrontWindowPivot/HingeKnuckle_1",
+      "MarkVMod1_ROOT/FrontWindowPivot/HingeKnuckle_3",
+      "MarkVMod1_ROOT/FrontWindowPivot/HingeLeafDoor_-0.03",
+      "MarkVMod1_ROOT/FrontWindowPivot/HingeLeafDoor_0.03",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/AirDuct_Interpretive_BackToCrown",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/AirDuct_Interpretive_SideBranch_-1",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/AirDuct_Interpretive_SideBranch_1",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/AirDuct_Interpretive_TopBranch",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/ChinButton_Interpretive",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/InternalChinValveStem_Interpretive",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/TelephoneLead_Interpretive_Route",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/TelephoneTransducer_Interpretive_NoInventedCircuit",
+      "MarkVMod1_ROOT/NeckLockAssembly",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_0_0_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_0_1_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_1_0_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_1_1_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_2_0_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_2_1_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_3_0_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_3_1_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/LowerNeckRing_NominalOpening",
+      "MarkVMod1_ROOT/NeckLockAssembly/NeckGasket_Leather_Interpretive",
+      "MarkVMod1_ROOT/NeckLockAssembly/NeckJoint_RolledLip",
+      "MarkVMod1_ROOT/NeckLockAssembly/RearLock_BallA",
+      "MarkVMod1_ROOT/NeckLockAssembly/RearLock_BallB",
+      "MarkVMod1_ROOT/NeckLockAssembly/RearLock_CotterPin",
+      "MarkVMod1_ROOT/NeckLockAssembly/RearLock_Latch",
+      "MarkVMod1_ROOT/NeckLockAssembly/RearLock_Lever",
+      "MarkVMod1_ROOT/NeckLockAssembly/RearLock_Pivot",
+      "MarkVMod1_ROOT/NeckLockAssembly/RearLock_StopRecess",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_00",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_01",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_02",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_03",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_04",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_05",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_06",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_07",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_08",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_09",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_10",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_11",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_12",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_13",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_14",
+      "MarkVMod1_ROOT/NeckLockAssembly/UpperNeckRing_Female_Approximate",
+      "MarkVMod1_ROOT/ShellAssembly",
+      "MarkVMod1_ROOT/ShellAssembly/Bonnet_HollowCopper_TinFinish",
+      "MarkVMod1_ROOT/SideWindowsAssembly",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGlassRetainer_-1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGlassRetainer_1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGlass_-1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGlass_1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_-1_0",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_-1_1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_-1_2",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_-1_3",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_1_0",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_1_1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_1_2",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_1_3",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_-1h-0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_-1h0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_-1v-0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_-1v0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_1h-0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_1h0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_1v-0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_1v0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_-1_0",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_-1_1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_-1_2",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_-1_3",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_1_0",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_1_1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_1_2",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_1_3",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_SupportRim_-1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_SupportRim_1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideSeat_-1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideSeat_1",
+      "MarkVMod1_ROOT/SpitcockAssembly",
+      "MarkVMod1_ROOT/SpitcockAssembly/SpitcockBody",
+      "MarkVMod1_ROOT/SpitcockAssembly/SpitcockCollar",
+      "MarkVMod1_ROOT/SpitcockAssembly/SpitcockLever",
+      "MarkVMod1_ROOT/SpitcockAssembly/SpitcockLeverBall",
+      "MarkVMod1_ROOT/SpitcockAssembly/SpitcockSeat",
+      "MarkVMod1_ROOT/TelephoneAssembly",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneCupCoverScrew_-1",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneCupCoverScrew_1",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneCup_ClosedOuterCover",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneCup_Mount",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneCup_UpperShoulder",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneElbowThreadCore_1point715",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneElbowThread_11TPI",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneFemaleCoupling_HexBody",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneGooseneckMount",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneGooseneck_HollowCast",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneMountRivet_0",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneMountRivet_1",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneMountRivet_2",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephonePlug_Recessed_Unresolved",
+      "MarkVMod1_ROOT/TopWindowAssembly",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGlass",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuardScrew_0",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuardScrew_1",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuardScrew_2",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuardScrew_3",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_H_-0.025",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_H_0",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_H_0.025",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_MountFoot_0",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_MountFoot_1",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_MountFoot_2",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_MountFoot_3",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_SupportRim",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_V_-0.024",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_V_0.024",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopRetainer",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopSeat"
+    ],
+    "anchors_blender_m": {
+      "Anchor_AirOutlet": [
+        -0.06499999761581421,
+        0.17399999499320984,
+        0.22599999606609344
+      ],
+      "Anchor_ExhaustOutlet": [
+        -0.11999999731779099,
+        0.11699999868869781,
+        0.25099998712539673
+      ],
+      "Anchor_Neck": [
+        0.0,
+        0.0,
+        0.1979999989271164
+      ],
+      "Anchor_TelephoneOutlet": [
+        0.06499999761581421,
+        0.17399999499320984,
+        0.2639999985694885
+      ],
+      "Anchor_WindowCentre": [
+        0.0,
+        -0.15700000524520874,
+        0.34700000286102295
+      ]
+    },
+    "animated_nodes": []
+  },
+  "after": {
+    "object_count": 275,
+    "mesh_count": 255,
+    "triangles": 141502,
+    "bounds_blender_m": [
+      [
+        -0.17744958400726318,
+        -0.20562900602817535,
+        0.012974618002772331
+      ],
+      [
+        0.17771221697330475,
+        0.20548087358474731,
+        0.5144336819648743
+      ]
+    ],
+    "materials": [
+      "AgedTin_OriginalInterpretation",
+      "CastBronze_OriginalInterpretation",
+      "FaceSeal_Rubber_Approximate",
+      "HandledBronze_EstimatedWear",
+      "HistoricalGlass_VisualPropertiesAssumed",
+      "InteriorTin_Approximate",
+      "LeatherSeal_Approximate",
+      "UnresolvedTelephoneInterior"
+    ],
+    "node_paths": [
+      "MarkVMod1_ROOT",
+      "MarkVMod1_ROOT/AirConnectionAssembly",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirGooseneckMount",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirGooseneck_HollowCast",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirMountRivet_0",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirMountRivet_1",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirMountRivet_2",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirNonReturnValve_OldStyleExternalBody",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirOutletThread_17TPI",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirSubmarineThreadCore_1and1sixteenth",
+      "MarkVMod1_ROOT/AirConnectionAssembly/AirValve_UpperHex",
+      "MarkVMod1_ROOT/Anchor_AirOutlet",
+      "MarkVMod1_ROOT/Anchor_ExhaustOutlet",
+      "MarkVMod1_ROOT/Anchor_Neck",
+      "MarkVMod1_ROOT/Anchor_TelephoneOutlet",
+      "MarkVMod1_ROOT/Anchor_WindowCentre",
+      "MarkVMod1_ROOT/CorseletAssembly",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_01_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_01_FlangedBase",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_01_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_01_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_01_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_01_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_02_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_02_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_02_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_02_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_02_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_03_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_03_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_03_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_03_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_03_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_04_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_04_FlangedBase",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_04_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_04_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_04_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_04_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_05_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_05_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_05_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_05_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_05_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_06_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_06_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_06_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_06_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_06_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_07_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_07_FlangedBase",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_07_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_07_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_07_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_07_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_08_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_08_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_08_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_08_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_08_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_09_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_09_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_09_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_09_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_09_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_10_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_10_FlangedBase",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_10_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_10_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_10_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_10_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_11_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_11_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_11_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_11_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_11_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_12_CastWingnut",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_12_Stud",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_12_StudThread_12TPI",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_12_Washer",
+      "MarkVMod1_ROOT/CorseletAssembly/BrailFastener_12_WingnutCore",
+      "MarkVMod1_ROOT/CorseletAssembly/Brail_01_CurvedClampingStrap",
+      "MarkVMod1_ROOT/CorseletAssembly/Brail_02_CurvedClampingStrap",
+      "MarkVMod1_ROOT/CorseletAssembly/Brail_03_CurvedClampingStrap",
+      "MarkVMod1_ROOT/CorseletAssembly/Brail_04_CurvedClampingStrap",
+      "MarkVMod1_ROOT/CorseletAssembly/Corselet_CopperSaddle_WithUnderside",
+      "MarkVMod1_ROOT/CorseletAssembly/Corselet_RolledOuterEdge",
+      "MarkVMod1_ROOT/CorseletAssembly/DressCollar_DarkGasket_Approximate",
+      "MarkVMod1_ROOT/CorseletAssembly/EyePadBase_-1",
+      "MarkVMod1_ROOT/CorseletAssembly/EyePadBase_1",
+      "MarkVMod1_ROOT/CorseletAssembly/EyePadRivet_-1_-1",
+      "MarkVMod1_ROOT/CorseletAssembly/EyePadRivet_-1_1",
+      "MarkVMod1_ROOT/CorseletAssembly/EyePadRivet_1_-1",
+      "MarkVMod1_ROOT/CorseletAssembly/EyePadRivet_1_1",
+      "MarkVMod1_ROOT/CorseletAssembly/FrontEyelet_-1",
+      "MarkVMod1_ROOT/CorseletAssembly/FrontEyelet_1",
+      "MarkVMod1_ROOT/CorseletAssembly/NameplateRivet_-1",
+      "MarkVMod1_ROOT/CorseletAssembly/NameplateRivet_1",
+      "MarkVMod1_ROOT/CorseletAssembly/Nameplate_WartimeFootball_Untranscribed",
+      "MarkVMod1_ROOT/ExhaustAssembly",
+      "MarkVMod1_ROOT/ExhaustAssembly/BananaExhaust_Hollow_SectionApproximate",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustPerforatedBulb",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustStarWheel_Arm_0",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustStarWheel_Arm_1",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustStarWheel_Arm_2",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustStarWheel_Arm_3",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustStarWheel_Hub",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustValve_AdjusterBoss",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustValve_Cover",
+      "MarkVMod1_ROOT/ExhaustAssembly/ExhaustValve_Seat",
+      "MarkVMod1_ROOT/FrontSeatAssembly",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot/DoorToggleBolt_13TPI_Nominal",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot/DoorToggleNutPivot",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot/DoorToggleNutPivot/DoorToggleNutCore",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot/DoorToggleNutPivot/DoorToggleWing_-1",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot/DoorToggleNutPivot/DoorToggleWing_1",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot/DoorToggleThread_13TPI",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorTogglePivot/DoorToggle_RetainingWasher",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorToggle_FixedLug_-1",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorToggle_FixedLug_1",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorToggle_PinKeeper_-1",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorToggle_PinKeeper_1",
+      "MarkVMod1_ROOT/FrontSeatAssembly/DoorToggle_PivotPin",
+      "MarkVMod1_ROOT/FrontSeatAssembly/FrontSeat_CastFrame",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingeKnuckle_0",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingeKnuckle_2",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingeKnuckle_4",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingeLeafFixed_-0.03",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingeLeafFixed_0.03",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingePinTopButton",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingePin_KeeperCotter",
+      "MarkVMod1_ROOT/FrontSeatAssembly/HingePin_Removable",
+      "MarkVMod1_ROOT/FrontWindowPivot",
+      "MarkVMod1_ROOT/FrontWindowPivot/DiamondGuard_-1_-0.057",
+      "MarkVMod1_ROOT/FrontWindowPivot/DiamondGuard_-1_0.057",
+      "MarkVMod1_ROOT/FrontWindowPivot/DiamondGuard_1_-0.057",
+      "MarkVMod1_ROOT/FrontWindowPivot/DiamondGuard_1_0.057",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuardScrew_0",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuardScrew_1",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuardScrew_2",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuardScrew_3",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuard_MountFoot_0",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuard_MountFoot_1",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuard_MountFoot_2",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorGuard_MountFoot_3",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorToggleFork_Lower",
+      "MarkVMod1_ROOT/FrontWindowPivot/DoorToggleFork_Upper",
+      "MarkVMod1_ROOT/FrontWindowPivot/Door_CastFrame",
+      "MarkVMod1_ROOT/FrontWindowPivot/Door_HandledOuterLip",
+      "MarkVMod1_ROOT/FrontWindowPivot/Door_InternalFollowerRing",
+      "MarkVMod1_ROOT/FrontWindowPivot/FaceplateSeal_Rubber",
+      "MarkVMod1_ROOT/FrontWindowPivot/FrontGlass_12point7mm_SpecimenApproximation",
+      "MarkVMod1_ROOT/FrontWindowPivot/HingeKnuckle_1",
+      "MarkVMod1_ROOT/FrontWindowPivot/HingeKnuckle_3",
+      "MarkVMod1_ROOT/FrontWindowPivot/HingeLeafDoor_-0.03",
+      "MarkVMod1_ROOT/FrontWindowPivot/HingeLeafDoor_0.03",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/AirDuct_Interpretive_BackToCrown",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/AirDuct_Interpretive_SideBranch_-1",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/AirDuct_Interpretive_SideBranch_1",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/AirDuct_Interpretive_TopBranch",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/ChinButton_Interpretive",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/InternalChinValveStem_Interpretive",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/TelephoneLead_Interpretive_Route",
+      "MarkVMod1_ROOT/InteriorInterpretiveAssembly/TelephoneTransducer_Interpretive_NoInventedCircuit",
+      "MarkVMod1_ROOT/NeckLockAssembly",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_0_0_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_0_1_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_1_0_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_1_1_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_2_0_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_2_1_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_3_0_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/InterruptedThread_3_1_SeatApproximation",
+      "MarkVMod1_ROOT/NeckLockAssembly/LowerNeckRing_NominalOpening",
+      "MarkVMod1_ROOT/NeckLockAssembly/NeckGasket_Leather_Interpretive",
+      "MarkVMod1_ROOT/NeckLockAssembly/NeckJoint_RolledLip",
+      "MarkVMod1_ROOT/NeckLockAssembly/RearLock_BallA",
+      "MarkVMod1_ROOT/NeckLockAssembly/RearLock_BallB",
+      "MarkVMod1_ROOT/NeckLockAssembly/RearLock_CotterPin",
+      "MarkVMod1_ROOT/NeckLockAssembly/RearLock_Latch",
+      "MarkVMod1_ROOT/NeckLockAssembly/RearLock_Lever",
+      "MarkVMod1_ROOT/NeckLockAssembly/RearLock_Pivot",
+      "MarkVMod1_ROOT/NeckLockAssembly/RearLock_StopRecess",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_00",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_01",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_02",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_03",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_04",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_05",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_06",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_07",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_08",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_09",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_10",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_11",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_12",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_13",
+      "MarkVMod1_ROOT/NeckLockAssembly/SafetyChain_Link_14",
+      "MarkVMod1_ROOT/NeckLockAssembly/UpperNeckRing_Female_Approximate",
+      "MarkVMod1_ROOT/ShellAssembly",
+      "MarkVMod1_ROOT/ShellAssembly/Bonnet_HollowCopper_TinFinish",
+      "MarkVMod1_ROOT/SideWindowsAssembly",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGlassRetainer_-1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGlassRetainer_1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGlass_-1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGlass_1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_-1_0",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_-1_1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_-1_2",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_-1_3",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_1_0",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_1_1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_1_2",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuardScrew_1_3",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_-1h-0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_-1h0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_-1v-0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_-1v0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_1h-0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_1h0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_1v-0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_1v0.017",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_-1_0",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_-1_1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_-1_2",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_-1_3",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_1_0",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_1_1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_1_2",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_MountFoot_1_3",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_SupportRim_-1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideGuard_SupportRim_1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideSeat_-1",
+      "MarkVMod1_ROOT/SideWindowsAssembly/SideSeat_1",
+      "MarkVMod1_ROOT/SpitcockAssembly",
+      "MarkVMod1_ROOT/SpitcockAssembly/SpitcockBody",
+      "MarkVMod1_ROOT/SpitcockAssembly/SpitcockCollar",
+      "MarkVMod1_ROOT/SpitcockAssembly/SpitcockLever",
+      "MarkVMod1_ROOT/SpitcockAssembly/SpitcockLeverBall",
+      "MarkVMod1_ROOT/SpitcockAssembly/SpitcockSeat",
+      "MarkVMod1_ROOT/TelephoneAssembly",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneCupCoverScrew_-1",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneCupCoverScrew_1",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneCup_ClosedOuterCover",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneCup_Mount",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneCup_UpperShoulder",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneElbowThreadCore_1point715",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneElbowThread_11TPI",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneFemaleCoupling_HexBody",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneGooseneckMount",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneGooseneck_HollowCast",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneMountRivet_0",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneMountRivet_1",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephoneMountRivet_2",
+      "MarkVMod1_ROOT/TelephoneAssembly/TelephonePlug_Recessed_Unresolved",
+      "MarkVMod1_ROOT/TopWindowAssembly",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGlass",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuardScrew_0",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuardScrew_1",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuardScrew_2",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuardScrew_3",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_H_-0.025",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_H_0",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_H_0.025",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_MountFoot_0",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_MountFoot_1",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_MountFoot_2",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_MountFoot_3",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_SupportRim",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_V_-0.024",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopGuard_V_0.024",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopRetainer",
+      "MarkVMod1_ROOT/TopWindowAssembly/TopSeat"
+    ],
+    "anchors_blender_m": {
+      "Anchor_AirOutlet": [
+        -0.06499999761581421,
+        0.17399999499320984,
+        0.22599999606609344
+      ],
+      "Anchor_ExhaustOutlet": [
+        -0.11999999731779099,
+        0.11699999868869781,
+        0.25099998712539673
+      ],
+      "Anchor_Neck": [
+        0.0,
+        0.0,
+        0.1979999989271164
+      ],
+      "Anchor_TelephoneOutlet": [
+        0.06499999761581421,
+        0.17399999499320984,
+        0.2639999985694885
+      ],
+      "Anchor_WindowCentre": [
+        0.0,
+        -0.15700000524520874,
+        0.34700000286102295
+      ]
+    },
+    "animated_nodes": []
+  },
+  "reduction": {
+    "target_triangles": 140000,
+    "computed_ratio": 0.11718888182848458,
+    "protected_role_names": [
+      "Bonnet_HollowCopper_TinFinish",
+      "Corselet_CopperSaddle_WithUnderside",
+      "Door_CastFrame",
+      "FrontSeat_CastFrame"
+    ],
+    "glass_material_protected": "HistoricalGlass_VisualPropertiesAssumed",
+    "small_detail_threshold_triangles": 1200,
+    "changes": [
+      {
+        "name": "AirGooseneck_HollowCast",
+        "parent": "AirConnectionAssembly",
+        "triangles_before": 4992,
+        "triangles_after": 584,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "AirGooseneckMount",
+        "parent": "AirConnectionAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "AirNonReturnValve_OldStyleExternalBody",
+        "parent": "AirConnectionAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "AirOutletThread_17TPI",
+        "parent": "AirConnectionAssembly",
+        "triangles_before": 9772,
+        "triangles_after": 1144,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "AirSubmarineThreadCore_1and1sixteenth",
+        "parent": "AirConnectionAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "Brail_01_CurvedClampingStrap",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1772,
+        "triangles_after": 206,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "Brail_02_CurvedClampingStrap",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1780,
+        "triangles_after": 208,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "Brail_03_CurvedClampingStrap",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1780,
+        "triangles_after": 208,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "Brail_04_CurvedClampingStrap",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1776,
+        "triangles_after": 208,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_01_FlangedBase",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_01_StudThread_12TPI",
+        "parent": "CorseletAssembly",
+        "triangles_before": 6172,
+        "triangles_after": 722,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_01_Washer",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_01_WingnutCore",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_02_StudThread_12TPI",
+        "parent": "CorseletAssembly",
+        "triangles_before": 6172,
+        "triangles_after": 722,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_02_Washer",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_02_WingnutCore",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_03_StudThread_12TPI",
+        "parent": "CorseletAssembly",
+        "triangles_before": 6172,
+        "triangles_after": 722,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_03_Washer",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_03_WingnutCore",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_04_FlangedBase",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_04_StudThread_12TPI",
+        "parent": "CorseletAssembly",
+        "triangles_before": 6172,
+        "triangles_after": 722,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_04_Washer",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_04_WingnutCore",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_05_StudThread_12TPI",
+        "parent": "CorseletAssembly",
+        "triangles_before": 6172,
+        "triangles_after": 722,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_05_Washer",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_05_WingnutCore",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_06_StudThread_12TPI",
+        "parent": "CorseletAssembly",
+        "triangles_before": 6172,
+        "triangles_after": 722,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_06_Washer",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_06_WingnutCore",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_07_FlangedBase",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_07_StudThread_12TPI",
+        "parent": "CorseletAssembly",
+        "triangles_before": 6172,
+        "triangles_after": 722,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_07_Washer",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_07_WingnutCore",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_08_StudThread_12TPI",
+        "parent": "CorseletAssembly",
+        "triangles_before": 6172,
+        "triangles_after": 722,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_08_Washer",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_08_WingnutCore",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_09_StudThread_12TPI",
+        "parent": "CorseletAssembly",
+        "triangles_before": 6172,
+        "triangles_after": 722,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_09_Washer",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_09_WingnutCore",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_10_FlangedBase",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_10_StudThread_12TPI",
+        "parent": "CorseletAssembly",
+        "triangles_before": 6172,
+        "triangles_after": 722,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_10_Washer",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_10_WingnutCore",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_11_StudThread_12TPI",
+        "parent": "CorseletAssembly",
+        "triangles_before": 11836,
+        "triangles_after": 1386,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_11_Washer",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_11_WingnutCore",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_12_StudThread_12TPI",
+        "parent": "CorseletAssembly",
+        "triangles_before": 6172,
+        "triangles_after": 722,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_12_Washer",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BrailFastener_12_WingnutCore",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "Corselet_RolledOuterEdge",
+        "parent": "CorseletAssembly",
+        "triangles_before": 2560,
+        "triangles_after": 300,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "DressCollar_DarkGasket_Approximate",
+        "parent": "CorseletAssembly",
+        "triangles_before": 6460,
+        "triangles_after": 756,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "EyePadBase_-1",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1520,
+        "triangles_after": 200,
+        "requested_ratio": 0.1315789520740509,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "EyePadBase_1",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1520,
+        "triangles_after": 200,
+        "requested_ratio": 0.1315789520740509,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "FrontEyelet_-1",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "FrontEyelet_1",
+        "parent": "CorseletAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "BananaExhaust_Hollow_SectionApproximate",
+        "parent": "ExhaustAssembly",
+        "triangles_before": 6336,
+        "triangles_after": 742,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "ExhaustPerforatedBulb",
+        "parent": "ExhaustAssembly",
+        "triangles_before": 5862,
+        "triangles_after": 686,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "ExhaustValve_AdjusterBoss",
+        "parent": "ExhaustAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "ExhaustValve_Cover",
+        "parent": "ExhaustAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "ExhaustValve_Seat",
+        "parent": "ExhaustAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "DoorToggle_RetainingWasher",
+        "parent": "DoorTogglePivot",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "DoorToggleNutCore",
+        "parent": "DoorToggleNutPivot",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "DoorToggleWing_-1",
+        "parent": "DoorToggleNutPivot",
+        "triangles_before": 1520,
+        "triangles_after": 200,
+        "requested_ratio": 0.1315789520740509,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "DoorToggleWing_1",
+        "parent": "DoorToggleNutPivot",
+        "triangles_before": 1520,
+        "triangles_after": 200,
+        "requested_ratio": 0.1315789520740509,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "DoorToggleThread_13TPI",
+        "parent": "DoorTogglePivot",
+        "triangles_before": 9436,
+        "triangles_after": 1104,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "HingePinTopButton",
+        "parent": "FrontSeatAssembly",
+        "triangles_before": 1520,
+        "triangles_after": 200,
+        "requested_ratio": 0.1315789520740509,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "Door_HandledOuterLip",
+        "parent": "FrontWindowPivot",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "Door_InternalFollowerRing",
+        "parent": "FrontWindowPivot",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "FaceplateSeal_Rubber",
+        "parent": "FrontWindowPivot",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "ChinButton_Interpretive",
+        "parent": "InteriorInterpretiveAssembly",
+        "triangles_before": 1520,
+        "triangles_after": 200,
+        "requested_ratio": 0.1315789520740509,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "LowerNeckRing_NominalOpening",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "NeckGasket_Leather_Interpretive",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "NeckJoint_RolledLip",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "RearLock_BallA",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1520,
+        "triangles_after": 200,
+        "requested_ratio": 0.1315789520740509,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "RearLock_BallB",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1520,
+        "triangles_after": 200,
+        "requested_ratio": 0.1315789520740509,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "RearLock_StopRecess",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1536,
+        "triangles_after": 200,
+        "requested_ratio": 0.1302083283662796,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SafetyChain_Link_00",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SafetyChain_Link_01",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SafetyChain_Link_02",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SafetyChain_Link_03",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SafetyChain_Link_04",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SafetyChain_Link_05",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SafetyChain_Link_06",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SafetyChain_Link_07",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SafetyChain_Link_08",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SafetyChain_Link_09",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SafetyChain_Link_10",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SafetyChain_Link_11",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SafetyChain_Link_12",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SafetyChain_Link_13",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SafetyChain_Link_14",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "UpperNeckRing_Female_Approximate",
+        "parent": "NeckLockAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SideGlassRetainer_-1",
+        "parent": "SideWindowsAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SideGlassRetainer_1",
+        "parent": "SideWindowsAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SideGuard_SupportRim_-1",
+        "parent": "SideWindowsAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SideGuard_SupportRim_1",
+        "parent": "SideWindowsAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SideSeat_-1",
+        "parent": "SideWindowsAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SideSeat_1",
+        "parent": "SideWindowsAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SpitcockCollar",
+        "parent": "SpitcockAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SpitcockLeverBall",
+        "parent": "SpitcockAssembly",
+        "triangles_before": 1520,
+        "triangles_after": 200,
+        "requested_ratio": 0.1315789520740509,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "SpitcockSeat",
+        "parent": "SpitcockAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "TelephoneCup_ClosedOuterCover",
+        "parent": "TelephoneAssembly",
+        "triangles_before": 1596,
+        "triangles_after": 200,
+        "requested_ratio": 0.12531328201293945,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "TelephoneCup_Mount",
+        "parent": "TelephoneAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "TelephoneElbowThread_11TPI",
+        "parent": "TelephoneAssembly",
+        "triangles_before": 5996,
+        "triangles_after": 702,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "TelephoneElbowThreadCore_1point715",
+        "parent": "TelephoneAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "TelephoneGooseneck_HollowCast",
+        "parent": "TelephoneAssembly",
+        "triangles_before": 4992,
+        "triangles_after": 584,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "TelephoneGooseneckMount",
+        "parent": "TelephoneAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "TopGuard_SupportRim",
+        "parent": "TopWindowAssembly",
+        "triangles_before": 1440,
+        "triangles_after": 200,
+        "requested_ratio": 0.1388888955116272,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "TopRetainer",
+        "parent": "TopWindowAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      },
+      {
+        "name": "TopSeat",
+        "parent": "TopWindowAssembly",
+        "triangles_before": 3072,
+        "triangles_after": 360,
+        "requested_ratio": 0.11718887835741043,
+        "rejected_reason": null,
+        "topology_before": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        },
+        "topology_after": {
+          "nonmanifold_edges": 0,
+          "loose_vertices": 0,
+          "zero_area_faces": 0
+        }
+      }
+    ],
+    "merge_performed": false
+  },
+  "readback": {
+    "status": "PASS",
+    "mesh_count": 255,
+    "triangles": 141502,
+    "bounds_max_error_m": 2.9802322387695312e-08,
+    "node_paths_equal": true,
+    "actions_read": 0,
+    "sample_seconds": [
+      0.0,
+      0.5,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "max_animation_or_anchor_matrix_error": 1.6292067073209182e-07,
+    "packed_images_read": 6
+  },
+  "coordinates": "Source Blender Z up / -Y front. FBX Y up, forward=-Z export option. Unity importer orientation must be checked separately.",
+  "limitations": [
+    "No Unity or VR-device test in this script.",
+    "No LOD, collision-mesh or draw-call optimization.",
+    "Five-time-point mechanical/anchor export checks are sampled, not exhaustive continuous validation.",
+    "Texture embedding is retained; final Unity materials are assigned by integration."
+  ]
+}

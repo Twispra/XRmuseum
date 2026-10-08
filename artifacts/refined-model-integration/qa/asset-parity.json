@@ -1,0 +1,156 @@
+{
+  "status": "passed",
+  "baseCommit": "afc3a9e56734d3c7230adb5b81a5dcdd7ddd016e",
+  "newGuidCollisions": {},
+  "pairs": [
+    {
+      "source": "artifacts/refined-model-integration/exports/diver-telephone-runtime.fbx",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/diver-telephone-runtime.fbx",
+      "sha256": "42f9f969a9f16a585ea5c8456759b93a7414412cf4ade922d17bfc64ff3ddb6f",
+      "match": true,
+      "bytes": 4228748,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/refined-model-integration/exports/mark-iii-pump-runtime.fbx",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-iii-pump-runtime.fbx",
+      "sha256": "df89d323ad8c9e0b3c851391316efe7cc149ae1892fa5cdf842568b0f1cfc8b4",
+      "match": true,
+      "bytes": 12072316,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/refined-model-integration/exports/mark-v-runtime.fbx",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-v-runtime.fbx",
+      "sha256": "7c8633d7e90b21eaa15e57d7fe90c7d16a0315bcac443c716f18376bc511c83a",
+      "match": true,
+      "bytes": 28257852,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/refined-model-integration/exports/surface-telephone-runtime.fbx",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/surface-telephone-runtime.fbx",
+      "sha256": "a8bec0a694084cd2759603ab4c5a8676af1db338b26f66d817532dfb13ef309f",
+      "match": true,
+      "bytes": 9391468,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/helmet-refinement/eras/mark-v/textures/AgedTin_OriginalInterpretation_BaseColor.png",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_BaseColor.png",
+      "sha256": "9d8d16471fc87de516c7a92dd61ee882f0b98d58e042929fdfa16362ce09df13",
+      "match": true,
+      "bytes": 4078408,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/helmet-refinement/eras/mark-v/textures/AgedTin_OriginalInterpretation_Normal.png",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_Normal.png",
+      "sha256": "eba4c3f5eef0e26d220c74ff762346c0316944a190215f6103c84704d2dcbdd5",
+      "match": true,
+      "bytes": 4756112,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/helmet-refinement/eras/mark-v/textures/AgedTin_OriginalInterpretation_Roughness.png",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/AgedTin_OriginalInterpretation_Roughness.png",
+      "sha256": "3a94ac88eb1f8fb3edc15e7b5a5044c39e3e5fd2cf4405ad78ab7b3b8655103d",
+      "match": true,
+      "bytes": 3323962,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/helmet-refinement/eras/mark-v/textures/CastBronze_OriginalInterpretation_BaseColor.png",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_BaseColor.png",
+      "sha256": "5b91461e84dba015e1ebcf93414681b32fc9b8bea315154e3374f7a1bf91cbae",
+      "match": true,
+      "bytes": 3938609,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/helmet-refinement/eras/mark-v/textures/CastBronze_OriginalInterpretation_Normal.png",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_Normal.png",
+      "sha256": "9c362ef0a3e146c28863b655584312c889d8f11679df4a2cd113a65a3345bc78",
+      "match": true,
+      "bytes": 4755187,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/helmet-refinement/eras/mark-v/textures/CastBronze_OriginalInterpretation_Roughness.png",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/CastBronze_OriginalInterpretation_Roughness.png",
+      "sha256": "bd569fc35ad7963057411c26287775d4359b21bfe339cc4e5cf3d37e6361f894",
+      "match": true,
+      "bytes": 3324111,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/connection-demo-refinement/textures/OriginalAshInterpretation_BaseColor.png",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_BaseColor.png",
+      "sha256": "d3c5c74e071005594ece4adb4e564e7b1ee320fbde87c7341eb1796114648b6c",
+      "match": true,
+      "bytes": 1164249,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/connection-demo-refinement/textures/OriginalAshInterpretation_Normal.png",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_Normal.png",
+      "sha256": "8e8296be5c3a384cdf7009e890add699b32737c29d4f81de0b353dfa2615cc18",
+      "match": true,
+      "bytes": 1369722,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/connection-demo-refinement/textures/OriginalAshInterpretation_Roughness.png",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalAshInterpretation_Roughness.png",
+      "sha256": "62251f0bc6457324a373e410baa23d2d87006b0059277e5e8cbed5fd63c8611c",
+      "match": true,
+      "bytes": 1262148,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/connection-demo-refinement/textures/OriginalGunmetalInterpretation_BaseColor.png",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_BaseColor.png",
+      "sha256": "0177d399e86837651af71c489781ddc44c392760319d72383c8b24a8c77601aa",
+      "match": true,
+      "bytes": 1132414,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/connection-demo-refinement/textures/OriginalGunmetalInterpretation_Normal.png",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_Normal.png",
+      "sha256": "4822da4463e55b2d8311f5c13c0bc648bec10cb41eba9e2c9be58fca3a04b0ee",
+      "match": true,
+      "bytes": 1369961,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/connection-demo-refinement/textures/OriginalGunmetalInterpretation_Roughness.png",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Textures/OriginalGunmetalInterpretation_Roughness.png",
+      "sha256": "3e750ab7877bdce662e6f97df4b4bf62001d9d1bdf41b93ed4b19ba40e187636",
+      "match": true,
+      "bytes": 1314512,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/connection-demo-refinement/audio/gentle-air.wav",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-air.wav",
+      "sha256": "3727d64d31e910b4f7a43429afadf9ea2e59a3a6bbdcc3d148b57f892950f036",
+      "match": true,
+      "bytes": 1536044,
+      "expanded": true
+    },
+    {
+      "source": "artifacts/connection-demo-refinement/audio/gentle-voice.wav",
+      "unity": "MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-voice.wav",
+      "sha256": "033fb478255ee12e4ad0991559d6c318e12d8ffbbe5cda4eea2d3f1545488ab3",
+      "match": true,
+      "bytes": 1536044,
+      "expanded": true
+    }
+  ],
+  "originalPrefabFileIds": 386,
+  "missingOriginalPrefabFileIds": [],
+  "canonicalMarkVSource": "artifacts/helmet-refinement/eras/mark-v/sources/mark-v-mod1.blend",
+  "canonicalMarkVSourceMatchesExportInput": true,
+  "canonicalMarkVSourceSha256": "45343307e9990b2e023cd5a6be43772f48aefa2c00b8b09d56387845c8905721"
+}

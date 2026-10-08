@@ -283,7 +283,7 @@ namespace Museum.Inspection
             EnsurePropertyBlock();
             foreach (var renderer in highlightedRenderers)
             {
-                if (renderer == null) continue;
+                if (renderer == null || !renderer.enabled || !renderer.gameObject.activeInHierarchy) continue;
                 renderer.GetPropertyBlock(propertyBlock);
                 propertyBlock.SetFloat(HoverId, hovered && isActiveAndEnabled ? 1f : 0f);
                 renderer.SetPropertyBlock(propertyBlock);
@@ -323,7 +323,7 @@ namespace Museum.Inspection
             var rearConnections=GetComponent<Museum.Experience.HelmetRearConnections>();
             foreach (var renderer in clippedRenderers)
             {
-                if (renderer == null) continue;
+                if (renderer == null || !renderer.enabled || !renderer.gameObject.activeInHierarchy) continue;
                 // Keep the original inspection centre/range stable when adding illustrative rear fittings.
                 if(rearConnections && rearConnections.IsTelephoneSurface(renderer))continue;
                 var filter = renderer.GetComponent<MeshFilter>();
@@ -421,7 +421,8 @@ namespace Museum.Inspection
                 renderer.GetPropertyBlock(propertyBlock);
                 propertyBlock.SetFloat(CutEnabledId, IsCutaway ? 1f : 0f);
                 propertyBlock.SetVector(CutPlaneId, plane);
-                bool hollow=renderer.name=="GB_Bonnet_Hollow" || renderer.name=="GB_Corselet_ShoulderPlate";
+                bool hollow=renderer.name=="GB_Bonnet_Hollow" || renderer.name=="GB_Corselet_ShoulderPlate" ||
+                    renderer.name=="Bonnet_HollowCopper_TinFinish" || renderer.name=="Corselet_CopperSaddle_WithUnderside";
                 propertyBlock.SetFloat("_ShellInterior",hollow?1:0);
                 if(hollow)
                 {

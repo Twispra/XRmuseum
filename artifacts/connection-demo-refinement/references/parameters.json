@@ -1,0 +1,71 @@
+{
+  "units": "metres / seconds; source inches converted exactly with 25.4 mm/in",
+  "historical_facts": [
+    {
+      "item": "pump cylinders",
+      "value": 2,
+      "source": "R01 printed 37 / PDF97",
+      "note": "Mark III, double acting; not two single-acting cylinders"
+    },
+    {
+      "item": "Mark III cylinder bore",
+      "inches": 4.25,
+      "metres": 0.10795,
+      "source": "R01 printed37 / PDF97; visually checked 4¼; OCR drops fraction"
+    },
+    {
+      "item": "Mark III piston stroke",
+      "inches": 7.25,
+      "metres": 0.18415,
+      "source": "R01 printed37 / PDF97; visually checked 7¼; OCR drops fraction"
+    },
+    {
+      "item": "crank phase",
+      "degrees": 90,
+      "source": "R01 printed39 / PDF103",
+      "qualifier": "about 90 degrees"
+    },
+    {
+      "item": "telephone dry cells",
+      "count": 6,
+      "source": "R01 printed41 / PDF113"
+    },
+    {
+      "item": "telephone connection",
+      "description": "Separate transmitter and receiver circuits, separate batteries, common return; 3-conductor cable also serves as life line",
+      "source": "R01 printed41 / PDF113"
+    },
+    {
+      "item": "attendant equipment",
+      "description": "single receiver on spring headband and separate transmitter",
+      "source": "R01 printed41 / PDF113"
+    }
+  ],
+  "estimates": {
+    "pump_case_xyz": [
+      0.5,
+      0.4,
+      0.78
+    ],
+    "wheel_radius": 0.37,
+    "connecting_sling_length": 0.29,
+    "cylinder_outer_radius": 0.065,
+    "battery_box_xyz": [
+      0.43,
+      0.27,
+      0.2
+    ],
+    "dry_cell_radius": 0.032,
+    "pump_rotation_hz": 0.65,
+    "exhibit_duration_seconds": 16,
+    "signal_travel_seconds": 3.2
+  },
+  "interpretations": [
+    "Case and cistern can be lifted/hidden for teaching, not a service procedure.",
+    "No historical depth/pressure/performance readings shown; gauges say DEMO and use uncalibrated ticks.",
+    "Line lengths, flow particles, electrical packets and exaggerated diaphragm motion are teaching effects.",
+    "1916 apparatus is contextualised beside the independent 1944 Mark V study; no claim that this particular pair was used together.",
+    "Bore/stroke apply to inner pumping chamber, not external cylinder shell.",
+    "Sounds are original synthesis, not museum or historical recordings."
+  ]
+}

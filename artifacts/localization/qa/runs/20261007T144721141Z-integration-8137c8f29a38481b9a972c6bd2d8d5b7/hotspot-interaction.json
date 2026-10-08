@@ -1,0 +1,5023 @@
+{
+    "status": "passed",
+    "unity": "2022.3.62f3c1",
+    "scene": "Assets/Museum/Scenes/MuseumStart.unity",
+    "inputMethod": "Caller-provided queued synthetic controller poses and grip states, through production Input Actions and saved XRDirectInteractor/XRRayInteractor. No SelectEnter, SelectExit, activated.Invoke or reflected lifecycle calls.",
+    "languageMethod": "Public LanguageChannel.SetLanguage API; this module does not claim to test the language buttons.",
+    "fixtureMethods": "Public ResetTour/ResetInspection/SetWindowOpen preconditions and cleanup, ReturnInspectionToDisplay for the smooth-return API regression, ReduceMotion=false for that fixture, component/GameObject disable-enable, and saved SerializedObject field reads. Helmet displacement/rotation and subsequent hotspot selection use production controller input. No asset writes or generator calls.",
+    "limitations": "Automated poses are not physical controller/headset testing. PNGs are diagnostic monocular panel close-ups, not the visitor camera or readability/user-study evidence.",
+    "checks": [
+        {
+            "name": "one saved scene tour and localization assets",
+            "detail": "tours=1",
+            "passed": true
+        },
+        {
+            "name": "three saved hotspots attached to the inspectable helmet",
+            "detail": "hotspots=3",
+            "passed": true
+        },
+        {
+            "name": "saved panel labels exist",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "integrated saved helmet has smooth return, rear outlets and AIR clue",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "saved tour and markers start enabled",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot source exists in table",
+            "detail": "Select a highlighted point to inspect the helmet.",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / Chinese",
+            "detail": "Select a highlighted point to inspect the helmet.",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / Chinese/hotspots.prompt",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / TraditionalChinese",
+            "detail": "Select a highlighted point to inspect the helmet.",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / TraditionalChinese/hotspots.prompt",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / English",
+            "detail": "Select a highlighted point to inspect the helmet.",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / English/hotspots.prompt",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot source exists in table",
+            "detail": "Exploration complete",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / Chinese",
+            "detail": "Exploration complete",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / Chinese/hotspots.complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / TraditionalChinese",
+            "detail": "Exploration complete",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / TraditionalChinese/hotspots.complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / English",
+            "detail": "Exploration complete",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / English/hotspots.complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot source exists in table",
+            "detail": "0 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / Chinese",
+            "detail": "0 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / Chinese/hotspots.progress.0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / TraditionalChinese",
+            "detail": "0 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / TraditionalChinese/hotspots.progress.0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / English",
+            "detail": "0 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / English/hotspots.progress.0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot source exists in table",
+            "detail": "1 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / Chinese",
+            "detail": "1 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / Chinese/hotspots.progress.1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / TraditionalChinese",
+            "detail": "1 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / TraditionalChinese/hotspots.progress.1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / English",
+            "detail": "1 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / English/hotspots.progress.1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot source exists in table",
+            "detail": "2 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / Chinese",
+            "detail": "2 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / Chinese/hotspots.progress.2",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / TraditionalChinese",
+            "detail": "2 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / TraditionalChinese/hotspots.progress.2",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / English",
+            "detail": "2 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / English/hotspots.progress.2",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot source exists in table",
+            "detail": "3 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / Chinese",
+            "detail": "3 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / Chinese/hotspots.progress.3",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / TraditionalChinese",
+            "detail": "3 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / TraditionalChinese/hotspots.progress.3",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / English",
+            "detail": "3 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / English/hotspots.progress.3",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot source exists in table",
+            "detail": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / Chinese",
+            "detail": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / Chinese/hotspots.bonnet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / TraditionalChinese",
+            "detail": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / TraditionalChinese/hotspots.bonnet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / English",
+            "detail": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / English/hotspots.bonnet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot source exists in table",
+            "detail": "Breastplate\nInspect the broad lower section around the shoulders.",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / Chinese",
+            "detail": "Breastplate\nInspect the broad lower section around the shoulders.",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / Chinese/hotspots.breastplate",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / TraditionalChinese",
+            "detail": "Breastplate\nInspect the broad lower section around the shoulders.",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / TraditionalChinese/hotspots.breastplate",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / English",
+            "detail": "Breastplate\nInspect the broad lower section around the shoulders.",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / English/hotspots.breastplate",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot source exists in table",
+            "detail": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / Chinese",
+            "detail": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / Chinese/hotspots.front_window",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / TraditionalChinese",
+            "detail": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / TraditionalChinese/hotspots.front_window",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hotspot translation exists / English",
+            "detail": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "passed": true
+        },
+        {
+            "name": "stored hotspot glyphs / English/hotspots.front_window",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "saved trigger has finite surface distance / Bonnet shell Hotspot",
+            "detail": "mode=ColliderPosition; distanceSqr=0",
+            "passed": true
+        },
+        {
+            "name": "saved trigger has finite surface distance / Breastplate Hotspot",
+            "detail": "mode=ColliderPosition; distanceSqr=0",
+            "passed": true
+        },
+        {
+            "name": "saved trigger has finite surface distance / Front window Hotspot",
+            "detail": "mode=ColliderPosition; distanceSqr=0",
+            "passed": true
+        },
+        {
+            "name": "progress retained / direct-progress-0/Chinese",
+            "detail": "visited=0",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / direct-progress-0/Chinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-0/Chinese/Information",
+            "detail": "expected=选择一个高亮标记，观察头盔。; actual=选择一个高亮标记，观察头盔。",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-0/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-0/Chinese/Information",
+            "detail": "fontSize=0.5; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-0/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-0/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-0/Chinese/Progress",
+            "detail": "expected=已观察 0 / 3 个部位; actual=已观察 0 / 3 个部位",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-0/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-0/Chinese/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-0/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-0/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / direct-progress-0/Chinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / direct-progress-0/TraditionalChinese",
+            "detail": "visited=0",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / direct-progress-0/TraditionalChinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-0/TraditionalChinese/Information",
+            "detail": "expected=選擇一個高亮標記，觀察頭盔。; actual=選擇一個高亮標記，觀察頭盔。",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-0/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-0/TraditionalChinese/Information",
+            "detail": "fontSize=0.5; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-0/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-0/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-0/TraditionalChinese/Progress",
+            "detail": "expected=已觀察 0 / 3 個部位; actual=已觀察 0 / 3 個部位",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-0/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-0/TraditionalChinese/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-0/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-0/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / direct-progress-0/TraditionalChinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / direct-progress-0/English",
+            "detail": "visited=0",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / direct-progress-0/English",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-0/English/Information",
+            "detail": "expected=Select a highlighted point to inspect the helmet.; actual=Select a highlighted point to inspect the helmet.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-0/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-0/English/Information",
+            "detail": "fontSize=0.4; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-0/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-0/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-0/English/Progress",
+            "detail": "expected=0 / 3 inspected; actual=0 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-0/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-0/English/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-0/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-0/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / direct-progress-0/English",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot bonnet/direct",
+            "detail": "target=Bonnet shell Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot bonnet/direct",
+            "detail": "events=1; selector=Direct Interactor (UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot bonnet/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot bonnet/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / bonnet/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / direct-progress-1/Chinese",
+            "detail": "visited=1",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / direct-progress-1/Chinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-1/Chinese/Information",
+            "detail": "expected=上部外壳\n观察圆形的上部外壳和整体形状。; actual=上部外壳\n观察圆形的上部外壳和整体形状。",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-1/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-1/Chinese/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-1/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-1/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-1/Chinese/Progress",
+            "detail": "expected=已观察 1 / 3 个部位; actual=已观察 1 / 3 个部位",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-1/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-1/Chinese/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-1/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-1/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / direct-progress-1/Chinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / direct-progress-1/TraditionalChinese",
+            "detail": "visited=1",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / direct-progress-1/TraditionalChinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-1/TraditionalChinese/Information",
+            "detail": "expected=上部外殼\n觀察圓形的上部外殼和整體形狀。; actual=上部外殼\n觀察圓形的上部外殼和整體形狀。",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-1/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-1/TraditionalChinese/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-1/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-1/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-1/TraditionalChinese/Progress",
+            "detail": "expected=已觀察 1 / 3 個部位; actual=已觀察 1 / 3 個部位",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-1/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-1/TraditionalChinese/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-1/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-1/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / direct-progress-1/TraditionalChinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / direct-progress-1/English",
+            "detail": "visited=1",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / direct-progress-1/English",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-1/English/Information",
+            "detail": "expected=Bonnet shell\nInspect the rounded upper shell and its overall form.; actual=Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-1/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-1/English/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-1/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-1/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-1/English/Progress",
+            "detail": "expected=1 / 3 inspected; actual=1 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-1/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-1/English/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-1/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-1/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / direct-progress-1/English",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot breastplate/direct",
+            "detail": "target=Breastplate Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot breastplate/direct",
+            "detail": "events=1; selector=Direct Interactor (UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot breastplate/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot breastplate/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / breastplate/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / direct-progress-2/Chinese",
+            "detail": "visited=2",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / direct-progress-2/Chinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-2/Chinese/Information",
+            "detail": "expected=胸甲\n观察肩部周围宽大的下部结构。; actual=胸甲\n观察肩部周围宽大的下部结构。",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-2/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-2/Chinese/Information",
+            "detail": "fontSize=0.35; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-2/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-2/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-2/Chinese/Progress",
+            "detail": "expected=已观察 2 / 3 个部位; actual=已观察 2 / 3 个部位",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-2/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-2/Chinese/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-2/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-2/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / direct-progress-2/Chinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / direct-progress-2/TraditionalChinese",
+            "detail": "visited=2",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / direct-progress-2/TraditionalChinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-2/TraditionalChinese/Information",
+            "detail": "expected=胸甲\n觀察肩部周圍寬大的下部結構。; actual=胸甲\n觀察肩部周圍寬大的下部結構。",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-2/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-2/TraditionalChinese/Information",
+            "detail": "fontSize=0.35; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-2/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-2/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-2/TraditionalChinese/Progress",
+            "detail": "expected=已觀察 2 / 3 個部位; actual=已觀察 2 / 3 個部位",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-2/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-2/TraditionalChinese/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-2/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-2/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / direct-progress-2/TraditionalChinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / direct-progress-2/English",
+            "detail": "visited=2",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / direct-progress-2/English",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-2/English/Information",
+            "detail": "expected=Breastplate\nInspect the broad lower section around the shoulders.; actual=Breastplate\nInspect the broad lower section around the shoulders.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-2/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-2/English/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-2/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-2/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-2/English/Progress",
+            "detail": "expected=2 / 3 inspected; actual=2 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-2/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-2/English/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-2/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-2/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / direct-progress-2/English",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot front-window/direct",
+            "detail": "target=Front window Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot front-window/direct",
+            "detail": "events=1; selector=Direct Interactor (UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot front-window/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot front-window/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / front-window/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / direct-progress-3/Chinese",
+            "detail": "visited=3",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / direct-progress-3/Chinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-3/Chinese/Information",
+            "detail": "expected=前窗\n观察前方视窗及周围的边框。; actual=前窗\n观察前方视窗及周围的边框。",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-3/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-3/Chinese/Information",
+            "detail": "fontSize=0.35; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-3/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-3/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-3/Chinese/Progress",
+            "detail": "expected=已观察 3 / 3 个部位; actual=已观察 3 / 3 个部位",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-3/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-3/Chinese/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-3/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-3/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-3/Chinese/Complete",
+            "detail": "expected=部位探索完成; actual=部位探索完成",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-3/Chinese/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-3/Chinese/Complete",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-3/Chinese/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-3/Chinese/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / direct-progress-3/Chinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / direct-progress-3/TraditionalChinese",
+            "detail": "visited=3",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / direct-progress-3/TraditionalChinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-3/TraditionalChinese/Information",
+            "detail": "expected=前窗\n觀察前方視窗及周圍的邊框。; actual=前窗\n觀察前方視窗及周圍的邊框。",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-3/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-3/TraditionalChinese/Information",
+            "detail": "fontSize=0.35; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-3/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-3/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-3/TraditionalChinese/Progress",
+            "detail": "expected=已觀察 3 / 3 個部位; actual=已觀察 3 / 3 個部位",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-3/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-3/TraditionalChinese/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-3/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-3/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-3/TraditionalChinese/Complete",
+            "detail": "expected=部位探索完成; actual=部位探索完成",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-3/TraditionalChinese/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-3/TraditionalChinese/Complete",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-3/TraditionalChinese/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-3/TraditionalChinese/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / direct-progress-3/TraditionalChinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / direct-progress-3/English",
+            "detail": "visited=3",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / direct-progress-3/English",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-3/English/Information",
+            "detail": "expected=Front window\nInspect the front viewing area and its surrounding rim.; actual=Front window\nInspect the front viewing area and its surrounding rim.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-3/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-3/English/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-3/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-3/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-3/English/Progress",
+            "detail": "expected=3 / 3 inspected; actual=3 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-3/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-3/English/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-3/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-3/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / direct-progress-3/English/Complete",
+            "detail": "expected=Exploration complete; actual=Exploration complete",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / direct-progress-3/English/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / direct-progress-3/English/Complete",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / direct-progress-3/English/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / direct-progress-3/English/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / direct-progress-3/English",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "disabling marker restores the saved default distance callback",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "reenabling marker restores finite distance and its visited state",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / tour-component-reenabled",
+            "detail": "visited=3",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / tour-component-reenabled",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / tour-component-reenabled/Information",
+            "detail": "expected=前窗\n觀察前方視窗及周圍的邊框。; actual=前窗\n觀察前方視窗及周圍的邊框。",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / tour-component-reenabled/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / tour-component-reenabled/Information",
+            "detail": "fontSize=0.35; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / tour-component-reenabled/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / tour-component-reenabled/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / tour-component-reenabled/Progress",
+            "detail": "expected=已觀察 3 / 3 個部位; actual=已觀察 3 / 3 個部位",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / tour-component-reenabled/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / tour-component-reenabled/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / tour-component-reenabled/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / tour-component-reenabled/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / tour-component-reenabled/Complete",
+            "detail": "expected=部位探索完成; actual=部位探索完成",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / tour-component-reenabled/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / tour-component-reenabled/Complete",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / tour-component-reenabled/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / tour-component-reenabled/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / tour-object-reenabled",
+            "detail": "visited=3",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / tour-object-reenabled",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / tour-object-reenabled/Information",
+            "detail": "expected=前窗\n观察前方视窗及周围的边框。; actual=前窗\n观察前方视窗及周围的边框。",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / tour-object-reenabled/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / tour-object-reenabled/Information",
+            "detail": "fontSize=0.35; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / tour-object-reenabled/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / tour-object-reenabled/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / tour-object-reenabled/Progress",
+            "detail": "expected=已观察 3 / 3 个部位; actual=已观察 3 / 3 个部位",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / tour-object-reenabled/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / tour-object-reenabled/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / tour-object-reenabled/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / tour-object-reenabled/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / tour-object-reenabled/Complete",
+            "detail": "expected=部位探索完成; actual=部位探索完成",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / tour-object-reenabled/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / tour-object-reenabled/Complete",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / tour-object-reenabled/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / tour-object-reenabled/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "completed state survives disable-enable/Bonnet shell Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "completed state survives disable-enable/Breastplate Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "completed state survives disable-enable/Front window Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "progress retained / reset-while-inactive",
+            "detail": "visited=0",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / reset-while-inactive",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / reset-while-inactive/Information",
+            "detail": "expected=Select a highlighted point to inspect the helmet.; actual=Select a highlighted point to inspect the helmet.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / reset-while-inactive/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / reset-while-inactive/Information",
+            "detail": "fontSize=0.4; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / reset-while-inactive/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / reset-while-inactive/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / reset-while-inactive/Progress",
+            "detail": "expected=0 / 3 inspected; actual=0 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / reset-while-inactive/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / reset-while-inactive/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / reset-while-inactive/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / reset-while-inactive/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "saved markers clear after inactive reset/Bonnet shell Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "saved markers clear after inactive reset/Breastplate Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "saved markers clear after inactive reset/Front window Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot bonnet/ray",
+            "detail": "target=Bonnet shell Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot bonnet/ray",
+            "detail": "events=1; selector=Ray Interactor (UnityEngine.XR.Interaction.Toolkit.XRRayInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot bonnet/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot bonnet/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / bonnet/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / ray-progress-1",
+            "detail": "visited=1",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / ray-progress-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / ray-progress-1/Information",
+            "detail": "expected=Bonnet shell\nInspect the rounded upper shell and its overall form.; actual=Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / ray-progress-1/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / ray-progress-1/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / ray-progress-1/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / ray-progress-1/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / ray-progress-1/Progress",
+            "detail": "expected=1 / 3 inspected; actual=1 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / ray-progress-1/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / ray-progress-1/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / ray-progress-1/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / ray-progress-1/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot breastplate/ray",
+            "detail": "target=Breastplate Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot breastplate/ray",
+            "detail": "events=1; selector=Ray Interactor (UnityEngine.XR.Interaction.Toolkit.XRRayInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot breastplate/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot breastplate/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / breastplate/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / ray-progress-2",
+            "detail": "visited=2",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / ray-progress-2",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / ray-progress-2/Information",
+            "detail": "expected=Breastplate\nInspect the broad lower section around the shoulders.; actual=Breastplate\nInspect the broad lower section around the shoulders.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / ray-progress-2/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / ray-progress-2/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / ray-progress-2/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / ray-progress-2/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / ray-progress-2/Progress",
+            "detail": "expected=2 / 3 inspected; actual=2 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / ray-progress-2/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / ray-progress-2/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / ray-progress-2/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / ray-progress-2/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot front-window/ray",
+            "detail": "target=Front window Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot front-window/ray",
+            "detail": "events=1; selector=Ray Interactor (UnityEngine.XR.Interaction.Toolkit.XRRayInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot front-window/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot front-window/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / front-window/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / ray-progress-3",
+            "detail": "visited=3",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / ray-progress-3",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / ray-progress-3/Information",
+            "detail": "expected=Front window\nInspect the front viewing area and its surrounding rim.; actual=Front window\nInspect the front viewing area and its surrounding rim.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / ray-progress-3/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / ray-progress-3/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / ray-progress-3/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / ray-progress-3/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / ray-progress-3/Progress",
+            "detail": "expected=3 / 3 inspected; actual=3 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / ray-progress-3/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / ray-progress-3/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / ray-progress-3/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / ray-progress-3/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / ray-progress-3/Complete",
+            "detail": "expected=Exploration complete; actual=Exploration complete",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / ray-progress-3/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / ray-progress-3/Complete",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / ray-progress-3/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / ray-progress-3/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "original window still exists",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / original window outside marker/direct",
+            "detail": "target=Front Window Hinge",
+            "passed": true
+        },
+        {
+            "name": "production select / original window outside marker/direct",
+            "detail": "events=1; selector=Direct Interactor (UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / original window outside marker/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / original window outside marker/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "original window click still opens / direct",
+            "detail": "angle=95",
+            "passed": true
+        },
+        {
+            "name": "original window still exists",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / original window outside marker/ray",
+            "detail": "target=Front Window Hinge",
+            "passed": true
+        },
+        {
+            "name": "production select / original window outside marker/ray",
+            "detail": "events=1; selector=Ray Interactor (UnityEngine.XR.Interaction.Toolkit.XRRayInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / original window outside marker/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / original window outside marker/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "original window click still opens / ray",
+            "detail": "angle=95",
+            "passed": true
+        },
+        {
+            "name": "ordinary shell remains directly grabbable",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "held helmet retains selection across a marker",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "window and ordinary grabs do not change completed progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot bonnet/direct",
+            "detail": "target=Bonnet shell Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot bonnet/direct",
+            "detail": "events=1; selector=Direct Interactor (UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot bonnet/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot bonnet/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / bonnet/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / smooth-return-progress-1/before",
+            "detail": "visited=1",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / smooth-return-progress-1/before",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-1/before/Information",
+            "detail": "expected=Bonnet shell\nInspect the rounded upper shell and its overall form.; actual=Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-1/before/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-1/before/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-1/before/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-1/before/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-1/before/Progress",
+            "detail": "expected=1 / 3 inspected; actual=1 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-1/before/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-1/before/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-1/before/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-1/before/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/before/Bonnet shell Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/before/Breastplate Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/before/Front window Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "AIR clue uses relocated fitting anchor / smooth-return-progress-1/before",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "AIR cached anchor matches relocated saved renderer / smooth-return-progress-1/before",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production grab before smooth return / smooth-return-progress-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production grab displaces and rotates helmet / smooth-return-progress-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/displaced/HelmetHotspotTour",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/displaced/Air connection clue",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/displaced/Anchor_AirOutlet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/displaced/Anchor_TelephoneOutlet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/displaced/Bonnet shell Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/displaced/Breastplate Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/displaced/Front window Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "AIR clue uses relocated fitting anchor / smooth-return-progress-1/displaced",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth return releases held exhibit without initial teleport / smooth-return-progress-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth return has intermediate pose with tour attached / smooth-return-progress-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/midway/HelmetHotspotTour",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/midway/Air connection clue",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/midway/Anchor_AirOutlet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/midway/Anchor_TelephoneOutlet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/midway/Bonnet shell Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/midway/Breastplate Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/midway/Front window Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact visited and completion state retained / smooth-return-progress-1/midway",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "dynamic detail and font retained during return / smooth-return-progress-1/midway/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "dynamic detail and font retained during return / smooth-return-progress-1/midway/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/midway/Bonnet shell Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/midway/Breastplate Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/midway/Front window Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "AIR clue uses relocated fitting anchor / smooth-return-progress-1/midway",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "held Grip cannot reacquire returning helmet / smooth-return-progress-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth return reaches home with visited tour / smooth-return-progress-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/home/HelmetHotspotTour",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/home/Air connection clue",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/home/Anchor_AirOutlet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/home/Anchor_TelephoneOutlet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/home/Bonnet shell Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/home/Breastplate Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-1/home/Front window Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact visited and completion state retained / smooth-return-progress-1/home",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "dynamic detail and font retained during return / smooth-return-progress-1/home/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "dynamic detail and font retained during return / smooth-return-progress-1/home/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/home/Bonnet shell Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/home/Breastplate Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/home/Front window Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "AIR clue uses relocated fitting anchor / smooth-return-progress-1/home",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "AIR cached anchor matches relocated saved renderer / smooth-return-progress-1/home",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "held Grip remains blocked after smooth return until release / smooth-return-progress-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / smooth-return-progress-1/home-languages/Chinese",
+            "detail": "visited=1",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / smooth-return-progress-1/home-languages/Chinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-1/home-languages/Chinese/Information",
+            "detail": "expected=上部外壳\n观察圆形的上部外壳和整体形状。; actual=上部外壳\n观察圆形的上部外壳和整体形状。",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-1/home-languages/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-1/home-languages/Chinese/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-1/home-languages/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-1/home-languages/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-1/home-languages/Chinese/Progress",
+            "detail": "expected=已观察 1 / 3 个部位; actual=已观察 1 / 3 个部位",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-1/home-languages/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-1/home-languages/Chinese/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-1/home-languages/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-1/home-languages/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / smooth-return-progress-1/home-languages/Chinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / smooth-return-progress-1/home-languages/TraditionalChinese",
+            "detail": "visited=1",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / smooth-return-progress-1/home-languages/TraditionalChinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-1/home-languages/TraditionalChinese/Information",
+            "detail": "expected=上部外殼\n觀察圓形的上部外殼和整體形狀。; actual=上部外殼\n觀察圓形的上部外殼和整體形狀。",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-1/home-languages/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-1/home-languages/TraditionalChinese/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-1/home-languages/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-1/home-languages/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-1/home-languages/TraditionalChinese/Progress",
+            "detail": "expected=已觀察 1 / 3 個部位; actual=已觀察 1 / 3 個部位",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-1/home-languages/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-1/home-languages/TraditionalChinese/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-1/home-languages/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-1/home-languages/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / smooth-return-progress-1/home-languages/TraditionalChinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / smooth-return-progress-1/home-languages/English",
+            "detail": "visited=1",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / smooth-return-progress-1/home-languages/English",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-1/home-languages/English/Information",
+            "detail": "expected=Bonnet shell\nInspect the rounded upper shell and its overall form.; actual=Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-1/home-languages/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-1/home-languages/English/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-1/home-languages/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-1/home-languages/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-1/home-languages/English/Progress",
+            "detail": "expected=1 / 3 inspected; actual=1 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-1/home-languages/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-1/home-languages/English/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-1/home-languages/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-1/home-languages/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / smooth-return-progress-1/home-languages/English",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot bonnet/direct",
+            "detail": "target=Bonnet shell Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot bonnet/direct",
+            "detail": "events=1; selector=Direct Interactor (UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot bonnet/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot bonnet/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / bonnet/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot bonnet/ray",
+            "detail": "target=Bonnet shell Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot bonnet/ray",
+            "detail": "events=1; selector=Ray Interactor (UnityEngine.XR.Interaction.Toolkit.XRRayInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot bonnet/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot bonnet/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / bonnet/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / smooth-return-progress-1/after-direct-ray-revisit",
+            "detail": "visited=1",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / smooth-return-progress-1/after-direct-ray-revisit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-1/after-direct-ray-revisit/Information",
+            "detail": "expected=Bonnet shell\nInspect the rounded upper shell and its overall form.; actual=Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-1/after-direct-ray-revisit/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-1/after-direct-ray-revisit/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-1/after-direct-ray-revisit/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-1/after-direct-ray-revisit/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-1/after-direct-ray-revisit/Progress",
+            "detail": "expected=1 / 3 inspected; actual=1 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-1/after-direct-ray-revisit/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-1/after-direct-ray-revisit/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-1/after-direct-ray-revisit/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-1/after-direct-ray-revisit/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/after-direct-ray-revisit/Bonnet shell Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/after-direct-ray-revisit/Breastplate Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/after-direct-ray-revisit/Front window Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "ordinary shell remains directly grabbable",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "held helmet retains selection across a marker",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / smooth-return-progress-1/after-ordinary-grab",
+            "detail": "visited=1",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / smooth-return-progress-1/after-ordinary-grab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-1/after-ordinary-grab/Information",
+            "detail": "expected=Bonnet shell\nInspect the rounded upper shell and its overall form.; actual=Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-1/after-ordinary-grab/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-1/after-ordinary-grab/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-1/after-ordinary-grab/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-1/after-ordinary-grab/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-1/after-ordinary-grab/Progress",
+            "detail": "expected=1 / 3 inspected; actual=1 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-1/after-ordinary-grab/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-1/after-ordinary-grab/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-1/after-ordinary-grab/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-1/after-ordinary-grab/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/after-ordinary-grab/Bonnet shell Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/after-ordinary-grab/Breastplate Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/after-ordinary-grab/Front window Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "progress retained / smooth-return-progress-1/explicit-tour-reset",
+            "detail": "visited=0",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / smooth-return-progress-1/explicit-tour-reset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-1/explicit-tour-reset/Information",
+            "detail": "expected=Select a highlighted point to inspect the helmet.; actual=Select a highlighted point to inspect the helmet.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-1/explicit-tour-reset/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-1/explicit-tour-reset/Information",
+            "detail": "fontSize=0.4; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-1/explicit-tour-reset/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-1/explicit-tour-reset/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-1/explicit-tour-reset/Progress",
+            "detail": "expected=0 / 3 inspected; actual=0 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-1/explicit-tour-reset/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-1/explicit-tour-reset/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-1/explicit-tour-reset/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-1/explicit-tour-reset/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/explicit-tour-reset/Bonnet shell Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/explicit-tour-reset/Breastplate Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-1/explicit-tour-reset/Front window Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot bonnet/direct",
+            "detail": "target=Bonnet shell Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot bonnet/direct",
+            "detail": "events=1; selector=Direct Interactor (UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot bonnet/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot bonnet/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / bonnet/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot breastplate/direct",
+            "detail": "target=Breastplate Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot breastplate/direct",
+            "detail": "events=1; selector=Direct Interactor (UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot breastplate/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot breastplate/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / breastplate/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot front-window/direct",
+            "detail": "target=Front window Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot front-window/direct",
+            "detail": "events=1; selector=Direct Interactor (UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot front-window/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot front-window/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / front-window/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / smooth-return-progress-3/before",
+            "detail": "visited=3",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / smooth-return-progress-3/before",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/before/Information",
+            "detail": "expected=Front window\nInspect the front viewing area and its surrounding rim.; actual=Front window\nInspect the front viewing area and its surrounding rim.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/before/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/before/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/before/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/before/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/before/Progress",
+            "detail": "expected=3 / 3 inspected; actual=3 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/before/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/before/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/before/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/before/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/before/Complete",
+            "detail": "expected=Exploration complete; actual=Exploration complete",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/before/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/before/Complete",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/before/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/before/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/before/Bonnet shell Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/before/Breastplate Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/before/Front window Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "AIR clue uses relocated fitting anchor / smooth-return-progress-3/before",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "AIR cached anchor matches relocated saved renderer / smooth-return-progress-3/before",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production grab before smooth return / smooth-return-progress-3",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production grab displaces and rotates helmet / smooth-return-progress-3",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/displaced/HelmetHotspotTour",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/displaced/Air connection clue",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/displaced/Anchor_AirOutlet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/displaced/Anchor_TelephoneOutlet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/displaced/Bonnet shell Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/displaced/Breastplate Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/displaced/Front window Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "AIR clue uses relocated fitting anchor / smooth-return-progress-3/displaced",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth return releases held exhibit without initial teleport / smooth-return-progress-3",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth return has intermediate pose with tour attached / smooth-return-progress-3",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/midway/HelmetHotspotTour",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/midway/Air connection clue",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/midway/Anchor_AirOutlet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/midway/Anchor_TelephoneOutlet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/midway/Bonnet shell Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/midway/Breastplate Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/midway/Front window Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact visited and completion state retained / smooth-return-progress-3/midway",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "dynamic detail and font retained during return / smooth-return-progress-3/midway/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "dynamic detail and font retained during return / smooth-return-progress-3/midway/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "dynamic detail and font retained during return / smooth-return-progress-3/midway/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/midway/Bonnet shell Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/midway/Breastplate Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/midway/Front window Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "AIR clue uses relocated fitting anchor / smooth-return-progress-3/midway",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "held Grip cannot reacquire returning helmet / smooth-return-progress-3",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth return reaches home with visited tour / smooth-return-progress-3",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/home/HelmetHotspotTour",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/home/Air connection clue",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/home/Anchor_AirOutlet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/home/Anchor_TelephoneOutlet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/home/Bonnet shell Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/home/Breastplate Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "helmet-local pose retained / smooth-return-progress-3/home/Front window Hotspot",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact visited and completion state retained / smooth-return-progress-3/home",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "dynamic detail and font retained during return / smooth-return-progress-3/home/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "dynamic detail and font retained during return / smooth-return-progress-3/home/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "dynamic detail and font retained during return / smooth-return-progress-3/home/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/home/Bonnet shell Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/home/Breastplate Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/home/Front window Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "AIR clue uses relocated fitting anchor / smooth-return-progress-3/home",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "AIR cached anchor matches relocated saved renderer / smooth-return-progress-3/home",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "held Grip remains blocked after smooth return until release / smooth-return-progress-3",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / smooth-return-progress-3/home-languages/Chinese",
+            "detail": "visited=3",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / smooth-return-progress-3/home-languages/Chinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/home-languages/Chinese/Information",
+            "detail": "expected=前窗\n观察前方视窗及周围的边框。; actual=前窗\n观察前方视窗及周围的边框。",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/home-languages/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/home-languages/Chinese/Information",
+            "detail": "fontSize=0.35; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/home-languages/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/home-languages/Chinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/home-languages/Chinese/Progress",
+            "detail": "expected=已观察 3 / 3 个部位; actual=已观察 3 / 3 个部位",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/home-languages/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/home-languages/Chinese/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/home-languages/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/home-languages/Chinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/home-languages/Chinese/Complete",
+            "detail": "expected=部位探索完成; actual=部位探索完成",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/home-languages/Chinese/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/home-languages/Chinese/Complete",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/home-languages/Chinese/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/home-languages/Chinese/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / smooth-return-progress-3/home-languages/Chinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / smooth-return-progress-3/home-languages/TraditionalChinese",
+            "detail": "visited=3",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / smooth-return-progress-3/home-languages/TraditionalChinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/home-languages/TraditionalChinese/Information",
+            "detail": "expected=前窗\n觀察前方視窗及周圍的邊框。; actual=前窗\n觀察前方視窗及周圍的邊框。",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/home-languages/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/home-languages/TraditionalChinese/Information",
+            "detail": "fontSize=0.35; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/home-languages/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/home-languages/TraditionalChinese/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/home-languages/TraditionalChinese/Progress",
+            "detail": "expected=已觀察 3 / 3 個部位; actual=已觀察 3 / 3 個部位",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/home-languages/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/home-languages/TraditionalChinese/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/home-languages/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/home-languages/TraditionalChinese/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/home-languages/TraditionalChinese/Complete",
+            "detail": "expected=部位探索完成; actual=部位探索完成",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/home-languages/TraditionalChinese/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/home-languages/TraditionalChinese/Complete",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/home-languages/TraditionalChinese/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/home-languages/TraditionalChinese/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / smooth-return-progress-3/home-languages/TraditionalChinese",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / smooth-return-progress-3/home-languages/English",
+            "detail": "visited=3",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / smooth-return-progress-3/home-languages/English",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/home-languages/English/Information",
+            "detail": "expected=Front window\nInspect the front viewing area and its surrounding rim.; actual=Front window\nInspect the front viewing area and its surrounding rim.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/home-languages/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/home-languages/English/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/home-languages/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/home-languages/English/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/home-languages/English/Progress",
+            "detail": "expected=3 / 3 inspected; actual=3 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/home-languages/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/home-languages/English/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/home-languages/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/home-languages/English/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/home-languages/English/Complete",
+            "detail": "expected=Exploration complete; actual=Exploration complete",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/home-languages/English/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/home-languages/English/Complete",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/home-languages/English/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/home-languages/English/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "language change preserves visited markers / smooth-return-progress-3/home-languages/English",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot bonnet/direct",
+            "detail": "target=Bonnet shell Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot bonnet/direct",
+            "detail": "events=1; selector=Direct Interactor (UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot bonnet/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot bonnet/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / bonnet/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot bonnet/ray",
+            "detail": "target=Bonnet shell Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot bonnet/ray",
+            "detail": "events=1; selector=Ray Interactor (UnityEngine.XR.Interaction.Toolkit.XRRayInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot bonnet/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot bonnet/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / bonnet/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot breastplate/direct",
+            "detail": "target=Breastplate Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot breastplate/direct",
+            "detail": "events=1; selector=Direct Interactor (UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot breastplate/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot breastplate/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / breastplate/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot breastplate/ray",
+            "detail": "target=Breastplate Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot breastplate/ray",
+            "detail": "events=1; selector=Ray Interactor (UnityEngine.XR.Interaction.Toolkit.XRRayInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot breastplate/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot breastplate/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / breastplate/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot front-window/direct",
+            "detail": "target=Front window Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot front-window/direct",
+            "detail": "events=1; selector=Direct Interactor (UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot front-window/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot front-window/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / front-window/direct",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production hover / hotspot front-window/ray",
+            "detail": "target=Front window Hotspot",
+            "passed": true
+        },
+        {
+            "name": "production select / hotspot front-window/ray",
+            "detail": "events=1; selector=Ray Interactor (UnityEngine.XR.Interaction.Toolkit.XRRayInteractor)",
+            "passed": true
+        },
+        {
+            "name": "child selection does not grab helmet / hotspot front-window/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "production release / hotspot front-window/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "selected hotspot records visit / front-window/ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / smooth-return-progress-3/after-direct-ray-revisit",
+            "detail": "visited=3",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / smooth-return-progress-3/after-direct-ray-revisit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/after-direct-ray-revisit/Information",
+            "detail": "expected=Front window\nInspect the front viewing area and its surrounding rim.; actual=Front window\nInspect the front viewing area and its surrounding rim.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/after-direct-ray-revisit/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/after-direct-ray-revisit/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/after-direct-ray-revisit/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/after-direct-ray-revisit/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/after-direct-ray-revisit/Progress",
+            "detail": "expected=3 / 3 inspected; actual=3 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/after-direct-ray-revisit/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/after-direct-ray-revisit/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/after-direct-ray-revisit/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/after-direct-ray-revisit/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/after-direct-ray-revisit/Complete",
+            "detail": "expected=Exploration complete; actual=Exploration complete",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/after-direct-ray-revisit/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/after-direct-ray-revisit/Complete",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/after-direct-ray-revisit/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/after-direct-ray-revisit/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/after-direct-ray-revisit/Bonnet shell Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/after-direct-ray-revisit/Breastplate Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/after-direct-ray-revisit/Front window Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "ordinary shell remains directly grabbable",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "held helmet retains selection across a marker",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "progress retained / smooth-return-progress-3/after-ordinary-grab",
+            "detail": "visited=3",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / smooth-return-progress-3/after-ordinary-grab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/after-ordinary-grab/Information",
+            "detail": "expected=Front window\nInspect the front viewing area and its surrounding rim.; actual=Front window\nInspect the front viewing area and its surrounding rim.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/after-ordinary-grab/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/after-ordinary-grab/Information",
+            "detail": "fontSize=0.3; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/after-ordinary-grab/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/after-ordinary-grab/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/after-ordinary-grab/Progress",
+            "detail": "expected=3 / 3 inspected; actual=3 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/after-ordinary-grab/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/after-ordinary-grab/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/after-ordinary-grab/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/after-ordinary-grab/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/after-ordinary-grab/Complete",
+            "detail": "expected=Exploration complete; actual=Exploration complete",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/after-ordinary-grab/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/after-ordinary-grab/Complete",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/after-ordinary-grab/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/after-ordinary-grab/Complete",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/after-ordinary-grab/Bonnet shell Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/after-ordinary-grab/Breastplate Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/after-ordinary-grab/Front window Hotspot",
+            "detail": "actual=RGBA(0.250, 0.950, 0.500, 0.850); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+            "passed": true
+        },
+        {
+            "name": "progress retained / smooth-return-progress-3/explicit-tour-reset",
+            "detail": "visited=0",
+            "passed": true
+        },
+        {
+            "name": "completion visibility / smooth-return-progress-3/explicit-tour-reset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/explicit-tour-reset/Information",
+            "detail": "expected=Select a highlighted point to inspect the helmet.; actual=Select a highlighted point to inspect the helmet.",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/explicit-tour-reset/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/explicit-tour-reset/Information",
+            "detail": "fontSize=0.4; rect=(0.51, 0.12)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/explicit-tour-reset/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/explicit-tour-reset/Information",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "exact dynamic translation / smooth-return-progress-3/explicit-tour-reset/Progress",
+            "detail": "expected=0 / 3 inspected; actual=0 / 3 inspected",
+            "passed": true
+        },
+        {
+            "name": "font and stored glyphs / smooth-return-progress-3/explicit-tour-reset/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "visible layout / smooth-return-progress-3/explicit-tour-reset/Progress",
+            "detail": "fontSize=0.3; rect=(0.51, 0.04)",
+            "passed": true
+        },
+        {
+            "name": "panel text stays in production camera view / smooth-return-progress-3/explicit-tour-reset/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/explicit-tour-reset/Progress",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/explicit-tour-reset/Bonnet shell Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/explicit-tour-reset/Breastplate Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        },
+        {
+            "name": "smooth-return-progress-3/explicit-tour-reset/Front window Hotspot",
+            "detail": "actual=RGBA(0.120, 0.800, 0.900, 0.750); expected=RGBA(0.120, 0.800, 0.900, 0.750)",
+            "passed": true
+        }
+    ],
+    "selections": [
+        {
+            "target": "Bonnet shell Hotspot",
+            "mode": "direct",
+            "selector": "XRDirectInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": 0.17000004649162293,
+                "y": 1.5,
+                "z": 3.5
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Breastplate Hotspot",
+            "mode": "direct",
+            "selector": "XRDirectInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": 3.725290298461914e-8,
+                "y": 1.2350000143051148,
+                "z": 3.319999933242798
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Front window Hotspot",
+            "mode": "direct",
+            "selector": "XRDirectInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": -0.10999992489814758,
+                "y": 1.459999918937683,
+                "z": 3.259999990463257
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Bonnet shell Hotspot",
+            "mode": "ray",
+            "selector": "XRRayInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": 0.8200000524520874,
+                "y": 1.4999998807907105,
+                "z": 3.5
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Breastplate Hotspot",
+            "mode": "ray",
+            "selector": "XRRayInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": 1.2412054672950036e-7,
+                "y": 1.2350000143051148,
+                "z": 2.6700000762939455
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Front window Hotspot",
+            "mode": "ray",
+            "selector": "XRRayInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": -0.10999985039234162,
+                "y": 1.4600000381469727,
+                "z": 2.6100001335144045
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Front Window Hinge",
+            "mode": "direct",
+            "selector": "XRDirectInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": -1.4901161193847657e-8,
+                "y": 1.5070000886917115,
+                "z": 3.3429999351501467
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Front Window Hinge",
+            "mode": "ray",
+            "selector": "XRRayInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": 0.0000021068667592771819,
+                "y": 1.5069999694824219,
+                "z": 2.692999839782715
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Bonnet shell Hotspot",
+            "mode": "direct",
+            "selector": "XRDirectInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": 0.17000004649162293,
+                "y": 1.5,
+                "z": 3.5
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Bonnet shell Hotspot",
+            "mode": "direct",
+            "selector": "XRDirectInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": 0.17000004649162293,
+                "y": 1.5,
+                "z": 3.5
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Bonnet shell Hotspot",
+            "mode": "ray",
+            "selector": "XRRayInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": 0.8200000524520874,
+                "y": 1.4999998807907105,
+                "z": 3.5
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Bonnet shell Hotspot",
+            "mode": "direct",
+            "selector": "XRDirectInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": 0.17000004649162293,
+                "y": 1.5,
+                "z": 3.5
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Breastplate Hotspot",
+            "mode": "direct",
+            "selector": "XRDirectInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": 3.725290298461914e-8,
+                "y": 1.2350000143051148,
+                "z": 3.319999933242798
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Front window Hotspot",
+            "mode": "direct",
+            "selector": "XRDirectInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": -0.10999992489814758,
+                "y": 1.459999918937683,
+                "z": 3.259999990463257
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Bonnet shell Hotspot",
+            "mode": "direct",
+            "selector": "XRDirectInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": 0.17000004649162293,
+                "y": 1.5,
+                "z": 3.5
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Bonnet shell Hotspot",
+            "mode": "ray",
+            "selector": "XRRayInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": 0.8200000524520874,
+                "y": 1.4999998807907105,
+                "z": 3.5
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Breastplate Hotspot",
+            "mode": "direct",
+            "selector": "XRDirectInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": 3.725290298461914e-8,
+                "y": 1.2350000143051148,
+                "z": 3.319999933242798
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Breastplate Hotspot",
+            "mode": "ray",
+            "selector": "XRRayInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": 1.2412054672950036e-7,
+                "y": 1.2350000143051148,
+                "z": 2.6700000762939455
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Front window Hotspot",
+            "mode": "direct",
+            "selector": "XRDirectInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": -0.10999992489814758,
+                "y": 1.459999918937683,
+                "z": 3.259999990463257
+            },
+            "rootSelected": false
+        },
+        {
+            "target": "Front window Hotspot",
+            "mode": "ray",
+            "selector": "XRRayInteractor",
+            "events": 1,
+            "controllerPosition": {
+                "x": -0.10999983549118042,
+                "y": 1.459999918937683,
+                "z": 2.6100001335144045
+            },
+            "rootSelected": false
+        }
+    ],
+    "samples": [
+        {
+            "phase": "direct-progress-0/Chinese",
+            "language": "Chinese",
+            "name": "Information",
+            "text": "选择一个高亮标记，观察头盔。",
+            "source": "Select a highlighted point to inspect the helmet.",
+            "visited": 0,
+            "fontSize": 0.5,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-0/Chinese",
+            "language": "Chinese",
+            "name": "Progress",
+            "text": "已观察 0 / 3 个部位",
+            "source": "0 / 3 inspected",
+            "visited": 0,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-0/TraditionalChinese",
+            "language": "TraditionalChinese",
+            "name": "Information",
+            "text": "選擇一個高亮標記，觀察頭盔。",
+            "source": "Select a highlighted point to inspect the helmet.",
+            "visited": 0,
+            "fontSize": 0.5,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-0/TraditionalChinese",
+            "language": "TraditionalChinese",
+            "name": "Progress",
+            "text": "已觀察 0 / 3 個部位",
+            "source": "0 / 3 inspected",
+            "visited": 0,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-0/English",
+            "language": "English",
+            "name": "Information",
+            "text": "Select a highlighted point to inspect the helmet.",
+            "source": "Select a highlighted point to inspect the helmet.",
+            "visited": 0,
+            "fontSize": 0.4000000059604645,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-0/English",
+            "language": "English",
+            "name": "Progress",
+            "text": "0 / 3 inspected",
+            "source": "0 / 3 inspected",
+            "visited": 0,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-1/Chinese",
+            "language": "Chinese",
+            "name": "Information",
+            "text": "上部外壳\n观察圆形的上部外壳和整体形状。",
+            "source": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-1/Chinese",
+            "language": "Chinese",
+            "name": "Progress",
+            "text": "已观察 1 / 3 个部位",
+            "source": "1 / 3 inspected",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-1/TraditionalChinese",
+            "language": "TraditionalChinese",
+            "name": "Information",
+            "text": "上部外殼\n觀察圓形的上部外殼和整體形狀。",
+            "source": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-1/TraditionalChinese",
+            "language": "TraditionalChinese",
+            "name": "Progress",
+            "text": "已觀察 1 / 3 個部位",
+            "source": "1 / 3 inspected",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-1/English",
+            "language": "English",
+            "name": "Information",
+            "text": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "source": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-1/English",
+            "language": "English",
+            "name": "Progress",
+            "text": "1 / 3 inspected",
+            "source": "1 / 3 inspected",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-2/Chinese",
+            "language": "Chinese",
+            "name": "Information",
+            "text": "胸甲\n观察肩部周围宽大的下部结构。",
+            "source": "Breastplate\nInspect the broad lower section around the shoulders.",
+            "visited": 2,
+            "fontSize": 0.3499999940395355,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-2/Chinese",
+            "language": "Chinese",
+            "name": "Progress",
+            "text": "已观察 2 / 3 个部位",
+            "source": "2 / 3 inspected",
+            "visited": 2,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-2/TraditionalChinese",
+            "language": "TraditionalChinese",
+            "name": "Information",
+            "text": "胸甲\n觀察肩部周圍寬大的下部結構。",
+            "source": "Breastplate\nInspect the broad lower section around the shoulders.",
+            "visited": 2,
+            "fontSize": 0.3499999940395355,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-2/TraditionalChinese",
+            "language": "TraditionalChinese",
+            "name": "Progress",
+            "text": "已觀察 2 / 3 個部位",
+            "source": "2 / 3 inspected",
+            "visited": 2,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-2/English",
+            "language": "English",
+            "name": "Information",
+            "text": "Breastplate\nInspect the broad lower section around the shoulders.",
+            "source": "Breastplate\nInspect the broad lower section around the shoulders.",
+            "visited": 2,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-2/English",
+            "language": "English",
+            "name": "Progress",
+            "text": "2 / 3 inspected",
+            "source": "2 / 3 inspected",
+            "visited": 2,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-3/Chinese",
+            "language": "Chinese",
+            "name": "Information",
+            "text": "前窗\n观察前方视窗及周围的边框。",
+            "source": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "visited": 3,
+            "fontSize": 0.3499999940395355,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-3/Chinese",
+            "language": "Chinese",
+            "name": "Progress",
+            "text": "已观察 3 / 3 个部位",
+            "source": "3 / 3 inspected",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-3/Chinese",
+            "language": "Chinese",
+            "name": "Complete",
+            "text": "部位探索完成",
+            "source": "Exploration complete",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-3/TraditionalChinese",
+            "language": "TraditionalChinese",
+            "name": "Information",
+            "text": "前窗\n觀察前方視窗及周圍的邊框。",
+            "source": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "visited": 3,
+            "fontSize": 0.3499999940395355,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-3/TraditionalChinese",
+            "language": "TraditionalChinese",
+            "name": "Progress",
+            "text": "已觀察 3 / 3 個部位",
+            "source": "3 / 3 inspected",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-3/TraditionalChinese",
+            "language": "TraditionalChinese",
+            "name": "Complete",
+            "text": "部位探索完成",
+            "source": "Exploration complete",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-3/English",
+            "language": "English",
+            "name": "Information",
+            "text": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "source": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-3/English",
+            "language": "English",
+            "name": "Progress",
+            "text": "3 / 3 inspected",
+            "source": "3 / 3 inspected",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "direct-progress-3/English",
+            "language": "English",
+            "name": "Complete",
+            "text": "Exploration complete",
+            "source": "Exploration complete",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "tour-component-reenabled",
+            "language": "TraditionalChinese",
+            "name": "Information",
+            "text": "前窗\n觀察前方視窗及周圍的邊框。",
+            "source": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "visited": 3,
+            "fontSize": 0.3499999940395355,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "tour-component-reenabled",
+            "language": "TraditionalChinese",
+            "name": "Progress",
+            "text": "已觀察 3 / 3 個部位",
+            "source": "3 / 3 inspected",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "tour-component-reenabled",
+            "language": "TraditionalChinese",
+            "name": "Complete",
+            "text": "部位探索完成",
+            "source": "Exploration complete",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "tour-object-reenabled",
+            "language": "Chinese",
+            "name": "Information",
+            "text": "前窗\n观察前方视窗及周围的边框。",
+            "source": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "visited": 3,
+            "fontSize": 0.3499999940395355,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "tour-object-reenabled",
+            "language": "Chinese",
+            "name": "Progress",
+            "text": "已观察 3 / 3 个部位",
+            "source": "3 / 3 inspected",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "tour-object-reenabled",
+            "language": "Chinese",
+            "name": "Complete",
+            "text": "部位探索完成",
+            "source": "Exploration complete",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "reset-while-inactive",
+            "language": "English",
+            "name": "Information",
+            "text": "Select a highlighted point to inspect the helmet.",
+            "source": "Select a highlighted point to inspect the helmet.",
+            "visited": 0,
+            "fontSize": 0.4000000059604645,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "reset-while-inactive",
+            "language": "English",
+            "name": "Progress",
+            "text": "0 / 3 inspected",
+            "source": "0 / 3 inspected",
+            "visited": 0,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "ray-progress-1",
+            "language": "English",
+            "name": "Information",
+            "text": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "source": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "ray-progress-1",
+            "language": "English",
+            "name": "Progress",
+            "text": "1 / 3 inspected",
+            "source": "1 / 3 inspected",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "ray-progress-2",
+            "language": "English",
+            "name": "Information",
+            "text": "Breastplate\nInspect the broad lower section around the shoulders.",
+            "source": "Breastplate\nInspect the broad lower section around the shoulders.",
+            "visited": 2,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "ray-progress-2",
+            "language": "English",
+            "name": "Progress",
+            "text": "2 / 3 inspected",
+            "source": "2 / 3 inspected",
+            "visited": 2,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "ray-progress-3",
+            "language": "English",
+            "name": "Information",
+            "text": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "source": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "ray-progress-3",
+            "language": "English",
+            "name": "Progress",
+            "text": "3 / 3 inspected",
+            "source": "3 / 3 inspected",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "ray-progress-3",
+            "language": "English",
+            "name": "Complete",
+            "text": "Exploration complete",
+            "source": "Exploration complete",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-1/before",
+            "language": "English",
+            "name": "Information",
+            "text": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "source": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-1/before",
+            "language": "English",
+            "name": "Progress",
+            "text": "1 / 3 inspected",
+            "source": "1 / 3 inspected",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-1/home-languages/Chinese",
+            "language": "Chinese",
+            "name": "Information",
+            "text": "上部外壳\n观察圆形的上部外壳和整体形状。",
+            "source": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-1/home-languages/Chinese",
+            "language": "Chinese",
+            "name": "Progress",
+            "text": "已观察 1 / 3 个部位",
+            "source": "1 / 3 inspected",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-1/home-languages/TraditionalChinese",
+            "language": "TraditionalChinese",
+            "name": "Information",
+            "text": "上部外殼\n觀察圓形的上部外殼和整體形狀。",
+            "source": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-1/home-languages/TraditionalChinese",
+            "language": "TraditionalChinese",
+            "name": "Progress",
+            "text": "已觀察 1 / 3 個部位",
+            "source": "1 / 3 inspected",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-1/home-languages/English",
+            "language": "English",
+            "name": "Information",
+            "text": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "source": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-1/home-languages/English",
+            "language": "English",
+            "name": "Progress",
+            "text": "1 / 3 inspected",
+            "source": "1 / 3 inspected",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-1/after-direct-ray-revisit",
+            "language": "English",
+            "name": "Information",
+            "text": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "source": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-1/after-direct-ray-revisit",
+            "language": "English",
+            "name": "Progress",
+            "text": "1 / 3 inspected",
+            "source": "1 / 3 inspected",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-1/after-ordinary-grab",
+            "language": "English",
+            "name": "Information",
+            "text": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "source": "Bonnet shell\nInspect the rounded upper shell and its overall form.",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-1/after-ordinary-grab",
+            "language": "English",
+            "name": "Progress",
+            "text": "1 / 3 inspected",
+            "source": "1 / 3 inspected",
+            "visited": 1,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-1/explicit-tour-reset",
+            "language": "English",
+            "name": "Information",
+            "text": "Select a highlighted point to inspect the helmet.",
+            "source": "Select a highlighted point to inspect the helmet.",
+            "visited": 0,
+            "fontSize": 0.4000000059604645,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-1/explicit-tour-reset",
+            "language": "English",
+            "name": "Progress",
+            "text": "0 / 3 inspected",
+            "source": "0 / 3 inspected",
+            "visited": 0,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/before",
+            "language": "English",
+            "name": "Information",
+            "text": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "source": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/before",
+            "language": "English",
+            "name": "Progress",
+            "text": "3 / 3 inspected",
+            "source": "3 / 3 inspected",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/before",
+            "language": "English",
+            "name": "Complete",
+            "text": "Exploration complete",
+            "source": "Exploration complete",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/home-languages/Chinese",
+            "language": "Chinese",
+            "name": "Information",
+            "text": "前窗\n观察前方视窗及周围的边框。",
+            "source": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "visited": 3,
+            "fontSize": 0.3499999940395355,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/home-languages/Chinese",
+            "language": "Chinese",
+            "name": "Progress",
+            "text": "已观察 3 / 3 个部位",
+            "source": "3 / 3 inspected",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/home-languages/Chinese",
+            "language": "Chinese",
+            "name": "Complete",
+            "text": "部位探索完成",
+            "source": "Exploration complete",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/home-languages/TraditionalChinese",
+            "language": "TraditionalChinese",
+            "name": "Information",
+            "text": "前窗\n觀察前方視窗及周圍的邊框。",
+            "source": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "visited": 3,
+            "fontSize": 0.3499999940395355,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/home-languages/TraditionalChinese",
+            "language": "TraditionalChinese",
+            "name": "Progress",
+            "text": "已觀察 3 / 3 個部位",
+            "source": "3 / 3 inspected",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/home-languages/TraditionalChinese",
+            "language": "TraditionalChinese",
+            "name": "Complete",
+            "text": "部位探索完成",
+            "source": "Exploration complete",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/home-languages/English",
+            "language": "English",
+            "name": "Information",
+            "text": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "source": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/home-languages/English",
+            "language": "English",
+            "name": "Progress",
+            "text": "3 / 3 inspected",
+            "source": "3 / 3 inspected",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/home-languages/English",
+            "language": "English",
+            "name": "Complete",
+            "text": "Exploration complete",
+            "source": "Exploration complete",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/after-direct-ray-revisit",
+            "language": "English",
+            "name": "Information",
+            "text": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "source": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/after-direct-ray-revisit",
+            "language": "English",
+            "name": "Progress",
+            "text": "3 / 3 inspected",
+            "source": "3 / 3 inspected",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/after-direct-ray-revisit",
+            "language": "English",
+            "name": "Complete",
+            "text": "Exploration complete",
+            "source": "Exploration complete",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/after-ordinary-grab",
+            "language": "English",
+            "name": "Information",
+            "text": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "source": "Front window\nInspect the front viewing area and its surrounding rim.",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/after-ordinary-grab",
+            "language": "English",
+            "name": "Progress",
+            "text": "3 / 3 inspected",
+            "source": "3 / 3 inspected",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/after-ordinary-grab",
+            "language": "English",
+            "name": "Complete",
+            "text": "Exploration complete",
+            "source": "Exploration complete",
+            "visited": 3,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/explicit-tour-reset",
+            "language": "English",
+            "name": "Information",
+            "text": "Select a highlighted point to inspect the helmet.",
+            "source": "Select a highlighted point to inspect the helmet.",
+            "visited": 0,
+            "fontSize": 0.4000000059604645,
+            "visible": true,
+            "overflow": false
+        },
+        {
+            "phase": "smooth-return-progress-3/explicit-tour-reset",
+            "language": "English",
+            "name": "Progress",
+            "text": "0 / 3 inspected",
+            "source": "0 / 3 inspected",
+            "visited": 0,
+            "fontSize": 0.30000001192092898,
+            "visible": true,
+            "overflow": false
+        }
+    ],
+    "captures": [
+        {
+            "file": "hotspots-direct-progress-0-Chinese-diagnostic.png",
+            "position": {
+                "x": -0.003616618225350976,
+                "y": 1.1805596351623536,
+                "z": 2.1501171588897707
+            },
+            "rotation": {
+                "x": 3.680357308786988e-15,
+                "y": -6.684447129146065e-8,
+                "z": -5.505851774501025e-8,
+                "w": 1.0
+            },
+            "fieldOfView": 48.0
+        },
+        {
+            "file": "hotspots-direct-progress-0-TraditionalChinese-diagnostic.png",
+            "position": {
+                "x": -0.0036352595780044796,
+                "y": 1.1805596351623536,
+                "z": 2.1501569747924806
+            },
+            "rotation": {
+                "x": 3.680628359330109e-15,
+                "y": -6.684938824719211e-8,
+                "z": -5.505851774501025e-8,
+                "w": 1.0
+            },
+            "fieldOfView": 48.0
+        },
+        {
+            "file": "hotspots-direct-progress-0-English-diagnostic.png",
+            "position": {
+                "x": -0.012076486833393574,
+                "y": 1.1797819137573243,
+                "z": 2.1666057109832765
+            },
+            "rotation": {
+                "x": 3.661653127245718e-15,
+                "y": -6.650475370406639e-8,
+                "z": -5.505851774501025e-8,
+                "w": 1.0
+            },
+            "fieldOfView": 48.0
+        },
+        {
+            "file": "hotspots-direct-progress-3-Chinese-diagnostic.png",
+            "position": {
+                "x": -0.028749637305736543,
+                "y": 1.1670093536376954,
+                "z": 2.1888480186462404
+            },
+            "rotation": {
+                "x": 3.673395968509978e-15,
+                "y": -6.671803021163214e-8,
+                "z": -5.505851774501025e-8,
+                "w": 1.0
+            },
+            "fieldOfView": 48.0
+        },
+        {
+            "file": "hotspots-direct-progress-3-TraditionalChinese-diagnostic.png",
+            "position": {
+                "x": -0.028801850974559785,
+                "y": 1.1670093536376954,
+                "z": 2.188741683959961
+            },
+            "rotation": {
+                "x": 3.6726188157808728e-15,
+                "y": -6.670391883289995e-8,
+                "z": -5.505851774501025e-8,
+                "w": 1.0
+            },
+            "fieldOfView": 48.0
+        },
+        {
+            "file": "hotspots-direct-progress-3-English-diagnostic.png",
+            "position": {
+                "x": -0.013004410080611706,
+                "y": 1.1651291847229005,
+                "z": 2.157254219055176
+            },
+            "rotation": {
+                "x": 3.696118474353022e-15,
+                "y": -6.713072764341632e-8,
+                "z": -5.505851774501025e-8,
+                "w": 1.0
+            },
+            "fieldOfView": 48.0
+        }
+    ]
+}

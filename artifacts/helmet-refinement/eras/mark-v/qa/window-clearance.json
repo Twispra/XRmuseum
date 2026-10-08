@@ -1,0 +1,109 @@
+{
+  "blender": "4.5.14 LTS",
+  "source_sha256": "45343307e9990b2e023cd5a6be43772f48aefa2c00b8b09d56387845c8905721",
+  "script_sha256": "1b64105951ec5c3ea7c2b74305c6873dcb2761e804a16385238d361d59008b1e",
+  "obstacles": [
+    "Bonnet_HollowCopper_TinFinish",
+    "TelephoneCup_Mount",
+    "TelephoneCup_ClosedOuterCover",
+    "TelephoneCup_UpperShoulder"
+  ],
+  "moving_meshes": 23,
+  "poses": [
+    {
+      "door_angle_deg": 0,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 5,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 10,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 15,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 20,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 25,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 30,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 35,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 40,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 45,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 50,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 55,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 60,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 65,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 70,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 75,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 80,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 85,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 90,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 95,
+      "surface_intersections": []
+    },
+    {
+      "door_angle_deg": 100,
+      "surface_intersections": []
+    }
+  ],
+  "passed": true,
+  "scope": "21 poses at five-degree intervals, moving front-window surfaces versus shell and telephone cup only",
+  "excluded": [
+    "hinge/seat/gasket intentional mating contact",
+    "toggle/fork loosening and thread fit",
+    "intersections between samples",
+    "solid containment and engineering tolerance",
+    "Unity collider behaviour",
+    "real artifact stop angle"
+  ],
+  "angle_status": "100 degrees is an illustrative review angle, not measured from artifact"
+}

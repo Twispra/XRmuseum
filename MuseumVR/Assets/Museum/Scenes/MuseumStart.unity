@@ -3911,7 +3911,7 @@ Transform:
   m_GameObject: {fileID: 417679643}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.056405433, y: 0.35877514, z: 0.16485834}
+  m_LocalPosition: {x: -0.065000035, y: 0.23601127, z: 0.17400002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4045,11 +4045,11 @@ MonoBehaviour:
       m_Calls: []
   exploration: {fileID: 1128445191}
   inspection: {fileID: 1120544054}
-  airConnector: {fileID: 1120544057}
+  airConnector: {fileID: 1092418491}
   highlightMaterial: {fileID: 2100000, guid: c9c7e246ae97e33489f125caf8f91402, type: 2}
   viewer: {fileID: 829167124}
-  localAnchor: {x: 0.056405433, y: 0.35877514, z: 0.16485834}
-  anchorReady: 0
+  localAnchor: {x: -0.065000035, y: 0.23601127, z: 0.17400002}
+  anchorReady: 1
   marker: {fileID: 474574408}
   hoverText: {fileID: 1463318078}
 --- !u!1 &428643546
@@ -11127,6 +11127,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1082910794}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &1092418491 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1066588534730060267, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+  m_PrefabInstance: {fileID: 1120544053}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1114228607
 GameObject:
   m_ObjectHideFlags: 0
@@ -11181,6 +11186,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 444948335}
     m_Modifications:
+    - target: {fileID: 359559405243681450, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.26408374
+      objectReference: {fileID: 0}
+    - target: {fileID: 359559405243681450, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00007224083
+      objectReference: {fileID: 0}
     - target: {fileID: 2257646481026636850, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
       propertyPath: m_Name
       value: HelmetExhibit
@@ -11248,6 +11261,14 @@ PrefabInstance:
     - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
       propertyPath: hasConfiguredHome
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355059867001364887, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.1183205
+      objectReference: {fileID: 0}
+    - target: {fileID: 8355059867001364887, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.044898637
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11464,6 +11485,7 @@ MonoBehaviour:
   airMaterial: {fileID: 2100000, guid: c9c7e246ae97e33489f125caf8f91402, type: 2}
   voiceMaterial: {fileID: 2100000, guid: 00fc9e04527475148ab2ecab25d28005, type: 2}
   inkMaterial: {fileID: 2100000, guid: bdf52766d437fa54bbff8ed412db1e8e, type: 2}
+  refinedEquipmentPrefab: {fileID: 7851025120569054339, guid: e65c2f41c4cff664fbf184b3b4caff4f, type: 3}
 --- !u!4 &1128445193
 Transform:
   m_ObjectHideFlags: 0
