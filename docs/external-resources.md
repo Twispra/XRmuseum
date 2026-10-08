@@ -80,3 +80,9 @@ AI 辅助范围：模块架构、Editor 工具、运行时脚本、字体子集�
 在原PR #32 / Issue #25继续，Fttt1003通过Codex辅助检索DESCO制造说明、2011年Making an Icon及前窗/锁紧件/铰链销三个现售零件页，实际核对四张零件照片。[完整URL、适用边界及改模依据](../artifacts/helmet-refinement/eras/mark-v/references/refinement-r2.zh-CN.md)，[下载记录](../artifacts/helmet-refinement/eras/mark-v/references/sources.json)。原媒体只在本机研究，不再分发、未作贴图。未新增Unity依赖、第三方模型或收费素材。
 
 Codex辅助增量改模、原创材质图、导出、渲染与自动/浏览器检查；内部走线仍为示意。资产自动检查不是成员人工批准、设备测试或精密历史复原；three.js/esbuild依赖与MIT声明沿用R1。
+
+## 2026-10-08：SuperLite 17B 面窗与侧阀外观研究
+
+Ereshkigal1224 负责本轮细节与外观，Codex 辅助核对 Kirby Morgan 的 [17B 产品页](https://www.kirbymorgan.com/products/helmets/superlite-17b)、[规格页](https://www.kirbymorgan.com/product/specs/314/superlite-17b)及 [2025 零件分解图 Document #241108001](https://kirbymorgan.com/sites/default/files/2025-01/sl-17b-blowapart-241108001.pdf)。参考对象拟定 P/N 500-010；对应观察、部件编号及估算界线见[独立资料](../artifacts/helmet-refinement/eras/superlite-17b/references/faceport-exterior-v1.zh-CN.md)。原图片和 PDF 仅供观察，不复制到仓库或作贴图，也不推断其再分发许可。
+
+两张 1024px 基色/粗糙度贴图由本项目脚本原创生成；Blender4.5.14 LTS 从官方便携版仅在本机临时使用，未提交软件本体或增添 Unity 包。Codex 辅助独立 Blender 分件、GLB、渲染和回读检查，详见[活动记录](activity/2026-10-08-superlite17b-details-v1.md)。材质和尺寸为展示估算，自动检查不等于组员人工审阅、实物测绘、真实 VR 或用户研究。
