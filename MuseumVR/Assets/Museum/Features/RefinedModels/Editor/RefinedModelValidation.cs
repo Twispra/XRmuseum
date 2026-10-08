@@ -367,12 +367,77 @@ namespace Museum.RefinedModels.EditorTools
             int rebuilds = section.RebuildCount;
             inspection.RotateDisplayAround(Vector3.up, 24); yield return null; section.Refresh();
             Check(section.RebuildCount == rebuilds, "rotating entire refined object reuses section geometry", "public rotation API");
-            inspection.SetWindowAngle(35); section.Refresh();
+            inspection.SetWindowAngle(35); yield return null; yield return null;
             Check(section.RebuildCount > rebuilds, "refined articulated door updates structural section", "public window API");
             inspection.SetCutaway(false); section.Refresh();
             Check(!inspection.GetComponentsInChildren<Renderer>(true).Any(r => r.name.StartsWith("Section face -") && r.gameObject.activeInHierarchy),
                 "closing cut hides all caps", "public section API");
+            yield return CheckLockSections();
             inspection.ResetInspection(); yield return Wait(.2f);
+        }
+
+        static IEnumerator CheckLockSections()
+        {
+            var source = binding.RefinedRenderers.Single(r => r.name == "DoorToggleBolt_13TPI_Nominal");
+            var geometry = AssetDatabase.LoadAssetAtPath<HelmetSectionMeshData>(
+                "Assets/Museum/Features/RefinedModels/Data/RefinedSectionMeshes.asset");
+            var data = geometry.Find(source.GetComponent<MeshFilter>().sharedMesh);
+            Check(data != null, "saved lock has production cap geometry", "saved asset");
+            bool reduced = inspection.ReduceMotion;
+            inspection.ReduceMotion = true;
+            foreach (var normal in new[] { Vector3.right, Vector3.up, Vector3.forward })
+            {
+                inspection.SetWindowAngle(0);
+                yield return null; yield return null;
+                Vector3 centre = inspection.transform.InverseTransformPoint(source.bounds.center);
+                inspection.SetCutaway(true);
+                inspection.SetSectionPlane(normal, Vector3.Dot(normal, centre - inspection.SectionCenterLocal));
+                yield return null; yield return null;
+                CheckLockCap(source, data, "closed baseline / " + normal, true);
+                Quaternion closedRotation = source.transform.rotation;
+                inspection.SetWindowAngle(5);
+                yield return null; yield return null;
+                Check(Quaternion.Angle(closedRotation, source.transform.rotation) > .1f,
+                    "partial opening moves lock / " + normal, "public window API -> natural LateUpdate");
+                CheckLockCap(source, data, "partial opening / " + normal);
+                int rebuilds = section.RebuildCount;
+                yield return null; yield return null;
+                Check(section.RebuildCount == rebuilds, "stationary lock section reuses cache / " + normal,
+                    "natural LateUpdate cache regression");
+                inspection.SetWindowOpen(true);
+                yield return null; yield return null;
+                CheckLockCap(source, data, "reduced-motion opening / " + normal);
+                inspection.SetWindowOpen(false);
+                yield return null; yield return null;
+                CheckLockCap(source, data, "reduced-motion closing / " + normal);
+                // Existing editor clients can request a cap before this frame's lock motion.
+                inspection.SetWindowAngle(5); section.Refresh();
+                yield return null; yield return null;
+                CheckLockCap(source, data, "early public Refresh recovers / " + normal);
+            }
+            inspection.ReduceMotion = reduced;
+            inspection.SetCutaway(false);
+        }
+
+        static void CheckLockCap(Renderer source, HelmetSectionMeshData.Entry data, string phase, bool requireCap = false)
+        {
+            var cap = inspection.GetComponentsInChildren<MeshFilter>(true)
+                .Single(f => f.name == "Section face - " + source.name);
+            var vertices = new List<Vector3>();
+            var indices = new List<int>();
+            SectionCapGeometry.Build(data.vertices, data.triangles,
+                inspection.transform.worldToLocalMatrix * source.transform.localToWorldMatrix,
+                inspection.SectionNormalLocal, inspection.SectionPointLocal, vertices, indices);
+            var actual = cap.sharedMesh.vertices;
+            float error = actual.Length == vertices.Count ? 0f : float.PositiveInfinity;
+            for (int i = 0; i < actual.Length && i < vertices.Count; i++)
+                error = Mathf.Max(error, Vector3.Distance(actual[i], vertices[i]));
+            Check((!requireCap || indices.Count > 0) && actual.Length == vertices.Count &&
+                cap.sharedMesh.triangles.SequenceEqual(indices) && error < .00001f &&
+                cap.gameObject.activeInHierarchy == (indices.Count > 0),
+                "lock cap matches current articulated geometry / " + phase,
+                "production cap data -> current source matrix after natural Play frames",
+                "cached vertices=" + actual.Length + "; current vertices=" + vertices.Count + "; max vertex error metres=" + error);
         }
 
         static IEnumerator CheckEras()

@@ -27,11 +27,13 @@ namespace Museum.Refined
         HelmetRearConnections rear;
         HelmetWindowInteractable window;
         HelmetSectionInteractable guide;
+        HelmetSectionSurface sectionSurface;
         XRSimpleInteractable[] priorityTargets;
         Quaternion toggleClosed, nutClosed;
         bool initialized;
         bool priorityRegistered;
         int observedEra = int.MinValue;
+        float observedLockRelease = float.NaN;
         public bool IsRefinedActive { get; private set; }
         public Renderer[] RefinedRenderers => refinedRenderers;
         public Transform RefinedWindow => refinedWindow;
@@ -97,6 +99,7 @@ namespace Museum.Refined
             inspection = GetComponent<HelmetInspectionController>(); eras = GetComponent<HelmetEraSwitcher>(); rear = GetComponent<HelmetRearConnections>();
             window = GetComponentInChildren<HelmetWindowInteractable>(true);
             guide = GetComponentInChildren<HelmetSectionInteractable>(true);
+            sectionSurface = GetComponent<HelmetSectionSurface>();
             if (toggle) toggleClosed = toggle.localRotation;
             if (nut) nutClosed = nut.localRotation;
             initialized = true;
@@ -112,6 +115,13 @@ namespace Museum.Refined
                 float release = Mathf.Clamp01(inspection.WindowAngle / 10f);
                 if (toggle) toggle.localRotation = toggleClosed * Quaternion.AngleAxis(release * -65f, Vector3.back);
                 if (nut) nut.localRotation = nutClosed * Quaternion.AngleAxis(release * 720f, Vector3.up);
+                // Preserve the cap's .05-degree window threshold while invalidating
+                // a Refresh called before these articulated transforms were updated.
+                if (float.IsNaN(observedLockRelease) || Mathf.Abs(observedLockRelease - release) > .005f)
+                {
+                    observedLockRelease = release;
+                    if (sectionSurface) sectionSurface.InvalidateGeometry();
+                }
             }
         }
         public void RefreshVisualBinding()

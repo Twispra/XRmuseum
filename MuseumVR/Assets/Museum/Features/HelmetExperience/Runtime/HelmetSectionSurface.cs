@@ -5,7 +5,8 @@ using UnityEngine.Rendering;
 
 namespace Museum.Experience
 {
-    [DisallowMultipleComponent]
+    // Refined lock motion runs at order 80; caps must use its current pose.
+    [DefaultExecutionOrder(90), DisallowMultipleComponent]
     public sealed class HelmetSectionSurface : MonoBehaviour
     {
         [SerializeField] HelmetSectionMeshData geometry;
@@ -16,7 +17,7 @@ namespace Museum.Experience
         readonly List<int> indices = new List<int>();
         Vector3 previousNormal,previousPoint;
         float previousWindow=float.NaN;
-        bool initialized,wasCut;
+        bool initialized,wasCut,geometryDirty;
         public int TriangleCount { get; private set; }
         public int RebuildCount { get; private set; }
         public int RejectedOpenBands { get; private set; }
@@ -28,6 +29,7 @@ namespace Museum.Experience
         }
         void Awake() => controller=GetComponent<HelmetInspectionController>();
         void LateUpdate() => Refresh();
+        public void InvalidateGeometry() => geometryDirty=true;
         public void Refresh()
         {
             if(!controller) controller=GetComponent<HelmetInspectionController>();
@@ -54,9 +56,10 @@ namespace Museum.Experience
                 }
                 initialized=true;
             }
-            bool changed=!wasCut || (previousNormal-controller.SectionNormalLocal).sqrMagnitude>1e-10f ||
+            bool changed=!wasCut || geometryDirty || (previousNormal-controller.SectionNormalLocal).sqrMagnitude>1e-10f ||
                 (previousPoint-controller.SectionPointLocal).sqrMagnitude>1e-10f || Mathf.Abs(previousWindow-controller.WindowAngle)>.05f;
             if(!changed)return;
+            geometryDirty=false;
             previousNormal=controller.SectionNormalLocal;previousPoint=controller.SectionPointLocal;previousWindow=controller.WindowAngle;
             TriangleCount=0;RejectedOpenBands=0;RebuildCount++;
             foreach(var p in parts)
