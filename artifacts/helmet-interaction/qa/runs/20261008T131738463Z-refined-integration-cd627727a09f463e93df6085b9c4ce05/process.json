@@ -1,0 +1,14 @@
+{
+  "testedCommit": "00ed3cbcc36a4475948185d58feefc8e86998339",
+  "unity": "2022.3.62f3c1",
+  "environment": "Windows Editor / Direct3D 11, isolated worktree, expanded LFS assets",
+  "command": "Unity.exe -batchmode -projectPath <isolated worktree>/MuseumVR -executeMethod Museum.RefinedModels.EditorTools.RefinedModelValidation.RunBatch -logFile <local independent log>",
+  "processId": 32724,
+  "exitCode": 0,
+  "report": "report.json",
+  "status": "passed",
+  "checks": 135,
+  "failedChecks": 0,
+  "reportedRuntimeErrors": 0,
+  "limitations": "Simulated XR input and public API checks in desktop Unity Editor. Temporary mono screenshots. Not a physical headset, historical/participant acceptance, executable build, listening or performance measurement."
+}
