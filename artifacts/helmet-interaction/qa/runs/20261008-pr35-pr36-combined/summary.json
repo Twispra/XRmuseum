@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "repository": "Twispra/XRmuseum",
+  "dateAsiaShanghai": "2026-10-08",
+  "testedHeads": {
+    "pr35": "154bc3b744806d2fbf6040eb0e568db5c7ae0a37",
+    "pr36": "649819d644a994f8bc4cc3f7ae18f46718f771f2"
+  },
+  "testedHead": "154bc3b744806d2fbf6040eb0e568db5c7ae0a37",
+  "additionalDirty": "PR36 head merged with --no-commit into the isolated PR35 fix worktree. Known untracked Editor review probe/meta and QA outputs. No unrelated product edits.",
+  "combinedIndexTree": "fa24287316e903209bac4f8ebdf18adc5719b7a9",
+  "museumVRTree": "8f9ef25d7a3ff6d9e9bf014117927a6a0b0a2eca",
+  "environment": "Windows / Unity 2022.3.62f3c1 / Direct3D 11 / expanded Unity LFS assets",
+  "processes": [
+    {
+      "method": "Museum.RefinedModels.EditorTools.RefinedModelValidation.RunBatch",
+      "processId": 13596,
+      "exitCode": 0,
+      "checks": 135,
+      "failedChecks": 0,
+      "reportedRuntimeErrors": 0,
+      "fullReportRetainedLocally": "C:/Users/zhaoooooo/.codex/worktrees/pr35-pr36-review-2026-10-08/XRmuseum/artifacts/helmet-interaction/qa/runs/20261008T133302549Z-refined-integration-d764345348ae4ada88c113d13ce74073/report.json"
+    },
+    {
+      "method": "Museum.Localization.EditorTools.LocalizationIntegrationValidation.RunBatch",
+      "processId": 35316,
+      "exitCode": 0,
+      "checks": 80999,
+      "failedChecks": 0,
+      "reportedRuntimeErrors": 0,
+      "fullReportRetainedLocally": "C:/Users/zhaoooooo/.codex/worktrees/pr35-pr36-review-2026-10-08/XRmuseum/artifacts/localization/qa/runs/20261008T133729690Z-integration-a7537e58f5e54cbbbfed7d366fd6ee4f/report.json",
+      "includedHotspotChecks": 768,
+      "focusedReport": "hotspot-interaction.json"
+    }
+  ],
+  "validationScope": "Saved main scene. Queued simulated XR controller/HMD input for existing XRI interactions and language buttons; public API geometry/era/connection checks as labelled in the full reports. Current articulated cap geometry, cache reuse, direct/ray hotspots, localization/lifecycle/reset and original scene bindings.",
+  "limitations": "Desktop Editor and temporary monocular captures. Not physical headset/controller acceptance, historical/appearance certification, participant study, listening, target performance or an executable build. The two targeted fixes also have separately committed standalone acceptance. Full raw reports and failure/startup logs remain local; this compact evidence does not claim a new run on a future merge commit."
+}

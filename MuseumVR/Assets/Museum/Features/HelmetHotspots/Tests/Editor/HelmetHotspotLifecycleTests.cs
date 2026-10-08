@@ -160,6 +160,112 @@ namespace Museum.Hotspots.Tests
             Assert.That(originalTour.VisitedCount, Is.Zero);
         }
 
+        [UnityTest]
+        public IEnumerator ExpiredExplanationStaysHiddenAfterTourComponentAndObjectReenable()
+        {
+            var tour = InstantiateSavedTour();
+            var hotspot = tour.GetComponentsInChildren<HelmetHotspot>(true)[0];
+
+            foreach (bool wholeObject in new[] { false, true })
+            {
+                hotspot.Activate();
+                tour.AdvanceExplanation(31f);
+                AssertExplanationOpacity(tour, 0f);
+
+                SetTourEnabled(tour, wholeObject, false);
+                yield return null;
+                SetTourEnabled(tour, wholeObject, true);
+                AssertExplanationOpacity(tour, 0f);
+                tour.AdvanceExplanation(60f);
+                AssertExplanationOpacity(tour, 0f);
+
+                hotspot.Activate();
+                AssertExplanationOpacity(tour, 1f);
+                Assert.That(tour.VisitedCount, Is.EqualTo(1), "Reselection restarts the explanation without adding a visit.");
+                tour.AdvanceExplanation(30.5f);
+                AssertExplanationOpacity(tour, .5f);
+
+                tour.ResetTour();
+                AssertExplanationOpacity(tour, 1f);
+                Assert.That(tour.VisitedCount, Is.Zero);
+                tour.AdvanceExplanation(60f);
+                AssertExplanationOpacity(tour, 1f);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator FadingExplanationKeepsItsOpacityAfterTourComponentAndObjectReenable()
+        {
+            var tour = InstantiateSavedTour();
+            var hotspot = tour.GetComponentsInChildren<HelmetHotspot>(true)[0];
+
+            foreach (bool wholeObject in new[] { false, true })
+            {
+                hotspot.Activate();
+                tour.AdvanceExplanation(30.5f);
+                AssertExplanationOpacity(tour, .5f);
+
+                SetTourEnabled(tour, wholeObject, false);
+                yield return null;
+                SetTourEnabled(tour, wholeObject, true);
+                AssertExplanationOpacity(tour, .5f);
+
+                tour.AdvanceExplanation(.25f);
+                AssertExplanationOpacity(tour, .25f);
+                tour.AdvanceExplanation(.25f);
+                AssertExplanationOpacity(tour, 0f);
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator HoldingExplanationKeepsItsRemainingTimeAfterTourComponentAndObjectReenable()
+        {
+            var tour = InstantiateSavedTour();
+            var hotspot = tour.GetComponentsInChildren<HelmetHotspot>(true)[0];
+
+            foreach (bool wholeObject in new[] { false, true })
+            {
+                hotspot.Activate();
+                tour.AdvanceExplanation(29.5f);
+                AssertExplanationOpacity(tour, 1f);
+
+                SetTourEnabled(tour, wholeObject, false);
+                yield return null;
+                SetTourEnabled(tour, wholeObject, true);
+                AssertExplanationOpacity(tour, 1f);
+
+                tour.AdvanceExplanation(.75f);
+                AssertExplanationOpacity(tour, .75f);
+                tour.AdvanceExplanation(.75f);
+                AssertExplanationOpacity(tour, 0f);
+            }
+        }
+
+        static void SetTourEnabled(HelmetHotspotTour tour, bool wholeObject, bool enabled)
+        {
+            if (wholeObject) tour.gameObject.SetActive(enabled);
+            else tour.enabled = enabled;
+        }
+
+        static void AssertExplanationOpacity(HelmetHotspotTour tour, float expected)
+        {
+            Assert.That(tour.ExplanationOpacity, Is.EqualTo(expected).Within(.001f), "Explanation lifetime opacity");
+            var panel = tour.transform.Find("Information Panel");
+            Assert.That(panel, Is.Not.Null);
+            foreach (var label in panel.GetComponentsInChildren<TMPro.TMP_Text>(true))
+                Assert.That(label.color.a, Is.EqualTo(expected).Within(.001f), label.name + " visible opacity");
+
+            var backing = panel.Find("Panel Backing").GetComponent<Renderer>();
+            var material = backing.sharedMaterial;
+            string colorProperty = material.HasProperty("_BaseColor") ? "_BaseColor" : "_Color";
+            float expectedAlpha = material.GetColor(colorProperty).a * expected;
+            var block = new MaterialPropertyBlock();
+            backing.GetPropertyBlock(block);
+            foreach (string property in new[] { "_BaseColor", "_Color" })
+                Assert.That(block.GetColor(property).a, Is.EqualTo(expectedAlpha).Within(.001f),
+                    "Explanation backing " + property + " visible opacity");
+        }
+
         HelmetHotspotTour InstantiateSavedTour()
         {
             Assert.That(Application.isPlaying, Is.True);

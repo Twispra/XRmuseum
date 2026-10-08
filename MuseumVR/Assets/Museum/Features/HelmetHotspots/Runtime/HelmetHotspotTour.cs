@@ -14,6 +14,8 @@ namespace Museum.Hotspots
         [SerializeField] TMP_Text progressText;
         [SerializeField] GameObject completionFeedback;
         [SerializeField] bool enableTriggerQueries = true;
+        [SerializeField, Min(0f)] float explanationHoldSeconds = 30f;
+        [SerializeField, Min(.01f)] float explanationFadeSeconds = 1f;
 
         readonly HashSet<string> visited = new HashSet<string>();
         readonly Dictionary<XRRayInteractor, QueryTriggerInteraction> rayQuerySettings = new Dictionary<XRRayInteractor, QueryTriggerInteraction>();
@@ -27,10 +29,19 @@ namespace Museum.Hotspots
         public event Action<TMP_Text, string> TextChanged;
         const string Prompt = "Select a highlighted point to inspect the helmet.";
         string informationEnglish = Prompt;
+        TMP_Text[] explanationLabels = Array.Empty<TMP_Text>();
+        Color[] explanationLabelColors = Array.Empty<Color>();
+        Renderer[] explanationRenderers = Array.Empty<Renderer>();
+        Color[] explanationRendererColors = Array.Empty<Color>();
+        bool explanationVisualsCached;
+        float explanationElapsed;
+        bool explanationCountdownActive;
         public int VisitedCount => visited.Count;
         public int RequiredHotspots => requiredHotspots;
         public bool IsComplete => VisitedCount >= requiredHotspots;
         public bool HasVisited(string identifier) => identifier != null && visited.Contains(identifier);
+        public float ExplanationOpacity { get; private set; } = 1f;
+        public bool HotspotsVisible { get; private set; }
 
         public void Configure(int required, TMP_Text information, TMP_Text progress, GameObject completion)
         {
@@ -38,6 +49,9 @@ namespace Museum.Hotspots
             informationText = information;
             progressText = progress;
             completionFeedback = completion;
+            explanationVisualsCached = false;
+            CacheExplanationVisuals();
+            SetExplanationOpacity(1f);
             RefreshText();
         }
 
@@ -50,6 +64,7 @@ namespace Museum.Hotspots
             bool added = visited.Add(identifier);
 
             informationEnglish = string.IsNullOrWhiteSpace(title) ? description : title + "\n" + description;
+            RestartExplanationLifetime();
             RefreshText();
 
             if (!wasComplete && IsComplete)
@@ -62,6 +77,9 @@ namespace Museum.Hotspots
         {
             visited.Clear();
             informationEnglish = Prompt;
+            explanationCountdownActive = false;
+            explanationElapsed = 0f;
+            SetExplanationOpacity(1f);
             RefreshText();
             ResetPerformed?.Invoke();
         }
@@ -70,7 +88,16 @@ namespace Museum.Hotspots
         {
             if (enableTriggerQueries)
                 EnableCompatibleInteractors();
+            CacheExplanationVisuals();
+            SetExplanationOpacity(ExplanationOpacity);
+            SetHotspotsVisible(false);
             RefreshText();
+        }
+
+        void Update()
+        {
+            AdvanceExplanation(Time.unscaledDeltaTime);
+            UpdateHotspotVisibilityFromRays();
         }
 
         void OnDisable()
@@ -111,6 +138,123 @@ namespace Museum.Hotspots
                 if (!directQuerySettings.ContainsKey(interactor))
                     directQuerySettings[interactor] = interactor.physicsTriggerInteraction;
                 interactor.physicsTriggerInteraction = QueryTriggerInteraction.Collide;
+            }
+        }
+
+        public void AdvanceExplanation(float deltaSeconds)
+        {
+            if (!explanationCountdownActive || deltaSeconds <= 0f)
+                return;
+
+            explanationElapsed += deltaSeconds;
+            float fadeProgress = Mathf.Max(0f, explanationElapsed - explanationHoldSeconds) / Mathf.Max(.01f, explanationFadeSeconds);
+            SetExplanationOpacity(1f - Mathf.Clamp01(fadeProgress));
+            if (ExplanationOpacity <= 0f)
+                explanationCountdownActive = false;
+        }
+
+        public void SetHotspotsVisible(bool visible)
+        {
+            HotspotsVisible = visible;
+            foreach (var hotspot in GetComponentsInChildren<HelmetHotspot>(true))
+                hotspot.SetMarkerVisible(visible);
+        }
+
+        public bool IsHelmetTarget(Transform target)
+        {
+            if (target == null)
+                return false;
+
+            var hotspot = target.GetComponentInParent<HelmetHotspot>();
+            if (hotspot != null && hotspot.transform.IsChildOf(transform))
+                return true;
+
+            var helmet = transform.parent;
+            return helmet != null && (target == helmet || target.IsChildOf(helmet)) && !target.IsChildOf(transform);
+        }
+
+        void UpdateHotspotVisibilityFromRays()
+        {
+            bool visible = false;
+            foreach (var ray in rayQuerySettings.Keys)
+            {
+                if (ray == null || !ray.isActiveAndEnabled || !ray.TryGetCurrent3DRaycastHit(out var hit) || !hit.collider)
+                    continue;
+                if (!IsHelmetTarget(hit.collider.transform))
+                    continue;
+                visible = true;
+                break;
+            }
+            if (visible != HotspotsVisible)
+                SetHotspotsVisible(visible);
+        }
+
+        void RestartExplanationLifetime()
+        {
+            explanationElapsed = 0f;
+            explanationCountdownActive = true;
+            SetExplanationOpacity(1f);
+        }
+
+        void CacheExplanationVisuals()
+        {
+            if (explanationVisualsCached)
+                return;
+
+            if (informationText == null || informationText.transform.parent == null)
+            {
+                explanationLabels = Array.Empty<TMP_Text>();
+                explanationLabelColors = Array.Empty<Color>();
+                explanationRenderers = Array.Empty<Renderer>();
+                explanationRendererColors = Array.Empty<Color>();
+                return;
+            }
+
+            var panel = informationText.transform.parent;
+            explanationLabels = panel.GetComponentsInChildren<TMP_Text>(true);
+            explanationLabelColors = new Color[explanationLabels.Length];
+            for (int i = 0; i < explanationLabels.Length; i++)
+                explanationLabelColors[i] = explanationLabels[i].color;
+
+            var renderers = panel.GetComponentsInChildren<Renderer>(true);
+            var backgrounds = new List<Renderer>();
+            var colors = new List<Color>();
+            foreach (var renderer in renderers)
+            {
+                if (renderer.GetComponent<TMP_Text>() != null || renderer.sharedMaterial == null)
+                    continue;
+                string property = renderer.sharedMaterial.HasProperty("_BaseColor") ? "_BaseColor" : "_Color";
+                if (!renderer.sharedMaterial.HasProperty(property))
+                    continue;
+                backgrounds.Add(renderer);
+                colors.Add(renderer.sharedMaterial.GetColor(property));
+            }
+            explanationRenderers = backgrounds.ToArray();
+            explanationRendererColors = colors.ToArray();
+            explanationVisualsCached = true;
+        }
+
+        void SetExplanationOpacity(float opacity)
+        {
+            ExplanationOpacity = Mathf.Clamp01(opacity);
+            for (int i = 0; i < explanationLabels.Length; i++)
+            {
+                if (!explanationLabels[i]) continue;
+                var color = explanationLabelColors[i];
+                color.a *= ExplanationOpacity;
+                explanationLabels[i].color = color;
+            }
+            for (int i = 0; i < explanationRenderers.Length; i++)
+            {
+                var renderer = explanationRenderers[i];
+                if (!renderer) continue;
+                var color = explanationRendererColors[i];
+                color.a *= ExplanationOpacity;
+                var block = new MaterialPropertyBlock();
+                renderer.GetPropertyBlock(block);
+                block.SetColor("_BaseColor", color);
+                block.SetColor("_Color", color);
+                renderer.SetPropertyBlock(block);
             }
         }
 
