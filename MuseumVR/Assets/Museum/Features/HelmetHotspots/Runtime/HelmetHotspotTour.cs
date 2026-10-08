@@ -89,7 +89,7 @@ namespace Museum.Hotspots
             if (enableTriggerQueries)
                 EnableCompatibleInteractors();
             CacheExplanationVisuals();
-            SetExplanationOpacity(1f);
+            SetExplanationOpacity(ExplanationOpacity);
             SetHotspotsVisible(false);
             RefreshText();
         }
