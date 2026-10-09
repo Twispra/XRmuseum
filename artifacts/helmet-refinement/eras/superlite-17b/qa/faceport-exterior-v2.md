@@ -10,7 +10,7 @@
 
 ## 阻碍及未验证
 
-从 [Blender 官方下载站](https://download.blender.org/release/Blender4.5/)取得便携 4.5.14，用 `--version` 启动即退出，Windows CodeIntegrity Operational 事件 3077/3033 指向 `blender.shared/OpenEXR.dll` 未满足签名级别；进程退出码 `0xC0E90002`。未关闭或降低 Smart App Control/代码完整性策略，也未尝试规避拦截。
+从 [Blender 官方下载站](https://download.blender.org/release/Blender4.5/)取得便携 4.5.14，用 `--version` 启动即退出，Windows CodeIntegrity Operational 事件 3077/3033 指向 `blender.shared/OpenEXR.dll` 未满足签名级别；进程退出码 `0xC0E90002`。用户随后安装的官方 4.5.14 安装版位于 `D:\Blender4.5.14`，启动也显示同一个 DLL 的“损坏的映像”错误和状态 `0xC0E90002`。本机两份 `OpenEXR.dll` 的 SHA-256 相同（`BD2175B05AF73744D28EDBB05BC087FD9455C0823F5CB3EBD91936E73DA5E859`），故不能把它归因为单份便携包下载损坏；仍需在可运行环境确认。未关闭或降低 Smart App Control/代码完整性策略，也未尝试规避拦截。
 
 因此 **v2 `.blend`、GLB、预览及运行版回读结果尚不存在**；`scripts/check_faceport_exterior_v2.py` 未运行。本次仅提交资料与可编辑建模脚本，不声称外形校正已经生成或通过审阅。现有 v1 自动检查结果仍有效，但维护者指出的外观和参数缺陷仍存在于 v1 文件。没有 Unity 导入、主体装配、真实尺寸、VR、构建或用户验证。
 

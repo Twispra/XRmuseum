@@ -27,6 +27,6 @@ Blender 4.5 LTS 可分别打开两个分件源文件。两个 GLB 可在支持 g
 
 - [整盔来源、部件关系、数据依据与视图缺口](references/whole-helmet-source-map-v2.zh-CN.md)；[官方照片链接—现有 v1 模型近似视角—v2 修正目标](references/photo-model-comparison-v2.zh-CN.md)。厂家图片只作链接。
 - [v2 参数](references/faceport-exterior-parameters-v2.json)把压圈建模估计厚度定为 0.012 m，与 v2 脚本的 -0.011～+0.001 m 一致；这**不是实测尺寸**。`scripts/build_faceport_exterior_v2.py` 改为非对称面窗轮廓、不规则侧阀体与错位/不同轴控制钮，并从独立面窗件移除属于壳体的 visor 520-054。v1 资产和其原始报告保留。
-- **v2 Blender/GLB/渲染未产出。**本机 Windows Smart App Control 拦截从 Blender 官方站下载的 4.5.14 便携版 `OpenEXR.dll`（`0xC0E90002`）；没有关闭安全防护。[本轮检查与限制](qa/faceport-exterior-v2.md)。请勿把脚本修正写成已经完成的模型校正或装配验收。
+- **v2 Blender/GLB/渲染未产出。**本机 Windows 代码完整性策略拦截 Blender 官方 4.5.14 便携版和用户新装安装版的同一 `OpenEXR.dll`（`0xC0E90002`）；没有关闭安全防护。[本轮检查与限制](qa/faceport-exterior-v2.md)。请勿把脚本修正写成已经完成的模型校正或装配验收。
 
 后续在可信可运行的 Blender 4.5.14 环境，先在新空目录运行既有 `scripts/make_original_textures_v1.py` 生成两张原创贴图，再在同一目录运行 v2 建模脚本；人工对照官方照片调整，导出源/GLB/同角度渲染，再运行 v2 回读脚本并在本 PR 更新证据。正式比例、整体原点和接触曲面要同未来主体作者协商。
