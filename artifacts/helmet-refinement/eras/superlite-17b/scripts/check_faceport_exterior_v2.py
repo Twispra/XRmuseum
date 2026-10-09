@@ -9,7 +9,7 @@ from mathutils import Vector
 
 args = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 if len(args) != 1:
-    raise SystemExit("usage: blender -b -P check_faceport_exterior_v1.py -- ASSET_DIR")
+    raise SystemExit("usage: blender -b -P check_faceport_exterior_v2.py -- ASSET_DIR")
 root = os.path.abspath(args[0])
 result = {"blender": bpy.app.version_string, "parts": {}}
 
@@ -28,10 +28,16 @@ for stem in ("SL17B_FacePortAssembly_v2", "SL17B_SideBlockControls_v2"):
                      for a in range(3)]
     packed_images = sorted(i.name for i in bpy.data.images if i.packed_file)
     retainer_depth = None
+    retainer_fastener_count = None
+    distinct_sideblock_controls = None
     if stem == "SL17B_FacePortAssembly_v2":
         retainer = next(o for o in meshes if o.name.startswith("Port_Retainer_"))
         ys = [(retainer.matrix_world @ v.co).y for v in retainer.data.vertices]
         retainer_depth = round(max(ys) - min(ys), 6)
+        retainer_fastener_count = sum(n.startswith("Retainer_Fastener_") for n in source_names)
+    else:
+        distinct_sideblock_controls = (any("520-524" in n for n in source_names) and
+                                       any("520-525" in n for n in source_names))
 
     bpy.ops.wm.read_factory_settings(use_empty=True)
     bpy.ops.import_scene.gltf(filepath=export)
@@ -54,7 +60,9 @@ for stem in ("SL17B_FacePortAssembly_v2", "SL17B_SideBlockControls_v2"):
               (stem != "SL17B_FacePortAssembly_v2" or
                (transparent == ["Polycarbonate lens - interpretive tint"] and
                 retainer_depth == 0.012 and
+                retainer_fastener_count == 11 and
                 not any("UpperVisor" in n for n in source_names))))
+    all_ok = all_ok and (stem != "SL17B_SideBlockControls_v2" or distinct_sideblock_controls)
     result["parts"][stem] = {
         "passed": all_ok,
         "source_meshes": len(meshes),
@@ -68,7 +76,9 @@ for stem in ("SL17B_FacePortAssembly_v2", "SL17B_SideBlockControls_v2"):
         "transparent_glb_materials": transparent,
         "names_match": source_names == export_names,
         "review_objects_excluded": not any(n.startswith("REVIEW_ONLY") for n in export_names)
-        ,"retainer_depth_m": retainer_depth
+        ,"retainer_depth_m": retainer_depth,
+        "retainer_fastener_count": retainer_fastener_count,
+        "distinct_sideblock_controls": distinct_sideblock_controls
     }
 
 result["passed"] = all(item["passed"] for item in result["parts"].values())

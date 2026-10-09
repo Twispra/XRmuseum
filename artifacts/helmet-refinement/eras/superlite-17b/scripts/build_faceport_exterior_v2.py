@@ -13,7 +13,7 @@ from mathutils import Vector
 
 args = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
 if len(args) != 1:
-    raise SystemExit("usage: blender -b -P build_faceport_exterior_v1.py -- NEW_OUTPUT_DIR")
+    raise SystemExit("usage: blender -b -P build_faceport_exterior_v2.py -- NEW_OUTPUT_DIR")
 ROOT = os.path.abspath(args[0])
 for folder in ("sources/parts", "exports", "previews", "textures"):
     os.makedirs(os.path.join(ROOT, folder), exist_ok=True)
@@ -278,9 +278,10 @@ def faceport():
     annulus("Port_Retainer_560-070_ESTIMATED", (.157,.109), (.133,.0845), -.011, .001, chrome)
     annulus("ViewPort_Seal_510-260_ESTIMATED", (.138,.090), (.131,.082), .002, .006, seal)
     lens("FacePort_520-004_ESTIMATED", .136, .087, -.004, .000, glass)
-    # Visible fasteners sampled around the ring; count/spacing remain estimates.
-    # Central crown/bottom are left clear for shell handle and nose-block area.
-    fastener_degrees = (10, 35, 65, 115, 145, 170, 190, 215, 245, 295, 325, 350)
+    # FCPRT-2 documents 11 port-retainer screws plus 4 separate whisker screws.
+    # Only the retainer screws belong to this independent face-port study.
+    # Their angles/head sizes remain estimates; there is no measured hole map.
+    fastener_degrees = (10, 35, 65, 115, 145, 170, 190, 215, 245, 325, 350)
     for i, degree in enumerate(fastener_degrees, 1):
         x,z = perimeter(math.radians(degree),.146,.098)
         cylinder("Retainer_Fastener_%02d_ESTIMATED" % i, (x,-.015,z), .0037,.003,
@@ -302,20 +303,22 @@ def sideblock():
     scene = setup()
     brass = image_material("Brass fitting - interpretation", (.47,.31,.11), .83, .32,
                            rough_image="SL17B_Exterior_Roughness_v1.png")
-    chrome = image_material("Connector steel - interpretation", (.64,.68,.70), .83, .27,
+    chrome = image_material("Chromed brass side-block - interpretation", (.56,.60,.63), .83, .27,
                             rough_image="SL17B_Exterior_Roughness_v1.png")
     black = image_material("Polyurethane control knob - interpretation", (.05,.06,.065), 0, .55,
                            base_image="SL17B_Exterior_BaseColor_v1.png")
     label = image_material("Dark identification plate - no copied logo", (.025,.027,.029), 0, .68)
-    outline = [(-.075,-.035),(-.080,.014),(-.053,.044),(.049,.045),(.078,.018),(.068,-.027),(.037,-.047),(-.044,-.046)]
+    # Low transverse body with a separate hanging identification plate follows
+    # the manufacturer's 17B side-block close-up; dimensions are unmeasured.
+    outline = [(-.075,-.023),(-.080,.010),(-.056,.032),(.049,.032),(.076,.013),(.071,-.018),(.050,-.029),(-.052,-.028)]
     prism("SideBlock_505-024_OuterBody_ESTIMATED", outline, -.025, .027, chrome, .006)
-    plaque = [(-.047,-.031),(-.053,.010),(-.035,.032),(.044,.032),(.058,.010),(.049,-.025),(.029,-.037),(-.036,-.036)]
+    plaque = [(-.033,-.014),(-.032,.014),(.040,.020),(.055,-.006),(.043,-.053),(.012,-.062),(-.026,-.052)]
     prism("SideBlock_BlankLabel_Interpretive", plaque, -.030, -.027, label, .002)
     # Product photo shows offset control positions/orientations. Axes and
     # sizes are provisional: the photo is perspective, not a measured drawing.
     controls = [
-        ("Emergency",(-.071,-.032,.002),Vector((-.77,-.64,-.03))),
-        ("SteadyFlow",(.061,-.010,.038),Vector((.95,-.30,.04))),
+        ("EmergencyValve_505-070_Knob_520-525",(-.071,-.032,.002),Vector((-.77,-.64,-.03))),
+        ("SteadyFlow_Knob_520-524",(.061,-.010,.038),Vector((.95,-.30,.04))),
     ]
     for name, root, axis in controls:
         axis.normalize()
