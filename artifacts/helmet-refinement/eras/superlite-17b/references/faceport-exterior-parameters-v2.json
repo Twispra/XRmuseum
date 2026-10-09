@@ -1,0 +1,51 @@
+{
+  "subject": "Kirby Morgan SuperLite 17B, proposed P/N 500-010 posts configuration",
+  "scope": "independent unassembled face-port and side-block exterior study v2",
+  "source_checked": "2026-10-09",
+  "coordinates": {
+    "unit": "metre, provisional",
+    "front": "-Y",
+    "up": "+Z",
+    "faceport_local_origin": "centre of estimated face-port opening",
+    "sideblock_local_origin": "centre of study housing",
+    "whole_helmet_origin": "unknown; to agree with body author"
+  },
+  "manufacturer_identification": {
+    "face_port": "520-004, blowapart #241108001 location 35",
+    "port_retainer": "560-070, location 33",
+    "view_port_o_ring": "510-260, location 37",
+    "nose_block_knob": "550-062, location 29",
+    "side_block_assembly": "505-024, location 6",
+    "visor": "520-054, location 1; included with shell 520-065, not in face-port v2"
+  },
+  "visual_estimates_not_measurements": {
+    "faceport_outer_width_m": 0.314,
+    "faceport_outer_height_m": 0.218,
+    "faceport_clear_width_m": 0.266,
+    "faceport_clear_height_m": 0.169,
+    "retainer_front_y_m": -0.011,
+    "retainer_back_y_m": 0.001,
+    "retainer_depth_m": 0.012,
+    "lens_thickness_m": 0.004,
+    "sideblock_housing_nominal_width_m": 0.158,
+    "sideblock_housing_nominal_height_m": 0.092,
+    "sideblock_housing_nominal_depth_m": 0.052,
+    "fastener_heads_modelled": 12
+  },
+  "unknown": [
+    "actual outer dimensions, fastener count and pitch on a 500-010 unit",
+    "shell contact surfaces, part attachment coordinates and shared origin",
+    "control axes and connector thread geometry",
+    "exact batch material and manufacturing year",
+    "whether manufacturer marketing photographs show posts or MWPC variant",
+    "full orthographic front, side, rear and top photographic coverage"
+  ],
+  "sources": [
+    "https://www.kirbymorgan.com/products/helmets/superlite-17b",
+    "https://www.kirbymorgan.com/product/specs/314/superlite-17b",
+    "https://kirbymorgan.com/sites/default/files/2025-01/sl-17b-blowapart-241108001.pdf",
+    "https://www.kirbymorgan.com/sites/default/files/2021-02/17B-Helmet-Colors-yellow.jpg",
+    "https://www.kirbymorgan.com/sites/default/files/2021-02/fiberglass-side-block-IMG_0387.jpg",
+    "https://www.kirbymorgan.com/sites/default/files/2021-06/Bulletin-03-2021.pdf"
+  ]
+}

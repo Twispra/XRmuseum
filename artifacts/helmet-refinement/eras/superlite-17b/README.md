@@ -20,3 +20,13 @@ Blender 4.5 LTS 可分别打开两个分件源文件。两个 GLB 可在支持 g
 - 主体负责人仍待认领。正式尺寸、整体坐标、面窗安装曲率与侧阀连接点须共同确定后再改分件。
 - 目前外观仍为概略研究件：侧阀体内部气路、旋钮功能、螺纹、鼻夹内构、壳体/颈圈、呼吸调节器及排气翼均未建立。
 - 需要另一位成员对照同一 17B 版本审阅后，才能决定是否汇入资产分支；Unity 接入另行处理。
+
+## 2026-10-09 维护者审阅后的进度
+
+[PR #37 的审阅意见](https://github.com/Twispra/XRmuseum/pull/37#issuecomment-6063779730)指出 v1 面窗上下轮廓、visor 归属、侧阀壳体/旋钮布局与参数深度问题。Ereshkigal1224 已在同一 PR 回复，接受 **500-010 整盔资料收集**；主体与最终总装仍待其他成员认领。
+
+- [整盔来源、部件关系、数据依据与视图缺口](references/whole-helmet-source-map-v2.zh-CN.md)；[官方照片链接—现有 v1 模型近似视角—v2 修正目标](references/photo-model-comparison-v2.zh-CN.md)。厂家图片只作链接。
+- [v2 参数](references/faceport-exterior-parameters-v2.json)把压圈建模估计厚度定为 0.012 m，与 v2 脚本的 -0.011～+0.001 m 一致；这**不是实测尺寸**。`scripts/build_faceport_exterior_v2.py` 改为非对称面窗轮廓、不规则侧阀体与错位/不同轴控制钮，并从独立面窗件移除属于壳体的 visor 520-054。v1 资产和其原始报告保留。
+- **v2 Blender/GLB/渲染未产出。**本机 Windows Smart App Control 拦截从 Blender 官方站下载的 4.5.14 便携版 `OpenEXR.dll`（`0xC0E90002`）；没有关闭安全防护。[本轮检查与限制](qa/faceport-exterior-v2.md)。请勿把脚本修正写成已经完成的模型校正或装配验收。
+
+后续在可信可运行的 Blender 4.5.14 环境，先在新空目录运行既有 `scripts/make_original_textures_v1.py` 生成两张原创贴图，再在同一目录运行 v2 建模脚本；人工对照官方照片调整，导出源/GLB/同角度渲染，再运行 v2 回读脚本并在本 PR 更新证据。正式比例、整体原点和接触曲面要同未来主体作者协商。

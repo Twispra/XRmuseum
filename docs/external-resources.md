@@ -86,3 +86,9 @@ Codex辅助增量改模、原创材质图、导出、渲染与自动/浏览器�
 Ereshkigal1224 负责本轮细节与外观，Codex 辅助核对 Kirby Morgan 的 [17B 产品页](https://www.kirbymorgan.com/products/helmets/superlite-17b)、[规格页](https://www.kirbymorgan.com/product/specs/314/superlite-17b)及 [2025 零件分解图 Document #241108001](https://kirbymorgan.com/sites/default/files/2025-01/sl-17b-blowapart-241108001.pdf)。参考对象拟定 P/N 500-010；对应观察、部件编号及估算界线见[独立资料](../artifacts/helmet-refinement/eras/superlite-17b/references/faceport-exterior-v1.zh-CN.md)。原图片和 PDF 仅供观察，不复制到仓库或作贴图，也不推断其再分发许可。
 
 两张 1024px 基色/粗糙度贴图由本项目脚本原创生成；Blender4.5.14 LTS 从官方便携版仅在本机临时使用，未提交软件本体或增添 Unity 包。Codex 辅助独立 Blender 分件、GLB、渲染和回读检查，详见[活动记录](activity/2026-10-08-superlite17b-details-v1.md)。材质和尺寸为展示估算，自动检查不等于组员人工审阅、实物测绘、真实 VR 或用户研究。
+
+## 2026-10-09：SuperLite 17B 扩展资料核对
+
+Ereshkigal1224 接受维护者提出的 500-010（posts）**整盔资料研究**，Codex 辅助整理 [厂家 17B 产品/局部照片](https://www.kirbymorgan.com/products/helmets/superlite-17b)、[规格](https://www.kirbymorgan.com/product/specs/314/superlite-17b)、[零件图 Document #241108001](https://kirbymorgan.com/sites/default/files/2025-01/sl-17b-blowapart-241108001.pdf)、[通信手册 Document #240617001](https://www.kirbymorgan.com/sites/default/files/2024-07/communications-on-superLite-17b-and-17c-helmets-kmb-18-and-28-bandmasks.pdf)和[压圈材料变更公告 #3/2021](https://www.kirbymorgan.com/sites/default/files/2021-06/Bulletin-03-2021.pdf)。媒体版权未核实为可再分发，本仓库只留链接、观察、引用位置与原创 v1 预览；未复制照片/PDF 页面、未做贴图。适用配置、未知年代、欠缺视角与事实/估算分界详见[整盔索引](../artifacts/helmet-refinement/eras/superlite-17b/references/whole-helmet-source-map-v2.zh-CN.md)。
+
+Codex 辅助编写 v2 修正脚本和静态检查，**没有产生新的模型二进制或渲染**：官方 Blender 4.5.14 便携版运行时被本机 Windows 完整性策略拦截，未关闭保护，见[活动记录](activity/2026-10-09-superlite17b-review-response.md)。不把脚本设计写成完成的可编辑模型、装配或人工外形验收；未新增第三方模型、贴图或 Unity 依赖。
