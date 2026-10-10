@@ -30,3 +30,14 @@ Blender 4.5 LTS 可分别打开两个分件源文件。两个 GLB 可在支持 g
 - **v2 独立源、GLB 与四张预览已生成并纳入本轮交付。**微软商店版 Blender 4.5.14 可以构建并回读；[本地新运行记录](qa/2026-10-09-store-blender-v2.md)通过名称、UV、透明镜片、辅助物排除和压圈深度。[先前的启动故障记录](qa/faceport-exterior-v2.md)保留。厂家手册新证据将压圈螺钉数改为 11 枚；孔位/尺度仍为估算，外形和主体装配尚待审阅。[统一来源目录](references/README.md)区分事实、照片观察、建模估算及未知。
 
 后续继续按 [照片—模型对照](references/photo-model-comparison-v2.zh-CN.md)修正轮廓和局部结构，找另一位成员审阅；正式比例、整体原点和接触曲面要同未来主体作者协商。本轮可审阅交付集中记录于 Draft PR #37。
+
+## 2026-10-10 v3 结构修正与资料收束
+
+本轮依据厂家黄色整盔照片与侧阀特写，把面窗下缘改成更平缓的过渡，把侧阀原先的扁平多边形主体改成横向圆润体；两个控制钮保留独立部件和不同轴线，深色标牌只做无商标概略件。**均属照片观察下的造型估计，不是 500-010 实测复制。** v1、v2 源与报告保留，不覆盖。
+
+| 分件 | 正面 | 斜前方 | Blender 4.5.14 源 | GLB |
+| --- | --- | --- | --- | --- |
+| 面窗 v3 | [图](previews/SL17B_FacePort_front_v3.png) | [图](previews/SL17B_FacePort_threequarter_v3.png) | [源](sources/parts/SL17B_FacePortAssembly_v3.blend) | [导出](exports/SL17B_FacePortAssembly_v3.glb) |
+| 侧阀 v3 | [图](previews/SL17B_SideBlock_front_v3.png) | [图](previews/SL17B_SideBlock_threequarter_v3.png) | [源](sources/parts/SL17B_SideBlockControls_v3.blend) | [导出](exports/SL17B_SideBlockControls_v3.glb) |
+
+[本轮资料缺口及暂停说明](references/research-freeze-2026-10-10.zh-CN.md)、[v3 暂定参数](references/faceport-exterior-parameters-v3.json)、[v3 回读记录](qa/faceport-exterior-v3.md)。2026-10-10 之后先暂停继续搜集资料，用现有证据审阅/迭代；未找到的尺寸和背面/顶部视角保持未知。下一步是另一位成员审阅外形，以及同未来主体作者确认比例、原点、安装曲面与连接点。此件仍未整机装配或接入 Unity。
