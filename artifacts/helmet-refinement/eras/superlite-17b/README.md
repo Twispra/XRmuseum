@@ -41,3 +41,11 @@ Blender 4.5 LTS 可分别打开两个分件源文件。两个 GLB 可在支持 g
 | 侧阀 v3 | [图](previews/SL17B_SideBlock_front_v3.png) | [图](previews/SL17B_SideBlock_threequarter_v3.png) | [源](sources/parts/SL17B_SideBlockControls_v3.blend) | [导出](exports/SL17B_SideBlockControls_v3.glb) |
 
 [本轮资料缺口及暂停说明](references/research-freeze-2026-10-10.zh-CN.md)、[v3 暂定参数](references/faceport-exterior-parameters-v3.json)、[v3 回读记录](qa/faceport-exterior-v3.md)。2026-10-10 之后先暂停继续搜集资料，用现有证据审阅/迭代；未找到的尺寸和背面/顶部视角保持未知。下一步是另一位成员审阅外形，以及同未来主体作者确认比例、原点、安装曲面与连接点。此件仍未整机装配或接入 Unity。
+
+## 2026-10-10 P2 修复：当前面窗 v3 / 侧阀 v4
+
+侧阀 v3 的两个下接头有悬空间隙，已在独立 v4 中上移接头，使其与圆润阀体实际表面相交；这是本研究件内部的连续性修复，接触面与尺寸仍为估计。当前使用面窗 v3 和侧阀 v4；v1/v2/v3 模型及历史报告保留。四份旧 v1/v2 GLB 仅规范为 LFS 指针，展开字节与原始 Git blob 完全相同。
+
+- 侧阀 v4：[Blender 源](sources/parts/SL17B_SideBlockControls_v4.blend)、[GLB](exports/SL17B_SideBlockControls_v4.glb)、[正面预览](previews/SL17B_SideBlock_front_v4.png)、[斜前预览](previews/SL17B_SideBlock_threequarter_v4.png)。
+- [v4 参数](references/faceport-exterior-parameters-v4.json)、[源和实际 GLB 几何检查](qa/faceport-exterior-v4-readback.json)、[旧 v3 用新连接检查的回归失败结果](qa/v3-connection-regression-2026-10-10.json)。新检查对求值后的源网格及读回的 GLB 网格使用世界坐标表面交叉断言，不以对象名或包围盒重叠代替实际连接。
+- [本轮检查与全新 checkout 记录](qa/2026-10-10-p2-fix.md)。原厂资料缺口与暂停检索约定继续有效，整盔主体、总装和 Unity 接入仍待团队协调。

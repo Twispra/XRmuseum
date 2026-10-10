@@ -16,3 +16,5 @@
 ## 2026-10-10 资料收束
 
 新核查与尚缺的可靠来源见 [资料收束与缺口](research-freeze-2026-10-10.zh-CN.md)；逐项照片与模型近似视角见 [v3 对照](photo-model-comparison-v3.zh-CN.md)。v3 的局部估算参数见 [参数 JSON](faceport-exterior-parameters-v3.json)，模型和预览见[本目录入口](../README.md)。2026-10-10 之后按用户要求暂停继续搜集资料；未找到的正交视角、尺寸和安装坐标不以模型估计代替。v1、v2 是历史研究版本，保留各自原始结论。
+
+P2 修复后的当前组合为面窗 v3 / 侧阀 v4；[v4 参数](faceport-exterior-parameters-v4.json)记录下接头局部位置与估计性质。本轮仅修复分件自身连接，不新增资料检索。
