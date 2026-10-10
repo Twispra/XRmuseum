@@ -1,0 +1,174 @@
+{
+  "head": "6459f081447748716fd200648182d7db903dc04e",
+  "prior": "b6f61346bc0c0b34327157d8419af2e80cbf2ff1",
+  "environment": "Windows / Node v24.19.0 / Three.js 0.170.0 / three-mesh-bvh 0.8.3",
+  "assetManifest": [
+    {
+      "relative": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_FacePortAssembly_v1.blend",
+      "size": 2092345,
+      "sha256": "c85147b79e5eff6cc53d100b4d718138d5861fb9d692496e967ff007ce74138f",
+      "matchesPointer": true
+    },
+    {
+      "relative": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_FacePortAssembly_v2.blend",
+      "size": 2018097,
+      "sha256": "ba07da426963155e4c2b1f8344133822dc84b923a26eef20b49271e6c1ba6c66",
+      "matchesPointer": true
+    },
+    {
+      "relative": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_FacePortAssembly_v3.blend",
+      "size": 1361940,
+      "sha256": "5db1e7bfe21552e82f54ab6ce2ddb196ba9ef7615b16056b8cf706c8790510e0",
+      "matchesPointer": true
+    },
+    {
+      "relative": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_SideBlockControls_v1.blend",
+      "size": 2014935,
+      "sha256": "2497fc04e210cd126ee78d002523f19c3b8eb9a031d231aa27542ddf27f03c30",
+      "matchesPointer": true
+    },
+    {
+      "relative": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_SideBlockControls_v2.blend",
+      "size": 1994141,
+      "sha256": "776cc3b13214a7cf0681f3cd68865fc2484dabab3e3e3e3c7ee08c0b14601bdb",
+      "matchesPointer": true
+    },
+    {
+      "relative": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_SideBlockControls_v3.blend",
+      "size": 1379796,
+      "sha256": "d5f91ffdf25dd15b69bd87297ff8e5996c3ea39d7a37934de6d38c78c491cf4a",
+      "matchesPointer": true
+    },
+    {
+      "relative": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_SideBlockControls_v4.blend",
+      "size": 1379796,
+      "sha256": "f51857de252d384d49b071d3ac718d5367d9ca7a522d27f51e9a30283a35ca42",
+      "matchesPointer": true
+    },
+    {
+      "relative": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_FacePortAssembly_v1.glb",
+      "size": 2205676,
+      "sha256": "390890d0727fa041528f364242d55c8f2c3050a476cc9a1c3feb9f663f02b74a",
+      "matchesPointer": true
+    },
+    {
+      "relative": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_FacePortAssembly_v2.glb",
+      "size": 2086280,
+      "sha256": "fe24964d0b11204db83610eac7d4419e58297629c2663c2412df2907413aea44",
+      "matchesPointer": true
+    },
+    {
+      "relative": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_FacePortAssembly_v3.glb",
+      "size": 1438388,
+      "sha256": "5a03b63a42d42efc86ecf672dc137516019de4982dda0f151e5df0ae08ca65dc",
+      "matchesPointer": true
+    },
+    {
+      "relative": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_SideBlockControls_v1.glb",
+      "size": 1973440,
+      "sha256": "c0907508668f899b0246f3c5983f761c6c3bfd1257e4d42614ce153e2c817098",
+      "matchesPointer": true
+    },
+    {
+      "relative": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_SideBlockControls_v2.glb",
+      "size": 1967320,
+      "sha256": "539df34fdcf79e45342fd6b91624260e59d108846c4150f42c8ca4759b9e63ba",
+      "matchesPointer": true
+    },
+    {
+      "relative": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_SideBlockControls_v3.glb",
+      "size": 1408376,
+      "sha256": "f8923771140705c5c296b568e595ded78411cf4f48447bae752d546eb5e1baf2",
+      "matchesPointer": true
+    },
+    {
+      "relative": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_SideBlockControls_v4.glb",
+      "size": 1408380,
+      "sha256": "875a9777b989bd0a5763d91d53e2b6721c166c90accc18fd0ef86bbbdb9c1b70",
+      "matchesPointer": true
+    }
+  ],
+  "legacyHashes": [
+    {
+      "name": "SL17B_FacePortAssembly_v1.glb",
+      "before": "390890d0727fa041528f364242d55c8f2c3050a476cc9a1c3feb9f663f02b74a",
+      "after": "390890d0727fa041528f364242d55c8f2c3050a476cc9a1c3feb9f663f02b74a",
+      "identical": true
+    },
+    {
+      "name": "SL17B_FacePortAssembly_v2.glb",
+      "before": "fe24964d0b11204db83610eac7d4419e58297629c2663c2412df2907413aea44",
+      "after": "fe24964d0b11204db83610eac7d4419e58297629c2663c2412df2907413aea44",
+      "identical": true
+    },
+    {
+      "name": "SL17B_SideBlockControls_v1.glb",
+      "before": "c0907508668f899b0246f3c5983f761c6c3bfd1257e4d42614ce153e2c817098",
+      "after": "c0907508668f899b0246f3c5983f761c6c3bfd1257e4d42614ce153e2c817098",
+      "identical": true
+    },
+    {
+      "name": "SL17B_SideBlockControls_v2.glb",
+      "before": "539df34fdcf79e45342fd6b91624260e59d108846c4150f42c8ca4759b9e63ba",
+      "after": "539df34fdcf79e45342fd6b91624260e59d108846c4150f42c8ca4759b9e63ba",
+      "identical": true
+    }
+  ],
+  "exports": {
+    "v3": {
+      "sha256": "f8923771140705c5c296b568e595ded78411cf4f48447bae752d546eb5e1baf2",
+      "bytes": 1408376,
+      "meshCount": 35,
+      "connections": {
+        "Supply_LowerConnector_ESTIMATED": {
+          "intersections": {
+            "SideBlock_505-024_RoundedBody_ESTIMATED": false,
+            "SideBlock_LeftEndCollar_ESTIMATED": false,
+            "SideBlock_RightEndCollar_ESTIMATED": false
+          },
+          "intersectsHousing": false,
+          "signedVerticalBBoxGapMetres": 0.001904195174574852
+        },
+        "BentTube_LowerConnector_ESTIMATED": {
+          "intersections": {
+            "SideBlock_505-024_RoundedBody_ESTIMATED": false,
+            "SideBlock_LeftEndCollar_ESTIMATED": false,
+            "SideBlock_RightEndCollar_ESTIMATED": false
+          },
+          "intersectsHousing": false,
+          "signedVerticalBBoxGapMetres": 0.004404086619615555
+        }
+      },
+      "matchesExpectedPositiveOrNegativeRegression": true
+    },
+    "v4": {
+      "sha256": "875a9777b989bd0a5763d91d53e2b6721c166c90accc18fd0ef86bbbdb9c1b70",
+      "bytes": 1408380,
+      "meshCount": 35,
+      "connections": {
+        "Supply_LowerConnector_ESTIMATED": {
+          "intersections": {
+            "SideBlock_505-024_RoundedBody_ESTIMATED": true,
+            "SideBlock_LeftEndCollar_ESTIMATED": true,
+            "SideBlock_RightEndCollar_ESTIMATED": false
+          },
+          "intersectsHousing": true,
+          "signedVerticalBBoxGapMetres": -0.010095806792378426
+        },
+        "BentTube_LowerConnector_ESTIMATED": {
+          "intersections": {
+            "SideBlock_505-024_RoundedBody_ESTIMATED": true,
+            "SideBlock_LeftEndCollar_ESTIMATED": false,
+            "SideBlock_RightEndCollar_ESTIMATED": true
+          },
+          "intersectsHousing": true,
+          "signedVerticalBBoxGapMetres": -0.010595913976430893
+        }
+      },
+      "matchesExpectedPositiveOrNegativeRegression": true
+    }
+  },
+  "validationScope": "Actual committed GLB world-space triangle surfaces; not Blender source execution or mechanical tolerance.",
+  "worktreeCleanBeforeAndAfter": true,
+  "passed": true
+}
