@@ -1,0 +1,44 @@
+{
+  "subject": "Kirby Morgan SuperLite 17B, proposed P/N 500-010 with communications posts",
+  "status": "unassembled exterior study; not a measured or agreed interface",
+  "source_accessed": "2026-10-08",
+  "coordinates": {
+    "unit": "metre (provisional)",
+    "front": "-Y",
+    "up": "+Z",
+    "faceport_local_origin": "centre of opening",
+    "sideblock_local_origin": "centre of study part",
+    "whole_helmet_origin": "undecided with future body author"
+  },
+  "verified_part_ids": {
+    "face_port": "520-004",
+    "port_retainer": "560-070",
+    "view_port_o_ring": "510-260",
+    "nose_block_knob": "550-062",
+    "side_block_assembly": "505-024"
+  },
+  "estimates_not_for_manufacture": {
+    "faceport_outer_width_m": 0.314,
+    "faceport_outer_height_m": 0.218,
+    "faceport_clear_width_m": 0.266,
+    "faceport_clear_height_m": 0.169,
+    "retainer_depth_m": 0.010,
+    "lens_thickness_m": 0.004,
+    "sideblock_study_width_m": 0.160,
+    "sideblock_study_height_m": 0.082,
+    "sideblock_study_depth_m": 0.059
+  },
+  "unresolved": [
+    "absolute scale and dimensions from a measured 17B unit",
+    "shared body origin, orientation and placement",
+    "shell surface curvature and attachment contact",
+    "fastener count and pitch",
+    "finish and lens optical transmission",
+    "exact exterior hose and connector configuration"
+  ],
+  "sources": [
+    "https://www.kirbymorgan.com/products/helmets/superlite-17b",
+    "https://www.kirbymorgan.com/product/specs/314/superlite-17b",
+    "https://kirbymorgan.com/sites/default/files/2025-01/sl-17b-blowapart-241108001.pdf"
+  ]
+}

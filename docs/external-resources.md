@@ -80,3 +80,25 @@ AI 辅助范围：模块架构、Editor 工具、运行时脚本、字体子集�
 在原PR #32 / Issue #25继续，Fttt1003通过Codex辅助检索DESCO制造说明、2011年Making an Icon及前窗/锁紧件/铰链销三个现售零件页，实际核对四张零件照片。[完整URL、适用边界及改模依据](../artifacts/helmet-refinement/eras/mark-v/references/refinement-r2.zh-CN.md)，[下载记录](../artifacts/helmet-refinement/eras/mark-v/references/sources.json)。原媒体只在本机研究，不再分发、未作贴图。未新增Unity依赖、第三方模型或收费素材。
 
 Codex辅助增量改模、原创材质图、导出、渲染与自动/浏览器检查；内部走线仍为示意。资产自动检查不是成员人工批准、设备测试或精密历史复原；three.js/esbuild依赖与MIT声明沿用R1。
+
+## 2026-10-08：SuperLite 17B 面窗与侧阀外观研究
+
+Ereshkigal1224 负责本轮细节与外观，Codex 辅助核对 Kirby Morgan 的 [17B 产品页](https://www.kirbymorgan.com/products/helmets/superlite-17b)、[规格页](https://www.kirbymorgan.com/product/specs/314/superlite-17b)及 [2025 零件分解图 Document #241108001](https://kirbymorgan.com/sites/default/files/2025-01/sl-17b-blowapart-241108001.pdf)。参考对象拟定 P/N 500-010；对应观察、部件编号及估算界线见[独立资料](../artifacts/helmet-refinement/eras/superlite-17b/references/faceport-exterior-v1.zh-CN.md)。原图片和 PDF 仅供观察，不复制到仓库或作贴图，也不推断其再分发许可。
+
+两张 1024px 基色/粗糙度贴图由本项目脚本原创生成；Blender4.5.14 LTS 从官方便携版仅在本机临时使用，未提交软件本体或增添 Unity 包。Codex 辅助独立 Blender 分件、GLB、渲染和回读检查，详见[活动记录](activity/2026-10-08-superlite17b-details-v1.md)。材质和尺寸为展示估算，自动检查不等于组员人工审阅、实物测绘、真实 VR 或用户研究。
+
+## 2026-10-09：SuperLite 17B 扩展资料核对
+
+Ereshkigal1224 接受维护者提出的 500-010（posts）**整盔资料研究**，Codex 辅助整理 [厂家 17B 产品/局部照片](https://www.kirbymorgan.com/products/helmets/superlite-17b)、[规格](https://www.kirbymorgan.com/product/specs/314/superlite-17b)、[零件图 Document #241108001](https://kirbymorgan.com/sites/default/files/2025-01/sl-17b-blowapart-241108001.pdf)、[通信手册 Document #240617001](https://www.kirbymorgan.com/sites/default/files/2024-07/communications-on-superLite-17b-and-17c-helmets-kmb-18-and-28-bandmasks.pdf)和[压圈材料变更公告 #3/2021](https://www.kirbymorgan.com/sites/default/files/2021-06/Bulletin-03-2021.pdf)。媒体版权未核实为可再分发，本仓库只留链接、观察、引用位置与原创 v1 预览；未复制照片/PDF 页面、未做贴图。适用配置、未知年代、欠缺视角与事实/估算分界详见[整盔索引](../artifacts/helmet-refinement/eras/superlite-17b/references/whole-helmet-source-map-v2.zh-CN.md)。
+
+Codex 辅助编写 v2 修正脚本和静态检查，**没有产生新的模型二进制或渲染**：官方 Blender 4.5.14 便携版运行时被本机 Windows 完整性策略拦截，未关闭保护，见[活动记录](activity/2026-10-09-superlite17b-review-response.md)。不把脚本设计写成完成的可编辑模型、装配或人工外形验收；未新增第三方模型、贴图或 Unity 依赖。
+
+## 2026-10-09：SuperLite 17B v2 资料与可编辑分件
+
+本次继续由 Ereshkigal1224 负责，Codex 辅助使用 Kirby Morgan 原始[面窗手册 #260901001](https://www.kirbymorgan.com/sites/default/files/2026-09/face-port-port-retainer-nose-block-260901001.pdf)、[侧阀手册 #260701004](https://www.kirbymorgan.com/sites/default/files/2026-07/brass-chromed-brass-side-block-260701004.pdf)、[侧阀分解图 #230118015](https://www.kirbymorgan.com/sites/default/files/2023-01/chromed-brass-side-block-blowapart-230118015.pdf)、厂家照片及[使用条款](https://www.kirbymorgan.com/company/terms-usage)核对部件和外形。[完整来源登记、图号/页码、适用范围和许可状态](../artifacts/helmet-refinement/eras/superlite-17b/references/whole-helmet-source-map-v2.zh-CN.md)在独立年代资料目录。厂家照片、PDF 页面、标牌和商标未复制入仓库或贴图；公开可浏览不作为重新分发许可。新源文件/GLB/预览使用仓库已有两张脚本原创贴图。
+
+微软商店官方 Blender 4.5.14 LTS 在本机完成 v2 两分件生成、GLB 导出与回读；便携/安装版的 Windows 应用控制阻挡记录保留为历史，没有改安全策略。Codex 自动检查只能证实文件结构、UV、导出透明材质和局部估算参数一致；不代表外形测绘、装配、Unity/VR 或其他成员人工批准。见[本次活动记录](activity/2026-10-09-superlite17b-v2-research-and-assets.md)。未新增 Unity 包或运行时依赖。
+
+## 2026-10-10：SuperLite 17B 资料收束和 v3 结构修正
+
+Ereshkigal1224 负责，Codex 辅助核查 [Kirby Morgan 产品页](https://www.kirbymorgan.com/products/helmets/superlite-17b)、[黄色整盔照片](https://www.kirbymorgan.com/sites/default/files/2021-02/17B-Helmet-Colors-yellow.jpg)、[侧阀照片](https://www.kirbymorgan.com/sites/default/files/2021-02/fiberglass-side-block-IMG_0387.jpg)、[面窗手册 #260901001](https://www.kirbymorgan.com/sites/default/files/2026-09/face-port-port-retainer-nose-block-260901001.pdf)、[侧阀分解图 #230118015](https://www.kirbymorgan.com/sites/default/files/2023-01/chromed-brass-side-block-blowapart-230118015.pdf)及[厂家 FAQ](https://www.kirbymorgan.com/faq)。完整逐项用途、局限和未找到的资料见[本轮资料收束](../artifacts/helmet-refinement/eras/superlite-17b/references/research-freeze-2026-10-10.zh-CN.md)。照片和 PDF 只链接，不复制或作贴图；许可未核实为可再分发。v3 Blender/GLB/预览由本项目生成，颜色与几何均为展示估计，未新增第三方模型或 Unity 依赖。官方 Blender 4.5.14 回读通过只证明文件结构，不代表外形精度、整机装配或成员批准。
