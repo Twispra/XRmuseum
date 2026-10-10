@@ -1,0 +1,154 @@
+{
+  "commands": [
+    {
+      "command": "git clone --depth 1 --single-branch --branch codex/superlite17b-details-2026-10-08 --no-checkout https://github.com/Twispra/XRmuseum.git <fresh-checkout>",
+      "exit_code": 0,
+      "output": "Cloning into '<fresh-checkout>'..."
+    },
+    {
+      "command": "git checkout HEAD",
+      "exit_code": 0,
+      "output": "Your branch is up to date with 'origin/codex/superlite17b-details-2026-10-08'."
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "exit_code": 0,
+      "output": "6979e3718c28b599b03753ba27dffa6c824d4575"
+    },
+    {
+      "command": "git lfs pull --include=artifacts/helmet-refinement/eras/superlite-17b/** --exclude=",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "git lfs checkout artifacts/helmet-refinement/eras/superlite-17b/**",
+      "exit_code": 0,
+      "output": "Checking out LFS objects: 100% (14/14), 25 MB | 0 B/s, done."
+    },
+    {
+      "command": "git lfs fsck --pointers HEAD",
+      "exit_code": 0,
+      "output": "Git LFS fsck OK"
+    },
+    {
+      "command": "git status --porcelain=v1",
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "tested_commit": "6979e3718c28b599b03753ba27dffa6c824d4575",
+  "legacy_assets": {
+    "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_FacePortAssembly_v1.glb": {
+      "sha256_before": "390890d0727fa041528f364242d55c8f2c3050a476cc9a1c3feb9f663f02b74a",
+      "size": 2205676,
+      "sha256_after": "390890d0727fa041528f364242d55c8f2c3050a476cc9a1c3feb9f663f02b74a",
+      "unchanged": true
+    },
+    "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_FacePortAssembly_v2.glb": {
+      "sha256_before": "fe24964d0b11204db83610eac7d4419e58297629c2663c2412df2907413aea44",
+      "size": 2086280,
+      "sha256_after": "fe24964d0b11204db83610eac7d4419e58297629c2663c2412df2907413aea44",
+      "unchanged": true
+    },
+    "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_SideBlockControls_v1.glb": {
+      "sha256_before": "c0907508668f899b0246f3c5983f761c6c3bfd1257e4d42614ce153e2c817098",
+      "size": 1973440,
+      "sha256_after": "c0907508668f899b0246f3c5983f761c6c3bfd1257e4d42614ce153e2c817098",
+      "unchanged": true
+    },
+    "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_SideBlockControls_v2.glb": {
+      "sha256_before": "539df34fdcf79e45342fd6b91624260e59d108846c4150f42c8ca4759b9e63ba",
+      "size": 1967320,
+      "sha256_after": "539df34fdcf79e45342fd6b91624260e59d108846c4150f42c8ca4759b9e63ba",
+      "unchanged": true
+    }
+  },
+  "expanded_task_assets": [
+    {
+      "path": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_FacePortAssembly_v1.glb",
+      "sha256": "390890d0727fa041528f364242d55c8f2c3050a476cc9a1c3feb9f663f02b74a",
+      "size": 2205676,
+      "header_valid": true
+    },
+    {
+      "path": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_FacePortAssembly_v2.glb",
+      "sha256": "fe24964d0b11204db83610eac7d4419e58297629c2663c2412df2907413aea44",
+      "size": 2086280,
+      "header_valid": true
+    },
+    {
+      "path": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_FacePortAssembly_v3.glb",
+      "sha256": "5a03b63a42d42efc86ecf672dc137516019de4982dda0f151e5df0ae08ca65dc",
+      "size": 1438388,
+      "header_valid": true
+    },
+    {
+      "path": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_SideBlockControls_v1.glb",
+      "sha256": "c0907508668f899b0246f3c5983f761c6c3bfd1257e4d42614ce153e2c817098",
+      "size": 1973440,
+      "header_valid": true
+    },
+    {
+      "path": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_SideBlockControls_v2.glb",
+      "sha256": "539df34fdcf79e45342fd6b91624260e59d108846c4150f42c8ca4759b9e63ba",
+      "size": 1967320,
+      "header_valid": true
+    },
+    {
+      "path": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_SideBlockControls_v3.glb",
+      "sha256": "f8923771140705c5c296b568e595ded78411cf4f48447bae752d546eb5e1baf2",
+      "size": 1408376,
+      "header_valid": true
+    },
+    {
+      "path": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_SideBlockControls_v4.glb",
+      "sha256": "875a9777b989bd0a5763d91d53e2b6721c166c90accc18fd0ef86bbbdb9c1b70",
+      "size": 1408380,
+      "header_valid": true
+    },
+    {
+      "path": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_FacePortAssembly_v1.blend",
+      "sha256": "c85147b79e5eff6cc53d100b4d718138d5861fb9d692496e967ff007ce74138f",
+      "size": 2092345,
+      "header_valid": true
+    },
+    {
+      "path": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_FacePortAssembly_v2.blend",
+      "sha256": "ba07da426963155e4c2b1f8344133822dc84b923a26eef20b49271e6c1ba6c66",
+      "size": 2018097,
+      "header_valid": true
+    },
+    {
+      "path": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_FacePortAssembly_v3.blend",
+      "sha256": "5db1e7bfe21552e82f54ab6ce2ddb196ba9ef7615b16056b8cf706c8790510e0",
+      "size": 1361940,
+      "header_valid": true
+    },
+    {
+      "path": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_SideBlockControls_v1.blend",
+      "sha256": "2497fc04e210cd126ee78d002523f19c3b8eb9a031d231aa27542ddf27f03c30",
+      "size": 2014935,
+      "header_valid": true
+    },
+    {
+      "path": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_SideBlockControls_v2.blend",
+      "sha256": "776cc3b13214a7cf0681f3cd68865fc2484dabab3e3e3e3c7ee08c0b14601bdb",
+      "size": 1994141,
+      "header_valid": true
+    },
+    {
+      "path": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_SideBlockControls_v3.blend",
+      "sha256": "d5f91ffdf25dd15b69bd87297ff8e5996c3ea39d7a37934de6d38c78c491cf4a",
+      "size": 1379796,
+      "header_valid": true
+    },
+    {
+      "path": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_SideBlockControls_v4.blend",
+      "sha256": "f51857de252d384d49b071d3ac718d5367d9ca7a522d27f51e9a30283a35ca42",
+      "size": 1379796,
+      "header_valid": true
+    }
+  ],
+  "working_tree_clean": true,
+  "passed": true
+}

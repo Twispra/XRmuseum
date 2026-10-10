@@ -1,0 +1,72 @@
+{
+  "blender": "4.5.14 LTS",
+  "parts": {
+    "SL17B_FacePortAssembly_v3": {
+      "passed": true,
+      "source_meshes": 16,
+      "glb_meshes": 16,
+      "source_triangles_without_modifiers": 3240,
+      "glb_triangles_after_modifiers": 8520,
+      "source_local_bounds_m_provisional": [
+        [
+          -0.157,
+          0.157
+        ],
+        [
+          -0.037,
+          0.006
+        ],
+        [
+          -0.107,
+          0.12317
+        ]
+      ],
+      "source_uv_missing": [],
+      "glb_uv_missing": [],
+      "packed_images": [
+        "SL17B_Exterior_Roughness_v1.png"
+      ],
+      "transparent_glb_materials": [
+        "Polycarbonate lens - interpretive tint"
+      ],
+      "names_match": true,
+      "review_objects_excluded": true,
+      "retainer_depth_m": 0.012,
+      "retainer_fastener_count": 11,
+      "distinct_sideblock_controls": null
+    },
+    "SL17B_SideBlockControls_v3": {
+      "passed": true,
+      "source_meshes": 35,
+      "glb_meshes": 35,
+      "source_triangles_without_modifiers": 2124,
+      "glb_triangles_after_modifiers": 6740,
+      "source_local_bounds_m_provisional": [
+        [
+          -0.13384,
+          0.12447
+        ],
+        [
+          -0.06188,
+          0.029
+        ],
+        [
+          -0.07198,
+          0.06822
+        ]
+      ],
+      "source_uv_missing": [],
+      "glb_uv_missing": [],
+      "packed_images": [
+        "SL17B_Exterior_Roughness_v1.png"
+      ],
+      "transparent_glb_materials": [],
+      "names_match": true,
+      "review_objects_excluded": true,
+      "retainer_depth_m": null,
+      "retainer_fastener_count": null,
+      "distinct_sideblock_controls": true
+    }
+  },
+  "passed": true
+}
