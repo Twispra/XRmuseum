@@ -142,6 +142,8 @@ Editor 能打开或进入 Play Mode，不代表头显跟踪、控制器输入、
 
 2026-09-22 曾生成初始化场景的 Windows Development 构建，本机位置 `E:\XRmuseum\Builds\Windows\MuseumVR.exe`。它不含随后开发的头盔成果，且不会随 clone 下载；不能当作当前版本交付。构建依赖同目录的其他文件，不能只发送单个 exe；真实 VR 运行需要对应设备和 runtime。[初始化历史验证](initialization-checks.md)
 
+> 当前版本的可运行构建怎么出、有哪些坑，见 [Windows 可运行构建（批处理与 GUI）](build-windows.zh-CN.md)。
+
 ## 8. 本机初始化记录
 
 - Git 仓库：`E:\XRmuseum`。
