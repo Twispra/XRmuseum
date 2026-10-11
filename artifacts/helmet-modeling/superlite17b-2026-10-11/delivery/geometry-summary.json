@@ -1,0 +1,724 @@
+{
+  "blender": "4.5.14 LTS",
+  "global_scale_guess": 0.86,
+  "measured_dimensions": false,
+  "dimensions_m": [
+    0.2788829803466797,
+    0.29913410544395447,
+    0.3224306316114962
+  ],
+  "mesh_count": 142,
+  "triangle_count": 52980,
+  "objects": [
+    {
+      "name": "Shell_Yellow_520-065_ESTIMATED",
+      "triangles": 9472,
+      "uv": true
+    },
+    {
+      "name": "Ring_PortChrome_560-070",
+      "triangles": 1920,
+      "uv": true
+    },
+    {
+      "name": "ViewPort_Seal_510-260",
+      "triangles": 1920,
+      "uv": true
+    },
+    {
+      "name": "Glass_Port_520-004",
+      "triangles": 320,
+      "uv": true
+    },
+    {
+      "name": "Handle_Brass_560-014",
+      "triangles": 576,
+      "uv": true
+    },
+    {
+      "name": "Handle_FrontFoot",
+      "triangles": 108,
+      "uv": true
+    },
+    {
+      "name": "Handle_RearFoot",
+      "triangles": 108,
+      "uv": true
+    },
+    {
+      "name": "Regulator_SuperFlow_505-027_Body",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "Regulator_ConvexCover",
+      "triangles": 960,
+      "uv": true
+    },
+    {
+      "name": "Regulator_PurgeButton",
+      "triangles": 572,
+      "uv": true
+    },
+    {
+      "name": "Regulator_AdjustmentStem",
+      "triangles": 164,
+      "uv": true
+    },
+    {
+      "name": "Regulator_AdjustmentKnob",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "Regulator_InletNipple",
+      "triangles": 164,
+      "uv": true
+    },
+    {
+      "name": "Regulator_InletCap",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "SideBlock_Chrome_505-024",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "SideBlock_MountingFoot",
+      "triangles": 108,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Stem",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524",
+      "triangles": 572,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_CentreCap",
+      "triangles": 284,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_00",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_01",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_02",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_03",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_04",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_05",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_06",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_07",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_08",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_09",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_10",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_11",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Stem",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525",
+      "triangles": 572,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_CentreCap",
+      "triangles": 284,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_00",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_01",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_02",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_03",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_04",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_05",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_06",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_07",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_08",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_09",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_10",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_11",
+      "triangles": 28,
+      "uv": true
+    },
+    {
+      "name": "CheckValve_Brass_555-195",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "CheckValve_Hex",
+      "triangles": 164,
+      "uv": true
+    },
+    {
+      "name": "CheckValve_DustCap",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "Emergency_Inlet_DustCap",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "Emergency_InletStem",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "CheckValve_SideBlock_Adapter",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "BentTube_UpperCoupling",
+      "triangles": 164,
+      "uv": true
+    },
+    {
+      "name": "BentTube_Chrome_555-155",
+      "triangles": 816,
+      "uv": true
+    },
+    {
+      "name": "BentTube_LowerCoupling",
+      "triangles": 164,
+      "uv": true
+    },
+    {
+      "name": "NoseBlock_Hex",
+      "triangles": 164,
+      "uv": true
+    },
+    {
+      "name": "NoseBlock_Knob_550-062",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "NeckClamp_505-055",
+      "triangles": 1920,
+      "uv": true
+    },
+    {
+      "name": "Neck_Yoke_520-117",
+      "triangles": 1920,
+      "uv": true
+    },
+    {
+      "name": "NeckDam_Neoprene_510-533",
+      "triangles": 1920,
+      "uv": true
+    },
+    {
+      "name": "NeckCushion_VisibleBlue",
+      "triangles": 1920,
+      "uv": true
+    },
+    {
+      "name": "Exhaust_Black_Wing_-1",
+      "triangles": 960,
+      "uv": true
+    },
+    {
+      "name": "Whisker_Deflector_-1",
+      "triangles": 144,
+      "uv": true
+    },
+    {
+      "name": "Exhaust_Outlet_Rim_-1",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "Exhaust_Outlet_Recess_-1",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "Whisker_Clamp_-1",
+      "triangles": 108,
+      "uv": true
+    },
+    {
+      "name": "Whisker_Clamp_BrassScrew_-1",
+      "triangles": 44,
+      "uv": true
+    },
+    {
+      "name": "Exhaust_Black_Wing_1",
+      "triangles": 960,
+      "uv": true
+    },
+    {
+      "name": "Whisker_Deflector_1",
+      "triangles": 144,
+      "uv": true
+    },
+    {
+      "name": "Exhaust_Outlet_Rim_1",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "Exhaust_Outlet_Recess_1",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "Whisker_Clamp_1",
+      "triangles": 108,
+      "uv": true
+    },
+    {
+      "name": "Whisker_Clamp_BrassScrew_1",
+      "triangles": 44,
+      "uv": true
+    },
+    {
+      "name": "Weights_Brass_Rear_560-005",
+      "triangles": 960,
+      "uv": true
+    },
+    {
+      "name": "Weights_Brass_Side_-1",
+      "triangles": 960,
+      "uv": true
+    },
+    {
+      "name": "Strap_Black_Diagonal_-1",
+      "triangles": 36,
+      "uv": true
+    },
+    {
+      "name": "Strap_Adjuster_-1",
+      "triangles": 108,
+      "uv": true
+    },
+    {
+      "name": "Weights_Brass_Side_1",
+      "triangles": 960,
+      "uv": true
+    },
+    {
+      "name": "Strap_Black_Diagonal_1",
+      "triangles": 36,
+      "uv": true
+    },
+    {
+      "name": "Strap_Adjuster_1",
+      "triangles": 108,
+      "uv": true
+    },
+    {
+      "name": "Hinge_NeckClamp_Rear",
+      "triangles": 108,
+      "uv": true
+    },
+    {
+      "name": "Hinge_Pin",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "Neck_Latch_-1",
+      "triangles": 108,
+      "uv": true
+    },
+    {
+      "name": "Neck_PullPin_-1",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "Neck_Latch_1",
+      "triangles": 108,
+      "uv": true
+    },
+    {
+      "name": "Neck_PullPin_1",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "Interior_Cushion_-1",
+      "triangles": 960,
+      "uv": true
+    },
+    {
+      "name": "Earphone_VisualOnly_-1",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "Interior_Cushion_1",
+      "triangles": 960,
+      "uv": true
+    },
+    {
+      "name": "Earphone_VisualOnly_1",
+      "triangles": 380,
+      "uv": true
+    },
+    {
+      "name": "Interior_Cushion_Crown",
+      "triangles": 960,
+      "uv": true
+    },
+    {
+      "name": "OralNasal_Mask_510-747",
+      "triangles": 960,
+      "uv": true
+    },
+    {
+      "name": "AirTrain_Defog_545-016",
+      "triangles": 2416,
+      "uv": true
+    },
+    {
+      "name": "Screws_Port_01",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Screw_Slot_01",
+      "triangles": 12,
+      "uv": true
+    },
+    {
+      "name": "Screws_Port_02",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Screw_Slot_02",
+      "triangles": 12,
+      "uv": true
+    },
+    {
+      "name": "Screws_Port_03",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Screw_Slot_03",
+      "triangles": 12,
+      "uv": true
+    },
+    {
+      "name": "Screws_Port_04",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Screw_Slot_04",
+      "triangles": 12,
+      "uv": true
+    },
+    {
+      "name": "Screws_Port_05",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Screw_Slot_05",
+      "triangles": 12,
+      "uv": true
+    },
+    {
+      "name": "Screws_Port_06",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Screw_Slot_06",
+      "triangles": 12,
+      "uv": true
+    },
+    {
+      "name": "Screws_Port_07",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Screw_Slot_07",
+      "triangles": 12,
+      "uv": true
+    },
+    {
+      "name": "Screws_Port_08",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Screw_Slot_08",
+      "triangles": 12,
+      "uv": true
+    },
+    {
+      "name": "Screws_Port_09",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Screw_Slot_09",
+      "triangles": 12,
+      "uv": true
+    },
+    {
+      "name": "Screws_Port_10",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Screw_Slot_10",
+      "triangles": 12,
+      "uv": true
+    },
+    {
+      "name": "Screws_Port_11",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Screw_Slot_11",
+      "triangles": 12,
+      "uv": true
+    },
+    {
+      "name": "Handle_Fastener_0",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Handle_Fastener_1",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Handle_Fastener_2",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Whisker_Fastener_-1_0",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Whisker_Fastener_-1_1",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Whisker_Fastener_1_0",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "Whisker_Fastener_1_1",
+      "triangles": 60,
+      "uv": true
+    },
+    {
+      "name": "SideBlock_Label_Blank",
+      "triangles": 108,
+      "uv": true
+    },
+    {
+      "name": "Label_Layout_Line_0",
+      "triangles": 12,
+      "uv": true
+    },
+    {
+      "name": "Label_Layout_Line_1",
+      "triangles": 12,
+      "uv": true
+    },
+    {
+      "name": "Label_Layout_Line_2",
+      "triangles": 12,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_00",
+      "triangles": 216,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_01",
+      "triangles": 216,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_02",
+      "triangles": 216,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_03",
+      "triangles": 216,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_04",
+      "triangles": 216,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_05",
+      "triangles": 216,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_06",
+      "triangles": 216,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_07",
+      "triangles": 216,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_08",
+      "triangles": 216,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_09",
+      "triangles": 216,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_10",
+      "triangles": 216,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_11",
+      "triangles": 216,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_12",
+      "triangles": 216,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_13",
+      "triangles": 216,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_14",
+      "triangles": 216,
+      "uv": true
+    },
+    {
+      "name": "NoseKnob_Knurl_15",
+      "triangles": 216,
+      "uv": true
+    }
+  ]
+}
