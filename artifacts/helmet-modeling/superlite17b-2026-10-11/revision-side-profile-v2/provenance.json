@@ -1,0 +1,29 @@
+{
+  "reference_photo": {
+    "path": "D:\\XR_documents\\helmet\\SuperLite17B\\refs\\04_side_rear_view.png",
+    "sha256": "990eddafee9e25a3d16d46ae009cf9ca8f5e49e94cea7bdd3ac2831efbb8c0cd"
+  },
+  "user_screenshot": {
+    "path": "C:\\Users\\16924\\AppData\\Local\\Temp\\codex-clipboard-c87bf11a-4797-47f3-8825-76c350fe1644.png",
+    "sha256": "00a229af8d2d253adeae0dd219ffad21108e41a86fa2b0132d69f37115d5c016"
+  },
+  "retained_before_model_sha256": "5bf1c30e1f8b848745e76e95111d407da110a80936484e920ee248d0154ca841",
+  "v2_model_sha256": "54a21895b807a19ccc0345a25101cb5369c0a9c976d175a40a58a528a5b8b905",
+  "build_script_sha256": "991c4374ff197da4e9aeeb2f13ea4a86f3429349be20ff2f7c3dc7b771412fbe",
+  "photo_was_not_copied_or_used_as_texture": true,
+  "real_measured_dimensions_available": false,
+  "comparison_camera": {
+    "location_m": [
+      -0.903,
+      0.4042,
+      0.387
+    ],
+    "target_m": [
+      0,
+      0.01548,
+      0.1634
+    ],
+    "ortho_scale_m": 0.4386
+  },
+  "comparison_notes": "Actual saved models, same camera and framing. Existing lighting/materials retained per source; this is a visual geometry comparison, not photogrammetric calibration."
+}

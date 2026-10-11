@@ -1,0 +1,18 @@
+{
+  "source_sha256": "5bf1c30e1f8b848745e76e95111d407da110a80936484e920ee248d0154ca841",
+  "passed": false,
+  "checks": {
+    "neck_angle_matches_v2": false,
+    "neck_vertical_band_thickness_under_14mm": false,
+    "two_shallow_rear_plates": false,
+    "handle_height_above_shell_under_35mm": false,
+    "rear_retainer_straps_present": false
+  },
+  "neck_slope": 5.104448292330427e-13,
+  "neck_angle_deg": 2.9246334389329376e-11,
+  "neck_plane_intercept_m": 0.049879999831318855,
+  "neck_vertical_band_thickness_m": 0.015480004251110374,
+  "handle_height_above_shell_m": 0.039190590381622314,
+  "rear_plates": [],
+  "limitation": "Tests verify intended modelling corrections, not measured real dimensions or photo accuracy."
+}

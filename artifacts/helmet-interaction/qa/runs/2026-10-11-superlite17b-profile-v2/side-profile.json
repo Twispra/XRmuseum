@@ -1,0 +1,29 @@
+{
+  "source_sha256": "54a21895b807a19ccc0345a25101cb5369c0a9c976d175a40a58a528a5b8b905",
+  "passed": true,
+  "checks": {
+    "neck_angle_matches_v2": true,
+    "neck_vertical_band_thickness_under_14mm": true,
+    "two_shallow_rear_plates": true,
+    "handle_height_above_shell_under_35mm": true,
+    "rear_retainer_straps_present": true
+  },
+  "neck_slope": 0.5799984372550964,
+  "neck_angle_deg": 30.113666151021224,
+  "neck_plane_intercept_m": 0.08772000132434969,
+  "neck_vertical_band_thickness_m": 0.010320393846640963,
+  "handle_height_above_shell_m": 0.01668485999107361,
+  "rear_plates": [
+    {
+      "name": "Weights_Brass_Rear_560-005_-1",
+      "max_shell_distance_m": 0.0017200582660734653,
+      "min_shell_distance_m": 0.0016750894719734788
+    },
+    {
+      "name": "Weights_Brass_Rear_560-005_1",
+      "max_shell_distance_m": 0.0017200419679284096,
+      "min_shell_distance_m": 0.0016743268352001905
+    }
+  ],
+  "limitation": "Tests verify intended modelling corrections, not measured real dimensions or photo accuracy."
+}
