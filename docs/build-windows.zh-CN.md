@@ -5,16 +5,43 @@
 - 适用版本：编辑器 **2022.3.62f3c1**，目标平台 `StandaloneWindows64`，
   唯一构建场景 `MuseumVR/Assets/Museum/Scenes/MuseumStart.unity`。
 - 本页只讲**步骤与排错**。构建产物的验收结论、体积分析和运行证据另有记录，
-  不在这里重复；`docs/project-state.md` 才是"当前有没有可交付构建"的判定处。
+  不在这里重复；[项目状态](project-state.md)是版本快照，当前交付以对应活动／PR 和实际日志为准。
 - 「构建成功」**不等于**「XR/真机验收通过」。这两件事必须分开写，仓库其它文档也是这么要求的。
 
 ## 1. 构建前核验（不用打开 Unity）
 
-```bash
-git -C <仓库> status --porcelain                                  # 记下开工前已有改动
-git -C <仓库> lfs fsck --pointers HEAD                            # LFS 指针完整
-grep m_EditorVersion <仓库>/MuseumVR/ProjectSettings/ProjectVersion.txt
-grep -A3 m_Scenes <仓库>/MuseumVR/ProjectSettings/EditorBuildSettings.asset
+推荐从已确认的 commit 创建**新的干净构建 worktree**，让日常工程的未提交设置和正在运行的
+Unity 留在原处。下面是 **PowerShell** 命令；尖括号内容均须替换为实际绝对路径或 commit。
+新工作副本不得与其他 Unity 任务共用，同一工作副本也不能同时运行 GUI 和批处理 Editor。
+
+```powershell
+git -C '<日常仓库>' worktree add --detach '<新的构建工作副本>' '<已确认的commit>'
+$buildRepo = '<新的构建工作副本>'
+git -C $buildRepo rev-parse HEAD
+git -C $buildRepo status --short
+git -C $buildRepo lfs pull
+git -C $buildRepo lfs checkout
+git -C $buildRepo lfs fsck --pointers HEAD
+git -C $buildRepo lfs ls-files
+Get-Content -LiteralPath (Join-Path $buildRepo 'MuseumVR/ProjectSettings/ProjectVersion.txt')
+Get-Content -LiteralPath (Join-Path $buildRepo 'MuseumVR/ProjectSettings/EditorBuildSettings.asset')
+```
+
+继续前确认工作副本没有未知改动；`lfs fsck` 只检查对象／指针，不能代替工作区展开检查。
+如果要构建尚未提交的修改，先在独立副本保留这些修改并记录来源及 dirty 清单；不要用
+撤销整个设置文件的方法清理日常工作区。
+
+构建前另保存设置副本，构建后按第 4 节比较。以下仍为 **PowerShell**，备份目录放在仓库外，
+必须是新路径；目录或备份文件已存在时停止，避免覆盖已有证据。
+
+```powershell
+$backupDir = '<仓库外的新备份目录>'
+if (Test-Path -LiteralPath $backupDir) { throw '备份目录已存在，请选择新目录' }
+New-Item -ItemType Directory -Path $backupDir | Out-Null
+$settingsPath = Join-Path $buildRepo 'MuseumVR/ProjectSettings/ProjectSettings.asset'
+$settingsBackup = Join-Path $backupDir 'ProjectSettings.before-build.asset'
+[IO.File]::Copy($settingsPath, $settingsBackup, $false)
+Get-FileHash -LiteralPath $settingsBackup -Algorithm SHA256
 ```
 
 要确认的三件事：编辑器版本是 **2022.3.62f3c1**；构建场景列表里
@@ -23,52 +50,67 @@ grep -A3 m_Scenes <仓库>/MuseumVR/ProjectSettings/EditorBuildSettings.asset
 
 ## 2. 方式一：批处理（适合自动化与留日志）
 
+下面是 **cmd.exe 的 `.bat` 文件**语法，不要直接粘贴进 PowerShell。
+先创建新的日志和输出目录，按本机安装位置替换 Unity 路径；将脚本保存后再运行。
+
 ```bat
+@echo off
+setlocal
 "D:\Program Files (x86)\Unity\2022.3.62f3c1\Editor\Unity.exe" ^
   -batchmode -quit ^
+  -buildTarget win64 ^
   -projectPath "<仓库>\MuseumVR" ^
   -logFile "<日志路径>\build.log" ^
   -buildWindows64Player "<输出目录>\MuseumVR.exe"
+set "BUILD_RC=%ERRORLEVEL%"
+echo ExitCode=%BUILD_RC%
+exit /b %BUILD_RC%
 ```
 
 要点：
 
 - 路径全部写**绝对路径**，不要依赖当前目录。
 - 不要加 `-nographics`（桌面会话下更少意外）；确实卡住时再作为对照组尝试。
-- Windows 上把这几行放进 `.bat` 更容易复现，但 **`.bat` 必须用 CRLF 换行**（见坑 A）。
-- Unity 会把返回码写进日志尾部（形如 `Application will terminate with return code 0`）；
-  `.bat` 里再用 `%ERRORLEVEL%` 单独落一行更保险（这也是坑 A 会伤到的地方）。
+- `<仓库>` 指第 1 节的构建工作副本；日志和产物均使用新的运行目录。
+- `.bat` 推荐 CRLF 换行，并保留适用于当前 `cmd.exe` 的原文件编码（见坑 A）。
+  caret `^` 后不要留空格，尤其要核对路径中的中文字符。
+- 在 Unity 命令结束后立即保存 `%ERRORLEVEL%`；同时保留完整构建日志，退出码并非唯一判据。
+- 从 PowerShell 调用已保存的脚本时可用 `& '<脚本绝对路径>.bat'`，紧接着记录
+  `$buildExitCode = $LASTEXITCODE`。上述参数见 [Unity 2022.3 命令行说明](https://docs.unity3d.com/2022.3/Documentation/Manual/EditorCommandLineArguments.html)。
 
-## 3. 方式二：Unity GUI（正式 VR 交付推荐）
+## 3. 方式二：Unity GUI（便于人工检查设置）
 
-1. 打开 Unity Hub → 选中 `MuseumVR`，确认版本仍是 2022.3.62f3c1。
+1. 在 Unity Hub 打开第 1 节构建工作副本中的 `MuseumVR`，确认版本仍是 2022.3.62f3c1。
 2. `File > Build Settings`：目标选 **Windows / x86_64**；确认场景列表里
    `MuseumStart` 已勾选且在第 0 位（其它场景不要勾）。
 3. `Build`，选一个**仓库外**的输出目录。
 4. 构建后回看 `ProjectSettings/ProjectSettings.asset` 有没有被改动（见坑 B）。
 
-另外：紧接在批处理构建之后再跑 GUI 构建，Unity 往往判定为**增量构建**
-（日志出现 `player data was not rebuilt`），产物与批处理那次逐字节相同、时间戳不变。
-要拿到"确实由 GUI 重新产出"的证据，得先清掉上次的输出目录或让工程内容真正变化。
+历史构建记录曾观察到紧接批处理再进行 GUI 构建时复用 player data
+（日志出现 `player data was not rebuilt`），两次产物字节及时间戳相同；不能据此推断每次
+GUI 构建都会复用输出。为区分各次运行，选新的输出目录，分别保存日志、文件清单和哈希，
+并如实记录增量复用；不为了制造变化而修改产品内容或删除已引用的历史产物。
 
-GUI 构建不会改写 XR 的 `preloadedAssets`，所以正式交付建议走这条路。
+历史记录中的 GUI 构建没有观察到 `preloadedAssets` 被清空；这是有限观测，不能保证以后
+GUI 构建不改设置。两种方式都须比较构建前后设置，并执行相同的构建与设备验收。
 
-## 4. 三个容易踩的地方（都在本工程实测过）
+## 4. 三个容易踩的地方
 
-### 坑 A：`.bat` 用 LF 换行会让 `cmd.exe` 解析错乱
+### 坑 A：排查 `.bat` 的换行、编码和退出码记录
 
-症状：`echo ExitCode=%RC%>> "%LOG%"` 既不写日志也不带出变量值，退出码丢失。
-用 PowerShell 转成 CRLF，并校验 CR 数 == LF 数：
+历史构建时曾遇到 `echo ExitCode=%RC%>> "%LOG%"` 未留下预期记录，但没有隔离确认根因；
+后续本机最小复核中，包含 caret 续行、变量和退出码的 LF-only 脚本也能正常执行。
+因此不要把 LF 一律认定为解析错误。优先检查当前 shell、续行符尾部空格、变量赋值、
+日志目录是否存在、路径引号及编码；需要时用不启动 Unity 的最小脚本定位。
 
-```powershell
-$p = "<脚本>.bat"
-$t = [IO.File]::ReadAllText($p) -replace "`r`n","`n" -replace "`n","`r`n"
-[IO.File]::WriteAllText($p, $t, (New-Object System.Text.ASCIIEncoding))
-```
+若统一为 CRLF，在编辑器中仅改变换行并保留原编码，另存新副本后核对中文路径没有变化。
+不要用 ASCII 编码覆写含中文的脚本，也不要未经确认把 UTF-8 转为 GBK；当前 shell 的
+解码方式须与文件编码对应。[Microsoft 编码说明](https://learn.microsoft.com/en-us/dotnet/standard/base-types/character-encoding)
+指出 ASCII 默认会把无法表示的字符替换为问号。
 
-### 坑 B：批处理会清空 XR 的 `preloadedAssets`
+### 坑 B：比较并保留构建前的 `ProjectSettings`
 
-构建后 `MuseumVR/ProjectSettings/ProjectSettings.asset` 里原本的两条
+历史记录称两次批处理构建后，`MuseumVR/ProjectSettings/ProjectSettings.asset` 中原有的两条
 
 ```
   preloadedAssets:
@@ -76,25 +118,22 @@ $t = [IO.File]::ReadAllText($p) -replace "`r`n","`n" -replace "`n","`r`n"
   - {fileID: …, guid: e5d58f9cc1d44cb4c9239fda248dbab1, type: 2}   # com.unity.xr.openxr.settings4
 ```
 
-会被改成 `preloadedAssets: []`。
+变成了 `preloadedAssets: []`，随后已恢复。这是特定版本和运行环境的观测，不是所有
+批处理必然发生、GUI 必然免疫的规律。本轮文档修正没有重新运行 Unity 验证该现象。
 
 处理：
 
-1. **提交前必须还原**，别让它混进提交：
+1. 构建结束后关闭 Unity，保留本次日志、dirty 清单及构建后设置副本。
+2. 将第 1 节构建前副本与当前文件逐项比较，只恢复**确认由此次构建引入**的差异；
+   原有 Player 设置修改和其他人的改动必须保留。不要按 Git 的 index／HEAD 整文件覆盖。
+   构建期间若有人修改同一文件，先协调重叠部分，不能把其改动当成构建噪声撤销。
+3. 两种构建方式都核对 `preloadedAssets` 的实际条目与构建前副本一致；当前保存基线是上面
+   两条，但应以此次构建前的已确认设置为准。
+4. 在构建记录中注明准确 commit、构建时的额外改动，以及后来恢复了哪些差异。
 
-   ```bash
-   git -C <仓库> checkout -- MuseumVR/ProjectSettings/ProjectSettings.asset
-   ```
-
-2. 在构建记录里如实写明"构建时存在该未提交改动"。
-3. 正式 VR 交付改用 GUI 构建，构建后确认 `preloadedAssets` 仍是 2 条。
-
-**关于危害，要说准**：这个改动在本工程的批处理构建里**已经出现两次**（两次都已还原）；
-但它是否真的影响播放器启动时的 OpenXR 初始化，我们**没有证实**——
-实际播放器日志里 `UnitySubsystems/UnityOpenXR/UnitySubsystemsManifest.json` 仍报
-`1 displays + 1 inputs`，也就是子系统照常装载。
-所以这条的正确写法是"**会造成 ProjectSettings 的意外改动，必须还原**"，
-不该写成"会导致 VR 起不来"。（凭机制推断下结论前先找运行证据。）
+历史播放器日志仍报告 `UnitySubsystems/UnityOpenXR/UnitySubsystemsManifest.json` 的
+`1 displays + 1 inputs`。这说明当时注册了相关子系统，不能单独证明真实头显会话、跟踪或输入
+正常，也不能据此排除设置差异的影响。该影响仍未证实；不要直接写成“VR 起不来”或“已无影响”。
 
 ### 坑 C：构建产物不要提交
 
@@ -104,35 +143,54 @@ $t = [IO.File]::ReadAllText($p) -replace "`r`n","`n" -replace "`n","`r`n"
 
 ## 5. 构建后收证据（判据要写清）
 
-```bash
-ls -la "<输出目录>"                    # exe / <名字>_Data / MonoBleedingEdge / UnityPlayer.dll
-du -sh "<输出目录>"                    # 完整体积
-certutil.exe -hashfile "<输出目录>\MuseumVR.exe" SHA256
-grep -c "error CS" "<日志>"            # 编译错误数，应为 0
-tail -n 3 "<日志>"                     # 应出现 return code 0
-git -C <仓库> status --porcelain       # 记录 Unity 改动了哪些文件
+下面是 **PowerShell** 的只读收集命令；沿用第 1 节 `$buildRepo`，填入本次输出与日志路径。
+
+```powershell
+$buildOutputDir = '<本次输出目录>'
+$buildLog = '<本次完整构建日志>'
+Get-ChildItem -LiteralPath $buildOutputDir
+(Get-ChildItem -LiteralPath $buildOutputDir -File -Recurse | Measure-Object -Property Length -Sum).Sum
+Get-FileHash -LiteralPath (Join-Path $buildOutputDir 'MuseumVR.exe') -Algorithm SHA256
+Select-String -LiteralPath $buildLog -Pattern 'Build succeeded|Build completed with a result of|error CS|return code'
+Get-Content -LiteralPath $buildLog -Tail 20
+git -C $buildRepo status --short
+git -C $buildRepo diff -- MuseumVR/ProjectSettings/ProjectSettings.asset
 ```
 
-判定"构建成功"的三个条件缺一不可：**进程退出码 0 + `error CS` 0 条 + 产物文件齐全**。
-另外两条容易漏：
+构建日志必须明确给出本次 **`Build succeeded`／`Build completed with a result of 'Succeeded'`**
+或相应的成功 BuildReport，再结合批处理进程退出码 0、没有编译／构建错误、完整且对应本次
+运行的产物作判断。成功状态见 [Unity BuildResult.Succeeded](https://docs.unity3d.com/2022.3/Documentation/ScriptReference/Build.Reporting.BuildResult.Succeeded.html)。
+**退出码 0、`error CS` 为 0 或目录中已有 exe 都不能单独证明此次构建成功**；缺少明确结果时
+保留完整日志进一步检查。GUI 也须保留构建结果，不能只看窗口正常关闭。
 
-- 构建日志里的 **OpenXR 弃用警告**（`PoseControl` / `Vector2Control`）是官方可选警告，不是错误；
-  它出现反而说明 OpenXR 构建校验确实跑过。
+核对 exe、`*_Data/`、`UnityPlayer.dll` 等运行依赖；当前 Mono 后端还需 `MonoBleedingEdge/`，
+以本次后端和完整文件清单为准。另外两条容易漏：
+
+- `PoseControl` / `Vector2Control` 弃用警告不是编译错误，但要保留具体日志并确认是否还有
+  构建校验错误；警告的存在不能证明整个 OpenXR 构建校验或运行初始化通过。
 - 记录被测 commit 与额外未提交改动（本次构建相对哪个 `main`、有哪些 dirty 文件）。
 
-## 6. 本机没有头显时的已知现象（不是构建缺陷）
+## 6. 无头显启动现象与 Editor 模拟器
 
-双击产物能进主场景、能正常渲染，但没有头显时**不可操作**。播放器日志
-（`%USERPROFILE%\AppData\LocalLow\<公司名>\MuseumVR\Player.log`）会给出原因：
+历史运行在没有可用头显时进入并渲染主场景，但未能执行 VR 交互。播放器日志
+（`%USERPROFILE%\AppData\LocalLow\<公司名>\MuseumVR\Player.log`）当时记录了：
 
 ```
 xrGetSystem: XR_ERROR_FORM_FACTOR_UNAVAILABLE
 ```
 
-这是"本机没有头显"，不是工程或构建的问题。要在本机试交互，
-得手动把 `MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/XR Device Simulator/XR Device Simulator.prefab`
-拖进场景按 Play（**临时用，别保存场景、别提交**）；主场景本身不含该 prefab。
-桌面操作键位见 `docs/helmet-interaction.zh-CN.md`。
+按 [OpenXR 返回码定义](https://registry.khronos.org/OpenXR/specs/1.0/man/html/XrResult.html)，
+所请求形态受支持，但设备当前不可用，例如未连接或未开机；需结合设备和运行时环境检查。
+它不能单独归因为构建失败，也不能证明构建没有其他缺陷。
+
+本机预览交互直接在 Editor 打开已有 `MuseumStart` 并按 Play：当前保存的
+`Assets/XRI/Settings/Resources/XRDeviceSimulatorSettings.asset` 已启用
+`m_AutomaticallyInstantiateSimulatorPrefab=1` 和 `m_AutomaticallyInstantiateInEditorOnly=1`，
+会在 Editor 自动创建 XR Device Simulator，无需手动拖入 prefab；该设置不会在播放器中
+自动创建模拟器。若没有出现，检查 `Edit > Project Settings > XR Plug-in Management >
+XR Interaction Toolkit` 的 `Use XR Device Simulator in scenes` 与 `Instantiate In Editor Only`，
+按[首次打开指南](getting-started.zh-CN.md)核对。桌面键位见[头盔交互说明](helmet-interaction.zh-CN.md)。
+模拟输入通过仍不能代替真实头显验收。
 
 ## 7. 与其它文档的关系
 
