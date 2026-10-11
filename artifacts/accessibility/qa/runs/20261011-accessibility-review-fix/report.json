@@ -1,0 +1,796 @@
+{
+  "scope": "只读扫描仓库资产文件；不运行 Unity、不做仿真或推测",
+  "observations": [
+    {
+      "item": "扫描范围",
+      "value": {
+        "productPrefabs": 8,
+        "productScenes": 3,
+        "productMaterials": 69,
+        "thirdPartySamples": 43,
+        "note": "Samples/ 是 XR Interaction Toolkit 官方样例，单独统计、不计入产品结论"
+      },
+      "note": ""
+    },
+    {
+      "item": "产品侧 TMP 文本组件数",
+      "value": {
+        "components": 92,
+        "withFontSize": 92,
+        "autoSizing": 92,
+        "semiTransparentText": 0
+      },
+      "note": ""
+    },
+    {
+      "item": "字号分布（按文件）",
+      "value": {
+        "Museum/Features/HelmetHotspots/Prefabs/HelmetHotspotTour.prefab": {
+          "count": 3,
+          "min": 0.75,
+          "max": 1.2,
+          "distinct": [
+            0.75,
+            0.8,
+            1.2
+          ]
+        },
+        "Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity": {
+          "count": 8,
+          "min": 0.3,
+          "max": 1.45,
+          "distinct": [
+            0.3,
+            0.4,
+            0.45,
+            0.55,
+            0.75,
+            0.9,
+            1.45
+          ]
+        },
+        "Museum/Features/Localization/Prefabs/LanguageShowcase.prefab": {
+          "count": 6,
+          "min": 0.85,
+          "max": 2.0,
+          "distinct": [
+            0.85,
+            1.0,
+            1.2,
+            2.0
+          ]
+        },
+        "Museum/Features/MaritimeGallery/Prefabs/MaritimeGallery.prefab": {
+          "count": 28,
+          "min": 0.76,
+          "max": 5.0,
+          "distinct": [
+            0.76,
+            0.84,
+            1.3,
+            1.4,
+            1.47,
+            1.48,
+            1.5,
+            1.52,
+            1.65,
+            1.72,
+            1.8,
+            2.0,
+            2.2,
+            2.32,
+            2.7,
+            2.8,
+            4.0,
+            5.0
+          ]
+        },
+        "Museum/Scenes/MuseumStart.unity": {
+          "count": 47,
+          "min": 0.2,
+          "max": 36.0,
+          "distinct": [
+            0.2,
+            0.22,
+            0.3,
+            0.32,
+            0.35,
+            0.36,
+            0.4,
+            2.2,
+            2.4,
+            3.2,
+            7.0,
+            36.0
+          ]
+        }
+      },
+      "note": "各文件的字号区间互不相同 → 工程内没有统一的排版基线；仓库也没有任何一处记录『最小可读字号』，因此无法判断自动缩放压到下限时是否仍可读。注意：*.unity 只内联场景自身的 TMP 组件，prefab 实例展开的组件不在其中（其实际字号以源 prefab + 场景覆盖为准）"
+    },
+    {
+      "item": "自动缩放压缩比最大的几个文本组件",
+      "value": {
+        "autoSizingComponents": 92,
+        "top5": [
+          {
+            "object": "Title",
+            "file": "Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity",
+            "range": [
+              0.02,
+              1.45
+            ],
+            "shrinkRatio": 72.5
+          },
+          {
+            "object": "Task",
+            "file": "Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity",
+            "range": [
+              0.02,
+              0.9
+            ],
+            "shrinkRatio": 45.0
+          },
+          {
+            "object": "SHALLOWER label",
+            "file": "Museum/Scenes/MuseumStart.unity",
+            "range": [
+              0.02,
+              0.85
+            ],
+            "shrinkRatio": 42.5
+          },
+          {
+            "object": "TILT DOWN label",
+            "file": "Museum/Scenes/MuseumStart.unity",
+            "range": [
+              0.02,
+              0.85
+            ],
+            "shrinkRatio": 42.5
+          },
+          {
+            "object": "TURN RIGHT label",
+            "file": "Museum/Scenes/MuseumStart.unity",
+            "range": [
+              0.02,
+              0.85
+            ],
+            "shrinkRatio": 42.5
+          }
+        ]
+      },
+      "note": "自动缩放会在文案变长时把字号压到 fontSizeMin 为止；同一组件内压缩比越大，长文案（如繁体/英文整句）被压得越小"
+    },
+    {
+      "item": "自动缩放下限低于 0.05 的文本组件",
+      "value": {
+        "count": 21,
+        "ofAutoSizingComponents": 92,
+        "distribution": {
+          "0.02": 20,
+          "0.03": 1
+        },
+        "examples": [
+          {
+            "object": "Title",
+            "file": "Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity",
+            "range": [
+              0.02,
+              1.45
+            ],
+            "shrinkRatio": 72.5
+          },
+          {
+            "object": "Task",
+            "file": "Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity",
+            "range": [
+              0.02,
+              0.9
+            ],
+            "shrinkRatio": 45.0
+          },
+          {
+            "object": "SHALLOWER label",
+            "file": "Museum/Scenes/MuseumStart.unity",
+            "range": [
+              0.02,
+              0.85
+            ],
+            "shrinkRatio": 42.5
+          },
+          {
+            "object": "TILT DOWN label",
+            "file": "Museum/Scenes/MuseumStart.unity",
+            "range": [
+              0.02,
+              0.85
+            ],
+            "shrinkRatio": 42.5
+          }
+        ]
+      },
+      "note": "下限 0.02 意味着当文案超出文本框时，字号可以被压到原下限的 1/40 以下 —— 资产层面等于没有可读性保护。是否真的会被压到这一步，取决于最长文案，需在编辑器里逐条核对"
+    },
+    {
+      "item": "主场景中的样式覆盖",
+      "value": {
+        "fontSizeOverrideCount": 10,
+        "fontSizeOverrideValues": [
+          "2",
+          "2.05",
+          "2.6",
+          "2.75"
+        ],
+        "textOverrideCount": 5
+      },
+      "note": "主场景里实际显示的字号由这些覆盖决定，与源 prefab 默认值不同；m_text 覆盖处写死的英文字符串同时充当三语表的查找 key"
+    },
+    {
+      "item": "面板的物理尺寸（沿 Transform 父链累乘 localScale）",
+      "value": [
+        {
+          "prefab": "HelmetHotspotTour",
+          "object": "Panel Backing",
+          "chain": [
+            "HelmetHotspotTour",
+            "Information Panel",
+            "Panel Backing"
+          ],
+          "chainDetail": [
+            {
+              "object": "HelmetHotspotTour",
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "localPosition": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "object": "Information Panel",
+              "localScale": [
+                0.75,
+                0.75,
+                0.75
+              ],
+              "localPosition": [
+                0.0,
+                0.01,
+                -0.8
+              ]
+            },
+            {
+              "object": "Panel Backing",
+              "localScale": [
+                0.56,
+                0.23,
+                0.015
+              ],
+              "localPosition": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            }
+          ],
+          "cumulativeScale": [
+            0.42,
+            0.1725,
+            0.01125
+          ],
+          "localPosition": [
+            0.0,
+            0.0,
+            0.0
+          ]
+        },
+        {
+          "prefab": "HelmetHotspotTour",
+          "object": "Information",
+          "chain": [
+            "HelmetHotspotTour",
+            "Information Panel",
+            "Information"
+          ],
+          "chainDetail": [
+            {
+              "object": "HelmetHotspotTour",
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "localPosition": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "object": "Information Panel",
+              "localScale": [
+                0.75,
+                0.75,
+                0.75
+              ],
+              "localPosition": [
+                0.0,
+                0.01,
+                -0.8
+              ]
+            },
+            {
+              "object": "Information",
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "localPosition": [
+                0.0,
+                0.0,
+                -0.011
+              ]
+            }
+          ],
+          "cumulativeScale": [
+            0.75,
+            0.75,
+            0.75
+          ],
+          "localPosition": [
+            0.0,
+            0.0,
+            -0.011
+          ],
+          "sizeDeltaLocal": [
+            0.51,
+            0.12
+          ],
+          "physicalSizeMeters": {
+            "x": 0.3825,
+            "y": 0.09
+          }
+        },
+        {
+          "prefab": "LanguageShowcase",
+          "object": "Board",
+          "chain": [
+            "LanguageShowcase",
+            "Board"
+          ],
+          "chainDetail": [
+            {
+              "object": "LanguageShowcase",
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "localPosition": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "object": "Board",
+              "localScale": [
+                2.1,
+                1.55,
+                0.03
+              ],
+              "localPosition": [
+                0.0,
+                1.45,
+                0.6
+              ]
+            }
+          ],
+          "cumulativeScale": [
+            2.1,
+            1.55,
+            0.03
+          ],
+          "localPosition": [
+            0.0,
+            1.45,
+            0.6
+          ]
+        },
+        {
+          "prefab": "LanguageShowcase",
+          "object": "Language Button - English",
+          "chain": [
+            "LanguageShowcase",
+            "Language Button - English"
+          ],
+          "chainDetail": [
+            {
+              "object": "LanguageShowcase",
+              "localScale": [
+                1.0,
+                1.0,
+                1.0
+              ],
+              "localPosition": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            {
+              "object": "Language Button - English",
+              "localScale": [
+                0.59,
+                0.2,
+                0.04
+              ],
+              "localPosition": [
+                0.66,
+                0.92,
+                0.545
+              ]
+            }
+          ],
+          "cumulativeScale": [
+            0.59,
+            0.2,
+            0.04
+          ],
+          "localPosition": [
+            0.66,
+            0.92,
+            0.545
+          ]
+        }
+      ],
+      "note": "Quad 的物理尺寸 = 累乘后的 scale；TMP 的 = sizeDelta × 累乘 scale。这是资产层面的确定值，可复算"
+    },
+    {
+      "item": "热点说明面板背景（HotspotPanel.mat）",
+      "value": {
+        "baseColorHex": "#040B0E",
+        "baseAlpha": 1.0,
+        "shaderGuid": "650dd9526735d5b46b79224bc6e94025",
+        "shaderEvidence": {
+          "package": "com.unity.render-pipelines.universal",
+          "version": "14.0.12",
+          "file": "Packages/com.unity.render-pipelines.universal/Shaders/Unlit.shader",
+          "available": true,
+          "sha256": "bb500b052e684f862be56220ef187081a0c9de08265b2ffcff144a2f21817cd4",
+          "name": "Universal Render Pipeline/Unlit",
+          "blendDeclaration": "Blend [_SrcBlend][_DstBlend], [_SrcBlendAlpha][_DstBlendAlpha]",
+          "baseColorIsColorProperty": true,
+          "baseMapDefaultWhite": true,
+          "fragmentSource": {
+            "package": "com.unity.render-pipelines.universal",
+            "version": "14.0.12",
+            "file": "Packages/com.unity.render-pipelines.universal/Shaders/UnlitForwardPass.hlsl",
+            "available": true,
+            "sha256": "d768bee84bb8509908681cd71422d8ec095316e0442a9f47bc9dbb77f552d062",
+            "alphaExpression": "texColor.a * _BaseColor.a"
+          }
+        },
+        "baseMapTexture": "{fileID: 0}",
+        "blendState": {
+          "_Surface": 1.0,
+          "_Blend": 0.0,
+          "_SrcBlend": 5.0,
+          "_DstBlend": 10.0,
+          "_ZWrite": 0.0
+        },
+        "transparentSurface": true,
+        "renderQueue": 3000
+      },
+      "note": "Transparent 表示渲染模式，不等于当前透景。需联合核对 shader、纹理 alpha、baseAlpha、blendState 和运行时 opacity；不能只凭 _Surface 判断。hold 与 fade 两阶段的最终像素对比度均未验证"
+    },
+    {
+      "item": "语言选择板背景（Language-Board.mat）",
+      "value": {
+        "baseColorHex": "#1A1F26",
+        "baseAlpha": 1.0,
+        "shaderGuid": "933532a4fcc9baf4fa0491de14d08ed7",
+        "shaderEvidence": {
+          "package": "com.unity.render-pipelines.universal",
+          "version": "14.0.12",
+          "file": "Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader",
+          "available": true,
+          "sha256": "123d3d4a5f1092c1ee1566916907a44300d94723e354576b90de4dd2d1600e4a",
+          "name": "Universal Render Pipeline/Lit",
+          "blendDeclaration": "Blend[_SrcBlend][_DstBlend], [_SrcBlendAlpha][_DstBlendAlpha]",
+          "baseColorIsColorProperty": true,
+          "baseMapDefaultWhite": true
+        },
+        "baseMapTexture": "{fileID: 0}",
+        "blendState": {
+          "_Surface": 0.0,
+          "_Blend": 0.0,
+          "_SrcBlend": 1.0,
+          "_DstBlend": 0.0,
+          "_ZWrite": 1.0
+        },
+        "transparentSurface": false,
+        "renderQueue": -1
+      },
+      "note": "不透明表示不会 Alpha 混合后景；若 shader 是 Lit，最终颜色仍受光照等影响。不能把文字对材质基色的配色估算当成已通过的最终对比度"
+    },
+    {
+      "item": "热点面板文字 / 面板背景 的对比度",
+      "value": [
+        {
+          "label": "文字色 1",
+          "textHex": "#4CFF8C",
+          "backgroundHex": "#040B0E",
+          "conditionalSrgbPaletteRatio": 15.07,
+          "assumption": "材质 Color 和 TMP 序列化文字色均按 sRGB 的配色估算；不代表最终像素",
+          "renderedContrastVerified": false
+        },
+        {
+          "label": "文字色 2",
+          "textHex": "#EBF5F2",
+          "backgroundHex": "#040B0E",
+          "conditionalSrgbPaletteRatio": 17.75,
+          "assumption": "材质 Color 和 TMP 序列化文字色均按 sRGB 的配色估算；不代表最终像素",
+          "renderedContrastVerified": false
+        }
+      ],
+      "note": "仅估算文字色与材质基色；hold 时 alpha=1，fade 时透明度降低，两阶段的最终像素对比度都未在本轮渲染验证"
+    },
+    {
+      "item": "语言选择板文字 / 板面背景 的对比度",
+      "value": [
+        {
+          "label": "文字色 1",
+          "textHex": "#FFFFFF",
+          "backgroundHex": "#1A1F26",
+          "conditionalSrgbPaletteRatio": 16.63,
+          "assumption": "材质 Color 和 TMP 序列化文字色均按 sRGB 的配色估算；不代表最终像素",
+          "renderedContrastVerified": false
+        }
+      ],
+      "note": "板面是 URP Lit，光照可能改变实际颜色；语言按钮另有 Language-Button 材质。此处只估算文字色对 Language-Board 基色，不判定整个语言入口对比度通过"
+    },
+    {
+      "item": "热点标记的状态配色（HelmetHotspot.cs）",
+      "value": {
+        "availableColor": {
+          "hex": "#1FCCE6",
+          "alpha": 0.75
+        },
+        "hoverColor": {
+          "hex": "#FFAD26",
+          "alpha": 1.0
+        },
+        "visitedColor": {
+          "hex": "#40F280",
+          "alpha": 0.85
+        },
+        "_hasIsVisitedState": true
+      },
+      "note": "三种状态（可选/悬停/已访问）**只用颜色区分**，其中两态还带透明度；对抗色觉障碍与低视力使用者属风险点（WCAG 1.4.1 不以颜色为唯一信息载体）"
+    },
+    {
+      "item": "说明面板自动淡出的默认时长",
+      "value": {
+        "holdSeconds": 30.0,
+        "fadeSeconds": 1.0,
+        "recallPathExists": true,
+        "fadeScalesLabelAlpha": true,
+        "fadeScalesBackingAlpha": true,
+        "restartRestoresFullOpacity": true
+      },
+      "note": "阅读窗口 = hold + fade；代码里重新选中热点会重启计时（RestartExplanationLifetime），因此存在召回路径 —— 这是正面的，但窗口长度本身是否足够只能由真实使用者判断"
+    },
+    {
+      "item": "交互输入开关",
+      "value": {
+        "enableTriggerQueries": "true",
+        "allowHoveredActivate": "true",
+        "activateInputSource": {
+          "package": "com.unity.xr.interaction.toolkit",
+          "version": "2.6.4",
+          "file": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRBaseControllerInteractor.cs",
+          "available": true,
+          "sha256": "138614a74dc3f5d6190bb397e8d0ee12a633da202e2663561ada7ab5e289beed",
+          "shouldActivateCondition": "m_AllowActivate && (hasSelection || m_AllowHoveredActivate && hasHover) && m_Controller != null && m_Controller.activateInteractionState.activatedThisFrame"
+        },
+        "hoverHandler": "ApplyColor(hoverColor);"
+      },
+      "note": "allowHoveredActivate 允许在未 Select、已 Hover 时把 Activate 输入发给目标；它不产生输入，仍需 Activate（本工程为扳机）或 Select（握持）动作。热点 hover 回调只换颜色，不构成免按键、dwell 或凝视激活路径"
+    },
+    {
+      "item": "年代切换的运动方式（HelmetEraSwitcher.cs）",
+      "value": {
+        "minFadeBrightness": 0.35,
+        "cameraMotionApisFound": "无"
+      },
+      "note": "淡变修改绑定渲染器的材质颜色，未在此脚本找到所列相机运动 API；minFadeBrightness 是对象颜色乘数下限，不是全画面亮度或舒适性实测"
+    },
+    {
+      "item": "复位（回到起始位姿）的资产证据",
+      "value": {
+        "homeOverrides": [
+          [
+            "homePosition.y",
+            "1.1719999"
+          ],
+          [
+            "homePosition.z",
+            "3.5"
+          ],
+          [
+            "homeRotation.x",
+            "-0"
+          ],
+          [
+            "homeRotation.y",
+            "-0"
+          ],
+          [
+            "homeRotation.z",
+            "-0"
+          ],
+          [
+            "hasConfiguredHome",
+            "1"
+          ]
+        ],
+        "configuredFlagPresent": true,
+        "resetScriptExists": true
+      },
+      "note": "存在已配置的复位位姿覆盖与独立复位脚本 → 『复位』这条官方要求在资产层面有对应实现"
+    },
+    {
+      "item": "主场景中的 prefab 实例位置",
+      "value": [
+        {
+          "prefab": "HelmetHotspotTour",
+          "sceneName": "HelmetHotspotTour",
+          "transformObjectFileID": "5719041681487742875",
+          "parentIsSceneRoot": false,
+          "localPositionOverrides": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        },
+        {
+          "prefab": "LanguageShowcase",
+          "sceneName": "Language Selection",
+          "transformObjectFileID": "7040005279808717193",
+          "parentIsSceneRoot": true,
+          "localPositionOverrides": {
+            "x": 2.6,
+            "y": 0.0,
+            "z": 6.2
+          }
+        },
+        {
+          "prefab": "XR Origin (XR Rig)",
+          "sceneName": "XR Origin (XR Rig)",
+          "transformObjectFileID": "1717954561962503726",
+          "parentIsSceneRoot": true,
+          "localPositionOverrides": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 2.2
+          }
+        },
+        {
+          "prefab": "HelmetExhibit",
+          "sceneName": "HelmetExhibit",
+          "transformObjectFileID": "3281464335696301320",
+          "parentIsSceneRoot": false,
+          "localPositionOverrides": {
+            "x": 0.0,
+            "y": 1.1719999,
+            "z": 3.5
+          }
+        },
+        {
+          "prefab": "Maritime Gallery Environment",
+          "sceneName": "Maritime Gallery Environment",
+          "transformObjectFileID": "1189572321490871457",
+          "parentIsSceneRoot": true,
+          "localPositionOverrides": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          }
+        }
+      ],
+      "note": "坐标只取该实例根对象的 m_LocalPosition 覆盖。被别的实例嵌套的 prefab（parentIsSceneRoot=false）其绝对位置还要叠加父级实例，因此这些数值只用于判断相对关系，绝对视距/视高仍需打开场景或实机确认"
+    },
+    {
+      "item": "运行时字符串是否都在三语表里",
+      "value": [
+        {
+          "key": "Select a highlighted point to inspect the helmet.",
+          "present": true
+        },
+        {
+          "key": "Exploration complete",
+          "present": true
+        },
+        {
+          "key": "Choose your interface language",
+          "present": true
+        },
+        {
+          "key": "Inside the helmet",
+          "present": true
+        },
+        {
+          "key": "Beneath the surface",
+          "present": true
+        },
+        {
+          "key": "Connected to the surface",
+          "present": true
+        },
+        {
+          "key": "The diving gallery",
+          "present": true
+        }
+      ],
+      "note": "热点提示语/完成语在代码里是英文常量，但经 HelmetHotspotLocalization 桥接后以英文为 key 查表；本项确认这些 key 均已存在，故不构成缺陷"
+    },
+    {
+      "item": "docs/ 中提到可访问性的文件",
+      "value": {
+        "count": 18,
+        "files": [
+          "docs/accessibility.zh-CN.md",
+          "docs/course-requirements.md",
+          "docs/exhibit-information.zh-CN.md",
+          "docs/helmet-eras.zh-CN.md",
+          "docs/project-state.md",
+          "docs/activity/2026-09-23-helmet-prototype.md",
+          "docs/activity/2026-10-03-exhibit-information.md",
+          "docs/activity/2026-10-03-helmet-eras.md",
+          "docs/activity/2026-10-03-helmet-exploration.md",
+          "docs/activity/2026-10-04-localization.md",
+          "docs/activity/2026-10-05-localization-fixes.md",
+          "docs/activity/2026-10-05-localization-integration.md",
+          "docs/activity/2026-10-06-helmet-hotspots-latest.md",
+          "docs/activity/2026-10-06-pr14-completion.md",
+          "docs/activity/2026-10-06-project-records-audit.md",
+          "docs/activity/2026-10-07-mark-v-refined.md",
+          "docs/activity/2026-10-10-accessibility-audit.md",
+          "docs/activity/2026-10-11-accessibility-review-fix.md"
+        ]
+      },
+      "note": "本项只做关键词命中统计，不判断命中处是『设计基线』还是『未做该项声明』——上下文需要人工阅读；脚本不代替该判断。"
+    },
+    {
+      "item": "CI 工作流",
+      "value": {
+        "workflowsDirExists": false,
+        "files": []
+      },
+      "note": "没有 CI 意味着本报告这类核对只能靠人手动重跑"
+    }
+  ],
+  "unverified": [
+    "真实视高/眼高与坐姿可达范围：需要头显；坐姿人体测量分布也不在仓库里",
+    "文字的实际角尺寸与毫米高度：需要 Unity 打开工程或实机测量（本环境不运行 Unity、本机无头显）",
+    "文字的最终像素对比度：包含 Lit 光照、TMP shader 与热点背板 hold/fade 两阶段，需渲染或实机取样",
+    "色觉障碍下的真实可辨性：需色彩仿真或真人测试，本脚本不做仿真",
+    "参与者可用性研究：属 Phase 3；仓库明示『自动 XR 测试不等于参与者研究』"
+  ],
+  "repo": "E:\\Codex\\pr-review\\20261011-audits-40-41\\pr41-fix",
+  "generatedBy": "artifacts/accessibility/qa/runs/20261010-accessibility-audit/audit_accessibility.py",
+  "provenance": {
+    "gitHead": "5ced5d155c86e53f9a1d0f06a623162b15a9933d",
+    "museumTree": "2c9f4ad31dc30cffe5f14b18eaa68f4b232165d7",
+    "dirtyPaths": "M artifacts/accessibility/qa/runs/20261010-accessibility-audit/audit_accessibility.py\n M docs/accessibility.zh-CN.md\n M docs/activity/2026-10-10-accessibility-audit.md\n?? artifacts/accessibility/qa/runs/20261011-accessibility-review-fix/\n?? docs/activity/2026-10-11-accessibility-review-fix.md",
+    "scriptSha256": "84e5f1130fdb62e3ba18dd0323b7d2b0b710cf7267346fd223594990a6c91fc7",
+    "python": "3.12.10",
+    "packageCache": "E:\\XRmuseum\\MuseumVR\\Library\\PackageCache"
+  }
+}
