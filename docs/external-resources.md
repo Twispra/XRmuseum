@@ -1,5 +1,15 @@
 # 外部资源与辅助工具记录
 
+## 2026-10-11：SuperLite 17B 侧面比例修正 v2
+
+沿用用户本地资料，重点对照 `04_side_rear_view.png` 与用户 Blender 截图修正壳体、颈圈、配重、头带、提手、侧阀位置和排气罩。Codex 辅助新建独立 v2 原创程序几何、Blender 渲染、保存源回读、回归对照和 Pillow 对比图；没有新增第三方模型、贴图、媒体、Unity 包或字体资产，原照片没有复制到仓库或用作贴图。中文对比标注仅使用本机既有字体渲染成图片。约 30.1° 颈圈角度与全部尺寸仍为照片建模估计，不称实测或摄影测量；AI 检查不能代替成员/用户审阅。保留用户已保存的旧模型和历史报告，未导出或接入 Unity。[v2 交付/限制](../artifacts/helmet-modeling/superlite17b-2026-10-11/revision-side-profile-v2/REPORT.md)、[活动记录](activity/2026-10-11-superlite17b-side-profile-v2.md)。
+
+## 2026-10-11：用户资料驱动的 SuperLite 17B 整盔
+
+用户提供本地 12 张参考图、BUILD_SPEC 和两页 17B.pdf（实际为厂家 2015 Document #150424001，覆盖 500-010 / 500-011）。Codex 逐张查看图片、读取/渲染 PDF，并访问[厂家产品页](https://www.kirbymorgan.com/products/helmets/superlite-17b)和[规格页](https://www.kirbymorgan.com/product/specs/314/superlite-17b)核对部件/材质；没有取得整盔实测尺寸。原媒体许可未核实可再分发，只在本地观察，仓库保存来源摘要与哈希，不复制原图、PDF 页面或商标贴图。
+
+Codex 辅助新建独立原创 Blender 外观模型、程序材质、六阶段渲染、实际源文件回读与空目录重复构建。使用本机既有 Blender 4.5.14 LTS，PDF 阅读用既有 pypdf / pypdfium2，检查图整理用 Pillow；不分发工具本体，不新增 Unity 包。全部几何尺寸和材质参数为展示估计，不称实物测绘；没有覆盖原作者面窗/侧阀研究件，没有导出或接入 Unity。AI/机器检查不等于人工成员批准、真实头显、性能或用户研究。[交付/限制](../artifacts/helmet-modeling/superlite17b-2026-10-11/REPORT.md)、[本次活动](activity/2026-10-11-superlite17b-whole-helmet.md)。
+
 2026-10-06 PR #19 主线整合：Codex 辅助逐项冲突合并、现有 Noto Sans SC/OFL 字体并集与 Unity 原地补烤、生产输入共存回归、六组批处理和截图/版本证据核对；责任与限制见[本轮记录](activity/2026-10-06-pr19-main-integration.md)。205 条三语文案、536 保存字形。源字体仍来自既有 Noto Sans SC 及其许可证，不引入外部模型/音频/图片或 package。以下旧“本地”条目保留为原开发时快照。
 
 2026-10-06 项目记录核对补充：已合入 main 的 [PR #21](https://github.com/Twispra/XRmuseum/pull/21) 沿用现有 Noto Sans SC / OFL 1.1，保留原源子集码位并补入 8 字，保存静态字体为 533 字形。Codex 辅助热点生命周期/选择距离修复、九条三语文案及适配、字体扩充/烘焙、卡片布局、自动输入测试和单眼截图复核，见[修复记录](activity/2026-10-06-hotspot-repair.md)。热点原始实现的 Codex 辅助声明见[迁移记录](activity/2026-10-06-helmet-hotspots-latest.md)；原作者 Aragorn-cyber 与修复者 Twispra 分开记录，没有新增第三方模型、图片、音频或 package。
