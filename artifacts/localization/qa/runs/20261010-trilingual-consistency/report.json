@@ -1,0 +1,66 @@
+{
+  "run": "20261010-trilingual-consistency",
+  "date": "2026-10-10",
+  "task": "三语文案一致性核对（JSON 源 ↔ Unity 保存表、字形覆盖）",
+  "baseCommit": "270c7b72da63f08baac85ee7bb94f7fcdb4a226d",
+  "environment": {
+    "os": "Windows 11",
+    "tool": "Python 3.13.12",
+    "unity": "未启动；本核对为纯文本解析（YAML/JSON/Unicode）",
+    "inputs": [
+      "MuseumVR/Assets/Museum/Features/Localization/Tables/MuseumTranslations.json",
+      "MuseumVR/Assets/Museum/Features/Localization/Tables/LocalizationTable.asset",
+      "MuseumVR/Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset",
+      "MuseumVR/Assets/Museum/Features/Localization/Fonts/characters-required.txt"
+    ],
+    "script": "audit_trilingual.py"
+  },
+  "results": {
+    "translationTableParity": {
+      "jsonEntries": 205,
+      "assetEntries": 205,
+      "keysOnlyInJson": 0,
+      "keysOnlyInAsset": 0,
+      "fieldsCompared": 615,
+      "fieldMismatches": 0,
+      "note": "保存表的字符串以 \\uXXXX 转义、并以 YAML flow scalar 折行书写；比对前按 YAML 折叠规则还原换行并按 Unicode 转义解码，故换行与全角标点均逐字符比对。"
+    },
+    "glyphCoverage": {
+      "bakedGlyphsInSdfAsset": 536,
+      "distinctCharsUsedInCopy": 511,
+      "missingGlyphs": 0
+    },
+    "requiredListCoverage": {
+      "charsInCharactersRequiredTxt": 526,
+      "missingFromSdfAsset": 0
+    },
+    "structuralChecks": {
+      "emptyFields": 0,
+      "duplicateKeys": 0,
+      "simplifiedCharsInsideTraditionalField": 0,
+      "halfWidthPunctuationInChineseFields": 0
+    }
+  },
+  "openJudgementItems": [
+    {
+      "id": "tc-zuozhe",
+      "kind": "繁体用字",
+      "keys": ["welcome.body", "access.seated", "text.805b59527b6f"],
+      "observation": "繁体字段使用「着」，繁体书面标准通常作「著」（坐着/坐著、着急/著急）。",
+      "action": "留待三语文案作者决定是否统一；本轮不改任何文案数据。"
+    },
+    {
+      "id": "zh-hant-selflabel",
+      "kind": "语言标签",
+      "keys": ["text.9937e365aaf3"],
+      "observation": "该条目 english/chinese/traditionalChinese 均为「简体中文」；同批另有 text.72726d8818f6 的 traditionalChinese 作「簡體中文」。若语言按钮采用「以该语言自身书写」的约定，则保持不变即正确；若按界面语言转换，则应作「簡體中文」。",
+      "action": "留待作者确认采用哪种约定；本轮不改。"
+    }
+  ],
+  "limitations": [
+    "纯文本核对，未启动 Unity，未做运行时实例化检查或界面布局检查。",
+    "未做人工术语审校、译文质量评价或母语者复核。",
+    "未做真实头显中的三语阅读与遮挡检查。",
+    "「繁体用字」与「语言标签」两项为约定/风格判断，不属于自动判定结论。"
+  ]
+}
