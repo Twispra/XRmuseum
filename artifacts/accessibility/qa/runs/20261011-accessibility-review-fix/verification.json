@@ -1,0 +1,134 @@
+{
+  "checks": [
+    {
+      "check": "20 observations retained",
+      "passed": true
+    },
+    {
+      "check": "unchanged asset values: CI 工作流",
+      "passed": true
+    },
+    {
+      "check": "unchanged asset values: 主场景中的 prefab 实例位置",
+      "passed": true
+    },
+    {
+      "check": "unchanged asset values: 主场景中的样式覆盖",
+      "passed": true
+    },
+    {
+      "check": "unchanged asset values: 产品侧 TMP 文本组件数",
+      "passed": true
+    },
+    {
+      "check": "unchanged asset values: 复位（回到起始位姿）的资产证据",
+      "passed": true
+    },
+    {
+      "check": "unchanged asset values: 字号分布（按文件）",
+      "passed": true
+    },
+    {
+      "check": "unchanged asset values: 年代切换的运动方式（HelmetEraSwitcher.cs）",
+      "passed": true
+    },
+    {
+      "check": "unchanged asset values: 扫描范围",
+      "passed": true
+    },
+    {
+      "check": "unchanged asset values: 热点标记的状态配色（HelmetHotspot.cs）",
+      "passed": true
+    },
+    {
+      "check": "unchanged asset values: 自动缩放下限低于 0.05 的文本组件",
+      "passed": true
+    },
+    {
+      "check": "unchanged asset values: 自动缩放压缩比最大的几个文本组件",
+      "passed": true
+    },
+    {
+      "check": "unchanged asset values: 运行时字符串是否都在三语表里",
+      "passed": true
+    },
+    {
+      "check": "unchanged asset values: 面板的物理尺寸（沿 Transform 父链累乘 localScale）",
+      "passed": true
+    },
+    {
+      "check": "panel alpha/blend/baseMap",
+      "passed": true
+    },
+    {
+      "check": "URP Unlit package evidence",
+      "passed": true
+    },
+    {
+      "check": "URP Lit board evidence",
+      "passed": true
+    },
+    {
+      "check": "conditional palette / no rendered pass: #4CFF8C",
+      "passed": true
+    },
+    {
+      "check": "conditional palette / no rendered pass: #EBF5F2",
+      "passed": true
+    },
+    {
+      "check": "conditional palette / no rendered pass: #FFFFFF",
+      "passed": true
+    },
+    {
+      "check": "Activate still requires input / hover only colors",
+      "passed": true
+    },
+    {
+      "check": "30s hold / 1s fade / recall",
+      "passed": true
+    },
+    {
+      "check": "historic report bytes preserved",
+      "passed": true
+    },
+    {
+      "check": "Unity project equals merged main",
+      "passed": true
+    },
+    {
+      "check": "audit Python syntax",
+      "passed": true
+    },
+    {
+      "check": "existing report rejected unchanged",
+      "passed": true
+    },
+    {
+      "check": "explicit --out required",
+      "passed": true
+    },
+    {
+      "check": "audit works without package cache",
+      "passed": true
+    },
+    {
+      "check": "missing package sources explicitly unverified",
+      "passed": true
+    },
+    {
+      "check": "current doc drops obsolete assertions",
+      "passed": true
+    },
+    {
+      "check": "current doc local links resolve",
+      "passed": true
+    }
+  ],
+  "gitHead": "5ced5d155c86e53f9a1d0f06a623162b15a9933d",
+  "reportSha256": "64602a761597c68cafd1ab6d918e25d5256f8189eaf07dfad1149d48469b4e49",
+  "historicReportSha256": "e934b85b42ff0015855e11cbb0d4dc1fb65e9c82d7db5a48f9f79178376b3f46",
+  "scriptSha256": "84e5f1130fdb62e3ba18dd0323b7d2b0b710cf7267346fd223594990a6c91fc7",
+  "python": "3.12.10",
+  "passed": true
+}

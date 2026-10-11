@@ -11,18 +11,25 @@
   一律写在下面第 3 节"明确未验证"里。
 - 本页**没有改动任何产品文件**；第 4 节只是给组里的建议清单，供决定后再单独开工。
 
-- 核对版本：`main` @ `ac3d31cb2d`（2026-10-10 实测）
-- **提交前复核（2026-10-11）**：`main` 仍为 `ac3d31cb2d`，24 小时内无新合并，
-  本页所依据的资产文件未发生变化，故未重跑。
-- 原始数据与脚本：`artifacts/accessibility/qa/runs/20261010-accessibility-audit/`
+- 当前修订：2026-10-11，基于 PR #41 head `5fd765d` 正常合并 `origin/main` @ `a8da4e8`，
+  合并提交 `5ced5d1`；`MuseumVR/` 与该主线一致。本轮修改脚本和说明后已重跑。
+- 当前报告：[20261011-accessibility-review-fix/report.json](../artifacts/accessibility/qa/runs/20261011-accessibility-review-fix/report.json)。
+  [修复记录](activity/2026-10-11-accessibility-review-fix.md)记录环境、命令、额外未提交文件与检查结果。
+- 2026-10-10 的[旧报告](../artifacts/accessibility/qa/runs/20261010-accessibility-audit/report.json)保持原样；
+  其中悬停激活、色彩空间和透明面板的解释已由本页更正，不能继续引用为当前结论。
 
 ## 0. 怎么复算
 
 ```bash
-python artifacts/accessibility/qa/runs/20261010-accessibility-audit/audit_accessibility.py
+python artifacts/accessibility/qa/runs/20261010-accessibility-audit/audit_accessibility.py --out artifacts/accessibility/qa/runs/20261011-local-rerun/report.json
 ```
 
-脚本只读资产、只写同目录的 `report.json`（纯标准库，任意 Python 3 均可跑）。
+脚本只读资产，使用 Python 3.10+ 标准库；`--out` 必填，已有文件会被拒绝覆盖。
+每次复跑请选一个新的运行目录，不要使用已归档的报告路径。
+默认在本 clone 的 `MuseumVR/Library/PackageCache` 核对 manifest 指定版本的包源码；
+若包缓存尚未生成，报告会将 shader/XRI 源码标为未核对，资产读数仍会产出。
+可用 `--package-cache <现有工程的Library/PackageCache>` 指定已有缓存；不必启动 Unity。
+当前归档报告使用本机现有的 URP 14.0.12 / XRI 2.6.4 缓存，并记录相对包路径与文件 SHA-256。
 扫描范围：产品资产（`MuseumVR/Assets/Museum/`）8 个 prefab、3 个场景、69 个材质，以及其中 92 个 TMP 文本组件；
 `MuseumVR/Assets/Samples/` 下的 XR Interaction Toolkit 官方样例单独统计，不计入下面的结论。
 
@@ -30,16 +37,16 @@ python artifacts/accessibility/qa/runs/20261010-accessibility-audit/audit_access
 
 | # | 维度 | 观察到的事实（出处见第 2 节） | 判定 |
 | --- | --- | --- | --- |
-| 1 | 文字对比度（不透明板面） | 语言选择板：白字 `#FFFFFF` / 板面 `#1A1F26` → **6.25:1**（Unity 忠实解释；四种色彩空间解释范围 6.25–16.63） | 通过 |
-| 2 | 文字对比度（透明面板） | 热点说明面板材质 `HotspotPanel` 是**透明材质**（`_Surface: 1`、RenderQueue 3000）。文字 `#EBF5F2` / 材质基色 `#040B0E` 算得 10.54:1，但实机背景是**佩戴者身后的场景内容**，材质本身保证不了最终对比度 | 待实机确认 |
+| 1 | 文字对比度（语言板） | 白字 / 板面基色均按 sRGB 的配色估算为 **16.63:1**；板面使用 URP Lit，实际像素还受光照等影响，按钮另有材质 | 配色估算；最终对比度未验证 |
+| 2 | 文字对比度（热点面板） | `HotspotPanel` 使用 URP Unlit / Alpha blend，基色 alpha=1、无 BaseMap；选中后 hold 30 s 覆盖后景，接下来的 fade 1 s 才与后景混合 | 分阶段记录；最终对比度未验证 |
 | 3 | 最小可读字号 | 92 个 TMP 组件**全部**开启自动缩放；其中 **21 个把 `fontSizeMin` 设为 ≤0.05（20 个是 0.02）**；最大压缩比 **72.5×**（`HelmetInspectionDemo` 的 `Title`：0.02→1.45） | **风险**：资产层等于没有可读性保护 |
 | 4 | 状态信息只用颜色 | 热点标记三态 `#1FCCE6`(α0.75) / `#FFAD26`(α1.0) / `#40F280`(α0.85)，只换颜色，没有形状、图标或文字冗余；其中两态还带透明度 | **风险**（WCAG 1.4.1 不以颜色为唯一信息载体） |
 | 5 | 时间限制 | 说明面板 `hold 30 s + fade 1 s` 后淡出；重新选中同一热点会**重启计时**（`RestartExplanationLifetime`） | 有召回路径；窗口长度需真实使用者判断 |
-| 6 | 操作负担 | 射线与直触都能选中；`allowHoveredActivate = true`（悬停即可激活）→ 更省力，同时更容易误触；仓库内未发现 dwell / 凝视等备选方案 | 可选优化项 |
-| 7 | 运动舒适 | 年代切换是"压暗到 **35%** 亮度 → 换模型 → 恢复"，脚本内**没有相机位移**；切换瞬间画面不会全黑 | 通过（对晕动症友好） |
+| 6 | 操作负担 | 射线与直触都能选中；`allowHoveredActivate = true` 允许对已悬停但未 Select 的目标发送 Activate 输入，仍需扳机或握持动作；hover 仅换色 | 输入路径存在；操作负担未验证 |
+| 7 | 运动舒适 | 年代切换对绑定渲染器的材质基色施加最低 **0.35** 乘数；脚本内未找到所列相机运动 API | 实现证据；舒适性未验证 |
 | 8 | 复位 | `MuseumStart` 里 `hasConfiguredHome: 1`、`homePosition` (y 1.172, z 3.5)、并存在独立复位脚本 | 通过 |
 | 9 | 语言可及性 | 运行时生成的英文串（热点提示语、完成语、画廊标题…）**都在** `MuseumTranslations.json` 里 | 通过 |
-| 10 | 文档与流程 | `docs/` 中有 15 个文件提到"可访问性"，但**逐条读过**：全部是"未做无障碍评价""不声明无障碍已验证"这类**边界声明**，或对课程要求的引用；**没有一处是可访问性的设计基线或走查结论**（本页是第一个）。`.github/workflows` 不存在，这类核对只能手动跑 | 缺口 |
+| 10 | 文档与流程 | 原基准关键词扫描命中 15 篇文档，以边界声明或课程引用为主；当前统计包含新增走查及活动记录，会随文档变化。`.github/workflows` 不存在 | 当前核对仍需手动运行 |
 
 ## 2. 逐项细节（括号里是 `report.json` 的观测名）
 
@@ -82,18 +89,26 @@ python artifacts/accessibility/qa/runs/20261010-accessibility-audit/audit_access
 
 ### 2.3 对比度（"热点面板文字 / 面板背景 的对比度"、"语言选择板文字 / 板面背景 的对比度"）
 
-本工程是线性色彩空间，材质里序列化的 `_BaseColor` 是**线性**值，而 TMP 的 `m_fontColor` 与代码里的
-`new Color(...)` 是**按作者所写原样保存**的值。为避免用单一假设下结论，脚本对每个配色都算了
-四种解释，并标出"材质按线性、文字按 sRGB"这一 **Unity 忠实解释**：
+本工程为 Linear 色彩空间。材质的 **Color 属性以 sRGB 提供，在传给 shader 时才转换为线性值**；
+不能把 `.mat` 里序列化的 `_BaseColor` 直接当作线性光值。
+脚本将材质基色与 TMP 序列化文字色均按 sRGB 的条件进行配色估算，字段名为 `conditionalSrgbPaletteRatio`。
+这还没有核对 TMP 的完整 shader 路径，也没有采集渲染像素，因此不是实际显示的对比度。
 
-| 配色 | 文字 | 背景 | Unity 忠实 | 四种解释的范围 |
-| --- | --- | --- | --- | --- |
-| 语言选择板 | `#FFFFFF` | `#1A1F26`（不透明） | 6.25:1 | 6.25 – 16.63 |
-| 热点面板正文/进度 | `#EBF5F2` | `#040B0E`（透明） | 10.54:1 | 10.54 – 18.86 |
-| 热点面板完成提示 | `#4CFF8C` | `#040B0E`（透明） | 8.95:1 | 8.95 – 16.37 |
+| 配色 | 文字 | 材质基色 | sRGB 条件配色估算 |
+| --- | --- | --- | --- |
+| 语言选择板 | `#FFFFFF` | `#1A1F26` | 16.63:1 |
+| 热点面板正文/进度 | `#EBF5F2` | `#040B0E` | 17.75:1 |
+| 热点面板完成提示 | `#4CFF8C` | `#040B0E` | 15.07:1 |
 
-两个结论要分开说：**不透明**板面上的对比度在资产层面已经成立，属正面结论；
-**透明**面板上的比例只是"文字对材质基色"的比值，实机背景是场景内容，所以**不能据此认定通过**。
+语言板使用 **URP Lit**：不透明只能说明不与后景作 Alpha 混合，不能保证受光照影响后的板面颜色。
+语言按钮使用另一个 `Language-Button` 材质，不能把上表的板面估算套用于整个入口。
+
+热点背板的 shader GUID 经包 `.meta` 核对为 **URP Unlit**，`_BaseMap` 引用为 0，shader 默认白纹理。
+材质 `_BaseColor.a=1`，`_SrcBlend=5`（SrcAlpha）、`_DstBlend=10`（OneMinusSrcAlpha），
+fragment 的 alpha 为 `texColor.a * _BaseColor.a`。因此在重新选中后 **30 秒 hold** 期间，
+背板 alpha 为 1，在背板覆盖的像素上不会透出后景；`_Surface=1` 只是透明渲染模式。
+随后 **1 秒 fade** 才由 `SetExplanationOpacity` 同时降低背板和文字 alpha，后景开始参与混合。
+两个阶段都还受到文字 shader、雾、后处理及遮挡等因素影响，本轮均未验证最终像素对比度。
 
 ### 2.4 状态只用颜色（"热点标记的状态配色"）
 
@@ -112,15 +127,18 @@ python artifacts/accessibility/qa/runs/20261010-accessibility-audit/audit_access
 
 - 说明面板在 `hold 30 s` 后开始淡出、`1 s` 淡完。对阅读慢的使用者这是时间限制，
   但代码里重新选中同一热点会重启计时，因此**存在召回路径**（这一点是正面的）。
-- `enableTriggerQueries = true`、`allowHoveredActivate = true`：射线把触发器等碰撞体也纳入检测，
-  且悬停即可激活——**不必按扳机**。对精细动作受限的使用者更省力，代价是误触发概率上升。
-  仓库内没有 dwell（凝视停留）或开关控制的替代路径。
+- `enableTriggerQueries = true` 将触发器碰撞体纳入交互检测。
+  `allowHoveredActivate = true` 允许在没有 Select 目标、但有 Hover 目标时向该目标发送 Activate 事件。
+  XRI 2.6.4 的 `shouldActivate` 仍要求 `activateInteractionState.activatedThisFrame`；
+  本工程 Activate 对应扳机，Select 对应握持，两条路径都可调用热点的 `Activate()`。
+  `OnHoverEntered` 只调用 `ApplyColor(hoverColor)`，单纯悬停不会访问热点。
+  这些是输入路径证据，不能据此宣称免按键、操作负担降低或误触增加；本轮未发现 dwell / 凝视激活路径。
 
 ### 2.6 运动舒适（"年代切换的运动方式"）
 
-`HelmetEraSwitcher.cs` 的切换流程是"压暗 → 换模型 → 恢复"，压暗下限常量 `MinFadeBrightness = 0.35`，
-脚本内**没有** `Teleport` / `Camera.main` / `MoveTowards` / `SetPositionAndRotation` 这类相机位移调用。
-对晕动症（vection）而言，这比瞬移或位移方案风险低；压暗下限大于 0 也意味着切换瞬间画面不会全黑。
+`HelmetEraSwitcher.cs` 在切换时淡变绑定渲染器的材质基色，常量 `MinFadeBrightness = 0.35`
+是对象颜色的乘数下限，不能解释为全画面亮度。脚本内未找到 `Teleport` / `Camera.main` /
+`MoveTowards` / `SetPositionAndRotation` 等所列相机运动 API。本轮不据此判定晕动症或舒适性通过。
 
 ### 2.7 复位（"复位（回到起始位姿）的资产证据"）
 
@@ -151,15 +169,14 @@ python artifacts/accessibility/qa/runs/20261010-accessibility-audit/audit_access
 
 ### 2.10 文档现状（"docs/ 中提到可访问性的文件"）
 
-脚本按关键词命中统计出 `docs/` 下 15 个文件提到可访问性。这 15 处**逐条读过**，
-性质一致，全部属于"划边界"而非"给基线"：
+原基准按关键词命中统计出 `docs/` 下 15 个文件提到可访问性，命中内容以限制和课程引用为主：
 
 - 活动记录里的收尾句，如"未做无障碍或参与者评价""不声明舒适性或无障碍已获验证"；
 - 文档里的限制段，如"距离和字号是本项目设计参数，不是通用 VR 无障碍标准"；
 - `course-requirements.md` 与 `project-state.md` 对课程要求本身的引用。
 
-也就是说：仓库一直**明确地知道自己没做可访问性工作**，但**没有把它落成可核查的条目**。
-本页补的就是这一层，不改变上面任何一条既有声明。
+关键词命中不是整个仓库是否已有设计工作的证明；例如现有展厅文档已经记录坐姿、单手、成年新手的设计方向。
+本页提供集中走查入口；当前脚本也会扫描本页及新增活动记录，不能要求结果始终为 15。
 
 （关键词统计由脚本自动产出；"命中处是基线还是声明"这一步需要人读上下文，脚本不代替该判断。）
 
@@ -169,7 +186,7 @@ python artifacts/accessibility/qa/runs/20261010-accessibility-audit/audit_access
 
 1. 真实视高/眼高与坐姿可达范围——需要头显；坐姿人体测量分布也不在仓库里。
 2. 文字的实际角尺寸与毫米高度——需要 Unity 打开工程或实机测量（本机无头显，本轮也未运行 Unity）。
-3. 透明面板上文字的**最终**对比度——取决于佩戴者周围的实际场景内容，需实机取样。
+3. 所有文字的**最终像素对比度**——包含语言板 Lit 光照、TMP shader、热点背板 hold/fade 两阶段，需渲染或实机取样。
 4. 色觉障碍下的真实可辨性——需色彩仿真或真人测试，本轮脚本不做仿真。
 5. 参与者可用性研究——属 Phase 3；仓库已明示"自动 XR 测试不等于参与者研究"。
 6. 主场景中**内联** TMP 组件的字号是否已经真的压到 `fontSizeMin`——需要在编辑器里逐条核对最长文案。
@@ -180,15 +197,20 @@ python artifacts/accessibility/qa/runs/20261010-accessibility-audit/audit_access
    热点面板高 0.1725 m、文字框高 0.09 m——据此反推出一个"最小 em 高"再回填，
    比继续留 0.02（等于没有下限）可核查得多。
 2. 给热点三态加一个**非颜色**冗余：形状/图标/描边/勾选，任一即可，使状态不只依赖色相。
-3. 透明面板要么给不透明度设下限，要么给文字加描边或浅底，让对比度不完全由背景决定。
+3. 先分别检查热点背板 hold 与 fade 的可读性；hold 已是 alpha=1，不再建议因 `_Surface=1` 而重复加不透明底。
+   若淡出影响阅读，可另行评估延长、暂停或关闭计时；若渲染检查发现实际对比度不足，再评估文字描边或配色。
 4. 若要长期守住以上几条，可把本页的脚本接进 CI——当前仓库没有 CI，所有核对都是手动的。
 
 ## 5. 依据
 
-- 复现脚本与原始数据：[`audit_accessibility.py`](../artifacts/accessibility/qa/runs/20261010-accessibility-audit/audit_accessibility.py)、
-  [`report.json`](../artifacts/accessibility/qa/runs/20261010-accessibility-audit/report.json)
+- 复现脚本与当前数据：[`audit_accessibility.py`](../artifacts/accessibility/qa/runs/20261010-accessibility-audit/audit_accessibility.py)、
+  [`report.json`](../artifacts/accessibility/qa/runs/20261011-accessibility-review-fix/report.json)
+- Unity 2022.3 [材质 Color / shader 色彩空间](https://docs.unity3d.com/2022.3/Documentation/Manual/SL-PropertiesInPrograms.html)、
+  [MaterialPropertyBlock.SetColor](https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MaterialPropertyBlock.SetColor.html)
+- XRI 2.6 [allowHoveredActivate](https://docs.unity3d.com/Packages/com.unity.xr.interaction.toolkit@2.6/api/UnityEngine.XR.Interaction.Toolkit.XRBaseControllerInteractor.html#UnityEngine_XR_Interaction_Toolkit_XRBaseControllerInteractor_allowHoveredActivate)
 - 课程依据：[course-requirements.md](course-requirements.md)
 - 相关实现：`MuseumVR/Assets/Museum/Features/HelmetHotspots/Runtime/HelmetHotspot.cs`、
   `.../HelmetHotspotTour.cs`、`MuseumVR/Assets/Museum/Features/HelmetEras/Runtime/HelmetEraSwitcher.cs`、
   `MuseumVR/Assets/Museum/Scripts/HelmetExhibitReset.cs`
-- 工作记录：[2026-10-10 无障碍与舒适性走查](activity/2026-10-10-accessibility-audit.md)
+- 工作记录：[2026-10-11 审查修复](activity/2026-10-11-accessibility-review-fix.md)、
+  [2026-10-10 历史走查](activity/2026-10-10-accessibility-audit.md)
