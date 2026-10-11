@@ -1,5 +1,11 @@
 # 外部资源与辅助工具记录
 
+## 2026-10-11：SuperLite 17B v2 Unity 接入
+
+Ereshkigal1224 按用户要求认领主体/最终总装，并由 Codex 辅助将已接受、已由 PR #43 合入的本组整盔 v2 派生为 FBX，接入现有三年代展台索引 2。原资料/媒体与估算边界沿用整盔资产记录，本轮未下载或分发第三方模型、参考照片、标牌、音频或贴图，未新增 Unity package。旧研究分件继续独立保存。
+
+使用已有 Blender 4.5.14 LTS、Unity 2022.3.62f3c1 和本组剖面着色器。AI 辅助范围为运行时导出、轴转换、材料适配、交互绑定、剖面缓存、展台高度校准、桌面 XR 输入模拟、渲染及交接记录；没有重建/覆盖用户接受的保存源。Blender 程序凹凸/涂层没有烘焙，真实 17B 螺栓面窗的虚拟侧开与通信端点均是教学假设，不声称真实机械或接口复原。见[接入说明](superlite17b-unity-integration.zh-CN.md)与[本轮活动](activity/2026-10-11-superlite17b-unity-integration.md)。自动检查不等于实测尺寸、真实头显、构建、性能、用户研究或另一成员批准。
+
 ## 2026-10-11：SuperLite 17B 侧面比例修正 v2
 
 沿用用户本地资料，重点对照 `04_side_rear_view.png` 与用户 Blender 截图修正壳体、颈圈、配重、头带、提手、侧阀位置和排气罩。Codex 辅助新建独立 v2 原创程序几何、Blender 渲染、保存源回读、回归对照和 Pillow 对比图；没有新增第三方模型、贴图、媒体、Unity 包或字体资产，原照片没有复制到仓库或用作贴图。中文对比标注仅使用本机既有字体渲染成图片。约 30.1° 颈圈角度与全部尺寸仍为照片建模估计，不称实测或摄影测量；AI 检查不能代替成员/用户审阅。保留用户已保存的旧模型和历史报告，未导出或接入 Unity。[v2 交付/限制](../artifacts/helmet-modeling/superlite17b-2026-10-11/revision-side-profile-v2/REPORT.md)、[活动记录](activity/2026-10-11-superlite17b-side-profile-v2.md)。

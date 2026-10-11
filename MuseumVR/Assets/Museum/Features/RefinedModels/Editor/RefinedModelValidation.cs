@@ -66,8 +66,11 @@ namespace Museum.RefinedModels.EditorTools
         {
             public string status = "running", utc, unity, scene, commit, branch, workingTree, failure = "";
             public string inputMethod = "Queued XRSimulatedController/HMD states in Dynamic Input System updates -> saved actions, controllers and XRDirectInteractor. No SelectEnter/SelectExit, invoked button events or private-field writes. Section/era/demonstration assertions are explicitly labelled public API checks.";
-            public string limitations = "Editor desktop simulation and temporary monocular URP renders only. Official simulator is checked then its input writer is disabled to prevent competing synthetic states. This is not a real headset, keyboard navigation usability, physical sound listening, historical certification, user study, build validation or device performance measurement. Other-era placeholders remain concept previews, not completed historical refined models.";
+            public string limitations = "Editor desktop simulation and temporary monocular URP renders only. Official simulator is checked then its input writer is disabled to prevent competing synthetic states. This is not a real headset, keyboard navigation usability, physical sound listening, historical certification, user study, build validation or device performance measurement. The early-era placeholder remains a concept preview; SuperLite dimensions and virtual front-panel articulation remain display assumptions.";
             public int refinedRenderers, refinedTriangles;
+            public int superLiteRenderers, superLiteTriangles;
+            public float superLiteWorldBottom, superLitePlinthTop;
+            public Vector3 superLiteRootWorld, superLiteSavedHomeWorld;
             public List<CheckRecord> checks = new List<CheckRecord>();
             public List<SampleRecord> samples = new List<SampleRecord>();
             public List<FileState> files = new List<FileState>();
@@ -228,6 +231,7 @@ namespace Museum.RefinedModels.EditorTools
             yield return GrabAndMove();
             yield return CheckSections();
             yield return CheckEras();
+            if (binding.AdditionalVisual != null) yield return CheckSuperLite();
             yield return CheckConnections();
             yield return CheckLanguages();
             demo.Stop(); inspection.ReduceMotion = false; inspection.SoundEnabled = true; inspection.ResetInspection(); ParkHands();
@@ -316,12 +320,14 @@ namespace Museum.RefinedModels.EditorTools
         static IEnumerator GrabAndMove()
         {
             inspection.ResetInspection(); yield return Wait(.25f);
-            var target = grab.colliders.Where(c => c && c.enabled && !c.isTrigger).OrderByDescending(c => c.bounds.size.sqrMagnitude).First().bounds.center;
+            var target = binding.IsAdditionalVisualActive ? binding.ActiveShell.bounds.center :
+                grab.colliders.Where(c => c && c.enabled && !c.isTrigger).OrderByDescending(c => c.bounds.size.sqrMagnitude).First().bounds.center;
             QueueRight(target, Quaternion.identity, false); yield return Wait(.2f);
             QueueRight(target, Quaternion.identity, true); yield return Wait(.2f);
             Check(grab.isSelected && grab.interactorsSelecting[0] is XRDirectInteractor && !inspection.IsWindowHeld,
                 "existing direct grip selects refined exhibit", "InputSystem -> XRI");
-            Vector3 oldRoot = inspection.transform.position, oldShell = binding.RefinedShell.bounds.center;
+            var activeShell = binding.ActiveShell;
+            Vector3 oldRoot = inspection.transform.position, oldShell = activeShell.bounds.center;
             Quaternion oldRotation = inspection.transform.rotation;
             float begin = Time.realtimeSinceStartup;
             while (Time.realtimeSinceStartup - begin < .6f)
@@ -333,9 +339,9 @@ namespace Museum.RefinedModels.EditorTools
             yield return Wait(.3f);
             Check(grab.isSelected && Vector3.Distance(oldRoot, inspection.transform.position) > .12f && Quaternion.Angle(oldRotation, inspection.transform.rotation) > 12f,
                 "refined helmet moves and rotates through original physics grab", "InputSystem -> XRI");
-            Check(Vector3.Distance(oldShell, binding.RefinedShell.bounds.center) > .1f && binding.RefinedShell.transform.IsChildOf(inspection.transform),
+            Check(Vector3.Distance(oldShell, activeShell.bounds.center) > .1f && activeShell.transform.IsChildOf(inspection.transform),
                 "refined shell follows grabbed root", "InputSystem -> XRI");
-            CaptureHelmet("05-refined-held", new Vector3(-.38f, .13f, -.88f));
+            CaptureHelmet(binding.IsAdditionalVisualActive ? "20-superlite-held" : "05-refined-held", new Vector3(-.38f, .13f, -.88f));
             ParkHands(); yield return Wait(.4f);
             Check(!grab.isSelected, "release clears original grab", "InputSystem -> XRI");
             inspection.ReturnInspectionToDisplay();
@@ -459,7 +465,8 @@ namespace Museum.RefinedModels.EditorTools
             foreach (int index in new[] { 0, 2, 1, 0, 1 })
             {
                 era.ShowEra(index); yield return Wait(.35f);
-                Check(era.CurrentIndex == index && binding.IsRefinedActive == (index == 1), "era visual mode / " + index, "public era API");
+                bool expectedRefined = index == 1 || binding.AdditionalVisual != null && binding.AdditionalVisual.eraIndex == index;
+                Check(era.CurrentIndex == index && binding.IsRefinedActive == expectedRefined, "era visual mode / " + index, "public era API");
                 Check(binding.GetInstanceID() == bindingId && grab.GetInstanceID() == grabId && reset.GetInstanceID() == resetId,
                     "era switch retains original interaction component identities / " + index, "public era API");
                 Check(inspection.IsCutaway && Vector3.Distance(inspection.SectionNormalLocal, normal) < .0001f &&
@@ -476,6 +483,92 @@ namespace Museum.RefinedModels.EditorTools
             }
             inspection.SetCutaway(false); section.Refresh(); yield return null;
             ValidateMeshes();
+        }
+
+        static IEnumerator CheckSuperLite()
+        {
+            var visual = binding.AdditionalVisual;
+            Check(visual.eraIndex == 2, "reviewed SuperLite occupies era index 2", "saved asset");
+            era.ShowEra(2); yield return Wait(.35f);
+            inspection.ResetInspection(); yield return Wait(.25f);
+            report.superLiteRenderers = visual.renderers.Length;
+            report.superLiteTriangles = visual.renderers.Sum(r => r.GetComponent<MeshFilter>().sharedMesh.triangles.Length / 3);
+            Check(binding.IsAdditionalVisualActive && binding.ActiveShell == visual.shell && binding.ActiveGlass == visual.glass,
+                "SuperLite resolves active surfaces", "public era API");
+            Check(visual.renderers.Length == 143 && report.superLiteTriangles == 50268,
+                "actual imported SuperLite retains reviewed mesh and triangle counts", "saved imported meshes", "meshes=" + visual.renderers.Length + "; triangles=" + report.superLiteTriangles);
+            Check(visual.renderers.All(r => r.enabled && r.gameObject.activeInHierarchy) && binding.RefinedRenderers.All(r => !r.enabled),
+                "SuperLite is visible with Mark V hidden", "public era API");
+            Check(visual.renderers.All(r => r.GetComponent<MeshFilter>().sharedMesh.vertexCount > 0 && r.GetComponent<MeshFilter>().sharedMesh.uv.Length == r.GetComponent<MeshFilter>().sharedMesh.vertexCount &&
+                r.GetComponent<MeshFilter>().sharedMesh.vertices.All(v => !float.IsNaN(v.x) && !float.IsInfinity(v.x) && !float.IsNaN(v.y) && !float.IsInfinity(v.y) && !float.IsNaN(v.z) && !float.IsInfinity(v.z))),
+                "SuperLite imports finite usable meshes and UVs", "saved imported meshes");
+            Check(visual.glass.sharedMaterial.shader.name == "Museum/Inspection Glass" && visual.glass.sharedMaterial.renderQueue >= 3000 &&
+                visual.renderers.Where(r => r != visual.glass).All(r => r.sharedMaterial.shader.name == "Museum/Inspection Shell"),
+                "SuperLite uses transparent glass and compatible section/highlight materials", "saved asset");
+            Check(visual.window.GetComponentsInChildren<Renderer>(true).Length == 14 && visual.glass.transform.IsChildOf(inspection.WindowPivot),
+                "SuperLite front panel remains in original interaction hinge", "saved asset");
+            var bounds = MeshBoundsInHelmet(visual.renderers[0]);
+            foreach (var r in visual.renderers.Skip(1)) bounds.Encapsulate(MeshBoundsInHelmet(r));
+            Check(Vector3.Distance(bounds.size, new Vector3(.2816658f, .3138472f, .3250093f)) < .0001f,
+                "SuperLite axis conversion retains width/height/depth without scaling drift", "saved imported meshes", bounds.size.ToString("F6"));
+            var worldMin = visual.renderers.Select(r => r.bounds.min.y).Min();
+            var plinth = GameObject.Find("Plinth");
+            if (plinth && plinth.GetComponent<Renderer>())
+            {
+                var support = plinth.GetComponent<Renderer>().bounds.max.y;
+                report.superLiteWorldBottom = worldMin;
+                report.superLitePlinthTop = support;
+                report.superLiteRootWorld = inspection.transform.position;
+                report.superLiteSavedHomeWorld = reset.HomePose.position;
+                Debug.Log("SUPERLITE_SUPPORT_RUNTIME root=" + inspection.transform.position + "; home=" + reset.HomePose.position + "; scale=" + inspection.transform.lossyScale + "; localMin=" + bounds.min.y + "; worldBottom=" + worldMin + "; plinth=" + support);
+                Check(worldMin >= support - .005f && worldMin < support + .015f,
+                    "SuperLite rests at existing exhibition support height", "saved scene geometry", "bottom=" + worldMin + "; support=" + support);
+            }
+            CaptureHelmet("15-superlite-front-closed", new Vector3(-.38f, .13f, -.88f));
+            CaptureHelmet("16-superlite-reference-side", new Vector3(-.70f, .15f, .30f));
+            CaptureCamera("17-superlite-on-display-in-museum", Camera.main);
+            var closed = inspection.transform.InverseTransformPoint(visual.glass.bounds.center);
+            yield return PressInspectionButton("WINDOW"); yield return Wait(.9f);
+            var expected = visual.hinge + Quaternion.AngleAxis(-HelmetInspectionController.MaximumWindowAngle, Vector3.up) * (closed - visual.hinge);
+            Check(inspection.WindowAngle > 94.9f && Vector3.Distance(inspection.transform.InverseTransformPoint(visual.glass.bounds.center), expected) < .004f,
+                "SuperLite virtual inspection panel opens via existing XR button", "InputSystem -> XRI");
+            CaptureHelmet("18-superlite-virtual-panel-open", new Vector3(-.38f, .13f, -.88f));
+            yield return PressInspectionButton("WINDOW"); yield return Wait(.9f);
+            Check(inspection.WindowAngle < .05f && Vector3.Distance(inspection.transform.InverseTransformPoint(visual.glass.bounds.center), closed) < .004f,
+                "SuperLite inspection panel closes at original alignment", "InputSystem -> XRI");
+            yield return GrabAndMove();
+            Check(binding.IsAdditionalVisualActive, "SuperLite persists through original grab/return", "InputSystem -> XRI and public return API");
+            foreach (var normal in new[] { Vector3.right, Vector3.up, new Vector3(.4f, .3f, -.8f).normalized })
+            {
+                inspection.SetCutaway(true); inspection.SetSectionPlane(normal, 0); section.Refresh(); yield return null;
+                Check(section.TriangleCount > 0, "SuperLite structural section / " + normal, "public section API", "triangles=" + section.TriangleCount);
+                var block = new MaterialPropertyBlock();
+                Check(visual.renderers.All(r => { r.GetPropertyBlock(block); return block.GetFloat("_CutEnabled") > .5f; }),
+                    "SuperLite visible surfaces receive clip state / " + normal, "public section API");
+            }
+            CaptureHelmet("19-superlite-section", new Vector3(-.38f, .13f, -.88f));
+            inspection.SetCutaway(false);
+            demo.Play(HelmetExplorationController.Clue.Air); yield return Wait(2.7f);
+            Check(Vector3.Distance(demo.AirEndpointWorld, visual.airOutlet.position) < .0002f,
+                "existing AIR demonstration follows SuperLite inlet anchor", "public demonstration API");
+            demo.Play(HelmetExplorationController.Clue.Voice); yield return Wait(2.7f);
+            Check(Vector3.Distance(demo.VoiceEndpointWorld, visual.telephoneOutlet.position) < .0002f && Vector3.Distance(visual.airOutlet.position, visual.telephoneOutlet.position) > .08f,
+                "existing VOICE demonstration follows separate SuperLite teaching anchor", "public demonstration API");
+            demo.Stop();
+            var channel = AssetDatabase.LoadAssetAtPath<LanguageChannel>("Assets/Museum/Features/Localization/Tables/LanguageChannel.asset");
+            foreach (var language in new[] { MuseumLanguage.Chinese, MuseumLanguage.TraditionalChinese, MuseumLanguage.English })
+            {
+                channel.SetLanguage(language); yield return Wait(.2f);
+                Check(channel.Current == language && binding.IsAdditionalVisualActive,
+                    "SuperLite remains equipped across language change / " + language, "public language API");
+            }
+            foreach (int index in new[] { 1, 2, 0, 2, 1 })
+            {
+                era.ShowEra(index); yield return Wait(.35f);
+                Check(visual.renderers.All(r => r.enabled == (index == 2)) && binding.RefinedRenderers.All(r => r.enabled == (index == 1)),
+                    "three-way switching hides the inactive refined geometry / " + index, "public era API");
+            }
+            inspection.ResetInspection(); yield return Wait(.2f);
         }
 
         static IEnumerator CheckConnections()

@@ -22,6 +22,19 @@ namespace Museum.Refined
         [SerializeField] HelmetSectionMeshData sectionData;
         [SerializeField] Material sectionMaterial;
         [SerializeField] int refinedEraIndex = 1;
+        [System.Serializable]
+        public sealed class EraVisual
+        {
+            public int eraIndex;
+            public Renderer[] renderers;
+            public Transform window, airOutlet, telephoneOutlet;
+            public Renderer glass, shell, air;
+            public Renderer[] telephone;
+            public Vector3 hinge, triggerCenter, triggerSize;
+            public HelmetSectionMeshData sectionData;
+        }
+        [SerializeField] EraVisual additionalVisual;
+        EraVisual activeAdditional;
         HelmetInspectionController inspection;
         HelmetEraSwitcher eras;
         HelmetRearConnections rear;
@@ -39,10 +52,15 @@ namespace Museum.Refined
         public Transform RefinedWindow => refinedWindow;
         public Renderer RefinedGlass => refinedGlass;
         public Renderer RefinedShell => refinedShell;
-        public Transform AirOutlet => IsRefinedActive ? airOutlet : originalAirOutlet;
-        public Transform TelephoneOutlet => IsRefinedActive ? telephoneOutlet : originalTelephoneOutlet;
-        public Renderer ActiveGlass => IsRefinedActive ? refinedGlass : originalWindowRenderers.First(r => r.sharedMaterial.shader.name == "Museum/Inspection Glass");
-        public Renderer ActiveShell => IsRefinedActive ? refinedShell : originalClipped.First(r => r.name == "GB_Bonnet_Hollow");
+        bool HasAdditionalVisual => additionalVisual != null && additionalVisual.renderers != null && additionalVisual.renderers.Length > 0;
+        public EraVisual AdditionalVisual => HasAdditionalVisual ? additionalVisual : null;
+        public bool IsAdditionalVisualActive => activeAdditional != null;
+        public Transform AirOutlet => activeAdditional != null ? activeAdditional.airOutlet : IsRefinedActive ? airOutlet : originalAirOutlet;
+        public Transform TelephoneOutlet => activeAdditional != null ? activeAdditional.telephoneOutlet : IsRefinedActive ? telephoneOutlet : originalTelephoneOutlet;
+        public Renderer ActiveGlass => activeAdditional != null ? activeAdditional.glass : IsRefinedActive ? refinedGlass : originalWindowRenderers.First(r => r.sharedMaterial.shader.name == "Museum/Inspection Glass");
+        public Renderer ActiveShell => activeAdditional != null ? activeAdditional.shell : IsRefinedActive ? refinedShell : originalClipped.First(r => r.name == "GB_Bonnet_Hollow");
+        public void ConfigureAdditionalEra(EraVisual visual)
+        { additionalVisual = visual; RefreshVisualBinding(); }
 
         public void Configure(Renderer[] originals, Renderer[] refined, Renderer[] clipped, Renderer[] windowParts,
             Transform door, Renderer glass, Renderer shell, Renderer air, Transform airEnd, Renderer[] phone, Transform phoneEnd,
@@ -60,7 +78,7 @@ namespace Museum.Refined
             refinedWindowCenter = triggerCenter; refinedWindowSize = triggerSize; sectionData = data; sectionMaterial = cap;
             toggle = GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == "DoorTogglePivot");
             nut = GetComponentsInChildren<Transform>(true).FirstOrDefault(t => t.name == "DoorToggleNutPivot");
-            Initialize(); Apply(true);
+            Initialize(); Apply(refinedEraIndex);
         }
         void Awake() => Initialize();
         void OnEnable()
@@ -109,8 +127,8 @@ namespace Museum.Refined
             Initialize();
             int index = eras ? eras.CurrentIndex : refinedEraIndex;
             if (index >= 0 && index != observedEra && !inspection.IsWindowHeld && !inspection.IsSectionHeld)
-            { Apply(index == refinedEraIndex); observedEra = index; }
-            if (IsRefinedActive)
+            { Apply(index); observedEra = index; }
+            if (IsRefinedActive && activeAdditional == null)
             {
                 float release = Mathf.Clamp01(inspection.WindowAngle / 10f);
                 if (toggle) toggle.localRotation = toggleClosed * Quaternion.AngleAxis(release * -65f, Vector3.back);
@@ -125,22 +143,29 @@ namespace Museum.Refined
             }
         }
         public void RefreshVisualBinding()
-        { Initialize(); Apply(!eras || eras.CurrentIndex < 0 || eras.CurrentIndex == refinedEraIndex); observedEra = eras ? eras.CurrentIndex : refinedEraIndex; }
-        void Apply(bool refined)
+        { Initialize(); int index = !eras || eras.CurrentIndex < 0 ? refinedEraIndex : eras.CurrentIndex; Apply(index); observedEra = index; }
+        void Apply(int index)
         {
             if (!inspection || refinedRenderers == null || originalRenderers == null) return;
             Vector3 normal = inspection.SectionNormalLocal;
             float relativeDepth = inspection.SectionRange > .0001f ? inspection.SectionOffset / inspection.SectionRange : 0f;
-            IsRefinedActive = refined;
-            foreach (var r in originalRenderers) if (r) r.enabled = !refined;
-            foreach (var r in refinedRenderers) if (r) r.enabled = refined;
+            activeAdditional = HasAdditionalVisual && additionalVisual.eraIndex == index ? additionalVisual : null;
+            bool markV = index == refinedEraIndex && activeAdditional == null;
+            IsRefinedActive = markV || activeAdditional != null;
+            foreach (var r in originalRenderers) if (r) r.enabled = !IsRefinedActive;
+            foreach (var r in refinedRenderers) if (r) r.enabled = markV;
+            var additional = additionalVisual != null && additionalVisual.renderers != null ? additionalVisual.renderers : System.Array.Empty<Renderer>();
+            foreach (var r in additional) if (r) r.enabled = activeAdditional != null;
             // Both window sets are children of the same identity hinge. Repositioning changes no root pose/physics.
-            inspection.WindowPivot.localPosition = refined ? refinedHinge : originalHinge;
+            inspection.WindowPivot.localPosition = activeAdditional != null ? activeAdditional.hinge : markV ? refinedHinge : originalHinge;
             var hit = window.colliders.OfType<BoxCollider>().First();
-            hit.center = refined ? refinedWindowCenter : originalWindowCenter; hit.size = refined ? refinedWindowSize : originalWindowSize;
-            var allClipped = originalClipped.Concat(refinedRenderers.Where(r => !r.transform.IsChildOf(inspection.WindowPivot))).ToArray();
-            var allWindow = originalWindowRenderers.Concat(refinedRenderers.Where(r => r.transform.IsChildOf(inspection.WindowPivot))).ToArray();
-            rear.Configure(refined ? refinedAir : originalAir, AirOutlet, refined ? refinedTelephone : originalTelephone, TelephoneOutlet, response);
+            hit.center = activeAdditional != null ? activeAdditional.triggerCenter : markV ? refinedWindowCenter : originalWindowCenter;
+            hit.size = activeAdditional != null ? activeAdditional.triggerSize : markV ? refinedWindowSize : originalWindowSize;
+            var visuals = refinedRenderers.Concat(additional);
+            var allClipped = originalClipped.Concat(visuals.Where(r => !r.transform.IsChildOf(inspection.WindowPivot))).ToArray();
+            var allWindow = originalWindowRenderers.Concat(visuals.Where(r => r.transform.IsChildOf(inspection.WindowPivot))).ToArray();
+            var activeAir = activeAdditional != null ? activeAdditional.air : markV ? refinedAir : originalAir;
+            rear.Configure(activeAir, AirOutlet, activeAdditional != null ? activeAdditional.telephone : markV ? refinedTelephone : originalTelephone, TelephoneOutlet, response);
             inspection.Configure(inspection.WindowPivot, allClipped, allWindow, -1);
             // Configure resets the plane. Restore its direction before measuring the new
             // model's extent, so an oblique cut keeps the same normalized depth.
@@ -149,10 +174,10 @@ namespace Museum.Refined
             var guide = GetComponentInChildren<HelmetSectionInteractable>(true);
             if (guide) guide.RefreshGeometryCenter();
             if (response && TelephoneOutlet) response.position = TelephoneOutlet.position;
-            var section = GetComponent<HelmetSectionSurface>(); if (section) section.Configure(sectionData, sectionMaterial);
-            foreach (var clue in GetComponentsInChildren<HelmetExplorationHotspot>(true)) clue.RebindConnector(refined ? refinedAir : originalAir);
+            var section = GetComponent<HelmetSectionSurface>(); if (section) section.Configure(activeAdditional != null ? activeAdditional.sectionData : sectionData, sectionMaterial);
+            foreach (var clue in GetComponentsInChildren<HelmetExplorationHotspot>(true)) clue.RebindConnector(activeAir);
             if (Application.isPlaying)
-                foreach (var demo in FindObjectsOfType<HelmetConnectionDemonstration>()) demo.RebindConnector(refined ? refinedAir : originalAir, rear);
+                foreach (var demo in FindObjectsOfType<HelmetConnectionDemonstration>()) demo.RebindConnector(activeAir, rear);
         }
     }
 }

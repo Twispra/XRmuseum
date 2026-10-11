@@ -1,0 +1,10 @@
+{
+  "unity": "2022.3.62f3c1",
+  "source_run": "20261011T105046024Z-refined-integration-c4aac216a4ea41daaf4489718999d2e8",
+  "method": "Observed saved MuseumStart runtime root after the existing grab/return and ResetInspection, not a real helmet measurement",
+  "root_world_y": 1.16,
+  "plinth_world_y": 1.1,
+  "saved_home_y": 1.1719999,
+  "display_clearance_m": 0.003,
+  "limitations": "The existing physics settles the root 12 mm below its saved home pose. Calibration applies to this unchanged support/collider/scale layout; recalibrate after changes to the scene layout or body physics. No headset or performance claim."
+}
