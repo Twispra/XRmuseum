@@ -10,7 +10,7 @@
 
 Codex 辅助新建独立原创 Blender 外观模型、程序材质、六阶段渲染、实际源文件回读与空目录重复构建。使用本机既有 Blender 4.5.14 LTS，PDF 阅读用既有 pypdf / pypdfium2，检查图整理用 Pillow；不分发工具本体，不新增 Unity 包。全部几何尺寸和材质参数为展示估计，不称实物测绘；没有覆盖原作者面窗/侧阀研究件，没有导出或接入 Unity。AI/机器检查不等于人工成员批准、真实头显、性能或用户研究。[交付/限制](../artifacts/helmet-modeling/superlite17b-2026-10-11/REPORT.md)、[本次活动](activity/2026-10-11-superlite17b-whole-helmet.md)。
 
-2026-10-10 Phase 2 构建与技术说明：Codex 辅助把本地工程同步到 `main` @ `270c7b72`、核验构建前提（LFS 展开、编辑器版本、构建场景）、以批处理产出 Windows 播放器构建、采集产物哈希与播放器运行日志，并撰写不超过四页 A4 的[技术说明](phase2-technical-note.zh-CN.md)，见[本轮记录](activity/2026-10-10-phase2-build-and-note.md)。**未新增**任何第三方模型、贴图、音频、字体或 package；**未修改** `MuseumVR/` 产品文件。构建产物按仓库约定不进 Git。播放器在目标机器上可启动并渲染主场景，OpenXR 子系统已装配，但因本机无头显会话未建立（`XR_ERROR_FORM_FACTOR_UNAVAILABLE`）——自动构建与模拟输入不等于真机验收或用户研究。
+2026-10-10 Phase 2 构建与技术说明：Codex 辅助把本地工程同步到 `main` @ `270c7b72`、核验构建前提（LFS 展开、编辑器版本、构建场景）、以批处理产出 Windows 播放器构建、采集产物哈希与播放器运行日志，并撰写[技术说明 Markdown 草稿](phase2-technical-note.zh-CN.md)，见[原作者记录](activity/2026-10-10-phase2-build-and-note.md)。**未新增**任何第三方模型、贴图、音频、字体或 package；**未修改** `MuseumVR/` 产品文件。构建产物按仓库约定不进 Git。原作者报告播放器在无头显本机可启动并渲染主场景，OpenXR 子系统已装配，但会话未建立（`XR_ERROR_FORM_FACTOR_UNAVAILABLE`）。2026-10-11 文档审查修订没有重做构建；原始日志和完整产物未供本轮独立复核，A4 排版页数和正式交付仍待核验，见[本次修订](activity/2026-10-11-pr38-technical-note-review-fix.md)。自动构建与模拟输入不等于真机验收或用户研究。
 
 2026-10-06 PR #19 主线整合：Codex 辅助逐项冲突合并、现有 Noto Sans SC/OFL 字体并集与 Unity 原地补烤、生产输入共存回归、六组批处理和截图/版本证据核对；责任与限制见[本轮记录](activity/2026-10-06-pr19-main-integration.md)。205 条三语文案、536 保存字形。源字体仍来自既有 Noto Sans SC 及其许可证，不引入外部模型/音频/图片或 package。以下旧“本地”条目保留为原开发时快照。
 
