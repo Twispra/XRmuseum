@@ -1,0 +1,67 @@
+{
+  "testedCommit": "6459f081447748716fd200648182d7db903dc04e",
+  "baselineMain": "270c7b72da63f08baac85ee7bb94f7fcdb4a226d",
+  "sourceAssetMerge": "169c643cac3c94d12f8c1cad75894bc2db2c9ab9",
+  "sourcePrHead": "7ebb64078d1e6a7b40bc43938b2e537bac3f7fdb",
+  "integrationPullRequest": "https://github.com/Twispra/XRmuseum/pull/39",
+  "mergeParentsMatchBaselineAndSource": true,
+  "sourceSubtree": {
+    "path": "artifacts/helmet-refinement/eras/superlite-17b",
+    "tree": "56d192c8f901b7339c234438c4987c49ae74d0d1",
+    "matchesAcceptedSource": true,
+    "changedFilesAgainstBaseline": 62
+  },
+  "unchangedSubtrees": [
+    {
+      "path": "MuseumVR",
+      "tree": "8f9ef25d7a3ff6d9e9bf014117927a6a0b0a2eca"
+    },
+    {
+      "path": "artifacts/helmet-refinement/eras/mark-v",
+      "tree": "855e355cb1d422d0bc4a5847539aa6be7ea71098"
+    },
+    {
+      "path": "artifacts/connection-demo-refinement",
+      "tree": "760ce6b2d1352bc004ee3645c1a6188c6f7cac2b"
+    }
+  ],
+  "stagedAndUntrackedFilesDuringAssetTest": [],
+  "lfsPointerFsck": {
+    "command": "git lfs fsck --pointers HEAD",
+    "exitCode": 0,
+    "result": "Git LFS fsck OK"
+  },
+  "independentChecker": {
+    "exitCode": 0,
+    "report": "independent-glb-and-lfs.json",
+    "assets": 14,
+    "legacyGlbsIdentical": 4
+  },
+  "excludedPullRequests": [
+    28,
+    38
+  ],
+  "limitations": [
+    "No new Blender execution",
+    "No Unity execution or product asset integration",
+    "No headset, executable build, performance or user-study validation",
+    "AI technical reviews are not independent member approval"
+  ],
+  "reviewers": [
+    {
+      "kind": "AI read-only scope review",
+      "result": "No blocking finding"
+    },
+    {
+      "kind": "AI read-only evidence review",
+      "result": "No blocking finding at tested commit; final documentation reviewed separately"
+    }
+  ],
+  "originalCheckout": {
+    "path": "E:/XRmuseum",
+    "head": "b4e1886c9762a85926ef3bf58db92500a29176f3",
+    "preservedDirtyPath": "MuseumVR/ProjectSettings/ProjectSettings.asset",
+    "sha256": "81c0eb3103e303a2567619e388c45709e89fa1940353cdfe4a163bbe402c5587",
+    "unrelatedUntrackedFilesPreserved": true
+  }
+}

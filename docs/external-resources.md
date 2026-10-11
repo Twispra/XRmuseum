@@ -1,5 +1,15 @@
 # 外部资源与辅助工具记录
 
+## 2026-10-11：SuperLite 17B 侧面比例修正 v2
+
+沿用用户本地资料，重点对照 `04_side_rear_view.png` 与用户 Blender 截图修正壳体、颈圈、配重、头带、提手、侧阀位置和排气罩。Codex 辅助新建独立 v2 原创程序几何、Blender 渲染、保存源回读、回归对照和 Pillow 对比图；没有新增第三方模型、贴图、媒体、Unity 包或字体资产，原照片没有复制到仓库或用作贴图。中文对比标注仅使用本机既有字体渲染成图片。约 30.1° 颈圈角度与全部尺寸仍为照片建模估计，不称实测或摄影测量；AI 检查不能代替成员/用户审阅。保留用户已保存的旧模型和历史报告，未导出或接入 Unity。[v2 交付/限制](../artifacts/helmet-modeling/superlite17b-2026-10-11/revision-side-profile-v2/REPORT.md)、[活动记录](activity/2026-10-11-superlite17b-side-profile-v2.md)。
+
+## 2026-10-11：用户资料驱动的 SuperLite 17B 整盔
+
+用户提供本地 12 张参考图、BUILD_SPEC 和两页 17B.pdf（实际为厂家 2015 Document #150424001，覆盖 500-010 / 500-011）。Codex 逐张查看图片、读取/渲染 PDF，并访问[厂家产品页](https://www.kirbymorgan.com/products/helmets/superlite-17b)和[规格页](https://www.kirbymorgan.com/product/specs/314/superlite-17b)核对部件/材质；没有取得整盔实测尺寸。原媒体许可未核实可再分发，只在本地观察，仓库保存来源摘要与哈希，不复制原图、PDF 页面或商标贴图。
+
+Codex 辅助新建独立原创 Blender 外观模型、程序材质、六阶段渲染、实际源文件回读与空目录重复构建。使用本机既有 Blender 4.5.14 LTS，PDF 阅读用既有 pypdf / pypdfium2，检查图整理用 Pillow；不分发工具本体，不新增 Unity 包。全部几何尺寸和材质参数为展示估计，不称实物测绘；没有覆盖原作者面窗/侧阀研究件，没有导出或接入 Unity。AI/机器检查不等于人工成员批准、真实头显、性能或用户研究。[交付/限制](../artifacts/helmet-modeling/superlite17b-2026-10-11/REPORT.md)、[本次活动](activity/2026-10-11-superlite17b-whole-helmet.md)。
+
 2026-10-10 Phase 2 构建与技术说明：Codex 辅助把本地工程同步到 `main` @ `270c7b72`、核验构建前提（LFS 展开、编辑器版本、构建场景）、以批处理产出 Windows 播放器构建、采集产物哈希与播放器运行日志，并撰写不超过四页 A4 的[技术说明](phase2-technical-note.zh-CN.md)，见[本轮记录](activity/2026-10-10-phase2-build-and-note.md)。**未新增**任何第三方模型、贴图、音频、字体或 package；**未修改** `MuseumVR/` 产品文件。构建产物按仓库约定不进 Git。播放器在目标机器上可启动并渲染主场景，OpenXR 子系统已装配，但因本机无头显会话未建立（`XR_ERROR_FORM_FACTOR_UNAVAILABLE`）——自动构建与模拟输入不等于真机验收或用户研究。
 
 2026-10-06 PR #19 主线整合：Codex 辅助逐项冲突合并、现有 Noto Sans SC/OFL 字体并集与 Unity 原地补烤、生产输入共存回归、六组批处理和截图/版本证据核对；责任与限制见[本轮记录](activity/2026-10-06-pr19-main-integration.md)。205 条三语文案、536 保存字形。源字体仍来自既有 Noto Sans SC 及其许可证，不引入外部模型/音频/图片或 package。以下旧“本地”条目保留为原开发时快照。
@@ -96,3 +106,31 @@ Fttt1003 发起，Codex 辅助将已有 Mark V R2 和供气／通话设备派生
 新增 FBX 为本组原创源模型的派生导出，Mark V 高面数静态件保守减面；设备保留动画、节点和锚点。源文件、旧导出和历史 QA 不覆盖，源哈希与 FBX 回读记录见 [运行时报告](../artifacts/refined-model-integration/qa/runtime-preparation.json)。建模／导出使用已有 Blender 4.5.14 LTS，不分发工具本体，也不增加 Unity package；Unity 仍为 2022.3.62f3c1。材质图沿用原资产的程序合成作品；运行时采用较柔和的原创 `gentle` 空气／通信 WAV，未把合成轨道当作历史录音或真实人声。
 
 AI 辅助范围为运行时导出、原功能兼容绑定、材质／截面升级、机械动画及声音接入、桌面模拟输入与渲染验证、代码审查和交接文档。具体结果以[本轮活动记录](activity/2026-10-07-refined-model-integration.md)为准；源模型回读不等于 Unity 通过，桌面模拟和 AI 初检不等于成员批准、人工试听、真实头显、用户研究、性能或构建验收。历史尺寸、局部结构、旧化、音效、可见传输与展厅缩放继续分别标明事实／估算／教学表达，课程 AI 政策仍由有访问权限的成员核对。
+
+## 2026-10-08：SuperLite 17B 面窗与侧阀外观研究
+
+Ereshkigal1224 负责本轮细节与外观，Codex 辅助核对 Kirby Morgan 的 [17B 产品页](https://www.kirbymorgan.com/products/helmets/superlite-17b)、[规格页](https://www.kirbymorgan.com/product/specs/314/superlite-17b)及 [2025 零件分解图 Document #241108001](https://kirbymorgan.com/sites/default/files/2025-01/sl-17b-blowapart-241108001.pdf)。参考对象拟定 P/N 500-010；对应观察、部件编号及估算界线见[独立资料](../artifacts/helmet-refinement/eras/superlite-17b/references/faceport-exterior-v1.zh-CN.md)。原图片和 PDF 仅供观察，不复制到仓库或作贴图，也不推断其再分发许可。
+
+两张 1024px 基色/粗糙度贴图由本项目脚本原创生成；Blender4.5.14 LTS 从官方便携版仅在本机临时使用，未提交软件本体或增添 Unity 包。Codex 辅助独立 Blender 分件、GLB、渲染和回读检查，详见[活动记录](activity/2026-10-08-superlite17b-details-v1.md)。材质和尺寸为展示估算，自动检查不等于组员人工审阅、实物测绘、真实 VR 或用户研究。
+
+## 2026-10-09：SuperLite 17B 扩展资料核对
+
+Ereshkigal1224 接受维护者提出的 500-010（posts）**整盔资料研究**，Codex 辅助整理 [厂家 17B 产品/局部照片](https://www.kirbymorgan.com/products/helmets/superlite-17b)、[规格](https://www.kirbymorgan.com/product/specs/314/superlite-17b)、[零件图 Document #241108001](https://kirbymorgan.com/sites/default/files/2025-01/sl-17b-blowapart-241108001.pdf)、[通信手册 Document #240617001](https://www.kirbymorgan.com/sites/default/files/2024-07/communications-on-superLite-17b-and-17c-helmets-kmb-18-and-28-bandmasks.pdf)和[压圈材料变更公告 #3/2021](https://www.kirbymorgan.com/sites/default/files/2021-06/Bulletin-03-2021.pdf)。媒体版权未核实为可再分发，本仓库只留链接、观察、引用位置与原创 v1 预览；未复制照片/PDF 页面、未做贴图。适用配置、未知年代、欠缺视角与事实/估算分界详见[整盔索引](../artifacts/helmet-refinement/eras/superlite-17b/references/whole-helmet-source-map-v2.zh-CN.md)。
+
+Codex 辅助编写 v2 修正脚本和静态检查，**没有产生新的模型二进制或渲染**：官方 Blender 4.5.14 便携版运行时被本机 Windows 完整性策略拦截，未关闭保护，见[活动记录](activity/2026-10-09-superlite17b-review-response.md)。不把脚本设计写成完成的可编辑模型、装配或人工外形验收；未新增第三方模型、贴图或 Unity 依赖。
+
+## 2026-10-09：SuperLite 17B v2 资料与可编辑分件
+
+本次继续由 Ereshkigal1224 负责，Codex 辅助使用 Kirby Morgan 原始[面窗手册 #260901001](https://www.kirbymorgan.com/sites/default/files/2026-09/face-port-port-retainer-nose-block-260901001.pdf)、[侧阀手册 #260701004](https://www.kirbymorgan.com/sites/default/files/2026-07/brass-chromed-brass-side-block-260701004.pdf)、[侧阀分解图 #230118015](https://www.kirbymorgan.com/sites/default/files/2023-01/chromed-brass-side-block-blowapart-230118015.pdf)、厂家照片及[使用条款](https://www.kirbymorgan.com/company/terms-usage)核对部件和外形。[完整来源登记、图号/页码、适用范围和许可状态](../artifacts/helmet-refinement/eras/superlite-17b/references/whole-helmet-source-map-v2.zh-CN.md)在独立年代资料目录。厂家照片、PDF 页面、标牌和商标未复制入仓库或贴图；公开可浏览不作为重新分发许可。新源文件/GLB/预览使用仓库已有两张脚本原创贴图。
+
+微软商店官方 Blender 4.5.14 LTS 在本机完成 v2 两分件生成、GLB 导出与回读；便携/安装版的 Windows 应用控制阻挡记录保留为历史，没有改安全策略。Codex 自动检查只能证实文件结构、UV、导出透明材质和局部估算参数一致；不代表外形测绘、装配、Unity/VR 或其他成员人工批准。见[本次活动记录](activity/2026-10-09-superlite17b-v2-research-and-assets.md)。未新增 Unity 包或运行时依赖。
+
+## 2026-10-10：SuperLite 17B 资料收束和 v3 结构修正
+
+Ereshkigal1224 负责，Codex 辅助核查 [Kirby Morgan 产品页](https://www.kirbymorgan.com/products/helmets/superlite-17b)、[黄色整盔照片](https://www.kirbymorgan.com/sites/default/files/2021-02/17B-Helmet-Colors-yellow.jpg)、[侧阀照片](https://www.kirbymorgan.com/sites/default/files/2021-02/fiberglass-side-block-IMG_0387.jpg)、[面窗手册 #260901001](https://www.kirbymorgan.com/sites/default/files/2026-09/face-port-port-retainer-nose-block-260901001.pdf)、[侧阀分解图 #230118015](https://www.kirbymorgan.com/sites/default/files/2023-01/chromed-brass-side-block-blowapart-230118015.pdf)及[厂家 FAQ](https://www.kirbymorgan.com/faq)。完整逐项用途、局限和未找到的资料见[本轮资料收束](../artifacts/helmet-refinement/eras/superlite-17b/references/research-freeze-2026-10-10.zh-CN.md)。照片和 PDF 只链接，不复制或作贴图；许可未核实为可再分发。v3 Blender/GLB/预览由本项目生成，颜色与几何均为展示估计，未新增第三方模型或 Unity 依赖。官方 Blender 4.5.14 回读通过只证明文件结构，不代表外形精度、整机装配或成员批准。
+
+## 2026-10-10：SuperLite 独立资产主线归档
+
+按维护者明确授权，Codex 将 Ereshkigal1224 在 [PR #37](https://github.com/Twispra/XRmuseum/pull/37) 交付、已合入资产分支的独立资料、原创源模型、GLB 和预览整合到最新 main。原作者提交与历史记录保留；仅处理来源记录冲突、范围核对、LFS 实体校验和实际导出几何复验，没有生成或修改模型，没有接入 Unity。见[整合记录](activity/2026-10-10-superlite17b-main-integration.md)。
+
+独立几何复验使用本地 Node.js、Three.js 0.170.0 与 three-mesh-bvh 0.8.3（后两者为 MIT），仅作临时验证，不提交工具本体、不新增 Unity 或产品运行时依赖。本轮未重新运行 Blender、Unity、真实头显或用户研究；AI 技术审查不等于另一位成员的人工批准，也不将局部分件写成整盔装配完成。
