@@ -84,6 +84,7 @@ namespace Museum.RefinedModels.EditorTools
             public List<SampleRecord> samples = new List<SampleRecord>();
             public List<ColorProbeRecord> colorProbes = new List<ColorProbeRecord>();
             public List<SelectionRecord> hotspotSelections = new List<SelectionRecord>();
+            public List<string> grabDiagnostics = new List<string>();
             public List<FileState> files = new List<FileState>();
             public List<string> errors = new List<string>();
             public List<string> screenshots = new List<string>();
@@ -332,12 +333,25 @@ namespace Museum.RefinedModels.EditorTools
         static IEnumerator GrabAndMove()
         {
             inspection.ResetInspection(); yield return Wait(.25f);
-            var target = binding.IsAdditionalVisualActive ? binding.ActiveShell.bounds.center :
+            if (binding.IsAdditionalVisualActive)
+            {
+                // Reproduce and record the former interior-centre fixture before
+                // testing a visitor's ordinary touch on the actual outer shell.
+                var interior = binding.ActiveShell.bounds.center;
+                QueueRight(interior, Quaternion.identity, false); yield return Wait(.2f);
+                QueueRight(interior, Quaternion.identity, true); yield return Wait(.2f);
+                report.grabDiagnostics.Add("Former interior-centre fixture: " + GrabDiagnostic(interior));
+                ParkHands(); yield return Wait(.2f);
+                inspection.ResetInspection(); yield return Wait(.25f);
+            }
+            var target = binding.IsAdditionalVisualActive ? OrdinaryShellGrabPoint() :
                 grab.colliders.Where(c => c && c.enabled && !c.isTrigger).OrderByDescending(c => c.bounds.size.sqrMagnitude).First().bounds.center;
             QueueRight(target, Quaternion.identity, false); yield return Wait(.2f);
+            Check(grab.isHovered && rightController.GetComponentInChildren<XRDirectInteractor>(true).interactablesHovered.Contains(grab),
+                "ordinary shell touch actually hovers helmet", "queued controller input -> actual XRI Direct root hover", GrabDiagnostic(target));
             QueueRight(target, Quaternion.identity, true); yield return Wait(.2f);
             Check(grab.isSelected && grab.interactorsSelecting[0] is XRDirectInteractor && !inspection.IsWindowHeld,
-                "existing direct grip selects refined exhibit", "InputSystem -> XRI");
+                "existing direct grip selects refined exhibit", "InputSystem -> XRI", GrabDiagnostic(target));
             var activeShell = binding.ActiveShell;
             Vector3 oldRoot = inspection.transform.position, oldShell = activeShell.bounds.center;
             Quaternion oldRotation = inspection.transform.rotation;
@@ -360,6 +374,56 @@ namespace Museum.RefinedModels.EditorTools
             yield return Wait(.6f);
             Check(!inspection.IsReturning && Vector3.Distance(inspection.transform.position, reset.HomePose.position) < .02f && Quaternion.Angle(inspection.transform.rotation, reset.HomePose.rotation) < 1f,
                 "refined display returns to existing home", "public return API");
+        }
+
+        static Vector3 OrdinaryShellGrabPoint()
+        {
+            // A renderer's AABB centre is inside this helmet, not a visitor's shell
+            // touch. Use a real rear/upper shell vertex, away from intentional
+            // child controls, and put the saved Direct hand sphere on that vertex.
+            var direct = rightController.GetComponentInChildren<XRDirectInteractor>(true);
+            var hand = direct.GetComponentsInChildren<SphereCollider>(true).Single(c => c.enabled && c.isTrigger);
+            float radius = Mathf.Max(hand.bounds.extents.x, hand.bounds.extents.y, hand.bounds.extents.z);
+            var body = grab.colliders.Where(c => c && c.enabled && c.gameObject.activeInHierarchy && !c.isTrigger).ToArray();
+            var children = inspection.GetComponentsInChildren<XRSimpleInteractable>(true).Where(t => t && t.enabled && t != grab)
+                .SelectMany(t => t.colliders).Where(c => c && c.enabled && c.gameObject.activeInHierarchy).Distinct().ToArray();
+            var shell = binding.ActiveShell;
+            var envelope = MeshBoundsInHelmet(shell);
+            Vector3 chosen = Vector3.zero; float best = float.NegativeInfinity, rootDistance = 0;
+            foreach (var vertex in shell.GetComponent<MeshFilter>().sharedMesh.vertices)
+            {
+                Vector3 point = shell.transform.TransformPoint(vertex);
+                Vector3 local = inspection.transform.InverseTransformPoint(point);
+                if (local.z < envelope.center.z + envelope.extents.z * .55f || local.y < envelope.center.y) continue;
+                float reach = body.Min(c => Vector3.Distance(c.ClosestPoint(point), point));
+                float clearance = children.Min(c => Vector3.Distance(c.ClosestPoint(point), point));
+                if (reach > radius * .8f || clearance <= radius + .01f || clearance <= best) continue;
+                chosen = point; best = clearance; rootDistance = reach;
+            }
+            Check(!float.IsNegativeInfinity(best), "ordinary SuperLite grip has a real rear-shell contact clear of child targets",
+                "actual mesh vertices, root ClosestPoint and child-collider clearance",
+                "touch=" + chosen.ToString("F6") + "; root distance=" + rootDistance + "; child clearance=" + best + "; Direct radius=" + radius);
+            Vector3 handOffset = Quaternion.Inverse(rightController.transform.rotation) * (hand.bounds.center - rightController.transform.position);
+            return chosen - handOffset; // QueueRight uses world identity rotation for this ordinary grab.
+        }
+
+        static string GrabDiagnostic(Vector3 controllerPoint)
+        {
+            var direct = rightController.GetComponentInChildren<XRDirectInteractor>(true);
+            var selected = UnityEngine.Object.FindObjectsOfType<XRBaseInteractable>(true).Where(t => t.isSelected)
+                .Select(t => t.name + " by " + string.Join(",", t.interactorsSelecting.Select(i => i.GetType().Name)));
+            var hands = direct.GetComponentsInChildren<Collider>(true).Where(c => c.enabled)
+                .Select(c => c.name + " " + c.GetType().Name + " center=" + c.bounds.center.ToString("F6") + "; bounds=" + c.bounds.size.ToString("F6"));
+            var body = grab.colliders.Where(c => c && c.enabled)
+                .Select(c => c.name + " " + c.GetType().Name + " distance=" + Vector3.Distance(c.ClosestPoint(controllerPoint), controllerPoint).ToString("F6"));
+            var window = inspection.GetComponentInChildren<HelmetWindowInteractable>(true);
+            return "era=" + era.CurrentIndex + "; requested controller=" + controllerPoint.ToString("F6") +
+                "; actual controller=" + rightController.transform.position.ToString("F6") +
+                "; Direct attach=" + direct.GetAttachTransform(grab).position.ToString("F6") +
+                "; root hovered=" + grab.isHovered + "; window hovered=" + window.isHovered + "; window held=" + inspection.IsWindowHeld +
+                "; Direct hovered=[" + string.Join(",", direct.interactablesHovered.Select(t => t.transform.name)) +
+                "]; selected=[" + string.Join(";", selected) + "]; Direct colliders=[" + string.Join(";", hands) +
+                "]; root colliders=[" + string.Join(";", body) + "]";
         }
 
         static IEnumerator CheckSections()
