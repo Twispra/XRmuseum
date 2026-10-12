@@ -886,6 +886,12 @@ namespace Museum.RefinedModels.EditorTools
                         "SuperLite observation describes its actual subject / " + language + "/" + id,
                         "independent accepted English copy compared with live hotspot source", HotspotDetail(hotspot));
                     yield return SelectObservation(hotspot, false);
+                    if (id == "front-window")
+                    {
+                        var card = information.GetComponent<Renderer>().bounds;
+                        float distance = Mathf.Max(.35f, (card.extents.magnitude + .045f) / Mathf.Tan(24f * Mathf.Deg2Rad));
+                        Render("21-superlite-front-card-" + language, card.center - information.transform.forward * distance, card.center, 48f);
+                    }
                     CheckVisitorText(information, expected, table, language, id);
                     Check(!new[] { "Mark V", "Breastplate", "shoulders", "胸甲", "肩部" }.Any(information.text.Contains),
                         "visible SuperLite card has no old model or shoulder-plate copy / " + language + "/" + id,
@@ -924,7 +930,7 @@ namespace Museum.RefinedModels.EditorTools
         {
             switch (identifier)
             {
-                case "front-window": return "Front window\nInspect the front viewing area and its rim. Side opening is an observation demonstration, not the real helmet's mechanism.";
+                case "front-window": return "Front window\nWindow and rim. Side opening is a museum demonstration.";
                 case "bonnet": return "Helmet shell\nInspect the upper shell of this lightweight helmet study.";
                 case "breastplate": return "Neck seal\nInspect the neck seal and surrounding clamp below the shell.";
                 default: throw new InvalidOperationException("Unexpected observation identifier: " + identifier);
