@@ -29,6 +29,7 @@ namespace Museum.Hotspots
         public event Action<TMP_Text, string> TextChanged;
         const string Prompt = "Select a highlighted point to inspect the helmet.";
         string informationEnglish = Prompt;
+        string selectedIdentifier;
         TMP_Text[] explanationLabels = Array.Empty<TMP_Text>();
         Color[] explanationLabelColors = Array.Empty<Color>();
         Renderer[] explanationRenderers = Array.Empty<Renderer>();
@@ -63,6 +64,7 @@ namespace Museum.Hotspots
             bool wasComplete = IsComplete;
             bool added = visited.Add(identifier);
 
+            selectedIdentifier = identifier;
             informationEnglish = string.IsNullOrWhiteSpace(title) ? description : title + "\n" + description;
             RestartExplanationLifetime();
             RefreshText();
@@ -73,9 +75,19 @@ namespace Museum.Hotspots
             return added;
         }
 
+        public void RefreshSelectedContent(string identifier, string title, string description)
+        {
+            if (string.IsNullOrEmpty(identifier) || selectedIdentifier != identifier)
+                return;
+            informationEnglish = string.IsNullOrWhiteSpace(title) ? description : title + "\n" + description;
+            // Do not add a visit, restart the explanation timer, or change visibility.
+            RefreshText();
+        }
+
         public void ResetTour()
         {
             visited.Clear();
+            selectedIdentifier = null;
             informationEnglish = Prompt;
             explanationCountdownActive = false;
             explanationElapsed = 0f;

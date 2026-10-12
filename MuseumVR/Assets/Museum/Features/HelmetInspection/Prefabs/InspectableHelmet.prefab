@@ -3962,6 +3962,7 @@ GameObject:
   - component: {fileID: 5045062680713722717}
   - component: {fileID: 426116414638230195}
   - component: {fileID: 118794250406679012}
+  - component: {fileID: 6887944843734790652}
   m_Layer: 0
   m_Name: InspectableHelmet
   m_TagString: Untagged
@@ -5382,14 +5383,27 @@ MonoBehaviour:
     glass: {fileID: 648037876526554348}
     shell: {fileID: 1426993756073495241}
     air: {fileID: 7385968901359766258}
-    telephone:
-    - {fileID: 2488515043163827839}
-    - {fileID: 6928367840962825373}
-    - {fileID: 1982279043188448131}
+    telephone: []
     hinge: {x: 0.11442972, y: 0.14163312, z: -0.11493463}
     triggerCenter: {x: -0.09804002, y: 0.000000074505806, z: -0.005000049}
     triggerSize: {x: 0.20808016, y: 0.12655208, z: 0.014580035}
     sectionData: {fileID: 11400000, guid: 54feff4915b7d18429f3c80953d62f67, type: 2}
+--- !u!114 &6887944843734790652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2257646481026636850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d75b74ec5b42f7ac523f479abbf034, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  binding: {fileID: 118794250406679012}
+  tour: {fileID: 0}
+  instructions: {fileID: 0}
+  attachments: []
 --- !u!1 &2283044382297830847
 GameObject:
   m_ObjectHideFlags: 0

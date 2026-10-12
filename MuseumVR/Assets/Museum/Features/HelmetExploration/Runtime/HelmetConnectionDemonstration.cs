@@ -252,7 +252,9 @@ namespace Museum.Exploration
             if(showBoth) SetArrow(returnArrow, .28f, -1f);
 
             MuseumText.Set(sourceText, air ? "Air pump" : "Surface telephone");
-            MuseumText.Set(destinationText, air ? "Air inlet" : rearConnections ? "Telephone connection" : "Diver unit");
+            MuseumText.Set(destinationText, air ? "Air inlet" : rearConnections
+                ? rearConnections.TelephoneLocationIsIllustrative ? "Communication location (illustrative)" : "Telephone connection"
+                : "Diver unit");
             sourceText.transform.position = IsUsingRefinedEquipment ? refinedEquipment.SourceLabelPosition
                 : (air ? models.Pump.position : models.SurfaceTelephone.position) + Vector3.up * .31f;
             destinationText.transform.position = air || rearConnections ? pathEnd + Vector3.up*.09f

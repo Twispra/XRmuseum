@@ -151,7 +151,7 @@ namespace Museum.SuperLiteModels.EditorTools
                     eraIndex = 2, renderers = renderers, window = door, glass = moving.Single(r => r.name == "Glass_Port_520-004"),
                     shell = renderers.Single(r => r.name.StartsWith("Shell_Yellow")), air = renderers.Single(r => r.name == "CheckValve_Brass_555-195"),
                     airOutlet = Find(visual.transform, "Anchor_AirOutlet"), telephoneOutlet = Find(visual.transform, "Anchor_TelephoneOutlet"),
-                    telephone = renderers.Where(r => r.name.StartsWith("Hinge_") || r.name.StartsWith("Neck_Yoke_")).ToArray(),
+                    telephone = Array.Empty<Renderer>(),
                     hinge = hingePosition, triggerCenter = windowBounds.center, triggerSize = windowBounds.size + Vector3.one * .012f, sectionData = data
                 };
                 // The retained educational voice path uses a separate anchor; no physical posts are invented.
@@ -190,7 +190,8 @@ namespace Museum.SuperLiteModels.EditorTools
             if (!shader) throw new InvalidOperationException("Required inspection shader missing.");
             var material = new Material(shader) { name = info.name, enableInstancing = true };
             var c = info.base_color_linear;
-            material.SetColor("_BaseColor", glass ? new Color(.16f, .23f, .24f, .10f) : new Color(c[0], c[1], c[2], 1));
+            // Unity material Color properties use sRGB values; the export stores scene-linear RGB.
+            material.SetColor("_BaseColor", glass ? new Color(.16f, .23f, .24f, .10f) : new Color(c[0], c[1], c[2], 1f).gamma);
             if (!glass) { material.SetFloat("_Metallic", info.metallic); material.SetFloat("_Roughness", info.roughness); }
             AssetDatabase.CreateAsset(material, path); return material;
         }

@@ -18,14 +18,19 @@ namespace Museum.Experience
         public Transform AirOutlet => airOutlet;
         public Transform TelephoneOutlet => telephoneOutlet;
         public Renderer[] TelephoneSurfaces => telephoneSurfaces;
+        public bool TelephoneLocationIsIllustrative { get; private set; }
         // Append-on fittings can be clipped without moving the established specimen/tool reference frame.
         public bool IsTelephoneSurface(Renderer surface) => System.Array.IndexOf(telephoneSurfaces,surface)>=0;
         public bool VoiceResponseVisible => voiceResponse && voiceResponse.gameObject.activeInHierarchy;
         public float VoiceFocus { get; private set; }
 
-        public void Configure(Renderer air, Transform airEnd, Renderer[] telephone, Transform telephoneEnd, Transform response)
+        public void Configure(Renderer air, Transform airEnd, Renderer[] telephone, Transform telephoneEnd, Transform response,
+            bool telephoneLocationIsIllustrative = false)
         {
-            airConnector=air;airOutlet=airEnd;telephoneSurfaces=telephone;telephoneOutlet=telephoneEnd;voiceResponse=response;
+            // Clear the previous era's surfaces before replacing the renderer list.
+            ClearVoice();
+            airConnector=air;airOutlet=airEnd;telephoneSurfaces=telephone ?? System.Array.Empty<Renderer>();telephoneOutlet=telephoneEnd;voiceResponse=response;
+            TelephoneLocationIsIllustrative = telephoneLocationIsIllustrative;
             ClearVoice();
         }
         public void ShowVoice(float emphasis, bool responding, bool moving, float phaseTime)

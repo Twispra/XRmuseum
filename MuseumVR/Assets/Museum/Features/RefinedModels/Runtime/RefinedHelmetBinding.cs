@@ -165,7 +165,9 @@ namespace Museum.Refined
             var allClipped = originalClipped.Concat(visuals.Where(r => !r.transform.IsChildOf(inspection.WindowPivot))).ToArray();
             var allWindow = originalWindowRenderers.Concat(visuals.Where(r => r.transform.IsChildOf(inspection.WindowPivot))).ToArray();
             var activeAir = activeAdditional != null ? activeAdditional.air : markV ? refinedAir : originalAir;
-            rear.Configure(activeAir, AirOutlet, activeAdditional != null ? activeAdditional.telephone : markV ? refinedTelephone : originalTelephone, TelephoneOutlet, response);
+            var telephone = activeAdditional != null ? activeAdditional.telephone : markV ? refinedTelephone : originalTelephone;
+            bool illustrativeTelephone = activeAdditional != null && (telephone == null || telephone.Length == 0);
+            rear.Configure(activeAir, AirOutlet, telephone, TelephoneOutlet, response, illustrativeTelephone);
             inspection.Configure(inspection.WindowPivot, allClipped, allWindow, -1);
             // Configure resets the plane. Restore its direction before measuring the new
             // model's extent, so an oblique cut keeps the same normalized depth.

@@ -5,16 +5,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 using Museum.Eras;
 using Museum.Experience;
 using Museum.Exploration;
 using Museum.Inspection;
+using Museum.Hotspots;
 using Museum.Localization;
 using Museum.Refined;
 using TMPro;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.Rendering;
@@ -36,6 +39,8 @@ namespace Museum.RefinedModels.EditorTools
     {
         const string Prefix = "Museum.RefinedModelsQA.";
         const string ScenePath = "Assets/Museum/Scenes/MuseumStart.unity";
+        const string ColorSourcePath = "artifacts/superlite17b-unity-integration/exports/runtime-readback.json";
+        const string ColorProbeShaderPath = "Assets/Museum/Features/RefinedModels/Editor/MaterialColorProbe.shader";
         static readonly Stack<IEnumerator> Routines = new Stack<IEnumerator>();
         static readonly Queue<Action> InputQueue = new Queue<Action>();
         static Keyboard keyboard;
@@ -62,10 +67,14 @@ namespace Museum.RefinedModels.EditorTools
         [Serializable] sealed class CheckRecord { public string name, method, detail; public bool passed; }
         [Serializable] sealed class FileState { public string path, sha256; }
         [Serializable] sealed class SampleRecord { public string phase; public float windowAngle, time; public Vector3 point; public Quaternion rotation; }
+        [Serializable] sealed class SourceMaterial { public string name; public float[] base_color_linear; public float transmission; }
+        [Serializable] sealed class SourceReadback { public SourceMaterial[] materials; }
+        [Serializable] sealed class ColorProbeRecord { public string material, assetPath; public Color sourceLinear, savedSrgb, shaderLinear; public float maximumError; }
+        [Serializable] sealed class SelectionRecord { public string hotspot, mode, selector; public int events; public Vector3 controllerWorld; public bool rootSelected; }
         [Serializable] sealed class Report
         {
             public string status = "running", utc, unity, scene, commit, branch, workingTree, failure = "";
-            public string inputMethod = "Queued XRSimulatedController/HMD states in Dynamic Input System updates -> saved actions, controllers and XRDirectInteractor. No SelectEnter/SelectExit, invoked button events or private-field writes. Section/era/demonstration assertions are explicitly labelled public API checks.";
+            public string inputMethod = "Queued XRSimulatedController/HMD states in Dynamic Input System updates -> saved actions, controllers, XRDirectInteractor and XRRayInteractor. Selection listeners only observe actual XRI events. No SelectEnter/SelectExit, invoked button events or private-field writes. Section/era/demonstration assertions are explicitly labelled public API checks.";
             public string limitations = "Editor desktop simulation and temporary monocular URP renders only. Official simulator is checked then its input writer is disabled to prevent competing synthetic states. This is not a real headset, keyboard navigation usability, physical sound listening, historical certification, user study, build validation or device performance measurement. The early-era placeholder remains a concept preview; SuperLite dimensions and virtual front-panel articulation remain display assumptions.";
             public int refinedRenderers, refinedTriangles;
             public int superLiteRenderers, superLiteTriangles;
@@ -73,6 +82,8 @@ namespace Museum.RefinedModels.EditorTools
             public Vector3 superLiteRootWorld, superLiteSavedHomeWorld;
             public List<CheckRecord> checks = new List<CheckRecord>();
             public List<SampleRecord> samples = new List<SampleRecord>();
+            public List<ColorProbeRecord> colorProbes = new List<ColorProbeRecord>();
+            public List<SelectionRecord> hotspotSelections = new List<SelectionRecord>();
             public List<FileState> files = new List<FileState>();
             public List<string> errors = new List<string>();
             public List<string> screenshots = new List<string>();
@@ -103,6 +114,7 @@ namespace Museum.RefinedModels.EditorTools
             foreach (var path in Directory.GetFiles(Path.Combine(Application.dataPath, "Museum"), "*", SearchOption.AllDirectories)
                 .Where(p => p.EndsWith(".cs") || p.EndsWith(".shader") || p.EndsWith(".asset") || p.EndsWith(".prefab") || p.EndsWith(".mat") || p.EndsWith(".unity") || p.Contains("RefinedModels")))
                 snapshot.files.Add(new FileState { path = path.Substring(RepoRoot.Length + 1).Replace('\\', '/'), sha256 = Hash(path) });
+            snapshot.files.Add(new FileState { path = ColorSourcePath, sha256 = Hash(Path.Combine(RepoRoot, ColorSourcePath)) });
             SessionState.SetString(Prefix + "Snapshot", JsonUtility.ToJson(snapshot));
             SessionState.SetString(Prefix + "Output", output);
             SessionState.SetBool(Prefix + "Batch", batch);
@@ -164,7 +176,7 @@ namespace Museum.RefinedModels.EditorTools
                 EditorApplication.Exit(code); return;
             }
             if (!SessionState.GetBool(Prefix + "Active", false) || !EditorApplication.isPlaying || report == null || finishing) return;
-            if (EditorApplication.timeSinceStartup - started > 180) { Finish(new TimeoutException("Refined integration acceptance exceeded 180 seconds.")); return; }
+            if (EditorApplication.timeSinceStartup - started > 240) { Finish(new TimeoutException("Refined integration acceptance exceeded 240 seconds.")); return; }
             if (lastFrame == Time.frameCount) return;
             lastFrame = Time.frameCount;
             // Avoid XRI's sub-1ms throw-sample cutoff in an uncapped hidden batch player.
@@ -505,6 +517,7 @@ namespace Museum.RefinedModels.EditorTools
             Check(visual.glass.sharedMaterial.shader.name == "Museum/Inspection Glass" && visual.glass.sharedMaterial.renderQueue >= 3000 &&
                 visual.renderers.Where(r => r != visual.glass).All(r => r.sharedMaterial.shader.name == "Museum/Inspection Shell"),
                 "SuperLite uses transparent glass and compatible section/highlight materials", "saved asset");
+            CheckSuperLiteColors(visual);
             Check(visual.window.GetComponentsInChildren<Renderer>(true).Length == 14 && visual.glass.transform.IsChildOf(inspection.WindowPivot),
                 "SuperLite front panel remains in original interaction hinge", "saved asset");
             var bounds = MeshBoundsInHelmet(visual.renderers[0]);
@@ -528,14 +541,24 @@ namespace Museum.RefinedModels.EditorTools
             CaptureHelmet("16-superlite-reference-side", new Vector3(-.70f, .15f, .30f));
             CaptureCamera("17-superlite-on-display-in-museum", Camera.main);
             var closed = inspection.transform.InverseTransformPoint(visual.glass.bounds.center);
+            var frontMarker = Hotspots().Single(h => HotspotSource(h, "identifier") == "front-window");
+            var markerClosed = inspection.transform.InverseTransformPoint(frontMarker.transform.position);
+            var markerInGlass = visual.glass.transform.InverseTransformPoint(frontMarker.transform.position);
+            CheckHotspotSurfaces(visual, "closed window");
             yield return PressInspectionButton("WINDOW"); yield return Wait(.9f);
             var expected = visual.hinge + Quaternion.AngleAxis(-HelmetInspectionController.MaximumWindowAngle, Vector3.up) * (closed - visual.hinge);
             Check(inspection.WindowAngle > 94.9f && Vector3.Distance(inspection.transform.InverseTransformPoint(visual.glass.bounds.center), expected) < .004f,
                 "SuperLite virtual inspection panel opens via existing XR button", "InputSystem -> XRI");
+            Check(Vector3.Distance(markerInGlass, visual.glass.transform.InverseTransformPoint(frontMarker.transform.position)) < .0001f &&
+                Vector3.Distance(markerClosed, inspection.transform.InverseTransformPoint(frontMarker.transform.position)) > .05f,
+                "SuperLite front hotspot follows actual moving glass", "InputSystem -> XRI -> observed surface-relative transform");
+            CheckHotspotSurfaces(visual, "open window");
             CaptureHelmet("18-superlite-virtual-panel-open", new Vector3(-.38f, .13f, -.88f));
             yield return PressInspectionButton("WINDOW"); yield return Wait(.9f);
             Check(inspection.WindowAngle < .05f && Vector3.Distance(inspection.transform.InverseTransformPoint(visual.glass.bounds.center), closed) < .004f,
                 "SuperLite inspection panel closes at original alignment", "InputSystem -> XRI");
+            Check(Vector3.Distance(markerClosed, inspection.transform.InverseTransformPoint(frontMarker.transform.position)) < .0001f,
+                "SuperLite front hotspot returns with closed glass", "InputSystem -> XRI -> observed marker transform");
             yield return GrabAndMove();
             Check(binding.IsAdditionalVisualActive, "SuperLite persists through original grab/return", "InputSystem -> XRI and public return API");
             foreach (var normal in new[] { Vector3.right, Vector3.up, new Vector3(.4f, .3f, -.8f).normalized })
@@ -554,14 +577,17 @@ namespace Museum.RefinedModels.EditorTools
             demo.Play(HelmetExplorationController.Clue.Voice); yield return Wait(2.7f);
             Check(Vector3.Distance(demo.VoiceEndpointWorld, visual.telephoneOutlet.position) < .0002f && Vector3.Distance(visual.airOutlet.position, visual.telephoneOutlet.position) > .08f,
                 "existing VOICE demonstration follows separate SuperLite teaching anchor", "public demonstration API");
+            yield return WaitDemoElapsed(6f);
+            var rear = inspection.GetComponent<HelmetRearConnections>();
+            Check(demo.HasReachedDestination && rear.VoiceResponseVisible && rear.VoiceFocus > .65f,
+                "SuperLite VOICE reaches its illustrative endpoint", "public demonstration API -> observed response");
+            CheckSuperLiteMechanicalFocus(visual, "incoming VOICE");
+            yield return CheckSuperLiteVoiceText();
+            yield return WaitDemoElapsed(9.3f);
+            Check(demo.PhaseIndex == 3, "SuperLite VOICE reaches reply phase", "public demonstration API");
+            CheckSuperLiteMechanicalFocus(visual, "reply VOICE");
             demo.Stop();
-            var channel = AssetDatabase.LoadAssetAtPath<LanguageChannel>("Assets/Museum/Features/Localization/Tables/LanguageChannel.asset");
-            foreach (var language in new[] { MuseumLanguage.Chinese, MuseumLanguage.TraditionalChinese, MuseumLanguage.English })
-            {
-                channel.SetLanguage(language); yield return Wait(.2f);
-                Check(channel.Current == language && binding.IsAdditionalVisualActive,
-                    "SuperLite remains equipped across language change / " + language, "public language API");
-            }
+            yield return CheckSuperLiteVisitorContent(visual);
             foreach (int index in new[] { 1, 2, 0, 2, 1 })
             {
                 era.ShowEra(index); yield return Wait(.35f);
@@ -569,6 +595,315 @@ namespace Museum.RefinedModels.EditorTools
                     "three-way switching hides the inactive refined geometry / " + index, "public era API");
             }
             inspection.ResetInspection(); yield return Wait(.2f);
+        }
+
+        static void CheckSuperLiteColors(RefinedHelmetBinding.EraVisual visual)
+        {
+            Check(QualitySettings.activeColorSpace == ColorSpace.Linear && SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.ARGBFloat),
+                "linear floating-point color probe is available", "project color space and graphics capability");
+            var source = JsonUtility.FromJson<SourceReadback>(File.ReadAllText(Path.Combine(RepoRoot, ColorSourcePath)));
+            var shader = AssetDatabase.LoadAssetAtPath<Shader>(ColorProbeShaderPath);
+            Check(shader && shader.isSupported && source.materials.Count(m => m.transmission == 0) == 8,
+                "probe shader and eight opaque Blender source colors are available", "saved source readback and ordinary Color-property shader", ColorSourcePath);
+            foreach (var materialSource in source.materials.Where(m => m.transmission == 0))
+            {
+                string path = "Assets/Museum/Features/SuperLiteModels/Materials/" + materialSource.name + ".mat";
+                var saved = AssetDatabase.LoadAssetAtPath<Material>(path);
+                Check(saved && visual.renderers.Any(r => r.sharedMaterials.Contains(saved)) && saved.shader.name == "Museum/Inspection Shell",
+                    "actual SuperLite renderer uses saved material / " + materialSource.name, "saved asset identity", path);
+                var values = materialSource.base_color_linear;
+                var expected = new Color(values[0], values[1], values[2], values[3]);
+                var stored = saved.GetColor("_BaseColor");
+                var observed = ProbeColor(shader, stored);
+                float error = ColorError(expected, observed);
+                report.colorProbes.Add(new ColorProbeRecord { material = materialSource.name, assetPath = path,
+                    sourceLinear = expected, savedSrgb = stored, shaderLinear = observed, maximumError = error });
+                Check(error < .001f, "saved shader color matches Blender linear source / " + materialSource.name,
+                    "ordinary Color property -> ARGBFloat linear RT pixel readback (no lighting or display transfer)",
+                    "source=" + expected.ToString("F6") + "; saved=" + stored.ToString("F6") + "; shader=" + observed.ToString("F6") + "; max error=" + error);
+                if (materialSource.name == "M_Shell_Gelcoat_Yellow")
+                {
+                    var unencoded = ProbeColor(shader, expected);
+                    Check(ColorError(expected, unencoded) > .1f && unencoded.g < expected.g - .1f,
+                        "color probe rejects former direct-linear assignment", "negative control using the same Color-property upload",
+                        "source=" + expected.ToString("F6") + "; unencoded shader=" + unencoded.ToString("F6"));
+                }
+            }
+        }
+
+        static Color ProbeColor(Shader shader, Color savedColor)
+        {
+            var probe = new Material(shader) { hideFlags = HideFlags.HideAndDontSave };
+            var target = RenderTexture.GetTemporary(4, 4, 0, RenderTextureFormat.ARGBFloat, RenderTextureReadWrite.Linear);
+            var previous = RenderTexture.active; bool previousWrite = GL.sRGBWrite; Texture2D pixels = null;
+            try
+            {
+                if (target.sRGB) throw new InvalidOperationException("Color probe target unexpectedly applies sRGB transfer.");
+                probe.SetColor("_BaseColor", savedColor);
+                GL.sRGBWrite = false;
+                Graphics.Blit(Texture2D.whiteTexture, target, probe);
+                RenderTexture.active = target;
+                pixels = new Texture2D(4, 4, TextureFormat.RGBAFloat, false, true);
+                pixels.ReadPixels(new Rect(0, 0, 4, 4), 0, 0); pixels.Apply();
+                return pixels.GetPixel(2, 2);
+            }
+            finally
+            {
+                RenderTexture.active = previous; GL.sRGBWrite = previousWrite;
+                RenderTexture.ReleaseTemporary(target);
+                if (pixels) UnityEngine.Object.DestroyImmediate(pixels);
+                UnityEngine.Object.DestroyImmediate(probe);
+            }
+        }
+
+        static float ColorError(Color a, Color b) => Mathf.Max(Mathf.Abs(a.r - b.r), Mathf.Abs(a.g - b.g), Mathf.Abs(a.b - b.b), Mathf.Abs(a.a - b.a));
+        static HelmetHotspot[] Hotspots() => inspection.GetComponentsInChildren<HelmetHotspot>(true)
+            .OrderBy(h => HotspotSource(h, "identifier"), StringComparer.Ordinal).ToArray();
+        static string HotspotSource(HelmetHotspot hotspot, string field) => new SerializedObject(hotspot).FindProperty(field).stringValue;
+        static string HotspotDetail(HelmetHotspot hotspot) => HotspotSource(hotspot, "title") + "\n" + HotspotSource(hotspot, "description");
+
+        static void CheckHotspotSurfaces(RefinedHelmetBinding.EraVisual visual, string phase)
+        {
+            var hotspots = Hotspots();
+            Check(hotspots.Length == 3, "three actual SuperLite observation targets / " + phase, "saved scene components");
+            foreach (var hotspot in hotspots)
+            {
+                string id = HotspotSource(hotspot, "identifier");
+                var surfaces = visual.renderers.Where(r => id == "front-window" ? r.name == "Glass_Port_520-004" :
+                    id == "bonnet" ? r.name.StartsWith("Shell_Yellow", StringComparison.Ordinal) :
+                    id == "breastplate" && (r.name == "NeckDam_Neoprene_510-533" || r.name == "NeckClamp_505-055")).ToArray();
+                var collider = hotspot.GetComponent<XRSimpleInteractable>().colliders.SingleOrDefault();
+                Check(surfaces.Length > 0 && surfaces.All(r => r.enabled && r.gameObject.activeInHierarchy) && collider && collider.enabled && collider.isTrigger,
+                    "observation target has its actual active surface / " + phase + "/" + id, "renderer names and live collider");
+                Vector3 center = collider.bounds.center;
+                float radius = Mathf.Max(collider.bounds.extents.x, collider.bounds.extents.y, collider.bounds.extents.z);
+                float distance = surfaces.Min(r => SurfaceDistance(r, center));
+                var bounds = surfaces[0].bounds; foreach (var surface in surfaces.Skip(1)) bounds.Encapsulate(surface.bounds);
+                bounds.Expand(2 * (radius + .006f));
+                Check(bounds.Contains(center) && distance <= radius + .006f,
+                    "observation marker intersects matching model surface / " + phase + "/" + id,
+                    "actual mesh triangles and world bounds (independent of attachment configuration)",
+                    "surfaces=" + string.Join(",", surfaces.Select(r => r.name)) + "; marker=" + center.ToString("F6") +
+                    "; radius=" + radius + "; nearest triangle metres=" + distance + "; expanded bounds=" + bounds);
+            }
+        }
+
+        static float SurfaceDistance(Renderer renderer, Vector3 point)
+        {
+            var mesh = renderer.GetComponent<MeshFilter>().sharedMesh;
+            var vertices = mesh.vertices; var triangles = mesh.triangles; float nearest = float.PositiveInfinity;
+            for (int i = 0; i < triangles.Length; i += 3)
+            {
+                Vector3 a = renderer.transform.TransformPoint(vertices[triangles[i]]);
+                Vector3 b = renderer.transform.TransformPoint(vertices[triangles[i + 1]]);
+                Vector3 c = renderer.transform.TransformPoint(vertices[triangles[i + 2]]);
+                nearest = Mathf.Min(nearest, Vector3.Distance(point, ClosestTrianglePoint(point, a, b, c)));
+            }
+            return nearest;
+        }
+
+        static Vector3 ClosestTrianglePoint(Vector3 p, Vector3 a, Vector3 b, Vector3 c)
+        {
+            Vector3 ab = b - a, ac = c - a, ap = p - a;
+            float d1 = Vector3.Dot(ab, ap), d2 = Vector3.Dot(ac, ap);
+            if (d1 <= 0 && d2 <= 0) return a;
+            Vector3 bp = p - b; float d3 = Vector3.Dot(ab, bp), d4 = Vector3.Dot(ac, bp);
+            if (d3 >= 0 && d4 <= d3) return b;
+            float vc = d1 * d4 - d3 * d2;
+            if (vc <= 0 && d1 >= 0 && d3 <= 0) return a + d1 / (d1 - d3) * ab;
+            Vector3 cp = p - c; float d5 = Vector3.Dot(ab, cp), d6 = Vector3.Dot(ac, cp);
+            if (d6 >= 0 && d5 <= d6) return c;
+            float vb = d5 * d2 - d1 * d6;
+            if (vb <= 0 && d2 >= 0 && d6 <= 0) return a + d2 / (d2 - d6) * ac;
+            float va = d3 * d6 - d5 * d4;
+            if (va <= 0 && d4 - d3 >= 0 && d5 - d6 >= 0) return b + (d4 - d3) / ((d4 - d3) + (d5 - d6)) * (c - b);
+            float inverse = 1 / (va + vb + vc);
+            return a + ab * (vb * inverse) + ac * (vc * inverse);
+        }
+
+        static void CheckSuperLiteMechanicalFocus(RefinedHelmetBinding.EraVisual visual, string phase)
+        {
+            var mechanical = visual.renderers.Where(r => r.name.StartsWith("Hinge_", StringComparison.Ordinal) ||
+                r.name.StartsWith("NeckClamp", StringComparison.Ordinal) || r.name.StartsWith("Neck_Yoke", StringComparison.Ordinal)).ToArray();
+            var block = new MaterialPropertyBlock(); var samples = new List<string>();
+            bool clear = mechanical.Length >= 3;
+            foreach (var renderer in mechanical)
+            {
+                renderer.GetPropertyBlock(block); float focus = block.GetFloat("_Focus");
+                samples.Add(renderer.name + "=" + focus.ToString("F6")); clear &= Mathf.Abs(focus) < .0001f;
+            }
+            Check(clear, "VOICE does not highlight neck-clamp mechanisms / " + phase,
+                "actual renderer MaterialPropertyBlock during natural playback", string.Join("; ", samples));
+        }
+
+        static IEnumerator CheckSuperLiteVoiceText()
+        {
+            var channel = AssetDatabase.LoadAssetAtPath<LanguageChannel>("Assets/Museum/Features/Localization/Tables/LanguageChannel.asset");
+            var table = AssetDatabase.LoadAssetAtPath<LocalizationTable>("Assets/Museum/Features/Localization/Tables/LocalizationTable.asset");
+            var label = demo.GetComponentsInChildren<TMP_Text>(true).SingleOrDefault(t => t.name == "Destination label");
+            Check(label && channel && table, "actual SuperLite VOICE destination label is present", "natural playback TMP hierarchy");
+            foreach (var language in new[] { MuseumLanguage.English, MuseumLanguage.Chinese, MuseumLanguage.TraditionalChinese })
+            {
+                channel.SetLanguage(language); yield return Wait(.12f);
+                CheckVisitorText(label, "Communication location (illustrative)", table, language, "SuperLite VOICE destination");
+                Check(demo.IsVisible && binding.IsAdditionalVisualActive,
+                    "trilingual VOICE clarification retains active playback / " + language, "actual demonstration and model state");
+            }
+            channel.SetLanguage(MuseumLanguage.English);
+        }
+
+        static IEnumerator CheckSuperLiteVisitorContent(RefinedHelmetBinding.EraVisual visual)
+        {
+            var channel = AssetDatabase.LoadAssetAtPath<LanguageChannel>("Assets/Museum/Features/Localization/Tables/LanguageChannel.asset");
+            var table = AssetDatabase.LoadAssetAtPath<LocalizationTable>("Assets/Museum/Features/Localization/Tables/LocalizationTable.asset");
+            var hotspots = Hotspots();
+            var tour = hotspots[0].GetComponentInParent<HelmetHotspotTour>();
+            var caption = GameObject.Find("Helmet Instructions")?.GetComponent<TMP_Text>();
+            var information = tour ? tour.GetComponentsInChildren<TMP_Text>(true).SingleOrDefault(t => t.name == "Information") : null;
+            Check(channel && table && tour && caption && information && hotspots.Length == 3,
+                "saved visitor labels, tour and language assets are attached", "saved scene components");
+            channel.SetLanguage(MuseumLanguage.English);
+            era.ShowEra(1); yield return Wait(.35f);
+            inspection.ResetInspection(); tour.ResetTour(); yield return Wait(.2f);
+            var positions = hotspots.Select(h => h.transform.localPosition).ToArray();
+            var rotations = hotspots.Select(h => h.transform.localRotation).ToArray();
+            var scales = hotspots.Select(h => h.transform.localScale).ToArray();
+            var originalDetails = hotspots.Select(HotspotDetail).ToArray();
+            var originalCaption = caption.GetComponent<LocalizedSourceText>()?.SourceEnglish;
+            Check(!string.IsNullOrEmpty(originalCaption) && originalCaption.Contains("Mark V"),
+                "restoration baseline shows original Mark V instructions", "actual visible TMP English source", caption.text);
+            var lower = hotspots.Single(h => HotspotSource(h, "identifier") == "breastplate");
+            yield return SelectObservation(lower, false);
+            Check(tour.VisitedCount == 1 && information.GetComponent<LocalizedSourceText>().SourceEnglish == HotspotDetail(lower),
+                "Mark V baseline has one actual selected observation card", "InputSystem -> XRI -> actual TMP source");
+
+            era.ShowEra(2); yield return Wait(.35f);
+            Check(tour.VisitedCount == 1 && lower.IsVisited && information.GetComponent<LocalizedSourceText>().SourceEnglish == ExpectedSuperLiteDetail("breastplate"),
+                "era change refreshes displayed neck-seal card while retaining progress", "public era API -> actual TMP source", information.text);
+            CheckHotspotSurfaces(visual, "1 to 2 visitor switch");
+            foreach (var language in new[] { MuseumLanguage.English, MuseumLanguage.Chinese, MuseumLanguage.TraditionalChinese })
+            {
+                channel.SetLanguage(language); yield return Wait(.2f);
+                Check(channel.Current == language && binding.IsAdditionalVisualActive,
+                    "SuperLite remains equipped across language change / " + language, "public language API");
+                CheckVisitorText(caption, "Diving helmet\n<size=62%>SuperLite 17B-inspired study</size>", table, language, "model instructions");
+                Check(caption.text.Contains("SuperLite 17B") && !caption.text.Contains("Mark V"),
+                    "visible trilingual instructions name current SuperLite model / " + language, "actual TMP text", caption.text);
+                foreach (var hotspot in hotspots)
+                {
+                    string id = HotspotSource(hotspot, "identifier");
+                    string expected = ExpectedSuperLiteDetail(id);
+                    Check(HotspotDetail(hotspot) == expected,
+                        "SuperLite observation describes its actual subject / " + language + "/" + id,
+                        "independent accepted English copy compared with live hotspot source", HotspotDetail(hotspot));
+                    yield return SelectObservation(hotspot, false);
+                    CheckVisitorText(information, expected, table, language, id);
+                    Check(!new[] { "Mark V", "Breastplate", "shoulders", "胸甲", "肩部" }.Any(information.text.Contains),
+                        "visible SuperLite card has no old model or shoulder-plate copy / " + language + "/" + id,
+                        "actual selected TMP text", information.text);
+                }
+                Check(tour.VisitedCount == 3 && hotspots.All(h => h.IsVisited),
+                    "three trilingual observations retain exact completed progress / " + language, "actual tour state after XRI selections");
+            }
+            channel.SetLanguage(MuseumLanguage.English); yield return Wait(.2f);
+            foreach (var hotspot in hotspots)
+            {
+                yield return SelectObservation(hotspot, true);
+                CheckVisitorText(information, ExpectedSuperLiteDetail(HotspotSource(hotspot, "identifier")), table, channel.Current, "ray " + hotspot.name);
+            }
+            Check(tour.VisitedCount == 3, "Ray revisits do not increment completed SuperLite progress", "actual tour state after XRI selections");
+
+            era.ShowEra(1); yield return Wait(.35f);
+            for (int i = 0; i < hotspots.Length; i++)
+                Check(Vector3.Distance(hotspots[i].transform.localPosition, positions[i]) < .0001f &&
+                    Quaternion.Angle(hotspots[i].transform.localRotation, rotations[i]) < .01f &&
+                    Vector3.Distance(hotspots[i].transform.localScale, scales[i]) < .0001f && HotspotDetail(hotspots[i]) == originalDetails[i],
+                    "1 to 2 to 1 restores original hotspot pose and copy / " + HotspotSource(hotspots[i], "identifier"),
+                    "actual local transforms and sources compared with observed Mark V baseline",
+                    "position=" + hotspots[i].transform.localPosition.ToString("F6") + "; original=" + positions[i].ToString("F6") + "; detail=" + HotspotDetail(hotspots[i]));
+            CheckVisitorText(caption, originalCaption, table, channel.Current, "restored Mark V instructions");
+            var last = hotspots.Last();
+            Check(tour.VisitedCount == 3 && hotspots.All(h => h.IsVisited) &&
+                information.GetComponent<LocalizedSourceText>().SourceEnglish == HotspotDetail(last),
+                "1 to 2 to 1 restores displayed card and preserves visited IDs", "actual tour and TMP state", information.text);
+            era.ShowEra(2); yield return Wait(.35f);
+            CheckHotspotSurfaces(visual, "restored SuperLite after round trip");
+            ParkHands();
+        }
+
+        static string ExpectedSuperLiteDetail(string identifier)
+        {
+            switch (identifier)
+            {
+                case "front-window": return "Front window\nInspect the front viewing area and its rim. Side opening is an observation demonstration, not the real helmet's mechanism.";
+                case "bonnet": return "Helmet shell\nInspect the upper shell of this lightweight helmet study.";
+                case "breastplate": return "Neck seal\nInspect the neck seal and surrounding clamp below the shell.";
+                default: throw new InvalidOperationException("Unexpected observation identifier: " + identifier);
+            }
+        }
+
+        static void CheckVisitorText(TMP_Text label, string expectedSource, LocalizationTable table, MuseumLanguage language, string subject)
+        {
+            var source = label.GetComponent<LocalizedSourceText>();
+            var entry = table.Entries.FirstOrDefault(e => e.English == expectedSource);
+            string expected = entry.For(language);
+            Check(table.ContainsEnglish(expectedSource) && !string.IsNullOrWhiteSpace(expected) &&
+                (language == MuseumLanguage.English || expected != expectedSource),
+                "registered full trilingual visitor copy / " + language + "/" + subject, "saved table independent of runtime source", expected);
+            label.ForceMeshUpdate(true, true);
+            Check(source && source.SourceEnglish == expectedSource && label.text == expected,
+                "actual visitor label uses exact current translation / " + language + "/" + subject,
+                "visible TMP source and text", "source=" + (source ? source.SourceEnglish : "missing") + "; actual=" + label.text);
+            string plain = Regex.Replace(label.text, "<[^>]*>", "");
+            string missing = !label.font ? "missing font" : new string(plain.Where(ch => !char.IsWhiteSpace(ch)).Distinct()
+                .Where(ch => !label.font.HasCharacter(ch, false, false)).ToArray());
+            Check(label.font == table.FontAsset && missing.Length == 0,
+                "visitor label uses saved glyphs / " + language + "/" + subject, "actual TMP font character table without fallback or dynamic population", missing);
+            var renderer = label.GetComponent<Renderer>();
+            Check(label.gameObject.activeInHierarchy && renderer && renderer.enabled && label.color.a > .9f &&
+                !label.isTextOverflowing && label.textInfo.characterCount > 0,
+                "translated visitor label has visible complete layout / " + language + "/" + subject,
+                "actual TMP generated layout", "fontSize=" + label.fontSize + "; rect=" + label.rectTransform.sizeDelta + "; overflow=" + label.isTextOverflowing);
+        }
+
+        static IEnumerator SelectObservation(HelmetHotspot hotspot, bool ray)
+        {
+            var target = hotspot.GetComponent<XRSimpleInteractable>();
+            string id = HotspotSource(hotspot, "identifier"), mode = ray ? "Ray" : "Direct";
+            Vector3 point = target.colliders.Single().bounds.center;
+            Vector3 outward = inspection.transform.TransformDirection(id == "bonnet" ? Vector3.right : Vector3.back);
+            Vector3 hand = ray ? point + outward * .65f : point;
+            Quaternion rotation = ray ? Quaternion.LookRotation(point - hand, inspection.transform.up) : Quaternion.identity;
+            int events = 0; IXRSelectInteractor selector = null;
+            UnityAction<SelectEnterEventArgs> listener = args => { events++; selector = args.interactorObject; };
+            target.selectEntered.AddListener(listener);
+            try
+            {
+                ParkHands(); yield return Wait(.15f);
+                QueueRight(hand, rotation, false); yield return Wait(.22f);
+                Check(target.isHovered, "actual observation hover / " + mode + "/" + id, "InputSystem -> saved actions -> XRI colliders");
+                if (ray)
+                {
+                    var rays = rightController.GetComponentsInChildren<XRRayInteractor>(true);
+                    Check(rays.Any(r => r.TryGetCurrent3DRaycastHit(out var hit) && target.colliders.Contains(hit.collider)),
+                        "Ray physically hits current observation collider / " + id, "actual saved XRRayInteractor raycast hit");
+                    var marker = new SerializedObject(hotspot).FindProperty("targetRenderer").objectReferenceValue as Renderer;
+                    Check(marker && marker.enabled && marker.gameObject.activeInHierarchy,
+                        "Ray reveals actual observation marker / " + id, "live marker renderer visibility after physical ray hit");
+                }
+                QueueRight(hand, rotation, true); yield return Wait(.18f);
+                report.hotspotSelections.Add(new SelectionRecord { hotspot = id, mode = mode,
+                    selector = selector == null ? "none" : selector.GetType().Name, events = events, controllerWorld = hand, rootSelected = grab.isSelected });
+                Check(events == 1 && target.isSelected && hotspot.IsVisited && (ray ? selector is XRRayInteractor : selector is XRDirectInteractor),
+                    "actual observation selection / " + mode + "/" + id, "queued Grip input and observed selectEntered listener",
+                    "events=" + events + "; selector=" + selector + "; controller=" + hand.ToString("F6"));
+                Check(!grab.isSelected && !inspection.IsWindowHeld,
+                    "observation selection leaves helmet and window unheld / " + mode + "/" + id, "actual XRI interaction state");
+                QueueRight(hand, rotation, false); yield return Wait(.15f);
+                Check(!target.isSelected, "actual observation release / " + mode + "/" + id, "queued Grip release -> XRI");
+                ParkHands(); yield return Wait(.12f);
+            }
+            finally { target.selectEntered.RemoveListener(listener); }
         }
 
         static IEnumerator CheckConnections()
