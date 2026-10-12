@@ -22,6 +22,18 @@ namespace Museum.Hotspots
         Func<IXRInteractable, Vector3, DistanceInfo> previousDistance;
 
         public bool IsVisited => tour != null && tour.HasVisited(identifier);
+        public string Identifier => identifier;
+        public string Title => title;
+        public string Description => description;
+
+        // A visual-era change keeps the same discovery identity and completion state.
+        public void SetContent(string heading, string details)
+        {
+            title = heading;
+            description = details;
+            if (tour != null)
+                tour.RefreshSelectedContent(identifier, title, description);
+        }
 
         public void Configure(HelmetHotspotTour targetTour, string id, string heading, string details, Renderer visual)
         {

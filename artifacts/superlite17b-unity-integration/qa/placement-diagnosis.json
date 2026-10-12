@@ -1,0 +1,31 @@
+{
+  "purpose": "Retained compact evidence of two placement failures before runtime calibration. Full diagnostic outputs stay local in ignored tmp; final acceptance has its own run.",
+  "runs": [
+    {
+      "run": "20261011T104105983Z-refined-integration-d387b5e114504258b561c05fe4204d2e",
+      "status": "failed",
+      "failed_checks": [
+        {
+          "name": "SuperLite rests at existing exhibition support height",
+          "method": "saved scene geometry",
+          "detail": "bottom=1.172975; support=1.1",
+          "passed": false
+        }
+      ],
+      "failure": "System.InvalidOperationException: SuperLite rests at existing exhibition support height: bottom=1.172975; support=1.1\r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation.Check (System.Boolean passed, System.String name, System.String method, System.String detail) [0x00045] in D:\\XR_documents\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:738 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation+<CheckSuperLite>d__52.MoveNext () [0x00508] in D:\\XR_documents\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:516 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation.Tick () [0x000ba] in D:\\XR_documents\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:175 "
+    },
+    {
+      "run": "20261011T105046024Z-refined-integration-c4aac216a4ea41daaf4489718999d2e8",
+      "status": "failed",
+      "failed_checks": [
+        {
+          "name": "SuperLite rests at existing exhibition support height",
+          "method": "saved scene geometry",
+          "detail": "bottom=1.163; support=1.1",
+          "passed": false
+        }
+      ],
+      "failure": "System.InvalidOperationException: SuperLite rests at existing exhibition support height: bottom=1.163; support=1.1\r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation.Check (System.Boolean passed, System.String name, System.String method, System.String detail) [0x00045] in D:\\XR_documents\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:739 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation+<CheckSuperLite>d__52.MoveNext () [0x005e1] in D:\\XR_documents\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:517 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation.Tick () [0x000ba] in D:\\XR_documents\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:175 "
+    }
+  ]
+}

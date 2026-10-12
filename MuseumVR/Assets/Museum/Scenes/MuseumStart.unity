@@ -245,6 +245,50 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 1372464926363300598, guid: a2f0d4237079f5a4194e3a4b3567ce82, type: 3}
   m_PrefabInstance: {fileID: 43545013}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &43545016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1497206159012701181, guid: a2f0d4237079f5a4194e3a4b3567ce82, type: 3}
+  m_PrefabInstance: {fileID: 43545013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29def2e70f9d0534fa368df1a0d35d83, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+--- !u!114 &43545017 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8683872125808705364, guid: a2f0d4237079f5a4194e3a4b3567ce82, type: 3}
+  m_PrefabInstance: {fileID: 43545013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18e568523444f54d81cbb99328c9c19, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+--- !u!114 &43545018 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6607228411709714014, guid: a2f0d4237079f5a4194e3a4b3567ce82, type: 3}
+  m_PrefabInstance: {fileID: 43545013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29def2e70f9d0534fa368df1a0d35d83, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+--- !u!114 &43545019 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2337622119183450610, guid: a2f0d4237079f5a4194e3a4b3567ce82, type: 3}
+  m_PrefabInstance: {fileID: 43545013}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29def2e70f9d0534fa368df1a0d35d83, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &107799312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2651,6 +2695,21 @@ MonoBehaviour:
   table: {fileID: 11400000, guid: ca262dc3d02429245991b087c7d15858, type: 2}
   channel: {fileID: 11400000, guid: 1c39d1ee21f80bc41ae272dccf23e592, type: 2}
   sourceEnglish: A SPACE TO EXPLORE
+--- !u!23 &342254947 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 648037876526554348, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+  m_PrefabInstance: {fileID: 1120544053}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &342254948 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1426993756073495241, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+  m_PrefabInstance: {fileID: 1120544053}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &342254949 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 9155699154662871266, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+  m_PrefabInstance: {fileID: 1120544053}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &345629526
 GameObject:
   m_ObjectHideFlags: 0
@@ -11261,6 +11320,98 @@ PrefabInstance:
     - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
       propertyPath: hasConfiguredHome
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: tour
+      value:
+      objectReference: {fileID: 43545017}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: instructions
+      value:
+      objectReference: {fileID: 2055464003}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[0].details
+      value: Window and rim. Side opening is a museum demonstration.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[0].heading
+      value: Front window
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[0].hotspot
+      value:
+      objectReference: {fileID: 43545019}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[0].surface
+      value:
+      objectReference: {fileID: 342254947}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[1].details
+      value: Inspect the upper shell of this lightweight helmet study.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[1].heading
+      value: Helmet shell
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[1].hotspot
+      value:
+      objectReference: {fileID: 43545016}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[1].surface
+      value:
+      objectReference: {fileID: 342254948}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[2].details
+      value: Inspect the neck seal and surrounding clamp below the shell.
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[2].heading
+      value: Neck seal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[2].hotspot
+      value:
+      objectReference: {fileID: 43545018}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[2].surface
+      value:
+      objectReference: {fileID: 342254949}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[0].localPoint.y
+      value: -0.0012642001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[0].localPoint.z
+      value: 0.001892
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[1].localPoint.x
+      value: -0.0010198775
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[1].localPoint.y
+      value: 0.00008600001
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[1].localPoint.z
+      value: 0.0023173066
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[2].localPoint.x
+      value: 1.2779928e-19
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[2].localPoint.y
+      value: -0.00083330687
+      objectReference: {fileID: 0}
+    - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
+      propertyPath: attachments.Array.data[2].localPoint.z
+      value: 0.00029928202
       objectReference: {fileID: 0}
     - target: {fileID: 8355059867001364887, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
       propertyPath: m_LocalPosition.y

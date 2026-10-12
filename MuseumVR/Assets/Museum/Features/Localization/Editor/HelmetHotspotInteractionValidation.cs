@@ -254,6 +254,7 @@ namespace Museum.Localization.EditorTools
             Quaternion rotation = ray ? Quaternion.LookRotation(point - hand, c.root.transform.up) : Quaternion.identity;
             yield return Select(c, target, hand, rotation, ray, "hotspot " + id);
             c.Check(hotspot.IsVisited, "selected hotspot records visit / " + id + "/" + (ray ? "ray" : "direct"));
+            c.Check(!target.isHovered, "production hover exit after hands park / hotspot " + id + "/" + (ray ? "ray" : "direct"));
         }
 
         static IEnumerator SelectWindow(Context c, bool ray)
@@ -436,10 +437,13 @@ namespace Museum.Localization.EditorTools
             {
                 var hotspot = c.hotspots[i]; var serialized = new SerializedObject(hotspot);
                 var renderer = serialized.FindProperty("targetRenderer").objectReferenceValue as Renderer;
-                Color expected = serialized.FindProperty(visited[i] ? "visitedColor" : "availableColor").colorValue;
+                var target = hotspot.GetComponent<XRSimpleInteractable>();
+                Color expected = serialized.FindProperty(target.isHovered ? "hoverColor" : visited[i] ? "visitedColor" : "availableColor").colorValue;
                 var block = new MaterialPropertyBlock(); renderer.GetPropertyBlock(block); Color actual = block.GetColor("_BaseColor");
                 c.Check(hotspot.IsVisited == visited[i] && ((Vector4)(actual - expected)).sqrMagnitude < .000001f,
-                    phase + "/" + hotspot.name, "actual=" + actual + "; expected=" + expected);
+                    phase + "/" + hotspot.name, "actual=" + actual + "; expected=" + expected + "; hovered=" + target.isHovered + "; selected=" + target.isSelected +
+                    "; hovering=" + string.Join(", ", target.interactorsHovering.Select(interactor => interactor.ToString())) +
+                    "; selecting=" + string.Join(", ", target.interactorsSelecting.Select(interactor => interactor.ToString())));
             }
         }
 
@@ -449,10 +453,13 @@ namespace Museum.Localization.EditorTools
             {
                 var serialized = new SerializedObject(hotspot);
                 var renderer = serialized.FindProperty("targetRenderer").objectReferenceValue as Renderer;
-                Color expected = serialized.FindProperty(visited ? "visitedColor" : "availableColor").colorValue;
+                var target = hotspot.GetComponent<XRSimpleInteractable>();
+                Color expected = serialized.FindProperty(target.isHovered ? "hoverColor" : visited ? "visitedColor" : "availableColor").colorValue;
                 var block = new MaterialPropertyBlock(); renderer.GetPropertyBlock(block); Color actual = block.GetColor("_BaseColor");
                 c.Check(hotspot.IsVisited == visited && ((Vector4)(actual - expected)).sqrMagnitude < .000001f,
-                    phase + "/" + hotspot.name, "actual=" + actual + "; expected=" + expected);
+                    phase + "/" + hotspot.name, "actual=" + actual + "; expected=" + expected + "; hovered=" + target.isHovered + "; selected=" + target.isSelected +
+                    "; hovering=" + string.Join(", ", target.interactorsHovering.Select(interactor => interactor.ToString())) +
+                    "; selecting=" + string.Join(", ", target.interactorsSelecting.Select(interactor => interactor.ToString())));
             }
         }
 

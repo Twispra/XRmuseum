@@ -1174,4 +1174,42 @@ MonoBehaviour:
     traditionalChinese: "\u901A\u8A71\u63A5\u982D"
     note: Saved rear telephone fitting; position is illustrative, not an engineering
       measurement.
+  - key: refined.superlite.instructions
+    chinese: "\u6F5C\u6C34\u5934\u76D4\n<size=62%>\u53C2\u8003 SuperLite 17B \u7684\u6A21\u578B</size>"
+    english: 'Diving helmet
+
+      <size=62%>SuperLite 17B-inspired study</size>'
+    traditionalChinese: "\u6F5B\u6C34\u982D\u76D4\n<size=62%>\u53C3\u8003 SuperLite
+      17B \u7684\u6A21\u578B</size>"
+    note: Visitor title follows the applied SuperLite visual; an inspired study,
+      not a measured reconstruction.
+  - key: refined.superlite.hotspots.front_window
+    chinese: "\u524d\u7a97\n\u89c2\u5bdf\u524d\u7a97\u548c\u8fb9\u6846\u3002\u4fa7\u5f00\u4ec5\u7528\u4e8e\u5c55\u5385\u6f14\u793a\uff0c\u4e0d\u4ee3\u8868\u5b9e\u7269\u7ed3\u6784\u3002"
+    english: "Front window\nWindow and rim. Side opening is a museum demonstration."
+    traditionalChinese: "\u524d\u7a97\n\u89c0\u5bdf\u524d\u7a97\u548c\u908a\u6846\u3002\u5074\u958b\u50c5\u7528\u65bc\u5c55\u5ef3\u6f14\u793a\uff0c\u4e0d\u4ee3\u8868\u5be6\u7269\u7d50\u69cb\u3002"
+    note: The marker follows the moving glass. The side-opening motion is a teaching
+      demonstration.
+  - key: refined.superlite.hotspots.shell
+    chinese: "\u5934\u76D4\u5916\u58F3\n\u89C2\u5BDF\u8FD9\u6B3E\u8F7B\u578B\u5934\u76D4\u6A21\u578B\u7684\u4E0A\u90E8\u5916\u58F3\u3002"
+    english: 'Helmet shell
+
+      Inspect the upper shell of this lightweight helmet
+      study.'
+    traditionalChinese: "\u982D\u76D4\u5916\u6BBC\n\u89C0\u5BDF\u9019\u6B3E\u8F15\u578B\u982D\u76D4\u6A21\u578B\u7684\u4E0A\u90E8\u5916\u6BBC\u3002"
+    note: SuperLite shell hotspot; discovery identity is shared across visual eras.
+  - key: refined.superlite.hotspots.neck
+    chinese: "\u9888\u90E8\u5BC6\u5C01\n\u89C2\u5BDF\u5916\u58F3\u4E0B\u65B9\u7684\u9888\u90E8\u5BC6\u5C01\u548C\u5468\u56F4\u7684\u5939\u73AF\u3002"
+    english: 'Neck seal
+
+      Inspect the neck seal and surrounding clamp below
+      the shell.'
+    traditionalChinese: "\u9838\u90E8\u5BC6\u5C01\n\u89C0\u5BDF\u5916\u6BBC\u4E0B\u65B9\u7684\u9838\u90E8\u5BC6\u5C01\u548C\u5468\u570D\u7684\u593E\u74B0\u3002"
+    note: SuperLite neck seal hotspot, replacing the Mark V breastplate copy for
+      this era.
+  - key: refined.superlite.communication_location
+    chinese: "\u901A\u4FE1\u4F4D\u7F6E\uFF08\u793A\u610F\uFF09"
+    english: Communication location (illustrative)
+    traditionalChinese: "\u901A\u4FE1\u4F4D\u7F6E\uFF08\u793A\u610F\uFF09"
+    note: The model has no confirmed telephone posts. This endpoint is a teaching
+      position; no mechanical fitting is identified as a telephone part.
   fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}

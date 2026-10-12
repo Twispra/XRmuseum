@@ -1,0 +1,96 @@
+{
+  "scope": "Historical failed attempts are preserved locally. This summary records their failure and SHA256; they are not passing validation evidence.",
+  "runs": [
+    {
+      "report": "artifacts/helmet-interaction/qa/runs/20261012T111243538Z-refined-integration-1d73cfcd820d4b44bbf4ebd2827f3b00/report.json",
+      "sha256": "22705f5efebb172ccd767fac32432b5c8a475628d20afb69dd1441c28083571d",
+      "commit": "31b12ab53587b7393c46e288b7b734fe2c27fe3b",
+      "failure": "System.InvalidOperationException: existing direct grip selects refined exhibit: \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation.Check (System.Boolean passed, System.String name, System.String method, System.String detail) [0x00045] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:1081 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation+<GrabAndMove>d__53.MoveNext () [0x00151] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:339 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation.Tick () [0x000ba] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:189 ",
+      "failed_checks": [
+        {
+          "name": "existing direct grip selects refined exhibit",
+          "method": "InputSystem -> XRI",
+          "detail": "",
+          "passed": false
+        }
+      ],
+      "grabDiagnostics": []
+    },
+    {
+      "report": "artifacts/helmet-interaction/qa/runs/20261012T112126490Z-refined-integration-90cc7232765a4b18b593c8d1b86ef5e5/report.json",
+      "sha256": "6cb8a1a069cc2c9a90f700f1b518684fb631300674d8b393684641a63503b8c5",
+      "commit": "83e108abc99ad493f21804f79dd5e1604ac9413e",
+      "failure": "System.InvalidOperationException: Sequence contains no matching element\r\n  at System.Linq.Enumerable.Single[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] predicate) [0x00070] in <ea489521390f48908a7ce45cb17a6848>:0 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation.OrdinaryShellGrabPoint () [0x0000b] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:385 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation+<GrabAndMove>d__53.MoveNext () [0x0017d] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:347 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation.Tick () [0x000ba] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:190 ",
+      "failed_checks": [],
+      "grabDiagnostics": [
+        "Former interior-centre fixture: era=2; requested controller=(0.016390, 1.273162, 3.524940); actual controller=(0.016390, 1.273162, 3.524940); Direct attach=(0.016390, 1.273162, 3.524940); root hovered=False; window hovered=False; window held=False; Direct hovered=[Bonnet shell Hotspot]; selected=[Bonnet shell Hotspot by XRDirectInteractor]; Direct colliders=[]; root colliders=[Bonnet Capsule CapsuleCollider distance=0.015917;Breastplate Base BoxCollider distance=0.063162;Neck Support BoxCollider distance=0.000000;Front Window BoxCollider distance=0.181869]"
+      ]
+    },
+    {
+      "report": "artifacts/helmet-interaction/qa/runs/20261012T112551713Z-refined-integration-e2bc3e94c77349a7b45bbbacfac88f73/report.json",
+      "sha256": "5218f0714716164d051dc0976c0536dfb88e2b1280fe110245a7afa29fa5fb11",
+      "commit": "1fe464b4d27ea10df8e02643d3717236bb69f1ff",
+      "failure": "System.InvalidOperationException: actual observation selection / Direct/front-window: events=0; selector=; controller=(0.016392, 1.295269, 3.378775)\r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation.Check (System.Boolean passed, System.String name, System.String method, System.String detail) [0x00045] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:1168 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation+<SelectObservation>d__76.MoveNext () [0x00388] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:984 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation.Tick () [0x000ba] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:190 ",
+      "failed_checks": [
+        {
+          "name": "actual observation selection / Direct/front-window",
+          "method": "queued Grip input and observed selectEntered listener",
+          "detail": "events=0; selector=; controller=(0.016392, 1.295269, 3.378775)",
+          "passed": false
+        }
+      ],
+      "grabDiagnostics": [
+        "Former interior-centre fixture: era=2; requested controller=(0.016390, 1.273162, 3.524940); actual controller=(0.016390, 1.273162, 3.524940); Direct attach=(0.016390, 1.273162, 3.524940); Direct query center=(0.016390, 1.273162, 3.524940); query radius=0.100000; optimized=True; query mask=1; triggers=Collide; root hovered=False; window hovered=False; window held=False; Direct hovered=[Bonnet shell Hotspot]; selected=[Bonnet shell Hotspot by XRDirectInteractor]; Direct colliders=[Direct Interactor SphereCollider enabled=False; center=(0.016390, 1.273162, 3.524940); bounds=(0.000000, 0.000000, 0.000000)]; root colliders=[Bonnet Capsule CapsuleCollider distance=0.015917;Breastplate Base BoxCollider distance=0.063162;Neck Support BoxCollider distance=0.000000;Front Window BoxCollider distance=0.181869]"
+      ]
+    },
+    {
+      "report": "artifacts/helmet-interaction/qa/runs/20261012T113405465Z-refined-integration-78a6c436d7514c6da230faf36268f7ef/report.json",
+      "sha256": "c69b0d53b0b34c0a81efd220a6a4780dbe0b084701611d098176eb91e2bd737a",
+      "commit": "b6b0e3c3a3394a5a943f3cb87abcd19c5f816fe5",
+      "failure": "System.InvalidOperationException: translated visitor label has visible complete layout / English/front-window: fontSize=0.28; rect=(0.51, 0.12); overflow=True\r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation.Check (System.Boolean passed, System.String name, System.String method, System.String detail) [0x00045] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:1200 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation.CheckVisitorText (TMPro.TMP_Text label, System.String expectedSource, Museum.Localization.LocalizationTable table, Museum.Localization.MuseumLanguage language, System.String subject) [0x00202] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:952 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation+<CheckSuperLiteVisitorContent>d__73.MoveNext () [0x005cf] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:889 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation.Tick () [0x000ba] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:190 ",
+      "failed_checks": [
+        {
+          "name": "translated visitor label has visible complete layout / English/front-window",
+          "method": "actual TMP generated layout",
+          "detail": "fontSize=0.28; rect=(0.51, 0.12); overflow=True",
+          "passed": false
+        }
+      ],
+      "grabDiagnostics": [
+        "Former interior-centre fixture: era=2; requested controller=(0.016390, 1.273162, 3.524940); actual controller=(0.016390, 1.273162, 3.524940); Direct attach=(0.016390, 1.273162, 3.524940); Direct query center=(0.016390, 1.273162, 3.524940); query radius=0.100000; optimized=True; query mask=1; triggers=Collide; root hovered=False; window hovered=False; window held=False; Direct hovered=[Bonnet shell Hotspot]; Direct valid targets=[Bonnet shell Hotspot,HelmetExhibit]; selected=[Bonnet shell Hotspot by XRDirectInteractor]; Direct colliders=[Direct Interactor SphereCollider enabled=False; center=(0.016390, 1.273162, 3.524940); bounds=(0.000000, 0.000000, 0.000000)]; root colliders=[Bonnet Capsule CapsuleCollider distance=0.015917;Breastplate Base BoxCollider distance=0.063162;Neck Support BoxCollider distance=0.000000;Front Window BoxCollider distance=0.181869]"
+      ]
+    },
+    {
+      "report": "artifacts/helmet-interaction/qa/runs/20261012T114141086Z-refined-integration-101159a512bf4c4289b857a0ddd12b56/report.json",
+      "sha256": "6e0fa7b55e3dd9ae8df51ce266eb0573f72ecb1c563e80c64368cdcfe4372879",
+      "commit": "6314c6ea0b6f867aa255cce0d38c530f4ce1a252",
+      "failure": "System.InvalidOperationException: actual observation hover / Ray/breastplate: era=2; requested controller=(0.016412, 1.135997, 2.771865); actual controller=(0.016412, 1.135997, 2.771865); Direct attach=(0.016412, 1.135997, 2.771865); Direct query center=(0.016412, 1.135997, 2.771865); query radius=0.100000; optimized=True; query mask=1; triggers=Collide; root hovered=False; window hovered=False; window held=False; Direct hovered=[]; Direct valid targets=[]; selected=[]; Direct colliders=[Direct Interactor SphereCollider enabled=False; center=(0.016412, 1.135997, 2.771865); bounds=(0.000000, 0.000000, 0.000000)]; root colliders=[Bonnet Capsule CapsuleCollider distance=0.643098;Breastplate Base BoxCollider distance=0.527016;Neck Support BoxCollider distance=0.621440;Front Window BoxCollider distance=0.610461]\r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation.Check (System.Boolean passed, System.String name, System.String method, System.String detail) [0x00045] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:1206 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation+<SelectObservation>d__76.MoveNext () [0x00344] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:998 \r\n  at Museum.RefinedModels.EditorTools.RefinedModelValidation.Tick () [0x000ba] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\RefinedModels\\Editor\\RefinedModelValidation.cs:190 ",
+      "failed_checks": [
+        {
+          "name": "actual observation hover / Ray/breastplate",
+          "method": "InputSystem -> saved actions -> XRI colliders",
+          "detail": "era=2; requested controller=(0.016412, 1.135997, 2.771865); actual controller=(0.016412, 1.135997, 2.771865); Direct attach=(0.016412, 1.135997, 2.771865); Direct query center=(0.016412, 1.135997, 2.771865); query radius=0.100000; optimized=True; query mask=1; triggers=Collide; root hovered=False; window hovered=False; window held=False; Direct hovered=[]; Direct valid targets=[]; selected=[]; Direct colliders=[Direct Interactor SphereCollider enabled=False; center=(0.016412, 1.135997, 2.771865); bounds=(0.000000, 0.000000, 0.000000)]; root colliders=[Bonnet Capsule CapsuleCollider distance=0.643098;Breastplate Base BoxCollider distance=0.527016;Neck Support BoxCollider distance=0.621440;Front Window BoxCollider distance=0.610461]",
+          "passed": false
+        }
+      ],
+      "grabDiagnostics": [
+        "Former interior-centre fixture: era=2; requested controller=(0.016390, 1.273162, 3.524940); actual controller=(0.016390, 1.273162, 3.524940); Direct attach=(0.016390, 1.273162, 3.524940); Direct query center=(0.016390, 1.273162, 3.524940); query radius=0.100000; optimized=True; query mask=1; triggers=Collide; root hovered=False; window hovered=False; window held=False; Direct hovered=[Bonnet shell Hotspot]; Direct valid targets=[Bonnet shell Hotspot,HelmetExhibit]; selected=[Bonnet shell Hotspot by XRDirectInteractor]; Direct colliders=[Direct Interactor SphereCollider enabled=False; center=(0.016390, 1.273162, 3.524940); bounds=(0.000000, 0.000000, 0.000000)]; root colliders=[Bonnet Capsule CapsuleCollider distance=0.015917;Breastplate Base BoxCollider distance=0.063162;Neck Support BoxCollider distance=0.000000;Front Window BoxCollider distance=0.181869]"
+      ]
+    },
+    {
+      "report": "artifacts/localization/qa/runs/20261012T113037183Z-integration-74d174cfd7624038903e7d94f011e24d/report.json",
+      "sha256": "fcae39ea8703fb208298ed8f6aee9c90c758308e7ddd1e8474b2393d63f0ace0",
+      "commit": "1fe464b4d27ea10df8e02643d3717236bb69f1ff",
+      "failure": "System.InvalidOperationException: smooth-return-progress-1/midway/Bonnet shell Hotspot: actual=RGBA(1.000, 0.680, 0.150, 1.000); expected=RGBA(0.250, 0.950, 0.500, 0.850)\r\n  at Museum.Localization.EditorTools.LocalizationIntegrationValidation.Require (System.Boolean condition, System.String kind, System.String name, System.String detail) [0x00045] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\LocalizationIntegrationValidation.cs:407 \r\n  at Museum.Localization.EditorTools.HelmetHotspotInteractionValidation+Context.Check (System.Boolean passed, System.String name, System.String detail) [0x00064] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\HelmetHotspotInteractionValidation.cs:71 \r\n  at Museum.Localization.EditorTools.HelmetHotspotInteractionValidation.CheckMarkerColors (Museum.Localization.EditorTools.HelmetHotspotInteractionValidation+Context c, System.Boolean[] visited, System.String phase) [0x00065] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\HelmetHotspotInteractionValidation.cs:441 \r\n  at Museum.Localization.EditorTools.HelmetHotspotInteractionValidation.CheckRetainedProgress (Museum.Localization.EditorTools.HelmetHotspotInteractionValidation+Context c, System.Boolean[] visited, System.String information, System.String phase) [0x001e5] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\HelmetHotspotInteractionValidation.cs:415 \r\n  at Museum.Localization.EditorTools.HelmetHotspotInteractionValidation+<ReturnWithProgress>d__19.MoveNext () [0x00794] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\HelmetHotspotInteractionValidation.cs:358 \r\n  at Museum.Localization.EditorTools.LocalizationIntegrationValidation.Tick () [0x0009d] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr44-review-2026-10-12\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\LocalizationIntegrationValidation.cs:203 ",
+      "failed_checks": [
+        {
+          "kind": "helmet hotspots",
+          "name": "smooth-return-progress-1/midway/Bonnet shell Hotspot",
+          "detail": "actual=RGBA(1.000, 0.680, 0.150, 1.000); expected=RGBA(0.250, 0.950, 0.500, 0.850)",
+          "passed": false
+        }
+      ],
+      "grabDiagnostics": []
+    }
+  ]
+}

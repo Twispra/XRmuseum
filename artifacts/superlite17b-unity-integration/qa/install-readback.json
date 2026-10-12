@@ -1,0 +1,49 @@
+{
+    "unity": "2022.3.62f3c1",
+    "prefab": "Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+    "sourceExportSha256": "febfddaf522c50b0044237998c7a661b1bbb1d1220fb07588cfc3e23f5718fda",
+    "modelGuid": "a2433ca4215aebd48ab4e446902402bf",
+    "prefabGuid": "7eef595f081bc0a4fabb2153e06a553d",
+    "renderers": 143,
+    "triangles": 50268,
+    "movingWindowRenderers": 14,
+    "sectionDataMeshCount": 142,
+    "displayBoundsCenter": {
+        "x": 0.0,
+        "y": 0.09992364794015885,
+        "z": 0.0
+    },
+    "displayBoundsSize": {
+        "x": 0.2816658020019531,
+        "y": 0.3138471841812134,
+        "z": 0.325009286403656
+    },
+    "hinge": {
+        "x": 0.11442971974611283,
+        "y": 0.14163312315940858,
+        "z": -0.11493463069200516
+    },
+    "windowTriggerCenter": {
+        "x": -0.09804002195596695,
+        "y": 7.450580596923828e-8,
+        "z": -0.005000048782676458
+    },
+    "windowTriggerSize": {
+        "x": 0.20808015763759614,
+        "y": 0.12655207514762879,
+        "z": 0.014580034650862217
+    },
+    "sourceUpInUnity": {
+        "x": 0.0,
+        "y": 1.0000001192092896,
+        "z": -1.1920928955078126e-7
+    },
+    "sourceFrontInUnity": {
+        "x": 0.0,
+        "y": 1.1920928955078126e-7,
+        "z": -1.0000001192092896
+    },
+    "priorModelBottom": 0.012974560260772705,
+    "installedModelBottom": -0.056999944150447848,
+    "limitations": "Display dimensions, telephone endpoint and virtual panel articulation are assumptions. Existing scene and interaction identities retained; real headset/build/performance not tested by installation."
+}

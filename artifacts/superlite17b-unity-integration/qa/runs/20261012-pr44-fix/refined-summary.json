@@ -1,0 +1,175 @@
+{
+  "status": "passed",
+  "commit": "df135bb181f1a144cf5718c6e763238fd7e835b8",
+  "report": "artifacts/helmet-interaction/qa/runs/20261012T115156460Z-refined-integration-e6a9890e3ed1406199dcc69fda707823/report.json",
+  "report_sha256": "329019c771b1e3b277d8fe0587d958ebd55ba73179bc4d6bc2503ea7780c4c61",
+  "checks_total": 422,
+  "failed_checks": [],
+  "errors": [],
+  "screenshots_total": 23,
+  "color_probe_count": 8,
+  "maximum_gpu_color_error": 1.7881393432617188e-07,
+  "actual_hotspot_selections": [
+    {
+      "hotspot": "breastplate",
+      "mode": "Direct",
+      "selector": "XRDirectInteractor",
+      "events": 1,
+      "controllerWorld": {
+        "x": 4.470348358154297e-08,
+        "y": 1.2350000143051147,
+        "z": 3.319999933242798
+      },
+      "rootSelected": false
+    },
+    {
+      "hotspot": "bonnet",
+      "mode": "Direct",
+      "selector": "XRDirectInteractor",
+      "events": 1,
+      "controllerWorld": {
+        "x": 0.1183779239654541,
+        "y": 1.3377996683120728,
+        "z": 3.5137956142425537
+      },
+      "rootSelected": false
+    },
+    {
+      "hotspot": "breastplate",
+      "mode": "Direct",
+      "selector": "XRDirectInteractor",
+      "events": 1,
+      "controllerWorld": {
+        "x": 0.0163910910487175,
+        "y": 1.1359972953796387,
+        "z": 3.4218647480010986
+      },
+      "rootSelected": false
+    },
+    {
+      "hotspot": "front-window",
+      "mode": "Direct",
+      "selector": "XRDirectInteractor",
+      "events": 1,
+      "controllerWorld": {
+        "x": 0.0163919385522604,
+        "y": 1.2952690124511719,
+        "z": 3.354400396347046
+      },
+      "rootSelected": false
+    },
+    {
+      "hotspot": "bonnet",
+      "mode": "Direct",
+      "selector": "XRDirectInteractor",
+      "events": 1,
+      "controllerWorld": {
+        "x": 0.11837884783744812,
+        "y": 1.3377996683120728,
+        "z": 3.513796329498291
+      },
+      "rootSelected": false
+    },
+    {
+      "hotspot": "breastplate",
+      "mode": "Direct",
+      "selector": "XRDirectInteractor",
+      "events": 1,
+      "controllerWorld": {
+        "x": 0.01639275625348091,
+        "y": 1.1359972953796387,
+        "z": 3.4218649864196777
+      },
+      "rootSelected": false
+    },
+    {
+      "hotspot": "front-window",
+      "mode": "Direct",
+      "selector": "XRDirectInteractor",
+      "events": 1,
+      "controllerWorld": {
+        "x": 0.016394393518567085,
+        "y": 1.2952691316604614,
+        "z": 3.354400634765625
+      },
+      "rootSelected": false
+    },
+    {
+      "hotspot": "bonnet",
+      "mode": "Direct",
+      "selector": "XRDirectInteractor",
+      "events": 1,
+      "controllerWorld": {
+        "x": 0.11838039755821228,
+        "y": 1.3377996683120728,
+        "z": 3.5137970447540283
+      },
+      "rootSelected": false
+    },
+    {
+      "hotspot": "breastplate",
+      "mode": "Direct",
+      "selector": "XRDirectInteractor",
+      "events": 1,
+      "controllerWorld": {
+        "x": 0.01639425754547119,
+        "y": 1.1359972953796387,
+        "z": 3.4218649864196777
+      },
+      "rootSelected": false
+    },
+    {
+      "hotspot": "front-window",
+      "mode": "Direct",
+      "selector": "XRDirectInteractor",
+      "events": 1,
+      "controllerWorld": {
+        "x": 0.01639651507139206,
+        "y": 1.2952691316604614,
+        "z": 3.354400634765625
+      },
+      "rootSelected": false
+    },
+    {
+      "hotspot": "bonnet",
+      "mode": "Ray",
+      "selector": "XRRayInteractor",
+      "events": 1,
+      "controllerWorld": {
+        "x": 0.7683817148208618,
+        "y": 1.3377995491027832,
+        "z": 3.513812303543091
+      },
+      "rootSelected": false
+    },
+    {
+      "hotspot": "breastplate",
+      "mode": "Ray",
+      "selector": "XRRayInteractor",
+      "events": 1,
+      "controllerWorld": {
+        "x": 0.6663963198661804,
+        "y": 1.1359972953796387,
+        "z": 3.4218804836273193
+      },
+      "rootSelected": false
+    },
+    {
+      "hotspot": "front-window",
+      "mode": "Ray",
+      "selector": "XRRayInteractor",
+      "events": 1,
+      "controllerWorld": {
+        "x": 0.016414334997534752,
+        "y": 1.2952691316604614,
+        "z": 2.728775978088379
+      },
+      "rootSelected": false
+    }
+  ],
+  "final_fingerprint_check": {
+    "checked": 306,
+    "mismatches": [],
+    "packageCacheMappings": []
+  }
+}
