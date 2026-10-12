@@ -382,8 +382,7 @@ namespace Museum.RefinedModels.EditorTools
             // touch. Use a real rear/upper shell vertex, away from intentional
             // child controls, and put the saved Direct hand sphere on that vertex.
             var direct = rightController.GetComponentInChildren<XRDirectInteractor>(true);
-            var hand = direct.GetComponentsInChildren<SphereCollider>(true).Single(c => c.enabled && c.isTrigger);
-            float radius = Mathf.Max(hand.bounds.extents.x, hand.bounds.extents.y, hand.bounds.extents.z);
+            DirectQuerySphere(direct, out var queryCenter, out float radius);
             var body = grab.colliders.Where(c => c && c.enabled && c.gameObject.activeInHierarchy && !c.isTrigger).ToArray();
             var children = inspection.GetComponentsInChildren<XRSimpleInteractable>(true).Where(t => t && t.enabled && t != grab)
                 .SelectMany(t => t.colliders).Where(c => c && c.enabled && c.gameObject.activeInHierarchy).Distinct().ToArray();
@@ -403,23 +402,47 @@ namespace Museum.RefinedModels.EditorTools
             Check(!float.IsNegativeInfinity(best), "ordinary SuperLite grip has a real rear-shell contact clear of child targets",
                 "actual mesh vertices, root ClosestPoint and child-collider clearance",
                 "touch=" + chosen.ToString("F6") + "; root distance=" + rootDistance + "; child clearance=" + best + "; Direct radius=" + radius);
-            Vector3 handOffset = Quaternion.Inverse(rightController.transform.rotation) * (hand.bounds.center - rightController.transform.position);
+            Vector3 handOffset = Quaternion.Inverse(rightController.transform.rotation) * (queryCenter - rightController.transform.position);
             return chosen - handOffset; // QueueRight uses world identity rotation for this ordinary grab.
+        }
+
+        static void DirectQuerySphere(XRDirectInteractor direct, out Vector3 center, out float radius)
+        {
+            if (direct.usingSphereColliderAccuracyImprovement)
+            {
+                // XRI 2.6.4 XRDirectInteractor.EvaluateSphereOverlap (lines 223-228):
+                // Awake disables this SphereCollider, but still uses its stored
+                // center/radius for OverlapSphere and inter-frame SphereCast.
+                var sphere = direct.GetComponent<SphereCollider>();
+                if (!sphere) throw new InvalidOperationException("Optimized saved Direct interactor has no sphere configuration.");
+                center = direct.GetAttachTransform(null).TransformPoint(sphere.center);
+                radius = sphere.radius * sphere.transform.lossyScale.x;
+            }
+            else
+            {
+                var sphere = direct.GetComponentsInChildren<SphereCollider>(true).Single(c => c.enabled && c.isTrigger);
+                center = sphere.transform.TransformPoint(sphere.center);
+                var scale = sphere.transform.lossyScale;
+                radius = sphere.radius * Mathf.Max(Mathf.Abs(scale.x), Mathf.Abs(scale.y), Mathf.Abs(scale.z));
+            }
         }
 
         static string GrabDiagnostic(Vector3 controllerPoint)
         {
             var direct = rightController.GetComponentInChildren<XRDirectInteractor>(true);
+            DirectQuerySphere(direct, out var queryCenter, out float queryRadius);
             var selected = UnityEngine.Object.FindObjectsOfType<XRBaseInteractable>(true).Where(t => t.isSelected)
                 .Select(t => t.name + " by " + string.Join(",", t.interactorsSelecting.Select(i => i.GetType().Name)));
-            var hands = direct.GetComponentsInChildren<Collider>(true).Where(c => c.enabled)
-                .Select(c => c.name + " " + c.GetType().Name + " center=" + c.bounds.center.ToString("F6") + "; bounds=" + c.bounds.size.ToString("F6"));
+            var hands = direct.GetComponentsInChildren<Collider>(true)
+                .Select(c => c.name + " " + c.GetType().Name + " enabled=" + c.enabled + "; center=" + c.bounds.center.ToString("F6") + "; bounds=" + c.bounds.size.ToString("F6"));
             var body = grab.colliders.Where(c => c && c.enabled)
                 .Select(c => c.name + " " + c.GetType().Name + " distance=" + Vector3.Distance(c.ClosestPoint(controllerPoint), controllerPoint).ToString("F6"));
             var window = inspection.GetComponentInChildren<HelmetWindowInteractable>(true);
             return "era=" + era.CurrentIndex + "; requested controller=" + controllerPoint.ToString("F6") +
                 "; actual controller=" + rightController.transform.position.ToString("F6") +
                 "; Direct attach=" + direct.GetAttachTransform(grab).position.ToString("F6") +
+                "; Direct query center=" + queryCenter.ToString("F6") + "; query radius=" + queryRadius.ToString("F6") +
+                "; optimized=" + direct.usingSphereColliderAccuracyImprovement + "; query mask=" + direct.physicsLayerMask.value + "; triggers=" + direct.physicsTriggerInteraction +
                 "; root hovered=" + grab.isHovered + "; window hovered=" + window.isHovered + "; window held=" + inspection.IsWindowHeld +
                 "; Direct hovered=[" + string.Join(",", direct.interactablesHovered.Select(t => t.transform.name)) +
                 "]; selected=[" + string.Join(";", selected) + "]; Direct colliders=[" + string.Join(";", hands) +
