@@ -1,0 +1,12 @@
+{
+  "entryPoint": "Museum.Localization.EditorTools.LocalizationValidation.RunBatch",
+  "testedCommit": "6314c6ea0b6f867aa255cce0d38c530f4ce1a252",
+  "unity": "2022.3.62f3c1",
+  "exitCode": 0,
+  "report": "artifacts/localization/qa/runs/20261012T114444001Z-validation/report.json",
+  "passed": 11,
+  "failed": 0,
+  "tableEntries": 210,
+  "uncommittedProductFiles": [],
+  "extraChanges": "Documentation and untracked QA evidence only. Subsequent df135bb changes only the refined validation fixture, not the tested localization assets or runtime."
+}

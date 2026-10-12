@@ -1,0 +1,49 @@
+{
+  "baseline": "86715c941875c851e5f7768acc6bc08cf62dd68d",
+  "reviewMethod": "Independent read-only code and serialized-asset inspection after scoped Unity save and final front-copy revision.",
+  "reviewedProductCommit": "6314c6ea0b6f867aa255cce0d38c530f4ce1a252",
+  "prefab": {
+    "mainBaselineIds": 719,
+    "originalPrHeadIds": 910,
+    "currentIds": 911,
+    "allOriginalIdsPreserved": true,
+    "newVisitorComponentId": "6887944843734790652",
+    "oldChangedBlocks": [
+      "root GameObject component list",
+      "RefinedHelmetBinding.additionalVisual.telephone"
+    ],
+    "physicsBlocksBytePreserved": 7,
+    "sha256": "7d6fda67b4557f99d922b219cf9ebdef91e7f049112b50d046c8fc45f1939f5d"
+  },
+  "scene": {
+    "beforeIds": 753,
+    "currentIds": 760,
+    "allOriginalIdsPreserved": true,
+    "newStrippedRefs": 7,
+    "componentOverrides": 23,
+    "onlyChangedOriginalBlock": "Helmet PrefabInstance 1120544053",
+    "onlyModifiedProperties": "Visitor content tour, instructions and three surface/hotspot attachments",
+    "sha256": "3bee0dcd09f84c1d6da90011e4566c6e3e936c1b85ab870ada9c0fb1e1df59d1"
+  },
+  "references": {
+    "localPrefabAndSceneFileIdsResolve": true,
+    "originalMetaFilesUnchanged": true,
+    "markVBindingsAndCollidersUnchanged": true,
+    "sectionDataAndFbxUnchanged": true
+  },
+  "materials": {
+    "opaqueMaterials": 8,
+    "onlyBaseColorRgbChanged": true,
+    "maxDecodedSourceError": 5.6717081e-8,
+    "glassAndOtherPropertiesUnchanged": true
+  },
+  "font": {
+    "entries": 210,
+    "charList": 547,
+    "savedGlyphs": 558,
+    "sourceCodepoints": 7666,
+    "allOriginalCodepointsPreserved": true,
+    "addedSourceCharacters": "側僅夾環輕頸",
+    "originalGuidsAndSubassetIdsPreserved": true
+  }
+}

@@ -140,3 +140,9 @@ Ereshkigal1224 负责，Codex 辅助核查 [Kirby Morgan 产品页](https://www.
 按维护者明确授权，Codex 将 Ereshkigal1224 在 [PR #37](https://github.com/Twispra/XRmuseum/pull/37) 交付、已合入资产分支的独立资料、原创源模型、GLB 和预览整合到最新 main。原作者提交与历史记录保留；仅处理来源记录冲突、范围核对、LFS 实体校验和实际导出几何复验，没有生成或修改模型，没有接入 Unity。见[整合记录](activity/2026-10-10-superlite17b-main-integration.md)。
 
 独立几何复验使用本地 Node.js、Three.js 0.170.0 与 three-mesh-bvh 0.8.3（后两者为 MIT），仅作临时验证，不提交工具本体、不新增 Unity 或产品运行时依赖。本轮未重新运行 Blender、Unity、真实头显或用户研究；AI 技术审查不等于另一位成员的人工批准，也不将局部分件写成整盔装配完成。
+
+## 2026-10-12：SuperLite 展示台合并前修复
+
+按用户授权，Codex 修复 [PR #44](https://github.com/Twispra/XRmuseum/pull/44) 的年代热点/展签、VOICE 部件高亮及材质颜色转换，并补充输入、三语和 GPU 回读验证。没有生成或替换保存的 SuperLite 模型；几何与来源沿用 #43 和原接入记录。
+
+五条新三语文案需要补字，继续从本机同一 Noto Sans SC 变量字体（SIL OFL 1.1）以 fontTools 4.60.1 的 Regular 400 实例扩展既有子集，保留全部 7660 原码位，加入「側、僅、夾、環、輕、頸」至 7666。保存静态 SDF 原位补烤为 558 字形，保留原 GUID、字体/材质/图集子资源引用；许可仍见 [OFL](licenses/noto-sans-sc-OFL.txt)。工具只用于本次本地维护，没有新增 Unity 包或产品运行时依赖。来源哈希及保存字节证据见[本轮字体报告](../artifacts/superlite17b-unity-integration/qa/runs/20261012-pr44-fix/font-completion.json)；实际回归、AI 辅助范围与未验证边界见[修复活动](activity/2026-10-12-pr44-fix-and-rereview.md)。
