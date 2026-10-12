@@ -167,6 +167,51 @@ namespace Museum.Hotspots.Tests
         }
 
         [Test]
+        public void HotspotStatesUseNonColorVisualCues()
+        {
+            var hotspotObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            hotspotObject.name = "Window Hotspot";
+            hotspotObject.transform.SetParent(root.transform);
+            hotspotObject.GetComponent<SphereCollider>().isTrigger = true;
+            var interactable = hotspotObject.AddComponent<XRSimpleInteractable>();
+            var hotspot = hotspotObject.AddComponent<HelmetHotspot>();
+            hotspot.Configure(tour, "window", "Front window", "Look through the glass.", hotspotObject.GetComponent<Renderer>());
+            typeof(HelmetHotspot).GetMethod("OnEnable", System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).Invoke(hotspot, null);
+
+            var hoverOutline = hotspotObject.transform.Find("State Cues/Hover Outline");
+            var visitedCheck = hotspotObject.transform.Find("State Cues/Visited Check");
+
+            Assert.That(hoverOutline, Is.Not.Null);
+            Assert.That(visitedCheck, Is.Not.Null);
+            Assert.That(hoverOutline.GetComponent<LineRenderer>().loop, Is.True);
+            Assert.That(hoverOutline.GetComponent<LineRenderer>().positionCount, Is.EqualTo(32));
+            Assert.That(visitedCheck.GetComponent<LineRenderer>().loop, Is.False);
+            Assert.That(visitedCheck.GetComponent<LineRenderer>().positionCount, Is.EqualTo(3));
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.False);
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.False);
+
+            interactable.hoverEntered.Invoke(null);
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.True);
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.False);
+
+            interactable.hoverExited.Invoke(null);
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.False);
+
+            hotspot.Activate();
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.True);
+
+            hotspot.SetMarkerVisible(false);
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.False);
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.False);
+
+            hotspot.SetMarkerVisible(true);
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.True);
+
+            tour.ResetTour();
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.False);
+        }
+
+        [Test]
         public void StandalonePrefabContainsThreeSelectableHotspots()
         {
             const string path = "Assets/Museum/Features/HelmetHotspots/Prefabs/HelmetHotspotTour.prefab";
