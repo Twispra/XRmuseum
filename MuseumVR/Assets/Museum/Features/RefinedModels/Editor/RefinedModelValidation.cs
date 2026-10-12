@@ -431,6 +431,7 @@ namespace Museum.RefinedModels.EditorTools
         {
             var direct = rightController.GetComponentInChildren<XRDirectInteractor>(true);
             DirectQuerySphere(direct, out var queryCenter, out float queryRadius);
+            var valid = new List<IXRInteractable>(); direct.GetValidTargets(valid);
             var selected = UnityEngine.Object.FindObjectsOfType<XRBaseInteractable>(true).Where(t => t.isSelected)
                 .Select(t => t.name + " by " + string.Join(",", t.interactorsSelecting.Select(i => i.GetType().Name)));
             var hands = direct.GetComponentsInChildren<Collider>(true)
@@ -445,6 +446,7 @@ namespace Museum.RefinedModels.EditorTools
                 "; optimized=" + direct.usingSphereColliderAccuracyImprovement + "; query mask=" + direct.physicsLayerMask.value + "; triggers=" + direct.physicsTriggerInteraction +
                 "; root hovered=" + grab.isHovered + "; window hovered=" + window.isHovered + "; window held=" + inspection.IsWindowHeld +
                 "; Direct hovered=[" + string.Join(",", direct.interactablesHovered.Select(t => t.transform.name)) +
+                "]; Direct valid targets=[" + string.Join(",", valid.Select(t => t.transform.name)) +
                 "]; selected=[" + string.Join(";", selected) + "]; Direct colliders=[" + string.Join(";", hands) +
                 "]; root colliders=[" + string.Join(";", body) + "]";
         }
@@ -961,14 +963,44 @@ namespace Museum.RefinedModels.EditorTools
             Vector3 outward = inspection.transform.TransformDirection(id == "bonnet" ? Vector3.right : Vector3.back);
             Vector3 hand = ray ? point + outward * .65f : point;
             Quaternion rotation = ray ? Quaternion.LookRotation(point - hand, inspection.transform.up) : Quaternion.identity;
+            var direct = rightController.GetComponentInChildren<XRDirectInteractor>(true);
+            var window = inspection.GetComponentInChildren<HelmetWindowInteractable>(true);
+            if (!ray)
+            {
+                // The glass-centred marker and the window trigger overlap. Touch
+                // the marker's visible front portion, still inside its sphere,
+                // instead of putting the hand in both collider volumes at once.
+                if (id == "front-window")
+                {
+                    var collider = target.colliders.Single();
+                    var front = collider.ClosestPoint(point + outward * (collider.bounds.size.magnitude + .01f));
+                    hand = Vector3.Lerp(point, front, .75f);
+                }
+                DirectQuerySphere(direct, out var queryCenter, out _);
+                var offset = Quaternion.Inverse(rightController.transform.rotation) * (queryCenter - rightController.transform.position);
+                hand -= rotation * offset;
+            }
             int events = 0; IXRSelectInteractor selector = null;
             UnityAction<SelectEnterEventArgs> listener = args => { events++; selector = args.interactorObject; };
             target.selectEntered.AddListener(listener);
             try
             {
                 ParkHands(); yield return Wait(.15f);
+                Check(!direct.hasSelection && !grab.isSelected && !window.isSelected && !direct.isSelectActive,
+                    "observation starts after actual Grip release / " + mode + "/" + id, "saved XRI state before new queued Grip", GrabDiagnostic(hand));
                 QueueRight(hand, rotation, false); yield return Wait(.22f);
-                Check(target.isHovered, "actual observation hover / " + mode + "/" + id, "InputSystem -> saved actions -> XRI colliders");
+                Check(ray ? target.isHovered : target.IsHovered(direct), "actual observation hover / " + mode + "/" + id,
+                    "InputSystem -> saved actions -> XRI colliders", GrabDiagnostic(hand));
+                if (!ray)
+                {
+                    DirectQuerySphere(direct, out var queryCenter, out _);
+                    float markerDistance = target.colliders.Min(c => Vector3.Distance(c.ClosestPoint(queryCenter), queryCenter));
+                    float windowDistance = window.colliders.Min(c => Vector3.Distance(c.ClosestPoint(queryCenter), queryCenter));
+                    Check(markerDistance < .0001f && (id != "front-window" || windowDistance > .001f),
+                        "Direct hand genuinely touches observation marker without front-window distance tie / " + id,
+                        "actual query centre and production Collider.ClosestPoint",
+                        "marker distance=" + markerDistance + "; window distance=" + windowDistance + "; query centre=" + queryCenter.ToString("F6"));
+                }
                 if (ray)
                 {
                     var rays = rightController.GetComponentsInChildren<XRRayInteractor>(true);
@@ -983,7 +1015,7 @@ namespace Museum.RefinedModels.EditorTools
                     selector = selector == null ? "none" : selector.GetType().Name, events = events, controllerWorld = hand, rootSelected = grab.isSelected });
                 Check(events == 1 && target.isSelected && hotspot.IsVisited && (ray ? selector is XRRayInteractor : selector is XRDirectInteractor),
                     "actual observation selection / " + mode + "/" + id, "queued Grip input and observed selectEntered listener",
-                    "events=" + events + "; selector=" + selector + "; controller=" + hand.ToString("F6"));
+                    "events=" + events + "; selector=" + selector + "; selectable=" + target.IsSelectableBy(direct) + "; " + GrabDiagnostic(hand));
                 Check(!grab.isSelected && !inspection.IsWindowHeld,
                     "observation selection leaves helmet and window unheld / " + mode + "/" + id, "actual XRI interaction state");
                 QueueRight(hand, rotation, false); yield return Wait(.15f);
