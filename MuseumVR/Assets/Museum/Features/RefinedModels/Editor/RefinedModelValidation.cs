@@ -451,6 +451,27 @@ namespace Museum.RefinedModels.EditorTools
                 "]; root colliders=[" + string.Join(";", body) + "]";
         }
 
+        static string RayDiagnostic()
+        {
+            var samples = new List<string>();
+            foreach (var ray in rightController.GetComponentsInChildren<XRRayInteractor>(true))
+            {
+                ray.GetLineOriginAndDirection(out var origin, out var direction);
+                var valid = new List<IXRInteractable>(); ray.GetValidTargets(valid);
+                string physical = ray.TryGetCurrent3DRaycastHit(out var hit)
+                    ? hit.collider.name + " distance=" + hit.distance.ToString("F6") + "; point=" + hit.point.ToString("F6") : "none";
+                string ui = ray.TryGetCurrentUIRaycastResult(out var result)
+                    ? result.gameObject.name + " distance=" + result.distance.ToString("F6") : "none";
+                samples.Add(ray.name + " enabled=" + ray.isActiveAndEnabled + "; origin=" + origin.ToString("F6") +
+                    "; forward=" + direction.ToString("F6") + "; line=" + ray.lineType + "; detection=" + ray.hitDetectionType +
+                    "; mask=" + ray.raycastMask.value + "; triggers=" + ray.raycastTriggerInteraction +
+                    "; first 3D hit=" + physical + "; UI hit=" + ui +
+                    "; hovered=[" + string.Join(",", ray.interactablesHovered.Select(t => t.transform.name)) +
+                    "]; valid targets=[" + string.Join(",", valid.Select(t => t.transform.name)) + "]");
+            }
+            return "; right Rays=[" + string.Join("; ", samples) + "]";
+        }
+
         static IEnumerator CheckSections()
         {
             inspection.ToggleFloating();
@@ -966,7 +987,10 @@ namespace Museum.RefinedModels.EditorTools
             var target = hotspot.GetComponent<XRSimpleInteractable>();
             string id = HotspotSource(hotspot, "identifier"), mode = ray ? "Ray" : "Direct";
             Vector3 point = target.colliders.Single().bounds.center;
-            Vector3 outward = inspection.transform.TransformDirection(id == "bonnet" ? Vector3.right : Vector3.back);
+            // Approach the low neck point from the same display side as the
+            // shell. Keep the UI enabled; actual first-hit assertions and the
+            // ray trace establish whether this physical approach is clear.
+            Vector3 outward = inspection.transform.TransformDirection(id == "bonnet" || ray && id == "breastplate" ? Vector3.right : Vector3.back);
             Vector3 hand = ray ? point + outward * .65f : point;
             Quaternion rotation = ray ? Quaternion.LookRotation(point - hand, inspection.transform.up) : Quaternion.identity;
             var direct = rightController.GetComponentInChildren<XRDirectInteractor>(true);
@@ -993,10 +1017,10 @@ namespace Museum.RefinedModels.EditorTools
             {
                 ParkHands(); yield return Wait(.15f);
                 Check(!direct.hasSelection && !grab.isSelected && !window.isSelected && !direct.isSelectActive,
-                    "observation starts after actual Grip release / " + mode + "/" + id, "saved XRI state before new queued Grip", GrabDiagnostic(hand));
+                    "observation starts after actual Grip release / " + mode + "/" + id, "saved XRI state before new queued Grip", GrabDiagnostic(hand) + (ray ? RayDiagnostic() : ""));
                 QueueRight(hand, rotation, false); yield return Wait(.22f);
                 Check(ray ? target.isHovered : target.IsHovered(direct), "actual observation hover / " + mode + "/" + id,
-                    "InputSystem -> saved actions -> XRI colliders", GrabDiagnostic(hand));
+                    "InputSystem -> saved actions -> XRI colliders", GrabDiagnostic(hand) + (ray ? RayDiagnostic() : ""));
                 if (!ray)
                 {
                     DirectQuerySphere(direct, out var queryCenter, out _);
@@ -1011,7 +1035,7 @@ namespace Museum.RefinedModels.EditorTools
                 {
                     var rays = rightController.GetComponentsInChildren<XRRayInteractor>(true);
                     Check(rays.Any(r => r.TryGetCurrent3DRaycastHit(out var hit) && target.colliders.Contains(hit.collider)),
-                        "Ray physically hits current observation collider / " + id, "actual saved XRRayInteractor raycast hit");
+                        "Ray physically hits current observation collider / " + id, "actual saved XRRayInteractor raycast hit", RayDiagnostic());
                     var marker = new SerializedObject(hotspot).FindProperty("targetRenderer").objectReferenceValue as Renderer;
                     Check(marker && marker.enabled && marker.gameObject.activeInHierarchy,
                         "Ray reveals actual observation marker / " + id, "live marker renderer visibility after physical ray hit");
@@ -1021,7 +1045,7 @@ namespace Museum.RefinedModels.EditorTools
                     selector = selector == null ? "none" : selector.GetType().Name, events = events, controllerWorld = hand, rootSelected = grab.isSelected });
                 Check(events == 1 && target.isSelected && hotspot.IsVisited && (ray ? selector is XRRayInteractor : selector is XRDirectInteractor),
                     "actual observation selection / " + mode + "/" + id, "queued Grip input and observed selectEntered listener",
-                    "events=" + events + "; selector=" + selector + "; selectable=" + target.IsSelectableBy(direct) + "; " + GrabDiagnostic(hand));
+                    "events=" + events + "; selector=" + selector + "; selectable=" + target.IsSelectableBy(direct) + "; " + GrabDiagnostic(hand) + (ray ? RayDiagnostic() : ""));
                 Check(!grab.isSelected && !inspection.IsWindowHeld,
                     "observation selection leaves helmet and window unheld / " + mode + "/" + id, "actual XRI interaction state");
                 QueueRight(hand, rotation, false); yield return Wait(.15f);
