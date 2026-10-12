@@ -6,7 +6,7 @@
 
 - 本轮在本地分支 `codex/early-helmet-research-2026-10-12` 上工作，基于已获取的资产汇总分支 `169c643cac3c94d12f8c1cad75894bc2db2c9ab9`。核对时远程 `main` 为 `06e68e89871fdac278f64c2ec58a1df866291360`；该资产分支不代表最新产品运行时。
 - 开工时该工作副本 `git status --short` 为空。使用 `GIT_LFS_SKIP_SMUDGE=1` 建立文档专用工作副本，未展开其中的模型二进制，也**未打开 Unity**；任何人若用它做模型或 Editor 验收，须先展开并检查 LFS 实物。
-- 只新增 `artifacts/helmet-refinement/eras/early-standard/references/` 内的研究与参数文件、本活动记录，并在 `docs/external-resources.md` 追加来源记录。未改 `.blend`、FBX、Prefab、主场景、年代脚本或访客文案。
+- 只新增 `artifacts/helmet-refinement/eras/early-standard/references/` 内的研究、参数与获同意的组员照片、本活动记录，并在 `docs/external-resources.md` 追加来源记录。未改 `.blend`、FBX、Prefab、主场景、年代脚本或访客文案。
 
 ## 已完成的核对
 
@@ -18,7 +18,7 @@
 
 本轮可执行的检查为 JSON 语法、文件链接／路径及 Git 差异检查；不运行模型导出、Unity 或真实头显。资料候选不等于小组已选择馆藏 1881-47，不等于历史精确复原。图片只链接馆藏原页，未下载或复制到仓库。建模者仍需确认目标、获得适合的多角度参照，核对三轴映射、局部尺寸及接口。Codex 辅助检索、分类与撰写；需由成员对来源和制作判断进行人工复核。
 
-香港展厅原照亦未提交到仓库；摄影者和再分发权未知，馆方网页只核对展厅背景，不提供该件 1988 年头盔的正式规格。因本轮是文档研究，未进行 Unity 或模型验证。
+2026-10-13 后续补充：用户说明前四张由组员拍摄，并确认该组员同意上传至小组项目；四张原始 JPEG 现放入 `artifacts/helmet-refinement/eras/early-standard/references/photos/`，附用途和归属说明。未取得拍摄者姓名或项目外再利用许可；第五张展柜背景照不提交。检查 JPEG 元数据时，前两张含 EXIF 但没有 GPS 字段，后两张没有 EXIF；原图未作视觉修改。馆方网页只核对展厅背景，不提供该件 1988 年头盔的正式规格。因本轮是资料提交，未进行 Unity 或模型验证。
 
 ## 下一步
 

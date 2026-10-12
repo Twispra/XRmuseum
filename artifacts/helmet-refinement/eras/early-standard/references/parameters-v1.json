@@ -22,14 +22,15 @@
   "visual_inspiration_not_historical_evidence": {
     "museum": "Hong Kong Maritime Museum",
     "museum_context_url": "https://www.hkmaritimemuseum.org/permanent-b-deck/details?lang=zh",
-    "source": "user-provided photos 1-4 on 2026-10-13; photos not redistributed",
+    "source": "four teammate-shot photos provided by user on 2026-10-13; teammate consent to group project upload relayed by user",
     "label_made_year": 1988,
     "label_made_place": "China",
     "label_loan_source": "Macalister Collection",
     "permitted_use_in_this_research": "visual inspiration only; mark any borrowed forms as interpretation",
     "must_not_transfer_to_1839_object": ["dimensions", "mass", "window_count", "port_functions", "materials_by_part", "provenance", "manufacturer"],
-    "photos_in_repository": false,
-    "photographer_and_redistribution_rights": "not_verified"
+    "photos_in_repository": true,
+    "photos_directory": "photos/",
+    "photographer_and_redistribution_rights": "teammate photographed; user relayed consent for group project GitHub upload; photographer name and wider reuse permission not provided"
   },
   "unverified_part_parameters": {
     "helmet_shell_dimensions_mm": null,
