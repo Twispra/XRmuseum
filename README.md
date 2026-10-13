@@ -42,6 +42,7 @@ XRmuseum/
 - [每周活动记录](docs/weekly-activity.md)
 - [2026-09-23 头盔原型：实现、验证与贡献证据](docs/activity/2026-09-23-helmet-prototype.md)
 - [外部资源与辅助工具记录](docs/external-resources.md)
+- [不启动 Unity 的 PR 基础检查](docs/static-checks.zh-CN.md)
 - [初始化验证结果与尚未验证的范围](docs/initialization-checks.md)
 - [课程依据与团队约定的区别](docs/course-requirements.md)
 - [六人协作机制与工具保护记录](docs/activity/2026-09-23-team-collaboration.md)

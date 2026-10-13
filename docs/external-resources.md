@@ -146,3 +146,7 @@ Ereshkigal1224 负责，Codex 辅助核查 [Kirby Morgan 产品页](https://www.
 按用户授权，Codex 修复 [PR #44](https://github.com/Twispra/XRmuseum/pull/44) 的年代热点/展签、VOICE 部件高亮及材质颜色转换，并补充输入、三语和 GPU 回读验证。没有生成或替换保存的 SuperLite 模型；几何与来源沿用 #43 和原接入记录。
 
 五条新三语文案需要补字，继续从本机同一 Noto Sans SC 变量字体（SIL OFL 1.1）以 fontTools 4.60.1 的 Regular 400 实例扩展既有子集，保留全部 7660 原码位，加入「側、僅、夾、環、輕、頸」至 7666。保存静态 SDF 原位补烤为 558 字形，保留原 GUID、字体/材质/图集子资源引用；许可仍见 [OFL](licenses/noto-sans-sc-OFL.txt)。工具只用于本次本地维护，没有新增 Unity 包或产品运行时依赖。来源哈希及保存字节证据见[本轮字体报告](../artifacts/superlite17b-unity-integration/qa/runs/20261012-pr44-fix/font-completion.json)；实际回归、AI 辅助范围与未验证边界见[修复活动](activity/2026-10-12-pr44-fix-and-rereview.md)。
+
+## 2026-10-13：PR 基础静态检查
+
+成员选择新增轻量 PR 检查，Codex 辅助实现 Python 标准库检查器、单元测试、GitHub Actions 工作流及[活动记录](activity/2026-10-13-static-repository-checks.md)。工作流使用 GitHub 官方 [actions/checkout](https://github.com/actions/checkout) 与 [actions/setup-python](https://github.com/actions/setup-python)，不新增模型、贴图、音频、Unity 包或产品运行时依赖。本地静态通过不等于远程 Actions、Unity、头显或构建验收通过。
