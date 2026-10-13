@@ -224,6 +224,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HelmetHotspotTour
       objectReference: {fileID: 0}
+    - target: {fileID: 3903409312573763416, guid: a2f0d4237079f5a4194e3a4b3567ce82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.21
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
