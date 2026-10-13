@@ -23,7 +23,6 @@ namespace Museum.Hotspots
         Func<IXRInteractable, Vector3, DistanceInfo> previousDistance;
         LineRenderer hoverOutline;
         LineRenderer visitedCheck;
-        bool isHovered;
         bool markerVisible;
 
         public bool IsVisited => tour != null && tour.HasVisited(identifier);
@@ -113,7 +112,6 @@ namespace Museum.Hotspots
             interactable.activated.RemoveListener(OnActivated);
             interactable.hoverEntered.RemoveListener(OnHoverEntered);
             interactable.hoverExited.RemoveListener(OnHoverExited);
-            isHovered = false;
             SetCueActive(hoverOutline, false);
             SetCueActive(visitedCheck, false);
         }
@@ -141,13 +139,11 @@ namespace Museum.Hotspots
 
         void OnHoverEntered(HoverEnterEventArgs args)
         {
-            isHovered = true;
             ApplyVisualState();
         }
 
         void OnHoverExited(HoverExitEventArgs args)
         {
-            isHovered = false;
             ApplyVisualState();
         }
 
@@ -192,6 +188,9 @@ namespace Museum.Hotspots
 
         void ApplyVisualState()
         {
+            // XRI updates the aggregate hover state before these callbacks. One
+            // interactor exiting must not clear another interactor's hover cue.
+            bool isHovered = isActiveAndEnabled && interactable != null && interactable.isHovered;
             Color color = isHovered ? hoverColor : IsVisited ? visitedColor : availableColor;
             ApplyColor(color);
             EnsureStateCues();
