@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="19" result="Passed" total="19" passed="19" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-12 16:32:56Z" end-time="2026-10-12 16:33:00Z" duration="3.5863588">
+  <test-suite type="TestSuite" id="1000" name="MuseumVR" fullname="MuseumVR" runstate="Runnable" testcasecount="19" result="Passed" start-time="2026-10-12 16:32:56Z" end-time="2026-10-12 16:33:00Z" duration="3.586359" total="19" passed="19" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties />
+    <test-suite type="Assembly" id="1022" name="Museum.HelmetHotspots.EditorTests.dll" fullname="E:/1香港留学/开学以来重要资料/COMP-扩展现实/code/XRmuseum-hotspot-state-accessibility/MuseumVR/Library/ScriptAssemblies/Museum.HelmetHotspots.EditorTests.dll" runstate="Runnable" testcasecount="19" result="Passed" start-time="2026-10-12 16:32:58Z" end-time="2026-10-12 16:33:00Z" duration="1.766466" total="19" passed="19" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="24528" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+      </properties>
+      <test-suite type="TestSuite" id="1023" name="Museum" fullname="Museum" runstate="Runnable" testcasecount="19" result="Passed" start-time="2026-10-12 16:32:58Z" end-time="2026-10-12 16:33:00Z" duration="1.765738" total="19" passed="19" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1024" name="Hotspots" fullname="Museum.Hotspots" runstate="Runnable" testcasecount="19" result="Passed" start-time="2026-10-12 16:32:58Z" end-time="2026-10-12 16:33:00Z" duration="1.765450" total="19" passed="19" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestSuite" id="1025" name="Tests" fullname="Museum.Hotspots.Tests" runstate="Runnable" testcasecount="19" result="Passed" start-time="2026-10-12 16:32:58Z" end-time="2026-10-12 16:33:00Z" duration="1.764908" total="19" passed="19" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="TestFixture" id="1001" name="HelmetHotspotLifecycleTests" fullname="Museum.Hotspots.Tests.HelmetHotspotLifecycleTests" classname="Museum.Hotspots.Tests.HelmetHotspotLifecycleTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-10-12 16:32:58Z" end-time="2026-10-12 16:32:59Z" duration="0.468210" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1004" name="ExpiredExplanationStaysHiddenAfterTourComponentAndObjectReenable" fullname="Museum.Hotspots.Tests.HelmetHotspotLifecycleTests.ExpiredExplanationStaysHiddenAfterTourComponentAndObjectReenable" methodname="ExpiredExplanationStaysHiddenAfterTourComponentAndObjectReenable" classname="Museum.Hotspots.Tests.HelmetHotspotLifecycleTests" runstate="Runnable" seed="1778382898" result="Passed" start-time="2026-10-12 16:32:39Z" end-time="2026-10-12 16:32:40Z" duration="0.903324" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+                <output><![CDATA[GfxDevice renderer is null. Unity cannot update the Ambient Probe and Reflection Probes that the SkyManager generates. Run the Editor without the -nographics argument or generate lighting for your scene.
+]]></output>
+              </test-case>
+              <test-case id="1005" name="FadingExplanationKeepsItsOpacityAfterTourComponentAndObjectReenable" fullname="Museum.Hotspots.Tests.HelmetHotspotLifecycleTests.FadingExplanationKeepsItsOpacityAfterTourComponentAndObjectReenable" methodname="FadingExplanationKeepsItsOpacityAfterTourComponentAndObjectReenable" classname="Museum.Hotspots.Tests.HelmetHotspotLifecycleTests" runstate="Runnable" seed="2135354861" result="Passed" start-time="2026-10-12 16:32:40Z" end-time="2026-10-12 16:32:44Z" duration="4.792636" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+                <output><![CDATA[GfxDevice renderer is null. Unity cannot update the Ambient Probe and Reflection Probes that the SkyManager generates. Run the Editor without the -nographics argument or generate lighting for your scene.
+]]></output>
+              </test-case>
+              <test-case id="1006" name="HoldingExplanationKeepsItsRemainingTimeAfterTourComponentAndObjectReenable" fullname="Museum.Hotspots.Tests.HelmetHotspotLifecycleTests.HoldingExplanationKeepsItsRemainingTimeAfterTourComponentAndObjectReenable" methodname="HoldingExplanationKeepsItsRemainingTimeAfterTourComponentAndObjectReenable" classname="Museum.Hotspots.Tests.HelmetHotspotLifecycleTests" runstate="Runnable" seed="2104524245" result="Passed" start-time="2026-10-12 16:32:44Z" end-time="2026-10-12 16:32:49Z" duration="4.688949" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+                <output><![CDATA[GfxDevice renderer is null. Unity cannot update the Ambient Probe and Reflection Probes that the SkyManager generates. Run the Editor without the -nographics argument or generate lighting for your scene.
+]]></output>
+              </test-case>
+              <test-case id="1003" name="SavedPrefabReconfigurationFollowsOnlyTheCurrentTourAndIdentifier" fullname="Museum.Hotspots.Tests.HelmetHotspotLifecycleTests.SavedPrefabReconfigurationFollowsOnlyTheCurrentTourAndIdentifier" methodname="SavedPrefabReconfigurationFollowsOnlyTheCurrentTourAndIdentifier" classname="Museum.Hotspots.Tests.HelmetHotspotLifecycleTests" runstate="Runnable" seed="290204156" result="Passed" start-time="2026-10-12 16:32:49Z" end-time="2026-10-12 16:32:54Z" duration="4.784163" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+                <output><![CDATA[GfxDevice renderer is null. Unity cannot update the Ambient Probe and Reflection Probes that the SkyManager generates. Run the Editor without the -nographics argument or generate lighting for your scene.
+]]></output>
+              </test-case>
+              <test-case id="1002" name="SavedPrefabResetsAcrossDisabledAndRepeatedlyEnabledHotspots" fullname="Museum.Hotspots.Tests.HelmetHotspotLifecycleTests.SavedPrefabResetsAcrossDisabledAndRepeatedlyEnabledHotspots" methodname="SavedPrefabResetsAcrossDisabledAndRepeatedlyEnabledHotspots" classname="Museum.Hotspots.Tests.HelmetHotspotLifecycleTests" runstate="Runnable" seed="1991476014" result="Passed" start-time="2026-10-12 16:32:54Z" end-time="2026-10-12 16:32:59Z" duration="4.648769" asserts="0">
+                <properties>
+                  <property name="_JOINTYPE" value="UnityCombinatorial" />
+                </properties>
+                <output><![CDATA[GfxDevice renderer is null. Unity cannot update the Ambient Probe and Reflection Probes that the SkyManager generates. Run the Editor without the -nographics argument or generate lighting for your scene.
+]]></output>
+              </test-case>
+            </test-suite>
+            <test-suite type="TestFixture" id="1007" name="HelmetHotspotTourTests" fullname="Museum.Hotspots.Tests.HelmetHotspotTourTests" classname="Museum.Hotspots.Tests.HelmetHotspotTourTests" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-10-12 16:32:59Z" end-time="2026-10-12 16:33:00Z" duration="1.294683" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1015" name="ActivateEventMarksHotspotVisited" fullname="Museum.Hotspots.Tests.HelmetHotspotTourTests.ActivateEventMarksHotspotVisited" methodname="ActivateEventMarksHotspotVisited" classname="Museum.Hotspots.Tests.HelmetHotspotTourTests" runstate="Runnable" seed="2078407362" result="Passed" start-time="2026-10-12 16:32:59Z" end-time="2026-10-12 16:32:59Z" duration="0.027178" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1013" name="AnotherVisitRestoresExplanationAndRestartsTimeout" fullname="Museum.Hotspots.Tests.HelmetHotspotTourTests.AnotherVisitRestoresExplanationAndRestartsTimeout" methodname="AnotherVisitRestoresExplanationAndRestartsTimeout" classname="Museum.Hotspots.Tests.HelmetHotspotTourTests" runstate="Runnable" seed="1349799560" result="Passed" start-time="2026-10-12 16:32:59Z" end-time="2026-10-12 16:32:59Z" duration="0.107961" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1012" name="ExplanationFadesAfterThirtySecondsWithoutAnotherVisit" fullname="Museum.Hotspots.Tests.HelmetHotspotTourTests.ExplanationFadesAfterThirtySecondsWithoutAnotherVisit" methodname="ExplanationFadesAfterThirtySecondsWithoutAnotherVisit" classname="Museum.Hotspots.Tests.HelmetHotspotTourTests" runstate="Runnable" seed="1581631059" result="Passed" start-time="2026-10-12 16:32:59Z" end-time="2026-10-12 16:32:59Z" duration="0.001834" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1014" name="HotspotActivationMarksItVisited" fullname="Museum.Hotspots.Tests.HelmetHotspotTourTests.HotspotActivationMarksItVisited" methodname="HotspotActivationMarksItVisited" classname="Museum.Hotspots.Tests.HelmetHotspotTourTests" runstate="Runnable" seed="2013642536" result="Passed" start-time="2026-10-12 16:32:59Z" end-time="2026-10-12 16:32:59Z" duration="0.000802" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1019" name="HotspotMarkersFollowHelmetRayTargetVisibility" fullname="Museum.Hotspots.Tests.HelmetHotspotTourTests.HotspotMarkersFollowHelmetRayTargetVisibility" methodname="HotspotMarkersFollowHelmetRayTargetVisibility" classname="Museum.Hotspots.Tests.HelmetHotspotTourTests" runstate="Runnable" seed="522844658" result="Passed" start-time="2026-10-12 16:32:59Z" end-time="2026-10-12 16:32:59Z" duration="0.007930" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1017" name="HotspotStatesUseNonColorVisualCues" fullname="Museum.Hotspots.Tests.HelmetHotspotTourTests.HotspotStatesUseNonColorVisualCues" methodname="HotspotStatesUseNonColorVisualCues" classname="Museum.Hotspots.Tests.HelmetHotspotTourTests" runstate="Runnable" seed="1301079726" result="Passed" start-time="2026-10-12 16:32:59Z" end-time="2026-10-12 16:32:59Z" duration="0.006051" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1020" name="MainSceneContainsHelmetHotspotTourUnderExhibit" fullname="Museum.Hotspots.Tests.HelmetHotspotTourTests.MainSceneContainsHelmetHotspotTourUnderExhibit" methodname="MainSceneContainsHelmetHotspotTourUnderExhibit" classname="Museum.Hotspots.Tests.HelmetHotspotTourTests" runstate="Runnable" seed="1006829632" result="Passed" start-time="2026-10-12 16:32:59Z" end-time="2026-10-12 16:33:00Z" duration="1.116698" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1016" name="ResetTourClearsHotspotVisitedState" fullname="Museum.Hotspots.Tests.HelmetHotspotTourTests.ResetTourClearsHotspotVisitedState" methodname="ResetTourClearsHotspotVisitedState" classname="Museum.Hotspots.Tests.HelmetHotspotTourTests" runstate="Runnable" seed="1118420875" result="Passed" start-time="2026-10-12 16:33:00Z" end-time="2026-10-12 16:33:00Z" duration="0.000831" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1010" name="ResetTourClearsProgress" fullname="Museum.Hotspots.Tests.HelmetHotspotTourTests.ResetTourClearsProgress" methodname="ResetTourClearsProgress" classname="Museum.Hotspots.Tests.HelmetHotspotTourTests" runstate="Runnable" seed="2129117746" result="Passed" start-time="2026-10-12 16:33:00Z" end-time="2026-10-12 16:33:00Z" duration="0.000466" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1018" name="StandalonePrefabContainsThreeSelectableHotspots" fullname="Museum.Hotspots.Tests.HelmetHotspotTourTests.StandalonePrefabContainsThreeSelectableHotspots" methodname="StandalonePrefabContainsThreeSelectableHotspots" classname="Museum.Hotspots.Tests.HelmetHotspotTourTests" runstate="Runnable" seed="1862257607" result="Passed" start-time="2026-10-12 16:33:00Z" end-time="2026-10-12 16:33:00Z" duration="0.012760" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1021" name="TourEnablesTriggerQueriesAndRestoresPreviousValues" fullname="Museum.Hotspots.Tests.HelmetHotspotTourTests.TourEnablesTriggerQueriesAndRestoresPreviousValues" methodname="TourEnablesTriggerQueriesAndRestoresPreviousValues" classname="Museum.Hotspots.Tests.HelmetHotspotTourTests" runstate="Runnable" seed="948123758" result="Passed" start-time="2026-10-12 16:33:00Z" end-time="2026-10-12 16:33:00Z" duration="0.006826" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1009" name="VisitCompletesAfterRequiredUniqueHotspots" fullname="Museum.Hotspots.Tests.HelmetHotspotTourTests.VisitCompletesAfterRequiredUniqueHotspots" methodname="VisitCompletesAfterRequiredUniqueHotspots" classname="Museum.Hotspots.Tests.HelmetHotspotTourTests" runstate="Runnable" seed="1508904842" result="Passed" start-time="2026-10-12 16:33:00Z" end-time="2026-10-12 16:33:00Z" duration="0.000682" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1008" name="VisitCountsEachHotspotOnce" fullname="Museum.Hotspots.Tests.HelmetHotspotTourTests.VisitCountsEachHotspotOnce" methodname="VisitCountsEachHotspotOnce" classname="Museum.Hotspots.Tests.HelmetHotspotTourTests" runstate="Runnable" seed="7605389" result="Passed" start-time="2026-10-12 16:33:00Z" end-time="2026-10-12 16:33:00Z" duration="0.000461" asserts="0">
+                <properties />
+              </test-case>
+              <test-case id="1011" name="VisitRejectsMissingIdentifier" fullname="Museum.Hotspots.Tests.HelmetHotspotTourTests.VisitRejectsMissingIdentifier" methodname="VisitRejectsMissingIdentifier" classname="Museum.Hotspots.Tests.HelmetHotspotTourTests" runstate="Runnable" seed="829596655" result="Passed" start-time="2026-10-12 16:33:00Z" end-time="2026-10-12 16:33:00Z" duration="0.000335" asserts="0">
+                <properties />
+              </test-case>
+            </test-suite>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

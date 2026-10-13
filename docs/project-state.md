@@ -1,5 +1,9 @@
 # 项目状态与下一步
 
+2026-10-13 热点非颜色状态提示与合并前悬停修复：[PR #46](https://github.com/Twispra/XRmuseum/pull/46) 基于 main **`37930ae`**，保留原圆点/颜色并增加悬停外环、已访问勾形；修复提交 **`a0df95b`** 从 XRI 聚合状态恢复外环，避免双手部分退出或组件重新启用时丢失提示。Unity 2022.3.62f3c1 的热点 **21/21** 与保存主场景回归 **81,849 项检查、0 errors/0 warnings**通过；热点子流程为 786 项/20 次 Direct/Ray 选择。源码、证据、未验证设备范围及本轮合并交接见[活动记录](activity/2026-10-13-pr46-hover-state-fix-and-pr47-merge.md)。不改场景/Prefab/模型/XR 设置；实际主线合并状态和 merge SHA 仍以 PR 回读为准。
+
+同日早期头盔研究资料 [PR #47](https://github.com/Twispra/XRmuseum/pull/47) 已合入 **`codex/helmet-refinement-assets`**（`39e895f9`），目标仍为资产汇总流程，未进入 main；1839 馆藏是待确认候选，1988 年组员照片只作外形灵感。早期精细模型及 Unity 接入仍未完成，不据资料合并认定三年代全部交付。
+
 2026-10-12 SuperLite 展示台接入与合并前修复：基于实际 main **`06e68e8`**，本轮 [PR #44](https://github.com/Twispra/XRmuseum/pull/44) 为索引 2 接入 #43 已接受的整盔 v2，并修复实际表面热点 / 三语展签、VOICE 机械部件误强调和线性颜色重复转换。默认 Mark V（索引 1）保留，索引 0 仍占位；17B 侧开仍为博物馆观察演示，通信位置仍为示意。验证版本、保存资产 / 字体证据和复审见[本轮记录](activity/2026-10-12-pr44-fix-and-rereview.md)、[查看说明](superlite17b-unity-integration.zh-CN.md)。实际是否合入以 PR 状态和 merge SHA 为准，桌面模拟不代表真实头显 / 性能 / 构建 / 用户研究通过。下方均保留各日期快照，接手前仍须 fetch。
 
 2026-10-10 SuperLite 独立资产主线整合：本轮基于实际 `origin/main` **`270c7b7`**（已合入 #35／#36），归档 [PR #37](https://github.com/Twispra/XRmuseum/pull/37) 已验收并合入资产分支 `169c643` 的面窗 v3、侧阀 v4 及其资料、源文件、导出、预览和历史证据。仅将这批[独立资产](../artifacts/helmet-refinement/eras/superlite-17b/README.md)纳入主线版本管理，不接入 Unity，不改变 Mark V／供气通话成果；现有应用另两个年代仍为占位展示。本轮验证、限制及合并入口见[整合记录](activity/2026-10-10-superlite17b-main-integration.md)，最终合并状态以该记录所指 GitHub PR 为准。下方保留各日期的历史快照，不能据旧段落判断实时 main。

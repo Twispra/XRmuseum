@@ -40,9 +40,9 @@ python artifacts/accessibility/qa/runs/20261010-accessibility-audit/audit_access
 | 1 | 文字对比度（语言板） | 白字 / 板面基色均按 sRGB 的配色估算为 **16.63:1**；板面使用 URP Lit，实际像素还受光照等影响，按钮另有材质 | 配色估算；最终对比度未验证 |
 | 2 | 文字对比度（热点面板） | `HotspotPanel` 使用 URP Unlit / Alpha blend，基色 alpha=1、无 BaseMap；选中后 hold 30 s 覆盖后景，接下来的 fade 1 s 才与后景混合 | 分阶段记录；最终对比度未验证 |
 | 3 | 最小可读字号 | 92 个 TMP 组件**全部**开启自动缩放；其中 **21 个把 `fontSizeMin` 设为 ≤0.05（20 个是 0.02）**；最大压缩比 **72.5×**（`HelmetInspectionDemo` 的 `Title`：0.02→1.45） | **风险**：资产层等于没有可读性保护 |
-| 4 | 状态信息只用颜色 | 热点标记三态 `#1FCCE6`(α0.75) / `#FFAD26`(α1.0) / `#40F280`(α0.85)，只换颜色，没有形状、图标或文字冗余；其中两态还带透明度 | **风险**（WCAG 1.4.1 不以颜色为唯一信息载体） |
+| 4 | 状态信息冗余 | 热点标记保留 `#1FCCE6`(α0.75) / `#FFAD26`(α1.0) / `#40F280`(α0.85)，并新增悬停外环和已访问勾形标记 | 代码与自动测试通过；真实头显和色觉用户辨识仍未验证 |
 | 5 | 时间限制 | 说明面板 `hold 30 s + fade 1 s` 后淡出；重新选中同一热点会**重启计时**（`RestartExplanationLifetime`） | 有召回路径；窗口长度需真实使用者判断 |
-| 6 | 操作负担 | 射线与直触都能选中；`allowHoveredActivate = true` 允许对已悬停但未 Select 的目标发送 Activate 输入，仍需扳机或握持动作；hover 仅换色 | 输入路径存在；操作负担未验证 |
+| 6 | 操作负担 | 射线与直触都能选中；`allowHoveredActivate = true` 允许对已悬停但未 Select 的目标发送 Activate 输入，仍需扳机或握持动作；hover 同时换色并显示外环 | 输入路径存在；操作负担未验证 |
 | 7 | 运动舒适 | 年代切换对绑定渲染器的材质基色施加最低 **0.35** 乘数；脚本内未找到所列相机运动 API | 实现证据；舒适性未验证 |
 | 8 | 复位 | `MuseumStart` 里 `hasConfiguredHome: 1`、`homePosition` (y 1.172, z 3.5)、并存在独立复位脚本 | 通过 |
 | 9 | 语言可及性 | 运行时生成的英文串（热点提示语、完成语、画廊标题…）**都在** `MuseumTranslations.json` 里 | 通过 |
@@ -110,7 +110,7 @@ fragment 的 alpha 为 `texColor.a * _BaseColor.a`。因此在重新选中后 **
 随后 **1 秒 fade** 才由 `SetExplanationOpacity` 同时降低背板和文字 alpha，后景开始参与混合。
 两个阶段都还受到文字 shader、雾、后处理及遮挡等因素影响，本轮均未验证最终像素对比度。
 
-### 2.4 状态只用颜色（"热点标记的状态配色"）
+### 2.4 状态的颜色与形状冗余（"热点标记的状态配色"）
 
 `HelmetHotspot.cs` 里三个状态常量：
 
@@ -120,8 +120,10 @@ fragment 的 alpha 为 `texColor.a * _BaseColor.a`。因此在重新选中后 **
 | 悬停 | `#FFAD26` | 1.0 |
 | 已访问 | `#40F280` | 0.85 |
 
-三种状态**只靠颜色**区分，且"可选"是青、"已访问"是绿——对红绿色觉障碍（deuteranopia / protanopia）
-使用者这两态最接近。脚本**不做**色彩仿真，所以这里只标出风险点，不下可辨性结论。
+三种颜色仍保留，但状态不再只靠色相：悬停时出现围绕圆点的外环，访问后出现勾形标记；热点整体隐藏时两者同步隐藏。
+该行为由 `HelmetHotspotTourTests.HotspotStatesUseNonColorVisualCues` 和保存主场景回归覆盖，证据见
+[2026-10-13 活动记录](activity/2026-10-13-hotspot-state-accessibility.md)。本轮没有做色彩仿真、真实头显或色觉用户测试，
+所以只确认代码提供了非颜色冗余，不宣称实际可辨性已经通过。
 
 ### 2.5 时间限制与操作负担（"说明面板自动淡出的默认时长"、"交互输入开关"）
 
@@ -131,7 +133,7 @@ fragment 的 alpha 为 `texColor.a * _BaseColor.a`。因此在重新选中后 **
   `allowHoveredActivate = true` 允许在没有 Select 目标、但有 Hover 目标时向该目标发送 Activate 事件。
   XRI 2.6.4 的 `shouldActivate` 仍要求 `activateInteractionState.activatedThisFrame`；
   本工程 Activate 对应扳机，Select 对应握持，两条路径都可调用热点的 `Activate()`。
-  `OnHoverEntered` 只调用 `ApplyColor(hoverColor)`，单纯悬停不会访问热点。
+  `OnHoverEntered` 更新颜色并显示外环，单纯悬停仍不会访问热点。
   这些是输入路径证据，不能据此宣称免按键、操作负担降低或误触增加；本轮未发现 dwell / 凝视激活路径。
 
 ### 2.6 运动舒适（"年代切换的运动方式"）
@@ -196,7 +198,7 @@ fragment 的 alpha 为 `texColor.a * _BaseColor.a`。因此在重新选中后 **
 1. 给那 21 个 `fontSizeMin ≤ 0.05` 的组件设一个有意义的下限。可用的锚点已经有：
    热点面板高 0.1725 m、文字框高 0.09 m——据此反推出一个"最小 em 高"再回填，
    比继续留 0.02（等于没有下限）可核查得多。
-2. 给热点三态加一个**非颜色**冗余：形状/图标/描边/勾选，任一即可，使状态不只依赖色相。
+2. 热点三态的**非颜色**冗余已在 Issue #45 实现；下一步是用真实头显和目标用户检查外环／勾形在不同角度、距离与背景下是否足够清晰。
 3. 先分别检查热点背板 hold 与 fade 的可读性；hold 已是 alpha=1，不再建议因 `_Surface=1` 而重复加不透明底。
    若淡出影响阅读，可另行评估延长、暂停或关闭计时；若渲染检查发现实际对比度不足，再评估文字描边或配色。
 4. 若要长期守住以上几条，可把本页的脚本接进 CI——当前仓库没有 CI，所有核对都是手动的。

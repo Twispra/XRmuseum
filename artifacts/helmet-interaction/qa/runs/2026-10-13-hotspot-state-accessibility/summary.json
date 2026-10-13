@@ -1,0 +1,39 @@
+{
+  "status": "passed",
+  "date": "2026-10-13",
+  "sourceCommit": "37930ae235b6bfd00f9575805c759614a0cec6a4",
+  "branch": "codex/hotspot-state-accessibility",
+  "unity": "2022.3.62f3c1",
+  "focusedTest": {
+    "name": "Museum.Hotspots.Tests.HelmetHotspotTourTests.HotspotStatesUseNonColorVisualCues",
+    "redResult": "failed because State Cues/Hover Outline did not exist",
+    "greenResult": "passed"
+  },
+  "hotspotSuite": {
+    "result": "passed",
+    "total": 19,
+    "failed": 0,
+    "skipped": 0,
+    "report": "hotspot-tests.xml"
+  },
+  "mainSceneRegression": {
+    "result": "passed",
+    "integrationChecks": 77657,
+    "integrationErrors": 0,
+    "integrationWarnings": 0,
+    "hotspotChecks": 786,
+    "hotspotSelections": 20,
+    "hotspotReport": "hotspot-interaction.json",
+    "omittedFullReportSha256": "e58e35d556d61cc44902eb78c17618f6da3155bfe97fc0b79696e7be3ace7ae2"
+  },
+  "visualCheck": {
+    "result": "passed",
+    "file": "state-cue-preview.png",
+    "description": "Diagnostic comparison of available marker, hover outline and visited check mark"
+  },
+  "limitations": [
+    "The preview is a diagnostic render, not the saved museum scene or a headset view.",
+    "Automated XR inputs do not prove physical controller reach, stereo readability, comfort or user-study results.",
+    "No current Windows executable build was produced."
+  ]
+}

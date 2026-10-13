@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Museum.Hotspots
@@ -20,6 +21,9 @@ namespace Museum.Hotspots
         MaterialPropertyBlock propertyBlock;
         XRSimpleInteractable interactable;
         Func<IXRInteractable, Vector3, DistanceInfo> previousDistance;
+        LineRenderer hoverOutline;
+        LineRenderer visitedCheck;
+        bool markerVisible;
 
         public bool IsVisited => tour != null && tour.HasVisited(identifier);
         public string Identifier => identifier;
@@ -49,6 +53,8 @@ namespace Museum.Hotspots
             if (tour != null && isActiveAndEnabled)
                 tour.ResetPerformed += ResetState;
 
+            markerVisible = targetRenderer != null && targetRenderer.enabled;
+            EnsureStateCues();
             ResetState();
         }
 
@@ -58,19 +64,23 @@ namespace Museum.Hotspots
                 return;
 
             tour.Visit(identifier, title, description);
-            ApplyColor(IsVisited ? visitedColor : availableColor);
+            ApplyVisualState();
         }
 
         public void SetMarkerVisible(bool visible)
         {
+            markerVisible = visible;
             if (targetRenderer != null)
                 targetRenderer.enabled = visible;
+            ApplyVisualState();
         }
 
         void OnEnable()
         {
             propertyBlock = new MaterialPropertyBlock();
             interactable = GetComponent<XRSimpleInteractable>();
+            markerVisible = targetRenderer != null && targetRenderer.enabled;
+            EnsureStateCues();
             if (interactable.getDistanceOverride != HotspotDistance)
                 previousDistance = interactable.getDistanceOverride;
             // XRI's default collider distance omits triggers, placing these small
@@ -85,7 +95,7 @@ namespace Museum.Hotspots
             interactable.activated.AddListener(OnActivated);
             interactable.hoverEntered.AddListener(OnHoverEntered);
             interactable.hoverExited.AddListener(OnHoverExited);
-            ApplyColor(IsVisited ? visitedColor : availableColor);
+            ApplyVisualState();
         }
 
         void OnDisable()
@@ -102,6 +112,8 @@ namespace Museum.Hotspots
             interactable.activated.RemoveListener(OnActivated);
             interactable.hoverEntered.RemoveListener(OnHoverEntered);
             interactable.hoverExited.RemoveListener(OnHoverExited);
+            SetCueActive(hoverOutline, false);
+            SetCueActive(visitedCheck, false);
         }
 
         void OnDestroy()
@@ -127,17 +139,24 @@ namespace Museum.Hotspots
 
         void OnHoverEntered(HoverEnterEventArgs args)
         {
-            ApplyColor(hoverColor);
+            ApplyVisualState();
         }
 
         void OnHoverExited(HoverExitEventArgs args)
         {
-            ApplyColor(IsVisited ? visitedColor : availableColor);
+            ApplyVisualState();
         }
 
         void ResetState()
         {
-            ApplyColor(IsVisited ? visitedColor : availableColor);
+            ApplyVisualState();
+        }
+
+        void LateUpdate()
+        {
+            if ((hoverOutline != null && hoverOutline.gameObject.activeSelf) ||
+                (visitedCheck != null && visitedCheck.gameObject.activeSelf))
+                UpdateCueGeometry();
         }
 
         DistanceInfo HotspotDistance(IXRInteractable target, Vector3 position)
@@ -165,6 +184,111 @@ namespace Museum.Hotspots
             propertyBlock.SetColor("_BaseColor", color);
             propertyBlock.SetColor("_Color", color);
             targetRenderer.SetPropertyBlock(propertyBlock);
+        }
+
+        void ApplyVisualState()
+        {
+            // XRI updates the aggregate hover state before these callbacks. One
+            // interactor exiting must not clear another interactor's hover cue.
+            bool isHovered = isActiveAndEnabled && interactable != null && interactable.isHovered;
+            Color color = isHovered ? hoverColor : IsVisited ? visitedColor : availableColor;
+            ApplyColor(color);
+            EnsureStateCues();
+            SetCueActive(hoverOutline, markerVisible && isHovered);
+            SetCueActive(visitedCheck, markerVisible && IsVisited);
+            ApplyCueColor(hoverOutline, hoverColor);
+            ApplyCueColor(visitedCheck, visitedColor);
+            UpdateCueGeometry();
+        }
+
+        void EnsureStateCues()
+        {
+            if (targetRenderer == null)
+                return;
+
+            var stateCues = transform.Find("State Cues");
+            if (stateCues == null)
+            {
+                var cueObject = new GameObject("State Cues");
+                cueObject.layer = gameObject.layer;
+                stateCues = cueObject.transform;
+                stateCues.SetParent(transform, false);
+            }
+
+            hoverOutline = GetOrCreateLine(stateCues, "Hover Outline", true, 32);
+            visitedCheck = GetOrCreateLine(stateCues, "Visited Check", false, 3);
+        }
+
+        LineRenderer GetOrCreateLine(Transform parent, string objectName, bool loop, int positionCount)
+        {
+            var child = parent.Find(objectName);
+            if (child == null)
+            {
+                var childObject = new GameObject(objectName);
+                childObject.layer = gameObject.layer;
+                child = childObject.transform;
+                child.SetParent(parent, false);
+            }
+
+            var line = child.GetComponent<LineRenderer>();
+            if (line == null)
+                line = child.gameObject.AddComponent<LineRenderer>();
+            line.useWorldSpace = true;
+            line.loop = loop;
+            line.positionCount = positionCount;
+            line.sharedMaterial = targetRenderer.sharedMaterial;
+            line.textureMode = LineTextureMode.Stretch;
+            line.alignment = LineAlignment.View;
+            line.numCapVertices = 4;
+            line.numCornerVertices = 4;
+            line.shadowCastingMode = ShadowCastingMode.Off;
+            line.receiveShadows = false;
+            line.gameObject.SetActive(false);
+            return line;
+        }
+
+        void UpdateCueGeometry()
+        {
+            if (targetRenderer == null || hoverOutline == null || visitedCheck == null)
+                return;
+
+            float markerSize = Mathf.Max(transform.lossyScale.x, transform.lossyScale.y, transform.lossyScale.z);
+            float radius = markerSize * 0.72f;
+            var camera = Camera.main;
+            Vector3 forward = camera != null ? (camera.transform.position - transform.position).normalized : -transform.forward;
+            Vector3 up = camera != null ? camera.transform.up : transform.up;
+            Vector3 right = camera != null ? camera.transform.right : transform.right;
+            Vector3 center = transform.position + forward * markerSize * 0.56f;
+
+            hoverOutline.widthMultiplier = markerSize * 0.13f;
+            for (int i = 0; i < hoverOutline.positionCount; i++)
+            {
+                float angle = Mathf.PI * 2f * i / hoverOutline.positionCount;
+                hoverOutline.SetPosition(i, center + right * Mathf.Cos(angle) * radius + up * Mathf.Sin(angle) * radius);
+            }
+
+            visitedCheck.widthMultiplier = markerSize * 0.18f;
+            visitedCheck.SetPosition(0, center - right * radius * 0.65f);
+            visitedCheck.SetPosition(1, center - right * radius * 0.15f - up * radius * 0.5f);
+            visitedCheck.SetPosition(2, center + right * radius * 0.75f + up * radius * 0.55f);
+        }
+
+        void ApplyCueColor(Renderer cue, Color color)
+        {
+            if (cue == null)
+                return;
+            if (propertyBlock == null)
+                propertyBlock = new MaterialPropertyBlock();
+            cue.GetPropertyBlock(propertyBlock);
+            propertyBlock.SetColor("_BaseColor", color);
+            propertyBlock.SetColor("_Color", color);
+            cue.SetPropertyBlock(propertyBlock);
+        }
+
+        static void SetCueActive(Renderer cue, bool active)
+        {
+            if (cue != null)
+                cue.gameObject.SetActive(active);
         }
     }
 }

@@ -167,6 +167,157 @@ namespace Museum.Hotspots.Tests
         }
 
         [Test]
+        public void HotspotStatesUseNonColorVisualCues()
+        {
+            var hotspot = CreateVisualHotspot(out var interactable, out var hoverOutline, out var visitedCheck);
+            var manager = CreateInteractionManager(interactable);
+            var ray = CreateRegisteredRay(manager, "Ray");
+
+            Assert.That(hoverOutline, Is.Not.Null);
+            Assert.That(visitedCheck, Is.Not.Null);
+            Assert.That(hoverOutline.GetComponent<LineRenderer>().loop, Is.True);
+            Assert.That(hoverOutline.GetComponent<LineRenderer>().positionCount, Is.EqualTo(32));
+            Assert.That(visitedCheck.GetComponent<LineRenderer>().loop, Is.False);
+            Assert.That(visitedCheck.GetComponent<LineRenderer>().positionCount, Is.EqualTo(3));
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.False);
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.False);
+
+            manager.HoverEnter((IXRHoverInteractor)ray, (IXRHoverInteractable)interactable);
+            Assert.That(interactable.isHovered, Is.True);
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.True);
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.False);
+            Assert.That(tour.VisitedCount, Is.Zero, "Hovering alone must not visit the hotspot.");
+
+            manager.HoverExit((IXRHoverInteractor)ray, (IXRHoverInteractable)interactable);
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.False);
+
+            hotspot.Activate();
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.True);
+
+            manager.HoverEnter((IXRHoverInteractor)ray, (IXRHoverInteractable)interactable);
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.True);
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.True);
+
+            hotspot.SetMarkerVisible(false);
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.False);
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.False);
+
+            hotspot.SetMarkerVisible(true);
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.True);
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.True);
+
+            tour.ResetTour();
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.True, "Resetting visits must preserve the current hover.");
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.False);
+            Assert.That(tour.VisitedCount, Is.Zero);
+
+            manager.HoverExit((IXRHoverInteractor)ray, (IXRHoverInteractable)interactable);
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.False);
+        }
+
+        [Test]
+        public void HoverOutlineRemainsUntilLastInteractorExits()
+        {
+            var hotspot = CreateVisualHotspot(out var interactable, out var hoverOutline, out var visitedCheck);
+            var manager = CreateInteractionManager(interactable);
+            var leftRay = CreateRegisteredRay(manager, "Left Ray");
+            var rightRay = CreateRegisteredRay(manager, "Right Ray");
+
+            manager.HoverEnter((IXRHoverInteractor)leftRay, (IXRHoverInteractable)interactable);
+            manager.HoverEnter((IXRHoverInteractor)rightRay, (IXRHoverInteractable)interactable);
+            Assert.That(interactable.interactorsHovering.Count, Is.EqualTo(2));
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.True);
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.False);
+
+            hotspot.Activate();
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.True);
+
+            manager.HoverExit((IXRHoverInteractor)leftRay, (IXRHoverInteractable)interactable);
+            Assert.That(interactable.interactorsHovering.Count, Is.EqualTo(1));
+            Assert.That(interactable.isHovered, Is.True);
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.True, "The remaining ray must keep its hover outline.");
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.True);
+
+            manager.HoverExit((IXRHoverInteractor)rightRay, (IXRHoverInteractable)interactable);
+            Assert.That(interactable.interactorsHovering.Count, Is.Zero);
+            Assert.That(interactable.isHovered, Is.False);
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.False, "Only the final hover exit should remove the outline.");
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.True, "Hover exit must preserve the visit cue.");
+            Assert.That(tour.VisitedCount, Is.EqualTo(1));
+        }
+
+        [Test]
+        public void HoverOutlineRestoresAfterCallbacksRestartDuringHover()
+        {
+            var hotspot = CreateVisualHotspot(out var interactable, out var hoverOutline, out var visitedCheck);
+            var manager = CreateInteractionManager(interactable);
+            var ray = CreateRegisteredRay(manager, "Ray");
+
+            manager.HoverEnter((IXRHoverInteractor)ray, (IXRHoverInteractable)interactable);
+            hotspot.Activate();
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.True);
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.True);
+
+            // EditMode does not run these MonoBehaviour callbacks automatically.
+            // Restart only the hotspot callbacks; XRI retains the existing hover.
+            InvokeHotspotLifecycle(hotspot, "OnDisable");
+            Assert.That(interactable.interactorsHovering.Count, Is.EqualTo(1));
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.False);
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.False);
+
+            InvokeHotspotLifecycle(hotspot, "OnEnable");
+            Assert.That(interactable.interactorsHovering.Count, Is.EqualTo(1));
+            Assert.That(interactable.isHovered, Is.True);
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.True, "Re-enabling must restore an already active XRI hover.");
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.True);
+            Assert.That(tour.VisitedCount, Is.EqualTo(1));
+
+            manager.HoverExit((IXRHoverInteractor)ray, (IXRHoverInteractable)interactable);
+            Assert.That(hoverOutline.gameObject.activeSelf, Is.False);
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.True);
+            tour.ResetTour();
+            Assert.That(visitedCheck.gameObject.activeSelf, Is.False);
+        }
+
+        HelmetHotspot CreateVisualHotspot(out XRSimpleInteractable interactable, out Transform hoverOutline, out Transform visitedCheck)
+        {
+            var hotspotObject = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+            hotspotObject.name = "Window Hotspot";
+            hotspotObject.transform.SetParent(root.transform);
+            hotspotObject.GetComponent<SphereCollider>().isTrigger = true;
+            interactable = hotspotObject.AddComponent<XRSimpleInteractable>();
+            var hotspot = hotspotObject.AddComponent<HelmetHotspot>();
+            hotspot.Configure(tour, "window", "Front window", "Look through the glass.", hotspotObject.GetComponent<Renderer>());
+            InvokeHotspotLifecycle(hotspot, "OnEnable");
+            hoverOutline = hotspotObject.transform.Find("State Cues/Hover Outline");
+            visitedCheck = hotspotObject.transform.Find("State Cues/Visited Check");
+            return hotspot;
+        }
+
+        XRInteractionManager CreateInteractionManager(XRSimpleInteractable interactable)
+        {
+            var manager = root.AddComponent<XRInteractionManager>();
+            interactable.interactionManager = manager;
+            manager.RegisterInteractable((IXRInteractable)interactable);
+            return manager;
+        }
+
+        XRRayInteractor CreateRegisteredRay(XRInteractionManager manager, string name)
+        {
+            var rayObject = new GameObject(name);
+            rayObject.transform.SetParent(root.transform);
+            var ray = rayObject.AddComponent<XRRayInteractor>();
+            ray.interactionManager = manager;
+            manager.RegisterInteractor((IXRInteractor)ray);
+            return ray;
+        }
+
+        static void InvokeHotspotLifecycle(HelmetHotspot hotspot, string callback)
+        {
+            typeof(HelmetHotspot).GetMethod(callback, System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).Invoke(hotspot, null);
+        }
+
+        [Test]
         public void StandalonePrefabContainsThreeSelectableHotspots()
         {
             const string path = "Assets/Museum/Features/HelmetHotspots/Prefabs/HelmetHotspotTour.prefab";
