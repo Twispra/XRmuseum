@@ -1,0 +1,19 @@
+{
+  "startedUtc": "2026-10-13T15:10:01.2444650Z",
+  "finishedUtc": "2026-10-13T15:12:23.6703888Z",
+  "exitCode": 0,
+  "commit": "1633e98a8e85a431abba5a0ff73218d10f17fa9d",
+  "trackedDirty": [
+    " M docs/external-resources.md",
+    " M docs/getting-started.zh-CN.md"
+  ],
+  "arguments": [
+    "-batchmode",
+    "-projectPath",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\fix-hmd-tracking-2026-10-13\\XRmuseum\\MuseumVR\"",
+    "-executeMethod",
+    "Museum.Localization.EditorTools.LocalizationIntegrationValidation.RunBatch",
+    "-logFile",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\fix-hmd-tracking-2026-10-13\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261013-display-height-local\\main-02.log\""
+  ]
+}

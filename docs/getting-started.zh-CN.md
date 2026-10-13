@@ -64,7 +64,9 @@
 4. 本工程启用 Oculus Touch、Valve Index、HTC Vive 和 Khronos Simple Controller profile。按实际设备确认对应 profile；这只是兼容配置，不代表这些设备都已经测试。
 5. 启动你们设备对应的 SteamVR、Meta Quest Link 或 Virtual Desktop，并确认对应 OpenXR runtime，再回 Unity 进入 Play。使用 Virtual Desktop / VDXR 时，Streamer 选择 VDXR，Unity 的 **Play Mode OpenXR Runtime** 使用 **System Default**；不要为了本工程额外切换到其他 runtime。[Unity Play 模式 runtime 说明](https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.14/manual/project-configuration.html#choose-an-openxr-runtime-to-use-in-play-mode)、[VDXR 开发说明](https://github.com/mbucchia/VirtualDesktop-OpenXR/wiki/Developers)。
 6. 实机检查进入 Play 的站立眼睛高度、左右转头、俯仰、身体前倾和蹲下，再测试手柄。主场景保留 **Floor** 跟踪，实际眼睛高度由设备提供；**1.65 m Camera Y Offset** 用于 Device 模式，不应再给 Floor 模式叠加身高。修复和定向测试见[本轮活动](activity/2026-10-13-xr-head-tracking-fix.md)；自动合成输入不能代替实机通过。
-6. 若只是自己临时切换模拟器，提交前检查 XRI 设置改动，避免无意影响其他组员。
+7. 若只是自己临时切换模拟器，提交前检查 XRI 设置改动，避免无意影响其他组员。
+
+**站着玩、地面正常但展品偏高：** 优先调整展示布局，保留设备提供的眼睛高度。本轮中央台面由 1.16 m 降至 0.96 m，头盔、年代按钮和复位点一起下移 20 cm；热点信息卡保留原阅读高度。设备体验仍需复测，详见[站姿高度调整记录](activity/2026-10-13-standing-display-height.md)。
 
 ### Unity Version Control 和 GitHub 的关系
 

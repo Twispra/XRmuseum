@@ -1,0 +1,35 @@
+{
+  "target": "E:/XRmuseum",
+  "targetBranch": "main",
+  "targetHead": "4578e6619a28c16828268f31f669a3e374fe2ade",
+  "sourceCommit": "1633e98a8e85a431abba5a0ff73218d10f17fa9d",
+  "application": "Scoped four-file height source patch; uncommitted local mirror for device retest, no main commit or merge.",
+  "paths": [
+    "MuseumVR/Assets/Museum/Features/RefinedModels/Editor/RefinedModelValidation.cs",
+    "MuseumVR/Assets/Museum/Features/XRTracking/Editor/HelmetDisplayHeightValidation.cs",
+    "MuseumVR/Assets/Museum/Features/XRTracking/Editor/HelmetDisplayHeightValidation.cs.meta",
+    "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity"
+  ],
+  "sourceBlobs": [
+    {
+      "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Editor/RefinedModelValidation.cs",
+      "normalizedGitBlob": "86a59776ea4d027d03a8e027fc333330676729fe"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/XRTracking/Editor/HelmetDisplayHeightValidation.cs",
+      "normalizedGitBlob": "e66056e8c1727587fe2f113e652ac0112bf5a40a"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/XRTracking/Editor/HelmetDisplayHeightValidation.cs.meta",
+      "normalizedGitBlob": "bbd6d8cd5eb751b4d7c9c54fd1ae8e1767e33305"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+      "normalizedGitBlob": "ec6898438cc54414b60f6dc1529aca2a38fc0a74"
+    }
+  ],
+  "sourcePatchSha256": "2B865CD0C38746A12E082548FB8A138F6D55C474C60B82F9D4FDBCF5D2FE3852",
+  "preexistingProjectSettingsSha256Before": "81C0EB3103E303A2567619E388C45709E89FA1940353CDFE4A163BBE402C5587",
+  "preexistingProjectSettingsSha256After": "81C0EB3103E303A2567619E388C45709E89FA1940353CDFE4A163BBE402C5587",
+  "appliedUtc": "2026-10-13T15:15:30.0866983Z"
+}
