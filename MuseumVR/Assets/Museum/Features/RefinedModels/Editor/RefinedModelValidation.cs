@@ -635,7 +635,9 @@ namespace Museum.RefinedModels.EditorTools
             Check(Vector3.Distance(bounds.size, new Vector3(.2816658f, .3138472f, .3250093f)) < .0001f,
                 "SuperLite axis conversion retains width/height/depth without scaling drift", "saved imported meshes", bounds.size.ToString("F6"));
             var worldMin = visual.renderers.Select(r => r.bounds.min.y).Min();
-            var plinth = GameObject.Find("Plinth");
+            // The three plinths can have different heights; validate the helmet's actual central support.
+            var plinth = GameObject.Find("Exhibit 02 - Placeholder")?.transform.Find("Plinth");
+            Check(plinth && plinth.GetComponent<Renderer>(), "central exhibition support is resolved explicitly", "saved scene geometry");
             if (plinth && plinth.GetComponent<Renderer>())
             {
                 var support = plinth.GetComponent<Renderer>().bounds.max.y;
