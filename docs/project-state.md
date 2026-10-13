@@ -1,5 +1,7 @@
 # 项目状态与下一步
 
+2026-10-13 真实头显视角修复：[Issue #48](https://github.com/Twispra/XRmuseum/issues/48) 基于实际 main **`4578e66`**，修复 Editor 自动模拟器删除真实 HMD 输入的问题。修复源码 **`1690a52`** 的定向合成输入 **23/23** 与保存主场景 **83,156 项检查 / 0 errors / 0 warnings**通过；未修改主场景、相机绑定、地面定位、packages 或 ProjectSettings。已同步本地原工程供设备复测，权威修复仍在独立分支，尚未合入 main；真实 Quest 3 / Virtual Desktop 转头、起始高度及历史 frame submission 错误仍待实机确认。[原因、证据与接手步骤](activity/2026-10-13-xr-head-tracking-fix.md)。
+
 2026-10-13 热点非颜色状态提示与合并前悬停修复：[PR #46](https://github.com/Twispra/XRmuseum/pull/46) 基于 main **`37930ae`**，保留原圆点/颜色并增加悬停外环、已访问勾形；修复提交 **`a0df95b`** 从 XRI 聚合状态恢复外环，避免双手部分退出或组件重新启用时丢失提示。Unity 2022.3.62f3c1 的热点 **21/21** 与保存主场景回归 **81,849 项检查、0 errors/0 warnings**通过；热点子流程为 786 项/20 次 Direct/Ray 选择。源码、证据、未验证设备范围及本轮合并交接见[活动记录](activity/2026-10-13-pr46-hover-state-fix-and-pr47-merge.md)。不改场景/Prefab/模型/XR 设置；实际主线合并状态和 merge SHA 仍以 PR 回读为准。
 
 同日早期头盔研究资料 [PR #47](https://github.com/Twispra/XRmuseum/pull/47) 已合入 **`codex/helmet-refinement-assets`**（`39e895f9`），目标仍为资产汇总流程，未进入 main；1839 馆藏是待确认候选，1988 年组员照片只作外形灵感。早期精细模型及 Unity 接入仍未完成，不据资料合并认定三年代全部交付。

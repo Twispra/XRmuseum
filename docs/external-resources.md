@@ -1,5 +1,9 @@
 # 外部资源与辅助工具记录
 
+## 2026-10-13：头显跟踪与桌面模拟器启动策略
+
+Codex 辅助核对本机 Unity / VDXR 日志、项目现有 XRI 2.6.4 与 Input System 1.14.0 包源码，修复 Editor 中模拟器删除真实头显输入的问题，并新增定向合成输入验证。继续使用现有官方 XR Device Simulator Prefab 与输入资源，未复制包源码、下载媒体或新增 package。参考 [Unity Play 模式 OpenXR runtime 说明](https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.14/manual/project-configuration.html#choose-an-openxr-runtime-to-use-in-play-mode)和 [VDXR 开发说明](https://github.com/mbucchia/VirtualDesktop-OpenXR/wiki/Developers)。AI 辅助范围包含诊断、启动策略代码、验证及交接；真实 Quest 3 / Virtual Desktop 复测、设备舒适性和构建仍单独记录。见[活动记录](activity/2026-10-13-xr-head-tracking-fix.md)。
+
 ## 2026-10-11：SuperLite 17B v2 Unity 接入
 
 Ereshkigal1224 按用户要求认领主体/最终总装，并由 Codex 辅助将已接受、已由 PR #43 合入的本组整盔 v2 派生为 FBX，接入现有三年代展台索引 2。原资料/媒体与估算边界沿用整盔资产记录，本轮未下载或分发第三方模型、参考照片、标牌、音频或贴图，未新增 Unity package。旧研究分件继续独立保存。
