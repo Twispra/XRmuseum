@@ -102,3 +102,9 @@ Codex 辅助编写 v2 修正脚本和静态检查，**没有产生新的模型�
 ## 2026-10-10：SuperLite 17B 资料收束和 v3 结构修正
 
 Ereshkigal1224 负责，Codex 辅助核查 [Kirby Morgan 产品页](https://www.kirbymorgan.com/products/helmets/superlite-17b)、[黄色整盔照片](https://www.kirbymorgan.com/sites/default/files/2021-02/17B-Helmet-Colors-yellow.jpg)、[侧阀照片](https://www.kirbymorgan.com/sites/default/files/2021-02/fiberglass-side-block-IMG_0387.jpg)、[面窗手册 #260901001](https://www.kirbymorgan.com/sites/default/files/2026-09/face-port-port-retainer-nose-block-260901001.pdf)、[侧阀分解图 #230118015](https://www.kirbymorgan.com/sites/default/files/2023-01/chromed-brass-side-block-blowapart-230118015.pdf)及[厂家 FAQ](https://www.kirbymorgan.com/faq)。完整逐项用途、局限和未找到的资料见[本轮资料收束](../artifacts/helmet-refinement/eras/superlite-17b/references/research-freeze-2026-10-10.zh-CN.md)。照片和 PDF 只链接，不复制或作贴图；许可未核实为可再分发。v3 Blender/GLB/预览由本项目生成，颜色与几何均为展示估计，未新增第三方模型或 Unity 依赖。官方 Blender 4.5.14 回读通过只证明文件结构，不代表外形精度、整机装配或成员批准。
+
+## 2026-10-12：早期封闭式头盔资料候选
+
+我根据组员建议确定早期头盔资料整理范围，并借助 Codex 检索、分类和撰写 [Science Museum Group 馆藏 1881-47](https://collection.sciencemuseumgroup.org.uk/objects/co40614/first-closed-diving-helmet-and-breastplate) 的整件尺寸、重量、材料及未核实局部参数；分类和来源见[独立资料](../artifacts/helmet-refinement/eras/early-standard/references/research-v1.zh-CN.md)。馆藏数据只作有来源的研究候选，不声称小组已采用同一实物或精细模型已完成。馆藏图片标注 CC BY-NC-SA 4.0，本仓库仅保留链接，没有复制照片、下载模型或制作贴图。Codex 辅助不能代替成员的人工历史核对、建模或课程 AI 许可确认。
+
+2026-10-13 补充外形灵感：我提供香港海事博物馆一顶 1988 年在中国制造、借自 Macalister Collection 的四张近照，另附展厅背景照；[馆方展厅页](https://www.hkmaritimemuseum.org/permanent-b-deck/details?lang=zh)仅用于核对博物馆背景。四张近照由组员拍摄，我确认该组员同意上传至小组 GitHub 项目；这四张原始 JPEG 已按[照片索引](../artifacts/helmet-refinement/eras/early-standard/references/photos/README.md)提交，第五张不提交。拍摄者姓名及小组项目外再利用许可未提供。Codex 辅助区分可见外形与历史事实；1988 年照片不作为 1839 年藏品的尺寸、零件功能、材料或来源证据，详见[研究说明](../artifacts/helmet-refinement/eras/early-standard/references/research-v1.zh-CN.md)。

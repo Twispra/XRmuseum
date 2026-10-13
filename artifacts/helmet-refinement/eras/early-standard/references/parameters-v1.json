@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "status": "research_candidate_not_model_approval",
+  "issue": "https://github.com/Twispra/XRmuseum/issues/25",
+  "candidate_object": {
+    "collection": "Science Museum Group Collection",
+    "title": "First closed diving helmet and breastplate",
+    "object_number": "1881-47",
+    "source_url": "https://collection.sciencemuseumgroup.org.uk/objects/co40614/first-closed-diving-helmet-and-breastplate",
+    "accessed_on": "2026-10-12",
+    "catalogue_date": "1839",
+    "catalogue_place": "England"
+  },
+  "catalogue_measurements": {
+    "scope": "helmet_and_breastplate_as_one_catalogued_object",
+    "overall_dimensions_mm_in_source_order": [465, 460, 417],
+    "axis_mapping": null,
+    "mass_kg": 11.5,
+    "mass_scope": "catalogued_object_not_helmet_alone_or_xr_rigidbody"
+  },
+  "catalogue_materials": ["leather", "asbestos", "glass", "copper (alloy)"],
+  "visual_inspiration_not_historical_evidence": {
+    "museum": "Hong Kong Maritime Museum",
+    "museum_context_url": "https://www.hkmaritimemuseum.org/permanent-b-deck/details?lang=zh",
+    "source": "four teammate-shot photos shared for this project on 2026-10-13; upload consent confirmed by the contributing member",
+    "label_made_year": 1988,
+    "label_made_place": "China",
+    "label_loan_source": "Macalister Collection",
+    "permitted_use_in_this_research": "visual inspiration only; mark any borrowed forms as interpretation",
+    "must_not_transfer_to_1839_object": ["dimensions", "mass", "window_count", "port_functions", "materials_by_part", "provenance", "manufacturer"],
+    "photos_in_repository": true,
+    "photos_directory": "photos/",
+    "photographer_and_redistribution_rights": "teammate photographed; contributor confirmed consent for group-project GitHub upload; photographer name and wider reuse permission not provided"
+  },
+  "unverified_part_parameters": {
+    "helmet_shell_dimensions_mm": null,
+    "breastplate_dimensions_mm": null,
+    "window_count": null,
+    "window_diameter_mm": null,
+    "window_thickness_mm": null,
+    "fastener_count": null,
+    "air_inlet_position_and_size": null,
+    "exhaust_position_and_size": null,
+    "helmet_to_breastplate_joint_dimensions_mm": null,
+    "internal_structure": null
+  },
+  "modeling_convention_proposal": {
+    "unit": "meter",
+    "overall_dimensions_m_in_source_order": [0.465, 0.46, 0.417],
+    "forward_axis": null,
+    "up_axis": null,
+    "origin": null,
+    "approval_status": "pending_model_owner_and_team_review"
+  },
+  "media_use": {
+    "museum_photo_included_in_repository": false,
+    "museum_page_image_license": "CC BY-NC-SA 4.0; check before reuse",
+    "catalogue_data_license": "CC0 for title/made/maker/details data; page descriptions CC BY 4.0"
+  },
+  "note": "The three overall numbers are not assigned to X/Y/Z or to helmet-only parts. Null means not verified, not zero."
+}
