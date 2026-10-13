@@ -29,6 +29,8 @@ namespace Museum.XRTracking.EditorTools
         static IEnumerator routine;
         static Report report;
         static XRHMD fixture;
+        static Keyboard addedKeyboard;
+        static Mouse addedMouse;
         static XROrigin rig;
         static Vector3 oldOffset, originPosition;
         static Quaternion originRotation;
@@ -56,10 +58,18 @@ namespace Museum.XRTracking.EditorTools
         public static void RunInEditor() => Begin(false);
         // Omit -quit; this entry point exits only after Play Mode checks and report writing.
         public static void RunBatch() => Begin(true);
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        static void PrepareDesktopInput()
+        {
+            if (!SessionState.GetBool(Prefix + "Active", false)) return;
+            // Batch mode has no OS devices; the official simulator help UI reads these controls in Start.
+            if (Keyboard.current == null) addedKeyboard = InputSystem.AddDevice<Keyboard>("XR tracking QA keyboard");
+            if (Mouse.current == null) addedMouse = InputSystem.AddDevice<Mouse>("XR tracking QA mouse");
+        }
         static void Begin(bool batch)
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Exit Play Mode before XR tracking validation.");
-            if (SceneManager.GetActiveScene().isDirty) throw new InvalidOperationException("Save scene changes before validation; no scene is saved by this validator.");
+            if (!batch && SceneManager.GetActiveScene().isDirty) throw new InvalidOperationException("Save scene changes before validation; no scene is saved by this validator.");
             var provenance = new Report { utc = DateTime.UtcNow.ToString("o"), commit = Git("rev-parse HEAD"), branch = Git("branch --show-current"), dirty = Git("status --porcelain=v1 --untracked-files=all"), unity = Application.unityVersion,
                 environment = SystemInfo.operatingSystem + "; " + SystemInfo.processorType + "; " + SystemInfo.graphicsDeviceName, sceneSha256 = Hash(ScenePath) };
             string output = Path.Combine(RepoRoot, "artifacts/helmet-interaction/qa/runs", DateTime.UtcNow.ToString("yyyyMMddTHHmmssfffZ") + "-xr-tracking-" + Guid.NewGuid().ToString("N"));
@@ -154,6 +164,8 @@ namespace Museum.XRTracking.EditorTools
         {
             if (finishing) return; finishing = true; routine = null; Application.logMessageReceived -= Log; InputSystem.onBeforeUpdate -= Flush; PendingInput.Clear();
             if (fixture != null && fixture.added) InputSystem.RemoveDevice(fixture);
+            if (addedKeyboard != null && addedKeyboard.added) InputSystem.RemoveDevice(addedKeyboard);
+            if (addedMouse != null && addedMouse.added) InputSystem.RemoveDevice(addedMouse);
             if (changedOffset && rig && rig.CameraFloorOffsetObject) rig.CameraFloorOffsetObject.transform.localPosition = oldOffset;
             if (changedInput) { InputSystem.settings.backgroundBehavior = oldBackground; InputSystem.settings.editorInputBehaviorInPlayMode = oldEditorInput; }
             bool unchanged = Hash(ScenePath) == report.sceneSha256; report.checks.Add(new Check { name = "saved scene is unchanged", passed = unchanged, detail = Hash(ScenePath) });
