@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "sourceCommit": "a0df95bb5489f5ccbb2e7866f7790cd576a8e9e5",
+  "unity": "2022.3.62f3c1",
+  "testedDirty": [],
+  "editMode": {
+    "total": 21,
+    "passed": 21,
+    "failed": 0,
+    "skipped": 0,
+    "exitCode": 0,
+    "report": "hotspot-tests.xml"
+  },
+  "mainScene": {
+    "status": "passed",
+    "checks": 81849,
+    "failedChecks": 0,
+    "errors": 0,
+    "warnings": 0,
+    "verifiedInputFiles": 339,
+    "exitCode": 0,
+    "inputMethod": "Queued synthetic XR controller/HMD states in the normal Dynamic input update; production Input Actions, ray interactors and saved LanguageButton selectEntered handlers. No SelectEnter/SelectExit or TriggerProgrammatically calls. The existing simulator device writer is temporarily disabled.",
+    "fullReportIncluded": false,
+    "fullReportSha256": "b4773da520970a1166d09680ecaf92f75aa4fe049d6c7fb169ffd80795983d05"
+  },
+  "hotspots": {
+    "status": "passed",
+    "checks": 786,
+    "selections": 20,
+    "captures": 6,
+    "report": "hotspot-interaction.json"
+  },
+  "commands": [
+    "Unity.exe -batchmode -projectPath <repo>/MuseumVR -runTests -testPlatform EditMode -testFilter Museum.Hotspots.Tests -testResults <new-run>/hotspot-tests.xml -logFile <local-log>",
+    "Unity.exe -batchmode -projectPath <repo>/MuseumVR -executeMethod Museum.Localization.EditorTools.LocalizationIntegrationValidation.RunBatch -logFile <local-log>"
+  ],
+  "limitations": [
+    "Synthetic XR states and XRI manager tests do not prove real headset or physical controller behavior.",
+    "The component-restart regression calls MonoBehaviour lifecycle callbacks directly in EditMode.",
+    "Monocular captures do not prove stereo or color-vision accessibility, reach, comfort, performance, user-study results or executable build success.",
+    "Full main-scene output, logs and Library cache remain local; only useful hotspot evidence is committed."
+  ]
+}
