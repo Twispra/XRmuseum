@@ -8,7 +8,7 @@ namespace Museum.Exploration
     {
         // Append only: existing scene assets serialize these numeric values.
         public enum Action { Explore, Inspect, Air, Voice, Hint, Review, Replay, Stop, Back, NewVisit,
-            More, Help, Details, CloseReading, InspectMore, ReduceMotion, Sound }
+            More, Help, Details, CloseReading, InspectMore, ReduceMotion, Sound, CenterView }
         [SerializeField] HelmetExplorationController controller;
         [SerializeField] HelmetExplorationPanel panel;
         [SerializeField] Action action;
@@ -50,6 +50,7 @@ namespace Museum.Exploration
             if (!panel) return;
             // Returning to the original tools must work even when interpretation is disabled.
             if (action == Action.Inspect) { panel.ShowInspection(); return; }
+            if (action == Action.CenterView) { panel.ResetView(); return; }
             if (!controller || !controller.isActiveAndEnabled) return;
             switch (action)
             {

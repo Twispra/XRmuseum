@@ -1,0 +1,42 @@
+{
+  "method": "Same saved MuseumStart LocalizationIntegrationValidation.RunBatch in isolated worktree; no assertions changed",
+  "runs": [
+    {
+      "commit": "05e0345c6d91b8167416edde2e9a83064401d215",
+      "status": "failed",
+      "checks": 1082,
+      "failedChecks": [
+        {
+          "kind": "helmet hotspots",
+          "name": "ordinary shell remains directly grabbable",
+          "detail": "",
+          "passed": false
+        }
+      ],
+      "failure": "System.InvalidOperationException: ordinary shell remains directly grabbable: \r\n  at Museum.Localization.EditorTools.LocalizationIntegrationValidation.Require (System.Boolean condition, System.String kind, System.String name, System.String detail) [0x00045] in E:\\Codex\\worktrees\\pr51-fix-2026-10-14\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\LocalizationIntegrationValidation.cs:407 \r\n  at Museum.Localization.EditorTools.HelmetHotspotInteractionValidation+Context.Check (System.Boolean passed, System.String name, System.String detail) [0x00064] in E:\\Codex\\worktrees\\pr51-fix-2026-10-14\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\HelmetHotspotInteractionValidation.cs:72 \r\n  at Museum.Localization.EditorTools.HelmetHotspotInteractionValidation+<OrdinaryGrab>d__18.MoveNext () [0x00133] in E:\\Codex\\worktrees\\pr51-fix-2026-10-14\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\HelmetHotspotInteractionValidation.cs:316 \r\n  at Museum.Localization.EditorTools.LocalizationIntegrationValidation.Tick () [0x0009d] in E:\\Codex\\worktrees\\pr51-fix-2026-10-14\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\LocalizationIntegrationValidation.cs:203 ",
+      "errors": [],
+      "warnings": [],
+      "rawReportStoredLocally": true,
+      "newTrilingualFullPass": false
+    },
+    {
+      "commit": "81a8e0c5200dcbfd0c576d7f24bd2a0800eba3b3",
+      "status": "failed",
+      "checks": 1082,
+      "failedChecks": [
+        {
+          "kind": "helmet hotspots",
+          "name": "ordinary shell remains directly grabbable",
+          "detail": "",
+          "passed": false
+        }
+      ],
+      "failure": "System.InvalidOperationException: ordinary shell remains directly grabbable: \r\n  at Museum.Localization.EditorTools.LocalizationIntegrationValidation.Require (System.Boolean condition, System.String kind, System.String name, System.String detail) [0x00045] in E:\\Codex\\worktrees\\pr51-fix-2026-10-14\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\LocalizationIntegrationValidation.cs:407 \r\n  at Museum.Localization.EditorTools.HelmetHotspotInteractionValidation+Context.Check (System.Boolean passed, System.String name, System.String detail) [0x00064] in E:\\Codex\\worktrees\\pr51-fix-2026-10-14\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\HelmetHotspotInteractionValidation.cs:72 \r\n  at Museum.Localization.EditorTools.HelmetHotspotInteractionValidation+<OrdinaryGrab>d__18.MoveNext () [0x00133] in E:\\Codex\\worktrees\\pr51-fix-2026-10-14\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\HelmetHotspotInteractionValidation.cs:316 \r\n  at Museum.Localization.EditorTools.LocalizationIntegrationValidation.Tick () [0x0009d] in E:\\Codex\\worktrees\\pr51-fix-2026-10-14\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\LocalizationIntegrationValidation.cs:203 ",
+      "errors": [],
+      "warnings": [],
+      "rawReportStoredLocally": true,
+      "newTrilingualFullPass": false
+    }
+  ],
+  "conclusion": "Both the PR candidate and untouched main fail the same ordinary-shell direct grab check; full regression did not pass, and this comparison does not establish the underlying #52 root cause."
+}

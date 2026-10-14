@@ -159,6 +159,11 @@ MonoBehaviour:
     english: Help
     traditionalChinese: "\u5E6B\u52A9"
     note: Visitor-facing exhibit copy; translated from existing English.
+  - key: view.reset
+    chinese: "\u91CD\u7F6E\u89C6\u89D2"
+    english: Reset View
+    traditionalChinese: "\u91CD\u8A2D\u8996\u89D2"
+    note: Return the visitor view to its starting position without resetting the exhibit or visit progress.
   - key: text.19734a1b58ca
     chinese: "\u524D\u7A97"
     english: Window

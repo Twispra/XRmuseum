@@ -1,0 +1,224 @@
+{
+  "commit": "c64dc0e29a4c6223ef462a2f1049f675f4bce76f",
+  "unity": "2022.3.62f3c1",
+  "scope": "Edit Mode height fixtures only; first runtime fixture stopped on active-only controller lookup, corrected before later runs.",
+  "checks": [
+    {
+      "name": "Floor 0.85: reset succeeds",
+      "detail": "Public API pose fixture.",
+      "passed": true
+    },
+    {
+      "name": "Floor 0.85: initial floor restored",
+      "detail": "origin Y=0.8; expected=0",
+      "passed": false
+    },
+    {
+      "name": "Floor 0.85: tracked eye height retained",
+      "detail": "camera Y=1.65; expected=0.85",
+      "passed": false
+    },
+    {
+      "name": "Floor 0.85: horizontal camera position restored",
+      "detail": "(0.0000, 1.6500, 2.2000)",
+      "passed": true
+    },
+    {
+      "name": "Floor 0.85: horizontal heading restored",
+      "detail": "(0.0000, -0.2588, 0.9659)",
+      "passed": true
+    },
+    {
+      "name": "Floor 0.85: repeated reset stable",
+      "detail": "Second call must not add another offset.",
+      "passed": true
+    },
+    {
+      "name": "Crouched reset then stand retains standing height",
+      "detail": "camera Y=2.45",
+      "passed": false
+    },
+    {
+      "name": "Floor 1.2: reset succeeds",
+      "detail": "Public API pose fixture.",
+      "passed": true
+    },
+    {
+      "name": "Floor 1.2: initial floor restored",
+      "detail": "origin Y=0.4499998; expected=0",
+      "passed": false
+    },
+    {
+      "name": "Floor 1.2: tracked eye height retained",
+      "detail": "camera Y=1.65; expected=1.2",
+      "passed": false
+    },
+    {
+      "name": "Floor 1.2: horizontal camera position restored",
+      "detail": "(0.0000, 1.6500, 2.2000)",
+      "passed": true
+    },
+    {
+      "name": "Floor 1.2: horizontal heading restored",
+      "detail": "(0.0000, -0.2588, 0.9659)",
+      "passed": true
+    },
+    {
+      "name": "Floor 1.2: repeated reset stable",
+      "detail": "Second call must not add another offset.",
+      "passed": true
+    },
+    {
+      "name": "Floor 1.65: reset succeeds",
+      "detail": "Public API pose fixture.",
+      "passed": true
+    },
+    {
+      "name": "Floor 1.65: initial floor restored",
+      "detail": "origin Y=0; expected=0",
+      "passed": true
+    },
+    {
+      "name": "Floor 1.65: tracked eye height retained",
+      "detail": "camera Y=1.65; expected=1.65",
+      "passed": true
+    },
+    {
+      "name": "Floor 1.65: horizontal camera position restored",
+      "detail": "(0.0000, 1.6500, 2.2000)",
+      "passed": true
+    },
+    {
+      "name": "Floor 1.65: horizontal heading restored",
+      "detail": "(0.0000, -0.2588, 0.9659)",
+      "passed": true
+    },
+    {
+      "name": "Floor 1.65: repeated reset stable",
+      "detail": "Second call must not add another offset.",
+      "passed": true
+    },
+    {
+      "name": "Floor 1.8: reset succeeds",
+      "detail": "Public API pose fixture.",
+      "passed": true
+    },
+    {
+      "name": "Floor 1.8: initial floor restored",
+      "detail": "origin Y=-0.15; expected=0",
+      "passed": false
+    },
+    {
+      "name": "Floor 1.8: tracked eye height retained",
+      "detail": "camera Y=1.65; expected=1.8",
+      "passed": false
+    },
+    {
+      "name": "Floor 1.8: horizontal camera position restored",
+      "detail": "(0.0000, 1.6500, 2.2000)",
+      "passed": true
+    },
+    {
+      "name": "Floor 1.8: horizontal heading restored",
+      "detail": "(0.0000, -0.2588, 0.9659)",
+      "passed": true
+    },
+    {
+      "name": "Floor 1.8: repeated reset stable",
+      "detail": "Second call must not add another offset.",
+      "passed": true
+    },
+    {
+      "name": "Floor on elevated platform: reset succeeds",
+      "detail": "Public API pose fixture.",
+      "passed": true
+    },
+    {
+      "name": "Floor on elevated platform: initial floor restored",
+      "detail": "origin Y=3.45; expected=3",
+      "passed": false
+    },
+    {
+      "name": "Floor on elevated platform: tracked eye height retained",
+      "detail": "camera Y=4.65; expected=4.2",
+      "passed": false
+    },
+    {
+      "name": "Floor on elevated platform: horizontal camera position restored",
+      "detail": "(0.0000, 4.6500, 2.2000)",
+      "passed": true
+    },
+    {
+      "name": "Floor on elevated platform: horizontal heading restored",
+      "detail": "(0.0000, -0.2588, 0.9659)",
+      "passed": true
+    },
+    {
+      "name": "Floor on elevated platform: repeated reset stable",
+      "detail": "Second call must not add another offset.",
+      "passed": true
+    },
+    {
+      "name": "Floor scaled origin: reset succeeds",
+      "detail": "Public API pose fixture.",
+      "passed": true
+    },
+    {
+      "name": "Floor scaled origin: initial floor restored",
+      "detail": "origin Y=0.4499998; expected=0",
+      "passed": false
+    },
+    {
+      "name": "Floor scaled origin: tracked eye height retained",
+      "detail": "camera Y=2.85; expected=2.4",
+      "passed": false
+    },
+    {
+      "name": "Floor scaled origin: horizontal camera position restored",
+      "detail": "(0.2965, 2.8500, 2.1164)",
+      "passed": false
+    },
+    {
+      "name": "Floor scaled origin: horizontal heading restored",
+      "detail": "(0.0000, -0.2588, 0.9659)",
+      "passed": true
+    },
+    {
+      "name": "Floor scaled origin: repeated reset stable",
+      "detail": "Second call must not add another offset.",
+      "passed": true
+    },
+    {
+      "name": "Device with downward pose: reset succeeds",
+      "detail": "Public API pose fixture.",
+      "passed": true
+    },
+    {
+      "name": "Device with downward pose: initial floor restored",
+      "detail": "origin Y=0.2499999; expected=0",
+      "passed": false
+    },
+    {
+      "name": "Device with downward pose: tracked eye height retained",
+      "detail": "camera Y=1.65; expected=1.4",
+      "passed": false
+    },
+    {
+      "name": "Device with downward pose: horizontal camera position restored",
+      "detail": "(0.0000, 1.6500, 2.2000)",
+      "passed": true
+    },
+    {
+      "name": "Device with downward pose: horizontal heading restored",
+      "detail": "(0.0000, -0.2588, 0.9659)",
+      "passed": true
+    },
+    {
+      "name": "Device with downward pose: repeated reset stable",
+      "detail": "Second call must not add another offset.",
+      "passed": true
+    }
+  ],
+  "runtimeFailure": "System.InvalidOperationException: Sequence contains no matching element\r\n  at System.Linq.Enumerable.Single[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] predicate) [0x00070] in <ea489521390f48908a7ce45cb17a6848>:0 \r\n  at Museum.Exploration.Editor.VisitorViewRecoveryValidation+<ValidateMain>d__39.MoveNext () [0x00128] in E:\\Codex\\worktrees\\pr51-fix-2026-10-14\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\HelmetExploration\\Editor\\VisitorViewRecoveryValidation.cs:177 \r\n  at Museum.Exploration.Editor.VisitorViewRecoveryValidation.Tick () [0x0008d] in E:\\Codex\\worktrees\\pr51-fix-2026-10-14\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\HelmetExploration\\Editor\\VisitorViewRecoveryValidation.cs:158 ",
+  "errors": []
+}
