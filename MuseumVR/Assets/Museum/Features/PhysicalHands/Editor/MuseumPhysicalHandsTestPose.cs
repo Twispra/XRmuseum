@@ -178,10 +178,6 @@ namespace Museum.PhysicalHands.EditorTools
             Vector3 outward, Vector3 legacyPosition, XRGrabInteractable exhibit)
         {
             if (!Hand(controller) || !exhibit || !(target is BoxCollider box)) return OutsideTouch(target, controller, rotation, outward, legacyPosition);
-            // Wide page-navigation controls use their centre; their outer edge
-            // shares space with the smaller controls in the row above.
-            if (Vector3.Scale(box.size, box.transform.lossyScale).x > .20f)
-                return OutsideTouch(target, controller, rotation, outward, legacyPosition);
             float side = Mathf.Sign(Vector3.Dot(target.bounds.center - exhibit.transform.position, box.transform.right));
             Vector3 aim = box.transform.TransformPoint(box.center + Vector3.right * box.size.x * .45f * side);
             // Use the control's own face away from the exhibit, where the visitor
