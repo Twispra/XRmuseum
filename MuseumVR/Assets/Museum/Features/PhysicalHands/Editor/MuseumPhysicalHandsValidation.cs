@@ -345,6 +345,7 @@ namespace Museum.PhysicalHands.EditorTools
             var queryBody = queryObject.AddComponent<Rigidbody>(); queryBody.isKinematic = true; queryBody.useGravity = false;
             direct = queryObject.AddComponent<XRDirectInteractor>(); direct.xrController = controller; direct.interactionManager = fixtureManager;
             direct.hideControllerOnSelect = false; direct.enabled = directEnabled;
+            controller.hideControllerModel = hideModel; // The preceding XRI setter unhides its bound controller.
             return controller;
         }
 
