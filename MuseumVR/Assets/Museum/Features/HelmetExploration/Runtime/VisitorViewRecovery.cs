@@ -9,7 +9,7 @@ namespace Museum.Exploration
     {
         XROrigin origin;
         Museum.Inspection.HelmetInspectionPalette palette;
-        Vector3 homeCameraPosition;
+        Vector3 homeOriginPosition;
         Vector3 homeForward;
 
         public bool IsReady => origin && origin.Camera && homeForward.sqrMagnitude > .5f;
@@ -20,7 +20,7 @@ namespace Museum.Exploration
             origin = xrOrigin;
             palette = follower;
             var baseTransform = origin.Origin ? origin.Origin.transform : origin.transform;
-            homeCameraPosition = baseTransform.position + Vector3.up * origin.CameraYOffset;
+            homeOriginPosition = baseTransform.position;
             homeForward = Vector3.ProjectOnPlane(baseTransform.forward, Vector3.up).normalized;
         }
 
@@ -34,7 +34,12 @@ namespace Museum.Exploration
         {
             if (!IsReady) return false;
             if (!origin.MatchOriginUpCameraForward(Vector3.up, homeForward)) return false;
-            if (!origin.MoveCameraToWorldLocation(homeCameraPosition)) return false;
+            var baseTransform = origin.Origin ? origin.Origin.transform : origin.transform;
+            // Restore the original floor while retaining the current tracked eye height,
+            // including crouching and the Device-mode camera offset. Use world offsets
+            // so a scaled rig also keeps its tracked pose relative to that floor.
+            var cameraOffset = Vector3.ProjectOnPlane(origin.Camera.transform.position - baseTransform.position, Vector3.up);
+            baseTransform.position = homeOriginPosition - cameraOffset;
             if (palette) palette.RecenterNow();
             return true;
         }

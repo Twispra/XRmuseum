@@ -174,8 +174,8 @@ namespace Museum.Exploration.Editor
             InputSystem.settings.editorInputBehaviorInPlayMode = InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
             panel = UnityEngine.Object.FindObjectOfType<HelmetExplorationPanel>(); palette = panel.GetComponent<HelmetInspectionPalette>(); exploration = panel.Exploration;
             origin = Camera.main.GetComponentInParent<XROrigin>();
-            rightController = UnityEngine.Object.FindObjectsOfType<ActionBasedController>().Single(c => c.name == "Right Controller");
-            leftController = UnityEngine.Object.FindObjectsOfType<ActionBasedController>().Single(c => c.name == "Left Controller");
+            rightController = UnityEngine.Object.FindObjectsOfType<ActionBasedController>(true).Single(c => c.name == "Right Controller");
+            leftController = UnityEngine.Object.FindObjectsOfType<ActionBasedController>(true).Single(c => c.name == "Left Controller");
             rightDevice = InputSystem.AddDevice<XRSimulatedController>(); InputSystem.SetDeviceUsage(rightDevice, UnityEngine.InputSystem.CommonUsages.RightHand);
             leftDevice = InputSystem.AddDevice<XRSimulatedController>(); InputSystem.SetDeviceUsage(leftDevice, UnityEngine.InputSystem.CommonUsages.LeftHand);
             hmd = InputSystem.AddDevice<XRSimulatedHMD>(); keyboard = InputSystem.AddDevice<Keyboard>();
