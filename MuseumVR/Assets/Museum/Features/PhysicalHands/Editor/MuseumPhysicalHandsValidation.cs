@@ -405,7 +405,7 @@ namespace Museum.PhysicalHands.EditorTools
             // Editor queries can report enabled while the player buffer is still disabled
             // by its earlier background-focus state. Explicitly re-enable owned fixtures.
             InputSystem.EnableDevice(keyboard);
-            if (addedMouse) InputSystem.EnableDevice(addedMouse);
+            if (addedMouse != null) InputSystem.EnableDevice(addedMouse);
             leftDevice = InputSystem.AddDevice<XRSimulatedController>("Physical hands QA left"); InputSystem.SetDeviceUsage(leftDevice, UnityEngine.InputSystem.CommonUsages.LeftHand);
             rightDevice = InputSystem.AddDevice<XRSimulatedController>("Physical hands QA right"); InputSystem.SetDeviceUsage(rightDevice, UnityEngine.InputSystem.CommonUsages.RightHand);
             hmd = InputSystem.AddDevice<XRSimulatedHMD>("Physical hands QA head");
