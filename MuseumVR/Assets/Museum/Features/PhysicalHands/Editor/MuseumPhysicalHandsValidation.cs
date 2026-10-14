@@ -577,7 +577,10 @@ namespace Museum.PhysicalHands.EditorTools
             Require(!helmet.isSelected && !window.isSelected && inspection.WindowAngle < .1f, "API cleanup", "public reset establishes the closed display state");
             Vector3 touch = RootTouch(leftHand, Vector3.left);
             QueueController(leftDevice, touch, Quaternion.identity, false); yield return Wait(.45f);
-            Require(NearCandidate(leftHand, helmet), "production input", "left palm can reapproach the reset exhibit");
+            Record("approaching reset exhibit", leftHand, helmet);
+            Require(NearCandidate(leftHand, helmet), "production input", "left palm can reapproach the reset exhibit", HandDetail(leftHand) +
+                "; root=" + helmet.transform.position + "; grip=" + leftController.currentControllerState.selectInteractionState.value +
+                "; hand filter=" + ((IXRSelectFilter)leftHand).Process(leftHand.DirectInteractor, helmet));
             QueueController(leftDevice, touch, Quaternion.identity, true); yield return Wait(.2f);
             Require(helmet.IsSelected(leftHand.DirectInteractor), "production input", "left hand holds the helmet for window manipulation");
             Vector3 windowTouch = WindowTouch(rightHand);
@@ -664,7 +667,12 @@ namespace Museum.PhysicalHands.EditorTools
         static string HandDetail(MuseumPhysicalHand hand)
         {
             var candidates = new List<IXRInteractable>(); hand.DirectInteractor.GetValidTargets(candidates);
-            return "target=" + hand.TrackingTarget.position + "; proxy=" + hand.Body.position + "; error=" + hand.TrackingError + "; blocked=" + hand.IsBlocked + "; candidates=" + string.Join(",", candidates.Select(c => c.transform.name));
+            var box = hand.CollisionCollider as BoxCollider;
+            var nearby = Physics.OverlapBox(box.transform.TransformPoint(box.center), box.size * .5f + Vector3.one * .003f,
+                box.transform.rotation, ~0, QueryTriggerInteraction.Ignore);
+            return "target=" + hand.TrackingTarget.position + "; proxy=" + hand.Body.position + "; error=" + hand.TrackingError + "; blocked=" + hand.IsBlocked +
+                "; tracked=" + hand.IsTrackingValid + "; candidates=" + string.Join(",", candidates.Select(c => c.transform.name)) +
+                "; nearby solids=" + string.Join(",", nearby.Where(c => !c.transform.IsChildOf(hand.transform)).Select(c => c.name));
         }
         static float Penetration(Collider own, Collider other)
         {
