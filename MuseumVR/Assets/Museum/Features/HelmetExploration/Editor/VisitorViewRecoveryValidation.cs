@@ -37,6 +37,8 @@ namespace Museum.Exploration.Editor
         static XRSimulatedController rightDevice, leftDevice;
         static XRSimulatedHMD hmd;
         static Keyboard keyboard;
+        static Mouse mouse;
+        static bool addedMouse;
         static XROrigin origin;
         static InputSettings.BackgroundBehavior oldBackground;
         static InputSettings.EditorInputBehaviorInPlayMode oldEditorInput;
@@ -71,6 +73,16 @@ namespace Museum.Exploration.Editor
         [MenuItem("Museum/Exploration/Validate visitor view recovery")]
         public static void RunInEditor() => Begin();
         public static void RunBatch() => Begin();
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        static void PrepareInput()
+        {
+            if (!SessionState.GetBool(Prefix + "Active", false)) return;
+            // The official simulator UI resolves keyboard/mouse bindings during Start.
+            // Supply the same isolated devices used by the existing scene validators.
+            keyboard = InputSystem.AddDevice<Keyboard>("View recovery QA keyboard");
+            mouse = Mouse.current; addedMouse = mouse == null;
+            if (addedMouse) mouse = InputSystem.AddDevice<Mouse>("View recovery QA mouse");
+        }
         static void Begin()
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Exit Play Mode first.");
@@ -181,7 +193,7 @@ namespace Museum.Exploration.Editor
             leftController = UnityEngine.Object.FindObjectsOfType<ActionBasedController>(true).Single(c => c.name == "Left Controller");
             rightDevice = InputSystem.AddDevice<XRSimulatedController>(); InputSystem.SetDeviceUsage(rightDevice, UnityEngine.InputSystem.CommonUsages.RightHand);
             leftDevice = InputSystem.AddDevice<XRSimulatedController>(); InputSystem.SetDeviceUsage(leftDevice, UnityEngine.InputSystem.CommonUsages.LeftHand);
-            hmd = InputSystem.AddDevice<XRSimulatedHMD>(); keyboard = InputSystem.AddDevice<Keyboard>();
+            hmd = InputSystem.AddDevice<XRSimulatedHMD>(); InputSystem.EnableDevice(keyboard); if (addedMouse) InputSystem.EnableDevice(mouse);
             QueueHead(); ParkHands(); yield return Wait(.5f);
             exploration.SelectClue(HelmetExplorationController.Clue.Air); exploration.RequestHint(); exploration.ShowReview(); panel.ShowExploration();
             var before = Snapshot();
@@ -321,7 +333,7 @@ namespace Museum.Exploration.Editor
         {
             if (finishing) return; finishing = true; report.failure = failure; report.finishedUtc = DateTime.UtcNow.ToString("o");
             Application.logMessageReceived -= OnLog; InputSystem.onBeforeUpdate -= FlushInput; PendingInput.Clear();
-            foreach (var device in new InputDevice[] { rightDevice, leftDevice, hmd, keyboard }) if (device != null && device.added) InputSystem.RemoveDevice(device);
+            foreach (var device in new InputDevice[] { rightDevice, leftDevice, hmd, keyboard, addedMouse ? mouse : null }) if (device != null && device.added) InputSystem.RemoveDevice(device);
             if (changedSettings) { InputSystem.settings.backgroundBehavior = oldBackground; InputSystem.settings.editorInputBehaviorInPlayMode = oldEditorInput; changedSettings = false; }
             Directory.CreateDirectory(Output); File.WriteAllText(Path.Combine(Output, "report.json"), JsonUtility.ToJson(report, true));
             bool passed = failure == null && report.errors.Count == 0 && report.checks.All(c => c.passed);
