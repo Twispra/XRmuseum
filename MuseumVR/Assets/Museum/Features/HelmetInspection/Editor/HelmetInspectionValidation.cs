@@ -1050,7 +1050,8 @@ namespace Museum.Inspection.Editor
         {
             controller=controller ? controller : rightController;
             var collider=helmetColliders.OrderByDescending(c=>c.bounds.size.sqrMagnitude).First();
-            Vector3 outward=helmet.transform.rotation*(controller==leftController ? Vector3.left : Vector3.right);
+            // Exercise an ordinary shell grasp away from the authored right-side clue.
+            Vector3 outward=helmet.transform.rotation*Vector3.left;
             return MuseumPhysicalHandsTestPose.OutsideTouch(collider, controller, Quaternion.identity, outward, collider.bounds.center);
         }
 

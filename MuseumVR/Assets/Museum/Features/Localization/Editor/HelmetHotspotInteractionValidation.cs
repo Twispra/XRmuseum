@@ -301,7 +301,7 @@ namespace Museum.Localization.EditorTools
         {
             var collider = c.root.colliders.OrderByDescending(col => col.bounds.size.sqrMagnitude).First();
             return MuseumPhysicalHandsTestPose.OutsideTouch(collider, MuseumPhysicalHandsTestPose.Controller(false),
-                Quaternion.identity, c.root.transform.right, collider.bounds.center);
+                Quaternion.identity, -c.root.transform.right, collider.bounds.center);
         }
 
         static IEnumerator OrdinaryGrab(Context c)
