@@ -1,0 +1,18 @@
+{
+  "method": "Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch",
+  "project": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\physical-hands-2026-10-14\\XRmuseum\\MuseumVR",
+  "commit": "b92af45431b232c8d880f26a4531e0c71a1ae135",
+  "startedUtc": "2026-10-14T07:04:24.6387283Z",
+  "endedUtc": "2026-10-14T07:07:42.4900048Z",
+  "pid": 7884,
+  "exitCode": 0,
+  "args": [
+    "-batchmode",
+    "-projectPath",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\physical-hands-2026-10-14\\XRmuseum\\MuseumVR\"",
+    "-executeMethod",
+    "Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch",
+    "-logFile",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\physical-hands-2026-10-14\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261014-150424-exploration-exterior\\unity.log\""
+  ]
+}

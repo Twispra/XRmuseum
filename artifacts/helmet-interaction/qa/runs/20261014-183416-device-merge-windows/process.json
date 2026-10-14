@@ -1,0 +1,20 @@
+{
+  "method": "Museum.PhysicalHands.EditorTools.MuseumPhysicalHandsBuild.RunBatch",
+  "project": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\physical-hands-2026-10-14\\XRmuseum\\MuseumVR",
+  "commit": "4cde10c62887cf3857b388c084b1339cc41c7f7c",
+  "startedUtc": "2026-10-14T10:34:16.0671588Z",
+  "endedUtc": "2026-10-14T10:37:20.5587242Z",
+  "pid": 29044,
+  "exitCode": 0,
+  "args": [
+    "-batchmode",
+    "-projectPath",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\physical-hands-2026-10-14\\XRmuseum\\MuseumVR\"",
+    "-executeMethod",
+    "Museum.PhysicalHands.EditorTools.MuseumPhysicalHandsBuild.RunBatch",
+    "-logFile",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\physical-hands-2026-10-14\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261014-183416-device-merge-windows\\unity.log\"",
+    "-buildTarget",
+    "Win64"
+  ]
+}
