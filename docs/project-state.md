@@ -1,5 +1,7 @@
 # 项目状态与下一步
 
+2026-10-14 视角修复合并交接：用户反馈“视角没有太大的问题了”，明确授权 [PR #49](https://github.com/Twispra/XRmuseum/pull/49) 合入 main。合并前实际 main 仍为 `4578e66`，候选 `a45f515` 的产品源码与已测 `1633e98` 一致，来源指纹复核通过；本次仅补充反馈与文档。执行正常 GitHub 合并，最终 merged 状态/实际 merge SHA 以 PR 回读为准。[设备反馈、复核与交接](activity/2026-10-14-pr49-merge.md)。本条用户反馈只覆盖视角，没有扩大为控制器、性能、完整舒适性、构建或用户研究通过；原目录既有改动继续保留。
+
 2026-10-13 站姿展示高度调整：用户确认真实头显转动正常、站着游玩且地面正常，剩余问题是展品太高。同一 [Issue #48](https://github.com/Twispra/XRmuseum/issues/48) / [Draft PR #49](https://github.com/Twispra/XRmuseum/pull/49) 将中央台面 **1.16 → 0.96 m**，头盔/操作按钮/复位点下移 20 cm，台座底部仍贴地，热点信息卡保留原阅读高度。最终被测源码 **`1633e98`** 的高度专项 **65 项 / 0 errors / 0 warnings**、主场景 **83,424 项 / 0 errors / 0 warnings**通过；此前 `ac42155` 精细整合 423 项通过。已安全同步到本地原工程供设备复测，相机/Origin/地面跟踪保持原配置；尚未合入 main，20 cm 调整后的真实舒适性仍待用户回读。[最终范围、证据与交接](activity/2026-10-13-standing-display-height.md)。
 
 2026-10-13 真实头显视角修复：[Issue #48](https://github.com/Twispra/XRmuseum/issues/48) 基于实际 main **`4578e66`**，修复 Editor 自动模拟器删除真实 HMD 输入的问题。修复源码 **`1690a52`** 的定向合成输入 **23/23** 与保存主场景 **83,156 项检查 / 0 errors / 0 warnings**通过；未修改主场景、相机绑定、地面定位、packages 或 ProjectSettings。已同步本地原工程供设备复测，权威修复仍在独立分支，尚未合入 main；真实 Quest 3 / Virtual Desktop 转头、起始高度及历史 frame submission 错误仍待实机确认。[原因、证据与接手步骤](activity/2026-10-13-xr-head-tracking-fix.md)。
