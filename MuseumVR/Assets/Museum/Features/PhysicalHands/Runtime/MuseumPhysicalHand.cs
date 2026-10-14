@@ -54,6 +54,8 @@ namespace Museum.PhysicalHands
         public SphereCollider PalmCollider { get { EnsureBody(); return palm; } }
         public Collider CollisionCollider { get { EnsureBody(); return envelope; } }
         public float CollisionRadius => collisionRadius;
+        public Vector3 OpenEnvelopeSize => OpenSize;
+        public Vector3 OpenEnvelopeCenter => OpenCenter;
         public bool IsBlocked { get; private set; }
         public float TrackingError => trackingTarget ? Vector3.Distance(trackingTarget.position, body ? body.position : transform.position) : 0f;
         public bool IsTrackingValid => trackingOverride ?? (trackingTarget && (!inputController ||
