@@ -278,7 +278,12 @@ namespace Museum.PhysicalHands.EditorTools
                 Mathf.Abs(localLeftQuery.radius - .1f) < .0001f && Mathf.Abs(localRightQuery.radius - .1f) < .0001f &&
                 !localLeft.hideControllerModel && localRight.hideControllerModel &&
                 localLeftDirect.enabled && !localRightDirect.enabled,
-                "lifecycle fixture", "disabled startup leaves generated hands inactive and restores each query/model/enabled state");
+                "lifecycle fixture", "disabled startup leaves generated hands inactive and restores each query/model/enabled state",
+                "hands=" + (fixtureRig.LeftHand ? fixtureRig.LeftHand.gameObject.activeSelf.ToString() : "absent") + "/" +
+                (fixtureRig.RightHand ? fixtureRig.RightHand.gameObject.activeSelf.ToString() : "absent") +
+                "; queries=" + localLeftQuery.radius + "/" + localRightQuery.radius +
+                "; hidden models=" + localLeft.hideControllerModel + "/" + localRight.hideControllerModel +
+                "; direct enabled=" + localLeftDirect.enabled + "/" + localRightDirect.enabled);
             Require(localControl.distanceCalculationMode == XRBaseInteractable.DistanceCalculationMode.ColliderPosition &&
                 localExploration.distanceCalculationMode == XRBaseInteractable.DistanceCalculationMode.TransformPosition,
                 "lifecycle fixture", "disabled startup does not alter either control distance mode");
