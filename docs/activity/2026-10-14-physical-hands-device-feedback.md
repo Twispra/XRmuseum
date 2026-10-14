@@ -40,7 +40,7 @@
 
 待设备复测时，先双手不抓物、左摇杆静止，再分别向前、松开、向后、松开，观察输入归零后角色是否继续移动；随后从外壳不同侧面拿起、旋转、放下，检查掌面空隙，再检查左右换手和双手协作。记录正常、异常或未测，不将一次目视正常扩大为完整设备验收。
 
-修订程序完整目录：`E:/XRmuseum/Builds/Windows/physical-hands-device-20261014-merge/`。保留 `MuseumVR.exe`、`MuseumVR_Data`、`UnityPlayer.dll`、`MonoBleedingEdge` 等依赖；构建产物不进 Git。构建过程中只追加本轮文档，Assets 源码冻结，源指纹没有变化。当前 Player 未启动，没有修订版设备采样或实机通过结果。
+修订程序完整目录：`E:/XRmuseum/Builds/Windows/physical-hands-device-20261014-merge/`。保留 `MuseumVR.exe`、`MuseumVR_Data`、`UnityPlayer.dll`、`MonoBleedingEdge` 等依赖；构建产物不进 Git。构建过程中只追加本轮文档，Assets 源码冻结，源指纹没有变化。真正退出后在 `d4c8d7e1450d6030c496660ed9cee08bfa5af97f` 复核 1,133 个源文件零差、trackedDiff 为空、exe 哈希一致，记录全部 272 个产物的哈希。后续交接提交只追加文档和证据。当前 Player 未启动，没有修订版设备采样或实机通过结果。
 
 ## 限制与交接
 
