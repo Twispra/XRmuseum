@@ -1,4 +1,5 @@
 #if UNITY_EDITOR
+using System.Collections;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -21,6 +22,26 @@ namespace Museum.PhysicalHands.EditorTools
             foreach (var hand in Object.FindObjectsOfType<MuseumPhysicalHand>())
                 if (hand.isActiveAndEnabled && hand.InputController == controller && hand.TrackingTarget) return hand;
             return null;
+        }
+
+        public static IEnumerator WaitForPalm(XRBaseController controller, string phase)
+        {
+            var hand = Hand(controller);
+            if (!hand) yield break;
+            // Let the caller's queued raw controller state reach the production
+            // actions before measuring the collision-constrained palm target.
+            yield return null;
+            yield return null;
+            float deadline = Time.realtimeSinceStartup + 1.5f;
+            while (!hand.IsTrackingValid || hand.TrackingError >= .008f)
+            {
+                if (Time.realtimeSinceStartup >= deadline)
+                    throw new System.InvalidOperationException("Physical palm did not arrive before near grip / " + phase +
+                        "; controller=" + controller.name + "; tracked=" + hand.IsTrackingValid +
+                        "; error=" + hand.TrackingError.ToString("F4") + "; blocked=" + hand.IsBlocked +
+                        "; target=" + hand.TrackingTarget.position + "; proxy=" + hand.Body.position);
+                yield return null;
+            }
         }
 
         public static Vector3 OutsideTouch(Collider target, XRBaseController controller, Quaternion controllerRotation,

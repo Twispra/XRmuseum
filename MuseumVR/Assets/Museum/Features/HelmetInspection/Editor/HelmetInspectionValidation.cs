@@ -491,6 +491,7 @@ namespace Museum.Inspection.Editor
             Vector3 touch = WindowTouch();
             QueueRight(touch, Quaternion.identity, false);
             yield return Wait(.25f);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase);
             QueueRight(touch, Quaternion.identity, true);
             yield return Wait(.2f);
             Require(window.isSelected && !helmet.isSelected, "window input select", SelectionDetail());
@@ -526,6 +527,7 @@ namespace Museum.Inspection.Editor
             touch = WindowTouch();
             QueueRight(touch, Quaternion.identity, false);
             yield return Wait(.25f);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase);
             QueueRight(touch, Quaternion.identity, true);
             yield return Wait(.25f);
             Require(window.isSelected && !helmet.isSelected, "window select for drag", SelectionDetail());
@@ -541,6 +543,7 @@ namespace Museum.Inspection.Editor
             var heldBodyPosition = body.position;
             QueueController(leftDevice, RootTouch(leftController), Quaternion.identity, false);
             yield return Wait(.2f);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(leftController, phase + " / left root");
             QueueController(leftDevice, RootTouch(leftController), Quaternion.identity, true);
             yield return Wait(.25f);
             if (inspection.AllowHeldChildInteraction)
@@ -569,6 +572,7 @@ namespace Museum.Inspection.Editor
             touch = WindowTouch();
             QueueRight(touch, Quaternion.identity, false);
             yield return Wait(.2f);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase);
             QueueRight(touch, Quaternion.identity, true);
             yield return Wait(.2f);
             Require(window.isSelected, "window selected before Home", SelectionDetail());
@@ -582,6 +586,7 @@ namespace Museum.Inspection.Editor
             Require(!window.isSelected && !helmet.isSelected, "held reset grip cannot reselect", "Same held grip remains blocked after cooldown, even over the restored window.");
             QueueRight(WindowTouch(), Quaternion.identity, false);
             yield return Wait(.2f);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase + " / window reselect");
             QueueRight(WindowTouch(), Quaternion.identity, true);
             yield return Wait(.2f);
             Require(window.isSelected, "window usable after releasing reset grip", SelectionDetail());
@@ -614,12 +619,14 @@ namespace Museum.Inspection.Editor
             touch = RootTouch();
             QueueRight(touch, Quaternion.identity, false);
             yield return Wait(.25f);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase);
             QueueRight(touch, Quaternion.identity, true);
             yield return Wait(.3f);
             Require(helmet.isSelected && !window.isSelected, "whole helmet input grab", SelectionDetail());
             Require(helmet.interactorsSelecting[0] is XRDirectInteractor, "whole helmet direct grab", helmet.interactorsSelecting[0].GetType().Name);
             QueueController(leftDevice, WindowTouch(leftController), Quaternion.identity, false);
             yield return Wait(.2f);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(leftController, phase + " / left window");
             QueueController(leftDevice, WindowTouch(leftController), Quaternion.identity, true);
             yield return Wait(.2f);
             if (inspection.AllowHeldChildInteraction)
@@ -652,6 +659,7 @@ namespace Museum.Inspection.Editor
             touch=RootTouch();
             QueueRight(touch,Quaternion.identity,false);
             yield return Wait(.25f);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase);
             QueueRight(touch,Quaternion.identity,true);
             yield return Wait(.25f);
             Require(helmet.isSelected,"whole helmet selected before Home",SelectionDetail());
@@ -668,6 +676,7 @@ namespace Museum.Inspection.Editor
             Require(!helmet.isSelected && !window.isSelected,"whole helmet reset blocks transfer to window","Grip remains pressed over the home window hit target; "+SelectionDetail());
             QueueRight(WindowTouch(),Quaternion.identity,false);
             yield return Wait(.22f);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase + " / window reselect");
             QueueRight(WindowTouch(),Quaternion.identity,true);
             yield return Wait(.22f);
             Require(window.isSelected && !helmet.isSelected,"window available after root-reset grip release",SelectionDetail());
@@ -716,6 +725,7 @@ namespace Museum.Inspection.Editor
             QueueController(leftDevice, new Vector3(-1,1,1), Quaternion.Euler(-80,0,0), false);
             var touch = SectionTouch(tool, Quaternion.identity);
             QueueRight(touch, Quaternion.identity, false); yield return Wait(.3f);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase + " / section");
             QueueRight(touch, Quaternion.identity, true); yield return Wait(.25f);
             Require(tool.isSelected && inspection.IsSectionHeld && !helmet.isSelected && !window.isSelected,
                 "direct grip owns section tool", "Tool is selected without stealing the helmet or window.");
@@ -759,6 +769,7 @@ namespace Museum.Inspection.Editor
 
             yield return PressButton("FLOAT");
             touch=RootTouch(); QueueRight(touch,Quaternion.identity,false);yield return Wait(.25f);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase + " / floating root");
             QueueRight(touch,Quaternion.identity,true);yield return Wait(.25f);
             Require(helmet.isSelected && !tool.isSelected,"floating exhibit still supports ordinary grab","Same XRGrabInteractable, controlled by a single hand.");
             var rootPosition=body.position;var rootRotation=body.rotation;
@@ -788,6 +799,7 @@ namespace Museum.Inspection.Editor
             touch=SectionTouch(tool, Quaternion.identity);QueueRight(touch,Quaternion.identity,true);yield return Wait(.35f);
             Require(!tool.isSelected && !helmet.isSelected && !window.isSelected,"held reset grip cannot reselect another part","Test continues past the original 0.15 second cooldown.");
             QueueRight(touch,Quaternion.identity,false);yield return Wait(.2f);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase + " / section reselect");
             QueueRight(touch,Quaternion.identity,true);yield return Wait(.2f);
             Require(tool.isSelected,"release enables section grip again","User can continue after releasing the previous grip.");
             QueueRight(touch+Vector3.back*.3f,Quaternion.Euler(-80,0,0),false);yield return Wait(.2f);
@@ -916,6 +928,7 @@ namespace Museum.Inspection.Editor
             Require(inspection.IsFloating && body.isKinematic && !body.useGravity && tool.ShowTool,
                 phase+" floating fixture", "API setup fixes the root and initial normal; selection and wrist motion below are synthetic XR input.");
             QueueRight(touch,initialHandRotation,false);yield return Wait(.15f);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase + " / section trace");
             QueueRight(touch,initialHandRotation,true);yield return Wait(.15f);
             Require(tool.isSelected && tool.interactorsSelecting[0] is XRDirectInteractor && !helmet.isSelected && !window.isSelected,
                 phase+" direct grip", SectionSelectionDiagnostics(tool,touch));
@@ -982,6 +995,7 @@ namespace Museum.Inspection.Editor
             var regrabRotation=Quaternion.Euler(10,40,20);
             var regrabPosition=SectionTouch(tool, regrabRotation, axis);
             QueueRight(regrabPosition,regrabRotation,false);yield return Wait(.15f);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase + " / section regrab");
             QueueRight(regrabPosition,regrabRotation,true);yield return Wait(.15f);
             Require(tool.isSelected && tool.interactorsSelecting[0] is XRDirectInteractor && SectionQuaternionAngle(releasedGuide,tool.transform.rotation)<.1f && Vector3.Distance(releasedKnob,knob.position)<.001f,
                 phase+" regrab preserves guide pose", "New hand orientation must not reset the guide roll. "+SectionPoseDetail(tool,knob,releasedGuide,releasedKnob));
@@ -1088,6 +1102,7 @@ namespace Museum.Inspection.Editor
                 -button.transform.forward, buttonCollider.bounds.center);
             QueueRight(touch,Quaternion.identity,false);
             yield return Wait(.22f);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, "button " + label);
             QueueRight(touch,Quaternion.identity,true);
             yield return Wait(.22f);
             Require(button.isSelected,"input selects button: "+label,"Controller grip selects the saved control.");

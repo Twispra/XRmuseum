@@ -834,6 +834,7 @@ namespace Museum.Exploration.Editor
                 Quaternion rotation = distant ? Quaternion.LookRotation(collider.bounds.center - touch, Vector3.up) : Quaternion.identity;
                 if (!distant) touch = DirectButtonTouch(button, collider, left);
                 QueueController(device, touch, rotation, false); yield return Wait(.25f);
+                if (!distant) yield return MuseumPhysicalHandsTestPose.WaitForPalm(left ? leftController : rightController, objectName);
                 if (objectName.StartsWith("Exploration ", StringComparison.Ordinal))
                 {
                     var follower = panel.GetComponent<HelmetInspectionPalette>();
