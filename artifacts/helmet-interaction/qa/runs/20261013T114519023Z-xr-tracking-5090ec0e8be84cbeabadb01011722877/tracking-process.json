@@ -1,0 +1,23 @@
+{
+  "commit": "1690a524dbdcda349cfe4d94431a630cbae78029",
+  "dirty": [
+    " M docs/external-resources.md",
+    " M docs/getting-started.zh-CN.md",
+    "?? artifacts/helmet-interaction/qa/runs/20261013-xr-tracking-fix-local/compile-pid.txt",
+    "?? artifacts/helmet-interaction/qa/runs/20261013-xr-tracking-fix-local/compile-process.json",
+    "?? artifacts/helmet-interaction/qa/runs/20261013-xr-tracking-fix-local/tracking-01-process.json",
+    "?? artifacts/helmet-interaction/qa/runs/20261013T114302083Z-xr-tracking-4080c92bde4349e88556975567797ab0/report.json"
+  ],
+  "exitCode": 0,
+  "finishedUtc": "2026-10-13T11:45:46.7370442Z",
+  "startedUtc": "2026-10-13T11:44:45.4817618Z",
+  "arguments": [
+    "-batchmode",
+    "-projectPath",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\fix-hmd-tracking-2026-10-13\\XRmuseum\\MuseumVR\"",
+    "-executeMethod",
+    "Museum.XRTracking.EditorTools.MuseumXRTrackingValidation.RunBatch",
+    "-logFile",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\fix-hmd-tracking-2026-10-13\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261013-xr-tracking-fix-local\\tracking-02.log\""
+  ]
+}

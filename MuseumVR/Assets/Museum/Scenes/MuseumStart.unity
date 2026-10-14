@@ -224,6 +224,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HelmetHotspotTour
       objectReference: {fileID: 0}
+    - target: {fileID: 3903409312573763416, guid: a2f0d4237079f5a4194e3a4b3567ce82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.21
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4136,7 +4140,7 @@ Transform:
   m_GameObject: {fileID: 428643546}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4252,7 +4256,7 @@ Transform:
   m_GameObject: {fileID: 444948334}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7407,7 +7411,7 @@ Transform:
   m_GameObject: {fileID: 732892393}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -8390,6 +8394,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1767192434, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
   m_PrefabInstance: {fileID: 829167121}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &829167125 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1670256628, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 829167121}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+--- !u!114 &829167126 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 202364692, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 829167121}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!1 &843551673
 GameObject:
   m_ObjectHideFlags: 0
@@ -11299,7 +11325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
       propertyPath: homePosition.y
-      value: 1.1719999
+      value: 0.9719999
       objectReference: {fileID: 0}
     - target: {fileID: 5489111055939569899, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
       propertyPath: homePosition.z
@@ -17342,8 +17368,8 @@ Transform:
   m_GameObject: {fileID: 1626163191}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.55, z: 3.5}
-  m_LocalScale: {x: 1.35, y: 1.1, z: 1.35}
+  m_LocalPosition: {x: 0, y: 0.65, z: 3.5}
+  m_LocalScale: {x: 1.35, y: 0.9, z: 1.35}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 732892394}
@@ -20535,6 +20561,54 @@ MonoBehaviour:
   sourceEnglish: 'TAKE YOUR
 
     TIME'
+--- !u!1 &1941529128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1941529130}
+  - component: {fileID: 1941529129}
+  m_Layer: 0
+  m_Name: Museum Physical Hands
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1941529129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941529128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bce5ca4c99a0504589193c06cf14085, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  leftController: {fileID: 829167126}
+  rightController: {fileID: 829167125}
+  leftPrefab: {fileID: 51860538552481641, guid: 5c0cdb4b6ba9d8e488410f31b1db5413, type: 3}
+  rightPrefab: {fileID: 8274137025274083185, guid: df9b265e4c46f294c85cbd1202c64edc, type: 3}
+--- !u!4 &1941529130
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941529128}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1941628639
 GameObject:
   m_ObjectHideFlags: 0
@@ -22151,3 +22225,4 @@ SceneRoots:
   - {fileID: 1128445193}
   - {fileID: 303325135}
   - {fileID: 428643547}
+  - {fileID: 1941529130}

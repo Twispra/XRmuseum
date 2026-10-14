@@ -74,7 +74,7 @@ namespace Museum.Inspection
         public override bool IsSelectableBy(IXRSelectInteractor interactor)
         {
             return controller != null && controller.CanSelectWindow(interactor) &&
-                   !cancelling && !cancelledInteractors.Contains(interactor) && base.IsSelectableBy(interactor);
+                   !cancelling && CanSelectWholeHelmet(interactor) && base.IsSelectableBy(interactor);
         }
 
         public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
@@ -189,7 +189,9 @@ namespace Museum.Inspection
         {
             // A hand cancelled from the window must not immediately catch the whole helmet on reset.
             cancelledInteractors.RemoveAll(HasReleasedOrDisappeared);
-            return !cancelledInteractors.Contains(interactor);
+            foreach (var cancelled in cancelledInteractors)
+                if (HelmetInspectionController.SamePhysicalHand(cancelled, interactor)) return false;
+            return true;
         }
 
         bool TryGetHandPosition(IXRSelectInteractor interactor, out Vector3 localPosition)

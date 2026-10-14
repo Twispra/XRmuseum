@@ -1,0 +1,940 @@
+{
+    "status": "passed",
+    "failure": "",
+    "unity": "2022.3.62f3c1",
+    "utc": "2026-10-14T09:56:29.7746584Z",
+    "limits": "Edit Mode derived mesh contacts and isolated native self-collision checks only; no Play Mode, physical-device input injection, visitor camera movement or headset acceptance.",
+    "selfCollisionReport": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\physical-hands-2026-10-14\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261014-175603-device-preview-physics\\20261014T095631714Z-hand-self-collision-175c10333d434bfc9cc63dce53fe2836\\report.json",
+    "checks": [
+        {
+            "name": "saved root ranks by its touched collider surface",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "new grip cache bound to the saved helmet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_AirConnector",
+            "detail": "resolved=True; fallback=False; triangles=316; distance=0.01639965; normal=(0.84, -0.23, -0.50)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_AirConnector",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_AirConnectorThread",
+            "detail": "resolved=True; fallback=False; triangles=1536; distance=0.02403943; normal=(-0.18, -0.98, 0.11)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_AirConnectorThread",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_Bonnet_Hollow",
+            "detail": "resolved=True; fallback=False; triangles=10092; distance=0.03812419; normal=(-0.47, 0.13, -0.87)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_Bonnet_Hollow",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_Corselet_ShoulderPlate",
+            "detail": "resolved=True; fallback=False; triangles=4992; distance=0.01540367; normal=(0.93, -0.38, 0.02)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_Corselet_ShoulderPlate",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02315883; normal=(-0.78, -0.58, -0.25)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.001",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02356991; normal=(-0.87, -0.45, -0.20)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.001",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.002",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.0242744; normal=(-0.97, -0.25, -0.09)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.002",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.003",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02506519; normal=(-0.99, -0.13, -0.04)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.003",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.004",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02583015; normal=(-1.00, -0.03, 0.01)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.004",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.005",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02651755; normal=(-1.00, 0.06, 0.07)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.005",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.006",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02720515; normal=(-0.96, 0.02, 0.30)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.006",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.007",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02771281; normal=(-0.93, 0.09, 0.37)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.007",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.008",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02812332; normal=(-0.88, 0.17, 0.45)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.008",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.009",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02843002; normal=(-0.88, 0.28, 0.37)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.009",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.010",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02867991; normal=(-0.82, 0.35, 0.46)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.010",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.011",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.0288195; normal=(-0.74, 0.42, 0.53)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.011",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.012",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02882102; normal=(-0.68, 0.24, 0.69)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.012",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.013",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02865807; normal=(-0.59, 0.30, 0.75)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.013",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.014",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02834975; normal=(-0.48, 0.35, 0.80)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.014",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.015",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02812325; normal=(-0.53, 0.24, 0.81)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.015",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.016",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02770826; normal=(-0.44, 0.30, 0.85)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.016",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.017",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02721481; normal=(-0.35, 0.36, 0.87)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.017",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.018",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02651506; normal=(-0.16, 0.28, 0.95)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.018",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.019",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02582903; normal=(-0.08, 0.35, 0.94)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.019",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.020",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02505987; normal=(0.01, 0.42, 0.91)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.020",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.021",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02426751; normal=(0.10, 0.49, 0.87)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.021",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.022",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02356732; normal=(0.27, 0.62, 0.73)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.022",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.023",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02315954; normal=(0.36, 0.70, 0.62)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.023",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.024",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02061269; normal=(0.41, 0.91, 0.06)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.024",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.025",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02098311; normal=(0.46, 0.88, -0.10)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.025",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.026",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02170547; normal=(0.49, 0.83, -0.25)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.026",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.027",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02265387; normal=(0.51, 0.77, -0.38)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.027",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.028",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02367533; normal=(0.54, 0.68, -0.49)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.028",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.029",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.0246796; normal=(0.56, 0.59, -0.58)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.029",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.030",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02558588; normal=(0.60, 0.27, -0.76)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.030",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.031",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02649581; normal=(0.62, 0.38, -0.69)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.031",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.032",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02732742; normal=(0.65, 0.26, -0.71)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.032",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.033",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02803003; normal=(0.68, 0.13, -0.72)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.033",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.034",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02854017; normal=(0.71, 0.00, -0.70)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.034",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.035",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02880559; normal=(0.73, -0.14, -0.67)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.035",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.036",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02880505; normal=(0.87, -0.12, -0.49)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.036",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.037",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02856855; normal=(0.86, -0.25, -0.44)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.037",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.038",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02813727; normal=(0.84, -0.38, -0.39)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.038",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.039",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.0273252; normal=(0.64, -0.63, -0.44)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.039",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.040",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.026496; normal=(0.57, -0.73, -0.38)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.040",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.041",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02558517; normal=(0.68, -0.63, -0.38)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.041",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.042",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02468325; normal=(0.40, -0.87, -0.28)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.042",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.043",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02367079; normal=(0.29, -0.92, -0.25)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.043",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.044",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02265402; normal=(0.16, -0.96, -0.22)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.044",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.045",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02170398; normal=(0.02, -0.98, -0.20)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.045",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.046",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02098159; normal=(-0.14, -0.97, -0.18)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.046",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_CorseletRolledEdge.047",
+            "detail": "resolved=True; fallback=False; triangles=476; distance=0.02061224; normal=(-0.31, -0.94, -0.15)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_CorseletRolledEdge.047",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_Front_PortRim",
+            "detail": "resolved=True; fallback=False; triangles=2048; distance=0.02939537; normal=(-0.52, 0.32, 0.79)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_Front_PortRim",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_FrontLatch",
+            "detail": "resolved=True; fallback=False; triangles=316; distance=0.02305995; normal=(-0.23, 0.02, -0.97)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_FrontLatch",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_Hinge",
+            "detail": "resolved=True; fallback=False; triangles=188; distance=0.01496567; normal=(0.73, -0.21, -0.65)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_Hinge",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_InterpretiveLabel",
+            "detail": "resolved=True; fallback=False; triangles=188; distance=0.006999001; normal=(-0.39, -0.91, -0.14)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_InterpretiveLabel",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_Left_GlassPlaceholder",
+            "detail": "resolved=True; fallback=False; triangles=252; distance=0.03844746; normal=(0.73, -0.21, -0.65)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_Left_GlassPlaceholder",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_Left_PortRim",
+            "detail": "resolved=True; fallback=False; triangles=2048; distance=0.0294881; normal=(-0.42, 0.77, 0.48)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_Left_PortRim",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_NeckFastener_00",
+            "detail": "resolved=True; fallback=False; triangles=508; distance=0.03589351; normal=(-0.56, 0.36, -0.75)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_NeckFastener_00",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_NeckFastener_01",
+            "detail": "resolved=True; fallback=False; triangles=508; distance=0.03589351; normal=(-0.56, 0.36, -0.75)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_NeckFastener_01",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_NeckFastener_02",
+            "detail": "resolved=True; fallback=False; triangles=508; distance=0.03589333; normal=(-0.56, 0.36, -0.75)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_NeckFastener_02",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_NeckFastener_03",
+            "detail": "resolved=True; fallback=False; triangles=508; distance=0.03589357; normal=(-0.56, 0.36, -0.75)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_NeckFastener_03",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_NeckFastener_04",
+            "detail": "resolved=True; fallback=False; triangles=508; distance=0.03589506; normal=(-0.56, 0.36, -0.75)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_NeckFastener_04",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_NeckFastener_05",
+            "detail": "resolved=True; fallback=False; triangles=508; distance=0.03589323; normal=(-0.56, 0.36, -0.75)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_NeckFastener_05",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_NeckFastener_06",
+            "detail": "resolved=True; fallback=False; triangles=508; distance=0.03589373; normal=(-0.56, 0.36, -0.75)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_NeckFastener_06",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_NeckFastener_07",
+            "detail": "resolved=True; fallback=False; triangles=508; distance=0.03589445; normal=(-0.56, 0.36, -0.75)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_NeckFastener_07",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_NeckFastener_08",
+            "detail": "resolved=True; fallback=False; triangles=508; distance=0.03589308; normal=(-0.56, 0.36, -0.75)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_NeckFastener_08",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_NeckFastener_09",
+            "detail": "resolved=True; fallback=False; triangles=508; distance=0.03589209; normal=(-0.56, 0.36, -0.75)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_NeckFastener_09",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_NeckFastener_10",
+            "detail": "resolved=True; fallback=False; triangles=508; distance=0.03589331; normal=(-0.56, 0.36, -0.75)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_NeckFastener_10",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_NeckFastener_11",
+            "detail": "resolved=True; fallback=False; triangles=508; distance=0.03589329; normal=(-0.56, 0.36, -0.75)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_NeckFastener_11",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_NeckLockRing",
+            "detail": "resolved=True; fallback=False; triangles=3072; distance=0.02893502; normal=(0.01, -0.20, 0.98)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_NeckLockRing",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_Right_GlassPlaceholder",
+            "detail": "resolved=True; fallback=False; triangles=252; distance=0.03844925; normal=(0.34, 0.94, 0.08)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_Right_GlassPlaceholder",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_Right_PortRim",
+            "detail": "resolved=True; fallback=False; triangles=2048; distance=0.02949937; normal=(0.89, 0.33, -0.30)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_Right_PortRim",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_Top_GlassPlaceholder",
+            "detail": "resolved=True; fallback=False; triangles=252; distance=0.03870353; normal=(-0.63, 0.14, -0.76)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_Top_GlassPlaceholder",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_Top_PortRim",
+            "detail": "resolved=True; fallback=False; triangles=2048; distance=0.03194291; normal=(0.06, -0.05, 1.00)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_Top_PortRim",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_WeightAttachmentEye",
+            "detail": "resolved=True; fallback=False; triangles=1280; distance=0.03781777; normal=(0.68, 0.27, 0.68)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_WeightAttachmentEye",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_WeightAttachmentEye.001",
+            "detail": "resolved=True; fallback=False; triangles=1280; distance=0.03781936; normal=(0.68, 0.26, 0.68)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_WeightAttachmentEye.001",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_Front_GlassPlaceholder",
+            "detail": "resolved=True; fallback=False; triangles=252; distance=0.03783727; normal=(-0.39, -0.91, -0.14)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_Front_GlassPlaceholder",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_FrontDiamondGuard",
+            "detail": "resolved=True; fallback=False; triangles=316; distance=0.007387941; normal=(0.93, -0.32, 0.19)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_FrontDiamondGuard",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_FrontDiamondGuard.001",
+            "detail": "resolved=True; fallback=False; triangles=316; distance=0.007422532; normal=(0.93, -0.32, 0.19)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_FrontDiamondGuard.001",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_FrontDiamondGuard.002",
+            "detail": "resolved=True; fallback=False; triangles=316; distance=0.007396731; normal=(-0.02, 0.06, -1.00)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_FrontDiamondGuard.002",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: GB_FrontDiamondGuard.003",
+            "detail": "resolved=True; fallback=False; triangles=316; distance=0.007395803; normal=(-0.02, 0.06, -1.00)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: GB_FrontDiamondGuard.003",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: EyePadBase_-1",
+            "detail": "resolved=True; fallback=False; triangles=200; distance=0.03041431; normal=(-0.16, -0.42, 0.89)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: EyePadBase_-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: EyePadBase_1",
+            "detail": "resolved=True; fallback=False; triangles=200; distance=0.02784927; normal=(-0.34, 0.83, 0.43)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: EyePadBase_1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: ExhaustPerforatedBulb",
+            "detail": "resolved=True; fallback=False; triangles=686; distance=0.035775; normal=(-0.22, 0.49, -0.84)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: ExhaustPerforatedBulb",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: DoorToggleWing_-1",
+            "detail": "resolved=True; fallback=False; triangles=200; distance=0.02891732; normal=(-0.76, -0.30, 0.57)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: DoorToggleWing_-1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: DoorToggleWing_1",
+            "detail": "resolved=True; fallback=False; triangles=200; distance=0.03012219; normal=(-0.39, 0.66, -0.64)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: DoorToggleWing_1",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: HingePinTopButton",
+            "detail": "resolved=True; fallback=False; triangles=200; distance=0.02891732; normal=(-0.76, -0.30, 0.57)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: HingePinTopButton",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: ChinButton_Interpretive",
+            "detail": "resolved=True; fallback=False; triangles=200; distance=0.02891732; normal=(-0.76, -0.30, 0.57)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: ChinButton_Interpretive",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: RearLock_BallA",
+            "detail": "resolved=True; fallback=False; triangles=200; distance=0.02891732; normal=(-0.76, -0.30, 0.57)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: RearLock_BallA",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: RearLock_BallB",
+            "detail": "resolved=True; fallback=False; triangles=200; distance=0.02891732; normal=(-0.28, -0.48, 0.83)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: RearLock_BallB",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "actual mesh contact under rotated nonuniform mirrored scale: SpitcockLeverBall",
+            "detail": "resolved=True; fallback=False; triangles=200; distance=0.02891732; normal=(-0.76, -0.30, 0.57)",
+            "passed": true
+        },
+        {
+            "name": "supporting palm contact matches recorded mesh surface: SpitcockLeverBall",
+            "detail": "",
+            "passed": true
+        }
+    ]
+}

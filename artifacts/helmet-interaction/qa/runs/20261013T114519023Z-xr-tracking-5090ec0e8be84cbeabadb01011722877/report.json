@@ -1,0 +1,221 @@
+{
+    "status": "passed",
+    "failure": "",
+    "utc": "2026-10-13T11:45:18.6094173Z",
+    "commit": "1690a524dbdcda349cfe4d94431a630cbae78029",
+    "branch": "codex/fix-hmd-tracking-2026-10-13",
+    "dirty": "M docs/external-resources.md\n M docs/getting-started.zh-CN.md\n?? artifacts/helmet-interaction/qa/runs/20261013-xr-tracking-fix-local/compile-pid.txt\n?? artifacts/helmet-interaction/qa/runs/20261013-xr-tracking-fix-local/compile-process.json\n?? artifacts/helmet-interaction/qa/runs/20261013-xr-tracking-fix-local/tracking-01-process.json\n?? artifacts/helmet-interaction/qa/runs/20261013T114302083Z-xr-tracking-4080c92bde4349e88556975567797ab0/report.json",
+    "unity": "2022.3.62f3c1",
+    "environment": "Windows 11  (10.0.26200) 64bit; AMD Ryzen 7 5800H with Radeon Graphics ; NVIDIA GeForce RTX 3070 Laptop GPU",
+    "sceneSha256": "3bee0dcd09f84c1d6da90011e4566c6e3e936c1b85ab870ada9c0fb1e1df59d1",
+    "method": "Saved MuseumStart; generic non-XRSimulated XRHMD fixture added normally, then QueueDeltaStateEvent in Dynamic input updates through production head actions and TrackedPoseDriver.",
+    "limits": "Synthetic physical-class fixture only, not real Quest 3 / Virtual Desktop acceptance. Floor/device offsets are temporary pose fixtures; runtime floor calibration, OS simulator controls, frame submission, comfort and executable builds are not validated.",
+    "durationSeconds": 0.5889260768890381,
+    "checks": [
+        {
+            "name": "synthetic test has no connected physical XR session",
+            "detail": "Run without a headset; actual hardware is never removed by this test.",
+            "passed": true
+        },
+        {
+            "name": "saved main scene loaded",
+            "detail": "Assets/Museum/Scenes/MuseumStart.unity",
+            "passed": true
+        },
+        {
+            "name": "production XR origin and camera exist",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "no-hardware desktop simulator is instantiated safely",
+            "detail": "Count=1",
+            "passed": true
+        },
+        {
+            "name": "official simulator owns one simulated HMD",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "late hardware-class fixture survives simulator device-change callbacks",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "late hardware synchronously releases simulated HMD and controllers",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "late hardware removes the inactive owned simulator hierarchy",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "saved camera uses the production TrackedPoseDriver",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "saved head action resolves and enables physical-class fixture",
+            "detail": "XRI Head/Position",
+            "passed": true
+        },
+        {
+            "name": "saved head action resolves and enables physical-class fixture",
+            "detail": "XRI Head/Rotation",
+            "passed": true
+        },
+        {
+            "name": "saved head action resolves and enables physical-class fixture",
+            "detail": "XRI Head/Tracking State",
+            "passed": true
+        },
+        {
+            "name": "floor standing: tracked height is not added twice",
+            "detail": "local=(0.20, 1.70, -0.15); rig-relative height=1.7; angle error=0",
+            "passed": true
+        },
+        {
+            "name": "head movement leaves rig origin unchanged / floor standing: tracked height is not added twice",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "floor crouching: camera follows physical-class head translation and rotation",
+            "detail": "local=(-0.10, 1.10, 0.25); rig-relative height=1.1; angle error=0",
+            "passed": true
+        },
+        {
+            "name": "head movement leaves rig origin unchanged / floor crouching: camera follows physical-class head translation and rotation",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "device-origin fixture: zero local head height uses one 1.65m offset",
+            "detail": "local=(0.00, 0.00, 0.00); rig-relative height=1.65; angle error=0",
+            "passed": true
+        },
+        {
+            "name": "head movement leaves rig origin unchanged / device-origin fixture: zero local head height uses one 1.65m offset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "disconnect does not recreate desktop simulation during the same session",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "gate exposes runtime initialization callback",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "hardware-class fixture present at initialization bypasses simulation",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "runtime owns one transient simulator gate",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "saved scene is unchanged",
+            "detail": "3bee0dcd09f84c1d6da90011e4566c6e3e936c1b85ab870ada9c0fb1e1df59d1",
+            "passed": true
+        }
+    ],
+    "samples": [
+        {
+            "name": "floor standing: tracked height is not added twice",
+            "expected": {
+                "x": 0.20000000298023225,
+                "y": 1.7000000476837159,
+                "z": -0.15000000596046449
+            },
+            "localPosition": {
+                "x": 0.20000000298023225,
+                "y": 1.7000000476837159,
+                "z": -0.15000000596046449
+            },
+            "rigRelativePosition": {
+                "x": 0.20000000298023225,
+                "y": 1.7000000476837159,
+                "z": -0.15000009536743165
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "localRotation": {
+                "x": 0.09969056397676468,
+                "y": 0.2990584969520569,
+                "z": -0.031432315707206729,
+                "w": 0.9484924077987671
+            }
+        },
+        {
+            "name": "floor crouching: camera follows physical-class head translation and rotation",
+            "expected": {
+                "x": -0.10000000149011612,
+                "y": 1.100000023841858,
+                "z": 0.25
+            },
+            "localPosition": {
+                "x": -0.10000000149011612,
+                "y": 1.100000023841858,
+                "z": 0.25
+            },
+            "rigRelativePosition": {
+                "x": -0.10000000149011612,
+                "y": 1.100000023841858,
+                "z": 0.25
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "localRotation": {
+                "x": -0.16342929005622865,
+                "y": -0.40942302346229555,
+                "z": -0.019172947853803636,
+                "w": 0.897382915019989
+            }
+        },
+        {
+            "name": "device-origin fixture: zero local head height uses one 1.65m offset",
+            "expected": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "localPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "rigRelativePosition": {
+                "x": 0.0,
+                "y": 1.649999976158142,
+                "z": 0.0
+            },
+            "offset": {
+                "x": 0.0,
+                "y": 1.649999976158142,
+                "z": 0.0
+            },
+            "localRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            }
+        }
+    ],
+    "errors": []
+}

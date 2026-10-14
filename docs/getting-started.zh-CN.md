@@ -43,7 +43,7 @@
 
 1. 在 Project 面板依次打开 **Assets > Museum > Scenes**，双击 **MuseumStart**。
 2. 点击顶部三角形 **Play**。先点击 **Game** 画面，使键盘输入进入游戏窗口。
-3. 本工程开启了官方 **XR Device Simulator**，只在 Editor 中自动创建。按 **Tab** 在头部与左右手之间切换，按 **U** 切换身体操作；以画面上的模拟器提示为准。
+3. Editor 中没有真实头显或运行中的 XR 显示时，工程自动创建官方 **XR Device Simulator**。连接真实设备时停止模拟器，保留头显的位置和旋转输入；断开设备后需退出再进入 Play 才恢复桌面模拟。按 **Tab** 在头部与左右手之间切换，按 **U** 切换身体操作；以画面上的模拟器提示为准。
 4. **W/A/S/D** 控制当前设备的移动，**Q/E** 调整高度；按住鼠标右键操作头部视角。按 **T/Y** 切换左/右控制器操作，**G** 模拟握持键，鼠标左键模拟扳机。为避免误按空格时突然切换操作对象，本项目将模拟器的“按住操控右手”从 **空格** 改为 **右 Shift**；日常操作右手仍推荐按 **Y** 切换。
 5. 中间展台已替换为带有 **XR Grab Interactable** 的头盔简模：靠近并按住 **G** 抓取，松开后放下，按 **Home** 复位。详细说明见[头盔抓取原型](helmet-interaction.zh-CN.md)。地面带有 **Teleportation Area**，使用 XRI 的 Teleport 交互层。模拟器的 **1/3** 在摇杆输入和位置输入目标之间切换，完整映射见导入的 XR Device Simulator inputactions。
 6. 再次点击 Play 退出。**Play 期间对场景的临时改动不会自动保存到编辑状态。**
@@ -64,8 +64,11 @@
 2. 打开 **Edit > Project Settings > XR Plug-in Management > XR Interaction Toolkit**，取消 **Use XR Device Simulator in scenes**（对应 Automatically Instantiate Simulator Prefab）。否则模拟器可能接管真实设备输入。
 3. 在同一设置窗口的 **XR Plug-in Management** 中选择桌面平台，确认 **OpenXR** 已启用。
 4. 本工程启用 Oculus Touch、Valve Index、HTC Vive 和 Khronos Simple Controller profile。按实际设备确认对应 profile；这只是兼容配置，不代表这些设备都已经测试。
-5. 启动你们设备对应的 SteamVR 或 Meta Quest Link，并将它设为当前 OpenXR runtime，再回 Unity 进入 Play。
-6. 若只是自己临时切换模拟器，提交前检查 XRI 设置改动，避免无意影响其他组员。
+5. 启动你们设备对应的 SteamVR、Meta Quest Link 或 Virtual Desktop，并确认对应 OpenXR runtime，再回 Unity 进入 Play。使用 Virtual Desktop / VDXR 时，Streamer 选择 VDXR，Unity 的 **Play Mode OpenXR Runtime** 使用 **System Default**；不要为了本工程额外切换到其他 runtime。[Unity Play 模式 runtime 说明](https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.14/manual/project-configuration.html#choose-an-openxr-runtime-to-use-in-play-mode)、[VDXR 开发说明](https://github.com/mbucchia/VirtualDesktop-OpenXR/wiki/Developers)。
+6. 实机检查进入 Play 的站立眼睛高度、左右转头、俯仰、身体前倾和蹲下，再测试手柄。主场景保留 **Floor** 跟踪，实际眼睛高度由设备提供；**1.65 m Camera Y Offset** 用于 Device 模式，不应再给 Floor 模式叠加身高。修复和定向测试见[本轮活动](activity/2026-10-13-xr-head-tracking-fix.md)；自动合成输入不能代替实机通过。
+7. 若只是自己临时切换模拟器，提交前检查 XRI 设置改动，避免无意影响其他组员。
+
+**站着玩、地面正常但展品偏高：** 优先调整展示布局，保留设备提供的眼睛高度。本轮中央台面由 1.16 m 降至 0.96 m，头盔、年代按钮和复位点一起下移 20 cm；热点信息卡保留原阅读高度。设备体验仍需复测，详见[站姿高度调整记录](activity/2026-10-13-standing-display-height.md)。
 
 ### Unity Version Control 和 GitHub 的关系
 

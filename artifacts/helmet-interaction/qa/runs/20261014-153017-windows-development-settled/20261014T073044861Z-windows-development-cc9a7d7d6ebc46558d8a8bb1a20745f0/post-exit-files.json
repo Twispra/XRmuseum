@@ -1,0 +1,1367 @@
+{
+  "verifiedUtc": "2026-10-14T07:32:28.8081784Z",
+  "commit": "09b9adfecf21a9ab6f8c261b72a0525c6d768d2e",
+  "sourceCount": 1121,
+  "sourceMismatches": [],
+  "trackedDiff": "",
+  "exeMatches": true,
+  "folder": "E:\\XRmuseum\\Builds\\Windows\\physical-hands-final-20261014-1531",
+  "fileCount": 271,
+  "files": [
+    {
+      "path": "MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll",
+      "bytes": 7896912,
+      "sha256": "968347d6e14a1bd2490737399d8640cdcbe81c71340e054f4c083e1b8bfc2275"
+    },
+    {
+      "path": "MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll",
+      "bytes": 610640,
+      "sha256": "6bfc68fa9711f56d9f7d8dc1cb9f38b62ad8b963c6ad2241a69825f558edce8f"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser",
+      "bytes": 1605,
+      "sha256": "8a1082057ac5681dcd4e9c227ed7fb8eb42ac1618963b5de3b65739dd77e2741"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx",
+      "bytes": 60575,
+      "sha256": "751861040b69ea63a3827507b7c8da9c7f549dc181c1c8af4b7ca78cc97d710a"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/2.0/machine.config",
+      "bytes": 29066,
+      "sha256": "e91782a27fa39fc6c1d6ee8b08529f5d35052310d0006034b878eb04b8f2af30"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/2.0/settings.map",
+      "bytes": 2622,
+      "sha256": "49c6160f9d54af4270a3b4e997fc4a8301f79b9e2070118fa46ddbcbbc44f9a2"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/2.0/web.config",
+      "bytes": 11635,
+      "sha256": "cf2b54339e069b9e42f7d6795eecbf562c50c1011f4ca8f65f578fe52d97ff92"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser",
+      "bytes": 1605,
+      "sha256": "8a1082057ac5681dcd4e9c227ed7fb8eb42ac1618963b5de3b65739dd77e2741"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx",
+      "bytes": 60575,
+      "sha256": "751861040b69ea63a3827507b7c8da9c7f549dc181c1c8af4b7ca78cc97d710a"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.0/machine.config",
+      "bytes": 33598,
+      "sha256": "e60aec2c5115d65b3acb3c55ea21576dbd770f579166c017125571e46ae560ed"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.0/settings.map",
+      "bytes": 2622,
+      "sha256": "ce1db1ad8a9512073164e3eccdc193f7eda036e1a9733caec4635de21b2865c8"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.0/web.config",
+      "bytes": 18802,
+      "sha256": "e38bb8cc68fe5b4edecdfd288d094b9e8ced7629039b2a347682aba0d8bd7492"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser",
+      "bytes": 1605,
+      "sha256": "8a1082057ac5681dcd4e9c227ed7fb8eb42ac1618963b5de3b65739dd77e2741"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx",
+      "bytes": 60575,
+      "sha256": "751861040b69ea63a3827507b7c8da9c7f549dc181c1c8af4b7ca78cc97d710a"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.5/machine.config",
+      "bytes": 34056,
+      "sha256": "ee950004b576fb28dc85f4b0435ed04bf96612de2e8b53be84d07afe85a0de6c"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.5/settings.map",
+      "bytes": 2622,
+      "sha256": "ce1db1ad8a9512073164e3eccdc193f7eda036e1a9733caec4635de21b2865c8"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/4.5/web.config",
+      "bytes": 18811,
+      "sha256": "c4cbddd4fd9347b58cc5a72b36dc4ba1ad2bb699e65869d05cd3fb9865f0d824"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/browscap.ini",
+      "bytes": 311984,
+      "sha256": "4ddd50f31fb968f30bedefc253a46dc3f2890192d05cdaa9e0a64a056eee807e"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/config",
+      "bytes": 3815,
+      "sha256": "5776169973a26a387b8b3e5c0f2301a7ab9a6dd7c7d3efa22a96abc47fbf8662"
+    },
+    {
+      "path": "MonoBleedingEdge/etc/mono/mconfig/config.xml",
+      "bytes": 25817,
+      "sha256": "0c56e34c69124510fa8c19e7b4c2ca6c1c4ff460ae19f798dd0ca035809e396d"
+    },
+    {
+      "path": "MuseumVR_Data/app.info",
+      "bytes": 21,
+      "sha256": "4f0bfc7afab5ae982e2b7e791fe804e2b446e8fc85bf4b692088afb2229d839a"
+    },
+    {
+      "path": "MuseumVR_Data/boot.config",
+      "bytes": 462,
+      "sha256": "49b4c79300dd16f0628129b235f24c0d92c810e5018a278168df7fcee92305d4"
+    },
+    {
+      "path": "MuseumVR_Data/globalgamemanagers",
+      "bytes": 227588,
+      "sha256": "5a1081cce1dca6b025d3f9be472bbddb0cc6ba3b53cfc0ed4e3539286b016c64"
+    },
+    {
+      "path": "MuseumVR_Data/globalgamemanagers.assets",
+      "bytes": 595124,
+      "sha256": "35862757313c501151a796b1336383a118a3a3cc5d949b6c159a179430d21245"
+    },
+    {
+      "path": "MuseumVR_Data/globalgamemanagers.assets.resS",
+      "bytes": 2802400,
+      "sha256": "2a9b59e34c2cd6b7aa6f491713bf2f2fbc885c7def55b637c07222d5b46b8490"
+    },
+    {
+      "path": "MuseumVR_Data/level0",
+      "bytes": 675688,
+      "sha256": "cb6411b86f291abee2b13fce5e6fd0023db17e10deb097d43416018f423d3f46"
+    },
+    {
+      "path": "MuseumVR_Data/level0.resS",
+      "bytes": 991232,
+      "sha256": "d86ec91831240130239bd898f51030e4d0e5e8bd364cb8ee293b7d645c9a0db8"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Assembly-CSharp.dll",
+      "bytes": 199168,
+      "sha256": "e679b2511e638257c4fb291931f4189c5c8243d9258aa4aab56ffc55922b6881"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Assembly-CSharp.pdb",
+      "bytes": 101712,
+      "sha256": "b527783bd07e441c3a8afcd6282a5bb6eafa2dfd8a801a96d91af8be8d1f1b6e"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Mono.Security.dll",
+      "bytes": 241152,
+      "sha256": "576f911be2e0db795ea78f78828f3faf4b20900baf1ce8e33ca8fe599370fc1d"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/mscorlib.dll",
+      "bytes": 4631552,
+      "sha256": "98c9b62133db5dd33b22bc6aab6f28e4f04f5b5be6559b28ba5c2738241434d0"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Museum.HelmetHotspots.dll",
+      "bytes": 20992,
+      "sha256": "0a36d6ecfeb74fd863153b23dfce049f8fda21814ac3795177b9e156eb060f1e"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Museum.HelmetHotspots.pdb",
+      "bytes": 20960,
+      "sha256": "ed3616ad69b095ddf8feb0fce21b0f494d477d7d1d3c60c67d63395090a47022"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/netstandard.dll",
+      "bytes": 90112,
+      "sha256": "6ae62e082dc494a2433984177f60ca4db5fae69b1f360a8b33754172b310b8c5"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.ComponentModel.Composition.dll",
+      "bytes": 257024,
+      "sha256": "2535fd6fac676852936cb435d917b2d69cc6fcdd391f7b3009898153ba04919f"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.Configuration.dll",
+      "bytes": 124928,
+      "sha256": "ec883b49c12ab0e5110337e817a72cf781878d7faf904aa8abb1ab1c4b99bd78"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.Core.dll",
+      "bytes": 1113088,
+      "sha256": "f1b33eb1ae8522edcf9ba4c2b85f532d4bab68bfa2a51527264bb61619bed4ea"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.Data.DataSetExtensions.dll",
+      "bytes": 29696,
+      "sha256": "1c88d17e686caf77551a18d3672a1589143e6b8ae83bfcf7c306478cdb64ab90"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.Data.dll",
+      "bytes": 2125312,
+      "sha256": "534ac87e6a7c1e3ce02ff2d88f4ffa45e7b5fc44e6236922c2f46f8174a29e56"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.dll",
+      "bytes": 2639872,
+      "sha256": "ace2dd6a7d534b581bf4a9d316e743d64508ca2135db73dbff0ddb9365fc454e"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.Drawing.dll",
+      "bytes": 489984,
+      "sha256": "435cc673a1aba5af488d8af379d96f7e351a4b5ed2a1772892287a8268567deb"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.EnterpriseServices.dll",
+      "bytes": 44544,
+      "sha256": "03f240d259b9cf27dbc5c9e8f42b8746a50cc5c52395d8e2de5730321f9de3b8"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.IO.Compression.dll",
+      "bytes": 114688,
+      "sha256": "15e84f38fb5e6bb926fe92a79374a083b8dfbabfa11f8cd1d409f21b98447cfd"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.IO.Compression.FileSystem.dll",
+      "bytes": 18432,
+      "sha256": "02f749fbe31e54cd8b86a35738e1dddae00ccc2e9fdb8990b93f1a494e6e753a"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.Net.Http.dll",
+      "bytes": 122880,
+      "sha256": "85f6d618b5df944d2271e2d028b94a93cd371c6134507997441475b1700623cf"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.Numerics.dll",
+      "bytes": 119296,
+      "sha256": "55eda0fb467f9356d8f63933fb4b237732f1b215cb8eb0380398f05d3e8a3461"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.Runtime.dll",
+      "bytes": 12288,
+      "sha256": "e0a7334b7ba419aaab6bd3bb6992d693e689341a9178172c9bf99c2aa6a085bd"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.Runtime.Serialization.dll",
+      "bytes": 934400,
+      "sha256": "c1058a78e3828052b92d535d8fb27f9f3c9eb9cbfcdee1904898611b44d7cdb7"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.Security.dll",
+      "bytes": 320000,
+      "sha256": "f7f53eb1401f2bd70ea1dcab1c6c30ae7a4a142e26781c4a78bb885d2f6816a3"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.ServiceModel.Internals.dll",
+      "bytes": 215040,
+      "sha256": "5f926225818163439d823f9ef0f6e798e16604d8b75b66f22a133b40615f1b05"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.Transactions.dll",
+      "bytes": 35328,
+      "sha256": "8983073e9627b1086102a9871a23e2ba53a0bb9fcc76826cab9f5dec9107e21a"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.Xml.dll",
+      "bytes": 3160064,
+      "sha256": "7a3587565cabf8294cfc372991545f3ae5790d54264e40069f5e0e460b66bc55"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/System.Xml.Linq.dll",
+      "bytes": 136704,
+      "sha256": "48b11f5d3a51034f9b9d330082f9099a0e68956ee2153d151cdf146bf9e76c78"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.Burst.dll",
+      "bytes": 347648,
+      "sha256": "ec08243ebf58cc34275256dde6fd5e04fa652e821bb18a26bf011f7f06e8ff82"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.Burst.pdb",
+      "bytes": 219312,
+      "sha256": "dfa9474b86f5e5a7b022f406da4eeb56725fe6c3c67f9a3d3a3c0e72763e6086"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.Burst.Unsafe.dll",
+      "bytes": 5632,
+      "sha256": "9d9c1ff52411decbee5d9f0d1cd61ebeaa222077aa77a52101ea3debafae98e2"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.InputSystem.dll",
+      "bytes": 1259520,
+      "sha256": "de6215ffedc2415f84140495731cb7a3fdc91d909cdc210f3d3ccfc19e9142e4"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.InputSystem.ForUI.dll",
+      "bytes": 4096,
+      "sha256": "82741af53e688750d55fe06d280cc9ef66c20b4fdbcd85c4a0b46ab255db4de1"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.InputSystem.ForUI.pdb",
+      "bytes": 15300,
+      "sha256": "3bd872ca17354b1f4a4d4430b232ee07e00860adceacc181e021d8975923dc04"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.InputSystem.pdb",
+      "bytes": 572136,
+      "sha256": "4318b97cf61f8b4f075099d224cc97597e1c8e0c40fa59c11e29d90125325131"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.Mathematics.dll",
+      "bytes": 873984,
+      "sha256": "20d2d37d1f7a4ed7067d6be0e1d837863b6a206bc57701421a155f8433f57001"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.Mathematics.pdb",
+      "bytes": 506844,
+      "sha256": "3a877dc650fbabe8636213f5a907ba8f1b8813a4780e6979807ee201dcd5adab"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll",
+      "bytes": 8192,
+      "sha256": "bd2ca6aeac6ec8fba764fa895bdd67f63f0486eb8ade38ac2b89a8f499d3bd68"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.pdb",
+      "bytes": 15864,
+      "sha256": "56cd28da943bb2968e9dfb0bb31ebae1ca2ab3b5b205f90273c669df6a3e8269"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll",
+      "bytes": 577024,
+      "sha256": "8a190a3b87a5b251c1e29955aa3ee95e7c597cda592aae4e2077ea2d0f9bff6d"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipelines.Core.Runtime.pdb",
+      "bytes": 282384,
+      "sha256": "3fe85aeb3692745651795cd5f23ed206c9f8a3502858f0a296bfe439de6b68fe"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll",
+      "bytes": 4608,
+      "sha256": "001c81d787a3e399115f169c55141a6c945548a23dbb28df84a9527f5fcf2f04"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.pdb",
+      "bytes": 15376,
+      "sha256": "ba6e9989dbe7d51cd8bd248933904f16ebbc5a0bf3923aa8d3533fcfa5abc51f"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll",
+      "bytes": 4608,
+      "sha256": "9221c805efb8b25458fcf5f731fb875c2ebfef195b0cb2afcacd5b3f33bf5866"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.pdb",
+      "bytes": 15364,
+      "sha256": "ac28ecba4eb3c56e5769f1c84a61bb023dc99e3ca39d280cecc1ac81c54b3b87"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipelines.Universal.2D.Internal.dll",
+      "bytes": 5120,
+      "sha256": "472c017c79c5631626c2214d3cd669bb78d44e59bcab8ee96eafb6d68bea5592"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipelines.Universal.2D.Internal.pdb",
+      "bytes": 15620,
+      "sha256": "072f94bc3728d3557e893673d4aeb42fd3a615235fe9d97613032c042ede4d4e"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipelines.Universal.Config.Runtime.dll",
+      "bytes": 5632,
+      "sha256": "55cf218a7bee78e1adfb5f3626fa3c0beb9e955c0508d0ef92c693b764bab3dc"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipelines.Universal.Config.Runtime.pdb",
+      "bytes": 15536,
+      "sha256": "7c4fd8f91a7217bbc6b452c4b56763ca7f4ae08b2f37e948f4a5685d4260fc06"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll",
+      "bytes": 850432,
+      "sha256": "6d6513191908a4d9d682cb2b86c4ddf1696620975ea172f0ca869800c68c4f50"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipelines.Universal.Runtime.pdb",
+      "bytes": 394592,
+      "sha256": "40655ed85b2693f173f9a8854130d4f9d69f7f813844265c07e51e8702bdb2d2"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll",
+      "bytes": 4608,
+      "sha256": "f720d4d29bec49ba4a7502697d41c98ab3968aa44f8699af2124e6ee82fe8db5"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.RenderPipelines.Universal.Shaders.pdb",
+      "bytes": 15368,
+      "sha256": "244d4181795c52f69d12f9bacfecbfb9f23460bc8beb3464930134cf26df76c5"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.TextMeshPro.dll",
+      "bytes": 436224,
+      "sha256": "68449593171027a93d6485ff8ee85c026466a2941920a5775d7a4dc9302ca7e6"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.TextMeshPro.pdb",
+      "bytes": 233636,
+      "sha256": "e6f87621b3567d036bf1a529face1f0e696573d671d29d3eb9958a543d0685a3"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.Timeline.dll",
+      "bytes": 141312,
+      "sha256": "7cbfce0c1f004e71fa2037dd5cb14ee8fda340de1541e84512aa36b68b202edb"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.Timeline.pdb",
+      "bytes": 86024,
+      "sha256": "64779a5880277d7441c07e6c8247e1013557719ae2fab877372dce7db4ad2065"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll",
+      "bytes": 86016,
+      "sha256": "ed7ce205f66eafe39bbb5d084d42e7fe11cb4b386ff208e5d5110891be0b7b37"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.VisualScripting.Core.dll",
+      "bytes": 670208,
+      "sha256": "9e5b9a7dc2eae39a7fe94b3dae6becb448a85cd20e5347271e3abba7ec33e7de"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.VisualScripting.Core.pdb",
+      "bytes": 334812,
+      "sha256": "8a5449b86d42bbb339ad4edc60b7661f0f63cac1ef60b9531a38538a0f545a58"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.VisualScripting.Flow.dll",
+      "bytes": 430592,
+      "sha256": "82cf27374bd0b343dccc5309e8eaf7c035a39d6d4fdb20a6706c596c0f753c07"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.VisualScripting.Flow.pdb",
+      "bytes": 219924,
+      "sha256": "b1f9af957be23b108b0dc7d4c8ec334d11845604f496f2f4d37abd00ec253327"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.VisualScripting.State.dll",
+      "bytes": 33792,
+      "sha256": "c88354ea6f80d69d480030ac95dcb4ff6d7ca7e56941d0b6a7471e72c2c4ce82"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.VisualScripting.State.pdb",
+      "bytes": 28444,
+      "sha256": "62439c6da94c22377307b47a4357473ca54980122d5c6c8014d2e80849744fb0"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.CoreUtils.dll",
+      "bytes": 95744,
+      "sha256": "7650e3cd0a6fcbe440cfc9a99789171d29ee6f31f00ac6f3f1122e3bee89da31"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.CoreUtils.pdb",
+      "bytes": 66532,
+      "sha256": "e00a5f0dc97e5b3165edb3b789ba463bbbf6ab882796645911c26d1fc4a8d7ad"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.Interaction.Toolkit.dll",
+      "bytes": 923136,
+      "sha256": "91a697aaa531d983b951a70bf258cb8fa487793ea544e1cfce6ad4dcc7f86320"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.Interaction.Toolkit.pdb",
+      "bytes": 366716,
+      "sha256": "020070aec82b8115012c6fca9593f6f2775147664ca99e0960aa4130ffd2dcd6"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator.dll",
+      "bytes": 30208,
+      "sha256": "5db3b49512fa30c80570321848cfe948ca48373b31999adcc88043189ac7b014"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.Interaction.Toolkit.Samples.DeviceSimulator.pdb",
+      "bytes": 24740,
+      "sha256": "ced5d8ee031e9dd3cee414d02c77e003cd52d4fab4a5da72fbb5a6d1e929e15c"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.dll",
+      "bytes": 40960,
+      "sha256": "3c270afddaf4371062932e3bc6ffce512ff9dfba39d985992edd7bc0af98f699"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.pdb",
+      "bytes": 27588,
+      "sha256": "cc0164ab2c92161a332637139afea847d7deb5b6e575cf8b5802ef7ce5a65df2"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.Management.dll",
+      "bytes": 18432,
+      "sha256": "ba4a5b6281541239b009a14f555db8f6464cce2c741a42eeba4dee1f6765c21e"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.Management.pdb",
+      "bytes": 21000,
+      "sha256": "1f066d4941fe7c12dddcc55af791f4069e57d13131a4fa47620ae1a0911d4903"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.OpenXR.dll",
+      "bytes": 181760,
+      "sha256": "2e606e6e955a915b52b6d1b531d5f8e630fb50ce25093157d8d7b1c7f4ca4146"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.OpenXR.Features.ConformanceAutomation.dll",
+      "bytes": 7680,
+      "sha256": "0819bddc3114ae18d7c53c1343d51798c32585212369d1ed080374fa49bbbefc"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.OpenXR.Features.ConformanceAutomation.pdb",
+      "bytes": 16108,
+      "sha256": "ac754aae01a49a2ec93cc40d1fe06d46d11650cb155adaada94cca478f4408bc"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.OpenXR.Features.MetaQuestSupport.dll",
+      "bytes": 5632,
+      "sha256": "b3bae91ce019717ed3455b753e7098db7e2a8d8771a4a90c9b39f896c6ef6ac4"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.OpenXR.Features.MetaQuestSupport.pdb",
+      "bytes": 15552,
+      "sha256": "7839dc27ed6f0571a47312e4185b1d7af6f68f57e7aa0859026df26c2b79613d"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.OpenXR.Features.MockRuntime.dll",
+      "bytes": 10752,
+      "sha256": "ea851cae0991c742117e5cb474b411e9a5a0c8f0e8735cf2effcdac478310cb4"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.OpenXR.Features.MockRuntime.pdb",
+      "bytes": 16856,
+      "sha256": "6ab5dbde842420f99aa240c31289c2cff809e26eea20681f2ce7fd3e8483e055"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.OpenXR.Features.OculusQuestSupport.dll",
+      "bytes": 5120,
+      "sha256": "42850cb9035662ea94eace37144571492e4d96f712cceadc5df5449a5e2b1d98"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.OpenXR.Features.OculusQuestSupport.pdb",
+      "bytes": 15664,
+      "sha256": "2aad073b4653c79c46efcef56e2dc54b27e0a6cdeaa886db91c2b8ee10e82ed3"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.OpenXR.Features.RuntimeDebugger.dll",
+      "bytes": 6144,
+      "sha256": "58c2f61f4276baf863356c402bc42150efe3d3a52d0caf48541a9243fdb21093"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.OpenXR.Features.RuntimeDebugger.pdb",
+      "bytes": 16036,
+      "sha256": "af3567563a91cec74bdbc8349218559ed6900bc0b2ef47cae4afb1d95cbd9061"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/Unity.XR.OpenXR.pdb",
+      "bytes": 64664,
+      "sha256": "06712e93e696dd118aa0aecd028ec153dd232b6eb3df0a9bb73783d5f3fcab4e"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.AccessibilityModule.dll",
+      "bytes": 22864,
+      "sha256": "b5102bfb8f1f98c23d004610dc93481d94988c00d817658f464f26feaaf7b48b"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.AccessibilityModule.pdb",
+      "bytes": 10188,
+      "sha256": "cc935b817b192d20efbc8aa34a0fc0edf9026173da102d119122034c7480b275"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.AIModule.dll",
+      "bytes": 57680,
+      "sha256": "97f1e42a505c2abcf7858507053ba79b759e6c2acaba2255e8e3055adacf597f"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.AIModule.pdb",
+      "bytes": 19708,
+      "sha256": "5af25a12701c4fdbded2381899807e864321b94df72a92754fd9da6e85f12f4e"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.AndroidJNIModule.dll",
+      "bytes": 94544,
+      "sha256": "b68b24080b14871dc194594ac172b8ff5c67d81e9c73df1357b956bca0d9f963"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.AndroidJNIModule.pdb",
+      "bytes": 44700,
+      "sha256": "a8c76d9cd4242a6dd95c1a57006e6f4a854050bffe3e870326015c3c4b3c2457"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.AnimationModule.dll",
+      "bytes": 163664,
+      "sha256": "6e9ba61d243edbe533a46fb268ea663c0a26f56d90f1d05f7561350e679f23a1"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.AnimationModule.pdb",
+      "bytes": 52912,
+      "sha256": "10d9e8715546423851797d1de0a6a232a95c32051284663752db37b25a2150cc"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ARModule.dll",
+      "bytes": 20816,
+      "sha256": "4f5a8b04c4f35a42f7ab0b0d3e52e9b54c20c1b2c76a37b590161987adfea5e3"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ARModule.pdb",
+      "bytes": 9672,
+      "sha256": "c10278b0dccbecfb2003dc88df9c48e224ae59397c9e647c129160c4b17ad037"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.AssetBundleModule.dll",
+      "bytes": 32592,
+      "sha256": "6603e35290e54c1e6624d8fe960d108ca73f52560f1a21cb08dc648f21240b92"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.AssetBundleModule.pdb",
+      "bytes": 12968,
+      "sha256": "7e8db93c74b29ca421d607b5167a0e9e6a2f32c001e50d3917de77d78e809b4f"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.AudioModule.dll",
+      "bytes": 70992,
+      "sha256": "eef3f0563a4475d0ad1632b854dad61711a3ef17847285bdad8f301a1446782c"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.AudioModule.pdb",
+      "bytes": 21688,
+      "sha256": "e906f8bad9f7887eeaf179d7ded9cd053b0b0d7e9aa8530b973b8238aaea6cea"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ClothModule.dll",
+      "bytes": 25424,
+      "sha256": "5e86303e917879ae966b6cfdd0cf18b3a8723e7475099bdd0a1d068e13fcd3ed"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ClothModule.pdb",
+      "bytes": 10056,
+      "sha256": "8c6ec1a92655f46e89cda2faf56adbb1ec96ad06c74c363ea2f59882ad30f474"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ClusterInputModule.dll",
+      "bytes": 21328,
+      "sha256": "a10d68d89d8415670384e0878dc5bcd882061582e04cdc5d4d3a80ee015d3dfd"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ClusterInputModule.pdb",
+      "bytes": 9016,
+      "sha256": "0964de6f28f7d75f746143f4594e4026670d0b2ab54a4d184d0f34544e3d3b37"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ClusterRendererModule.dll",
+      "bytes": 22864,
+      "sha256": "c9b98d4ab1ae70dc8daf67c18bd0eb1f3dcc5b4c79cb28873b3924531a92a184"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ClusterRendererModule.pdb",
+      "bytes": 9988,
+      "sha256": "6b4905af074257798b7933f0e6a83b95297e75cc9359358c5398a73c3f41a910"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ContentLoadModule.dll",
+      "bytes": 26960,
+      "sha256": "8e1a597caaec891a7c751f17e3c20d04946535753b8c1794442f61fd44490195"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ContentLoadModule.pdb",
+      "bytes": 10832,
+      "sha256": "0f3ba1001419e448511580ba8c32d31e49a7bafb3268a189a5a45b7b5eca4b5b"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.CoreModule.dll",
+      "bytes": 1395024,
+      "sha256": "7aa2b2cca920a83a11f9ec30be54975b43e7f01af703a56a27f1698d617b62f3"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.CoreModule.pdb",
+      "bytes": 456128,
+      "sha256": "6e4c86ba008c0a5b1ac3fc3dfc658077f6b91e01f3ade595442fe4ad0483a2f6"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.CrashReportingModule.dll",
+      "bytes": 20816,
+      "sha256": "53cd13149b9599b23a3599931da960d53add24ff04dff4a32be2f51d744a471e"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.CrashReportingModule.pdb",
+      "bytes": 9584,
+      "sha256": "83c1b936fac73a27b03aa052c66014ccbd8b6cf6fe173da95945a2fea419bca2"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.DirectorModule.dll",
+      "bytes": 24400,
+      "sha256": "0bcce1dd7ae1de16302e8b1e6ef17b68e8a5cf1aabee1045906652bd50000819"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.DirectorModule.pdb",
+      "bytes": 10304,
+      "sha256": "be4488e156c82ed5d401d6bfbb1c2abba4b36a6806e6ecda5b8ef0e60afeeeed"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.dll",
+      "bytes": 126288,
+      "sha256": "b33da62450da26768ae441de86e28a6aada864b3dd5803263996ccfa2fcbacbc"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.DSPGraphModule.dll",
+      "bytes": 29008,
+      "sha256": "f90e4a68e83389da015650eaf0c4512db35992066ce56fe78d1f7fb1e3da485a"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.DSPGraphModule.pdb",
+      "bytes": 10204,
+      "sha256": "c609f4afe5cd803a2a4d49e5b868cd90744e16a226d0f24f2398d4759b61de6b"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.GameCenterModule.dll",
+      "bytes": 39248,
+      "sha256": "4aa58602763f15db4fd761cd3a8f4200c6d93020e8555210f2dd3fa1ea4381ee"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.GameCenterModule.pdb",
+      "bytes": 17148,
+      "sha256": "2f35fdc5d9780a600f805080aa71a113fed18f1ca02180e62c5f1e5475452b97"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.GIModule.dll",
+      "bytes": 19792,
+      "sha256": "d9b7d2d8c9a0d077b4e1befa24c67b1a564526701fa46eeebec57a573848b515"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.GIModule.pdb",
+      "bytes": 8928,
+      "sha256": "9513225535d956e0c2c5cd383c2bc1af35be17c95e64bbe69fccccb146c38ed0"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.GridModule.dll",
+      "bytes": 24400,
+      "sha256": "8582e5ae9f0596d547fcb530737f984fff8afff95c67f41272dbcde3360db02e"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.GridModule.pdb",
+      "bytes": 9664,
+      "sha256": "6f364c8b54c5580aca1f9d160a24e93c6a3ec8076b86852ee18b1c31fee16317"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.HotReloadModule.dll",
+      "bytes": 19792,
+      "sha256": "7acd7cdc0d8283762454ba9ea56bccb53eac970102e68d1b88ec4a78b90ee84f"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.HotReloadModule.pdb",
+      "bytes": 8928,
+      "sha256": "10f68e0e5b26425a54d392499d2935533b401febe34b12ebb389099ea2975ad2"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ImageConversionModule.dll",
+      "bytes": 23888,
+      "sha256": "f80b349af7984c0faa20f700999975ef4cc84de3a1192998013ef93e28e62f4e"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ImageConversionModule.pdb",
+      "bytes": 10072,
+      "sha256": "53922b7815782fd40a0517340c6b0ed9b0c273aa5450f97fae299f841cd4eec1"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.IMGUIModule.dll",
+      "bytes": 190800,
+      "sha256": "2ef37b6f0704c24b81db92ac8095aaf03ca1dd25ad2bbd86881f8fe0d90dc1c3"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.IMGUIModule.pdb",
+      "bytes": 87308,
+      "sha256": "4127a50815234e9bcb5eea0caf46267ebed704b0229397f9e7abcc1ed3d18dfb"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.InputLegacyModule.dll",
+      "bytes": 38224,
+      "sha256": "3586ae197d9f9990c14f9dface6129d5d0b2dd41ef22a7127cce7bdc58daa996"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.InputLegacyModule.pdb",
+      "bytes": 14880,
+      "sha256": "20b9d54923c42900d1069a3fe4aabaf57bc7b0052fb290957d26293701c79819"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.InputModule.dll",
+      "bytes": 23376,
+      "sha256": "790720125df6e88e0dd56ff881dbad7a3d3cbc0e277dcf24f8bdd7ba4123a802"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.InputModule.pdb",
+      "bytes": 10288,
+      "sha256": "3599a8bac600f102fd2d7c88b5a43f3a9c1e908406d3e5af96f421693709d069"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.JSONSerializeModule.dll",
+      "bytes": 21840,
+      "sha256": "2473f594c856ee92a3001705bc8718256ae88a882569ea3f1ed6b504f5ac3acc"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.JSONSerializeModule.pdb",
+      "bytes": 9552,
+      "sha256": "75785c9b736d1a662d4f6c32c3cfe10e0412409e879cb2854519e98660d616d5"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.LocalizationModule.dll",
+      "bytes": 20816,
+      "sha256": "19e8af0200b2c6a9aec6ff2e4b03efec7ba12a15c9eccc7227a9931bc8dc4510"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.LocalizationModule.pdb",
+      "bytes": 9320,
+      "sha256": "69a08de08e18b25d9ba6788393e8ca262d0b8353855b354136b2290e86d67015"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.NVIDIAModule.dll",
+      "bytes": 33616,
+      "sha256": "535c41359e7d863a276c22c6c58119f6f857a732246f01a8b720cff665a09d81"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.NVIDIAModule.pdb",
+      "bytes": 15368,
+      "sha256": "3211147cc13a35763c985c99728a0c5ad191e943090f366bf14bbb3c21826531"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ParticleSystemModule.dll",
+      "bytes": 161104,
+      "sha256": "e31fe5e17743780ac1e45f9938f6d65ba89fbd1c705e1c1dcfeadb5965f966cb"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ParticleSystemModule.pdb",
+      "bytes": 35760,
+      "sha256": "545376c143b714c2bbd135dd3596ba7ee03c270769b3e732eb4aba095184d0b3"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.pdb",
+      "bytes": 11688,
+      "sha256": "725e352897b41075b2f189d0f5d643290dcb60b719ccb78e8394ab1d63b1eed3"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.PerformanceReportingModule.dll",
+      "bytes": 20304,
+      "sha256": "6cefda30013ae6f979ff06601198469fe629dad9840625948d9bd780640f4233"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.PerformanceReportingModule.pdb",
+      "bytes": 9132,
+      "sha256": "666efcfc0fa8592ee752f933ed2a2323c468eb1b9aa9fc537634e8bf29fd5f1a"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.Physics2DModule.dll",
+      "bytes": 141136,
+      "sha256": "138ceb9523f6f42527283a955dca87d65cc21d47ca00fd1299f51a54fad70640"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.Physics2DModule.pdb",
+      "bytes": 42420,
+      "sha256": "95120b6fbe3d2bf39b89608ad99ef4a5a9bd3bcc5ed2aec704e281d0678ec5e9"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.PhysicsModule.dll",
+      "bytes": 138064,
+      "sha256": "cd80a340c8e7ccd63e2413c0374cc84dd80b235884c3a535985f74b1be3f465e"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.PhysicsModule.pdb",
+      "bytes": 40880,
+      "sha256": "b32613931074527d915e7fa18cf169b62d37f47b3b8d18c1cbbeeef4afdad420"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ProfilerModule.dll",
+      "bytes": 19792,
+      "sha256": "18f52458dc3d0a0ebbef6b9a9cf730790a1aa9ae3341ccfb246bad082936844b"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ProfilerModule.pdb",
+      "bytes": 8928,
+      "sha256": "19b0fa46233c48ca0bf1d6f9945df57297cd4f9a45631f48095ae72684d78f98"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.PropertiesModule.dll",
+      "bytes": 154448,
+      "sha256": "114aa609affbd3faebf403897fee706d137d2a4e57e1ded52a4b22783ca1db5c"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.PropertiesModule.pdb",
+      "bytes": 58456,
+      "sha256": "d6d2693de0c17805b68794d239fccc85b55079a45f0eab2ca509e8fb8c0cd3d3"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll",
+      "bytes": 19792,
+      "sha256": "df066bde6a8190db5ab2561cb3a006d0a5fc1aa5bfec0990e8d7e18d57916203"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.pdb",
+      "bytes": 8988,
+      "sha256": "139ff659934f3fef51a26b1a93a77b89f2b60c571363b7e97a6fdeed92c7c4fd"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ScreenCaptureModule.dll",
+      "bytes": 20816,
+      "sha256": "defb2f7fd40385f5fbc1467dcdeb961533eda0cc4dd59d5a1b345a42ac427434"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.ScreenCaptureModule.pdb",
+      "bytes": 9520,
+      "sha256": "2e9e4b287f86b05cbe88eb1cdddd8e046d4692b116e7f536e639bf26a2a8f49f"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.SharedInternalsModule.dll",
+      "bytes": 32592,
+      "sha256": "f3e44dcb14dfd8e37aa61349ba00527b09d3199d16a2c146599662ec13529c09"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.SharedInternalsModule.pdb",
+      "bytes": 13904,
+      "sha256": "bb52d177a79f8a0b244861672d85b79e6d7bf8aca664762d3abc54b75908dd11"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.SpatialTracking.dll",
+      "bytes": 12288,
+      "sha256": "1a5c45713ae35667f203757b40e6c91bfbc5fc3ce8deee95a03c40753e197bf9"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.SpatialTracking.pdb",
+      "bytes": 18412,
+      "sha256": "96e9a30813a461c22be96c2555b0869a9e3b3e70ae13185a2e51090d60f8f5d9"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.SpriteMaskModule.dll",
+      "bytes": 21328,
+      "sha256": "fd83a9f58285e8eee9481ff51110013e3301ab379ccddbb74dcf821e62514f6d"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.SpriteMaskModule.pdb",
+      "bytes": 9040,
+      "sha256": "c89505010cd9ddc597af5150ce4283343987d36cd0d9ae269a00a6b541fe9bae"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.SpriteShapeModule.dll",
+      "bytes": 25424,
+      "sha256": "da3d0a7f3eed3b6494afd718a29c50e558d74b9bddcdc9995f97fb4e1ea8f4c1"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.SpriteShapeModule.pdb",
+      "bytes": 10468,
+      "sha256": "75be9e8474a7cc8855033a80175d51b8ecef7714d10e941298872d859966a09c"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.StreamingModule.dll",
+      "bytes": 20304,
+      "sha256": "08c2954004290e9778477f392dd71d87f6e5583def63f4905b19c0d8fa2afc64"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.StreamingModule.pdb",
+      "bytes": 8980,
+      "sha256": "9091e8c4d28b2e26b6472a33c2558823df67b8b0724c705a418379771f02a47f"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.SubstanceModule.dll",
+      "bytes": 24400,
+      "sha256": "fabd8d601370547a65786541c101a71829fab5d77cff1a8270f861e359538958"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.SubstanceModule.pdb",
+      "bytes": 11140,
+      "sha256": "69bb8efb9a79c38dd50c75402864117a1a8a13c6320c459314bbc45099947ef6"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.SubsystemsModule.dll",
+      "bytes": 34640,
+      "sha256": "c93d3ca1c74e262b8b3bfcd0527f9febe2f7776e0a8c1b727a78ec98f9fd084b"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.SubsystemsModule.pdb",
+      "bytes": 15208,
+      "sha256": "ca6fec114733816db885edcb6b0f69372bfb0d8bb9e1e4fb70707febffa9bdd3"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.TerrainModule.dll",
+      "bytes": 100688,
+      "sha256": "74627612599161c00c9a81c1630a2280794f050aeca90b22d77d01f62fd8cae2"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.TerrainModule.pdb",
+      "bytes": 32428,
+      "sha256": "01ea35dce46ab66a7161deb7882908f38c3f10e0675a40e19ea1c551a9c16eaa"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.TerrainPhysicsModule.dll",
+      "bytes": 20304,
+      "sha256": "44fb1ee956fd72a1193dc9998a509c2f27f715470a620e7e342b496ccca0e9c2"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.TerrainPhysicsModule.pdb",
+      "bytes": 9388,
+      "sha256": "5fd30f455055d066b9806205c6e4f55ea3664f0cffb12e65104f836a80d0269c"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll",
+      "bytes": 72016,
+      "sha256": "df1abfbfea4ae55849b79ba17c51a5b28c2b063831fb769c4395b200422dcac7"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.TextCoreFontEngineModule.pdb",
+      "bytes": 27312,
+      "sha256": "663dc8af24edbd0cd2096c173da655a318d8cc801a254a08d2328f6379b814e7"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll",
+      "bytes": 248656,
+      "sha256": "c110eae7d8c3e2219934a91102ca6a81b1915a010b0e832ab89130ef1afadfe5"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.TextCoreTextEngineModule.pdb",
+      "bytes": 110816,
+      "sha256": "5477fa45059b5e0131dc90adbeaef2c77220fe2eb1b50ec780271488a59a4cb3"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.TextRenderingModule.dll",
+      "bytes": 38736,
+      "sha256": "dbafd847679fcf8eef5ac721854cb9e7b7ebdc8cf6c13e64d96a3115a0621f34"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.TextRenderingModule.pdb",
+      "bytes": 14604,
+      "sha256": "dcff43127a75b9133fd1aa27b8e5a57af4f9ecd9bb3b070e9f5db1e474f4e444"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.TilemapModule.dll",
+      "bytes": 46416,
+      "sha256": "c144b8a14b46353792b3563409c7970dd4b71d0d51ea9f626ce79e113cdd67ea"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.TilemapModule.pdb",
+      "bytes": 18168,
+      "sha256": "e040db2505c924456c1751e806c83103ecbd18f0b696de7f038df96231c34cb2"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.TLSModule.dll",
+      "bytes": 26448,
+      "sha256": "f323d1c6198622f3721074a21bba7afd543ab640df4ef957000afa4f12c6d302"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.TLSModule.pdb",
+      "bytes": 8948,
+      "sha256": "57b7bbcb955c942364abe63aae36b88520562f98f9c03334318c205440d7156d"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UI.dll",
+      "bytes": 297472,
+      "sha256": "58be412666ad4cccbeefa5b75fad320f5159a8f7ecaaa8036fc68e6a6385a6ec"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UI.pdb",
+      "bytes": 181076,
+      "sha256": "917e43c269d8ef83cc9368ec6671c918936c291f1bd5e904c5bab67a3a0db3db"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UIElementsModule.dll",
+      "bytes": 1535824,
+      "sha256": "1d143a24b03df68b10ac737adc628a73ddcd30eed407dcd7cc8d0ba7ea6f0b4c"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UIElementsModule.pdb",
+      "bytes": 701996,
+      "sha256": "84a0a8b58aa470f9337a2d1cbb87dbfba1462fa131ea30809766f43f62adfebc"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UIModule.dll",
+      "bytes": 36688,
+      "sha256": "3c1344c9fe608a32f56014f15091b69f5f7046b64cecc4434306b86996d132c9"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UIModule.pdb",
+      "bytes": 13216,
+      "sha256": "8afca7ab159c27e71a0b7fda4a5198cd0f30a0a15ddae492ca842cfadcd6d3dd"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UmbraModule.dll",
+      "bytes": 19792,
+      "sha256": "60acbbcafd83e02138b50a37a31fc49dc10652eebbd2023be178f7f2c42ef406"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UmbraModule.pdb",
+      "bytes": 8928,
+      "sha256": "0847386f8df5c98e8e17ec4260a812cc37606ce87069715ac3e18891b3108bf2"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll",
+      "bytes": 20304,
+      "sha256": "5438cb2b9af38b69d02ea73adda4ac05b63d566ab82243830bec324cabb6b479"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.pdb",
+      "bytes": 9352,
+      "sha256": "900c15618ef679a7988519992d4f670afe965e5c03e946fd69cfbe3845a8e9e5"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityAnalyticsModule.dll",
+      "bytes": 43856,
+      "sha256": "2da85b51444eb4f61511c7eaac934b8cf6c1ff2be687b089f6fababdd131d55d"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityAnalyticsModule.pdb",
+      "bytes": 17288,
+      "sha256": "423f059bb8cd01858657a2d0673d821fdf2fe7a0417860f26559cfbbd170b0bf"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityConnectModule.dll",
+      "bytes": 21328,
+      "sha256": "1bce615f0f4f6f7ebcc57f670e4313249cb12e5a05110acc9bd5c43ffae76146"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityConnectModule.pdb",
+      "bytes": 9496,
+      "sha256": "2e4214eb3c2e4816b946c4fea7397c55391b2bf4a37aec0489724e67a101882d"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityCurlModule.dll",
+      "bytes": 21328,
+      "sha256": "13f755ef9cbf7ceccf101811e6ccfecd82ab31d06979602f87f4839d40e9f7e8"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityCurlModule.pdb",
+      "bytes": 9328,
+      "sha256": "85ed0bf4bae9d652b2466e49a96b9684295bf206c135bf267cb779ce9f23c525"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityTestProtocolModule.dll",
+      "bytes": 19792,
+      "sha256": "debf84570ce0462985d3d51c9a65403e54311c78a4fcc20a27637708d9f5bb0d"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityTestProtocolModule.pdb",
+      "bytes": 8988,
+      "sha256": "733811c84dd851255684f4f3abe44e63b6d62c47389737d56879402e4fd2d49d"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll",
+      "bytes": 22864,
+      "sha256": "2ee03ab7cf7d039c05152a8e4c2180bc5f8f08744548ae09999da2c3ff31abe3"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.pdb",
+      "bytes": 10456,
+      "sha256": "fec2179aab3be5774d0663d5c96881b61bfc1a6f0385af692aab51070fc6e3ed"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll",
+      "bytes": 22352,
+      "sha256": "dc52dc6443494eec2ef00232e9657b0c12c1f42ecd76253abb692f659f6fec73"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityWebRequestAudioModule.pdb",
+      "bytes": 10252,
+      "sha256": "78ebf5394cb778be3962056cf06555c232523168b3b8d497f3432795645a77fe"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityWebRequestModule.dll",
+      "bytes": 57680,
+      "sha256": "7eb138c2142356d8c1be103a9fc795373d5bcb8bbe49c388f03f2eb9e6eb0a2e"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityWebRequestModule.pdb",
+      "bytes": 27440,
+      "sha256": "0ec19ba3c398a5d5ed9fb0078acd3fb363d3df799ccee9b755d1155c72f307af"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll",
+      "bytes": 21328,
+      "sha256": "85ae522318fbcfea44c6e61d275f89a504389f21e31e8b4aae101a73b6d6a3aa"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityWebRequestTextureModule.pdb",
+      "bytes": 10012,
+      "sha256": "8a8cc4b15b3b070db1c856ce57cc11d11e5eea8c9ccf38c39542f4b5e13f0e8d"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll",
+      "bytes": 31056,
+      "sha256": "52a96ea5a5dcb41f118429b4a2b9e5e32d1c8d1ff58fc2350df7d0442766c014"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.UnityWebRequestWWWModule.pdb",
+      "bytes": 13372,
+      "sha256": "b793ca6555a19dd7052b486bff87acabd528b2d7db50fe28b1d6f51951969d54"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.VehiclesModule.dll",
+      "bytes": 23888,
+      "sha256": "e680c83eb5b085ac8005575b9bb59de713e1db649e097d3e52fda13a26f47d35"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.VehiclesModule.pdb",
+      "bytes": 10080,
+      "sha256": "e019bb780ded5b41f313568da51c307390ba98cda5d40a6bce1c254d72ffb4e7"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.VFXModule.dll",
+      "bytes": 58192,
+      "sha256": "6cf69a005b823c504d18736882b18f8aece0f53655a88d7365626c8d6708cd57"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.VFXModule.pdb",
+      "bytes": 17524,
+      "sha256": "7f87225017202ce1b69bcc1c57abe1d0bc963491853915730169ab9874696a51"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.VideoModule.dll",
+      "bytes": 40784,
+      "sha256": "f3e70b08322bacbdf005817a5b14252f144961f16d2a1d3ed045acc6e3b4aaf9"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.VideoModule.pdb",
+      "bytes": 13124,
+      "sha256": "492cc04e6e507ab7d94ac8a3df6a00aab43d5e31de0a543dafc1f735bdd5993e"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.VirtualTexturingModule.dll",
+      "bytes": 35152,
+      "sha256": "4e0a9853ae3ac4f7c070f906d499dd4f385b4cd0ffc33d3560258aeaa573e072"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.VirtualTexturingModule.pdb",
+      "bytes": 13096,
+      "sha256": "0c5f06d7ff08c04200e4babc23459bb3318c74caf06d29b5162c06ba4ee1c9d9"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.VRModule.dll",
+      "bytes": 26448,
+      "sha256": "a6e6cdd8f2a811cde194204f55e3132833b0dfbbdf53e7eb34996193710fc401"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.VRModule.pdb",
+      "bytes": 9984,
+      "sha256": "8253bfe77fb2aaf83f3a5431dd17e2086caeb933cfb2298e0bbaac9a30fba3a0"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.WindModule.dll",
+      "bytes": 20304,
+      "sha256": "5936c74e773b950186aa9670c08a98dffc2f88e14cf574f3896f7e3a5078adcc"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.WindModule.pdb",
+      "bytes": 9012,
+      "sha256": "7752bd7149c6f0a81f03ddf1a588c5bf5895ef137af888feac1c888bb8c7b446"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.XR.LegacyInputHelpers.dll",
+      "bytes": 25088,
+      "sha256": "13c00a492ae4efd989a539397bfb68e754ed8ff904cb9e294c7f6a36ee38a231"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.XR.LegacyInputHelpers.pdb",
+      "bytes": 24708,
+      "sha256": "7d230776f130fb4a9b6702b03d0ad9ea9e4904db7008a5d53ec945c5a7c02ef6"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.XRModule.dll",
+      "bytes": 70480,
+      "sha256": "64b4be29cc8102bc88146235d825eeef8e8847ced7f5e483023f18be5fb7f0c9"
+    },
+    {
+      "path": "MuseumVR_Data/Managed/UnityEngine.XRModule.pdb",
+      "bytes": 23056,
+      "sha256": "14ed4ea51731e7879f4d9a14cac164b8e55b0ea6017e95b9e69e7e8037313d4b"
+    },
+    {
+      "path": "MuseumVR_Data/Plugins/x86_64/lib_burst_generated.dll",
+      "bytes": 207872,
+      "sha256": "8136f7bcbfbbe1ac5d4f6e034760f6be871f70d8118204ae905e5229b3244a1a"
+    },
+    {
+      "path": "MuseumVR_Data/Plugins/x86_64/lib_burst_generated.pdb",
+      "bytes": 1175552,
+      "sha256": "ab29f68b0336b9ec7300cf3d116c3b90fa4fb34969f53c28b106d3e651458f6b"
+    },
+    {
+      "path": "MuseumVR_Data/Plugins/x86_64/openxr_loader.dll",
+      "bytes": 2036224,
+      "sha256": "47d29b2f0e7df7fb367af5ce36fd428df0511f86fab6a279c4971f20237e0d2d"
+    },
+    {
+      "path": "MuseumVR_Data/Plugins/x86_64/UnityOpenXR.dll",
+      "bytes": 831488,
+      "sha256": "de72c50d3b99ef05482d4ea658acad2faa236b24c8398773bddc4f2c3c65448e"
+    },
+    {
+      "path": "MuseumVR_Data/resources.assets",
+      "bytes": 475736,
+      "sha256": "6bcd3bf77a79357a39399ef2909e4c5d643cff9433ae7a16de2c8ae7eb4ed033"
+    },
+    {
+      "path": "MuseumVR_Data/resources.assets.resS",
+      "bytes": 23464864,
+      "sha256": "058132616f6d752d3c126b395637e335325f8803f39eb08edd8c2f44b74b93ff"
+    },
+    {
+      "path": "MuseumVR_Data/Resources/unity default resources",
+      "bytes": 1564240,
+      "sha256": "a11e3e24520676183b3750564b4d9f5a90e8f41fd3523cbfb0c49f3989453da2"
+    },
+    {
+      "path": "MuseumVR_Data/Resources/unity_builtin_extra",
+      "bytes": 417328,
+      "sha256": "a9cbdc1bb826b5061713f7c6a743fefd3b371eca6645cde2f7dea1cb1daea483"
+    },
+    {
+      "path": "MuseumVR_Data/RuntimeInitializeOnLoads.json",
+      "bytes": 2971,
+      "sha256": "2c19941273b82ff4ef6057b1e2cc938f5c1257cc58b2bf233e3e5fcabc8c9685"
+    },
+    {
+      "path": "MuseumVR_Data/ScriptingAssemblies.json",
+      "bytes": 3984,
+      "sha256": "048aae7ddabde79742ad735079db6a6e249f80f32a6c25186a0b902ed49a58d9"
+    },
+    {
+      "path": "MuseumVR_Data/sharedassets0.assets",
+      "bytes": 25882012,
+      "sha256": "91e3869964a6b836dd7d7ffd4d7afa14bd4effd16c1eb76061a078aaa832d919"
+    },
+    {
+      "path": "MuseumVR_Data/sharedassets0.assets.resS",
+      "bytes": 48929824,
+      "sha256": "7cbd8d4b3a9c95e15fc24933a70a1e6bb41f10bf08d4a4377f17b3224dff0058"
+    },
+    {
+      "path": "MuseumVR_Data/sharedassets0.resource",
+      "bytes": 116000,
+      "sha256": "6edba0696b3a8428a48bf238cfdfaec6557d9ccfcd114f9d910c8c9790d550d7"
+    },
+    {
+      "path": "MuseumVR_Data/UnitySubsystems/UnityOpenXR/UnitySubsystemsManifest.json",
+      "bytes": 334,
+      "sha256": "5b023386c970272efb78353621e1f63294f47e9e832acd398fc5f8061a2e16aa"
+    },
+    {
+      "path": "MuseumVR.exe",
+      "bytes": 666624,
+      "sha256": "fa01ccdbaa5f74c777609235b99ba8988285b2bf0754445e85bba268b2e61eb7"
+    },
+    {
+      "path": "UnityCrashHandler64.exe",
+      "bytes": 1215824,
+      "sha256": "23c6942cfb53b5216a73c4ca9a936f6d20c373c562ed5bd8c137341e48e94e91"
+    },
+    {
+      "path": "UnityPlayer.dll",
+      "bytes": 50221392,
+      "sha256": "832986755f4379569342ed89264ca4c98d73e1430fe4c8983d8546b904701fed"
+    },
+    {
+      "path": "WinPixEventRuntime.dll",
+      "bytes": 33360,
+      "sha256": "23ef5b23f1cf6f1b7132542c4063b5e9da532572634afa41f27139bbf02468fc"
+    }
+  ]
+}

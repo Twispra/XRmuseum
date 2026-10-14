@@ -14,6 +14,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.Interaction.Toolkit;
+using Museum.PhysicalHands.EditorTools;
 using UnityEngine.XR.Interaction.Toolkit.Inputs.Simulation;
 using Clue = Museum.Exploration.HelmetExplorationController.Clue;
 using Page = Museum.Exploration.HelmetExplorationController.Page;
@@ -831,7 +832,11 @@ namespace Museum.Exploration.Editor
                 var device = left ? leftDevice : rightDevice;
                 Vector3 touch = collider.bounds.center - (distant ? button.transform.forward * .55f : Vector3.zero);
                 Quaternion rotation = distant ? Quaternion.LookRotation(collider.bounds.center - touch, Vector3.up) : Quaternion.identity;
+                if (!distant) touch = DirectButtonTouch(button, collider, left);
                 QueueController(device, touch, rotation, false); yield return Wait(.25f);
+                if (!distant) yield return MuseumPhysicalHandsTestPose.Approach(left ? leftController : rightController,
+                    inspection.GetComponent<XRGrabInteractable>(),
+                    (position, pose, grip) => QueueController(device, position, pose, grip), objectName);
                 if (objectName.StartsWith("Exploration ", StringComparison.Ordinal))
                 {
                     var follower = panel.GetComponent<HelmetInspectionPalette>();
@@ -840,8 +845,10 @@ namespace Museum.Exploration.Editor
                 }
                 touch = collider.bounds.center - (distant ? button.transform.forward * .55f : Vector3.zero);
                 rotation = distant ? Quaternion.LookRotation(collider.bounds.center - touch, Vector3.up) : Quaternion.identity;
+                if (!distant) touch = DirectButtonTouch(button, collider, left);
                 QueueController(device, touch, rotation, true); yield return Wait(.22f);
-                Require(events == 1, "XR input", "grip selects " + objectName, "hand=" + (left ? "left" : "right") + "; select events=" + events + "; interactor=" + interactor);
+                Require(events == 1, "XR input", "grip selects " + objectName, "hand=" + (left ? "left" : "right") + "; select events=" + events + "; interactor=" + interactor +
+                    (distant ? "" : "; " + MuseumPhysicalHandsTestPose.SelectionDiagnostics(left ? leftController : rightController, button)));
                 if (distant) Require(interactor == nameof(XRRayInteractor), "XR input", "distant ray selects " + objectName,
                     "Target is 0.55 m from the simulated hand; interactor=" + interactor);
                 if (button is HelmetExplorationHotspot)
@@ -850,6 +857,15 @@ namespace Museum.Exploration.Editor
                 ParkHands(); yield return Wait(.12f);
             }
             finally { if (button) button.selectEntered.RemoveListener(listener); }
+        }
+
+        static Vector3 DirectButtonTouch(XRSimpleInteractable button, Collider collider, bool left)
+        {
+            Vector3 outward = button is HelmetExplorationHotspot
+                ? collider.bounds.center - inspection.transform.TransformPoint(inspection.SectionCenterLocal)
+                : -button.transform.forward;
+            return MuseumPhysicalHandsTestPose.OutsideTouch(collider, left ? leftController : rightController,
+                Quaternion.identity, outward, collider.bounds.center);
         }
 
         static void ParkHands()

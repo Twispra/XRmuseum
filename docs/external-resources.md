@@ -1,5 +1,21 @@
 # 外部资源与辅助工具记录
 
+## 2026-10-14：博物馆虚拟手与双手协作候选
+
+同日设备反馈修订：Codex 辅助编写自身角色碰撞隔离、近距表面贴合、支撑握姿与本地 Development 诊断，并从仓库已有模型只读网格派生独立 `GripSurfaceCache.asset`（480 个网格、254,198 个三角形）。原 FBX、导入器及 GUID 保留，没有新增第三方素材。小面法线归一化、模型实时变换与碰撞对恢复的依据是当前 Unity/XRI API；采用 [Unity 2022.3 MeshUtility.AcquireReadOnlyMeshData](https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MeshUtility.AcquireReadOnlyMeshData.html) 与 [EditorSceneManager.NewPreviewScene](https://docs.unity3d.com/2022.3/Documentation/ScriptReference/SceneManagement.EditorSceneManager.NewPreviewScene.html)，预览场景的物理隔离由运行报告实际检查。用户以 Alyx 说明预期抓握体验，没有据此复制 Valve 资产或算法。具体反馈、被测版本和限制见[设备反馈记录](activity/2026-10-14-physical-hands-device-feedback.md)。
+
+本轮对应 [Issue #50](https://github.com/Twispra/XRmuseum/issues/50)。用户引用的 ChatGPT 对话「解释物体操控逻辑」及 Half-Life: Alyx 的手柄、游戏手和物体交互思路仅作设计启发；没有取得或使用 Valve 源码、模型、手套素材或游戏媒体，也未导入原对话的 zip 示例。引用对话中的示例与初始参数不作为本项目已验证实现或设备验收依据，不能由参考关系推断媒体许可或课程 AI 使用许可。
+
+Codex 辅助编写 `Assets/Museum/Features/PhysicalHands/` 的手套动画、碰撞代理、控制器绑定、双手抓取目标、开发接入和验证代码，并协助调整既有头盔部件协作与验证。浅灰手套、海军蓝袖口及五指几何由本项目程序原创生成，Grip / Trigger 驱动预设姿态；没有新增第三方模型、贴图、音频或字体。Box 手套包络、换手规则和保护释放阈值属于本轮原型设计，没有逐指物理或真实重量力反馈，也不称为 Alyx 交互系统复刻。
+
+实际实现沿用 **Unity 2022.3.62f3c1 / XRI 2.6.4 / Windows PC VR / OpenXR**，使用本机既有包源码核对接口，没有升级编辑器、packages 或平台，没有复制包源码或更改官方 Samples。独立追踪目标、手代理与可见手分层，持有物继续由 XRI 驱动；对话中的 Unity 6 接口和自定义 Joint 抓取示例没有直接替换现有抓取核心。使用、包络限制和设备反馈步骤见[手模块指南](physical-hands.zh-CN.md)，候选版本与运行证据见[本轮活动记录](activity/2026-10-14-physical-hands.md)。当前候选已完成版本绑定的手模块、观察/探索/热点/三语自动验证与 Windows64 Development 构建；按[活动记录](activity/2026-10-14-physical-hands.md)区分几何/API 夹具、生产合成输入和可执行产物，并明确数学夹具的隔离条件。真实头显、性能、程序启动与用户研究仍未验证；不得沿用先前视角反馈认定新手部功能通过。
+
+## 2026-10-13：头显跟踪与桌面模拟器启动策略
+
+Codex 辅助核对本机 Unity / VDXR 日志、项目现有 XRI 2.6.4 与 Input System 1.14.0 包源码，修复 Editor 中模拟器删除真实头显输入的问题，并新增定向合成输入验证。继续使用现有官方 XR Device Simulator Prefab 与输入资源，未复制包源码、下载媒体或新增 package。参考 [Unity Play 模式 OpenXR runtime 说明](https://docs.unity3d.com/Packages/com.unity.xr.openxr@1.14/manual/project-configuration.html#choose-an-openxr-runtime-to-use-in-play-mode)和 [VDXR 开发说明](https://github.com/mbucchia/VirtualDesktop-OpenXR/wiki/Developers)。AI 辅助范围包含诊断、启动策略代码、验证及交接；真实 Quest 3 / Virtual Desktop 复测、设备舒适性和构建仍单独记录。见[活动记录](activity/2026-10-13-xr-head-tracking-fix.md)。
+
+用户随后确认站姿、地面正常、展品太高。Codex 辅助降低中央展示与操作区域 20 cm、保持台座底部贴地/显式复位点一致，并保留热点信息卡的原阅读高度；新增保存布局、物理复位和三年代验证，运行既有输入/三语回归并目视检查合成站姿截图。没有新增外部资源或文案；20 cm 是本轮布局假设，临时相机 1.60 m 是测试夹具，均不等于真实设备高度验收或用户研究结论。[本轮调整记录](activity/2026-10-13-standing-display-height.md)。
+
 ## 2026-10-11：SuperLite 17B v2 Unity 接入
 
 Ereshkigal1224 按用户要求认领主体/最终总装，并由 Codex 辅助将已接受、已由 PR #43 合入的本组整盔 v2 派生为 FBX，接入现有三年代展台索引 2。原资料/媒体与估算边界沿用整盔资产记录，本轮未下载或分发第三方模型、参考照片、标牌、音频或贴图，未新增 Unity package。旧研究分件继续独立保存。

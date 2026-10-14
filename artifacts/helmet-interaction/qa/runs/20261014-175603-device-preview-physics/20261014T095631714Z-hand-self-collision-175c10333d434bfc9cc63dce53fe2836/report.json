@@ -1,0 +1,107 @@
+{
+    "status": "passed",
+    "utc": "2026-10-14T09:56:31.7093920Z",
+    "unity": "2022.3.62f3c1",
+    "failure": "",
+    "runtimeSha256": "981bb10810dcbe9c30ead21cbc4805ebc1c3fa20df4bad5fe2ed0fdb59c05621",
+    "fixtureSha256": "5fbe3f8c068a328f0b0cdde50a3c0d134403a10d948bf4ac29fa3b515916528e",
+    "method": "Edit Mode isolated Physics3D scene; native CharacterController.Move; instance-only runInEditMode hand callbacks; manual tracking-validity override. No Play Mode, input devices, saved assets, global collision layers or default-scene simulation.",
+    "limits": "Native character movement and self-collision pair bookkeeping only. Hand sweeps use default Physics queries and remain covered by the separate Play Mode validator; lifecycle steps here use clear remote coordinates and do not establish those sweep results. Not headset locomotion/comfort or a build acceptance result.",
+    "checks": [
+        {
+            "name": "fixture owns a valid nondefault physics scene",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "positive control: an unisolated hand obstructs character forward",
+            "detail": "travel=0.1759949",
+            "passed": true
+        },
+        {
+            "name": "positive control: an unisolated hand obstructs character backward",
+            "detail": "travel=0.1239929",
+            "passed": true
+        },
+        {
+            "name": "both native self pairs are isolated",
+            "detail": "palm=True; box=True",
+            "passed": true
+        },
+        {
+            "name": "isolated hand does not obstruct character forward",
+            "detail": "travel=0.6000061",
+            "passed": true
+        },
+        {
+            "name": "isolated hand does not obstruct character backward",
+            "detail": "travel=0.6000061",
+            "passed": true
+        },
+        {
+            "name": "wall still blocks the character and retains hand collision pairs",
+            "detail": "travel=0.3199921; flags=Sides",
+            "passed": true
+        },
+        {
+            "name": "table still blocks the character and retains hand collision pairs",
+            "detail": "drop=0.009994507; flags=Below",
+            "passed": true
+        },
+        {
+            "name": "clearing the binding restores original false bits",
+            "detail": "palm=False; box=False",
+            "passed": true
+        },
+        {
+            "name": "rebinding restores each distinct previous-owner bit",
+            "detail": "palm=True; box=False",
+            "passed": true
+        },
+        {
+            "name": "rebinding isolates both new-owner pairs",
+            "detail": "palm=True; box=True",
+            "passed": true
+        },
+        {
+            "name": "clearing the new binding restores its distinct bits",
+            "detail": "palm=False; box=True",
+            "passed": true
+        },
+        {
+            "name": "tracking loss disables both self colliders",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "tracking recovery reestablishes both self pairs",
+            "detail": "palm=True; box=True",
+            "passed": true
+        },
+        {
+            "name": "reenabled collider/native pair reset is repaired during synchronization",
+            "detail": "palm=True; box=True",
+            "passed": true
+        },
+        {
+            "name": "module disable executes the hand collider lifecycle",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "name": "module disable restores the original owner pairs",
+            "detail": "palm=False; box=False",
+            "passed": true
+        },
+        {
+            "name": "module enable reapplies the owner isolation",
+            "detail": "palm=True; box=True",
+            "passed": true
+        },
+        {
+            "name": "component destruction restores the original owner pairs",
+            "detail": "palm=False; box=False",
+            "passed": true
+        }
+    ]
+}

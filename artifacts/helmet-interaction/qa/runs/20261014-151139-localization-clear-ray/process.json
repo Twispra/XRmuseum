@@ -1,0 +1,18 @@
+{
+  "method": "Museum.Localization.EditorTools.LocalizationIntegrationValidation.RunBatch",
+  "project": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\physical-hands-2026-10-14\\XRmuseum\\MuseumVR",
+  "commit": "e97f3c9433156d0472cc5503c15f3d4eb154b2e7",
+  "startedUtc": "2026-10-14T07:11:39.9935547Z",
+  "endedUtc": "2026-10-14T07:14:09.0156227Z",
+  "pid": 29296,
+  "exitCode": 0,
+  "args": [
+    "-batchmode",
+    "-projectPath",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\physical-hands-2026-10-14\\XRmuseum\\MuseumVR\"",
+    "-executeMethod",
+    "Museum.Localization.EditorTools.LocalizationIntegrationValidation.RunBatch",
+    "-logFile",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\physical-hands-2026-10-14\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261014-151139-localization-clear-ray\\unity.log\""
+  ]
+}
