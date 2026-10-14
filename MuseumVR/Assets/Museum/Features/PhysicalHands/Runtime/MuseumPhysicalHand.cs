@@ -107,7 +107,9 @@ namespace Museum.PhysicalHands
             {
                 if (!ray || owned.Contains(ray)) continue;
                 var controller = ray.xrController ? ray.xrController : ray.GetComponentInParent<XRBaseController>();
-                if (inputController && controller != inputController) continue;
+                // The saved teleport ray has its own nontracking controller beneath
+                // this hand's tracked controller. Hierarchy still establishes ownership.
+                if (inputController && controller != inputController && !ray.transform.IsChildOf(inputController.transform)) continue;
                 owned.Add(ray);
             }
             rayInteractors = owned.ToArray();

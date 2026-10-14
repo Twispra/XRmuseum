@@ -390,6 +390,31 @@ namespace Museum.PhysicalHands.EditorTools
             controller.currentControllerState.selectInteractionState.SetFrameState(false); hand.StepPhysics(Time.fixedDeltaTime);
             Require(((IXRSelectFilter)hand).Process(ray, rayTarget),
                 "API fixture", "releasing Grip restores ray selection eligibility without a near-grab reach restriction");
+            // The saved teleport interactor owns a nested nontracking controller,
+            // so its hand ownership must follow the hierarchy, not controller equality.
+            var teleportObject = new GameObject("Fixture nested-controller teleport ray"); teleportObject.SetActive(false);
+            teleportObject.transform.SetParent(targetObject.transform, false);
+            var teleportController = teleportObject.AddComponent<ActionBasedController>();
+            teleportController.enableInputTracking = false; teleportController.enableInputActions = false;
+            var teleportRay = teleportObject.AddComponent<XRRayInteractor>();
+            teleportRay.xrController = teleportController; teleportRay.interactionManager = manager;
+            teleportRay.hideControllerOnSelect = false;
+            ray.enabled = false;
+            hand.ConfigureRays(new[] { ray, teleportRay }); teleportObject.SetActive(true);
+            controller.currentControllerState.selectInteractionState.SetFrameState(true);
+            rayCanceled = false;
+            manager.SelectEnter((IXRSelectInteractor)teleportRay, rayTarget);
+            Require(rayTarget.IsSelected(teleportRay) && teleportRay.xrController != controller,
+                "API fixture", "nested-controller ray selection exists before tracking loss");
+            hand.SetTrackingOverride(false); hand.StepPhysics(Time.fixedDeltaTime);
+            Require(!teleportRay.hasSelection && !rayTarget.isSelected && rayCanceled && !teleportRay.enabled,
+                "API fixture", "tracking loss cancels and disables the owned nested-controller ray");
+            hand.SetTrackingOverride(true); hand.StepPhysics(Time.fixedDeltaTime);
+            Require(teleportRay.enabled && !ray.enabled && !((IXRSelectFilter)hand).Process(teleportRay, rayTarget),
+                "API fixture", "nested-ray recovery preserves both enabled states and the held-Grip latch");
+            controller.currentControllerState.selectInteractionState.SetFrameState(false); hand.StepPhysics(Time.fixedDeltaTime);
+            Require(((IXRSelectFilter)hand).Process(teleportRay, rayTarget),
+                "API fixture", "releasing outer controller Grip restores nested-ray eligibility");
             UnityEngine.Object.DestroyImmediate(fixtureRoot); fixtureRoot = null;
             yield return null;
         }
