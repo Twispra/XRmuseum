@@ -41,6 +41,8 @@ namespace Museum.PhysicalHands
         bool queriesSuspended, directWasEnabled, pokeWasEnabled;
         bool? trackingOverride;
         const float Skin = .002f;
+        static readonly Vector3 OpenSize = new Vector3(.15f, .09f, .20f);
+        Vector3 OpenCenter => new Vector3((left ? 1f : -1f) * .018f, -.01f, .026f);
 
         public Transform TrackingTarget => trackingTarget;
         public XRBaseController InputController => inputController;
@@ -118,8 +120,8 @@ namespace Museum.PhysicalHands
             float grip = inputController && inputController.currentControllerState != null ? inputController.currentControllerState.selectInteractionState.value : 0;
             if (held) grip = Mathf.Max(grip, .72f);
             float side = left ? 1f : -1f;
-            envelope.size = Vector3.Lerp(new Vector3(.15f,.09f,.20f), new Vector3(.12f,.105f,.12f), Mathf.Clamp01(grip));
-            envelope.center = Vector3.Lerp(new Vector3(side*.018f,-.01f,.026f), new Vector3(side*.012f,-.025f,-.006f), Mathf.Clamp01(grip));
+            envelope.size = Vector3.Lerp(OpenSize, new Vector3(.12f,.105f,.12f), Mathf.Clamp01(grip));
+            envelope.center = Vector3.Lerp(OpenCenter, new Vector3(side*.012f,-.025f,-.006f), Mathf.Clamp01(grip));
             envelope.isTrigger = false;
         }
         void Register()
@@ -336,7 +338,13 @@ namespace Museum.PhysicalHands
                 float distance = (point - transform.position).sqrMagnitude;
                 if (distance < best) { nearest = point; best = distance; }
             }
-            if (Vector3.Distance(envelope.ClosestPoint(nearest), nearest) > .025f) return false;
+            // Grip shrinks the physical glove, but must not remove the chance to grab a surface
+            // just reached with an open hand. Selection reach therefore uses the fixed open box.
+            Vector3 localReach = Quaternion.Inverse(body.rotation) * (nearest - body.position) - OpenCenter;
+            Vector3 halfReach = OpenSize * .5f;
+            Vector3 outsideReach = new Vector3(Mathf.Max(Mathf.Abs(localReach.x) - halfReach.x, 0f),
+                Mathf.Max(Mathf.Abs(localReach.y) - halfReach.y, 0f), Mathf.Max(Mathf.Abs(localReach.z) - halfReach.z, 0f));
+            if (outsideReach.sqrMagnitude > .025f * .025f) return false;
             Vector3 delta = nearest - transform.position;
             if (delta.sqrMagnitude < .000001f) return true;
             int count = Physics.RaycastNonAlloc(transform.position, delta.normalized, hits, delta.magnitude, obstructionMask, QueryTriggerInteraction.Ignore);

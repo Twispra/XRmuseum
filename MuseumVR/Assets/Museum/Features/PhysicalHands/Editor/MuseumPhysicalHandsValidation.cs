@@ -400,6 +400,7 @@ namespace Museum.PhysicalHands.EditorTools
             root.SetActive(false);
             var body = root.AddComponent<Rigidbody>(); body.useGravity = true;
             var grab = root.AddComponent<XRGrabInteractable>(); grab.interactionManager = manager;
+            grab.colliders.Clear(); grab.colliders.Add(root.GetComponent<BoxCollider>());
             grab.selectMode = InteractableSelectMode.Multiple; grab.movementType = XRBaseInteractable.MovementType.VelocityTracking;
             grab.useDynamicAttach = true; grab.trackScale = false; grab.throwOnDetach = false;
             var exhibitReset = root.AddComponent<HelmetExhibitReset>(); exhibitReset.ConfigureHomePose(origin, Quaternion.identity);
@@ -519,7 +520,11 @@ namespace Museum.PhysicalHands.EditorTools
             Vector3 beforeSecond = helmet.transform.position;
             QueueController(rightDevice, rightTouch, Quaternion.identity, true); yield return Wait(.2f);
             Require(helmet.interactorsSelecting.Count == 2 && helmet.IsSelected(leftHand.DirectInteractor) && helmet.IsSelected(rightHand.DirectInteractor) && Vector3.Distance(beforeSecond, helmet.transform.position) < .08f,
-                "production input", "one to two hands preserves grip pose without a large position jump", "jump=" + Vector3.Distance(beforeSecond, helmet.transform.position));
+                "production input", "one to two hands preserves grip pose without a large position jump", "jump=" + Vector3.Distance(beforeSecond, helmet.transform.position) +
+                "; selectors=" + string.Join(",", helmet.interactorsSelecting.Select(i => i.transform.name)) +
+                "; left=" + HandDetail(leftHand) + "; right=" + HandDetail(rightHand) +
+                "; right selected=" + string.Join(",", rightHand.DirectInteractor.interactablesSelected.Select(i => i.transform.name)) +
+                "; right grip=" + rightController.currentControllerState.selectInteractionState.value);
             Quaternion beforeTurn = helmet.transform.rotation;
             rightTouch += Vector3.up * .14f + Vector3.right * .08f;
             yield return MoveController(rightDevice, rightController.transform.position, rightTouch, true, .4f); yield return Wait(.15f);
