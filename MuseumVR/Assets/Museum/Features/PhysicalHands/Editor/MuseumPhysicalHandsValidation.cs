@@ -46,6 +46,7 @@ namespace Museum.PhysicalHands.EditorTools
         static InputSettings.BackgroundBehavior oldBackground;
         static InputSettings.EditorInputBehaviorInPlayMode oldEditorInput;
         static bool changedInput, finishing;
+        static bool inspectHome, homeDownSeen, homeEdgeSeen;
         static double started, exitAt;
         static int lastFrame = -1, pendingExit = -1;
         static string RepoRoot => Path.GetFullPath(Path.Combine(Application.dataPath, "../.."));
@@ -72,6 +73,7 @@ namespace Museum.PhysicalHands.EditorTools
             public List<Source> sources = new List<Source>();
             public List<Sample> samples = new List<Sample>();
             public List<string> warnings = new List<string>(), errors = new List<string>();
+            public List<string> inputDiagnostics = new List<string>();
         }
 
         static MuseumPhysicalHandsValidation()
@@ -132,6 +134,7 @@ namespace Museum.PhysicalHands.EditorTools
                 Routines.Clear(); PendingInput.Clear();
                 Application.logMessageReceived += Log;
                 InputSystem.onBeforeUpdate += FlushInput;
+                InputSystem.onAfterUpdate += InspectHomeInput;
                 Routines.Push(Validate());
             }
             else if (state == PlayModeStateChange.ExitingPlayMode && !finishing && report != null)
@@ -600,13 +603,15 @@ namespace Museum.PhysicalHands.EditorTools
             bool enabledBeforeHome = keyboard.enabled;
             if (!keyboard.enabled) InputSystem.EnableDevice(keyboard);
             keyboard.MakeCurrent();
+            inspectHome = true; homeDownSeen = false; homeEdgeSeen = false;
             QueueKeyboard(new KeyboardState(Key.Home));
             float keyboardDeadline = Time.realtimeSinceStartup + 1f;
-            while (!keyboard.homeKey.isPressed && Time.realtimeSinceStartup < keyboardDeadline) yield return null;
-            Require(keyboard.homeKey.isPressed && Keyboard.current == keyboard,
+            while (!homeDownSeen && Time.realtimeSinceStartup < keyboardDeadline) yield return null;
+            Require(homeDownSeen && homeEdgeSeen,
                 "production input", "Home down reaches the player keyboard before scheduling release", "enabled before press=" + enabledBeforeHome + "; current=" + Keyboard.current?.name);
             yield return Wait(.1f);
             QueueKeyboard(new KeyboardState()); yield return Wait(.6f);
+            inspectHome = false;
             var body = helmet.GetComponent<Rigidbody>();
             Require(reset.ResetCount == resetsBefore + 1 && !helmet.isSelected && !window.isSelected && !leftHand.DirectInteractor.hasSelection && !rightHand.DirectInteractor.hasSelection && !body.isKinematic && body.useGravity && inspection.WindowAngle < .1f && Vector3.Distance(body.position, reset.HomePose.position) < .06f,
                 "production input", "Home clears held object/window ownership and restores the display", "reset delta=" + (reset.ResetCount - resetsBefore));
@@ -724,6 +729,17 @@ namespace Museum.PhysicalHands.EditorTools
             if (InputState.currentUpdateType == InputUpdateType.Dynamic)
                 while (PendingInput.Count > 0) PendingInput.Dequeue()();
         }
+        static void InspectHomeInput()
+        {
+            if (!inspectHome || InputState.currentUpdateType != InputUpdateType.Dynamic) return;
+            bool down = keyboard != null && keyboard.homeKey.isPressed;
+            bool edge = keyboard != null && keyboard.homeKey.wasPressedThisFrame;
+            homeDownSeen |= down; homeEdgeSeen |= edge;
+            if (report.inputDiagnostics.Count < 80)
+                report.inputDiagnostics.Add("frame=" + Time.frameCount + "; down=" + down + "; edge=" + edge +
+                    "; current=" + Keyboard.current?.name + "; current down=" + Keyboard.current?.homeKey.isPressed +
+                    "; keyboard enabled=" + keyboard?.enabled + "; reset enabled=" + reset.isActiveAndEnabled + "; reset count=" + reset.ResetCount);
+        }
         static void Require(bool condition, string kind, string name, string detail = "")
         {
             report.checks.Add(new Check { kind = kind, name = name, detail = detail, passed = condition });
@@ -738,6 +754,7 @@ namespace Museum.PhysicalHands.EditorTools
         {
             if (finishing) return; finishing = true; Routines.Clear(); PendingInput.Clear();
             Application.logMessageReceived -= Log; InputSystem.onBeforeUpdate -= FlushInput;
+            InputSystem.onAfterUpdate -= InspectHomeInput; inspectHome = false;
             if (fixtureRoot) UnityEngine.Object.DestroyImmediate(fixtureRoot);
             foreach (var device in new InputDevice[] { leftDevice, rightDevice, hmd, keyboard, addedMouse }) if (device != null && device.added) InputSystem.RemoveDevice(device);
             if (changedInput) { InputSystem.settings.backgroundBehavior = oldBackground; InputSystem.settings.editorInputBehaviorInPlayMode = oldEditorInput; }
