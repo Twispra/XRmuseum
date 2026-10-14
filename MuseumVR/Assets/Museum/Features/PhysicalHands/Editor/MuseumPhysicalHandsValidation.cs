@@ -596,7 +596,17 @@ namespace Museum.PhysicalHands.EditorTools
             Require(!window.isSelected && helmet.IsSelected(leftHand.DirectInteractor) && Mathf.Abs(inspection.WindowAngle - HelmetInspectionController.MaximumWindowAngle) < .5f,
                 "production input", "short window grip and release opens the window while the left grip stays held", "angle=" + inspection.WindowAngle);
             int resetsBefore = reset.ResetCount;
-            QueueKeyboard(new KeyboardState(Key.Home)); yield return Wait(.05f); QueueKeyboard(new KeyboardState()); yield return Wait(.6f);
+            Require(keyboard != null && keyboard.added, "production input", "owned synthetic keyboard exists before Home");
+            bool enabledBeforeHome = keyboard.enabled;
+            if (!keyboard.enabled) InputSystem.EnableDevice(keyboard);
+            keyboard.MakeCurrent();
+            QueueKeyboard(new KeyboardState(Key.Home));
+            float keyboardDeadline = Time.realtimeSinceStartup + 1f;
+            while (!keyboard.homeKey.isPressed && Time.realtimeSinceStartup < keyboardDeadline) yield return null;
+            Require(keyboard.homeKey.isPressed && Keyboard.current == keyboard,
+                "production input", "Home down reaches the player keyboard before scheduling release", "enabled before press=" + enabledBeforeHome + "; current=" + Keyboard.current?.name);
+            yield return Wait(.1f);
+            QueueKeyboard(new KeyboardState()); yield return Wait(.6f);
             var body = helmet.GetComponent<Rigidbody>();
             Require(reset.ResetCount == resetsBefore + 1 && !helmet.isSelected && !window.isSelected && !leftHand.DirectInteractor.hasSelection && !rightHand.DirectInteractor.hasSelection && !body.isKinematic && body.useGravity && inspection.WindowAngle < .1f && Vector3.Distance(body.position, reset.HomePose.position) < .06f,
                 "production input", "Home clears held object/window ownership and restores the display", "reset delta=" + (reset.ResetCount - resetsBefore));
