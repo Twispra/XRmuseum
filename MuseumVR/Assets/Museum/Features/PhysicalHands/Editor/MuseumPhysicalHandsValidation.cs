@@ -250,6 +250,7 @@ namespace Museum.PhysicalHands.EditorTools
             var managerObject = new GameObject("Fixture lifecycle manager");
             managerObject.transform.SetParent(fixtureRoot.transform, false);
             var fixtureManager = managerObject.AddComponent<XRInteractionManager>();
+            fixtureManager.enabled = false; // These lifecycle checks do not run interaction updates.
 
             var localLeft = LifecycleController("Fixture lifecycle left input", new Vector3(-.3f, 0, 0), false, true,
                 fixtureManager, out var localLeftDirect, out var localLeftQuery);
@@ -272,8 +273,8 @@ namespace Museum.PhysicalHands.EditorTools
             fixtureRig.Configure(localLeft, localRight, template, template);
             fixtureRig.enabled = false;
             fixtureRoot.SetActive(true); // Awake must install bindings but honor disabled startup.
-            Require(fixtureRig.LeftHand && fixtureRig.RightHand &&
-                !fixtureRig.LeftHand.gameObject.activeSelf && !fixtureRig.RightHand.gameObject.activeSelf &&
+            Require((!fixtureRig.LeftHand || !fixtureRig.LeftHand.gameObject.activeSelf) &&
+                (!fixtureRig.RightHand || !fixtureRig.RightHand.gameObject.activeSelf) &&
                 Mathf.Abs(localLeftQuery.radius - .1f) < .0001f && Mathf.Abs(localRightQuery.radius - .1f) < .0001f &&
                 !localLeft.hideControllerModel && localRight.hideControllerModel &&
                 localLeftDirect.enabled && !localRightDirect.enabled,
@@ -282,9 +283,11 @@ namespace Museum.PhysicalHands.EditorTools
                 localExploration.distanceCalculationMode == XRBaseInteractable.DistanceCalculationMode.TransformPosition,
                 "lifecycle fixture", "disabled startup does not alter either control distance mode");
 
-            fixtureRig.LeftHand.SetTrackingOverride(true); fixtureRig.RightHand.SetTrackingOverride(true);
             fixtureRig.enabled = true;
-            yield return null; // Let actual Start capture control distances.
+            yield return null; // Let actual Awake/Start initialize a previously disabled component.
+            Require(fixtureRig.LeftHand && fixtureRig.RightHand, "lifecycle fixture", "enabling installs both controller bindings");
+            fixtureRig.LeftHand.SetTrackingOverride(true); fixtureRig.RightHand.SetTrackingOverride(true);
+            yield return null;
             Require(fixtureRig.LeftHand.gameObject.activeSelf && fixtureRig.RightHand.gameObject.activeSelf &&
                 Mathf.Abs(localLeftQuery.radius - fixtureRig.LeftHand.OpenSelectionRadius) < .0001f &&
                 Mathf.Abs(localRightQuery.radius - fixtureRig.RightHand.OpenSelectionRadius) < .0001f &&
