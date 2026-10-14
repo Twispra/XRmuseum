@@ -7,6 +7,8 @@ using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
 using Museum.Inspection;
+using Museum.Localization;
+using TMPro;
 using Unity.XR.CoreUtils;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -54,6 +56,7 @@ namespace Museum.Exploration.Editor
             public List<Check> checks = new List<Check>();
             public List<Fingerprint> files = new List<Fingerprint>();
             public List<string> errors = new List<string>();
+            public List<string> diagnosticCaptures = new List<string>();
         }
         [Serializable] sealed class Visit
         {
@@ -197,6 +200,7 @@ namespace Museum.Exploration.Editor
             CheckResult(Vector2.Distance(new Vector2(Camera.main.transform.position.x, Camera.main.transform.position.z), new Vector2(0, 2.2f)) < .01f,
                 "F11 restores main camera XZ", Camera.main.transform.position.ToString("F4"));
             yield return LateCameraFixture();
+            yield return CaptionFixtures();
         }
         static Visit Snapshot()
         {
@@ -234,6 +238,46 @@ namespace Museum.Exploration.Editor
             }
         }
         static XRSimpleInteractable Center() => panel.GetComponentsInChildren<HelmetExplorationButton>(true).Single(b => b.Command == HelmetExplorationButton.Action.CenterView).GetComponent<XRSimpleInteractable>();
+        static IEnumerator CaptionFixtures()
+        {
+            var channel = MuseumText.Channel; var saved = channel.Current;
+            var languages = new[] { MuseumLanguage.English, MuseumLanguage.Chinese, MuseumLanguage.TraditionalChinese };
+            var captions = new[] { "Reset View", "重置视角", "重設視角" };
+            try
+            {
+                for (int i = 0; i < languages.Length; i++)
+                {
+                    channel.SetLanguage(languages[i]); yield return Wait(.1f);
+                    var center = Center(); var label = center.transform.parent.Find("Exploration CENTER label").GetComponent<TextMeshPro>();
+                    label.ForceMeshUpdate();
+                    CheckResult(label.text == captions[i], languages[i] + ": recovery caption", label.text);
+                    foreach (char character in captions[i].Where(c => !char.IsWhiteSpace(c)).Distinct())
+                        CheckResult(label.font.HasCharacter(character, false, false), languages[i] + ": saved glyph U+" + ((int)character).ToString("X4"), label.font.name);
+                    foreach (string name in new[] { "Exploration INSPECT label", "Exploration EXPLORE label", "Exploration HELP label", "Exploration CENTER label" })
+                    {
+                        var text = center.transform.parent.Find(name).GetComponent<TextMeshPro>(); text.ForceMeshUpdate();
+                        CheckResult(!text.isTextOverflowing, languages[i] + ": tab label fits " + name, "font=" + text.fontSize + "; text=" + text.text);
+                    }
+                    CaptureTabs(languages[i].ToString());
+                }
+            }
+            finally { channel.SetLanguage(saved); }
+        }
+        static void CaptureTabs(string language)
+        {
+            // An orthographic diagnostic close-up of the actual runtime labels; not a headset view.
+            var temporary = new GameObject("Recovery tabs diagnostic camera"); var camera = temporary.AddComponent<Camera>();
+            var target = RenderTexture.GetTemporary(1440, 400, 24); var previous = RenderTexture.active; Texture2D pixels = null;
+            try
+            {
+                temporary.transform.SetPositionAndRotation(palette.transform.TransformPoint(new Vector3(0, .36f, -.8f)), palette.transform.rotation);
+                camera.orthographic = true; camera.orthographicSize = .11f; camera.nearClipPlane = .01f; camera.farClipPlane = 10;
+                camera.targetTexture = target; camera.Render(); RenderTexture.active = target;
+                pixels = new Texture2D(1440, 400, TextureFormat.RGB24, false); pixels.ReadPixels(new Rect(0, 0, 1440, 400), 0, 0); pixels.Apply();
+                string file = "tabs-" + language + ".png"; Directory.CreateDirectory(Output); File.WriteAllBytes(Path.Combine(Output, file), pixels.EncodeToPNG()); report.diagnosticCaptures.Add(file);
+            }
+            finally { RenderTexture.active = previous; RenderTexture.ReleaseTemporary(target); if (pixels) UnityEngine.Object.DestroyImmediate(pixels); UnityEngine.Object.DestroyImmediate(temporary); }
+        }
         static IEnumerator PressCenter()
         {
             var center = Center(); var collider = center.GetComponent<Collider>(); int events = 0; string interactor = "";
