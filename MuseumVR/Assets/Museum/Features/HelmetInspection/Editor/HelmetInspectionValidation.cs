@@ -838,7 +838,12 @@ namespace Museum.Inspection.Editor
             inspection.SetSectionPlane(Vector3.up,100f);
             Require(Mathf.Abs(inspection.SectionOffset)<=inspection.SectionRange+.001f,"section depth remains bounded","Explicit API clamp prevents accidental disappearance.");
             inspection.ResetSection();
+            // The following is an isolated solver fixture. The panel's input
+            // paths were exercised above; keep its solids out of the wrist arc.
+            bool paletteWasActive = palette.gameObject.activeSelf;
+            palette.gameObject.SetActive(false);
             yield return ValidateSectionInputContinuity(tool);
+            palette.gameObject.SetActive(paletteWasActive);
             palette.FollowEnabled=true;
         }
 
@@ -910,6 +915,8 @@ namespace Museum.Inspection.Editor
             float initialTheta=roll ? 30f : angles[0];
             float radians=initialTheta*Mathf.Deg2Rad;
             inspection.SetSectionPlane(new Vector3(Mathf.Cos(radians),Mathf.Sin(radians),0),0f);
+            if (roll && MuseumPhysicalHandsTestPose.Hand(rightController))
+                inspection.SetSectionPlane(inspection.SectionNormalLocal, inspection.SectionRange);
             inspection.SetCutaway(true);tool.ShowTool=true;
             Physics.SyncTransforms();
             yield return Wait(.15f);
@@ -919,16 +926,20 @@ namespace Museum.Inspection.Editor
             var initialGuideRotation=tool.transform.rotation;
             var initialNormal=tool.transform.forward;
             var axis=roll ? initialNormal : fixedRootRotation*Vector3.forward;
-            var initialHandRotation=Quaternion.identity;
+            var outward = roll ? axis : (Vector3.Dot(initialKnob-center,axis) < 0 ? -axis : axis);
+            var initialHandRotation=MuseumPhysicalHandsTestPose.Hand(rightController)
+                ? Quaternion.LookRotation(-outward, Mathf.Abs(Vector3.Dot(outward.normalized,Vector3.up)) > .95f ? Vector3.right : Vector3.up)
+                : Quaternion.identity;
             // The contact offset lies on the rotation axis, so this external-hand
             // fixture retains the original exact plane/knob trajectory under wrist roll.
-            var touch=SectionTouch(tool, initialHandRotation, axis);
+            var touch=SectionTouch(tool, initialHandRotation, outward);
             var initialHandTrackingPosition=MuseumPhysicalHandsTestPose.TrackingPosition(rightController, touch, initialHandRotation);
             int resetsBefore=reset.ResetCount;
             Require(inspection.IsFloating && body.isKinematic && !body.useGravity && tool.ShowTool,
-                phase+" floating fixture", "API setup fixes the root and initial normal; selection and wrist motion below are synthetic XR input.");
+                phase+" floating fixture", "API setup fixes root/initial normal and puts pure roll at the bounded outer depth. Unrelated panel solids are hidden; hand/exhibit collision and all precision assertions remain active. Selection and wrist motion are synthetic XR input.");
             QueueRight(touch,initialHandRotation,false);yield return Wait(.15f);
-            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase + " / section trace");
+            yield return MuseumPhysicalHandsTestPose.Approach(rightController, helmet,
+                (position, rotation, grip) => QueueRight(position, rotation, grip), phase + " / section trace");
             QueueRight(touch,initialHandRotation,true);yield return Wait(.15f);
             Require(tool.isSelected && tool.interactorsSelecting[0] is XRDirectInteractor && !helmet.isSelected && !window.isSelected,
                 phase+" direct grip", SectionSelectionDiagnostics(tool,touch));
@@ -993,9 +1004,10 @@ namespace Museum.Inspection.Editor
             Require(!tool.isSelected && body.isKinematic && inspection.IsFloating && SectionQuaternionAngle(releasedGuide,tool.transform.rotation)<.1f && Vector3.Distance(releasedKnob,knob.position)<.001f,
                 phase+" release preserves guide pose", "Release is real XR grip-up; floating removes gravity as a confounding factor. "+SectionPoseDetail(tool,knob,releasedGuide,releasedKnob));
             var regrabRotation=Quaternion.Euler(10,40,20);
-            var regrabPosition=SectionTouch(tool, regrabRotation, axis);
+            var regrabPosition=SectionTouch(tool, regrabRotation, outward);
             QueueRight(regrabPosition,regrabRotation,false);yield return Wait(.15f);
-            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase + " / section regrab");
+            yield return MuseumPhysicalHandsTestPose.Approach(rightController, helmet,
+                (position, rotation, grip) => QueueRight(position, rotation, grip), phase + " / section regrab");
             QueueRight(regrabPosition,regrabRotation,true);yield return Wait(.15f);
             Require(tool.isSelected && tool.interactorsSelecting[0] is XRDirectInteractor && SectionQuaternionAngle(releasedGuide,tool.transform.rotation)<.1f && Vector3.Distance(releasedKnob,knob.position)<.001f,
                 phase+" regrab preserves guide pose", "New hand orientation must not reset the guide roll. "+SectionPoseDetail(tool,knob,releasedGuide,releasedKnob));
