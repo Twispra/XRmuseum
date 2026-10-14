@@ -10,7 +10,7 @@ namespace Museum.PhysicalHands.EditorTools
 {
     public static class MuseumHandDeviceSetup
     {
-        [Serializable] sealed class Check { public string name; public bool passed; }
+        [Serializable] sealed class Check { public string name, detail; public bool passed; }
         [Serializable] sealed class Report
         {
             public string status = "running", failure = "", unity, utc;
@@ -71,7 +71,7 @@ namespace Museum.PhysicalHands.EditorTools
                 var test = new GameObject("Grip surface query fixture");
                 try
                 {
-                    test.transform.position = new Vector3(100f, 100f, 100f);
+                    test.transform.position = new Vector3(12f, 10f, 12f);
                     test.transform.rotation = Quaternion.Euler(21, 37, -13);
                     test.transform.localScale = new Vector3(-.55f, .7f, .4f);
                     var filter = test.AddComponent<MeshFilter>(); filter.sharedMesh = entry.source;
@@ -82,10 +82,13 @@ namespace Museum.PhysicalHands.EditorTools
                     Vector3 b = test.transform.TransformPoint(entry.vertices[entry.triangles[triangle + 1]]);
                     Vector3 c = test.transform.TransformPoint(entry.vertices[entry.triangles[triangle + 2]]);
                     Vector3 query = (a + b + c) / 3f + Vector3.Cross(b - a, c - a).normalized * .04f;
-                    Require(report, surface.TryGetContact(grab, query, out var contact, out var normal) &&
+                    bool resolved = surface.TryGetContact(grab, query, out var contact, out var normal);
+                    Require(report, resolved &&
                         !surface.LastContactUsedColliderFallback && Vector3.Distance(query, contact) <= .0402f &&
                         Mathf.Abs(normal.magnitude - 1f) < .001f && Vector3.Dot(normal, query - contact) >= -.00001f,
-                        "actual mesh contact under rotated nonuniform mirrored scale: " + entry.source.name);
+                        "actual mesh contact under rotated nonuniform mirrored scale: " + entry.source.name,
+                        "resolved=" + resolved + "; fallback=" + surface.LastContactUsedColliderFallback +
+                        "; triangles=" + surface.LastTestedTriangleCount + "; distance=" + Vector3.Distance(query, contact) + "; normal=" + normal);
                     Vector3 forward = Vector3.ProjectOnPlane(Vector3.forward, normal);
                     if (forward.sqrMagnitude < .001f) forward = Vector3.ProjectOnPlane(Vector3.up, normal);
                     Quaternion pose = Quaternion.LookRotation(forward.normalized, normal);
@@ -96,10 +99,10 @@ namespace Museum.PhysicalHands.EditorTools
                 finally { UnityEngine.Object.DestroyImmediate(test); }
             }
         }
-        static void Require(Report report, bool passed, string name)
+        static void Require(Report report, bool passed, string name, string detail = "")
         {
-            report.checks.Add(new Check { name = name, passed = passed });
-            if (!passed) throw new InvalidOperationException(name);
+            report.checks.Add(new Check { name = name, passed = passed, detail = detail });
+            if (!passed) throw new InvalidOperationException(name + ": " + detail);
         }
     }
 }

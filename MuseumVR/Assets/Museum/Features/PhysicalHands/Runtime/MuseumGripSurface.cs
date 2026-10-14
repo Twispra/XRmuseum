@@ -83,7 +83,7 @@ namespace Museum.PhysicalHands
                 if (!filter || !filter.sharedMesh || !filter.transform.IsChildOf(grab.transform)) continue;
                 var renderer = filter.GetComponent<Renderer>();
                 if (!renderer || !renderer.enabled || !renderer.gameObject.activeInHierarchy) continue;
-                float boundsDistance = renderer.bounds.SqrDistance(query);
+                float boundsDistance = WorldBounds(filter).SqrDistance(query);
                 if (!geometry.TryGetValue(filter.sharedMesh, out var entry))
                 {
                     unknownBoundsDistanceSquared = Mathf.Min(unknownBoundsDistanceSquared, boundsDistance);
@@ -119,6 +119,17 @@ namespace Museum.PhysicalHands
             LastContactRenderer = null;
             LastContactUsedColliderFallback = true;
             return TryColliderContact(grab, query, out point, out normal);
+        }
+        static Bounds WorldBounds(MeshFilter filter)
+        {
+            Bounds local = filter.sharedMesh.bounds;
+            Matrix4x4 matrix = filter.transform.localToWorldMatrix;
+            Vector3 x = matrix.MultiplyVector(Vector3.right * local.extents.x);
+            Vector3 y = matrix.MultiplyVector(Vector3.up * local.extents.y);
+            Vector3 z = matrix.MultiplyVector(Vector3.forward * local.extents.z);
+            Vector3 half = new Vector3(Mathf.Abs(x.x) + Mathf.Abs(y.x) + Mathf.Abs(z.x),
+                Mathf.Abs(x.y) + Mathf.Abs(y.y) + Mathf.Abs(z.y), Mathf.Abs(x.z) + Mathf.Abs(y.z) + Mathf.Abs(z.z));
+            return new Bounds(matrix.MultiplyPoint3x4(local.center), half * 2f);
         }
 
         static bool TryColliderContact(XRGrabInteractable grab, Vector3 query, out Vector3 point, out Vector3 normal)
