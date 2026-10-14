@@ -13,6 +13,8 @@ namespace Museum.PhysicalHands
         [SerializeField] MuseumPhysicalHand leftPrefab;
         [SerializeField] MuseumPhysicalHand rightPrefab;
         [NonSerialized] HandBinding left, right;
+        readonly System.Collections.Generic.Dictionary<XRBaseInteractable, XRBaseInteractable.DistanceCalculationMode> controlDistances =
+            new System.Collections.Generic.Dictionary<XRBaseInteractable, XRBaseInteractable.DistanceCalculationMode>();
         public MuseumPhysicalHand LeftHand => left?.hand;
         public MuseumPhysicalHand RightHand => right?.hand;
         public ActionBasedController LeftController => leftController;
@@ -62,8 +64,25 @@ namespace Museum.PhysicalHands
             controller.hideControllerModel = true;
             return result;
         }
-        void OnEnable() { Activate(left, true); Activate(right, true); }
-        void OnDisable() { Activate(left, false); Activate(right, false); }
+        void Start()
+        {
+            foreach (var control in FindObjectsOfType<XRBaseInteractable>(true))
+            {
+                if (!control.GetComponent<Museum.Inspection.HelmetInspectionControls>() &&
+                    !control.GetComponent<Museum.Exploration.HelmetExplorationButton>()) continue;
+                controlDistances[control] = control.distanceCalculationMode;
+            }
+            SetControlDistances(true);
+        }
+        void SetControlDistances(bool active)
+        {
+            // Flat controls rank by the touched surface, like the window and
+            // discovery markers, rather than a centre far from that contact.
+            foreach (var pair in controlDistances) if (pair.Key)
+                pair.Key.distanceCalculationMode = active ? XRBaseInteractable.DistanceCalculationMode.ColliderVolume : pair.Value;
+        }
+        void OnEnable() { Activate(left, true); Activate(right, true); SetControlDistances(true); }
+        void OnDisable() { Activate(left, false); Activate(right, false); SetControlDistances(false); }
         void LateUpdate()
         {
             // XRI selection exits can unhide a controller model even when its select-hide option is off.
