@@ -117,8 +117,11 @@ namespace Museum.PhysicalHands.EditorTools
             var box = hand.CollisionCollider as BoxCollider;
             if (!box) return hand.CollisionRadius;
             Vector3 scale = box.transform.lossyScale;
-            Vector3 center = Vector3.Scale(box.center, scale);
-            Vector3 half = Vector3.Scale(box.size * .5f, scale);
+            // Every near fixture approaches with Grip up. The prior interaction
+            // may still leave the visible/physical glove closed when this pose
+            // is calculated; always reserve the production open envelope.
+            Vector3 center = Vector3.Scale(hand.OpenEnvelopeCenter, scale);
+            Vector3 half = Vector3.Scale(hand.OpenEnvelopeSize * .5f, scale);
             return Vector3.Dot(rotation * center, direction) +
                    Mathf.Abs(Vector3.Dot(rotation * (Vector3.right * half.x), direction)) +
                    Mathf.Abs(Vector3.Dot(rotation * (Vector3.up * half.y), direction)) +
