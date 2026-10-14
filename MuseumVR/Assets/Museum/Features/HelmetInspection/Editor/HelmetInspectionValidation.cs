@@ -542,9 +542,19 @@ namespace Museum.Inspection.Editor
             yield return Wait(.2f);
             QueueController(leftDevice, RootTouch(), Quaternion.identity, true);
             yield return Wait(.25f);
-            Require(window.isSelected && !helmet.isSelected && Vector3.Distance(body.position, heldBodyPosition) < .01f,
-                "whole helmet blocked during window drag", "Second hand grip cannot steal or move the pinned root.");
+            if (inspection.AllowHeldChildInteraction)
+                Require(window.isSelected && helmet.isSelected && !body.isKinematic,
+                    "different hand grabs root during window drag", "Both selections coexist and XRI retains the dynamic root; " + SelectionDetail());
+            else
+                Require(window.isSelected && !helmet.isSelected && Vector3.Distance(body.position, heldBodyPosition) < .01f,
+                    "whole helmet blocked during window drag", "Second hand grip cannot steal or move the pinned root.");
             QueueController(leftDevice, new Vector3(-.7f, 1f, 1f), Quaternion.identity, false);
+            if (inspection.AllowHeldChildInteraction)
+            {
+                yield return Wait(.2f);
+                Require(window.isSelected && !helmet.isSelected && body.isKinematic,
+                    "last root hand release restores child pin", "The window grip remains active without a throw or a falling root.");
+            }
             yield return DragWindowArc(localVector, sign, 130f, 0f, .9f);
             Require(inspection.WindowAngle < .6f, "drag closes", "Returning the controller arc closes the hinge; angle=" + inspection.WindowAngle);
             QueueRight(WindowTouch(), Quaternion.identity, false);
@@ -611,7 +621,11 @@ namespace Museum.Inspection.Editor
             yield return Wait(.2f);
             QueueController(leftDevice, WindowTouch(), Quaternion.identity, true);
             yield return Wait(.2f);
-            Require(helmet.isSelected && !window.isSelected, "window blocked during whole helmet grab", SelectionDetail());
+            if (inspection.AllowHeldChildInteraction)
+                Require(helmet.isSelected && window.isSelected && !body.isKinematic,
+                    "different hand opens window while root held", "Both selections coexist without pinning the held Rigidbody; " + SelectionDetail());
+            else
+                Require(helmet.isSelected && !window.isSelected, "window blocked during whole helmet grab", SelectionDetail());
             QueueController(leftDevice,new Vector3(-.7f,1f,1f),Quaternion.identity,false);
             var delta = new Vector3(.12f,.32f,-.12f);
             var turn = Quaternion.Euler(8,32,8);

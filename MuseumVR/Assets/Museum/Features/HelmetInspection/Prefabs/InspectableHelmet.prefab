@@ -3963,6 +3963,7 @@ GameObject:
   - component: {fileID: 426116414638230195}
   - component: {fileID: 118794250406679012}
   - component: {fileID: 6887944843734790652}
+  - component: {fileID: 5329936790744955895}
   m_Layer: 0
   m_Name: InspectableHelmet
   m_TagString: Untagged
@@ -4044,7 +4045,7 @@ MonoBehaviour:
   m_InteractionLayers:
     m_Bits: 1
   m_DistanceCalculationMode: 1
-  m_SelectMode: 0
+  m_SelectMode: 1
   m_FocusMode: 1
   m_CustomReticle: {fileID: 0}
   m_AllowGazeInteraction: 0
@@ -4173,9 +4174,11 @@ MonoBehaviour:
   m_ForceGravityOnDetach: 0
   m_RetainTransformParent: 0
   m_AttachPointCompatibilityMode: 0
-  m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers: []
-  m_AddDefaultGrabTransformers: 1
+  m_StartingSingleGrabTransformers:
+  - {fileID: 5329936790744955895}
+  m_StartingMultipleGrabTransformers:
+  - {fileID: 5329936790744955895}
+  m_AddDefaultGrabTransformers: 0
 --- !u!114 &5489111055939569899
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4695,6 +4698,7 @@ MonoBehaviour:
   openAngleSign: -1
   windowSpeed: 150
   reduceMotion: 0
+  allowHeldChildInteraction: 1
 --- !u!114 &9161723946131611749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5404,6 +5408,20 @@ MonoBehaviour:
   tour: {fileID: 0}
   instructions: {fileID: 0}
   attachments: []
+--- !u!114 &5329936790744955895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2257646481026636850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbb714e3a75e6b24f9028569ec32e1f5, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  maximumPositionError: 0.1
+  maximumRotationError: 20
 --- !u!1 &2283044382297830847
 GameObject:
   m_ObjectHideFlags: 0
