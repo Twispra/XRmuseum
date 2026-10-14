@@ -1,5 +1,7 @@
 # 项目状态与下一步
 
+2026-10-14 虚拟手与双手协作开发候选：[Issue #50](https://github.com/Twispra/XRmuseum/issues/50) 在独立 `codex/physical-hands-2026-10-14` 分支开发，候选代码提交 `dd74d7d` 及后续修正正在进行 QA，尚未合入 main。新增原创五指手套预设动画、近距手包络阻挡、无缩放双手支撑/换手，以及不同手的本体/窗口/剖面相对操作；保存独立 PhysicalHandsLab 与主场景接入候选，保留 FLOAT 单手观察方式。沿用 Unity 2022.3.62f3c1 / XRI 2.6.4 / Windows PC VR，未升级编辑器、packages 或平台，原目录既有修改保留。使用与首次约五分钟设备反馈见[手模块指南](physical-hands.zh-CN.md)，实际被测版本、结果和下一步见[本轮活动记录](activity/2026-10-14-physical-hands.md)。完整自动验证结论仍待记录，真实头显双眼对齐、握持/阻挡手感、性能、当前构建与用户研究均无本轮验收证据；既有视角反馈不覆盖新手部功能。以下历史主线和验证快照保留。
+
 2026-10-14 视角修复合并交接：用户反馈“视角没有太大的问题了”，明确授权 [PR #49](https://github.com/Twispra/XRmuseum/pull/49) 合入 main。合并前实际 main 仍为 `4578e66`，候选 `a45f515` 的产品源码与已测 `1633e98` 一致，来源指纹复核通过；本次仅补充反馈与文档。执行正常 GitHub 合并，最终 merged 状态/实际 merge SHA 以 PR 回读为准。[设备反馈、复核与交接](activity/2026-10-14-pr49-merge.md)。本条用户反馈只覆盖视角，没有扩大为控制器、性能、完整舒适性、构建或用户研究通过；原目录既有改动继续保留。
 
 2026-10-13 站姿展示高度调整：用户确认真实头显转动正常、站着游玩且地面正常，剩余问题是展品太高。同一 [Issue #48](https://github.com/Twispra/XRmuseum/issues/48) / [Draft PR #49](https://github.com/Twispra/XRmuseum/pull/49) 将中央台面 **1.16 → 0.96 m**，头盔/操作按钮/复位点下移 20 cm，台座底部仍贴地，热点信息卡保留原阅读高度。最终被测源码 **`1633e98`** 的高度专项 **65 项 / 0 errors / 0 warnings**、主场景 **83,424 项 / 0 errors / 0 warnings**通过；此前 `ac42155` 精细整合 423 项通过。已安全同步到本地原工程供设备复测，相机/Origin/地面跟踪保持原配置；尚未合入 main，20 cm 调整后的真实舒适性仍待用户回读。[最终范围、证据与交接](activity/2026-10-13-standing-display-height.md)。

@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using Museum.PhysicalHands.EditorTools;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -529,7 +530,7 @@ namespace Museum.Inspection.Editor
             yield return Wait(.25f);
             Require(window.isSelected && !helmet.isSelected, "window select for drag", SelectionDetail());
             var pivot = inspection.WindowPivot;
-            var localVector = pivot.parent.InverseTransformVector(touch - pivot.position);
+            var localVector = pivot.parent.InverseTransformVector(MuseumPhysicalHandsTestPose.TrackingPosition(rightController, touch, Quaternion.identity) - pivot.position);
             // Builder uses a local Y hinge; sign is an explicit serialized interpretation parameter.
             var serialized = new SerializedObject(inspection);
             float sign = serialized.FindProperty("openAngleSign").floatValue < 0 ? -1f : 1f;
@@ -538,9 +539,9 @@ namespace Museum.Inspection.Editor
             Require(window.isSelected && Mathf.Abs(inspection.WindowAngle - HelmetInspectionController.MaximumWindowAngle) < .6f,
                 "drag clamps at maximum", "130-degree hand arc yields " + inspection.WindowAngle + " degree hinge; direct input.");
             var heldBodyPosition = body.position;
-            QueueController(leftDevice, RootTouch(), Quaternion.identity, false);
+            QueueController(leftDevice, RootTouch(leftController), Quaternion.identity, false);
             yield return Wait(.2f);
-            QueueController(leftDevice, RootTouch(), Quaternion.identity, true);
+            QueueController(leftDevice, RootTouch(leftController), Quaternion.identity, true);
             yield return Wait(.25f);
             if (inspection.AllowHeldChildInteraction)
                 Require(window.isSelected && helmet.isSelected && !body.isKinematic,
@@ -617,9 +618,9 @@ namespace Museum.Inspection.Editor
             yield return Wait(.3f);
             Require(helmet.isSelected && !window.isSelected, "whole helmet input grab", SelectionDetail());
             Require(helmet.interactorsSelecting[0] is XRDirectInteractor, "whole helmet direct grab", helmet.interactorsSelecting[0].GetType().Name);
-            QueueController(leftDevice, WindowTouch(), Quaternion.identity, false);
+            QueueController(leftDevice, WindowTouch(leftController), Quaternion.identity, false);
             yield return Wait(.2f);
-            QueueController(leftDevice, WindowTouch(), Quaternion.identity, true);
+            QueueController(leftDevice, WindowTouch(leftController), Quaternion.identity, true);
             yield return Wait(.2f);
             if (inspection.AllowHeldChildInteraction)
                 Require(helmet.isSelected && window.isSelected && !body.isKinematic,
@@ -713,7 +714,7 @@ namespace Museum.Inspection.Editor
             yield return PressButton("EDIT CUT");
             Require(inspection.IsCutaway && tool.ShowTool, "input reveals section tool", "Both commands travel through production grip input.");
             QueueController(leftDevice, new Vector3(-1,1,1), Quaternion.Euler(-80,0,0), false);
-            var touch = tool.colliders[0].bounds.center;
+            var touch = SectionTouch(tool, Quaternion.identity);
             QueueRight(touch, Quaternion.identity, false); yield return Wait(.3f);
             QueueRight(touch, Quaternion.identity, true); yield return Wait(.25f);
             Require(tool.isSelected && inspection.IsSectionHeld && !helmet.isSelected && !window.isSelected,
@@ -784,7 +785,7 @@ namespace Museum.Inspection.Editor
             yield return PressHome();yield return Wait(.4f);
             Require(reset.ResetCount==resetsBefore+1 && !tool.isSelected && !inspection.IsCutaway && !body.isKinematic,"Home cancels held section tool","The former grip cannot leave a stale pinned body.");
             inspection.SetCutaway(true);tool.ShowTool=true; // labelled reset-lock setup, not claimed as input.
-            touch=tool.colliders[0].bounds.center;QueueRight(touch,Quaternion.identity,true);yield return Wait(.35f);
+            touch=SectionTouch(tool, Quaternion.identity);QueueRight(touch,Quaternion.identity,true);yield return Wait(.35f);
             Require(!tool.isSelected && !helmet.isSelected && !window.isSelected,"held reset grip cannot reselect another part","Test continues past the original 0.15 second cooldown.");
             QueueRight(touch,Quaternion.identity,false);yield return Wait(.2f);
             QueueRight(touch,Quaternion.identity,true);yield return Wait(.2f);
@@ -902,12 +903,15 @@ namespace Museum.Inspection.Editor
             yield return Wait(.15f);
             var knob=tool.colliders[0].transform;
             var center=inspection.transform.TransformPoint(inspection.SectionPointLocal);
-            var touch=tool.colliders[0].bounds.center;
             var initialKnob=knob.position;
             var initialGuideRotation=tool.transform.rotation;
             var initialNormal=tool.transform.forward;
             var axis=roll ? initialNormal : fixedRootRotation*Vector3.forward;
             var initialHandRotation=Quaternion.identity;
+            // The contact offset lies on the rotation axis, so this external-hand
+            // fixture retains the original exact plane/knob trajectory under wrist roll.
+            var touch=SectionTouch(tool, initialHandRotation, axis);
+            var initialHandTrackingPosition=MuseumPhysicalHandsTestPose.TrackingPosition(rightController, touch, initialHandRotation);
             int resetsBefore=reset.ResetCount;
             Require(inspection.IsFloating && body.isKinematic && !body.useGravity && tool.ShowTool,
                 phase+" floating fixture", "API setup fixes the root and initial normal; selection and wrist motion below are synthetic XR input.");
@@ -930,8 +934,9 @@ namespace Museum.Inspection.Editor
                 // Move the held hand on the same circular path as the saved knob. Combined
                 // translation + wrist rotation keeps the plane's canonical center stationary.
                 var targetKnob=center+delta*(initialKnob-center);
-                lastHandPosition=touch+(targetKnob-initialKnob);
                 lastHandRotation=delta*initialHandRotation;
+                lastHandPosition=MuseumPhysicalHandsTestPose.ControllerPosition(rightController,
+                    initialHandTrackingPosition+(targetKnob-initialKnob), lastHandRotation);
                 QueueRight(lastHandPosition,lastHandRotation,true);
                 yield return Wait(.065f);
                 float inputDelta=Mathf.Abs(angles[i]-previousDegrees);
@@ -975,7 +980,7 @@ namespace Museum.Inspection.Editor
             Require(!tool.isSelected && body.isKinematic && inspection.IsFloating && SectionQuaternionAngle(releasedGuide,tool.transform.rotation)<.1f && Vector3.Distance(releasedKnob,knob.position)<.001f,
                 phase+" release preserves guide pose", "Release is real XR grip-up; floating removes gravity as a confounding factor. "+SectionPoseDetail(tool,knob,releasedGuide,releasedKnob));
             var regrabRotation=Quaternion.Euler(10,40,20);
-            var regrabPosition=tool.colliders[0].bounds.center;
+            var regrabPosition=SectionTouch(tool, regrabRotation, axis);
             QueueRight(regrabPosition,regrabRotation,false);yield return Wait(.15f);
             QueueRight(regrabPosition,regrabRotation,true);yield return Wait(.15f);
             Require(tool.isSelected && tool.interactorsSelecting[0] is XRDirectInteractor && SectionQuaternionAngle(releasedGuide,tool.transform.rotation)<.1f && Vector3.Distance(releasedKnob,knob.position)<.001f,
@@ -1031,14 +1036,31 @@ namespace Museum.Inspection.Editor
 
         static string SelectionDetail() => "window="+window.isSelected+"; root="+helmet.isSelected+"; angle="+inspection.WindowAngle+"; hand="+(rightController?rightController.transform.position.ToString():"missing");
 
-        static Vector3 WindowTouch()
+        static Vector3 WindowTouch(XRBaseController controller = null)
         {
             var collider=window.colliders[0];
             // Frontmost point of the explicit hit target avoids the whole-shell collider behind it.
-            return collider.bounds.center + (inspection.transform.rotation*Vector3.back)*.009f;
+            Vector3 outward=inspection.transform.rotation*Vector3.back;
+            Vector3 legacy=collider.bounds.center + outward*.009f;
+            return MuseumPhysicalHandsTestPose.OutsideTouch(collider, controller ? controller : rightController,
+                Quaternion.identity, outward, legacy);
         }
 
-        static Vector3 RootTouch() => helmetColliders.OrderByDescending(c=>c.bounds.size.sqrMagnitude).First().bounds.center;
+        static Vector3 RootTouch(XRBaseController controller = null)
+        {
+            controller=controller ? controller : rightController;
+            var collider=helmetColliders.OrderByDescending(c=>c.bounds.size.sqrMagnitude).First();
+            Vector3 outward=helmet.transform.rotation*(controller==leftController ? Vector3.left : Vector3.right);
+            return MuseumPhysicalHandsTestPose.OutsideTouch(collider, controller, Quaternion.identity, outward, collider.bounds.center);
+        }
+
+        static Vector3 SectionTouch(HelmetSectionInteractable tool, Quaternion rotation, Vector3 outward = default)
+        {
+            var collider=tool.colliders[0];
+            if(outward.sqrMagnitude<.000001f)
+                outward=collider.bounds.center-inspection.transform.TransformPoint(inspection.SectionCenterLocal);
+            return MuseumPhysicalHandsTestPose.OutsideTouch(collider, rightController, rotation, outward, collider.bounds.center);
+        }
 
         static IEnumerator PressButton(string label)
         {
@@ -1060,7 +1082,9 @@ namespace Museum.Inspection.Editor
             if (!button && label == "RESET" && IsMainSceneRun)
                 button=GameObject.Find("Helmet Reset Button")?.GetComponent<XRSimpleInteractable>();
             Require(button,"button exists: "+label,"Independent world-space control.");
-            var touch=button.GetComponent<Collider>().bounds.center;
+            var buttonCollider=button.GetComponent<Collider>();
+            var touch=MuseumPhysicalHandsTestPose.OutsideTouch(buttonCollider, rightController, Quaternion.identity,
+                -button.transform.forward, buttonCollider.bounds.center);
             QueueRight(touch,Quaternion.identity,false);
             yield return Wait(.22f);
             QueueRight(touch,Quaternion.identity,true);
@@ -1085,11 +1109,13 @@ namespace Museum.Inspection.Editor
             {
                 float t=Mathf.SmoothStep(0,1,(Time.realtimeSinceStartup-start)/duration);
                 Vector3 v=Quaternion.AngleAxis(Mathf.Lerp(from,to,t)*sign,Vector3.up)*closedLocalVector;
-                QueueRight(inspection.WindowPivot.position+inspection.WindowPivot.parent.TransformVector(v),Quaternion.identity,true);
+                QueueRight(MuseumPhysicalHandsTestPose.ControllerPosition(rightController,
+                    inspection.WindowPivot.position+inspection.WindowPivot.parent.TransformVector(v), Quaternion.identity),Quaternion.identity,true);
                 yield return null;
             }
             Vector3 last=Quaternion.AngleAxis(to*sign,Vector3.up)*closedLocalVector;
-            QueueRight(inspection.WindowPivot.position+inspection.WindowPivot.parent.TransformVector(last),Quaternion.identity,true);
+            QueueRight(MuseumPhysicalHandsTestPose.ControllerPosition(rightController,
+                inspection.WindowPivot.position+inspection.WindowPivot.parent.TransformVector(last), Quaternion.identity),Quaternion.identity,true);
         }
 
         static void CheckPlane(string name,bool enabled)

@@ -45,8 +45,8 @@ namespace Museum.PhysicalHands.EditorTools
         static InputSettings.BackgroundBehavior oldBackground;
         static InputSettings.EditorInputBehaviorInPlayMode oldEditorInput;
         static bool changedInput, finishing;
-        static double started;
-        static int lastFrame = -1;
+        static double started, exitAt;
+        static int lastFrame = -1, pendingExit = -1;
         static string RepoRoot => Path.GetFullPath(Path.Combine(Application.dataPath, "../.."));
         static string Output => SessionState.GetString(Prefix + "Output", "");
 
@@ -98,6 +98,7 @@ namespace Museum.PhysicalHands.EditorTools
                 throw new InvalidOperationException("Exit Play Mode before physical hands validation.");
             if (Enumerable.Range(0, SceneManager.sceneCount).Any(i => SceneManager.GetSceneAt(i).isDirty))
                 throw new InvalidOperationException("Save or discard your existing scene edits before validation; this runner does not save scenes.");
+            pendingExit = -1;
             var snapshot = new Report
             {
                 utc = DateTime.UtcNow.ToString("o"), commit = Git("rev-parse HEAD"), branch = Git("branch --show-current"),
@@ -140,13 +141,19 @@ namespace Museum.PhysicalHands.EditorTools
                 if (SessionState.GetBool(Prefix + "Batch", false))
                 {
                     int code = SessionState.GetInt(Prefix + "Exit", 1);
-                    EditorApplication.delayCall += () => EditorApplication.Exit(code < 0 ? 1 : code);
+                    // Let the Play-to-Edit transition and native XR teardown settle before exit.
+                    // This follows the existing tracking/height QA delayed-exit harness.
+                    EditorApplication.delayCall += () => { pendingExit = code < 0 ? 1 : code; exitAt = EditorApplication.timeSinceStartup + 20; };
                 }
             }
         }
 
         static void Tick()
         {
+            if (pendingExit >= 0 && EditorApplication.timeSinceStartup >= exitAt)
+            {
+                int code = pendingExit; pendingExit = -1; EditorApplication.Exit(code); return;
+            }
             if (!SessionState.GetBool(Prefix + "Active", false) || !EditorApplication.isPlaying || finishing || report == null || lastFrame == Time.frameCount) return;
             lastFrame = Time.frameCount;
             // XRI 2.6 skips throw samples with sub-millisecond deltaTime in unpaced hidden batch runs.
@@ -219,20 +226,26 @@ namespace Museum.PhysicalHands.EditorTools
 
         static IEnumerator CollisionFixtures()
         {
-            fixtureRoot = new GameObject("Physical hands QA isolated fixtures") { hideFlags = HideFlags.HideAndDontSave };
+            // XRI requires a valid Unity physics scene. HideAndDontSave can detach a
+            // hierarchy from that scene, so use ordinary temporary Play Mode objects.
+            fixtureRoot = new GameObject("Physical hands QA isolated fixtures");
             Vector3 origin = new Vector3(100f, 1f, 100f);
-            var manager = new GameObject("Fixture interaction manager").AddComponent<XRInteractionManager>(); manager.transform.SetParent(fixtureRoot.transform);
+            var manager = leftHand.DirectInteractor.interactionManager;
+            Require(manager && manager.isActiveAndEnabled, "geometry fixture", "isolated fixture uses the existing production interaction manager");
             var targetObject = new GameObject("Fixture tracked target"); targetObject.transform.SetParent(fixtureRoot.transform); targetObject.transform.position = origin;
             var controller = targetObject.AddComponent<ActionBasedController>(); controller.enableInputTracking = false; controller.enableInputActions = false;
             var proxy = new GameObject("Fixture physical palm"); proxy.transform.SetParent(fixtureRoot.transform); proxy.transform.position = origin;
             var hand = proxy.AddComponent<MuseumPhysicalHand>();
-            var directObject = new GameObject("Fixture direct interactor"); directObject.SetActive(false); directObject.transform.SetParent(proxy.transform, false);
+            var directObject = new GameObject("Fixture direct interactor"); directObject.SetActive(false); directObject.transform.SetParent(targetObject.transform, false);
             var trigger = directObject.AddComponent<SphereCollider>(); trigger.radius = .15f; trigger.isTrigger = true;
+            var queryBody = directObject.AddComponent<Rigidbody>(); queryBody.isKinematic = true; queryBody.useGravity = false;
             var direct = directObject.AddComponent<XRDirectInteractor>(); direct.interactionManager = manager; direct.xrController = controller;
             direct.selectActionTrigger = XRBaseControllerInteractor.InputTriggerType.State; direct.hideControllerOnSelect = false;
             hand.Configure(targetObject.transform, controller, direct, null, true); hand.SetTrackingOverride(true);
             // Only this fixture driver is stepped manually; the production components stay enabled.
             hand.enabled = false; directObject.SetActive(true);
+            Require(directObject.scene.IsValid() && direct.xrController == controller && direct.isActiveAndEnabled,
+                "geometry fixture", "query has a valid physics scene and controller parent before contacts are collected");
             var wall = Box("Fixture thin wall", origin + Vector3.forward * .7f, new Vector3(2f, 2f, .04f));
             var table = Box("Fixture table", origin + Vector3.down * .45f, new Vector3(2f, .04f, 2f));
             Require(hand.Body && hand.CollisionCollider is BoxCollider && !hand.CollisionCollider.isTrigger, "geometry fixture", "fixture owns a measurable solid glove envelope");
@@ -273,10 +286,36 @@ namespace Museum.PhysicalHands.EditorTools
                 "geometry fixture", "tracking recovery returns to the valid target");
             Record("fixture tracking recovered", hand, null);
 
+            // Both endpoint poses are clear, but the glove corner crosses this thin
+            // obstacle halfway through a 20-degree turn. Endpoint-only tests miss it.
+            Vector3 turnAnchor = hand.Body.position;
+            hand.Body.rotation = Quaternion.identity;
+            hand.transform.SetPositionAndRotation(turnAnchor, Quaternion.identity);
+            targetObject.transform.SetPositionAndRotation(turnAnchor, Quaternion.identity);
+            var turnObstacle = Box("Fixture thin rotation obstacle", turnAnchor + new Vector3(.111f, -.01f, .106f), Vector3.one * .002f);
+            Physics.SyncTransforms();
+            bool startClear = Penetration(hand.CollisionCollider, turnObstacle) < .0001f;
+            hand.transform.rotation = Quaternion.Euler(0, 20f, 0);
+            Physics.SyncTransforms();
+            bool endClear = Penetration(hand.CollisionCollider, turnObstacle) < .0001f;
+            hand.Body.rotation = Quaternion.identity; hand.transform.rotation = Quaternion.identity;
+            Physics.SyncTransforms();
+            Require(startClear && endClear, "geometry fixture", "thin rotation obstacle has clear starting and ending poses");
+            targetObject.transform.rotation = Quaternion.Euler(0, 20f, 0);
+            yield return StepFixture(hand, 1);
+            float turn = Quaternion.Angle(Quaternion.identity, hand.Body.rotation);
+            Require(hand.IsBlocked && turn < 15f && Penetration(hand.CollisionCollider, turnObstacle) < .0001f,
+                "geometry fixture", "rotation path stops before a thin obstacle even when the destination pose is clear", "turn=" + turn);
+            Record("rotation path blocked", hand, null, Penetration(hand.CollisionCollider, turnObstacle));
+            UnityEngine.Object.DestroyImmediate(turnObstacle.gameObject);
+            targetObject.transform.rotation = Quaternion.identity;
+            yield return StepFixture(hand, 4);
+
             // Explicit API fixture: proximity and select filters are checked before SelectEnter.
-            var cubeObject = Box("Fixture grabbable cube", origin + Vector3.left * .25f + Vector3.forward * .18f, Vector3.one * .16f).gameObject;
+            var cubeObject = Box("Fixture grabbable cube", origin + Vector3.left * .25f + Vector3.forward * .35f, Vector3.one * .16f).gameObject;
             cubeObject.SetActive(false);
             var cubeBody = cubeObject.AddComponent<Rigidbody>(); cubeBody.useGravity = false;
+            cubeBody.collisionDetectionMode = CollisionDetectionMode.ContinuousDynamic;
             var cube = cubeObject.AddComponent<XRGrabInteractable>(); cube.interactionManager = manager;
             cube.useDynamicAttach = true; cube.matchAttachPosition = true; cube.matchAttachRotation = true;
             cube.reinitializeDynamicAttachEverySingleGrab = true; cube.selectMode = InteractableSelectMode.Multiple;
@@ -284,6 +323,9 @@ namespace Museum.PhysicalHands.EditorTools
             var transformer = cubeObject.AddComponent<MuseumHandGrabTransformer>();
             cube.startingSingleGrabTransformers.Add(transformer); cube.startingMultipleGrabTransformers.Add(transformer);
             cubeObject.SetActive(true);
+            Physics.SyncTransforms();
+            Require(Penetration(hand.CollisionCollider, cubeObject.GetComponent<Collider>()) < .0001f,
+                "API fixture", "cube starts clear of the recovered glove envelope before approaching");
             targetObject.transform.position = cubeObject.transform.position + Vector3.back * (.08f + EnvelopeSupport(hand, Vector3.forward) + .004f);
             yield return StepFixture(hand, 24);
             yield return FixedSteps(2);
@@ -291,9 +333,30 @@ namespace Museum.PhysicalHands.EditorTools
             // stepped geometry fixtures; no further valid-target manual physics steps are run.
             hand.enabled = true;
             var candidates = new List<IXRInteractable>(); direct.GetValidTargets(candidates);
-            Require(candidates.Contains(cube) && manager.IsSelectPossible(direct, cube), "API fixture", "cube is a nearby valid selection before explicit manager selection", "candidates=" + candidates.Count);
+            var nearest = cubeObject.GetComponent<Collider>().ClosestPoint(direct.transform.position);
+            string candidateDetail = "candidates=" + candidates.Count + "; query=" + direct.transform.position + "; cube=" + cubeObject.transform.position +
+                "; target=" + targetObject.transform.position + "; proxy=" + hand.Body.position + "; sceneValid=" + directObject.scene.IsValid() +
+                "; queryEnabled=" + direct.isActiveAndEnabled + "; controller=" + (direct.xrController ? direct.xrController.name : "missing") +
+                "; queryToCube=" + Vector3.Distance(direct.transform.position, nearest) + "; hullGap=" + Vector3.Distance(hand.CollisionCollider.ClosestPoint(nearest), nearest);
+            Require(candidates.Contains(cube) && manager.IsSelectPossible(direct, cube), "API fixture", "cube is a nearby valid selection before explicit manager selection", candidateDetail);
             manager.SelectEnter((IXRSelectInteractor)direct, cube);
             Require(cube.IsSelected(direct), "API fixture", "explicit manager selection is recorded as an API check");
+            controller.currentControllerState.selectInteractionState.SetFrameState(true);
+            Vector3 pushStart = targetObject.transform.position;
+            Vector3 pushEnd = origin + Vector3.left * .25f + Vector3.forward * .82f;
+            float pushStarted = Time.realtimeSinceStartup, heldPenetration = 0;
+            while (Time.realtimeSinceStartup - pushStarted < .8f)
+            {
+                targetObject.transform.position = Vector3.Lerp(pushStart, pushEnd, (Time.realtimeSinceStartup - pushStarted) / .8f);
+                heldPenetration = Mathf.Max(heldPenetration, Penetration(cubeObject.GetComponent<Collider>(), wall));
+                yield return null;
+            }
+            targetObject.transform.position = pushEnd;
+            yield return Wait(.25f);
+            heldPenetration = Mathf.Max(heldPenetration, Penetration(cubeObject.GetComponent<Collider>(), wall));
+            Require(cube.IsSelected(direct) && cubeBody.position.z < wall.bounds.min.z && heldPenetration < .005f && Finite(cubeBody.velocity),
+                "API fixture", "held velocity-tracked object stays on the near side of a thin wall", "penetration=" + heldPenetration + "; cube=" + cubeBody.position + "; target=" + pushEnd);
+            Record("held object wall blocked", hand, cube, heldPenetration);
             hand.SetTrackingOverride(false); hand.StepPhysics(Time.fixedDeltaTime);
             Require(!cube.isSelected && !direct.hasSelection, "API fixture", "tracking loss releases the selecting interactor");
             UnityEngine.Object.DestroyImmediate(fixtureRoot); fixtureRoot = null;
@@ -325,12 +388,13 @@ namespace Museum.PhysicalHands.EditorTools
 
         static IEnumerator CollaborationApiFixtures()
         {
-            fixtureRoot = new GameObject("Physical hands QA ownership fixtures") { hideFlags = HideFlags.HideAndDontSave };
-            var managerObject = new GameObject("Ownership fixture manager"); managerObject.transform.SetParent(fixtureRoot.transform);
+            fixtureRoot = new GameObject("Physical hands QA ownership fixtures");
+            var managerObject = new GameObject("Ownership fixture manager"); managerObject.SetActive(false); managerObject.transform.SetParent(fixtureRoot.transform);
             var manager = managerObject.AddComponent<XRInteractionManager>();
             // These state-machine fixtures are synchronous. The disabled manager cannot perform
             // an unrelated automatic input selection between the explicitly labelled API calls.
             manager.enabled = false;
+            managerObject.SetActive(true);
             Vector3 origin = new Vector3(200f, 1f, 200f);
             var root = Box("Ownership fixture helmet", origin, Vector3.one * .4f).gameObject;
             root.SetActive(false);
@@ -636,12 +700,15 @@ namespace Museum.PhysicalHands.EditorTools
         static void CaptureSources(Report target)
         {
             var paths = new List<string> { "MuseumVR/" + ScenePath, "MuseumVR/" + ScenePath + ".meta", "MuseumVR/Assets/Museum/Prefabs/HelmetExhibit.prefab",
+                "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+                "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab.meta",
+                "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionValidation.cs",
                 "MuseumVR/Assets/Museum/Scripts/HelmetExhibitReset.cs", "MuseumVR/Packages/manifest.json", "MuseumVR/Packages/packages-lock.json",
                 "MuseumVR/ProjectSettings/ProjectVersion.txt", "MuseumVR/ProjectSettings/ProjectSettings.asset",
                 "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/XRI Default Input Actions.inputactions" };
             foreach (string folder in new[] { "MuseumVR/Assets/Museum/Features/PhysicalHands", "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime" })
                 if (Directory.Exists(Path.Combine(RepoRoot, folder)))
-                    paths.AddRange(Directory.GetFiles(Path.Combine(RepoRoot, folder), "*", SearchOption.AllDirectories).Where(p => p.EndsWith(".cs") || p.EndsWith(".meta") || p.EndsWith(".prefab")).Select(p => p.Substring(RepoRoot.Length + 1).Replace('\\', '/')));
+                    paths.AddRange(Directory.GetFiles(Path.Combine(RepoRoot, folder), "*", SearchOption.AllDirectories).Where(p => p.EndsWith(".cs") || p.EndsWith(".meta") || p.EndsWith(".prefab") || p.EndsWith(".mat") || p.EndsWith(".unity")).Select(p => p.Substring(RepoRoot.Length + 1).Replace('\\', '/')));
             foreach (string path in paths.Distinct().OrderBy(p => p)) target.sources.Add(new Source { path = path, sha256 = Hash(path) });
         }
         static string Hash(string path)

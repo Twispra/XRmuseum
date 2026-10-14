@@ -195,14 +195,23 @@ namespace Museum.PhysicalHands
                 remaining = Vector3.ProjectOnPlane(remaining - direction * travel, normal);
             }
             body.MovePosition(from);
-            Quaternion desiredRotation = Quaternion.RotateTowards(body.rotation, trackingTarget.rotation, 1080f * dt);
-            if (!ClearPose(from, desiredRotation))
+            Quaternion startRotation = body.rotation;
+            Quaternion desiredRotation = Quaternion.RotateTowards(startRotation, trackingTarget.rotation, 1080f * dt);
+            // A clear endpoint can still sweep through a thin obstacle. Check the whole arc;
+            // the 2 mm skin covers the glove corner's motion between samples at most 1 degree apart.
+            int rotationSteps = Mathf.Max(1, Mathf.CeilToInt(Quaternion.Angle(startRotation, desiredRotation)));
+            float lastClear = 0f;
+            for (int step = 1; step <= rotationSteps; step++)
             {
+                float next = step / (float)rotationSteps;
+                if (ClearPose(from, Quaternion.Slerp(startRotation, desiredRotation, next)))
+                { lastClear = next; continue; }
                 IsBlocked = true;
-                float lo = 0, hi = 1;
+                float lo = lastClear, hi = next;
                 for (int trial = 0; trial < 6; trial++)
-                { float t = (lo + hi) * .5f; if (ClearPose(from, Quaternion.Slerp(body.rotation, desiredRotation, t))) lo = t; else hi = t; }
-                desiredRotation = Quaternion.Slerp(body.rotation, desiredRotation, lo);
+                { float t = (lo + hi) * .5f; if (ClearPose(from, Quaternion.Slerp(startRotation, desiredRotation, t))) lo = t; else hi = t; }
+                desiredRotation = Quaternion.Slerp(startRotation, desiredRotation, lo);
+                break;
             }
             body.MoveRotation(desiredRotation);
             SynchronizeQueries();

@@ -64,6 +64,8 @@ namespace Museum.PhysicalHands.EditorTools
                 InstallRig(labScene, left, right);
                 EditorSceneManager.SaveScene(labScene);
             }
+            EnsureLabBench(glove, cuff);
+            EditorSceneManager.SaveScene(SceneManager.GetActiveScene());
             AssetDatabase.SaveAssets();
             string output = Environment.GetEnvironmentVariable("MUSEUM_QA_OUTPUT");
             if (!string.IsNullOrEmpty(output))
@@ -127,6 +129,26 @@ namespace Museum.PhysicalHands.EditorTools
             var rig = scene.GetRootGameObjects().SelectMany(r => r.GetComponentsInChildren<MuseumPhysicalHandsRig>(true)).FirstOrDefault();
             if (!rig) rig = new GameObject("Museum Physical Hands").AddComponent<MuseumPhysicalHandsRig>();
             rig.Configure(leftInput, rightInput, left, right); EditorUtility.SetDirty(rig);
+        }
+        static void EnsureLabBench(Material glove, Material cuff)
+        {
+            glove = AssetDatabase.LoadAssetAtPath<Material>(Root + "/Materials/Museum Glove.mat");
+            cuff = AssetDatabase.LoadAssetAtPath<Material>(Root + "/Materials/Museum Navy Cuff.mat");
+            foreach (string name in new[] { "Physical Hands Lab Pedestal", "Physical Hands Lab Table" })
+            {
+                var instance = GameObject.Find(name);
+                if (!instance) { instance = GameObject.CreatePrimitive(PrimitiveType.Cube); instance.name = name; }
+                bool top = name.EndsWith("Table");
+                instance.transform.position = new Vector3(1.5f, top ? .94f : .47f, 2.3f);
+                instance.transform.localScale = top ? new Vector3(.60f,.04f,.55f) : new Vector3(.35f,.94f,.35f);
+                instance.GetComponent<Renderer>().sharedMaterial = cuff;
+            }
+            var block = GameObject.Find("Physical Hands Grab Test Block");
+            if (!block) return;
+            block.transform.position = new Vector3(1.5f,1.037f,2.3f);
+            block.GetComponent<Renderer>().sharedMaterial = glove;
+            var reset = block.GetComponent<HelmetExhibitReset>(); if (!reset) reset = block.AddComponent<HelmetExhibitReset>();
+            reset.ConfigureHomePose(block.transform.position, block.transform.rotation);
         }
         static void CaptureVisuals(MuseumPhysicalHand left, MuseumPhysicalHand right, string output)
         {

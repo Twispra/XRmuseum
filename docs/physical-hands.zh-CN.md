@@ -2,7 +2,7 @@
 
 本轮对应 [Issue #50](https://github.com/Twispra/XRmuseum/issues/50)，在现有 Windows PC VR / OpenXR / XRI 2.6.4 工程上加入博物馆手套与双手交互。编辑器保持 **Unity 2022.3.62f3c1**。具体被测 commit、额外未提交修改、自动验证、构建和真实头显反馈见[本轮活动记录](activity/2026-10-14-physical-hands.md)。
 
-写本文时，Unity 编译和行为验证尚未完成。下文说明实现设计、使用入口和验收目标，不能作为已通过验收的证据；后续结果以活动记录中的实际运行版本和报告为准。
+本轮已保存手模块与场景候选；实际编译、行为回归和 Windows 构建结果以活动记录中绑定版本的运行报告为准。下文操作说明不替代头显验收，真实握持与碰撞手感仍需首次设备反馈。
 
 ## 打开已保存的交付
 
@@ -41,7 +41,7 @@ Play 后，**Grip / 握持**驱动抓握并选择近处物体；松开 Grip 放�
 
 ## 第一次头显反馈：约五分钟
 
-在第 3 阶段的双手功能完成后做第一次设备反馈。先打开保存的 PhysicalHandsLab 检查手与碰撞，再在 MuseumStart 检查头盔部件和复位。每步记录“正常 / 异常 / 未测”，异常附上哪只手、动作、预期与实际结果；不用把一次目视正常扩大为完整验收通过。
+先打开保存的 PhysicalHandsLab 检查手与碰撞，再在 MuseumStart 检查头盔部件和复位；使用 Windows 候选构建时直接检查主场景展台和周围墙面。每步记录“正常 / 异常 / 未测”，异常附上哪只手、动作、预期与实际结果；不用把一次目视正常扩大为完整验收通过。
 
 | 时间 | 操作 | 观察目标 |
 | --- | --- | --- |
@@ -67,6 +67,7 @@ XRI 继续独占持有物的刚体运动。`MuseumHandGrabTransformer` 负责无
 | `Assets/Museum/Features/PhysicalHands/Runtime/` | 手套姿态、碰撞代理、控制器绑定和双手抓取目标 |
 | `Museum > Physical Hands > Validate saved integration (synthetic Play Mode)` | 对保存主场景运行自动合成输入检查 |
 | `Museum.PhysicalHands.EditorTools.MuseumPhysicalHandsValidation.RunBatch` | 同一验收的批处理入口；报告保存到独立的 `artifacts/helmet-interaction/qa/runs/` 运行目录 |
+| `Museum.PhysicalHands.EditorTools.MuseumPhysicalHandsBuild.RunBatch` | 从已保存主场景生成 Windows64 Development 构建与独立报告；batch 启动使用 `-buildTarget Win64`，`MUSEUM_BUILD_OUTPUT` 可指定全新绝对 `.exe` 路径，不运行 Install |
 | `Museum > Physical Hands > Install Saved Hand Module` | 本轮开发接入工具，创建缺失手模块并接入场景；会写资产和共享场景，仅由协调的开发者在明确范围内运行 |
 
 日常打开、预览、设备验收使用**已保存场景和 Prefab**，无需运行 Install。已有手套资产不重建；修改既有资产须保留 `.meta` / GUID。Install 是本轮开发工具，不是日常初始化步骤，也不调用 `HelmetPrototypeSetup.Build` 等历史模型生成器。

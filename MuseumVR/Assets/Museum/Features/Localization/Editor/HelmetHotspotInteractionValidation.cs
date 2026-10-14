@@ -10,6 +10,7 @@ using Museum.Experience;
 using Museum.Exploration;
 using Museum.Hotspots;
 using Museum.Inspection;
+using Museum.PhysicalHands.EditorTools;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -250,7 +251,8 @@ namespace Museum.Localization.EditorTools
             string id = Source(hotspot, "identifier");
             Vector3 outward = c.root.transform.TransformDirection(id == "bonnet" ? Vector3.right : Vector3.back);
             Vector3 point = target.colliders.Single().bounds.center;
-            Vector3 hand = ray ? point + outward * .65f : point;
+            Vector3 hand = ray ? point + outward * .65f : MuseumPhysicalHandsTestPose.OutsideTouch(
+                target.colliders.Single(), MuseumPhysicalHandsTestPose.Controller(false), Quaternion.identity, outward, point);
             Quaternion rotation = ray ? Quaternion.LookRotation(point - hand, c.root.transform.up) : Quaternion.identity;
             yield return Select(c, target, hand, rotation, ray, "hotspot " + id);
             c.Check(hotspot.IsVisited, "selected hotspot records visit / " + id + "/" + (ray ? "ray" : "direct"));
@@ -263,7 +265,8 @@ namespace Museum.Localization.EditorTools
             var window = c.root.GetComponentInChildren<HelmetWindowInteractable>(true);
             c.Check(window, "original window still exists");
             Vector3 point = window.colliders.Single().bounds.center;
-            Vector3 hand = ray ? point - c.root.transform.forward * .65f : point;
+            Vector3 hand = ray ? point - c.root.transform.forward * .65f : MuseumPhysicalHandsTestPose.OutsideTouch(
+                window.colliders.Single(), MuseumPhysicalHandsTestPose.Controller(false), Quaternion.identity, -c.root.transform.forward, point);
             Quaternion rotation = ray ? Quaternion.LookRotation(point - hand, c.root.transform.up) : Quaternion.identity;
             yield return Select(c, window, hand, rotation, ray, "original window outside marker");
             yield return Wait(.4f);
@@ -294,9 +297,16 @@ namespace Museum.Localization.EditorTools
             finally { target.selectEntered.RemoveListener(listener); }
         }
 
+        static Vector3 RootTouch(Context c)
+        {
+            var collider = c.root.colliders.OrderByDescending(col => col.bounds.size.sqrMagnitude).First();
+            return MuseumPhysicalHandsTestPose.OutsideTouch(collider, MuseumPhysicalHandsTestPose.Controller(false),
+                Quaternion.identity, c.root.transform.right, collider.bounds.center);
+        }
+
         static IEnumerator OrdinaryGrab(Context c)
         {
-            Vector3 touch = c.root.colliders.OrderByDescending(col => col.bounds.size.sqrMagnitude).First().bounds.center;
+            Vector3 touch = RootTouch(c);
             c.park(); yield return Wait(.15f); c.move(touch, Quaternion.identity, false); yield return Wait(.22f);
             c.move(touch, Quaternion.identity, true); yield return Wait(.18f);
             c.Check(c.root.isSelected && c.root.interactorsSelecting[0] is XRDirectInteractor, "ordinary shell remains directly grabbable");
@@ -334,7 +344,7 @@ namespace Museum.Localization.EditorTools
                     rotation = Quaternion.Inverse(c.root.transform.rotation) * target.rotation, scale = target.localScale
                 }).ToArray();
             var home = c.reset.HomePose;
-            Vector3 touch = c.root.colliders.OrderByDescending(col => col.bounds.size.sqrMagnitude).First().bounds.center;
+            Vector3 touch = RootTouch(c);
             c.park(); yield return Wait(.15f); c.move(touch, Quaternion.identity, false); yield return Wait(.22f);
             c.move(touch, Quaternion.identity, true); yield return Wait(.18f);
             c.Check(c.root.isSelected && c.root.interactorsSelecting[0] is XRDirectInteractor,
@@ -367,7 +377,7 @@ namespace Museum.Localization.EditorTools
             CheckRelativePoses(c, followed, phase + "/home");
             CheckRetainedProgress(c, visited, information, phase + "/home");
             CheckAirAnchor(c, phase + "/home");
-            touch = c.root.colliders.OrderByDescending(col => col.bounds.size.sqrMagnitude).First().bounds.center;
+            touch = RootTouch(c);
             c.move(touch, Quaternion.identity, true); yield return Wait(.18f);
             c.Check(!c.root.isSelected, "held Grip remains blocked after smooth return until release / " + phase);
             c.move(touch, Quaternion.identity, false); yield return Wait(.15f); c.park(); yield return Wait(.15f);
