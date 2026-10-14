@@ -283,7 +283,7 @@ namespace Museum.Localization.EditorTools
             {
                 c.park(); yield return Wait(.15f);
                 c.move(hand, rotation, false); yield return Wait(.22f);
-                if (!ray) yield return MuseumPhysicalHandsTestPose.WaitForPalm(MuseumPhysicalHandsTestPose.Controller(false), name);
+                if (!ray) yield return MuseumPhysicalHandsTestPose.Approach(MuseumPhysicalHandsTestPose.Controller(false), c.root, c.move, name);
                 c.Check(target.isHovered, "production hover / " + name + "/" + (ray ? "ray" : "direct"), "target=" + target.name +
                     (ray ? "" : "; " + MuseumPhysicalHandsTestPose.SelectionDiagnostics(MuseumPhysicalHandsTestPose.Controller(false), target)));
                 c.move(hand, rotation, true); yield return Wait(.18f);
@@ -311,7 +311,7 @@ namespace Museum.Localization.EditorTools
         {
             Vector3 touch = RootTouch(c);
             c.park(); yield return Wait(.15f); c.move(touch, Quaternion.identity, false); yield return Wait(.22f);
-            yield return MuseumPhysicalHandsTestPose.WaitForPalm(MuseumPhysicalHandsTestPose.Controller(false), "ordinary shell grab");
+            yield return MuseumPhysicalHandsTestPose.Approach(MuseumPhysicalHandsTestPose.Controller(false), c.root, c.move, "ordinary shell grab");
             c.move(touch, Quaternion.identity, true); yield return Wait(.18f);
             c.Check(c.root.isSelected && c.root.interactorsSelecting[0] is XRDirectInteractor, "ordinary shell remains directly grabbable");
             Vector3 overMarker = c.hotspots[0].transform.position;
@@ -350,7 +350,7 @@ namespace Museum.Localization.EditorTools
             var home = c.reset.HomePose;
             Vector3 touch = RootTouch(c);
             c.park(); yield return Wait(.15f); c.move(touch, Quaternion.identity, false); yield return Wait(.22f);
-            yield return MuseumPhysicalHandsTestPose.WaitForPalm(MuseumPhysicalHandsTestPose.Controller(false), "smooth return grab / " + phase);
+            yield return MuseumPhysicalHandsTestPose.Approach(MuseumPhysicalHandsTestPose.Controller(false), c.root, c.move, "smooth return grab / " + phase);
             c.move(touch, Quaternion.identity, true); yield return Wait(.18f);
             c.Check(c.root.isSelected && c.root.interactorsSelecting[0] is XRDirectInteractor,
                 "production grab before smooth return / " + phase);

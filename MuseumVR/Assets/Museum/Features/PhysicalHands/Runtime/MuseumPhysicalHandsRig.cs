@@ -38,6 +38,7 @@ namespace Museum.PhysicalHands
             if (!leftController || !rightController || !leftPrefab || !rightPrefab)
             { Debug.LogError("Museum physical hands require both saved controller and palm prefab references.", this); enabled = false; return; }
             left = Install(leftController, leftPrefab, true); right = Install(rightController, rightPrefab, false);
+            Activate(left, isActiveAndEnabled); Activate(right, isActiveAndEnabled);
         }
         HandBinding Install(ActionBasedController controller, MuseumPhysicalHand prefab, bool isLeft)
         {
