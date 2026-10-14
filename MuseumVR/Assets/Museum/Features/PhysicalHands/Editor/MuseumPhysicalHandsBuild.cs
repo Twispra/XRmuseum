@@ -42,6 +42,7 @@ namespace Museum.PhysicalHands.EditorTools
             public int totalErrors, totalWarnings;
             public long totalBytes;
             public double buildDurationSeconds, durationSeconds;
+            public float batchExitSettleSeconds = 20f;
             public bool preloadedAssetsChanged, preloadedAssetsRestored, editorSceneListChanged, editorSceneListRestored;
             public List<SceneEntry> editorScenesBefore = new List<SceneEntry>();
             public List<Source> sources = new List<Source>();
@@ -170,7 +171,17 @@ namespace Museum.PhysicalHands.EditorTools
                 File.WriteAllText(path, JsonUtility.ToJson(report, true), new UTF8Encoding(false));
                 Debug.Log("PHYSICAL_HANDS_WINDOWS_BUILD_" + report.status.ToUpperInvariant() + " " + path);
                 int exitCode = report.status == "passed" ? 0 : 1;
-                EditorApplication.delayCall += () => EditorApplication.Exit(exitCode);
+                // Protected settings restoration queues imports. Let those imports and
+                // build workers settle before shutting down the dedicated batch Editor.
+                double exitAfter = EditorApplication.timeSinceStartup + report.batchExitSettleSeconds;
+                EditorApplication.CallbackFunction finish = null;
+                finish = () =>
+                {
+                    if (EditorApplication.timeSinceStartup < exitAfter || EditorApplication.isCompiling || EditorApplication.isUpdating) return;
+                    EditorApplication.update -= finish;
+                    EditorApplication.Exit(exitCode);
+                };
+                EditorApplication.update += finish;
             }
         }
 
