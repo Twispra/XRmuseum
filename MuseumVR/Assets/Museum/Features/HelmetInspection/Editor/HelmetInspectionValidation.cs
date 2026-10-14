@@ -1099,11 +1099,12 @@ namespace Museum.Inspection.Editor
                 button=GameObject.Find("Helmet Reset Button")?.GetComponent<XRSimpleInteractable>();
             Require(button,"button exists: "+label,"Independent world-space control.");
             var buttonCollider=button.GetComponent<Collider>();
-            var touch=label == "MORE TOOLS"
-                ? MuseumPhysicalHandsTestPose.OutsideTouch(buttonCollider, rightController, Quaternion.identity,
-                    -button.transform.forward, buttonCollider.bounds.center)
-                : MuseumPhysicalHandsTestPose.ControlTouch(buttonCollider, rightController, Quaternion.identity,
-                    -button.transform.forward, buttonCollider.bounds.center, helmet);
+            bool movedFloatingReset = label == "RESET" && inspection.IsFloating && Vector3.Distance(body.position, homePosition) > .15f;
+            var touch=movedFloatingReset
+                ? MuseumPhysicalHandsTestPose.ControlTouch(buttonCollider, rightController, Quaternion.identity,
+                    -button.transform.forward, buttonCollider.bounds.center, helmet)
+                : MuseumPhysicalHandsTestPose.OutsideTouch(buttonCollider, rightController, Quaternion.identity,
+                    -button.transform.forward, buttonCollider.bounds.center);
             QueueRight(touch,Quaternion.identity,false);
             yield return Wait(.22f);
             yield return MuseumPhysicalHandsTestPose.Approach(rightController, helmet,
