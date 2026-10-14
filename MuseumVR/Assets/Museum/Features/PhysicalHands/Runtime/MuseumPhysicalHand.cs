@@ -19,6 +19,7 @@ namespace Museum.PhysicalHands
         XRPokeInteractor pokeInteractor;
         XRRayInteractor[] rayInteractors = new XRRayInteractor[0];
         readonly Dictionary<XRRayInteractor, bool> rayEnabled = new Dictionary<XRRayInteractor, bool>();
+        readonly HashSet<XRRayInteractor> raysWaitingForRelease = new HashSet<XRRayInteractor>();
         Vector3 pokeOffset;
         Quaternion pokeRotation;
         [SerializeField] Transform trackingOrigin;
@@ -112,6 +113,7 @@ namespace Museum.PhysicalHands
                 if (inputController && controller != inputController && !ray.transform.IsChildOf(inputController.transform)) continue;
                 owned.Add(ray);
             }
+            foreach (var oldRay in rayInteractors) if (!oldRay || !owned.Contains(oldRay)) raysWaitingForRelease.Remove(oldRay);
             rayInteractors = owned.ToArray();
             Register();
             if (suspended) SuspendQueries();
@@ -121,6 +123,7 @@ namespace Museum.PhysicalHands
         void BeforeRender() => SynchronizeQueries();
         public void SynchronizeQueries()
         {
+            ObserveRayReleases();
             // Keep authored interactor/group references and hierarchy while moving only their query poses.
             // The separate target never reads these transforms, so there is no tracking feedback loop.
             if (!previousTracking || !body) return;
@@ -211,6 +214,7 @@ namespace Museum.PhysicalHands
             if (visual) visual.gameObject.SetActive(true);
             var state = inputController ? inputController.currentControllerState : null;
             if (state == null || !state.selectInteractionState.active) releaseRequired = false;
+            ObserveRayReleases();
             if (held && (TrackingError > releaseDistance || Vector3.Distance(held.transform.TransformPoint(heldGripLocal), trackingTarget.position) > releaseDistance)) ForceRelease();
 
             Vector3 from = Depenetrate(body.position);
@@ -349,12 +353,38 @@ namespace Museum.PhysicalHands
             foreach (var ray in rayInteractors) if (ray && ray.hasSelection) return true;
             return false;
         }
+        void ObserveRayReleases()
+        {
+            foreach (var ray in rayInteractors) ObserveRayRelease(ray);
+        }
+        void ObserveRayRelease(XRRayInteractor ray)
+        {
+            if (!ray || !raysWaitingForRelease.Contains(ray) || !ray.gameObject.activeInHierarchy) return;
+            var controller = ray.xrController ? ray.xrController : ray.GetComponentInParent<XRBaseController>(true);
+            // An inactive teleport controller retains its old state. Only an active
+            // source can demonstrate release; its latch never blocks the other queries.
+            if (!controller || !controller.isActiveAndEnabled) return;
+            var state = controller.currentControllerState;
+            if (state != null && !state.selectInteractionState.active) raysWaitingForRelease.Remove(ray);
+        }
         public void ForceRelease()
         {
             releaseRequired = true;
             var selectors = new List<XRBaseControllerInteractor>();
             if (directInteractor) selectors.Add(directInteractor);
-            foreach (var ray in rayInteractors) if (ray) selectors.Add(ray);
+            foreach (var ray in rayInteractors) if (ray)
+            {
+                selectors.Add(ray);
+                var controller = ray.xrController ? ray.xrController : ray.GetComponentInParent<XRBaseController>(true);
+                var inputState = inputController ? inputController.currentControllerState : null;
+                bool sharesHeldInput = controller == inputController && inputController && inputController.isActiveAndEnabled &&
+                    inputState != null && inputState.selectInteractionState.active;
+                // Do not consume the first future input of an unused inactive ray.
+                // A sleeping ordinary Ray still shares a live held Grip; a nested
+                // inactive controller's cached state cannot establish that condition.
+                // A previously latched ray stays latched even if its GameObject later sleeps.
+                if (ray.gameObject.activeInHierarchy || ray.hasSelection || sharesHeldInput) raysWaitingForRelease.Add(ray);
+            }
             var throwStates = new Dictionary<XRGrabInteractable, bool>();
             foreach (var selector in selectors)
             foreach (var item in selector.interactablesSelected)
@@ -379,9 +409,15 @@ namespace Museum.PhysicalHands
         }
         bool IXRSelectFilter.Process(IXRSelectInteractor interactor, IXRSelectInteractable interactable)
         {
-            if (!IsTrackingValid || releaseRequired) return false;
+            if (!IsTrackingValid) return false;
             // Rays retain their authored distance/target rules; only physical-hand safety is shared.
-            if (!object.ReferenceEquals(interactor, directInteractor)) return true;
+            if (!object.ReferenceEquals(interactor, directInteractor))
+            {
+                var ray = interactor as XRRayInteractor;
+                ObserveRayRelease(ray);
+                return !ray || !raysWaitingForRelease.Contains(ray);
+            }
+            if (releaseRequired) return false;
             foreach (var selector in interactable.interactorsSelecting) if (selector == interactor) return true;
             // A trigger volume may overlap a thin wall; reject candidates hidden behind solid geometry.
             var candidate = interactable as XRBaseInteractable;
