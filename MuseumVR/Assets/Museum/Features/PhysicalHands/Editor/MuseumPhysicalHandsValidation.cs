@@ -576,8 +576,11 @@ namespace Museum.PhysicalHands.EditorTools
             inspection.ResetInspection(); yield return Wait(.3f);
             Require(!helmet.isSelected && !window.isSelected && inspection.WindowAngle < .1f, "API cleanup", "public reset establishes the closed display state");
             Vector3 touch = RootTouch(leftHand, Vector3.left);
+            Vector3 beforeApproach = helmet.transform.position;
             QueueController(leftDevice, touch, Quaternion.identity, false); yield return Wait(.45f);
             Record("approaching reset exhibit", leftHand, helmet);
+            Require(Vector3.Distance(beforeApproach, helmet.transform.position) < .03f,
+                "production input", "an unselected open-hand approach does not fling the reset exhibit", "drift=" + Vector3.Distance(beforeApproach, helmet.transform.position));
             Require(NearCandidate(leftHand, helmet), "production input", "left palm can reapproach the reset exhibit", HandDetail(leftHand) +
                 "; root=" + helmet.transform.position + "; grip=" + leftController.currentControllerState.selectInteractionState.value +
                 "; hand filter=" + ((IXRSelectFilter)leftHand).Process(leftHand.DirectInteractor, helmet));

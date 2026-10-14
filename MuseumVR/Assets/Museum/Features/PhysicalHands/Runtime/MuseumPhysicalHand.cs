@@ -135,8 +135,11 @@ namespace Museum.PhysicalHands
             if (!body || !palm) return;
             body.isKinematic = true; body.useGravity = false;
             body.interpolation = RigidbodyInterpolation.Interpolate;
-            body.collisionDetectionMode = CollisionDetectionMode.ContinuousSpeculative;
+            // This driver already sweeps translations and rotations. Speculative CCD
+            // can create predictive contacts that fling nearby dynamic exhibits.
+            body.collisionDetectionMode = CollisionDetectionMode.Discrete;
             palm.radius = collisionRadius; palm.center = Vector3.zero; palm.isTrigger = false;
+            palm.contactOffset = .001f; envelope.contactOffset = .001f;
             float grip = inputController && inputController.currentControllerState != null ? inputController.currentControllerState.selectInteractionState.value : 0;
             if (held) grip = Mathf.Max(grip, .72f);
             // Closing follows the visible fingers; opening expands the envelope immediately.
