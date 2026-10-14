@@ -56,6 +56,16 @@ namespace Museum.PhysicalHands
         public float CollisionRadius => collisionRadius;
         public Vector3 OpenEnvelopeSize => OpenSize;
         public Vector3 OpenEnvelopeCenter => OpenCenter;
+        public float OpenSelectionRadius
+        {
+            get
+            {
+                Vector3 half = OpenSize * .5f;
+                Vector3 center = OpenCenter;
+                return new Vector3(half.x + Mathf.Abs(center.x), half.y + Mathf.Abs(center.y),
+                    half.z + Mathf.Abs(center.z)).magnitude + .025f;
+            }
+        }
         public bool IsBlocked { get; private set; }
         public float TrackingError => trackingTarget ? Vector3.Distance(trackingTarget.position, body ? body.position : transform.position) : 0f;
         public bool IsTrackingValid => trackingOverride ?? (trackingTarget && (!inputController ||

@@ -58,7 +58,7 @@ namespace Museum.PhysicalHands
             result.hand.ConfigureRays(controller.GetComponentsInChildren<XRRayInteractor>(true));
             // The Direct trigger is a selection affordance, distinct from the smaller solid palm.
             result.triggers = direct.GetComponents<SphereCollider>(); result.radii = new float[result.triggers.Length];
-            for (int i = 0; i < result.triggers.Length; i++) { result.radii[i] = result.triggers[i].radius; if (result.triggers[i].isTrigger) result.triggers[i].radius = .145f; }
+            for (int i = 0; i < result.triggers.Length; i++) { result.radii[i] = result.triggers[i].radius; if (result.triggers[i].isTrigger) result.triggers[i].radius = result.hand.OpenSelectionRadius; }
             controller.hideControllerModel = true;
             return result;
         }
@@ -76,7 +76,7 @@ namespace Museum.PhysicalHands
             if (binding.hand) binding.hand.gameObject.SetActive(active);
             if (binding.controller) binding.controller.hideControllerModel = active || binding.hiddenModel;
             if (binding.triggers != null) for (int i = 0; i < binding.triggers.Length; i++)
-                if (binding.triggers[i]) binding.triggers[i].radius = active && binding.triggers[i].isTrigger ? .145f : binding.radii[i];
+                if (binding.triggers[i]) binding.triggers[i].radius = active && binding.triggers[i].isTrigger && binding.hand ? binding.hand.OpenSelectionRadius : binding.radii[i];
             if (!active)
             {
                 if (binding.directTransform) { binding.directTransform.localPosition = binding.directPosition; binding.directTransform.localRotation = binding.directRotation; }

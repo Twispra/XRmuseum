@@ -216,6 +216,12 @@ namespace Museum.PhysicalHands.EditorTools
             }
             Require(leftHand.DirectInteractor.containingGroup == null || leftHand.DirectInteractor.containingGroup != rightHand.DirectInteractor.containingGroup,
                 "saved integration", "left and right direct interactors do not share an exclusive interaction group");
+            foreach (var hand in new[] { leftHand, rightHand })
+            {
+                var query = hand.DirectInteractor.GetComponent<SphereCollider>();
+                Require(query && query.radius >= hand.OpenSelectionRadius - .0001f,
+                    "saved integration", hand.name + ": Direct broadphase covers the open glove's fixed selection reach");
+            }
             inspection = UnityEngine.Object.FindObjectOfType<HelmetInspectionController>();
             Require(inspection, "saved integration", "inspection exhibit exists");
             helmet = inspection.GetComponent<XRGrabInteractable>(); reset = inspection.GetComponent<HelmetExhibitReset>();
