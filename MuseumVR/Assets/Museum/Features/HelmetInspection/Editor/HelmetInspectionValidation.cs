@@ -1100,16 +1100,17 @@ namespace Museum.Inspection.Editor
             Require(button,"button exists: "+label,"Independent world-space control.");
             var buttonCollider=button.GetComponent<Collider>();
             bool movedFloatingReset = label == "RESET" && inspection.IsFloating && Vector3.Distance(body.position, homePosition) > .15f;
+            Quaternion touchRotation = movedFloatingReset ? button.transform.rotation : Quaternion.identity;
             var touch=movedFloatingReset
-                ? MuseumPhysicalHandsTestPose.ControlTouch(buttonCollider, rightController, Quaternion.identity,
+                ? MuseumPhysicalHandsTestPose.ControlTouch(buttonCollider, rightController, touchRotation,
                     -button.transform.forward, buttonCollider.bounds.center, helmet)
                 : MuseumPhysicalHandsTestPose.OutsideTouch(buttonCollider, rightController, Quaternion.identity,
                     -button.transform.forward, buttonCollider.bounds.center);
-            QueueRight(touch,Quaternion.identity,false);
+            QueueRight(touch,touchRotation,false);
             yield return Wait(.22f);
             yield return MuseumPhysicalHandsTestPose.Approach(rightController, helmet,
                 (position, rotation, grip) => QueueRight(position, rotation, grip), "button " + label);
-            QueueRight(touch,Quaternion.identity,true);
+            QueueRight(touch,touchRotation,true);
             yield return Wait(.22f);
             Require(button.isSelected,"input selects button: "+label,"Controller grip selects the saved control; touch="+touch+
                 "; button="+buttonCollider.bounds.center+"; "+MuseumPhysicalHandsTestPose.SelectionDiagnostics(rightController, button));
