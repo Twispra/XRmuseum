@@ -174,6 +174,17 @@ namespace Museum.PhysicalHands.EditorTools
             return OutsideTouch(target, controller, rotation, outward, legacyPosition, aim);
         }
 
+        public static Vector3 ControlTouch(Collider target, XRBaseController controller, Quaternion rotation,
+            Vector3 outward, Vector3 legacyPosition, XRGrabInteractable exhibit)
+        {
+            if (!Hand(controller) || !exhibit || !(target is BoxCollider box)) return OutsideTouch(target, controller, rotation, outward, legacyPosition);
+            float side = Mathf.Sign(Vector3.Dot(target.bounds.center - exhibit.transform.position, box.transform.right));
+            Vector3 aim = box.transform.TransformPoint(box.center + Vector3.right * box.size.x * .45f * side);
+            // Use the control's own face away from the exhibit, where the visitor
+            // can distinguish its button from the neighbouring discovery marker.
+            return OutsideTouch(target, controller, rotation, outward, legacyPosition, aim);
+        }
+
         public static string SelectionDiagnostics(XRBaseController controller, IXRSelectInteractable target)
         {
             var hand = Hand(controller);
