@@ -12,7 +12,13 @@
 
 接真实 PC VR 头显沿用[协作指南中的设备步骤](getting-started.zh-CN.md#接真实-pc-vr-头显)，记录头显、控制器、OpenXR runtime 和串流方式。现有相机、地面定位及输入动作继续使用原配置。打开新 clone / worktree 前须确认 LFS 模型已经展开成实际资产；不要用旧生成器修复导入问题。
 
+Windows 候选程序的实际目录和被测版本见[活动记录](activity/2026-10-14-physical-hands.md)。移动或分享时须保留完整目录，包括 `.exe`、`MuseumVR_Data`、`UnityPlayer.dll`、`MonoBleedingEdge` 等依赖，不能只复制 exe。
+
 Play 后，**Grip / 握持**驱动抓握并选择近处物体；松开 Grip 放下。**Trigger / 扳机**驱动食指弯曲，继续沿用已有 Activate 输入。左右手套为原创浅灰手套和海军蓝袖口，每只手有五指预设动画；输入来自控制器，不是光学手指追踪。
+
+![左右手张开与握持的静态预览](../artifacts/helmet-interaction/qa/runs/20261014-120454-hands-install/gloves-open-and-held.png)
+
+这是 Unity 生成的手套外观预览；真实设备的手掌对齐和双眼显示仍待反馈。
 
 ## 怎样拿放和协作
 
@@ -59,6 +65,8 @@ Play 后，**Grip / 握持**驱动抓握并选择近处物体；松开 Grip 放�
 ## 实施结构与验证入口
 
 独立追踪目标保存控制器姿态；`MuseumPhysicalHand` 驱动受阻挡约束的手套代理；可见手和 Direct / Poke 查询对齐代理。Direct / Poke 保留原控制器层级，在 Update、FixedUpdate 和 BeforeRender 对齐；目标姿态独立读取，避免代理位置反过来成为追踪输入。
+
+Direct 的候选查询球覆盖固定张手包络外侧 **25 mm** 接触余量，最终选择仍须满足该接触范围和实心障碍视线检查。模块启用时，观察和探索按钮按 `ColliderVolume` 的表面距离排序；停用后还原原来的距离模式、查询半径、控制器模型状态与查询姿态。启动前关闭模块也不运行手代理。
 
 XRI 继续独占持有物的刚体运动。`MuseumHandGrabTransformer` 负责无缩放的单手、双手及换手目标；`HelmetInspectionController.ConfigureHandCollaboration(true)` 按展品启用不同手的本体/部件协作。该开关默认关闭，未启用的独立旧演示保留原互斥行为。
 

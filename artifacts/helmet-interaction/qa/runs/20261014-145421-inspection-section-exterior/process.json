@@ -1,0 +1,18 @@
+{
+  "method": "Museum.Localization.EditorTools.TrilingualInspectionRegression.RunBatch",
+  "project": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\physical-hands-2026-10-14\\XRmuseum\\MuseumVR",
+  "commit": "8ecee3baa7f9e7f2c47dea54200f1d56557bb7ef",
+  "startedUtc": "2026-10-14T06:54:21.5752421Z",
+  "endedUtc": "2026-10-14T06:56:53.4981031Z",
+  "pid": 4748,
+  "exitCode": 0,
+  "args": [
+    "-batchmode",
+    "-projectPath",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\physical-hands-2026-10-14\\XRmuseum\\MuseumVR\"",
+    "-executeMethod",
+    "Museum.Localization.EditorTools.TrilingualInspectionRegression.RunBatch",
+    "-logFile",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\physical-hands-2026-10-14\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261014-145421-inspection-section-exterior\\unity.log\""
+  ]
+}

@@ -1,6 +1,6 @@
 # 项目状态与下一步
 
-2026-10-14 虚拟手与双手协作开发候选：[Issue #50](https://github.com/Twispra/XRmuseum/issues/50) 在独立 `codex/physical-hands-2026-10-14` 分支开发，候选代码提交 `dd74d7d` 及后续修正正在进行 QA，尚未合入 main。新增原创五指手套预设动画、近距手包络阻挡、无缩放双手支撑/换手，以及不同手的本体/窗口/剖面相对操作；保存独立 PhysicalHandsLab 与主场景接入候选，保留 FLOAT 单手观察方式。沿用 Unity 2022.3.62f3c1 / XRI 2.6.4 / Windows PC VR，未升级编辑器、packages 或平台，原目录既有修改保留。使用与首次约五分钟设备反馈见[手模块指南](physical-hands.zh-CN.md)，实际被测版本、结果和下一步见[本轮活动记录](activity/2026-10-14-physical-hands.md)。完整自动验证结论仍待记录，真实头显双眼对齐、握持/阻挡手感、性能、当前构建与用户研究均无本轮验收证据；既有视角反馈不覆盖新手部功能。以下历史主线和验证快照保留。
+2026-10-14 虚拟手与双手协作候选完成：[Issue #50](https://github.com/Twispra/XRmuseum/issues/50) 在独立 `codex/physical-hands-2026-10-14` 分支完成原创五指手套、近距拿放、简化包络阻挡、无缩放双手支撑/换手，以及不同手的头盔/窗口/剖面相对操作，保存 PhysicalHandsLab 和主场景接入，保留 FLOAT 单手方式。手模块在 `e8516dd` 通过 171 项、0 errors/0 warnings；Inspector 207 项、Explorer 1,486 项及三语 83,688 项分别通过。Windows64 Development 在 `09b9adf` 构建成功，0 errors/2 条既有 OpenXR 可选迁移警告，Editor 正常退出 0，退出后 1,121 个工程源文件哈希一致。各项实际被测版本、报告、完整程序目录和交接见[活动记录](activity/2026-10-14-physical-hands.md)。沿用 Unity 2022.3.62f3c1 / XRI 2.6.4 / Windows PC VR；原目录既有修改保留，尚未合入 main。下一步按[五分钟设备反馈](physical-hands.zh-CN.md)检查手掌/双眼对齐、碰撞与换手。程序未启动，真实头显手感、设备性能和用户研究仍未验证；既有视角反馈不覆盖新手模块。以下历史主线和验证快照保留。
 
 2026-10-14 视角修复合并交接：用户反馈“视角没有太大的问题了”，明确授权 [PR #49](https://github.com/Twispra/XRmuseum/pull/49) 合入 main。合并前实际 main 仍为 `4578e66`，候选 `a45f515` 的产品源码与已测 `1633e98` 一致，来源指纹复核通过；本次仅补充反馈与文档。执行正常 GitHub 合并，最终 merged 状态/实际 merge SHA 以 PR 回读为准。[设备反馈、复核与交接](activity/2026-10-14-pr49-merge.md)。本条用户反馈只覆盖视角，没有扩大为控制器、性能、完整舒适性、构建或用户研究通过；原目录既有改动继续保留。
 
