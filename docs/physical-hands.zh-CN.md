@@ -2,7 +2,7 @@
 
 本轮对应 [Issue #50](https://github.com/Twispra/XRmuseum/issues/50)，在现有 Windows PC VR / OpenXR / XRI 2.6.4 工程上加入博物馆手套与双手交互。编辑器保持 **Unity 2022.3.62f3c1**。具体被测 commit、额外未提交修改、自动验证、构建和真实头显反馈见[本轮活动记录](activity/2026-10-14-physical-hands.md)。
 
-本轮已保存手模块与场景候选；实际编译、行为回归和 Windows 构建结果以活动记录中绑定版本的运行报告为准。下文操作说明不替代头显验收，真实握持与碰撞手感仍需首次设备反馈。
+本轮已保存手模块与场景。首轮 Quest 3 / Virtual Desktop 反馈指出抓握空隙、难拿及左摇杆前后卡顿，已据此修订表面贴合与自身碰撞隔离；修订的验证和待测范围见[设备反馈记录](activity/2026-10-14-physical-hands-device-feedback.md)。下文操作说明不替代头显验收。
 
 ## 打开已保存的交付
 
@@ -18,11 +18,11 @@ Play 后，**Grip / 握持**驱动抓握并选择近处物体；松开 Grip 放�
 
 ![左右手张开与握持的静态预览](../artifacts/helmet-interaction/qa/runs/20261014-120454-hands-install/gloves-open-and-held.png)
 
-这是 Unity 生成的手套外观预览；真实设备的手掌对齐和双眼显示仍待反馈。
+这是首轮候选的历史外观预览。当前持有大型头盔时改用半握的支撑姿势；真实设备的手掌对齐和双眼显示仍待复测。
 
 ## 怎样拿放和协作
 
-1. 将手靠近头盔本体，再按住 Grip。慢慢抬起、旋转，降低到展台后松手，观察物体是否稳定。抓点按接触位置建立，不要求固定的左右手姿势。
+1. 将手靠近头盔本体，再按住 Grip。首次近距抓握时，掌面朝模型表面贴合，物体最多在约 0.18 秒内收拢 12 cm。慢慢抬起、旋转，降低到展台后松手，观察物体是否稳定。不要求固定的左右手姿势，换手不重新吸附。
 2. 另一只手靠近本体并按住 Grip，可共同支撑。只松开一只手时，另一只手继续持有；最后一只手松开才释放。可按这个顺序换手。双手操作保持原尺度，不通过两手距离缩放展品。已有一手持盔时，贴近外壳的另一手 Grip 优先接握本体，避免被外壳说明热点抢走；热点悬停与射线选择继续可用。
 3. 一只手抓本体，另一只手靠近前窗并握住，沿铰链方向操作；剖面开启并显示球柄后，也可由另一手平移、转腕调切面。同一只手不能同时抓本体和部件，窗口与剖面仍互斥；对准把手时优先操作部件。
 4. 部件由操作手**相对头盔**的姿态驱动。两手随头盔共同平移或转动时，部件局部状态应保持；操作手不动而持盔手移动时，两者产生的相对运动可以改变窗口或剖面。
@@ -52,7 +52,7 @@ Play 后，**Grip / 握持**驱动抓握并选择近处物体；松开 Grip 放�
 | 时间 | 操作 | 观察目标 |
 | --- | --- | --- |
 | 0:00–0:35 | 双手放在眼前，翻掌；分别轻按 Grip、松开，再按 Trigger | 左右手方向正确，手掌与真实控制器握持位置合理；张手、握拳和食指响应自然，双眼没有明显错位 |
-| 0:35–1:10 | 近距抓方块或头盔，缓慢拿起、旋转、放回 | 抓点不突跳，物体跟随稳定，松手清楚且落桌不持续抖动 |
+| 0:35–1:10 | 近距抓方块或头盔，缓慢拿起、旋转、放回 | 头盔首次抓握平滑收拢，掌面空隙合理；物体跟随稳定，松手清楚且落桌不持续抖动 |
 | 1:10–1:50 | 张手、握手分别慢慢接近虚拟墙和桌面，再轻微转腕 | 可见手被挡住；不明显穿入、抖动或突然换边；注意包络与五指外观是否相符 |
 | 1:50–2:15 | 解除阻挡，把手撤回开放区域，再拿放一次 | 虚拟手恢复跟随，不持续卡住或突然跳过障碍；若触发保护释放，松 Grip 后可重新抓取 |
 | 2:15–2:55 | 左拿右接、右拿左接，再双手持有；依次松开两手 | 1→2→1 手过程连续，不意外缩放；一手松开不丢物，最后一手松开才释放 |
@@ -66,7 +66,7 @@ Play 后，**Grip / 握持**驱动抓握并选择近处物体；松开 Grip 放�
 
 独立追踪目标保存控制器姿态；`MuseumPhysicalHand` 驱动受阻挡约束的手套代理；可见手和 Direct / Poke 查询对齐代理。Direct / Poke 保留原控制器层级，在 Update、FixedUpdate 和 BeforeRender 对齐；目标姿态独立读取，避免代理位置反过来成为追踪输入。
 
-Direct 的候选查询球覆盖固定张手包络外侧 **25 mm** 接触余量，最终选择仍须满足该接触范围和实心障碍视线检查。模块启用时，观察和探索按钮按 `ColliderVolume` 的表面距离排序；停用后还原原来的距离模式、查询半径、控制器模型状态与查询姿态。启动前关闭模块也不运行手代理。
+Direct 的候选查询球覆盖固定张手包络外侧 **60 mm**。本体采用 60 mm 近距选择余量；按钮、窗口及热点保持 **25 mm** 实际接触余量，均保留实心障碍视线检查。热点的宽范围悬停不会抢走本体抓取。模块启用时，头盔、观察和探索按钮按 `ColliderVolume` 的表面距离排序；停用后还原运行时临时配置。启动前关闭模块也不运行手代理。手掌与同一 Origin 的角色胶囊按碰撞对排除，避免手挡住自己的移动；墙和桌面的阻挡仍保留。
 
 XRI 继续独占持有物的刚体运动。`MuseumHandGrabTransformer` 负责无缩放的单手、双手及换手目标；`HelmetInspectionController.ConfigureHandCollaboration(true)` 按展品启用不同手的本体/部件协作。该开关默认关闭，未启用的独立旧演示保留原互斥行为。
 
@@ -76,6 +76,7 @@ XRI 继续独占持有物的刚体运动。`MuseumHandGrabTransformer` 负责无
 | `Museum > Physical Hands > Validate saved integration (synthetic Play Mode)` | 对保存主场景运行自动合成输入检查 |
 | `Museum.PhysicalHands.EditorTools.MuseumPhysicalHandsValidation.RunBatch` | 同一验收的批处理入口；报告保存到独立的 `artifacts/helmet-interaction/qa/runs/` 运行目录 |
 | `Museum.PhysicalHands.EditorTools.MuseumPhysicalHandsBuild.RunBatch` | 从已保存主场景生成 Windows64 Development 构建与独立报告；batch 启动使用 `-buildTarget Win64`，`MUSEUM_BUILD_OUTPUT` 可指定全新绝对 `.exe` 路径，不运行 Install |
+| `Museum.PhysicalHands.EditorTools.MuseumHandDeviceSetup.RunBatch` | 开发者专用：烘焙独立模型表面缓存并检查表面接触和自身角色碰撞，会保存头盔 Prefab，须遵守共享文件单写入者规则；不作为日常预览步骤 |
 | `Museum > Physical Hands > Install Saved Hand Module` | 本轮开发接入工具，创建缺失手模块并接入场景；会写资产和共享场景，仅由协调的开发者在明确范围内运行 |
 
 日常打开、预览、设备验收使用**已保存场景和 Prefab**，无需运行 Install。已有手套资产不重建；修改既有资产须保留 `.meta` / GUID。Install 是本轮开发工具，不是日常初始化步骤，也不调用 `HelmetPrototypeSetup.Build` 等历史模型生成器。
@@ -83,3 +84,5 @@ XRI 继续独占持有物的刚体运动。`MuseumHandGrabTransformer` 负责无
 本轮保留 Samples、Packages、ProjectSettings 和现有输入动作；共享主场景和头盔 Prefab 继续由单一整合人写入。运行验证应记录实际源码和保存资产版本，分别报告手模块检查与原拿放、窗口、剖面、热点、年代、三语及复位回归。合成输入、静态截图、真实头显、当前 Windows 构建分别是不同证据，均不得互相替代。
 
 本轮运行代码和原创手套几何由 Codex 辅助制作；设备实测、团队决定和成员贡献按实际活动记录补充。手套包络、保护阈值和抓握姿势属于原型选择，不是 Valve 源码、历史装备参数或已验证的真实重量模拟。
+
+贡献者更新 main 后先确认 LFS 资产展开，再直接打开已保存的 MuseumStart；不运行生成器。优先复现“左摇杆前推、松开、后推、松开”和“外壳不同侧面抓取、放下、换手”。Development Player 会在本地 `Application.persistentDataPath/PhysicalHandsDiagnostics/` 写入动作、虚拟位移和帧耗时；反馈附 commit、设备/runtime、步骤及异常时间，关联 Issue #50。采样是诊断材料，不是实机通过证明。
