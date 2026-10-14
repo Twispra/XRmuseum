@@ -47,6 +47,106 @@ namespace Museum.PhysicalHands.EditorTools
             }
         }
 
+        public static IEnumerator Approach(XRBaseController controller, XRGrabInteractable exhibit,
+            System.Action<Vector3, Quaternion, bool> queue, string phase)
+        {
+            var hand = Hand(controller);
+            if (!hand) yield break;
+            Vector3 desiredControllerPosition = controller.transform.position;
+            Quaternion desiredControllerRotation = controller.transform.rotation;
+            Vector3 target = TrackingPosition(controller, desiredControllerPosition, desiredControllerRotation);
+            Quaternion localRotation = Quaternion.Inverse(controller.transform.rotation) * hand.TrackingTarget.rotation;
+            Quaternion targetRotation = desiredControllerRotation * localRotation;
+            Quaternion currentRotation = hand.Body.rotation;
+            Vector3 from = hand.Body.position;
+            var solids = exhibit ? exhibit.colliders.Where(c => c && c.enabled && !c.isTrigger && c.gameObject.activeInHierarchy).ToArray() : new Collider[0];
+            if (solids.Length == 0 || (Quaternion.Angle(currentRotation, targetRotation) < .25f &&
+                !CrossesExhibit(hand, from, target, currentRotation, solids)))
+            {
+                queue(desiredControllerPosition, desiredControllerRotation, false);
+                yield return WaitForPalm(controller, phase);
+                yield break;
+            }
+
+            var bounds = solids[0].bounds;
+            foreach (var solid in solids.Skip(1)) bounds.Encapsulate(solid.bounds);
+            var box = hand.CollisionCollider as BoxCollider;
+            Vector3 scale = box ? box.transform.lossyScale : Vector3.one;
+            float radius = Vector3.Scale(hand.OpenEnvelopeSize * .5f, scale).magnitude +
+                           Vector3.Scale(hand.OpenEnvelopeCenter, scale).magnitude + .03f;
+            bounds.Expand(radius * 2f);
+            Vector3 withdraw = OutsideBounds(bounds, from, SurfaceOutward(solids, from, bounds.center));
+            Vector3 entry = OutsideBounds(bounds, target, SurfaceOutward(solids, target, bounds.center));
+            float height = Mathf.Max(bounds.max.y + .08f, withdraw.y, entry.y);
+            Vector3 aboveWithdraw = new Vector3(withdraw.x, height, withdraw.z);
+            Vector3 aboveEntry = new Vector3(entry.x, height, entry.z);
+            // First clear the entire open glove without changing its current rotation.
+            // Turn only above the expanded exhibit, then descend on its target side.
+            yield return Waypoint(controller, withdraw, currentRotation, queue, phase + " / withdraw");
+            yield return Waypoint(controller, aboveWithdraw, currentRotation, queue, phase + " / lift clear");
+            yield return Waypoint(controller, aboveWithdraw, targetRotation, queue, phase + " / turn clear");
+            yield return Waypoint(controller, aboveEntry, targetRotation, queue, phase + " / travel outside");
+            yield return Waypoint(controller, entry, targetRotation, queue, phase + " / descend outside");
+            queue(desiredControllerPosition, desiredControllerRotation, false);
+            yield return WaitForPalm(controller, phase + " / final approach");
+        }
+
+        static bool CrossesExhibit(MuseumPhysicalHand hand, Vector3 from, Vector3 target, Quaternion rotation, Collider[] solids)
+        {
+            Vector3 delta = target - from;
+            if (delta.sqrMagnitude < .000001f) return false;
+            Vector3 scale = hand.CollisionCollider.transform.lossyScale;
+            Vector3 center = rotation * Vector3.Scale(hand.OpenEnvelopeCenter, scale);
+            Vector3 half = Vector3.Scale(hand.OpenEnvelopeSize * .5f, scale);
+            var hits = Physics.BoxCastAll(from + center, half, delta.normalized, rotation, delta.magnitude + .002f, ~0, QueryTriggerInteraction.Ignore);
+            return hits.Any(hit => solids.Contains(hit.collider));
+        }
+
+        static Vector3 SurfaceOutward(Collider[] solids, Vector3 position, Vector3 fallbackCenter)
+        {
+            Vector3 direction = position - fallbackCenter;
+            float nearest = float.MaxValue;
+            foreach (var solid in solids)
+            {
+                Vector3 delta = position - solid.ClosestPoint(position);
+                if (delta.sqrMagnitude > .000001f && delta.sqrMagnitude < nearest)
+                { nearest = delta.sqrMagnitude; direction = delta; }
+            }
+            return direction.sqrMagnitude > .000001f ? direction.normalized : Vector3.back;
+        }
+
+        static Vector3 OutsideBounds(Bounds bounds, Vector3 position, Vector3 direction)
+        {
+            if (!bounds.Contains(position)) return position + direction * .08f;
+            float exit = float.MaxValue;
+            for (int axis = 0; axis < 3; axis++)
+            {
+                float component = direction[axis];
+                if (Mathf.Abs(component) < .00001f) continue;
+                float distance = ((component > 0 ? bounds.max[axis] : bounds.min[axis]) - position[axis]) / component;
+                if (distance >= 0) exit = Mathf.Min(exit, distance);
+            }
+            return position + direction * (exit + .08f);
+        }
+
+        static IEnumerator Waypoint(XRBaseController controller, Vector3 position, Quaternion palmRotation,
+            System.Action<Vector3, Quaternion, bool> queue, string phase)
+        {
+            var hand = Hand(controller);
+            Quaternion localRotation = Quaternion.Inverse(controller.transform.rotation) * hand.TrackingTarget.rotation;
+            Quaternion rawRotation = palmRotation * Quaternion.Inverse(localRotation);
+            queue(ControllerPosition(controller, position, rawRotation), rawRotation, false);
+            yield return WaitForPalm(controller, phase);
+            float deadline = Time.realtimeSinceStartup + 1.5f;
+            while (Quaternion.Angle(hand.Body.rotation, palmRotation) >= .25f)
+            {
+                if (Time.realtimeSinceStartup >= deadline)
+                    throw new System.InvalidOperationException("Physical palm could not turn in the clear route / " + phase +
+                        "; rotation error=" + Quaternion.Angle(hand.Body.rotation, palmRotation) + "; " + SelectionDiagnostics(controller, null));
+                yield return null;
+            }
+        }
+
         public static Vector3 OutsideTouch(Collider target, XRBaseController controller, Quaternion controllerRotation,
             Vector3 outward, Vector3 legacyPosition, Vector3? surfaceAim = null)
         {

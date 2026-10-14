@@ -1103,7 +1103,8 @@ namespace Museum.Inspection.Editor
                 -button.transform.forward, buttonCollider.bounds.center);
             QueueRight(touch,Quaternion.identity,false);
             yield return Wait(.22f);
-            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, "button " + label);
+            yield return MuseumPhysicalHandsTestPose.Approach(rightController, helmet,
+                (position, rotation, grip) => QueueRight(position, rotation, grip), "button " + label);
             QueueRight(touch,Quaternion.identity,true);
             yield return Wait(.22f);
             Require(button.isSelected,"input selects button: "+label,"Controller grip selects the saved control.");
