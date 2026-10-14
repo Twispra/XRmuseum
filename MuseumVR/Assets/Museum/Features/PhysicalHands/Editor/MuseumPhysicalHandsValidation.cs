@@ -402,6 +402,10 @@ namespace Museum.PhysicalHands.EditorTools
             oldBackground = InputSystem.settings.backgroundBehavior; oldEditorInput = InputSystem.settings.editorInputBehaviorInPlayMode; changedInput = true;
             InputSystem.settings.backgroundBehavior = InputSettings.BackgroundBehavior.IgnoreFocus;
             InputSystem.settings.editorInputBehaviorInPlayMode = InputSettings.EditorInputBehaviorInPlayMode.AllDeviceInputAlwaysGoesToGameView;
+            // Editor queries can report enabled while the player buffer is still disabled
+            // by its earlier background-focus state. Explicitly re-enable owned fixtures.
+            InputSystem.EnableDevice(keyboard);
+            if (addedMouse) InputSystem.EnableDevice(addedMouse);
             leftDevice = InputSystem.AddDevice<XRSimulatedController>("Physical hands QA left"); InputSystem.SetDeviceUsage(leftDevice, UnityEngine.InputSystem.CommonUsages.LeftHand);
             rightDevice = InputSystem.AddDevice<XRSimulatedController>("Physical hands QA right"); InputSystem.SetDeviceUsage(rightDevice, UnityEngine.InputSystem.CommonUsages.RightHand);
             hmd = InputSystem.AddDevice<XRSimulatedHMD>("Physical hands QA head");
@@ -601,7 +605,7 @@ namespace Museum.PhysicalHands.EditorTools
             int resetsBefore = reset.ResetCount;
             Require(keyboard != null && keyboard.added, "production input", "owned synthetic keyboard exists before Home");
             bool enabledBeforeHome = keyboard.enabled;
-            if (!keyboard.enabled) InputSystem.EnableDevice(keyboard);
+            InputSystem.EnableDevice(keyboard);
             keyboard.MakeCurrent();
             inspectHome = true; homeDownSeen = false; homeEdgeSeen = false;
             QueueKeyboard(new KeyboardState(Key.Home));
