@@ -1,5 +1,9 @@
 # 外部资源与辅助工具记录
 
+## 2026-10-14：个人面板视角回中与合并前修复
+
+Codex 辅助完成 [PR #51](https://github.com/Twispra/XRmuseum/pull/51) 的个人面板回中入口、Floor 追踪高度与晚相机交互缓存修复、定向姿态/生产合成输入验证、三语近景检查及交接。沿用本机 Unity 2022.3.62f3c1 / XRI 2.6.4 包源码与现有三语字体，没有新增第三方模型、媒体、字体或 package。模拟验证与真实头显、构建、用户研究分别记录，完整主场景回归的既有 main 抓取失败未被写成通过。见[本轮活动](activity/2026-10-14-pr51-fix-and-merge.md)。
+
 ## 2026-10-14：博物馆虚拟手与双手协作候选
 
 同日设备反馈修订：Codex 辅助编写自身角色碰撞隔离、近距表面贴合、支撑握姿与本地 Development 诊断，并从仓库已有模型只读网格派生独立 `GripSurfaceCache.asset`（480 个网格、254,198 个三角形）。原 FBX、导入器及 GUID 保留，没有新增第三方素材。小面法线归一化、模型实时变换与碰撞对恢复的依据是当前 Unity/XRI API；采用 [Unity 2022.3 MeshUtility.AcquireReadOnlyMeshData](https://docs.unity3d.com/2022.3/Documentation/ScriptReference/MeshUtility.AcquireReadOnlyMeshData.html) 与 [EditorSceneManager.NewPreviewScene](https://docs.unity3d.com/2022.3/Documentation/ScriptReference/SceneManagement.EditorSceneManager.NewPreviewScene.html)，预览场景的物理隔离由运行报告实际检查。用户以 Alyx 说明预期抓握体验，没有据此复制 Valve 资产或算法。具体反馈、被测版本和限制见[设备反馈记录](activity/2026-10-14-physical-hands-device-feedback.md)。
