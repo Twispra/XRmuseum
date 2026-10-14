@@ -54,8 +54,7 @@ namespace Museum.PhysicalHands.EditorTools
             {
                 // The runtime scene API is preflighted rather than falling back to
                 // the loaded scene if this editor cannot create local physics here.
-                scene = SceneManager.CreateScene("HandSelfCollisionFixture_" + Guid.NewGuid().ToString("N"),
-                    new CreateSceneParameters(LocalPhysicsMode.Physics3D));
+                scene = EditorSceneManager.NewPreviewScene();
                 var physics = scene.GetPhysicsScene();
                 Require(report, scene.IsValid() && scene.isLoaded && physics.IsValid() && !physics.Equals(Physics.defaultPhysicsScene),
                     "fixture owns a valid nondefault physics scene");
@@ -163,7 +162,7 @@ namespace Museum.PhysicalHands.EditorTools
             {
                 if (hand) { hand.enabled = false; hand.runInEditMode = false; }
                 if (root) UnityEngine.Object.DestroyImmediate(root);
-                if (scene.IsValid() && scene.isLoaded) EditorSceneManager.CloseScene(scene, true);
+                if (scene.IsValid() && scene.isLoaded) EditorSceneManager.ClosePreviewScene(scene);
                 File.WriteAllText(LastReportPath, JsonUtility.ToJson(report, true));
                 Debug.Log("Museum hand self-collision " + report.status + ": " + LastReportPath);
             }

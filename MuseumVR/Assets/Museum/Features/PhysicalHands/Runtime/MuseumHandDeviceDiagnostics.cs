@@ -31,9 +31,9 @@ namespace Museum.PhysicalHands
         }
         [Serializable] sealed class HandSample
         {
-            public bool tracked, grip, blocked, palmIgnoresBody, envelopeIgnoresBody;
+            public bool tracked, grip, blocked, palmIgnoresBody, envelopeIgnoresBody, surfaceGrip;
             public float trackingError;
-            public Vector3 target, proxy, visiblePalm;
+            public Vector3 target, proxy, visiblePalm, surfaceContact;
             public string selected = "";
         }
         [Serializable] sealed class Sample
@@ -110,6 +110,8 @@ namespace Museum.PhysicalHands
             result.proxy = hand.transform.position; result.target = hand.TrackingTarget ? hand.TrackingTarget.position : hand.transform.position;
             var visual = hand.GetComponentInChildren<MuseumHandVisual>(true);
             result.visiblePalm = visual ? visual.transform.TransformPoint(MuseumHandGrabTransformer.PalmContactLocal) : result.proxy;
+            result.surfaceGrip = hand.HasSurfaceGrip;
+            if (result.surfaceGrip) result.surfaceContact = hand.SurfaceContactPoint;
             result.palmIgnoresBody = character && hand.PalmCollider && Physics.GetIgnoreCollision(hand.PalmCollider, character);
             result.envelopeIgnoresBody = character && hand.CollisionCollider && Physics.GetIgnoreCollision(hand.CollisionCollider, character);
             if (hand.DirectInteractor && hand.DirectInteractor.hasSelection)
