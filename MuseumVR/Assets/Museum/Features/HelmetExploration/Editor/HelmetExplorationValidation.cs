@@ -845,7 +845,8 @@ namespace Museum.Exploration.Editor
                 rotation = distant ? Quaternion.LookRotation(collider.bounds.center - touch, Vector3.up) : Quaternion.identity;
                 if (!distant) touch = DirectButtonTouch(button, collider, left);
                 QueueController(device, touch, rotation, true); yield return Wait(.22f);
-                Require(events == 1, "XR input", "grip selects " + objectName, "hand=" + (left ? "left" : "right") + "; select events=" + events + "; interactor=" + interactor);
+                Require(events == 1, "XR input", "grip selects " + objectName, "hand=" + (left ? "left" : "right") + "; select events=" + events + "; interactor=" + interactor +
+                    (distant ? "" : "; " + MuseumPhysicalHandsTestPose.SelectionDiagnostics(left ? leftController : rightController, button)));
                 if (distant) Require(interactor == nameof(XRRayInteractor), "XR input", "distant ray selects " + objectName,
                     "Target is 0.55 m from the simulated hand; interactor=" + interactor);
                 if (button is HelmetExplorationHotspot)

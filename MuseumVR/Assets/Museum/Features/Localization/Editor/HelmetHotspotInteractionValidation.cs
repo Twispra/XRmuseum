@@ -265,7 +265,7 @@ namespace Museum.Localization.EditorTools
             var window = c.root.GetComponentInChildren<HelmetWindowInteractable>(true);
             c.Check(window, "original window still exists");
             Vector3 point = window.colliders.Single().bounds.center;
-            Vector3 hand = ray ? point - c.root.transform.forward * .65f : MuseumPhysicalHandsTestPose.OutsideTouch(
+            Vector3 hand = ray ? point - c.root.transform.forward * .65f : MuseumPhysicalHandsTestPose.WindowTouch(
                 window.colliders.Single(), MuseumPhysicalHandsTestPose.Controller(false), Quaternion.identity, -c.root.transform.forward, point);
             Quaternion rotation = ray ? Quaternion.LookRotation(point - hand, c.root.transform.up) : Quaternion.identity;
             yield return Select(c, window, hand, rotation, ray, "original window outside marker");
@@ -284,12 +284,14 @@ namespace Museum.Localization.EditorTools
                 c.park(); yield return Wait(.15f);
                 c.move(hand, rotation, false); yield return Wait(.22f);
                 if (!ray) yield return MuseumPhysicalHandsTestPose.WaitForPalm(MuseumPhysicalHandsTestPose.Controller(false), name);
-                c.Check(target.isHovered, "production hover / " + name + "/" + (ray ? "ray" : "direct"), "target=" + target.name);
+                c.Check(target.isHovered, "production hover / " + name + "/" + (ray ? "ray" : "direct"), "target=" + target.name +
+                    (ray ? "" : "; " + MuseumPhysicalHandsTestPose.SelectionDiagnostics(MuseumPhysicalHandsTestPose.Controller(false), target)));
                 c.move(hand, rotation, true); yield return Wait(.18f);
                 c.report.selections.Add(new Selection { target = target.name, mode = ray ? "ray" : "direct",
                     selector = selector == null ? "none" : selector.GetType().Name, events = events, controllerPosition = hand, rootSelected = c.root.isSelected });
                 c.Check(events == 1 && target.isSelected && (ray ? selector is XRRayInteractor : selector is XRDirectInteractor),
-                    "production select / " + name + "/" + (ray ? "ray" : "direct"), "events=" + events + "; selector=" + selector);
+                    "production select / " + name + "/" + (ray ? "ray" : "direct"), "events=" + events + "; selector=" + selector +
+                    (ray ? "" : "; " + MuseumPhysicalHandsTestPose.SelectionDiagnostics(MuseumPhysicalHandsTestPose.Controller(false), target)));
                 c.Check(!c.root.isSelected, "child selection does not grab helmet / " + name + "/" + (ray ? "ray" : "direct"));
                 c.move(hand, rotation, false); yield return Wait(.15f);
                 c.Check(!target.isSelected, "production release / " + name + "/" + (ray ? "ray" : "direct"));

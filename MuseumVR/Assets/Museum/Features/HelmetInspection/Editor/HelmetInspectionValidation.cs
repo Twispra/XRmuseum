@@ -1048,7 +1048,8 @@ namespace Museum.Inspection.Editor
             finally {RenderTexture.active=previous;RenderTexture.ReleaseTemporary(target);if(pixels)UnityEngine.Object.DestroyImmediate(pixels);}
         }
 
-        static string SelectionDetail() => "window="+window.isSelected+"; root="+helmet.isSelected+"; angle="+inspection.WindowAngle+"; hand="+(rightController?rightController.transform.position.ToString():"missing");
+        static string SelectionDetail() => "window="+window.isSelected+"; root="+helmet.isSelected+"; angle="+inspection.WindowAngle+"; hand="+(rightController?rightController.transform.position.ToString():"missing")+
+            "; "+MuseumPhysicalHandsTestPose.SelectionDiagnostics(rightController, window);
 
         static Vector3 WindowTouch(XRBaseController controller = null)
         {
@@ -1056,7 +1057,7 @@ namespace Museum.Inspection.Editor
             // Frontmost point of the explicit hit target avoids the whole-shell collider behind it.
             Vector3 outward=inspection.transform.rotation*Vector3.back;
             Vector3 legacy=collider.bounds.center + outward*.009f;
-            return MuseumPhysicalHandsTestPose.OutsideTouch(collider, controller ? controller : rightController,
+            return MuseumPhysicalHandsTestPose.WindowTouch(collider, controller ? controller : rightController,
                 Quaternion.identity, outward, legacy);
         }
 
