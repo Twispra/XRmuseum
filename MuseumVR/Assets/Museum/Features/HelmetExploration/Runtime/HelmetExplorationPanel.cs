@@ -348,6 +348,9 @@ namespace Museum.Exploration
             var label = Instantiate(labelTemplate.gameObject, tabRoot);
             label.name = "Exploration CENTER label";
             MuseumText.Set(label.GetComponent<TextMeshPro>(), "Reset View");
+            // This may run after the palette's Start when the XR camera appears late.
+            // Include the new control in its hover/selection freeze cache immediately.
+            palette.ConfigureAdditionalPage(Available ? .085f : 0f);
         }
         TextMeshPro FindText(string name)
         {
