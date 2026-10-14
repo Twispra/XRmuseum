@@ -1,0 +1,683 @@
+{
+    "status": "passed",
+    "failure": "",
+    "utc": "2026-10-13T15:13:16.9711939Z",
+    "commit": "1633e98a8e85a431abba5a0ff73218d10f17fa9d",
+    "branch": "codex/fix-hmd-tracking-2026-10-13",
+    "dirty": "M docs/external-resources.md\n M docs/getting-started.zh-CN.md\n?? artifacts/helmet-interaction/qa/runs/20261013-display-height-local/compile-process.json\n?? artifacts/helmet-interaction/qa/runs/20261013-display-height-local/height-01-process.json\n?? artifacts/helmet-interaction/qa/runs/20261013-display-height-local/main-01-process.json\n?? artifacts/helmet-interaction/qa/runs/20261013-display-height-local/main-02-process.json\n?? artifacts/helmet-interaction/qa/runs/20261013-display-height-local/refined-01-process.json\n?? artifacts/helmet-interaction/qa/runs/20261013-display-height-local/refined-02-process.json\n?? artifacts/helmet-interaction/qa/runs/20261013-xr-tracking-fix-local/compile-pid.txt\n?? artifacts/helmet-interaction/qa/runs/20261013-xr-tracking-fix-local/compile-process.json\n?? artifacts/helmet-interaction/qa/runs/20261013-xr-tracking-fix-local/documentation.patch\n?? artifacts/helmet-interaction/qa/runs/20261013-xr-tracking-fix-local/height-followup.patch\n?? artifacts/helmet-interaction/qa/runs/20261013-xr-tracking-fix-local/main-01-process.json\n?? artifacts/helmet-interaction/qa/runs/20261013-xr-tracking-fix-local/source.patch\n?? artifacts/helmet-interaction/qa/runs/20261013-xr-tracking-fix-local/tracking-01-process.json\n?? artifacts/helmet-interaction/qa/runs/20261013-xr-tracking-fix-local/tracking-02-process.json\n?? artifacts/helmet-interaction/qa/runs/20261013T114302083Z-xr-tracking-4080c92bde4349e88556975567797ab0/report.json\n?? artifacts/helmet-interaction/qa/runs/20261013T145724047Z-display-height-63c926f4e6724a11bdda8dab3d6cb9fd/report.json\n?? artifacts/helmet-interaction/qa/runs/20261013T145724047Z-display-height-63c926f4e6724a11bdda8dab3d6cb9fd/standing-1.6m-era-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261013T145724047Z-display-height-63c926f4e6724a11bdda8dab3d6cb9fd/standing-1.6m-era-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261013T145724047Z-display-height-63c926f4e6724a11bdda8dab3d6cb9fd/standing-1.6m-era-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/01-refined-front-closed.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/02-refined-rear-fittings.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/03-saved-XR-view.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/04-refined-window-open.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/05-refined-held.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/06-section-5.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/06-section-6.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/06-section-7.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/09-refined-air-pump.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/10-refined-voice-surface.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/11-refined-phone-arrival.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/12-refined-reduced-motion.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/13-refined-existing-language-interface.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/14-final-reset.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/15-superlite-front-closed.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/16-superlite-reference-side.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/17-superlite-on-display-in-museum.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/18-superlite-virtual-panel-open.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/19-superlite-section.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/20-superlite-held.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/21-superlite-front-card-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/21-superlite-front-card-English.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/21-superlite-front-card-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261013T150044742Z-refined-integration-9bbedce8b70a411aad7e06ac7af35a57/report.json\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/diagram-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/diagram-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/diagram-zh-production.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/hotspot-interaction.json\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/hotspots-direct-progress-0-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/hotspots-direct-progress-0-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/hotspots-direct-progress-0-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/hotspots-direct-progress-3-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/hotspots-direct-progress-3-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/hotspots-direct-progress-3-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/initial-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/initial-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/initial-en-production.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/report.json\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/restored-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/restored-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/restored-en-production.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/restored-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/restored-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/restored-zh-production.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/selected-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/selected-zh-hant-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/selected-zh-hant-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/selected-zh-hant-production.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/selected-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T114708097Z-integration-bf62bff63e24449faca8a99b93affea8/selected-zh-production.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/diagram-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/diagram-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/diagram-zh-production.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/hotspot-interaction.json\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/initial-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/initial-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/initial-en-production.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/report.json\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/restored-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/restored-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/restored-en-production.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/restored-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/restored-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/restored-zh-production.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/selected-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/selected-zh-hant-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/selected-zh-hant-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/selected-zh-hant-production.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/selected-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T150323199Z-integration-2255f3b32ed64356beffc15f3d21b39f/selected-zh-production.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/diagram-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/diagram-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/diagram-zh-production.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/hotspot-interaction.json\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/hotspots-direct-progress-0-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/hotspots-direct-progress-0-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/hotspots-direct-progress-0-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/hotspots-direct-progress-3-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/hotspots-direct-progress-3-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/hotspots-direct-progress-3-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/initial-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/initial-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/initial-en-production.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/report.json\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/restored-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/restored-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/restored-en-production.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/restored-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/restored-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/restored-zh-production.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/selected-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/selected-zh-hant-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/selected-zh-hant-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/selected-zh-hant-production.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/selected-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261013T151027661Z-integration-7b3c5cb404d342f8adc36308c365f479/selected-zh-production.png\n?? docs/activity/2026-10-13-standing-display-height.md",
+    "unity": "2022.3.62f3c1",
+    "environment": "Windows 11  (10.0.26200) 64bit; AMD Ryzen 7 5800H with Radeon Graphics ; NVIDIA GeForce RTX 3070 Laptop GPU",
+    "limits": "Public ResetToDisplay/RequestResetToDisplay/ShowEra functional checks with temporary rigidbody pose fixtures. No physical grab input, headset comfort, Virtual Desktop, floor calibration, executable build or participant study. Standing captures use a temporary camera at 1.6m with production horizontal pose/orientation/FOV; persistent XR camera is not moved. Visibility checks are geometric, not a human readability judgment.",
+    "savedOriginPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 2.200000047683716
+    },
+    "savedOriginScale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+    },
+    "savedHelmetScale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+    },
+    "savedOriginRotation": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0,
+        "w": 1.0
+    },
+    "durationSeconds": 4.81439208984375,
+    "checks": [
+        {
+            "kind": "saved structure",
+            "name": "central display base stays at floor and top is 0.96m",
+            "detail": "plinth=Center: (0.00, 0.45, 3.50), Extents: (0.68, 0.45, 0.68); top=Center: (0.00, 0.93, 3.50), Extents: (0.73, 0.03, 0.73)",
+            "passed": true
+        },
+        {
+            "kind": "saved structure",
+            "name": "two side display tops remain at 1.16m",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved structure",
+            "name": "helmet station and era controls are lowered together by 0.20m",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved reset",
+            "name": "explicit world home matches lowered saved helmet",
+            "detail": "home=(0.00, 0.97, 3.50); root=(0.00, 0.97, 3.50)",
+            "passed": true
+        },
+        {
+            "kind": "saved XR",
+            "name": "rig stays at y=0, scale=1 and requests Floor tracking",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved floor",
+            "name": "floor top remains at world y=0",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "runtime structure",
+            "name": "same exhibit retains physics, grab and all three era visuals",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "runtime physics",
+            "name": "initial helmet settles within 12mm of the lowered configured home",
+            "detail": "root=(0.00, 0.96, 3.50); home=(0.00, 0.97, 3.50)",
+            "passed": true
+        },
+        {
+            "kind": "public reset API",
+            "name": "ResetToDisplay returns immediately to the new home",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "runtime physics",
+            "name": "immediate reset remains supported on the lowered tabletop",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "public reset API",
+            "name": "RequestResetToDisplay starts a smooth return from the pose fixture",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "public reset API",
+            "name": "smooth return has an intermediate pose",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "public reset API + physics",
+            "name": "smooth return finishes and remains at the new home",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "public era API",
+            "name": "era 0 displays an active helmet shell",
+            "detail": "1839 标准潜水服头盔",
+            "passed": true
+        },
+        {
+            "kind": "runtime model + physics",
+            "name": "era 0 preserves grab, model scale and lowered home",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "synthetic standing view",
+            "name": "era 0 shell intersects the 1.6m standing camera frustum",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "public era API",
+            "name": "era 1 displays an active helmet shell",
+            "detail": "Mark V 标准空气头盔",
+            "passed": true
+        },
+        {
+            "kind": "runtime model + physics",
+            "name": "era 1 preserves grab, model scale and lowered home",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "synthetic standing view",
+            "name": "era 1 shell intersects the 1.6m standing camera frustum",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "public era API",
+            "name": "era 2 displays an active helmet shell",
+            "detail": "SuperLite 17B 轻量化头盔",
+            "passed": true
+        },
+        {
+            "kind": "runtime model + physics",
+            "name": "era 2 preserves grab, model scale and lowered home",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "synthetic standing view",
+            "name": "era 2 shell intersects the 1.6m standing camera frustum",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "runtime XR",
+            "name": "display changes and reset APIs leave rig origin unchanged",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/HelmetEras/Runtime/HelmetEraSwitcher.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/HelmetEras/Runtime/HelmetEraSwitcher.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/HelmetHotspots/Prefabs/HelmetHotspotTour.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/HelmetHotspots/Prefabs/HelmetHotspotTour.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/Localization/Prefabs/LanguageShowcase.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/Localization/Prefabs/LanguageShowcase.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/MaritimeGallery/Prefabs/MaritimeGallery.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/MaritimeGallery/Prefabs/MaritimeGallery.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/RefinedModels/Prefabs/ConnectionEquipment.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/RefinedModels/Prefabs/ConnectionEquipment.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/RefinedModels/Runtime/RefinedHelmetBinding.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/RefinedModels/Runtime/RefinedHelmetBinding.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/XRTracking/Editor/HelmetDisplayHeightValidation.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Features/XRTracking/Editor/HelmetDisplayHeightValidation.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Scenes/MuseumStart.unity",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Scenes/MuseumStart.unity.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Scripts/HelmetExhibitReset.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Museum/Scripts/HelmetExhibitReset.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Controllers/XR Controller Left.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Controllers/XR Controller Left.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Controllers/XR Controller Right.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Controllers/XR Controller Right.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Direct Interactor.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Direct Interactor.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Gaze Interactor.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Gaze Interactor.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Poke Interactor.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Poke Interactor.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Ray Interactor.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Ray Interactor.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Teleport Interactor.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Teleport Interactor.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Blocking Teleport Reticle.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Blocking Teleport Reticle.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Climb Teleport Arrow.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Climb Teleport Arrow.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Directional Teleport Reticle.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Directional Teleport Reticle.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/XR Origin (XR Rig).prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "no incidental scene/meta/prefab/source save: Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/XR Origin (XR Rig).prefab.meta",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "sources": [
+        {
+            "path": "Assets/Museum/Features/HelmetEras/Runtime/HelmetEraSwitcher.cs",
+            "sha256": "aeb65fae36e3988d6fe9ca4ca8dfe93980ddc5545a6a4c5baee91544e650e718"
+        },
+        {
+            "path": "Assets/Museum/Features/HelmetEras/Runtime/HelmetEraSwitcher.cs.meta",
+            "sha256": "2d5a302b632f56d4029d79703dcb39bc64491d2a4849da680bfd99da2c3be6ba"
+        },
+        {
+            "path": "Assets/Museum/Features/HelmetHotspots/Prefabs/HelmetHotspotTour.prefab",
+            "sha256": "d3ba8f005f214107f19c48f72fe526eb0e95dc9f8735c555167dc8ac4bcc9f55"
+        },
+        {
+            "path": "Assets/Museum/Features/HelmetHotspots/Prefabs/HelmetHotspotTour.prefab.meta",
+            "sha256": "0ca63871754b1171bf3f45008edfd745a0d94373971da2536040808865c0cc24"
+        },
+        {
+            "path": "Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+            "sha256": "7d6fda67b4557f99d922b219cf9ebdef91e7f049112b50d046c8fc45f1939f5d"
+        },
+        {
+            "path": "Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab.meta",
+            "sha256": "3dd5bb2d81e3680a255bfefab032457e803c16e821a5dc16d94d900b0c87fdee"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Prefabs/LanguageShowcase.prefab",
+            "sha256": "5d84ce609e270341a26a2f2ed981b81923c8731c8d05c4abd8e2d0e06ea22dd1"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Prefabs/LanguageShowcase.prefab.meta",
+            "sha256": "41e56fdb496ad1b224289c832da71b76784dfaa2d00d1cfc9658505214160f8e"
+        },
+        {
+            "path": "Assets/Museum/Features/MaritimeGallery/Prefabs/MaritimeGallery.prefab",
+            "sha256": "0747df4b788e31c584ca724822d09245a81b1442d4ebfea93c34fb0884aa5488"
+        },
+        {
+            "path": "Assets/Museum/Features/MaritimeGallery/Prefabs/MaritimeGallery.prefab.meta",
+            "sha256": "23bc2896a7db06708c7786a0c2e4ed411df20cecb4d6a13ea3c1c83ba7f678c0"
+        },
+        {
+            "path": "Assets/Museum/Features/RefinedModels/Prefabs/ConnectionEquipment.prefab",
+            "sha256": "35cd0b54f64e5975929e513f571658595a22473f596199ca74d2fbf1b1c681b7"
+        },
+        {
+            "path": "Assets/Museum/Features/RefinedModels/Prefabs/ConnectionEquipment.prefab.meta",
+            "sha256": "21acf2be7cc86f40cd68c826be7eea7ce7afa148e068f9c6d30a36be91e844fc"
+        },
+        {
+            "path": "Assets/Museum/Features/RefinedModels/Runtime/RefinedHelmetBinding.cs",
+            "sha256": "4aef8a617b0bd1fb1de389305a0fe8921c63fea3c8207597e733d05b5dc0a92a"
+        },
+        {
+            "path": "Assets/Museum/Features/RefinedModels/Runtime/RefinedHelmetBinding.cs.meta",
+            "sha256": "b31ea66c4e77bed3c34ba3d83e5cad7c1fccd0dfc948027a579e2a812196a9d5"
+        },
+        {
+            "path": "Assets/Museum/Features/XRTracking/Editor/HelmetDisplayHeightValidation.cs",
+            "sha256": "3b09ed9ee2b4907979ad01df155faa7d4ca6ff0796ba87763aac4caeb6ab67bf"
+        },
+        {
+            "path": "Assets/Museum/Features/XRTracking/Editor/HelmetDisplayHeightValidation.cs.meta",
+            "sha256": "0baf5c4e4aec736e0216faf31a5b8cc34e2c58c9d228337a5323ec031b196c5d"
+        },
+        {
+            "path": "Assets/Museum/Scenes/MuseumStart.unity",
+            "sha256": "e240af12cc830d751641981de2d2ab60dc159e488db6c3f2260ef93c6fcbd727"
+        },
+        {
+            "path": "Assets/Museum/Scenes/MuseumStart.unity.meta",
+            "sha256": "93d99235c89c8cb0576cfb0268a5d07ef15bd82651558b69036b6ec0b956a245"
+        },
+        {
+            "path": "Assets/Museum/Scripts/HelmetExhibitReset.cs",
+            "sha256": "7b0ed74a93cb2c6311a28dda061064293f99ee808aecdc361356028d59f07761"
+        },
+        {
+            "path": "Assets/Museum/Scripts/HelmetExhibitReset.cs.meta",
+            "sha256": "52da96548bb35037272a78667457391ae141d3ef21134956e6f62183efda7eef"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Controllers/XR Controller Left.prefab",
+            "sha256": "46ab0bc0498b8c4fa608a7a1d0bf395065e0c53374897ab94a04d3230ea1a010"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Controllers/XR Controller Left.prefab.meta",
+            "sha256": "c6608c716b87ca57d30d49b970c1b6f5d6bc3d327f5a214c834e46fcbb9acb68"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Controllers/XR Controller Right.prefab",
+            "sha256": "d411483f56cd92532fd6b34ca3ca5a7720b1914478c7c89f634abeace73428cd"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Controllers/XR Controller Right.prefab.meta",
+            "sha256": "cb3a51045aaa6543cfcef285d0a2731addd20e05e868a4c61679983c9b15406a"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Direct Interactor.prefab",
+            "sha256": "c00eb811caed28eba38d74a91e30c51e11872ad42adbb665201775168217ce09"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Direct Interactor.prefab.meta",
+            "sha256": "8cfd6a75d07f1ed3eaa0d75ed60f1f06ead7bc21817815319f0671fc0e6e0f37"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Gaze Interactor.prefab",
+            "sha256": "866a3c63cebe7c148490d2df94175d173b907525be17e98dd1bc539f18febe1d"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Gaze Interactor.prefab.meta",
+            "sha256": "f3405d9fda3d344376867252edcbb9d264a3bea9849d85e58176ee9e6e856d4a"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Poke Interactor.prefab",
+            "sha256": "674daf81a658bb5cf01ff76809ca1fe7b430341e9a70499f4fbc8d04d3cc298c"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Poke Interactor.prefab.meta",
+            "sha256": "93f881a0bae89c353e548bf24c9c48ced3bd72142dfc6db7ba743a5366fb63fd"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Ray Interactor.prefab",
+            "sha256": "beeab61a5c7ae09dbb564e950831825fb1bab5f14b22aec6c536ddc958a3d20d"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Ray Interactor.prefab.meta",
+            "sha256": "7e7e54c8b76d2663e6d7cf468448524fadd702c3cf18c512d3dfef98bc03616b"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Teleport Interactor.prefab",
+            "sha256": "902b19d9d5c70adb987c3b76736a4dfd6fa308f6ce480f398fafbde5d86fe6b9"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Interactors/Teleport Interactor.prefab.meta",
+            "sha256": "b51487adbe5e4831abede2f47a2b5e59d63b4201e5fc6a9b2689b60324fd016c"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Blocking Teleport Reticle.prefab",
+            "sha256": "bb7dbd18a95794d135f1ca103fce3e19baa059eac8732c26d04d143871e5b339"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Blocking Teleport Reticle.prefab.meta",
+            "sha256": "658d28ced158eabcd6617c9ae9a3c76ea9474ed255ba86430fa5a15a9ab3d505"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Climb Teleport Arrow.prefab",
+            "sha256": "e09337454cf4cbb5ad10decd8302583c8b5806dd14702e72ee2ab8636ab03a88"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Climb Teleport Arrow.prefab.meta",
+            "sha256": "ef84f42c6ab9dc1cbdfdfa378ab9934fe3dcd7551921b6018d3f05fafc025a44"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Directional Teleport Reticle.prefab",
+            "sha256": "46af312d083382cf7ce9fa229b935979ab24ea6860fdf565195f548c66f6f4b1"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/Teleport/Directional Teleport Reticle.prefab.meta",
+            "sha256": "5ab303680e690316a502621607fa19d3d981425a1ef75f7fa2a01dacf93939f9"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/XR Origin (XR Rig).prefab",
+            "sha256": "033024a6d91ada2796e5301297c98e808e981e9fdd6982b1936f7dc1603ba23f"
+        },
+        {
+            "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Prefabs/XR Origin (XR Rig).prefab.meta",
+            "sha256": "adf2bad051d391d0bda2caeeb30180a220ae10e60074aed104017c5053004c9f"
+        }
+    ],
+    "captures": [
+        {
+            "file": "standing-1.6m-era-0.jpg",
+            "era": "1839 标准潜水服头盔",
+            "method": "synthetic standing-eye fixture copied from production camera; monocular",
+            "position": {
+                "x": 0.0,
+                "y": 1.600000023841858,
+                "z": 2.200000047683716
+            },
+            "shellMin": {
+                "x": -0.13853485882282258,
+                "y": 1.0867661237716675,
+                "z": 3.350623369216919
+            },
+            "shellMax": {
+                "x": 0.13853494822978974,
+                "y": 1.455311894416809,
+                "z": 3.6555850505828859
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "fieldOfView": 60.0,
+            "aspect": 1.3333333730697632
+        },
+        {
+            "file": "standing-1.6m-era-1.jpg",
+            "era": "Mark V 标准空气头盔",
+            "method": "synthetic standing-eye fixture copied from production camera; monocular",
+            "position": {
+                "x": 0.0,
+                "y": 1.600000023841858,
+                "z": 2.200000047683716
+            },
+            "shellMin": {
+                "x": -0.13878612220287324,
+                "y": 1.1574078798294068,
+                "z": 3.358201265335083
+            },
+            "shellMax": {
+                "x": 0.13878615200519563,
+                "y": 1.467000126838684,
+                "z": 3.644296407699585
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "fieldOfView": 60.0,
+            "aspect": 1.3333333730697632
+        },
+        {
+            "file": "standing-1.6m-era-2.jpg",
+            "era": "SuperLite 17B 轻量化头盔",
+            "method": "synthetic standing-eye fixture copied from production camera; monocular",
+            "position": {
+                "x": 0.0,
+                "y": 1.600000023841858,
+                "z": 2.200000047683716
+            },
+            "shellMin": {
+                "x": -0.10462044179439545,
+                "y": 0.9461621046066284,
+                "z": 3.3873753547668459
+            },
+            "shellMax": {
+                "x": 0.13740013539791108,
+                "y": 1.2001625299453736,
+                "z": 3.6625046730041506
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "fieldOfView": 60.0,
+            "aspect": 1.3333333730697632
+        }
+    ],
+    "errors": [],
+    "warnings": []
+}

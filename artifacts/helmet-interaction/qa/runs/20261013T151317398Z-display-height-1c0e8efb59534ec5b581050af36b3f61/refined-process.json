@@ -1,0 +1,16 @@
+{
+  "arguments": [
+    "-batchmode",
+    "-projectPath",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\fix-hmd-tracking-2026-10-13\\XRmuseum\\MuseumVR\"",
+    "-executeMethod",
+    "Museum.RefinedModels.EditorTools.RefinedModelValidation.RunBatch",
+    "-logFile",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\fix-hmd-tracking-2026-10-13\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261013-display-height-local\\refined-02.log\""
+  ],
+  "finishedUtc": "2026-10-13T15:02:18.7413085Z",
+  "commit": "ac421556ecf64e05448a1689805fccde1a42a50f",
+  "startedUtc": "2026-10-13T15:00:18.0306127Z",
+  "exitCode": 0,
+  "dirty": null
+}

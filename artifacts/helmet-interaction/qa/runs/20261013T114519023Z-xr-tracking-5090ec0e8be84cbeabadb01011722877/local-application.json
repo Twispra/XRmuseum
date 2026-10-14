@@ -1,0 +1,21 @@
+{
+  "target": "E:/XRmuseum",
+  "targetBranch": "main",
+  "targetHead": "4578e6619a28c16828268f31f669a3e374fe2ade",
+  "application": "Scoped source patch only; local uncommitted mirror for headset testing. No main commit or merge.",
+  "sourceCommit": "1690a524dbdcda349cfe4d94431a630cbae78029",
+  "paths": [
+    "MuseumVR/Assets/Museum/Features/XRTracking.meta",
+    "MuseumVR/Assets/Museum/Features/XRTracking/Editor.meta",
+    "MuseumVR/Assets/Museum/Features/XRTracking/Editor/MuseumXRTrackingValidation.cs",
+    "MuseumVR/Assets/Museum/Features/XRTracking/Editor/MuseumXRTrackingValidation.cs.meta",
+    "MuseumVR/Assets/Museum/Features/XRTracking/Runtime.meta",
+    "MuseumVR/Assets/Museum/Features/XRTracking/Runtime/MuseumXRSimulatorGate.cs",
+    "MuseumVR/Assets/Museum/Features/XRTracking/Runtime/MuseumXRSimulatorGate.cs.meta",
+    "MuseumVR/Assets/XRI/Settings/Resources/XRDeviceSimulatorSettings.asset"
+  ],
+  "sourcePatchSha256": "63054A7FFF2D7801277FDA7FABC22BAD9ED780EF6D49C989BF6E1185E4F45FC5",
+  "preexistingProjectSettingsSha256After": "81C0EB3103E303A2567619E388C45709E89FA1940353CDFE4A163BBE402C5587",
+  "preexistingProjectSettingsSha256Before": "81C0EB3103E303A2567619E388C45709E89FA1940353CDFE4A163BBE402C5587",
+  "appliedUtc": "2026-10-13T11:50:37.1010792Z"
+}
