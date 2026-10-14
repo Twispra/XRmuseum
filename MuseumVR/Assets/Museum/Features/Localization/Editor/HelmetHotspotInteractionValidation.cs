@@ -283,9 +283,9 @@ namespace Museum.Localization.EditorTools
             {
                 c.park(); yield return Wait(.15f);
                 c.move(hand, rotation, false); yield return Wait(.22f);
-                if (!ray) yield return MuseumPhysicalHandsTestPose.Approach(MuseumPhysicalHandsTestPose.Controller(false), c.root, c.move, name);
+                yield return MuseumPhysicalHandsTestPose.Approach(MuseumPhysicalHandsTestPose.Controller(false), c.root, c.move, name);
                 c.Check(target.isHovered, "production hover / " + name + "/" + (ray ? "ray" : "direct"), "target=" + target.name +
-                    (ray ? "" : "; " + MuseumPhysicalHandsTestPose.SelectionDiagnostics(MuseumPhysicalHandsTestPose.Controller(false), target)));
+                    "; " + MuseumPhysicalHandsTestPose.SelectionDiagnostics(MuseumPhysicalHandsTestPose.Controller(false), target));
                 c.move(hand, rotation, true); yield return Wait(.18f);
                 c.report.selections.Add(new Selection { target = target.name, mode = ray ? "ray" : "direct",
                     selector = selector == null ? "none" : selector.GetType().Name, events = events, controllerPosition = hand, rootSelected = c.root.isSelected });
