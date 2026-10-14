@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using Museum.Inspection;
 using Museum.Localization;
+using Unity.XR.CoreUtils;
 using Command = Museum.Exploration.HelmetExplorationButton.Action;
 
 namespace Museum.Exploration
@@ -29,6 +30,7 @@ namespace Museum.Exploration
         HelmetExplorationController.Page lastPage;
         ButtonSlot[] buttons;
         ButtonSlot[] inspectionButtons;
+        VisitorViewRecovery viewRecovery;
         TextMeshPro inspectionTitle, inspectionSubtitle, inspectionStatus;
         const float Row = .065f;
         const float Top = .405f;
@@ -114,6 +116,7 @@ namespace Museum.Exploration
         public bool MoreExpanded => moreExpanded;
         public bool InspectionToolsExpanded => inspectionToolsExpanded;
         public HelmetExplorationController Exploration => exploration;
+        public bool ResetView() => viewRecovery && viewRecovery.ResetView();
         bool Available => isActiveAndEnabled && exploration && exploration.isActiveAndEnabled;
         bool UseProgressiveLayout => progressiveLayout && Available;
 
@@ -161,6 +164,12 @@ namespace Museum.Exploration
         void Update()
         {
             UpdateAvailability();
+            // The XR camera can become available after this panel's first OnEnable.
+            if (Application.isPlaying && progressiveLayout && (!viewRecovery || !viewRecovery.IsReady) && Camera.main)
+            {
+                buttons = null;
+                RefreshView();
+            }
             if (!UseProgressiveLayout || !palette || !palette.Controller) return;
             var controller = palette.Controller;
             if (lastCutaway == controller.IsCutaway && lastReduceMotion == controller.ReduceMotion && lastSound == controller.SoundEnabled) return;
@@ -292,6 +301,7 @@ namespace Museum.Exploration
         void CacheControls()
         {
             if (buttons != null) return;
+            EnsureViewRecoveryControl();
             buttons = new ButtonSlot[Enum.GetValues(typeof(Command)).Length];
             foreach (var button in GetComponentsInChildren<HelmetExplorationButton>(true))
             {
@@ -316,6 +326,29 @@ namespace Museum.Exploration
             inspectionSubtitle = FindText("Follows your position / stays still while aiming label");
             inspectionStatus = FindText("GRIP TO SELECT label");
         }
+        void EnsureViewRecoveryControl()
+        {
+            // The scene/prefab is shared: add this control only to the Play Mode instance.
+            if (!Application.isPlaying) return;
+            if (!palette || !tabs) return;
+            var xrOrigin = Camera.main ? Camera.main.GetComponentInParent<XROrigin>() : null;
+            if (!xrOrigin) return;
+            viewRecovery = palette.GetComponent<VisitorViewRecovery>();
+            if (!viewRecovery) viewRecovery = palette.gameObject.AddComponent<VisitorViewRecovery>();
+            viewRecovery.Configure(xrOrigin, palette);
+
+            var tabRoot = tabs.transform;
+            if (tabRoot.Find("Exploration CENTER")) return;
+            var template = tabRoot.Find("Exploration HELP");
+            var labelTemplate = tabRoot.Find("Exploration HELP label");
+            if (!template || !labelTemplate) return;
+            var button = Instantiate(template.gameObject, tabRoot);
+            button.name = "Exploration CENTER";
+            button.GetComponent<HelmetExplorationButton>().Configure(exploration, this, Command.CenterView);
+            var label = Instantiate(labelTemplate.gameObject, tabRoot);
+            label.name = "Exploration CENTER label";
+            MuseumText.Set(label.GetComponent<TextMeshPro>(), "Reset View");
+        }
         TextMeshPro FindText(string name)
         {
             // The original subtitle has a literal '/' in its object name.
@@ -338,7 +371,14 @@ namespace Museum.Exploration
             var slot = buttons[(int)command];
             slot?.Place(caption, x, y, width);
             if (slot != null && slot.label)
+            {
+                if (command == Command.Help)
+                {
+                    slot.label.fontSizeMax = .27f;
+                    slot.label.fontSize = .27f;
+                }
                 slot.label.fontStyle = IsCommandSelected(command) ? FontStyles.Underline : FontStyles.Normal;
+            }
         }
 
         public void RefreshView()
@@ -361,9 +401,10 @@ namespace Museum.Exploration
             lastPage = exploration.CurrentPage;
             foreach (var button in buttons) if (button != null) button.wanted = false;
             if (tabs) tabs.SetActive(true);
-            Place(Command.Inspect, "Inspect", -.157f, .36f, .148f);
-            Place(Command.Explore, "Explore", 0f, .36f, .148f);
-            Place(Command.Help, "Help", .157f, .36f, .148f);
+            Place(Command.Inspect, "Inspect", -.18f, .36f, .112f);
+            Place(Command.Explore, "Explore", -.06f, .36f, .112f);
+            Place(Command.Help, "Help", .04f, .36f, .075f);
+            Place(Command.CenterView, "Reset View", .165f, .36f, .14f);
             if (IsReading) LayoutReading();
             else if (IsExploring) LayoutExploration();
             else LayoutInspection();
