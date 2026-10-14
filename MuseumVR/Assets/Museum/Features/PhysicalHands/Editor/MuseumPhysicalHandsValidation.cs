@@ -185,6 +185,7 @@ namespace Museum.PhysicalHands.EditorTools
                 "environment", "no physical XR session is modified", "Run this synthetic validator without a connected headset.");
             Require(SceneManager.GetActiveScene().path == ScenePath, "saved integration", "saved MuseumStart loaded", SceneManager.GetActiveScene().path);
             yield return InspectSavedIntegration();
+            yield return RigLifecycleFixture();
             yield return CollisionFixtures();
             yield return CollaborationApiFixtures();
             yield return PrepareProductionInputs();
@@ -232,6 +233,122 @@ namespace Museum.PhysicalHands.EditorTools
                 "saved integration", "helmet has one XRI physics movement owner and the museum grab transformer");
             Require(helmet.GetComponents<Joint>().Length == 0, "saved integration", "helmet has no competing root joint driver");
             yield return null;
+        }
+
+        static IEnumerator RigLifecycleFixture()
+        {
+            var productionControls = UnityEngine.Object.FindObjectsOfType<XRBaseInteractable>(true)
+                .Where(c => c.GetComponent<Museum.Inspection.HelmetInspectionControls>() ||
+                    c.GetComponent<Museum.Exploration.HelmetExplorationButton>())
+                .ToDictionary(c => c, c => c.distanceCalculationMode);
+            Require(productionControls.Values.All(mode => mode == XRBaseInteractable.DistanceCalculationMode.ColliderVolume),
+                "lifecycle fixture", "saved controls already use the active production hand distance mode before isolation");
+
+            fixtureRoot = new GameObject("Physical hands QA rig lifecycle fixture");
+            fixtureRoot.SetActive(false);
+            fixtureRoot.transform.position = new Vector3(130f, 1f, 130f);
+            var managerObject = new GameObject("Fixture lifecycle manager");
+            managerObject.transform.SetParent(fixtureRoot.transform, false);
+            var fixtureManager = managerObject.AddComponent<XRInteractionManager>();
+
+            var localLeft = LifecycleController("Fixture lifecycle left input", new Vector3(-.3f, 0, 0), false, true,
+                fixtureManager, out var localLeftDirect, out var localLeftQuery);
+            var localRight = LifecycleController("Fixture lifecycle right input", new Vector3(.3f, 0, 0), true, false,
+                fixtureManager, out var localRightDirect, out var localRightQuery);
+            Vector3 leftPosition = localLeftDirect.transform.localPosition, rightPosition = localRightDirect.transform.localPosition;
+            Quaternion leftRotation = localLeftDirect.transform.localRotation, rightRotation = localRightDirect.transform.localRotation;
+
+            // A runtime-only inactive template supplies the same component contract
+            // as the saved prefabs, without adding visual/material/import dependencies.
+            var templateObject = new GameObject("Fixture lifecycle inactive hand template");
+            templateObject.SetActive(false); templateObject.transform.SetParent(fixtureRoot.transform, false);
+            var template = templateObject.AddComponent<MuseumPhysicalHand>();
+            var localControl = LifecycleControl("Fixture lifecycle inspection control", fixtureManager, false);
+            var localExploration = LifecycleControl("Fixture lifecycle exploration control", fixtureManager, true);
+            localControl.distanceCalculationMode = XRBaseInteractable.DistanceCalculationMode.ColliderPosition;
+            localExploration.distanceCalculationMode = XRBaseInteractable.DistanceCalculationMode.TransformPosition;
+
+            var fixtureRig = fixtureRoot.AddComponent<MuseumPhysicalHandsRig>();
+            fixtureRig.Configure(localLeft, localRight, template, template);
+            fixtureRig.enabled = false;
+            fixtureRoot.SetActive(true); // Awake must install bindings but honor disabled startup.
+            Require(fixtureRig.LeftHand && fixtureRig.RightHand &&
+                !fixtureRig.LeftHand.gameObject.activeSelf && !fixtureRig.RightHand.gameObject.activeSelf &&
+                Mathf.Abs(localLeftQuery.radius - .1f) < .0001f && Mathf.Abs(localRightQuery.radius - .1f) < .0001f &&
+                !localLeft.hideControllerModel && localRight.hideControllerModel &&
+                localLeftDirect.enabled && !localRightDirect.enabled,
+                "lifecycle fixture", "disabled startup leaves generated hands inactive and restores each query/model/enabled state");
+            Require(localControl.distanceCalculationMode == XRBaseInteractable.DistanceCalculationMode.ColliderPosition &&
+                localExploration.distanceCalculationMode == XRBaseInteractable.DistanceCalculationMode.TransformPosition,
+                "lifecycle fixture", "disabled startup does not alter either control distance mode");
+
+            fixtureRig.LeftHand.SetTrackingOverride(true); fixtureRig.RightHand.SetTrackingOverride(true);
+            fixtureRig.enabled = true;
+            yield return null; // Let actual Start capture control distances.
+            Require(fixtureRig.LeftHand.gameObject.activeSelf && fixtureRig.RightHand.gameObject.activeSelf &&
+                Mathf.Abs(localLeftQuery.radius - fixtureRig.LeftHand.OpenSelectionRadius) < .0001f &&
+                Mathf.Abs(localRightQuery.radius - fixtureRig.RightHand.OpenSelectionRadius) < .0001f &&
+                localLeft.hideControllerModel && localRight.hideControllerModel &&
+                localControl.distanceCalculationMode == XRBaseInteractable.DistanceCalculationMode.ColliderVolume &&
+                localExploration.distanceCalculationMode == XRBaseInteractable.DistanceCalculationMode.ColliderVolume,
+                "lifecycle fixture", "enabling activates both hands, expands the queries and applies ColliderVolume to both control types");
+
+            // Prove that restore uses the authored local pose, not the last proxy pose.
+            localLeftDirect.transform.localPosition += Vector3.one * .03f;
+            localRightDirect.transform.localPosition -= Vector3.one * .03f;
+            localLeftDirect.transform.localRotation = Quaternion.Euler(20, 30, 40);
+            localRightDirect.transform.localRotation = Quaternion.Euler(-20, -30, -40);
+            fixtureRig.enabled = false;
+            Require(!fixtureRig.LeftHand.gameObject.activeSelf && !fixtureRig.RightHand.gameObject.activeSelf &&
+                Mathf.Abs(localLeftQuery.radius - .1f) < .0001f && Mathf.Abs(localRightQuery.radius - .1f) < .0001f &&
+                !localLeft.hideControllerModel && localRight.hideControllerModel &&
+                localLeftDirect.enabled && !localRightDirect.enabled &&
+                Vector3.Distance(localLeftDirect.transform.localPosition, leftPosition) < .0001f &&
+                Vector3.Distance(localRightDirect.transform.localPosition, rightPosition) < .0001f &&
+                Quaternion.Angle(localLeftDirect.transform.localRotation, leftRotation) < .01f &&
+                Quaternion.Angle(localRightDirect.transform.localRotation, rightRotation) < .01f &&
+                localControl.distanceCalculationMode == XRBaseInteractable.DistanceCalculationMode.ColliderPosition &&
+                localExploration.distanceCalculationMode == XRBaseInteractable.DistanceCalculationMode.TransformPosition,
+                "lifecycle fixture", "disabling restores both authored query poses, original enabled/model/radius states and distinct UI modes");
+
+            // Start runs once: OnEnable must reapply modes on the second activation.
+            fixtureRig.enabled = true;
+            Require(localControl.distanceCalculationMode == XRBaseInteractable.DistanceCalculationMode.ColliderVolume &&
+                localExploration.distanceCalculationMode == XRBaseInteractable.DistanceCalculationMode.ColliderVolume,
+                "lifecycle fixture", "reenabling reapplies ColliderVolume after Start has already run");
+            fixtureRig.enabled = false;
+            Require(productionControls.All(pair => !pair.Key || pair.Key.distanceCalculationMode == pair.Value),
+                "lifecycle fixture", "isolated rig activation leaves production controls at their original distance modes");
+            UnityEngine.Object.DestroyImmediate(fixtureRoot); fixtureRoot = null;
+            yield return null;
+        }
+
+        static ActionBasedController LifecycleController(string name, Vector3 position, bool hideModel, bool directEnabled,
+            XRInteractionManager fixtureManager, out XRDirectInteractor direct, out SphereCollider query)
+        {
+            var controllerObject = new GameObject(name); controllerObject.transform.SetParent(fixtureRoot.transform, false);
+            controllerObject.transform.localPosition = position;
+            var controller = controllerObject.AddComponent<ActionBasedController>();
+            controller.enableInputTracking = false; controller.enableInputActions = false; controller.hideControllerModel = hideModel;
+            var queryObject = new GameObject(name + " Direct"); queryObject.transform.SetParent(controllerObject.transform, false);
+            queryObject.transform.localPosition = new Vector3(.02f, -.01f, .05f);
+            queryObject.transform.localRotation = Quaternion.Euler(0, 5, 0);
+            query = queryObject.AddComponent<SphereCollider>(); query.isTrigger = true; query.radius = .1f;
+            var queryBody = queryObject.AddComponent<Rigidbody>(); queryBody.isKinematic = true; queryBody.useGravity = false;
+            direct = queryObject.AddComponent<XRDirectInteractor>(); direct.xrController = controller; direct.interactionManager = fixtureManager;
+            direct.hideControllerOnSelect = false; direct.enabled = directEnabled;
+            return controller;
+        }
+
+        static XRSimpleInteractable LifecycleControl(string name, XRInteractionManager fixtureManager, bool exploration)
+        {
+            var controlObject = new GameObject(name); controlObject.transform.SetParent(fixtureRoot.transform, false);
+            controlObject.transform.localPosition = new Vector3(0, exploration ? 6f : 5f, 0);
+            var collider = controlObject.AddComponent<BoxCollider>(); collider.isTrigger = true; collider.size = Vector3.one * .1f;
+            var interactable = controlObject.AddComponent<XRSimpleInteractable>(); interactable.interactionManager = fixtureManager;
+            if (exploration) controlObject.AddComponent<Museum.Exploration.HelmetExplorationButton>();
+            else controlObject.AddComponent<Museum.Inspection.HelmetInspectionControls>();
+            return interactable;
         }
 
         static IEnumerator CollisionFixtures()
