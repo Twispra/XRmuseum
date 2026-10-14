@@ -24,6 +24,7 @@ namespace Museum.PhysicalHands
         bool isHeld;
 
         public bool IsLeft => left;
+        public float GripAmount => currentGrip;
         public int FingerCount => JointCount / JointsPerFinger;
         public int JointCount => fingerJoints != null ? fingerJoints.Length : 0;
 

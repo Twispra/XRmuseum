@@ -55,6 +55,7 @@ namespace Museum.PhysicalHands
             var visual = result.hand.GetComponentInChildren<MuseumHandVisual>(true);
             result.hand.Configure(result.target, controller, direct, visual, isLeft);
             result.hand.ConfigurePoke(poke);
+            result.hand.ConfigureRays(controller.GetComponentsInChildren<XRRayInteractor>(true));
             // The Direct trigger is a selection affordance, distinct from the smaller solid palm.
             result.triggers = direct.GetComponents<SphereCollider>(); result.radii = new float[result.triggers.Length];
             for (int i = 0; i < result.triggers.Length; i++) { result.radii[i] = result.triggers[i].radius; if (result.triggers[i].isTrigger) result.triggers[i].radius = .145f; }

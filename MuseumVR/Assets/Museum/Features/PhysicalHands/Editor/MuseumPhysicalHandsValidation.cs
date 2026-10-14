@@ -359,6 +359,33 @@ namespace Museum.PhysicalHands.EditorTools
             Record("held object wall blocked", hand, cube, heldPenetration);
             hand.SetTrackingOverride(false); hand.StepPhysics(Time.fixedDeltaTime);
             Require(!cube.isSelected && !direct.hasSelection, "API fixture", "tracking loss releases the selecting interactor");
+            hand.SetTrackingOverride(true);
+            controller.currentControllerState.selectInteractionState.SetFrameState(false);
+            hand.StepPhysics(Time.fixedDeltaTime);
+            var rayObject = new GameObject("Fixture same-controller ray"); rayObject.SetActive(false);
+            rayObject.transform.SetParent(targetObject.transform, false);
+            var ray = rayObject.AddComponent<XRRayInteractor>(); ray.xrController = controller; ray.interactionManager = manager;
+            ray.hideControllerOnSelect = false; ray.selectActionTrigger = XRBaseControllerInteractor.InputTriggerType.State;
+            hand.ConfigureRays(new[] { ray }); rayObject.SetActive(true);
+            var rayTargetObject = Box("Fixture ray-only target", origin + Vector3.right * .5f, Vector3.one * .1f).gameObject;
+            rayTargetObject.SetActive(false);
+            var rayTarget = rayTargetObject.AddComponent<XRSimpleInteractable>(); rayTarget.interactionManager = manager;
+            rayTarget.colliders.Clear(); rayTarget.colliders.Add(rayTargetObject.GetComponent<Collider>());
+            bool rayCanceled = false;
+            rayTarget.selectExited.AddListener(args => rayCanceled = args.isCanceled);
+            rayTargetObject.SetActive(true);
+            controller.currentControllerState.selectInteractionState.SetFrameState(true);
+            manager.SelectEnter((IXRSelectInteractor)ray, rayTarget);
+            Require(rayTarget.IsSelected(ray), "API fixture", "explicit same-controller ray selection exists before the safety cancellation");
+            hand.SetTrackingOverride(false); hand.StepPhysics(Time.fixedDeltaTime);
+            Require(!ray.hasSelection && !rayTarget.isSelected && rayCanceled && !ray.enabled,
+                "API fixture", "tracking loss cancels and disables the same-controller ray instead of issuing a short click");
+            hand.SetTrackingOverride(true); hand.StepPhysics(Time.fixedDeltaTime);
+            Require(ray.enabled && !((IXRSelectFilter)hand).Process(ray, rayTarget),
+                "API fixture", "recovered ray resumes its original enabled state but remains locked while Grip stays held");
+            controller.currentControllerState.selectInteractionState.SetFrameState(false); hand.StepPhysics(Time.fixedDeltaTime);
+            Require(((IXRSelectFilter)hand).Process(ray, rayTarget),
+                "API fixture", "releasing Grip restores ray selection eligibility without a near-grab reach restriction");
             UnityEngine.Object.DestroyImmediate(fixtureRoot); fixtureRoot = null;
             yield return null;
         }

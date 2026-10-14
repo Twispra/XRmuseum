@@ -17,6 +17,8 @@ namespace Museum.PhysicalHands
         [SerializeField] XRDirectInteractor directInteractor;
         [SerializeField] MuseumHandVisual visual;
         XRPokeInteractor pokeInteractor;
+        XRRayInteractor[] rayInteractors = new XRRayInteractor[0];
+        readonly Dictionary<XRRayInteractor, bool> rayEnabled = new Dictionary<XRRayInteractor, bool>();
         Vector3 pokeOffset;
         Quaternion pokeRotation;
         [SerializeField] Transform trackingOrigin;
@@ -94,6 +96,24 @@ namespace Museum.PhysicalHands
             pokeOffset = trackingTarget.InverseTransformPoint(poke.transform.position);
             pokeRotation = Quaternion.Inverse(trackingTarget.rotation) * poke.transform.rotation;
         }
+        public void ConfigureRays(XRRayInteractor[] rays)
+        {
+            bool suspended = queriesSuspended;
+            Unregister();
+            // Relinquish the old set completely before assigning another set of owned queries.
+            if (suspended) ResumeQueries();
+            var owned = new List<XRRayInteractor>();
+            if (rays != null) foreach (var ray in rays)
+            {
+                if (!ray || owned.Contains(ray)) continue;
+                var controller = ray.xrController ? ray.xrController : ray.GetComponentInParent<XRBaseController>();
+                if (inputController && controller != inputController) continue;
+                owned.Add(ray);
+            }
+            rayInteractors = owned.ToArray();
+            Register();
+            if (suspended) SuspendQueries();
+        }
         void Update() => SynchronizeQueries();
         [BeforeRenderOrder(99)]
         void BeforeRender() => SynchronizeQueries();
@@ -119,6 +139,8 @@ namespace Museum.PhysicalHands
             palm.radius = collisionRadius; palm.center = Vector3.zero; palm.isTrigger = false;
             float grip = inputController && inputController.currentControllerState != null ? inputController.currentControllerState.selectInteractionState.value : 0;
             if (held) grip = Mathf.Max(grip, .72f);
+            // Closing follows the visible fingers; opening expands the envelope immediately.
+            if (visual) grip = Mathf.Min(grip, visual.GripAmount);
             float side = left ? 1f : -1f;
             envelope.size = Vector3.Lerp(OpenSize, new Vector3(.12f,.105f,.12f), Mathf.Clamp01(grip));
             envelope.center = Vector3.Lerp(OpenCenter, new Vector3(side*.012f,-.025f,-.006f), Mathf.Clamp01(grip));
@@ -126,18 +148,26 @@ namespace Museum.PhysicalHands
         }
         void Register()
         {
-            if (!directInteractor || filterRegistered) return;
-            directInteractor.selectFilters.Add(this);
-            directInteractor.selectEntered.AddListener(Selected);
-            directInteractor.selectExited.AddListener(Released);
+            if (filterRegistered) return;
+            if (directInteractor)
+            {
+                directInteractor.selectFilters.Add(this);
+                directInteractor.selectEntered.AddListener(Selected);
+                directInteractor.selectExited.AddListener(Released);
+            }
+            foreach (var ray in rayInteractors) if (ray) ray.selectFilters.Add(this);
             filterRegistered = true;
         }
         void Unregister()
         {
-            if (!directInteractor || !filterRegistered) return;
-            directInteractor.selectFilters.Remove(this);
-            directInteractor.selectEntered.RemoveListener(Selected);
-            directInteractor.selectExited.RemoveListener(Released);
+            if (!filterRegistered) return;
+            if (directInteractor)
+            {
+                directInteractor.selectFilters.Remove(this);
+                directInteractor.selectEntered.RemoveListener(Selected);
+                directInteractor.selectExited.RemoveListener(Released);
+            }
+            foreach (var ray in rayInteractors) if (ray) ray.selectFilters.Remove(this);
             filterRegistered = false;
         }
         void FixedUpdate() => StepPhysics(Time.fixedDeltaTime);
@@ -148,7 +178,7 @@ namespace Museum.PhysicalHands
             bool valid = IsTrackingValid;
             if (!valid)
             {
-                if (previousTracking || (directInteractor && directInteractor.hasSelection)) ForceRelease();
+                if (previousTracking || HasOwnedSelection()) ForceRelease();
                 palm.enabled = false; envelope.enabled = false;
                 SuspendQueries();
                 if (visual) visual.gameObject.SetActive(false);
@@ -289,9 +319,15 @@ namespace Museum.PhysicalHands
         void SuspendQueries()
         {
             if (!queriesSuspended)
-            { directWasEnabled = directInteractor && directInteractor.enabled; pokeWasEnabled = pokeInteractor && pokeInteractor.enabled; queriesSuspended = true; }
+            {
+                directWasEnabled = directInteractor && directInteractor.enabled; pokeWasEnabled = pokeInteractor && pokeInteractor.enabled;
+                rayEnabled.Clear();
+                foreach (var ray in rayInteractors) if (ray) rayEnabled[ray] = ray.enabled;
+                queriesSuspended = true;
+            }
             if (directInteractor) directInteractor.enabled = false;
             if (pokeInteractor) pokeInteractor.enabled = false;
+            foreach (var ray in rayInteractors) if (ray) ray.enabled = false;
         }
         void ResumeQueries()
         {
@@ -299,52 +335,106 @@ namespace Museum.PhysicalHands
             queriesSuspended = false;
             if (directInteractor) directInteractor.enabled = directWasEnabled;
             if (pokeInteractor) pokeInteractor.enabled = pokeWasEnabled;
+            foreach (var pair in rayEnabled) if (pair.Key) pair.Key.enabled = pair.Value;
+            rayEnabled.Clear();
+        }
+        bool HasOwnedSelection()
+        {
+            if (directInteractor && directInteractor.hasSelection) return true;
+            foreach (var ray in rayInteractors) if (ray && ray.hasSelection) return true;
+            return false;
         }
         public void ForceRelease()
         {
             releaseRequired = true;
-            if (directInteractor && directInteractor.interactionManager)
+            var selectors = new List<XRBaseControllerInteractor>();
+            if (directInteractor) selectors.Add(directInteractor);
+            foreach (var ray in rayInteractors) if (ray) selectors.Add(ray);
+            var throwStates = new Dictionary<XRGrabInteractable, bool>();
+            foreach (var selector in selectors)
+            foreach (var item in selector.interactablesSelected)
             {
-                var selected = directInteractor.interactablesSelected.ToArray();
-                var throwStates = new Dictionary<XRGrabInteractable, bool>();
-                foreach (var item in selected) if (item is XRGrabInteractable grab) { throwStates[grab] = grab.throwOnDetach; grab.throwOnDetach = false; }
-                try
-                {
-                    // A safety cancellation must not become a short-click on a window or a fling.
-                    directInteractor.interactionManager.CancelInteractorSelection((IXRSelectInteractor)directInteractor);
-                    foreach (var pair in throwStates) if (pair.Key && !pair.Key.isSelected)
-                    {
-                        pair.Key.ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase.Late);
-                        var rb = pair.Key.GetComponent<Rigidbody>();
-                        if (rb && !rb.isKinematic) { rb.velocity = Vector3.zero; rb.angularVelocity = Vector3.zero; }
-                    }
-                }
-                finally { foreach (var pair in throwStates) if (pair.Key) pair.Key.throwOnDetach = pair.Value; }
+                if (item is XRGrabInteractable grab && !throwStates.ContainsKey(grab))
+                { throwStates[grab] = grab.throwOnDetach; grab.throwOnDetach = false; }
             }
+            try
+            {
+                // A safety cancellation must not become a short-click on a window or a fling.
+                foreach (var selector in selectors) if (selector.interactionManager)
+                    selector.interactionManager.CancelInteractorSelection((IXRSelectInteractor)selector);
+                foreach (var pair in throwStates) if (pair.Key && !pair.Key.isSelected)
+                {
+                    pair.Key.ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase.Late);
+                    var rb = pair.Key.GetComponent<Rigidbody>();
+                    if (rb && !rb.isKinematic) { rb.velocity = Vector3.zero; rb.angularVelocity = Vector3.zero; }
+                }
+            }
+            finally { foreach (var pair in throwStates) if (pair.Key) pair.Key.throwOnDetach = pair.Value; }
             held = null; RestoreCollisions();
         }
         bool IXRSelectFilter.Process(IXRSelectInteractor interactor, IXRSelectInteractable interactable)
         {
             if (!IsTrackingValid || releaseRequired) return false;
+            // Rays retain their authored distance/target rules; only physical-hand safety is shared.
+            if (!object.ReferenceEquals(interactor, directInteractor)) return true;
             foreach (var selector in interactable.interactorsSelecting) if (selector == interactor) return true;
             // A trigger volume may overlap a thin wall; reject candidates hidden behind solid geometry.
             var candidate = interactable as XRBaseInteractable;
             if (!candidate) return true;
-            Vector3 nearest = candidate.transform.position; float best = float.MaxValue;
+            if (PreferHeldExhibit(candidate, interactor)) return false;
+            TryNearestPoint(candidate, transform.position, out var nearest);
+            return WithinOpenReach(nearest) && HasLineOfSight(candidate, nearest);
+        }
+        bool PreferHeldExhibit(XRBaseInteractable candidate, IXRSelectInteractor interactor)
+        {
+            if (!object.ReferenceEquals(interactor, directInteractor) ||
+                (!(candidate is Museum.Exploration.HelmetExplorationHotspot) && !candidate.GetComponent<Museum.Hotspots.HelmetHotspot>())) return false;
+            var exhibit = candidate.GetComponentInParent<XRGrabInteractable>();
+            if (!exhibit || !exhibit.isActiveAndEnabled || !exhibit.isSelected || !exhibit.IsSelectableBy(interactor)) return false;
+            bool anotherHand = false;
+            foreach (var selector in exhibit.interactorsSelecting)
+            {
+                if (selector == interactor) continue;
+                var selectorController = (selector as XRBaseControllerInteractor)?.xrController;
+                if (!selectorController) selectorController = selector.transform.GetComponentInParent<XRBaseController>();
+                if (!inputController || selectorController != inputController) { anotherHand = true; break; }
+            }
+            if (!anotherHand) return false;
+            var querySphere = directInteractor.GetComponent<SphereCollider>();
+            if (!querySphere || !querySphere.isTrigger || exhibit.colliders.Count == 0) return false;
+            Vector3 queryCenter = querySphere.transform.TransformPoint(querySphere.center);
+            float queryRadius = querySphere.radius * Mathf.Abs(querySphere.transform.lossyScale.x);
+            if (!TryNearestPoint(exhibit, queryCenter, out var rootNearest, directInteractor.physicsLayerMask)) return false;
+            // A support hand touching an already held exhibit means "take hold", not "open a clue".
+            // Only nearby Direct handovers win; unheld/farther clues and Window/Section/Ray keep their rules.
+            return (rootNearest - queryCenter).sqrMagnitude <= queryRadius * queryRadius &&
+                WithinOpenReach(rootNearest) && HasLineOfSight(exhibit, rootNearest);
+        }
+        static bool TryNearestPoint(XRBaseInteractable candidate, Vector3 origin, out Vector3 nearest, int layerMask = ~0)
+        {
+            nearest = candidate.transform.position; float best = float.MaxValue;
             foreach (var collider in candidate.colliders)
             {
-                if (!collider || !collider.enabled) continue;
-                Vector3 point = collider.ClosestPoint(transform.position);
-                float distance = (point - transform.position).sqrMagnitude;
+                if (!collider || !collider.enabled || !collider.gameObject.activeInHierarchy ||
+                    (layerMask & (1 << collider.gameObject.layer)) == 0) continue;
+                Vector3 point = collider.ClosestPoint(origin);
+                float distance = (point - origin).sqrMagnitude;
                 if (distance < best) { nearest = point; best = distance; }
             }
+            return best < float.MaxValue;
+        }
+        bool WithinOpenReach(Vector3 nearest)
+        {
             // Grip shrinks the physical glove, but must not remove the chance to grab a surface
             // just reached with an open hand. Selection reach therefore uses the fixed open box.
             Vector3 localReach = Quaternion.Inverse(body.rotation) * (nearest - body.position) - OpenCenter;
             Vector3 halfReach = OpenSize * .5f;
             Vector3 outsideReach = new Vector3(Mathf.Max(Mathf.Abs(localReach.x) - halfReach.x, 0f),
                 Mathf.Max(Mathf.Abs(localReach.y) - halfReach.y, 0f), Mathf.Max(Mathf.Abs(localReach.z) - halfReach.z, 0f));
-            if (outsideReach.sqrMagnitude > .025f * .025f) return false;
+            return outsideReach.sqrMagnitude <= .025f * .025f;
+        }
+        bool HasLineOfSight(XRBaseInteractable candidate, Vector3 nearest)
+        {
             Vector3 delta = nearest - transform.position;
             if (delta.sqrMagnitude < .000001f) return true;
             int count = Physics.RaycastNonAlloc(transform.position, delta.normalized, hits, delta.magnitude, obstructionMask, QueryTriggerInteraction.Ignore);
