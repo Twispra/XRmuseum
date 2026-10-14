@@ -81,7 +81,8 @@ namespace Museum.PhysicalHands.EditorTools
                     Vector3 a = test.transform.TransformPoint(entry.vertices[entry.triangles[triangle]]);
                     Vector3 b = test.transform.TransformPoint(entry.vertices[entry.triangles[triangle + 1]]);
                     Vector3 c = test.transform.TransformPoint(entry.vertices[entry.triangles[triangle + 2]]);
-                    Vector3 query = (a + b + c) / 3f + Vector3.Cross(b - a, c - a).normalized * .04f;
+                    Vector3 triangleNormal = Vector3.Cross(b - a, c - a);
+                    Vector3 query = (a + b + c) / 3f + triangleNormal / Mathf.Sqrt(triangleNormal.sqrMagnitude) * .04f;
                     bool resolved = surface.TryGetContact(grab, query, out var contact, out var normal);
                     Require(report, resolved &&
                         !surface.LastContactUsedColliderFallback && Vector3.Distance(query, contact) <= .0402f &&

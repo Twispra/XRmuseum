@@ -45,6 +45,7 @@ namespace Museum.PhysicalHands
             BuildIndex();
         }
 
+        void Awake() => BuildIndex();
         void OnValidate() => indexed = false;
 
         void BuildIndex()
@@ -110,7 +111,8 @@ namespace Museum.PhysicalHands
                     Vector3 contact = ClosestPointOnTriangle(query, a, b, c);
                     float distance = (query - contact).sqrMagnitude;
                     if (distance >= best) continue;
-                    best = distance; point = contact; normal = triangleNormal.normalized;
+                    // Vector3.normalized zeroes small but valid imported triangles.
+                    best = distance; point = contact; normal = triangleNormal / Mathf.Sqrt(triangleNormal.sqrMagnitude);
                     if (Vector3.Dot(normal, query - point) < 0f) normal = -normal;
                     LastContactRenderer = part.renderer;
                 }

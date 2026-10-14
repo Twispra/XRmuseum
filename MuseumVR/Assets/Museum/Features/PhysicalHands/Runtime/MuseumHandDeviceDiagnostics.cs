@@ -109,7 +109,7 @@ namespace Museum.PhysicalHands
             result.tracked = hand.IsTrackingValid; result.blocked = hand.IsBlocked; result.trackingError = hand.TrackingError;
             result.proxy = hand.transform.position; result.target = hand.TrackingTarget ? hand.TrackingTarget.position : hand.transform.position;
             var visual = hand.GetComponentInChildren<MuseumHandVisual>(true);
-            result.visiblePalm = visual ? visual.transform.TransformPoint(new Vector3(0f, -.025f, .045f)) : result.proxy;
+            result.visiblePalm = visual ? visual.transform.TransformPoint(MuseumHandGrabTransformer.PalmContactLocal) : result.proxy;
             result.palmIgnoresBody = character && hand.PalmCollider && Physics.GetIgnoreCollision(hand.PalmCollider, character);
             result.envelopeIgnoresBody = character && hand.CollisionCollider && Physics.GetIgnoreCollision(hand.CollisionCollider, character);
             if (hand.DirectInteractor && hand.DirectInteractor.hasSelection)
