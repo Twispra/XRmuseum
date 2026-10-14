@@ -74,6 +74,12 @@ namespace Museum.PhysicalHands
                 controlDistances[control] = control.distanceCalculationMode;
             }
             SetControlDistances(true);
+            if (Debug.isDebugBuild)
+            {
+                var diagnostics = GetComponent<MuseumHandDeviceDiagnostics>();
+                if (!diagnostics) diagnostics = gameObject.AddComponent<MuseumHandDeviceDiagnostics>();
+                diagnostics.Configure(this, "physical-hands-device-feedback-20261014");
+            }
         }
         void SetControlDistances(bool active)
         {

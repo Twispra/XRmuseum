@@ -32,12 +32,18 @@ namespace Museum.PhysicalHands
         readonly Collider[] overlaps = new Collider[64];
         readonly Dictionary<Collider, bool> ignored = new Dictionary<Collider, bool>();
         readonly Dictionary<Collider, bool> envelopeIgnored = new Dictionary<Collider, bool>();
+        readonly Dictionary<Collider, bool> selfCollisionStates = new Dictionary<Collider, bool>();
+        CharacterController selfCharacterController;
         Rigidbody body;
         SphereCollider palm;
         BoxCollider envelope;
         XRGrabInteractable held;
         Vector3 heldGripLocal;
+        Vector3 heldVisualLocal, heldVisualStartLocal, heldSurfaceLocal;
         Quaternion heldRotationLocal;
+        Quaternion heldVisualStartRotation;
+        float visualGripStarted;
+        bool hasSurfaceGrip;
         Vector3 originPosition;
         Quaternion originRotation;
         bool originReady, filterRegistered, releaseRequired, previousTracking;
@@ -63,10 +69,12 @@ namespace Museum.PhysicalHands
                 Vector3 half = OpenSize * .5f;
                 Vector3 center = OpenCenter;
                 return new Vector3(half.x + Mathf.Abs(center.x), half.y + Mathf.Abs(center.y),
-                    half.z + Mathf.Abs(center.z)).magnitude + .025f;
+                    half.z + Mathf.Abs(center.z)).magnitude + .06f;
             }
         }
         public bool IsBlocked { get; private set; }
+        public bool HasSurfaceGrip => held && hasSurfaceGrip;
+        public Vector3 SurfaceContactPoint => held ? held.transform.TransformPoint(heldSurfaceLocal) : transform.position;
         public float TrackingError => trackingTarget ? Vector3.Distance(trackingTarget.position, body ? body.position : transform.position) : 0f;
         public bool IsTrackingValid => trackingOverride ?? (trackingTarget && (!inputController ||
             (inputController.isActiveAndEnabled && inputController.currentControllerState != null &&
@@ -76,26 +84,29 @@ namespace Museum.PhysicalHands
         bool IXRSelectFilter.canProcess => isActiveAndEnabled;
 
         void Awake() => EnsureBody();
-        void OnEnable() { EnsureBody(); Register(); Application.onBeforeRender += BeforeRender; }
+        void OnEnable() { EnsureBody(); MaintainSelfCollisionIsolation(); Register(); Application.onBeforeRender += BeforeRender; }
         void OnDisable()
         {
             ForceRelease();
             Unregister();
             Application.onBeforeRender -= BeforeRender;
             ResumeQueries(); previousTracking = false; originReady = false;
+            RestoreSelfCollisions();
             if (palm) palm.enabled = false;
             if (envelope) envelope.enabled = false;
             if (visual) visual.gameObject.SetActive(false);
         }
-        void OnDestroy() => RestoreCollisions();
+        void OnDestroy() { RestoreCollisions(); RestoreSelfCollisions(true); }
 
         public void Configure(Transform target, XRBaseController controller, XRDirectInteractor direct, MuseumHandVisual handVisual, bool left)
         {
+            RestoreSelfCollisions(true);
             Unregister();
             trackingTarget = target; inputController = controller; directInteractor = direct; visual = handVisual; this.left = left;
             var origin = controller ? controller.GetComponentInParent<XROrigin>() : null;
             trackingOrigin = origin ? origin.transform : null;
             EnsureBody();
+            BindSelfCollisions(controller ? controller.GetComponentInParent<XROrigin>(true) : null);
             if (target && !Application.isPlaying) { transform.SetPositionAndRotation(target.position, target.rotation); body.position = target.position; body.rotation = target.rotation; }
             if (direct) direct.xrController = controller;
             Register();
@@ -135,6 +146,7 @@ namespace Museum.PhysicalHands
         void BeforeRender() => SynchronizeQueries();
         public void SynchronizeQueries()
         {
+            MaintainSelfCollisionIsolation();
             ObserveRayReleases();
             // Keep authored interactor/group references and hierarchy while moving only their query poses.
             // The separate target never reads these transforms, so there is no tracking feedback loop.
@@ -165,6 +177,35 @@ namespace Museum.PhysicalHands
             envelope.size = Vector3.Lerp(OpenSize, new Vector3(.12f,.105f,.12f), Mathf.Clamp01(grip));
             envelope.center = Vector3.Lerp(OpenCenter, new Vector3(side*.012f,-.025f,-.006f), Mathf.Clamp01(grip));
             envelope.isTrigger = false;
+        }
+        void BindSelfCollisions(XROrigin origin)
+        {
+            selfCharacterController = origin && origin.Origin ? origin.Origin.GetComponent<CharacterController>() : null;
+            if (!selfCharacterController && origin) selfCharacterController = origin.GetComponent<CharacterController>();
+            if (!selfCharacterController) return;
+            if (palm) selfCollisionStates[palm] = Physics.GetIgnoreCollision(palm, selfCharacterController);
+            if (envelope) selfCollisionStates[envelope] = Physics.GetIgnoreCollision(envelope, selfCharacterController);
+            MaintainSelfCollisionIsolation();
+        }
+        void MaintainSelfCollisionIsolation()
+        {
+            if (!isActiveAndEnabled || !selfCharacterController || !selfCharacterController.enabled ||
+                !selfCharacterController.gameObject.activeInHierarchy) return;
+            // Obstacle() excludes the tracking rig only from our software sweeps.
+            // CharacterController.Move also needs native pair isolation, or its
+            // capsule can hit a world-space hand that is still catching up with locomotion.
+            // Keep these saved states separate from the temporary held-object pairs.
+            foreach (var pair in selfCollisionStates)
+                if (pair.Key && pair.Key.enabled && pair.Key.gameObject.activeInHierarchy &&
+                    !Physics.GetIgnoreCollision(pair.Key, selfCharacterController))
+                    Physics.IgnoreCollision(pair.Key, selfCharacterController, true);
+        }
+        void RestoreSelfCollisions(bool forget = false)
+        {
+            if (selfCharacterController) foreach (var pair in selfCollisionStates)
+                if (pair.Key) Physics.IgnoreCollision(pair.Key, selfCharacterController, pair.Value);
+            if (!forget) return;
+            selfCollisionStates.Clear(); selfCharacterController = null;
         }
         void Register()
         {
@@ -222,6 +263,7 @@ namespace Museum.PhysicalHands
                 }
             }
             previousTracking = true; palm.enabled = true; envelope.enabled = true;
+            MaintainSelfCollisionIsolation();
             ResumeQueries();
             if (visual) visual.gameObject.SetActive(true);
             var state = inputController ? inputController.currentControllerState : null;
@@ -307,7 +349,10 @@ namespace Museum.PhysicalHands
             // During a hold, draw the hand at the actual grip, including the object's collision lag.
             if (held && directInteractor && held.IsSelected(directInteractor))
             {
-                visual.transform.SetPositionAndRotation(held.transform.TransformPoint(heldGripLocal), held.transform.rotation * heldRotationLocal);
+                float settle = Mathf.SmoothStep(0f, 1f, Mathf.Clamp01((Time.unscaledTime - visualGripStarted) / .14f));
+                visual.transform.SetPositionAndRotation(
+                    held.transform.TransformPoint(Vector3.Lerp(heldVisualStartLocal, heldVisualLocal, settle)),
+                    held.transform.rotation * Quaternion.Slerp(heldVisualStartRotation, heldRotationLocal, settle));
                 IsBlocked |= Vector3.Distance(visual.transform.position, trackingTarget.position) > .08f;
             }
             else visual.transform.SetPositionAndRotation(transform.position, transform.rotation);
@@ -321,6 +366,21 @@ namespace Museum.PhysicalHands
             if (!held) return;
             heldGripLocal = held.transform.InverseTransformPoint(transform.position);
             heldRotationLocal = Quaternion.Inverse(held.transform.rotation) * transform.rotation;
+            heldVisualStartLocal = heldVisualLocal = heldGripLocal;
+            heldVisualStartRotation = heldRotationLocal;
+            visualGripStarted = Time.unscaledTime; hasSurfaceGrip = false;
+            var surface = held.GetComponent<MuseumGripSurface>();
+            if (surface && surface.TryGetContact(held, transform.position, out var contact, out var normal))
+            {
+                Vector3 fingers = Vector3.ProjectOnPlane(transform.forward, normal);
+                if (fingers.sqrMagnitude < .0001f) fingers = Vector3.ProjectOnPlane(Vector3.up, normal);
+                if (fingers.sqrMagnitude < .0001f) fingers = Vector3.ProjectOnPlane(Vector3.right, normal);
+                Quaternion pose = Quaternion.LookRotation(fingers.normalized, normal);
+                heldSurfaceLocal = held.transform.InverseTransformPoint(contact);
+                heldVisualLocal = held.transform.InverseTransformPoint(contact - pose * MuseumHandGrabTransformer.PalmContactLocal);
+                heldRotationLocal = Quaternion.Inverse(held.transform.rotation) * pose;
+                hasSurfaceGrip = true;
+            }
             foreach (var collider in held.GetComponentsInChildren<Collider>())
             {
                 if (!collider || collider.isTrigger || collider == palm) continue;
@@ -330,7 +390,7 @@ namespace Museum.PhysicalHands
                 Physics.IgnoreCollision(envelope, collider, true);
             }
         }
-        void Released(SelectExitEventArgs args) { held = null; RestoreCollisions(); }
+        void Released(SelectExitEventArgs args) { held = null; hasSurfaceGrip = false; RestoreCollisions(); }
         void RestoreCollisions()
         {
             if (palm) foreach (var pair in ignored) if (pair.Key) Physics.IgnoreCollision(palm, pair.Key, pair.Value);
@@ -436,7 +496,12 @@ namespace Museum.PhysicalHands
             if (!candidate) return true;
             if (PreferHeldExhibit(candidate, interactor)) return false;
             TryNearestPoint(candidate, transform.position, out var nearest);
-            return WithinOpenReach(nearest) && HasLineOfSight(candidate, nearest);
+            return WithinOpenReach(nearest, candidate is XRGrabInteractable ? .06f : .025f) && HasLineOfSight(candidate, nearest);
+        }
+        public bool IsDirectContact(XRBaseInteractable candidate)
+        {
+            return candidate && IsTrackingValid && TryNearestPoint(candidate, transform.position, out var nearest) &&
+                WithinOpenReach(nearest) && HasLineOfSight(candidate, nearest);
         }
         bool PreferHeldExhibit(XRBaseInteractable candidate, IXRSelectInteractor interactor)
         {
@@ -476,7 +541,7 @@ namespace Museum.PhysicalHands
             }
             return best < float.MaxValue;
         }
-        bool WithinOpenReach(Vector3 nearest)
+        bool WithinOpenReach(Vector3 nearest, float reach = .025f)
         {
             // Grip shrinks the physical glove, but must not remove the chance to grab a surface
             // just reached with an open hand. Selection reach therefore uses the fixed open box.
@@ -484,7 +549,7 @@ namespace Museum.PhysicalHands
             Vector3 halfReach = OpenSize * .5f;
             Vector3 outsideReach = new Vector3(Mathf.Max(Mathf.Abs(localReach.x) - halfReach.x, 0f),
                 Mathf.Max(Mathf.Abs(localReach.y) - halfReach.y, 0f), Mathf.Max(Mathf.Abs(localReach.z) - halfReach.z, 0f));
-            return outsideReach.sqrMagnitude <= .025f * .025f;
+            return outsideReach.sqrMagnitude <= reach * reach;
         }
         bool HasLineOfSight(XRBaseInteractable candidate, Vector3 nearest)
         {

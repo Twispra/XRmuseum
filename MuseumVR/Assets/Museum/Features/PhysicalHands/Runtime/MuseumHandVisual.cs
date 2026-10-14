@@ -15,6 +15,7 @@ namespace Museum.PhysicalHands
         [SerializeField] Transform[] fingerJoints = Array.Empty<Transform>();
         [SerializeField] Quaternion[] restRotations = Array.Empty<Quaternion>();
         [SerializeField, Min(1f)] float poseResponse = 18f;
+        [SerializeField, Range(.15f, .65f)] float supportGrip = .4f;
 
         IReadOnlyList<Transform> jointView;
         float targetGrip;
@@ -70,7 +71,9 @@ namespace Museum.PhysicalHands
             ApplyCurrentPose();
         }
 
-        float EffectiveGrip => isHeld ? Mathf.Max(targetGrip, 0.72f) : targetGrip;
+        // A large curved exhibit rests against a half-open supporting hand.
+        // Full controller Grip is selection intent, not an instruction to fist through it.
+        float EffectiveGrip => isHeld ? supportGrip : targetGrip;
 
         void OnEnable()
         {

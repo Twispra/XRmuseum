@@ -137,6 +137,8 @@ namespace Museum.Exploration
             cancelledInteractors.RemoveAll(ReleasedOrGone);
             if (cancelledInteractors.Contains(interactor)) return false;
             if (!rootGrab || rootGrab.IsSelected(interactor)) return true;
+            var physical = Museum.PhysicalHands.MuseumHandGrabTransformer.PhysicalHand(interactor);
+            if (physical && !physical.IsDirectContact(this)) return !isSelected;
             return !isSelected && !(interactor is IXRHoverInteractor hover && IsHovered(hover));
         }
 
