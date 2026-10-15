@@ -34,6 +34,7 @@ namespace Museum.Hotspots
         Color[] explanationLabelColors = Array.Empty<Color>();
         Renderer[] explanationRenderers = Array.Empty<Renderer>();
         Color[] explanationRendererColors = Array.Empty<Color>();
+        XRGrabInteractable helmetGrab;
         bool explanationVisualsCached;
         float explanationElapsed;
         bool explanationCountdownActive;
@@ -98,6 +99,7 @@ namespace Museum.Hotspots
 
         void OnEnable()
         {
+            BindHelmetGrab();
             if (enableTriggerQueries)
                 EnableCompatibleInteractors();
             CacheExplanationVisuals();
@@ -114,7 +116,32 @@ namespace Museum.Hotspots
 
         void OnDisable()
         {
+            UnbindHelmetGrab();
             RestoreInteractorQueries();
+        }
+
+        void BindHelmetGrab()
+        {
+            UnbindHelmetGrab();
+            helmetGrab = GetComponentInParent<XRGrabInteractable>();
+            if (helmetGrab != null)
+                helmetGrab.selectEntered.AddListener(OnHelmetGrabbed);
+        }
+
+        void UnbindHelmetGrab()
+        {
+            if (helmetGrab != null)
+                helmetGrab.selectEntered.RemoveListener(OnHelmetGrabbed);
+            helmetGrab = null;
+        }
+
+        void OnHelmetGrabbed(SelectEnterEventArgs args)
+        {
+            if (selectedIdentifier == null)
+                return;
+            explanationCountdownActive = false;
+            explanationElapsed = 0f;
+            SetExplanationOpacity(0f);
         }
 
         public void RestoreInteractorQueries()

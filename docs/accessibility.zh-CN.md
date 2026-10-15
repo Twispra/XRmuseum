@@ -41,7 +41,7 @@ python artifacts/accessibility/qa/runs/20261010-accessibility-audit/audit_access
 | 2 | 文字对比度（热点面板） | `HotspotPanel` 使用 URP Unlit / Alpha blend，基色 alpha=1、无 BaseMap；选中后 hold 30 s 覆盖后景，接下来的 fade 1 s 才与后景混合 | 分阶段记录；最终对比度未验证 |
 | 3 | 最小可读字号 | 92 个 TMP 组件**全部**开启自动缩放；其中 **21 个把 `fontSizeMin` 设为 ≤0.05（20 个是 0.02）**；最大压缩比 **72.5×**（`HelmetInspectionDemo` 的 `Title`：0.02→1.45） | **风险**：资产层等于没有可读性保护 |
 | 4 | 状态信息冗余 | 热点标记保留 `#1FCCE6`(α0.75) / `#FFAD26`(α1.0) / `#40F280`(α0.85)，并新增悬停外环和已访问勾形标记 | 代码与自动测试通过；真实头显和色觉用户辨识仍未验证 |
-| 5 | 时间限制 | 说明面板 `hold 30 s + fade 1 s` 后淡出；重新选中同一热点会**重启计时**（`RestartExplanationLifetime`） | 有召回路径；窗口长度需真实使用者判断 |
+| 5 | 时间限制 | 说明面板 `hold 30 s + fade 1 s` 后淡出；移动头盔会立即隐藏，重新选中任一热点会重新显示并重启计时 | 有召回路径；窗口长度需真实使用者判断 |
 | 6 | 操作负担 | 射线与直触都能选中；`allowHoveredActivate = true` 允许对已悬停但未 Select 的目标发送 Activate 输入，仍需扳机或握持动作；hover 同时换色并显示外环 | 输入路径存在；操作负担未验证 |
 | 7 | 运动舒适 | 年代切换对绑定渲染器的材质基色施加最低 **0.35** 乘数；脚本内未找到所列相机运动 API | 实现证据；舒适性未验证 |
 | 8 | 复位 | `MuseumStart` 里 `hasConfiguredHome: 1`、`homePosition` (y 1.172, z 3.5)、并存在独立复位脚本 | 通过 |
@@ -129,6 +129,7 @@ fragment 的 alpha 为 `texColor.a * _BaseColor.a`。因此在重新选中后 **
 
 - 说明面板在 `hold 30 s` 后开始淡出、`1 s` 淡完。对阅读慢的使用者这是时间限制，
   但代码里重新选中同一热点会重启计时，因此**存在召回路径**（这一点是正面的）。
+- 选中热点后若开始抓取头盔，说明面板会立即隐藏；松手不会恢复旧说明，必须再次选择热点才会重新显示。
 - `enableTriggerQueries = true` 将触发器碰撞体纳入交互检测。
   `allowHoveredActivate = true` 允许在没有 Select 目标、但有 Hover 目标时向该目标发送 Activate 事件。
   XRI 2.6.4 的 `shouldActivate` 仍要求 `activateInteractionState.activatedThisFrame`；

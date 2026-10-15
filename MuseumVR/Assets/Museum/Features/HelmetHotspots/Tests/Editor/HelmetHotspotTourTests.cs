@@ -118,6 +118,42 @@ namespace Museum.Hotspots.Tests
         }
 
         [Test]
+        public void GrabbingHelmetHidesExplanationUntilAnotherHotspotVisit()
+        {
+            var helmet = new GameObject("Helmet");
+            var grab = helmet.AddComponent<XRGrabInteractable>();
+            root.transform.SetParent(helmet.transform);
+            var panel = new GameObject("Information Panel");
+            panel.transform.SetParent(root.transform);
+            var information = new GameObject("Information").AddComponent<TMPro.TextMeshPro>();
+            information.transform.SetParent(panel.transform);
+            tour.Configure(3, information, null, null);
+            InvokeTourLifecycle(tour, "OnDisable");
+            InvokeTourLifecycle(tour, "OnEnable");
+
+            try
+            {
+                tour.Visit("window", "Window", "View");
+                grab.selectEntered.Invoke(null);
+
+                Assert.That(tour.ExplanationOpacity, Is.Zero);
+                Assert.That(information.color.a, Is.Zero);
+
+                grab.selectExited.Invoke(null);
+                Assert.That(tour.ExplanationOpacity, Is.Zero);
+
+                tour.Visit("shell", "Shell", "View");
+                Assert.That(tour.ExplanationOpacity, Is.EqualTo(1f));
+                Assert.That(information.color.a, Is.EqualTo(1f));
+            }
+            finally
+            {
+                root.transform.SetParent(null);
+                Object.DestroyImmediate(helmet);
+            }
+        }
+
+        [Test]
         public void HotspotActivationMarksItVisited()
         {
             var hotspotObject = new GameObject("Window Hotspot");
@@ -317,6 +353,11 @@ namespace Museum.Hotspots.Tests
             typeof(HelmetHotspot).GetMethod(callback, System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).Invoke(hotspot, null);
         }
 
+        static void InvokeTourLifecycle(HelmetHotspotTour target, string callback)
+        {
+            typeof(HelmetHotspotTour).GetMethod(callback, System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic).Invoke(target, null);
+        }
+
         [Test]
         public void StandalonePrefabContainsThreeSelectableHotspots()
         {
@@ -396,6 +437,30 @@ namespace Museum.Hotspots.Tests
             Assert.That(sceneTour, Is.Not.Null);
             Assert.That(sceneTour.transform.IsChildOf(exhibit.transform), Is.True);
             Assert.That(sceneTour.GetComponentsInChildren<HelmetHotspot>(true).Length, Is.EqualTo(3));
+        }
+
+        [Test]
+        public void MainSceneHelmetGrabHidesExplanationUntilNextVisit()
+        {
+            EditorSceneManager.OpenScene("Assets/Museum/Scenes/MuseumStart.unity", OpenSceneMode.Single);
+
+            var sceneTour = Object.FindObjectOfType<HelmetHotspotTour>(true);
+            Assert.That(sceneTour, Is.Not.Null);
+            var grab = sceneTour.GetComponentInParent<XRGrabInteractable>();
+            Assert.That(grab, Is.Not.Null);
+            InvokeTourLifecycle(sceneTour, "OnDisable");
+            InvokeTourLifecycle(sceneTour, "OnEnable");
+
+            sceneTour.Visit("window", "Window", "View");
+            grab.selectEntered.Invoke(null);
+
+            Assert.That(sceneTour.ExplanationOpacity, Is.Zero);
+
+            grab.selectExited.Invoke(null);
+            Assert.That(sceneTour.ExplanationOpacity, Is.Zero);
+
+            sceneTour.Visit("shell", "Shell", "View");
+            Assert.That(sceneTour.ExplanationOpacity, Is.EqualTo(1f));
         }
 
         [Test]

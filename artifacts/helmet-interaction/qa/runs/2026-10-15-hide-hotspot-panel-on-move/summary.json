@@ -1,0 +1,30 @@
+{
+  "baseCommit": "4d8796bbeeabd44f28517f52d16e4dcc5b84a0c8",
+  "branch": "codex/hide-hotspot-panel-on-move",
+  "unity": "2022.3.62f3c1",
+  "platform": "Windows Editor",
+  "hotspotTests": {
+    "total": 23,
+    "passed": 23,
+    "failed": 0,
+    "skipped": 0,
+    "results": "hotspot-tests.xml"
+  },
+  "tdd": {
+    "syntheticHierarchyFailedBeforeFix": true,
+    "savedMainSceneFailedBeforeFix": true,
+    "bothPassedAfterFix": true
+  },
+  "mainIntegration": {
+    "status": "blocked by baseline failure",
+    "failure": "ordinary shell remains directly grabbable",
+    "sameFailureWithoutRuntimeChange": true,
+    "reportsCommitted": false
+  },
+  "notVerified": [
+    "physical headset and controller",
+    "stereo readability",
+    "current Windows build",
+    "user study"
+  ]
+}
