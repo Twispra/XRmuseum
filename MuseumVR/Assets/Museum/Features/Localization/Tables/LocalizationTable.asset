@@ -328,7 +328,7 @@ MonoBehaviour:
     chinese: "\u6307\u5411\u540E\u6309 G \u9009\u62E9"
     english: Point + G to select
     traditionalChinese: "\u6307\u5411\u5F8C\u6309 G \u9078\u64C7"
-    note: Visitor-facing exhibit copy; translated from existing English.
+    note: Unity Editor XR simulator instruction; physical VR controllers use inspection.status.select.vr.
   - key: text.d410e11b1b05
     chinese: "\u6765\u81EA\u6C34\u9762\u7684\u7A7A\u6C14"
     english: Air from the surface
@@ -686,7 +686,7 @@ MonoBehaviour:
     traditionalChinese: "\u5148\u9EDE\u64CA Game \u756B\u9762\u3002\nT / Y\uFF1A\u9078\u64C7\u5DE6
       / \u53F3\u63A7\u5236\u5668\u3002\n\u6307\u5411\u5F8C\u6309 G\uFF1A\u9078\u64C7\u6309\u9215\u3002\n\u6309\u4F4F
       G \u6293\u53D6\uFF0C\u9B06\u958B\u5373\u53EF\u653E\u4E0B\u3002\nHome\uFF1A\u982D\u76D4\u5FA9\u4F4D\u3002"
-    note: Visitor-facing exhibit copy; translated from existing English.
+    note: Unity Editor XR simulator Help; physical VR controllers use inspection.help.vr.
   - key: text.cbda5237f43b
     chinese: "\u8BBE\u5907\u7C7B\u578B\u7ECF\u8FC7\u6559\u5B66\u7B80\u5316\u3002\n\u4E0D\u662F\u7CBE\u786E\u914D\u5957\u88C5\u5907\u7684\u590D\u539F\u3002\n\u672A\u91CD\u5EFA\u771F\u5B9E\u5934\u76D4\u7684\u5B8C\u6574\u5185\u90E8\u6784\u9020\u3002\n\n"
     english: 'Equipment types, simplified.
@@ -1212,4 +1212,14 @@ MonoBehaviour:
     traditionalChinese: "\u901A\u4FE1\u4F4D\u7F6E\uFF08\u793A\u610F\uFF09"
     note: The model has no confirmed telephone posts. This endpoint is a teaching
       position; no mechanical fitting is identified as a telephone part.
+  - key: inspection.status.select.vr
+    chinese: "\u6307\u5411\u540E\u6309\u63E1\u628A\u952E\u9009\u62E9"
+    english: "Point + grip to select"
+    traditionalChinese: "\u6307\u5411\u5F8C\u6309\u63E1\u628A\u9375\u9078\u64C7"
+    note: Visitor instruction for physical VR controllers; Unity Editor keeps its keyboard simulator hint.
+  - key: inspection.help.vr
+    chinese: "\u6307\u5411\u6309\u94AE\u5E76\u6309\u63E1\u628A\u952E\uFF1A\u9009\u62E9\u3002\n\u6309\u4F4F\u63E1\u628A\u952E\uFF1A\u6293\u53D6\u5934\u76D4\u3002\n\u677E\u5F00\u63E1\u628A\u952E\uFF1A\u653E\u4E0B\u5934\u76D4\u3002\n\u5728\u89C2\u5BDF\u9875\u9009\u62E9 Reset\uFF1A\u5934\u76D4\u590D\u4F4D\u3002"
+    english: "Point + grip: select a button.\nHold grip: grab the helmet.\nRelease grip: put it down.\nIn Inspect, select Reset for the helmet."
+    traditionalChinese: "\u6307\u5411\u6309\u9215\u4E26\u6309\u63E1\u628A\u9375\uFF1A\u9078\u64C7\u3002\n\u6309\u4F4F\u63E1\u628A\u9375\uFF1A\u6293\u53D6\u982D\u76D4\u3002\n\u9B06\u958B\u63E1\u628A\u9375\uFF1A\u653E\u4E0B\u982D\u76D4\u3002\n\u5728\u89C0\u5BDF\u9801\u9078\u64C7 Reset\uFF1A\u982D\u76D4\u5FA9\u4F4D\u3002"
+    note: Visitor Help in a VR player build; no Unity Editor keyboard shortcuts.
   fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}

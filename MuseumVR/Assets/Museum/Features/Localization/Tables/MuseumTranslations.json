@@ -439,7 +439,7 @@
       "english": "Point + G to select",
       "chinese": "指向后按 G 选择",
       "traditionalChinese": "指向後按 G 選擇",
-      "note": "Visitor-facing exhibit copy; translated from existing English."
+      "note": "Unity Editor XR simulator instruction; physical VR controllers use inspection.status.select.vr."
     },
     {
       "key": "text.d410e11b1b05",
@@ -894,7 +894,7 @@
       "english": "Click Game to focus.\nT / Y: choose a controller.\nPoint + G: select a button.\nHold G: grab; release to let go.\nHome: reset the helmet.",
       "chinese": "先点击 Game 画面。\nT / Y：选择左 / 右控制器。\n指向后按 G：选择按钮。\n按住 G 抓取，松开即可放下。\nHome：头盔复位。",
       "traditionalChinese": "先點擊 Game 畫面。\nT / Y：選擇左 / 右控制器。\n指向後按 G：選擇按鈕。\n按住 G 抓取，鬆開即可放下。\nHome：頭盔復位。",
-      "note": "Visitor-facing exhibit copy; translated from existing English."
+      "note": "Unity Editor XR simulator Help; physical VR controllers use inspection.help.vr."
     },
     {
       "key": "text.cbda5237f43b",
@@ -1469,6 +1469,20 @@
       "chinese": "通信位置（示意）",
       "traditionalChinese": "通信位置（示意）",
       "note": "The model has no confirmed telephone posts. This endpoint is a teaching position; no mechanical fitting is identified as a telephone part."
+    },
+    {
+      "key": "inspection.status.select.vr",
+      "english": "Point + grip to select",
+      "chinese": "指向后按握把键选择",
+      "traditionalChinese": "指向後按握把鍵選擇",
+      "note": "Visitor instruction for physical VR controllers; Unity Editor keeps its keyboard simulator hint."
+    },
+    {
+      "key": "inspection.help.vr",
+      "english": "Point + grip: select a button.\nHold grip: grab the helmet.\nRelease grip: put it down.\nIn Inspect, select Reset for the helmet.",
+      "chinese": "指向按钮并按握把键：选择。\n按住握把键：抓取头盔。\n松开握把键：放下头盔。\n在观察页选择 Reset：头盔复位。",
+      "traditionalChinese": "指向按鈕並按握把鍵：選擇。\n按住握把鍵：抓取頭盔。\n鬆開握把鍵：放下頭盔。\n在觀察頁選擇 Reset：頭盔復位。",
+      "note": "Visitor Help in a VR player build; no Unity Editor keyboard shortcuts."
     }
   ]
 }
