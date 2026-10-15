@@ -1,0 +1,186 @@
+{
+  "testedCommit": "0bc65cd972c2d77fabf20adbd10319524d630e19",
+  "utc": "2026-10-14T11:40:04.1147205Z",
+  "checkedFiles": 284,
+  "differences": [],
+  "trackedDiff": null,
+  "packageMappings": [
+    {
+      "path": "Packages/com.unity.inputsystem/InputSystem/Actions/InputActionAsset.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.inputsystem@1.14.0\\InputSystem\\Actions\\InputActionAsset.cs"
+    },
+    {
+      "path": "Packages/com.unity.inputsystem/InputSystem/Actions/InputActionReference.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.inputsystem@1.14.0\\InputSystem\\Actions\\InputActionReference.cs"
+    },
+    {
+      "path": "Packages/com.unity.inputsystem/InputSystem/Editor/AssetImporter/InputActionImporter.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.inputsystem@1.14.0\\InputSystem\\Editor\\AssetImporter\\InputActionImporter.cs"
+    },
+    {
+      "path": "Packages/com.unity.inputsystem/InputSystem/Editor/Icons/TrackedPoseDriver@4x.png",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.inputsystem@1.14.0\\InputSystem\\Editor\\Icons\\TrackedPoseDriver@4x.png"
+    },
+    {
+      "path": "Packages/com.unity.inputsystem/InputSystem/Plugins/XR/TrackedPoseDriver.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.inputsystem@1.14.0\\InputSystem\\Plugins\\XR\\TrackedPoseDriver.cs"
+    },
+    {
+      "path": "Packages/com.unity.render-pipelines.universal/Editor/AssetVersion.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.render-pipelines.universal@14.0.12\\Editor\\AssetVersion.cs"
+    },
+    {
+      "path": "Packages/com.unity.render-pipelines.universal/Runtime/Materials/Lit.mat",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.render-pipelines.universal@14.0.12\\Runtime\\Materials\\Lit.mat"
+    },
+    {
+      "path": "Packages/com.unity.render-pipelines.universal/Runtime/UniversalAdditionalCameraData.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.render-pipelines.universal@14.0.12\\Runtime\\UniversalAdditionalCameraData.cs"
+    },
+    {
+      "path": "Packages/com.unity.render-pipelines.universal/Runtime/UniversalAdditionalLightData.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.render-pipelines.universal@14.0.12\\Runtime\\UniversalAdditionalLightData.cs"
+    },
+    {
+      "path": "Packages/com.unity.render-pipelines.universal/Shaders/Lit.shader",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.render-pipelines.universal@14.0.12\\Shaders\\Lit.shader"
+    },
+    {
+      "path": "Packages/com.unity.render-pipelines.universal/Shaders/Unlit.shader",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.render-pipelines.universal@14.0.12\\Shaders\\Unlit.shader"
+    },
+    {
+      "path": "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Font Asset Icon.psd",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.textmeshpro@3.0.7\\Editor Resources\\Gizmos\\TMP - Font Asset Icon.psd"
+    },
+    {
+      "path": "Packages/com.unity.textmeshpro/Editor Resources/Gizmos/TMP - Text Component Icon.psd",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.textmeshpro@3.0.7\\Editor Resources\\Gizmos\\TMP - Text Component Icon.psd"
+    },
+    {
+      "path": "Packages/com.unity.textmeshpro/Scripts/Runtime/TextMeshPro.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.textmeshpro@3.0.7\\Scripts\\Runtime\\TextMeshPro.cs"
+    },
+    {
+      "path": "Packages/com.unity.textmeshpro/Scripts/Runtime/TMP_FontAsset.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.textmeshpro@3.0.7\\Scripts\\Runtime\\TMP_FontAsset.cs"
+    },
+    {
+      "path": "Packages/com.unity.ugui/Runtime/UI/Core/GraphicRaycaster.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\GraphicRaycaster.cs"
+    },
+    {
+      "path": "Packages/com.unity.ugui/Runtime/UI/Core/Image.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Image.cs"
+    },
+    {
+      "path": "Packages/com.unity.ugui/Runtime/UI/Core/Layout/CanvasScaler.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.ugui@1.0.0\\Runtime\\UI\\Core\\Layout\\CanvasScaler.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.core-utils/Runtime/XROrigin.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.core-utils@2.5.2\\Runtime\\XROrigin.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Inputs/InputActionManager.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Inputs\\InputActionManager.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Inputs/XRInputModalityManager.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Inputs\\XRInputModalityManager.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Inputs/XRTransformStabilizer.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Inputs\\XRTransformStabilizer.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Controllers/ActionBasedController.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Interaction\\Controllers\\ActionBasedController.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactables/XRGrabInteractable.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Interaction\\Interactables\\XRGrabInteractable.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactables/XRSimpleInteractable.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Interaction\\Interactables\\XRSimpleInteractable.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/Visual/XRInteractorLineVisual.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Interaction\\Interactors\\Visual\\XRInteractorLineVisual.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRDirectInteractor.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Interaction\\Interactors\\XRDirectInteractor.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRGazeInteractor.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Interaction\\Interactors\\XRGazeInteractor.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRInteractionGroup.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Interaction\\Interactors\\XRInteractionGroup.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRPokeInteractor.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Interaction\\Interactors\\XRPokeInteractor.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Interactors/XRRayInteractor.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Interaction\\Interactors\\XRRayInteractor.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/Overrides/XRGazeAssistance.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Interaction\\Overrides\\XRGazeAssistance.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Interaction/XRInteractionManager.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Interaction\\XRInteractionManager.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/CharacterControllerDriver.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Locomotion\\CharacterControllerDriver.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Climb/ClimbProvider.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Locomotion\\Climb\\ClimbProvider.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Climb/ClimbTeleportInteractor.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Locomotion\\Climb\\ClimbTeleportInteractor.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Continuous/ActionBasedContinuousTurnProvider.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Locomotion\\Continuous\\ActionBasedContinuousTurnProvider.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Grab/GrabMoveProvider.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Locomotion\\Grab\\GrabMoveProvider.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Grab/TwoHandedGrabMoveProvider.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Locomotion\\Grab\\TwoHandedGrabMoveProvider.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/LocomotionSystem.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Locomotion\\LocomotionSystem.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/SnapTurn/ActionBasedSnapTurnProvider.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Locomotion\\SnapTurn\\ActionBasedSnapTurnProvider.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/GazeTeleportationAnchorFilter.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Locomotion\\Teleportation\\GazeTeleportationAnchorFilter.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/TeleportationArea.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Locomotion\\Teleportation\\TeleportationArea.cs"
+    },
+    {
+      "path": "Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/Teleportation/TeleportationProvider.cs",
+      "resolved": "MuseumVR\\Library\\PackageCache\\com.unity.xr.interaction.toolkit@2.6.4\\Runtime\\Locomotion\\Teleportation\\TeleportationProvider.cs"
+    }
+  ],
+  "verification": "Scene dependencies plus recovery runtime, panel, validator and package manifests match final report after Editor exit. Virtual Packages paths resolve through matching packages-lock versions in Library/PackageCache."
+}

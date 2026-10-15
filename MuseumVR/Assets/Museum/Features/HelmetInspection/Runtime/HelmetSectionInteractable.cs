@@ -16,6 +16,8 @@ namespace Museum.Inspection
         Renderer[] guideRenderers;
         Vector3 initialHandPosition, initialPlanePoint, initialHandlePosition;
         Quaternion initialHandRotation, initialPlaneRotation;
+        Vector3 initialHandPositionLocal, initialPlanePointLocal, initialHandlePositionLocal;
+        Quaternion initialHandRotationLocal, initialPlaneRotationLocal;
         Vector3 visualOffsetInPlane;
         Vector3 guideNormalLocal, guideRightLocal;
         bool guideFrameReady;
@@ -96,11 +98,30 @@ namespace Museum.Inspection
             SetVisible(true);
             if (activeInteractor != null && TryGetHandPose(activeInteractor, out var position, out var rotation))
             {
-                Quaternion delta = rotation * Quaternion.Inverse(initialHandRotation);
-                // Keep the initial handle-to-plane offset: a ray grab never snaps the guide onto the hand.
-                Vector3 anchor = initialHandlePosition + (position - initialHandPosition);
-                Vector3 point = anchor + delta * (initialPlanePoint - initialHandlePosition);
-                Quaternion rotationInWorld = delta * initialPlaneRotation;
+                Quaternion delta;
+                Vector3 point;
+                Quaternion rotationInWorld;
+                if (controller.AllowHeldChildInteraction)
+                {
+                    // Solve relative to the helmet. Carrying both hands and the
+                    // exhibit together preserves the local cut; moving either
+                    // hand relative to the helmet deliberately edits it.
+                    Vector3 handLocal = controller.transform.InverseTransformPoint(position);
+                    Quaternion handRotationLocal = Quaternion.Inverse(controller.transform.rotation) * rotation;
+                    delta = handRotationLocal * Quaternion.Inverse(initialHandRotationLocal);
+                    Vector3 anchorLocal = initialHandlePositionLocal + (handLocal - initialHandPositionLocal);
+                    Vector3 pointLocal = anchorLocal + delta * (initialPlanePointLocal - initialHandlePositionLocal);
+                    point = controller.transform.TransformPoint(pointLocal);
+                    rotationInWorld = controller.transform.rotation * delta * initialPlaneRotationLocal;
+                }
+                else
+                {
+                    delta = rotation * Quaternion.Inverse(initialHandRotation);
+                    // A ray grab never snaps the guide onto the hand.
+                    Vector3 anchor = initialHandlePosition + (position - initialHandPosition);
+                    point = anchor + delta * (initialPlanePoint - initialHandlePosition);
+                    rotationInWorld = delta * initialPlaneRotation;
+                }
                 controller.SetSectionFromWorldPose(point, rotationInWorld);
                 // A normal alone loses wrist roll. Keep the whole hand-driven frame for release/regrab.
                 RememberGuideFrame(rotationInWorld);
@@ -128,6 +149,11 @@ namespace Museum.Inspection
             initialPlanePoint = controller.transform.TransformPoint(controller.SectionPointLocal);
             initialPlaneRotation = PlaneRotation();
             initialHandlePosition = handle != null ? handle.position : transform.position;
+            initialHandPositionLocal = controller.transform.InverseTransformPoint(initialHandPosition);
+            initialHandRotationLocal = Quaternion.Inverse(controller.transform.rotation) * initialHandRotation;
+            initialPlanePointLocal = controller.SectionPointLocal;
+            initialHandlePositionLocal = controller.transform.InverseTransformPoint(initialHandlePosition);
+            initialPlaneRotationLocal = Quaternion.Inverse(controller.transform.rotation) * initialPlaneRotation;
             controller.BeginSectionInteraction();
         }
         protected override void OnSelectExited(SelectExitEventArgs args)
@@ -157,10 +183,7 @@ namespace Museum.Inspection
             cancelledInteractors.RemoveAll(HasReleasedOrDisappeared);
             foreach (var cancelled in cancelledInteractors)
             {
-                if (cancelled == interactor) return false;
-                // Direct and ray interactors on one physical hand share the same grip.
-                var hand = cancelled.transform.GetComponentInParent<XRBaseController>();
-                if (hand != null && interactor != null && interactor.transform.GetComponentInParent<XRBaseController>() == hand) return false;
+                if (HelmetInspectionController.SamePhysicalHand(cancelled, interactor)) return false;
             }
             return true;
         }

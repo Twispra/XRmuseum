@@ -1,0 +1,11 @@
+{
+  "testedCommit": "0bc65cd972c2d77fabf20adbd10319524d630e19",
+  "unity": "2022.3.62f3c1",
+  "focusedChecks": 86,
+  "focusedFailed": 0,
+  "runtimeErrors": 0,
+  "focusedFailure": "",
+  "mainRegression": "Failed both on PR candidate and untouched main; see main-regression-comparison.json",
+  "inputMethod": "Edit Mode public-API height fixtures; saved MuseumStart queued synthetic HMD/controller/keyboard states in normal Dynamic input updates through production Input Actions and XR ray selection. Late-camera fixture clones only the Play Mode palette. No manual SelectEnter, HoverEnter, TriggerProgrammatically or InputSystem.Update calls.",
+  "limitations": "No real headset/controller, comfort, learning study or executable build verification. Floor/Device pose fixtures are labelled separately from main-scene synthetic input. Input injection refuses a real InputSystem XRHMD. Product scene, prefab and input assets are never saved."
+}

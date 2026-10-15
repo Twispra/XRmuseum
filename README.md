@@ -1,6 +1,6 @@
 # XRmuseum
 
-COMP5424 Extended Reality 博物馆小组作业的 Unity 工程与协作文档。
+COMP5424 Extended Reality 博物馆**group2**小组作业的 Unity 工程与协作文档。
 
 多人 / Codex 开工：先读 [AGENTS.md](AGENTS.md) → [当前状态与下一步](docs/project-state.md) → 对应 [Issue](https://github.com/Twispra/XRmuseum/issues) / PR。当前分支的功能不一定已合入 `main`；状态页区分主线、候选成果和仅本地改动。
 

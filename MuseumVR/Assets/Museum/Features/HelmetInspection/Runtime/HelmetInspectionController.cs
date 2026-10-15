@@ -16,6 +16,7 @@ namespace Museum.Inspection
         [SerializeField] float openAngleSign = -1f;
         [SerializeField, Min(1f)] float windowSpeed = 150f;
         [SerializeField] bool reduceMotion;
+        [SerializeField] bool allowHeldChildInteraction;
         static readonly int CutEnabledId = Shader.PropertyToID("_CutEnabled");
         static readonly int CutPlaneId = Shader.PropertyToID("_CutPlane");
         static readonly int HoverId = Shader.PropertyToID("_Hover");
@@ -35,6 +36,7 @@ namespace Museum.Inspection
         bool clipDirty = true, boundsReady, filterRegistered;
         bool interactionBodyPinned, pinnedWasKinematic, pinnedUsedGravity, windowPinOwner, sectionPinOwner;
         bool initialPhysicsCaptured, initialIsKinematic, initialUseGravity, previousThrowOnDetach;
+        bool rootGrabRestorePhysics, rootDropWasKinematic, rootDropUsedGravity;
 
         public float WindowAngle { get; private set; }
         public bool IsCutaway { get; private set; }
@@ -50,6 +52,7 @@ namespace Museum.Inspection
         }
         public Transform WindowPivot => windowPivot;
         public bool ReduceMotion { get => reduceMotion; set => reduceMotion = value; }
+        public bool AllowHeldChildInteraction => allowHeldChildInteraction;
         public int ResetCount => exhibitReset != null ? exhibitReset.ResetCount : 0;
         public Vector3 SectionNormalLocal => sectionNormalLocal;
         public Vector3 SectionCenterLocal { get { EnsureSectionBounds(); return sectionCenterLocal; } }
@@ -76,6 +79,8 @@ namespace Museum.Inspection
         {
             EnsureReferences();
             if (!filterRegistered) { grab.selectFilters.Add(this); filterRegistered = true; }
+            grab.selectEntered.AddListener(OnRootSelected);
+            grab.selectExited.AddListener(OnRootReleased);
             observedResetCount = exhibitReset.ResetCount;
             clipDirty = true;
         }
@@ -84,6 +89,11 @@ namespace Museum.Inspection
             CancelChildInteractions();
             if (grab != null && grab.isSelected && exhibitReset != null) exhibitReset.ResetToDisplay();
             RestoreInspectionState();
+            if (grab != null)
+            {
+                grab.selectEntered.RemoveListener(OnRootSelected);
+                grab.selectExited.RemoveListener(OnRootReleased);
+            }
         }
         void OnDestroy()
         {
@@ -120,6 +130,13 @@ namespace Museum.Inspection
             ApplyWindowAngle(WindowAngle);
             ApplyCutawayProperties();
             SetWindowHover(false);
+        }
+        /// <summary>Opt in per exhibit; isolated legacy scenes retain their original mutual exclusion.</summary>
+        public void ConfigureHandCollaboration(bool enabled)
+        {
+            if (allowHeldChildInteraction == enabled) return;
+            if (IsWindowHeld || IsSectionHeld) CancelChildInteractions();
+            allowHeldChildInteraction = enabled;
         }
         public void ToggleWindow() => SetWindowOpen(targetWindowAngle < MaximumWindowAngle * .5f);
         public void SetWindowOpen(bool open, bool immediate = false)
@@ -250,18 +267,19 @@ namespace Museum.Inspection
         {
             if (!isActiveAndEnabled || interactor == null || (interactor is Object obj && obj == null)) return false;
             EnsureReferences();
-            if (grab == null || exhibitReset == null || IsHeld) return false;
+            if (grab == null || exhibitReset == null) return false;
+            if (IsHeld && (!allowHeldChildInteraction || SameHandSelecting(grab, interactor))) return false;
             var resetFilter = (IXRSelectFilter)exhibitReset;
             return !resetFilter.canProcess || resetFilter.Process(interactor, grab);
         }
-        internal void BeginWindowInteraction() { targetWindowAngle = WindowAngle; windowPinOwner = true; PinBody(); }
+        internal void BeginWindowInteraction() { targetWindowAngle = WindowAngle; windowPinOwner = true; if (!IsHeld) PinBody(); }
         internal void EndWindowInteraction() { windowPinOwner = false; if (!sectionPinOwner) UnpinBody(); }
-        internal void BeginSectionInteraction() { sectionPinOwner = true; PinBody(); }
+        internal void BeginSectionInteraction() { sectionPinOwner = true; if (!IsHeld) PinBody(); }
         internal void EndSectionInteraction() { sectionPinOwner = false; if (!windowPinOwner) UnpinBody(); }
         void PinBody()
         {
             EnsureReferences();
-            if (interactionBodyPinned) return;
+            if (interactionBodyPinned || IsHeld || IsReturning || !isActiveAndEnabled) return;
             pinnedWasKinematic = body.isKinematic;
             pinnedUsedGravity = body.useGravity;
             ClearVelocity();
@@ -277,6 +295,57 @@ namespace Museum.Inspection
             body.isKinematic = IsFloating || pinnedWasKinematic;
             body.useGravity = !IsFloating && pinnedUsedGravity;
             ClearVelocity();
+        }
+        void OnRootSelected(SelectEnterEventArgs args)
+        {
+            if (!interactionBodyPinned) return;
+            // XRI has already run SetupRigidbodyGrab before selectEntered. Relinquish
+            // the pin without overwriting its movement mode, gravity or live velocity.
+            // Its cached drop pose was pinned, so remember the true unpinned baseline.
+            rootDropWasKinematic = pinnedWasKinematic;
+            rootDropUsedGravity = pinnedUsedGravity;
+            rootGrabRestorePhysics = true;
+            interactionBodyPinned = false;
+        }
+        void OnRootReleased(SelectExitEventArgs args)
+        {
+            if (IsHeld) return;
+            if (rootGrabRestorePhysics)
+            {
+                rootGrabRestorePhysics = false;
+                body.isKinematic = IsFloating || rootDropWasKinematic;
+                body.useGravity = !IsFloating && rootDropUsedGravity;
+            }
+            if (!isActiveAndEnabled || (!windowPinOwner && !sectionPinOwner) || IsReturning) return;
+            var resetFilter = (IXRSelectFilter)exhibitReset;
+            // A forced reset owns the root and will cancel the child interactions.
+            if (resetFilter.canProcess && !resetFilter.Process(args.interactorObject, grab)) return;
+            // Drop queues a throw until LateUpdate. Drain it before making the body
+            // kinematic, so an ongoing child grip never produces a throw or warning.
+            bool throwOnDetach = grab.throwOnDetach;
+            grab.throwOnDetach = false;
+            try { grab.ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase.Late); }
+            finally { grab.throwOnDetach = throwOnDetach; }
+            PinBody();
+        }
+        internal static bool SamePhysicalHand(IXRSelectInteractor first, IXRSelectInteractor second)
+        {
+            if (first == null || second == null) return false;
+            if (first == second) return true;
+            // Physics proxies need not be children of the tracked controller. XRI's
+            // explicit controller reference also unifies direct/ray on the same hand.
+            var firstController = (first as XRBaseControllerInteractor)?.xrController;
+            var secondController = (second as XRBaseControllerInteractor)?.xrController;
+            if (firstController == null) firstController = first.transform.GetComponentInParent<XRBaseController>();
+            if (secondController == null) secondController = second.transform.GetComponentInParent<XRBaseController>();
+            return firstController != null && firstController == secondController;
+        }
+        static bool SameHandSelecting(IXRSelectInteractable target, IXRSelectInteractor interactor)
+        {
+            if (target == null) return false;
+            foreach (var selected in target.interactorsSelecting)
+                if (SamePhysicalHand(selected, interactor)) return true;
+            return false;
         }
         internal void SetWindowHover(bool hovered)
         {
@@ -297,7 +366,8 @@ namespace Museum.Inspection
             if (grab != null && !grab.IsSelected(interactor) && interactor is IXRHoverInteractor hover &&
                 ((windowInteraction != null && windowInteraction.IsHovered(hover)) ||
                  (sectionInteraction != null && IsCutaway && sectionInteraction.ShowTool && sectionInteraction.IsHovered(hover)))) return false;
-            return !IsWindowHeld && !IsSectionHeld && !interactionBodyPinned;
+            if (!allowHeldChildInteraction) return !IsWindowHeld && !IsSectionHeld && !interactionBodyPinned;
+            return !SameHandSelecting(windowInteraction, interactor) && !SameHandSelecting(sectionInteraction, interactor);
         }
         void EnsureReferences()
         {

@@ -204,6 +204,13 @@
       "note": "Visitor-facing exhibit copy; translated from existing English."
     },
     {
+      "key": "view.reset",
+      "english": "Reset View",
+      "chinese": "重置视角",
+      "traditionalChinese": "重設視角",
+      "note": "Return the visitor view to its starting position without resetting the exhibit or visit progress."
+    },
+    {
       "key": "text.19734a1b58ca",
       "english": "Window",
       "chinese": "前窗",
@@ -891,9 +898,9 @@
     },
     {
       "key": "text.5a418305a621",
-      "english": "Click Game to focus.\nT / Y: choose a controller.\nPoint + G: select a button.\nHold G: grab; release to let go.\nHome: reset the helmet.",
-      "chinese": "先点击 Game 画面。\nT / Y：选择左 / 右控制器。\n指向后按 G：选择按钮。\n按住 G 抓取，松开即可放下。\nHome：头盔复位。",
-      "traditionalChinese": "先點擊 Game 畫面。\nT / Y：選擇左 / 右控制器。\n指向後按 G：選擇按鈕。\n按住 G 抓取，鬆開即可放下。\nHome：頭盔復位。",
+      "english": "Click Game to focus.\nT / Y: choose a controller.\nPoint + G: select a button.\nHold G: grab; release to let go.\nHome / Inspect Reset: reset helmet.\nReset View: return to start.",
+      "chinese": "先点击 Game 画面。\nT / Y：选择左 / 右控制器。\n指向后按 G：选择按钮。\n按住 G 抓取，松开即可放下。\nHome / 观察页 Reset：头盔复位。\n重置视角：回到起点。",
+      "traditionalChinese": "先點擊 Game 畫面。\nT / Y：選擇左 / 右控制器。\n指向後按 G：選擇按鈕。\n按住 G 抓取，鬆開即可放下。\nHome / 觀察頁 Reset：頭盔復位。\n重設視角：回到起點。",
       "note": "Unity Editor XR simulator Help; physical VR controllers use inspection.help.vr."
     },
     {
@@ -1479,9 +1486,9 @@
     },
     {
       "key": "inspection.help.vr",
-      "english": "Point + grip: select a button.\nHold grip: grab the helmet.\nRelease grip: put it down.\nIn Inspect, select Reset for the helmet.",
-      "chinese": "指向按钮并按握把键：选择。\n按住握把键：抓取头盔。\n松开握把键：放下头盔。\n在观察页选择 Reset：头盔复位。",
-      "traditionalChinese": "指向按鈕並按握把鍵：選擇。\n按住握把鍵：抓取頭盔。\n鬆開握把鍵：放下頭盔。\n在觀察頁選擇 Reset：頭盔復位。",
+      "english": "Point + grip: select a button.\nHold grip: grab the helmet.\nRelease grip: put it down.\nInspect Reset: reset the helmet.\nReset View: return to start.",
+      "chinese": "指向按钮并按握把键：选择。\n按住握把键：抓取头盔。\n松开握把键：放下头盔。\n观察页 Reset：头盔复位。\n重置视角：回到起点。",
+      "traditionalChinese": "指向按鈕並按握把鍵：選擇。\n按住握把鍵：抓取頭盔。\n鬆開握把鍵：放下頭盔。\n觀察頁 Reset：頭盔復位。\n重設視角：回到起點。",
       "note": "Visitor Help in a VR player build; no Unity Editor keyboard shortcuts."
     }
   ]
