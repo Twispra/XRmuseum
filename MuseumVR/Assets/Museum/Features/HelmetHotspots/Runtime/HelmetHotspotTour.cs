@@ -34,6 +34,14 @@ namespace Museum.Hotspots
         Color[] explanationLabelColors = Array.Empty<Color>();
         Renderer[] explanationRenderers = Array.Empty<Renderer>();
         Color[] explanationRendererColors = Array.Empty<Color>();
+        XRGrabInteractable helmetGrab;
+        Transform explanationHelmet;
+        Vector3 explanationHelmetPosition;
+        Quaternion explanationHelmetRotation;
+        // Ignore sub-millimetre pose noise, but compare against the selection pose
+        // rather than the previous frame so slow continuous movement still hides.
+        const float MovementDistance = .002f;
+        const float MovementAngle = .5f;
         bool explanationVisualsCached;
         float explanationElapsed;
         bool explanationCountdownActive;
@@ -91,6 +99,7 @@ namespace Museum.Hotspots
             informationEnglish = Prompt;
             explanationCountdownActive = false;
             explanationElapsed = 0f;
+            explanationHelmet = null;
             SetExplanationOpacity(1f);
             RefreshText();
             ResetPerformed?.Invoke();
@@ -98,6 +107,7 @@ namespace Museum.Hotspots
 
         void OnEnable()
         {
+            BindHelmetGrab();
             if (enableTriggerQueries)
                 EnableCompatibleInteractors();
             CacheExplanationVisuals();
@@ -112,9 +122,50 @@ namespace Museum.Hotspots
             UpdateHotspotVisibilityFromRays();
         }
 
+        void LateUpdate()
+        {
+            if (!explanationCountdownActive || explanationHelmet == null)
+                return;
+            // Turn/Tilt, physics and the smooth return can move the whole helmet
+            // without a grab event. Sample after their Update work, before rendering.
+            if ((explanationHelmet.position - explanationHelmetPosition).sqrMagnitude > MovementDistance * MovementDistance ||
+                Quaternion.Angle(explanationHelmet.rotation, explanationHelmetRotation) > MovementAngle)
+                HideExplanation();
+        }
+
         void OnDisable()
         {
+            UnbindHelmetGrab();
             RestoreInteractorQueries();
+        }
+
+        void BindHelmetGrab()
+        {
+            UnbindHelmetGrab();
+            helmetGrab = GetComponentInParent<XRGrabInteractable>();
+            if (helmetGrab != null)
+                helmetGrab.selectEntered.AddListener(OnHelmetGrabbed);
+        }
+
+        void UnbindHelmetGrab()
+        {
+            if (helmetGrab != null)
+                helmetGrab.selectEntered.RemoveListener(OnHelmetGrabbed);
+            helmetGrab = null;
+        }
+
+        void OnHelmetGrabbed(SelectEnterEventArgs args)
+        {
+            if (selectedIdentifier == null)
+                return;
+            HideExplanation();
+        }
+
+        void HideExplanation()
+        {
+            explanationCountdownActive = false;
+            explanationElapsed = 0f;
+            SetExplanationOpacity(0f);
         }
 
         public void RestoreInteractorQueries()
@@ -203,6 +254,13 @@ namespace Museum.Hotspots
 
         void RestartExplanationLifetime()
         {
+            var grab = GetComponentInParent<XRGrabInteractable>();
+            explanationHelmet = grab != null ? grab.transform : null;
+            if (explanationHelmet != null)
+            {
+                explanationHelmetPosition = explanationHelmet.position;
+                explanationHelmetRotation = explanationHelmet.rotation;
+            }
             explanationElapsed = 0f;
             explanationCountdownActive = true;
             SetExplanationOpacity(1f);
