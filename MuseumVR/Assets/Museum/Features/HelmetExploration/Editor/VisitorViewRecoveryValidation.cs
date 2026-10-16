@@ -255,14 +255,27 @@ namespace Museum.Exploration.Editor
             var channel = MuseumText.Channel; var saved = channel.Current;
             var languages = new[] { MuseumLanguage.English, MuseumLanguage.Chinese, MuseumLanguage.TraditionalChinese };
             var captions = new[] { "Reset View", "重置视角", "重設視角" };
+            var helmetHelp = new[] { "Inspect Reset: reset helmet.", "观察页 Reset：头盔复位。", "觀察頁 Reset：頭盔復位。" };
+            var helmetHelpVr = new[] { "Inspect Reset: reset the helmet.", "观察页 Reset：头盔复位。", "觀察頁 Reset：頭盔復位。" };
+            var viewHelp = new[] { "Reset View: return to start.", "重置视角：回到起点。", "重設視角：回到起點。" };
+            var table = AssetDatabase.LoadAssetAtPath<LocalizationTable>("Assets/Museum/Features/Localization/Tables/LocalizationTable.asset");
             try
             {
+                panel.ShowHelp();
                 for (int i = 0; i < languages.Length; i++)
                 {
                     channel.SetLanguage(languages[i]); yield return Wait(.1f);
                     var center = Center(); var label = center.transform.parent.Find("Exploration CENTER label").GetComponent<TextMeshPro>();
                     label.ForceMeshUpdate();
                     CheckResult(label.text == captions[i], languages[i] + ": recovery caption", label.text);
+                    var body = panel.GetComponentsInChildren<TextMeshPro>(false).Single(t => t.name == "Exploration explanation");
+                    body.ForceMeshUpdate();
+                    CheckResult(body.text.Contains(helmetHelp[i]) && body.text.Contains(viewHelp[i]),
+                        languages[i] + ": Editor Help distinguishes helmet and view reset", body.text);
+                    CheckResult(!body.isTextOverflowing, languages[i] + ": Editor Help fits text rectangle", "font=" + body.fontSize);
+                    var vrHelp = table.Get("inspection.help.vr", languages[i]);
+                    CheckResult(vrHelp.Contains(helmetHelpVr[i]) && vrHelp.Contains(viewHelp[i]),
+                        languages[i] + ": saved VR Help distinguishes helmet and view reset", vrHelp);
                     foreach (char character in captions[i].Where(c => !char.IsWhiteSpace(c)).Distinct())
                         CheckResult(label.font.HasCharacter(character, false, false), languages[i] + ": saved glyph U+" + ((int)character).ToString("X4"), label.font.name);
                     foreach (string name in new[] { "Exploration INSPECT label", "Exploration EXPLORE label", "Exploration HELP label", "Exploration CENTER label" })
@@ -273,7 +286,7 @@ namespace Museum.Exploration.Editor
                     CaptureTabs(languages[i].ToString());
                 }
             }
-            finally { channel.SetLanguage(saved); }
+            finally { panel.CloseReading(); channel.SetLanguage(saved); }
         }
         static void CaptureTabs(string language)
         {
