@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -34,6 +35,8 @@ namespace Museum.Inspection.Editor
         const string RunIdKey = "Museum.HelmetInspectionQA.RunId";
         const string ProvenanceKey = "Museum.HelmetInspectionQA.Provenance";
         const string ScenePathKey = "Museum.HelmetInspectionQA.ScenePath";
+        const string PendingExitKey = "Museum.HelmetInspectionQA.PendingExit";
+        const string ExitNotBeforeKey = "Museum.HelmetInspectionQA.ExitNotBefore";
         const string MainScenePath = "Assets/Museum/Scenes/MuseumStart.unity";
         const double BatchExitSettleSeconds = 20;
         static string ScenePath => SessionState.GetString(ScenePathKey, HelmetInspectionBuilder.ScenePath);
@@ -56,8 +59,25 @@ namespace Museum.Inspection.Editor
         static Rigidbody body;
         static Collider[] helmetColliders;
         static double started;
-        static double exitNotBefore;
-        static int pendingBatchExit = -1;
+        // SessionState survives a script reload during the post-Play import window.
+        static int PendingBatchExit
+        {
+            get => SessionState.GetInt(PendingExitKey, -1);
+            set => SessionState.SetInt(PendingExitKey, value);
+        }
+        static double ExitNotBefore
+        {
+            get
+            {
+                if (double.TryParse(SessionState.GetString(ExitNotBeforeKey, ""), NumberStyles.Float,
+                    CultureInfo.InvariantCulture, out double deadline) && !double.IsNaN(deadline) && !double.IsInfinity(deadline))
+                    return deadline;
+                deadline = EditorApplication.timeSinceStartup + BatchExitSettleSeconds;
+                ExitNotBefore = deadline;
+                return deadline;
+            }
+            set => SessionState.SetString(ExitNotBeforeKey, value.ToString("R", CultureInfo.InvariantCulture));
+        }
         static int lastFrame = -1;
         static bool finishing;
         static Vector3 homePosition;
@@ -173,7 +193,7 @@ namespace Museum.Inspection.Editor
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode)
                 throw new InvalidOperationException("Run helmet validation from Edit Mode.");
-            pendingBatchExit = -1;
+            PendingBatchExit = -1;
             // Do not save a user's dirty scene as a side effect of an acceptance test.
             if (!batch && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
             SessionState.SetString(ScenePathKey, scenePath);
@@ -372,9 +392,9 @@ namespace Museum.Inspection.Editor
                     // Match the other acceptance runners: returning to Edit Mode
                     // still queues imports and native render/worker cleanup. An
                     // immediate Exit can finish every check yet spin in shutdown.
-                    pendingBatchExit = code < 0 ? 1 : code;
-                    exitNotBefore = EditorApplication.timeSinceStartup + BatchExitSettleSeconds;
-                    Debug.Log("HELMET_INSPECTION_BATCH_SETTLING code=" + pendingBatchExit +
+                    ExitNotBefore = EditorApplication.timeSinceStartup + BatchExitSettleSeconds;
+                    PendingBatchExit = code < 0 ? 1 : code;
+                    Debug.Log("HELMET_INSPECTION_BATCH_SETTLING code=" + PendingBatchExit +
                         "; seconds=" + BatchExitSettleSeconds + "; utc=" + DateTime.UtcNow.ToString("o"));
                 }
             }
@@ -384,12 +404,12 @@ namespace Museum.Inspection.Editor
         {
             // Keep pumping Editor updates after Active is cleared; never block the
             // main thread while the asset pipeline and workers finish their work.
-            if (pendingBatchExit >= 0)
+            if (PendingBatchExit >= 0)
             {
-                if (EditorApplication.timeSinceStartup < exitNotBefore || EditorApplication.isCompiling ||
+                if (EditorApplication.timeSinceStartup < ExitNotBefore || EditorApplication.isCompiling ||
                     EditorApplication.isUpdating || EditorApplication.isPlayingOrWillChangePlaymode) return;
-                int code = pendingBatchExit;
-                pendingBatchExit = -1;
+                int code = PendingBatchExit;
+                PendingBatchExit = -1;
                 Debug.Log("HELMET_INSPECTION_BATCH_SETTLED_EXIT code=" + code + "; utc=" + DateTime.UtcNow.ToString("o"));
                 EditorApplication.Exit(code);
                 return;
@@ -431,7 +451,7 @@ namespace Museum.Inspection.Editor
             {
                 string failure = exception.ToString();
                 if (exception.Message.Contains("Physical palm did not arrive"))
-                    failure += "\n" + PalmObstacles(rightController);
+                    failure += "\n" + PalmObstacles(rightController) + "\n" + PalmObstacles(leftController);
                 Finish(failure);
             }
         }
@@ -446,7 +466,7 @@ namespace Museum.Inspection.Editor
                 .Where(c => c && !c.transform.IsChildOf(hand.transform))
                 .Select(c => c.name + " [" + c.GetType().Name + "; center=" + c.bounds.center +
                     "; size=" + c.bounds.size + "; body=" + (c.attachedRigidbody ? c.attachedRigidbody.name : "static") + "]");
-            return "Palm nearby solids: " + string.Join("; ", nearby);
+            return controller.name + " palm nearby solids: " + string.Join("; ", nearby);
         }
 
         static IEnumerator Validate()
@@ -688,7 +708,10 @@ namespace Museum.Inspection.Editor
             yield return Wait(.4f);
             QueueRight(touch,Quaternion.identity,false);
             yield return Wait(.2f);
-            QueueRight(touch+new Vector3(.65f,.3f,-.4f),Quaternion.identity,false);
+            // Withdraw on the same side as RootTouch. A diagonal move across the
+            // shell can leave the collision proxy blocked before the next grip.
+            QueueRight(touch + helmet.transform.rotation * Vector3.left * .35f,Quaternion.identity,false);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase + " / release withdraw");
             yield return Wait(1.3f);
             var settled=body.position;
             yield return Wait(.2f);
