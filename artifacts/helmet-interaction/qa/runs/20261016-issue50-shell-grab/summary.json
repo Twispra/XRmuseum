@@ -1,0 +1,63 @@
+{
+  "base": "6b6eefe5ef49af932c375c99b5c8581e376acb8b",
+  "mainScene": {
+    "checks": 84730,
+    "report": "main-validation-summary.json",
+    "status": "passed",
+    "failed": 0,
+    "errors": 0,
+    "exitCode": 0,
+    "warnings": 0
+  },
+  "limitations": [
+    "Automated synthetic poses and stated fixture paths only; physical headset/controller feel, comfort, performance and user research unverified",
+    "Inspection207behavior assertions passed twice, but neither batch process exited normally; shutdown anomaly remains unresolved",
+    "Windows build succeeded but player was not launched",
+    "Issue50 broader device feedback stays open; this PR is only the ordinary-shell grab fix",
+    "Raw19MBmain report, logs and screenshots remain local; bounded report excerpts include originalSHA256"
+  ],
+  "scope": "Restore ordinary shell Direct grabs during non-contact child hover; retain child contact priority",
+  "inspection": {
+    "checksPerRun": 207,
+    "reports": [
+      "inspection-main-report.json",
+      "inspection-main-retry-report.json"
+    ],
+    "errors": 0,
+    "exitCodes": [
+      -1,
+      -1
+    ],
+    "normalExit": false,
+    "behaviorStatus": "passed in two runs",
+    "reason": "Both completed behavior reports then stalled in native shutdown; only verified owned batch processes were stopped"
+  },
+  "physicalHands": {
+    "checks": 182,
+    "report": "physical-hands-report.json",
+    "status": "passed",
+    "failed": 0,
+    "errors": 0,
+    "exitCode": 0,
+    "warnings": 0
+  },
+  "issue": 50,
+  "unity": "2022.3.62f3c1",
+  "sourceVerification": {
+    "checkedFiles": 1139,
+    "mismatches": []
+  },
+  "testedCommit": "62c299462f53dd214f50b4ee77a1db997a7f1121",
+  "windowsBuild": {
+    "errors": 0,
+    "exitCode": 0,
+    "totalBytes": 214112679,
+    "result": "Succeeded",
+    "warnings": 2,
+    "report": "windows-build-report.json",
+    "playerStarted": false,
+    "files": 272,
+    "exeSha256": "fa01ccdbaa5f74c777609235b99ba8988285b2bf0754445e85bba268b2e61eb7",
+    "exe": "E:\\Codex\\Builds\\XRmuseum\\issue50-shell-grab-20261016-62c2994\\MuseumVR.exe"
+  }
+}

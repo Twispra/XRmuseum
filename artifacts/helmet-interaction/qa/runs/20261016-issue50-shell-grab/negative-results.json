@@ -1,0 +1,35 @@
+{
+  "intermediate": {
+    "errors": [],
+    "warnings": [],
+    "checks": 1283,
+    "rawSha256": "45e3d7bb57d256bf870016426ee6e8ff0323c1db0c69baff7618912f056d8519",
+    "failed": [
+      {
+        "kind": "helmet hotspots",
+        "name": "panel glyphs clear of solid scene geometry / smooth-return-progress-3/before/Progress",
+        "detail": "Right Physical Hand",
+        "passed": false
+      }
+    ],
+    "commit": "dd122531aaff382295fef6b669865414af8e91cb",
+    "status": "failed"
+  },
+  "baseline": {
+    "errors": [],
+    "warnings": [],
+    "checks": 1082,
+    "rawSha256": "2a4db16b5dd16c44dcadd81b5d3ab97bea7d50e5f5761a4aec4e20e1d47efcc2",
+    "failed": [
+      {
+        "kind": "helmet hotspots",
+        "name": "ordinary shell remains directly grabbable",
+        "detail": "before grip: target=(-0.21, 1.27, 3.50); proxy=(-0.21, 1.27, 3.50); query=(-0.21, 1.27, 3.50); error=0; tracked=True; blocked=False; grip=0.000; selectActive=False; handFilter=True; selectPossible=False; group=Direct Interactor; candidates=HelmetExhibit,Air connection clue,Front Window Hinge; selected=; rootHovered=True; inspectionFilter=False; Front Window Hinge hovered=True, contact=False, selected=False; Section Plane Tool hovered=False, contact=False, selected=False; after grip: target=(-0.21, 1.27, 3.50); proxy=(-0.21, 1.27, 3.50); query=(-0.21, 1.27, 3.50); error=0; tracked=True; blocked=False; grip=1.000; selectActive=False; handFilter=True; selectPossible=False; group=Direct Interactor; candidates=HelmetExhibit,Air connection clue,Front Window Hinge; selected=; rootHovered=True; inspectionFilter=False; Front Window Hinge hovered=True, contact=False, selected=False; Section Plane Tool hovered=False, contact=False, selected=False",
+        "passed": false
+      }
+    ],
+    "commit": "d7fb14406f8153fad30ca52759897fa8db39e4d9",
+    "status": "failed"
+  },
+  "note": "Negative evidence only; original main runtime in baseline, diagnostics added without changing input or assertions. Full raw reports remain local."
+}

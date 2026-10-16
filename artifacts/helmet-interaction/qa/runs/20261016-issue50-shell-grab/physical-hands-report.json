@@ -1,0 +1,1708 @@
+{
+    "status": "passed",
+    "failure": "",
+    "utc": "2026-10-16T05:43:38.0517997Z",
+    "commit": "62c299462f53dd214f50b4ee77a1db997a7f1121",
+    "branch": "codex/issue-50-shell-grab-2026-10-16",
+    "dirty": "?? artifacts/helmet-interaction/qa/runs/20261014-pr51-fix/baseline-process.json\n?? artifacts/helmet-interaction/qa/runs/20261014-pr51-fix/focused-final-process.json\n?? artifacts/helmet-interaction/qa/runs/20261014-pr51-fix/focused-trilingual-process.json\n?? artifacts/helmet-interaction/qa/runs/20261014-pr51-fix/height-fix-process.json\n?? artifacts/helmet-interaction/qa/runs/20261014T112308187Z-view-recovery-a788ca6e4d064152938859d6791b38df/report.json\n?? artifacts/helmet-interaction/qa/runs/20261014T112640696Z-view-recovery-477033fc164947c69e9aae16d2f13355/report.json\n?? artifacts/helmet-interaction/qa/runs/20261014T113248132Z-view-recovery-0e4aacd20e6f449e98b8d4a545d220a1/report.json\n?? artifacts/helmet-interaction/qa/runs/20261014T113248132Z-view-recovery-0e4aacd20e6f449e98b8d4a545d220a1/tabs-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261014T113248132Z-view-recovery-0e4aacd20e6f449e98b8d4a545d220a1/tabs-English.png\n?? artifacts/helmet-interaction/qa/runs/20261014T113248132Z-view-recovery-0e4aacd20e6f449e98b8d4a545d220a1/tabs-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261016-issue50-shell-grab/baseline-process.json\n?? artifacts/helmet-interaction/qa/runs/20261016-issue50-shell-grab/baseline-report.json\n?? artifacts/helmet-interaction/qa/runs/20261016-issue50-shell-grab/final-main-process.json\n?? artifacts/helmet-interaction/qa/runs/20261016-issue50-shell-grab/final-source-fingerprints.json\n?? artifacts/helmet-interaction/qa/runs/20261016-issue50-shell-grab/fixed-main-process.json\n?? artifacts/helmet-interaction/qa/runs/20261016-issue50-shell-grab/fixed-source-fingerprints.json\n?? artifacts/helmet-interaction/qa/runs/20261016-issue50-shell-grab/inspection-main-process.json\n?? artifacts/helmet-interaction/qa/runs/20261016-issue50-shell-grab/inspection-main-report.json\n?? artifacts/helmet-interaction/qa/runs/20261016-issue50-shell-grab/inspection-shutdown-local.json\n?? artifacts/helmet-interaction/qa/runs/20261016-issue50-shell-grab/intermediate-hand-parking-report.json\n?? artifacts/helmet-interaction/qa/runs/20261016-issue50-shell-grab/main-hotspot-interaction.json\n?? artifacts/helmet-interaction/qa/runs/20261016-issue50-shell-grab/main-validation-summary.json\n?? artifacts/helmet-interaction/qa/runs/20261016-issue50-shell-grab/negative-results.json\n?? artifacts/helmet-interaction/qa/runs/20261016T050410817Z-view-recovery-bcb3aad425d848a884e5e7aefc22e6c6/report.json\n?? artifacts/helmet-interaction/qa/runs/20261016T050410817Z-view-recovery-bcb3aad425d848a884e5e7aefc22e6c6/tabs-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261016T050410817Z-view-recovery-bcb3aad425d848a884e5e7aefc22e6c6/tabs-English.png\n?? artifacts/helmet-interaction/qa/runs/20261016T050410817Z-view-recovery-bcb3aad425d848a884e5e7aefc22e6c6/tabs-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261016T052022055Z-view-recovery-26845e56f91b4a8e9fb130575580ae9c/report.json\n?? artifacts/helmet-interaction/qa/runs/20261016T052022055Z-view-recovery-26845e56f91b4a8e9fb130575580ae9c/tabs-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261016T052022055Z-view-recovery-26845e56f91b4a8e9fb130575580ae9c/tabs-English.png\n?? artifacts/helmet-interaction/qa/runs/20261016T052022055Z-view-recovery-26845e56f91b4a8e9fb130575580ae9c/tabs-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261016T053802827Z-inspection-main-8718c79ef13c4426a8b076affef6ed74/00-startup-controls.jpg\n?? artifacts/helmet-interaction/qa/runs/20261016T053802827Z-inspection-main-8718c79ef13c4426a8b076affef6ed74/05-oblique-cut.jpg\n?? artifacts/helmet-interaction/qa/runs/20261016T053802827Z-inspection-main-8718c79ef13c4426a8b076affef6ed74/06-floating-tilted.jpg\n?? artifacts/helmet-interaction/qa/runs/20261016T053802827Z-inspection-main-8718c79ef13c4426a8b076affef6ed74/07-view-0.jpg\n?? artifacts/helmet-interaction/qa/runs/20261016T053802827Z-inspection-main-8718c79ef13c4426a8b076affef6ed74/07-view-1.jpg\n?? artifacts/helmet-interaction/qa/runs/20261016T053802827Z-inspection-main-8718c79ef13c4426a8b076affef6ed74/07-view-2.jpg\n?? artifacts/helmet-interaction/qa/runs/20261016T053802827Z-inspection-main-8718c79ef13c4426a8b076affef6ed74/08-view-aligned-interior.jpg\n?? artifacts/helmet-interaction/qa/runs/20261016T053802827Z-inspection-main-8718c79ef13c4426a8b076affef6ed74/09-deeper-section.jpg\n?? artifacts/helmet-interaction/qa/runs/20261016T053802827Z-inspection-main-8718c79ef13c4426a8b076affef6ed74/report.json\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/diagram-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/diagram-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/diagram-zh-production.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/hotspot-interaction.json\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/hotspots-direct-progress-0-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/hotspots-direct-progress-0-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/hotspots-direct-progress-0-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/hotspots-direct-progress-3-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/hotspots-direct-progress-3-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/hotspots-direct-progress-3-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/initial-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/initial-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/initial-en-production.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/report.json\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/restored-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/restored-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/restored-en-production.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/restored-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/restored-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/restored-zh-production.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/selected-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/selected-zh-hant-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/selected-zh-hant-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/selected-zh-hant-production.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/selected-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261014T112752922Z-integration-d7ea7c95efe24d6c876feb8e956393a6/selected-zh-production.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/diagram-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/diagram-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/diagram-zh-production.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/hotspot-interaction.json\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/hotspots-direct-progress-0-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/hotspots-direct-progress-0-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/hotspots-direct-progress-0-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/hotspots-direct-progress-3-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/hotspots-direct-progress-3-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/hotspots-direct-progress-3-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/initial-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/initial-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/initial-en-production.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/report.json\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/restored-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/restored-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/restored-en-production.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/restored-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/restored-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/restored-zh-production.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/selected-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/selected-zh-hant-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/selected-zh-hant-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/selected-zh-hant-production.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/selected-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261014T113039667Z-integration-ec50d010b5224221bad32aa2a7e7f305/selected-zh-production.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/diagram-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/diagram-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/diagram-zh-production.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/hotspot-interaction.json\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/hotspots-direct-progress-0-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/hotspots-direct-progress-0-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/hotspots-direct-progress-0-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/hotspots-direct-progress-3-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/hotspots-direct-progress-3-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/hotspots-direct-progress-3-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/initial-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/initial-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/initial-en-production.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/report.json\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/restored-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/restored-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/restored-en-production.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/restored-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/restored-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/restored-zh-production.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/selected-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/selected-zh-hant-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/selected-zh-hant-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/selected-zh-hant-production.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/selected-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T052914562Z-integration-8d85c0ff6a77442eaa511e49a16bd5e3/selected-zh-production.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/diagram-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/diagram-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/diagram-zh-production.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/hotspot-interaction.json\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/hotspots-direct-progress-0-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/hotspots-direct-progress-0-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/hotspots-direct-progress-0-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/hotspots-direct-progress-3-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/hotspots-direct-progress-3-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/hotspots-direct-progress-3-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/initial-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/initial-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/initial-en-production.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/report.json\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/restored-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/restored-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/restored-en-production.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/restored-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/restored-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/restored-zh-production.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/selected-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/selected-zh-hant-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/selected-zh-hant-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/selected-zh-hant-production.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/selected-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T053156208Z-integration-b938d97510ea405fb62e20a2ba5c7ffd/selected-zh-production.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/diagram-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/diagram-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/diagram-zh-production.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/hotspot-interaction.json\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/hotspots-direct-progress-0-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/hotspots-direct-progress-0-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/hotspots-direct-progress-0-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/hotspots-direct-progress-3-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/hotspots-direct-progress-3-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/hotspots-direct-progress-3-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/initial-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/initial-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/initial-en-production.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/report.json\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/restored-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/restored-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/restored-en-production.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/restored-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/restored-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/restored-zh-production.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/selected-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/selected-zh-hant-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/selected-zh-hant-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/selected-zh-hant-production.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/selected-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261016T053501959Z-integration-b0aecf4bf3b34fd4a819bb424e9fb5ca/selected-zh-production.png\n?? docs/activity/2026-10-16-issue50-shell-grab.md",
+    "unity": "2022.3.62f3c1",
+    "environment": "Windows 11  (10.0.26200) 64bit; AMD Ryzen 7 5800H with Radeon Graphics ; NVIDIA GeForce RTX 3070 Laptop GPU",
+    "method": "Saved MuseumStart integration; isolated swept kinematic glove envelope and XRInteractionManager API fixtures; explicit root/window/section ownership and relative-pose checks; separate XRSimulatedController Grip -> saved input actions -> ActionBasedController -> saved physical hand/direct interactor -> helmet/window. Home uses synthetic keyboard input. No scene saves.",
+    "limits": "Desktop synthetic inputs and explicit API fixtures only. Not real headset/controller tracking, finger tracking, hand comfort, perceived weight, stereo visual acceptance, device performance, accessibility/user research, or an executable build. Collision checks use the simplified box glove envelope spanning the palm and preset finger space, not individual articulated finger colliders. They cover the recorded wall/table fixtures and exercised saved exhibit paths, not absolute nonpenetration for every geometry/speed. API collaboration fixtures use authored local poses and synchronous manager calls; they do not establish physical input usability. Hidden batch frames are paced near 90 Hz; elapsed time is harness time, not a performance benchmark.",
+    "durationSeconds": 14.45734691619873,
+    "checks": [
+        {
+            "kind": "environment",
+            "name": "no physical XR session is modified",
+            "detail": "Run this synthetic validator without a connected headset.",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "saved MuseumStart loaded",
+            "detail": "Assets/Museum/Scenes/MuseumStart.unity",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "two saved controller targets and physical hands",
+            "detail": "hand count=2",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "each physical hand retains its original controller input reference",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "Right Controller owns a kinematic glove envelope and original-input direct interactor",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "Right Controller separates tracked target from collision proxy",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "Right Controller retains the saved direct-interactor controller hierarchy",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "Right Controller has saved articulated glove geometry",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "Left Controller owns a kinematic glove envelope and original-input direct interactor",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "Left Controller separates tracked target from collision proxy",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "Left Controller retains the saved direct-interactor controller hierarchy",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "Left Controller has saved articulated glove geometry",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "left and right direct interactors do not share an exclusive interaction group",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "Left Physical Hand: Direct broadphase covers the open glove's fixed selection reach",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "Right Physical Hand: Direct broadphase covers the open glove's fixed selection reach",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "inspection exhibit exists",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "helmet supports multiple dynamic grips with scaling disabled",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "helmet has one XRI physics movement owner and the museum grab transformer",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "saved integration",
+            "name": "helmet has no competing root joint driver",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "lifecycle fixture",
+            "name": "saved controls already use the active production hand distance mode before isolation",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "lifecycle fixture",
+            "name": "disabled startup leaves generated hands inactive and restores each query/model/enabled state",
+            "detail": "hands=False/False; queries=0.1/0.1; hidden models=False/True; direct enabled=True/False",
+            "passed": true
+        },
+        {
+            "kind": "lifecycle fixture",
+            "name": "disabled startup does not alter either control distance mode",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "lifecycle fixture",
+            "name": "enabling installs both controller bindings",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "lifecycle fixture",
+            "name": "enabling activates both hands, expands the queries and applies ColliderVolume to both control types",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "lifecycle fixture",
+            "name": "disabling restores both authored query poses, original enabled/model/radius states and distinct UI modes",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "lifecycle fixture",
+            "name": "reenabling reapplies ColliderVolume after Start has already run",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "lifecycle fixture",
+            "name": "isolated rig activation leaves production controls at their original distance modes",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "geometry fixture",
+            "name": "isolated fixture uses the existing production interaction manager",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "geometry fixture",
+            "name": "query has a valid physics scene and controller parent before contacts are collected",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "geometry fixture",
+            "name": "fixture owns a measurable solid glove envelope",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "geometry fixture",
+            "name": "rapid target crossing stops the complete simplified glove envelope before a thin wall",
+            "detail": "penetration=0; error=0.7481079",
+            "passed": true
+        },
+        {
+            "kind": "geometry fixture",
+            "name": "return to clear space recovers the palm without stale wall blocking",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "geometry fixture",
+            "name": "simplified glove envelope is blocked above the tabletop",
+            "detail": "penetration=0",
+            "passed": true
+        },
+        {
+            "kind": "geometry fixture",
+            "name": "lost tracking freezes the collision proxy",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "geometry fixture",
+            "name": "tracking recovery returns to the valid target",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "geometry fixture",
+            "name": "thin rotation obstacle has clear starting and ending poses",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "geometry fixture",
+            "name": "rotation path stops before a thin obstacle even when the destination pose is clear",
+            "detail": "turn=7.541002",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "cube starts clear of the recovered glove envelope before approaching",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "cube is a nearby valid selection before explicit manager selection",
+            "detail": "candidates=1; query=(99.75, 1.00, 100.14); cube=(99.75, 1.00, 100.35); target=(99.75, 1.00, 100.14); proxy=(99.75, 1.00, 100.14); sceneValid=True; queryEnabled=True; controller=Fixture tracked target; queryToCube=0.1299973; hullGap=0.003997803",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "explicit manager selection is recorded as an API check",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "held velocity-tracked object stays on the near side of a thin wall",
+            "detail": "penetration=0; cube=(99.75, 1.00, 100.60); target=(99.75, 1.00, 100.82)",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "tracking loss releases the selecting interactor",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "explicit same-controller ray selection exists before the safety cancellation",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "tracking loss cancels and disables the same-controller ray instead of issuing a short click",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "recovered ray resumes its original enabled state but remains locked while Grip stays held",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "releasing Grip restores ray selection eligibility without a near-grab reach restriction",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "an inactive ordinary ray sharing the held outer Grip remains locked when activated after cancellation",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "the reactivated ordinary ray unlocks after its active outer controller releases Grip",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "an unused inactive nested ray accepts its first new Select after hand initialization",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "nested-controller ray selection exists before tracking loss",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "tracking loss cancels and disables the owned nested-controller ray",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "outer Grip release cannot unlock a nested ray whose own Select remains held; enabled states are preserved",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "an inactive nested controller's cached released state does not clear its pending Select latch",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "an inactive nested-ray latch leaves ordinary Ray and Direct eligibility independent and preserves the disabled Ray state",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "reactivating the nested ray with Select still held preserves its release latch",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "observing the active nested controller's own Select release restores Ray eligibility without a near-grab restriction",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API fixture",
+            "name": "the nested ray accepts a new Select after its own observed release",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window root then child: each authored hand can select its initial target",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window root then child: the holder hand's ray cannot select its own child part",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window root then child: the other hand can select a held exhibit part",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window root then child: simultaneous root and child selection relinquishes the body pin",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window root then child: direct and ray references on either physical hand stay mutually exclusive across root and child",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window root then child: carrying both hands and helmet together preserves the local window angle",
+            "detail": "angle drift=0.005187988",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window root then child: releasing the last root grip retains the child-owned pin",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window root then child: releasing every hand restores the original dynamic gravity body",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window child then root: each authored hand can select its initial target",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window child then root: child alone pins the unheld exhibit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window child then root: the child hand's ray cannot also select the whole helmet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window child then root: the other hand can grab an already pinned exhibit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window child then root: simultaneous root and child selection relinquishes the body pin",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window child then root: direct and ray references on either physical hand stay mutually exclusive across root and child",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window child then root: carrying both hands and helmet together preserves the local window angle",
+            "detail": "angle drift=0.03060913",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window child then root: releasing the last root grip retains the child-owned pin",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "window child then root: releasing every hand restores the original dynamic gravity body",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section root then child: each authored hand can select its initial target",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section root then child: the holder hand's ray cannot select its own child part",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section root then child: the other hand can select a held exhibit part",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section root then child: simultaneous root and child selection relinquishes the body pin",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section root then child: direct and ray references on either physical hand stay mutually exclusive across root and child",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section root then child: carrying both hands and helmet together preserves the local cutting plane",
+            "detail": "point drift=4.063065E-06; normal drift=0",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section root then child: releasing the last root grip retains the child-owned pin",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section root then child: releasing every hand restores the original dynamic gravity body",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section child then root: each authored hand can select its initial target",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section child then root: child alone pins the unheld exhibit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section child then root: the child hand's ray cannot also select the whole helmet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section child then root: the other hand can grab an already pinned exhibit",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section child then root: simultaneous root and child selection relinquishes the body pin",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section child then root: direct and ray references on either physical hand stay mutually exclusive across root and child",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section child then root: carrying both hands and helmet together preserves the local cutting plane",
+            "detail": "point drift=6.48593E-06; normal drift=0",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section child then root: releasing the last root grip retains the child-owned pin",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API collaboration",
+            "name": "section child then root: releasing every hand restores the original dynamic gravity body",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "official desktop simulator is present before the independent input writer",
+            "detail": "count=1",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "synthetic device poses resolve through enabled saved controller actions",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "saved direct-interactor query transforms follow collision proxies instead of raw tracked targets",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "saved grip actions resolve the correct synthetic handed devices",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "left palm hovers the whole helmet from its external surface",
+            "detail": "target=(-0.24, 1.27, 3.50); proxy=(-0.24, 1.27, 3.50); error=0; blocked=False; tracked=True; candidates=HelmetExhibit; nearby solids=",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "grip selects the saved helmet through the left physical direct interactor",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "one-hand lift moves the actual dynamic helmet",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "second palm reaches a valid helmet surface",
+            "detail": "target=(0.18, 1.47, 3.52); proxy=(0.18, 1.47, 3.52); error=0; blocked=False; tracked=True; candidates=Bonnet shell Hotspot,HelmetExhibit; nearby solids=",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "one to two hands preserves grip pose without a large position jump",
+            "detail": "jump=0; selectors=Direct Interactor,Direct Interactor; left=target=(-0.24, 1.49, 3.50); proxy=(-0.24, 1.49, 3.50); error=0; blocked=False; tracked=True; candidates=HelmetExhibit,Front Window Hinge,Front window Hotspot,Air connection clue; nearby solids=Bonnet Capsule; right=target=(0.18, 1.47, 3.52); proxy=(0.18, 1.47, 3.52); error=0; blocked=False; tracked=True; candidates=Bonnet shell Hotspot,HelmetExhibit; nearby solids=; right selected=HelmetExhibit; right grip=1",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "two-hand motion rotates the helmet without changing its scale",
+            "detail": "turn=16.3329",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "two to one hand keeps the current pose",
+            "detail": "position jump=1.194419E-07; rotation jump=0",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "final grip release restores an unselected finite dynamic body",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "scale remains unchanged through 1 to 2 to 1 to 0 hands",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "API cleanup",
+            "name": "public reset establishes the closed display state",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "an unselected open-hand approach does not fling the reset exhibit",
+            "detail": "drift=2.385399E-07",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "left palm can reapproach the reset exhibit",
+            "detail": "target=(-0.24, 1.27, 3.50); proxy=(-0.24, 1.27, 3.50); error=0; blocked=False; tracked=True; candidates=HelmetExhibit; nearby solids=; root=(0.00, 0.96, 3.50); grip=0; hand filter=True",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "left hand holds the helmet for window manipulation",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "free right palm can select the window while the other hand holds the helmet",
+            "detail": "target=(-0.10, 1.33, 3.22); proxy=(-0.10, 1.33, 3.22); error=0; blocked=False; tracked=True; candidates=Front Window Hinge,Front window Hotspot,HelmetExhibit; nearby solids=",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "held window uses the free hand without stealing the helmet or pinning its rigidbody",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "short window grip and release opens the window while the left grip stays held",
+            "detail": "angle=95",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "owned synthetic keyboard exists before Home",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "Home down reaches the player keyboard before scheduling release",
+            "detail": "enabled before press=True; current=Physical hands QA keyboard",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "Home clears held object/window ownership and restores the display",
+            "detail": "reset delta=1",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "a still-held grip cannot regrab immediately after Home",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "production input",
+            "name": "release and new grip restore grabbing after reset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionValidation.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionControls.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionControls.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionPalette.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionPalette.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetSectionInteractable.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetSectionInteractable.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetWindowInteractable.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetWindowInteractable.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumGripSurfaceBaker.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumGripSurfaceBaker.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumHandDeviceSetup.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumHandDeviceSetup.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumHandSelfCollisionValidation.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumHandSelfCollisionValidation.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumHandVisualFactory.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumHandVisualFactory.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsBuild.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsBuild.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsSetup.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsSetup.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsTestPose.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsTestPose.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsValidation.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsValidation.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/GripSurfaceCache.asset.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Materials.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Materials/Museum Glove.mat",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Materials/Museum Glove.mat.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Materials/Museum Navy Cuff.mat",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Materials/Museum Navy Cuff.mat.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Prefabs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Prefabs/LeftMuseumHand.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Prefabs/LeftMuseumHand.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Prefabs/RightMuseumHand.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Prefabs/RightMuseumHand.prefab.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumGripSurface.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumGripSurface.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandDeviceDiagnostics.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandDeviceDiagnostics.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandGrabTransformer.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandGrabTransformer.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandVisual.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandVisual.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumPhysicalHand.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumPhysicalHand.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumPhysicalHandsRig.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumPhysicalHandsRig.cs.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Scenes.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Prefabs/HelmetExhibit.prefab",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Scenes/MuseumStart.unity.meta",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Museum/Scripts/HelmetExhibitReset.cs",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/XRI Default Input Actions.inputactions",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Packages/manifest.json",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/Packages/packages-lock.json",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/ProjectSettings/ProjectSettings.asset",
+            "detail": "",
+            "passed": true
+        },
+        {
+            "kind": "source",
+            "name": "source remained unchanged during QA: MuseumVR/ProjectSettings/ProjectVersion.txt",
+            "detail": "",
+            "passed": true
+        }
+    ],
+    "sources": [
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionValidation.cs",
+            "sha256": "7d85d90bb1c292fa2df379e93c6563cf4b0dcb88a5e9ab5fd9770b4857765518"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+            "sha256": "ea473b24d8c82848441916da79fb12504dac0104162cc16067b3c1fcd3e7bb5c"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab.meta",
+            "sha256": "3dd5bb2d81e3680a255bfefab032457e803c16e821a5dc16d94d900b0c87fdee"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+            "sha256": "244cef073b2b785ff6f27eece50bc85c6b31cac1cc12ad54091383dd9deef832"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs.meta",
+            "sha256": "7892725c540d87cd077cebbcc0a27447fdd562f96f042a8120ca8f26da584431"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionControls.cs",
+            "sha256": "c9543448b80d98b3337653a1e9db9ce56288ed81fdef90618c38be10f7998eb3"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionControls.cs.meta",
+            "sha256": "f0973bc89a247720159083e88eb43f566bb36fc47bfcb99deb20cac3c20689bf"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionPalette.cs",
+            "sha256": "d67a65e1267f3a3ec345839c9a0dd32d9463853c9a4c3eb363b7221d3184b0d0"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionPalette.cs.meta",
+            "sha256": "ab4008ee2fdde342a2f710f8189dc9988d752c32d24b059f5bac849b16cd6bb8"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetSectionInteractable.cs",
+            "sha256": "0d3b54000e68aa78b0e76dc1a5b8052c134597767376bdbf56fd513b4ab7eff9"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetSectionInteractable.cs.meta",
+            "sha256": "abf74df78e0c6f904975792a9f2b2733f6b12cbd03d822e153a25ff85be2e2d3"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetWindowInteractable.cs",
+            "sha256": "5be40257d98fd9bb47bf5cc286129ae52cee792077afac0d3d18dd2a1e732b19"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetWindowInteractable.cs.meta",
+            "sha256": "7306fa1791f9d4bf101c7fe8e420674a5f8f5300cb43927f11af7a945e213d91"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor.meta",
+            "sha256": "a223576c58601623e9fb2d6756cf13e22ebe96f691b7ebd454a4de25f38a24e8"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumGripSurfaceBaker.cs",
+            "sha256": "793ba315cadd4ada162661302bf79d4740f8305c6550a9d2eff3d6396dec433d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumGripSurfaceBaker.cs.meta",
+            "sha256": "bb89b281435bbd60872c4297cad7ee0549c97c1cc1be742ba5585277ccb5be2b"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumHandDeviceSetup.cs",
+            "sha256": "759a7c027dad3443f7a8a9e3f31ebc008ed50470fdc7ad25489929e3591a15e5"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumHandDeviceSetup.cs.meta",
+            "sha256": "879a0f447329d2e357ba78b2b39ef485a3ecc2878439e0cdf48e71f75594eca4"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumHandSelfCollisionValidation.cs",
+            "sha256": "5fbe3f8c068a328f0b0cdde50a3c0d134403a10d948bf4ac29fa3b515916528e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumHandSelfCollisionValidation.cs.meta",
+            "sha256": "3a17fa53cb11f3be4cabe00ff74b1aa6713177325abdbe2647d820428334861b"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumHandVisualFactory.cs",
+            "sha256": "d8f8b0a7f3aa7bc30724f42be48750cda62b1a8d5711dd9d8d7fdbb7cb40ef02"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumHandVisualFactory.cs.meta",
+            "sha256": "04443e8ff7fdbde7fe159edb5bbe7898762b735233d0da6de49acbfed517f35d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsBuild.cs",
+            "sha256": "f8bb5ce9c91b1d946ae532da91385fdec654726a03de4f2cfd4d942ea3e78b9d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsBuild.cs.meta",
+            "sha256": "1ad21c25ba6338f0629965c66114d143d7b71187662f4311391ab790c138bdc7"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsSetup.cs",
+            "sha256": "a33254df454195f757595e1f82b0c918a7f0a5bd985f43306b58d0e286ea98b2"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsSetup.cs.meta",
+            "sha256": "a0ed676ddd1f9073c71b4b6a3a0d4018099448641a472275c3be61f24ce35674"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsTestPose.cs",
+            "sha256": "82529322dbbe149ee8cb1afcd9d1f71e4a245236095e1b74abc0ef120acf7ab7"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsTestPose.cs.meta",
+            "sha256": "ec32c431560d82b01cd5efd614022bc6136f04b58936b8c6c2fbcbd8f32836bb"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsValidation.cs",
+            "sha256": "c9bb9a0a3d7269bda8f15739da3d029f769fe015453c6627bab967bc485e205c"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsValidation.cs.meta",
+            "sha256": "979594df490afe3db36b304fd3c05df54a97e25c3a3286d7551ceb0308e588a8"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/GripSurfaceCache.asset.meta",
+            "sha256": "958e9c537109b0d5bdd22a9eb3f3216ab9a3b5199b51b6b95f2bf1421b7a620e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Materials.meta",
+            "sha256": "32005ce5f8489aba040827cc0c31c89923de13ccd73b5bfba022c16d44446028"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Materials/Museum Glove.mat",
+            "sha256": "34d5615468da2bc421c869cc5cff6134577fdd52286978cdf795397275892269"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Materials/Museum Glove.mat.meta",
+            "sha256": "cfb83671a395952ec40dc1c239dd90d2e53c028ac414a1ce1d6e84524de2bfeb"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Materials/Museum Navy Cuff.mat",
+            "sha256": "fdba0aa633bcb314638f7d2a4692fe0608ad12d410ce119b6cc0dc7784e233e3"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Materials/Museum Navy Cuff.mat.meta",
+            "sha256": "d515a8f195e9477bf8560fa05092c321656333ebcb13c67700c86b4d4d3bf4a3"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Prefabs.meta",
+            "sha256": "67a83ba018a01b4062aa35b165c6131a18ba434e3c3a79d015981a80a916ec0f"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Prefabs/LeftMuseumHand.prefab",
+            "sha256": "fdc467715acc736cd24e95c417656cf4380e77aa67d7b92ea84b90f1c218f9f0"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Prefabs/LeftMuseumHand.prefab.meta",
+            "sha256": "435f74c3f62d0a4281d58d67f437762a3dc62d30ada03ed09bffe85a32366cf7"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Prefabs/RightMuseumHand.prefab",
+            "sha256": "870661a4aeb65559356aa6014f62890ab2c76079de68ec95bf968971638c3685"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Prefabs/RightMuseumHand.prefab.meta",
+            "sha256": "006ee29c3dfb95f85f8c00b3c6ed392ecc71eb9f6239497419c2d30c61f2a23f"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime.meta",
+            "sha256": "15644fe4cddf2a328c66d34ef649410ccdc85306864cd0ce4d0510a747296a07"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumGripSurface.cs",
+            "sha256": "f34b66ed2dfed341f6acd7935c8bf095a6789f4f325994dd1fc080aba6d9de51"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumGripSurface.cs.meta",
+            "sha256": "f5de9e5ea07c16fa4a1d3e5159ea8ed563fa7d46132ef033f4995f4512d13d7c"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandDeviceDiagnostics.cs",
+            "sha256": "5cee5868f2c8c75167df6260df8877b8110e582167627686ee8df98da2c5b65d"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandDeviceDiagnostics.cs.meta",
+            "sha256": "0517f64218ba06b4b1789f68346150e8491d487b7712dd37b2400abe06dbd99a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandGrabTransformer.cs",
+            "sha256": "db30e2c82b2e0162577a7850e6c5c66523f7927e3192259064d9312e623ce54a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandGrabTransformer.cs.meta",
+            "sha256": "d2bc8892967e5cee33c3ed66889f162b0534aacf8aff0ee058e8b63b6ca1fa02"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandVisual.cs",
+            "sha256": "cb8c87ec426ce44634e191c696c5ef45365297d42e8e6a3b7a3e2544057efa5e"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandVisual.cs.meta",
+            "sha256": "23f58c505aae93e5bc59b0c60ac654aeebe0aa4df48017301c739af203da5b68"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumPhysicalHand.cs",
+            "sha256": "981bb10810dcbe9c30ead21cbc4805ebc1c3fa20df4bad5fe2ed0fdb59c05621"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumPhysicalHand.cs.meta",
+            "sha256": "69f0af6c2169a81fc8a3dd26d555bac7ee5612e0c368ee376196302e0a990aae"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumPhysicalHandsRig.cs",
+            "sha256": "650870e52aff220a0e9a407889e82e55b0a21aa4f7118e3a483da7e66f213f1a"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Runtime/MuseumPhysicalHandsRig.cs.meta",
+            "sha256": "43fb9849c5e1a6be9688ddd68be26d1731c2dd476f442df88500f495ad272699"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Scenes.meta",
+            "sha256": "38666fb625cb3cc84b6d175e9ca71b7b18c178d6cc1c56b37a11cbd8b5b028fd"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+            "sha256": "a502687bf0ba65fd1e0199f50280a555888d3d2224470b4cd7c63c2f283468b9"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity.meta",
+            "sha256": "4b615fb63bdf53242fc2857b399d706548caf418b1f14ff3a694db7b00290212"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Prefabs/HelmetExhibit.prefab",
+            "sha256": "788ed00f8d9c3276333ed7d2bcf091cb1df09227694bc3744c1f6b8c76ab9337"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+            "sha256": "9005212ba6016606dab37e1373ecbd07ef533d29107d49a6d48d138ab93e09c9"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity.meta",
+            "sha256": "93d99235c89c8cb0576cfb0268a5d07ef15bd82651558b69036b6ec0b956a245"
+        },
+        {
+            "path": "MuseumVR/Assets/Museum/Scripts/HelmetExhibitReset.cs",
+            "sha256": "7b0ed74a93cb2c6311a28dda061064293f99ee808aecdc361356028d59f07761"
+        },
+        {
+            "path": "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/XRI Default Input Actions.inputactions",
+            "sha256": "d51f6a0518c700cb15adb77f5a297c66cce683f13057ab47d466751cbe3b5336"
+        },
+        {
+            "path": "MuseumVR/Packages/manifest.json",
+            "sha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7"
+        },
+        {
+            "path": "MuseumVR/Packages/packages-lock.json",
+            "sha256": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03"
+        },
+        {
+            "path": "MuseumVR/ProjectSettings/ProjectSettings.asset",
+            "sha256": "6b3aa93c403f4a0697a561f117cea95e529db9965f59dcadfcb4533031e1e2b0"
+        },
+        {
+            "path": "MuseumVR/ProjectSettings/ProjectVersion.txt",
+            "sha256": "93eba324bad77e6764a40d1b8a2020e7b69424102a2b2f3b17b69afdf7dd67a0"
+        }
+    ],
+    "samples": [
+        {
+            "name": "wall blocked after rapid target move",
+            "target": {
+                "x": 100.0,
+                "y": 1.0,
+                "z": 101.30000305175781
+            },
+            "proxy": {
+                "x": 100.0,
+                "y": 1.0,
+                "z": 100.55189514160156
+            },
+            "objectPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "objectScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "objectRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "trackingError": 0.74810791015625,
+            "maximumPenetration": 0.0,
+            "blocked": true,
+            "tracking": true,
+            "selectors": 0
+        },
+        {
+            "name": "fixture tracking recovered",
+            "target": {
+                "x": 99.75,
+                "y": 1.0,
+                "z": 100.0
+            },
+            "proxy": {
+                "x": 99.75,
+                "y": 1.0,
+                "z": 100.0
+            },
+            "objectPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "objectScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "objectRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "trackingError": 0.0,
+            "maximumPenetration": 0.0,
+            "blocked": false,
+            "tracking": true,
+            "selectors": 0
+        },
+        {
+            "name": "rotation path blocked",
+            "target": {
+                "x": 99.75,
+                "y": 1.0,
+                "z": 100.0
+            },
+            "proxy": {
+                "x": 99.75,
+                "y": 1.0,
+                "z": 100.0
+            },
+            "objectPosition": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            },
+            "objectScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "objectRotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "trackingError": 0.0,
+            "maximumPenetration": 0.0,
+            "blocked": true,
+            "tracking": true,
+            "selectors": 0
+        },
+        {
+            "name": "held object wall blocked",
+            "target": {
+                "x": 99.75,
+                "y": 1.0,
+                "z": 100.81999969482422
+            },
+            "proxy": {
+                "x": 99.75,
+                "y": 1.0,
+                "z": 100.62389373779297
+            },
+            "objectPosition": {
+                "x": 99.75,
+                "y": 0.9999995231628418,
+                "z": 100.5999984741211
+            },
+            "objectScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "objectRotation": {
+                "x": -7.637671046722971e-7,
+                "y": 0.000005455617611005437,
+                "z": -5.384925998441759e-7,
+                "w": 1.0
+            },
+            "trackingError": 0.19610595703125,
+            "maximumPenetration": 0.0,
+            "blocked": true,
+            "tracking": true,
+            "selectors": 1
+        },
+        {
+            "name": "one hand held",
+            "target": {
+                "x": -0.24338161945343018,
+                "y": 1.4910389184951783,
+                "z": 3.5031042098999025
+            },
+            "proxy": {
+                "x": -0.24338161945343018,
+                "y": 1.4910389184951783,
+                "z": 3.5031042098999025
+            },
+            "objectPosition": {
+                "x": -0.06691844761371613,
+                "y": 1.154538869857788,
+                "z": 3.5192973613739015
+            },
+            "objectScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "objectRotation": {
+                "x": 2.7939677238464357e-9,
+                "y": -1.1707433600349759e-7,
+                "z": 3.446644569748969e-8,
+                "w": 1.0
+            },
+            "trackingError": 0.0,
+            "maximumPenetration": 0.0,
+            "blocked": false,
+            "tracking": true,
+            "selectors": 1
+        },
+        {
+            "name": "two hands held",
+            "target": {
+                "x": 0.2564631700515747,
+                "y": 1.6055779457092286,
+                "z": 3.5224015712738039
+            },
+            "proxy": {
+                "x": 0.2564631700515747,
+                "y": 1.6055779457092286,
+                "z": 3.5224015712738039
+            },
+            "objectPosition": {
+                "x": 0.06561248749494553,
+                "y": 1.2283269166946412,
+                "z": 3.5233120918273927
+            },
+            "objectScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "objectRotation": {
+                "x": -0.006302102468907833,
+                "y": 0.0036010982003062965,
+                "z": 0.14186418056488038,
+                "w": 0.9898595809936523
+            },
+            "trackingError": 0.0,
+            "maximumPenetration": 0.0,
+            "blocked": true,
+            "tracking": true,
+            "selectors": 2
+        },
+        {
+            "name": "approaching reset exhibit",
+            "target": {
+                "x": -0.24338161945343018,
+                "y": 1.2710390090942383,
+                "z": 3.5031042098999025
+            },
+            "proxy": {
+                "x": -0.24338161945343018,
+                "y": 1.2710390090942383,
+                "z": 3.5031042098999025
+            },
+            "objectPosition": {
+                "x": 7.680609037663544e-9,
+                "y": 0.9600000381469727,
+                "z": 3.500000238418579
+            },
+            "objectScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "objectRotation": {
+                "x": 1.4321558161611847e-8,
+                "y": -1.2386028913624615e-7,
+                "z": -3.271377124747232e-8,
+                "w": 1.0
+            },
+            "trackingError": 0.0,
+            "maximumPenetration": 0.0,
+            "blocked": false,
+            "tracking": true,
+            "selectors": 0
+        },
+        {
+            "name": "saved integration after reset and regrab",
+            "target": {
+                "x": -0.24338161945343018,
+                "y": 1.2710390090942383,
+                "z": 3.5031042098999025
+            },
+            "proxy": {
+                "x": -0.3168143332004547,
+                "y": 1.2580161094665528,
+                "z": 3.5031042098999025
+            },
+            "objectPosition": {
+                "x": -0.018029624596238138,
+                "y": 0.9818094372749329,
+                "z": 3.5096940994262697
+            },
+            "objectScale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "objectRotation": {
+                "x": 0.00016401098400820047,
+                "y": 0.0011047146981582046,
+                "z": 0.07559427618980408,
+                "w": 0.9971380829811096
+            },
+            "trackingError": 0.07457854598760605,
+            "maximumPenetration": 0.0,
+            "blocked": true,
+            "tracking": true,
+            "selectors": 0
+        }
+    ],
+    "warnings": [],
+    "errors": [],
+    "inputDiagnostics": [
+        "frame=944; down=True; edge=True; current=Physical hands QA keyboard; current down=True; keyboard enabled=True; reset enabled=True; reset count=1",
+        "frame=945; down=True; edge=False; current=Physical hands QA keyboard; current down=True; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=946; down=True; edge=False; current=Physical hands QA keyboard; current down=True; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=947; down=True; edge=False; current=Physical hands QA keyboard; current down=True; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=948; down=True; edge=False; current=Physical hands QA keyboard; current down=True; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=949; down=True; edge=False; current=Physical hands QA keyboard; current down=True; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=950; down=True; edge=False; current=Physical hands QA keyboard; current down=True; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=951; down=True; edge=False; current=Physical hands QA keyboard; current down=True; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=952; down=True; edge=False; current=Physical hands QA keyboard; current down=True; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=953; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=954; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=955; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=956; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=957; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=958; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=959; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=960; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=961; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=962; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=963; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=964; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=965; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=966; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=967; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=968; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=969; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=970; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=971; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=972; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=973; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=974; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=975; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=976; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=977; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=978; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=979; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=980; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=981; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=982; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=983; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=984; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=985; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=986; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=987; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=988; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=989; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=990; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=991; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=992; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=993; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=994; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=995; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=996; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=997; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=998; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=999; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2",
+        "frame=1000; down=False; edge=False; current=Physical hands QA keyboard; current down=False; keyboard enabled=True; reset enabled=True; reset count=2"
+    ]
+}
