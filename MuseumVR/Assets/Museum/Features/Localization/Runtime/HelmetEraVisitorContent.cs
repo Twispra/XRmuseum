@@ -13,7 +13,7 @@ namespace Museum.Localization
     {
         public const string SuperLiteInstructions = "Diving helmet\n<size=62%>SuperLite 17B-inspired study</size>";
         public const string EarlyInstructions = "Diving helmet\n<size=62%>Early (1839) - placeholder study</size>";
-        public const string EarlyPlaceholderDetails = "Placeholder geometry for the early era; historical details are not reconstructed.";
+        public const string EarlyPlaceholderDetails = "Placeholder; not a historical replica.";
         public const string FrontWindowTitle = "Front window";
         public const string FrontWindowDetails = "Window and rim. Side opening is a museum demonstration.";
         public const string ShellTitle = "Helmet shell";

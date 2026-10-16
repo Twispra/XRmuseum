@@ -33,7 +33,7 @@ namespace Museum.Localization.EditorTools
         const string Prefix = "Museum.VisitorEraQA.";
         const string ScenePath = "Assets/Museum/Scenes/MuseumStart.unity";
         const string EarlyCaption = "Diving helmet\n<size=62%>Early (1839) - placeholder study</size>";
-        const string EarlyDetail = "Placeholder geometry for the early era; historical details are not reconstructed.";
+        const string EarlyDetail = "Placeholder; not a historical replica.";
         const string MarkVCaption = "Diving helmet\n<size=62%>Mark V-inspired study</size>";
         const string SuperLiteCaption = "Diving helmet\n<size=62%>SuperLite 17B-inspired study</size>";
         static readonly Stack<IEnumerator> Routines = new Stack<IEnumerator>();

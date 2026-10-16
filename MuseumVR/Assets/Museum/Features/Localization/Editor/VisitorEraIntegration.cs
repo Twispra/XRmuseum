@@ -25,7 +25,10 @@ namespace Museum.Localization.EditorTools
             {
                 if (EditorApplication.isPlayingOrWillChangePlaymode)
                     throw new InvalidOperationException("Exit Play before migrating saved visitor content.");
-                TrilingualFontBaker.RunBatch();
+                var font = AssetDatabase.LoadAssetAtPath<TMP_FontAsset>(Root + "/Fonts/NotoSansSC-MuseumSubset SDF.asset");
+                string required = File.ReadAllText(Root + "/Fonts/characters-required.txt");
+                if (!font || required.Any(c => !char.IsWhiteSpace(c) && !font.HasCharacter(c)))
+                    TrilingualFontBaker.RunBatch();
                 var scene = EditorSceneManager.OpenScene(ScenePath);
                 var all = scene.GetRootGameObjects();
                 var table = AssetDatabase.LoadAssetAtPath<LocalizationTable>(Root + "/Tables/LocalizationTable.asset");
