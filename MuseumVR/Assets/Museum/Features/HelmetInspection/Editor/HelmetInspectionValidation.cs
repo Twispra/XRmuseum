@@ -35,6 +35,7 @@ namespace Museum.Inspection.Editor
         const string ProvenanceKey = "Museum.HelmetInspectionQA.Provenance";
         const string ScenePathKey = "Museum.HelmetInspectionQA.ScenePath";
         const string MainScenePath = "Assets/Museum/Scenes/MuseumStart.unity";
+        const double BatchExitSettleSeconds = 20;
         static string ScenePath => SessionState.GetString(ScenePathKey, HelmetInspectionBuilder.ScenePath);
         static bool IsMainSceneRun => ScenePath == MainScenePath;
         static readonly Stack<IEnumerator> Routines = new Stack<IEnumerator>();
@@ -55,6 +56,8 @@ namespace Museum.Inspection.Editor
         static Rigidbody body;
         static Collider[] helmetColliders;
         static double started;
+        static double exitNotBefore;
+        static int pendingBatchExit = -1;
         static int lastFrame = -1;
         static bool finishing;
         static Vector3 homePosition;
@@ -127,6 +130,7 @@ namespace Museum.Inspection.Editor
             public string timestampUtc, unityVersion, scene, inputMethod, limitations, status = "running", failure = "";
             public Provenance provenance;
             public float durationSeconds;
+            public double batchExitSettleSeconds;
             public bool officialSimulatorWasPresent;
             public int colliderCount, completedCycles;
             public List<Check> checks = new List<Check>();
@@ -169,6 +173,7 @@ namespace Museum.Inspection.Editor
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode)
                 throw new InvalidOperationException("Run helmet validation from Edit Mode.");
+            pendingBatchExit = -1;
             // Do not save a user's dirty scene as a side effect of an acceptance test.
             if (!batch && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
             SessionState.SetString(ScenePathKey, scenePath);
@@ -341,6 +346,7 @@ namespace Museum.Inspection.Editor
                 {
                     timestampUtc = DateTime.UtcNow.ToString("o"), unityVersion = Application.unityVersion,
                     provenance = RestoreProvenance(),
+                    batchExitSettleSeconds = SessionState.GetBool(BatchKey, false) ? BatchExitSettleSeconds : 0,
                     scene = SceneManager.GetActiveScene().path,
                     inputMethod = "InputSystem.QueueStateEvent in the player Dynamic input update on XRSimulatedController/HMD -> production Input Actions -> ActionBasedController -> existing XRDirectInteractor / XRRayInteractor -> window, physical controls, XRGrabInteractable and Rigidbody. Home uses a synthetic KeyboardState. Hidden batch frames are paced to approximately 90 Hz to remain above XRI 2.6's 1 ms throw-sampling cutoff.",
                     limitations = "Automated desktop simulation only. Official XR Device Simulator presence is checked, then its device writer is disabled to avoid competing states. Its mouse/keyboard navigation mappings, real headset tracking, hand comfort, and device performance still require manual testing. The test driver does not call XRI selection APIs. Input-driven checks and explicitly labelled public-API checks are separate. This run validates only the recorded scene and checkout; it does not validate a player build, visual rendering, historical accuracy, accessibility with users, or a merged main branch."
@@ -361,15 +367,33 @@ namespace Museum.Inspection.Editor
                 var code = SessionState.GetInt(ResultKey, 1);
                 var batch = SessionState.GetBool(BatchKey, false);
                 SessionState.SetBool(ActiveKey, false);
-                if (batch) EditorApplication.delayCall += () =>
+                if (batch)
                 {
-                    EditorApplication.Exit(code < 0 ? 1 : code);
-                };
+                    // Match the other acceptance runners: returning to Edit Mode
+                    // still queues imports and native render/worker cleanup. An
+                    // immediate Exit can finish every check yet spin in shutdown.
+                    pendingBatchExit = code < 0 ? 1 : code;
+                    exitNotBefore = EditorApplication.timeSinceStartup + BatchExitSettleSeconds;
+                    Debug.Log("HELMET_INSPECTION_BATCH_SETTLING code=" + pendingBatchExit +
+                        "; seconds=" + BatchExitSettleSeconds + "; utc=" + DateTime.UtcNow.ToString("o"));
+                }
             }
         }
 
         static void Tick()
         {
+            // Keep pumping Editor updates after Active is cleared; never block the
+            // main thread while the asset pipeline and workers finish their work.
+            if (pendingBatchExit >= 0)
+            {
+                if (EditorApplication.timeSinceStartup < exitNotBefore || EditorApplication.isCompiling ||
+                    EditorApplication.isUpdating || EditorApplication.isPlayingOrWillChangePlaymode) return;
+                int code = pendingBatchExit;
+                pendingBatchExit = -1;
+                Debug.Log("HELMET_INSPECTION_BATCH_SETTLED_EXIT code=" + code + "; utc=" + DateTime.UtcNow.ToString("o"));
+                EditorApplication.Exit(code);
+                return;
+            }
             if (!SessionState.GetBool(ActiveKey, false) || !EditorApplication.isPlaying || report == null || finishing) return;
             if (EditorApplication.timeSinceStartup - started > 150)
             {
