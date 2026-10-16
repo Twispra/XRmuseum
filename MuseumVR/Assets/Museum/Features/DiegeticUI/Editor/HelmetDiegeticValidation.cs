@@ -87,7 +87,7 @@ namespace Museum.Diegetic.Editor
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Exit Play Mode before validation.");
             EditorSceneManager.OpenScene(ScenePath);
-            SessionState.SetString(Prefix + "Run", DateTime.UtcNow.ToString("yyyyMMddTHHmmssfffZ") + "-diegetic-ui-" + Guid.NewGuid().ToString("N"));
+            SessionState.SetString(Prefix + "Run", DateTime.UtcNow.ToString("yyyyMMddTHHmmssfffZ") + "-precision-close-hints-20261017-" + Guid.NewGuid().ToString("N"));
             report = new Report { utc = DateTime.UtcNow.ToString("o"), commit = Git("rev-parse HEAD"), dirty = Git("status --porcelain=v1 --untracked-files=all"), unity = Application.unityVersion };
             foreach (string path in new[] { ScenePath, "Packages/manifest.json", "Packages/packages-lock.json" }
                 .Concat(Directory.GetFiles("Assets/Museum/Features/DiegeticUI", "*", SearchOption.AllDirectories))
@@ -151,6 +151,8 @@ namespace Museum.Diegetic.Editor
             station = UnityEngine.Object.FindObjectOfType<HelmetDiegeticStation>();
             CheckResult(station && station.IsReady, "Saved scene starts installed diegetic station", station ? "Ready=" + station.IsReady : "Station missing");
             if (!station || !station.IsReady) throw new InvalidOperationException("Diegetic station was not ready in the saved product scene.");
+            CheckResult(!station.RotationHelpLearned && !station.RotationHintsCondensed,
+                "New visitor starts with complete rotation guidance", "Learned=" + station.RotationHelpLearned + "; Condensed=" + station.RotationHintsCondensed);
             inspection = station.Inspection; demo = station.Demonstration;
             eras = inspection.GetComponent<HelmetEraSwitcher>(); binding = inspection.GetComponent<RefinedHelmetBinding>();
             CheckResult(station.Controls.Count == Enum.GetValues(typeof(HelmetDiegeticStation.Command)).Length, "All commands retain registered interaction metadata", "Count=" + station.Controls.Count);
@@ -179,6 +181,7 @@ namespace Museum.Diegetic.Editor
             Capture("02-close-observation", new Vector3(-.44f, .24f, -.83f));
             yield return BasicCommands();
             yield return GestureFixtures();
+            yield return RotationPrecisionFixtures();
             yield return StableSectionRailFixtures();
             yield return Demonstrations();
             yield return AnchoredDemonstrationFixtures();
@@ -190,6 +193,7 @@ namespace Museum.Diegetic.Editor
             yield return ProductionReleaseFeedback();
             yield return KnowledgeHotspots();
             yield return ProductionRayGesture();
+            yield return RotationHintFixtures();
             yield return ProductionRaySection();
             yield return CrossTargetReleaseGuard();
             yield return ProductionViewRecoveryWhileHeld();
@@ -324,6 +328,113 @@ namespace Museum.Diegetic.Editor
             var remembered = inspection.SectionOffset;
             station.Execute(HelmetDiegeticStation.Command.Section); station.Execute(HelmetDiegeticStation.Command.Section); yield return Wait(.1f);
             CheckResult(Mathf.Abs(inspection.SectionOffset - remembered) < .0001f, "Reopening cut retains previous position", "Offset=" + inspection.SectionOffset);
+            station.Execute(HelmetDiegeticStation.Command.Reset); yield return Wait(.5f);
+        }
+        struct RotationTrial
+        {
+            public float Angle, Gain;
+            public Quaternion Delta;
+        }
+        static float RotationDistance(Quaternion first, Quaternion second)
+        {
+            var delta = Quaternion.Inverse(first) * second;
+            return 2f * Mathf.Rad2Deg * Mathf.Atan2(new Vector3(delta.x, delta.y, delta.z).magnitude, Mathf.Abs(delta.w));
+        }
+        static RotationTrial SampleRotationPath(HelmetGestureInteractable gesture, Vector3 hand, float distance, float seconds, int framesPerSecond)
+        {
+            var root = gesture.TargetRoot;
+            var before = root.rotation;
+            gesture.BeginForValidation(hand, Quaternion.identity);
+            int steps = Mathf.RoundToInt(seconds * framesPerSecond);
+            float deltaTime = seconds / steps;
+            for (int i = 1; i <= steps; i++)
+                gesture.ApplyForValidation(hand + Vector3.right * distance * i / steps, deltaTime);
+            var result = new RotationTrial { Angle = Quaternion.Angle(before, root.rotation),
+                Delta = root.rotation * Quaternion.Inverse(before), Gain = gesture.CurrentRotationGainMultiplier };
+            gesture.EndForValidation();
+            return result;
+        }
+        static IEnumerator RotationPrecisionFixtures()
+        {
+            // These calculation fixtures vary the supplied sample duration, not
+            // Unity's global time scale. Production input regression remains below.
+            station.Execute(HelmetDiegeticStation.Command.Air); yield return Wait(.2f);
+            var apparatus = demo.EquipmentExhibits.First(e => e.IsVisible);
+            var equipmentGesture = apparatus.Root.GetComponentInChildren<HelmetGestureInteractable>();
+            foreach (var gesture in new[] { station.RotationGesture, equipmentGesture })
+            {
+                string specimen = gesture == station.RotationGesture ? "helmet" : apparatus.Id;
+                var root = gesture.TargetRoot;
+                Vector3 centerLocal = gesture == station.RotationGesture ? inspection.SectionCenterLocal : apparatus.CenterLocal;
+                var fixedCenter = root.TransformPoint(centerLocal);
+                var hand = fixedCenter + Vector3.back * .35f;
+                CheckResult(gesture.RotationDeadbandMetres > 0 && gesture.PrecisionGainMultiplier > 0 && gesture.PrecisionGainMultiplier < 1 &&
+                        gesture.PrecisionSpeedMetresPerSecond < gesture.FullSpeedMetresPerSecond,
+                    "Rotation precision parameters have a bounded low-speed range: " + specimen,
+                    "Deadband=" + gesture.RotationDeadbandMetres + "; Precision gain=" + gesture.PrecisionGainMultiplier);
+                gesture.BeginForValidation(hand, Quaternion.identity);
+                var restingHand = hand + Vector3.right * .025f;
+                gesture.ApplyForValidation(restingHand, 1f / 60f);
+                for (int i = 0; i < 30; i++) gesture.ApplyForValidation(restingHand, 1f / 60f);
+                var stillRotation = root.rotation;
+                float maximumJitter = 0, accumulatedJitter = 0;
+                for (int i = 1; i <= 180; i++)
+                {
+                    float time = i / 90f;
+                    var beforeSample = root.rotation;
+                    var noise = new Vector3(Mathf.Sin(time * Mathf.PI * 18f), Mathf.Sin(time * Mathf.PI * 22f), 0) * .0003f;
+                    gesture.ApplyForValidation(restingHand + noise, 1f / 90f);
+                    maximumJitter = Mathf.Max(maximumJitter, Quaternion.Angle(stillRotation, root.rotation));
+                    accumulatedJitter += RotationDistance(beforeSample, root.rotation);
+                }
+                CheckResult(gesture.IsManipulating && maximumJitter < .07f && accumulatedJitter < .5f,
+                    "Continuous filtering suppresses small stationary tremor after manipulation starts: " + specimen,
+                    "Maximum angle=" + maximumJitter + "; Accumulated angle=" + accumulatedJitter);
+                var stopped = root.rotation;
+                for (int i = 0; i < 90; i++) gesture.ApplyForValidation(restingHand, 1f / 90f);
+                CheckResult(Quaternion.Angle(stopped, root.rotation) < .001f,
+                    "A stationary held hand produces no catch-up rotation: " + specimen,
+                    "Angle=" + Quaternion.Angle(stopped, root.rotation));
+                gesture.EndForValidation();
+                var released = root.rotation;
+                for (int i = 0; i < 60; i++) gesture.ApplyForValidation(restingHand + Vector3.one, 1f / 60f);
+                CheckResult(!gesture.IsDragging && Quaternion.Angle(released, root.rotation) < .001f,
+                    "Release stops filtered rotation immediately without a trailing drift: " + specimen,
+                    "Angle=" + Quaternion.Angle(released, root.rotation));
+                var slow = SampleRotationPath(gesture, hand, .06f, 6f, 90);
+                var fast = SampleRotationPath(gesture, hand, .06f, .2f, 90);
+                CheckResult(slow.Angle > 1f,
+                    "Sub-deadband individual samples still accumulate into an intentional slow turn: " + specimen,
+                    "Distance per sample=" + (.01f / 90f) + "; Total angle=" + slow.Angle);
+                CheckResult(slow.Angle < fast.Angle * .65f && fast.Angle > 8f && slow.Gain < fast.Gain,
+                    "The same hand path gives finer control at low speed: " + specimen,
+                    "Slow angle/gain=" + slow.Angle + "/" + slow.Gain + "; Fast=" + fast.Angle + "/" + fast.Gain);
+                var rates = new[] { 30, 60, 90, 120 };
+                var trials = rates.Select(rate => SampleRotationPath(gesture, hand, .18f, 1.5f, rate)).ToArray();
+                float maximumDifference = trials.Max(trial => Quaternion.Angle(trials[0].Delta, trial.Delta));
+                float spread = trials.Max(trial => trial.Angle) - trials.Min(trial => trial.Angle);
+                CheckResult(maximumDifference < 2f && spread < trials.Average(trial => trial.Angle) * .05f + .2f,
+                    "Equivalent motion remains consistent at 30/60/90/120 samples per second: " + specimen,
+                    "Angles=" + string.Join(",", rates.Select((rate, i) => rate + ":" + trials[i].Angle.ToString("F4"))) + "; Maximum quaternion difference=" + maximumDifference);
+                gesture.BeginForValidation(hand, Quaternion.identity);
+                var depthStart = root.rotation;
+                for (int i = 1; i <= 90; i++) gesture.ApplyForValidation(hand + Vector3.forward * (.2f * i / 90f), 1f / 90f);
+                CheckResult(!gesture.IsManipulating && Quaternion.Angle(depthStart, root.rotation) < .001f,
+                    "Continuous pure depth motion cannot arm or rotate the specimen: " + specimen,
+                    "Angle=" + Quaternion.Angle(depthStart, root.rotation));
+                gesture.CancelGesture();
+                gesture.BeginForValidation(hand + Vector3.one, Quaternion.identity);
+                var regrabbed = root.rotation;
+                gesture.ApplyForValidation(hand + Vector3.one, 1f / 60f);
+                CheckResult(!gesture.IsManipulating && Quaternion.Angle(regrabbed, root.rotation) < .001f &&
+                        Mathf.Abs(gesture.CurrentRotationGainMultiplier - gesture.PrecisionGainMultiplier) < .0001f,
+                    "Cancellation clears cursor and gain history before a new grab: " + specimen,
+                    "Angle=" + Quaternion.Angle(regrabbed, root.rotation) + "; Gain=" + gesture.CurrentRotationGainMultiplier);
+                gesture.EndForValidation();
+                CheckResult(Vector3.Distance(fixedCenter, root.TransformPoint(centerLocal)) < .001f,
+                    "All precision and frame-rate fixtures preserve the specimen center: " + specimen,
+                    "Center delta=" + Vector3.Distance(fixedCenter, root.TransformPoint(centerLocal)));
+            }
             station.Execute(HelmetDiegeticStation.Command.Reset); yield return Wait(.5f);
         }
         static IEnumerator StableSectionRailFixtures()
@@ -988,6 +1099,189 @@ namespace Museum.Diegetic.Editor
             finally { gesture.selectEntered.RemoveListener(listener); ParkHands(); }
             yield return Wait(.2f);
             station.Execute(HelmetDiegeticStation.Command.Reset); yield return Wait(.5f);
+        }
+        static IEnumerator RotationHintFixtures()
+        {
+            if (station.AlwaysShowHints) station.Execute(HelmetDiegeticStation.Command.Hints);
+            CheckResult(station.RotationHelpLearned && station.RotationHintsCondensed,
+                "Successful production rotation enables shorter session guidance", "Learned=" + station.RotationHelpLearned + "; Condensed=" + station.RotationHintsCondensed);
+            bool oldMotion = inspection.ReduceMotion;
+            // Freeze mechanism sampling only for collider-size comparisons. The
+            // preceding production tests already validate moving pump mechanisms.
+            inspection.ReduceMotion = true;
+            station.Execute(HelmetDiegeticStation.Command.Air); yield return Wait(.2f);
+            var equipment = demo.EquipmentExhibits.First(e => e.IsVisible);
+            var equipmentGesture = equipment.Root.GetComponentInChildren<HelmetGestureInteractable>();
+            var equipmentHint = station.EquipmentRotationHints.Single(h => h.TargetRoot == equipment.Root);
+            foreach (var pair in new[] { new KeyValuePair<HelmetGestureInteractable, HelmetRotationHint>(station.RotationGesture, station.BodyRotationHint),
+                new KeyValuePair<HelmetGestureInteractable, HelmetRotationHint>(equipmentGesture, equipmentHint) })
+            {
+                var gesture = pair.Key; var hint = pair.Value;
+                string specimen = gesture == station.RotationGesture ? "helmet" : equipment.Id;
+                ParkHands(); yield return Wait(1.2f);
+                Vector3 pose; Quaternion rotation;
+                if (gesture == station.RotationGesture) BodyRayPose(out pose, out rotation);
+                else EquipmentRayPose(equipment, gesture, out pose, out rotation);
+                var ray = new Ray(pose, rotation * Vector3.forward);
+                var hit = Physics.RaycastAll(ray, 3f, ~0, QueryTriggerInteraction.Collide).OrderBy(value => value.distance)
+                    .First(value => gesture.colliders.Contains(value.collider));
+                Vector3 gripPoint = hit.point;
+                Vector3 outward = (pose - gripPoint).normalized;
+                Vector3 nearView = gripPoint + outward * .20f;
+                Quaternion viewRotation = Quaternion.LookRotation(gripPoint - nearView, Vector3.up);
+                var colliders = gesture.colliders.Where(c => c && c.enabled && c.gameObject.activeInHierarchy).ToArray();
+                var sizes = colliders.Select(c => c.bounds.size).ToArray();
+                QueueHeadWorld(nearView, viewRotation);
+                QueueController(rightDevice, pose, rotation, false); yield return Wait(.4f);
+                CheckResult(gesture.isHovered && hint.IsNear && hint.IsAnchored && hint.Caption.enabled && hint.Leader.enabled,
+                    "Near physical targeting preserves a visible hint and leader: " + specimen,
+                    "Hover=" + gesture.isHovered + "; Near=" + hint.IsNear + "; Anchored=" + hint.IsAnchored, "production-input");
+                var corners = new Vector3[4]; hint.Caption.rectTransform.GetWorldCorners(corners);
+                var left = (corners[0] + corners[1]) * .5f; var right = (corners[2] + corners[3]) * .5f;
+                float actualAngle = Vector3.Angle(left - Camera.main.transform.position, right - Camera.main.transform.position);
+                CheckResult(actualAngle <= station.MaximumHintAngle + .1f && hint.AngularWidthDegrees <= station.MaximumHintAngle + .01f,
+                    "Near rotation caption respects its angular width using rendered world geometry: " + specimen,
+                    "Measured=" + actualAngle + "; Reported=" + hint.AngularWidthDegrees + "; Limit=" + station.MaximumHintAngle);
+                // An entire helmet can exceed the viewport at close range. Its
+                // non-focus silhouette is then a valid overlap area; visibility
+                // and a clear selected point take priority over being outside it.
+                CheckHintViewport(hint, gripPoint, "initial " + specimen);
+                CheckResult(hint.GripScale > 0 && hint.GripScale < 1f && !hint.GetComponentsInChildren<Collider>(true).Any() &&
+                        !hint.GetComponentsInChildren<XRBaseInteractable>(true).Any(),
+                    "Smaller near feedback adds no competing interaction target: " + specimen,
+                    "Grip scale=" + hint.GripScale);
+                CheckResult(colliders.Select((collider, index) => collider.enabled && Vector3.Distance(collider.bounds.size, sizes[index]) < .0001f).All(value => value),
+                    "Near visual adaptation leaves the actual selection bounds unchanged: " + specimen,
+                    "Colliders=" + colliders.Length);
+                foreach (var language in new[] { MuseumLanguage.English, MuseumLanguage.Chinese, MuseumLanguage.TraditionalChinese })
+                {
+                    MuseumText.Channel.SetLanguage(language); yield return Wait(.12f);
+                    hint.Caption.ForceMeshUpdate(true, true);
+                    CheckResult(hint.Caption.GetComponent<LocalizedSourceText>().SourceEnglish == "Hold to rotate" && hint.Caption.text == MuseumText.Translate("Hold to rotate") && !hint.Caption.isTextOverflowing,
+                        "Learned short rotation guidance is localized and fits: " + specimen + "/" + language, hint.Caption.text);
+                    CaptureNearHint("near-" + specimen + "-hover-" + language);
+                }
+                station.Execute(HelmetDiegeticStation.Command.Hints); yield return Wait(.2f);
+                CheckResult(!station.RotationHintsCondensed && hint.Caption.GetComponent<LocalizedSourceText>().SourceEnglish == "Hold + move to rotate" &&
+                        hint.Caption.text == MuseumText.Translate("Hold + move to rotate"),
+                    "Visitors can restore complete rotation help after learning: " + specimen, hint.Caption.text);
+                foreach (var language in new[] { MuseumLanguage.English, MuseumLanguage.Chinese, MuseumLanguage.TraditionalChinese })
+                {
+                    MuseumText.Channel.SetLanguage(language); yield return Wait(.12f);
+                    hint.Caption.ForceMeshUpdate(true, true);
+                    CheckResult(hint.Caption.GetComponent<LocalizedSourceText>().SourceEnglish == "Hold + move to rotate" &&
+                            hint.Caption.text == MuseumText.Translate("Hold + move to rotate") && !hint.Caption.isTextOverflowing,
+                        "Restored complete help follows all three languages and fits: " + specimen + "/" + language, hint.Caption.text);
+                }
+                station.Execute(HelmetDiegeticStation.Command.Hints); yield return Wait(.2f);
+                var anchor = hint.AnchorPosition;
+                var ring = gesture == station.RotationGesture
+                    ? station.Controls[HelmetDiegeticStation.Command.Rotate].GetComponentsInChildren<LineRenderer>(true).Single(line => line.name == "Body grip feedback")
+                    : station.GetComponentsInChildren<LineRenderer>(true).Single(line => line.name == "Equipment grip ring" && line.transform.parent.name.EndsWith(equipment.Id));
+                float hoverWidth = ring.widthMultiplier;
+                QueueController(rightDevice, pose, rotation, true); yield return Wait(.2f);
+                CheckResult(gesture.isSelected && ring.enabled && ring.gameObject.activeInHierarchy && ring.widthMultiplier > hoverWidth * 1.5f &&
+                        hint.Caption.GetComponent<LocalizedSourceText>().SourceEnglish == "Move to rotate",
+                    "Near selected state remains visible without a large text strip: " + specimen,
+                    "Selected=" + gesture.isSelected + "; Ring width=" + ring.widthMultiplier + "; Caption=" + hint.Caption.text, "production-input");
+                CaptureNearHint("near-" + specimen + "-hold");
+                QueueHeadWorld(anchor - Camera.main.transform.forward * .01f, viewRotation); yield return Wait(.15f);
+                CheckResult(hint.CaptionSuppressed && !hint.Caption.enabled && !hint.Leader.enabled && ring.enabled && gesture.isSelected &&
+                        Vector3.Distance(anchor, hint.AnchorPosition) < .0001f,
+                    "Entering the caption space hides text while keeping the selected control point: " + specimen,
+                    "Suppressed=" + hint.CaptionSuppressed + "; Ring visible=" + ring.enabled + "; Selected=" + gesture.isSelected, "production-input");
+                QueueHeadWorld(nearView, viewRotation); yield return Wait(.15f);
+                CheckResult(!hint.CaptionSuppressed && hint.Caption.enabled && ring.enabled,
+                    "Returning to the clear view restores the existing caption without moving its anchor: " + specimen,
+                    "Suppressed=" + hint.CaptionSuppressed + "; Anchor delta=" + Vector3.Distance(anchor, hint.AnchorPosition));
+                var viewShift = Camera.main.transform.right * .04f;
+                QueueHeadWorld(nearView + viewShift, viewRotation); yield return Wait(.2f);
+                CheckResult(Vector3.Distance(anchor, hint.AnchorPosition) < .0001f && Vector3.Distance(anchor, hint.Caption.transform.position) < .0001f,
+                    "Caption stays anchored while the visitor moves their head during a hold: " + specimen,
+                    "Anchor delta=" + Vector3.Distance(anchor, hint.AnchorPosition));
+                QueueController(rightDevice, pose + Camera.main.transform.right * .05f, rotation, true); yield return Wait(.2f);
+                CheckResult(gesture.IsManipulating && Vector3.Distance(anchor, hint.AnchorPosition) < .0001f &&
+                        hint.Caption.GetComponent<LocalizedSourceText>().SourceEnglish == "Release to stop" && ring.enabled,
+                    "Rotating the specimen keeps its caption fixed and gives a short stop cue: " + specimen,
+                    "Manipulating=" + gesture.IsManipulating + "; Anchor delta=" + Vector3.Distance(anchor, hint.AnchorPosition), "production-input");
+                QueueController(rightDevice, pose, rotation, false); ParkHands(); QueueHead(); yield return Wait(1.2f);
+                CheckResult(!hint.IsAnchored && !hint.Leader.enabled,
+                    "Leaving the target releases the temporary caption anchor: " + specimen, "Anchored=" + hint.IsAnchored);
+                // Re-enter at a deliberately extreme 7.5 cm distance to exercise
+                // initial viewport-edge placement, not a head-following correction.
+                // This is a boundary fixture, not a recommended viewing distance.
+                if (gesture == station.RotationGesture) BodyRayPose(out pose, out rotation);
+                else EquipmentRayPose(equipment, gesture, out pose, out rotation);
+                ray = new Ray(pose, rotation * Vector3.forward);
+                hit = Physics.RaycastAll(ray, 3f, ~0, QueryTriggerInteraction.Collide).OrderBy(value => value.distance)
+                    .First(value => gesture.colliders.Contains(value.collider));
+                gripPoint = hit.point;
+                outward = (pose - gripPoint).normalized;
+                var boundaryView = gripPoint + outward * .075f;
+                var boundaryRotation = Quaternion.LookRotation(gripPoint - boundaryView, Vector3.up);
+                QueueHeadWorld(boundaryView, boundaryRotation);
+                QueueController(rightDevice, pose, rotation, false); yield return Wait(.4f);
+                CheckResult(gesture.isHovered && hint.UsesViewportFallback && hint.IsNear && !hint.CaptionSuppressed && hint.Caption.enabled,
+                    "Extreme close targeting explicitly chooses the initial viewport-edge fallback: " + specimen,
+                    "Hover=" + gesture.isHovered + "; Fallback=" + hint.UsesViewportFallback + "; Suppressed=" + hint.CaptionSuppressed, "production-input");
+                CheckHintViewport(hint, gripPoint, "viewport fallback " + specimen);
+                var boundaryAnchor = hint.AnchorPosition;
+                foreach (var language in new[] { MuseumLanguage.English, MuseumLanguage.Chinese, MuseumLanguage.TraditionalChinese })
+                {
+                    MuseumText.Channel.SetLanguage(language); yield return Wait(.12f);
+                    hint.Caption.ForceMeshUpdate(true, true);
+                    CheckResult(!hint.CaptionSuppressed && hint.Caption.enabled && !hint.Caption.isTextOverflowing &&
+                            hint.Caption.text == MuseumText.Translate("Hold to rotate") && Vector3.Distance(boundaryAnchor, hint.AnchorPosition) < .0001f,
+                        "Viewport-edge guidance is readable and remains anchored across languages: " + specimen + "/" + language,
+                        hint.Caption.text + "; Anchor delta=" + Vector3.Distance(boundaryAnchor, hint.AnchorPosition));
+                    CaptureNearHint("viewport-fallback-" + specimen + "-" + language);
+                }
+                ParkHands(); QueueHead(); yield return Wait(1.2f);
+            }
+            MuseumText.Channel.SetLanguage(MuseumLanguage.English);
+            inspection.ReduceMotion = oldMotion;
+            station.Execute(HelmetDiegeticStation.Command.Reset); yield return Wait(.5f);
+        }
+        static void QueueHeadWorld(Vector3 position, Quaternion rotation)
+        {
+            var parent = Camera.main.transform.parent;
+            QueueHead(parent.InverseTransformPoint(position), Quaternion.Inverse(parent.rotation) * rotation);
+        }
+        static void CaptureNearHint(string file)
+        {
+            foreach (var text in UnityEngine.Object.FindObjectsOfType<TMP_Text>()) text.ForceMeshUpdate(true);
+            string name = file + ".png";
+            var view = Camera.main;
+            HelmetDiegeticPreview.CaptureView(Path.Combine(Output, name), view.transform.position, view.transform.rotation, view.fieldOfView, view.aspect, view.nearClipPlane);
+            report.diagnosticCaptures.Add(name);
+        }
+        static Vector3 MonoViewportPoint(Camera view, Vector3 world)
+        {
+            Vector3 local = view.transform.InverseTransformPoint(world);
+            float halfHeight = Mathf.Tan(view.fieldOfView * .5f * Mathf.Deg2Rad);
+            float halfWidth = halfHeight * view.aspect;
+            if (local.z <= .00001f) return new Vector3(float.NaN, float.NaN, local.z);
+            return new Vector3(.5f + local.x / (2f * local.z * halfWidth), .5f + local.y / (2f * local.z * halfHeight), local.z);
+        }
+        static void CheckHintViewport(HelmetRotationHint hint, Vector3 gripPoint, string fixture)
+        {
+            var view = Camera.main;
+            var corners = new Vector3[4]; hint.Caption.rectTransform.GetWorldCorners(corners);
+            var projected = corners.Select(corner => MonoViewportPoint(view, corner)).ToArray();
+            bool fits = projected.All(point => point.z > view.nearClipPlane && point.x >= .02f && point.x <= .98f && point.y >= .02f && point.y <= .98f);
+            CheckResult(fits && hint.Caption.enabled && !hint.CaptionSuppressed,
+                "Whole initial rotation caption is visible inside the actual mono viewport: " + fixture,
+                "FOV=" + view.fieldOfView + "; Aspect=" + view.aspect + "; Corners=" + string.Join(",", projected.Select(point => point.ToString("F4"))));
+            var rectangle = Rect.MinMaxRect(projected.Min(point => point.x) - .003f, projected.Min(point => point.y) - .003f,
+                projected.Max(point => point.x) + .003f, projected.Max(point => point.y) + .003f);
+            var grip = MonoViewportPoint(view, gripPoint); var center = MonoViewportPoint(view, hint.TargetBounds.center);
+            CheckResult(grip.z > 0 && !rectangle.Contains(new Vector2(grip.x, grip.y)) &&
+                    (center.z <= 0 || !rectangle.Contains(new Vector2(center.x, center.y))),
+                "Viewport-edge placement keeps the selected point and specimen center clear: " + fixture,
+                "Caption=" + rectangle + "; Grip=" + grip.ToString("F4") + "; Center=" + center.ToString("F4"));
+            CheckResult(hint.AngularWidthDegrees <= station.MaximumHintAngle + .01f,
+                "Viewport placement retains the maximum caption angle: " + fixture,
+                "Angle=" + hint.AngularWidthDegrees + "; Limit=" + station.MaximumHintAngle);
         }
         static void BodyRayPose(out Vector3 pose, out Quaternion rotation)
         {

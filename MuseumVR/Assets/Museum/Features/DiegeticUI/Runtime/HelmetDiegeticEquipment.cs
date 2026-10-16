@@ -17,7 +17,9 @@ namespace Museum.Diegetic
             public Transform Feedback;
             public TextMeshPro Caption;
             public LineRenderer Ring;
+            public HelmetRotationHint Hint;
             public Vector3 GripLocal;
+            public Quaternion GripStart;
             public bool WasSelected;
             public int HoverState=-1;
             public readonly Dictionary<Renderer,float> OriginalHover = new Dictionary<Renderer,float>();
@@ -83,9 +85,10 @@ namespace Museum.Diegetic
             feedback.SetParent(exhibitUI,false);
             var label=Label(feedback,"Equipment gesture hint",new Vector3(0,.065f,-.025f),new Vector2(.40f,.055f),.26f);
             MuseumText.Set(label,"Hold + move to rotate");
+            var captionHint=MakeRotationHint(feedback,"Equipment rotation caption anchor - "+exhibit.Id,label,1,exhibit.Root);
             var ring=MakeLine(feedback,"Equipment grip ring",.0013f);ring.loop=true;ring.positionCount=40;
             for(int i=0;i<40;i++){float a=i/40f*Mathf.PI*2;ring.SetPosition(i,new Vector3(Mathf.Cos(a)*.014f,Mathf.Sin(a)*.014f,-.022f));}
-            var control=new EquipmentControl{Exhibit=exhibit,Gesture=gesture,Feedback=feedback,Caption=label,Ring=ring};
+            var control=new EquipmentControl{Exhibit=exhibit,Gesture=gesture,Feedback=feedback,Caption=label,Ring=ring,Hint=captionHint};
             foreach(var surface in exhibit.Renderers)
             {
                 if(!surface)continue;surface.GetPropertyBlock(capBlock);
@@ -121,13 +124,25 @@ namespace Museum.Diegetic
                         if(d<distance){distance=d;point=near;}
                     }
                 }
-                if(selected && !control.WasSelected)control.GripLocal=root.InverseTransformPoint(point);
+                if(selected && !control.WasSelected)
+                {control.GripLocal=root.InverseTransformPoint(point);control.GripStart=root.rotation;}
                 if(selected)point=root.TransformPoint(control.GripLocal);
+                if(selected && control.Gesture.IsManipulating && Quaternion.Angle(control.GripStart,root.rotation)>=rotationLearningAngle)
+                    RotationHelpLearned=true;
                 control.WasSelected=selected;control.Feedback.position=point;
                 if(viewer && (point-viewer.position).sqrMagnitude>.0001f)
                     control.Feedback.rotation=Quaternion.LookRotation(point-viewer.position,Vector3.up);
                 control.Ring.widthMultiplier=selected?.0028f:.0013f;SetLineColor(control.Ring,selected?amber:teal);
-                string text=selected?(control.Gesture.IsManipulating?"Release to stop":"Move hand to rotate"):"Hold + move to rotate";
+                var bounds=control.Exhibit.Renderers.FirstOrDefault(r=>r && r.enabled && r.gameObject.activeInHierarchy);
+                var combined=bounds?bounds.bounds:new Bounds(root.TransformPoint(control.Exhibit.CenterLocal),Vector3.one*.1f);
+                if(!control.Hint.IsAnchored || selected)
+                    foreach(var surface in control.Exhibit.Renderers)
+                        if(surface && surface.enabled && surface.gameObject.activeInHierarchy)combined.Encapsulate(surface.bounds);
+                else combined=control.Hint.TargetBounds;
+                control.Hint.UpdatePresentation(viewer,combined,point,true,selected,1f,nearHintDistance,maximumHintAngle,selected?amber:teal);
+                control.Ring.transform.localScale=Vector3.one*control.Hint.GripScale;
+                control.Ring.widthMultiplier=(selected?.0028f:.0013f)*control.Hint.GripScale;
+                string text=RotationHintText(selected,control.Gesture.IsManipulating);
                 if(control.Caption.GetComponent<LocalizedSourceText>()?.SourceEnglish!=text)MuseumText.Set(control.Caption,text);
             }
         }

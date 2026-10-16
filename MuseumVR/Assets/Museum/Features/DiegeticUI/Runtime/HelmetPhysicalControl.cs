@@ -30,7 +30,7 @@ namespace Museum.Diegetic
         IXRSelectInteractor pressInteractor;
         readonly List<IXRSelectInteractor> blockedHands = new List<IXRSelectInteractor>();
         Color tint;
-        bool contextualOnly, symbol;
+        bool contextualOnly, symbol, externalCaptionPlacement;
         public float Opacity => opacity;
         public XRBaseInteractable Target => target;
         public TMP_Text Caption => caption;
@@ -44,6 +44,7 @@ namespace Museum.Diegetic
         public int CancelledCount { get; private set; }
         public IXRSelectInteractor PressInteractor => pressInteractor;
         public FeedbackState State { get; private set; }
+        public bool HasVisualIntent { get; private set; }
         public event Action<IXRSelectInteractor> PressAbandonedWhileHeld;
         bool IXRSelectFilter.canProcess => true;
         public void ConfigureVisibility(float idle,float radius,float delay)
@@ -89,6 +90,7 @@ namespace Museum.Diegetic
             ApplyVisuals();
         }
         public void SetEmphasis(bool value) { emphasis=value; }
+        public void UseExternalCaptionPlacement() => externalCaptionPlacement=true;
         void OnSelected(SelectEnterEventArgs args)
         {
             PruneReleasedHands();
@@ -178,6 +180,7 @@ namespace Museum.Diegetic
             foreach(var hit in target.colliders)
                 if(hit && hit.enabled && hit.gameObject.activeInHierarchy && station.HandNear(hit,proximity)){nearby=true;break;}
             bool intent=target.isHovered || target.isSelected || ConfirmationVisible || nearby || (!contextualOnly && (emphasis || station.AlwaysShowHints));
+            HasVisualIntent=intent;
             if(intent)lastIntent=Time.unscaledTime;
             bool visible=intent || Time.unscaledTime-lastIntent<fadeDelay;
             opacity=Mathf.MoveTowards(opacity,visible?1:restingOpacity,Time.unscaledDeltaTime*4);
@@ -195,7 +198,7 @@ namespace Museum.Diegetic
             // Never move the target or the source face: their colliders remain fixed through every state.
             if(rim){rim.transform.localPosition+=Vector3.forward*deltaTravel;rim.widthMultiplier=rimWidth*(held?2.2f:ConfirmationVisible?2.5f:hover?1.6f:1);}
             foreach(var line in symbolLines)if(line)line.transform.localPosition+=Vector3.forward*deltaTravel;
-            if(caption)caption.transform.localPosition+=Vector3.forward*deltaTravel;
+            if(caption && !externalCaptionPlacement)caption.transform.localPosition+=Vector3.forward*deltaTravel;
             if(hint)hint.transform.localPosition+=Vector3.forward*deltaTravel;
             visualTravel=travel;
             if(face)
@@ -237,7 +240,7 @@ namespace Museum.Diegetic
             }
             return result;
         }
-        void OnDisable() { CancelPress();confirmedUntil=-100; }
+        void OnDisable() { CancelPress();confirmedUntil=-100;HasVisualIntent=false; }
         void OnDestroy()
         {
             if(target)

@@ -1,0 +1,77 @@
+{
+  "current": {
+    "sourceReport": "artifacts/helmet-interaction/qa/runs/20261016T180809025Z-precision-close-hints-20261017-eb148da9c5974f99b133232204fbdb47/report.json",
+    "sourceReportSha256": "7417108805864d1f00320cbc7d1eb9c38baf2c7c1ee73202d3a96fba85403d95",
+    "kind": "Publication copy; all checks and fingerprints preserved; original report unchanged locally.",
+    "omitted": [
+      "dirty: unrelated untracked-file inventory",
+      "diagnosticCaptures: local diagnostic image paths"
+    ],
+    "historical": false,
+    "execution": {
+      "entryPoint": "Museum.Diegetic.Editor.HelmetDiegeticValidation.RunBatch",
+      "naturalExitCode": 0,
+      "exitReceiptSha256": "13bf7b3039c63bf5a50491fa3cfd8eb4e699d1ba1436315aef9cbe5711530354",
+      "logSha256": "42ae73b43888fa4fa5944765ffa7033f3c3c7a516eb2596eddeb03e2288e76ca"
+    }
+  },
+  "captures": [
+    {
+      "path": "review-previews/near-air-pump-hold.png",
+      "sha256": "23b555af7f4cc3a548553764001fe89199a5c1a6dc84f16b4afb8ca6daa5bef5"
+    },
+    {
+      "path": "review-previews/near-air-pump-hover-Chinese.png",
+      "sha256": "503d4e0bb275cc64a8b69c04bc5552dd83bb442d6ef09bd4aca96e8185889c53"
+    },
+    {
+      "path": "review-previews/near-air-pump-hover-English.png",
+      "sha256": "59c8bfe93c1afeee7d3c19a6de6d8b9517ea7fb1b93f42c7c548de484dda1b1d"
+    },
+    {
+      "path": "review-previews/near-air-pump-hover-TraditionalChinese.png",
+      "sha256": "75cb98cc8c7b4dc66997f4c24fc7ba0c8ee2bc5ac102b44cb2881d44cc0594b2"
+    },
+    {
+      "path": "review-previews/near-helmet-hold.png",
+      "sha256": "e445fc536cd55cb3b1be702b5cb0eda2b84f659015094036ff34616ab7a96b86"
+    },
+    {
+      "path": "review-previews/near-helmet-hover-Chinese.png",
+      "sha256": "ae0a49904956ef59bfbae63942c878e15204b30ad1e56729b8ad829c45ba5cc7"
+    },
+    {
+      "path": "review-previews/near-helmet-hover-English.png",
+      "sha256": "0d2692e9b096b099b5913f1b6df77b527d6ace82d5a97b68039665c526b0e48c"
+    },
+    {
+      "path": "review-previews/near-helmet-hover-TraditionalChinese.png",
+      "sha256": "a1855e6c3d13d9dc5a1b613934e9a2802ed3e3b8b59cc93850116a06bc238a80"
+    },
+    {
+      "path": "review-previews/viewport-fallback-air-pump-Chinese.png",
+      "sha256": "a300c4c66dd64d292af7f5112f40e4a8a73138898944218d872068d6ff8e9b76"
+    },
+    {
+      "path": "review-previews/viewport-fallback-air-pump-English.png",
+      "sha256": "216bbfb4497410a286ad6a722f15e149d8c96e3f12de6f40b6d8058a22724ed9"
+    },
+    {
+      "path": "review-previews/viewport-fallback-air-pump-TraditionalChinese.png",
+      "sha256": "ee05b8ee0ad2be41ccb08aafba3b728bbd279e30d2bbdebfb8cafc79b976c388"
+    },
+    {
+      "path": "review-previews/viewport-fallback-helmet-Chinese.png",
+      "sha256": "6483491ffc75eca8a1bd3594e2adaead5d933f3b1c63b6c3dd3a6bf7c7267509"
+    },
+    {
+      "path": "review-previews/viewport-fallback-helmet-English.png",
+      "sha256": "ae8ad30a9101a55ab15100eaca3179cc1cbc12a16aa1e4161aaefd631779041a"
+    },
+    {
+      "path": "review-previews/viewport-fallback-helmet-TraditionalChinese.png",
+      "sha256": "01c196e586b8fb63d69d6f402c9cf7a0d577c48e1ea31a641f1ed3ac10aad440"
+    }
+  ],
+  "limitations": "No real headset/controller, comfort, reachability study, user test or executable build validation. RenderTexture images are diagnostic views of the product scene, not headset screenshots. Direct physical hand interaction is not independently validated by this runner."
+}

@@ -1784,6 +1784,20 @@
       "chinese": "已到高度限制",
       "traditionalChinese": "已到高度限制",
       "note": "Per-session eye height preference; prototype step and limits, not physical floor calibration."
+    },
+    {
+      "key": "diegetic.rotation.hold.short",
+      "english": "Hold to rotate",
+      "chinese": "按住旋转",
+      "traditionalChinese": "按住旋轉",
+      "note": "Short contextual rotation hint after the visitor has successfully rotated an exhibit; full help remains available through Always show hints."
+    },
+    {
+      "key": "diegetic.rotation.move.short",
+      "english": "Move to rotate",
+      "chinese": "移动旋转",
+      "traditionalChinese": "移動旋轉",
+      "note": "Short contextual hint while holding a rotation target before movement; interaction semantics are unchanged."
     }
   ]
 }

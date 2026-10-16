@@ -23,7 +23,7 @@ namespace Museum.Diegetic.Editor
         static HelmetDiegeticPreview(){EditorApplication.update+=Tick;EditorApplication.playModeStateChanged+=State;}
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void Prepare(){if(!SessionState.GetBool(Key,false))return;if(Keyboard.current==null)InputSystem.AddDevice<Keyboard>();if(Mouse.current==null)InputSystem.AddDevice<Mouse>();}
-        public static void RunBatch(){SessionState.SetString(Key+"Folder",Path.GetFullPath(Path.Combine(Application.dataPath,"../../../tmp/height-demo-20261017/preview-"+DateTime.UtcNow.ToString("yyyyMMddTHHmmssfffZ"))));Directory.CreateDirectory(Folder);SessionState.SetBool(Key,true);EditorSceneManager.OpenScene("Assets/Museum/Scenes/MuseumStart.unity");EditorApplication.EnterPlaymode();}
+        public static void RunBatch(){SessionState.SetString(Key+"Folder",Path.GetFullPath(Path.Combine(Application.dataPath,"../../../tmp/rotation-precision-20261017/preview-"+DateTime.UtcNow.ToString("yyyyMMddTHHmmssfffZ"))));Directory.CreateDirectory(Folder);SessionState.SetBool(Key,true);EditorSceneManager.OpenScene("Assets/Museum/Scenes/MuseumStart.unity");EditorApplication.EnterPlaymode();}
         static void State(PlayModeStateChange state)
         {
             if(!SessionState.GetBool(Key,false))return;
@@ -75,16 +75,25 @@ namespace Museum.Diegetic.Editor
             Vector3 center=station.Inspection.transform.TransformPoint(station.Inspection.SectionCenterLocal);
             if(railView)center=station.SectionRail.position+Vector3.up*.05f;
             if(settingsView)center=station.Controls[HelmetDiegeticStation.Command.HeightReset].transform.position;
-            var go=new GameObject("Read-only preview camera");var camera=go.AddComponent<Camera>();camera.fieldOfView=52;
-            camera.transform.position=center+offset;camera.transform.LookAt(center+Vector3.down*.1f);
-            camera.nearClipPlane=.02f;camera.farClipPlane=50;camera.clearFlags=CameraClearFlags.Skybox;
+            var position=center+offset;
+            CaptureView(Path.Combine(Folder,name+".png"),position,Quaternion.LookRotation(center+Vector3.down*.1f-position,Vector3.up),52);
+        }
+        /// <summary>Normal mono Camera.Render capture; validation supplies a real hover/hold scene state.</summary>
+        public static void CaptureView(string path,Vector3 position,Quaternion rotation,float fieldOfView=60f,float aspect=4f/3f,float nearClip=.02f)
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
+            aspect=Mathf.Clamp(aspect,.5f,3.5f);
+            int width=1600,height=Mathf.RoundToInt(width/aspect);
+            var go=new GameObject("Read-only preview camera");var camera=go.AddComponent<Camera>();camera.fieldOfView=fieldOfView;
+            camera.transform.SetPositionAndRotation(position,rotation);
+            camera.nearClipPlane=nearClip;camera.farClipPlane=50;camera.clearFlags=CameraClearFlags.Skybox;
             var data=camera.gameObject.AddComponent<UniversalAdditionalCameraData>();data.renderPostProcessing=true;data.allowXRRendering=false;
-            var target=new RenderTexture(1600,1200,24);camera.targetTexture=target;camera.stereoTargetEye=StereoTargetEyeMask.None;
-            camera.aspect=1600f/1200f;camera.rect=new Rect(0,0,1,1);
-            camera.projectionMatrix=Matrix4x4.Perspective(52,camera.aspect,.02f,50);
+            var target=new RenderTexture(width,height,24);camera.targetTexture=target;camera.stereoTargetEye=StereoTargetEyeMask.None;
+            camera.aspect=aspect;camera.rect=new Rect(0,0,1,1);
+            camera.projectionMatrix=Matrix4x4.Perspective(fieldOfView,camera.aspect,nearClip,50);
             camera.Render();var old=RenderTexture.active;RenderTexture.active=target;
-            var image=new Texture2D(1600,1200,TextureFormat.RGB24,false);image.ReadPixels(new Rect(0,0,1600,1200),0,0);image.Apply();
-            File.WriteAllBytes(Path.Combine(Folder,name+".png"),image.EncodeToPNG());RenderTexture.active=old;camera.targetTexture=null;
+            var image=new Texture2D(width,height,TextureFormat.RGB24,false);image.ReadPixels(new Rect(0,0,width,height),0,0);image.Apply();
+            File.WriteAllBytes(path,image.EncodeToPNG());RenderTexture.active=old;camera.targetTexture=null;
             UnityEngine.Object.DestroyImmediate(image);UnityEngine.Object.DestroyImmediate(target);UnityEngine.Object.DestroyImmediate(go);
         }
     }

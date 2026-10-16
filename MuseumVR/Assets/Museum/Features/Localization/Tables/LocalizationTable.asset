@@ -1496,4 +1496,16 @@ MonoBehaviour:
     traditionalChinese: "\u5DF2\u5230\u9AD8\u5EA6\u9650\u5236"
     note: Per-session eye height preference; prototype step and limits, not physical
       floor calibration.
+  - key: diegetic.rotation.hold.short
+    chinese: "\u6309\u4F4F\u65CB\u8F6C"
+    english: Hold to rotate
+    traditionalChinese: "\u6309\u4F4F\u65CB\u8F49"
+    note: Short contextual rotation hint after the visitor has successfully rotated
+      an exhibit; full help remains available through Always show hints.
+  - key: diegetic.rotation.move.short
+    chinese: "\u79FB\u52A8\u65CB\u8F6C"
+    english: Move to rotate
+    traditionalChinese: "\u79FB\u52D5\u65CB\u8F49"
+    note: Short contextual hint while holding a rotation target before movement;
+      interaction semantics are unchanged.
   fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}

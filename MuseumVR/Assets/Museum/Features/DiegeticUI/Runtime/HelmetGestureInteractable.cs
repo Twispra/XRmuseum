@@ -20,6 +20,12 @@ namespace Museum.Diegetic
         Transform equipmentRoot;
         Vector3 equipmentCentreLocal;
         [SerializeField, Min(1f)] float rotationDegreesPerMetre = 300f;
+        // Prototype interaction settings, not measured hand-tremor or accessibility limits.
+        [SerializeField, Range(0f, .003f)] float rotationDeadbandMetres = .0012f;
+        [SerializeField, Range(.1f, 1f)] float precisionGainMultiplier = .35f;
+        [SerializeField, Min(.001f)] float precisionSpeedMetresPerSecond = .02f;
+        [SerializeField, Min(.002f)] float fullSpeedMetresPerSecond = .22f;
+        [SerializeField, Min(.001f)] float rotationSpeedResponseSeconds = .045f;
         [SerializeField] Transform sectionRail;
         [SerializeField, Min(.01f)] float sectionRailHalfTravel = .15f;
 
@@ -33,20 +39,27 @@ namespace Museum.Diegetic
         readonly List<IXRSelectInteractor> releaseGuards = new List<IXRSelectInteractor>();
         IXRSelectInteractor activeInteractor;
         Rigidbody exhibitBody;
-        Vector3 previousHandPosition, initialHandPosition;
+        Vector3 initialHandPosition;
         Vector3 fixedWorldCentre, fixedCentreLocal, initialSectionHandLocal;
         Vector3 initialSectionNormalLocal;
         Vector3 capturedRailAxis;
-        Vector2 trackballPoint;
+        Vector2 trackballPoint, filteredRotationPosition;
         Quaternion fixedViewRotation;
         float initialSectionOffset;
         float capturedRailHalfTravel, capturedSectionRange;
+        float filteredRotationSpeed;
         int observedResetCount;
         bool dragging, cancelling, manipulating, usesRail;
 
         public bool IsDragging => dragging;
         public bool IsManipulating => dragging && manipulating;
         public Mode GestureMode => mode;
+        public float RotationDeadbandMetres => Finite(rotationDeadbandMetres) ? Mathf.Clamp(rotationDeadbandMetres, 0f, .003f) : .0012f;
+        public float PrecisionGainMultiplier => Finite(precisionGainMultiplier) ? Mathf.Clamp(precisionGainMultiplier, .1f, 1f) : .35f;
+        public float PrecisionSpeedMetresPerSecond => Finite(precisionSpeedMetresPerSecond) ? Mathf.Max(.001f, precisionSpeedMetresPerSecond) : .02f;
+        public float FullSpeedMetresPerSecond => Finite(fullSpeedMetresPerSecond)
+            ? Mathf.Max(PrecisionSpeedMetresPerSecond + .001f, fullSpeedMetresPerSecond) : Mathf.Max(PrecisionSpeedMetresPerSecond + .001f, .22f);
+        public float CurrentRotationGainMultiplier { get; private set; } = .35f;
         public Transform TargetRoot => equipmentRoot ? equipmentRoot : inspection ? inspection.transform : null;
         public Transform SectionRail => sectionRail;
         public float SectionRailHalfTravel => sectionRailHalfTravel;
@@ -144,6 +157,7 @@ namespace Museum.Diegetic
                 activeInteractor = null;
                 dragging = false;
                 manipulating = false;
+                ResetRotationFilter();
             }
             base.OnSelectExited(args);
         }
@@ -165,7 +179,7 @@ namespace Museum.Diegetic
                 CancelGesture();
                 return;
             }
-            Apply(position);
+            Apply(position, Time.unscaledDeltaTime);
         }
 
         /// <summary>Forced exits preserve a release-before-reselect guard across disable/enable.</summary>
@@ -185,6 +199,7 @@ namespace Museum.Diegetic
                 activeInteractor = null;
                 dragging = false;
                 manipulating = false;
+                ResetRotationFilter();
             }
             finally { cancelling = false; }
         }
@@ -208,7 +223,8 @@ namespace Museum.Diegetic
             Begin(handPosition, viewRotation, normalizedTrackballPoint);
         }
 
-        public void ApplyForValidation(Vector3 handPosition) => Apply(handPosition);
+        public void ApplyForValidation(Vector3 handPosition) => Apply(handPosition, Time.unscaledDeltaTime);
+        public void ApplyForValidation(Vector3 handPosition, float deltaTime) => Apply(handPosition, deltaTime);
         public void EndForValidation() => CancelGesture();
 
         bool CanOperate()
@@ -224,7 +240,8 @@ namespace Museum.Diegetic
             if (!CanOperate() || !Finite(handPosition) || !Finite(viewRotation) ||
                 !Finite(normalizedTrackballPoint)) return false;
             CacheExhibitBody();
-            initialHandPosition = previousHandPosition = handPosition;
+            initialHandPosition = handPosition;
+            ResetRotationFilter();
             fixedViewRotation = viewRotation.normalized;
             trackballPoint = Vector2.ClampMagnitude(normalizedTrackballPoint, MaximumTrackballOffset);
             fixedCentreLocal = equipmentRoot ? equipmentCentreLocal : inspection.SectionCenterLocal;
@@ -252,7 +269,7 @@ namespace Museum.Diegetic
             return true;
         }
 
-        void Apply(Vector3 handPosition)
+        void Apply(Vector3 handPosition, float deltaTime)
         {
             if (!dragging) return;
             if (!CanOperate() || (!equipmentRoot && inspection.ResetCount != observedResetCount))
@@ -292,40 +309,52 @@ namespace Museum.Diegetic
                 return;
             }
 
+            // Filtering is confined to rotation. The section rail above keeps its exact
+            // one-to-one mapping, independent of timing or the rotation gain settings.
+            if (!Finite(deltaTime) || deltaTime <= 0f) return;
+            Vector3 displacement = Quaternion.Inverse(fixedViewRotation) * (handPosition - initialHandPosition);
+            if (!Finite(displacement) || !Finite(rotationDegreesPerMetre)) return;
+            var rawPosition = new Vector2(displacement.x, displacement.y);
             if (!manipulating)
             {
-                Vector3 displacement = Quaternion.Inverse(fixedViewRotation) * (handPosition - initialHandPosition);
-                if (!Finite(displacement)) return;
-                var planarDisplacement = new Vector2(displacement.x, displacement.y);
-                float planarDistance = planarDisplacement.magnitude;
+                float planarDistance = rawPosition.magnitude;
                 if (!Finite(planarDistance) || planarDistance <= RotationStartDistance) return;
                 // Consume the small initial movement instead of releasing all of
                 // it at once when the grab threshold is crossed. Reaching toward
                 // the object alone cannot arm a rotation gesture.
-                Vector2 threshold = planarDisplacement / planarDistance * RotationStartDistance;
-                previousHandPosition = initialHandPosition + fixedViewRotation * new Vector3(threshold.x, threshold.y, displacement.z);
+                filteredRotationPosition = rawPosition / planarDistance * RotationStartDistance;
                 manipulating = true;
             }
 
-            Vector3 movement = Quaternion.Inverse(fixedViewRotation) * (handPosition - previousHandPosition);
-            if (!Finite(movement) || !Finite(rotationDegreesPerMetre)) return;
-            Vector2 planarMovement = new Vector2(movement.x, movement.y);
-            float distance = planarMovement.magnitude;
-            if (!Finite(distance)) return;
-            if (distance < .000001f)
+            // A position-domain play operator keeps the last accepted cursor inside a
+            // small disc around the raw cursor. Sub-millimetre changes accumulate in
+            // rawPosition; slow deliberate travel is not discarded frame by frame.
+            Vector2 residual = rawPosition - filteredRotationPosition;
+            float residualDistance = residual.magnitude;
+            if (!Finite(residualDistance)) return;
+            float deadband = RotationDeadbandMetres;
+            if (residualDistance <= deadband + .000001f)
             {
-                // Depth is deliberately ignored. Reaching toward the exhibit
-                // must not introduce an unexpected twist around the view axis.
-                previousHandPosition = handPosition;
+                // Only the speed estimate settles. Never chase the cursor or finish a
+                // pending rotation when the hand stops, including a depth-only reach.
+                UpdateRotationGain(0f, deltaTime);
                 return;
             }
+            Vector2 planarMovement = residual * ((residualDistance - deadband) / residualDistance);
+            float distance = planarMovement.magnitude;
+            if (!Finite(planarMovement) || !Finite(distance) || distance < .000001f) return;
+            float speed = distance / deltaTime;
+            if (!Finite(speed)) return;
+            UpdateRotationGain(speed, deltaTime);
             float gain = Mathf.Clamp(rotationDegreesPerMetre, 1f, 1440f);
+            // The rolling sphere's geometry stays fixed; speed changes only the angle,
+            // so transitioning into fine control cannot suddenly change the rotation axis.
             float radius = Mathf.Clamp(Mathf.Rad2Deg / gain, .08f, .45f);
             Vector2 nextPoint = Vector2.ClampMagnitude(trackballPoint + planarMovement / radius, MaximumTrackballOffset);
             Vector3 nearSurface = ProjectTrackball((trackballPoint + nextPoint) * .5f);
             Vector3 localAxis = Vector3.Cross(nearSurface, new Vector3(planarMovement.x, planarMovement.y, 0f));
             float axisMagnitude = localAxis.magnitude;
-            float angle = distance * gain;
+            float angle = distance * gain * CurrentRotationGainMultiplier;
             if (!Finite(nextPoint) || !Finite(localAxis) || !Finite(axisMagnitude) || !Finite(angle) || axisMagnitude < .0000001f) return;
 
             // In the frozen user view the near surface faces -Z. Cross(-Z,+X)
@@ -360,7 +389,23 @@ namespace Museum.Diegetic
             }
             Physics.SyncTransforms();
             trackballPoint = nextPoint;
-            previousHandPosition = handPosition;
+            filteredRotationPosition += planarMovement;
+        }
+
+        void ResetRotationFilter()
+        {
+            filteredRotationPosition = Vector2.zero;
+            filteredRotationSpeed = 0f;
+            CurrentRotationGainMultiplier = PrecisionGainMultiplier;
+        }
+
+        void UpdateRotationGain(float speed, float deltaTime)
+        {
+            float response = Finite(rotationSpeedResponseSeconds) ? Mathf.Max(.001f, rotationSpeedResponseSeconds) : .045f;
+            float weight = 1f - Mathf.Exp(-deltaTime / response);
+            filteredRotationSpeed = Mathf.Lerp(filteredRotationSpeed, speed, weight);
+            float amount = Mathf.InverseLerp(PrecisionSpeedMetresPerSecond, FullSpeedMetresPerSecond, filteredRotationSpeed);
+            CurrentRotationGainMultiplier = Mathf.Lerp(PrecisionGainMultiplier, 1f, amount * amount * (3f - 2f * amount));
         }
 
         static Vector3 ProjectTrackball(Vector2 point)

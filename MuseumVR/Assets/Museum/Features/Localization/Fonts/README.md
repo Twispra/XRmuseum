@@ -43,7 +43,7 @@ Issue #20 的九条热点文案使字符清单由 497 增至 523。原位补烤 
 
 1. 同步三语 JSON 与保存的 LocalizationTable。
 2. 用 Python 执行本目录 `make-charlist.py`；核对字符差集。
-3. 在隔离 checkout、退出 Play 后重烤所需字符，保留既有字体及子资源引用。不得删除字体或重建 .meta 来绕过问题。
+3. 先检查保存 SDF 的字符覆盖；确有缺字时，在隔离 checkout、退出 Play 后补烤，保留既有字体及子资源引用。文案变了但保存字形已覆盖时，只同步表并验证，不必重烤。不得删除字体或重建 .meta 来绕过问题。
 4. 核对保存图集的尺寸与真实像素、字符覆盖、原引用，并运行模块和受影响场景验收。
 
 手工 Creator 参数：Source Font 为本目录提交的 subset TTF；Custom Size 110、Padding 6、4096×4096、SDFAA、Characters from File 指向 characters-required.txt。更新前备份，保存后核对原 GUID/localFileID，不能只看内存里 HasCharacter 成功或图集尺寸存在。新增字符以本次字符清单和实际报告为准。
@@ -65,3 +65,7 @@ Issue #20 的九条热点文案使字符清单由 497 增至 523。原位补烤 
 ### 2026-10-17 视角高度（本地候选）
 
 新增四条三语高度文案，共 255 条、标准字符清单 574 个显示字符。当前源 TTF cmap 7671 个码位未变，已覆盖新字；静态 SDF 原位补烤为 585 字符，保留历史字形、GUID 和字体／材质／图集 localFileID。保存图集字节与渲染缓冲一致，新增文案无 fallback；详见本轮字体与交互验收活动。
+
+### 2026-10-17 旋转短提示
+
+新增“按住旋转／移动旋转”的简繁英文案，表共 257 条；规范显示字符仍为 574，保存 SDF 的 585 个字符完整覆盖，字符清单、源 TTF、静态 SDF 及所有身份引用均未改变。只用 `Museum.Diegetic.Editor.HelmetDiegeticSetup.RefreshTextBatch` 更新保存表，不重写场景或重烤字体。动态提示继续使用 `MuseumText.Set`，不得在每帧回调直接覆盖已翻译的 `.text`。见[本轮交接](../../../../../../docs/activity/2026-10-17-rotation-precision-hints.md)。

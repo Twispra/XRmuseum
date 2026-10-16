@@ -47,6 +47,19 @@ namespace Museum.Diegetic.Editor
             try{Install();TrilingualFontBaker.RunBatch();AssetDatabase.SaveAssets();EditorApplication.Exit(0);}
             catch(Exception e){Debug.LogException(e);EditorApplication.Exit(1);}
         }
+        /// <summary>Refresh visitor text without reserializing the scene or rebuilding an unchanged font.</summary>
+        public static void RefreshTextBatch()
+        {
+            try
+            {
+                var table=AssetDatabase.LoadAssetAtPath<LocalizationTable>("Assets/Museum/Features/Localization/Tables/LocalizationTable.asset");
+                if(!table || !table.FontAsset)throw new InvalidOperationException("Saved localization table/font missing.");
+                TrilingualMuseumSetup.ApplyTable(table,table.FontAsset);
+                AssetDatabase.SaveAssets();
+                EditorApplication.Exit(0);
+            }
+            catch(Exception e){Debug.LogException(e);EditorApplication.Exit(1);}
+        }
         [MenuItem("Museum/Exhibit UI/Open main scene")]
         public static void OpenMain()=>EditorSceneManager.OpenScene(ScenePath);
     }

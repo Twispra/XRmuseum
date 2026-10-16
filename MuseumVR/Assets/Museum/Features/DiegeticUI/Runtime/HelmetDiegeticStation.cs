@@ -32,6 +32,9 @@ namespace Museum.Diegetic
         [SerializeField,Range(.05f,.5f)] float handRevealDistance=.18f;
         [SerializeField,Range(0,3)] float fadeOutDelay=.65f;
         [SerializeField,Range(.02f,.10f)] float directContactDistance=.055f;
+        [SerializeField,Range(.15f,1f)] float nearHintDistance=.45f;
+        [SerializeField,Range(8f,30f)] float maximumHintAngle=18f;
+        [SerializeField,Range(1f,30f)] float rotationLearningAngle=5f;
         readonly Dictionary<Command, HelmetPhysicalControl> controls = new Dictionary<Command, HelmetPhysicalControl>();
         readonly Dictionary<GameObject,bool> previousVisibility = new Dictionary<GameObject,bool>();
         readonly List<XRBaseInteractable> guardedTargets = new List<XRBaseInteractable>();
@@ -43,6 +46,7 @@ namespace Museum.Diegetic
         Renderer hoveredShell;
         float previousShellHover;
         Vector3 gripPointLocal;
+        Quaternion bodyGripStart;
         bool bodyWasSelected;
         const float RailHalfTravel=.15f;
         GameObject options, about;
@@ -71,6 +75,12 @@ namespace Museum.Diegetic
         public bool AboutVisible => about && about.activeSelf;
         public HelmetGestureInteractable RotationGesture { get; private set; }
         public HelmetGestureInteractable SectionGesture { get; private set; }
+        public HelmetRotationHint BodyRotationHint { get; private set; }
+        public IReadOnlyList<HelmetRotationHint> EquipmentRotationHints => equipmentControls.Select(c=>c.Hint).Where(h=>h).ToArray();
+        public bool RotationHelpLearned { get; private set; }
+        public bool RotationHintsCondensed => RotationHelpLearned && !AlwaysShowHints;
+        public float NearHintDistance => nearHintDistance;
+        public float MaximumHintAngle => maximumHintAngle;
         public HelmetInspectionController Inspection => inspection;
         public HelmetConnectionDemonstration Demonstration => demonstration;
         public Transform SectionRail => sectionRail;
@@ -392,14 +402,31 @@ namespace Museum.Diegetic
                 foreach(var collider in RotationGesture.colliders)
                 {if(!collider || !collider.enabled)continue;var near=collider.ClosestPoint(hand.transform.position);float d=(near-hand.transform.position).sqrMagnitude;if(d<distance){distance=d;point=near;}}
             }
-            if(selected && !bodyWasSelected)gripPointLocal=inspection.transform.InverseTransformPoint(point);
+            if(selected && !bodyWasSelected)
+            {gripPointLocal=inspection.transform.InverseTransformPoint(point);bodyGripStart=inspection.transform.rotation;}
             if(selected)point=inspection.transform.TransformPoint(gripPointLocal);
+            if(selected && RotationGesture.IsManipulating && Quaternion.Angle(bodyGripStart,inspection.transform.rotation)>=rotationLearningAngle)
+                RotationHelpLearned=true;
             bodyWasSelected=selected;
             SetMarker(Command.Rotate,point);
             gripRing.enabled=selected || hovered;
             gripRing.widthMultiplier=selected?.0028f:.0013f;
             var tint=selected?amber:teal;tint.a=1;SetLineColor(gripRing,tint);
             var shell=binding?binding.ActiveShell:null;
+            if(BodyRotationHint)
+            {
+                var bounds=shell?shell.bounds:new Bounds(inspection.transform.TransformPoint(inspection.SectionCenterLocal),Vector3.one*.4f);
+                // Include the current inspection geometry, especially the wider
+                // breastplate, instead of treating the bonnet alone as the outline.
+                var center=inspection.SectionCenterLocal;var extent=inspection.SectionExtentLocal;
+                for(int corner=0;corner<8;corner++)
+                    bounds.Encapsulate(inspection.transform.TransformPoint(center+Vector3.Scale(extent,
+                        new Vector3((corner&1)==0?-1:1,(corner&2)==0?-1:1,(corner&4)==0?-1:1))));
+                BodyRotationHint.UpdatePresentation(viewer,bounds,point,control.HasVisualIntent,selected,
+                    control.Opacity,nearHintDistance,maximumHintAngle,tint);
+                gripRing.transform.localScale=Vector3.one*BodyRotationHint.GripScale;
+                gripRing.widthMultiplier=(selected?.0028f:.0013f)*BodyRotationHint.GripScale;
+            }
             if(hoveredShell!=shell){RestoreShellFeedback();hoveredShell=shell;if(shell){shell.GetPropertyBlock(capBlock);previousShellHover=capBlock.GetFloat("_Hover");}}
             if(hoveredShell){hoveredShell.GetPropertyBlock(capBlock);capBlock.SetFloat("_Hover",selected?.45f:hovered?.13f:previousShellHover);hoveredShell.SetPropertyBlock(capBlock);}
         }
@@ -428,7 +455,7 @@ namespace Museum.Diegetic
         {
             if(controls.Count==0)return;
             controls[Command.Window].SetTitle(inspection.WindowTargetOpen?"Click to close window":"Click to open window");
-            controls[Command.Rotate].SetTitle(RotationGesture.isSelected?(RotationGesture.IsManipulating?"Release to stop":"Move hand to rotate"):"Hold + move to rotate");
+            controls[Command.Rotate].SetTitle(RotationHintText(RotationGesture.isSelected,RotationGesture.IsManipulating));
             controls[Command.Section].SetTitle(inspection.IsCutaway?"Close section":"Section");
             controls[Command.Air].SetTitle(demonstration.IsVisible && demonstration.CurrentClue==HelmetExplorationController.Clue.Air?"Close air demo":"Air");
             controls[Command.Voice].SetTitle(demonstration.IsVisible && demonstration.CurrentClue==HelmetExplorationController.Clue.Voice?"Close voice demo":"Voice");
@@ -440,6 +467,16 @@ namespace Museum.Diegetic
             controls[Command.HeightDown].SetTitle(ViewHeight!=null && !ViewHeight.CanLower?"Height limit":"View lower");
             string era=eras.CurrentIndex==0?"1839 / Standard dress":eras.CurrentIndex==2?"SuperLite 17B":"Mark V";
             if(eraTitle.GetComponent<LocalizedSourceText>()?.SourceEnglish!=era)MuseumText.Set(eraTitle,era);
+        }
+        string RotationHintText(bool selected,bool manipulating) => selected
+            ?manipulating?"Release to stop":RotationHintsCondensed?"Move to rotate":"Move hand to rotate"
+            :RotationHintsCondensed?"Hold to rotate":"Hold + move to rotate";
+        HelmetRotationHint MakeRotationHint(Transform parent,string name,TMP_Text caption,int side,Transform targetRoot)
+        {
+            var anchor=new GameObject(name).transform;anchor.SetParent(parent,false);
+            var hint=anchor.gameObject.AddComponent<HelmetRotationHint>();
+            var leader=MakeLine(anchor,"Rotation hint leader",.0008f);
+            hint.Configure(caption,leader,side,targetRoot);return hint;
         }
         void BuildExhibitControls()
         {
@@ -461,6 +498,8 @@ namespace Museum.Diegetic
             if(bodyManager)bodyManager.RegisterInteractable((IXRInteractable)RotationGesture);
             rotate.ConfigureContextualOnly();
             rotate.Caption.transform.localPosition=new Vector3(0,.065f,-.025f);rotate.Caption.rectTransform.sizeDelta=new Vector2(.40f,.055f);
+            rotate.UseExternalCaptionPlacement();
+            BodyRotationHint=MakeRotationHint(rotate.transform,"Body rotation caption anchor",rotate.Caption,-1,inspection.transform);
             gripRing=MakeLine(rotate.transform,"Body grip feedback",.0013f);
             gripRing.loop=true;gripRing.positionCount=40;
             for(int i=0;i<40;i++){float a=i/40f*Mathf.PI*2;gripRing.SetPosition(i,new Vector3(Mathf.Cos(a)*.014f,Mathf.Sin(a)*.014f,-.022f));}gripRing.enabled=false;
