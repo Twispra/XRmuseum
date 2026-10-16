@@ -1,0 +1,383 @@
+{
+  "forced": false,
+  "exitMarkers": [
+    "HELMET_INSPECTION_BATCH_SETTLING code=1; seconds=20; utc=2026-10-16T06:03:02.5821732Z",
+    "HELMET_INSPECTION_BATCH_SETTLED_EXIT code=1; utc=2026-10-16T06:03:22.5819570Z"
+  ],
+  "commit": "a384e7fde86b861350ffbba9ea199c48083ce03b",
+  "exitCode": 1,
+  "checks": [
+    {
+      "name": "requested scene loaded",
+      "passed": true,
+      "detail": "Requested=Assets/Museum/Scenes/MuseumStart.unity; actual=Assets/Museum/Scenes/MuseumStart.unity"
+    },
+    {
+      "name": "main scene has no desktop preview",
+      "passed": true,
+      "detail": "The integrated museum must use the production XR view, including during manual Play Mode."
+    },
+    {
+      "name": "main camera belongs to original XR rig",
+      "passed": true,
+      "detail": "Camera.main is the saved XR Origin camera, not a separate exhibit camera."
+    },
+    {
+      "name": "original gallery and other exhibits retained",
+      "passed": true,
+      "detail": "Gallery Blockout and the two unaffected placeholder exhibits remain active in MuseumStart."
+    },
+    {
+      "name": "one integrated inspection exhibit",
+      "passed": true,
+      "detail": "Exactly one inspection controller exists, including inactive scene objects."
+    },
+    {
+      "name": "inspection exhibit exists",
+      "passed": true,
+      "detail": "Assets/Museum/Scenes/MuseumStart.unity"
+    },
+    {
+      "name": "runtime components",
+      "passed": true,
+      "detail": "Root grab/reset/body and constrained window are present."
+    },
+    {
+      "name": "physical body",
+      "passed": true,
+      "detail": "Idle helmet retains the baseline dynamic gravity body."
+    },
+    {
+      "name": "grab configuration",
+      "passed": true,
+      "detail": "VelocityTracking and dynamic attachment remain enabled."
+    },
+    {
+      "name": "compound colliders",
+      "passed": true,
+      "detail": "4 solid root colliders."
+    },
+    {
+      "name": "window collider ownership",
+      "passed": true,
+      "detail": "Window's registered hit colliders are separate from the whole helmet grab."
+    },
+    {
+      "name": "model meshes imported",
+      "passed": true,
+      "detail": "489 mesh renderers have imported geometry."
+    },
+    {
+      "name": "official simulator instantiated",
+      "passed": true,
+      "detail": "Production rig creates the official simulator."
+    },
+    {
+      "name": "action controllers",
+      "passed": true,
+      "detail": "Both production controller components exist."
+    },
+    {
+      "name": "right direct interactor",
+      "passed": true,
+      "detail": "Tracking state drives the saved direct interactor."
+    },
+    {
+      "name": "startup button visible: WINDOW",
+      "passed": true,
+      "detail": "Original startup camera; viewport=(0.13, 0.77, 0.92); eye=(0.00, 1.36, 2.20)"
+    },
+    {
+      "name": "startup button visible: SECTION",
+      "passed": true,
+      "detail": "Original startup camera; viewport=(0.31, 0.75, 1.01); eye=(0.00, 1.36, 2.20)"
+    },
+    {
+      "name": "startup button visible: FLOAT",
+      "passed": true,
+      "detail": "Original startup camera; viewport=(0.13, 0.71, 0.92); eye=(0.00, 1.36, 2.20)"
+    },
+    {
+      "name": "startup button visible: RESET",
+      "passed": true,
+      "detail": "Original startup camera; viewport=(0.31, 0.69, 1.01); eye=(0.00, 1.36, 2.20)"
+    },
+    {
+      "name": "advanced tools have a visible entry",
+      "passed": true,
+      "detail": "Concise presentation starts with core controls; original turn/tilt controls are reached through More tools below."
+    },
+    {
+      "name": "select action enabled",
+      "passed": true,
+      "detail": "Production input actions, not direct selection calls."
+    },
+    {
+      "name": "window input select",
+      "passed": true,
+      "detail": "window=True; root=False; angle=0; hand=(0.06, 1.31, 3.20); target=(0.06, 1.31, 3.20); proxy=(0.06, 1.31, 3.20); query=(0.06, 1.31, 3.20); error=0; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=True; selectPossible=True; group=Direct Interactor; candidates=Front Window Hinge,HelmetExhibit,Front window Hotspot; selected=Front Window Hinge"
+    },
+    {
+      "name": "window direct interactor",
+      "passed": true,
+      "detail": "XRDirectInteractor"
+    },
+    {
+      "name": "window stabilizes body",
+      "passed": true,
+      "detail": "Window selection temporarily pins the exhibit."
+    },
+    {
+      "name": "window click opens",
+      "passed": true,
+      "detail": "Short grip/release animates to 95 degrees and unpins the body."
+    },
+    {
+      "name": "button exists: WINDOW",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: WINDOW",
+      "passed": true,
+      "detail": "Controller grip selects the saved control; touch=(-0.45, 1.65, 2.96); button=(-0.52, 1.65, 3.12); target=(-0.45, 1.65, 2.96); proxy=(-0.45, 1.65, 2.96); query=(-0.45, 1.65, 2.96); error=0; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=True; selectPossible=True; group=Direct Interactor; candidates=Inspection WINDOW,Inspection FLOAT,Exploration MORE TOOLS,Exploration EXPLORE,Exploration INSPECT,Inspection SECTION,Inspection RESET; selected=Inspection WINDOW"
+    },
+    {
+      "name": "window button closes",
+      "passed": true,
+      "detail": "World-space control closes the previously opened window."
+    },
+    {
+      "name": "distant ray selects window",
+      "passed": true,
+      "detail": "window=True; root=False; angle=0; hand=(0.06, 1.31, 2.70); target=(0.06, 1.31, 2.70); proxy=(0.06, 1.31, 2.70); query=(0.06, 1.31, 2.70); error=0; tracked=True; blocked=False; grip=1.000; selectActive=False; handFilter=False; selectPossible=False; group=Ray Interactor; candidates=; selected="
+    },
+    {
+      "name": "window uses ray beyond direct reach",
+      "passed": true,
+      "detail": "Controller is 0.5 m from the hit target; actual selected interactor=XRRayInteractor"
+    },
+    {
+      "name": "distant ray short click opens",
+      "passed": true,
+      "detail": "Real XR ray grip/release invokes click-to-toggle without an arm arc; angle=95"
+    },
+    {
+      "name": "button exists: WINDOW",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: WINDOW",
+      "passed": true,
+      "detail": "Controller grip selects the saved control; touch=(-0.45, 1.65, 2.96); button=(-0.52, 1.65, 3.12); target=(-0.45, 1.65, 2.96); proxy=(-0.45, 1.65, 2.96); query=(-0.45, 1.65, 2.96); error=0; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=True; selectPossible=True; group=Direct Interactor; candidates=Inspection WINDOW,Inspection FLOAT,Exploration MORE TOOLS,Exploration EXPLORE,Exploration INSPECT,Inspection SECTION,Inspection RESET; selected=Inspection WINDOW"
+    },
+    {
+      "name": "window closes after ray test",
+      "passed": true,
+      "detail": "Return to a known closed state through the physical button."
+    },
+    {
+      "name": "window select for drag",
+      "passed": true,
+      "detail": "window=True; root=False; angle=0; hand=(0.06, 1.31, 3.20); target=(0.06, 1.31, 3.20); proxy=(0.06, 1.31, 3.20); query=(0.06, 1.31, 3.20); error=0; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=True; selectPossible=True; group=Direct Interactor; candidates=Front Window Hinge,HelmetExhibit,Front window Hotspot; selected=Front Window Hinge"
+    },
+    {
+      "name": "drag clamps at maximum",
+      "passed": true,
+      "detail": "130-degree hand arc yields 95 degree hinge; direct input."
+    },
+    {
+      "name": "different hand grabs root during window drag",
+      "passed": true,
+      "detail": "Both selections coexist and XRI retains the dynamic root; window=True; root=True; angle=78.62788; hand=(0.22, 1.31, 3.43); target=(0.22, 1.31, 3.43); proxy=(0.22, 1.31, 3.43); query=(0.22, 1.31, 3.43); error=0; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=True; selectPossible=True; group=Direct Interactor; candidates=Bonnet shell Hotspot,HelmetExhibit,Front Window Hinge; selected=Front Window Hinge"
+    },
+    {
+      "name": "last root hand release restores child pin",
+      "passed": true,
+      "detail": "The window grip remains active without a throw or a falling root."
+    },
+    {
+      "name": "drag closes",
+      "passed": true,
+      "detail": "Returning the controller arc closes the hinge; angle=0"
+    },
+    {
+      "name": "drag release is not a click",
+      "passed": true,
+      "detail": "A long drag releases without toggling the closed window."
+    },
+    {
+      "name": "button exists: SECTION",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: SECTION",
+      "passed": true,
+      "detail": "Controller grip selects the saved control; touch=(-0.23, 1.65, 3.06); button=(-0.30, 1.65, 3.21); target=(-0.23, 1.65, 3.06); proxy=(-0.23, 1.65, 3.06); query=(-0.23, 1.65, 3.06); error=0; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=True; selectPossible=True; group=Direct Interactor; candidates=Inspection SECTION,Inspection RESET,Inspection ALIGN VIEW,Exploration CENTER,Inspection WINDOW,Exploration HELP,Inspection FLOAT; selected=Inspection SECTION"
+    },
+    {
+      "name": "cutaway button enables",
+      "passed": true,
+      "detail": "Real controller grip selected SECTION."
+    },
+    {
+      "name": "window selected before Home",
+      "passed": true,
+      "detail": "window=True; root=False; angle=0; hand=(0.01, 1.31, 3.22); target=(0.01, 1.31, 3.22); proxy=(0.01, 1.31, 3.22); query=(0.01, 1.31, 3.22); error=0; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=True; selectPossible=True; group=Direct Interactor; candidates=Front Window Hinge,HelmetExhibit,Front window Hotspot; selected=Front Window Hinge"
+    },
+    {
+      "name": "Home cancels window and restores shell",
+      "passed": true,
+      "detail": "Reset delta=1; window=False; root=False; angle=0; hand=(0.01, 1.31, 3.22); target=(0.01, 1.31, 3.22); proxy=(0.01, 1.31, 3.22); query=(0.01, 1.31, 3.22); error=0; tracked=True; blocked=False; grip=1.000; selectActive=False; handFilter=True; selectPossible=True; group=Direct Interactor; candidates=Front window Hotspot,Front Window Hinge,HelmetExhibit; selected="
+    },
+    {
+      "name": "held reset grip cannot reselect",
+      "passed": true,
+      "detail": "Same held grip remains blocked after cooldown, even over the restored window."
+    },
+    {
+      "name": "window usable after releasing reset grip",
+      "passed": true,
+      "detail": "window=True; root=False; angle=0; hand=(0.06, 1.31, 3.20); target=(0.06, 1.31, 3.20); proxy=(0.06, 1.31, 3.20); query=(0.06, 1.31, 3.20); error=7.450581E-09; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=True; selectPossible=True; group=Direct Interactor; candidates=Front Window Hinge,HelmetExhibit,Front window Hotspot; selected=Front Window Hinge"
+    },
+    {
+      "name": "button exists: SECTION",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: SECTION",
+      "passed": true,
+      "detail": "Controller grip selects the saved control; touch=(-0.23, 1.65, 3.06); button=(-0.30, 1.65, 3.21); target=(-0.23, 1.65, 3.06); proxy=(-0.23, 1.65, 3.06); query=(-0.23, 1.65, 3.06); error=0; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=True; selectPossible=True; group=Direct Interactor; candidates=Inspection SECTION,Inspection RESET,Inspection ALIGN VIEW,Exploration CENTER,Inspection WINDOW,Exploration HELP,Inspection FLOAT; selected=Inspection SECTION"
+    },
+    {
+      "name": "cutaway property blocks enabled renderer list",
+      "passed": true,
+      "detail": "At least one explicitly clipped shell renderer."
+    },
+    {
+      "name": "cutaway property blocks enabled",
+      "passed": true,
+      "detail": "439 renderer blocks match the enabled state and helmet-local cutting geometry. Pixel rendering is not tested here."
+    },
+    {
+      "name": "button exists: MORE TOOLS",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: MORE TOOLS",
+      "passed": true,
+      "detail": "Controller grip selects the saved control; touch=(-0.34, 1.46, 3.01); button=(-0.41, 1.46, 3.17); target=(-0.34, 1.46, 3.01); proxy=(-0.34, 1.46, 3.01); query=(-0.34, 1.46, 3.01); error=0; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=True; selectPossible=True; group=Direct Interactor; candidates=Exploration MORE TOOLS,Inspection TURN LEFT,Inspection EDIT CUT,Inspection TURN RIGHT,Inspection ALIGN VIEW,Inspection FLOAT,Inspection TILT UP,Inspection RESET,Inspection TILT DOWN; selected=Exploration MORE TOOLS"
+    },
+    {
+      "name": "button exists: TURN RIGHT",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: TURN RIGHT",
+      "passed": true,
+      "detail": "Controller grip selects the saved control; touch=(-0.23, 1.39, 3.06); button=(-0.30, 1.39, 3.21); target=(-0.23, 1.39, 3.06); proxy=(-0.23, 1.39, 3.06); query=(-0.23, 1.39, 3.06); error=0; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=True; selectPossible=True; group=Direct Interactor; candidates=Inspection TURN RIGHT,Inspection TILT DOWN,Exploration MORE TOOLS,Inspection ALIGN VIEW,Inspection SHALLOWER,Inspection TURN LEFT,Inspection TILT UP; selected=Inspection TURN RIGHT"
+    },
+    {
+      "name": "turn button rotates display",
+      "passed": true,
+      "detail": "Root rotation delta=30.00001"
+    },
+    {
+      "name": "cut plane follows rotated helmet renderer list",
+      "passed": true,
+      "detail": "At least one explicitly clipped shell renderer."
+    },
+    {
+      "name": "cut plane follows rotated helmet",
+      "passed": true,
+      "detail": "439 renderer blocks match the enabled state and helmet-local cutting geometry. Pixel rendering is not tested here."
+    },
+    {
+      "name": "button exists: SECTION",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: SECTION",
+      "passed": true,
+      "detail": "Controller grip selects the saved control; touch=(-0.23, 1.65, 3.06); button=(-0.30, 1.65, 3.21); target=(-0.23, 1.65, 3.06); proxy=(-0.23, 1.65, 3.06); query=(-0.23, 1.65, 3.06); error=0; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=True; selectPossible=True; group=Direct Interactor; candidates=Inspection SECTION,Inspection RESET,Exploration MORE TOOLS,Exploration CENTER,Inspection WINDOW,Exploration HELP,Inspection FLOAT; selected=Inspection SECTION"
+    },
+    {
+      "name": "cutaway property blocks disabled renderer list",
+      "passed": true,
+      "detail": "At least one explicitly clipped shell renderer."
+    },
+    {
+      "name": "cutaway property blocks disabled",
+      "passed": true,
+      "detail": "439 renderer blocks match the enabled state and helmet-local cutting geometry. Pixel rendering is not tested here."
+    },
+    {
+      "name": "button exists: WINDOW",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: WINDOW",
+      "passed": true,
+      "detail": "Controller grip selects the saved control; touch=(-0.45, 1.65, 2.96); button=(-0.52, 1.65, 3.12); target=(-0.45, 1.65, 2.96); proxy=(-0.45, 1.65, 2.96); query=(-0.45, 1.65, 2.96); error=0; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=True; selectPossible=True; group=Direct Interactor; candidates=Inspection WINDOW,Inspection FLOAT,Exploration MORE TOOLS,Exploration EXPLORE,Exploration INSPECT,Inspection SECTION,Inspection RESET; selected=Inspection WINDOW"
+    },
+    {
+      "name": "button exists: RESET",
+      "passed": true,
+      "detail": "Independent world-space control."
+    },
+    {
+      "name": "input selects button: RESET",
+      "passed": true,
+      "detail": "Controller grip selects the saved control; touch=(-0.23, 1.59, 3.06); button=(-0.30, 1.59, 3.21); target=(-0.23, 1.59, 3.06); proxy=(-0.23, 1.59, 3.06); query=(-0.23, 1.59, 3.06); error=0; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=True; selectPossible=True; group=Direct Interactor; candidates=Inspection RESET,Inspection SECTION,Exploration MORE TOOLS,Inspection TURN RIGHT,Inspection FLOAT,Inspection WINDOW; selected=Inspection RESET"
+    },
+    {
+      "name": "inspection RESET restores full state",
+      "passed": true,
+      "detail": "World pose, closed window and full shell are restored by the physical control."
+    },
+    {
+      "name": "whole helmet input grab",
+      "passed": true,
+      "detail": "window=False; root=True; angle=0; hand=(-0.21, 1.27, 3.50); target=(-0.21, 1.27, 3.50); proxy=(-0.21, 1.27, 3.50); query=(-0.21, 1.27, 3.50); error=0; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=False; selectPossible=False; group=Direct Interactor; candidates=HelmetExhibit,Front Window Hinge,Air connection clue,Front window Hotspot; selected=HelmetExhibit"
+    },
+    {
+      "name": "whole helmet direct grab",
+      "passed": true,
+      "detail": "XRDirectInteractor"
+    },
+    {
+      "name": "different hand opens window while root held",
+      "passed": true,
+      "detail": "Both selections coexist without pinning the held Rigidbody; window=True; root=True; angle=0; hand=(-0.21, 1.27, 3.50); target=(-0.21, 1.27, 3.50); proxy=(-0.21, 1.27, 3.50); query=(-0.21, 1.27, 3.50); error=0; tracked=True; blocked=False; grip=1.000; selectActive=True; handFilter=False; selectPossible=False; group=Direct Interactor; candidates=HelmetExhibit,Front Window Hinge,Air connection clue,Front window Hotspot; selected=HelmetExhibit"
+    },
+    {
+      "name": "whole helmet follows pose",
+      "passed": true,
+      "detail": "Lift=0.3359652; turn=34.47336"
+    },
+    {
+      "name": "whole helmet stable release",
+      "passed": true,
+      "detail": "One real-input grab/lift/rotate/return/release cycle; no recovery masked a fall. Speed=0; angular=0"
+    },
+    {
+      "name": "placement has no deep penetration",
+      "passed": true,
+      "detail": "Maximum overlap=1.430511E-06 m."
+    }
+  ],
+  "failure": "System.InvalidOperationException: Physical palm did not arrive before near grip / whole helmet held reset; controller=Right Controller; tracked=True; error=0.3307; blocked=True; target=(-0.24, 1.27, 3.51); proxy=(-0.10, 1.50, 3.32)\r\n  at Museum.PhysicalHands.EditorTools.MuseumPhysicalHandsTestPose+<WaitForPalm>d__2.MoveNext () [0x0009a] in E:\\Codex\\worktrees\\pr51-fix-2026-10-14\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\PhysicalHands\\Editor\\MuseumPhysicalHandsTestPose.cs:42 \r\n  at Museum.Inspection.Editor.HelmetInspectionValidation.Tick () [0x00262] in E:\\Codex\\worktrees\\pr51-fix-2026-10-14\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\HelmetInspection\\Editor\\HelmetInspectionValidation.cs:424 ",
+  "note": "Negative behavior evidence: old direct jump into shell blocked physical glove; failure code1 exited naturally with settled protocol, not a full pass.",
+  "status": "failed",
+  "errors": [],
+  "derivedFromLocalReport": "artifacts/helmet-interaction/qa/runs/20261016T060230229Z-inspection-main-85889c8327e74a38a9a5fb5c83d7970f/report.json",
+  "rawReportSha256": "957a6451ca024da658cf21f41b7db79c91d67ba904800d65fbb10e540ab189f5",
+  "checkCount": 73
+}

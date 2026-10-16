@@ -1,0 +1,10 @@
+{
+  "priorTestedCommit": "62c299462f53dd214f50b4ee77a1db997a7f1121",
+  "currentTestedCommit": "e5655e6261e73ff815844ea371c5b66c9c340241",
+  "comparedFiles": 1139,
+  "unchangedFiles": 1138,
+  "changedFiles": [
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Editor/HelmetInspectionValidation.cs"
+  ],
+  "note": "Only the Editor acceptance runner changed. Prior runtime/source and saved assets are byte-identical. Original main/hand/Windows build reports remain bound to62c2994, not attributed to this rerun."
+}
