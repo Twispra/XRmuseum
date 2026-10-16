@@ -1,6 +1,6 @@
 # 精细模型接入主展厅：使用与交接
 
-2026-10-07，本轮在最新主线 `afc3a9e` 上接入已有 Mark V 和供气／通话精细资产。当前是整合候选；是否合入 main 以本轮 PR 的实际合并记录为准。[活动与本轮验证](activity/2026-10-07-refined-model-integration.md)记录最终测试结果。
+2026-10-16 核对 `main` @ `411524e`：Mark V 与供气／通话精细资产已经接入，SuperLite 17B 也已替换索引 2 的占位模型，索引 0 早期头盔仍为占位。[当前技术说明](phase2-technical-note.zh-CN.md)、[SuperLite 接入](superlite17b-unity-integration.zh-CN.md)给出后续范围；下方资产统计与准备报告保留为 2026-10-07 在 `afc3a9e` 上首次整合时的版本证据，见[原活动与验证](activity/2026-10-07-refined-model-integration.md)。
 
 ## 打开后看什么
 
@@ -8,7 +8,7 @@
 
 - 中央 `HelmetExhibit` 默认显示 **Mark V（年代索引 1）**。它仍使用原来拿放、悬停、复位、前窗和剖面操作入口；前窗玻璃、窗框和锁紧件随既有动作展示，背面供气与电话保持两个独立接口。
 - 选择 AIR 或 VOICE，原来的演示时序、重播／停止、SOUND 和减少动画入口继续使用。AIR 显示双缸泵；VOICE 显示水面电话和潜水员电话示意件，连接线终点跟随当前头盔接口。
-- 切换到年代索引 **0 或 2**，仍显示原项目的占位几何和年代材质。这两个时期的精细模型尚未接入；不能把本轮交付写成“三时期历史造型全部完成”。年代键盘预览沿用 F9／F10，具体模拟器操作见[协作指南](getting-started.zh-CN.md)及原功能说明。
+- 年代索引 **2** 显示已接入的 SuperLite 17B 整盔 v2；索引 **0** 仍显示原占位几何和早期档材质，不能写成“三时期历史造型全部完成”。Editor 预览 **F9 下一年代、F10 上一年代**，当前说明与占位边界见[年代操作说明](helmet-eras.zh-CN.md)。
 
 开窗、旋转、剖面、AIR／VOICE、热点、切换年代、切换语言和复位应在同一主场景检查。独立浏览器资产审阅器方便讨论造型；它不能代替 Unity 主场景兼容验证。
 
@@ -68,4 +68,4 @@ Unity 当前选择较柔和的 `gentle-air.wav`／`gentle-voice.wav` 合成方�
 
 本轮最终运行结果、被测版本、报告和截图见[活动记录的验证段](activity/2026-10-07-refined-model-integration.md#验证)。自动验收入口为 `Museum/Refined Models/Validate saved main museum`；批处理使用 `Museum.RefinedModels.EditorTools.RefinedModelValidation.RunBatch`，需图形渲染，不加 `-quit` 或 `-nographics`。报告输出到 `artifacts/helmet-interaction/qa/runs/` 的独立运行目录，不覆盖旧报告。
 
-优先接手项是另两时期精细造型、人工造型／史料复核、声音试听和目标设备性能。原输入、观察、探索、热点及三语回归要绑定同一个待提交版本；真实头显、坐姿单手可达性、学习效果、舒适性和可执行构建继续分别记录，不能从桌面模拟通过推断完成。新增访客说明遵循[三语维护流程](localization-authoring.zh-CN.md)。
+优先接手项是早期档精细造型、人工造型／史料复核、声音试听和目标设备性能。原输入、观察、探索、热点及三语回归要绑定同一个待提交版本；已有近期可执行构建与有限设备反馈的适用范围见[当前技术说明](phase2-technical-note.zh-CN.md)。修订版的完整头显流程、坐姿单手可达性、学习效果与舒适性仍待分别验证，不能从桌面模拟通过推断完成。新增访客说明遵循[三语维护流程](localization-authoring.zh-CN.md)。

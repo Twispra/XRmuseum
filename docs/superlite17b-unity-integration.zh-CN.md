@@ -6,7 +6,7 @@
 
 1. 获取本轮分支后，确认 Git LFS 已下载并展开实际 FBX。
 2. 用 Unity **2022.3.62f3c1** 打开仓库下的 `MuseumVR`，打开 `Assets/Museum/Scenes/MuseumStart.unity`。
-3. 点击 Play，再点击 Game。默认显示 Mark V，按 **F10** 切换到黄色 SuperLite，**F9** 回到上一年代；也可使用原展台年代切换按钮。
+3. 点击 Play，再点击 Game。默认显示 Mark V，按 **F9** 切换到黄色 SuperLite，**F10** 回到上一年代；也可使用原展台年代切换按钮。
 4. 原抓取、WINDOW、SECTION、FLOAT、RESET、AIR / VOICE 和语言入口继续使用。语言预览为 F6 简体、F7 繁体、F8 英文。
 
 普通查看直接打开保存场景即可。**不要运行旧头盔生成器、Mark V 安装器或 SuperLite 的 Install / AlignSupportBatch**：这些工具只用于首次接入与本轮校准，不能用来覆盖后续人工修改。
