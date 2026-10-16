@@ -444,7 +444,9 @@ namespace Museum.Exploration
             }
             if (showHideDemo)
             { Place(Command.Stop, "Hide demo", 0, y); y -= Row; }
-            if (inspectionStatus) LayoutText(inspectionStatus, "Point + G to select", y + .017f, .03f, .22f, false);
+            if (inspectionStatus) LayoutText(inspectionStatus,
+                Application.isEditor ? "Point + G to select" : "Point + grip to select",
+                y + .017f, .03f, .22f, false);
             foreach (var button in inspectionButtons) if (button != null) button.Show(button.wanted);
             SetBounds(y - .016f);
         }
@@ -503,7 +505,9 @@ namespace Museum.Exploration
             bool help = reading == Reading.Help;
             LayoutText(title, help ? "Help" : "About this model", .285f, .05f, .4f, false);
             string content = help
-                ? "Click Game to focus.\nT / Y: choose a controller.\nPoint + G: select a button.\nHold G: grab; release to let go.\nHome: reset the helmet."
+                ? Application.isEditor
+                    ? "Click Game to focus.\nT / Y: choose a controller.\nPoint + G: select a button.\nHold G: grab; release to let go.\nHome / Inspect Reset: reset helmet.\nReset View: return to start."
+                    : "Point + grip: select a button.\nHold grip: grab the helmet.\nRelease grip: put it down.\nInspect Reset: reset the helmet.\nReset View: return to start."
                 : DetailsText();
             float y = LayoutBody(content, .242f) - .04f;
             if (help)
