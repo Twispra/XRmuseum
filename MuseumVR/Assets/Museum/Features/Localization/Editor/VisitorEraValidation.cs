@@ -328,7 +328,13 @@ namespace Museum.Localization.EditorTools
                 Vector3 position = hit.bounds.center - target.transform.forward * .55f;
                 Quaternion rotation = Quaternion.LookRotation(hit.bounds.center - position, Vector3.up);
                 QueueController(rightDevice, position, rotation, false); yield return Wait(.35f);
-                Require(target.isHovered, "Production ray hovers era button / " + source.name, "Saved collider; physical hands remain enabled.");
+                string rayDetail = string.Join(" | ", rightController.GetComponentsInChildren<XRRayInteractor>(true)
+                    .Where(r => r.isActiveAndEnabled).Select(r => r.name + " origin=" + r.rayOriginTransform.position +
+                        "; hovered=" + string.Join(",", r.interactablesHovered.Select(t => t.transform.name)) +
+                        "; hits=" + string.Join(",", Physics.RaycastAll(r.rayOriginTransform.position, r.rayOriginTransform.forward, 2f, ~0, QueryTriggerInteraction.Collide)
+                            .OrderBy(h => h.distance).Take(8).Select(h => h.collider.name + "@" + h.distance.ToString("F3")))));
+                Require(target.isHovered, "Production ray hovers era button / " + source.name,
+                    "Saved collider; physical hands remain enabled. Controller=" + rightController.transform.position + "; target=" + hit.bounds.center + "; " + rayDetail);
                 QueueController(rightDevice, position, rotation, true); yield return Wait(.25f);
                 Require(events == 1 && interactor == nameof(XRRayInteractor) && era.CurrentIndex == expected,
                     "Production grip selects era button exactly once / " + source.name,
