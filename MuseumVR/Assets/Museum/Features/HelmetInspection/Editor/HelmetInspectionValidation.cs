@@ -683,7 +683,11 @@ namespace Museum.Inspection.Editor
             touch=RootTouch();
             QueueRight(touch,Quaternion.identity,false);
             yield return Wait(.25f);
-            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase);
+            // The prior placement can leave the glove on another side or at a
+            // different wrist angle. Approach the same root touch around the solid
+            // helmet rather than asking the collision proxy to cross through it.
+            yield return MuseumPhysicalHandsTestPose.Approach(rightController, helmet,
+                (position, rotation, grip) => QueueRight(position, rotation, grip), phase);
             QueueRight(touch,Quaternion.identity,true);
             yield return Wait(.25f);
             Require(helmet.isSelected,"whole helmet selected before Home",SelectionDetail());
