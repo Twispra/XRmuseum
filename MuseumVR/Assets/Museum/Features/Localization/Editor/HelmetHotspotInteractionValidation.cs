@@ -313,6 +313,15 @@ namespace Museum.Localization.EditorTools
             c.park(); yield return Wait(.15f); c.move(touch, Quaternion.identity, false); yield return Wait(.22f);
             yield return MuseumPhysicalHandsTestPose.Approach(MuseumPhysicalHandsTestPose.Controller(false), c.root, c.move, "ordinary shell grab");
             string beforeGrip = RootSelectionDiagnostics(c);
+            var hand = MuseumPhysicalHandsTestPose.Hand(MuseumPhysicalHandsTestPose.Controller(false));
+            if (hand)
+            {
+                var window = c.root.GetComponentInChildren<HelmetWindowInteractable>(true);
+                c.Check(window && window.IsHovered(hand.DirectInteractor) && !hand.IsDirectContact(window),
+                    "ordinary shell regression exercises non-contact window hover", beforeGrip);
+                c.Check(hand.DirectInteractor.interactionManager.IsSelectPossible(hand.DirectInteractor, c.root),
+                    "non-contact window hover leaves ordinary shell selectable", beforeGrip);
+            }
             c.move(touch, Quaternion.identity, true); yield return Wait(.18f);
             c.Check(c.root.isSelected && c.root.interactorsSelecting[0] is XRDirectInteractor, "ordinary shell remains directly grabbable",
                 "before grip: " + beforeGrip + "; after grip: " + RootSelectionDiagnostics(c));

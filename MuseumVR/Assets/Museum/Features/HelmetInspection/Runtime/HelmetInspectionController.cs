@@ -362,10 +362,17 @@ namespace Museum.Inspection
         {
             if ((windowInteraction != null && !windowInteraction.CanSelectWholeHelmet(interactor)) || (sectionInteraction != null && !sectionInteraction.CanSelectOtherPart(interactor))) return false;
             if (!isActiveAndEnabled) return true;
-            // A grip aimed at a handle must not silently select the entire exhibit.
-            if (grab != null && !grab.IsSelected(interactor) && interactor is IXRHoverInteractor hover &&
-                ((windowInteraction != null && windowInteraction.IsHovered(hover)) ||
-                 (sectionInteraction != null && IsCutaway && sectionInteraction.ShowTool && sectionInteraction.IsHovered(hover)))) return false;
+            // Physical Direct uses a broad candidate sphere around the open glove.
+            // Only a reachable handle may reserve the grip; a distant child hover
+            // must not reject a valid shell grip while the child itself is out of reach.
+            if (grab != null && !grab.IsSelected(interactor) && interactor is IXRHoverInteractor hover)
+            {
+                var physical = Museum.PhysicalHands.MuseumHandGrabTransformer.PhysicalHand(interactor);
+                if ((windowInteraction != null && windowInteraction.IsHovered(hover) &&
+                     (!physical || physical.IsDirectContact(windowInteraction))) ||
+                    (sectionInteraction != null && IsCutaway && sectionInteraction.ShowTool && sectionInteraction.IsHovered(hover) &&
+                     (!physical || physical.IsDirectContact(sectionInteraction)))) return false;
+            }
             if (!allowHeldChildInteraction) return !IsWindowHeld && !IsSectionHeld && !interactionBodyPinned;
             return !SameHandSelecting(windowInteraction, interactor) && !SameHandSelecting(sectionInteraction, interactor);
         }
