@@ -1,0 +1,40 @@
+{
+  "viewRecovery": {
+    "errors": [],
+    "failed": 0,
+    "checks": 95,
+    "report": "combined-view-recovery-report.json",
+    "exitCode": 0
+  },
+  "negativeBaseline": {
+    "report": "pr55-before-fix-movement.xml",
+    "originalTestsPassed": 23,
+    "commit": "754238e05682191e21654874286c50d7e5146e66",
+    "addedMovementTestFailed": 1
+  },
+  "limitations": [
+    "Production Turn/Tilt, exhibit reset and ResetView APIs tested in EditMode; no physical devices",
+    "EditMode exhibit reset uses immediate return; timed smooth return frames not verified",
+    "Windows Player build, Player Help rendering, headset readability and user research not verified",
+    "Known ordinary-shell direct-grab full-scene baseline failure tracked under Issue #50; no full-scene pass claimed",
+    "Raw Unity logs and diagnostic screenshots remain local"
+  ],
+  "platform": "Windows Editor",
+  "testedCommit": "ed36889744660e87aa7635f423d6ff6910e91de3",
+  "unity": "2022.3.62f3c1",
+  "sourceVerification": {
+    "mismatches": [],
+    "manifest": "combined-source-fingerprints.json",
+    "checkedFiles": 1139
+  },
+  "hotspots": {
+    "passed": 33,
+    "skipped": 0,
+    "total": 33,
+    "exitCode": 0,
+    "failed": 0,
+    "report": "combined-hotspot-tests.xml"
+  },
+  "mainIncluding53": "5052a6fb8f8eb3646e00ddfa0819f57806b20cce",
+  "task": "Issue #54 / PR #55 pose fix and PR #53 integration"
+}
