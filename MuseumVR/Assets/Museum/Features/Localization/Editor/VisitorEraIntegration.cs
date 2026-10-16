@@ -57,6 +57,11 @@ namespace Museum.Localization.EditorTools
                 if (buttons.Length != 2) throw new InvalidOperationException("Expected two existing era buttons; refusing to rebuild the exhibit.");
                 foreach (var button in buttons)
                 {
+                    // The inherited layout left the buttons partly behind Display
+                    // Top. Keep x/z and collider dimensions; lift the whole button
+                    // to clear the saved 0.96 m tabletop, including its label.
+                    var position = button.transform.position;
+                    button.transform.position = new Vector3(position.x, 1.035f, position.z);
                     var labelTransform = button.transform.Find("Era label");
                     TMP_Text label;
                     if (labelTransform) label = labelTransform.GetComponent<TMP_Text>();
@@ -67,7 +72,7 @@ namespace Museum.Localization.EditorTools
                         label = go.GetComponent<TMP_Text>();
                     }
                     if (!label) throw new InvalidOperationException("Existing era label has an unexpected component.");
-                    // Existing button/collider positions and dimensions stay unchanged.
+                    // Existing button/collider dimensions stay unchanged.
                     // Cancel the button's cube scale so text uses metre-space dimensions.
                     var scale = button.transform.lossyScale;
                     label.transform.localScale = new Vector3(1f / scale.x, 1f / scale.y, 1f / scale.z);
