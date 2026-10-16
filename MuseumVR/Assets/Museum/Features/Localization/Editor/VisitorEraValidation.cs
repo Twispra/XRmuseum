@@ -218,6 +218,8 @@ namespace Museum.Localization.EditorTools
             foreach (var point in hotspots) point.Activate();
             var selected = hotspots.Single(h => h.Identifier == "front-window"); selected.Activate();
             Require(tour.VisitedCount == 3 && hotspots.All(h => h.IsVisited), "API fixture seeds exactly three completed observations", "Activate is a labelled fixture, not an XR interaction test.");
+            yield return Wait(.15f);
+            Require(ExplanationElapsed() > .05f, "Selected explanation has an advancing timer before transitions", "elapsed=" + ExplanationElapsed());
             foreach (int index in new[] { 0, 1, 2 })
             {
                 float elapsed = ExplanationElapsed();
@@ -225,9 +227,11 @@ namespace Museum.Localization.EditorTools
                 Require(ExplanationElapsed() + .005f >= elapsed, "Era change does not restart selected explanation timer / " + index, "read-only elapsed=" + ExplanationElapsed());
                 var demo = UnityEngine.Object.FindObjectOfType<HelmetConnectionDemonstration>();
                 Require(demo, "Connection demonstration exists", "Existing production component.");
-                demo.Play(HelmetExplorationController.Clue.Air); yield return Wait(.25f);
                 foreach (var nextLanguage in new[] { MuseumLanguage.English, MuseumLanguage.Chinese, MuseumLanguage.TraditionalChinese })
                 {
+                    // Each language has its own explicit playback fixture. Diagnostic
+                    // screenshot rendering may outlast a complete demonstration.
+                    demo.Play(HelmetExplorationController.Clue.Air); yield return Wait(.25f);
                     float playback = demo.NormalizedProgress, timer = ExplanationElapsed();
                     language.SetLanguage(nextLanguage); yield return Wait(.15f);
                     Require(demo.IsPlaying && demo.NormalizedProgress + .001f >= playback,
