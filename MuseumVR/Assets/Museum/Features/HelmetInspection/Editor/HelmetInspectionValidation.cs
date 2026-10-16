@@ -427,7 +427,26 @@ namespace Museum.Inspection.Editor
                 }
                 Finish(null);
             }
-            catch (Exception exception) { Finish(exception.ToString()); }
+            catch (Exception exception)
+            {
+                string failure = exception.ToString();
+                if (exception.Message.Contains("Physical palm did not arrive"))
+                    failure += "\n" + PalmObstacles(rightController);
+                Finish(failure);
+            }
+        }
+
+        static string PalmObstacles(XRBaseController controller)
+        {
+            var hand = MuseumPhysicalHandsTestPose.Hand(controller);
+            if (!hand || !hand.CollisionCollider) return "Palm obstacle diagnostics unavailable.";
+            var bounds = hand.CollisionCollider.bounds;
+            var nearby = Physics.OverlapBox(bounds.center, bounds.extents + Vector3.one * .12f,
+                Quaternion.identity, ~0, QueryTriggerInteraction.Ignore)
+                .Where(c => c && !c.transform.IsChildOf(hand.transform))
+                .Select(c => c.name + " [" + c.GetType().Name + "; center=" + c.bounds.center +
+                    "; size=" + c.bounds.size + "; body=" + (c.attachedRigidbody ? c.attachedRigidbody.name : "static") + "]");
+            return "Palm nearby solids: " + string.Join("; ", nearby);
         }
 
         static IEnumerator Validate()
