@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
@@ -34,7 +35,10 @@ namespace Museum.Inspection.Editor
         const string RunIdKey = "Museum.HelmetInspectionQA.RunId";
         const string ProvenanceKey = "Museum.HelmetInspectionQA.Provenance";
         const string ScenePathKey = "Museum.HelmetInspectionQA.ScenePath";
+        const string PendingExitKey = "Museum.HelmetInspectionQA.PendingExit";
+        const string ExitNotBeforeKey = "Museum.HelmetInspectionQA.ExitNotBefore";
         const string MainScenePath = "Assets/Museum/Scenes/MuseumStart.unity";
+        const double BatchExitSettleSeconds = 20;
         static string ScenePath => SessionState.GetString(ScenePathKey, HelmetInspectionBuilder.ScenePath);
         static bool IsMainSceneRun => ScenePath == MainScenePath;
         static readonly Stack<IEnumerator> Routines = new Stack<IEnumerator>();
@@ -55,6 +59,25 @@ namespace Museum.Inspection.Editor
         static Rigidbody body;
         static Collider[] helmetColliders;
         static double started;
+        // SessionState survives a script reload during the post-Play import window.
+        static int PendingBatchExit
+        {
+            get => SessionState.GetInt(PendingExitKey, -1);
+            set => SessionState.SetInt(PendingExitKey, value);
+        }
+        static double ExitNotBefore
+        {
+            get
+            {
+                if (double.TryParse(SessionState.GetString(ExitNotBeforeKey, ""), NumberStyles.Float,
+                    CultureInfo.InvariantCulture, out double deadline) && !double.IsNaN(deadline) && !double.IsInfinity(deadline))
+                    return deadline;
+                deadline = EditorApplication.timeSinceStartup + BatchExitSettleSeconds;
+                ExitNotBefore = deadline;
+                return deadline;
+            }
+            set => SessionState.SetString(ExitNotBeforeKey, value.ToString("R", CultureInfo.InvariantCulture));
+        }
         static int lastFrame = -1;
         static bool finishing;
         static Vector3 homePosition;
@@ -127,6 +150,7 @@ namespace Museum.Inspection.Editor
             public string timestampUtc, unityVersion, scene, inputMethod, limitations, status = "running", failure = "";
             public Provenance provenance;
             public float durationSeconds;
+            public double batchExitSettleSeconds;
             public bool officialSimulatorWasPresent;
             public int colliderCount, completedCycles;
             public List<Check> checks = new List<Check>();
@@ -169,6 +193,7 @@ namespace Museum.Inspection.Editor
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode)
                 throw new InvalidOperationException("Run helmet validation from Edit Mode.");
+            PendingBatchExit = -1;
             // Do not save a user's dirty scene as a side effect of an acceptance test.
             if (!batch && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
             SessionState.SetString(ScenePathKey, scenePath);
@@ -341,6 +366,7 @@ namespace Museum.Inspection.Editor
                 {
                     timestampUtc = DateTime.UtcNow.ToString("o"), unityVersion = Application.unityVersion,
                     provenance = RestoreProvenance(),
+                    batchExitSettleSeconds = SessionState.GetBool(BatchKey, false) ? BatchExitSettleSeconds : 0,
                     scene = SceneManager.GetActiveScene().path,
                     inputMethod = "InputSystem.QueueStateEvent in the player Dynamic input update on XRSimulatedController/HMD -> production Input Actions -> ActionBasedController -> existing XRDirectInteractor / XRRayInteractor -> window, physical controls, XRGrabInteractable and Rigidbody. Home uses a synthetic KeyboardState. Hidden batch frames are paced to approximately 90 Hz to remain above XRI 2.6's 1 ms throw-sampling cutoff.",
                     limitations = "Automated desktop simulation only. Official XR Device Simulator presence is checked, then its device writer is disabled to avoid competing states. Its mouse/keyboard navigation mappings, real headset tracking, hand comfort, and device performance still require manual testing. The test driver does not call XRI selection APIs. Input-driven checks and explicitly labelled public-API checks are separate. This run validates only the recorded scene and checkout; it does not validate a player build, visual rendering, historical accuracy, accessibility with users, or a merged main branch."
@@ -361,15 +387,33 @@ namespace Museum.Inspection.Editor
                 var code = SessionState.GetInt(ResultKey, 1);
                 var batch = SessionState.GetBool(BatchKey, false);
                 SessionState.SetBool(ActiveKey, false);
-                if (batch) EditorApplication.delayCall += () =>
+                if (batch)
                 {
-                    EditorApplication.Exit(code < 0 ? 1 : code);
-                };
+                    // Match the other acceptance runners: returning to Edit Mode
+                    // still queues imports and native render/worker cleanup. An
+                    // immediate Exit can finish every check yet spin in shutdown.
+                    ExitNotBefore = EditorApplication.timeSinceStartup + BatchExitSettleSeconds;
+                    PendingBatchExit = code < 0 ? 1 : code;
+                    Debug.Log("HELMET_INSPECTION_BATCH_SETTLING code=" + PendingBatchExit +
+                        "; seconds=" + BatchExitSettleSeconds + "; utc=" + DateTime.UtcNow.ToString("o"));
+                }
             }
         }
 
         static void Tick()
         {
+            // Keep pumping Editor updates after Active is cleared; never block the
+            // main thread while the asset pipeline and workers finish their work.
+            if (PendingBatchExit >= 0)
+            {
+                if (EditorApplication.timeSinceStartup < ExitNotBefore || EditorApplication.isCompiling ||
+                    EditorApplication.isUpdating || EditorApplication.isPlayingOrWillChangePlaymode) return;
+                int code = PendingBatchExit;
+                PendingBatchExit = -1;
+                Debug.Log("HELMET_INSPECTION_BATCH_SETTLED_EXIT code=" + code + "; utc=" + DateTime.UtcNow.ToString("o"));
+                EditorApplication.Exit(code);
+                return;
+            }
             if (!SessionState.GetBool(ActiveKey, false) || !EditorApplication.isPlaying || report == null || finishing) return;
             if (EditorApplication.timeSinceStartup - started > 150)
             {
@@ -403,7 +447,26 @@ namespace Museum.Inspection.Editor
                 }
                 Finish(null);
             }
-            catch (Exception exception) { Finish(exception.ToString()); }
+            catch (Exception exception)
+            {
+                string failure = exception.ToString();
+                if (exception.Message.Contains("Physical palm did not arrive"))
+                    failure += "\n" + PalmObstacles(rightController) + "\n" + PalmObstacles(leftController);
+                Finish(failure);
+            }
+        }
+
+        static string PalmObstacles(XRBaseController controller)
+        {
+            var hand = MuseumPhysicalHandsTestPose.Hand(controller);
+            if (!hand || !hand.CollisionCollider) return "Palm obstacle diagnostics unavailable.";
+            var bounds = hand.CollisionCollider.bounds;
+            var nearby = Physics.OverlapBox(bounds.center, bounds.extents + Vector3.one * .12f,
+                Quaternion.identity, ~0, QueryTriggerInteraction.Ignore)
+                .Where(c => c && !c.transform.IsChildOf(hand.transform))
+                .Select(c => c.name + " [" + c.GetType().Name + "; center=" + c.bounds.center +
+                    "; size=" + c.bounds.size + "; body=" + (c.attachedRigidbody ? c.attachedRigidbody.name : "static") + "]");
+            return controller.name + " palm nearby solids: " + string.Join("; ", nearby);
         }
 
         static IEnumerator Validate()
@@ -645,7 +708,10 @@ namespace Museum.Inspection.Editor
             yield return Wait(.4f);
             QueueRight(touch,Quaternion.identity,false);
             yield return Wait(.2f);
-            QueueRight(touch+new Vector3(.65f,.3f,-.4f),Quaternion.identity,false);
+            // Withdraw on the same side as RootTouch. A diagonal move across the
+            // shell can leave the collision proxy blocked before the next grip.
+            QueueRight(touch + helmet.transform.rotation * Vector3.left * .35f,Quaternion.identity,false);
+            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase + " / release withdraw");
             yield return Wait(1.3f);
             var settled=body.position;
             yield return Wait(.2f);
@@ -659,7 +725,11 @@ namespace Museum.Inspection.Editor
             touch=RootTouch();
             QueueRight(touch,Quaternion.identity,false);
             yield return Wait(.25f);
-            yield return MuseumPhysicalHandsTestPose.WaitForPalm(rightController, phase);
+            // The prior placement can leave the glove on another side or at a
+            // different wrist angle. Approach the same root touch around the solid
+            // helmet rather than asking the collision proxy to cross through it.
+            yield return MuseumPhysicalHandsTestPose.Approach(rightController, helmet,
+                (position, rotation, grip) => QueueRight(position, rotation, grip), phase);
             QueueRight(touch,Quaternion.identity,true);
             yield return Wait(.25f);
             Require(helmet.isSelected,"whole helmet selected before Home",SelectionDetail());

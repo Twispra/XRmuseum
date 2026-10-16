@@ -1,0 +1,113 @@
+{
+  "pr": 56,
+  "issue": 50,
+  "base": "6b6eefe5ef49af932c375c99b5c8581e376acb8b",
+  "testedCommit": "e5655e6261e73ff815844ea371c5b66c9c340241",
+  "unity": "2022.3.62f3c1",
+  "entry": "Museum.Inspection.Editor.HelmetInspectionValidation.RunMainBatch",
+  "resolution": "Allow20seconds of Editor updates after Edit Mode, defer while compiling/importing/transitioning, retain pending exit across script reloads. Withdraw the test palm outside the shell and wait for arrival before returning to the original grip.",
+  "acceptedFinalRuns": [
+    7,
+    8
+  ],
+  "checksPerFinalRun": 207,
+  "normalExit": true,
+  "exitCodes": [
+    0,
+    0
+  ],
+  "runs": [
+    {
+      "number": 1,
+      "commit": "a384e7fde86b861350ffbba9ea199c48083ce03b",
+      "status": "passed",
+      "checks": 207,
+      "exitCode": 0,
+      "forced": false,
+      "summary": "inspection-1-summary.json",
+      "process": "inspection-1-process.json"
+    },
+    {
+      "number": 2,
+      "commit": "a384e7fde86b861350ffbba9ea199c48083ce03b",
+      "status": "failed",
+      "checks": 73,
+      "exitCode": 1,
+      "forced": false,
+      "summary": "inspection-2-failure-summary.json",
+      "process": "inspection-2-process.json"
+    },
+    {
+      "number": 3,
+      "commit": "3a02e0978c8a29c0b3397826dece7f011e823646",
+      "status": "passed",
+      "checks": 207,
+      "exitCode": 0,
+      "forced": false,
+      "summary": "inspection-3-summary.json",
+      "process": "inspection-3-process.json"
+    },
+    {
+      "number": 4,
+      "commit": "3a02e0978c8a29c0b3397826dece7f011e823646",
+      "status": "failed",
+      "checks": 73,
+      "exitCode": 1,
+      "forced": false,
+      "summary": "inspection-4-summary.json",
+      "process": "inspection-4-process.json"
+    },
+    {
+      "number": 5,
+      "commit": "f2bfd3eeb1d8e716e6f8159c00e37fb808583fba",
+      "status": "passed",
+      "checks": 207,
+      "exitCode": 0,
+      "forced": false,
+      "summary": "inspection-5-summary.json",
+      "process": "inspection-5-process.json"
+    },
+    {
+      "number": 6,
+      "commit": "f2bfd3eeb1d8e716e6f8159c00e37fb808583fba",
+      "status": "passed",
+      "checks": 207,
+      "exitCode": 0,
+      "forced": false,
+      "summary": "inspection-6-summary.json",
+      "process": "inspection-6-process.json"
+    },
+    {
+      "number": 7,
+      "commit": "e5655e6261e73ff815844ea371c5b66c9c340241",
+      "status": "passed",
+      "checks": 207,
+      "exitCode": 0,
+      "forced": false,
+      "summary": "inspection-7-summary.json",
+      "process": "inspection-7-process.json"
+    },
+    {
+      "number": 8,
+      "commit": "e5655e6261e73ff815844ea371c5b66c9c340241",
+      "status": "passed",
+      "checks": 207,
+      "exitCode": 0,
+      "forced": false,
+      "summary": "inspection-8-summary.json",
+      "process": "inspection-8-process.json"
+    }
+  ],
+  "sourceFilesVerified": 1139,
+  "sourceVerification": "final-source-verification.json",
+  "priorEvidenceComparison": "final-prior-evidence-comparison.json",
+  "limitations": [
+    "Synthetic desktop input and stated fixture paths only; physical headset/controllers, feel, comfort, performance and user research remain unverified.",
+    "No native stack captured: observed shutdown is resolved by settled Editor exit; InputSystem/licensing tail messages do not establish their fault.",
+    "No fault-injected script reload; SessionState branch independently code-reviewed.",
+    "Previous main84730, hand182 and Windows build reports remain bound to62c2994;1138/1139 unchanged, only this Editor runner changed. Player not launched.",
+    "Intermediate runs2/4 failed at73 checks and naturally exited1; they are not full behavioral passes.",
+    "Raw reports/traces/logs/screenshots remain local; bounded summaries contain all behavioral checks and raw report SHA256.",
+    "Issue50 remains open for broader device feedback."
+  ]
+}
