@@ -312,14 +312,32 @@ namespace Museum.Localization.EditorTools
             Vector3 touch = RootTouch(c);
             c.park(); yield return Wait(.15f); c.move(touch, Quaternion.identity, false); yield return Wait(.22f);
             yield return MuseumPhysicalHandsTestPose.Approach(MuseumPhysicalHandsTestPose.Controller(false), c.root, c.move, "ordinary shell grab");
+            string beforeGrip = RootSelectionDiagnostics(c);
             c.move(touch, Quaternion.identity, true); yield return Wait(.18f);
-            c.Check(c.root.isSelected && c.root.interactorsSelecting[0] is XRDirectInteractor, "ordinary shell remains directly grabbable");
+            c.Check(c.root.isSelected && c.root.interactorsSelecting[0] is XRDirectInteractor, "ordinary shell remains directly grabbable",
+                "before grip: " + beforeGrip + "; after grip: " + RootSelectionDiagnostics(c));
             Vector3 overMarker = c.hotspots[0].transform.position;
             c.move(overMarker, Quaternion.identity, true); yield return Wait(.18f);
             c.Check(c.root.isSelected && c.hotspots.All(h => !h.GetComponent<XRSimpleInteractable>().isSelected), "held helmet retains selection across a marker");
             c.move(touch, Quaternion.identity, true); yield return Wait(.18f);
             c.move(touch, Quaternion.identity, false); yield return Wait(.15f); c.park(); yield return Wait(.15f);
             c.inspection.ResetInspection(); yield return Wait(.25f);
+        }
+
+        static string RootSelectionDiagnostics(Context c)
+        {
+            var controller = MuseumPhysicalHandsTestPose.Controller(false);
+            var hand = MuseumPhysicalHandsTestPose.Hand(controller);
+            var direct = hand ? hand.DirectInteractor : null;
+            string detail = MuseumPhysicalHandsTestPose.SelectionDiagnostics(controller, c.root);
+            if (!direct) return detail;
+            detail += "; rootHovered=" + c.root.IsHovered(direct) + "; inspectionFilter=" +
+                ((UnityEngine.XR.Interaction.Toolkit.Filtering.IXRSelectFilter)c.inspection).Process(direct, c.root);
+            foreach (var child in c.root.GetComponentsInChildren<XRBaseInteractable>(true)
+                .Where(child => child is HelmetWindowInteractable || child is HelmetSectionInteractable))
+                detail += "; " + child.name + " hovered=" + child.IsHovered(direct) + ", contact=" + hand.IsDirectContact(child) +
+                    ", selected=" + child.isSelected;
+            return detail;
         }
 
         sealed class RelativePose
