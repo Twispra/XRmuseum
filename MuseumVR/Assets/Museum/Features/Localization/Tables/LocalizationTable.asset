@@ -163,7 +163,8 @@ MonoBehaviour:
     chinese: "\u91CD\u7F6E\u89C6\u89D2"
     english: Reset View
     traditionalChinese: "\u91CD\u8A2D\u8996\u89D2"
-    note: Return the visitor view to its starting position without resetting the exhibit or visit progress.
+    note: Return the visitor view to its starting position without resetting the
+      exhibit or visit progress.
   - key: text.19734a1b58ca
     chinese: "\u524D\u7A97"
     english: Window
@@ -674,9 +675,27 @@ MonoBehaviour:
     traditionalChinese: "\u7A7A\u6C23\u5F9E\u54EA\u88CF\u4F86\uFF1F\n\u4FE1\u606F\u600E\u6A23\u50B3\u905E\uFF1F"
     note: Visitor-facing exhibit copy; translated from existing English.
   - key: text.5a418305a621
-    chinese: "\u5148\u70B9\u51FB Game \u753B\u9762\u3002\nT / Y\uFF1A\u9009\u62E9\u5DE6 / \u53F3\u63A7\u5236\u5668\u3002\n\u6307\u5411\u540E\u6309 G\uFF1A\u9009\u62E9\u6309\u94AE\u3002\n\u6309\u4F4F G \u6293\u53D6\uFF0C\u677E\u5F00\u5373\u53EF\u653E\u4E0B\u3002\nHome / \u89C2\u5BDF\u9875 Reset\uFF1A\u5934\u76D4\u590D\u4F4D\u3002\n\u91CD\u7F6E\u89C6\u89D2\uFF1A\u56DE\u5230\u8D77\u70B9\u3002"
-    english: "Click Game to focus.\nT / Y: choose a controller.\nPoint + G: select a button.\nHold G: grab; release to let go.\nHome / Inspect Reset: reset helmet.\nReset View: return to start."
-    traditionalChinese: "\u5148\u9EDE\u64CA Game \u756B\u9762\u3002\nT / Y\uFF1A\u9078\u64C7\u5DE6 / \u53F3\u63A7\u5236\u5668\u3002\n\u6307\u5411\u5F8C\u6309 G\uFF1A\u9078\u64C7\u6309\u9215\u3002\n\u6309\u4F4F G \u6293\u53D6\uFF0C\u9B06\u958B\u5373\u53EF\u653E\u4E0B\u3002\nHome / \u89C0\u5BDF\u9801 Reset\uFF1A\u982D\u76D4\u5FA9\u4F4D\u3002\n\u91CD\u8A2D\u8996\u89D2\uFF1A\u56DE\u5230\u8D77\u9EDE\u3002"
+    chinese: "\u5148\u70B9\u51FB Game \u753B\u9762\u3002\nT / Y\uFF1A\u9009\u62E9\u5DE6
+      / \u53F3\u63A7\u5236\u5668\u3002\n\u6307\u5411\u540E\u6309 G\uFF1A\u9009\u62E9\u6309\u94AE\u3002\n\u6309\u4F4F
+      G \u6293\u53D6\uFF0C\u677E\u5F00\u5373\u53EF\u653E\u4E0B\u3002\nHome / \u89C2\u5BDF\u9875
+      Reset\uFF1A\u5934\u76D4\u590D\u4F4D\u3002\n\u91CD\u7F6E\u89C6\u89D2\uFF1A\u56DE\u5230\u8D77\u70B9\u3002"
+    english: 'Click Game to focus.
+
+      T / Y: choose a controller.
+
+      Point
+      + G: select a button.
+
+      Hold G: grab; release to let go.
+
+      Home /
+      Inspect Reset: reset helmet.
+
+      Reset View: return to start.'
+    traditionalChinese: "\u5148\u9EDE\u64CA Game \u756B\u9762\u3002\nT / Y\uFF1A\u9078\u64C7\u5DE6
+      / \u53F3\u63A7\u5236\u5668\u3002\n\u6307\u5411\u5F8C\u6309 G\uFF1A\u9078\u64C7\u6309\u9215\u3002\n\u6309\u4F4F
+      G \u6293\u53D6\uFF0C\u9B06\u958B\u5373\u53EF\u653E\u4E0B\u3002\nHome / \u89C0\u5BDF\u9801
+      Reset\uFF1A\u982D\u76D4\u5FA9\u4F4D\u3002\n\u91CD\u8A2D\u8996\u89D2\uFF1A\u56DE\u5230\u8D77\u9EDE\u3002"
     note: Unity Editor XR simulator Help; physical VR controllers use inspection.help.vr.
   - key: text.cbda5237f43b
     chinese: "\u8BBE\u5907\u7C7B\u578B\u7ECF\u8FC7\u6559\u5B66\u7B80\u5316\u3002\n\u4E0D\u662F\u7CBE\u786E\u914D\u5957\u88C5\u5907\u7684\u590D\u539F\u3002\n\u672A\u91CD\u5EFA\u771F\u5B9E\u5934\u76D4\u7684\u5B8C\u6574\u5185\u90E8\u6784\u9020\u3002\n\n"
@@ -1175,9 +1194,11 @@ MonoBehaviour:
     note: Visitor title follows the applied SuperLite visual; an inspired study,
       not a measured reconstruction.
   - key: refined.superlite.hotspots.front_window
-    chinese: "\u524d\u7a97\n\u89c2\u5bdf\u524d\u7a97\u548c\u8fb9\u6846\u3002\u4fa7\u5f00\u4ec5\u7528\u4e8e\u5c55\u5385\u6f14\u793a\uff0c\u4e0d\u4ee3\u8868\u5b9e\u7269\u7ed3\u6784\u3002"
-    english: "Front window\nWindow and rim. Side opening is a museum demonstration."
-    traditionalChinese: "\u524d\u7a97\n\u89c0\u5bdf\u524d\u7a97\u548c\u908a\u6846\u3002\u5074\u958b\u50c5\u7528\u65bc\u5c55\u5ef3\u6f14\u793a\uff0c\u4e0d\u4ee3\u8868\u5be6\u7269\u7d50\u69cb\u3002"
+    chinese: "\u524D\u7A97\n\u89C2\u5BDF\u524D\u7A97\u548C\u8FB9\u6846\u3002\u4FA7\u5F00\u4EC5\u7528\u4E8E\u5C55\u5385\u6F14\u793A\uFF0C\u4E0D\u4EE3\u8868\u5B9E\u7269\u7ED3\u6784\u3002"
+    english: 'Front window
+
+      Window and rim. Side opening is a museum demonstration.'
+    traditionalChinese: "\u524D\u7A97\n\u89C0\u5BDF\u524D\u7A97\u548C\u908A\u6846\u3002\u5074\u958B\u50C5\u7528\u65BC\u5C55\u5EF3\u6F14\u793A\uFF0C\u4E0D\u4EE3\u8868\u5BE6\u7269\u7D50\u69CB\u3002"
     note: The marker follows the moving glass. The side-opening motion is a teaching
       demonstration.
   - key: refined.superlite.hotspots.shell
@@ -1205,12 +1226,74 @@ MonoBehaviour:
       position; no mechanical fitting is identified as a telephone part.
   - key: inspection.status.select.vr
     chinese: "\u6307\u5411\u540E\u6309\u63E1\u628A\u952E\u9009\u62E9"
-    english: "Point + grip to select"
+    english: Point + grip to select
     traditionalChinese: "\u6307\u5411\u5F8C\u6309\u63E1\u628A\u9375\u9078\u64C7"
-    note: Visitor instruction for physical VR controllers; Unity Editor keeps its keyboard simulator hint.
+    note: Visitor instruction for physical VR controllers; Unity Editor keeps its
+      keyboard simulator hint.
   - key: inspection.help.vr
-    chinese: "\u6307\u5411\u6309\u94AE\u5E76\u6309\u63E1\u628A\u952E\uFF1A\u9009\u62E9\u3002\n\u6309\u4F4F\u63E1\u628A\u952E\uFF1A\u6293\u53D6\u5934\u76D4\u3002\n\u677E\u5F00\u63E1\u628A\u952E\uFF1A\u653E\u4E0B\u5934\u76D4\u3002\n\u89C2\u5BDF\u9875 Reset\uFF1A\u5934\u76D4\u590D\u4F4D\u3002\n\u91CD\u7F6E\u89C6\u89D2\uFF1A\u56DE\u5230\u8D77\u70B9\u3002"
-    english: "Point + grip: select a button.\nHold grip: grab the helmet.\nRelease grip: put it down.\nInspect Reset: reset the helmet.\nReset View: return to start."
-    traditionalChinese: "\u6307\u5411\u6309\u9215\u4E26\u6309\u63E1\u628A\u9375\uFF1A\u9078\u64C7\u3002\n\u6309\u4F4F\u63E1\u628A\u9375\uFF1A\u6293\u53D6\u982D\u76D4\u3002\n\u9B06\u958B\u63E1\u628A\u9375\uFF1A\u653E\u4E0B\u982D\u76D4\u3002\n\u89C0\u5BDF\u9801 Reset\uFF1A\u982D\u76D4\u5FA9\u4F4D\u3002\n\u91CD\u8A2D\u8996\u89D2\uFF1A\u56DE\u5230\u8D77\u9EDE\u3002"
+    chinese: "\u6307\u5411\u6309\u94AE\u5E76\u6309\u63E1\u628A\u952E\uFF1A\u9009\u62E9\u3002\n\u6309\u4F4F\u63E1\u628A\u952E\uFF1A\u6293\u53D6\u5934\u76D4\u3002\n\u677E\u5F00\u63E1\u628A\u952E\uFF1A\u653E\u4E0B\u5934\u76D4\u3002\n\u89C2\u5BDF\u9875
+      Reset\uFF1A\u5934\u76D4\u590D\u4F4D\u3002\n\u91CD\u7F6E\u89C6\u89D2\uFF1A\u56DE\u5230\u8D77\u70B9\u3002"
+    english: 'Point + grip: select a button.
+
+      Hold grip: grab the helmet.
+
+      Release
+      grip: put it down.
+
+      Inspect Reset: reset the helmet.
+
+      Reset View:
+      return to start.'
+    traditionalChinese: "\u6307\u5411\u6309\u9215\u4E26\u6309\u63E1\u628A\u9375\uFF1A\u9078\u64C7\u3002\n\u6309\u4F4F\u63E1\u628A\u9375\uFF1A\u6293\u53D6\u982D\u76D4\u3002\n\u9B06\u958B\u63E1\u628A\u9375\uFF1A\u653E\u4E0B\u982D\u76D4\u3002\n\u89C0\u5BDF\u9801
+      Reset\uFF1A\u982D\u76D4\u5FA9\u4F4D\u3002\n\u91CD\u8A2D\u8996\u89D2\uFF1A\u56DE\u5230\u8D77\u9EDE\u3002"
     note: Visitor Help in a VR player build; no Unity Editor keyboard shortcuts.
+  - key: era.previous
+    chinese: "\u4E0A\u4E00\u5E74\u4EE3"
+    english: Previous era
+    traditionalChinese: "\u4E0A\u4E00\u5E74\u4EE3"
+    note: 'Issue 57: era navigation and explicit early-era placeholder boundary.'
+  - key: era.next
+    chinese: "\u4E0B\u4E00\u5E74\u4EE3"
+    english: Next era
+    traditionalChinese: "\u4E0B\u4E00\u5E74\u4EE3"
+    note: 'Issue 57: era navigation and explicit early-era placeholder boundary.'
+  - key: era.early.caption
+    chinese: "\u6F5C\u6C34\u5934\u76D4\n<size=62%>\u65E9\u671F\uFF081839\uFF09\u2014\u5360\u4F4D\u7814\u7A76\u6A21\u578B</size>"
+    english: 'Diving helmet
+
+      <size=62%>Early (1839) - placeholder study</size>'
+    traditionalChinese: "\u6F5B\u6C34\u982D\u76D4\n<size=62%>\u65E9\u671F\uFF081839\uFF09\u2014\u4F54\u4F4D\u7814\u7A76\u6A21\u578B</size>"
+    note: 'Issue 57: era navigation and explicit early-era placeholder boundary.'
+  - key: era.early.placeholder
+    chinese: "\u65E9\u671F\u5E74\u4EE3\u7684\u5360\u4F4D\u6A21\u578B\uFF0C\u5C1A\u672A\u91CD\u5EFA\u5386\u53F2\u7EC6\u8282\u3002"
+    english: Placeholder geometry for the early era; historical details are not reconstructed.
+    traditionalChinese: "\u65E9\u671F\u5E74\u4EE3\u7684\u4F54\u4F4D\u6A21\u578B\uFF0C\u5C1A\u672A\u91CD\u5EFA\u6B77\u53F2\u7D30\u7BC0\u3002"
+    note: 'Issue 57: era navigation and explicit early-era placeholder boundary.'
+  - key: era.early.hotspot.front
+    chinese: "\u524D\u7A97\n\u65E9\u671F\u5E74\u4EE3\u7684\u5360\u4F4D\u6A21\u578B\uFF0C\u5C1A\u672A\u91CD\u5EFA\u5386\u53F2\u7EC6\u8282\u3002"
+    english: 'Front window
+
+      Placeholder geometry for the early era; historical
+      details are not reconstructed.'
+    traditionalChinese: "\u524D\u7A97\n\u65E9\u671F\u5E74\u4EE3\u7684\u4F54\u4F4D\u6A21\u578B\uFF0C\u5C1A\u672A\u91CD\u5EFA\u6B77\u53F2\u7D30\u7BC0\u3002"
+    note: 'Issue 57: complete dynamic title + description; early-era placeholder
+      boundary.'
+  - key: era.early.hotspot.shell
+    chinese: "\u4E0A\u58F3\n\u65E9\u671F\u5E74\u4EE3\u7684\u5360\u4F4D\u6A21\u578B\uFF0C\u5C1A\u672A\u91CD\u5EFA\u5386\u53F2\u7EC6\u8282\u3002"
+    english: 'Bonnet shell
+
+      Placeholder geometry for the early era; historical
+      details are not reconstructed.'
+    traditionalChinese: "\u4E0A\u6BBC\n\u65E9\u671F\u5E74\u4EE3\u7684\u4F54\u4F4D\u6A21\u578B\uFF0C\u5C1A\u672A\u91CD\u5EFA\u6B77\u53F2\u7D30\u7BC0\u3002"
+    note: 'Issue 57: complete dynamic title + description; early-era placeholder
+      boundary.'
+  - key: era.early.hotspot.shoulder
+    chinese: "\u80F8\u80A9\u677F\n\u65E9\u671F\u5E74\u4EE3\u7684\u5360\u4F4D\u6A21\u578B\uFF0C\u5C1A\u672A\u91CD\u5EFA\u5386\u53F2\u7EC6\u8282\u3002"
+    english: 'Breastplate
+
+      Placeholder geometry for the early era; historical
+      details are not reconstructed.'
+    traditionalChinese: "\u80F8\u80A9\u677F\n\u65E9\u671F\u5E74\u4EE3\u7684\u4F54\u4F4D\u6A21\u578B\uFF0C\u5C1A\u672A\u91CD\u5EFA\u6B77\u53F2\u7D30\u7BC0\u3002"
+    note: 'Issue 57: complete dynamic title + description; early-era placeholder
+      boundary.'
   fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
