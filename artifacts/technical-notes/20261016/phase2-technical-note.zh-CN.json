@@ -1,0 +1,16 @@
+{
+  "pages": 2,
+  "source": "docs\\phase2-technical-note.zh-CN.md",
+  "sourceSha256": "644b1d6246b254d46f58d5db7a42902d53ba79f49cf5373aff47da9a65be2b3f",
+  "pdf": "artifacts\\technical-notes\\20261016\\phase2-technical-note.zh-CN.pdf",
+  "pdfSha256": "b3f39c4d145a375c68d5b922ba470a1e5c4e22f6fcbe8bd6cf817bd9f7782517",
+  "runtimeCommit": "806993a1723bbf7a0b5c75bedbbccf8e6f5022a5",
+  "pageSize": "A4",
+  "renderEngine": "reportlab",
+  "visualReview": {
+    "pagesChecked": 2,
+    "result": "passed",
+    "method": "Poppler rendered page images inspected for missing glyphs, clipping and overlap."
+  },
+  "note": "Page count, extraction and visual review passed; this does not represent formal course submission."
+}

@@ -1,0 +1,37 @@
+{
+  "runId": "20261016T133828251Z-localization-6dcf91b0b6c64ea1bca4aeecd255f793",
+  "runName": "localization",
+  "state": "exited",
+  "commit": "806993a1723bbf7a0b5c75bedbbccf8e6f5022a5",
+  "checkout": "E:\\Codex\\worktrees\\visitor-validation-20261016\\XRmuseum",
+  "projectPath": "E:\\Codex\\worktrees\\visitor-validation-20261016\\XRmuseum\\MuseumVR",
+  "editor": "2022.3.62f3c1",
+  "executable": "E:\\unity\\36version\\2022.3.62f3c1\\Editor\\Unity.exe",
+  "arguments": [
+    "-batchmode",
+    "-projectPath",
+    "\"E:\\Codex\\worktrees\\visitor-validation-20261016\\XRmuseum\\MuseumVR\"",
+    "-logFile",
+    "\"E:\\Codex\\Temp\\visitor-flow-20261016\\evidence\\20261016T133828251Z-localization-6dcf91b0b6c64ea1bca4aeecd255f793\\unity.log\"",
+    "-executeMethod",
+    "Museum.Localization.EditorTools.LocalizationValidation.RunBatch"
+  ],
+  "startedUtc": "2026-10-16T13:38:28.2766205Z",
+  "finishedUtc": "2026-10-16T13:38:51.8684869Z",
+  "pid": 33036,
+  "exitCode": 0,
+  "forced": false,
+  "temp": "E:\\Codex\\Temp\\visitor-flow-20261016\\temp\\20261016T133828251Z-localization-6dcf91b0b6c64ea1bca4aeecd255f793",
+  "qaOutput": "E:\\Codex\\Temp\\visitor-flow-20261016\\evidence\\20261016T133828251Z-localization-6dcf91b0b6c64ea1bca4aeecd255f793\\qa",
+  "buildOutput": "E:\\Codex\\Temp\\visitor-flow-20261016\\evidence\\20261016T133828251Z-localization-6dcf91b0b6c64ea1bca4aeecd255f793\\windows-build",
+  "dirtyBefore": [
+    "?? artifacts/helmet-interaction/qa/runs/20261016T132630935Z-new-visit-e56896eeca05482c945ac4812aa287af/report.json",
+    "?? artifacts/helmet-interaction/qa/runs/20261016T133744105Z-new-visit-690d3c4304404044bff50f5ae25b9f82/report.json"
+  ],
+  "dirtyAfter": [
+    "?? artifacts/helmet-interaction/qa/runs/20261016T132630935Z-new-visit-e56896eeca05482c945ac4812aa287af/report.json",
+    "?? artifacts/helmet-interaction/qa/runs/20261016T133744105Z-new-visit-690d3c4304404044bff50f5ae25b9f82/report.json",
+    "?? artifacts/localization/qa/runs/20261016T133851012Z-validation/report.json"
+  ],
+  "timeoutSeconds": 900
+}

@@ -1,0 +1,34 @@
+{
+  "runId": "20261016T133605510Z-era-clearance-fb0903b60cc349c099a0a69845e86b7e",
+  "runName": "era-clearance",
+  "state": "exited",
+  "commit": "806993a1723bbf7a0b5c75bedbbccf8e6f5022a5",
+  "checkout": "E:\\Codex\\worktrees\\visitor-validation-20261016\\XRmuseum",
+  "projectPath": "E:\\Codex\\worktrees\\visitor-validation-20261016\\XRmuseum\\MuseumVR",
+  "editor": "2022.3.62f3c1",
+  "executable": "E:\\unity\\36version\\2022.3.62f3c1\\Editor\\Unity.exe",
+  "arguments": [
+    "-batchmode",
+    "-projectPath",
+    "\"E:\\Codex\\worktrees\\visitor-validation-20261016\\XRmuseum\\MuseumVR\"",
+    "-logFile",
+    "\"E:\\Codex\\Temp\\visitor-flow-20261016\\evidence\\20261016T133605510Z-era-clearance-fb0903b60cc349c099a0a69845e86b7e\\unity.log\"",
+    "-executeMethod",
+    "Museum.Localization.EditorTools.VisitorEraValidation.RunBatch"
+  ],
+  "startedUtc": "2026-10-16T13:36:05.5368880Z",
+  "finishedUtc": "2026-10-16T13:37:19.5842398Z",
+  "pid": 34056,
+  "exitCode": 0,
+  "forced": false,
+  "temp": "E:\\Codex\\Temp\\visitor-flow-20261016\\temp\\20261016T133605510Z-era-clearance-fb0903b60cc349c099a0a69845e86b7e",
+  "qaOutput": "E:\\Codex\\Temp\\visitor-flow-20261016\\evidence\\20261016T133605510Z-era-clearance-fb0903b60cc349c099a0a69845e86b7e\\qa",
+  "buildOutput": "E:\\Codex\\Temp\\visitor-flow-20261016\\evidence\\20261016T133605510Z-era-clearance-fb0903b60cc349c099a0a69845e86b7e\\windows-build",
+  "dirtyBefore": [
+    "?? artifacts/helmet-interaction/qa/runs/20261016T132630935Z-new-visit-e56896eeca05482c945ac4812aa287af/report.json"
+  ],
+  "dirtyAfter": [
+    "?? artifacts/helmet-interaction/qa/runs/20261016T132630935Z-new-visit-e56896eeca05482c945ac4812aa287af/report.json"
+  ],
+  "timeoutSeconds": 900
+}

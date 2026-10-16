@@ -18,7 +18,7 @@ COMP5424 Extended Reality 博物馆**group2**小组作业的 Unity 工程与协�
 
 本轮 [Issue #57](https://github.com/Twispra/XRmuseum/issues/57) 修复 NEW VISIT 对探索与观察发现的完整清理，并补齐年代按钮 / 当前展签的三语说明；最终被测版本与检查结果见[技术说明](docs/phase2-technical-note.zh-CN.md)。NEW VISIT 保留语言、年代、声音 / 动画偏好、展品位姿及视角；头盔 RESET 与 RESET VIEW 分别恢复展品和观看位置，保留本轮发现。
 
-快速操作见[年代切换](docs/helmet-eras.zh-CN.md)、[自由探索与复位](docs/helmet-exploration.zh-CN.md)、[物理手及设备反馈](docs/physical-hands.zh-CN.md)。2026-10-16 已有完整 Windows64 Development 构建与产物指纹，实际源码版本、目录和未启动边界见[构建记录](docs/activity/2026-10-16-issue50-shell-grab.md)。已有有限头显反馈；最新修订的完整头显流程、性能和用户研究仍需验证。
+快速操作见[年代切换](docs/helmet-eras.zh-CN.md)、[自由探索与复位](docs/helmet-exploration.zh-CN.md)、[物理手及设备反馈](docs/physical-hands.zh-CN.md)。本轮 `806993a` 已生成完整 Windows64 Development 构建并核对 272 个产物，目录、指纹和程序未启动边界见[修订与构建记录](docs/activity/2026-10-16-visitor-flow.md)。已有有限头显反馈；最新修订的完整头显流程、性能和用户研究仍需验证。
 
 已配置 URP 14.0.12、OpenXR 1.14.3、XR Interaction Toolkit 2.6.4、Input System 1.14.0。模拟器仅供 Editor 预览；真实头显与模拟输入的操作边界见[协作指南](docs/getting-started.zh-CN.md)。
 
