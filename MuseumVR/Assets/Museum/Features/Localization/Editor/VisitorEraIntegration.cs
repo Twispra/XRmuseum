@@ -18,6 +18,24 @@ namespace Museum.Localization.EditorTools
         const string Root = "Assets/Museum/Features/Localization";
         const string ScenePath = "Assets/Museum/Scenes/MuseumStart.unity";
 
+        public static void UpdateCopyBatch()
+        {
+            int code = 1;
+            try
+            {
+                if (EditorApplication.isPlayingOrWillChangePlaymode)
+                    throw new InvalidOperationException("Exit Play before updating the saved translation table.");
+                var table = AssetDatabase.LoadAssetAtPath<LocalizationTable>(Root + "/Tables/LocalizationTable.asset");
+                if (!table || !table.FontAsset) throw new InvalidOperationException("Missing saved localization assets.");
+                TrilingualMuseumSetup.ApplyTable(table, table.FontAsset);
+                AssetDatabase.SaveAssets();
+                Debug.Log("VISITOR_COPY_SAVED: translation table only; scene and font unchanged.");
+                code = 0;
+            }
+            catch (Exception ex) { Debug.LogException(ex); }
+            EditorApplication.Exit(code);
+        }
+
         public static void RunBatch()
         {
             int code = 1;
