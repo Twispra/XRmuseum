@@ -12,6 +12,8 @@ namespace Museum.Localization
     public sealed class HelmetEraVisitorContent : MonoBehaviour
     {
         public const string SuperLiteInstructions = "Diving helmet\n<size=62%>SuperLite 17B-inspired study</size>";
+        public const string EarlyInstructions = "Diving helmet\n<size=62%>Early (1839) - placeholder study</size>";
+        public const string EarlyPlaceholderDetails = "Placeholder geometry for the early era; historical details are not reconstructed.";
         public const string FrontWindowTitle = "Front window";
         public const string FrontWindowDetails = "Window and rim. Side opening is a museum demonstration.";
         public const string ShellTitle = "Helmet shell";
@@ -48,6 +50,7 @@ namespace Museum.Localization
         bool captured;
         LocalizedText originalKeyBinding;
         bool originalKeyBindingEnabled;
+        int appliedEra = int.MinValue;
 
         public bool IsSuperLiteContentActive { get; private set; }
         public IReadOnlyList<HotspotAttachment> Attachments => attachments;
@@ -65,11 +68,13 @@ namespace Museum.Localization
             instructions = caption;
             attachments = points ?? Array.Empty<HotspotAttachment>();
             captured = false;
+            appliedEra = int.MinValue;
         }
 
         void OnEnable()
         {
             if (captured && originalKeyBinding) originalKeyBinding.enabled = false;
+            appliedEra = int.MinValue;
         }
 
         void LateUpdate()
@@ -78,18 +83,27 @@ namespace Museum.Localization
             if (!captured) CaptureOriginal();
             // A requested era can be deferred while a window or section tool is held.
             // The visitor copy must change with the applied geometry, not the request.
-            bool next = binding.IsAdditionalVisualActive;
-            if (next != IsSuperLiteContentActive)
+            int next = binding.AppliedEraIndex;
+            if (next < 0) return;
+            if (next != appliedEra)
             {
-                IsSuperLiteContentActive = next;
-                if (next)
+                RestoreOriginal();
+                appliedEra = next;
+                IsSuperLiteContentActive = binding.IsAdditionalVisualActive;
+                if (IsSuperLiteContentActive)
                 {
                     foreach (var attachment in attachments)
                         if (attachment != null && attachment.hotspot)
                             attachment.hotspot.SetContent(attachment.heading, attachment.details);
                     WriteInstructions(SuperLiteInstructions);
                 }
-                else RestoreOriginal();
+                else if (!binding.IsRefinedActive)
+                {
+                    WriteInstructions(EarlyInstructions);
+                    foreach (var original in originals)
+                        if (original.hotspot)
+                            original.hotspot.SetContent(original.title, EarlyPlaceholderDetails);
+                }
             }
             if (!IsSuperLiteContentActive) return;
             foreach (var attachment in attachments)
