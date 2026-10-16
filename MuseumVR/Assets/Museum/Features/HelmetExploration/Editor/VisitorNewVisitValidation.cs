@@ -182,6 +182,10 @@ namespace Museum.Exploration.Editor
         {
             string prefix = language + ": ";
             MuseumText.Channel.SetLanguage(language);
+            var era = inspection.GetComponent<HelmetEraSwitcher>();
+            int chosenEra = language == MuseumLanguage.English ? 2 : language == MuseumLanguage.Chinese ? 0 : 1;
+            era.ShowEra(chosenEra); yield return Wait(.35f);
+            CheckResult(era.CurrentIndex == chosenEra, prefix + "fixture selects a different era", "era=" + chosenEra);
             inspection.ReduceMotion = language != MuseumLanguage.English;
             inspection.SoundEnabled = language == MuseumLanguage.TraditionalChinese;
             hotspots[0].Activate(); exploration.SelectClue(HelmetExplorationController.Clue.Air); exploration.RequestHint();
