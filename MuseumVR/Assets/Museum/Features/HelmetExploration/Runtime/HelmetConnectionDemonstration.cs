@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Museum.Inspection;
 using Museum.Localization;
 using Museum.RefinedModels;
@@ -12,6 +13,57 @@ namespace Museum.Exploration
     [DisallowMultipleComponent]
     public sealed class HelmetConnectionDemonstration : MonoBehaviour
     {
+        /// <summary>
+        /// A complete apparatus that can be turned about a fixed display centre. Its outer
+        /// root is never a sampled mechanical animation root. Renderers exclude the hose,
+        /// travelling signals and text so none of those become an oversized grab target.
+        /// </summary>
+        public sealed class EquipmentExhibit
+        {
+            public string Id { get; }
+            public Transform Root { get; }
+            public Vector3 CenterLocal { get; private set; }
+            public Renderer[] Renderers { get; }
+            public bool IsVisible
+            {
+                get
+                {
+                    if (!Root || !Root.gameObject.activeInHierarchy) return false;
+                    foreach (var surface in Renderers)
+                        if (surface && surface.enabled && surface.gameObject.activeInHierarchy) return true;
+                    return false;
+                }
+            }
+
+            internal EquipmentExhibit(string id, Transform root, Transform model)
+            {
+                Id = id; Root = root;
+                // Refined speech feedback lines are siblings of the model, not its meshes.
+                var surfaces = new List<Renderer>();
+                if (model)
+                    foreach (var surface in model.GetComponentsInChildren<Renderer>(true))
+                    {
+                        if (surface is LineRenderer || surface.name.StartsWith("Surface voice wave ", StringComparison.Ordinal) ||
+                            surface.name.StartsWith("Diver voice wave ", StringComparison.Ordinal)) continue;
+                        surfaces.Add(surface);
+                    }
+                Renderers = surfaces.ToArray();
+            }
+
+            internal void CaptureCenter()
+            {
+                if (!Root) return;
+                Bounds bounds = default(Bounds); bool found = false;
+                foreach (var surface in Renderers)
+                {
+                    if (!surface || surface is LineRenderer || !surface.enabled) continue;
+                    if (!found) { bounds = surface.bounds; found = true; }
+                    else bounds.Encapsulate(surface.bounds);
+                }
+                CenterLocal = found ? Root.InverseTransformPoint(bounds.center) : Vector3.zero;
+            }
+        }
+
         public const float Duration = 16f;
         const int PathSamples = 41;
         [SerializeField] HelmetInspectionController inspection;
@@ -30,6 +82,8 @@ namespace Museum.Exploration
         HelmetDemonstrationModels models;
         Vector3 airAnchorLocal, pathStart, pathControlA, pathControlB, pathEnd;
         Vector3 diagramRight = Vector3.right, diagramForward = Vector3.forward;
+        Vector3 diagramCentre;
+        readonly List<EquipmentExhibit> equipmentExhibits = new List<EquipmentExhibit>(3);
         readonly Vector3[] pathPoints = new Vector3[PathSamples];
         float startedAt;
         Transform viewer;
@@ -49,6 +103,9 @@ namespace Museum.Exploration
         public float NormalizedProgress => IsVisible ? Mathf.Clamp01((Time.unscaledTime - startedAt) / Duration) : 0f;
         public bool IsUsingRefinedEquipment => refinedEquipment && refinedEquipment.IsReady;
         public RefinedConnectionEquipment RefinedEquipment => refinedEquipment;
+        public IReadOnlyList<EquipmentExhibit> EquipmentExhibits => equipmentExhibits;
+        public Vector3 LayoutCenterWorld => diagramCentre;
+        public Quaternion LayoutRotationWorld => Quaternion.LookRotation(diagramForward, Vector3.up);
         public Vector3 AirSourceWorld => IsUsingRefinedEquipment ? refinedEquipment.AirOutlet.position : models != null ? models.AirOutlet.position : Vector3.zero;
         public Vector3 VoiceSourceWorld => IsUsingRefinedEquipment ? refinedEquipment.TelephoneOutlet.position : models != null ? models.TelephoneOutlet.position : Vector3.zero;
         public Vector3 AirTargetWorld => rearConnections && rearConnections.AirOutlet ? rearConnections.AirOutlet.position : inspection && anchorReady
@@ -105,6 +162,7 @@ namespace Museum.Exploration
             IsPlaying = !inspection.ReduceMotion; IsVisible = true;
             visuals.SetActive(true); models.SetMode(clue == HelmetExplorationController.Clue.Air);
             if (IsUsingRefinedEquipment) refinedEquipment.SetMode(clue == HelmetExplorationController.Clue.Air, !rearConnections);
+            PositionEquipmentAtDisplay();
             UpdateVisuals(0f);
             PlaybackChanged?.Invoke();
         }
@@ -182,7 +240,49 @@ namespace Museum.Exploration
             destinationText = MakeText("Destination label", new Vector2(.23f,.045f), .42f);
             caption = MakeText("Schematic caption", new Vector2(.52f,.073f), .48f);
             if (Camera.main) viewer = Camera.main.transform;
+            BuildEquipmentExhibits();
             visuals.SetActive(false);
+        }
+
+        void BuildEquipmentExhibits()
+        {
+            equipmentExhibits.Clear();
+            if (IsUsingRefinedEquipment)
+            {
+                equipmentExhibits.Add(new EquipmentExhibit("air-pump", refinedEquipment.PumpPresentation, refinedEquipment.Pump));
+                equipmentExhibits.Add(new EquipmentExhibit("surface-telephone", refinedEquipment.SurfaceTelephonePresentation, refinedEquipment.SurfaceTelephone));
+                equipmentExhibits.Add(new EquipmentExhibit("diver-unit", refinedEquipment.DiverTelephonePresentation, refinedEquipment.DiverTelephone));
+            }
+            else
+            {
+                equipmentExhibits.Add(new EquipmentExhibit("air-pump", models.Pump, models.Pump));
+                equipmentExhibits.Add(new EquipmentExhibit("surface-telephone", models.SurfaceTelephone, models.SurfaceTelephone));
+                equipmentExhibits.Add(new EquipmentExhibit("diver-unit", models.DiverTransducer, models.DiverTransducer));
+            }
+        }
+
+        void PositionEquipmentAtDisplay()
+        {
+            // Open in the same place beside the exhibition each time. A visitor can move
+            // their head, walk round, or turn the helmet without the apparatus following.
+            // HomePose records the exhibit's authored display basis, not its current turn.
+            var reset = inspection.GetComponent<HelmetExhibitReset>();
+            var displayPose = reset ? reset.HomePose : new Pose(inspection.transform.position, inspection.transform.rotation);
+            diagramForward = Vector3.ProjectOnPlane(displayPose.rotation * Vector3.forward, Vector3.up);
+            if (diagramForward.sqrMagnitude < .001f) diagramForward = Vector3.forward;
+            diagramForward.Normalize();
+            diagramRight = Vector3.Cross(Vector3.up, diagramForward).normalized;
+            diagramCentre = displayPose.position + displayPose.rotation * Vector3.Scale(inspection.SectionCenterLocal, inspection.transform.lossyScale);
+            Quaternion facing = Quaternion.LookRotation(diagramForward, Vector3.up);
+            models.Position(diagramCentre, facing);
+            if (IsUsingRefinedEquipment) refinedEquipment.Position(diagramCentre, facing);
+            // Start each reopening from an identical neutral mechanism pose before measuring
+            // the grab centre. A previous crank/diaphragm phase must not shift the pivot.
+            models.AnimatePump(0f, false);
+            models.AnimateVoice(0f, false, false, false);
+            if (IsUsingRefinedEquipment)
+                refinedEquipment.Evaluate(0f, false, false, false, false, false, false, false);
+            foreach (var exhibit in equipmentExhibits) exhibit.CaptureCenter();
         }
 
         void UpdateVisuals(float elapsed)
@@ -190,13 +290,6 @@ namespace Museum.Exploration
             bool air = CurrentClue == HelmetExplorationController.Clue.Air;
             bool staticDiagram = inspection.ReduceMotion || !IsPlaying;
             if (!viewer && Camera.main) viewer = Camera.main.transform;
-            diagramRight = viewer ? Vector3.ProjectOnPlane(viewer.right, Vector3.up).normalized : Vector3.right;
-            if (diagramRight.sqrMagnitude < .1f) diagramRight = Vector3.right;
-            diagramForward = Vector3.Cross(diagramRight, Vector3.up).normalized;
-            Quaternion facing = Quaternion.LookRotation(diagramForward, Vector3.up);
-            Vector3 centre = inspection.transform.TransformPoint(inspection.SectionCenterLocal);
-            models.Position(centre, facing);
-            if (IsUsingRefinedEquipment) refinedEquipment.Position(centre, facing);
             // The real helmet fitting is the receiving end. Keep the old detached schematic only as a fallback.
             models.DiverTransducer.gameObject.SetActive(!rearConnections);
             SetPhase(air, elapsed, staticDiagram);
@@ -260,7 +353,7 @@ namespace Museum.Exploration
             destinationText.transform.position = air || rearConnections ? pathEnd + Vector3.up*.09f
                 : IsUsingRefinedEquipment ? refinedEquipment.DiverLabelPosition : models.DiverTransducer.position + Vector3.up*.24f;
             MuseumText.Set(caption, AnimationStage + "\n<size=75%>Illustrative model</size>");
-            caption.transform.position = centre + diagramRight * .43f + Vector3.up * .43f;
+            caption.transform.position = diagramCentre + diagramRight * .43f + Vector3.up * .43f;
             FaceViewer(sourceText.transform); FaceViewer(destinationText.transform); FaceViewer(caption.transform);
         }
 
@@ -420,6 +513,7 @@ namespace Museum.Exploration
             if(refinedEquipment)refinedEquipment.Stop();
             if(visuals)DestroyOwned(visuals);
             visuals=null;models?.Dispose();models=null;refinedEquipment=null;
+            equipmentExhibits.Clear();
         }
         static void DestroyOwned(UnityEngine.Object target)
         {if(!target)return;if(Application.isPlaying)Destroy(target);else DestroyImmediate(target);}

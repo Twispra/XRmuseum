@@ -1293,4 +1293,207 @@ MonoBehaviour:
     traditionalChinese: "\u80F8\u80A9\u677F\n\u65E9\u671F\u5E74\u4EE3\u7684\u4F54\u4F4D\u6A21\u578B\uFF0C\u5C1A\u672A\u91CD\u5EFA\u6B77\u53F2\u7D30\u7BC0\u3002"
     note: 'Issue 57: complete dynamic title + description; early-era placeholder
       boundary.'
+  - key: diegetic.action.00
+    chinese: "\u6253\u5F00\u524D\u7A97"
+    english: Open window
+    traditionalChinese: "\u6253\u958B\u524D\u7A97"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.01
+    chinese: "\u5173\u95ED\u524D\u7A97"
+    english: Close window
+    traditionalChinese: "\u95DC\u9589\u524D\u7A97"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.02
+    chinese: "\u5173\u95ED\u5256\u9762"
+    english: Close section
+    traditionalChinese: "\u95DC\u9589\u5256\u9762"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.03
+    chinese: "\u5173\u95ED\u4F9B\u6C14\u6F14\u793A"
+    english: Close air demo
+    traditionalChinese: "\u95DC\u9589\u4F9B\u6C23\u6F14\u793A"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.04
+    chinese: "\u5173\u95ED\u901A\u8BDD\u6F14\u793A"
+    english: Close voice demo
+    traditionalChinese: "\u95DC\u9589\u901A\u8A71\u6F14\u793A"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.05
+    chinese: "\u65CB\u8F6C"
+    english: Rotate
+    traditionalChinese: "\u65CB\u8F49"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.06
+    chinese: "\u79FB\u52A8\u5207\u9762"
+    english: Slide section
+    traditionalChinese: "\u79FB\u52D5\u5207\u9762"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.07
+    chinese: "\u70B9\u51FB\u6253\u5F00\u6216\u5173\u95ED"
+    english: Click to open or close
+    traditionalChinese: "\u9EDE\u64CA\u6253\u958B\u6216\u95DC\u9589"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.08
+    chinese: "\u70B9\u51FB\u67E5\u770B\u5185\u90E8"
+    english: Click to look inside
+    traditionalChinese: "\u9EDE\u64CA\u67E5\u770B\u5167\u90E8"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.09
+    chinese: "\u70B9\u51FB\u5C55\u5F00\u6216\u6536\u8D77"
+    english: Click to show or hide
+    traditionalChinese: "\u9EDE\u64CA\u5C55\u958B\u6216\u6536\u8D77"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.10
+    chinese: "\u6309\u4F4F\u5E76\u79FB\u52A8\u624B\u6765\u65CB\u8F6C"
+    english: Hold + move to rotate
+    traditionalChinese: "\u6309\u4F4F\u4E26\u79FB\u52D5\u624B\u4F86\u65CB\u8F49"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.11
+    chinese: "\u6309\u4F4F\u5E76\u79FB\u52A8\u624B\u6765\u8C03\u6574\u5207\u9762"
+    english: Hold + move to slide
+    traditionalChinese: "\u6309\u4F4F\u4E26\u79FB\u52D5\u624B\u4F86\u8ABF\u6574\u5207\u9762"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.12
+    chinese: "\u70B9\u51FB\u9009\u62E9"
+    english: Click to select
+    traditionalChinese: "\u9EDE\u64CA\u9078\u64C7"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.13
+    chinese: "\u663E\u793A\u64CD\u4F5C\u63D0\u793A"
+    english: Show hints
+    traditionalChinese: "\u986F\u793A\u64CD\u4F5C\u63D0\u793A"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.14
+    chinese: "\u9690\u85CF\u64CD\u4F5C\u63D0\u793A"
+    english: Hide hints
+    traditionalChinese: "\u96B1\u85CF\u64CD\u4F5C\u63D0\u793A"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.15
+    chinese: "\u63D0\u793A\uFF1A\u5F00"
+    english: 'Hints: on'
+    traditionalChinese: "\u63D0\u793A\uFF1A\u958B"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.16
+    chinese: "\u63D0\u793A\uFF1A\u5173"
+    english: 'Hints: off'
+    traditionalChinese: "\u63D0\u793A\uFF1A\u95DC"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.17
+    chinese: "\u8BBE\u7F6E"
+    english: Settings
+    traditionalChinese: "\u8A2D\u5B9A"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.action.18
+    chinese: "\u8BBE\u5907\u662F\u7B80\u5316\u793A\u610F\u3002\n\u4E0D\u662F\u5B8C\u6574\u7684\u914D\u5957\u88C5\u5907\u3002\n\u5185\u90E8\u7ED3\u6784\u672A\u4F5C\u5386\u53F2\u590D\u539F\u3002"
+    english: 'Equipment types, simplified.
+
+      Not an exact matched rig.
+
+      No
+      helmet interior is reconstructed.'
+    traditionalChinese: "\u8A2D\u5099\u662F\u7C21\u5316\u793A\u610F\u3002\n\u4E0D\u662F\u5B8C\u6574\u7684\u914D\u5957\u88DD\u5099\u3002\n\u5167\u90E8\u7D50\u69CB\u672A\u4F5C\u6B77\u53F2\u5FA9\u539F\u3002"
+    note: 2026-10-14 exhibit-attached one-hand UI; design copy, not a historical
+      claim.
+  - key: diegetic.previousEra
+    chinese: "\u4E0A\u4E00\u5E74\u4EE3"
+    english: Previous era
+    traditionalChinese: "\u4E0A\u4E00\u5E74\u4EE3"
+    note: Fixed pedestal era selector.
+  - key: diegetic.nextEra
+    chinese: "\u4E0B\u4E00\u5E74\u4EE3"
+    english: Next era
+    traditionalChinese: "\u4E0B\u4E00\u5E74\u4EE3"
+    note: Fixed pedestal era selector.
+  - key: diegetic.about
+    chinese: "\u5C55\u54C1\u8BF4\u660E"
+    english: About
+    traditionalChinese: "\u5C55\u54C1\u8AAA\u660E"
+    note: Exhibit station caption.
+  - key: diegetic.era1839
+    chinese: "1839 / \u6807\u51C6\u6F5C\u6C34\u670D"
+    english: 1839 / Standard dress
+    traditionalChinese: "1839 / \u6A19\u6E96\u6F5B\u6C34\u670D"
+    note: Exhibit station caption.
+  - key: diegetic.markv
+    chinese: Mark V
+    english: Mark V
+    traditionalChinese: Mark V
+    note: Exhibit station caption.
+  - key: diegetic.sl17b
+    chinese: SuperLite 17B
+    english: SuperLite 17B
+    traditionalChinese: SuperLite 17B
+    note: Exhibit station caption.
+  - key: diegetic.window.open.hint
+    chinese: "\u70B9\u51FB\u6253\u5F00\u524D\u7A97"
+    english: Click to open window
+    traditionalChinese: "\u9EDE\u64CA\u958B\u555F\u524D\u7A97"
+    note: Contextual hint on the actual window; no persistent button.
+  - key: diegetic.window.close.hint
+    chinese: "\u70B9\u51FB\u5173\u95ED\u524D\u7A97"
+    english: Click to close window
+    traditionalChinese: "\u9EDE\u64CA\u95DC\u9589\u524D\u7A97"
+    note: Contextual hint on the actual window; no persistent button.
+  - key: diegetic.demo.close
+    chinese: "\u5173\u95ED\u6F14\u793A"
+    english: Close demo
+    traditionalChinese: "\u95DC\u9589\u6F14\u793A"
+    note: Fixed section rail and body-only rotation feedback.
+  - key: diegetic.body.release
+    chinese: "\u677E\u624B\u505C\u6B62"
+    english: Release to stop
+    traditionalChinese: "\u9B06\u624B\u505C\u6B62"
+    note: Fixed section rail and body-only rotation feedback.
+  - key: diegetic.body.move
+    chinese: "\u79FB\u52A8\u624B\u6765\u65CB\u8F6C"
+    english: Move hand to rotate
+    traditionalChinese: "\u79FB\u52D5\u624B\u4F86\u65CB\u8F49"
+    note: Fixed section rail and body-only rotation feedback.
+  - key: diegetic.rail.hold
+    chinese: "\u6309\u4F4F\u6ED1\u5757\u6CBF\u8F68\u9053\u62D6\u52A8"
+    english: Hold and drag along the rail
+    traditionalChinese: "\u6309\u4F4F\u6ED1\u584A\u6CBF\u8ECC\u9053\u62D6\u52D5"
+    note: Fixed section rail and body-only rotation feedback.
+  - key: diegetic.height.higher
+    chinese: "\u5347\u9AD8\u89C6\u89D2"
+    english: View higher
+    traditionalChinese: "\u5347\u9AD8\u8996\u89D2"
+    note: Per-session eye height preference; prototype step and limits, not physical
+      floor calibration.
+  - key: diegetic.height.lower
+    chinese: "\u964D\u4F4E\u89C6\u89D2"
+    english: View lower
+    traditionalChinese: "\u964D\u4F4E\u8996\u89D2"
+    note: Per-session eye height preference; prototype step and limits, not physical
+      floor calibration.
+  - key: diegetic.height.reset
+    chinese: "\u6062\u590D\u9AD8\u5EA6"
+    english: Reset height
+    traditionalChinese: "\u6062\u5FA9\u9AD8\u5EA6"
+    note: Per-session eye height preference; prototype step and limits, not physical
+      floor calibration.
+  - key: diegetic.height.limit
+    chinese: "\u5DF2\u5230\u9AD8\u5EA6\u9650\u5236"
+    english: Height limit
+    traditionalChinese: "\u5DF2\u5230\u9AD8\u5EA6\u9650\u5236"
+    note: Per-session eye height preference; prototype step and limits, not physical
+      floor calibration.
   fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}

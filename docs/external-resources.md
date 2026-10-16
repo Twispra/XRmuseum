@@ -182,3 +182,17 @@ Ereshkigal1224 负责，Codex 辅助核查 [Kirby Morgan 产品页](https://www.
 按用户授权，Codex 修复 [PR #44](https://github.com/Twispra/XRmuseum/pull/44) 的年代热点/展签、VOICE 部件高亮及材质颜色转换，并补充输入、三语和 GPU 回读验证。没有生成或替换保存的 SuperLite 模型；几何与来源沿用 #43 和原接入记录。
 
 五条新三语文案需要补字，继续从本机同一 Noto Sans SC 变量字体（SIL OFL 1.1）以 fontTools 4.60.1 的 Regular 400 实例扩展既有子集，保留全部 7660 原码位，加入「側、僅、夾、環、輕、頸」至 7666。保存静态 SDF 原位补烤为 558 字形，保留原 GUID、字体/材质/图集子资源引用；许可仍见 [OFL](licenses/noto-sans-sc-OFL.txt)。工具只用于本次本地维护，没有新增 Unity 包或产品运行时依赖。来源哈希及保存字节证据见[本轮字体报告](../artifacts/superlite17b-unity-integration/qa/runs/20261012-pr44-fix/font-completion.json)；实际回归、AI 辅助范围与未验证边界见[修复活动](activity/2026-10-12-pr44-fix-and-rereview.md)。
+
+## 2026-10-16：实体 UI 本地验收候选
+
+按用户要求，Codex 辅助实现环绕旋转／剖面图形、实际前窗就地提示和用户视角拖动旋转，并编写生产输入回归。图标为 C# LineRenderer 原创几何，无外部图标、图片、模型或新增 Unity 包。字体沿用上方 Noto Sans SC / OFL 来源及本地 fontTools，保留 main 原 cmap，补入 啟／顯；保存表、静态 SDF 和原 GUID 同步维护。[本轮范围、验证及限制](activity/2026-10-16-diegetic-icons-view-rotation.md)。成果尚未提交、推送或创建 PR；AI 与模拟输入验证不代表成员人工验收或真实头显结果。
+
+本地后续按用户选择删除独立旋转入口、制作固定切面滑轨、松开确认及取消反馈，并添加可从展台关闭演示的入口。均由 Codex 辅助编写原模块内 C#／三维线条，未新增运行时依赖或外部图像。字体沿用同一来源，原 7669 cmap 保留后增加 塊／軌 至 7671，三语表及静态字体一起维护；仍待用户验收，尚未提交或推送。
+
+固定滑轨与本体操作的实际验证／未验证范围见[第二轮活动](activity/2026-10-16-stable-section-body-controls.md)。
+
+## 2026-10-17：高度偏好与演示设备观察（本地候选）
+
+Codex 按用户要求辅助编写可调视角高度、固定摆放的演示设备及共用旋转手势；沿用已有精细模型、机械动画、音频及接口资料，没有生成模型、历史事实或引入新的运行时依赖。只读核对本地 XROrigin 2.5.2 源码的高度管理，采用跟踪树临时偏移，原型参数不作为测量或人体工学标准。新增四条三语文案；源 TTF 未改变，沿用同一 Noto Sans SC / OFL 字体及原 GUID，静态图集补齐所需字形。验证边界及证据见 [活动记录](activity/2026-10-17-view-height-demo-rotation.md)；未提交、未推送，未修改远程 Issue / PR。
+
+2026-10-17 发布补记：用户已验收并授权提交上述实体UI累计版本及发布五项待认领任务。实现与来源范围未再扩大，公开证据只省去无关旧文件清单及本机绝对路径，原报告保留。提交/PR与状态以 [发布交接](activity/2026-10-17-diegetic-release.md) 为准，未合并main、未新增实机或构建结论。

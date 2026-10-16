@@ -180,6 +180,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1120544056}
     m_Modifications:
+    - target: {fileID: 3903409312573763416, guid: a2f0d4237079f5a4194e3a4b3567ce82, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.21
+      objectReference: {fileID: 0}
     - target: {fileID: 5719041681487742875, guid: a2f0d4237079f5a4194e3a4b3567ce82, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -223,10 +227,6 @@ PrefabInstance:
     - target: {fileID: 6182519406536148843, guid: a2f0d4237079f5a4194e3a4b3567ce82, type: 3}
       propertyPath: m_Name
       value: HelmetHotspotTour
-      objectReference: {fileID: 0}
-    - target: {fileID: 3903409312573763416, guid: a2f0d4237079f5a4194e3a4b3567ce82, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2939,6 +2939,60 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 345629526}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &354960853
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 354960855}
+  - component: {fileID: 354960854}
+  m_Layer: 0
+  m_Name: Helmet physical UI station
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &354960854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354960853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ed8f50a9e5741e981ab299f8069ab64, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  inspection: {fileID: 1120544054}
+  eras: {fileID: 1466363618}
+  exploration: {fileID: 1128445191}
+  demonstration: {fileID: 1128445192}
+  uiMaterial: {fileID: 2100000, guid: a480cbe19df2b374baa1eeff86a9f42c, type: 2}
+  viewer: {fileID: 829167124}
+  idleOpacity: 0.22
+  handRevealDistance: 0.18
+  fadeOutDelay: 0.65
+  directContactDistance: 0.055
+--- !u!4 &354960855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 354960853}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &366246463
 GameObject:
   m_ObjectHideFlags: 0
@@ -22607,3 +22661,4 @@ SceneRoots:
   - {fileID: 303325135}
   - {fileID: 428643547}
   - {fileID: 1941529130}
+  - {fileID: 354960855}

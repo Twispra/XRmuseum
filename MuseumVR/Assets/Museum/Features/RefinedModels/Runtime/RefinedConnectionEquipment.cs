@@ -36,6 +36,11 @@ namespace Museum.RefinedModels
         public Transform Pump => pump;
         public Transform SurfaceTelephone => surfaceTelephone;
         public Transform DiverTelephone => diverTelephone;
+        // Manipulate these outer pivots rather than FBX roots: SampleAnimation is allowed
+        // to write the imported root curves without overwriting the visitor's display pose.
+        public Transform PumpPresentation { get { Initialize(); return pumpDisplay; } }
+        public Transform SurfaceTelephonePresentation { get { Initialize(); return telephoneDisplay; } }
+        public Transform DiverTelephonePresentation { get { Initialize(); return diverDisplay; } }
         public Transform AirOutlet { get { Initialize(); return airOutlet; } }
         public Transform TelephoneOutlet { get { Initialize(); return telephoneOutlet; } }
         public Transform DiverInlet { get { Initialize(); return diverInlet; } }
