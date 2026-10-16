@@ -1490,6 +1490,55 @@
       "chinese": "指向按钮并按握把键：选择。\n按住握把键：抓取头盔。\n松开握把键：放下头盔。\n观察页 Reset：头盔复位。\n重置视角：回到起点。",
       "traditionalChinese": "指向按鈕並按握把鍵：選擇。\n按住握把鍵：抓取頭盔。\n鬆開握把鍵：放下頭盔。\n觀察頁 Reset：頭盔復位。\n重設視角：回到起點。",
       "note": "Visitor Help in a VR player build; no Unity Editor keyboard shortcuts."
+    },
+    {
+      "key": "era.previous",
+      "english": "Previous era",
+      "chinese": "上一年代",
+      "traditionalChinese": "上一年代",
+      "note": "Issue 57: era navigation and explicit early-era placeholder boundary."
+    },
+    {
+      "key": "era.next",
+      "english": "Next era",
+      "chinese": "下一年代",
+      "traditionalChinese": "下一年代",
+      "note": "Issue 57: era navigation and explicit early-era placeholder boundary."
+    },
+    {
+      "key": "era.early.caption",
+      "english": "Diving helmet\n<size=62%>Early (1839) - placeholder study</size>",
+      "chinese": "潜水头盔\n<size=62%>早期（1839）—占位研究模型</size>",
+      "traditionalChinese": "潛水頭盔\n<size=62%>早期（1839）—佔位研究模型</size>",
+      "note": "Issue 57: era navigation and explicit early-era placeholder boundary."
+    },
+    {
+      "key": "era.early.placeholder",
+      "english": "Placeholder; not a historical replica.",
+      "chinese": "早期年代的占位模型，尚未重建历史细节。",
+      "traditionalChinese": "早期年代的佔位模型，尚未重建歷史細節。",
+      "note": "Issue 57: era navigation and explicit early-era placeholder boundary."
+    },
+    {
+      "key": "era.early.hotspot.front",
+      "english": "Front window\nPlaceholder; not a historical replica.",
+      "chinese": "前窗\n早期年代的占位模型，尚未重建历史细节。",
+      "traditionalChinese": "前窗\n早期年代的佔位模型，尚未重建歷史細節。",
+      "note": "Issue 57: complete dynamic title + description; early-era placeholder boundary."
+    },
+    {
+      "key": "era.early.hotspot.shell",
+      "english": "Bonnet shell\nPlaceholder; not a historical replica.",
+      "chinese": "上壳\n早期年代的占位模型，尚未重建历史细节。",
+      "traditionalChinese": "上殼\n早期年代的佔位模型，尚未重建歷史細節。",
+      "note": "Issue 57: complete dynamic title + description; early-era placeholder boundary."
+    },
+    {
+      "key": "era.early.hotspot.shoulder",
+      "english": "Breastplate\nPlaceholder; not a historical replica.",
+      "chinese": "胸肩板\n早期年代的占位模型，尚未重建历史细节。",
+      "traditionalChinese": "胸肩板\n早期年代的佔位模型，尚未重建歷史細節。",
+      "note": "Issue 57: complete dynamic title + description; early-era placeholder boundary."
     }
   ]
 }

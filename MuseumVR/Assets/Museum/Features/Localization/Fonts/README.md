@@ -1,5 +1,7 @@
 # 中文字体来源、保存资产与维护
 
+2026-10-16 Issue #57：年代按钮、早期占位展签与完整热点卡片新增七条三语文案，保存表共 220 条，字符清单 553 字符。源 TTF 沿用同一 OFL Noto Sans SC Regular 来源，保留全部原码位并仅补「佔」，现为 7667 个码位；静态 SDF 原位补烤后共 564 字符，完整覆盖新清单，font／atlas／material 的 GUID 和 localFileID 保持，仍为 4096²／110／Padding 6／SDFAA。图集保存字节与渲染缓冲哈希一致，原请求字形均有像素；见[字体报告](../../../../../../artifacts/helmet-interaction/qa/runs/20261016-visitor-flow/font-completion.json)与[活动记录](../../../../../../docs/activity/2026-10-16-visitor-flow.md)。以下日期段保留历史数字；日常预览不重烤字体。
+
 2026-10-12 PR #44 修复：SuperLite 年代的型号标题、三处观察热点和通信示意位置新增五条三语文案，保存文案共 210 条。源 TTF 保留原有 7660 个码位，按同一本机 OFL NotoSansSC-VF.ttf 的 Regular（wght=400）实例补入「側僅夾環輕頸」，现有 7666 个码位；fontTools 4.60.1。最初补烤时字符清单为 548 个显示字符，静态 SDF 原位补烤后共 558 个字符；原 GUID、字体／图集／材质 localFileID 均保留，4096²／110／Padding 6／SDFAA 参数不变。随后缩短前窗卡片的三语说明，当前字符清单为 547；已保存字形完整覆盖修订文案，无需再次烘焙。字体报告验证所有请求字符不借助 fallback 或动态填充即可使用，保存图集字节与渲染缓冲一致；这是字体资产验证，不代表头显可读性或整个交互验收完成。证据见 [源字体扩展记录](../../../../../../artifacts/superlite17b-unity-integration/qa/runs/20261012-pr44-fix/source-font-expansion.json) 和 [静态字体烘焙报告](../../../../../../artifacts/superlite17b-unity-integration/qa/runs/20261012-pr44-fix/font-completion.json)。以下按日期保留旧数字。
 
 2026-10-06 PR #19 与 main 热点整合（Issue #23）：保存文案共 205 条，保留 main 原 202 条并新增声音/电话标签三条。源 TTF 保留 main 的 7659 码位并补「聲」，共 7660；fontTools 4.51.0 从同一 OFL 字体取 wght=400。原位烘焙静态 SDF 536 字符、字符清单 526，原字体/材质/图集 GUID与 localFileID 不变，像素及保存字节核验通过；仍用 4096²／110／Padding 6／SDFAA。以下按日期保留旧数字，不是当前交付。
@@ -9,8 +11,8 @@
 ## 当前交付
 
 - `NotoSansSC-MuseumSubset.ttf`：约 2.25 MiB，Regular 静态子集，本轮扩充繁体所需码位。
-- `NotoSansSC-MuseumSubset SDF.asset`：已保存、可直接运行的静态 TMP 字体；**558 个字符，110 点采样，Padding 6，4096×4096 单张 Alpha8 图集，SDFAA**。
-- `characters-required.txt`：547 个显示字符，按三语文案、固定标签、ASCII 与 TMP 特殊字符生成。
+- `NotoSansSC-MuseumSubset SDF.asset`：已保存、可直接运行的静态 TMP 字体；**564 个字符，110 点采样，Padding 6，4096×4096 单张 Alpha8 图集，SDFAA**。
+- `characters-required.txt`：553 个显示字符，按三语文案、固定标签、ASCII 与 TMP 特殊字符生成。
 - `make-charlist.py`：按脚本自身路径定位三语 JSON，成员不需要修改作者机器路径。
 
 日常打开工程、预览或验收**不重建字体**。直接加载保存资产，再运行 LocalizationValidation；主场景验收另用 LocalizationIntegrationValidation。
@@ -44,7 +46,7 @@ Issue #20 的九条热点文案使字符清单由 497 增至 523。原位补烤 
 3. 在隔离 checkout、退出 Play 后重烤所需字符，保留既有字体及子资源引用。不得删除字体或重建 .meta 来绕过问题。
 4. 核对保存图集的尺寸与真实像素、字符覆盖、原引用，并运行模块和受影响场景验收。
 
-手工 Creator 参数：Source Font 为本目录提交的 subset TTF；Custom Size 110、Padding 6、2048×2048、SDFAA、Characters from File 指向 characters-required.txt。更新前备份，保存后核对原 GUID/localFileID，不能只看内存里 HasCharacter 成功或图集尺寸存在。新增字符不一定仍为 198，以本次字符清单和实际报告为准。
+手工 Creator 参数：Source Font 为本目录提交的 subset TTF；Custom Size 110、Padding 6、4096×4096、SDFAA、Characters from File 指向 characters-required.txt。更新前备份，保存后核对原 GUID/localFileID，不能只看内存里 HasCharacter 成功或图集尺寸存在。新增字符以本次字符清单和实际报告为准。
 
 ## 源字体、子集与许可
 

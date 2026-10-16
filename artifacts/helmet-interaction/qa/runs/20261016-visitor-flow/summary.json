@@ -1,0 +1,60 @@
+{
+  "issue": 57,
+  "base": "411524e10d4eee7ba00e43d7d27a3b329d4e2ad6",
+  "testedCommit": "806993a1723bbf7a0b5c75bedbbccf8e6f5022a5",
+  "unity": "2022.3.62f3c1",
+  "newVisit": {
+    "checks": 128,
+    "failed": 0,
+    "errors": 0,
+    "exitCode": 0,
+    "report": "new-visit-report.json"
+  },
+  "eras": {
+    "checks": 691,
+    "failed": 0,
+    "errors": 0,
+    "exitCode": 0,
+    "screenshots": 19,
+    "report": "era/report.json"
+  },
+  "localization": {
+    "checks": 11,
+    "failed": 0,
+    "exitCode": 0,
+    "report": "localization-report.json"
+  },
+  "main": {
+    "checks": 86968,
+    "failed": 0,
+    "errors": 0,
+    "warnings": 0,
+    "exitCode": 0,
+    "report": "main-summary.json"
+  },
+  "windowsBuild": {
+    "result": "Succeeded",
+    "errors": 0,
+    "warnings": 2,
+    "exitCode": 0,
+    "totalBytes": 214119503,
+    "files": 272,
+    "deliveryDirectory": "E:\\Codex\\Builds\\XRmuseum\\visitor-flow-20261016-806993a",
+    "playerStarted": false
+  },
+  "sourceVerification": {
+    "checkedFiles": 1145,
+    "changed": [],
+    "before": "E:\\Codex\\Temp\\visitor-flow-20261016\\before-final-validation.json"
+  },
+  "limits": [
+    "Synthetic desktop XR and diagnostic monocular captures only; not headset/stereo/comfort/performance/user research.",
+    "Main assertion count includes repeated text/glyph checks, not distinct user cases.",
+    "Build succeeded; executable not launched."
+  ],
+  "negativeEvidence": [
+    "era-initial-overflow-report.json",
+    "era-next-hover-report.json",
+    "era-ray-obstruction-report.json"
+  ]
+}

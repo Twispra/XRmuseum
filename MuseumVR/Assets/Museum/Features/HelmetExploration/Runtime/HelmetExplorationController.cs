@@ -1,4 +1,5 @@
 using System;
+using Museum.Hotspots;
 using Museum.Inspection;
 using UnityEngine;
 
@@ -13,6 +14,7 @@ namespace Museum.Exploration
 
         [SerializeField] HelmetInspectionController inspection;
         [SerializeField] HelmetConnectionDemonstration demonstration;
+        [SerializeField] HelmetHotspotTour visitTour;
         HelmetConnectionDemonstration subscribedDemonstration;
         int observedReset;
         bool hasSelectedClue;
@@ -79,6 +81,7 @@ namespace Museum.Exploration
             Unsubscribe();
             inspection = target;
             demonstration = animation;
+            ResolveVisitTour();
             observedReset = inspection ? inspection.ResetCount : 0;
             if (isActiveAndEnabled) Subscribe();
             NotifyChanged();
@@ -86,6 +89,7 @@ namespace Museum.Exploration
 
         void OnEnable()
         {
+            ResolveVisitTour();
             observedReset = inspection ? inspection.ResetCount : 0;
             Subscribe();
         }
@@ -167,7 +171,31 @@ namespace Museum.Exploration
             hasSelectedClue = false;
             SelectedClue = Clue.Air;
             CurrentPage = Page.Welcome;
+            // A new visitor starts both interpretation modules together. Physical
+            // Reset and Reset View deliberately retain these discovery records.
+            var tour = ResolveVisitTour();
+            if (tour) tour.ResetTour();
             NotifyChanged();
+        }
+
+        HelmetHotspotTour ResolveVisitTour()
+        {
+            if (!inspection) return null;
+            // Validate saved references when this controller is rebound to another
+            // exhibit; never clear an unrelated helmet elsewhere in the scene.
+            if (visitTour && visitTour.GetComponentInParent<HelmetInspectionController>(true) == inspection)
+                return visitTour;
+            visitTour = null;
+            HelmetHotspotTour match = null;
+            foreach (var candidate in inspection.GetComponentsInChildren<HelmetHotspotTour>(true))
+            {
+                if (candidate.GetComponentInParent<HelmetInspectionController>(true) != inspection) continue;
+                // An ambiguous exhibit needs an explicit Inspector reference.
+                if (match) return null;
+                match = candidate;
+            }
+            visitTour = match;
+            return visitTour;
         }
 
         void StopDemonstration() { if (demonstration) demonstration.Stop(); }

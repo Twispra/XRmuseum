@@ -14,9 +14,13 @@ COMP5424 Extended Reality 博物馆**group2**小组作业的 Unity 工程与协�
 
 详细图形界面操作见 [组员首次打开与日常协作](docs/getting-started.zh-CN.md)。
 
-打开后双击 `Assets/Museum/Scenes/MuseumStart.unity`。展厅包含中央可抓取的潜水头盔简模、两处占位展台、传送地面和官方 XR Origin。头盔支持拿放、碰撞与复位，使用方式见[头盔抓取原型](docs/helmet-interaction.zh-CN.md)。课程要求的完整博物馆体验与用户流程仍需继续开发。
+打开后双击保存的 `Assets/Museum/Scenes/MuseumStart.unity`，新 clone / worktree 先确认 Git LFS 资产已展开。中央展项默认显示 Mark V 精细头盔，SuperLite 17B 精细模型也已接入，1839 早期档仍为占位。可拿放、开窗、剖面、查看三个热点与 AIR / VOICE 演示；提供物理手与双手协作、FLOAT 单手方式、简繁英、声音 / 减少动画、Help、展品 RESET 与 RESET VIEW。日常查看不运行原型生成器或模型安装器。
 
-已配置 URP 14.0.12、OpenXR 1.14.3、XR Interaction Toolkit 2.6.4、Input System 1.14.0。模拟器只在 Editor 中自动启用；接真实头显前请按操作说明关闭模拟器。
+本轮 [Issue #57](https://github.com/Twispra/XRmuseum/issues/57) 修复 NEW VISIT 对探索与观察发现的完整清理，并补齐年代按钮 / 当前展签的三语说明；最终被测版本与检查结果见[技术说明](docs/phase2-technical-note.zh-CN.md)。NEW VISIT 保留语言、年代、声音 / 动画偏好、展品位姿及视角；头盔 RESET 与 RESET VIEW 分别恢复展品和观看位置，保留本轮发现。
+
+快速操作见[年代切换](docs/helmet-eras.zh-CN.md)、[自由探索与复位](docs/helmet-exploration.zh-CN.md)、[物理手及设备反馈](docs/physical-hands.zh-CN.md)。本轮 `806993a` 已生成完整 Windows64 Development 构建并核对 272 个产物，目录、指纹和程序未启动边界见[修订与构建记录](docs/activity/2026-10-16-visitor-flow.md)。已有有限头显反馈；最新修订的完整头显流程、性能和用户研究仍需验证。
+
+已配置 URP 14.0.12、OpenXR 1.14.3、XR Interaction Toolkit 2.6.4、Input System 1.14.0。模拟器仅供 Editor 预览；真实头显与模拟输入的操作边界见[协作指南](docs/getting-started.zh-CN.md)。
 
 ## 目录
 

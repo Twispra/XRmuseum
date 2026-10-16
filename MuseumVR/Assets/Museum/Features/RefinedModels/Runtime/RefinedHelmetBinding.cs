@@ -55,6 +55,9 @@ namespace Museum.Refined
         bool HasAdditionalVisual => additionalVisual != null && additionalVisual.renderers != null && additionalVisual.renderers.Length > 0;
         public EraVisual AdditionalVisual => HasAdditionalVisual ? additionalVisual : null;
         public bool IsAdditionalVisualActive => activeAdditional != null;
+        // Requested catalogue changes can wait while a part is held. Visitor copy
+        // follows this completed binding, rather than announcing the pending era.
+        public int AppliedEraIndex { get; private set; } = -1;
         public Transform AirOutlet => activeAdditional != null ? activeAdditional.airOutlet : IsRefinedActive ? airOutlet : originalAirOutlet;
         public Transform TelephoneOutlet => activeAdditional != null ? activeAdditional.telephoneOutlet : IsRefinedActive ? telephoneOutlet : originalTelephoneOutlet;
         public Renderer ActiveGlass => activeAdditional != null ? activeAdditional.glass : IsRefinedActive ? refinedGlass : originalWindowRenderers.First(r => r.sharedMaterial.shader.name == "Museum/Inspection Glass");
@@ -180,6 +183,7 @@ namespace Museum.Refined
             foreach (var clue in GetComponentsInChildren<HelmetExplorationHotspot>(true)) clue.RebindConnector(activeAir);
             if (Application.isPlaying)
                 foreach (var demo in FindObjectsOfType<HelmetConnectionDemonstration>()) demo.RebindConnector(activeAir, rear);
+            AppliedEraIndex = index;
         }
     }
 }
