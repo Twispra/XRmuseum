@@ -295,7 +295,7 @@ namespace Museum.Localization.EditorTools
                 c.Check(!c.root.isSelected, "child selection does not grab helmet / " + name + "/" + (ray ? "ray" : "direct"));
                 c.move(hand, rotation, false); yield return Wait(.15f);
                 c.Check(!target.isSelected, "production release / " + name + "/" + (ray ? "ray" : "direct"));
-                c.park(); yield return Wait(.12f);
+                yield return ParkAfterInteraction(c, name);
             }
             finally { target.selectEntered.RemoveListener(listener); }
         }
@@ -329,8 +329,19 @@ namespace Museum.Localization.EditorTools
             c.move(overMarker, Quaternion.identity, true); yield return Wait(.18f);
             c.Check(c.root.isSelected && c.hotspots.All(h => !h.GetComponent<XRSimpleInteractable>().isSelected), "held helmet retains selection across a marker");
             c.move(touch, Quaternion.identity, true); yield return Wait(.18f);
-            c.move(touch, Quaternion.identity, false); yield return Wait(.15f); c.park(); yield return Wait(.15f);
+            c.move(touch, Quaternion.identity, false); yield return Wait(.15f);
+            yield return ParkAfterInteraction(c, "ordinary shell grab");
             c.inspection.ResetInspection(); yield return Wait(.25f);
+        }
+
+        static IEnumerator ParkAfterInteraction(Context c, string phase)
+        {
+            c.park(); yield return Wait(.15f);
+            // A raw controller can reach its parked pose before the swept physical
+            // glove does. Clear the exhibit by normal input before auditing glyphs;
+            // do not exclude hand colliders from the existing obstruction assertion.
+            yield return MuseumPhysicalHandsTestPose.Approach(MuseumPhysicalHandsTestPose.Controller(false),
+                c.root, c.move, "park after " + phase);
         }
 
         static string RootSelectionDiagnostics(Context c)
