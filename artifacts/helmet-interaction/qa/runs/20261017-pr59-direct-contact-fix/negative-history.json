@@ -1,0 +1,809 @@
+{
+  "note": "Negative run 01/02 diagnose own collider line-of-sight; run 03 confirms contact but front fixture correctly loses to preserved target priority. Fixture moved to blank rear bonnet without dropping assertions. Run 01 required owned-process termination during shutdown; runs 02/03 exited naturally 1. Do not count as passed checks.",
+  "runs": [
+    {
+      "run": "20261017T065129334Z-direct-contact-0de333235532499bad813521780590b9",
+      "rawSha256": "69b0de72c95fe982cfd65d5f6703a18cac3515c308d6bb6c9a8418926bcc464e",
+      "commit": "8016085db2675daf69551678ac00eefa218f73c0",
+      "utc": "2026-10-17T06:51:29.3450289Z",
+      "finishedUtc": "2026-10-17T06:51:37.9945516Z",
+      "failure": "System.InvalidOperationException: Open glove contacts ordinary body / Right Controller / target=(0.00, 1.49, 3.28); proxy=(0.00, 1.49, 3.28); query=(0.00, 1.49, 3.28); error=1.610371E-09; tracked=True; blocked=False; grip=0.000; selectActive=False; handFilter=False; selectPossible=False; group=Direct Interactor; candidates=Physical UI - Window,Physical UI - Rotate,Front window Hotspot; selected=; contact=False; stationFilter=False; hovered=False; selected=False\r\n  at Museum.Diegetic.Editor.HelmetDiegeticDirectValidation.Require (System.Boolean passed, System.String name, System.String detail) [0x0003e] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr59-review-2026-10-17\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\DiegeticUI\\Editor\\HelmetDiegeticDirectValidation.cs:362 \r\n  at Museum.Diegetic.Editor.HelmetDiegeticDirectValidation+<BodyRotation>d__38.MoveNext () [0x0013f] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr59-review-2026-10-17\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\DiegeticUI\\Editor\\HelmetDiegeticDirectValidation.cs:182 \r\n  at Museum.Diegetic.Editor.HelmetDiegeticDirectValidation.Tick () [0x0008d] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr59-review-2026-10-17\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\DiegeticUI\\Editor\\HelmetDiegeticDirectValidation.cs:129 ",
+      "checks": [
+        {
+          "name": "Saved diegetic station ready",
+          "detail": "",
+          "passed": true
+        },
+        {
+          "name": "Right Controller production physical hand initialized",
+          "detail": "",
+          "passed": true
+        },
+        {
+          "name": "Left Controller production physical hand initialized",
+          "detail": "",
+          "passed": true
+        },
+        {
+          "name": "Open glove contacts ordinary body / Right Controller",
+          "detail": "target=(0.00, 1.49, 3.28); proxy=(0.00, 1.49, 3.28); query=(0.00, 1.49, 3.28); error=1.610371E-09; tracked=True; blocked=False; grip=0.000; selectActive=False; handFilter=False; selectPossible=False; group=Direct Interactor; candidates=Physical UI - Window,Physical UI - Rotate,Front window Hotspot; selected=; contact=False; stationFilter=False; hovered=False; selected=False",
+          "passed": false
+        }
+      ],
+      "files": [
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor.meta",
+          "sha256": "8d026974eb1140fc726e489d8feef337096650823dce74468013590d311b5d15"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticDirectValidation.cs",
+          "sha256": "ab25ffa110773b188c69ceeba71ff748b31d4a5fe3df4310dedf683aa29aa60c"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticDirectValidation.cs.meta",
+          "sha256": "c4ffa42d9a67e96f5bb1e395c840ce2dc06e171512b3bcf3b377e0cc8539d00c"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs",
+          "sha256": "530db047c79d2e3e39efcdfac927867fe40f6ef9ce8e44c427ed960d8b83710d"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs.meta",
+          "sha256": "ec6c7bbcc2065ab1f82386cfa0f7c64e043173b3225c2c3fa04a8412b2898dd9"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs",
+          "sha256": "3700df31f36fa6c188174d86bfa85d732831ed40d9108c2364e7a56bd014ef87"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs.meta",
+          "sha256": "c822bc2c4574400c367a2023daa88ec9657e833f4bd48519e502dca35ee1ac9e"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs",
+          "sha256": "772a0e41c1dc8bf93d7f2ac5c9ecdd7959e71f74e602a5668222a49211754216"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs.meta",
+          "sha256": "9629da0099cb309c00bc0456c29a0a6f0de41d3d7488e4c7977732a56e9d5aa8"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Materials.meta",
+          "sha256": "52a91259552604a9ef7d80d72b4dbc1c245ea571c5e15ef6206904c132e7c6ea"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat",
+          "sha256": "363f879b055303aa62da00cbd6bb241656ed216f439048f272c595e95fdcf422"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat.meta",
+          "sha256": "512c82d030ad3991f16a034be196c13dd3fe717c83e20819925c3bf508e183b3"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime.meta",
+          "sha256": "b733f29c063a6af24e32cac94990df45f8c7f8c6cd52a659d534f1d5b6151a54"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs",
+          "sha256": "dfbfdd9ef30c3e872eb2b28cd0b63d415eed00dbbfca93043bf133f15e4a7ba5"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs.meta",
+          "sha256": "e45c13a3f038251bd6594341e2f8b05f5a97a2eec7af4c678dd150b17821b0a6"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs",
+          "sha256": "a0f2f520fd329b77846dae57652b810f75ae9d8f45c4dcd6db0964121aff9db1"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs.meta",
+          "sha256": "203a496e55bb9060bcb0cf4756b1fe3ced2cb1726aab820d8f8ad0204897c65d"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs",
+          "sha256": "da2c89dc7ed59213ae8be6d4e2450f69132b992ed8ed7a35e576679627c92b9b"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs.meta",
+          "sha256": "29c6a424af966488904f074bd6239e215b09d62b545960454058913849312ae6"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDirectContact.cs",
+          "sha256": "be1d5a8b608aa59ddf417f9cc460330681397d86a35b732d0cded7b829d45d1d"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDirectContact.cs.meta",
+          "sha256": "1f4f1786bfa8728e34374ed9473536d1c4cf0ed755bb7b9a496d8b6c1ff16723"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs",
+          "sha256": "25d48d191e088bf5d713781edd7df7dc2c04b111b8f9cd94a2a4acea69b2ea28"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs.meta",
+          "sha256": "f2dc40e4624cc55e832eb90a8cd1298ed4c05d05cf7e5e1a1a699ef601d8e0fd"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs",
+          "sha256": "5f66d59671132eb2ac029936db1cf2733bd856a9a0bc055dc7c9e5cbb78f9eba"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs.meta",
+          "sha256": "08be069d714e297c43ad91d070b559b1da5139a83fd0dbbdabfc5f9e4897854f"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetRotationHint.cs",
+          "sha256": "2d5dfa8da33a181b081009334b8b9bb7f793e598503f787dae898859bdab5fb9"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetRotationHint.cs.meta",
+          "sha256": "4ad9367dd3a9985a07b3e3ac234ae61c2239d7ffedcc6e237841c0e20a243d24"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs",
+          "sha256": "f145f8fe499c38b4105a994a620eaa531f21d18b00f6cae9fd74da43b827bdf6"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs.meta",
+          "sha256": "bed431957ffcd6add58d8ef344549ae40ed19b39c48049fbc68951bec4151509"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs",
+          "sha256": "a2199f940955756b452b3143afe4a0ae3f59a307307664d771ebefda32bec6c4"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs.meta",
+          "sha256": "d91ab53d38e0ec1bd599599823b5ce1ee377ae033b9cd6877576022baa4e5997"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Shaders.meta",
+          "sha256": "e00a8cae84d37a9fb4b34c47917e592bfd32dee82afce20bd03dfd9cbb4f3957"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader",
+          "sha256": "4a571f1114f7d292b3891e2a4abf12e32e2e2c36f4573e24476db1462eab36d3"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader.meta",
+          "sha256": "b3bdf2954bc13e106789e0b4081600a1524f5c5bdcff56e156a6465b1b9cc31f"
+        },
+        {
+          "path": "Assets/Museum/Features/HelmetHotspots/Runtime/HelmetHotspot.cs",
+          "sha256": "cc4ec8738e2e9316f232bd9af44d518c86e160e8c11309ad89b1f289942eeaca"
+        },
+        {
+          "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+          "sha256": "0a126639b3511a75510f0e5f4de1438b7fe79aa22a40b884acbc5cf5fad248bc"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumGripSurfaceBaker.cs",
+          "sha256": "793ba315cadd4ada162661302bf79d4740f8305c6550a9d2eff3d6396dec433d"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumHandDeviceSetup.cs",
+          "sha256": "759a7c027dad3443f7a8a9e3f31ebc008ed50470fdc7ad25489929e3591a15e5"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumHandSelfCollisionValidation.cs",
+          "sha256": "5fbe3f8c068a328f0b0cdde50a3c0d134403a10d948bf4ac29fa3b515916528e"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumHandVisualFactory.cs",
+          "sha256": "d8f8b0a7f3aa7bc30724f42be48750cda62b1a8d5711dd9d8d7fdbb7cb40ef02"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsBuild.cs",
+          "sha256": "f8bb5ce9c91b1d946ae532da91385fdec654726a03de4f2cfd4d942ea3e78b9d"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsSetup.cs",
+          "sha256": "a33254df454195f757595e1f82b0c918a7f0a5bd985f43306b58d0e286ea98b2"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsTestPose.cs",
+          "sha256": "82529322dbbe149ee8cb1afcd9d1f71e4a245236095e1b74abc0ef120acf7ab7"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsValidation.cs",
+          "sha256": "c9bb9a0a3d7269bda8f15739da3d029f769fe015453c6627bab967bc485e205c"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Prefabs/LeftMuseumHand.prefab",
+          "sha256": "fdc467715acc736cd24e95c417656cf4380e77aa67d7b92ea84b90f1c218f9f0"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Prefabs/RightMuseumHand.prefab",
+          "sha256": "870661a4aeb65559356aa6014f62890ab2c76079de68ec95bf968971638c3685"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumGripSurface.cs",
+          "sha256": "f34b66ed2dfed341f6acd7935c8bf095a6789f4f325994dd1fc080aba6d9de51"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandDeviceDiagnostics.cs",
+          "sha256": "5cee5868f2c8c75167df6260df8877b8110e582167627686ee8df98da2c5b65d"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandGrabTransformer.cs",
+          "sha256": "db30e2c82b2e0162577a7850e6c5c66523f7927e3192259064d9312e623ce54a"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandVisual.cs",
+          "sha256": "cb8c87ec426ce44634e191c696c5ef45365297d42e8e6a3b7a3e2544057efa5e"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumPhysicalHand.cs",
+          "sha256": "981bb10810dcbe9c30ead21cbc4805ebc1c3fa20df4bad5fe2ed0fdb59c05621"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumPhysicalHandsRig.cs",
+          "sha256": "650870e52aff220a0e9a407889e82e55b0a21aa4f7118e3a483da7e66f213f1a"
+        },
+        {
+          "path": "Assets/Museum/Features/RefinedModels/Runtime/RefinedHelmetBinding.cs",
+          "sha256": "46154fc523821937e537cc68e5f2a6d12d45e04d5e2096abbafdf8080a505e23"
+        },
+        {
+          "path": "Assets/Museum/Scenes/MuseumStart.unity",
+          "sha256": "991e41052bc17128e60f657c5d57d031a3835dc9cc5c4e6efa18c9644bfbe8c2"
+        },
+        {
+          "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/XRI Default Input Actions.inputactions",
+          "sha256": "d51f6a0518c700cb15adb77f5a297c66cce683f13057ab47d466751cbe3b5336"
+        },
+        {
+          "path": "Packages/manifest.json",
+          "sha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7"
+        },
+        {
+          "path": "Packages/packages-lock.json",
+          "sha256": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03"
+        }
+      ]
+    },
+    {
+      "run": "20261017T065510660Z-direct-contact-7522f09cd8eb44ada2a866789ec61d0e",
+      "rawSha256": "49e4d8c26238fd67286d7e3a4a8af5f7f86f3a29a58b6de4d6c1bf10e52351bd",
+      "commit": "64d9c1fea273888136dc2b165ecc531dad1737f7",
+      "utc": "2026-10-17T06:55:10.6685974Z",
+      "finishedUtc": "2026-10-17T06:55:18.8595467Z",
+      "failure": "System.InvalidOperationException: Open glove contacts ordinary body / Right Controller / target=(0.00, 1.49, 3.28); proxy=(0.00, 1.49, 3.28); query=(0.00, 1.49, 3.28); error=1.610371E-09; tracked=True; blocked=False; grip=0.000; selectActive=False; handFilter=False; selectPossible=False; group=Direct Interactor; candidates=Physical UI - Window,Physical UI - Rotate,Front window Hotspot; selected=; contact=False; stationFilter=False; hovered=False; selected=False; openBoxOutside=0.004000; palmDistance=0.130000; rayHits=Bonnet Capsule:own=True:distance=0.130000\r\n  at Museum.Diegetic.Editor.HelmetDiegeticDirectValidation.Require (System.Boolean passed, System.String name, System.String detail) [0x0003e] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr59-review-2026-10-17\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\DiegeticUI\\Editor\\HelmetDiegeticDirectValidation.cs:377 \r\n  at Museum.Diegetic.Editor.HelmetDiegeticDirectValidation+<BodyRotation>d__38.MoveNext () [0x0013f] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr59-review-2026-10-17\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\DiegeticUI\\Editor\\HelmetDiegeticDirectValidation.cs:182 \r\n  at Museum.Diegetic.Editor.HelmetDiegeticDirectValidation.Tick () [0x0008d] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr59-review-2026-10-17\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\DiegeticUI\\Editor\\HelmetDiegeticDirectValidation.cs:129 ",
+      "checks": [
+        {
+          "name": "Saved diegetic station ready",
+          "detail": "",
+          "passed": true
+        },
+        {
+          "name": "Right Controller production physical hand initialized",
+          "detail": "",
+          "passed": true
+        },
+        {
+          "name": "Left Controller production physical hand initialized",
+          "detail": "",
+          "passed": true
+        },
+        {
+          "name": "Open glove contacts ordinary body / Right Controller",
+          "detail": "target=(0.00, 1.49, 3.28); proxy=(0.00, 1.49, 3.28); query=(0.00, 1.49, 3.28); error=1.610371E-09; tracked=True; blocked=False; grip=0.000; selectActive=False; handFilter=False; selectPossible=False; group=Direct Interactor; candidates=Physical UI - Window,Physical UI - Rotate,Front window Hotspot; selected=; contact=False; stationFilter=False; hovered=False; selected=False; openBoxOutside=0.004000; palmDistance=0.130000; rayHits=Bonnet Capsule:own=True:distance=0.130000",
+          "passed": false
+        }
+      ],
+      "files": [
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor.meta",
+          "sha256": "8d026974eb1140fc726e489d8feef337096650823dce74468013590d311b5d15"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticDirectValidation.cs",
+          "sha256": "3df2466c60e09654e7fef6c8327bf33f95188871a3ef2a474f0db52251b9fdf0"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticDirectValidation.cs.meta",
+          "sha256": "c4ffa42d9a67e96f5bb1e395c840ce2dc06e171512b3bcf3b377e0cc8539d00c"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs",
+          "sha256": "530db047c79d2e3e39efcdfac927867fe40f6ef9ce8e44c427ed960d8b83710d"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs.meta",
+          "sha256": "ec6c7bbcc2065ab1f82386cfa0f7c64e043173b3225c2c3fa04a8412b2898dd9"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs",
+          "sha256": "3700df31f36fa6c188174d86bfa85d732831ed40d9108c2364e7a56bd014ef87"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs.meta",
+          "sha256": "c822bc2c4574400c367a2023daa88ec9657e833f4bd48519e502dca35ee1ac9e"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs",
+          "sha256": "772a0e41c1dc8bf93d7f2ac5c9ecdd7959e71f74e602a5668222a49211754216"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs.meta",
+          "sha256": "9629da0099cb309c00bc0456c29a0a6f0de41d3d7488e4c7977732a56e9d5aa8"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Materials.meta",
+          "sha256": "52a91259552604a9ef7d80d72b4dbc1c245ea571c5e15ef6206904c132e7c6ea"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat",
+          "sha256": "363f879b055303aa62da00cbd6bb241656ed216f439048f272c595e95fdcf422"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat.meta",
+          "sha256": "512c82d030ad3991f16a034be196c13dd3fe717c83e20819925c3bf508e183b3"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime.meta",
+          "sha256": "b733f29c063a6af24e32cac94990df45f8c7f8c6cd52a659d534f1d5b6151a54"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs",
+          "sha256": "dfbfdd9ef30c3e872eb2b28cd0b63d415eed00dbbfca93043bf133f15e4a7ba5"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs.meta",
+          "sha256": "e45c13a3f038251bd6594341e2f8b05f5a97a2eec7af4c678dd150b17821b0a6"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs",
+          "sha256": "a0f2f520fd329b77846dae57652b810f75ae9d8f45c4dcd6db0964121aff9db1"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs.meta",
+          "sha256": "203a496e55bb9060bcb0cf4756b1fe3ced2cb1726aab820d8f8ad0204897c65d"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs",
+          "sha256": "da2c89dc7ed59213ae8be6d4e2450f69132b992ed8ed7a35e576679627c92b9b"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs.meta",
+          "sha256": "29c6a424af966488904f074bd6239e215b09d62b545960454058913849312ae6"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDirectContact.cs",
+          "sha256": "be1d5a8b608aa59ddf417f9cc460330681397d86a35b732d0cded7b829d45d1d"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDirectContact.cs.meta",
+          "sha256": "1f4f1786bfa8728e34374ed9473536d1c4cf0ed755bb7b9a496d8b6c1ff16723"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs",
+          "sha256": "25d48d191e088bf5d713781edd7df7dc2c04b111b8f9cd94a2a4acea69b2ea28"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs.meta",
+          "sha256": "f2dc40e4624cc55e832eb90a8cd1298ed4c05d05cf7e5e1a1a699ef601d8e0fd"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs",
+          "sha256": "5f66d59671132eb2ac029936db1cf2733bd856a9a0bc055dc7c9e5cbb78f9eba"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs.meta",
+          "sha256": "08be069d714e297c43ad91d070b559b1da5139a83fd0dbbdabfc5f9e4897854f"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetRotationHint.cs",
+          "sha256": "2d5dfa8da33a181b081009334b8b9bb7f793e598503f787dae898859bdab5fb9"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetRotationHint.cs.meta",
+          "sha256": "4ad9367dd3a9985a07b3e3ac234ae61c2239d7ffedcc6e237841c0e20a243d24"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs",
+          "sha256": "f145f8fe499c38b4105a994a620eaa531f21d18b00f6cae9fd74da43b827bdf6"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs.meta",
+          "sha256": "bed431957ffcd6add58d8ef344549ae40ed19b39c48049fbc68951bec4151509"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs",
+          "sha256": "a2199f940955756b452b3143afe4a0ae3f59a307307664d771ebefda32bec6c4"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs.meta",
+          "sha256": "d91ab53d38e0ec1bd599599823b5ce1ee377ae033b9cd6877576022baa4e5997"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Shaders.meta",
+          "sha256": "e00a8cae84d37a9fb4b34c47917e592bfd32dee82afce20bd03dfd9cbb4f3957"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader",
+          "sha256": "4a571f1114f7d292b3891e2a4abf12e32e2e2c36f4573e24476db1462eab36d3"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader.meta",
+          "sha256": "b3bdf2954bc13e106789e0b4081600a1524f5c5bdcff56e156a6465b1b9cc31f"
+        },
+        {
+          "path": "Assets/Museum/Features/HelmetHotspots/Runtime/HelmetHotspot.cs",
+          "sha256": "cc4ec8738e2e9316f232bd9af44d518c86e160e8c11309ad89b1f289942eeaca"
+        },
+        {
+          "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+          "sha256": "0a126639b3511a75510f0e5f4de1438b7fe79aa22a40b884acbc5cf5fad248bc"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumGripSurfaceBaker.cs",
+          "sha256": "793ba315cadd4ada162661302bf79d4740f8305c6550a9d2eff3d6396dec433d"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumHandDeviceSetup.cs",
+          "sha256": "759a7c027dad3443f7a8a9e3f31ebc008ed50470fdc7ad25489929e3591a15e5"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumHandSelfCollisionValidation.cs",
+          "sha256": "5fbe3f8c068a328f0b0cdde50a3c0d134403a10d948bf4ac29fa3b515916528e"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumHandVisualFactory.cs",
+          "sha256": "d8f8b0a7f3aa7bc30724f42be48750cda62b1a8d5711dd9d8d7fdbb7cb40ef02"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsBuild.cs",
+          "sha256": "f8bb5ce9c91b1d946ae532da91385fdec654726a03de4f2cfd4d942ea3e78b9d"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsSetup.cs",
+          "sha256": "a33254df454195f757595e1f82b0c918a7f0a5bd985f43306b58d0e286ea98b2"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsTestPose.cs",
+          "sha256": "82529322dbbe149ee8cb1afcd9d1f71e4a245236095e1b74abc0ef120acf7ab7"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsValidation.cs",
+          "sha256": "c9bb9a0a3d7269bda8f15739da3d029f769fe015453c6627bab967bc485e205c"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Prefabs/LeftMuseumHand.prefab",
+          "sha256": "fdc467715acc736cd24e95c417656cf4380e77aa67d7b92ea84b90f1c218f9f0"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Prefabs/RightMuseumHand.prefab",
+          "sha256": "870661a4aeb65559356aa6014f62890ab2c76079de68ec95bf968971638c3685"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumGripSurface.cs",
+          "sha256": "f34b66ed2dfed341f6acd7935c8bf095a6789f4f325994dd1fc080aba6d9de51"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandDeviceDiagnostics.cs",
+          "sha256": "5cee5868f2c8c75167df6260df8877b8110e582167627686ee8df98da2c5b65d"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandGrabTransformer.cs",
+          "sha256": "db30e2c82b2e0162577a7850e6c5c66523f7927e3192259064d9312e623ce54a"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandVisual.cs",
+          "sha256": "cb8c87ec426ce44634e191c696c5ef45365297d42e8e6a3b7a3e2544057efa5e"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumPhysicalHand.cs",
+          "sha256": "981bb10810dcbe9c30ead21cbc4805ebc1c3fa20df4bad5fe2ed0fdb59c05621"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumPhysicalHandsRig.cs",
+          "sha256": "650870e52aff220a0e9a407889e82e55b0a21aa4f7118e3a483da7e66f213f1a"
+        },
+        {
+          "path": "Assets/Museum/Features/RefinedModels/Runtime/RefinedHelmetBinding.cs",
+          "sha256": "46154fc523821937e537cc68e5f2a6d12d45e04d5e2096abbafdf8080a505e23"
+        },
+        {
+          "path": "Assets/Museum/Scenes/MuseumStart.unity",
+          "sha256": "991e41052bc17128e60f657c5d57d031a3835dc9cc5c4e6efa18c9644bfbe8c2"
+        },
+        {
+          "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/XRI Default Input Actions.inputactions",
+          "sha256": "d51f6a0518c700cb15adb77f5a297c66cce683f13057ab47d466751cbe3b5336"
+        },
+        {
+          "path": "Packages/manifest.json",
+          "sha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7"
+        },
+        {
+          "path": "Packages/packages-lock.json",
+          "sha256": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03"
+        }
+      ]
+    },
+    {
+      "run": "20261017T065651632Z-direct-contact-ce37f5d85de64dd4ba7758e4715b7f47",
+      "rawSha256": "192e7b9220c9c38709bcae4c180e4c3a2abee093bcc95d8156bb952cadf36131",
+      "commit": "799b1c3dc3fbc72befd621fe3698836fbdac597d",
+      "utc": "2026-10-17T06:56:51.6406537Z",
+      "finishedUtc": "2026-10-17T06:56:59.7706771Z",
+      "failure": "System.InvalidOperationException: Open glove contacts ordinary body / Right Controller / target=(0.00, 1.49, 3.28); proxy=(0.00, 1.49, 3.28); query=(0.00, 1.49, 3.28); error=1.610371E-09; tracked=True; blocked=False; grip=0.000; selectActive=False; handFilter=True; selectPossible=False; group=Direct Interactor; candidates=Physical UI - Window,Physical UI - Rotate,Front window Hotspot; selected=; contact=True; stationFilter=False; hovered=False; selected=False; openBoxOutside=0.004000; palmDistance=0.130000; rayHits=Bonnet Capsule:own=True:distance=0.130000\r\n  at Museum.Diegetic.Editor.HelmetDiegeticDirectValidation.Require (System.Boolean passed, System.String name, System.String detail) [0x0003e] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr59-review-2026-10-17\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\DiegeticUI\\Editor\\HelmetDiegeticDirectValidation.cs:377 \r\n  at Museum.Diegetic.Editor.HelmetDiegeticDirectValidation+<BodyRotation>d__38.MoveNext () [0x0013f] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr59-review-2026-10-17\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\DiegeticUI\\Editor\\HelmetDiegeticDirectValidation.cs:182 \r\n  at Museum.Diegetic.Editor.HelmetDiegeticDirectValidation.Tick () [0x0008d] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr59-review-2026-10-17\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\DiegeticUI\\Editor\\HelmetDiegeticDirectValidation.cs:129 ",
+      "checks": [
+        {
+          "name": "Saved diegetic station ready",
+          "detail": "",
+          "passed": true
+        },
+        {
+          "name": "Right Controller production physical hand initialized",
+          "detail": "",
+          "passed": true
+        },
+        {
+          "name": "Left Controller production physical hand initialized",
+          "detail": "",
+          "passed": true
+        },
+        {
+          "name": "Open glove contacts ordinary body / Right Controller",
+          "detail": "target=(0.00, 1.49, 3.28); proxy=(0.00, 1.49, 3.28); query=(0.00, 1.49, 3.28); error=1.610371E-09; tracked=True; blocked=False; grip=0.000; selectActive=False; handFilter=True; selectPossible=False; group=Direct Interactor; candidates=Physical UI - Window,Physical UI - Rotate,Front window Hotspot; selected=; contact=True; stationFilter=False; hovered=False; selected=False; openBoxOutside=0.004000; palmDistance=0.130000; rayHits=Bonnet Capsule:own=True:distance=0.130000",
+          "passed": false
+        }
+      ],
+      "files": [
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor.meta",
+          "sha256": "8d026974eb1140fc726e489d8feef337096650823dce74468013590d311b5d15"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticDirectValidation.cs",
+          "sha256": "3df2466c60e09654e7fef6c8327bf33f95188871a3ef2a474f0db52251b9fdf0"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticDirectValidation.cs.meta",
+          "sha256": "c4ffa42d9a67e96f5bb1e395c840ce2dc06e171512b3bcf3b377e0cc8539d00c"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs",
+          "sha256": "530db047c79d2e3e39efcdfac927867fe40f6ef9ce8e44c427ed960d8b83710d"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs.meta",
+          "sha256": "ec6c7bbcc2065ab1f82386cfa0f7c64e043173b3225c2c3fa04a8412b2898dd9"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs",
+          "sha256": "3700df31f36fa6c188174d86bfa85d732831ed40d9108c2364e7a56bd014ef87"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs.meta",
+          "sha256": "c822bc2c4574400c367a2023daa88ec9657e833f4bd48519e502dca35ee1ac9e"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs",
+          "sha256": "772a0e41c1dc8bf93d7f2ac5c9ecdd7959e71f74e602a5668222a49211754216"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs.meta",
+          "sha256": "9629da0099cb309c00bc0456c29a0a6f0de41d3d7488e4c7977732a56e9d5aa8"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Materials.meta",
+          "sha256": "52a91259552604a9ef7d80d72b4dbc1c245ea571c5e15ef6206904c132e7c6ea"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat",
+          "sha256": "363f879b055303aa62da00cbd6bb241656ed216f439048f272c595e95fdcf422"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat.meta",
+          "sha256": "512c82d030ad3991f16a034be196c13dd3fe717c83e20819925c3bf508e183b3"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime.meta",
+          "sha256": "b733f29c063a6af24e32cac94990df45f8c7f8c6cd52a659d534f1d5b6151a54"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs",
+          "sha256": "dfbfdd9ef30c3e872eb2b28cd0b63d415eed00dbbfca93043bf133f15e4a7ba5"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs.meta",
+          "sha256": "e45c13a3f038251bd6594341e2f8b05f5a97a2eec7af4c678dd150b17821b0a6"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs",
+          "sha256": "a0f2f520fd329b77846dae57652b810f75ae9d8f45c4dcd6db0964121aff9db1"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs.meta",
+          "sha256": "203a496e55bb9060bcb0cf4756b1fe3ced2cb1726aab820d8f8ad0204897c65d"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs",
+          "sha256": "da2c89dc7ed59213ae8be6d4e2450f69132b992ed8ed7a35e576679627c92b9b"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs.meta",
+          "sha256": "29c6a424af966488904f074bd6239e215b09d62b545960454058913849312ae6"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDirectContact.cs",
+          "sha256": "be1d5a8b608aa59ddf417f9cc460330681397d86a35b732d0cded7b829d45d1d"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDirectContact.cs.meta",
+          "sha256": "1f4f1786bfa8728e34374ed9473536d1c4cf0ed755bb7b9a496d8b6c1ff16723"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs",
+          "sha256": "25d48d191e088bf5d713781edd7df7dc2c04b111b8f9cd94a2a4acea69b2ea28"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs.meta",
+          "sha256": "f2dc40e4624cc55e832eb90a8cd1298ed4c05d05cf7e5e1a1a699ef601d8e0fd"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs",
+          "sha256": "5f66d59671132eb2ac029936db1cf2733bd856a9a0bc055dc7c9e5cbb78f9eba"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs.meta",
+          "sha256": "08be069d714e297c43ad91d070b559b1da5139a83fd0dbbdabfc5f9e4897854f"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetRotationHint.cs",
+          "sha256": "2d5dfa8da33a181b081009334b8b9bb7f793e598503f787dae898859bdab5fb9"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetRotationHint.cs.meta",
+          "sha256": "4ad9367dd3a9985a07b3e3ac234ae61c2239d7ffedcc6e237841c0e20a243d24"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs",
+          "sha256": "f145f8fe499c38b4105a994a620eaa531f21d18b00f6cae9fd74da43b827bdf6"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs.meta",
+          "sha256": "bed431957ffcd6add58d8ef344549ae40ed19b39c48049fbc68951bec4151509"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs",
+          "sha256": "a2199f940955756b452b3143afe4a0ae3f59a307307664d771ebefda32bec6c4"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs.meta",
+          "sha256": "d91ab53d38e0ec1bd599599823b5ce1ee377ae033b9cd6877576022baa4e5997"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Shaders.meta",
+          "sha256": "e00a8cae84d37a9fb4b34c47917e592bfd32dee82afce20bd03dfd9cbb4f3957"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader",
+          "sha256": "4a571f1114f7d292b3891e2a4abf12e32e2e2c36f4573e24476db1462eab36d3"
+        },
+        {
+          "path": "Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader.meta",
+          "sha256": "b3bdf2954bc13e106789e0b4081600a1524f5c5bdcff56e156a6465b1b9cc31f"
+        },
+        {
+          "path": "Assets/Museum/Features/HelmetHotspots/Runtime/HelmetHotspot.cs",
+          "sha256": "cc4ec8738e2e9316f232bd9af44d518c86e160e8c11309ad89b1f289942eeaca"
+        },
+        {
+          "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+          "sha256": "0a126639b3511a75510f0e5f4de1438b7fe79aa22a40b884acbc5cf5fad248bc"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumGripSurfaceBaker.cs",
+          "sha256": "793ba315cadd4ada162661302bf79d4740f8305c6550a9d2eff3d6396dec433d"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumHandDeviceSetup.cs",
+          "sha256": "759a7c027dad3443f7a8a9e3f31ebc008ed50470fdc7ad25489929e3591a15e5"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumHandSelfCollisionValidation.cs",
+          "sha256": "5fbe3f8c068a328f0b0cdde50a3c0d134403a10d948bf4ac29fa3b515916528e"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumHandVisualFactory.cs",
+          "sha256": "d8f8b0a7f3aa7bc30724f42be48750cda62b1a8d5711dd9d8d7fdbb7cb40ef02"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsBuild.cs",
+          "sha256": "f8bb5ce9c91b1d946ae532da91385fdec654726a03de4f2cfd4d942ea3e78b9d"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsSetup.cs",
+          "sha256": "a33254df454195f757595e1f82b0c918a7f0a5bd985f43306b58d0e286ea98b2"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsTestPose.cs",
+          "sha256": "82529322dbbe149ee8cb1afcd9d1f71e4a245236095e1b74abc0ef120acf7ab7"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Editor/MuseumPhysicalHandsValidation.cs",
+          "sha256": "c9bb9a0a3d7269bda8f15739da3d029f769fe015453c6627bab967bc485e205c"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Prefabs/LeftMuseumHand.prefab",
+          "sha256": "fdc467715acc736cd24e95c417656cf4380e77aa67d7b92ea84b90f1c218f9f0"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Prefabs/RightMuseumHand.prefab",
+          "sha256": "870661a4aeb65559356aa6014f62890ab2c76079de68ec95bf968971638c3685"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumGripSurface.cs",
+          "sha256": "f34b66ed2dfed341f6acd7935c8bf095a6789f4f325994dd1fc080aba6d9de51"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandDeviceDiagnostics.cs",
+          "sha256": "5cee5868f2c8c75167df6260df8877b8110e582167627686ee8df98da2c5b65d"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandGrabTransformer.cs",
+          "sha256": "db30e2c82b2e0162577a7850e6c5c66523f7927e3192259064d9312e623ce54a"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumHandVisual.cs",
+          "sha256": "cb8c87ec426ce44634e191c696c5ef45365297d42e8e6a3b7a3e2544057efa5e"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumPhysicalHand.cs",
+          "sha256": "ce49d4f965da39fcd839303bd942f8a2a1ceedb21d5fa694d4e570e809aa4651"
+        },
+        {
+          "path": "Assets/Museum/Features/PhysicalHands/Runtime/MuseumPhysicalHandsRig.cs",
+          "sha256": "650870e52aff220a0e9a407889e82e55b0a21aa4f7118e3a483da7e66f213f1a"
+        },
+        {
+          "path": "Assets/Museum/Features/RefinedModels/Runtime/RefinedHelmetBinding.cs",
+          "sha256": "46154fc523821937e537cc68e5f2a6d12d45e04d5e2096abbafdf8080a505e23"
+        },
+        {
+          "path": "Assets/Museum/Scenes/MuseumStart.unity",
+          "sha256": "991e41052bc17128e60f657c5d57d031a3835dc9cc5c4e6efa18c9644bfbe8c2"
+        },
+        {
+          "path": "Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/XRI Default Input Actions.inputactions",
+          "sha256": "d51f6a0518c700cb15adb77f5a297c66cce683f13057ab47d466751cbe3b5336"
+        },
+        {
+          "path": "Packages/manifest.json",
+          "sha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7"
+        },
+        {
+          "path": "Packages/packages-lock.json",
+          "sha256": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03"
+        }
+      ]
+    }
+  ],
+  "process01": {
+    "pid": 29360,
+    "exitCode": -1,
+    "finishedUtc": "2026-10-17T06:54:37.0767631Z",
+    "commit": "8016085db2675daf69551678ac00eefa218f73c0"
+  },
+  "termination01": {
+    "pid": 29360,
+    "forced": true,
+    "reason": "First Direct fixture failed; Editor entered shutdown and produced no output for over 150 seconds. Only this owned test process was stopped.",
+    "utc": "2026-10-17T06:54:37Z"
+  },
+  "process02": {
+    "pid": 19136,
+    "exitCode": 1,
+    "finishedUtc": "2026-10-17T06:55:40.5450073Z",
+    "commit": "64d9c1fea273888136dc2b165ecc531dad1737f7"
+  },
+  "process03": {
+    "pid": 19064,
+    "exitCode": 1,
+    "finishedUtc": "2026-10-17T06:57:21.5611206Z",
+    "commit": "799b1c3dc3fbc72befd621fe3698836fbdac597d"
+  }
+}

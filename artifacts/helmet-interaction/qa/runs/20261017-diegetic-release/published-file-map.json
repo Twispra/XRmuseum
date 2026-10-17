@@ -1,0 +1,349 @@
+{
+  "baseCommit": "bc9df77a56bf6dff18af9b25c528c82b49417ca4",
+  "sourceReportSha256": "de383a8249686062f5a6ef41d9a9ce73fc3ccbf0a6f501a97fb8f676d3620cdd",
+  "files": [
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Editor.meta",
+      "testedSha256": "931aa44946f26142ba778fd12d19add0142dc73368340e5d94929db6d1054d20",
+      "workingSha256": "8d026974eb1140fc726e489d8feef337096650823dce74468013590d311b5d15",
+      "gitBlobSha256": "8d026974eb1140fc726e489d8feef337096650823dce74468013590d311b5d15",
+      "gitBlobId": "ad09ec48122d5e94f073f2c8f310d071caa187ff",
+      "workingMatchesTestedExactly": false,
+      "normalization": "Only verified Unity YAML empty-field trailing whitespace plus Git line endings; GUID/values unchanged"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs",
+      "testedSha256": "7853155ffc61422d802f7f9bd1bfbb761b93cc3687ca0a6588840a86b9b25738",
+      "workingSha256": "7853155ffc61422d802f7f9bd1bfbb761b93cc3687ca0a6588840a86b9b25738",
+      "gitBlobSha256": "7853155ffc61422d802f7f9bd1bfbb761b93cc3687ca0a6588840a86b9b25738",
+      "gitBlobId": "996230dc94aea8ae5133080de835dbc56689e38f",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs.meta",
+      "testedSha256": "4ddf0db91fa9242ccd4286dce1f0170d15cf513698ff3dd6adfa2e6e5e44a1dc",
+      "workingSha256": "ec6c7bbcc2065ab1f82386cfa0f7c64e043173b3225c2c3fa04a8412b2898dd9",
+      "gitBlobSha256": "ec6c7bbcc2065ab1f82386cfa0f7c64e043173b3225c2c3fa04a8412b2898dd9",
+      "gitBlobId": "edfebe42ec70a7511b864827d8e166947f612101",
+      "workingMatchesTestedExactly": false,
+      "normalization": "Only verified Unity YAML empty-field trailing whitespace plus Git line endings; GUID/values unchanged"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs",
+      "testedSha256": "afecca80ae686981165f5974f9cf624af6825b4b659d4acb274f296310d00ea5",
+      "workingSha256": "afecca80ae686981165f5974f9cf624af6825b4b659d4acb274f296310d00ea5",
+      "gitBlobSha256": "68d77283a7d7cfcd3fcba5accd07f7046282f9318e371739c566cb1d08fa984b",
+      "gitBlobId": "8094c0f975705441b6d431b770129d80acf59bd4",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs.meta",
+      "testedSha256": "94675aa5a38989a7e14d541047db4053cfbfd38394add560c1c591c8fc964419",
+      "workingSha256": "c822bc2c4574400c367a2023daa88ec9657e833f4bd48519e502dca35ee1ac9e",
+      "gitBlobSha256": "c822bc2c4574400c367a2023daa88ec9657e833f4bd48519e502dca35ee1ac9e",
+      "gitBlobId": "7253959477fd18dc3fb546c42e28278003a92f08",
+      "workingMatchesTestedExactly": false,
+      "normalization": "Only verified Unity YAML empty-field trailing whitespace plus Git line endings; GUID/values unchanged"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs",
+      "testedSha256": "e22d76fb0393a3c23bd72870a2eed8f79e6a2f36af1d224c549f2615da95163c",
+      "workingSha256": "e22d76fb0393a3c23bd72870a2eed8f79e6a2f36af1d224c549f2615da95163c",
+      "gitBlobSha256": "e22d76fb0393a3c23bd72870a2eed8f79e6a2f36af1d224c549f2615da95163c",
+      "gitBlobId": "76d44d577f6bb92733cd5746afce8ef4bad78e0a",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs.meta",
+      "testedSha256": "9629da0099cb309c00bc0456c29a0a6f0de41d3d7488e4c7977732a56e9d5aa8",
+      "workingSha256": "9629da0099cb309c00bc0456c29a0a6f0de41d3d7488e4c7977732a56e9d5aa8",
+      "gitBlobSha256": "9629da0099cb309c00bc0456c29a0a6f0de41d3d7488e4c7977732a56e9d5aa8",
+      "gitBlobId": "53f5feba43955fc87c89250125714bfd299c6595",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Materials.meta",
+      "testedSha256": "ea3090e445c3c6c0e9582c4fa680256f36d7d5e7dbcb1999c8307fa6da66e394",
+      "workingSha256": "52a91259552604a9ef7d80d72b4dbc1c245ea571c5e15ef6206904c132e7c6ea",
+      "gitBlobSha256": "52a91259552604a9ef7d80d72b4dbc1c245ea571c5e15ef6206904c132e7c6ea",
+      "gitBlobId": "d2cfc1acb15dae36bff4e7cc7cc72d1a57385f82",
+      "workingMatchesTestedExactly": false,
+      "normalization": "Only verified Unity YAML empty-field trailing whitespace plus Git line endings; GUID/values unchanged"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat",
+      "testedSha256": "b5374b415255237a32e89c82be92b8fabda2902b9c1ce6cbe8a3315635363697",
+      "workingSha256": "363f879b055303aa62da00cbd6bb241656ed216f439048f272c595e95fdcf422",
+      "gitBlobSha256": "363f879b055303aa62da00cbd6bb241656ed216f439048f272c595e95fdcf422",
+      "gitBlobId": "791e5fd24bac3124696bf629c84848c6927c552a",
+      "workingMatchesTestedExactly": false,
+      "normalization": "Only verified Unity YAML empty-field trailing whitespace plus Git line endings; GUID/values unchanged"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat.meta",
+      "testedSha256": "ff2ba4bedc4e6a479868c56ec945aa458c39fea69f9e32dd97d250af9e162ec1",
+      "workingSha256": "512c82d030ad3991f16a034be196c13dd3fe717c83e20819925c3bf508e183b3",
+      "gitBlobSha256": "512c82d030ad3991f16a034be196c13dd3fe717c83e20819925c3bf508e183b3",
+      "gitBlobId": "4b2d029ba7466f1702b6fccae4545086d7d12556",
+      "workingMatchesTestedExactly": false,
+      "normalization": "Only verified Unity YAML empty-field trailing whitespace plus Git line endings; GUID/values unchanged"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Runtime.meta",
+      "testedSha256": "b8a9294e00b2d2187d87faf5fc4fa3d2133bb21e40c01249e06ba6ecd40e3d3b",
+      "workingSha256": "b733f29c063a6af24e32cac94990df45f8c7f8c6cd52a659d534f1d5b6151a54",
+      "gitBlobSha256": "b733f29c063a6af24e32cac94990df45f8c7f8c6cd52a659d534f1d5b6151a54",
+      "gitBlobId": "979e4cf9fbac11cd6ec1bc2cb0e7bcd9f3d814cd",
+      "workingMatchesTestedExactly": false,
+      "normalization": "Only verified Unity YAML empty-field trailing whitespace plus Git line endings; GUID/values unchanged"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs",
+      "testedSha256": "dfbfdd9ef30c3e872eb2b28cd0b63d415eed00dbbfca93043bf133f15e4a7ba5",
+      "workingSha256": "dfbfdd9ef30c3e872eb2b28cd0b63d415eed00dbbfca93043bf133f15e4a7ba5",
+      "gitBlobSha256": "dfbfdd9ef30c3e872eb2b28cd0b63d415eed00dbbfca93043bf133f15e4a7ba5",
+      "gitBlobId": "021568adf18477480d804a6a8900ec6454bc3c06",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs.meta",
+      "testedSha256": "e45c13a3f038251bd6594341e2f8b05f5a97a2eec7af4c678dd150b17821b0a6",
+      "workingSha256": "e45c13a3f038251bd6594341e2f8b05f5a97a2eec7af4c678dd150b17821b0a6",
+      "gitBlobSha256": "e45c13a3f038251bd6594341e2f8b05f5a97a2eec7af4c678dd150b17821b0a6",
+      "gitBlobId": "4a6b72ab12c39b2252262bc137972fc4a710e72a",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs",
+      "testedSha256": "73e8950577ec7f4dc206b5b18e68e00fd65a206b8b8335fa273d94ed97450a37",
+      "workingSha256": "73e8950577ec7f4dc206b5b18e68e00fd65a206b8b8335fa273d94ed97450a37",
+      "gitBlobSha256": "73e8950577ec7f4dc206b5b18e68e00fd65a206b8b8335fa273d94ed97450a37",
+      "gitBlobId": "3c488462fc87c26f7022e8853991703b87660c32",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs.meta",
+      "testedSha256": "236ff2e28f6a40d5150da0e91b7b4b2b1200517766598a639336b672384be09c",
+      "workingSha256": "203a496e55bb9060bcb0cf4756b1fe3ced2cb1726aab820d8f8ad0204897c65d",
+      "gitBlobSha256": "203a496e55bb9060bcb0cf4756b1fe3ced2cb1726aab820d8f8ad0204897c65d",
+      "gitBlobId": "b441dd062186bad61c450a41833b4c8d0534f3f8",
+      "workingMatchesTestedExactly": false,
+      "normalization": "Only verified Unity YAML empty-field trailing whitespace plus Git line endings; GUID/values unchanged"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs",
+      "testedSha256": "f8e27278b4765b635cbb489e7ef99faf3b8b06aba67be43a198c4b784d0a77d4",
+      "workingSha256": "f8e27278b4765b635cbb489e7ef99faf3b8b06aba67be43a198c4b784d0a77d4",
+      "gitBlobSha256": "bab25a5b8965d2531527f04a8f08358869151e85f732d0075c0d4925a5e7040b",
+      "gitBlobId": "0dcbf51eb86654bba9dea1e923e483b94e16a7db",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs.meta",
+      "testedSha256": "ca9599ab235def029115532527bb35cf1c8a67a3619bd26babd20252c59da75d",
+      "workingSha256": "29c6a424af966488904f074bd6239e215b09d62b545960454058913849312ae6",
+      "gitBlobSha256": "29c6a424af966488904f074bd6239e215b09d62b545960454058913849312ae6",
+      "gitBlobId": "b65e85f6811429a7138d71beba14e209e1120628",
+      "workingMatchesTestedExactly": false,
+      "normalization": "Only verified Unity YAML empty-field trailing whitespace plus Git line endings; GUID/values unchanged"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs",
+      "testedSha256": "48f3a6f0ee750bd4c72acde58a583eb9efb14d9f989e9934b7223541051eae94",
+      "workingSha256": "48f3a6f0ee750bd4c72acde58a583eb9efb14d9f989e9934b7223541051eae94",
+      "gitBlobSha256": "48f3a6f0ee750bd4c72acde58a583eb9efb14d9f989e9934b7223541051eae94",
+      "gitBlobId": "1a593ac1cd2fe721fc8e19de55863ecb0d297d31",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs.meta",
+      "testedSha256": "03538942cc52034cb2b63a0eb17c4545632451f886568e17dbfe8c9e8506730b",
+      "workingSha256": "f2dc40e4624cc55e832eb90a8cd1298ed4c05d05cf7e5e1a1a699ef601d8e0fd",
+      "gitBlobSha256": "f2dc40e4624cc55e832eb90a8cd1298ed4c05d05cf7e5e1a1a699ef601d8e0fd",
+      "gitBlobId": "99b6fe8274438f10a367dd6b415cac1daf651eb6",
+      "workingMatchesTestedExactly": false,
+      "normalization": "Only verified Unity YAML empty-field trailing whitespace plus Git line endings; GUID/values unchanged"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs",
+      "testedSha256": "8387de5f8e6fb10f4ec5aff907159246f93fd72d1e7c499048ea3f9aecf56ceb",
+      "workingSha256": "8387de5f8e6fb10f4ec5aff907159246f93fd72d1e7c499048ea3f9aecf56ceb",
+      "gitBlobSha256": "8387de5f8e6fb10f4ec5aff907159246f93fd72d1e7c499048ea3f9aecf56ceb",
+      "gitBlobId": "4334bb4ee81d9fafe79cd4dc8e7077ebaa4a7dee",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs.meta",
+      "testedSha256": "612a97366d6b817788100f06ca9b79e8ff0304441e80fb64fb8519f49b01c4f3",
+      "workingSha256": "08be069d714e297c43ad91d070b559b1da5139a83fd0dbbdabfc5f9e4897854f",
+      "gitBlobSha256": "08be069d714e297c43ad91d070b559b1da5139a83fd0dbbdabfc5f9e4897854f",
+      "gitBlobId": "e4401b6f7b292c3ee4d85c8efd93a1496327f8d2",
+      "workingMatchesTestedExactly": false,
+      "normalization": "Only verified Unity YAML empty-field trailing whitespace plus Git line endings; GUID/values unchanged"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs",
+      "testedSha256": "f145f8fe499c38b4105a994a620eaa531f21d18b00f6cae9fd74da43b827bdf6",
+      "workingSha256": "f145f8fe499c38b4105a994a620eaa531f21d18b00f6cae9fd74da43b827bdf6",
+      "gitBlobSha256": "f145f8fe499c38b4105a994a620eaa531f21d18b00f6cae9fd74da43b827bdf6",
+      "gitBlobId": "aac4e69a588fb8daa61e37d7325c50bde26a15bc",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs.meta",
+      "testedSha256": "d2b04658acfddbb5853b58aa20a2a216fe50d3a2d4de822e6cbabf8de816bf6b",
+      "workingSha256": "bed431957ffcd6add58d8ef344549ae40ed19b39c48049fbc68951bec4151509",
+      "gitBlobSha256": "bed431957ffcd6add58d8ef344549ae40ed19b39c48049fbc68951bec4151509",
+      "gitBlobId": "a8d1e37acad1feb99e97584f1bf8965d9fcbb6eb",
+      "workingMatchesTestedExactly": false,
+      "normalization": "Only verified Unity YAML empty-field trailing whitespace plus Git line endings; GUID/values unchanged"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs",
+      "testedSha256": "a2199f940955756b452b3143afe4a0ae3f59a307307664d771ebefda32bec6c4",
+      "workingSha256": "a2199f940955756b452b3143afe4a0ae3f59a307307664d771ebefda32bec6c4",
+      "gitBlobSha256": "a2199f940955756b452b3143afe4a0ae3f59a307307664d771ebefda32bec6c4",
+      "gitBlobId": "be82b54184da958414a83d3bf8eb02f47c36af26",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs.meta",
+      "testedSha256": "ebef462950d60ccf07a3a3b8884012897a88404a6d43f92fda709078447b703a",
+      "workingSha256": "d91ab53d38e0ec1bd599599823b5ce1ee377ae033b9cd6877576022baa4e5997",
+      "gitBlobSha256": "d91ab53d38e0ec1bd599599823b5ce1ee377ae033b9cd6877576022baa4e5997",
+      "gitBlobId": "41a3410d86c584e8ec05c810df1d820e5c6846fc",
+      "workingMatchesTestedExactly": false,
+      "normalization": "Only verified Unity YAML empty-field trailing whitespace plus Git line endings; GUID/values unchanged"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Shaders.meta",
+      "testedSha256": "96f8c600bd60854603569783733d0fd434868c1021f4026577632753115fdf0a",
+      "workingSha256": "e00a8cae84d37a9fb4b34c47917e592bfd32dee82afce20bd03dfd9cbb4f3957",
+      "gitBlobSha256": "e00a8cae84d37a9fb4b34c47917e592bfd32dee82afce20bd03dfd9cbb4f3957",
+      "gitBlobId": "d77b7463688c7b59362c511c3c63eb2a165cf15c",
+      "workingMatchesTestedExactly": false,
+      "normalization": "Only verified Unity YAML empty-field trailing whitespace plus Git line endings; GUID/values unchanged"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader",
+      "testedSha256": "bf4f7b0d225675a5518a1ef3f4f07a5c90693727c012be60f8ba29b627f6555b",
+      "workingSha256": "bf4f7b0d225675a5518a1ef3f4f07a5c90693727c012be60f8ba29b627f6555b",
+      "gitBlobSha256": "bf4f7b0d225675a5518a1ef3f4f07a5c90693727c012be60f8ba29b627f6555b",
+      "gitBlobId": "20351225dbdcc83233638b9a19c32269def4c96b",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader.meta",
+      "testedSha256": "5a27367c59d231f21349e0c30506cbf3c01b5a7817d4e467fe1bff4c91f3ee1d",
+      "workingSha256": "b3bdf2954bc13e106789e0b4081600a1524f5c5bdcff56e156a6465b1b9cc31f",
+      "gitBlobSha256": "b3bdf2954bc13e106789e0b4081600a1524f5c5bdcff56e156a6465b1b9cc31f",
+      "gitBlobId": "1a8f6b519f21713540f813bf63c4947bec25d46a",
+      "workingMatchesTestedExactly": false,
+      "normalization": "Only verified Unity YAML empty-field trailing whitespace plus Git line endings; GUID/values unchanged"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs",
+      "testedSha256": "8b6b605f14bbd510c589657b51b3a1a641993da035a9b02d2ebc47e50e8d5c01",
+      "workingSha256": "8b6b605f14bbd510c589657b51b3a1a641993da035a9b02d2ebc47e50e8d5c01",
+      "gitBlobSha256": "8b6b605f14bbd510c589657b51b3a1a641993da035a9b02d2ebc47e50e8d5c01",
+      "gitBlobId": "3e608ca7c8d42b1d7359455993a29929206a15bf",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+      "testedSha256": "0a126639b3511a75510f0e5f4de1438b7fe79aa22a40b884acbc5cf5fad248bc",
+      "workingSha256": "0a126639b3511a75510f0e5f4de1438b7fe79aa22a40b884acbc5cf5fad248bc",
+      "gitBlobSha256": "0a126639b3511a75510f0e5f4de1438b7fe79aa22a40b884acbc5cf5fad248bc",
+      "gitBlobId": "4b4f690981962ade67a1a26b529ccb7cc9af6970",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Fonts/characters-required.txt",
+      "testedSha256": "9ef00455606f7ec7da13dea176439ccd28000658db576d2123abf83440b8f5eb",
+      "workingSha256": "9ef00455606f7ec7da13dea176439ccd28000658db576d2123abf83440b8f5eb",
+      "gitBlobSha256": "9ef00455606f7ec7da13dea176439ccd28000658db576d2123abf83440b8f5eb",
+      "gitBlobId": "97ab23a0bcc69d73264c944fbb01d0a548f3d6e8",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset",
+      "testedSha256": "2e9427bd6be4163b827535454e9ff04a8b892458abbc37b19f323bf33b8cfd4e",
+      "workingSha256": "2e9427bd6be4163b827535454e9ff04a8b892458abbc37b19f323bf33b8cfd4e",
+      "gitBlobSha256": "2e9427bd6be4163b827535454e9ff04a8b892458abbc37b19f323bf33b8cfd4e",
+      "gitBlobId": "e61ee4954343a9fe9d3527c4365b5d78b5f8740d",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Tables/LocalizationTable.asset",
+      "testedSha256": "d1861405a95a4835828f51e93d478367f1df68ffa4928667e101cf47b14d8d4d",
+      "workingSha256": "d1861405a95a4835828f51e93d478367f1df68ffa4928667e101cf47b14d8d4d",
+      "gitBlobSha256": "d1861405a95a4835828f51e93d478367f1df68ffa4928667e101cf47b14d8d4d",
+      "gitBlobId": "3e6f0139b51ed91b35a8add36563084a193537b6",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Tables/MuseumTranslations.json",
+      "testedSha256": "ba3859ed5eee4428a9e197501bfa7183e11aa16fcc810fc06adfc3c6d82f1e66",
+      "workingSha256": "ba3859ed5eee4428a9e197501bfa7183e11aa16fcc810fc06adfc3c6d82f1e66",
+      "gitBlobSha256": "1564262a15823b70fbd49f2e00cc84fc9daea9d99bdc24b6571588f8f5195c7e",
+      "gitBlobId": "b93c317f6542f72b210e47462f989763a49c4ba9",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/RefinedModels/Runtime/RefinedConnectionEquipment.cs",
+      "testedSha256": "ec0135ffb6512bc0cff96ef923022222c2fa14f268dfd82be440ec93d18c5d59",
+      "workingSha256": "ec0135ffb6512bc0cff96ef923022222c2fa14f268dfd82be440ec93d18c5d59",
+      "gitBlobSha256": "ec0135ffb6512bc0cff96ef923022222c2fa14f268dfd82be440ec93d18c5d59",
+      "gitBlobId": "5359ba9f48f531b9ec31eb13750102b98f6d1a11",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+      "testedSha256": "781f515187693f31c8edbf1cf034c187b45280e6e126a541f2a0b64cb18e450a",
+      "workingSha256": "781f515187693f31c8edbf1cf034c187b45280e6e126a541f2a0b64cb18e450a",
+      "gitBlobSha256": "991e41052bc17128e60f657c5d57d031a3835dc9cc5c4e6efa18c9644bfbe8c2",
+      "gitBlobId": "dabaf9976bf7bb1a4a8b310707c58658c280d756",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Packages/manifest.json",
+      "testedSha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7",
+      "workingSha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7",
+      "gitBlobSha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7",
+      "gitBlobId": "7d8aa72072644d4932257e09dc7b389d8f058025",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    },
+    {
+      "path": "MuseumVR/Packages/packages-lock.json",
+      "testedSha256": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03",
+      "workingSha256": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03",
+      "gitBlobSha256": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03",
+      "gitBlobId": "4509a492250db9433b8c31c0f31f38bfee5a2393",
+      "workingMatchesTestedExactly": true,
+      "normalization": "Git CRLF/LF only"
+    }
+  ],
+  "note": "No runtime source or asset value changes after the 731-check run; new Unity metadata empty-field trailing whitespace and Git line endings only."
+}

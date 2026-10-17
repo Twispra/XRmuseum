@@ -39,6 +39,7 @@ namespace Museum.Inspection
         bool rootGrabRestorePhysics, rootDropWasKinematic, rootDropUsedGravity;
 
         public float WindowAngle { get; private set; }
+        public bool WindowTargetOpen => targetWindowAngle >= MaximumWindowAngle * .5f;
         public bool IsCutaway { get; private set; }
         public bool IsFloating { get; private set; }
         public bool IsHeld => grab != null && grab.isSelected;

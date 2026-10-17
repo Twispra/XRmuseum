@@ -1,0 +1,173 @@
+{
+  "sourceReport": "artifacts/helmet-interaction/qa/runs/20261016T180104910Z-precision-close-hints-20261017-ced44969c0e0463993cd9072accde21e/report.json",
+  "sourceReportSha256": "b4c99114219de85863fbdc71fb47e31551608a2835a1e8e1aefbd9e3e2431308",
+  "checks": 789,
+  "passed": 789,
+  "errors": [],
+  "failure": "",
+  "naturalExitCode": 0,
+  "visualReviewAccepted": false,
+  "finding": "Normal Camera.Render inspection showed body and equipment captions outside the initial view despite the geometry checks passing. The layout and visibility tests were corrected and the full regression rerun. This is historical evidence, not the final version.",
+  "files": [
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Editor.meta",
+      "sha256": "8d026974eb1140fc726e489d8feef337096650823dce74468013590d311b5d15"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs",
+      "sha256": "396b56dcab2224af9ef03f59514e4af458089ad6851d9938f995a716711f3a27"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs.meta",
+      "sha256": "ec6c7bbcc2065ab1f82386cfa0f7c64e043173b3225c2c3fa04a8412b2898dd9"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs",
+      "sha256": "3700df31f36fa6c188174d86bfa85d732831ed40d9108c2364e7a56bd014ef87"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs.meta",
+      "sha256": "c822bc2c4574400c367a2023daa88ec9657e833f4bd48519e502dca35ee1ac9e"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs",
+      "sha256": "d1b5d7b1e74304a0b5e4cc358e679c92eaca77c9154438286973e4a183f873f3"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs.meta",
+      "sha256": "9629da0099cb309c00bc0456c29a0a6f0de41d3d7488e4c7977732a56e9d5aa8"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Materials.meta",
+      "sha256": "52a91259552604a9ef7d80d72b4dbc1c245ea571c5e15ef6206904c132e7c6ea"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat",
+      "sha256": "363f879b055303aa62da00cbd6bb241656ed216f439048f272c595e95fdcf422"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat.meta",
+      "sha256": "512c82d030ad3991f16a034be196c13dd3fe717c83e20819925c3bf508e183b3"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime.meta",
+      "sha256": "b733f29c063a6af24e32cac94990df45f8c7f8c6cd52a659d534f1d5b6151a54"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs",
+      "sha256": "dfbfdd9ef30c3e872eb2b28cd0b63d415eed00dbbfca93043bf133f15e4a7ba5"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs.meta",
+      "sha256": "e45c13a3f038251bd6594341e2f8b05f5a97a2eec7af4c678dd150b17821b0a6"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs",
+      "sha256": "a0f2f520fd329b77846dae57652b810f75ae9d8f45c4dcd6db0964121aff9db1"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs.meta",
+      "sha256": "203a496e55bb9060bcb0cf4756b1fe3ced2cb1726aab820d8f8ad0204897c65d"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs",
+      "sha256": "90ed1704bc260a430916077f21eaf3482076db6ee0666e87d11d80a49e6e0624"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs.meta",
+      "sha256": "29c6a424af966488904f074bd6239e215b09d62b545960454058913849312ae6"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs",
+      "sha256": "25d48d191e088bf5d713781edd7df7dc2c04b111b8f9cd94a2a4acea69b2ea28"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs.meta",
+      "sha256": "f2dc40e4624cc55e832eb90a8cd1298ed4c05d05cf7e5e1a1a699ef601d8e0fd"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs",
+      "sha256": "d49097d3f515ce97e85389d2305f65ef3458b339f9f3000a04e26c08590f7009"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs.meta",
+      "sha256": "08be069d714e297c43ad91d070b559b1da5139a83fd0dbbdabfc5f9e4897854f"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetRotationHint.cs",
+      "sha256": "412048492c4c2829b6da1b677bc2c801f3c9658c973ef7c452ffad8cc84fe90c"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetRotationHint.cs.meta",
+      "sha256": "4ad9367dd3a9985a07b3e3ac234ae61c2239d7ffedcc6e237841c0e20a243d24"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs",
+      "sha256": "f145f8fe499c38b4105a994a620eaa531f21d18b00f6cae9fd74da43b827bdf6"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs.meta",
+      "sha256": "bed431957ffcd6add58d8ef344549ae40ed19b39c48049fbc68951bec4151509"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs",
+      "sha256": "a2199f940955756b452b3143afe4a0ae3f59a307307664d771ebefda32bec6c4"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs.meta",
+      "sha256": "d91ab53d38e0ec1bd599599823b5ce1ee377ae033b9cd6877576022baa4e5997"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Shaders.meta",
+      "sha256": "e00a8cae84d37a9fb4b34c47917e592bfd32dee82afce20bd03dfd9cbb4f3957"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader",
+      "sha256": "bf4f7b0d225675a5518a1ef3f4f07a5c90693727c012be60f8ba29b627f6555b"
+    },
+    {
+      "path": "Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader.meta",
+      "sha256": "b3bdf2954bc13e106789e0b4081600a1524f5c5bdcff56e156a6465b1b9cc31f"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs",
+      "sha256": "8b6b605f14bbd510c589657b51b3a1a641993da035a9b02d2ebc47e50e8d5c01"
+    },
+    {
+      "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+      "sha256": "0a126639b3511a75510f0e5f4de1438b7fe79aa22a40b884acbc5cf5fad248bc"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/characters-required.txt",
+      "sha256": "9ef00455606f7ec7da13dea176439ccd28000658db576d2123abf83440b8f5eb"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset",
+      "sha256": "2e9427bd6be4163b827535454e9ff04a8b892458abbc37b19f323bf33b8cfd4e"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Tables/LocalizationTable.asset",
+      "sha256": "759971f23d8055716ad08d10997269c378af0f5dcb10a062e8475cf479275e6a"
+    },
+    {
+      "path": "Assets/Museum/Features/Localization/Tables/MuseumTranslations.json",
+      "sha256": "c6e7f98625daac2ac0bc2d573b0a8b4cc43960abb17465e2624b95788d22953d"
+    },
+    {
+      "path": "Assets/Museum/Features/RefinedModels/Runtime/RefinedConnectionEquipment.cs",
+      "sha256": "ec0135ffb6512bc0cff96ef923022222c2fa14f268dfd82be440ec93d18c5d59"
+    },
+    {
+      "path": "Assets/Museum/Scenes/MuseumStart.unity",
+      "sha256": "781f515187693f31c8edbf1cf034c187b45280e6e126a541f2a0b64cb18e450a"
+    },
+    {
+      "path": "Packages/manifest.json",
+      "sha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7"
+    },
+    {
+      "path": "Packages/packages-lock.json",
+      "sha256": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03"
+    }
+  ]
+}
