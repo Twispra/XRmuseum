@@ -319,7 +319,9 @@ namespace Museum.Diegetic.Editor
             Physics.SyncTransforms();
             var target = station.RotationGesture;
             var shell = station.Inspection.GetComponent<RefinedHelmetBinding>().ActiveShell.bounds;
-            foreach (var direction in new[] { Vector3.back, Vector3.right, Vector3.left, Vector3.forward, new Vector3(-.7f,.45f,-1), new Vector3(.7f,.45f,-1) })
+            // Start on the rear bonnet: the front touch also covers the preserved
+            // discovery/window targets, whose priority is tested separately below.
+            foreach (var direction in new[] { Vector3.forward, Vector3.right, Vector3.left, Vector3.back, new Vector3(-.7f,.45f,-1), new Vector3(.7f,.45f,-1) })
             foreach (float height in new[] { .55f, .25f, .75f, 0f })
             {
                 var aim = shell.center + Vector3.up * shell.extents.y * height;
