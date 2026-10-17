@@ -10,6 +10,7 @@ Run with a Python environment containing trimesh, numpy and Pillow:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 
@@ -35,7 +36,7 @@ def pbr(name: str, rgba: tuple[int, int, int, int], metal: float, rough: float) 
     )
 
 
-AGED_BRONZE = pbr("V2_AgedBronze_Edge", (29, 21, 14, 255), .45, .72)
+AGED_BRONZE = pbr("V2_AgedBronze_Edge", (45, 32, 20, 255), .45, .72)
 WORN_BRASS = pbr("V2_WornBrass_Highlight", (133, 103, 61, 255), .78, .49)
 RECESS = pbr("V2_Recess_VisualAssumption", (10, 13, 12, 255), .12, .82)
 GLASS_DARK = pbr("V2_DarkGlass_VisualAssumption", (6, 10, 11, 255), .0, .72)
@@ -56,33 +57,26 @@ def annulus(scene: trimesh.Scene, name: str, inner: float, outer: float, depth: 
     add(scene, name, mesh, material, xyz)
 
 
-def ellipsoid(scene: trimesh.Scene, name: str, scales: tuple[float, float, float],
-              xyz: tuple[float, float, float], material: PBRMaterial) -> None:
-    mesh = trimesh.creation.icosphere(subdivisions=3, radius=1)
-    mesh.apply_scale(scales)
-    add(scene, name, mesh, material, xyz)
-
-
-def elliptical_rim(scene: trimesh.Scene, name: str, centre: tuple[float, float, float],
-                   radii: tuple[float, float], tube: float, material: PBRMaterial) -> None:
-    # A closed tube rather than a texture-painted outline, so it remains editable.
-    points = np.linspace(0, 2 * np.pi, 97)
-    verts, faces = [], []
-    for theta in points[:-1]:
-        x = radii[0] * np.cos(theta)
-        y = radii[1] * np.sin(theta)
-        tangent = np.array([-radii[0] * np.sin(theta), radii[1] * np.cos(theta), 0.])
-        tangent /= np.linalg.norm(tangent)
-        radial = np.array([tangent[1], -tangent[0], 0.])
-        for phi in np.linspace(0, 2 * np.pi, 9)[:-1]:
-            verts.append([x + tube * np.cos(phi) * radial[0],
-                          y + tube * np.cos(phi) * radial[1], tube * np.sin(phi)])
-    for i in range(96):
-        for j in range(8):
-            a, b = i * 8 + j, i * 8 + (j + 1) % 8
-            c, d = ((i + 1) % 96) * 8 + (j + 1) % 8, ((i + 1) % 96) * 8 + j
-            faces.extend(((a, b, c), (a, c, d)))
-    add(scene, name, trimesh.Trimesh(vertices=verts, faces=faces, process=False), material, centre)
+def reshape_observed_proportions(scene: trimesh.Scene) -> None:
+    # The photo's front window is visibly narrower than the first study's.
+    # The corselet also falls farther below the neck ring. These are visual
+    # proportions, not measured dimensions; the first-study source is untouched.
+    front_names = ("Front", "ClearMotif_", "FrameThumb", "RetainerSlot_")
+    corselet_names = ("Corselet_", "PerimeterBolt_", "Nameplate_")
+    front = np.eye(4)
+    front[0, 0] = front[1, 1] = .86
+    front[1, 3] = .235 * (1 - .86)
+    corselet = np.eye(4)
+    corselet[1, 1] = 2.1
+    corselet[1, 3] = .09 * (1 - 2.1)
+    for node in scene.graph.nodes_geometry:
+        world = front if node.startswith(front_names) else (
+            corselet if node.startswith(corselet_names) else None
+        )
+        if world is None:
+            continue
+        transform, name = scene.graph[node]
+        scene.geometry[name].apply_transform(np.linalg.inv(transform) @ world @ transform)
 
 
 def tone_original_materials(scene: trimesh.Scene) -> None:
@@ -96,20 +90,20 @@ def tone_original_materials(scene: trimesh.Scene) -> None:
         name = material.name or ""
         if name == "WeatheredShell_Interpretive":
             image = np.asarray(material.baseColorTexture.convert("RGB"), dtype=np.float32)
-            image = np.clip(image * np.array([.59, .55, .47]) + [12, 10, 8], 0, 255).astype(np.uint8)
+            image = np.clip(image * np.array([.90, .83, .69]) + [10, 8, 5], 0, 255).astype(np.uint8)
             material.baseColorTexture = Image.fromarray(image, "RGB")
             material.roughnessFactor = .66
         elif name == "CastBrass_Interpretive":
             image = np.asarray(material.baseColorTexture.convert("RGB"), dtype=np.float32)
-            image = np.clip(image * np.array([.66, .61, .49]) + [8, 7, 4], 0, 255).astype(np.uint8)
+            image = np.clip(image * np.array([.85, .80, .70]) + [6, 5, 3], 0, 255).astype(np.uint8)
             material.baseColorTexture = Image.fromarray(image, "RGB")
             material.roughnessFactor = .60
         elif name == "PolishedEdge_Interpretive":
             material.baseColorFactor = np.array([126, 94, 53, 255], dtype=np.uint8)
             material.roughnessFactor = .52
         elif name == "Glass_VisualAssumption":
-            material.baseColorFactor = np.array([31, 45, 49, 255], dtype=np.uint8)
-            material.roughnessFactor = .21
+            material.baseColorFactor = np.array([70, 67, 54, 255], dtype=np.uint8)
+            material.roughnessFactor = .36
             material.metallicFactor = .04
         elif name == "ClearFrontMotif_MaterialUnconfirmed":
             material.baseColorFactor = np.array([110, 121, 111, 255], dtype=np.uint8)
@@ -122,6 +116,8 @@ def tone_original_materials(scene: trimesh.Scene) -> None:
             mesh.visual = TextureVisuals(material=GLASS_DARK)
         elif node.startswith("ClearMotif_"):
             mesh.visual = TextureVisuals(material=MOTIF_METAL)
+        elif node.startswith("Nameplate_Blank"):
+            mesh.visual = TextureVisuals(material=RECESS)
 
 
 def build(source: Path) -> dict:
@@ -130,59 +126,58 @@ def build(source: Path) -> dict:
     scene = trimesh.load(source, force="scene")
     assert len(scene.geometry) > 90, "Unexpected v1 asset"
     original_nodes = len(scene.graph.nodes_geometry)
+    original_node_names = set(scene.graph.nodes_geometry)
+    original_bounds = scene.bounds.copy()
+    reshape_observed_proportions(scene)
     tone_original_materials(scene)
 
     # Photo 01: darker recessed front seat, concentric cast lip and visible seal.
     front = (0., .235)
-    annulus(scene, "V2_FrontPatinatedFaceplate", .086, .101, .003,
+    annulus(scene, "V2_FrontPatinatedFaceplate", .074, .087, .003,
             (*front, .184), AGED_BRONZE)
-    annulus(scene, "V2_FrontInnerSeal", .078, .084, .002,
+    annulus(scene, "V2_FrontInnerSeal", .067, .072, .002,
             (*front, .1845), GASKET)
-    annulus(scene, "V2_FrontWornInnerLip", .0835, .0865, .002,
+    annulus(scene, "V2_FrontWornInnerLip", .071, .074, .002,
             (*front, .187), WORN_BRASS)
     # Inset darkness is a visual reading of the photographed glass, not a claim
     # about its actual transparency or physical construction.
     for name, x, y, radius in [
-        ("centre", 0., .235, .031),
-        ("upper_left", -.046, .2736, .016),
-        ("right", .0564, .2555, .016),
-        ("lower", -.0104, .1759, .016),
+        ("centre", 0., .235, .0267),
+        ("upper_left", -.0396, .2682, .0138),
+        ("right", .0485, .2526, .0138),
+        ("lower", -.0089, .1842, .0138),
     ]:
         add(scene, "V2_PortholeDarkBacking_" + name,
             trimesh.creation.cylinder(radius=radius, height=.0007, sections=64),
             GLASS_DARK, (x, y, .185))
 
-    # Photo 01: the centre plaque is an oval with a raised metal border. The
-    # writing remains blank because it is not legible enough to transcribe.
-    elliptical_rim(scene, "V2_BlankNameplateRaisedBorder", (0., .058, .193),
-                   (.041, .017), .0023, WORN_BRASS)
-    ellipsoid(scene, "V2_BlankNameplateDarkInset", (.037, .014, .001),
-              (0., .058, .191), RECESS)
-
-    # Photos 01-04: larger collar fasteners have visibly more relief than v1's
-    # uniform little bolts. Positions remain estimates because of perspective.
-    for label, x, z in [("left", -.165, .101), ("centre", 0., .221), ("right", .165, .101)]:
-        annulus(scene, "V2_CollarWasher_" + label, .005, .0125, .0032,
-                (x, .058, z), AGED_BRONZE, 48)
-        mesh = trimesh.creation.cylinder(radius=.0077, height=.008, sections=6)
-        add(scene, "V2_CollarHexFastener_" + label, mesh, WORN_BRASS,
-            (x, .058, z + .0055))
-
-    # Retain the original rear fitting and side grilles: the photos show their
-    # silhouette but do not establish unseen mechanisms or exact dimensions.
+    # Keep the existing nameplate and collar bolts. An earlier pass placed
+    # duplicate details beyond the corselet surface; those are deliberately
+    # removed rather than claiming a photo-accurate reconstruction.
     export_path = OUT / "exports" / "photo-helmet-refined-v2.glb"
     export_path.parent.mkdir(parents=True, exist_ok=True)
     scene.export(export_path)
     readback = trimesh.load(export_path, force="scene")
     bounds = readback.bounds
+    preserved = original_node_names.issubset(set(readback.graph.nodes_geometry))
+    finite = bool(all(np.isfinite(g.vertices).all() for g in readback.geometry.values()))
+    xz_inside_original = bool(np.all(bounds[0, [0, 2]] >= original_bounds[0, [0, 2]] - .001)
+                              and np.all(bounds[1, [0, 2]] <= original_bounds[1, [0, 2]] + .001))
+    assert preserved and finite and xz_inside_original, "Export lost original nodes or exceeded checked bounds"
     report = {
         "source": "PR #28 photo-helmet-study.glb; user/team reference photos 01-04 not included",
         "output": str(export_path.relative_to(OUT)),
         "original_geometry_nodes": original_nodes,
         "refined_geometry_nodes": len(readback.graph.nodes_geometry),
         "triangles": int(sum(len(g.faces) for g in readback.geometry.values())),
+        "source_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
+        "export_sha256": hashlib.sha256(export_path.read_bytes()).hexdigest(),
+        "front_window_scale_from_v1": .86,
+        "corselet_vertical_scale_from_v1": 2.1,
+        "original_nodes_preserved": preserved,
+        "xz_inside_original_bounds": xz_inside_original,
         "bounds_m_gltf_y_up": np.round(bounds, 6).tolist(),
-        "all_finite": bool(all(np.isfinite(g.vertices).all() for g in readback.geometry.values())),
+        "all_finite": finite,
         "photo_based_not_measured": True,
         "blender_source_generated": False,
         "unity_or_headset_tested": False,

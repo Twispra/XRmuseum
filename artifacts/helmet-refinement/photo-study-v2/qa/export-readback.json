@@ -2,12 +2,18 @@
   "source": "PR #28 photo-helmet-study.glb; user/team reference photos 01-04 not included",
   "output": "exports/photo-helmet-refined-v2.glb",
   "original_geometry_nodes": 103,
-  "refined_geometry_nodes": 118,
-  "triangles": 121344,
+  "refined_geometry_nodes": 110,
+  "triangles": 117304,
+  "source_sha256": "eaee1dcd6686cf17a08beb844dfbe923aa18d1a3f25064e7319c8038b2203e56",
+  "export_sha256": "ccbb2087bb2d860fa7297700159d7e767a870c787644177de4be1c7f5dc9a499",
+  "front_window_scale_from_v1": 0.86,
+  "corselet_vertical_scale_from_v1": 2.1,
+  "original_nodes_preserved": true,
+  "xz_inside_original_bounds": true,
   "bounds_m_gltf_y_up": [
     [
       -0.2082,
-      0.0387,
+      -0.013818,
       -0.221
     ],
     [
