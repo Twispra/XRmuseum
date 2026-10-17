@@ -559,7 +559,8 @@ namespace Museum.PhysicalHands
             if (count == hits.Length) return false;
             var assemblyBody = candidate.GetComponentInParent<Rigidbody>();
             for (int i = 0; i < count; i++)
-                if (Obstacle(hits[i].collider) && !hits[i].collider.transform.IsChildOf(candidate.transform) &&
+                if (Obstacle(hits[i].collider) && !candidate.colliders.Contains(hits[i].collider) &&
+                    !hits[i].collider.transform.IsChildOf(candidate.transform) &&
                     (!assemblyBody || hits[i].collider.attachedRigidbody != assemblyBody)) return false;
             return true;
         }
