@@ -112,7 +112,7 @@ namespace Museum.Diegetic.Editor
             else if (state == PlayModeStateChange.EnteredEditMode)
             {
                 SessionState.SetBool(Prefix + "Active", false);
-                if (Application.isBatchMode) { pendingExit = SessionState.GetInt(Prefix + "Exit", 1); exitAt = EditorApplication.timeSinceStartup + 3; }
+                if (Application.isBatchMode) { pendingExit = SessionState.GetInt(Prefix + "Exit", 1); exitAt = EditorApplication.timeSinceStartup + 20; }
             }
         }
         static void Tick()
@@ -334,9 +334,24 @@ namespace Museum.Diegetic.Editor
             }
             throw new InvalidOperationException("No unobstructed ordinary solid body surface found.");
         }
-        static string Diagnostics(Pose pose, XRBaseInteractable target) => MuseumPhysicalHandsTestPose.SelectionDiagnostics(pose.controller, target) +
-            "; contact=" + pose.hand.IsDirectContact(target) + "; stationFilter=" + ((IXRSelectFilter)station).Process(pose.direct, target) +
-            "; hovered=" + target.IsHovered(pose.direct) + "; selected=" + target.IsSelected(pose.direct);
+        static string Diagnostics(Pose pose, XRBaseInteractable target)
+        {
+            Vector3 palm = pose.hand.Body.position;
+            Vector3 nearest = target.colliders.Where(c => c && c.enabled && c.gameObject.activeInHierarchy)
+                .Select(c => c.ClosestPoint(palm)).OrderBy(p => (p - palm).sqrMagnitude).First();
+            Vector3 local = Quaternion.Inverse(pose.hand.Body.rotation) * (nearest - palm) - pose.hand.OpenEnvelopeCenter;
+            Vector3 half = pose.hand.OpenEnvelopeSize * .5f;
+            Vector3 outside = new Vector3(Mathf.Max(Mathf.Abs(local.x) - half.x, 0),
+                Mathf.Max(Mathf.Abs(local.y) - half.y, 0), Mathf.Max(Mathf.Abs(local.z) - half.z, 0));
+            string blockers = string.Join("|", Physics.RaycastAll(palm, (nearest - palm).normalized,
+                Vector3.Distance(palm, nearest), ~0, QueryTriggerInteraction.Ignore)
+                .Select(hit => hit.collider.name + ":own=" + target.colliders.Contains(hit.collider) + ":distance=" + hit.distance.ToString("F6")));
+            return MuseumPhysicalHandsTestPose.SelectionDiagnostics(pose.controller, target) +
+                "; contact=" + pose.hand.IsDirectContact(target) + "; stationFilter=" + ((IXRSelectFilter)station).Process(pose.direct, target) +
+                "; hovered=" + target.IsHovered(pose.direct) + "; selected=" + target.IsSelected(pose.direct) +
+                "; openBoxOutside=" + outside.magnitude.ToString("F6") + "; palmDistance=" + Vector3.Distance(palm, nearest).ToString("F6") +
+                "; rayHits=" + blockers;
+        }
         static void Queue(Pose pose, bool grip) => Queue(pose.device, pose.controller, pose.controllerPosition, pose.rotation, grip);
         static void Queue(XRSimulatedController device, ActionBasedController controller, Vector3 world, Quaternion rotation, bool grip)
         {
