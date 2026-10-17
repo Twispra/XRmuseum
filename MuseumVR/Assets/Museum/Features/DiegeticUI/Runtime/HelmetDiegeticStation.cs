@@ -180,11 +180,7 @@ namespace Museum.Diegetic
         {
             if(!target)return false;
             if(interactor is IXRSelectInteractor selector && target.IsSelected(selector))return true;
-            float squared=directContactDistance*directContactDistance;
-            foreach(var collider in target.colliders)
-                if(collider && collider.enabled && collider.gameObject.activeInHierarchy &&
-                   (collider.ClosestPoint(interactor.transform.position)-interactor.transform.position).sqrMagnitude<=squared)return true;
-            return false;
+            return HelmetDirectContact.Touches(interactor,target,directContactDistance);
         }
         bool IXRSelectFilter.Process(IXRSelectInteractor interactor,IXRSelectInteractable target)
         {
@@ -215,6 +211,7 @@ namespace Museum.Diegetic
         }
         static bool TouchesTarget(IXRSelectInteractor hand,XRBaseInteractable target)
         {
+            if(hand is XRDirectInteractor)return HelmetDirectContact.Touches(hand,target,.025f);
             Vector3 point=hand.transform.position;float tolerance=.025f;
             if(hand is XRRayInteractor ray)
             {

@@ -140,11 +140,7 @@ namespace Museum.Diegetic
                 return false;
             }
             // Direct interaction uses the physical hand, never the ray attach point retained at a distance.
-            Vector3 position=hand.transform.position;
-            foreach(var collider in target.colliders)
-                if(collider && collider.enabled && collider.gameObject.activeInHierarchy &&
-                   (collider.ClosestPoint(position)-position).sqrMagnitude<=.06f*.06f)return true;
-            return false;
+            return HelmetDirectContact.Touches(hand,target,.06f);
         }
         void BlockUntilReleased(IXRSelectInteractor hand)
         {
