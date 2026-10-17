@@ -25,5 +25,15 @@
   "all_finite": true,
   "photo_based_not_measured": true,
   "blender_source_generated": false,
-  "unity_or_headset_tested": false
+  "unity_or_headset_tested": false,
+  "isolated_unity_obj_geometry_preview": {
+    "editor": "Unity 2022.3.62f3c1",
+    "geometry_imported_and_visible": true,
+    "import_warnings": [
+      "OBJ mesh default has no normals; Unity recalculated normals",
+      "OBJ mesh default normals could not be imported"
+    ],
+    "materials_mapped": false,
+    "scope": "Temporary OBJ geometry preview only; GLB and group project not tested"
+  }
 }
