@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Museum.Hotspots;
 using Museum.Refined;
 using TMPro;
@@ -14,6 +15,10 @@ namespace Museum.Localization
         public const string SuperLiteInstructions = "Diving helmet\n<size=62%>SuperLite 17B-inspired study</size>";
         public const string EarlyInstructions = "Diving helmet\n<size=62%>Early (1839) - placeholder study</size>";
         public const string EarlyPlaceholderDetails = "Placeholder; not a historical replica.";
+        public const string EarlyModelInstructions = "Diving helmet\n<size=62%>1839 closed-helmet study · SMG 1881-47</size>";
+        public const string EarlyModelFrontDetails = "Three guarded viewports are visible in the museum photograph. Opening this panel is a virtual inspection action, not a documented hinge.";
+        public const string EarlyModelShellDetails = "Rounded copper-alloy bonnet based on Science Museum Group object 1881-47. Exact rear profile and part dimensions are estimates.";
+        public const string EarlyModelBreastplateDetails = "Broad breastplate based on object 1881-47. Rear fastener positions and component measurements are interpretive.";
         public const string FrontWindowTitle = "Front window";
         public const string FrontWindowDetails = "Window and rim. Side opening is a museum demonstration.";
         public const string ShellTitle = "Helmet shell";
@@ -46,6 +51,13 @@ namespace Museum.Localization
             public string title, description;
         }
         OriginalHotspot[] originals = Array.Empty<OriginalHotspot>();
+        sealed class SurfaceAttachment
+        {
+            public HelmetHotspot hotspot;
+            public Renderer surface;
+            public Vector3 localPoint;
+        }
+        SurfaceAttachment[] earlyAttachments = Array.Empty<SurfaceAttachment>();
         string originalInstructions;
         bool captured;
         LocalizedText originalKeyBinding;
@@ -53,6 +65,7 @@ namespace Museum.Localization
         int appliedEra = int.MinValue;
 
         public bool IsSuperLiteContentActive { get; private set; }
+        public bool IsEarlyModelContentActive { get; private set; }
         public IReadOnlyList<HotspotAttachment> Attachments => attachments;
         public TMP_Text Instructions => instructions;
 
@@ -89,13 +102,44 @@ namespace Museum.Localization
             {
                 RestoreOriginal();
                 appliedEra = next;
-                IsSuperLiteContentActive = binding.IsAdditionalVisualActive;
+                IsSuperLiteContentActive = next == 2 && binding.IsAdditionalVisualActive;
                 if (IsSuperLiteContentActive)
                 {
                     foreach (var attachment in attachments)
                         if (attachment != null && attachment.hotspot)
                             attachment.hotspot.SetContent(attachment.heading, attachment.details);
                     WriteInstructions(SuperLiteInstructions);
+                }
+                else if (next == 0 && binding.EarlyVisual != null)
+                {
+                    IsEarlyModelContentActive = true;
+                    WriteInstructions(EarlyModelInstructions);
+                    var early = binding.EarlyVisual;
+                    var breastplate = early.renderers.First(r => r.name == "Breastplate_DishedCopper");
+                    var points = new List<SurfaceAttachment>();
+                    foreach (var original in originals)
+                    {
+                        if (!original.hotspot) continue;
+                        switch (original.hotspot.Identifier)
+                        {
+                            case "front-window":
+                                original.hotspot.SetContent("Front viewport", EarlyModelFrontDetails);
+                                points.Add(Attach(original.hotspot, early.glass,
+                                    early.glass.bounds.center + binding.transform.forward * .038f));
+                                break;
+                            case "bonnet":
+                                original.hotspot.SetContent("Bonnet shell", EarlyModelShellDetails);
+                                points.Add(Attach(original.hotspot, early.shell,
+                                    early.shell.bounds.center + binding.transform.right * (early.shell.bounds.extents.x + .025f)));
+                                break;
+                            case "breastplate":
+                                original.hotspot.SetContent("Breastplate", EarlyModelBreastplateDetails);
+                                points.Add(Attach(original.hotspot, breastplate,
+                                    breastplate.bounds.center + binding.transform.forward * (breastplate.bounds.extents.z + .025f)));
+                                break;
+                        }
+                    }
+                    earlyAttachments = points.ToArray();
                 }
                 else if (!binding.IsRefinedActive)
                 {
@@ -105,10 +149,24 @@ namespace Museum.Localization
                             original.hotspot.SetContent(original.title, EarlyPlaceholderDetails);
                 }
             }
+            if (IsEarlyModelContentActive)
+                foreach (var attachment in earlyAttachments)
+                    if (attachment.hotspot && attachment.surface)
+                        attachment.hotspot.transform.position = attachment.surface.transform.TransformPoint(attachment.localPoint);
             if (!IsSuperLiteContentActive) return;
             foreach (var attachment in attachments)
                 if (attachment != null && attachment.hotspot && attachment.surface)
                     attachment.hotspot.transform.position = attachment.surface.transform.TransformPoint(attachment.localPoint);
+        }
+
+        static SurfaceAttachment Attach(HelmetHotspot hotspot, Renderer surface, Vector3 worldPoint)
+        {
+            hotspot.transform.position = worldPoint;
+            return new SurfaceAttachment
+            {
+                hotspot = hotspot, surface = surface,
+                localPoint = surface.transform.InverseTransformPoint(worldPoint)
+            };
         }
 
         void CaptureOriginal()
@@ -161,6 +219,8 @@ namespace Museum.Localization
             }
             WriteInstructions(originalInstructions);
             IsSuperLiteContentActive = false;
+            IsEarlyModelContentActive = false;
+            earlyAttachments = Array.Empty<SurfaceAttachment>();
         }
 
         void OnDisable()

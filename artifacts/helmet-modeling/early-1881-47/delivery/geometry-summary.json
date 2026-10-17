@@ -1,0 +1,273 @@
+{
+  "source_object": "Science Museum Group Collection 1881-47 (1839)",
+  "source_url": "https://collection.sciencemuseumgroup.org.uk/objects/co40614/first-closed-diving-helmet-and-breastplate",
+  "source_image": "one front/oblique licensed image; not embedded or copied",
+  "museum_overall_mm_unassigned_axes": [
+    465,
+    460,
+    417
+  ],
+  "model_axes": "X=460 mm width, Y=417 mm depth, Z=465 mm height; this mapping and component sizes are estimates",
+  "parts": 56,
+  "triangles": 21696,
+  "bounds_m_xyz": [
+    [
+      -0.23,
+      -0.21448503141554762,
+      0.02453237410071943
+    ],
+    [
+      0.23,
+      0.20251496858445237,
+      0.4895323741007195
+    ]
+  ],
+  "glb_readback_bounds_m_xyz": [
+    [
+      -0.23000000596598344,
+      -0.21448502590375185,
+      0.024532373967788207
+    ],
+    [
+      0.23000000596598344,
+      0.20251497479440897,
+      0.48953238579866704
+    ]
+  ],
+  "part_evidence": {
+    "Breastplate_DishedCopper": {
+      "material": "aged_copper",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "Breastplate_OuterRolledEdge": {
+      "material": "worn_copper",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "Breastplate_InnerLip": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "Bonnet_RoundedCopper": {
+      "material": "aged_copper",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "Bonnet_BaseRolledSeam": {
+      "material": "worn_copper",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "Bonnet_LowerShadowSeam": {
+      "material": "seam",
+      "evidence": "interpretive completion: museum does not supply this measurement/view"
+    },
+    "FrontPort_RaisedSeat": {
+      "material": "seam",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "FrontPort_CopperRim": {
+      "material": "worn_copper",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "FrontPort_Glass": {
+      "material": "glass",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "FrontPort_InnerBead": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "FrontPort_VerticalBar_1": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "FrontPort_HorizontalBar_1": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "FrontPort_VerticalBar_2": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "FrontPort_HorizontalBar_2": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "FrontPort_RimFastener_-1": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "FrontPort_RimFastener_1": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "LeftPort_RaisedSeat": {
+      "material": "seam",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "LeftPort_CopperRim": {
+      "material": "worn_copper",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "LeftPort_Glass": {
+      "material": "glass",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "LeftPort_InnerBead": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "LeftPort_VerticalBar_1": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "LeftPort_HorizontalBar_1": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "LeftPort_VerticalBar_2": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "LeftPort_HorizontalBar_2": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "LeftPort_RimFastener_-1": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "LeftPort_RimFastener_1": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "RightPort_RaisedSeat": {
+      "material": "seam",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "RightPort_CopperRim": {
+      "material": "worn_copper",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "RightPort_Glass": {
+      "material": "glass",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "RightPort_InnerBead": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "RightPort_VerticalBar_1": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "RightPort_HorizontalBar_1": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "RightPort_VerticalBar_2": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "RightPort_HorizontalBar_2": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "RightPort_RimFastener_-1": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "RightPort_RimFastener_1": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "Breastplate_Fastener_01": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "Breastplate_FastenerPin_01": {
+      "material": "worn_copper",
+      "evidence": "interpretive completion: museum does not supply this measurement/view"
+    },
+    "Breastplate_Fastener_02": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "Breastplate_FastenerPin_02": {
+      "material": "worn_copper",
+      "evidence": "interpretive completion: museum does not supply this measurement/view"
+    },
+    "Breastplate_Fastener_03": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "Breastplate_FastenerPin_03": {
+      "material": "worn_copper",
+      "evidence": "interpretive completion: museum does not supply this measurement/view"
+    },
+    "Breastplate_Fastener_04": {
+      "material": "dark_bronze",
+      "evidence": "interpretive completion: museum does not supply this measurement/view"
+    },
+    "Breastplate_FastenerPin_04": {
+      "material": "worn_copper",
+      "evidence": "interpretive completion: museum does not supply this measurement/view"
+    },
+    "Breastplate_Fastener_05": {
+      "material": "dark_bronze",
+      "evidence": "interpretive completion: museum does not supply this measurement/view"
+    },
+    "Breastplate_FastenerPin_05": {
+      "material": "worn_copper",
+      "evidence": "interpretive completion: museum does not supply this measurement/view"
+    },
+    "Breastplate_Fastener_06": {
+      "material": "dark_bronze",
+      "evidence": "interpretive completion: museum does not supply this measurement/view"
+    },
+    "Breastplate_FastenerPin_06": {
+      "material": "worn_copper",
+      "evidence": "interpretive completion: museum does not supply this measurement/view"
+    },
+    "Breastplate_Fastener_07": {
+      "material": "dark_bronze",
+      "evidence": "interpretive completion: museum does not supply this measurement/view"
+    },
+    "Breastplate_FastenerPin_07": {
+      "material": "worn_copper",
+      "evidence": "interpretive completion: museum does not supply this measurement/view"
+    },
+    "Breastplate_Fastener_08": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "Breastplate_FastenerPin_08": {
+      "material": "worn_copper",
+      "evidence": "interpretive completion: museum does not supply this measurement/view"
+    },
+    "Shoulder_ClampBase_Left": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "Shoulder_ClampKnob_Left": {
+      "material": "worn_copper",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "Shoulder_ClampBase_Right": {
+      "material": "dark_bronze",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    },
+    "Shoulder_ClampKnob_Right": {
+      "material": "worn_copper",
+      "evidence": "observed in SMG 1881-47 front image; exact geometry estimated"
+    }
+  },
+  "limitations": [
+    "only one museum view",
+    "rear and exact side profile interpretive",
+    "no verified window hinge",
+    "air/telephone endpoints are virtual teaching anchors"
+  ],
+  "model_action": "front port can be moved in Unity as a virtual inspection panel, never a claimed period hinge",
+  "source_sha256": "4ed623bcf75c7f74270a011334eb6fc83eb255c514d0467ea1a5a18a7e71fc6e",
+  "obj_sha256": "bdbf26c33671421b9626cc13e0fdd197c733dc76529f8d2db893f8b10ce21d59",
+  "glb_sha256": "2cc291613e77d3801cd98435fef3f28fc25707ed3e39a59dc274c8c2f1845d30"
+}

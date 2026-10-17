@@ -8,6 +8,7 @@ Shader "Museum/Inspection Shell"
         _RoughnessMap ("Roughness", 2D) = "white" {}
         _TextureStrength ("Texture strength", Float) = 0
         _Metallic ("Metallic", Range(0,1)) = 0
+        _SpecularScale ("Specular intensity", Range(0,1)) = 1
         _Roughness ("Roughness scale", Range(0,1)) = .5
         _InsideColor ("Inside", Color) = (0.18,0.28,0.30,1)
         _CutColor ("Section edge", Color) = (1,0.65,0.18,1)
@@ -37,7 +38,7 @@ Shader "Museum/Inspection Shell"
                 float4 _CutPlane, _ShellCenter;
                 float _CutEnabled, _Hover, _Focus, _ShellInterior;
                 float4 _BaseMap_ST;
-                float _TextureStrength, _Metallic, _Roughness;
+                float _TextureStrength, _Metallic, _Roughness, _SpecularScale;
             CBUFFER_END
             TEXTURE2D(_BaseMap); SAMPLER(sampler_BaseMap);
             TEXTURE2D(_BumpMap); SAMPLER(sampler_BumpMap);
@@ -77,7 +78,7 @@ Shader "Museum/Inspection Shell"
                 half shade = .36 + .64 * saturate(dot(normal, light.direction));
                 half3 view = GetWorldSpaceNormalizeViewDir(i.positionWS);
                 half exponent = _TextureStrength > .5 ? lerp(100,8,roughness) : 42;
-                half spec = pow(saturate(dot(normal, normalize(light.direction + view))), exponent) * lerp(.22,.45,_Metallic);
+                half spec = pow(saturate(dot(normal, normalize(light.direction + view))), exponent) * lerp(.22,.45,_Metallic) * _SpecularScale;
                 half3 color = IS_FRONT_VFACE(face, baseColor, _InsideColor.rgb);
                 // The original hollow mesh has inward-facing inner normals; distinguish these existing surfaces.
                 if(_ShellInterior>.5 && dot(i.normalWS,i.positionWS-TransformObjectToWorld(_ShellCenter.xyz))<-.001)

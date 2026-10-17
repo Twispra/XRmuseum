@@ -462,7 +462,7 @@ namespace Museum.Diegetic
             controls[Command.Motion].SetTitle(inspection.ReduceMotion?"Motion: off":"Motion: on");
             controls[Command.HeightUp].SetTitle(ViewHeight!=null && !ViewHeight.CanRaise?"Height limit":"View higher");
             controls[Command.HeightDown].SetTitle(ViewHeight!=null && !ViewHeight.CanLower?"Height limit":"View lower");
-            string era=eras.CurrentIndex==0?"1839 / Standard dress":eras.CurrentIndex==2?"SuperLite 17B":"Mark V";
+            string era=eras.CurrentIndex==0?"1839 / Closed helmet":eras.CurrentIndex==2?"SuperLite 17B":"Mark V";
             if(eraTitle.GetComponent<LocalizedSourceText>()?.SourceEnglish!=era)MuseumText.Set(eraTitle,era);
         }
         string RotationHintText(bool selected,bool manipulating) => selected

@@ -32,8 +32,7 @@ namespace Museum.Localization.EditorTools
     {
         const string Prefix = "Museum.VisitorEraQA.";
         const string ScenePath = "Assets/Museum/Scenes/MuseumStart.unity";
-        const string EarlyCaption = "Diving helmet\n<size=62%>Early (1839) - placeholder study</size>";
-        const string EarlyDetail = "Placeholder; not a historical replica.";
+        const string EarlyCaption = HelmetEraVisitorContent.EarlyModelInstructions;
         const string MarkVCaption = "Diving helmet\n<size=62%>Mark V-inspired study</size>";
         const string SuperLiteCaption = "Diving helmet\n<size=62%>SuperLite 17B-inspired study</size>";
         static readonly Stack<IEnumerator> Routines = new Stack<IEnumerator>();
@@ -209,10 +208,13 @@ namespace Museum.Localization.EditorTools
             inspection = binding.GetComponent<HelmetInspectionController>(); window = binding.GetComponentInChildren<HelmetWindowInteractable>(true);
             tour = binding.GetComponentInChildren<HelmetHotspotTour>(true); hotspots = tour.GetComponentsInChildren<HelmetHotspot>(true).OrderBy(h => h.Identifier).ToArray();
             buttons = UnityEngine.Object.FindObjectsOfType<HelmetEraButton>().OrderBy(b => b.Direction).ToArray();
-            information = tour.GetComponentsInChildren<TMP_Text>(true).Single(t => t.name == "Information");
+            information = new SerializedObject(tour).FindProperty("informationText").objectReferenceValue as TMP_Text;
             table = MuseumText.Table; language = MuseumText.Channel;
-            Require(content && binding && era && inspection && window && table && language && buttons.Length == 2,
-                "Saved runtime dependencies are intact", "No runtime-generated replacement buttons.");
+            Require(content && binding && era && inspection && window && table && language && information && buttons.Length == 2,
+                "Saved runtime dependencies are intact", "content=" + (bool)content + "; binding=" + (bool)binding +
+                "; era=" + (bool)era + "; inspection=" + (bool)inspection + "; window=" + (bool)window +
+                "; table=" + (bool)table + "; language=" + (bool)language + "; information=" + (bool)information +
+                "; buttons=" + buttons.Length);
             SetupInput(); yield return Wait(.4f);
             era.ShowEra(1); yield return Wait(.35f);
             foreach (var point in hotspots) point.Activate();
@@ -279,15 +281,15 @@ namespace Museum.Localization.EditorTools
             Require(era.CurrentIndex == index && binding.AppliedEraIndex == index, "Requested and applied era agree / " + suffix,
                 "request=" + era.CurrentIndex + "; applied=" + binding.AppliedEraIndex);
             Require(binding.ActiveShell && binding.ActiveShell.enabled && binding.ActiveGlass && binding.ActiveGlass.enabled &&
-                binding.IsRefinedActive == (index != 0) && binding.IsAdditionalVisualActive == (index == 2),
+                binding.IsRefinedActive && binding.IsAdditionalVisualActive == (index != 1),
                 "Applied geometry matches visitor caption / " + suffix, "shell=" + binding.ActiveShell.name + "; glass=" + binding.ActiveGlass.name);
             CheckText(content.Instructions, Caption(index), "Exhibit caption / " + suffix);
             if (index == 0) Require(!content.Instructions.text.Contains("Mark V"), "Early caption has no Mark V attribution / " + suffix, content.Instructions.text);
             foreach (var point in hotspots)
             {
                 var original = report.markVPoints.Single(p => p.identifier == point.Identifier);
-                string expectedTitle = index == 2 ? SuperLiteTitle(point.Identifier) : original.title;
-                string expectedDetail = index == 0 ? EarlyDetail : index == 2 ? SuperLiteDetail(point.Identifier) : original.description;
+                string expectedTitle = index == 0 ? EarlyTitle(point.Identifier) : index == 2 ? SuperLiteTitle(point.Identifier) : original.title;
+                string expectedDetail = index == 0 ? EarlyModelDetail(point.Identifier) : index == 2 ? SuperLiteDetail(point.Identifier) : original.description;
                 Require(point.Title == expectedTitle && point.Description == expectedDetail,
                     "Observation content follows applied era / " + suffix + "/" + point.Identifier,
                     point.Title + "\n" + point.Description);
@@ -297,6 +299,15 @@ namespace Museum.Localization.EditorTools
                     Require(attachment.surface && attachment.surface.enabled &&
                         Vector3.Distance(point.transform.position, attachment.surface.transform.TransformPoint(attachment.localPoint)) < .0002f,
                         "SuperLite point follows saved mesh attachment / " + suffix + "/" + point.Identifier, point.transform.position.ToString("F6"));
+                }
+                else if (index == 0)
+                {
+                    var surface = point.Identifier == "front-window" ? binding.EarlyVisual.glass :
+                        point.Identifier == "bonnet" ? binding.EarlyVisual.shell :
+                        binding.EarlyVisual.renderers.Single(r => r.name == "Breastplate_DishedCopper");
+                    Require(surface && Vector3.Distance(point.transform.position, surface.bounds.center) < .3f,
+                        "Early observation point follows the sourced model / " + suffix + "/" + point.Identifier,
+                        point.transform.position.ToString("F6"));
                 }
                 else Require(Vector3.Distance(point.transform.localPosition, original.position) < .0002f &&
                     Quaternion.Angle(point.transform.localRotation, original.rotation) < .02f && Vector3.Distance(point.transform.localScale, original.scale) < .0002f,
@@ -369,6 +380,9 @@ namespace Museum.Localization.EditorTools
         }
 
         static string Caption(int index) => index == 0 ? EarlyCaption : index == 1 ? MarkVCaption : SuperLiteCaption;
+        static string EarlyTitle(string id) => id == "front-window" ? "Front viewport" : id == "bonnet" ? "Bonnet shell" : "Breastplate";
+        static string EarlyModelDetail(string id) => id == "front-window" ? HelmetEraVisitorContent.EarlyModelFrontDetails :
+            id == "bonnet" ? HelmetEraVisitorContent.EarlyModelShellDetails : HelmetEraVisitorContent.EarlyModelBreastplateDetails;
         static string SuperLiteTitle(string id) => id == "front-window" ? "Front window" : id == "bonnet" ? "Helmet shell" : "Neck seal";
         static string SuperLiteDetail(string id) => id == "front-window" ? "Window and rim. Side opening is a museum demonstration."
             : id == "bonnet" ? "Inspect the upper shell of this lightweight helmet study." : "Inspect the neck seal and surrounding clamp below the shell.";
