@@ -40,8 +40,8 @@ namespace Museum.EarlyHelmet.EditorTools
             frontMarker = binding.GetComponentsInChildren<HelmetHotspot>(true).Single(h => h.Identifier == "front-window");
             Check(era && inspection && section && content, "existing exhibit interaction components are missing");
             Check(binding.EarlyVisual.renderers.Length == 56 &&
-                  binding.EarlyVisual.renderers.Sum(r => r.GetComponent<MeshFilter>().sharedMesh.triangles.Length / 3) == 21696,
-                "imported model no longer matches the reviewed 56 parts and 21,696 triangles");
+                  binding.EarlyVisual.renderers.Sum(r => r.GetComponent<MeshFilter>().sharedMesh.triangles.Length / 3) == 32832,
+                "imported model no longer matches the reviewed 56 parts and 32,832 triangles");
             era.ShowEra(0);
             phase = 0;
             nextFrame = Time.frameCount + 8;
@@ -117,7 +117,7 @@ namespace Museum.EarlyHelmet.EditorTools
                     Check(binding.AppliedEraIndex == 0 && content.IsEarlyModelContentActive &&
                           early.renderers.All(r => r.enabled), "1839 round-trip failed");
                     phase = -1;
-                    Debug.Log("EARLY_HELMET_QA_PASS model=56/21696; index0/1/2/0; trilingual caption; section; virtual panel; marker tracking. Editor simulation only; no headset or build claim.");
+                    Debug.Log("EARLY_HELMET_QA_PASS model=56/32832; index0/1/2/0; trilingual caption; section; virtual panel; marker tracking. Editor simulation only; no headset or build claim.");
                     return;
                 }
                 nextFrame = Time.frameCount + 8;

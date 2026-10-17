@@ -141,6 +141,21 @@ namespace Museum.EarlyHelmet.EditorTools
         [MenuItem("Museum/Early Helmet/Sync 1881-47 text and profile")]
         public static void SyncContent()
         {
+            if (EditorApplication.isPlayingOrWillChangePlaymode)
+                throw new InvalidOperationException("Exit Play before syncing the imported section geometry.");
+            // The saved section cache stores source vertices as well as mesh
+            // references. Refresh both after changing the editable OBJ, or a
+            // visually updated bonnet would still cut using the old contour.
+            var source = AssetDatabase.LoadAssetAtPath<GameObject>(Model);
+            var section = AssetDatabase.LoadAssetAtPath<HelmetSectionMeshData>(
+                Root + "/Data/Early1881SectionMeshes.asset");
+            if (!source || !section) throw new InvalidOperationException("Early OBJ or saved section cache is missing.");
+            section.entries = source.GetComponentsInChildren<MeshRenderer>(true)
+                .Where(r => !r.name.EndsWith("_Glass", StringComparison.Ordinal))
+                .Select(r => r.GetComponent<MeshFilter>().sharedMesh).Distinct()
+                .Select(mesh => new HelmetSectionMeshData.Entry
+                { source = mesh, vertices = mesh.vertices, triangles = mesh.triangles }).ToArray();
+            EditorUtility.SetDirty(section);
             // This single-surface photo study has no measured interior wall.
             // Render either visible side in the same copper tone, including
             // Unity's imported OBJ backfaces, instead of the shared shader's
@@ -149,10 +164,27 @@ namespace Museum.EarlyHelmet.EditorTools
             {
                 var surface = AssetDatabase.LoadAssetAtPath<Material>(Root + "/Materials/Early" + name + ".mat");
                 if (!surface) throw new InvalidOperationException("Missing early model material: " + name);
+                Color color;
+                float patina;
+                switch (name)
+                {
+                    case "AgedCopper": color = new Color(.39f, .28f, .22f); patina = .45f; break;
+                    case "Bronze": color = new Color(.27f, .20f, .16f); patina = .25f; break;
+                    case "WornCopper": color = new Color(.48f, .34f, .25f); patina = .35f; break;
+                    default: color = new Color(.09f, .085f, .075f); patina = .12f; break;
+                }
+                surface.SetColor("_BaseColor", color);
                 surface.SetColor("_InsideColor", surface.GetColor("_BaseColor"));
-                surface.SetFloat("_SpecularScale", .25f);
+                surface.SetFloat("_Metallic", .52f);
+                surface.SetFloat("_Roughness", .72f);
+                surface.SetFloat("_SpecularScale", .55f);
+                surface.SetFloat("_PatinaStrength", patina);
                 EditorUtility.SetDirty(surface);
             }
+            var glass = AssetDatabase.LoadAssetAtPath<Material>(Root + "/Materials/EarlyGlass.mat");
+            if (!glass) throw new InvalidOperationException("Missing early model glass material.");
+            glass.SetColor("_BaseColor", new Color(.04f, .045f, .045f, .72f));
+            EditorUtility.SetDirty(glass);
             var table = AssetDatabase.LoadAssetAtPath<LocalizationTable>(
                 "Assets/Museum/Features/Localization/Tables/LocalizationTable.asset");
             if (!table || !table.FontAsset) throw new InvalidOperationException("Saved trilingual table/font is missing.");
@@ -249,19 +281,21 @@ namespace Museum.EarlyHelmet.EditorTools
             Color color;
             switch (type)
             {
-                case "Glass": color = new Color(.16f,.26f,.28f,.18f); break;
-                case "Seam": color = new Color(.13f,.11f,.09f,1f); break;
-                case "Bronze": color = new Color(.42f,.25f,.18f,1f); break;
-                case "WornCopper": color = new Color(.59f,.37f,.24f,1f); break;
-                default: color = new Color(.35f,.21f,.16f,1f); break;
+                case "Glass": color = new Color(.04f,.045f,.045f,.72f); break;
+                case "Seam": color = new Color(.09f,.085f,.075f,1f); break;
+                case "Bronze": color = new Color(.27f,.20f,.16f,1f); break;
+                case "WornCopper": color = new Color(.48f,.34f,.25f,1f); break;
+                default: color = new Color(.39f,.28f,.22f,1f); break;
             }
             material.SetColor("_BaseColor", color);
             if (type != "Glass")
             {
                 material.SetColor("_InsideColor", color);
-                material.SetFloat("_Metallic", .68f);
-                material.SetFloat("_Roughness", .48f);
-                material.SetFloat("_SpecularScale", .25f);
+                material.SetFloat("_Metallic", .52f);
+                material.SetFloat("_Roughness", .72f);
+                material.SetFloat("_SpecularScale", .55f);
+                material.SetFloat("_PatinaStrength", type == "AgedCopper" ? .45f :
+                    type == "WornCopper" ? .35f : type == "Bronze" ? .25f : .12f);
             }
             AssetDatabase.CreateAsset(material, path);
             return material;

@@ -20,13 +20,15 @@ UNITY = REPO / "MuseumVR/Assets/Museum/Features/EarlyHelmet/Models"
 OUT.mkdir(parents=True, exist_ok=True)
 UNITY.mkdir(parents=True, exist_ok=True)
 
-# Color is an approximation of the single museum image, not material analysis.
+# Muted copper/oxidation colours are visual estimates from the one published
+# photograph, not measured material or spectral data. Fine patina is rendered
+# by the Unity material without embedding or tracing that photograph.
 COLORS = {
-    "aged_copper": [91, 54, 42, 255],
-    "dark_bronze": [106, 65, 45, 255],
-    "worn_copper": [151, 96, 62, 255],
-    "glass": [41, 67, 71, 120],
-    "seam": [34, 29, 25, 255],
+    "aged_copper": [98, 70, 54, 255],
+    "dark_bronze": [67, 48, 38, 255],
+    "worn_copper": [122, 87, 62, 255],
+    "glass": [29, 31, 31, 210],
+    "seam": [31, 28, 27, 255],
 }
 MATERIALS = {
     name: trimesh.visual.material.SimpleMaterial(name=name, diffuse=rgba)
@@ -45,7 +47,28 @@ def put(name, mesh, material, evidence):
 
 
 def lathe(name, profile, material, evidence, xscale=1.0, yscale=1.0):
-    sides = 64
+    # The large silhouette surfaces need a continuous curvature at exhibit
+    # distance. Monotone cubic interpolation avoids the faceted cone/ramp of
+    # the initial ten-ring study without inventing additional fittings.
+    controls = np.array(profile, dtype=float)
+    heights, radii = controls[:, 0], controls[:, 1]
+    secants = np.diff(radii) / np.diff(heights)
+    slopes = np.empty_like(radii)
+    slopes[0], slopes[-1] = secants[0], secants[-1]
+    for i in range(1, len(radii) - 1):
+        slopes[i] = 0 if secants[i - 1] * secants[i] <= 0 else \
+            2 * secants[i - 1] * secants[i] / (secants[i - 1] + secants[i])
+    smooth = []
+    for i in range(len(radii) - 1):
+        h = heights[i + 1] - heights[i]
+        for step in range(4):
+            t = step / 4
+            r = ((2*t**3-3*t**2+1)*radii[i] + (t**3-2*t**2+t)*h*slopes[i]
+                 + (-2*t**3+3*t**2)*radii[i+1] + (t**3-t**2)*h*slopes[i+1])
+            smooth.append((heights[i] + t*h, max(0.0, r)))
+    smooth.append(tuple(controls[-1]))
+    profile = smooth
+    sides = 96
     a = np.arange(sides) * 2 * np.pi / sides
     verts = np.array([(r * math.cos(t) * xscale,
                        r * math.sin(t) * yscale, z)
@@ -103,16 +126,19 @@ def rod(name, a, b, radius, material, evidence):
 
 OBS = "observed in SMG 1881-47 front image; exact geometry estimated"
 EST = "interpretive completion: museum does not supply this measurement/view"
-lathe("Breastplate_DishedCopper", [(.022,.130),(.030,.173),(.048,.197),(.080,.216),
-                                   (.109,.211),(.137,.190),(.164,.160),(.181,.148)],
+# The former low, thick skirt read as a plinth in Unity. The photographed
+# breastplate instead has a thin rolled lower lip and rises into the neck.
+# Rear curvature and exact sections remain estimated from the single view.
+lathe("Breastplate_DishedCopper", [(.035,.205),(.037,.215),(.048,.216),(.065,.205),
+                                   (.088,.187),(.116,.169),(.149,.153),(.181,.148)],
       "aged_copper", OBS, yscale=.73)
-torus("Breastplate_OuterRolledEdge", (0,0,.055), .190, .008,
-      "worn_copper", OBS, xscale=1.08, yscale=.79)
+torus("Breastplate_OuterRolledEdge", (0,0,.043), .212, .004,
+      "worn_copper", OBS, xscale=1.02, yscale=.76)
 torus("Breastplate_InnerLip", (0,0,.175), .148, .006,
       "dark_bronze", OBS, yscale=.76)
 lathe("Bonnet_RoundedCopper", [(.177,.136),(.196,.150),(.224,.156),(.266,.158),
-                               (.310,.154),(.349,.140),(.383,.115),(.413,.077),
-                               (.434,.035),(.439,.006)],
+                               (.310,.155),(.349,.149),(.383,.134),(.411,.105),
+                               (.432,.069),(.444,.035),(.448,.006)],
       "aged_copper", OBS, yscale=.89)
 torus("Bonnet_BaseRolledSeam", (0,0,.189), .148, .006,
       "worn_copper", OBS, yscale=.87)

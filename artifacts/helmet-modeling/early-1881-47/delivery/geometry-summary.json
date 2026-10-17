@@ -9,29 +9,29 @@
   ],
   "model_axes": "X=460 mm width, Y=417 mm depth, Z=465 mm height; this mapping and component sizes are estimates",
   "parts": 56,
-  "triangles": 21696,
+  "triangles": 32832,
   "bounds_m_xyz": [
     [
       -0.23,
-      -0.21448503141554762,
-      0.02453237410071943
+      -0.21028807827032248,
+      0.03940677966101695
     ],
     [
       0.23,
-      0.20251496858445237,
-      0.4895323741007195
+      0.20671192172967748,
+      0.504406779661017
     ]
   ],
   "glb_readback_bounds_m_xyz": [
     [
-      -0.23000000596598344,
-      -0.21448502590375185,
-      0.024532373967788207
+      -0.23000000129922546,
+      -0.2102880728663792,
+      0.03940677982879031
     ],
     [
-      0.23000000596598344,
-      0.20251497479440897,
-      0.48953238579866704
+      0.23000000129922546,
+      0.2067119195861133,
+      0.5044067952303851
     ]
   ],
   "part_evidence": {
@@ -267,7 +267,7 @@
     "air/telephone endpoints are virtual teaching anchors"
   ],
   "model_action": "front port can be moved in Unity as a virtual inspection panel, never a claimed period hinge",
-  "source_sha256": "4ed623bcf75c7f74270a011334eb6fc83eb255c514d0467ea1a5a18a7e71fc6e",
-  "obj_sha256": "bdbf26c33671421b9626cc13e0fdd197c733dc76529f8d2db893f8b10ce21d59",
-  "glb_sha256": "2cc291613e77d3801cd98435fef3f28fc25707ed3e39a59dc274c8c2f1845d30"
+  "source_sha256": "daec7c0acd1c2b79f75948064b9bde868a6cbea486fde6c54cded655d8ba14dc",
+  "obj_sha256": "494d7dd028374d3b05808dd886d0de141ffc7649fcced790f36d34d857542643",
+  "glb_sha256": "dece44cc2ae6d85c62de318975169faa323a2431fc82ee725fc85c19749dfcd3"
 }

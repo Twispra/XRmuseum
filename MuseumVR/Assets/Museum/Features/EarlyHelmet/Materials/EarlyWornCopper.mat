@@ -40,15 +40,16 @@ Material:
     - _CutEnabled: 0
     - _Focus: 0
     - _Hover: 0
-    - _Metallic: 0.68
-    - _Roughness: 0.48
+    - _Metallic: 0.52
+    - _PatinaStrength: 0.35
+    - _Roughness: 0.72
     - _ShellInterior: 0
-    - _SpecularScale: 0.25
+    - _SpecularScale: 0.55
     - _TextureStrength: 0
     m_Colors:
-    - _BaseColor: {r: 0.59, g: 0.37, b: 0.24, a: 1}
+    - _BaseColor: {r: 0.48, g: 0.34, b: 0.25, a: 1}
     - _CutColor: {r: 1, g: 0.65, b: 0.17999998, a: 1}
     - _CutPlane: {r: 1, g: 0, b: 0, a: 0}
-    - _InsideColor: {r: 0.59, g: 0.36999997, b: 0.23999995, a: 1}
+    - _InsideColor: {r: 0.47999996, g: 0.33999997, b: 0.24999997, a: 1}
     - _ShellCenter: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
