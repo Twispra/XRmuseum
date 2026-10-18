@@ -1,0 +1,29 @@
+{
+  "runId": "20261018T105315460Z-pr66-saved-comparison-final-03bc96ebadae432fbaa4fbb921b84682",
+  "commit": "d9c40a095bc3ba86dc9e44e1eb2952e57c4424e8",
+  "checkout": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum",
+  "unity": "2022.3.62f3c1",
+  "executeMethod": "Museum.PhotoHelmetTrial.EditorTools.PhotoHelmetComparisonValidation.RunBatch",
+  "arguments": [
+    "-batchmode",
+    "-projectPath",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\MuseumVR\"",
+    "-logFile",
+    "\"E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T105315460Z-pr66-saved-comparison-final-03bc96ebadae432fbaa4fbb921b84682\\unity.log\"",
+    "-executeMethod",
+    "Museum.PhotoHelmetTrial.EditorTools.PhotoHelmetComparisonValidation.RunBatch"
+  ],
+  "startedUtc": "2026-10-18T10:53:16.4351580Z",
+  "finishedUtc": "2026-10-18T10:54:12.5942130Z",
+  "pid": 38720,
+  "exitCode": 0,
+  "forced": false,
+  "dirtyBefore": [
+    "?? artifacts/helmet-interaction/qa/runs/20261018-pr66-obj-fix/material-normalization.json",
+    "?? artifacts/helmet-interaction/qa/runs/20261018-pr66-obj-fix/static-validation.json"
+  ],
+  "dirtyAfter": [
+    "?? artifacts/helmet-interaction/qa/runs/20261018-pr66-obj-fix/material-normalization.json",
+    "?? artifacts/helmet-interaction/qa/runs/20261018-pr66-obj-fix/static-validation.json"
+  ]
+}

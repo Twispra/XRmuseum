@@ -1,0 +1,188 @@
+{
+  "base": "da52091d1c0ad46abb717a89e10a3afd1facce3a",
+  "testedSourceCommit": "d9c40a095bc3ba86dc9e44e1eb2952e57c4424e8",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "trimesh": "5.1.1",
+  "checks": [
+    {
+      "name": "negative control rejects the original saved OBJ",
+      "passed": true,
+      "detail": "Invalid OBJ: 18159 faces; line 257208: vt index 59289, total 59282"
+    },
+    {
+      "name": "details all three index streams valid",
+      "passed": true,
+      "detail": {
+        "v": 70888,
+        "vt": 70888,
+        "vn": 70888,
+        "f": 107248
+      }
+    },
+    {
+      "name": "details triangle count preserved",
+      "passed": true,
+      "detail": 107248
+    },
+    {
+      "name": "details vertex coordinates preserved",
+      "passed": true,
+      "detail": 70888
+    },
+    {
+      "name": "details numerical normals preserved",
+      "passed": true,
+      "detail": 70888
+    },
+    {
+      "name": "details vertex and normal face topology preserved",
+      "passed": true,
+      "detail": 107248
+    },
+    {
+      "name": "details object order and material bindings preserved",
+      "passed": true,
+      "detail": 109
+    },
+    {
+      "name": "details existing UVs preserved and missing UVs neutral",
+      "passed": true,
+      "detail": 109
+    },
+    {
+      "name": "shell all three index streams valid",
+      "passed": true,
+      "detail": {
+        "v": 5176,
+        "vt": 5176,
+        "vn": 5176,
+        "f": 10056
+      }
+    },
+    {
+      "name": "shell triangle count preserved",
+      "passed": true,
+      "detail": 10056
+    },
+    {
+      "name": "shell vertex coordinates preserved",
+      "passed": true,
+      "detail": 5176
+    },
+    {
+      "name": "shell numerical normals preserved",
+      "passed": true,
+      "detail": 5176
+    },
+    {
+      "name": "shell vertex and normal face topology preserved",
+      "passed": true,
+      "detail": 10056
+    },
+    {
+      "name": "shell object order and material bindings preserved",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "shell existing UVs preserved and missing UVs neutral",
+      "passed": true,
+      "detail": 1
+    },
+    {
+      "name": "preserved CastBrass_Interpretive.png",
+      "passed": true,
+      "detail": "f10791aad1abbcae6a4b70cbb4d50d881f92b9e5f7283f119240a7702b85e79f"
+    },
+    {
+      "name": "preserved WeatheredShell_Interpretive.png",
+      "passed": true,
+      "detail": "e21fc9a6c87c0d7ecbdeb26c67d651b9dfcf09d15394b9bb4ef6965304b69e0d"
+    },
+    {
+      "name": "preserved material.mtl",
+      "passed": true,
+      "detail": "8f3d93f63c60374d20c60bd5def451a9a525d0d373e99ae574d6c0f1c7d75078"
+    },
+    {
+      "name": "preserved CastBrass_Interpretive.png.meta",
+      "passed": true,
+      "detail": "5fa1b689d11a15bdec4684e547dac586c6710236e38f6693d73344e23b252779"
+    },
+    {
+      "name": "preserved material.mtl.meta",
+      "passed": true,
+      "detail": "29c4d836af6860e96a474696eb3e533d4c8f43b94912396d574c8d5e8156ea44"
+    },
+    {
+      "name": "preserved photo-helmet-refined-v2-details.obj.meta",
+      "passed": true,
+      "detail": "76fc6920a390f3c4b893dbe920b8e0dcc7b9ab46c2a812daf0904eb6e5a8e7b7"
+    },
+    {
+      "name": "preserved photo-helmet-refined-v2-shell.obj.meta",
+      "passed": true,
+      "detail": "fcea93a3777e3e5dcc60f39c999a7d849638c3b7f107d1f020f2b22b3b8fbfba"
+    },
+    {
+      "name": "preserved WeatheredShell_Interpretive.png.meta",
+      "passed": true,
+      "detail": "96fe2af619a956947a09024890b8f965ff6e91f327abc5c521c5a9ed35d9fe6a"
+    },
+    {
+      "name": "preserved PhotoHelmetStudy.prefab",
+      "passed": true,
+      "detail": "bfc0353a27c24d89ec9c0db30dea651c72e5f6a6ffca23628c2643eb6c628652"
+    },
+    {
+      "name": "preserved PhotoHelmetComparison.unity",
+      "passed": true,
+      "detail": "265482fc6527dc4c186b473c3f1933b7378e698feef0396de5f0943faad7689d"
+    },
+    {
+      "name": "preserved photo-helmet-refined-v2.glb",
+      "passed": true,
+      "detail": "ccbb2087bb2d860fa7297700159d7e767a870c787644177de4be1c7f5dc9a499"
+    },
+    {
+      "name": "source has exactly 11606 vertices needing neutral UVs",
+      "passed": true,
+      "detail": 11606
+    },
+    {
+      "name": "mixed UV fixture reproduces exporter failure",
+      "passed": true,
+      "detail": "untextured mesh before textured mesh"
+    },
+    {
+      "name": "mixed UV fixture repaired without changing original UVs",
+      "passed": true,
+      "detail": "6 valid vertex/UV/normal references"
+    },
+    {
+      "name": "missing UV with baseColorTexture rejected",
+      "passed": true,
+      "detail": "no invented texture mapping"
+    },
+    {
+      "name": "missing UV with metallicRoughnessTexture rejected",
+      "passed": true,
+      "detail": "no invented texture mapping"
+    },
+    {
+      "name": "missing UV with normalTexture rejected",
+      "passed": true,
+      "detail": "no invented texture mapping"
+    },
+    {
+      "name": "missing UV with occlusionTexture rejected",
+      "passed": true,
+      "detail": "no invented texture mapping"
+    },
+    {
+      "name": "missing UV with emissiveTexture rejected",
+      "passed": true,
+      "detail": "no invented texture mapping"
+    }
+  ]
+}
