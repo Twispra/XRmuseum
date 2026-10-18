@@ -1,5 +1,11 @@
 # 外部资源与辅助工具记录
 
+## 2026-10-18：#60 1839 早期头盔外形研究
+
+本轮以 [Science Museum Group Collection 1881-47](https://collection.sciencemuseumgroup.org.uk/objects/co40614/first-closed-diving-helmet-and-breastplate) 为唯一馆藏原型。馆藏条目记载 1839 年、Siebe／Deane 关联、铜合金与玻璃等材料、整体 465 × 460 × 417 mm 和 11.5 kg；记录没有标出三轴对应关系，也未提供可核验的背面、铰链或接头尺寸。模型外轮廓参照页面上的一张照片；照片标注为 CC BY-NC-SA 4.0，本仓库**未复制、上传或贴图使用原照片**。馆藏事实和模型估算分别记录在[本轮活动](activity/2026-10-18-early-helmet-1881-47.md)与几何清单中。
+
+Codex 辅助编写可编辑的 Python 几何定义、生成 OBJ／GLB、Unity 索引 0 绑定和三语说明。建模使用本地已有 Python、NumPy、trimesh；预览使用 Pillow，均为构建工具，不进入 Unity 运行时；没有增加 Unity package 或第三方模型。虚拟前面板、剖面及 AIR／VOICE 教学锚点是沿用现有原型交互的解释性设计，不主张其存在于 1839 原物。自动检查与 AI 复核不能替代组员史料审校、真实头显测试或用户研究。
+
 ## 2026-10-16：#57 新访客、年代说明与技术文档
 
 Codex 辅助实现同一展品的新访客发现记录清理、年代展签／按钮三语说明、独立验收与证据复审，并更新当前技术文档；见[本轮活动](activity/2026-10-16-visitor-flow.md)。原模型、Unity／XRI 和运行时依赖保持；源 TTF 沿用已记录的 Noto Sans SC OFL 来源及 fontTools 4.60.1 Regular 实例化／子集流程，只补「佔」并保留原码位，保存 SDF 原身份补烤。没有新增模型、图像、录音或第三方运行时包。技术说明 PDF 使用本机已有 ReportLab／Noto 字体排版，Poppler 渲染、pypdf 计页；这些为文档工具，不进入 Unity 运行时。桌面自动输入、AI 复审和排版检查不代表成员人工批准、真实设备或用户研究通过。

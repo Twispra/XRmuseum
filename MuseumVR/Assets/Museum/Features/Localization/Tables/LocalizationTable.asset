@@ -1293,6 +1293,43 @@ MonoBehaviour:
     traditionalChinese: "\u80F8\u80A9\u677F\n\u65E9\u671F\u5E74\u4EE3\u7684\u4F54\u4F4D\u6A21\u578B\uFF0C\u5C1A\u672A\u91CD\u5EFA\u6B77\u53F2\u7D30\u7BC0\u3002"
     note: 'Issue 57: complete dynamic title + description; early-era placeholder
       boundary.'
+  - key: era.early.model.caption
+    chinese: "\u6F5C\u6C34\u5934\u76D4\n<size=62%>1839 \u5E74\u5C01\u95ED\u5F0F\u5934\u76D4\u7814\u7A76\u6A21\u578B
+      \xB7 \u9986\u85CF 1881-47</size>"
+    english: "Diving helmet\n<size=62%>1839 closed-helmet study \xB7 SMG 1881-47</size>"
+    traditionalChinese: "\u6F5B\u6C34\u982D\u76D4\n<size=62%>1839 \u5E74\u5C01\u9589\u5F0F\u982D\u76D4\u7814\u7A76\u6A21\u578B
+      \xB7 \u9928\u85CF 1881-47</size>"
+    note: 'Issue 60: sourced interpretive model of Science Museum Group object 1881-47;
+      not a measured replica.'
+  - key: era.early.model.front
+    chinese: "\u524D\u89C2\u5BDF\u7A97\n\u9986\u85CF\u7167\u7247\u53EF\u89C1\u4E09\u5904\u5E26\u62A4\u680F\u7684\u89C2\u5BDF\u7A97\u3002\u6253\u5F00\u524D\u9762\u677F\u662F\u865A\u62DF\u89C2\u5BDF\u64CD\u4F5C\uFF0C\u5E76\u975E\u6709\u53F2\u6599\u8BC1\u5B9E\u7684\u94F0\u94FE\u3002"
+    english: 'Front viewport
+
+      Three guarded viewports are visible in the museum
+      photograph. Opening this panel is a virtual inspection action, not a documented
+      hinge.'
+    traditionalChinese: "\u524D\u89C0\u5BDF\u7A97\n\u9928\u85CF\u7167\u7247\u53EF\u898B\u4E09\u8655\u5E36\u8B77\u6B04\u7684\u89C0\u5BDF\u7A97\u3002\u6253\u958B\u524D\u9762\u677F\u662F\u865B\u64EC\u89C0\u5BDF\u64CD\u4F5C\uFF0C\u4E26\u975E\u6709\u53F2\u6599\u8B49\u5BE6\u7684\u9278\u93C8\u3002"
+    note: 'Issue 60: distinguish observed features from the teaching interaction.'
+  - key: era.early.model.shell
+    chinese: "\u5706\u9876\u5E3D\u4F53\n\u4F9D\u636E\u79D1\u5B66\u535A\u7269\u9986\u96C6\u56E2\u9986\u85CF
+      1881-47 \u7684\u5916\u5F62\u5EFA\u6A21\uFF1B\u80CC\u9762\u8F6E\u5ED3\u53CA\u5404\u90E8\u4EF6\u5C3A\u5BF8\u4E3A\u4F30\u7B97\u3002"
+    english: 'Bonnet shell
+
+      Rounded copper-alloy bonnet based on Science Museum
+      Group object 1881-47. Exact rear profile and part dimensions are estimates.'
+    traditionalChinese: "\u5713\u9802\u5E3D\u9AD4\n\u4F9D\u64DA\u79D1\u5B78\u535A\u7269\u9928\u96C6\u5718\u9928\u85CF
+      1881-47 \u7684\u5916\u5F62\u5EFA\u6A21\uFF1B\u80CC\u9762\u8F2A\u5ED3\u53CA\u5404\u90E8\u4EF6\u5C3A\u5BF8\u70BA\u4F30\u7B97\u3002"
+    note: 'Issue 60: source and uncertainty displayed with the exhibit.'
+  - key: era.early.model.breastplate
+    chinese: "\u80F8\u80A9\u677F\n\u5BBD\u5927\u7684\u80F8\u80A9\u677F\u53C2\u8003\u9986\u85CF
+      1881-47\uFF1B\u80CC\u9762\u7D27\u56FA\u4EF6\u4F4D\u7F6E\u4E0E\u90E8\u4EF6\u5C3A\u5BF8\u5C5E\u4E8E\u5EFA\u6A21\u63A8\u5B9A\u3002"
+    english: 'Breastplate
+
+      Broad breastplate based on object 1881-47. Rear
+      fastener positions and component measurements are interpretive.'
+    traditionalChinese: "\u80F8\u80A9\u677F\n\u5BEC\u5927\u7684\u80F8\u80A9\u677F\u53C3\u8003\u9928\u85CF
+      1881-47\uFF1B\u80CC\u9762\u7DCA\u56FA\u4EF6\u4F4D\u7F6E\u8207\u90E8\u4EF6\u5C3A\u5BF8\u5C6C\u65BC\u5EFA\u6A21\u63A8\u5B9A\u3002"
+    note: 'Issue 60: photo-based silhouette with explicitly estimated unseen details.'
   - key: diegetic.action.00
     chinese: "\u6253\u5F00\u524D\u7A97"
     english: Open window
@@ -1428,9 +1465,9 @@ MonoBehaviour:
     traditionalChinese: "\u5C55\u54C1\u8AAA\u660E"
     note: Exhibit station caption.
   - key: diegetic.era1839
-    chinese: "1839 / \u6807\u51C6\u6F5C\u6C34\u670D"
-    english: 1839 / Standard dress
-    traditionalChinese: "1839 / \u6A19\u6E96\u6F5B\u6C34\u670D"
+    chinese: "1839 / \u5C01\u95ED\u5F0F\u5934\u76D4"
+    english: 1839 / Closed helmet
+    traditionalChinese: "1839 / \u5C01\u9589\u5F0F\u982D\u76D4"
     note: Exhibit station caption.
   - key: diegetic.markv
     chinese: Mark V

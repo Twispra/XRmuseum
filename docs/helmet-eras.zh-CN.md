@@ -1,6 +1,6 @@
 # 头盔年代切换：当前展品与维护
 
-本页以 2026-10-16 `main` @ `411524e` 为基线，随 [Issue #57](https://github.com/Twispra/XRmuseum/issues/57) 修订年代说明。主场景已经接入年代切换、Mark V 和 SuperLite 精细模型；1839 档仍为占位。原独立模块与首次接入过程保留在[主场景接入活动](activity/2026-10-06-era-switch-helmet.md)，不作为当前操作步骤。
+本页以 2026-10-18 `main` @ `7011f78` 为基线，继续 [Issue #57](https://github.com/Twispra/XRmuseum/issues/57) 的年代说明，并记录 [Issue #60](https://github.com/Twispra/XRmuseum/issues/60) 的 1839 早期模型接入。主场景现在有 1839、Mark V 和 SuperLite 三套不同的可见几何。原独立模块与首次接入过程保留在[主场景接入活动](activity/2026-10-06-era-switch-helmet.md)，不作为当前操作步骤。
 
 ## 日常查看
 
@@ -8,7 +8,7 @@
 
 - 默认 **Mark V（索引 1）**；使用展台上的“上一年代／下一年代”按钮，当前名称和说明随显示更新，首尾环绕。
 - Editor 键盘预览为 **F9 下一年代、F10 上一年代**。保存主场景已关闭数字键，旧独立 Showcase 资产的 N／P、数字键配置不能当作主场景操作说明。
-- 切换简体／繁体／英文时，年代标识、展签和三个热点说明随语言刷新；1839 档须明确显示占位边界，不能继续显示 Mark V 展签。
+- 切换简体／繁体／英文时，年代标识、展签和三个热点说明随语言刷新；1839 档说明注明馆藏原型与虚拟教学操作的边界，不能继续显示 Mark V 展签。
 - 拿放、开窗、剖面、AIR／VOICE 与访问进度沿用同一展项；年代切换本身不开始新一轮参观。清理上一位的发现使用 NEW VISIT，物体归位和视角回中分别使用 RESET 与 RESET VIEW。
 
 以上新按钮文字／1839 说明已在候选 `806993a` 通过 **691/691** 项定向检查，Unity 自然退出 0；三语／三年代、生产按钮选择、持窗延迟切换及布局截图见[本轮活动](activity/2026-10-16-visitor-flow.md)。两按钮因原先被 0.96 m 台面遮挡，现整体抬高 8 cm 至中心 1.035 m，底部高出台面 4 cm；保留原尺寸、碰撞体与输入。当前仍待真实头显检查，不将桌面输入等同设备体验。
@@ -17,11 +17,11 @@
 
 | 索引／入口 | 实际显示 | 说明边界 |
 | --- | --- | --- |
-| 0：1839 早期头盔 | 原占位几何与早期档材质 | “1839”是早期潜水装备主题入口；精细史料造型尚未接入，不冒充该年某件馆藏的准确重建。窗口、气路与通信功能用于原型操作演示，不能当作该时期已经具备相应结构的证据 |
+| 0：1839 早期头盔 | 独立 56 部件的 1881-47 外观研究模型，三视窗、圆顶、胸甲与紧固件；已绑定主场景年代 0 的抓取、观察和剖面 | 参照科学博物馆馆藏 1881-47 的记录与单张可用照片，不是实物测绘；背面、轴向尺寸分配、隐藏结构及材质色值是建模估算。可移动前窗为虚拟教学面板，不声称原物有此铰链；AIR／VOICE 为现有原型的教学锚点，并非 1839 原件的接口证据 |
 | 1：Mark V 标准空气头盔 | 已接入精细 Mark V，默认档 | 外观主要参照 1944 DESCO 标准空气式资料；局部尺寸、内部路径与相关设备仍有估算及教学简化，不是制造图纸或历史实测复原 |
 | 2：SuperLite 17B | 已接入黄色整盔 v2 | 实物螺栓固定的面窗在本项目中侧开以便观察；AIR 锚点为估计，通信端点为示意，不代表历史机构、确定的接口位置或安全操作规程 |
 
-表中年代是项目组织入口，不用于推算气源、作业深度或某型号的全部使用范围。早期 `HelmetEraProfile` 的历史摘要仍有未经逐项核实的字段；主场景访客说明须以已审核的三语文案和实际模型边界为准，不能将旧 profile 自动当作可发布史实。[Mark V／设备资产边界](refined-model-integration.zh-CN.md)、[SuperLite 接入依据与限制](superlite17b-unity-integration.zh-CN.md)、[研究与资源索引](external-resources.md)
+表中年代是项目组织入口，不用于推算气源、作业深度或某型号的全部使用范围。早期 `HelmetEraProfile` 与三语展签已按 1881-47 更新；若再次修改模型，应同步核对馆藏事实、估算字段和三语说明。新模型的可编辑生成源、交换 GLB、几何清单及非 Unity 预览位于 `artifacts/helmet-modeling/early-1881-47/`。[Mark V／设备资产边界](refined-model-integration.zh-CN.md)、[SuperLite 接入依据与限制](superlite17b-unity-integration.zh-CN.md)、[研究与资源索引](external-resources.md)
 
 ## 数据与运行时绑定
 
@@ -34,7 +34,7 @@
 | `HelmetEraSwitcher` | 替换绑定材质、取消旧转换、广播当前档 |
 | `HelmetEraChannel` | 不持场景引用的年代事件；某订阅者异常不阻断其他订阅者 |
 | `HelmetEraButton`／`HelmetEraPlayModePreview` | XRI Select 按钮与 Editor 键盘预览 |
-| `RefinedModels`／`SuperLiteModels` | 按年代启停可见几何，更新前窗、热点、接口及剖面绑定 |
+| `EarlyHelmet`／`RefinedModels`／`SuperLiteModels` | 按年代启停独立可见几何，更新前窗、热点、接口及剖面绑定；`EarlyHelmet/Editor` 的 Install/Sync 只用于一次性生成或维护保存资产，不是日常打开项目的步骤 |
 
 资料／材质可以通过新增 Profile 和 Catalogue 条目扩展；**新增一套精细几何仍需扩展模型绑定、三语文案和验证**，不能仅创建资料就宣称新模型已交付。主场景已经接入，不需要再次拖入独立 `HelmetEraShowcase.prefab`；独立 Showcase 仅适合隔离开发，不覆盖现有展项。
 

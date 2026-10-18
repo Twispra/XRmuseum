@@ -34,6 +34,7 @@ namespace Museum.Refined
             public HelmetSectionMeshData sectionData;
         }
         [SerializeField] EraVisual additionalVisual;
+        [SerializeField] EraVisual earlyVisual;
         EraVisual activeAdditional;
         HelmetInspectionController inspection;
         HelmetEraSwitcher eras;
@@ -53,7 +54,9 @@ namespace Museum.Refined
         public Renderer RefinedGlass => refinedGlass;
         public Renderer RefinedShell => refinedShell;
         bool HasAdditionalVisual => additionalVisual != null && additionalVisual.renderers != null && additionalVisual.renderers.Length > 0;
+        bool HasEarlyVisual => earlyVisual != null && earlyVisual.renderers != null && earlyVisual.renderers.Length > 0;
         public EraVisual AdditionalVisual => HasAdditionalVisual ? additionalVisual : null;
+        public EraVisual EarlyVisual => HasEarlyVisual ? earlyVisual : null;
         public bool IsAdditionalVisualActive => activeAdditional != null;
         // Requested catalogue changes can wait while a part is held. Visitor copy
         // follows this completed binding, rather than announcing the pending era.
@@ -64,6 +67,8 @@ namespace Museum.Refined
         public Renderer ActiveShell => activeAdditional != null ? activeAdditional.shell : IsRefinedActive ? refinedShell : originalClipped.First(r => r.name == "GB_Bonnet_Hollow");
         public void ConfigureAdditionalEra(EraVisual visual)
         { additionalVisual = visual; RefreshVisualBinding(); }
+        public void ConfigureEarlyEra(EraVisual visual)
+        { earlyVisual = visual; RefreshVisualBinding(); }
 
         public void Configure(Renderer[] originals, Renderer[] refined, Renderer[] clipped, Renderer[] windowParts,
             Transform door, Renderer glass, Renderer shell, Renderer air, Transform airEnd, Renderer[] phone, Transform phoneEnd,
@@ -152,19 +157,22 @@ namespace Museum.Refined
             if (!inspection || refinedRenderers == null || originalRenderers == null) return;
             Vector3 normal = inspection.SectionNormalLocal;
             float relativeDepth = inspection.SectionRange > .0001f ? inspection.SectionOffset / inspection.SectionRange : 0f;
-            activeAdditional = HasAdditionalVisual && additionalVisual.eraIndex == index ? additionalVisual : null;
+            activeAdditional = HasEarlyVisual && earlyVisual.eraIndex == index ? earlyVisual :
+                HasAdditionalVisual && additionalVisual.eraIndex == index ? additionalVisual : null;
             bool markV = index == refinedEraIndex && activeAdditional == null;
             IsRefinedActive = markV || activeAdditional != null;
             foreach (var r in originalRenderers) if (r) r.enabled = !IsRefinedActive;
             foreach (var r in refinedRenderers) if (r) r.enabled = markV;
             var additional = additionalVisual != null && additionalVisual.renderers != null ? additionalVisual.renderers : System.Array.Empty<Renderer>();
-            foreach (var r in additional) if (r) r.enabled = activeAdditional != null;
+            foreach (var r in additional) if (r) r.enabled = activeAdditional == additionalVisual;
+            var early = earlyVisual != null && earlyVisual.renderers != null ? earlyVisual.renderers : System.Array.Empty<Renderer>();
+            foreach (var r in early) if (r) r.enabled = activeAdditional == earlyVisual;
             // Both window sets are children of the same identity hinge. Repositioning changes no root pose/physics.
             inspection.WindowPivot.localPosition = activeAdditional != null ? activeAdditional.hinge : markV ? refinedHinge : originalHinge;
             var hit = window.colliders.OfType<BoxCollider>().First();
             hit.center = activeAdditional != null ? activeAdditional.triggerCenter : markV ? refinedWindowCenter : originalWindowCenter;
             hit.size = activeAdditional != null ? activeAdditional.triggerSize : markV ? refinedWindowSize : originalWindowSize;
-            var visuals = refinedRenderers.Concat(additional);
+            var visuals = refinedRenderers.Concat(additional).Concat(early);
             var allClipped = originalClipped.Concat(visuals.Where(r => !r.transform.IsChildOf(inspection.WindowPivot))).ToArray();
             var allWindow = originalWindowRenderers.Concat(visuals.Where(r => r.transform.IsChildOf(inspection.WindowPivot))).ToArray();
             var activeAir = activeAdditional != null ? activeAdditional.air : markV ? refinedAir : originalAir;

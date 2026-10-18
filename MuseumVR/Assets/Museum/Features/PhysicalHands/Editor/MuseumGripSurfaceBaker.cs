@@ -36,7 +36,7 @@ namespace Museum.PhysicalHands.EditorTools
         }
 
         /// <summary>
-        /// Bakes only imported FBX mesh positions/triangles, including currently disabled eras.
+        /// Bakes imported FBX/OBJ mesh positions/triangles, including currently disabled eras.
         /// Creates/updates the supplied owned cache asset and binds the supplied root. The caller
         /// decides whether to save that root; this method does not save scenes or other dirty assets.
         /// </summary>
@@ -80,7 +80,9 @@ namespace Museum.PhysicalHands.EditorTools
         {
             if (!filter || !filter.sharedMesh || !filter.GetComponent<MeshRenderer>()) return false;
             string path = AssetDatabase.GetAssetPath(filter.sharedMesh);
-            if (!path.EndsWith(".fbx", StringComparison.OrdinalIgnoreCase) || !(AssetImporter.GetAtPath(path) is ModelImporter)) return false;
+            bool supported = path.EndsWith(".fbx", StringComparison.OrdinalIgnoreCase) ||
+                path.EndsWith(".obj", StringComparison.OrdinalIgnoreCase);
+            if (!supported || !(AssetImporter.GetAtPath(path) is ModelImporter)) return false;
             for (Transform t = filter.transform; t && t != root; t = t.parent)
             {
                 string name = t.name.ToLowerInvariant();
