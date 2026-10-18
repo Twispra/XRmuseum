@@ -1,0 +1,52 @@
+{
+  "sourceCommit": "d9c40a095bc3ba86dc9e44e1eb2952e57c4424e8",
+  "sourceGlbSha256": "ccbb2087bb2d860fa7297700159d7e767a870c787644177de4be1c7f5dc9a499",
+  "sourceGlbBytes": 11227352,
+  "sourceTriangles": 117304,
+  "objTriangles": 117304,
+  "sourceBounds": [
+    [
+      -0.20819999277591705,
+      -0.013817616738379002,
+      -0.2210000008344647
+    ],
+    [
+      0.20819610357284546,
+      0.4230000078678131,
+      0.2341790497303009
+    ]
+  ],
+  "objBounds": [
+    [
+      -0.20819999,
+      -0.01381762,
+      -0.221
+    ],
+    [
+      0.2081961,
+      0.42300001,
+      0.23417905
+    ]
+  ],
+  "maximumBoundDelta": 3.5728454639283314e-09,
+  "absoluteTolerance": 1e-06,
+  "trianglesAndBoundsMatch": true,
+  "textures": [
+    {
+      "material": "CastBrass_Interpretive",
+      "size": [
+        1024,
+        1024
+      ],
+      "decodedPixelsEqual": true
+    },
+    {
+      "material": "WeatheredShell_Interpretive",
+      "size": [
+        1024,
+        1024
+      ],
+      "decodedPixelsEqual": true
+    }
+  ]
+}

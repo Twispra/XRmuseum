@@ -1,0 +1,55 @@
+{
+  "reason": "Unity URP first-import compatibility _Color normalization; _BaseColor and all other serialized fields unchanged",
+  "beforeCommit": "8839b430038775d45c46bfc958da015c54b42de0",
+  "materials": [
+    {
+      "path": "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/Glass_VisualAssumption.mat",
+      "before": "{r: 0.275, g: 0.263, b: 0.212, a: 1}",
+      "after": "{r: 0.27499998, g: 0.26299998, b: 0.21199995, a: 1}",
+      "maxAbsoluteChannelDelta": 5.000000000143778e-08
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/PolishedEdge_Interpretive.mat",
+      "before": "{r: 0.494, g: 0.369, b: 0.208, a: 1}",
+      "after": "{r: 0.49399996, g: 0.36899996, b: 0.20799997, a: 1}",
+      "maxAbsoluteChannelDelta": 3.9999999978945766e-08
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_AgedBronze_Edge.mat",
+      "before": "{r: 0.176, g: 0.125, b: 0.078, a: 1}",
+      "after": "{r: 0.17599997, g: 0.12499998, b: 0.07799999, a: 1}",
+      "maxAbsoluteChannelDelta": 2.9999999984209325e-08
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_DarkGlass_VisualAssumption.mat",
+      "before": "{r: 0.024, g: 0.039, b: 0.043, a: 1}",
+      "after": "{r: 0.024, g: 0.039, b: 0.042999983, a: 1}",
+      "maxAbsoluteChannelDelta": 1.6999999997990844e-08
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_FrontWindowWornMetal_VisualAssumption.mat",
+      "before": "{r: 0.392, g: 0.369, b: 0.306, a: 1}",
+      "after": "{r: 0.39199996, g: 0.36899996, b: 0.30599996, a: 1}",
+      "maxAbsoluteChannelDelta": 4.000000003445692e-08
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_Recess_VisualAssumption.mat",
+      "before": "{r: 0.039, g: 0.051, b: 0.047, a: 1}",
+      "after": "{r: 0.039, g: 0.050999977, b: 0.046999976, a: 1}",
+      "maxAbsoluteChannelDelta": 2.4000000001245247e-08
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_RubberGasket_VisualAssumption.mat",
+      "before": "{r: 0.071, g: 0.078, b: 0.071, a: 1}",
+      "after": "{r: 0.07099997, g: 0.07799999, b: 0.07099997, a: 1}",
+      "maxAbsoluteChannelDelta": 2.999999999808711e-08
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_WornBrass_Highlight.mat",
+      "before": "{r: 0.522, g: 0.404, b: 0.239, a: 1}",
+      "after": "{r: 0.522, g: 0.40399998, b: 0.23899996, a: 1}",
+      "maxAbsoluteChannelDelta": 3.9999999978945766e-08
+    }
+  ],
+  "normalizedCommit": "d9c40a095bc3ba86dc9e44e1eb2952e57c4424e8"
+}
