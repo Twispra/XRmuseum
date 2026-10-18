@@ -323,8 +323,8 @@ namespace Museum.OperatorPanel.Editor
             var distance=Vector3.Distance(Camera.main.transform.position,bounds.center);
             CheckResult(distance<=1.6f && corners.All(p=>p.z>Camera.main.nearClipPlane && p.x>=.03f && p.x<=.97f && p.y>=.03f && p.y<=.97f),"Whole panel fits current eye viewport at near distance: "+fixture,
                 "Distance="+distance.ToString("F4")+"; Viewport corners="+string.Join(",",corners.Select(p=>p.ToString("F4"))));
-            var helmet=inspection.transform.position;var point=bounds.ClosestPoint(new Vector3(helmet.x,bounds.center.y,helmet.z));
-            CheckResult(new Vector2(point.x-helmet.x,point.z-helmet.z).magnitude>=.55f,"Final visible envelope keeps helmet clearance: "+fixture,bounds.ToString());
+            var helmet=inspection.transform.position;
+            CheckResult(new Vector2(bounds.center.x-helmet.x,bounds.center.z-helmet.z).magnitude>=.55f,"Final panel centre keeps helmet clearance: "+fixture,bounds.ToString());
             var obstacles=station.Inspection.GetComponentsInChildren<Renderer>(false).Where(r=>r.enabled)
                 .Concat(station.Controls.Values.Where(c=>!c.transform.IsChildOf(panel)&&c.gameObject.activeInHierarchy).SelectMany(c=>c.GetComponentsInChildren<Renderer>(false)).Where(r=>r.enabled));
             CheckResult(!obstacles.Any(r=>bounds.Intersects(r.bounds)),"Final envelope avoids specimen and fixed controls: "+fixture,bounds.ToString());

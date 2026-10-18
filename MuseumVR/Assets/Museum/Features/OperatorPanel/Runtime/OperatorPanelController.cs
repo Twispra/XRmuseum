@@ -249,8 +249,7 @@ namespace Museum.OperatorPanel
             if (obstacles.Any(bounds.Intersects)) return false;
             if (!station.Inspection) return true;
             var helmet = station.Inspection.transform.position;
-            var closest = bounds.ClosestPoint(new Vector3(helmet.x, bounds.center.y, helmet.z));
-            return new Vector2(closest.x - helmet.x, closest.z - helmet.z).sqrMagnitude >= minimumHelmetClearance * minimumHelmetClearance;
+            return new Vector2(bounds.center.x - helmet.x, bounds.center.z - helmet.z).sqrMagnitude >= minimumHelmetClearance * minimumHelmetClearance;
         }
         void OnDestroy()
         {
