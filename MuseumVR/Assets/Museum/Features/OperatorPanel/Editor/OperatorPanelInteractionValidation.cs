@@ -302,15 +302,16 @@ namespace Museum.OperatorPanel.Editor
         [Serializable] sealed class ProbeCandidate
         {
             public Vector3 groupPosition; public Bounds envelope; public float cost, eyeDistance;
-            public string[] intersections, occluders; public bool helmetCentreClear;
+            public string[] intersections, occluders; public bool helmetCentreClear, fullViewport;
         }
         [Serializable] sealed class PlacementProbe
         {
             public Vector3 eye, eyeEuler, preferredGroup; public Bounds panelLocal;
-            public int candidates, rejectedDistance, rejectedViewport, rejectedOverlap, rejectedSight, rejectedCentre, clear;
+            public int candidates, rejectedDistance, rejectedViewport, rejectedOverlap, rejectedSight, rejectedCentre, clear, clearCentreOnly;
             public List<ProbeObstacle> obstacles=new List<ProbeObstacle>();
             public List<ProbeCandidate> closestInViewport=new List<ProbeCandidate>();
             public List<ProbeCandidate> closestWithoutOverlap=new List<ProbeCandidate>();
+            public List<ProbeCandidate> centreOnlySolutions=new List<ProbeCandidate>();
         }
         static IEnumerable<Vector3> ProbeCorners(Bounds bounds)
         {
@@ -340,18 +341,26 @@ namespace Museum.OperatorPanel.Editor
                 probe.candidates++;var bounds=(Bounds)worldMethod.Invoke(null,new object[]{local,candidate+facing*offset,facing});
                 float distance=Vector3.Distance(view.transform.position,bounds.center);
                 if(distance<.35f||distance>1.6f){probe.rejectedDistance++;continue;}
-                if(ProbeCorners(bounds).Select(p=>view.WorldToViewportPoint(p,Camera.MonoOrStereoscopicEye.Mono)).Any(p=>p.z<=view.nearClipPlane||p.x<.03f||p.x>.97f||p.y<.03f||p.y>.97f)){probe.rejectedViewport++;continue;}
+                bool fullViewport=!ProbeCorners(bounds).Select(p=>view.WorldToViewportPoint(p,Camera.MonoOrStereoscopicEye.Mono)).Any(p=>p.z<=view.nearClipPlane||p.x<.03f||p.x>.97f||p.y<.03f||p.y>.97f);
+                if(!fullViewport)
+                {
+                    probe.rejectedViewport++;
+                    var centrePixel=view.WorldToViewportPoint(bounds.center,Camera.MonoOrStereoscopicEye.Mono);
+                    if(centrePixel.z<=view.nearClipPlane||centrePixel.x<.03f||centrePixel.x>.97f||centrePixel.y<.03f||centrePixel.y>.97f)continue;
+                }
                 var intersections=probe.obstacles.Where(o=>bounds.Intersects(o.bounds)).Select(o=>o.name).ToArray();
                 var occluders=new List<string>();
                 foreach(var point in ProbeCorners(bounds).Concat(new[]{bounds.center}))
                 {var direction=point-view.transform.position;var ray=new Ray(view.transform.position,direction.normalized);foreach(var obstacle in probe.obstacles)if(obstacle.bounds.IntersectRay(ray,out var hitDistance)&&hitDistance<direction.magnitude-.02f)occluders.Add(obstacle.name+"; point="+point.ToString("F3")+"; hit="+hitDistance.ToString("F3"));}
                 var helmet=inspection.transform.position;bool centreClear=new Vector2(bounds.center.x-helmet.x,bounds.center.z-helmet.z).magnitude>=so.FindProperty("minimumHelmetClearance").floatValue;
-                var record=new ProbeCandidate{groupPosition=candidate,envelope=bounds,cost=(candidate-center).magnitude,eyeDistance=distance,intersections=intersections,occluders=occluders.Distinct().Take(12).ToArray(),helmetCentreClear=centreClear};
-                if(probe.closestInViewport.Count<30)probe.closestInViewport.Add(record);
-                if(intersections.Length>0){probe.rejectedOverlap++;continue;}
-                if(probe.closestWithoutOverlap.Count<30)probe.closestWithoutOverlap.Add(record);
-                if(occluders.Count>0){probe.rejectedSight++;continue;}
-                if(!centreClear){probe.rejectedCentre++;continue;}probe.clear++;
+                var record=new ProbeCandidate{groupPosition=candidate,envelope=bounds,cost=(candidate-center).magnitude,eyeDistance=distance,intersections=intersections,occluders=occluders.Distinct().Take(12).ToArray(),helmetCentreClear=centreClear,fullViewport=fullViewport};
+                if(fullViewport&&probe.closestInViewport.Count<30)probe.closestInViewport.Add(record);
+                if(intersections.Length>0){if(fullViewport)probe.rejectedOverlap++;continue;}
+                if(fullViewport&&probe.closestWithoutOverlap.Count<30)probe.closestWithoutOverlap.Add(record);
+                if(occluders.Count>0){if(fullViewport)probe.rejectedSight++;continue;}
+                if(!centreClear){if(fullViewport)probe.rejectedCentre++;continue;}
+                if(fullViewport)probe.clear++;
+                else {probe.clearCentreOnly++;if(probe.centreOnlySolutions.Count<30)probe.centreOnlySolutions.Add(record);}
             }
             Directory.CreateDirectory(Output);var name="placement-probe-"+pitch+".json";File.WriteAllText(Path.Combine(Output,name),JsonUtility.ToJson(probe,true));
             CheckResult(false,"Rejected-placement diagnostic "+pitch,"File="+name+"; eye="+probe.eye+"; distance="+probe.rejectedDistance+" viewport="+probe.rejectedViewport+" overlap="+probe.rejectedOverlap+" sight="+probe.rejectedSight+" centre="+probe.rejectedCentre+" clear="+probe.clear);
