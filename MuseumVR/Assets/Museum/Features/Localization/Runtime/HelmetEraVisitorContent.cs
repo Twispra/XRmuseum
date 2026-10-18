@@ -16,9 +16,9 @@ namespace Museum.Localization
         public const string EarlyInstructions = "Diving helmet\n<size=62%>Early (1839) - placeholder study</size>";
         public const string EarlyPlaceholderDetails = "Placeholder; not a historical replica.";
         public const string EarlyModelInstructions = "Diving helmet\n<size=62%>1839 closed-helmet study · SMG 1881-47</size>";
-        public const string EarlyModelFrontDetails = "Three guarded viewports are visible in the museum photograph. Opening this panel is a virtual inspection action, not a documented hinge.";
-        public const string EarlyModelShellDetails = "Rounded copper-alloy bonnet based on Science Museum Group object 1881-47. Exact rear profile and part dimensions are estimates.";
-        public const string EarlyModelBreastplateDetails = "Broad breastplate based on object 1881-47. Rear fastener positions and component measurements are interpretive.";
+        public const string EarlyModelFrontDetails = "The photo shows three guarded ports. The opening hinge is virtual.";
+        public const string EarlyModelShellDetails = "Bonnet, SMG 1881-47. Rear shape and part sizes are estimates.";
+        public const string EarlyModelBreastplateDetails = "Broad plate, SMG 1881-47. Rear fasteners and part sizes are estimates.";
         public const string FrontWindowTitle = "Front window";
         public const string FrontWindowDetails = "Window and rim. Side opening is a museum demonstration.";
         public const string ShellTitle = "Helmet shell";
