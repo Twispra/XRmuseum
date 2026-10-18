@@ -50,8 +50,16 @@
 
 最终 Gallery 报告 801/801；三语逐项实际 hold 时 1 次选择、0 次确认、语言不变，release 时 1 次退出、1 次确认、精确切到目标语言，所有五条展签随后核对固定 key、保存字体、字形、无溢出／截断、完整相机矩形与实体视线。三语独立图已逐张核看，全文完整、无遮挡。左转过程图有手套短暂遮住标题尾部，总览裁切左展签／按钮，因此它们只证明旋转／两展并存，不证明所有截图都全文可读。面板左台两图分别展示原眼位出现中心、以及只转头看中心后全包络可见；不把原眼位部分在画面边缘写成无需转头即可完整阅读。诊断图不替代双眼头显检查。
 
+## 合并期间的主线与依赖协调
+
+审批期间 main 又正常合入文档 PR #70（`d445664`，提交 `2faf692`）：仅 README、独立活动、external-resources 与 Phase 2 PDF，MuseumVR 零差。本分支以正常 merge `71c9f71` 保留该四文件改动，external-resources 自动合并两轮声明；被测 MuseumVR tree 仍为 `eaa3237d73d386dc7b64bfc6c1994078ff2f958d`，没有因文档整合重跑相同产品测试。
+
+#67 原属 stack 68（#66 已合并、#67 是唯一未合并成员），PR 旧 base.sha 一直锚在 `88ca9c3`。GitHub 反复以“The merge-base changed after approval.”撤销正常批准，三次正常 merge-async 都被“一位有写权限成员批准”拦截，未绕过规则。标准 update-branch 对 stacked PR 返回不支持；先确认没有其他开放成员，再按 GitHub 官方 Stacks API 正常 unstack，仅解除 #67 的旧依赖关系，已合并 #66 保留。随后针对含 #70 的最终 head 正常批准和合并，实际状态见 PR 回读；没有更改保护、审批人数或账号权限。
+
 ## 本地保留与限制
 
 原工程开工时唯一 tracked 修改为 `MuseumVR/ProjectSettings/ProjectSettings.asset`，SHA-256 `81c0eb3103e303a2567619e388c45709e89fa1940353cdfe4a163bbe402c5587`；另有 **32,482** 个未跟踪文件。本轮独立保存副本/patch/路径、大小与 mtime_ns，位置 `E:\Codex\2026-10-18\xrmuseum-pr67-preservation`。同步前检查 incoming 路径冲突，合并后仅 fast-forward，最后再核对原文件；实际合并 SHA 与同步结果以 [PR #67](https://github.com/Twispra/XRmuseum/pull/67) 回读交接为准。
+
+独立工作期间，原目录由另一任务正常切换至已合并 #70 的 `codex/phase2-readme-activity-record-2026-10-18`／`2faf692`，不回滚该新提交或新增本地文件。同步时重新记录当前分支、HEAD、设置与未跟踪文件快照，先核对实际 incoming 差异，再以非强制 fast-forward 更新本地 main 并切换；原始开工基线继续保留，新快照不覆盖旧记录。
 
 环境仍为 Windows / Unity 2022.3.62f3c1 / PC VR / OpenXR。模拟设备和单眼图不能证明真实头显输入、双眼可读性、坐姿触达/舒适性、性能、用户研究或新 Player 构建；本轮不改变这些设备验证边界，不自动关闭 #64 或 #60。
