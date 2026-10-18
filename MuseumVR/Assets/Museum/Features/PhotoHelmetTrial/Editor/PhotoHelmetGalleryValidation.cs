@@ -69,7 +69,7 @@ namespace Museum.PhotoHelmetTrial.EditorTools
         [Serializable] sealed class Report
         {
             public string startedUtc, finishedUtc, commit, dirty, unity, status = "running", failure = "";
-            public string method = "Saved MuseumStart, no generator or asset saves. Queued synthetic tracked controllers, HMD and F11 use ordinary Dynamic Input System updates, production Input Actions, XRRayInteractor/ConeCast and physical-glove XRDirectInteractor. Ray cases retain authored ray configuration, colliders and filters; rays are temporarily disabled only in the separate labelled Direct fixture. Public gesture Begin/End and one hotspot Activate establish labelled protection/state preconditions; they do not count as XR selections. No TriggerProgrammatically, event Invoke, SelectEnter/SelectExit, manual InputSystem.Update or private-state writes.";
+            public string method = "Saved MuseumStart, no generator or asset saves. Queued synthetic tracked controllers, HMD and F11 use ordinary Dynamic Input System updates, production Input Actions, XRRayInteractor/ConeCast and physical-glove XRDirectInteractor. Ray cases retain authored ray configuration, colliders and filters; rays are temporarily disabled only in the separate labelled Direct fixture, snapshot after tracking is ready and restored before language input. Public Settings open/close, gesture Begin/End and one hotspot Activate establish labelled preconditions; they do not count as XR selections. Current Settings language controls use actual ray press/release. No TriggerProgrammatically, event Invoke, SelectEnter/SelectExit, manual InputSystem.Update or private-state writes.";
             public string limitations = "Desktop synthetic input and temporary diagnostic monocular cameras, not headset/controllers, stereo readability, comfort/reachability, user research, performance, historical authentication or executable build. The model/date remain the documented photo-label interpretation. The external runner must inspect the full Unity log through natural exit and compare all saved project fingerprints; report errors cover its subscribed Play lifetime.";
             public float batchExitSettleSeconds = 20;
             public List<Check> checks = new List<Check>();
@@ -198,6 +198,8 @@ namespace Museum.PhotoHelmetTrial.EditorTools
             yield return AbandonAndCrossTarget();
             yield return RecoveryAndLifecycle();
             yield return GestureProtection();
+            Require(rightRay.isActiveAndEnabled && leftRay.isActiveAndEnabled && MuseumPhysicalHandsTestPose.Hand(rightController).IsTrackingValid,
+                "Tracked production rays are active before the isolated Direct fixture", "right=" + rightRay.isActiveAndEnabled + "; left=" + leftRay.isActiveAndEnabled, "fixture-api");
             SetRays(false);
             try
             {
@@ -206,6 +208,8 @@ namespace Museum.PhotoHelmetTrial.EditorTools
             }
             finally { RestoreRays(); }
             yield return Wait(.2f);
+            Require(rightRay.isActiveAndEnabled && leftRay.isActiveAndEnabled,
+                "Direct fixture restores tracked production rays before subsequent input", "right=" + rightRay.isActiveAndEnabled + "; left=" + leftRay.isActiveAndEnabled, "fixture-api");
             yield return Languages();
             CheckModel();
             Capture("gallery-and-central", "Diagnostic overview shows independent left display alongside current central station; not a headset screenshot.", new Vector3(-1.5f, 1.65f, .65f), Quaternion.LookRotation(new Vector3(-1.45f, 1.15f, 3.5f) - new Vector3(-1.5f, 1.65f, .65f)), 66);
@@ -570,23 +574,40 @@ namespace Museum.PhotoHelmetTrial.EditorTools
             var expected = new Dictionary<string, string> {
                 { "Photo study title", "exhibit.photo1988.title" }, { "Photo study boundary", "exhibit.photo1988.boundary" },
                 { "Turn photo helmet left label", "text.b4b2cfcf7329" }, { "Reset photo helmet label", "text.7ef2fad58d1f" }, { "Turn photo helmet right label", "text.75cf34e2bbba" } };
-            foreach (var choice in new[] { LanguageButton.Choice.English, LanguageButton.Choice.Chinese, LanguageButton.Choice.TraditionalChinese })
+            Require(station.GetComponent<Museum.OperatorPanel.OperatorPanelController>() && !station.SettingsVisible,
+                "Current operator panel is installed and closed before language fixture", "Settings opening and closing below are labelled public API preconditions, not XR entry acceptance.", "fixture-api");
+            foreach (var choice in new[] { HelmetDiegeticStation.Command.English, HelmetDiegeticStation.Command.Chinese, HelmetDiegeticStation.Command.Traditional })
             {
-                var button = UnityEngine.Object.FindObjectsOfType<LanguageButton>().Single(b => b.Action == choice);
-                var target = button.GetComponent<XRSimpleInteractable>(); var hit = target.colliders.First();
-                var position = hit.bounds.center - button.transform.forward * .55f; var facing = Quaternion.LookRotation(hit.bounds.center - position);
-                int events = 0; UnityEngine.Events.UnityAction<SelectEnterEventArgs> listener = a => { if (a.interactorObject is XRRayInteractor) events++; };
-                target.selectEntered.AddListener(listener);
+                station.Execute(HelmetDiegeticStation.Command.Settings); yield return Wait(.3f);
+                Require(station.SettingsVisible, "Public Settings fixture opens current language controls / " + choice, "Current operator panel; entry itself is covered by the separate operator acceptance.", "fixture-api");
+                var control = station.Controls[choice]; var target = control.Target;
+                int confirmed = control.ConfirmedCount, enters = 0, exits = 0; bool selectedByRay = false;
+                var beforeLanguage = language.Current;
+                UnityEngine.Events.UnityAction<SelectEnterEventArgs> enter = a => { enters++; selectedByRay = ReferenceEquals(a.interactorObject, rightRay); };
+                UnityEngine.Events.UnityAction<SelectExitEventArgs> exit = a => exits++;
+                target.selectEntered.AddListener(enter); target.selectExited.AddListener(exit);
                 try
                 {
-                    QueueController(rightDevice, position, facing, false); yield return Wait(.25f);
-                    Require(FirstHit(target) && target.IsHovered(rightRay), "Production ray reaches saved language button / " + choice, InputDetail(target), "production-input");
-                    QueueController(rightDevice, position, facing, true); yield return Wait(.2f);
-                    QueueController(rightDevice, position, facing, false); yield return Wait(.2f); ParkHands(); yield return Wait(.2f);
-                    var expectedLanguage = choice == LanguageButton.Choice.Chinese ? MuseumLanguage.Chinese : choice == LanguageButton.Choice.TraditionalChinese ? MuseumLanguage.TraditionalChinese : MuseumLanguage.English;
-                    Require(events == 1 && language.Current == expectedLanguage, "Real language input selects requested channel exactly once / " + choice, "events=" + events, "production-input");
+                    var hit = target.colliders.First(c => c && c.enabled && c.gameObject.activeInHierarchy);
+                    var point = hit.bounds.center;
+                    rayPosition = point - control.transform.forward * .48f; rayRotation = Quaternion.LookRotation(point - rayPosition, Vector3.up);
+                    QueueController(rightDevice, rayPosition, rayRotation, false); yield return Wait(.25f);
+                    Require(rightRay.isActiveAndEnabled && FirstHit(target) && target.IsHovered(rightRay), "Production ray reaches current Settings language control / " + choice, InputDetail(target), "production-input");
+                    QueueController(rightDevice, rayPosition, rayRotation, true); yield return Wait(.2f);
+                    Require(enters == 1 && selectedByRay && target.IsSelected(rightRay) && control.IsPressed && control.ConfirmedCount == confirmed && language.Current == beforeLanguage,
+                        "Holding current language control selects once without changing channel / " + choice, "enters=" + enters + "; confirmedDelta=" + (control.ConfirmedCount - confirmed) + "; " + InputDetail(target), "production-input");
+                    QueueController(rightDevice, rayPosition, rayRotation, false); yield return Wait(.25f);
+                    var expectedLanguage = choice == HelmetDiegeticStation.Command.Chinese ? MuseumLanguage.Chinese : choice == HelmetDiegeticStation.Command.Traditional ? MuseumLanguage.TraditionalChinese : MuseumLanguage.English;
+                    Require(enters == 1 && exits == 1 && !target.isSelected && !control.IsPressed && control.ConfirmedCount == confirmed + 1 && language.Current == expectedLanguage,
+                        "Real Settings language release confirms requested channel exactly once / " + choice, "enters=" + enters + "; exits=" + exits + "; confirmedDelta=" + (control.ConfirmedCount - confirmed) + "; language=" + language.Current, "production-input");
                 }
-                finally { target.selectEntered.RemoveListener(listener); }
+                finally
+                {
+                    target.selectEntered.RemoveListener(enter); target.selectExited.RemoveListener(exit);
+                    if (station.SettingsVisible) station.Execute(HelmetDiegeticStation.Command.Settings);
+                }
+                ParkHands(); yield return Wait(.25f);
+                Require(!station.SettingsVisible, "Public Settings fixture closes after real language input / " + choice, "Restore closed panel before checking gallery labels.", "fixture-api");
                 foreach (var pair in expected)
                 {
                     var label = display.transform.Find(pair.Key).GetComponent<TMP_Text>(); var binding = label.GetComponent<LocalizedText>();
@@ -626,7 +647,6 @@ namespace Museum.PhotoHelmetTrial.EditorTools
             rightController = UnityEngine.Object.FindObjectsOfType<ActionBasedController>(true).Single(c => c.name == "Right Controller");
             leftController = UnityEngine.Object.FindObjectsOfType<ActionBasedController>(true).Single(c => c.name == "Left Controller");
             rightRay = rightController.GetComponentsInChildren<XRRayInteractor>(true).First(); leftRay = leftController.GetComponentsInChildren<XRRayInteractor>(true).First();
-            foreach (var ray in rightController.GetComponentsInChildren<XRRayInteractor>(true).Concat(leftController.GetComponentsInChildren<XRRayInteractor>(true))) RayStates[ray] = ray.enabled;
             rightDevice = InputSystem.AddDevice<XRSimulatedController>(); InputSystem.SetDeviceUsage(rightDevice, UnityEngine.InputSystem.CommonUsages.RightHand);
             leftDevice = InputSystem.AddDevice<XRSimulatedController>(); InputSystem.SetDeviceUsage(leftDevice, UnityEngine.InputSystem.CommonUsages.LeftHand);
             head = InputSystem.AddDevice<XRSimulatedHMD>(); var camera = Camera.main; var parent = camera.transform.parent;
@@ -636,8 +656,16 @@ namespace Museum.PhotoHelmetTrial.EditorTools
                 deviceRotation = rotation, centerEyeRotation = rotation, leftEyeRotation = rotation, rightEyeRotation = rotation };
             PendingInput.Enqueue(() => InputSystem.QueueStateEvent(head, state)); ParkHands();
         }
-        static void SetRays(bool enabled) { foreach (var item in RayStates) if (item.Key) item.Key.enabled = enabled; }
-        static void RestoreRays() { foreach (var item in RayStates) if (item.Key) item.Key.enabled = item.Value; }
+        static void SetRays(bool enabled)
+        {
+            foreach (var ray in rightController.GetComponentsInChildren<XRRayInteractor>(true).Concat(leftController.GetComponentsInChildren<XRRayInteractor>(true)))
+            { if (!RayStates.ContainsKey(ray)) RayStates[ray] = ray.enabled; ray.enabled = enabled; }
+        }
+        static void RestoreRays()
+        {
+            foreach (var item in RayStates) if (item.Key) item.Key.enabled = item.Value;
+            RayStates.Clear();
+        }
         static void QueueController(XRSimulatedController device, Vector3 world, Quaternion rotation, bool grip)
         {
             var parent = (device == leftDevice ? leftController : rightController).transform.parent;
