@@ -512,13 +512,18 @@ namespace Museum.PhotoHelmetTrial.EditorTools
                 QueueController(rightDevice, rayPosition, rayRotation, true); yield return Wait(.25f);
                 Require(enters == 1 && control.IsPressed && target.IsSelected(rightRay) && control.ConfirmedCount == count && Quaternion.Angle(rotation, display.Model.localRotation) < .01f,
                     "Clear gallery button is genuinely held before release-time obstruction", "enters=" + enters + "; " + InputDetail(target), "production-input");
-                blocker = GameObject.CreatePrimitive(PrimitiveType.Cube); blocker.name = "Temporary release-time gallery QA solid";
-                blocker.transform.position = Vector3.Lerp(rayPosition, target.colliders.Single().bounds.center, .55f);
-                blocker.transform.localScale = new Vector3(.22f, .22f, .10f);
-                Physics.SyncTransforms();
-                // Deliberately no yield/Update between inserting the real solid and
-                // queuing release: a hold-only Update guard is insufficient here.
-                QueueController(rightDevice, rayPosition, rayRotation, false); yield return Wait(.3f);
+                // Perform both operations in the same Dynamic before-input callback.
+                // FlushInput drains the queued release state immediately afterwards,
+                // so no hold-only MonoBehaviour.Update can run between them.
+                PendingInput.Enqueue(() =>
+                {
+                    blocker = GameObject.CreatePrimitive(PrimitiveType.Cube); blocker.name = "Temporary release-time gallery QA solid";
+                    blocker.transform.position = Vector3.Lerp(rayPosition, target.colliders.Single().bounds.center, .55f);
+                    blocker.transform.localScale = new Vector3(.22f, .22f, .10f);
+                    Physics.SyncTransforms();
+                    QueueController(rightDevice, rayPosition, rayRotation, false);
+                });
+                yield return Wait(.3f);
                 var origin = rightRay.rayOriginTransform;
                 var hits = Physics.RaycastAll(origin.position, origin.forward, rightRay.maxRaycastDistance, rightRay.raycastMask, rightRay.raycastTriggerInteraction)
                     .Where(h => SceneSolid(h.collider)).OrderBy(h => h.distance).ToArray();
