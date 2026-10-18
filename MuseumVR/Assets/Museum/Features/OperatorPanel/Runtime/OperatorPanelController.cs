@@ -247,6 +247,11 @@ namespace Museum.OperatorPanel
         List<Bounds> ObstacleBounds(Transform[] panels)
         {
             var renderers = new List<Renderer>();
+            // Other saved exhibits can contain opaque meshes and labels without
+            // colliders. Collect the gallery's stable exhibit container, including
+            // runtime button faces, rather than assuming only the central helmet exists.
+            foreach (var exhibitRoot in station.gameObject.scene.GetRootGameObjects().Where(root => root.name == "Exhibit Placeholders"))
+                renderers.AddRange(exhibitRoot.GetComponentsInChildren<Renderer>(false));
             renderers.AddRange(FindObjectsOfType<Renderer>().Where(r => r.name == "Plinth"));
             if (station.Inspection) renderers.AddRange(station.Inspection.GetComponentsInChildren<Renderer>(false));
             if (station.Demonstration)
@@ -255,7 +260,8 @@ namespace Museum.OperatorPanel
             var pedestal = station.transform.Find(PedestalPath);
             if (pedestal) renderers.AddRange(pedestal.GetComponentsInChildren<Renderer>(false)
                 .Where(r => !panels.Any(p => r.transform == p || r.transform.IsChildOf(p))));
-            return renderers.Where(r => r && r.enabled && r.gameObject.activeInHierarchy)
+            return renderers.Distinct().Where(r => r && r.enabled && r.gameObject.activeInHierarchy &&
+                !panels.Any(p => r.transform == p || r.transform.IsChildOf(p)))
                 .Select(r => { var bounds = r.bounds; bounds.Expand(.06f); return bounds; }).ToList();
         }
         bool IsClear(Bounds bounds, List<Bounds> obstacles, bool wholeCurrentView)

@@ -1,4 +1,5 @@
 using Museum.Diegetic;
+using Museum.PhysicalHands;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Filtering;
@@ -29,7 +30,7 @@ namespace Museum.PhotoHelmetTrial
             PhysicalControl && PhysicalControl.isActiveAndEnabled;
         bool IXRSelectFilter.canProcess => true;
         bool IXRSelectFilter.Process(IXRSelectInteractor hand, IXRSelectInteractable target) =>
-            Ready && !station.HasActiveGesture;
+            Ready && !station.HasActiveGesture && HasRayLineOfSight(hand);
 
         public void Configure(PhotoHelmetGalleryDisplay target, Action buttonAction,
             Renderer renderer, Material pressed)
@@ -52,6 +53,9 @@ namespace Museum.PhotoHelmetTrial
             if (!availabilityFilterInstalled)
             {
                 interactable.selectFilters.Add(this);
+                // Install in Awake, before the shared control subscribes OnReleased.
+                // A same-frame obstruction must cancel before it counts a confirmation.
+                interactable.selectExited.AddListener(GuardRelease);
                 availabilityFilterInstalled = true;
             }
         }
@@ -71,6 +75,37 @@ namespace Museum.PhotoHelmetTrial
         void Update()
         {
             RefreshBinding();
+            if (PhysicalControl && PhysicalControl.IsPressed && !HasRayLineOfSight(PhysicalControl.PressInteractor))
+                PhysicalControl.CancelPress();
+        }
+
+        void GuardRelease(SelectExitEventArgs args)
+        {
+            if (PhysicalControl && (!Ready || !HasRayLineOfSight(args.interactorObject)))
+                PhysicalControl.CancelPress();
+        }
+
+        bool HasRayLineOfSight(IXRSelectInteractor hand)
+        {
+            if (!(hand is XRRayInteractor ray)) return true;
+            if (!interactable || !ray.TryGetCurrent3DRaycastHit(out var candidate) ||
+                !interactable.colliders.Contains(candidate.collider)) return false;
+            var source = ray.rayOriginTransform ? ray.rayOriginTransform : ray.transform;
+            var direction = candidate.point - source.position;
+            float distance = direction.magnitude;
+            if (distance <= .002f) return true;
+            // ConeCast assists aim, but its candidate ordering is not a solid-occlusion
+            // test. Check the path to the assisted contact without treating trigger
+            // volumes or the physical hands as opaque scene surfaces.
+            foreach (var hit in Physics.RaycastAll(source.position, direction / distance, distance,
+                ray.raycastMask, QueryTriggerInteraction.Ignore))
+            {
+                var collider = hit.collider;
+                if (!collider || interactable.colliders.Contains(collider) ||
+                    collider.GetComponentInParent<XRBaseInteractor>() || collider.GetComponentInParent<MuseumPhysicalHand>()) continue;
+                if (hit.distance < distance - .002f) return false;
+            }
+            return true;
         }
 
         void RefreshBinding()
@@ -148,7 +183,11 @@ namespace Museum.PhotoHelmetTrial
         void OnDestroy()
         {
             ReleaseControl();
-            if (interactable && availabilityFilterInstalled) interactable.selectFilters.Remove(this);
+            if (interactable && availabilityFilterInstalled)
+            {
+                interactable.selectFilters.Remove(this);
+                interactable.selectExited.RemoveListener(GuardRelease);
+            }
         }
     }
 }

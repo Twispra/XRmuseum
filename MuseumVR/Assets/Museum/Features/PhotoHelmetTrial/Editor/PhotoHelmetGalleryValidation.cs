@@ -187,6 +187,7 @@ namespace Museum.PhotoHelmetTrial.EditorTools
             visitorRotation = Quaternion.LookRotation(new Vector3(bounds.center.x, 1.10f, bounds.center.z) - visitorPosition, Vector3.up);
             CheckModel();
             yield return Obstruction();
+            yield return ReleaseIntoObstruction();
             yield return DistantRayClick();
             yield return Click(Button(PhotoHelmetGalleryButton.Action.Reset), false);
             foreach (var action in new[] { PhotoHelmetGalleryButton.Action.TurnLeft, PhotoHelmetGalleryButton.Action.Reset, PhotoHelmetGalleryButton.Action.TurnRight, PhotoHelmetGalleryButton.Action.Reset })
@@ -366,6 +367,23 @@ namespace Museum.PhotoHelmetTrial.EditorTools
                 yield return Wait(.3f);
                 Require(!control.IsPressed && !control.Target.isSelected && control.ConfirmedCount == count && Quaternion.Angle(rotation, display.Model.localRotation) < .01f,
                     "Recovery/disable cancels without confirmation / " + fixture, "count=" + control.ConfirmedCount, "production-input");
+                if (fixture == "component" || fixture == "display-component" || fixture == "station")
+                {
+                    int disabledEnters = 0; var disabledTarget = control.Target;
+                    UnityEngine.Events.UnityAction<SelectEnterEventArgs> disabledListener = a => disabledEnters++;
+                    disabledTarget.selectEntered.AddListener(disabledListener);
+                    try
+                    {
+                        QueueController(rightDevice, rayPosition, rayRotation, false); yield return Wait(.2f);
+                        QueueController(rightDevice, rayPosition, rayRotation, true); yield return Wait(.25f);
+                        Require(disabledEnters == 0 && !disabledTarget.isSelected && !control.IsPressed && control.ConfirmedCount == count && Quaternion.Angle(rotation, display.Model.localRotation) < .01f,
+                            "Fresh production Grip cannot select while component is unavailable / " + fixture,
+                            "enters=" + disabledEnters + "; confirmed=" + control.ConfirmedCount + "; " + InputDetail(disabledTarget), "production-input");
+                    }
+                    finally { disabledTarget.selectEntered.RemoveListener(disabledListener); }
+                    // Keep this newly held Grip through restoration below: enabling the
+                    // presentation must still require a later release and fresh press.
+                }
                 PendingInput.Enqueue(() => InputSystem.QueueStateEvent(keyboard, new KeyboardState()));
                 if (fixture == "component") button.enabled = true;
                 else if (fixture == "display-component") display.enabled = true;
@@ -479,6 +497,44 @@ namespace Museum.PhotoHelmetTrial.EditorTools
             }
             finally { target.selectEntered.RemoveListener(listener); UnityEngine.Object.Destroy(blocker); }
             ParkHands(); yield return Wait(.25f);
+        }
+        static IEnumerator ReleaseIntoObstruction()
+        {
+            var button = Button(PhotoHelmetGalleryButton.Action.TurnLeft); yield return AimRay(button, true);
+            var control = button.PhysicalControl; var target = control.Target;
+            var rotation = display.Model.localRotation; int count = control.ConfirmedCount, cancelled = control.CancelledCount, enters = 0, exits = 0;
+            UnityEngine.Events.UnityAction<SelectEnterEventArgs> enter = a => enters++;
+            UnityEngine.Events.UnityAction<SelectExitEventArgs> exit = a => exits++;
+            target.selectEntered.AddListener(enter); target.selectExited.AddListener(exit);
+            GameObject blocker = null;
+            try
+            {
+                QueueController(rightDevice, rayPosition, rayRotation, true); yield return Wait(.25f);
+                Require(enters == 1 && control.IsPressed && target.IsSelected(rightRay) && control.ConfirmedCount == count && Quaternion.Angle(rotation, display.Model.localRotation) < .01f,
+                    "Clear gallery button is genuinely held before release-time obstruction", "enters=" + enters + "; " + InputDetail(target), "production-input");
+                blocker = GameObject.CreatePrimitive(PrimitiveType.Cube); blocker.name = "Temporary release-time gallery QA solid";
+                blocker.transform.position = Vector3.Lerp(rayPosition, target.colliders.Single().bounds.center, .55f);
+                blocker.transform.localScale = new Vector3(.22f, .22f, .10f);
+                Physics.SyncTransforms();
+                // Deliberately no yield/Update between inserting the real solid and
+                // queuing release: a hold-only Update guard is insufficient here.
+                QueueController(rightDevice, rayPosition, rayRotation, false); yield return Wait(.3f);
+                var origin = rightRay.rayOriginTransform;
+                var hits = Physics.RaycastAll(origin.position, origin.forward, rightRay.maxRaycastDistance, rightRay.raycastMask, rightRay.raycastTriggerInteraction)
+                    .Where(h => SceneSolid(h.collider)).OrderBy(h => h.distance).ToArray();
+                Require(hits.Length > 0 && hits[0].collider == blocker.GetComponent<Collider>(),
+                    "Release-time solid is the nearest physical surface", string.Join(",", hits.Select(h => h.collider.name + ":" + h.distance.ToString("F6"))), "production-input");
+                Require(enters == 1 && exits == 1 && !target.isSelected && !control.IsPressed && control.ConfirmedCount == count && control.CancelledCount > cancelled && Quaternion.Angle(rotation, display.Model.localRotation) < .01f,
+                    "Same-frame inserted solid cancels release before confirmation or action",
+                    "enters=" + enters + "; exits=" + exits + "; confirmedDelta=" + (control.ConfirmedCount - count) + "; cancelledDelta=" + (control.CancelledCount - cancelled) + "; angle=" + Quaternion.Angle(rotation, display.Model.localRotation) + "; " + InputDetail(target), "production-input");
+            }
+            finally
+            {
+                target.selectEntered.RemoveListener(enter); target.selectExited.RemoveListener(exit);
+                if (blocker) UnityEngine.Object.Destroy(blocker);
+            }
+            ParkHands(); yield return Wait(.25f);
+            yield return Click(button, false); yield return Click(Button(PhotoHelmetGalleryButton.Action.Reset), false);
         }
 
         static Bounds ModelBounds()
