@@ -1,0 +1,99 @@
+{
+  "sourceCommit": "6088c736e89d05101e09645c1796556012a6fd5d",
+  "validationCommit": "024d03942cc93d90453583e1c7e33e4eac96ecf2",
+  "identicalCommittedUnityTree": "eaa3237d73d386dc7b64bfc6c1994078ff2f958d",
+  "bodyPages": 4,
+  "referencesPages": 1,
+  "totalPages": 5,
+  "format": "A4 portrait; Times New Roman; all visible text at least 12 pt",
+  "marginsTwips": {
+    "top": 1417,
+    "right": 1417,
+    "bottom": 1417,
+    "left": 1417
+  },
+  "marginCmRounded": 2.5,
+  "visibleFontSizesPt": [
+    12.0,
+    14.04,
+    15.96
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "role": "body",
+      "heading": "1 Scope and requirements",
+      "wordsIncludingHeaderFooter": 349,
+      "widthPt": 595.32,
+      "heightPt": 841.92
+    },
+    {
+      "page": 2,
+      "role": "body",
+      "heading": "2 Design and technical decisions",
+      "wordsIncludingHeaderFooter": 410,
+      "widthPt": 595.32,
+      "heightPt": 841.92
+    },
+    {
+      "page": 3,
+      "role": "body",
+      "heading": "3 Implementation and verification",
+      "wordsIncludingHeaderFooter": 376,
+      "widthPt": 595.32,
+      "heightPt": 841.92
+    },
+    {
+      "page": 4,
+      "role": "body",
+      "heading": "4 Limitations and evaluation priorities",
+      "wordsIncludingHeaderFooter": 380,
+      "widthPt": 595.32,
+      "heightPt": 841.92
+    },
+    {
+      "page": 5,
+      "role": "references",
+      "heading": "References",
+      "wordsIncludingHeaderFooter": 186,
+      "widthPt": 595.32,
+      "heightPt": 841.92
+    }
+  ],
+  "pdf": "artifacts/technical-notes/20261018/phase2-prototype-design-and-technical-note.en.pdf",
+  "submissionCopy": "phase2小组和个人作业/COMP5424-Group2-Phase2-PrototypeDesignTechnicalNote.pdf",
+  "pdfSha256": "ec22b0effe718f049863894bc5f56470e8029aaf28337c0d5e5646a34f769b80",
+  "pdfBytes": 147561,
+  "docxSha256": "ec01d57a3c55044e4895060a6966c5e41f3c6a42b5fa2a05ba118bc7c0350c99",
+  "englishManuscriptSha256": "026d247430a32babbfa1a237396cf6be6804b758279ba320403c8d3c48944bfb",
+  "hyperlinkAnnotations": 38,
+  "uniqueVersionedRepositoryLinks": 14,
+  "linkTargetsResolveInGit": true,
+  "historicalChineseReviewBodyPreserved": true,
+  "preexistingProjectSettingsPreserved": true,
+  "renderComparison": [
+    {
+      "page": 1,
+      "identicalToInspectedRender02": true
+    },
+    {
+      "page": 2,
+      "identicalToInspectedRender02": false
+    },
+    {
+      "page": 3,
+      "identicalToInspectedRender02": false
+    },
+    {
+      "page": 4,
+      "identicalToInspectedRender02": true
+    },
+    {
+      "page": 5,
+      "identicalToInspectedRender02": true
+    }
+  ],
+  "renderMethod": "Native Microsoft Word ExportAsFixedFormat, packaged render_docx.py rasterization with bundled Poppler",
+  "visualReview": "Every page of render-02 inspected; bit-identical final pages reused; changed pages of render-04 inspected before delivery",
+  "scope": "No Unity/Player/headset/PQ604 test or build was run for this documentation task."
+}

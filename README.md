@@ -62,6 +62,7 @@ XRmuseum/
 
 - [每周活动记录](docs/weekly-activity.md)
 - [Phase 2 小组活动记录（提交用 PDF）](phase2小组和个人作业/COMP5424-Group2-Phase2-ActivityRecord.pdf)
+- [Phase 2 原型设计与技术说明（英文提交 PDF）](artifacts/technical-notes/20261018/phase2-prototype-design-and-technical-note.en.pdf) / [可维护文稿](docs/phase2-prototype-design-and-technical-note.en.md)
 - [2026-09-23 头盔原型：实现、验证与贡献证据](docs/activity/2026-09-23-helmet-prototype.md)
 - [外部资源与辅助工具记录](docs/external-resources.md)
 - [初始化验证结果与尚未验证的范围](docs/initialization-checks.md)
