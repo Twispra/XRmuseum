@@ -538,8 +538,7 @@ namespace Museum.Localization.EditorTools
                 // A raycast that starts inside a solid can miss that enclosing
                 // collider. Reject such origins, including the plinth below a
                 // neck-seal marker; leave room for the controller's open hand.
-                if (Physics.OverlapSphere(outside, .08f, ~0, QueryTriggerInteraction.Ignore)
-                    .Any(c => c && !c.GetComponentInParent<XRBaseInteractor>())) continue;
+                if (Physics.OverlapSphere(outside, .08f, ~0, QueryTriggerInteraction.Ignore).Any(CandidateSceneSolid)) continue;
                 var ray = new Ray(outside, (marker - outside).normalized);
                 foreach (var hit in Physics.RaycastAll(ray, .5f, ~0, QueryTriggerInteraction.Collide).OrderBy(h => h.distance))
                 {
@@ -553,6 +552,9 @@ namespace Museum.Localization.EditorTools
             }
         }
 
+        static bool CandidateSceneSolid(Collider collider) => collider &&
+            !collider.GetComponentInParent<XRBaseInteractor>() && !collider.GetComponentInParent<MuseumPhysicalHand>();
+
         static IEnumerator DiagnoseSuperLiteObservation()
         {
             era.ShowEra(2); yield return Wait(.5f); Physics.SyncTransforms();
@@ -562,19 +564,18 @@ namespace Museum.Localization.EditorTools
             report.geometryDiagnostics.Add("marker=" + point.transform.position.ToString("F6") + "; bounds=" + marker.bounds + "; localScale=" + point.transform.lossyScale);
             foreach (var surface in binding.AdditionalVisual.renderers.Where(r => r.name.Contains("Neck") || r.name.Contains("Clamp")))
                 report.geometryDiagnostics.Add("mesh=" + surface.name + "; bounds=" + surface.bounds + "; transform=" + surface.transform.position.ToString("F6"));
-            foreach (var hit in UnityEngine.Object.FindObjectsOfType<Collider>().Where(c => c.name == "Breastplate Base" || c.name == "Bonnet Capsule" || c.name == "Plinth"))
+            foreach (var hit in UnityEngine.Object.FindObjectsOfType<Collider>().Where(c => c.name == "Breastplate Base" || c.name == "Bonnet Capsule" || c.name == "Plinth" || c.name == "Display Top"))
                 report.geometryDiagnostics.Add("solid=" + hit.name + "; type=" + hit.GetType().Name + "; bounds=" + hit.bounds + "; closestMarker=" + hit.ClosestPoint(marker.bounds.center).ToString("F6"));
             CaptureModel("superlite-neck-seal-diagnostic.png");
             int valid = 0;
-            foreach (float distance in new[] { .25f, .30f, .45f, .65f })
-                foreach (float slope in new[] { .9f, .4f, 0f, -.3f })
-                    for (int angle = 0; angle < 360; angle += 45)
+            foreach (float distance in new[] { .25f, .30f, .45f, .65f, .75f })
+                foreach (float slope in new[] { .05f, .10f, .12f, .14f, .16f, .20f })
+                    foreach (int angle in new[] { 0, 45, 315 })
                     {
                         float radians = angle * Mathf.Deg2Rad;
                         var direction = inspection.transform.TransformDirection(new Vector3(Mathf.Sin(radians), slope, -Mathf.Cos(radians)).normalized);
                         Vector3 position = marker.bounds.center + direction * distance;
-                        var solids = Physics.OverlapSphere(position, .08f, ~0, QueryTriggerInteraction.Ignore)
-                            .Where(c => c && !c.GetComponentInParent<XRBaseInteractor>()).ToArray();
+                        var solids = Physics.OverlapSphere(position, .08f, ~0, QueryTriggerInteraction.Ignore).Where(CandidateSceneSolid).ToArray();
                         string detail = "distance=" + distance + "; slope=" + slope + "; angle=" + angle + "; origin=" + position.ToString("F6");
                         if (solids.Length > 0)
                         { report.geometryDiagnostics.Add(detail + "; rejected solid origin=" + string.Join(",", solids.Select(c => c.name))); continue; }
