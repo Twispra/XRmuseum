@@ -125,17 +125,17 @@ namespace Museum.Localization
                             case "front-window":
                                 original.hotspot.SetContent("Front viewport", EarlyModelFrontDetails);
                                 points.Add(Attach(original.hotspot, early.glass,
-                                    early.glass.bounds.center + binding.transform.forward * .038f));
+                                    OutsideSurface(early.glass, early.window.parent.TransformDirection(Vector3.back), .038f)));
                                 break;
                             case "bonnet":
                                 original.hotspot.SetContent("Bonnet shell", EarlyModelShellDetails);
                                 points.Add(Attach(original.hotspot, early.shell,
-                                    early.shell.bounds.center + binding.transform.right * (early.shell.bounds.extents.x + .025f)));
+                                    OutsideSurface(early.shell, binding.transform.right, .025f)));
                                 break;
                             case "breastplate":
                                 original.hotspot.SetContent("Breastplate", EarlyModelBreastplateDetails);
                                 points.Add(Attach(original.hotspot, breastplate,
-                                    breastplate.bounds.center + binding.transform.forward * (breastplate.bounds.extents.z + .025f)));
+                                    OutsideSurface(breastplate, -binding.transform.forward, .025f)));
                                 break;
                         }
                     }
@@ -167,6 +167,46 @@ namespace Museum.Localization
                 hotspot = hotspot, surface = surface,
                 localPoint = surface.transform.InverseTransformPoint(worldPoint)
             };
+        }
+
+        // Intersect the imported mesh once when the era changes. World AABB
+        // extents are not distances along the helmet's rotated local axes.
+        // Offsetting the actual outward face also keeps the marker in front
+        // of the glass after its virtual inspection panel has opened.
+        static Vector3 OutsideSurface(Renderer surface, Vector3 outward, float clearance)
+        {
+            var mesh = surface.GetComponent<MeshFilter>().sharedMesh;
+            outward.Normalize();
+            Vector3 origin = surface.bounds.center + outward * (surface.bounds.extents.magnitude + .1f);
+            Vector3 localOrigin = surface.transform.InverseTransformPoint(origin);
+            Vector3 localDirection = surface.transform.InverseTransformVector(-outward);
+            var vertices = mesh.vertices;
+            var triangles = mesh.triangles;
+            float nearest = float.PositiveInfinity;
+            Vector3 hit = Vector3.zero, normal = Vector3.zero;
+            for (int i = 0; i < triangles.Length; i += 3)
+            {
+                Vector3 a = vertices[triangles[i]], b = vertices[triangles[i + 1]], c = vertices[triangles[i + 2]];
+                Vector3 edge = b - a, other = c - a;
+                Vector3 p = Vector3.Cross(localDirection, other);
+                float determinant = Vector3.Dot(edge, p);
+                if (Mathf.Abs(determinant) < 1e-12f) continue;
+                Vector3 t = localOrigin - a;
+                float u = Vector3.Dot(t, p) / determinant;
+                if (u < 0f || u > 1f) continue;
+                Vector3 q = Vector3.Cross(t, edge);
+                float v = Vector3.Dot(localDirection, q) / determinant;
+                if (v < 0f || u + v > 1f) continue;
+                float distance = Vector3.Dot(other, q) / determinant;
+                if (distance < 0f || distance >= nearest) continue;
+                nearest = distance;
+                hit = localOrigin + localDirection * distance;
+                normal = surface.transform.worldToLocalMatrix.transpose.MultiplyVector(Vector3.Cross(edge, other)).normalized;
+            }
+            if (float.IsPositiveInfinity(nearest))
+                throw new InvalidOperationException("No outward observation surface on " + surface.name);
+            if (Vector3.Dot(normal, outward) < 0f) normal = -normal;
+            return surface.transform.TransformPoint(hit) + normal * clearance;
         }
 
         void CaptureOriginal()
