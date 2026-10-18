@@ -582,7 +582,9 @@ namespace Museum.Localization.EditorTools
                         var first = Physics.RaycastAll(ray, distance + .05f, ~0, QueryTriggerInteraction.Collide).OrderBy(h => h.distance)
                             .FirstOrDefault(h => h.collider && !h.collider.GetComponentInParent<XRBaseInteractor>());
                         detail += "; thinFirst=" + (first.collider ? first.collider.name : "none");
-                        if (!target.colliders.Contains(first.collider)) { report.geometryDiagnostics.Add(detail); continue; }
+                        // Diagnostic probes every outside-solid pose, including
+                        // a thin-ray obstruction: ConeCast may legitimately rank
+                        // an exposed peripheral marker differently.
                         Quaternion rotation = Quaternion.LookRotation(-direction, Vector3.up);
                         QueueController(rightDevice, position, rotation, false); yield return Wait(.3f);
                         bool actual = target.isHovered && ProductionRayFirstHits(target);
