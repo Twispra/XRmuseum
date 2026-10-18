@@ -10,6 +10,12 @@
 4. 若需要在其他隔离场景摆放模型，可拖入 `Assets/Museum/Features/PhotoHelmetTrial/Prefabs/PhotoHelmetStudy.prefab`。预制件约 0.45 米高、正面朝向已设定；尺寸只用于画面比较，不是实物测量值。
 5. 如需从原始 OBJ 重新生成材质、预制件和对比场景，执行 Unity 菜单 `Museum > Photo helmet > Build comparison scene`。该命令会覆盖本功能的同名预制件和对比场景；运行前先保存对这两个文件的手工改动。
 
+## OBJ 导出与回归检查
+
+- `scripts/export_unity_section_obj.py` 可从保存的 GLB 重新导出模型。导出依赖 Python、NumPy、trimesh 与 Pillow；本次修复使用 Python 3.12、trimesh 5.1.1。无贴图的纯色 PBR 网格补 `(0, 0)` UV，避免混合有／无 UV 网格时后续面的 UV 索引偏移；已有 UV、几何坐标、面、法线和材质绑定保留。缺 UV 的材质若含图像贴图，脚本会拒绝导出。
+- 不需要第三方依赖的索引检查：`python artifacts/helmet-refinement/photo-study-v2/scripts/export_unity_section_obj.py --validate MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Models/photo-helmet-refined-v2-details.obj MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Models/photo-helmet-refined-v2-shell.obj`（在仓库根目录执行）。脚本在保存任何导出文件前检查 `v/vt/vn` 三类引用；重新导出时保留目标 `.meta`，不重新生成 GUID。
+- 干净 Unity 工程可用 `-batchmode -projectPath <MuseumVR> -executeMethod Museum.PhotoHelmetTrial.EditorTools.PhotoHelmetComparisonValidation.RunBatch` 验证，先给 `MUSEUM_QA_OUTPUT` 设置独立的新目录。不要加 `-quit` 或 `-nographics`；验证器打开已有比较场景，用合成键盘输入检查旋转、剖切、深度、复位，保存模型数量断言、图像和结果后自然退出。它不会运行场景／Prefab 生成器。设备和主场景仍需分别验证。
+
 ## 对比结果与边界
 
 - 同样高度、同一相机和灯光下，照片模型更接近小组照片中的四孔前窗、圆顶轮廓、侧窗格栅和胸甲。现有 Mark V 是另一种外形，不能仅凭这组照片判定它错误。
