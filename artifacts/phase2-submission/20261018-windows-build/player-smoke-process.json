@@ -1,0 +1,28 @@
+{
+  "sourceCommit": "6088c736e89d05101e09645c1796556012a6fd5d",
+  "executable": "E:\\Codex\\Temp\\phase2-windows-20261018\\zip-extracted\\XRmuseum-Phase2-Windows-x64\\MuseumVR.exe",
+  "arguments": [
+    "-screen-fullscreen",
+    "0",
+    "-screen-width",
+    "1280",
+    "-screen-height",
+    "720",
+    "-logFile",
+    "\"E:\\Codex\\Temp\\phase2-windows-20261018\\evidence\\player-smoke.log\""
+  ],
+  "startedUtc": "2026-10-18T13:30:27.3978100Z",
+  "finishedUtc": "2026-10-18T13:31:23.1761574Z",
+  "pid": 42024,
+  "observedSeconds": 40,
+  "aliveAfterObservation": true,
+  "windowHandle": 0,
+  "responded": true,
+  "closeRequested": true,
+  "closeAccepted": false,
+  "exitCode": -1,
+  "forced": true,
+  "startupObservation": "observed-for-40-seconds-log-review-required",
+  "log": "E:\\Codex\\Temp\\phase2-windows-20261018\\evidence\\player-smoke.log",
+  "note": "Local extracted-player startup smoke check only. No physical headset/controller, PQ604 PC, interaction, stereo rendering or performance verification is implied. Exit/forced termination and startup observation are separate results; the final startup conclusion also requires log review."
+}
