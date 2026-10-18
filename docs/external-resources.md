@@ -1,5 +1,11 @@
 # 外部资源与辅助工具记录
 
+## 2026-10-18：Phase 2 成员登记与小组活动记录
+
+用户提供六份个人文案文件名作为姓名、学号与账号依据，以及本地课程 Activity Record DOCX 模板。Codex 辅助核对 GitHub 公开状态、提交／PR／活动证据，登记 README，并按模板编排约一页的英文小组活动记录；没有新增或代写个人经历、工时、会议或设备／用户研究结果。原始课程模板与六篇个人文案保持不变；仓库仅保存完成后的活动记录 PDF，不上传原始模板、批注或个人文案。
+
+文档使用本机 Microsoft Word 导出，保留模板 A4、Times New Roman 12 号及三张表格结构；中文姓名采用本机 Microsoft YaHei 回退。使用 Codex bundled Python／Node、lxml、pypdf、pdfplumber、Poppler 与文档渲染器做来源、排版、链接及保留检查；未向 Unity 增加字体、资源或运行时依赖。具体范围与证据见[本轮活动](activity/2026-10-18-phase2-readme-activity-record.md)。
+
 ## 2026-10-18：#60 1839 早期头盔外形研究
 
 本轮以 [Science Museum Group Collection 1881-47](https://collection.sciencemuseumgroup.org.uk/objects/co40614/first-closed-diving-helmet-and-breastplate) 为唯一馆藏原型。馆藏条目记载 1839 年、Siebe／Deane 关联、铜合金与玻璃等材料、整体 465 × 460 × 417 mm 和 11.5 kg；记录没有标出三轴对应关系，也未提供可核验的背面、铰链或接头尺寸。模型外轮廓参照页面上的一张照片；照片标注为 CC BY-NC-SA 4.0，本仓库**未复制、上传或贴图使用原照片**。馆藏事实和模型估算分别记录在[本轮活动](activity/2026-10-18-early-helmet-1881-47.md)与几何清单中。
