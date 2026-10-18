@@ -1,0 +1,33 @@
+{
+  "sourceCommit": "1096be0ca0cc7fc09f02195b7cf749d90ad3a136",
+  "combinedCommit": "af1a2854ea391e95e5dd3689dab65ebfadb0d3c6",
+  "module": "VisitorEraValidation",
+  "runDirectory": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T112105085Z-ve69-cf92fe5459dc4d50860a086c830f6af7",
+  "report": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T112105085Z-ve69-cf92fe5459dc4d50860a086c830f6af7\\qa\\20261018T112137294Z-visitor-era-04254479db4248118d9ae1da0bcb7b6f\\report.json",
+  "reportSha256": "4e04f3d7bf8f7360f8945cc25288be1f3f535fc362cb4bc32a072a8698e8fa46",
+  "unityLogSha256": "f06570e136511d70beef89da8cf17ae4451ede4fc51c0af5e1bb6118ffc57c23",
+  "exitCode": 1,
+  "forced": false,
+  "sourceFilesChecked": 1291,
+  "sourceChanges": [],
+  "passedChecks": 728,
+  "failedChecks": [
+    {
+      "name": "Current production ray selects observation / 2/bonnet",
+      "detail": "selections=0; kind=; origin=(0.12, 1.30, 3.09); marker=(0.12, 1.15, 3.51); Ray Interactor: active=True; hit=Bonnet Capsule; hovered=Physical UI - Rotate | Teleport Interactor: active=False; hit=none; hovered=",
+      "passed": false
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "captureCount": 31,
+  "prePressEvidence": [
+    {
+      "name": "Current production ray hovers observation / 2/bonnet",
+      "detail": "Ray Interactor: active=True; hit=Bonnet Capsule; hovered=Physical UI - Rotate,Bonnet shell Hotspot | Teleport Interactor: active=False; hit=none; hovered=",
+      "passed": true
+    }
+  ],
+  "nextValidationSourceCommit": "9285c6c78393d0be1c77e9c474b099ed69b8edc8",
+  "resolution": "Thin Physics ray prefilter found marker, but authored XRI ConeCast still first hit Bonnet Capsule. Next fixture requires actual production first hit and hover before Grip; keeps cone/ray settings and tries only outside-solid poses. This is not evidence that Grip moved the controller. All select/release assertions retained."
+}

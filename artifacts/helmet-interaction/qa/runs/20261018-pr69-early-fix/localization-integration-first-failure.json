@@ -1,0 +1,28 @@
+{
+  "module": "LocalizationIntegrationValidation",
+  "combinedCommit": "7e5b539cdb3faf65a32ce4491172ccdd33e4257d",
+  "runDirectory": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T114529509Z-li69-f2491640022e4bc7a6fad8e263e98303",
+  "report": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\artifacts\\localization\\qa\\runs\\20261018T114600067Z-integration-11046bea8b294d15a99c29d33f92d936\\report.json",
+  "reportSha256": "0728e15a7e07b5f48932cfef53ad285447e0d26c8655fea266f4f8304a00e407",
+  "unityLogSha256": "a49766ce52e50d79704a6539d2a1eba8721a81ea60e9e658018abd969e3ef331",
+  "passedChecks": 411,
+  "failedChecks": [
+    {
+      "kind": "runtime structure",
+      "name": "PR9 progressive exploration remains installed",
+      "detail": "Uses saved production components.",
+      "passed": false
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "exitCode": 1,
+  "forced": false,
+  "sourceAfter": {
+    "checkedFiles": 1291,
+    "changed": [],
+    "before": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T114529509Z-li69-f2491640022e4bc7a6fad8e263e98303\\source-before.json"
+  },
+  "resolutionCommit": "3a816a853a4eab6eae80d8d62a720d2f7eab25e0",
+  "resolution": "Inactive saved PR9 palette was omitted by FindObjectOfType. Validate current station language inputs first; then retain original assertions in an explicitly restored optional legacy fixture. Editor-only change; rerun pending."
+}

@@ -1,0 +1,181 @@
+{
+  "prSourceCommit": "3a816a853a4eab6eae80d8d62a720d2f7eab25e0",
+  "productFixCommit": "b92b06aa7aed158662821abffedd7aef07baf7ee",
+  "actualMainSynced": "d078ab4f8064b50ffbde90e3d6fd3d5630133898",
+  "lfsExpanded": 82,
+  "modules": [
+    {
+      "module": "LocalizationValidation",
+      "testedCommit": "40f9975227f8426c552fb4de67215d77622418ed",
+      "executeMethod": "Museum.Localization.EditorTools.LocalizationValidation.RunBatch",
+      "runDirectory": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111453490Z-joint-69-localization-final-8ac1b17ae82a47858f8b681aeaa449e7",
+      "report": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\artifacts\\localization\\qa\\runs\\20261018T111528791Z-validation\\report.json",
+      "reportSha256": "b4690964ef1ed26894ef0d7547020aa2d23a7d374144d6600574787f80067700",
+      "unityLogSha256": "43d69d557031ae9b8ae51bc75d7acda1e6867aad8d2426c425efb99638aa0a31",
+      "passedChecks": 11,
+      "failedChecks": [],
+      "errors": "not in report schema",
+      "warnings": "not in report schema",
+      "exitCode": 0,
+      "forced": false,
+      "sourceAfter": {
+        "checkedFiles": 1291,
+        "changed": [],
+        "before": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111453490Z-joint-69-localization-final-8ac1b17ae82a47858f8b681aeaa449e7\\source-before.json"
+      },
+      "fullUnityLogReview": "Reviewed through natural exit: expected licensing/no-headset OpenXR startup output only; no product C# exception/assertion/shader compile error or cleanup exception."
+    },
+    {
+      "module": "VisitorEraValidation",
+      "testedCommit": "7e5b539cdb3faf65a32ce4491172ccdd33e4257d",
+      "executeMethod": "Museum.Localization.EditorTools.VisitorEraValidation.RunBatch",
+      "runDirectory": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T114010660Z-ve69-078fe43f5b754358a6b052207255bdc9",
+      "report": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T114010660Z-ve69-078fe43f5b754358a6b052207255bdc9\\qa\\20261018T114041921Z-visitor-era-cf2c87e2d9c647e4ae59221972fc2c44\\report.json",
+      "reportSha256": "8bd9a3f78df5ba372b15cca0b2473f377f7b460a2d6e87c60e84be78b81aa26f",
+      "unityLogSha256": "1037276509e9b7ff63dcf05829f847e92016b132efc107bfb579a602a5a00bc4",
+      "passedChecks": 959,
+      "failedChecks": [],
+      "errors": [],
+      "warnings": [],
+      "exitCode": 0,
+      "forced": false,
+      "sourceAfter": {
+        "checkedFiles": 1291,
+        "changed": [],
+        "before": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T114010660Z-ve69-078fe43f5b754358a6b052207255bdc9\\source-before.json"
+      },
+      "fullUnityLogReview": "Reviewed through natural exit: expected licensing/no-headset OpenXR startup output only; no product C# exception/assertion/shader compile error or cleanup exception."
+    },
+    {
+      "module": "HelmetDiegeticValidation",
+      "testedCommit": "7e5b539cdb3faf65a32ce4491172ccdd33e4257d",
+      "executeMethod": "Museum.Diegetic.Editor.HelmetDiegeticValidation.RunBatch",
+      "runDirectory": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T114224016Z-di69-4819bf73f15c4bc9a9b3569433b1c86d",
+      "report": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261018T114255370Z-precision-close-hints-20261017-fab9562f4a70472f84f6ede1d62439b2\\report.json",
+      "reportSha256": "3fc2b0d661863796d422f53ca6ab580339e412627aae7bbb232716abd63e9236",
+      "unityLogSha256": "af7eb01f9d5815ddb326d87c9789a62ce9fc494131fdb12ce0eb11eb49061bf3",
+      "passedChecks": 819,
+      "failedChecks": [],
+      "errors": [],
+      "warnings": "not in report schema",
+      "exitCode": 0,
+      "forced": false,
+      "sourceAfter": {
+        "checkedFiles": 1291,
+        "changed": [],
+        "before": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T114224016Z-di69-4819bf73f15c4bc9a9b3569433b1c86d\\source-before.json"
+      },
+      "fullUnityLogReview": "Reviewed through natural exit: expected licensing/no-headset OpenXR startup output only; no product C# exception/assertion/shader compile error or cleanup exception."
+    },
+    {
+      "module": "LocalizationIntegrationValidation",
+      "testedCommit": "aa9dba38e9d6d7ea3fd0d3f77385ae844dcdd06e",
+      "executeMethod": "Museum.Localization.EditorTools.LocalizationIntegrationValidation.RunBatch",
+      "runDirectory": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T115314561Z-li69-8acfa8e6a287468c9999f7412e695189",
+      "report": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\artifacts\\localization\\qa\\runs\\20261018T115349447Z-integration-45231e7d8d534e45aa5fb3b8aeb194ed\\report.json",
+      "reportSha256": "340bdbfee281cd44dcf1ca65e3e92eb23f56488dc21dc3e1e864681cbe36e712",
+      "unityLogSha256": "81a0b6d62c715b72c929add27a03a90466c9990a7ccbd5fe942674b76f20515a",
+      "passedChecks": 122830,
+      "failedChecks": [],
+      "errors": [],
+      "warnings": [],
+      "exitCode": 0,
+      "forced": false,
+      "sourceAfter": {
+        "checkedFiles": 1291,
+        "changed": [],
+        "before": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T115314561Z-li69-8acfa8e6a287468c9999f7412e695189\\source-before.json"
+      },
+      "fullUnityLogReview": "Reviewed through natural exit: expected licensing/no-headset OpenXR startup output only; no product C# exception/assertion/shader compile error or cleanup exception.",
+      "currentAndRestorationChecks": [
+        {
+          "kind": "current presentation",
+          "name": "current diegetic station is ready",
+          "detail": "Saved production entry.",
+          "passed": true
+        },
+        {
+          "kind": "current station public command",
+          "name": "current Air diagram starts",
+          "detail": "Public command fixture; language selection below uses the production ray.",
+          "passed": true
+        },
+        {
+          "kind": "current presentation",
+          "name": "production language input retains current playback / Chinese",
+          "detail": "before=0.01852444; after=0.07322705",
+          "passed": true
+        },
+        {
+          "kind": "current presentation",
+          "name": "production language input retains current playback / TraditionalChinese",
+          "detail": "before=0.07322705; after=0.1282206",
+          "passed": true
+        },
+        {
+          "kind": "current presentation",
+          "name": "production language input retains current playback / English",
+          "detail": "before=0.1282206; after=0.1827187",
+          "passed": true
+        },
+        {
+          "kind": "current station public command",
+          "name": "current diagram closes in selected language",
+          "detail": "Legacy suite starts only after current checks pass.",
+          "passed": true
+        },
+        {
+          "kind": "fixture restoration",
+          "name": "current station and every explicitly changed legacy state are restored",
+          "detail": "Original activeSelf/enabled snapshots.",
+          "passed": true
+        }
+      ],
+      "optionalLegacyOriginalHelpersUnchanged": true,
+      "temporaryLegacyCaptures": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\tmp\\trilingual-qa\\20261018-115455",
+      "capturesInMainReport": 18,
+      "checkKinds": {
+        "saved assets": 7,
+        "saved font": 2,
+        "structure": 53,
+        "saved binding": 16,
+        "saved visibility": 7,
+        "saved layout": 1,
+        "runtime structure": 2,
+        "current presentation": 4,
+        "runtime state": 1,
+        "input fixture": 1,
+        "current text": 962,
+        "current layout": 337,
+        "current glyphs": 337,
+        "current station public command": 2,
+        "XR input": 40,
+        "optional legacy fixture": 1,
+        "XR input result": 10,
+        "progressive visibility": 60,
+        "rendered text": 186,
+        "text layout": 21,
+        "legacy visibility": 30,
+        "QA camera": 6,
+        "runtime lifecycle": 2,
+        "public exploration API": 1,
+        "helmet hotspots": 792,
+        "trilingual main scene": 119582,
+        "logs": 2,
+        "fixture restoration": 1,
+        "source integrity": 364
+      }
+    }
+  ],
+  "canonicalEvidenceDirectory": "artifacts/helmet-interaction/qa/runs/20261018-pr65-66-69-combined/",
+  "limitations": [
+    "Desktop synthetic XR inputs and labelled public API fixtures, not physical headset or executable build.",
+    "Passing report.errors arrays cover their subscribed lifetime; full raw Unity log separately reviewed through natural process exit.",
+    "Existing licensing startup errors, missing-headset OpenXR XR_ERROR_FORM_FACTOR_UNAVAILABLE exception output, and occasional exit Curl42 warnings are environment limitations, not claimed absent.",
+    "TrilingualMuseumValidation helper remained unchanged and wrote its temporary captures under tmp/trilingual-qa; durable selected evidence belongs to the separate combined run."
+  ],
+  "onlyMuseumVRDifference_7e_to_aa9": [
+    "MuseumVR/Assets/Museum/Features/Localization/Editor/LocalizationIntegrationValidation.cs"
+  ],
+  "entireMuseumVRTree_PRSource_equals_FinalCombined": true
+}

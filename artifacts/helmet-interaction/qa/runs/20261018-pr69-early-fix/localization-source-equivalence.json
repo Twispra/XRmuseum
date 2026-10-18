@@ -1,0 +1,40 @@
+{
+  "localizationCommit": "40f9975227f8426c552fb4de67215d77622418ed",
+  "behaviorCommit": "7e5b539cdb3faf65a32ce4491172ccdd33e4257d",
+  "onlyDiff": [
+    "MuseumVR/Assets/Museum/Features/Localization/Editor/VisitorEraValidation.cs",
+    "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity"
+  ],
+  "localizationInputsAndValidatorIdentical": [
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Tables/MuseumTranslations.json",
+      "sha256": "0d8f272bed66d8ce295d107698125bf0fef39ce6f3c4e059e2ecd66e36e924b2"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Tables/LocalizationTable.asset",
+      "sha256": "4764cc36307508490c842b24e1814dbee68e0f7e62878158d1b7a51453198847"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Fonts/characters-required.txt",
+      "sha256": "4fb6686388f4919bdcdde9249b5790c788230ce807190e732dea9aada900c6ce"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset",
+      "sha256": "ea619f682bc7c9c5c8d130824c12f6b151f65e68ef8e97380c371e88fd2cc74f"
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/LocalizationValidation.cs",
+      "sha256": "15a0c1da65731c20ba4892c1a20bed18148a1867b8eeb08c849aa463f1993296"
+    }
+  ],
+  "mainSyncedPRCommit": "2b1eeea253cd3176600cd63115aec5ba45fc6f0f",
+  "actualMainMerged": "d078ab4f8064b50ffbde90e3d6fd3d5630133898",
+  "entireMuseumVRTreeIdentical": true,
+  "lfsExpandedFiles": 82,
+  "finalPRSourceCommit": "3a816a853a4eab6eae80d8d62a720d2f7eab25e0",
+  "finalCombinedIntegrationCommit": "aa9dba38e9d6d7ea3fd0d3f77385ae844dcdd06e",
+  "onlyMuseumVRChangeAfterBehavior": [
+    "MuseumVR/Assets/Museum/Features/Localization/Editor/LocalizationIntegrationValidation.cs"
+  ],
+  "finalEntireMuseumVRTreeIdentical": true
+}

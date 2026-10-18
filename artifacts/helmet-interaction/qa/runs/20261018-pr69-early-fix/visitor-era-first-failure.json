@@ -1,0 +1,25 @@
+{
+  "sourceCommit": "483b2da32a0be5147339d19136324be9379c892f",
+  "combinedCommit": "68a151cda56fca9efa23180499f4ced7cd7bbda9",
+  "module": "VisitorEraValidation",
+  "runDirectory": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111119301Z-joint-69-visitor-era-464b95c67e9a484ca674360189e49d77",
+  "report": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111119301Z-joint-69-visitor-era-464b95c67e9a484ca674360189e49d77\\qa\\20261018T111153291Z-visitor-era-c433dbd9c997487dbfa70f6e8e73c25d\\report.json",
+  "reportSha256": "293b32e90fd04cfbbf2e8282cbb7c6cbe8b75888c1bac624893cf79c47c7f518",
+  "unityLogSha256": "b05afef68695720c4b61a9595a02668be7485d493c77258a13625dc57fcebb44",
+  "exitCode": 1,
+  "forced": false,
+  "failedChecks": [
+    {
+      "name": "Saved glyphs and layout fit / Selected observation card remains current / 0/English",
+      "detail": "missing=; overflowing=True; fontSize=0.28",
+      "passed": false
+    }
+  ],
+  "passedChecks": 328,
+  "errors": [],
+  "dirtyAfter": [
+    "?? artifacts/localization/qa/runs/20261018T111034256Z-validation/report.json"
+  ],
+  "nextProductCommit": "b4af252a8c8dd8e8214e9481a9d2364d8f50b7f9",
+  "resolution": "Shortened all three complete trilingual early-model cards without changing font minimum, container, station, CheckLayout or interaction assertions. Product behavior remains pending a new run."
+}

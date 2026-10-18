@@ -1,0 +1,29 @@
+{
+  "sourceCommit": "1096be0ca0cc7fc09f02195b7cf749d90ad3a136",
+  "combinedCommit": "af1a2854ea391e95e5dd3689dab65ebfadb0d3c6",
+  "module": "VisitorEraValidation",
+  "runDirectory": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111935427Z-joint-69-visitor-era-clear-ray-278f1612fd59460c8401e69dc16be4ba",
+  "report": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111935427Z-joint-69-visitor-era-clear-ray-278f1612fd59460c8401e69dc16be4ba\\qa\\20261018T112009500Z-visitor-era-c97054011abc47fa96f7acfc9f3c4c84\\report.json",
+  "reportSha256": "f6a32dd28d52b5ff15f4319da3f5b999e86222b3f1d0b998537f423648226f99",
+  "unityLogSha256": "1ba21e0c5f3315ffbe9390b7d98910079587e2b30d4dd812a5ce9c30f687d6ac",
+  "exitCode": 1,
+  "forced": false,
+  "sourceFilesChecked": 1291,
+  "sourceChanges": [],
+  "passedChecks": 431,
+  "failedChecks": [],
+  "failure": "System.IO.DirectoryNotFoundException: Could not find a part of the path \"E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111935427Z-joint-69-visitor-era-clear-ray-278f1612fd59460c8401e69dc16be4ba\\qa\\20261018T112009500Z-visitor-era-c97054011abc47fa96f7acfc9f3c4c84\\early-TraditionalChinese-breastplate-card.png\"\r\n  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <1071a2cb0cb3433aae80a793c277a048>:0 \r\n  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share) [0x00000] in <1071a2cb0cb3433aae80a793c277a048>:0 \r\n  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare)\r\n  at System.IO.File.InternalWriteAllBytes (System.String path, System.Byte[] bytes) [0x00000] in <1071a2cb0cb3433aae80a793c277a048>:0 \r\n  at System.IO.File.WriteAllBytes (System.String path, System.Byte[] bytes) [0x00039] in <1071a2cb0cb3433aae80a793c277a048>:0 \r\n  at Museum.Localization.EditorTools.VisitorEraValidation.CaptureLabels (System.String file, System.Collections.Generic.IEnumerable`1[T] labels, System.String purpose) [0x001e3] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\VisitorEraValidation.cs:704 \r\n  at Museum.Localization.EditorTools.VisitorEraValidation+<ValidateRuntime>d__49.MoveNext () [0x00800] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\VisitorEraValidation.cs:260 \r\n  at Museum.Localization.EditorTools.VisitorEraValidation.Tick () [0x000ce] in C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\MuseumVR\\Assets\\Museum\\Features\\Localization\\Editor\\VisitorEraValidation.cs:196 ",
+  "errors": [],
+  "warnings": [],
+  "captureCount": 11,
+  "missingCapturePathLength": 261,
+  "captureParentExists": true,
+  "captureExists": false,
+  "resolution": "Suspected Windows/Unity Mono MAX_PATH: a 261-character file path failed while the directory exists and preceding shorter files saved. Re-run the identical frozen commit with a shorter independent RunName ve69; no source change or assertion skipped.",
+  "sameCommitShortPathResult": {
+    "savedPreviouslyFailingCapture": true,
+    "capturePathLength": 235,
+    "runDirectory": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T112105085Z-ve69-cf92fe5459dc4d50860a086c830f6af7",
+    "noSourceChanges": true
+  }
+}
