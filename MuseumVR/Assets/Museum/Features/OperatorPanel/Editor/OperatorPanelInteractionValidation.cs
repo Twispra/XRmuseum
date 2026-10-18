@@ -404,7 +404,7 @@ namespace Museum.OperatorPanel.Editor
             var centre=Camera.main.WorldToViewportPoint(bounds.center,Camera.MonoOrStereoscopicEye.Mono);
             var points=wholeViewport?corners:new[]{centre};
             CheckResult(distance>=.35f&&distance<=1.6f && points.All(p=>p.z>Camera.main.nearClipPlane && p.x>=.03f && p.x<=.97f && p.y>=.03f && p.y<=.97f),(wholeViewport?"Whole panel fits current eye viewport":"Panel centre appears in current eye viewport")+" at near distance: "+fixture,
-                "Distance="+distance.ToString("F4")+"; Viewport corners="+string.Join(",",corners.Select(p=>p.ToString("F4"))));
+                "Distance="+distance.ToString("F4")+"; Centre="+centre.ToString("F4")+"; WholeRequired="+wholeViewport+"; Viewport corners="+string.Join(",",corners.Select(p=>p.ToString("F4"))));
             var helmet=inspection.transform.position;
             CheckResult(new Vector2(bounds.center.x-helmet.x,bounds.center.z-helmet.z).magnitude>=.55f,"Final panel centre keeps helmet clearance: "+fixture,bounds.ToString());
             var obstacles=station.Inspection.GetComponentsInChildren<Renderer>(false).Where(r=>r.enabled)
