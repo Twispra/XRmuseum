@@ -1,0 +1,32 @@
+{
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T112456008Z-ve69-e664e27c3fd64da28eb5efc9f247f1e1\\unity.log",
+  "logSha256": "bc700715b6959ebb126a6f7094e3497db8380f2834b1e4c28d000a8dae802acd",
+  "lineCount": 1508,
+  "applicationExceptionAndCompileErrorMatches": [
+    {
+      "line": 635,
+      "text": "System.InvalidOperationException: Current production ray hovers observation as first surface / 2/breastplate: candidate poses=0; Ray Interactor: active=True; hit=Welcome Panel; hitDistance=9.271366; origin=(0.800000, 0.800000, 1.000000); forward=(-0.016156, 0.009524, 0.999824); detection=ConeCast; mask=-2147483615; triggers=Collide; hovered= | Teleport Interactor: active=False; hit=none; hitDistance=-1; origin=(0.800000, 0.800000, 1.000000); forward=(-0.016156, 0.009524, 0.999824); detection=Raycast; mask=-2147483615; triggers=Collide; hovered="
+    }
+  ],
+  "format": "JSON evidence line endings normalized to LF; values and image bytes retained",
+  "copied": [
+    {
+      "file": "process.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T112456008Z-ve69-e664e27c3fd64da28eb5efc9f247f1e1\\process.json",
+      "sourceSha256": "979bea9d4d2e3af70ed67a0f89b3d954ab1c61f1bc4f7f10e82023eef2e63a16",
+      "storedLfSha256": "83a0aa99e86f70e4e5f3dc2a7bdbc8dbe26eef06af5670293c76d56519673bac"
+    },
+    {
+      "file": "source-after.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T112456008Z-ve69-e664e27c3fd64da28eb5efc9f247f1e1\\source-after.json",
+      "sourceSha256": "8a43a5e098cfc4b19f3f2e2c498b1638fc2c54f22966039189a882e8467febaf",
+      "storedLfSha256": "2f49b17dbd02c2962658e0120b02dd8f8ac875c9d61a97bb5433c3ca92d5978e"
+    },
+    {
+      "file": "report.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T112456008Z-ve69-e664e27c3fd64da28eb5efc9f247f1e1\\qa\\20261018T112531326Z-visitor-era-44ff18d07bfb4db985a5f118ee8ab78a\\report.json",
+      "sourceSha256": "c07c955ee89544608a77a21285edf5e4c8e8c50565165e22a625f640177f9156",
+      "storedLfSha256": "c07c955ee89544608a77a21285edf5e4c8e8c50565165e22a625f640177f9156"
+    }
+  ]
+}

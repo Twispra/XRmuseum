@@ -1,0 +1,57 @@
+{
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T115027424Z-cjoint-af456f9a5a394c0791606bca78966787\\unity.log",
+  "logSha256": "589ee893bc69700ec9a034345870d865b2a60f431004ea9ba3fe05ce14889417",
+  "lineCount": 1499,
+  "applicationExceptionAndCompileErrorMatches": [],
+  "format": "JSON evidence line endings normalized to LF; values and image bytes retained",
+  "copied": [
+    {
+      "file": "process.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T115027424Z-cjoint-af456f9a5a394c0791606bca78966787\\process.json",
+      "sourceSha256": "45d44b4b804e78ce2243a9b8c3c5c50883a0204a86fd59b6017ade1d39b95010",
+      "storedLfSha256": "548e86c24fa2f0843028110857b2bb651a4dda19089ee1fa8736103f62314041"
+    },
+    {
+      "file": "source-after.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T115027424Z-cjoint-af456f9a5a394c0791606bca78966787\\source-after.json",
+      "sourceSha256": "fee6f0681eb1277d1fca01ee2fb470eb082a6718d068c5f36e36d4a45e551a2b",
+      "storedLfSha256": "d25e738262a399fb71f839b036c6b2d48047f0947dba7bf273a69d4d6e9b8d90"
+    },
+    {
+      "file": "report.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T115027424Z-cjoint-af456f9a5a394c0791606bca78966787\\qa\\report.json",
+      "sourceSha256": "7d27bf415d764905a50239bae15439236b6c6f7b28931af4fc405d3e2ad6acec",
+      "storedLfSha256": "7d27bf415d764905a50239bae15439236b6c6f7b28931af4fc405d3e2ad6acec"
+    },
+    {
+      "file": "01-front.jpg",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T115027424Z-cjoint-af456f9a5a394c0791606bca78966787\\qa\\01-front.jpg",
+      "sha256": "961ccae1cc582d8038a3a6e1347bf37c17eaad43badaf76ceef973344c2d6f43"
+    },
+    {
+      "file": "02-rotated.jpg",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T115027424Z-cjoint-af456f9a5a394c0791606bca78966787\\qa\\02-rotated.jpg",
+      "sha256": "7516aa90c0733b57c7dca1f6637511bd32945758e978b477b7263818e497db9f"
+    },
+    {
+      "file": "03-section.jpg",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T115027424Z-cjoint-af456f9a5a394c0791606bca78966787\\qa\\03-section.jpg",
+      "sha256": "ddfa2c400828f49a3a8d82e367282b919c51511a49be5769baa4cd4b0a163d5d"
+    },
+    {
+      "file": "04-depth.jpg",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T115027424Z-cjoint-af456f9a5a394c0791606bca78966787\\qa\\04-depth.jpg",
+      "sha256": "542dfa0664d056e384e8ff57e958f8e0c859b0253a48b4308bed689b45b82f28"
+    },
+    {
+      "file": "05-rotated-section.jpg",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T115027424Z-cjoint-af456f9a5a394c0791606bca78966787\\qa\\05-rotated-section.jpg",
+      "sha256": "ac7015f8f6a28d01d481bb25e6c12dc8ccaaff10f0bc35648af322929d56c12d"
+    },
+    {
+      "file": "06-reset.jpg",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T115027424Z-cjoint-af456f9a5a394c0791606bca78966787\\qa\\06-reset.jpg",
+      "sha256": "961ccae1cc582d8038a3a6e1347bf37c17eaad43badaf76ceef973344c2d6f43"
+    }
+  ]
+}

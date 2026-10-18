@@ -1,0 +1,32 @@
+{
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T112105085Z-ve69-cf92fe5459dc4d50860a086c830f6af7\\unity.log",
+  "logSha256": "f06570e136511d70beef89da8cf17ae4451ede4fc51c0af5e1bb6118ffc57c23",
+  "lineCount": 1517,
+  "applicationExceptionAndCompileErrorMatches": [
+    {
+      "line": 611,
+      "text": "System.InvalidOperationException: Current production ray selects observation / 2/bonnet: selections=0; kind=; origin=(0.12, 1.30, 3.09); marker=(0.12, 1.15, 3.51); Ray Interactor: active=True; hit=Bonnet Capsule; hovered=Physical UI - Rotate | Teleport Interactor: active=False; hit=none; hovered="
+    }
+  ],
+  "format": "JSON evidence line endings normalized to LF; values and image bytes retained",
+  "copied": [
+    {
+      "file": "process.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T112105085Z-ve69-cf92fe5459dc4d50860a086c830f6af7\\process.json",
+      "sourceSha256": "b59a7a8e7583f82692c3f06ce0385bf60d7f7d8de7d27fe98ce03400db5e8f1f",
+      "storedLfSha256": "cd5a090dff60001490eb243ccfdaddb16b371e3969a913f47265259983054fb8"
+    },
+    {
+      "file": "source-after.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T112105085Z-ve69-cf92fe5459dc4d50860a086c830f6af7\\source-after.json",
+      "sourceSha256": "f10dabb237e4f54690a9458d409ce15636916feac0d5239ae233f29ef0a512ad",
+      "storedLfSha256": "f7376030ec1d73684d79c1c3f5b21854d66ae4081f24847835da05b5ce3468a5"
+    },
+    {
+      "file": "report.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T112105085Z-ve69-cf92fe5459dc4d50860a086c830f6af7\\qa\\20261018T112137294Z-visitor-era-04254479db4248118d9ae1da0bcb7b6f\\report.json",
+      "sourceSha256": "4e04f3d7bf8f7360f8945cc25288be1f3f535fc362cb4bc32a072a8698e8fa46",
+      "storedLfSha256": "4e04f3d7bf8f7360f8945cc25288be1f3f535fc362cb4bc32a072a8698e8fa46"
+    }
+  ]
+}

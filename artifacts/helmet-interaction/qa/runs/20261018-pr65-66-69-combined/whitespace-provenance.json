@@ -1,0 +1,8 @@
+{
+  "baselineOriginalPrHead": "83d64397d99f6d3b7dc99d85fe62bd23d5fff979",
+  "baselineDiffWarnings": 216,
+  "currentDiffWarnings": 266,
+  "method": "Diff hunk/rename context changes warning counts; compare actual complete original/current file lines for every flagged whitespace value and unchanged EOF geometry bytes.",
+  "introducedByRepair": [],
+  "decision": "Preserve tested Unity serialization and source geometry; do not rewrite assets solely to remove inherited empty-value spaces. Staged new documentation/evidence diff-check passes."
+}
