@@ -188,12 +188,21 @@ namespace Museum.OperatorPanel
                     for (int height = -4; height <= 4; height++)
                         candidates.Add(center + forward * (depth * .05f) + right * (side * .05f) + Vector3.up * (height * .05f));
             bool clear = false;
-            foreach (var candidate in candidates.OrderBy(p => (p - center).sqrMagnitude))
+            var ordered = candidates.OrderBy(p => (p - center).sqrMagnitude).ToArray();
+            // Prefer the whole panel in the current view. A low downward glance can leave
+            // no such space above a solid plinth: then keep its centre visible, with the
+            // complete panel safely readable after looking toward that centre. Neither
+            // the panel position nor its rotation changes when the visitor looks up.
+            foreach (bool wholeCurrentView in new[] { true, false })
             {
-                if (panels.Any(p => !IsClear(WorldEnvelope(p.bounds, candidate + placementFacing * p.offset, placementFacing), obstacles))) continue;
-                placementCenter = candidate;
-                clear = true;
-                break;
+                foreach (var candidate in ordered)
+                {
+                    if (panels.Any(p => !IsClear(WorldEnvelope(p.bounds, candidate + placementFacing * p.offset, placementFacing), obstacles, wholeCurrentView))) continue;
+                    placementCenter = candidate;
+                    clear = true;
+                    break;
+                }
+                if (clear) break;
             }
             if (!clear)
             {
@@ -249,17 +258,21 @@ namespace Museum.OperatorPanel
             return renderers.Where(r => r && r.enabled && r.gameObject.activeInHierarchy)
                 .Select(r => { var bounds = r.bounds; bounds.Expand(.06f); return bounds; }).ToList();
         }
-        bool IsClear(Bounds bounds, List<Bounds> obstacles)
+        bool IsClear(Bounds bounds, List<Bounds> obstacles, bool wholeCurrentView)
         {
             float eyeDistance = Vector3.Distance(viewer.position, bounds.center);
             if (eyeDistance < .35f || eyeDistance > 1.6f) return false;
             var camera = viewer.GetComponent<Camera>();
             if (camera)
-                foreach (var corner in Corners(bounds))
+            {
+                if (!InsideViewport(camera.WorldToViewportPoint(bounds.center, Camera.MonoOrStereoscopicEye.Mono), camera.nearClipPlane)) return false;
+                if (wholeCurrentView)
                 {
-                    var viewport = camera.WorldToViewportPoint(corner, Camera.MonoOrStereoscopicEye.Mono);
-                    if (viewport.z <= camera.nearClipPlane || viewport.x < .03f || viewport.x > .97f || viewport.y < .03f || viewport.y > .97f) return false;
+                    foreach (var corner in Corners(bounds))
+                        if (!InsideViewport(camera.WorldToViewportPoint(corner, Camera.MonoOrStereoscopicEye.Mono), camera.nearClipPlane)) return false;
                 }
+                else if (!FitsWhenFacingCenter(bounds, camera)) return false;
+            }
             if (obstacles.Any(bounds.Intersects)) return false;
             // World-space non-overlap alone can still put the panel behind the solid plinth
             // or the specimen. Keep the complete panel visible from the actual eye.
@@ -272,6 +285,20 @@ namespace Museum.OperatorPanel
             if (!station.Inspection) return true;
             var helmet = station.Inspection.transform.position;
             return new Vector2(bounds.center.x - helmet.x, bounds.center.z - helmet.z).sqrMagnitude >= minimumHelmetClearance * minimumHelmetClearance;
+        }
+        static bool InsideViewport(Vector3 point, float nearClip) => point.z > nearClip && point.x >= .03f && point.x <= .97f && point.y >= .03f && point.y <= .97f;
+        bool FitsWhenFacingCenter(Bounds bounds, Camera camera)
+        {
+            var facing = Quaternion.LookRotation(bounds.center - viewer.position, Vector3.up);
+            float halfHeight = Mathf.Tan(camera.fieldOfView * .5f * Mathf.Deg2Rad), halfWidth = halfHeight * camera.aspect;
+            foreach (var corner in Corners(bounds))
+            {
+                var local = Quaternion.Inverse(facing) * (corner - viewer.position);
+                if (local.z <= camera.nearClipPlane) return false;
+                var point = new Vector3(.5f + local.x / (2 * local.z * halfWidth), .5f + local.y / (2 * local.z * halfHeight), local.z);
+                if (!InsideViewport(point, camera.nearClipPlane)) return false;
+            }
+            return true;
         }
         void OnDestroy()
         {

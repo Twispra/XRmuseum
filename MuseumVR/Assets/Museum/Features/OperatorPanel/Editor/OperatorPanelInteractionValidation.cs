@@ -228,7 +228,14 @@ namespace Museum.OperatorPanel.Editor
                 yield return Click(entry,"pitched-eye summon "+pitch);
                 CheckResult(panel.PanelShown && Mathf.Abs(Mathf.DeltaAngle(settings.eulerAngles.x,0))<.01f,"Pitched eye can summon a yaw-only panel: "+pitch,"Shown="+panel.PanelShown+" PanelEuler="+settings.eulerAngles);
                 if(!panel.PanelShown) DumpRejectedPlacement(panel,settings,pitch);
-                CheckEnvelope(settings,"eye pitch "+pitch);CaptureEye("pitch-"+pitch);
+                CheckEnvelope(settings,"initial eye pitch "+pitch,false);CaptureEye("pitch-initial-"+pitch);
+                var eye=Camera.main.transform.position;var trackingParent=Camera.main.transform.parent;
+                var panelPosition=settings.position;var panelRotation=settings.rotation;
+                var towardPanel=Quaternion.LookRotation(RenderedEnvelope(settings).center-eye,Vector3.up);
+                QueueHead(trackingParent.InverseTransformPoint(eye),Quaternion.Inverse(trackingParent.rotation)*towardPanel);yield return Wait(.25f);
+                CheckResult(Vector3.Distance(panelPosition,settings.position)<.0001f&&Quaternion.Angle(panelRotation,settings.rotation)<.001f,
+                    "Looking at panel centre never repositions or follows the head: "+pitch,settings.position.ToString("F4"));
+                CheckEnvelope(settings,"focused eye pitch "+pitch);CaptureEye("pitch-focused-"+pitch);
                 if(panel.PanelShown)yield return Click(entry,"pitched-eye hide "+pitch);
             }
             QueueHead();yield return Wait(.2f);
@@ -382,14 +389,21 @@ namespace Museum.OperatorPanel.Editor
             CheckResult(control.ConfirmedCount==count+1,"Production release confirms once: "+fixture,"Count="+control.ConfirmedCount,"production-input");
             ParkHands();yield return Wait(.15f);
         }
-        static void CheckEnvelope(Transform panel,string fixture)
+        static Bounds RenderedEnvelope(Transform panel)
         {
             var renderers=panel.GetComponentsInChildren<Renderer>(false).Where(r=>r.enabled).ToArray();
             var bounds=renderers[0].bounds;foreach(var renderer in renderers.Skip(1))bounds.Encapsulate(renderer.bounds);
+            return bounds;
+        }
+        static void CheckEnvelope(Transform panel,string fixture,bool wholeViewport=true)
+        {
+            var bounds=RenderedEnvelope(panel);
             var corners=Enumerable.Range(0,8).Select(i=>bounds.center+Vector3.Scale(bounds.extents,new Vector3((i&1)==0?-1:1,(i&2)==0?-1:1,(i&4)==0?-1:1)))
                 .Select(c=>Camera.main.WorldToViewportPoint(c,Camera.MonoOrStereoscopicEye.Mono)).ToArray();
             var distance=Vector3.Distance(Camera.main.transform.position,bounds.center);
-            CheckResult(distance<=1.6f && corners.All(p=>p.z>Camera.main.nearClipPlane && p.x>=.03f && p.x<=.97f && p.y>=.03f && p.y<=.97f),"Whole panel fits current eye viewport at near distance: "+fixture,
+            var centre=Camera.main.WorldToViewportPoint(bounds.center,Camera.MonoOrStereoscopicEye.Mono);
+            var points=wholeViewport?corners:new[]{centre};
+            CheckResult(distance>=.35f&&distance<=1.6f && points.All(p=>p.z>Camera.main.nearClipPlane && p.x>=.03f && p.x<=.97f && p.y>=.03f && p.y<=.97f),(wholeViewport?"Whole panel fits current eye viewport":"Panel centre appears in current eye viewport")+" at near distance: "+fixture,
                 "Distance="+distance.ToString("F4")+"; Viewport corners="+string.Join(",",corners.Select(p=>p.ToString("F4"))));
             var helmet=inspection.transform.position;
             CheckResult(new Vector2(bounds.center.x-helmet.x,bounds.center.z-helmet.z).magnitude>=.55f,"Final panel centre keeps helmet clearance: "+fixture,bounds.ToString());
