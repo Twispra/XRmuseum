@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Museum.Diegetic;
 using Museum.Localization;
 using TMPro;
@@ -25,8 +27,8 @@ namespace Museum.OperatorPanel
         [SerializeField] Vector3 settingsOffset = new Vector3(-.42f, 0f, 0f);
         [SerializeField] Vector3 informationOffset = new Vector3(.42f, 0f, 0f);
         HelmetPhysicalControl entry;
-        int previousVisibleCount = -1;
-        bool entryBuilt, placementPending, placementPoseValid;
+        int previousVisibleState = -1;
+        bool entryBuilt, placementPoseValid;
         Vector3 placementCenter;
         Quaternion placementFacing;
         const float IdleOpacity = .22f, HandRevealDistance = .18f, FadeOutDelay = .65f;
@@ -99,6 +101,7 @@ namespace Museum.OperatorPanel
             entry = go.AddComponent<HelmetPhysicalControl>();
             entry.Configure(station, target, renderer, rim, text, detail, ShowTitle, EntryHint, Teal, Toggle);
             entry.ConfigureVisibility(IdleOpacity, HandRevealDistance, FadeOutDelay);
+            station.RegisterControl(entry);
             go.SetActive(true);
         }
         static TextMeshPro MakeLabel(Transform parent, string name, Vector3 position, Vector2 size)
@@ -116,15 +119,11 @@ namespace Museum.OperatorPanel
             return label;
         }
         /// <summary>True while any station gesture is mid-drag; summon and hide refuse during one
-        /// so the panel never jumps as a side effect of model rotation. Equipment drags are already
-        /// blocked at the XRI layer by the station's select filter, which prevents this entry
-        /// from being confirmed at all while they run.</summary>
+        /// so the panel never jumps as a side effect of model rotation. The dynamic entry also
+        /// inherits the station's select filter, including equipment drags.</summary>
         public static bool IsAnyGestureDragging(HelmetDiegeticStation station)
         {
-            if (!station) return false;
-            if (station.RotationGesture && station.RotationGesture.IsDragging) return true;
-            if (station.SectionGesture && station.SectionGesture.IsDragging) return true;
-            return false;
+            return station && station.HasActiveGesture;
         }
         public void Toggle()
         {
@@ -138,10 +137,10 @@ namespace Museum.OperatorPanel
         {
             if (!entryBuilt) { TryBuild(); if (!entryBuilt) return; }
             bool shown = PanelShown;
-            int visibleCount = (station.SettingsVisible ? 1 : 0) + (station.AboutVisible ? 1 : 0);
+            int visibleState = (station.SettingsVisible ? 1 : 0) | (station.AboutVisible ? 2 : 0);
             if (shown)
             {
-                if (!placementPoseValid || visibleCount != previousVisibleCount) PlaceVisiblePanels();
+                if (!placementPoseValid || visibleState != previousVisibleState) PlaceVisiblePanels();
                 entry.SetTitle(HideTitle);
             }
             else
@@ -149,7 +148,7 @@ namespace Museum.OperatorPanel
                 placementPoseValid = false;
                 entry.SetTitle(ShowTitle);
             }
-            previousVisibleCount = visibleCount;
+            previousVisibleState = visibleState;
         }
         /// <summary>Place every visible panel once at the viewer's current position, yaw-facing
         /// the viewer, clear of the exhibit. Panels then stay fixed; head movement never moves them,
@@ -163,23 +162,99 @@ namespace Museum.OperatorPanel
             var right = Vector3.Cross(Vector3.up, forward).normalized;
             var center = viewer.position + forward * summonDistance;
             center.y = viewer.position.y - summonBelowEye;
-            if (station.Inspection)
-            {
-                var helmet = station.Inspection.transform.position;
-                var flatHelmet = new Vector3(helmet.x, center.y, helmet.z);
-                var offset = center - flatHelmet;
-                offset.y = 0f;
-                if (offset.sqrMagnitude < minimumHelmetClearance * minimumHelmetClearance)
-                {
-                    var push = offset.sqrMagnitude < .0001f ? right : offset.normalized;
-                    center = flatHelmet + push * minimumHelmetClearance;
-                }
-            }
-            placementCenter = center;
             placementFacing = Quaternion.LookRotation(forward, Vector3.up);
+            var panels = new[] { (SettingsPath, settingsOffset), (InformationPath, informationOffset) }
+                .Select(p => (panel: station.transform.Find(PedestalPath + "/" + p.Item1), offset: p.Item2))
+                .Where(p => p.panel && p.panel.gameObject.activeSelf)
+                .Select(p => (p.panel, p.offset, bounds: LocalEnvelope(p.panel))).ToArray();
+            var obstacles = ObstacleBounds(panels.Select(p => p.panel).ToArray());
+            // Search at the requested eye height; validate the FINAL panel envelopes, including
+            // their offsets, before moving anything. The nearest clear candidate wins.
+            var candidates = new List<Vector3> { center };
+            for (int depth = 0; depth <= 6; depth++)
+                for (int side = -8; side <= 8; side++)
+                    candidates.Add(center + forward * (depth * .20f) + right * (side * .15f));
+            bool clear = false;
+            foreach (var candidate in candidates.OrderBy(p => (p - center).sqrMagnitude))
+            {
+                if (panels.Any(p => !IsClear(WorldEnvelope(p.bounds, candidate + placementFacing * p.offset, placementFacing), obstacles))) continue;
+                placementCenter = candidate;
+                clear = true;
+                break;
+            }
+            if (!clear)
+            {
+                // A crowded exhibition is an explicit refusal, never an overlapping invisible target.
+                if (station.SettingsVisible) station.Execute(HelmetDiegeticStation.Command.Settings);
+                else if (station.AboutVisible) station.Execute(HelmetDiegeticStation.Command.About);
+                placementPoseValid = false;
+                return;
+            }
             placementPoseValid = true;
             MoveIfVisible(SettingsPath, settingsOffset);
             MoveIfVisible(InformationPath, informationOffset);
+        }
+        static Bounds LocalEnvelope(Transform panel)
+        {
+            foreach (var text in panel.GetComponentsInChildren<TMP_Text>(true)) text.ForceMeshUpdate(true, true);
+            var result = new Bounds(Vector3.zero, Vector3.one * .02f);
+            foreach (var renderer in panel.GetComponentsInChildren<Renderer>(true))
+            {
+                var bounds = renderer.localBounds;
+                foreach (var corner in Corners(bounds))
+                    result.Encapsulate(panel.InverseTransformPoint(renderer.transform.TransformPoint(corner)));
+            }
+            foreach (var box in panel.GetComponentsInChildren<BoxCollider>(true))
+                foreach (var corner in Corners(new Bounds(box.center, box.size)))
+                    result.Encapsulate(panel.InverseTransformPoint(box.transform.TransformPoint(corner)));
+            result.Expand(.08f);
+            return result;
+        }
+        static IEnumerable<Vector3> Corners(Bounds bounds)
+        {
+            for (int i = 0; i < 8; i++)
+                yield return bounds.center + Vector3.Scale(bounds.extents,
+                    new Vector3((i & 1) == 0 ? -1 : 1, (i & 2) == 0 ? -1 : 1, (i & 4) == 0 ? -1 : 1));
+        }
+        static Bounds WorldEnvelope(Bounds local, Vector3 position, Quaternion rotation)
+        {
+            var result = new Bounds(position + rotation * local.center, Vector3.zero);
+            foreach (var corner in Corners(local)) result.Encapsulate(position + rotation * corner);
+            return result;
+        }
+        List<Bounds> ObstacleBounds(Transform[] panels)
+        {
+            var renderers = new List<Renderer>();
+            if (station.Inspection) renderers.AddRange(station.Inspection.GetComponentsInChildren<Renderer>(false));
+            if (station.Demonstration)
+                foreach (var equipment in station.Demonstration.EquipmentExhibits)
+                    if (equipment.IsVisible) renderers.AddRange(equipment.Renderers);
+            var pedestal = station.transform.Find(PedestalPath);
+            if (pedestal) renderers.AddRange(pedestal.GetComponentsInChildren<Renderer>(false)
+                .Where(r => !panels.Any(p => r.transform == p || r.transform.IsChildOf(p))));
+            return renderers.Where(r => r && r.enabled && r.gameObject.activeInHierarchy)
+                .Select(r => { var bounds = r.bounds; bounds.Expand(.06f); return bounds; }).ToList();
+        }
+        bool IsClear(Bounds bounds, List<Bounds> obstacles)
+        {
+            if (Vector3.Distance(viewer.position, bounds.center) > 1.6f) return false;
+            var camera = viewer.GetComponent<Camera>();
+            if (camera)
+                foreach (var corner in Corners(bounds))
+                {
+                    var viewport = camera.WorldToViewportPoint(corner, Camera.MonoOrStereoscopicEye.Mono);
+                    if (viewport.z <= camera.nearClipPlane || viewport.x < .03f || viewport.x > .97f || viewport.y < .03f || viewport.y > .97f) return false;
+                }
+            if (obstacles.Any(bounds.Intersects)) return false;
+            if (!station.Inspection) return true;
+            var helmet = station.Inspection.transform.position;
+            var closest = bounds.ClosestPoint(new Vector3(helmet.x, bounds.center.y, helmet.z));
+            return new Vector2(closest.x - helmet.x, closest.z - helmet.z).sqrMagnitude >= minimumHelmetClearance * minimumHelmetClearance;
+        }
+        void OnDestroy()
+        {
+            if (station && entry) station.UnregisterControl(entry);
+            if (entry) Destroy(entry.gameObject);
         }
         void MoveIfVisible(string panelName, Vector3 offset)
         {

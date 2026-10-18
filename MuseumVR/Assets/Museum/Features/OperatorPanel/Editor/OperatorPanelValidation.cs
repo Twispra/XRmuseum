@@ -22,7 +22,7 @@ namespace Museum.OperatorPanel.Editor
         const string JsonPath = "Assets/Museum/Features/Localization/Tables/MuseumTranslations.json";
         static readonly string[] RequiredSources = { OperatorPanelController.ShowTitle, OperatorPanelController.HideTitle, OperatorPanelController.EntryHint };
 
-        public sealed class Report
+        [Serializable] public sealed class Report
         {
             public string generatedUtc;
             public string sceneCommitGuess = "working tree";
@@ -36,7 +36,7 @@ namespace Museum.OperatorPanel.Editor
                 "player-build verification"
             };
         }
-        public sealed class Check
+        [Serializable] public sealed class Check
         {
             public string name; public bool passed; public string detail;
         }
@@ -75,7 +75,7 @@ namespace Museum.OperatorPanel.Editor
         public static Report Validate()
         {
             var report = new Report { generatedUtc = DateTime.UtcNow.ToString("o") };
-            var scene = EditorSceneManager.OpenScene(ScenePath);
+            if (!EditorApplication.isPlaying) EditorSceneManager.OpenScene(ScenePath);
             var station = UnityEngine.Object.FindObjectOfType<HelmetDiegeticStation>();
 
             report.Checks.Add(new Check { name = "station present", passed = station != null,
@@ -158,7 +158,7 @@ namespace Museum.OperatorPanel.Editor
             report.Checks.Add(new Check { name = "drag guard sanity (no station)", passed = !OperatorPanelController.IsAnyGestureDragging(null),
                 detail = "IsAnyGestureDragging(null) == false" });
 
-            EditorSceneManager.OpenScene(ScenePath); // Leave the scene open, unmodified.
+            if (!EditorApplication.isPlaying) EditorSceneManager.OpenScene(ScenePath); // Leave saved scene unmodified.
             return report;
         }
 
