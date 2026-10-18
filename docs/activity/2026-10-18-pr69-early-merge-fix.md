@@ -15,10 +15,16 @@
 
 ## 验证状态
 
-待填写实际产品提交、Unity 运行、自然退出、工程指纹和图像复核结果。当前静态证据写入 `artifacts/helmet-interaction/qa/runs/20261018-pr69-early-fix/`：46 个缺字、源字体扩展及三个实际 OBJ 部件的射线交点。静态算术不代表 Unity 或手柄验收通过。
+源码准备提交为 `e2b25a9aecc44c7a4e6c0c84274d0b9f3491a257`。在 Unity 2022.3.62f3c1 运行 `Museum.EarlyHelmet.EditorTools.EarlyHelmetMergeRepair.RunBatch`：重新编译成功（两条既有 CS0618 警告），FontBaker 和握持缓存维护通过，Editor 自然退出 0，未强制终止。SDF 631 字符／原身份保留／静态图集保存字节匹配；握持绑定现为 584 个 Filter、536 个唯一 Mesh、287,030 个三角面，其中 66 个 Filter 引用早期 OBJ（含保留的停用源前窗与活动副本）。
 
-Unity 使用隔离工程；Library 位于 E 盘 junction，LFS 工作区资产已展开。若复用既有 SDK／Library 缓存，只为避免重复导入依赖；新增 OBJ、字体和缓存仍须实际导入与验证，不能称为整库冷启动。
+维护前后 1,207 个 tracked 工程文件仅改变预期的 SDF、GripSurfaceCache.asset、InspectableHelmet.prefab 三项；三份 `.meta` 与起始提交逐字节相同，没有保存场景、修改设置或模型导入器。维护专用入口不作为常规打开项目步骤。静态证据、字体报告和维护过程／指纹摘要写入 `artifacts/helmet-interaction/qa/runs/20261018-pr69-early-fix/`；大备份和完整故障日志保留在隔离目录外的本地维护运行目录，不纳入 Git。
+
+待填写最终产品提交、行为回归、退出后零差指纹及图像复核结果；上述维护通过不是行为验收通过。
+
+Unity 使用隔离工程；Library 位于 E 盘 junction，79 份 LFS 工作区资产全部展开。维护使用已完全退出的 PR #65 Editor 基线 Library 副本，SDK 缓存仅补复制；早期 OBJ、修改后的字体和代码在本工程实际重新导入／编译，不称为整库冷启动。未将 #65 的未通过源码混入 #69。
 
 ## 限制和交接
 
 桌面合成 XR、公开 API 夹具和单眼诊断图不能证明真实头显手感、双眼可读性、舒适度、性能、学习效果或 Windows 可执行构建通过。早期模型仍是单照片驱动的解释性研究模型，没有重建历史内部结构。最终远程 PR 状态、合并 SHA、与 #65／#66 的组合验证及原工程同步由整合记录确认；本子任务不推送或合并远程 PR。
+
+当前 GitHub 主分支保护要求至少一位具有 write 权限的成员批准；整合人实际合并 #66 时被该条件阻止，没有绕过或伪造批准。此时实际 main 仍为 `7011f785b688946ec44631b88e3ac97c3fe5c6cd`，#69 也尚未合并；候选资产和局部测试结果不写成已上线或已进入 main。
