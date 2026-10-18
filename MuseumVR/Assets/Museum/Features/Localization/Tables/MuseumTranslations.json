@@ -1541,6 +1541,34 @@
       "note": "Issue 57: complete dynamic title + description; early-era placeholder boundary."
     },
     {
+      "key": "era.early.model.caption",
+      "english": "Diving helmet\n<size=62%>1839 closed-helmet study · SMG 1881-47</size>",
+      "chinese": "潜水头盔\n<size=62%>1839 年封闭式头盔研究模型 · 馆藏 1881-47</size>",
+      "traditionalChinese": "潛水頭盔\n<size=62%>1839 年封閉式頭盔研究模型 · 館藏 1881-47</size>",
+      "note": "Issue 60: sourced interpretive model of Science Museum Group object 1881-47; not a measured replica."
+    },
+    {
+      "key": "era.early.model.front",
+      "english": "Front viewport\nThe photo shows three guarded ports. The opening hinge is virtual.",
+      "chinese": "前观察窗\n照片可见三处带护栏观察窗；打开面板是虚拟操作，并非历史铰链。",
+      "traditionalChinese": "前觀察窗\n照片可見三處帶護欄觀察窗；打開面板是虛擬操作，並非歷史鉸鏈。",
+      "note": "Issue 60: distinguish observed features from the teaching interaction."
+    },
+    {
+      "key": "era.early.model.shell",
+      "english": "Bonnet shell\nBonnet, SMG 1881-47. Rear shape and part sizes are estimates.",
+      "chinese": "圆顶帽体\n依据馆藏 1881-47 的外形；背面轮廓与部件尺寸为估算。",
+      "traditionalChinese": "圓頂帽體\n依據館藏 1881-47 的外形；背面輪廓與部件尺寸為估算。",
+      "note": "Issue 60: source and uncertainty displayed with the exhibit."
+    },
+    {
+      "key": "era.early.model.breastplate",
+      "english": "Breastplate\nBroad plate, SMG 1881-47. Rear fasteners and part sizes are estimates.",
+      "chinese": "胸肩板\n宽胸板参考馆藏 1881-47；背面紧固件与部件尺寸为估算。",
+      "traditionalChinese": "胸肩板\n寬胸板參考館藏 1881-47；背面緊固件與部件尺寸為估算。",
+      "note": "Issue 60: photo-based silhouette with explicitly estimated unseen details."
+    },
+    {
       "key": "diegetic.action.00",
       "english": "Open window",
       "chinese": "打开前窗",
@@ -1696,9 +1724,9 @@
     },
     {
       "key": "diegetic.era1839",
-      "english": "1839 / Standard dress",
-      "chinese": "1839 / 标准潜水服",
-      "traditionalChinese": "1839 / 標準潛水服",
+      "english": "1839 / Closed helmet",
+      "chinese": "1839 / 封闭式头盔",
+      "traditionalChinese": "1839 / 封閉式頭盔",
       "note": "Exhibit station caption."
     },
     {

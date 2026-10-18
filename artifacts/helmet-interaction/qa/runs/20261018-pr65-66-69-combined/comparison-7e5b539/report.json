@@ -1,0 +1,1602 @@
+{
+    "unityVersion": "2022.3.62f3c1",
+    "sourceCommit": "see process manifest",
+    "cacheProvenance": "project-specific Library; see process manifest",
+    "scene": "Assets/Museum/Features/PhotoHelmetTrial/Scenes/PhotoHelmetComparison.unity",
+    "input": "Synthetic KeyboardState through Input System -> saved PhotoHelmetComparisonControls.Update",
+    "limitation": "Desktop comparison only; no headset, build, main-scene journey or historical validation.",
+    "checks": [
+        {
+            "name": "details imported",
+            "detail": "Assets/Museum/Features/PhotoHelmetTrial/Models/photo-helmet-refined-v2-details.obj",
+            "passed": true
+        },
+        {
+            "name": "details material slots intact",
+            "detail": "10",
+            "passed": true
+        },
+        {
+            "name": "details imported OBJ meshes exist",
+            "detail": "1",
+            "passed": true
+        },
+        {
+            "name": "details imported OBJ full triangle count",
+            "detail": "107248 / 107248",
+            "passed": true
+        },
+        {
+            "name": "details imported OBJ complete UV stream",
+            "detail": "70810",
+            "passed": true
+        },
+        {
+            "name": "details imported OBJ nonempty bounds",
+            "detail": "Center: (0.00, 0.16, 0.01), Extents: (0.21, 0.17, 0.23)",
+            "passed": true
+        },
+        {
+            "name": "shell imported",
+            "detail": "Assets/Museum/Features/PhotoHelmetTrial/Models/photo-helmet-refined-v2-shell.obj",
+            "passed": true
+        },
+        {
+            "name": "shell material slots intact",
+            "detail": "1",
+            "passed": true
+        },
+        {
+            "name": "shell imported OBJ meshes exist",
+            "detail": "1",
+            "passed": true
+        },
+        {
+            "name": "shell imported OBJ full triangle count",
+            "detail": "10056 / 10056",
+            "passed": true
+        },
+        {
+            "name": "shell imported OBJ complete UV stream",
+            "detail": "5684",
+            "passed": true
+        },
+        {
+            "name": "shell imported OBJ nonempty bounds",
+            "detail": "Center: (0.00, 0.26, 0.00), Extents: (0.14, 0.16, 0.14)",
+            "passed": true
+        },
+        {
+            "name": "saved prefab exists",
+            "detail": "No regeneration was performed.",
+            "passed": true
+        },
+        {
+            "name": "saved photo prefab meshes exist",
+            "detail": "2",
+            "passed": true
+        },
+        {
+            "name": "saved photo prefab full triangle count",
+            "detail": "117304 / 117304",
+            "passed": true
+        },
+        {
+            "name": "saved photo prefab complete UV stream",
+            "detail": "70810",
+            "passed": true
+        },
+        {
+            "name": "saved photo prefab nonempty bounds",
+            "detail": "Center: (0.00, 0.16, 0.01), Extents: (0.21, 0.17, 0.23)",
+            "passed": true
+        },
+        {
+            "name": "saved photo prefab complete UV stream",
+            "detail": "5684",
+            "passed": true
+        },
+        {
+            "name": "saved photo prefab nonempty bounds",
+            "detail": "Center: (0.00, 0.26, 0.00), Extents: (0.14, 0.16, 0.14)",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Current integrated Mark V",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Saved Mark V visual",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: AirConnectionAssembly",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: AirGooseneck_HollowCast",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: AirGooseneckMount",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: AirMountRivet_0",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: AirMountRivet_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: AirMountRivet_2",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: AirNonReturnValve_OldStyleExternalBody",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: AirOutletThread_17TPI",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: AirSubmarineThreadCore_1and1sixteenth",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: AirValve_UpperHex",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Anchor_AirOutlet",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Anchor_ExhaustOutlet",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Anchor_Neck",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Anchor_TelephoneOutlet",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Anchor_WindowCentre",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: CorseletAssembly",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Brail_01_CurvedClampingStrap",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Brail_02_CurvedClampingStrap",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Brail_03_CurvedClampingStrap",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Brail_04_CurvedClampingStrap",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_01_CastWingnut",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_01_FlangedBase",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_01_Stud",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_01_StudThread_12TPI",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_01_Washer",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_01_WingnutCore",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_02_CastWingnut",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_02_Stud",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_02_StudThread_12TPI",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_02_Washer",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_02_WingnutCore",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_03_CastWingnut",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_03_Stud",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_03_StudThread_12TPI",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_03_Washer",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_03_WingnutCore",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_04_CastWingnut",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_04_FlangedBase",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_04_Stud",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_04_StudThread_12TPI",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_04_Washer",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_04_WingnutCore",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_05_CastWingnut",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_05_Stud",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_05_StudThread_12TPI",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_05_Washer",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_05_WingnutCore",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_06_CastWingnut",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_06_Stud",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_06_StudThread_12TPI",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_06_Washer",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_06_WingnutCore",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_07_CastWingnut",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_07_FlangedBase",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_07_Stud",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_07_StudThread_12TPI",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_07_Washer",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_07_WingnutCore",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_08_CastWingnut",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_08_Stud",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_08_StudThread_12TPI",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_08_Washer",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_08_WingnutCore",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_09_CastWingnut",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_09_Stud",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_09_StudThread_12TPI",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_09_Washer",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_09_WingnutCore",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_10_CastWingnut",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_10_FlangedBase",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_10_Stud",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_10_StudThread_12TPI",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_10_Washer",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_10_WingnutCore",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_11_CastWingnut",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_11_Stud",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_11_StudThread_12TPI",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_11_Washer",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_11_WingnutCore",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_12_CastWingnut",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_12_Stud",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_12_StudThread_12TPI",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_12_Washer",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BrailFastener_12_WingnutCore",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Corselet_CopperSaddle_WithUnderside",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Corselet_RolledOuterEdge",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DressCollar_DarkGasket_Approximate",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: EyePadBase_-1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: EyePadBase_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: EyePadRivet_-1_-1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: EyePadRivet_-1_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: EyePadRivet_1_-1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: EyePadRivet_1_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: FrontEyelet_-1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: FrontEyelet_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Nameplate_WartimeFootball_Untranscribed",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: NameplateRivet_-1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: NameplateRivet_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: ExhaustAssembly",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: BananaExhaust_Hollow_SectionApproximate",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: ExhaustPerforatedBulb",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: ExhaustStarWheel_Arm_0",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: ExhaustStarWheel_Arm_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: ExhaustStarWheel_Arm_2",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: ExhaustStarWheel_Arm_3",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: ExhaustStarWheel_Hub",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: ExhaustValve_AdjusterBoss",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: ExhaustValve_Cover",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: ExhaustValve_Seat",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: FrontSeatAssembly",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorToggle_FixedLug_-1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorToggle_FixedLug_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorToggle_PinKeeper_-1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorToggle_PinKeeper_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorToggle_PivotPin",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorTogglePivot",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorToggle_RetainingWasher",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorToggleBolt_13TPI_Nominal",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorToggleNutPivot",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorToggleNutCore",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorToggleWing_-1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorToggleWing_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorToggleThread_13TPI",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: FrontSeat_CastFrame",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: HingeKnuckle_0",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: HingeKnuckle_2",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: HingeKnuckle_4",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: HingeLeafFixed_-0.03",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: HingeLeafFixed_0.03",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: HingePin_KeeperCotter",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: HingePin_Removable",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: HingePinTopButton",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: FrontWindowPivot",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DiamondGuard_-1_-0.057",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DiamondGuard_-1_0.057",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DiamondGuard_1_-0.057",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DiamondGuard_1_0.057",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Door_CastFrame",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Door_HandledOuterLip",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Door_InternalFollowerRing",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorGuard_MountFoot_0",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorGuard_MountFoot_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorGuard_MountFoot_2",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorGuard_MountFoot_3",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorGuardScrew_0",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorGuardScrew_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorGuardScrew_2",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorGuardScrew_3",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorToggleFork_Lower",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: DoorToggleFork_Upper",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: FaceplateSeal_Rubber",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: FrontGlass_12point7mm_SpecimenApproximation",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: HingeKnuckle_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: HingeKnuckle_3",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: HingeLeafDoor_-0.03",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: HingeLeafDoor_0.03",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: InteriorInterpretiveAssembly",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: AirDuct_Interpretive_BackToCrown",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: AirDuct_Interpretive_SideBranch_-1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: AirDuct_Interpretive_SideBranch_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: AirDuct_Interpretive_TopBranch",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: ChinButton_Interpretive",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: InternalChinValveStem_Interpretive",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneLead_Interpretive_Route",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneTransducer_Interpretive_NoInventedCircuit",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: NeckLockAssembly",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: InterruptedThread_0_0_SeatApproximation",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: InterruptedThread_0_1_SeatApproximation",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: InterruptedThread_1_0_SeatApproximation",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: InterruptedThread_1_1_SeatApproximation",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: InterruptedThread_2_0_SeatApproximation",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: InterruptedThread_2_1_SeatApproximation",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: InterruptedThread_3_0_SeatApproximation",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: InterruptedThread_3_1_SeatApproximation",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: LowerNeckRing_NominalOpening",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: NeckGasket_Leather_Interpretive",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: NeckJoint_RolledLip",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: RearLock_BallA",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: RearLock_BallB",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: RearLock_CotterPin",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: RearLock_Latch",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: RearLock_Lever",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: RearLock_Pivot",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: RearLock_StopRecess",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SafetyChain_Link_00",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SafetyChain_Link_01",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SafetyChain_Link_02",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SafetyChain_Link_03",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SafetyChain_Link_04",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SafetyChain_Link_05",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SafetyChain_Link_06",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SafetyChain_Link_07",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SafetyChain_Link_08",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SafetyChain_Link_09",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SafetyChain_Link_10",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SafetyChain_Link_11",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SafetyChain_Link_12",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SafetyChain_Link_13",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SafetyChain_Link_14",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: UpperNeckRing_Female_Approximate",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: ShellAssembly",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Bonnet_HollowCopper_TinFinish",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideWindowsAssembly",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGlass_-1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGlass_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGlassRetainer_-1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGlassRetainer_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_-1h-0.017",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_-1h0.017",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_-1v-0.017",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_-1v0.017",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_1h-0.017",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_1h0.017",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_1v-0.017",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_1v0.017",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_MountFoot_-1_0",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_MountFoot_-1_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_MountFoot_-1_2",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_MountFoot_-1_3",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_MountFoot_1_0",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_MountFoot_1_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_MountFoot_1_2",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_MountFoot_1_3",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_SupportRim_-1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuard_SupportRim_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuardScrew_-1_0",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuardScrew_-1_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuardScrew_-1_2",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuardScrew_-1_3",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuardScrew_1_0",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuardScrew_1_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuardScrew_1_2",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideGuardScrew_1_3",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideSeat_-1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SideSeat_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SpitcockAssembly",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SpitcockBody",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SpitcockCollar",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SpitcockLever",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SpitcockLeverBall",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: SpitcockSeat",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneAssembly",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneCup_ClosedOuterCover",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneCup_Mount",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneCup_UpperShoulder",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneCupCoverScrew_-1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneCupCoverScrew_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneElbowThread_11TPI",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneElbowThreadCore_1point715",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneFemaleCoupling_HexBody",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneGooseneck_HollowCast",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneGooseneckMount",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneMountRivet_0",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneMountRivet_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephoneMountRivet_2",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TelephonePlug_Recessed_Unresolved",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopWindowAssembly",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopGlass",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopGuard_H_-0.025",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopGuard_H_0",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopGuard_H_0.025",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopGuard_MountFoot_0",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopGuard_MountFoot_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopGuard_MountFoot_2",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopGuard_MountFoot_3",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopGuard_SupportRim",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopGuard_V_-0.024",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopGuard_V_0.024",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopGuardScrew_0",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopGuardScrew_1",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopGuardScrew_2",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopGuardScrew_3",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopRetainer",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: TopSeat",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Photo study V2 - section preview",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Photo details OBJ",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: default",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Photo hollow shell OBJ",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: default",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Comparison directional light",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Comparison front fill",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "no missing script: Comparison camera",
+            "detail": "saved comparison scene",
+            "passed": true
+        },
+        {
+            "name": "saved comparison controls active",
+            "detail": "Production component",
+            "passed": true
+        },
+        {
+            "name": "saved controls bound",
+            "detail": "Both models and the photo section component",
+            "passed": true
+        },
+        {
+            "name": "Play photo model meshes exist",
+            "detail": "2",
+            "passed": true
+        },
+        {
+            "name": "Play photo model full triangle count",
+            "detail": "117304 / 117304",
+            "passed": true
+        },
+        {
+            "name": "Play photo model nonempty bounds",
+            "detail": "Center: (0.00, 0.16, 0.01), Extents: (0.21, 0.17, 0.23)",
+            "passed": true
+        },
+        {
+            "name": "Play photo model nonempty bounds",
+            "detail": "Center: (0.00, 0.26, 0.00), Extents: (0.14, 0.16, 0.14)",
+            "passed": true
+        },
+        {
+            "name": "D rotates model",
+            "detail": "12.98",
+            "passed": true
+        },
+        {
+            "name": "both models rotate together",
+            "detail": "world-space rotation deltas",
+            "passed": true
+        },
+        {
+            "name": "R restores both orientations",
+            "detail": "keyboard path",
+            "passed": true
+        },
+        {
+            "name": "S creates shell cap",
+            "detail": "232 triangles",
+            "passed": true
+        },
+        {
+            "name": "E adjusts depth and rebuilds cap",
+            "detail": "0.1; 662 triangles",
+            "passed": true
+        },
+        {
+            "name": "cap remains visible after rotation",
+            "detail": "generated shell section",
+            "passed": true
+        },
+        {
+            "name": "cut plane follows rotated model",
+            "detail": "(-1.00, 0.00, 0.03)",
+            "passed": true
+        },
+        {
+            "name": "cap stays on world cut plane",
+            "detail": "2.086E-06 m",
+            "passed": true
+        },
+        {
+            "name": "R restores full display and disables cap",
+            "detail": "orientation, depth and display materials",
+            "passed": true
+        }
+    ],
+    "errors": [],
+    "warnings": []
+}

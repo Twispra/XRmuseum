@@ -1,0 +1,50 @@
+{
+  "method": "Independent static OBJ ray-triangle arithmetic, before Unity; not runtime validation. Source Z-up coordinates.",
+  "results": [
+    {
+      "part": "FrontPort_Glass",
+      "meshIntersection": [
+        0.0,
+        -0.19517756,
+        0.337772395
+      ],
+      "outwardNormal": [
+        0.0,
+        -1.0,
+        0.0
+      ],
+      "normalDotExpected": 1.0,
+      "triangleCount": 192
+    },
+    {
+      "part": "Bonnet_RoundedCopper",
+      "meshIntersection": [
+        -0.1615320699050612,
+        0.0,
+        0.35184624500000006
+      ],
+      "outwardNormal": [
+        -0.9946995518542693,
+        0.030332030291601253,
+        0.09824850878922009
+      ],
+      "normalDotExpected": 0.9946995518542693,
+      "triangleCount": 7872
+    },
+    {
+      "part": "Breastplate_DishedCopper",
+      "meshIntersection": [
+        0.0,
+        -0.15966118889993464,
+        0.121598065
+      ],
+      "outwardNormal": [
+        -0.02563543543796852,
+        -0.8893287575623569,
+        0.456549214677345
+      ],
+      "normalDotExpected": 0.8893287575623569,
+      "triangleCount": 5568
+    }
+  ]
+}

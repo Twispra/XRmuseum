@@ -1,0 +1,28 @@
+{
+  "runId": "20261018T111453490Z-joint-69-localization-final-8ac1b17ae82a47858f8b681aeaa449e7",
+  "commit": "40f9975227f8426c552fb4de67215d77622418ed",
+  "checkout": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum",
+  "unity": "2022.3.62f3c1",
+  "executeMethod": "Museum.Localization.EditorTools.LocalizationValidation.RunBatch",
+  "arguments": [
+    "-batchmode",
+    "-projectPath",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\MuseumVR\"",
+    "-logFile",
+    "\"E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111453490Z-joint-69-localization-final-8ac1b17ae82a47858f8b681aeaa449e7\\unity.log\"",
+    "-executeMethod",
+    "Museum.Localization.EditorTools.LocalizationValidation.RunBatch"
+  ],
+  "startedUtc": "2026-10-18T11:14:54.5067100Z",
+  "finishedUtc": "2026-10-18T11:15:29.8176947Z",
+  "pid": 37804,
+  "exitCode": 0,
+  "forced": false,
+  "dirtyBefore": [
+    "?? artifacts/localization/qa/runs/20261018T111034256Z-validation/report.json"
+  ],
+  "dirtyAfter": [
+    "?? artifacts/localization/qa/runs/20261018T111034256Z-validation/report.json",
+    "?? artifacts/localization/qa/runs/20261018T111528791Z-validation/report.json"
+  ]
+}

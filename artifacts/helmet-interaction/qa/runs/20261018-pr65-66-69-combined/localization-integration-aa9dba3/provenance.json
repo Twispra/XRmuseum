@@ -1,0 +1,50 @@
+{
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T115314561Z-li69-8acfa8e6a287468c9999f7412e695189\\unity.log",
+  "logSha256": "81a0b6d62c715b72c929add27a03a90466c9990a7ccbd5fe942674b76f20515a",
+  "lineCount": 1550,
+  "applicationExceptionAndCompileErrorMatches": [],
+  "format": "JSON evidence line endings normalized to LF; values and image bytes retained",
+  "copied": [
+    {
+      "file": "process.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T115314561Z-li69-8acfa8e6a287468c9999f7412e695189\\process.json",
+      "sourceSha256": "6fde4ced5c2b2e2d0ec3c03986a6904657cdaebeb168d19c6ce82d05d80d093d",
+      "storedLfSha256": "68506f29994b12bc5146b668684b9438fd32309215f036788341b5ff4d15b3c8"
+    },
+    {
+      "file": "source-after.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T115314561Z-li69-8acfa8e6a287468c9999f7412e695189\\source-after.json",
+      "sourceSha256": "c33efd0a8436f27d54e4ba3cda1fd833dabd96bac074e888e5b2215381484aad",
+      "storedLfSha256": "aa5fe046a516090e0254e96f8c9bf382cc88e1200c2538225f4fb116fc476722"
+    },
+    {
+      "file": "report.full.json.gz",
+      "source": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\artifacts\\localization\\qa\\runs\\20261018T115349447Z-integration-45231e7d8d534e45aa5fb3b8aeb194ed\\report.json",
+      "sourceSha256": "340bdbfee281cd44dcf1ca65e3e92eb23f56488dc21dc3e1e864681cbe36e712",
+      "storedLfSha256": "340bdbfee281cd44dcf1ca65e3e92eb23f56488dc21dc3e1e864681cbe36e712",
+      "storage": "deterministic gzip, mtime=0; storedLfSha256 hashes the decompressed JSON",
+      "compressedSha256": "2293af2c1e69e211be83cfc2d65ab831f39be7add52ee465e9ad81886da60ddf"
+    },
+    {
+      "file": "initial-en-production.png",
+      "source": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\artifacts\\localization\\qa\\runs\\20261018T115349447Z-integration-45231e7d8d534e45aa5fb3b8aeb194ed\\initial-en-production.png",
+      "sha256": "4d089067675d556799f35c099e6f445b0e628975d6cb4fbcb8335c12a4698770"
+    },
+    {
+      "file": "selected-zh-hant-masthead-closeup.png",
+      "source": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\artifacts\\localization\\qa\\runs\\20261018T115349447Z-integration-45231e7d8d534e45aa5fb3b8aeb194ed\\selected-zh-hant-masthead-closeup.png",
+      "sha256": "7bdc6cf8c4a4fad3565f8524f1d4f42bb9a2aaf52f60b2238ae9ac81995d715d"
+    },
+    {
+      "file": "selected-zh-hant-arrival-closeup.png",
+      "source": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\artifacts\\localization\\qa\\runs\\20261018T115349447Z-integration-45231e7d8d534e45aa5fb3b8aeb194ed\\selected-zh-hant-arrival-closeup.png",
+      "sha256": "892a2488c77089aca113ca1910936449f4759a582e461f152a45419369ae9d28"
+    }
+  ],
+  "summary": {
+    "file": "report.json",
+    "sha256": "72c012368279973c8d30f0122d7a22a5056c9bce93ac5b14846abfe1c8e1426e",
+    "totalChecks": 122830,
+    "completeChecksFile": "report.full.json.gz"
+  }
+}

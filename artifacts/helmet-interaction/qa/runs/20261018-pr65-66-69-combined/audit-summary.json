@@ -1,0 +1,74 @@
+{
+  "results": [
+    {
+      "label": "visitor-7e5b539",
+      "commit": "7e5b539cdb3faf65a32ce4491172ccdd33e4257d",
+      "passed": 959,
+      "naturalExit": 0,
+      "checkedFiles": 1291,
+      "changed": []
+    },
+    {
+      "label": "diegetic-7e5b539",
+      "commit": "7e5b539cdb3faf65a32ce4491172ccdd33e4257d",
+      "passed": 819,
+      "naturalExit": 0,
+      "checkedFiles": 1291,
+      "changed": []
+    },
+    {
+      "label": "operator-7e5b539",
+      "commit": "7e5b539cdb3faf65a32ce4491172ccdd33e4257d",
+      "passed": 255,
+      "naturalExit": 0,
+      "checkedFiles": 1291,
+      "changed": []
+    },
+    {
+      "label": "direct-7e5b539",
+      "commit": "7e5b539cdb3faf65a32ce4491172ccdd33e4257d",
+      "passed": 31,
+      "naturalExit": 0,
+      "checkedFiles": 1291,
+      "changed": []
+    },
+    {
+      "label": "comparison-7e5b539",
+      "commit": "7e5b539cdb3faf65a32ce4491172ccdd33e4257d",
+      "passed": 318,
+      "naturalExit": 0,
+      "checkedFiles": 1291,
+      "changed": []
+    },
+    {
+      "label": "localization-40f997",
+      "commit": "40f9975227f8426c552fb4de67215d77622418ed",
+      "passed": 11,
+      "naturalExit": 0,
+      "checkedFiles": 1291,
+      "changed": []
+    },
+    {
+      "label": "localization-integration-aa9dba3",
+      "commit": "aa9dba38e9d6d7ea3fd0d3f77385ae844dcdd06e",
+      "passed": 122830,
+      "naturalExit": 0,
+      "checkedFiles": 1291,
+      "changed": []
+    }
+  ],
+  "compatibility": {
+    "fromCommit": "7e5b539cdb3faf65a32ce4491172ccdd33e4257d",
+    "toCommit": "aa9dba38e9d6d7ea3fd0d3f77385ae844dcdd06e",
+    "checkedFiles": 1291,
+    "changed": [
+      {
+        "path": "MuseumVR/Assets/Museum/Features/Localization/Editor/LocalizationIntegrationValidation.cs",
+        "beforeSha256": "6e9d302080cf4ee4db3760a934e9391e761f042379d11f5937baff012ca1fd19",
+        "afterSha256": "bc121237233a392b3a3fcb343ac48fd3fbf341146f117ed8d511bf682ae52241"
+      }
+    ],
+    "runtimeAndAssetChanges": [],
+    "newManifestOriginalSha256": "751916027e6c70fa864452e793ee1ac062731e244429c4538ed20cf645a50fad"
+  }
+}

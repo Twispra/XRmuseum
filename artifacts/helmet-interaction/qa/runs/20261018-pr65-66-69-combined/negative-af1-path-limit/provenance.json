@@ -1,0 +1,32 @@
+{
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111935427Z-joint-69-visitor-era-clear-ray-278f1612fd59460c8401e69dc16be4ba\\unity.log",
+  "logSha256": "1ba21e0c5f3315ffbe9390b7d98910079587e2b30d4dd812a5ce9c30f687d6ac",
+  "lineCount": 1543,
+  "applicationExceptionAndCompileErrorMatches": [
+    {
+      "line": 635,
+      "text": "System.IO.DirectoryNotFoundException: Could not find a part of the path \"E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111935427Z-joint-69-visitor-era-clear-ray-278f1612fd59460c8401e69dc16be4ba\\qa\\20261018T112009500Z-visitor-era-c97054011abc47fa96f7acfc9f3c4c84\\early-TraditionalChinese-breastplate-card.png\""
+    }
+  ],
+  "format": "JSON evidence line endings normalized to LF; values and image bytes retained",
+  "copied": [
+    {
+      "file": "process.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111935427Z-joint-69-visitor-era-clear-ray-278f1612fd59460c8401e69dc16be4ba\\process.json",
+      "sourceSha256": "a980ec603138fccba028ec41f102786ecf08ac910248ed337017cb67f5d37cb9",
+      "storedLfSha256": "3f3f3f41bc59bb40f526a2434597df3959c14d4a15035c8b7ab19b2a0e6485f8"
+    },
+    {
+      "file": "source-after.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111935427Z-joint-69-visitor-era-clear-ray-278f1612fd59460c8401e69dc16be4ba\\source-after.json",
+      "sourceSha256": "f6de128c17fd41fd6fabfaf9af8e55ebbfba57eaf4b5fb3aece5ddafc417a56e",
+      "storedLfSha256": "1d5f00533ab1825bb386adb5d8ad968141b3d1a36b29b7c0ef95d9663a466a9f"
+    },
+    {
+      "file": "report.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111935427Z-joint-69-visitor-era-clear-ray-278f1612fd59460c8401e69dc16be4ba\\qa\\20261018T112009500Z-visitor-era-c97054011abc47fa96f7acfc9f3c4c84\\report.json",
+      "sourceSha256": "f6a32dd28d52b5ff15f4319da3f5b999e86222b3f1d0b998537f423648226f99",
+      "storedLfSha256": "f6a32dd28d52b5ff15f4319da3f5b999e86222b3f1d0b998537f423648226f99"
+    }
+  ]
+}

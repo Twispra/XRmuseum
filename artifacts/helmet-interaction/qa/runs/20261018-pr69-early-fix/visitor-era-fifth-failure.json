@@ -1,0 +1,25 @@
+{
+  "sourceCommit": "9285c6c78393d0be1c77e9c474b099ed69b8edc8",
+  "combinedCommit": "9e2e746e9948c3c40e24c23f793d138c22054e5e",
+  "module": "VisitorEraValidation",
+  "runDirectory": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T112456008Z-ve69-e664e27c3fd64da28eb5efc9f247f1e1",
+  "report": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T112456008Z-ve69-e664e27c3fd64da28eb5efc9f247f1e1\\qa\\20261018T112531326Z-visitor-era-44ff18d07bfb4db985a5f118ee8ab78a\\report.json",
+  "reportSha256": "c07c955ee89544608a77a21285edf5e4c8e8c50565165e22a625f640177f9156",
+  "unityLogSha256": "bc700715b6959ebb126a6f7094e3497db8380f2834b1e4c28d000a8dae802acd",
+  "exitCode": 1,
+  "forced": false,
+  "sourceFilesChecked": 1291,
+  "sourceChanges": [],
+  "passedChecks": 726,
+  "failedChecks": [
+    {
+      "name": "Current production ray hovers observation as first surface / 2/breastplate",
+      "detail": "candidate poses=0; Ray Interactor: active=True; hit=Welcome Panel; hitDistance=9.271366; origin=(0.800000, 0.800000, 1.000000); forward=(-0.016156, 0.009524, 0.999824); detection=ConeCast; mask=-2147483615; triggers=Collide; hovered= | Teleport Interactor: active=False; hit=none; hitDistance=-1; origin=(0.800000, 0.800000, 1.000000); forward=(-0.016156, 0.009524, 0.999824); detection=Raycast; mask=-2147483615; triggers=Collide; hovered=",
+      "passed": false
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "captureCount": 31,
+  "resolution": "All early/Mark V operations and actual first-hit SuperLite bonnet succeeded. Neck-seal marker had zero candidates among 15 thin-ray outside-solid prefilters. This does not prove no legal authored ConeCast approach exists. A separate diagnostic-only run will test 128 outside poses/distances against actual ConeCast, record each obstacle/mesh/collider bound, and retain this failure."
+}

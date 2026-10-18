@@ -1,0 +1,13 @@
+{
+  "utc": "2026-10-18T10:43:32.149845+00:00",
+  "checkout": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr69-early-fix\\XRmuseum",
+  "libraryJunction": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr69-early-fix\\XRmuseum\\MuseumVR\\Library",
+  "copiedClosedLibraryFrom": "E:/Codex/UnityLibraries/20261018-pr65",
+  "libraryTarget": "E:\\Codex\\UnityLibraries\\20261018-pr69",
+  "copyCommand": "robocopy SOURCE TARGET /E /XC /XN /XO /R:1 /W:1 /NFL /NDL /NJH /NJS /NP",
+  "copyExitCode": 1,
+  "copyMeaning": "Copied new files successfully. No deletion or overwrite of existing cache files. Source Editor was fully exited per coordinator.",
+  "lfsListedFiles": 79,
+  "lfsUnexpandedPointers": 0,
+  "limitation": "Reused baseline SDK/import/shader cache; not a whole-Library cold import. New or modified OBJ, font and source files still require actual import and validation."
+}

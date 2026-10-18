@@ -1,0 +1,32 @@
+{
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T114529509Z-li69-f2491640022e4bc7a6fad8e263e98303\\unity.log",
+  "logSha256": "a49766ce52e50d79704a6539d2a1eba8721a81ea60e9e658018abd969e3ef331",
+  "lineCount": 1469,
+  "applicationExceptionAndCompileErrorMatches": [
+    {
+      "line": 611,
+      "text": "System.InvalidOperationException: PR9 progressive exploration remains installed: Uses saved production components."
+    }
+  ],
+  "format": "JSON evidence line endings normalized to LF; values and image bytes retained",
+  "copied": [
+    {
+      "file": "process.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T114529509Z-li69-f2491640022e4bc7a6fad8e263e98303\\process.json",
+      "sourceSha256": "03a516980c3f9127d1942376496dca2382418ade4b8d58b39e6780f0ac268460",
+      "storedLfSha256": "f3a1dc5f2361baea70f4ed5ebae8e84b2fb998f8b50baccd0128bf7582b931d7"
+    },
+    {
+      "file": "source-after.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T114529509Z-li69-f2491640022e4bc7a6fad8e263e98303\\source-after.json",
+      "sourceSha256": "ed5d728474ff7760ec22822af1ee3e165e8effb2c364e5b1a4f47f929722d48b",
+      "storedLfSha256": "00fd5364c6749b9a60c549a02e87ca14324ea7b320bd1cf9452482aca5143203"
+    },
+    {
+      "file": "report.json",
+      "source": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\artifacts\\localization\\qa\\runs\\20261018T114600067Z-integration-11046bea8b294d15a99c29d33f92d936\\report.json",
+      "sourceSha256": "0728e15a7e07b5f48932cfef53ad285447e0d26c8655fea266f4f8304a00e407",
+      "storedLfSha256": "0728e15a7e07b5f48932cfef53ad285447e0d26c8655fea266f4f8304a00e407"
+    }
+  ]
+}

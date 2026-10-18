@@ -1,0 +1,27 @@
+{
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T114844864Z-djoint-8d072545bda248e8a07dfffa12754652\\unity.log",
+  "logSha256": "7abc8bd09360430c96efcd9933a127e8eae4a92d812dd331695a1e9f8e9eeedb",
+  "lineCount": 1465,
+  "applicationExceptionAndCompileErrorMatches": [],
+  "format": "JSON evidence line endings normalized to LF; values and image bytes retained",
+  "copied": [
+    {
+      "file": "process.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T114844864Z-djoint-8d072545bda248e8a07dfffa12754652\\process.json",
+      "sourceSha256": "908c023d0ec39b00698aad54bcda33fd978cfffce121fd9c27cefdaf24550d8e",
+      "storedLfSha256": "39a039ed3f44adf0ac2fa3f7aad624237c0735e1092b17458c1b329340eadbd5"
+    },
+    {
+      "file": "source-after.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T114844864Z-djoint-8d072545bda248e8a07dfffa12754652\\source-after.json",
+      "sourceSha256": "bb9a569fabdf881cb93f0f4805a9d07fa476ab09ca05d19c164f0f5fc9118153",
+      "storedLfSha256": "330cdf404bf9ffbe109e6b3c02ce585bf7a468ad19179af7bec1d71a6585f556"
+    },
+    {
+      "file": "report.json",
+      "source": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\artifacts\\helmet-interaction\\qa\\runs\\20261018T114915818Z-direct-contact-07f3e9c460de4b8dbaf5d6d609fed14d\\report.json",
+      "sourceSha256": "de1fbd4e8caa7d280759e483c265a6ef18de3e2f5b5f77a155049cebf19143ff",
+      "storedLfSha256": "de1fbd4e8caa7d280759e483c265a6ef18de3e2f5b5f77a155049cebf19143ff"
+    }
+  ]
+}

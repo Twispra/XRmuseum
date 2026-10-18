@@ -1,0 +1,32 @@
+{
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111119301Z-joint-69-visitor-era-464b95c67e9a484ca674360189e49d77\\unity.log",
+  "logSha256": "b05afef68695720c4b61a9595a02668be7485d493c77258a13625dc57fcebb44",
+  "lineCount": 1515,
+  "applicationExceptionAndCompileErrorMatches": [
+    {
+      "line": 612,
+      "text": "System.InvalidOperationException: Saved glyphs and layout fit / Selected observation card remains current / 0/English: missing=; overflowing=True; fontSize=0.28"
+    }
+  ],
+  "format": "JSON evidence line endings normalized to LF; values and image bytes retained",
+  "copied": [
+    {
+      "file": "process.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111119301Z-joint-69-visitor-era-464b95c67e9a484ca674360189e49d77\\process.json",
+      "sourceSha256": "87844d544e1edf1a6ec39a02aafd4b70072778af839704c6b8686ac2a426df1c",
+      "storedLfSha256": "938f2476fcf9f4054d68b0818600cb7431d3cd9f0671637380a62f84c244a50d"
+    },
+    {
+      "file": "source-after.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111119301Z-joint-69-visitor-era-464b95c67e9a484ca674360189e49d77\\source-after.json",
+      "sourceSha256": "849d6a1f0165abd24a8510064ea7c826667be02eec24fa60c2b26c02ae943f71",
+      "storedLfSha256": "04827bdde919c27d1fe412650facd5d9ebe02794a509fa48bf4386d68e392353"
+    },
+    {
+      "file": "report.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111119301Z-joint-69-visitor-era-464b95c67e9a484ca674360189e49d77\\qa\\20261018T111153291Z-visitor-era-c433dbd9c997487dbfa70f6e8e73c25d\\report.json",
+      "sourceSha256": "293b32e90fd04cfbbf2e8282cbb7c6cbe8b75888c1bac624893cf79c47c7f518",
+      "storedLfSha256": "293b32e90fd04cfbbf2e8282cbb7c6cbe8b75888c1bac624893cf79c47c7f518"
+    }
+  ]
+}

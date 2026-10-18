@@ -75,7 +75,7 @@ namespace Museum.RefinedModels.EditorTools
         {
             public string status = "running", utc, unity, scene, commit, branch, workingTree, failure = "";
             public string inputMethod = "Queued XRSimulatedController/HMD states in Dynamic Input System updates -> saved actions, controllers, XRDirectInteractor and XRRayInteractor. Selection listeners only observe actual XRI events. No SelectEnter/SelectExit, invoked button events or private-field writes. Section/era/demonstration assertions are explicitly labelled public API checks.";
-            public string limitations = "Editor desktop simulation and temporary monocular URP renders only. Official simulator is checked then its input writer is disabled to prevent competing synthetic states. This is not a real headset, keyboard navigation usability, physical sound listening, historical certification, user study, build validation or device performance measurement. The early-era placeholder remains a concept preview; SuperLite dimensions and virtual front-panel articulation remain display assumptions.";
+            public string limitations = "Editor desktop simulation and temporary monocular URP renders only. Official simulator is checked then its input writer is disabled to prevent competing synthetic states. This is not a real headset, keyboard navigation usability, physical sound listening, historical certification, user study, build validation or device performance measurement. The early 1881-47 model has estimated unseen geometry and virtual front-panel articulation; SuperLite dimensions and articulation remain display assumptions.";
             public int refinedRenderers, refinedTriangles;
             public int superLiteRenderers, superLiteTriangles;
             public float superLiteWorldBottom, superLitePlinthTop;
@@ -587,7 +587,8 @@ namespace Museum.RefinedModels.EditorTools
             foreach (int index in new[] { 0, 2, 1, 0, 1 })
             {
                 era.ShowEra(index); yield return Wait(.35f);
-                bool expectedRefined = index == 1 || binding.AdditionalVisual != null && binding.AdditionalVisual.eraIndex == index;
+                bool expectedRefined = index == 1 || binding.AdditionalVisual != null && binding.AdditionalVisual.eraIndex == index ||
+                    binding.EarlyVisual != null && binding.EarlyVisual.eraIndex == index;
                 Check(era.CurrentIndex == index && binding.IsRefinedActive == expectedRefined, "era visual mode / " + index, "public era API");
                 Check(binding.GetInstanceID() == bindingId && grab.GetInstanceID() == grabId && reset.GetInstanceID() == resetId,
                     "era switch retains original interaction component identities / " + index, "public era API");

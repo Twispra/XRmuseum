@@ -1,0 +1,32 @@
+{
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111537510Z-joint-69-visitor-era-final-a6f5748ef56947599f04a568d0c016f7\\unity.log",
+  "logSha256": "a0ff39bdc64774563d60338b7b622821197e70c497795f0ac27ad4bc07a14c92",
+  "lineCount": 1515,
+  "applicationExceptionAndCompileErrorMatches": [
+    {
+      "line": 612,
+      "text": "System.InvalidOperationException: Current production ray selects observation / 2/breastplate: selections=0; kind=; Ray Interactor: active=True; hit=Breastplate Base; hovered=Physical UI - Rotate | Teleport Interactor: active=False; hit=none; hovered="
+    }
+  ],
+  "format": "JSON evidence line endings normalized to LF; values and image bytes retained",
+  "copied": [
+    {
+      "file": "process.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111537510Z-joint-69-visitor-era-final-a6f5748ef56947599f04a568d0c016f7\\process.json",
+      "sourceSha256": "e7485edd6b81fc40063784836d4206b4e99f166f4c238ad6bece10656d8d542e",
+      "storedLfSha256": "542040ccc2ce9cf4e130f72de62d3a7bd5ec2ad3ecabfa2b64ee1365117a5537"
+    },
+    {
+      "file": "source-after.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111537510Z-joint-69-visitor-era-final-a6f5748ef56947599f04a568d0c016f7\\source-after.json",
+      "sourceSha256": "545a5c86fe50357074c4a17a0592c5d4d3248dd78fe894b5027ce2627536317b",
+      "storedLfSha256": "06efdeb2c7e1fd2917938b380308319a7c87571b7b09ca9ca7ec6fa530ac573b"
+    },
+    {
+      "file": "report.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111537510Z-joint-69-visitor-era-final-a6f5748ef56947599f04a568d0c016f7\\qa\\20261018T111608147Z-visitor-era-d29f76093ba5439698fb32d608837345\\report.json",
+      "sourceSha256": "bbaf26e958398f25806f9d9bf972d2bf19fa52e070b33877746d641d5e2ca8a0",
+      "storedLfSha256": "bbaf26e958398f25806f9d9bf972d2bf19fa52e070b33877746d641d5e2ca8a0"
+    }
+  ]
+}

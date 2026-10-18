@@ -1,0 +1,110 @@
+{
+  "productCommit": "b92b06aa7aed158662821abffedd7aef07baf7ee",
+  "savedProductChange": "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity: attachment[2].localPoint xyz only",
+  "unchangedSurface": "NeckDam_Neoprene_510-533",
+  "surfaceMeshFileID": -6554012008892168945,
+  "modelGUID": "a2433ca4215aebd48ab4e446902402bf",
+  "sectionDataSha256": "14de67483b22f1cb242b32a7f6b69304465dc168e99e80e24c90079f7250946c",
+  "surfaceVertexCount": 1264,
+  "oldLocalPoint": [
+    1.2779928e-19,
+    -0.00083330687,
+    0.00029928202
+  ],
+  "oldClosestCachedVertex": {
+    "index": 695,
+    "point": [
+      1.2779928e-19,
+      -0.00083330687,
+      0.00029928202
+    ],
+    "distanceInMeshUnits": 0.0
+  },
+  "sourceVertex": [
+    -1.1419615e-12,
+    0.0010211446,
+    0.00137229
+  ],
+  "sourceVertexIndices": [
+    583,
+    977
+  ],
+  "newLocalPoint": [
+    -1.1419615e-12,
+    0.0013711446,
+    0.00142229
+  ],
+  "oldWorldPoint": [
+    0.0163896981,
+    0.947997,
+    3.421865
+  ],
+  "sourceWorldVertex": [
+    0.0163896981,
+    1.05529797,
+    3.607309869
+  ],
+  "worldOffset": [
+    0,
+    0.005,
+    0.035
+  ],
+  "offsetMetres": 0.03535533905932738,
+  "predictedNewWorldPoint": [
+    0.0163896981,
+    1.06029797,
+    3.642309869
+  ],
+  "markerRadiusMetres": 0.0325,
+  "conservativeAABBSphereClearanceMetres": {
+    "aboveBaseTop": 0.00579797,
+    "belowCapsuleBottom": 0.01120203
+  },
+  "centerBeyondNeckSupportRearMetres": 0.012309869,
+  "normalEvidence": "Independent adjacent rear-face normal approximately (+/- .052,.418,.907); +worldZ offset is outward (dot .907).",
+  "runtimeStatus": "Actual diagnostic passed; full visitor-era regression pending.",
+  "actualDiagnostic": {
+    "combinedCommit": "7e5b539cdb3faf65a32ce4491172ccdd33e4257d",
+    "runDirectory": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T113837408Z-gd27-38c3c1407eb64569a0f30592cf733ef6",
+    "report": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T113837408Z-gd27-38c3c1407eb64569a0f30592cf733ef6\\qa\\20261018T113911662Z-visitor-era-562d43422462426d9f71b429d053a9a2\\report.json",
+    "diagnosticOnly": true,
+    "reportSha256": "38a891fad273e7caf4c32ad7aea91f8578c09a94ea644566b991ea5be64b8830",
+    "exitCode": 0,
+    "forced": false,
+    "sourceFilesChecked": 1291,
+    "sourceChanges": [],
+    "sampledCandidates": 27,
+    "productionFirstTarget": 27,
+    "selectAndReleaseChecks": [
+      {
+        "name": "Diagnostic only: actual neck-seal ray selects once",
+        "detail": "presses=1; Ray Interactor: active=True; hit=Breastplate Hotspot; hitDistance=0.4175002; origin=(0.016390, 1.208956, 4.067046); forward=(0.000000, -0.330351, -0.943858); detection=ConeCast; mask=-2147483615; triggers=Collide; hovered=Breastplate Hotspot | Teleport Interactor: active=False; hit=none; hitDistance=-1; origin=(0.016390, 1.208956, 4.067046); forward=(0.000000, -0.330351, -0.943858); detection=Raycast; mask=-2147483615; triggers=Collide; hovered=",
+        "passed": true
+      },
+      {
+        "name": "Diagnostic only: actual neck-seal ray releases once",
+        "detail": "releases=1",
+        "passed": true
+      }
+    ],
+    "actualWorldPoint": [
+      0.01639,
+      1.060298,
+      3.64231
+    ],
+    "actualBaseTop": 1.022,
+    "actualDisplayTopMaxY": 0.96,
+    "actualCapsuleAABBMinY": 1.098766,
+    "actualConservativeSphereClearanceMetres": {
+      "aboveBase": 0.005798,
+      "aboveDisplayTop": 0.067798,
+      "belowCapsuleAABB": 0.005968
+    },
+    "actualCapsuleClosestPoint": [
+      0.010342,
+      1.128507,
+      3.590943
+    ],
+    "actualCapsuleSphereSurfaceClearanceMetres": 0.05310148756885004
+  }
+}

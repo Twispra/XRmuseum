@@ -1293,6 +1293,29 @@ MonoBehaviour:
     traditionalChinese: "\u80F8\u80A9\u677F\n\u65E9\u671F\u5E74\u4EE3\u7684\u4F54\u4F4D\u6A21\u578B\uFF0C\u5C1A\u672A\u91CD\u5EFA\u6B77\u53F2\u7D30\u7BC0\u3002"
     note: 'Issue 57: complete dynamic title + description; early-era placeholder
       boundary.'
+  - key: era.early.model.caption
+    chinese: "\u6F5C\u6C34\u5934\u76D4\n<size=62%>1839 \u5E74\u5C01\u95ED\u5F0F\u5934\u76D4\u7814\u7A76\u6A21\u578B
+      \xB7 \u9986\u85CF 1881-47</size>"
+    english: "Diving helmet\n<size=62%>1839 closed-helmet study \xB7 SMG 1881-47</size>"
+    traditionalChinese: "\u6F5B\u6C34\u982D\u76D4\n<size=62%>1839 \u5E74\u5C01\u9589\u5F0F\u982D\u76D4\u7814\u7A76\u6A21\u578B
+      \xB7 \u9928\u85CF 1881-47</size>"
+    note: 'Issue 60: sourced interpretive model of Science Museum Group object 1881-47;
+      not a measured replica.'
+  - key: era.early.model.front
+    chinese: "\u524d\u89c2\u5bdf\u7a97\n\u7167\u7247\u53ef\u89c1\u4e09\u5904\u5e26\u62a4\u680f\u89c2\u5bdf\u7a97\uff1b\u6253\u5f00\u9762\u677f\u662f\u865a\u62df\u64cd\u4f5c\uff0c\u5e76\u975e\u5386\u53f2\u94f0\u94fe\u3002"
+    english: "Front viewport\nThe photo shows three guarded ports. The opening hinge is virtual."
+    traditionalChinese: "\u524d\u89c0\u5bdf\u7a97\n\u7167\u7247\u53ef\u898b\u4e09\u8655\u5e36\u8b77\u6b04\u89c0\u5bdf\u7a97\uff1b\u6253\u958b\u9762\u677f\u662f\u865b\u64ec\u64cd\u4f5c\uff0c\u4e26\u975e\u6b77\u53f2\u9278\u93c8\u3002"
+    note: 'Issue 60: distinguish observed features from the teaching interaction.'
+  - key: era.early.model.shell
+    chinese: "\u5706\u9876\u5e3d\u4f53\n\u4f9d\u636e\u9986\u85cf 1881-47 \u7684\u5916\u5f62\uff1b\u80cc\u9762\u8f6e\u5ed3\u4e0e\u90e8\u4ef6\u5c3a\u5bf8\u4e3a\u4f30\u7b97\u3002"
+    english: "Bonnet shell\nBonnet, SMG 1881-47. Rear shape and part sizes are estimates."
+    traditionalChinese: "\u5713\u9802\u5e3d\u9ad4\n\u4f9d\u64da\u9928\u85cf 1881-47 \u7684\u5916\u5f62\uff1b\u80cc\u9762\u8f2a\u5ed3\u8207\u90e8\u4ef6\u5c3a\u5bf8\u70ba\u4f30\u7b97\u3002"
+    note: 'Issue 60: source and uncertainty displayed with the exhibit.'
+  - key: era.early.model.breastplate
+    chinese: "\u80f8\u80a9\u677f\n\u5bbd\u80f8\u677f\u53c2\u8003\u9986\u85cf 1881-47\uff1b\u80cc\u9762\u7d27\u56fa\u4ef6\u4e0e\u90e8\u4ef6\u5c3a\u5bf8\u4e3a\u4f30\u7b97\u3002"
+    english: "Breastplate\nBroad plate, SMG 1881-47. Rear fasteners and part sizes are estimates."
+    traditionalChinese: "\u80f8\u80a9\u677f\n\u5bec\u80f8\u677f\u53c3\u8003\u9928\u85cf 1881-47\uff1b\u80cc\u9762\u7dca\u56fa\u4ef6\u8207\u90e8\u4ef6\u5c3a\u5bf8\u70ba\u4f30\u7b97\u3002"
+    note: 'Issue 60: photo-based silhouette with explicitly estimated unseen details.'
   - key: diegetic.action.00
     chinese: "\u6253\u5F00\u524D\u7A97"
     english: Open window
@@ -1428,9 +1451,9 @@ MonoBehaviour:
     traditionalChinese: "\u5C55\u54C1\u8AAA\u660E"
     note: Exhibit station caption.
   - key: diegetic.era1839
-    chinese: "1839 / \u6807\u51C6\u6F5C\u6C34\u670D"
-    english: 1839 / Standard dress
-    traditionalChinese: "1839 / \u6A19\u6E96\u6F5B\u6C34\u670D"
+    chinese: "1839 / \u5C01\u95ED\u5F0F\u5934\u76D4"
+    english: 1839 / Closed helmet
+    traditionalChinese: "1839 / \u5C01\u9589\u5F0F\u982D\u76D4"
     note: Exhibit station caption.
   - key: diegetic.markv
     chinese: Mark V

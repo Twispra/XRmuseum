@@ -1,0 +1,38 @@
+{
+  "runId": "20261018T105906217Z-pr69-assets-repair-c1b0140255114786b63c7c6135bb7654",
+  "commit": "e2b25a9aecc44c7a4e6c0c84274d0b9f3491a257",
+  "checkout": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr69-early-fix\\XRmuseum",
+  "unity": "2022.3.62f3c1",
+  "executeMethod": "Museum.EarlyHelmet.EditorTools.EarlyHelmetMergeRepair.RunBatch",
+  "arguments": [
+    "-batchmode",
+    "-projectPath",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr69-early-fix\\XRmuseum\\MuseumVR\"",
+    "-logFile",
+    "\"E:\\Codex\\Temp\\pr69-20261018\\validation\\20261018T105906217Z-pr69-assets-repair-c1b0140255114786b63c7c6135bb7654\\unity.log\"",
+    "-executeMethod",
+    "Museum.EarlyHelmet.EditorTools.EarlyHelmetMergeRepair.RunBatch",
+    "-fontCompletionOutput",
+    "\"E:\\Codex\\Temp\\pr69-20261018\\validation\\20261018T105906217Z-pr69-assets-repair-c1b0140255114786b63c7c6135bb7654\\font-completion\""
+  ],
+  "startedUtc": "2026-10-18T10:59:15.3257881Z",
+  "finishedUtc": "2026-10-18T11:00:58.0155843Z",
+  "pid": 30200,
+  "exitCode": 0,
+  "forced": false,
+  "dirtyBefore": [
+    "?? artifacts/helmet-interaction/qa/runs/20261018-pr69-early-fix/environment-preflight.json",
+    "?? artifacts/helmet-interaction/qa/runs/20261018-pr69-early-fix/pre-repair-coverage.json",
+    "?? artifacts/helmet-interaction/qa/runs/20261018-pr69-early-fix/source-font-expansion.json",
+    "?? artifacts/helmet-interaction/qa/runs/20261018-pr69-early-fix/static-surface-intersections.json"
+  ],
+  "dirtyAfter": [
+    " M MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs/InspectableHelmet.prefab",
+    " M \"MuseumVR/Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset\"",
+    " M MuseumVR/Assets/Museum/Features/PhysicalHands/GripSurfaceCache.asset",
+    "?? artifacts/helmet-interaction/qa/runs/20261018-pr69-early-fix/environment-preflight.json",
+    "?? artifacts/helmet-interaction/qa/runs/20261018-pr69-early-fix/pre-repair-coverage.json",
+    "?? artifacts/helmet-interaction/qa/runs/20261018-pr69-early-fix/source-font-expansion.json",
+    "?? artifacts/helmet-interaction/qa/runs/20261018-pr69-early-fix/static-surface-intersections.json"
+  ]
+}

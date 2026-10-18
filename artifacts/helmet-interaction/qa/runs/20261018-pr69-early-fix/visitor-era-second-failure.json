@@ -1,0 +1,33 @@
+{
+  "sourceCommit": "b4af252a8c8dd8e8214e9481a9d2364d8f50b7f9",
+  "combinedCommit": "40f9975227f8426c552fb4de67215d77622418ed",
+  "module": "VisitorEraValidation",
+  "runDirectory": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111537510Z-joint-69-visitor-era-final-a6f5748ef56947599f04a568d0c016f7",
+  "report": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T111537510Z-joint-69-visitor-era-final-a6f5748ef56947599f04a568d0c016f7\\qa\\20261018T111608147Z-visitor-era-d29f76093ba5439698fb32d608837345\\report.json",
+  "reportSha256": "bbaf26e958398f25806f9d9bf972d2bf19fa52e070b33877746d641d5e2ca8a0",
+  "unityLogSha256": "a0ff39bdc64774563d60338b7b622821197e70c497795f0ac27ad4bc07a14c92",
+  "exitCode": 1,
+  "forced": false,
+  "sourceFilesChecked": 1291,
+  "sourceChanges": [],
+  "passedChecks": 720,
+  "failedChecks": [
+    {
+      "name": "Current production ray selects observation / 2/breastplate",
+      "detail": "selections=0; kind=; Ray Interactor: active=True; hit=Breastplate Base; hovered=Physical UI - Rotate | Teleport Interactor: active=False; hit=none; hovered=",
+      "passed": false
+    }
+  ],
+  "prePressEvidence": [
+    {
+      "name": "Current production ray hovers observation / 2/breastplate",
+      "detail": "Ray Interactor: active=True; hit=Breastplate Base; hovered=Physical UI - Rotate,Breastplate Hotspot | Teleport Interactor: active=False; hit=none; hovered=",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "captureCount": 31,
+  "nextValidationSourceCommit": "1096be0ca0cc7fc09f02195b7cf749d90ad3a136",
+  "resolution": "The high/front generic pose hit Breastplate Base before Grip; XRI hover contained multiple candidates. New fixture requires a first-surface ray to the real marker from outside all solids, then still requires actual XRRayInteractor select and release once. No target, collision, filter or assertion is disabled. Re-run pending."
+}
