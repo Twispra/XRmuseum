@@ -331,7 +331,7 @@ namespace Museum.OperatorPanel.Editor
                 .Concat(demo.EquipmentExhibits.Where(e=>e.IsVisible).SelectMany(e=>e.Renderers))
                 .Concat(station.transform.Find("Pedestal edge controls").GetComponentsInChildren<Renderer>(false).Where(r=>!r.transform.IsChildOf(panel)));
             foreach(var surface in surfaces.Where(r=>r&&r.enabled&&r.gameObject.activeInHierarchy).Distinct())
-            {var bounds=surface.bounds;bounds.Expand(.06f);probe.obstacles.Add(new ProbeObstacle{name=surface.transform.parent.name+"/"+surface.name,bounds=bounds});}
+            {var bounds=surface.bounds;bounds.Expand(.06f);probe.obstacles.Add(new ProbeObstacle{name=(surface.transform.parent?surface.transform.parent.name:"<root>")+"/"+surface.name,bounds=bounds});}
             var candidates=new List<Vector3>{center};
             for(int depth=-2;depth<=12;depth++)for(int side=-8;side<=8;side++)for(int height=-4;height<=4;height++)candidates.Add(center+forward*(depth*.10f)+right*(side*.15f)+Vector3.up*(height*.10f));
             for(int depth=-5;depth<=4;depth++)for(int side=-4;side<=4;side++)for(int height=-4;height<=4;height++)candidates.Add(center+forward*(depth*.05f)+right*(side*.05f)+Vector3.up*(height*.05f));
