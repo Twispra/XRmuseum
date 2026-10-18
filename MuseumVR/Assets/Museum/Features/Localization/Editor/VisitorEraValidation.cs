@@ -431,9 +431,11 @@ namespace Museum.Localization.EditorTools
             {
                 var target = point.GetComponent<XRSimpleInteractable>();
                 ObservationRayPose(target, out Vector3 position, out Quaternion rotation);
-                int selections = 0; string kind = "";
+                int selections = 0, releases = 0; string kind = "";
                 UnityEngine.Events.UnityAction<SelectEnterEventArgs> listener = args => { selections++; kind = args.interactorObject.GetType().Name; };
+                UnityEngine.Events.UnityAction<SelectExitEventArgs> release = args => { if (args.interactorObject is XRRayInteractor) releases++; };
                 target.selectEntered.AddListener(listener);
+                target.selectExited.AddListener(release);
                 try
                 {
                     QueueController(rightDevice, position, rotation, false); yield return Wait(.3f);
@@ -443,9 +445,12 @@ namespace Museum.Localization.EditorTools
                         "Current production ray selects observation / " + index + "/" + point.Identifier,
                         "selections=" + selections + "; kind=" + kind + "; origin=" + position + "; marker=" + point.transform.position + "; " + RayDetail());
                     CheckText(information, point.Title + "\n" + point.Description, "Ray-selected observation / " + index + "/" + point.Identifier);
-                    QueueController(rightDevice, position, rotation, false); yield return Wait(.2f); ParkHands(); yield return Wait(.15f);
+                    QueueController(rightDevice, position, rotation, false); yield return Wait(.2f);
+                    Require(releases == 1 && !target.isSelected,
+                        "Current production ray releases observation once / " + index + "/" + point.Identifier, "releases=" + releases);
+                    ParkHands(); yield return Wait(.15f);
                 }
-                finally { target.selectEntered.RemoveListener(listener); }
+                finally { target.selectEntered.RemoveListener(listener); target.selectExited.RemoveListener(release); }
             }
             yield return RayClick(HelmetDiegeticStation.Command.Section);
             var section = binding.GetComponent<Museum.Experience.HelmetSectionSurface>(); section.Refresh();
@@ -502,6 +507,11 @@ namespace Museum.Localization.EditorTools
             foreach (var direction in directions)
             {
                 var outside = marker + inspection.transform.TransformDirection(direction.normalized) * .45f;
+                // A raycast that starts inside a solid can miss that enclosing
+                // collider. Reject such origins, including the plinth below a
+                // neck-seal marker; leave room for the controller's open hand.
+                if (Physics.OverlapSphere(outside, .08f, ~0, QueryTriggerInteraction.Ignore)
+                    .Any(c => c && !c.GetComponentInParent<XRBaseInteractor>())) continue;
                 var ray = new Ray(outside, (marker - outside).normalized);
                 foreach (var hit in Physics.RaycastAll(ray, .5f, ~0, QueryTriggerInteraction.Collide).OrderBy(h => h.distance))
                 {
