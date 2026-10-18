@@ -402,9 +402,17 @@ namespace Museum.Localization.EditorTools
         static string RayDetail() => string.Join(" | ", rightController.GetComponentsInChildren<XRRayInteractor>(true).Select(ray =>
         {
             bool found = ray.TryGetCurrent3DRaycastHit(out var hit);
+            var origin = ray.rayOriginTransform ? ray.rayOriginTransform : ray.transform;
             return ray.name + ": active=" + ray.isActiveAndEnabled + "; hit=" + (found && hit.collider ? hit.collider.name : "none") +
+                "; hitDistance=" + (found ? hit.distance : -1f) + "; origin=" + origin.position.ToString("F6") +
+                "; forward=" + origin.forward.ToString("F6") + "; detection=" + ray.hitDetectionType +
+                "; mask=" + ray.raycastMask.value + "; triggers=" + ray.raycastTriggerInteraction +
                 "; hovered=" + string.Join(",", ray.interactablesHovered.Select(t => t.transform.name));
         }));
+
+        static bool ProductionRayFirstHits(XRBaseInteractable target) =>
+            rightController.GetComponentsInChildren<XRRayInteractor>(true).Any(ray => ray.isActiveAndEnabled &&
+                ray.TryGetCurrent3DRaycastHit(out var hit) && target.colliders.Contains(hit.collider));
 
         static IEnumerator CurrentEraInteractions(int index)
         {
@@ -430,7 +438,7 @@ namespace Museum.Localization.EditorTools
             foreach (var point in hotspots)
             {
                 var target = point.GetComponent<XRSimpleInteractable>();
-                ObservationRayPose(target, out Vector3 position, out Quaternion rotation);
+                Vector3 position = Vector3.zero; Quaternion rotation = Quaternion.identity;
                 int selections = 0, releases = 0; string kind = "";
                 UnityEngine.Events.UnityAction<SelectEnterEventArgs> listener = args => { selections++; kind = args.interactorObject.GetType().Name; };
                 UnityEngine.Events.UnityAction<SelectExitEventArgs> release = args => { if (args.interactorObject is XRRayInteractor) releases++; };
@@ -438,8 +446,20 @@ namespace Museum.Localization.EditorTools
                 target.selectExited.AddListener(release);
                 try
                 {
-                    QueueController(rightDevice, position, rotation, false); yield return Wait(.3f);
-                    Require(target.isHovered, "Current production ray hovers observation / " + index + "/" + point.Identifier, RayDetail());
+                    int attempts = 0; bool acquired = false;
+                    foreach (var approach in ObservationRays(target))
+                    {
+                        position = approach.origin;
+                        rotation = Quaternion.LookRotation(approach.direction,
+                            Mathf.Abs(Vector3.Dot(approach.direction, Vector3.up)) > .98f ? Vector3.forward : Vector3.up);
+                        QueueController(rightDevice, position, rotation, false); yield return Wait(.3f); attempts++;
+                        // Authored cone casting and ray-origin transforms are retained.
+                        // A thin Physics ray is only a candidate prefilter; the actual
+                        // production ray must report this marker as its first hit.
+                        if (target.isHovered && ProductionRayFirstHits(target)) { acquired = true; break; }
+                    }
+                    Require(acquired, "Current production ray hovers observation as first surface / " + index + "/" + point.Identifier,
+                        "candidate poses=" + attempts + "; " + RayDetail());
                     QueueController(rightDevice, position, rotation, true); yield return Wait(.2f);
                     Require(selections == 1 && kind == nameof(XRRayInteractor) && tour.HasVisited(point.Identifier) && !station.RotationGesture.IsDragging,
                         "Current production ray selects observation / " + index + "/" + point.Identifier,
@@ -491,7 +511,7 @@ namespace Museum.Localization.EditorTools
             CaptureModel("era-" + index + "-exterior.png");
         }
 
-        static void ObservationRayPose(XRBaseInteractable target, out Vector3 position, out Quaternion rotation)
+        static IEnumerable<Ray> ObservationRays(XRBaseInteractable target)
         {
             // XRI may hover multiple valid targets along a ray, including a small
             // marker behind the shell. The production station correctly selects
@@ -518,17 +538,11 @@ namespace Museum.Localization.EditorTools
                     if (!hit.collider || hit.collider.GetComponentInParent<XRBaseInteractor>()) continue;
                     if (target.colliders.Contains(hit.collider))
                     {
-                        position = outside;
-                        rotation = Quaternion.LookRotation(marker - outside,
-                            Mathf.Abs(Vector3.Dot(ray.direction, Vector3.up)) > .98f ? Vector3.forward : Vector3.up);
-                        Require(true, "Observation fixture has a first-surface clear ray / " + era.CurrentIndex + "/" + target.name,
-                            "origin=" + position + "; marker=" + marker + "; first collider=" + hit.collider.name);
-                        return;
+                        yield return ray;
                     }
                     break;
                 }
             }
-            throw new InvalidOperationException("No unobstructed production observation ray was found for era " + era.CurrentIndex + "/" + target.name);
         }
 
         static void BodyRayPose(out Vector3 pose, out Quaternion rotation)
