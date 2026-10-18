@@ -4,8 +4,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Security.Cryptography;
 using System.Text;
+using Museum.Diegetic;
 using Museum.Exploration;
 using TMPro;
 using UnityEditor;
@@ -41,6 +43,10 @@ namespace Museum.Localization.EditorTools
         static LanguageButton chineseButton, englishButton;
         static HelmetExplorationController exploration;
         static HelmetConnectionDemonstration demonstration;
+        static HelmetDiegeticStation station;
+        static bool legacyFixtureActive, originalStationEnabled;
+        static readonly Dictionary<GameObject, bool> LegacyActive = new Dictionary<GameObject, bool>();
+        static readonly Dictionary<Behaviour, bool> LegacyEnabled = new Dictionary<Behaviour, bool>();
         static XRSimulatedController rightDevice, leftDevice;
         static XRSimulatedHMD hmd;
         static ActionBasedController rightController, leftController;
@@ -63,8 +69,8 @@ namespace Museum.Localization.EditorTools
         [Serializable] sealed class Report
         {
             public string startedUtc, finishedUtc, commit, branch, dirty, unity, status = "running", failure = "";
-            public string inputMethod = "Queued synthetic XR controller/HMD states in the normal Dynamic input update; production Input Actions, ray interactors and saved LanguageButton selectEntered handlers. No SelectEnter/SelectExit or TriggerProgrammatically calls. The existing simulator device writer is temporarily disabled.";
-            public string limitations = "XR controller poses are automated fixtures, not physical headset/controller, reachability or OS keyboard/mouse simulator testing. Demonstration start/stop uses the public exploration API and is labelled separately. Hidden labels are enabled only in a temporary Play Mode lifecycle fixture, then restored. PNGs are monocular captures: production view and separately labelled fixed diagnostic close-ups. No comfort, user study, historical accuracy or executable build claim.";
+            public string inputMethod = "Queued synthetic XR controller/HMD states in the normal Dynamic input update; production Input Actions, ray interactors and saved LanguageButton selectEntered handlers. Current diegetic station language/diagram states run first and after restoration. The original PR9 progression, panel and inspection assertions then run separately in an explicitly enabled optional legacy fixture; station and every hierarchy/component state changed by that fixture are restored. No SelectEnter/SelectExit or TriggerProgrammatically calls. The existing simulator device writer is temporarily disabled.";
+            public string limitations = "XR controller poses are automated fixtures, not physical headset/controller, reachability or OS keyboard/mouse simulator testing. Current diagram start/stop uses labelled public station commands. Legacy exploration start/stop uses its labelled public API. Hidden labels are enabled only in a temporary Play Mode lifecycle fixture, then restored. PNGs are monocular captures: production view and separately labelled fixed diagnostic close-ups. The unchanged TrilingualMuseumValidation helper still puts temporary captures under tmp/trilingual-qa; durable evidence is copied into a new QA run. No comfort, user study, historical accuracy or executable build claim.";
             public List<Check> checks = new List<Check>();
             public List<Fingerprint> files = new List<Fingerprint>();
             public List<string> errors = new List<string>();
@@ -219,13 +225,103 @@ namespace Museum.Localization.EditorTools
             var languageButtons = Find("Language Selection").GetComponentsInChildren<LanguageButton>(true);
             chineseButton = languageButtons.Single(button => button.Action == LanguageButton.Choice.Chinese);
             englishButton = languageButtons.Single(button => button.Action == LanguageButton.Choice.English);
-            exploration = UnityEngine.Object.FindObjectOfType<HelmetExplorationController>();
-            demonstration = UnityEngine.Object.FindObjectOfType<HelmetConnectionDemonstration>();
-            var progressive = UnityEngine.Object.FindObjectOfType<HelmetExplorationPanel>();
+            exploration = UnityEngine.Object.FindObjectOfType<HelmetExplorationController>(true);
+            demonstration = UnityEngine.Object.FindObjectOfType<HelmetConnectionDemonstration>(true);
+            var progressive = UnityEngine.Object.FindObjectOfType<HelmetExplorationPanel>(true);
             Require(exploration && demonstration && progressive && progressive.ProgressiveLayoutEnabled,
-                "runtime structure", "PR9 progressive exploration remains installed", "Uses saved production components.");
+                "runtime structure", "PR9 progressive exploration remains installed", "Saved components include the inactive legacy presentation; current entry is checked separately.");
+            station = UnityEngine.Object.FindObjectOfType<HelmetDiegeticStation>();
+            Require(station && station.isActiveAndEnabled && station.IsReady, "current presentation", "current diegetic station is ready", "Saved production entry.");
             Require(channel.Current == MuseumLanguage.English && !demonstration.IsVisible, "runtime state", "initial English without a diagram", channel.Current.ToString());
             SetupInput(); yield return Wait(.6f);
+            yield return ValidateCurrentStation(languageButtons);
+            BeginLegacyFixture(progressive);
+            try
+            {
+                yield return Wait(.35f);
+                Require(progressive.isActiveAndEnabled && progressive.gameObject.activeInHierarchy && !station.enabled,
+                    "optional legacy fixture", "original progression is explicitly enabled", "Current station is temporarily disabled only for the preserved original suite.");
+                exploration.RestartVisit(); progressive.ShowInspection(); yield return Wait(.15f);
+                yield return ValidateLegacyWorkflow(languageButtons, progressive);
+            }
+            finally { RestoreLegacyFixture(); }
+            yield return Wait(.25f);
+            Require(station.isActiveAndEnabled && station.IsReady && LegacyActive.All(p => p.Key && p.Key.activeSelf == p.Value) &&
+                LegacyEnabled.All(p => p.Key && p.Key.enabled == p.Value),
+                "fixture restoration", "current station and every explicitly changed legacy state are restored", "Original activeSelf/enabled snapshots.");
+            yield return Press(chineseButton, false); AuditCurrentLabels("restored-current-Chinese");
+            yield return Press(englishButton, false); AuditCurrentLabels("restored-current-English");
+            Require(report.errors.Count == 0, "logs", "no Unity errors after current presentation restoration", string.Join("\n", report.errors));
+        }
+
+        static IEnumerator ValidateCurrentStation(LanguageButton[] languageButtons)
+        {
+            AuditCurrentLabels("current-initial-English");
+            station.Execute(HelmetDiegeticStation.Command.Air); yield return Wait(.2f);
+            Require(demonstration.IsVisible && demonstration.IsPlaying, "current station public command", "current Air diagram starts", "Public command fixture; language selection below uses the production ray.");
+            foreach (var choice in new[] { LanguageButton.Choice.Chinese, LanguageButton.Choice.TraditionalChinese, LanguageButton.Choice.English })
+            {
+                float before = demonstration.NormalizedProgress;
+                yield return Press(languageButtons.Single(b => b.Action == choice), false);
+                var expected = choice == LanguageButton.Choice.Chinese ? MuseumLanguage.Chinese :
+                    choice == LanguageButton.Choice.TraditionalChinese ? MuseumLanguage.TraditionalChinese : MuseumLanguage.English;
+                Require(channel.Current == expected && station.isActiveAndEnabled && station.IsReady && demonstration.IsPlaying &&
+                    demonstration.NormalizedProgress + .001f >= before,
+                    "current presentation", "production language input retains current playback / " + expected,
+                    "before=" + before + "; after=" + demonstration.NormalizedProgress);
+                AuditCurrentLabels("current-playing-" + expected);
+            }
+            station.Execute(HelmetDiegeticStation.Command.CloseDemo); yield return Wait(.2f);
+            Require(!demonstration.IsVisible && channel.Current == MuseumLanguage.English, "current station public command", "current diagram closes in selected language", "Legacy suite starts only after current checks pass.");
+            AuditCurrentLabels("current-closed-English");
+        }
+
+        static void AuditCurrentLabels(string phase)
+        {
+            int visible = 0;
+            foreach (var label in SceneManager.GetActiveScene().GetRootGameObjects().SelectMany(r => r.GetComponentsInChildren<TMP_Text>(true)))
+            {
+                if (!label.gameObject.activeInHierarchy || !label.GetComponent<Renderer>().enabled) continue;
+                visible++; label.ForceMeshUpdate(true, true);
+                var source = label.GetComponent<LocalizedSourceText>(); var fixedKey = label.GetComponent<LocalizedText>();
+                bool native = label.name.Contains("Language Button") && label.name.EndsWith(" Label", StringComparison.Ordinal);
+                Require(source || fixedKey || native, "current text", "registered visible label / " + phase + "/" + label.name, label.text);
+                if (source) Require(string.IsNullOrEmpty(source.SourceEnglish) || source.SourceEnglish.All(char.IsDigit) || table.ContainsEnglish(source.SourceEnglish),
+                    "current text", "registered dynamic source / " + phase + "/" + label.name, source.SourceEnglish);
+                string expected = source ? table.TranslateEnglish(source.SourceEnglish, channel.Current) : fixedKey ? table.Get(fixedKey.Key, channel.Current) : label.text;
+                Require(label.text == expected && label.font == table.FontAsset, "current text", "exact translation and saved font / " + phase + "/" + label.name, label.text);
+                Require(!label.isTextOverflowing, "current layout", "visible text fits / " + phase + "/" + label.name, "fontSize=" + label.fontSize + "; rect=" + label.rectTransform.sizeDelta);
+                var missing = Regex.Replace(label.text, "<[^>]*>", "").Where(c => !char.IsWhiteSpace(c)).Distinct().Where(c => !label.font.HasCharacter(c, false, false)).ToArray();
+                Require(missing.Length == 0, "current glyphs", "stored visible glyphs / " + phase + "/" + label.name, new string(missing));
+                SampleText(phase, label);
+            }
+            Require(visible > 0, "current text", "visible labels were checked / " + phase, visible.ToString());
+        }
+
+        static void BeginLegacyFixture(HelmetExplorationPanel progressive)
+        {
+            LegacyActive.Clear(); LegacyEnabled.Clear(); originalStationEnabled = station.enabled; legacyFixtureActive = true;
+            foreach (var component in new Behaviour[] { progressive, progressive.GetComponent<Museum.Inspection.HelmetInspectionPalette>(), exploration, demonstration })
+                if (component && !LegacyEnabled.ContainsKey(component)) LegacyEnabled.Add(component, component.enabled);
+            for (var parent = progressive.transform; parent; parent = parent.parent)
+                if (!LegacyActive.ContainsKey(parent.gameObject)) LegacyActive.Add(parent.gameObject, parent.gameObject.activeSelf);
+            station.enabled = false;
+            foreach (var item in LegacyActive.Reverse()) item.Key.SetActive(true);
+            foreach (var item in LegacyEnabled) item.Key.enabled = true;
+        }
+
+        static void RestoreLegacyFixture()
+        {
+            if (!legacyFixtureActive) return;
+            if (exploration) exploration.Stop();
+            foreach (var item in LegacyEnabled) if (item.Key) item.Key.enabled = item.Value;
+            foreach (var item in LegacyActive) if (item.Key) item.Key.SetActive(item.Value);
+            if (station) station.enabled = originalStationEnabled;
+            legacyFixtureActive = false;
+        }
+
+        static IEnumerator ValidateLegacyWorkflow(LanguageButton[] languageButtons, HelmetExplorationPanel progressive)
+        {
             primary = new View { name = "production camera pose", position = Camera.main.transform.position, rotation = Camera.main.transform.rotation, fieldOfView = Camera.main.fieldOfView, aspect = 4f / 3f };
             mastheadView = DiagnosticView(signs[0]); arrivalView = DiagnosticView(signs[2]);
             CheckVisible("initial-en", MuseumLanguage.English, false); CaptureAll("initial-en");
@@ -414,6 +510,8 @@ namespace Museum.Localization.EditorTools
         static void Finish(string failure, bool exitPlayMode = true)
         {
             if (finishing) return;
+            try { RestoreLegacyFixture(); }
+            catch (Exception ex) { report.errors.Add("Legacy fixture restoration failed: " + ex); }
             finishing = true; Application.logMessageReceived -= OnLog; InputSystem.onBeforeUpdate -= FlushInput;
             PendingInput.Clear(); Routines.Clear(); report.failure = failure ?? "";
             foreach (var file in report.files)
