@@ -65,7 +65,7 @@ namespace Museum.PhotoHelmetTrial.EditorTools
 
         [Serializable] sealed class Check { public string name, detail, layer; public bool passed; }
         [Serializable] sealed class Fingerprint { public string path, sha256; }
-        [Serializable] sealed class Capture { public string file, purpose; public Vector3 position; public Quaternion rotation; public float fieldOfView; }
+        [Serializable] sealed class CaptureRecord { public string file, purpose; public Vector3 position; public Quaternion rotation; public float fieldOfView; }
         [Serializable] sealed class Report
         {
             public string startedUtc, finishedUtc, commit, dirty, unity, status = "running", failure = "";
@@ -74,7 +74,7 @@ namespace Museum.PhotoHelmetTrial.EditorTools
             public float batchExitSettleSeconds = 20;
             public List<Check> checks = new List<Check>();
             public List<Fingerprint> files = new List<Fingerprint>();
-            public List<Capture> captures = new List<Capture>();
+            public List<CaptureRecord> captures = new List<CaptureRecord>();
             public List<string> errors = new List<string>();
             public List<string> warnings = new List<string>();
         }
@@ -555,7 +555,7 @@ namespace Museum.PhotoHelmetTrial.EditorTools
         {
             string file = name + ".png";
             Museum.Diegetic.Editor.HelmetDiegeticPreview.CaptureView(Path.Combine(Output, file), position, rotation, fieldOfView);
-            report.captures.Add(new Capture { file = file, purpose = purpose, position = position, rotation = rotation, fieldOfView = fieldOfView });
+            report.captures.Add(new CaptureRecord { file = file, purpose = purpose, position = position, rotation = rotation, fieldOfView = fieldOfView });
         }
         static void Require(bool passed, string name, string detail, string layer = "saved-state")
         { report.checks.Add(new Check { passed = passed, name = name, detail = detail, layer = layer }); if (!passed) throw new InvalidOperationException(name + ": " + detail); }
