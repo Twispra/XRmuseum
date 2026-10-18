@@ -1,0 +1,16 @@
+[
+  {
+    "file": "蔡子申26134128g-r2kh8sck4y-bot.txt",
+    "beforeSha256": "3f902304bf356aeb489a09a49b13da0fd3cfa5eee0c5f8633d657ddfddd7d8ae",
+    "afterSha256": "06e6fc20934c4b87d55b92d48a7136f927f50cb2b1c128327a827b7f02e27831",
+    "old": "[PR #67](https://github.com/Twispra/XRmuseum/pull/67) proposes an independent left-plinth exhibit with rotation controls and three-language text, but remains unmerged pending the group’s layout decision.",
+    "new": "[PR #67](https://github.com/Twispra/XRmuseum/pull/67) subsequently merged on 18 October as an independent left-plinth exhibit with rotation controls and three-language text. My initial exhibit work is distinct from [Twispra’s follow-up confirmation/cancellation, occlusion and panel-placement repairs](https://github.com/Twispra/XRmuseum/blob/6088c736e89d05101e09645c1796556012a6fd5d/docs/activity/2026-10-18-pr67-review-and-merge.md). The wider layout in [Issue #64](https://github.com/Twispra/XRmuseum/issues/64) remains under review."
+  },
+  {
+    "file": "张非凡26108425g-nikoyeah830-wq.txt",
+    "beforeSha256": "6d027eca11ec62e738fb574ac67fd8be5378087834eb9802dee0f809af725438",
+    "afterSha256": "3e756dfdba5ed26a42568826daa57b1521032588c411d42299491a65a88cdc21",
+    "old": "added a summonable panel that faces the viewer once, remains fixed, blocks toggling during a drag and preserves exhibit state.",
+    "new": "added a summonable panel that faces the viewer once, remains fixed and preserves exhibit state, with initial guards for helmet and section drags."
+  }
+]
