@@ -167,12 +167,14 @@ namespace Museum.OperatorPanel
                 .Where(p => p.panel && p.panel.gameObject.activeSelf)
                 .Select(p => (p.panel, p.offset, bounds: LocalEnvelope(p.panel))).ToArray();
             var obstacles = ObstacleBounds(panels.Select(p => p.panel).ToArray());
-            // Search at the requested eye height; validate the FINAL panel envelopes, including
-            // their offsets, before moving anything. The nearest clear candidate wins.
+            // Validate FINAL panel envelopes, including offsets, before moving anything.
+            // A small vertical adjustment keeps a horizontal panel inside pitched-eye views.
+            // The nearest clear candidate wins, within the same view and distance limits.
             var candidates = new List<Vector3> { center };
             for (int depth = 0; depth <= 6; depth++)
                 for (int side = -8; side <= 8; side++)
-                    candidates.Add(center + forward * (depth * .20f) + right * (side * .15f));
+                    for (int height = -4; height <= 4; height++)
+                        candidates.Add(center + forward * (depth * .20f) + right * (side * .15f) + Vector3.up * (height * .10f));
             bool clear = false;
             foreach (var candidate in candidates.OrderBy(p => (p - center).sqrMagnitude))
             {
