@@ -1,8 +1,8 @@
 # XRmuseum Prototype Design and Technical Note
 
-COMP5424 Extended Reality | Group 2 | 18 October 2026
+COMP5424 Extended Reality | Group 2 | 18 October 2026 | Final build update
 
-Repository 6088c736 | Validated Unity source 024d039
+Prototype and ZIP source 6088c736 | Editor suites at 024d039
 
 ## 1 Scope and requirements
 
@@ -19,7 +19,7 @@ Enter and choose a language; approach the central exhibit; rotate it, inspect a 
 | Reduced motor demand | Single-controller exhibit manipulation, ray/direct selection, precision rotation and adjustable viewing height. [4] | Complete single-controller navigation and seated reach are unverified. |
 | Information access | Simplified Chinese, Traditional Chinese and English; hover outlines and visited checks; captions, sound toggle and reduced motion. [4,12] | Translation quality, binocular reading and sensory coverage need evaluation. |
 | Guidance and recovery | Contextual hints, press/release feedback, move-away cancellation, exhibit RESET and separate RESET VIEW. [4] | Legacy NEW VISIT is hidden in the default interface. |
-| Evaluable delivery | Public repository, member identities, modular source, retained model sources and version-bound reports. [3,7,11] | Current-revision build and PQ604 acceptance remain outstanding. |
+| Evaluable delivery | Public repository, six member identities, source, Windows ZIP and version-bound reports. [3,7,9,11] | Build/package checks passed; PQ604 and headset acceptance remain pending. |
 
 Course expectations concern a coherent journey, principal XR behaviour, recovery and delivery. Motor and information provisions are this team's selected responses, not a client-approved checklist or evidence of universal accessibility. [1,2]
 
@@ -45,7 +45,7 @@ The early model references Science Museum Group object 1881-47; the 1988 photo s
 
 ## 3 Implementation and verification
 
-This report describes repository revision 6088c736, including the merged left exhibit. Its committed MuseumVR tree is identical to frozen validation source 024d039 (tree eaa3237d). Later integration changed documentation and evidence only. The table presents archived results; no tests were rerun for this report. The local pre-existing ProjectSettings change was excluded from the report's source baseline. [3,6,7]
+The prototype and ZIP use repository revision 6088c736, including the left exhibit. Its committed MuseumVR tree is identical to frozen Editor validation source 024d039 (tree eaa3237d). The table retains archived suite results; those suites were not rerun for this update. The new build used a clean worktree, excluding the pre-existing local ProjectSettings change. [3,6,7,9]
 
 | Latest Editor suite at 024d039 | Passed | Recorded result |
 | --- | --- | --- |
@@ -55,15 +55,17 @@ This report describes repository revision 6088c736, including the merged left ex
 | Main-scene localisation integration | 128,389 | 0 failed; natural exit 0 |
 | Central era and hotspot behaviour | 989 | 0 failed; natural exit 0 |
 
-Each process exited without forced termination and left 1,299 tracked project files unchanged. Queued synthetic devices exercised production Input Actions and interaction events in saved scenes. Counts include repeated text, glyph and fingerprint assertions; they are not participant numbers or independent usability tasks and must not be added together. Monocular captures support layout inspection, not binocular readability or physical reach. [7]
+Each Editor process exited naturally with code 0 and left 1,299 project files unchanged. Synthetic devices exercised production Input Actions in saved scenes. Counts include repeated text, glyph and fingerprint assertions; they are not participants or independent usability tasks and must not be summed. Monocular captures do not establish binocular readability or physical reach. [7]
 
-Earlier evidence at 7e5b539 includes 31 central direct-contact checks for the default era and specified surfaces, plus 318 checks in the isolated comparison scene. These are historical runs. The comparison inputs are unchanged; that suite was retained without rerunning after the left-plinth integration. Coverage must therefore be read by version and task. [8]
+Historical runs at 7e5b539 include 31 direct-contact checks for the default era and specified surfaces, and 318 isolated-comparison checks. Comparison inputs are unchanged, but that suite was not rerun after left-plinth integration; coverage remains version-specific. [8]
 
 ### Build and real-device evidence
 
-The latest recorded complete Windows64 Development build is from 806993a on 16 October: build success, zero errors and two existing optional OpenXR migration warnings. Its 272-file runtime directory was copied with matching SHA-256 hashes, but the Player was not launched. It predates the current interaction, panel, early-model and left-plinth integrations. A fresh build, launch check and complete walkthrough on PQ604A/B/C remain required before submission. The ZIP must include the executable and its runtime dependencies. [9]
+A clean 6088c736 Windows x64 Development/Mono build on 18 October succeeded with zero errors and two existing optional OpenXR warnings; the Editor exited naturally with code 0. All 1,299 project files remained unchanged. The ZIP contains 272 Unity outputs plus instructions and a manifest: 274 files, 74,726,292 bytes. CRC and extracted-file SHA-256 checks passed. [9]
 
-Limited Quest 3 development feedback through Virtual Desktop/VDXR reported improved head rotation/viewing height, then difficult grabbing, hand-to-object gaps and joystick problems in an earlier hand build. Later repairs lack a complete current-headset retest. This is formative developer feedback, not participant research. Virtual Desktop is not evidence of approval or compatibility in the course's SteamVR/Meta Quest Link lab environment. [2,10]
+The extracted Player completed a 40-second local startup observation: Mono, D3D11, input and scene scripts initialized without unexpected managed exceptions. No headset was available; OpenXR reported XR_ERROR_FORM_FACTOR_UNAVAILABLE. The hidden-window probe ended by terminating its own Player process (exit -1). Natural Player shutdown, stereo rendering and VR interaction were not verified. PQ604 acceptance remains pending. [9]
+
+Earlier Quest 3/Virtual Desktop feedback reported improved head rotation/viewing height and, in an earlier hand build, grabbing, hand-gap and joystick problems. Later repairs still need a complete headset retest. This is formative developer feedback, not participant research or approval of compatibility with the course’s SteamVR/Meta Quest Link lab environment. [2,10]
 
 ## 4 Limitations and evaluation priorities
 
@@ -73,7 +75,7 @@ RESET restores exhibit inspection state; RESET VIEW restores starting horizontal
 
 | Priority | Representative task | Evidence to collect |
 | --- | --- | --- |
-| Before submission | Build the chosen final revision; launch and complete the core journey on PQ604 with the approved runtime. | Archive commit, ZIP/hash, dependencies, hardware/runtime, errors and complete-flow outcome. |
+| Before submission | Use the packaged 6088c736 build to complete the core journey on PQ604 with the approved runtime. | Record headset/controller tracking, complete-flow outcome, hardware/runtime, errors and target-device performance. |
 | Independent access | Enter, find controls, inspect and recover using a seated setup and one controller. | Completion, prompts, reach failures, unwanted movement, cancellation/recovery errors and discomfort. |
 | Readable and credible learning | Read a component label, compare eras, use AIR/VOICE, then explain the physical relationship and reconstruction limits. | Observed reading/selection problems; explanation accuracy; confusion between historical fact and virtual teaching mechanisms. |
 | Museum operation | Hide/recall the panel, recover a poor viewpoint, reset the exhibit and prepare for the next visitor. | Operator steps, residual selections/progress, failures to restore state and repeatability between sessions. |
@@ -100,7 +102,7 @@ Historical accuracy remains bounded by references and estimated geometry; the fu
 
 [8] Earlier combined Editor evidence, 7e5b539; historical Direct and isolated comparison coverage. [Combined validation record](https://github.com/Twispra/XRmuseum/blob/6088c736e89d05101e09645c1796556012a6fd5d/docs/activity/2026-10-18-pr65-66-69-fix-and-validation.md)
 
-[9] Windows build and runtime manifest, 806993a, 16 October 2026. [Build record](https://github.com/Twispra/XRmuseum/blob/6088c736e89d05101e09645c1796556012a6fd5d/docs/activity/2026-10-16-visitor-flow.md); [272-file manifest](https://github.com/Twispra/XRmuseum/blob/6088c736e89d05101e09645c1796556012a6fd5d/artifacts/helmet-interaction/qa/runs/20261016-visitor-flow/build-output-manifest.json)
+[9] Windows x64 build, complete ZIP and limited desktop startup observation, source 6088c736, 18 October 2026. Package SHA-256: 3914fb87cb3e1974…096b1cdbdfd4f102 (full value in manifest). [Build and observation record](https://github.com/Twispra/XRmuseum/blob/d05def503ad286815575ed7038c1f50ddc21dd9c/docs/activity/2026-10-18-phase2-windows-submission.md); [Package verification](https://github.com/Twispra/XRmuseum/blob/d05def503ad286815575ed7038c1f50ddc21dd9c/artifacts/phase2-submission/20261018-windows-build/package-verification.json)
 
 [10] Formative device feedback, 14 October 2026; accepted viewing repair and outstanding hand/navigation retest. [View feedback](https://github.com/Twispra/XRmuseum/blob/6088c736e89d05101e09645c1796556012a6fd5d/docs/activity/2026-10-14-pr49-merge.md); [Physical-hand feedback](https://github.com/Twispra/XRmuseum/blob/6088c736e89d05101e09645c1796556012a6fd5d/docs/activity/2026-10-14-physical-hands-device-feedback.md)
 

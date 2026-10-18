@@ -35,7 +35,7 @@ COMP5424 Extended Reality 博物馆**group2**小组作业的 Unity 工程与协�
 
 [PR #67](https://github.com/Twispra/XRmuseum/pull/67) 接入左展台的 1988 照片外形研究：三语展签与左转／复位／右转按钮，原位松手确认、移开取消，独立于中央三年代。模型身份、尺寸及细节仍未核实，没有开窗、剖切或供气／通话动作；[使用说明](docs/photo-helmet-unity-study.zh-CN.md)与[复审证据](docs/activity/2026-10-18-pr67-review-and-merge.md)。右展台及 #64 的完整双台方案仍待后续评审。
 
-快速操作见[实体 UI](docs/diegetic-ui.zh-CN.md)、[操作面板](docs/operator-panel.zh-CN.md)和[年代切换](docs/helmet-eras.zh-CN.md)；旧流程与设备反馈见[自由探索与复位](docs/helmet-exploration.zh-CN.md)、[物理手及设备反馈](docs/physical-hands.zh-CN.md)。2026-10-16 的 `806993a` 已生成完整 Windows64 Development 构建并核对 272 个产物，目录、指纹和程序未启动边界见[修订与构建记录](docs/activity/2026-10-16-visitor-flow.md)。该构建早于 #59、#65 与 #69，不包含这些后续变更；最新组合版本的编辑器验证见[联合修复与验证](docs/activity/2026-10-18-pr65-66-69-fix-and-validation.md)。已有有限头显反馈；最新修订的完整头显流程、新构建、性能和用户研究仍需验证。
+快速操作见[实体 UI](docs/diegetic-ui.zh-CN.md)、[操作面板](docs/operator-panel.zh-CN.md)和[年代切换](docs/helmet-eras.zh-CN.md)；旧流程与设备反馈见[自由探索与复位](docs/helmet-exploration.zh-CN.md)、[物理手及设备反馈](docs/physical-hands.zh-CN.md)。2026-10-18 已基于最新原型 `6088c736` 完成 Windows x64 Development/Mono 构建：0 errors、2 条既有 OpenXR 可选警告，Editor 自然退出 0，1,299 个源文件前后零差；完整提交 ZIP 共 274 文件、74,726,292 bytes，CRC 及解压哈希一致。解压版完成 40 秒本机启动观察，但无可用头显，观察后主动终止测试进程；不能据此称 Player 自然退出、VR 交互或 PQ604 验收通过。[本次构建、ZIP 与限制](docs/activity/2026-10-18-phase2-windows-submission.md)。2026-10-16 的 `806993a` 构建保留为[历史记录](docs/activity/2026-10-16-visitor-flow.md)。当前 Editor 验证见[左台接入复审](docs/activity/2026-10-18-pr67-review-and-merge.md)；真实头显完整流程、PQ604、性能和用户研究仍待验证。
 
 已配置 URP 14.0.12、OpenXR 1.14.3、XR Interaction Toolkit 2.6.4、Input System 1.14.0。模拟器仅供 Editor 预览；真实头显与模拟输入的操作边界见[协作指南](docs/getting-started.zh-CN.md)。
 
@@ -62,7 +62,8 @@ XRmuseum/
 
 - [每周活动记录](docs/weekly-activity.md)
 - [Phase 2 小组活动记录（提交用 PDF）](phase2小组和个人作业/COMP5424-Group2-Phase2-ActivityRecord.pdf)
-- [Phase 2 原型设计与技术说明（英文提交 PDF）](artifacts/technical-notes/20261018/phase2-prototype-design-and-technical-note.en.pdf) / [可维护文稿](docs/phase2-prototype-design-and-technical-note.en.md)
+- [Phase 2 原型设计与技术说明（最终构建更新 PDF）](artifacts/technical-notes/20261018-build-update/phase2-prototype-design-and-technical-note.en.pdf) / [可维护文稿](docs/phase2-prototype-design-and-technical-note.en.md)
+- [Phase 2 最终材料核查与提交清单](docs/activity/2026-10-18-phase2-final-submission-audit.md)
 - [2026-09-23 头盔原型：实现、验证与贡献证据](docs/activity/2026-09-23-helmet-prototype.md)
 - [外部资源与辅助工具记录](docs/external-resources.md)
 - [初始化验证结果与尚未验证的范围](docs/initialization-checks.md)

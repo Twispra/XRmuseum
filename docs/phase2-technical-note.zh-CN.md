@@ -1,4 +1,4 @@
-> 历史评审稿：以下原文保留 2026-10-16 / `806993a` 的状态与证据，不代表当前主线。最新提交稿见[英文原型设计与技术说明](phase2-prototype-design-and-technical-note.en.md)及[提交用 PDF](../artifacts/technical-notes/20261018/phase2-prototype-design-and-technical-note.en.pdf)，描述 `6088c736`（含已合并的 #67）。
+> 历史评审稿：以下原文保留 2026-10-16 / `806993a` 的状态与证据，不代表当前主线。最新提交稿见[英文原型设计与技术说明](phase2-prototype-design-and-technical-note.en.md)及[最终构建更新 PDF](../artifacts/technical-notes/20261018-build-update/phase2-prototype-design-and-technical-note.en.pdf)，描述 `6088c736`（含 #67 与 10-18 构建／有限启动观察）。
 
 # XRmuseum — Phase 2 技术说明（评审版）
 
