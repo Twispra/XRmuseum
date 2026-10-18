@@ -430,30 +430,27 @@ namespace Museum.Localization.EditorTools
             foreach (var point in hotspots)
             {
                 var target = point.GetComponent<XRSimpleInteractable>();
-                Vector3 centre = inspection.transform.TransformPoint(inspection.SectionCenterLocal);
-                Vector3 outward = (point.transform.position - centre).normalized;
-                Vector3 position = point.transform.position + outward * .35f;
-                if (point.Identifier == "breastplate")
-                {
-                    outward = Vector3.ProjectOnPlane(point.transform.position - centre, Vector3.up).normalized;
-                    if (outward.sqrMagnitude < .1f) outward = -inspection.transform.forward;
-                    position = point.transform.position + outward * .35f + Vector3.up * .25f;
-                }
-                Quaternion rotation = Quaternion.LookRotation(point.transform.position - position, Vector3.up);
-                int selections = 0; string kind = "";
+                ObservationRayPose(target, out Vector3 position, out Quaternion rotation);
+                int selections = 0, releases = 0; string kind = "";
                 UnityEngine.Events.UnityAction<SelectEnterEventArgs> listener = args => { selections++; kind = args.interactorObject.GetType().Name; };
+                UnityEngine.Events.UnityAction<SelectExitEventArgs> release = args => { if (args.interactorObject is XRRayInteractor) releases++; };
                 target.selectEntered.AddListener(listener);
+                target.selectExited.AddListener(release);
                 try
                 {
                     QueueController(rightDevice, position, rotation, false); yield return Wait(.3f);
                     Require(target.isHovered, "Current production ray hovers observation / " + index + "/" + point.Identifier, RayDetail());
                     QueueController(rightDevice, position, rotation, true); yield return Wait(.2f);
                     Require(selections == 1 && kind == nameof(XRRayInteractor) && tour.HasVisited(point.Identifier) && !station.RotationGesture.IsDragging,
-                        "Current production ray selects observation / " + index + "/" + point.Identifier, "selections=" + selections + "; kind=" + kind + "; " + RayDetail());
+                        "Current production ray selects observation / " + index + "/" + point.Identifier,
+                        "selections=" + selections + "; kind=" + kind + "; origin=" + position + "; marker=" + point.transform.position + "; " + RayDetail());
                     CheckText(information, point.Title + "\n" + point.Description, "Ray-selected observation / " + index + "/" + point.Identifier);
-                    QueueController(rightDevice, position, rotation, false); yield return Wait(.2f); ParkHands(); yield return Wait(.15f);
+                    QueueController(rightDevice, position, rotation, false); yield return Wait(.2f);
+                    Require(releases == 1 && !target.isSelected,
+                        "Current production ray releases observation once / " + index + "/" + point.Identifier, "releases=" + releases);
+                    ParkHands(); yield return Wait(.15f);
                 }
-                finally { target.selectEntered.RemoveListener(listener); }
+                finally { target.selectEntered.RemoveListener(listener); target.selectExited.RemoveListener(release); }
             }
             yield return RayClick(HelmetDiegeticStation.Command.Section);
             var section = binding.GetComponent<Museum.Experience.HelmetSectionSurface>(); section.Refresh();
@@ -492,6 +489,46 @@ namespace Museum.Localization.EditorTools
                 "Current ray reset preserves era, language and discoveries / " + index,
                 "resets=" + inspection.ResetCount + "; era=" + era.CurrentIndex + "; visited=" + tour.VisitedCount);
             CaptureModel("era-" + index + "-exterior.png");
+        }
+
+        static void ObservationRayPose(XRBaseInteractable target, out Vector3 position, out Quaternion rotation)
+        {
+            // XRI may hover multiple valid targets along a ray, including a small
+            // marker behind the shell. The production station correctly selects
+            // the first surface. Find a real clear approach for this era instead
+            // of assuming the Mark V breastplate's high/front pose also exposes
+            // the lower SuperLite neck seal. No collider or filter is disabled.
+            var directions = new[] { new Vector3(0, .35f, -1), new Vector3(-.7f, .35f, -1), new Vector3(.7f, .35f, -1),
+                new Vector3(-1, .2f, -.3f), new Vector3(1, .2f, -.3f), Vector3.back, Vector3.left, Vector3.right,
+                new Vector3(-.7f, -.25f, -1), new Vector3(.7f, -.25f, -1), new Vector3(0, -.25f, -1),
+                Vector3.up, new Vector3(-1, .35f, 1), new Vector3(1, .35f, 1), new Vector3(0, .35f, 1) };
+            Physics.SyncTransforms();
+            var marker = target.colliders.First(c => c && c.enabled && c.gameObject.activeInHierarchy).bounds.center;
+            foreach (var direction in directions)
+            {
+                var outside = marker + inspection.transform.TransformDirection(direction.normalized) * .45f;
+                // A raycast that starts inside a solid can miss that enclosing
+                // collider. Reject such origins, including the plinth below a
+                // neck-seal marker; leave room for the controller's open hand.
+                if (Physics.OverlapSphere(outside, .08f, ~0, QueryTriggerInteraction.Ignore)
+                    .Any(c => c && !c.GetComponentInParent<XRBaseInteractor>())) continue;
+                var ray = new Ray(outside, (marker - outside).normalized);
+                foreach (var hit in Physics.RaycastAll(ray, .5f, ~0, QueryTriggerInteraction.Collide).OrderBy(h => h.distance))
+                {
+                    if (!hit.collider || hit.collider.GetComponentInParent<XRBaseInteractor>()) continue;
+                    if (target.colliders.Contains(hit.collider))
+                    {
+                        position = outside;
+                        rotation = Quaternion.LookRotation(marker - outside,
+                            Mathf.Abs(Vector3.Dot(ray.direction, Vector3.up)) > .98f ? Vector3.forward : Vector3.up);
+                        Require(true, "Observation fixture has a first-surface clear ray / " + era.CurrentIndex + "/" + target.name,
+                            "origin=" + position + "; marker=" + marker + "; first collider=" + hit.collider.name);
+                        return;
+                    }
+                    break;
+                }
+            }
+            throw new InvalidOperationException("No unobstructed production observation ray was found for era " + era.CurrentIndex + "/" + target.name);
         }
 
         static void BodyRayPose(out Vector3 pose, out Quaternion rotation)
