@@ -38,6 +38,32 @@ namespace Museum.Diegetic
         readonly Dictionary<Command, HelmetPhysicalControl> controls = new Dictionary<Command, HelmetPhysicalControl>();
         readonly Dictionary<GameObject,bool> previousVisibility = new Dictionary<GameObject,bool>();
         readonly List<XRBaseInteractable> guardedTargets = new List<XRBaseInteractable>();
+        readonly HashSet<HelmetPhysicalControl> additionalControls = new HashSet<HelmetPhysicalControl>();
+        IEnumerable<HelmetPhysicalControl> AllControls => controls.Values.Concat(additionalControls.Where(c => c));
+        public bool HasActiveGesture => (RotationGesture && RotationGesture.IsDragging) ||
+            (SectionGesture && SectionGesture.IsDragging) || equipmentControls.Any(c => c.Gesture && c.Gesture.IsDragging);
+
+        /// <summary>Enroll runtime extension buttons in the station's same-hand, contact and recovery guards.</summary>
+        public void RegisterControl(HelmetPhysicalControl control)
+        {
+            if (!control || controls.Values.Contains(control) || !additionalControls.Add(control)) return;
+            control.PressAbandonedWhileHeld += GuardAbandonedPress;
+            Guard(control.Target);
+        }
+        public void UnregisterControl(HelmetPhysicalControl control)
+        {
+            if (!control || !additionalControls.Remove(control)) return;
+            if (control.Target)
+                foreach (var hand in control.Target.interactorsSelecting.ToArray()) GuardAbandonedPress(hand);
+            control.CancelPress();
+            control.PressAbandonedWhileHeld -= GuardAbandonedPress;
+            if (control.Target)
+            {
+                control.Target.selectFilters.Remove(this);
+                control.Target.hoverFilters.Remove(this);
+                guardedTargets.Remove(control.Target);
+            }
+        }
         readonly Dictionary<Behaviour,bool> previousEnabled = new Dictionary<Behaviour,bool>();
         readonly List<IXRSelectInteractor> cancelledHands=new List<IXRSelectInteractor>();
         Transform exhibitUI, pedestalUI, sectionDock, sectionRail;
@@ -192,7 +218,7 @@ namespace Museum.Diegetic
             if(resetting || inspection.IsReturning)return false;
             if(target is HelmetGestureInteractable &&
                !(target is XRBaseInteractable current && current.IsSelected(interactor)) &&
-               controls.Values.Any(c=>!ReferenceEquals(c.Target,target) && c.IsPressed))return false;
+               AllControls.Any(c=>!ReferenceEquals(c.Target,target) && c.IsPressed))return false;
             if(RotationGesture && RotationGesture.IsDragging && !ReferenceEquals(target,RotationGesture))return false;
             if(SectionGesture && SectionGesture.IsDragging && !ReferenceEquals(target,SectionGesture))return false;
             if(equipmentControls.Any(c=>c.Gesture && c.Gesture.IsDragging && !ReferenceEquals(target,c.Gesture)))return false;
@@ -297,7 +323,7 @@ namespace Museum.Diegetic
         }
         void CancelGestures()
         {
-            foreach(var control in controls.Values)
+            foreach(var control in AllControls)
             {
                 foreach(var hand in control.Target.interactorsSelecting.ToArray())GuardAbandonedPress(hand);
                 control.CancelPress();
@@ -308,7 +334,7 @@ namespace Museum.Diegetic
                 foreach(var hand in gesture.interactorsSelecting.ToArray())if(!cancelledHands.Contains(hand))cancelledHands.Add(hand);
                 gesture.CancelGesture();
             }
-            foreach(var control in controls.Values)
+            foreach(var control in AllControls)
                 foreach(var hand in control.Target.interactorsSelecting.ToArray())
                     if(control.Target.interactionManager)control.Target.interactionManager.SelectExit(hand,(IXRSelectInteractable)control.Target);
         }

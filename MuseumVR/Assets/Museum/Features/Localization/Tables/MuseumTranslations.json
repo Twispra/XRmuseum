@@ -1826,6 +1826,27 @@
       "chinese": "移动旋转",
       "traditionalChinese": "移動旋轉",
       "note": "Short contextual hint while holding a rotation target before movement; interaction semantics are unchanged."
+    },
+    {
+      "key": "operator.panel.show",
+      "english": "Show panel",
+      "chinese": "显示面板",
+      "traditionalChinese": "顯示面板",
+      "note": "Operator panel entry button; summons the settings and exhibit-information group to the viewer."
+    },
+    {
+      "key": "operator.panel.hide",
+      "english": "Hide panel",
+      "chinese": "收起面板",
+      "traditionalChinese": "收起面板",
+      "note": "Operator panel entry button title while the group is summoned; hides it again."
+    },
+    {
+      "key": "operator.panel.hint",
+      "english": "Open or close the panel",
+      "chinese": "打开或收起面板",
+      "traditionalChinese": "打開或收起面板",
+      "note": "Operator panel entry secondary hint."
     }
   ]
 }

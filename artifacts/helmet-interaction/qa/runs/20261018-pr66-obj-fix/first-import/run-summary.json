@@ -1,0 +1,25 @@
+{
+  "runId": "20261018T104847189Z-pr66-saved-comparison-a033f823c3204d6c9960104ee0de6770",
+  "sourceCommit": "8839b430038775d45c46bfc958da015c54b42de0",
+  "unityExitCode": 0,
+  "forced": false,
+  "accepted": false,
+  "checks": 318,
+  "failedChecks": 0,
+  "errors": 0,
+  "warnings": 0,
+  "checkedFiles": 1253,
+  "changed": [
+    "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/Glass_VisualAssumption.mat",
+    "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/PolishedEdge_Interpretive.mat",
+    "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_AgedBronze_Edge.mat",
+    "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_DarkGlass_VisualAssumption.mat",
+    "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_FrontWindowWornMetal_VisualAssumption.mat",
+    "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_Recess_VisualAssumption.mat",
+    "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_RubberGasket_VisualAssumption.mat",
+    "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_WornBrass_Highlight.mat"
+  ],
+  "rawLogLocalPath": "E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T104847189Z-pr66-saved-comparison-a033f823c3204d6c9960104ee0de6770\\unity.log",
+  "rawLogSha256": "0eec9b332544a171410f094067126e61e54cbebc23af8ee1ad618cfb00bb31eb",
+  "note": "Wrapper rejected the first run because Unity normalized eight compatibility _Color values; these changes were reviewed and committed, then the final run proved zero source changes."
+}

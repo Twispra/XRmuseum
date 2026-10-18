@@ -1,0 +1,1778 @@
+{
+    "utc": "2026-10-18T10:41:35.7530890Z",
+    "finishedUtc": "2026-10-18T10:42:06.4230482Z",
+    "commit": "5fc5c6f4d6d7c350092f1d5bf2facfb0de18ce6d",
+    "dirty": "M docs/operator-panel.zh-CN.md\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/before-02.json\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/before-03.json\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/before-04.json\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/before-05.json\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/before.json\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/committed-before-playmode.json\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/exit-01.json\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/exit-02.json\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/exit-03.json\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/exit-04.json\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/process-01.json\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/process-02.json\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/process-03.json\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/process-04.json\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/process-05.json\n?? artifacts/helmet-interaction/qa/runs/20261018-pr65-fix-process/round-02-comparison-after-authorized-edit.json\n?? artifacts/helmet-interaction/qa/runs/20261018T103328300Z-operator-panel-20261018-92a89f989b4d4143ab5d436bf38e8b91/01-settings.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103328300Z-operator-panel-20261018-92a89f989b4d4143ab5d436bf38e8b91/02-side-clearance.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103328300Z-operator-panel-20261018-92a89f989b4d4143ab5d436bf38e8b91/language-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103328300Z-operator-panel-20261018-92a89f989b4d4143ab5d436bf38e8b91/language-English.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103328300Z-operator-panel-20261018-92a89f989b4d4143ab5d436bf38e8b91/language-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103328300Z-operator-panel-20261018-92a89f989b4d4143ab5d436bf38e8b91/report.json\n?? artifacts/helmet-interaction/qa/runs/20261018T103607462Z-operator-panel-20261018-04d86875728547b79d452ba3a5653251/01-settings.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103607462Z-operator-panel-20261018-04d86875728547b79d452ba3a5653251/02-side-clearance.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103607462Z-operator-panel-20261018-04d86875728547b79d452ba3a5653251/language-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103607462Z-operator-panel-20261018-04d86875728547b79d452ba3a5653251/language-English.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103607462Z-operator-panel-20261018-04d86875728547b79d452ba3a5653251/language-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103607462Z-operator-panel-20261018-04d86875728547b79d452ba3a5653251/pitch--20.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103607462Z-operator-panel-20261018-04d86875728547b79d452ba3a5653251/pitch-20.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103607462Z-operator-panel-20261018-04d86875728547b79d452ba3a5653251/pitch-30.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103607462Z-operator-panel-20261018-04d86875728547b79d452ba3a5653251/report.json\n?? artifacts/helmet-interaction/qa/runs/20261018T103753696Z-operator-panel-20261018-e1e712f74bc04d34844944010f18c701/01-settings.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103753696Z-operator-panel-20261018-e1e712f74bc04d34844944010f18c701/02-side-clearance.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103753696Z-operator-panel-20261018-e1e712f74bc04d34844944010f18c701/language-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103753696Z-operator-panel-20261018-e1e712f74bc04d34844944010f18c701/language-English.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103753696Z-operator-panel-20261018-e1e712f74bc04d34844944010f18c701/language-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103753696Z-operator-panel-20261018-e1e712f74bc04d34844944010f18c701/pitch--20.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103753696Z-operator-panel-20261018-e1e712f74bc04d34844944010f18c701/pitch-20.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103753696Z-operator-panel-20261018-e1e712f74bc04d34844944010f18c701/pitch-30.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103753696Z-operator-panel-20261018-e1e712f74bc04d34844944010f18c701/report.json\n?? artifacts/helmet-interaction/qa/runs/20261018T103937526Z-operator-panel-20261018-c0280e7f5538484d93994deafc021661/01-settings.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103937526Z-operator-panel-20261018-c0280e7f5538484d93994deafc021661/02-side-clearance.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103937526Z-operator-panel-20261018-c0280e7f5538484d93994deafc021661/language-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103937526Z-operator-panel-20261018-c0280e7f5538484d93994deafc021661/language-English.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103937526Z-operator-panel-20261018-c0280e7f5538484d93994deafc021661/language-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103937526Z-operator-panel-20261018-c0280e7f5538484d93994deafc021661/pitch--20.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103937526Z-operator-panel-20261018-c0280e7f5538484d93994deafc021661/pitch-20.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103937526Z-operator-panel-20261018-c0280e7f5538484d93994deafc021661/pitch-30.png\n?? artifacts/helmet-interaction/qa/runs/20261018T103937526Z-operator-panel-20261018-c0280e7f5538484d93994deafc021661/report.json\n?? docs/activity/2026-10-18-pr65-panel-fix.md",
+    "unity": "2022.3.62f3c1",
+    "failure": "",
+    "method": "Saved MuseumStart Play Mode. Shared baseline runner lifecycle and queued synthetic controller/HMD/keyboard states, ordinary Dynamic Input System updates through production Input Actions and XR ray selection. API drag fixtures identified separately. No direct SelectEnter/Exit, InputSystem.Update, scene saves or generation.",
+    "limitations": "No real headset/controller, comfort, reachability study, user test or executable build validation. RenderTexture images are diagnostic views of the product scene, not headset screenshots. Direct physical hand interaction is not independently validated by this runner.",
+    "checks": [
+        {
+            "name": "Saved scene starts installed diegetic station",
+            "detail": "Ready=True",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "New visitor starts with complete rotation guidance",
+            "detail": "Learned=False; Condensed=False",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "All commands retain registered interaction metadata",
+            "detail": "Count=23",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "No old following palette remains active",
+            "detail": "Retired presentation, existing content engines retained.",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Three original knowledge hotspots remain enabled",
+            "detail": "front-window,bonnet,breastplate",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Knowledge hotspot position preserved: front-window",
+            "detail": "(-0.1100, 0.3000, -0.2400)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Knowledge hotspot position preserved: bonnet",
+            "detail": "(0.1700, 0.3400, 0.0000)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Knowledge hotspot position preserved: breastplate",
+            "detail": "(0.0000, 0.0750, -0.1800)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Exhibit cannot be freely translated or dropped",
+            "detail": "Legacy grab disabled; rigidbody pinned.",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Controller and unchanged GUID import into saved scene",
+            "detail": "EntryReady=True",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Installed scene and saved glyph validation passes in Play Mode",
+            "detail": "Passed=18 Failed=0",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Dynamic entry inherits station select and hover protection",
+            "detail": "Filters registered before enabling entry",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover: summon",
+            "detail": "Hovered=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects: summon",
+            "detail": "Pressed=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production release confirms once: summon",
+            "detail": "Count=1",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Entry opens settings on release",
+            "detail": "Settings=True",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Whole panel fits current eye viewport at near distance: initial summon",
+            "detail": "Distance=1.5572; Viewport corners=(0.1176, 0.4410, 1.4350),(0.3664, 0.4410, 1.4350),(0.1176, 0.6823, 1.4350),(0.3664, 0.6823, 1.4350),(0.1232, 0.4419, 1.4560),(0.3683, 0.4419, 1.4560),(0.1232, 0.6796, 1.4560),(0.3683, 0.6796, 1.4560)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Final panel centre keeps helmet clearance: initial summon",
+            "detail": "Center: (-0.57, 1.46, 3.65), Extents: (0.27, 0.20, 0.01)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Final envelope avoids specimen and fixed controls: initial summon",
+            "detail": "Center: (-0.57, 1.46, 3.65), Extents: (0.27, 0.20, 0.01)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Eye sees entire panel without plinth or specimen occlusion: initial summon",
+            "detail": "Eye=(0.00, 1.36, 2.20); Center: (-0.57, 1.46, 3.65), Extents: (0.27, 0.20, 0.01)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Summon preserves specimen, preferences and active demonstration",
+            "detail": "(0.00, 0.97, 3.50)|(0.00000, 0.00000, 0.00000, 1.00000)|True|True|1|True|Voice|English|True|False|False|0|True|True,False,False => (0.00, 0.97, 3.50)|(0.00000, 0.00000, 0.00000, 1.00000)|True|True|1|True|Voice|English|True|False|False|0|True|True,False,False",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Head motion does not move visible panel",
+            "detail": "(-0.5700, 1.6014, 3.6500)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Height preference does not move visible panel",
+            "detail": "(-0.5700, 1.6014, 3.6500)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover: settings to about",
+            "detail": "Hovered=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects: settings to about",
+            "detail": "Pressed=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production release confirms once: settings to about",
+            "detail": "Count=1",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "One-visible to one-visible transition places newly shown About at current viewing yaw",
+            "detail": "(0.6089, 1.5014, 2.8429)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover: about to settings",
+            "detail": "Hovered=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects: about to settings",
+            "detail": "Pressed=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production release confirms once: about to settings",
+            "detail": "Count=1",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "About to Settings also places at new view instead of retaining stale pose",
+            "detail": "(-0.7180, 1.5514, 3.0196)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover: hide",
+            "detail": "Hovered=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects: hide",
+            "detail": "Pressed=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production release confirms once: hide",
+            "detail": "Count=2",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Hidden settings has no active ray-blocking collider",
+            "detail": "Hidden=True",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Hide preserves specimen, preferences and active demonstration",
+            "detail": "(0.00, 0.97, 3.50)|(0.00000, 0.00000, 0.00000, 1.00000)|True|True|1|True|Voice|English|True|False|False|0.05|True|True,False,False => (0.00, 0.97, 3.50)|(0.00000, 0.00000, 0.00000, 1.00000)|True|True|1|True|Voice|English|True|False|False|0.05|True|True,False,False",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover: resummon",
+            "detail": "Hovered=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects: resummon",
+            "detail": "Pressed=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production release confirms once: resummon",
+            "detail": "Count=3",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Hidden panel remains reachable through fixed entry",
+            "detail": "Shown=True",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover: hide before guard fixtures",
+            "detail": "Hovered=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects: hide before guard fixtures",
+            "detail": "Pressed=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production release confirms once: hide before guard fixtures",
+            "detail": "Count=4",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover: pitched-eye summon -20",
+            "detail": "Hovered=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects: pitched-eye summon -20",
+            "detail": "Pressed=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production release confirms once: pitched-eye summon -20",
+            "detail": "Count=5",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Pitched eye can summon a yaw-only panel: -20",
+            "detail": "Shown=True PanelEuler=(0.00, 0.00, 0.00)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Whole panel fits current eye viewport at near distance: eye pitch -20",
+            "detail": "Distance=0.6472; Viewport corners=(0.2203, 0.2246, 0.5683),(0.8483, 0.2246, 0.5683),(0.2745, 0.7395, 0.7050),(0.7808, 0.7395, 0.7050),(0.2296, 0.2233, 0.5880),(0.8366, 0.2233, 0.5880),(0.2806, 0.7244, 0.7247),(0.7731, 0.7244, 0.7247)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Final panel centre keeps helmet clearance: eye pitch -20",
+            "detail": "Center: (0.03, 1.64, 2.81), Extents: (0.27, 0.20, 0.01)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Final envelope avoids specimen and fixed controls: eye pitch -20",
+            "detail": "Center: (0.03, 1.64, 2.81), Extents: (0.27, 0.20, 0.01)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Eye sees entire panel without plinth or specimen occlusion: eye pitch -20",
+            "detail": "Eye=(0.00, 1.41, 2.20); Center: (0.03, 1.64, 2.81), Extents: (0.27, 0.20, 0.01)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover: pitched-eye hide -20",
+            "detail": "Hovered=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects: pitched-eye hide -20",
+            "detail": "Pressed=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production release confirms once: pitched-eye hide -20",
+            "detail": "Count=6",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover: pitched-eye summon 20",
+            "detail": "Hovered=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects: pitched-eye summon 20",
+            "detail": "Pressed=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production release confirms once: pitched-eye summon 20",
+            "detail": "Count=7",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Pitched eye can summon a yaw-only panel: 20",
+            "detail": "Shown=False PanelEuler=(0.00, 0.00, 0.00)",
+            "layer": "public-api",
+            "passed": false
+        },
+        {
+            "name": "Whole panel fits current eye viewport at near distance: eye pitch 20",
+            "detail": "Distance=0.6472; Viewport corners=(0.2117, 0.8563, 0.5515),(0.8589, 0.8563, 0.5515),(0.1167, 1.7581, 0.4147),(0.9773, 1.7581, 0.4147),(0.2217, 0.8548, 0.5712),(0.8465, 0.8548, 0.5712),(0.1341, 1.7153, 0.4345),(0.9556, 1.7153, 0.4345)",
+            "layer": "public-api",
+            "passed": false
+        },
+        {
+            "name": "Final panel centre keeps helmet clearance: eye pitch 20",
+            "detail": "Center: (0.03, 1.64, 2.81), Extents: (0.27, 0.20, 0.01)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Final envelope avoids specimen and fixed controls: eye pitch 20",
+            "detail": "Center: (0.03, 1.64, 2.81), Extents: (0.27, 0.20, 0.01)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Eye sees entire panel without plinth or specimen occlusion: eye pitch 20",
+            "detail": "Eye=(0.00, 1.41, 2.20); Center: (0.03, 1.64, 2.81), Extents: (0.27, 0.20, 0.01)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover: pitched-eye summon 30",
+            "detail": "Hovered=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects: pitched-eye summon 30",
+            "detail": "Pressed=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production release confirms once: pitched-eye summon 30",
+            "detail": "Count=8",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Pitched eye can summon a yaw-only panel: 30",
+            "detail": "Shown=False PanelEuler=(0.00, 0.00, 0.00)",
+            "layer": "public-api",
+            "passed": false
+        },
+        {
+            "name": "Whole panel fits current eye viewport at near distance: eye pitch 30",
+            "detail": "Distance=0.6472; Viewport corners=(0.1844, 1.0488, 0.5037),(0.8930, 1.0488, 0.5037),(-0.0232, 2.3966, 0.3038),(1.1515, 2.3966, 0.3038),(0.1954, 1.0471, 0.5219),(0.8793, 1.0471, 0.5219),(0.0063, 2.3177, 0.3220),(1.1147, 2.3177, 0.3220)",
+            "layer": "public-api",
+            "passed": false
+        },
+        {
+            "name": "Final panel centre keeps helmet clearance: eye pitch 30",
+            "detail": "Center: (0.03, 1.64, 2.81), Extents: (0.27, 0.20, 0.01)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Final envelope avoids specimen and fixed controls: eye pitch 30",
+            "detail": "Center: (0.03, 1.64, 2.81), Extents: (0.27, 0.20, 0.01)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Eye sees entire panel without plinth or specimen occlusion: eye pitch 30",
+            "detail": "Eye=(0.00, 1.41, 2.20); Center: (0.03, 1.64, 2.81), Extents: (0.27, 0.20, 0.01)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Dragging rejects entry through API and production ray: Rotate",
+            "detail": "Confirmations=8",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Dragging rejects entry through API and production ray: SectionTranslate",
+            "detail": "Confirmations=8",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Equipment drag fixture begins on active demonstration",
+            "detail": "Dragging=True",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Equipment drag also rejects dynamic entry through station protection",
+            "detail": "Confirmations=8",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray holds dynamic entry before abandonment",
+            "detail": "Pressed=True",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Abandoned dynamic press propagates release guard across targets",
+            "detail": "EntryPressed=False",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Still-held cancelled entry cannot become model rotation",
+            "detail": "Dragging=False",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Fresh production grip rotates after release guard clears",
+            "detail": "Dragging=True",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "F11 cancels dynamic entry without confirming or opening panel",
+            "detail": "Pressed=False Selected=False",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover: right-side clearance",
+            "detail": "Hovered=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects: right-side clearance",
+            "detail": "Pressed=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production release confirms once: right-side clearance",
+            "detail": "Count=9",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Whole panel fits current eye viewport at near distance: right-side settings",
+            "detail": "Distance=0.8517; Viewport corners=(0.3096, 0.1912, 0.8350),(0.7371, 0.1912, 0.8350),(0.3096, 0.6058, 0.8350),(0.7371, 0.6058, 0.8350),(0.3143, 0.1988, 0.8560),(0.7312, 0.1988, 0.8560),(0.3143, 0.6032, 0.8560),(0.7312, 0.6032, 0.8560)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Final panel centre keeps helmet clearance: right-side settings",
+            "detail": "Center: (0.53, 1.55, 3.70), Extents: (0.27, 0.20, 0.01)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Final envelope avoids specimen and fixed controls: right-side settings",
+            "detail": "Center: (0.53, 1.55, 3.70), Extents: (0.27, 0.20, 0.01)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Eye sees entire panel without plinth or specimen occlusion: right-side settings",
+            "detail": "Eye=(0.50, 1.65, 2.85); Center: (0.53, 1.55, 3.70), Extents: (0.27, 0.20, 0.01)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action",
+            "detail": "简体中文",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action",
+            "detail": "简体中文",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action",
+            "detail": "繁體中文",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action",
+            "detail": "繁體中文",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action",
+            "detail": "English",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action",
+            "detail": "English",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action",
+            "detail": "降低视角",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action",
+            "detail": "降低视角",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action",
+            "detail": "恢复高度",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action",
+            "detail": "恢复高度",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action",
+            "detail": "升高视角",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action",
+            "detail": "升高视角",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action",
+            "detail": "声音：开",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action",
+            "detail": "声音：开",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action",
+            "detail": "动画：开",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action",
+            "detail": "动画：开",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action",
+            "detail": "提示：关",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action",
+            "detail": "提示：关",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action",
+            "detail": "重置视角",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action",
+            "detail": "重置视角",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action",
+            "detail": "收起面板",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action",
+            "detail": "收起面板",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese visible text fits Action hint",
+            "detail": "打开或收起面板",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese uses saved glyphs Action hint",
+            "detail": "打开或收起面板",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese entry follows current language",
+            "detail": "收起面板",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action",
+            "detail": "简体中文",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action",
+            "detail": "简体中文",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action",
+            "detail": "繁體中文",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action",
+            "detail": "繁體中文",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action",
+            "detail": "English",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action",
+            "detail": "English",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action",
+            "detail": "View lower",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action",
+            "detail": "View lower",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action",
+            "detail": "Reset height",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action",
+            "detail": "Reset height",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action",
+            "detail": "View higher",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action",
+            "detail": "View higher",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action",
+            "detail": "Sound: on",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action",
+            "detail": "Sound: on",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action",
+            "detail": "Motion: on",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action",
+            "detail": "Motion: on",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action",
+            "detail": "Hints: off",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action",
+            "detail": "Hints: off",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action",
+            "detail": "Reset View",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action",
+            "detail": "Reset View",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action",
+            "detail": "Hide panel",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action",
+            "detail": "Hide panel",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English visible text fits Action hint",
+            "detail": "Open or close the panel",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English uses saved glyphs Action hint",
+            "detail": "Open or close the panel",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English entry follows current language",
+            "detail": "Hide panel",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action",
+            "detail": "简体中文",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action",
+            "detail": "简体中文",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action",
+            "detail": "繁體中文",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action",
+            "detail": "繁體中文",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action",
+            "detail": "English",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action",
+            "detail": "English",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action",
+            "detail": "降低視角",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action",
+            "detail": "降低視角",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action",
+            "detail": "恢復高度",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action",
+            "detail": "恢復高度",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action",
+            "detail": "升高視角",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action",
+            "detail": "升高視角",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action",
+            "detail": "聲音：開",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action",
+            "detail": "聲音：開",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action",
+            "detail": "動畫：開",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action",
+            "detail": "動畫：開",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action",
+            "detail": "提示：關",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action",
+            "detail": "提示：關",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action",
+            "detail": "重設視角",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action",
+            "detail": "重設視角",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action hint",
+            "detail": "",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action",
+            "detail": "收起面板",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action",
+            "detail": "收起面板",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese visible text fits Action hint",
+            "detail": "打開或收起面板",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese uses saved glyphs Action hint",
+            "detail": "打開或收起面板",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese entry follows current language",
+            "detail": "收起面板",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover: localized about",
+            "detail": "Hovered=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects: localized about",
+            "detail": "Pressed=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production release confirms once: localized about",
+            "detail": "Count=2",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Whole panel fits current eye viewport at near distance: about envelope",
+            "detail": "Distance=0.8915; Viewport corners=(0.5825, 0.3871, 0.8500),(0.8177, 0.3871, 0.8500),(0.5825, 0.4896, 0.8500),(0.8177, 0.4896, 0.8500),(0.5825, 0.3871, 0.8500),(0.8177, 0.3871, 0.8500),(0.5825, 0.4896, 0.8500),(0.8177, 0.4896, 0.8500)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Final panel centre keeps helmet clearance: about envelope",
+            "detail": "Center: (0.76, 1.59, 3.70), Extents: (0.15, 0.05, 0.00)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Final envelope avoids specimen and fixed controls: about envelope",
+            "detail": "Center: (0.76, 1.59, 3.70), Extents: (0.15, 0.05, 0.00)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Eye sees entire panel without plinth or specimen occlusion: about envelope",
+            "detail": "Eye=(0.50, 1.65, 2.85); Center: (0.76, 1.59, 3.70), Extents: (0.15, 0.05, 0.00)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Chinese About fits with saved glyphs",
+            "detail": "设备是简化示意。\n不是完整的配套装备。\n内部结构未作历史复原。",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "English About fits with saved glyphs",
+            "detail": "Equipment types, simplified.\nNot an exact matched rig.\nNo helmet interior is reconstructed.",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese About fits with saved glyphs",
+            "detail": "設備是簡化示意。\n不是完整的配套裝備。\n內部結構未作歷史復原。",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover: hide about",
+            "detail": "Hovered=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects: hide about",
+            "detail": "Pressed=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production release confirms once: hide about",
+            "detail": "Count=10",
+            "layer": "production-input",
+            "passed": true
+        }
+    ],
+    "files": [
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor.meta",
+            "sha256": "8d026974eb1140fc726e489d8feef337096650823dce74468013590d311b5d15"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticDirectValidation.cs",
+            "sha256": "0ef6d30c813d86886ef9e3e7070c69458b782c83487cc6c4d25079075b6d0043"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticDirectValidation.cs.meta",
+            "sha256": "c4ffa42d9a67e96f5bb1e395c840ce2dc06e171512b3bcf3b377e0cc8539d00c"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs",
+            "sha256": "530db047c79d2e3e39efcdfac927867fe40f6ef9ce8e44c427ed960d8b83710d"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs.meta",
+            "sha256": "ec6c7bbcc2065ab1f82386cfa0f7c64e043173b3225c2c3fa04a8412b2898dd9"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs",
+            "sha256": "3700df31f36fa6c188174d86bfa85d732831ed40d9108c2364e7a56bd014ef87"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs.meta",
+            "sha256": "c822bc2c4574400c367a2023daa88ec9657e833f4bd48519e502dca35ee1ac9e"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs",
+            "sha256": "772a0e41c1dc8bf93d7f2ac5c9ecdd7959e71f74e602a5668222a49211754216"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs.meta",
+            "sha256": "9629da0099cb309c00bc0456c29a0a6f0de41d3d7488e4c7977732a56e9d5aa8"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Materials.meta",
+            "sha256": "52a91259552604a9ef7d80d72b4dbc1c245ea571c5e15ef6206904c132e7c6ea"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat",
+            "sha256": "363f879b055303aa62da00cbd6bb241656ed216f439048f272c595e95fdcf422"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat.meta",
+            "sha256": "512c82d030ad3991f16a034be196c13dd3fe717c83e20819925c3bf508e183b3"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime.meta",
+            "sha256": "b733f29c063a6af24e32cac94990df45f8c7f8c6cd52a659d534f1d5b6151a54"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs",
+            "sha256": "dfbfdd9ef30c3e872eb2b28cd0b63d415eed00dbbfca93043bf133f15e4a7ba5"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs.meta",
+            "sha256": "e45c13a3f038251bd6594341e2f8b05f5a97a2eec7af4c678dd150b17821b0a6"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs",
+            "sha256": "f8aeeff94ad9326ffe1775076e168150a62958003974bbeb46e35798cb14910c"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs.meta",
+            "sha256": "203a496e55bb9060bcb0cf4756b1fe3ced2cb1726aab820d8f8ad0204897c65d"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs",
+            "sha256": "e5346941e561c4320e8f02508bb91a5005c037e4a45cec0e7ae60b48d5feb675"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs.meta",
+            "sha256": "29c6a424af966488904f074bd6239e215b09d62b545960454058913849312ae6"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDirectContact.cs",
+            "sha256": "be1d5a8b608aa59ddf417f9cc460330681397d86a35b732d0cded7b829d45d1d"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDirectContact.cs.meta",
+            "sha256": "1f4f1786bfa8728e34374ed9473536d1c4cf0ed755bb7b9a496d8b6c1ff16723"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs",
+            "sha256": "25d48d191e088bf5d713781edd7df7dc2c04b111b8f9cd94a2a4acea69b2ea28"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs.meta",
+            "sha256": "f2dc40e4624cc55e832eb90a8cd1298ed4c05d05cf7e5e1a1a699ef601d8e0fd"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs",
+            "sha256": "5f66d59671132eb2ac029936db1cf2733bd856a9a0bc055dc7c9e5cbb78f9eba"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs.meta",
+            "sha256": "08be069d714e297c43ad91d070b559b1da5139a83fd0dbbdabfc5f9e4897854f"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetRotationHint.cs",
+            "sha256": "2d5dfa8da33a181b081009334b8b9bb7f793e598503f787dae898859bdab5fb9"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetRotationHint.cs.meta",
+            "sha256": "4ad9367dd3a9985a07b3e3ac234ae61c2239d7ffedcc6e237841c0e20a243d24"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs",
+            "sha256": "f145f8fe499c38b4105a994a620eaa531f21d18b00f6cae9fd74da43b827bdf6"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs.meta",
+            "sha256": "bed431957ffcd6add58d8ef344549ae40ed19b39c48049fbc68951bec4151509"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs",
+            "sha256": "a2199f940955756b452b3143afe4a0ae3f59a307307664d771ebefda32bec6c4"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs.meta",
+            "sha256": "d91ab53d38e0ec1bd599599823b5ce1ee377ae033b9cd6877576022baa4e5997"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Shaders.meta",
+            "sha256": "e00a8cae84d37a9fb4b34c47917e592bfd32dee82afce20bd03dfd9cbb4f3957"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader",
+            "sha256": "4a571f1114f7d292b3891e2a4abf12e32e2e2c36f4573e24476db1462eab36d3"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader.meta",
+            "sha256": "b3bdf2954bc13e106789e0b4081600a1524f5c5bdcff56e156a6465b1b9cc31f"
+        },
+        {
+            "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs",
+            "sha256": "8b6b605f14bbd510c589657b51b3a1a641993da035a9b02d2ebc47e50e8d5c01"
+        },
+        {
+            "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+            "sha256": "0a126639b3511a75510f0e5f4de1438b7fe79aa22a40b884acbc5cf5fad248bc"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Fonts/characters-required.txt",
+            "sha256": "9ef00455606f7ec7da13dea176439ccd28000658db576d2123abf83440b8f5eb"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset",
+            "sha256": "2e9427bd6be4163b827535454e9ff04a8b892458abbc37b19f323bf33b8cfd4e"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Tables/LocalizationTable.asset",
+            "sha256": "287ae4bc424c9187e906a56eae11ac04fcf3f8cf5baec55aa633c14c57cd0d54"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Tables/MuseumTranslations.json",
+            "sha256": "18eb9426f6777314023eb29eef7dfd6caad8812dc4ca84742fba0bd3ae0201df"
+        },
+        {
+            "path": "Assets/Museum/Features/OperatorPanel/Editor.meta",
+            "sha256": "332b472ef70862d43f18f0dd032b8289db6e3b8367eb0eae191b0783771af128"
+        },
+        {
+            "path": "Assets/Museum/Features/OperatorPanel/Editor/OperatorPanelInteractionValidation.cs",
+            "sha256": "d7ba9c5becfac644d0cd3205bf8daa0d0e8571cd0bb559cc1ceac7bc516b59ad"
+        },
+        {
+            "path": "Assets/Museum/Features/OperatorPanel/Editor/OperatorPanelInteractionValidation.cs.meta",
+            "sha256": "1107ea3f0ed2f7b08359a9a307f6a99d94b673b4ac8e33f1c8d29bf72dc8c2e3"
+        },
+        {
+            "path": "Assets/Museum/Features/OperatorPanel/Editor/OperatorPanelSetup.cs",
+            "sha256": "1f8b3a257a35e6aa2c28ed8b758a6a82ebad6e813d0f4a676228dd632d7494d0"
+        },
+        {
+            "path": "Assets/Museum/Features/OperatorPanel/Editor/OperatorPanelSetup.cs.meta",
+            "sha256": "dec325ae88259e43530815dae5414ce9f48796f31013e8f1e2b06336ec419947"
+        },
+        {
+            "path": "Assets/Museum/Features/OperatorPanel/Editor/OperatorPanelValidation.cs",
+            "sha256": "6d9732e33940b65f7623b7a457f82bc68e02c8db1b5fb5b737a8eef104810edf"
+        },
+        {
+            "path": "Assets/Museum/Features/OperatorPanel/Editor/OperatorPanelValidation.cs.meta",
+            "sha256": "c87ccfea93d01354a73bdf77c134b852389725b4a92bede3afc50a45657f4da3"
+        },
+        {
+            "path": "Assets/Museum/Features/OperatorPanel/Runtime.meta",
+            "sha256": "ed2211164d888c0d3dca7da4148bcc0bd30641d00b314c1359763f8bc75c7cf2"
+        },
+        {
+            "path": "Assets/Museum/Features/OperatorPanel/Runtime/OperatorPanelController.cs",
+            "sha256": "d06c8f7b4bb8dc7f5a8ab66b9d4a94430233ff0bb26df82dd6fd4470c38438bf"
+        },
+        {
+            "path": "Assets/Museum/Features/OperatorPanel/Runtime/OperatorPanelController.cs.meta",
+            "sha256": "ee7ad8078eaaec6d2b6c5a7a72e5f071382253c4c3758d2684b9e8ca9b42349d"
+        },
+        {
+            "path": "Assets/Museum/Features/RefinedModels/Runtime/RefinedConnectionEquipment.cs",
+            "sha256": "ec0135ffb6512bc0cff96ef923022222c2fa14f268dfd82be440ec93d18c5d59"
+        },
+        {
+            "path": "Assets/Museum/Scenes/MuseumStart.unity",
+            "sha256": "bcf13688b0ba8869978e5aa2b65df51b04bf7c1531482172152c16dc338ea252"
+        },
+        {
+            "path": "Packages/manifest.json",
+            "sha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7"
+        },
+        {
+            "path": "Packages/packages-lock.json",
+            "sha256": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03"
+        },
+        {
+            "path": "ProjectSettings/AudioManager.asset",
+            "sha256": "f2ed914f70919b6434c647bd820850be731b408f0f0c31e3bf7f98c8cafb617f"
+        },
+        {
+            "path": "ProjectSettings/ClusterInputManager.asset",
+            "sha256": "40e65dd214bf254955d2c8829ca8ce2130fd3510485560ce012e9a1ddd93e623"
+        },
+        {
+            "path": "ProjectSettings/DynamicsManager.asset",
+            "sha256": "80ba5565beefddabba07863f19983c62409753fb36bff400fe36cf9a7db94690"
+        },
+        {
+            "path": "ProjectSettings/EditorBuildSettings.asset",
+            "sha256": "2eb668ca519737bdc61a58cac1d5e687415e6ec38d9ff3a6c7f5b7d1a178f09e"
+        },
+        {
+            "path": "ProjectSettings/EditorSettings.asset",
+            "sha256": "705e5dde8b4ceb8147971b0c8f3781ebbe566a12b8e280379ee24f2bd9ad9474"
+        },
+        {
+            "path": "ProjectSettings/GraphicsSettings.asset",
+            "sha256": "34ce4ccf02ed829f7b299c4dee9e9a744ca5a0428d3008ace9e13e3b17d12f75"
+        },
+        {
+            "path": "ProjectSettings/InputManager.asset",
+            "sha256": "60c83ae48e29a782141f99032eb38e803d18475124ff5224fbd1fd81b233f051"
+        },
+        {
+            "path": "ProjectSettings/MemorySettings.asset",
+            "sha256": "1e8379a461b10ae09f3f696911088c16875d63e87ed5f2d95df9e1892703f9fd"
+        },
+        {
+            "path": "ProjectSettings/NavMeshAreas.asset",
+            "sha256": "80106cfa7e6181a1928b142c075f3e510d527441e3d79bc83590e4ac91e7cd66"
+        },
+        {
+            "path": "ProjectSettings/PackageManagerSettings.asset",
+            "sha256": "1480f945e8240f4f62d1bc3850dde6a02e32446181a0ee2d78902bc658b8044e"
+        },
+        {
+            "path": "ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json",
+            "sha256": "a40f81b0dcc795e422f5ca0881fe7dad4e26cb8fdb33244a70f110835c1a8d44"
+        },
+        {
+            "path": "ProjectSettings/Physics2DSettings.asset",
+            "sha256": "d57a0fe55659c33879e8b70bc01c5ea9cdf082069dab649905c6c5138531e6eb"
+        },
+        {
+            "path": "ProjectSettings/PresetManager.asset",
+            "sha256": "29c125923fe6e29f90190d4fce1c82d660e7051546e2c9d02908d18c9cf2436c"
+        },
+        {
+            "path": "ProjectSettings/ProjectSettings.asset",
+            "sha256": "6b3aa93c403f4a0697a561f117cea95e529db9965f59dcadfcb4533031e1e2b0"
+        },
+        {
+            "path": "ProjectSettings/ProjectVersion.txt",
+            "sha256": "93eba324bad77e6764a40d1b8a2020e7b69424102a2b2f3b17b69afdf7dd67a0"
+        },
+        {
+            "path": "ProjectSettings/QualitySettings.asset",
+            "sha256": "98ae67ac472dd0df80a04f389a7f434b47f1c86245d3d29533384506493639ee"
+        },
+        {
+            "path": "ProjectSettings/SceneTemplateSettings.json",
+            "sha256": "5baf593374ad67246277a435d8d0ded7167696eef6e05d2d245670e490625d8c"
+        },
+        {
+            "path": "ProjectSettings/ShaderGraphSettings.asset",
+            "sha256": "733eb0b08f2d9e57a51cef99c450140b18ddd101065cad1b9cde9330899ed8c7"
+        },
+        {
+            "path": "ProjectSettings/TagManager.asset",
+            "sha256": "8e18b1c820e9c09e16bbd1f1b7842e9fb3b0158a0921b0964e0b8fa12c6e2c01"
+        },
+        {
+            "path": "ProjectSettings/TimeManager.asset",
+            "sha256": "1a83e54adbbda7c9f4851103a0c6ab7f6448a3343d4ea5b7620452fa08416ecd"
+        },
+        {
+            "path": "ProjectSettings/UnityConnectSettings.asset",
+            "sha256": "5af4c69bb69f1d9dfbbc47b01eb6522e3ea41e672791e080a003c8deacae9ab5"
+        },
+        {
+            "path": "ProjectSettings/URPProjectSettings.asset",
+            "sha256": "3e9d9f824875297ef6b9315fa7a3ac7ec1b047042395404a23c368fc971a8f3e"
+        },
+        {
+            "path": "ProjectSettings/VersionControlSettings.asset",
+            "sha256": "e7bda45bf7a394745fee1316e6c71fa676004d591ad1f3aa247fd3e4ceb86071"
+        },
+        {
+            "path": "ProjectSettings/VFXManager.asset",
+            "sha256": "f066c6483919961332415ee64204f74fe52f38c02e82892eb02b7a5b2e381f0e"
+        },
+        {
+            "path": "ProjectSettings/XRPackageSettings.asset",
+            "sha256": "4cbc8f79d73d844f75ebe7c4d9dead01e72bd68e8ed901e926c7e58dd41d56e5"
+        },
+        {
+            "path": "ProjectSettings/XRSettings.asset",
+            "sha256": "edd2beb4a2e388312b4b7da241aa51070434005d82c59363f1237dd2e567585f"
+        }
+    ],
+    "originalHotspots": [
+        {
+            "id": "front-window",
+            "position": {
+                "x": -0.10999999940395355,
+                "y": 0.2999999523162842,
+                "z": -0.24000000953674317
+            },
+            "enabled": true
+        },
+        {
+            "id": "bonnet",
+            "position": {
+                "x": 0.17000000178813935,
+                "y": 0.3400000333786011,
+                "z": 0.0
+            },
+            "enabled": true
+        },
+        {
+            "id": "breastplate",
+            "position": {
+                "x": 0.0,
+                "y": 0.07500004768371582,
+                "z": -0.18000006675720216
+            },
+            "enabled": true
+        }
+    ],
+    "errors": [],
+    "diagnosticCaptures": [
+        "01-settings.png",
+        "pitch--20.png",
+        "pitch-20.png",
+        "pitch-30.png",
+        "02-side-clearance.png",
+        "language-Chinese.png",
+        "language-English.png",
+        "language-TraditionalChinese.png"
+    ]
+}

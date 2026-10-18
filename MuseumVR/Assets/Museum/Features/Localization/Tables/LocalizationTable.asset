@@ -1531,4 +1531,21 @@ MonoBehaviour:
     traditionalChinese: "\u79FB\u52D5\u65CB\u8F49"
     note: Short contextual hint while holding a rotation target before movement;
       interaction semantics are unchanged.
+  - key: operator.panel.show
+    chinese: "\u663E\u793A\u9762\u677F"
+    english: Show panel
+    traditionalChinese: "\u986F\u793A\u9762\u677F"
+    note: Operator panel entry button; summons the settings and exhibit-information
+      group to the viewer.
+  - key: operator.panel.hide
+    chinese: "\u6536\u8D77\u9762\u677F"
+    english: Hide panel
+    traditionalChinese: "\u6536\u8D77\u9762\u677F"
+    note: Operator panel entry button title while the group is summoned; hides it
+      again.
+  - key: operator.panel.hint
+    chinese: "\u6253\u5F00\u6216\u6536\u8D77\u9762\u677F"
+    english: Open or close the panel
+    traditionalChinese: "\u6253\u958B\u6216\u6536\u8D77\u9762\u677F"
+    note: Operator panel entry secondary hint.
   fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}

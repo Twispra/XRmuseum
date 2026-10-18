@@ -1,0 +1,35 @@
+{
+  "runId": "20261018T104847189Z-pr66-saved-comparison-a033f823c3204d6c9960104ee0de6770",
+  "commit": "8839b430038775d45c46bfc958da015c54b42de0",
+  "checkout": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum",
+  "unity": "2022.3.62f3c1",
+  "executeMethod": "Museum.PhotoHelmetTrial.EditorTools.PhotoHelmetComparisonValidation.RunBatch",
+  "arguments": [
+    "-batchmode",
+    "-projectPath",
+    "\"C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\MuseumVR\"",
+    "-logFile",
+    "\"E:\\Codex\\2026-10-18\\xrmuseum-pr65-66-69-preservation\\validation\\20261018T104847189Z-pr66-saved-comparison-a033f823c3204d6c9960104ee0de6770\\unity.log\"",
+    "-executeMethod",
+    "Museum.PhotoHelmetTrial.EditorTools.PhotoHelmetComparisonValidation.RunBatch"
+  ],
+  "startedUtc": "2026-10-18T10:48:56.8277924Z",
+  "finishedUtc": "2026-10-18T10:52:00.7107848Z",
+  "pid": 38076,
+  "exitCode": 0,
+  "forced": false,
+  "dirtyBefore": [
+    "?? artifacts/helmet-interaction/qa/runs/20261018-pr66-obj-fix/static-validation.json"
+  ],
+  "dirtyAfter": [
+    " M MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/Glass_VisualAssumption.mat",
+    " M MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/PolishedEdge_Interpretive.mat",
+    " M MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_AgedBronze_Edge.mat",
+    " M MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_DarkGlass_VisualAssumption.mat",
+    " M MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_FrontWindowWornMetal_VisualAssumption.mat",
+    " M MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_Recess_VisualAssumption.mat",
+    " M MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_RubberGasket_VisualAssumption.mat",
+    " M MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials/V2_WornBrass_Highlight.mat",
+    "?? artifacts/helmet-interaction/qa/runs/20261018-pr66-obj-fix/static-validation.json"
+  ]
+}
