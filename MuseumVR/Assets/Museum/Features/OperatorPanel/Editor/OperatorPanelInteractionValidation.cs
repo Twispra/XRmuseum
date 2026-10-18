@@ -203,7 +203,7 @@ namespace Museum.OperatorPanel.Editor
             CheckEnvelope(settings,"initial summon");
             CheckResult(before==Snapshot(),"Summon preserves specimen, preferences and active demonstration",before+" => "+Snapshot());
             var fixedPosition=settings.position; var fixedRotation=settings.rotation;
-            QueueHead(new Vector3(.18f,1.70f,.14f),Quaternion.Euler(0,30,0)); yield return Wait(.3f);
+            QueueHead(new Vector3(.18f,.05f,.14f),Quaternion.Euler(0,30,0)); yield return Wait(.3f);
             CheckResult(Vector3.Distance(fixedPosition,settings.position)<.0001f && Quaternion.Angle(fixedRotation,settings.rotation)<.001f,"Head motion does not move visible panel",settings.position.ToString("F4"));
             station.Execute(HelmetDiegeticStation.Command.HeightUp); yield return Wait(.25f);
             CheckResult(Vector3.Distance(fixedPosition,settings.position)<.0001f,"Height preference does not move visible panel",settings.position.ToString("F4"));
@@ -211,7 +211,7 @@ namespace Museum.OperatorPanel.Editor
             yield return Click(station.Controls[HelmetDiegeticStation.Command.About],"settings to about");
             CheckResult(station.AboutVisible && !station.SettingsVisible && Vector3.Distance(oldAbout,about.position)>.1f && Quaternion.Angle(about.rotation,Quaternion.Euler(0,Camera.main.transform.eulerAngles.y,0))<.01f,
                 "One-visible to one-visible transition places newly shown About at current viewing yaw",about.position.ToString("F4"));
-            QueueHead(new Vector3(-.25f,1.65f,.10f),Quaternion.Euler(0,-25,0)); yield return Wait(.3f);
+            QueueHead(new Vector3(-.25f,0,.10f),Quaternion.Euler(0,-25,0)); yield return Wait(.3f);
             yield return Click(station.Controls[HelmetDiegeticStation.Command.Settings],"about to settings");
             CheckResult(station.SettingsVisible && !station.AboutVisible && Vector3.Distance(fixedPosition,settings.position)>.1f && Quaternion.Angle(settings.rotation,Quaternion.Euler(0,Camera.main.transform.eulerAngles.y,0))<.01f,
                 "About to Settings also places at new view instead of retaining stale pose",settings.position.ToString("F4"));
@@ -222,6 +222,15 @@ namespace Museum.OperatorPanel.Editor
             yield return Click(entry,"resummon");
             CheckResult(panel.PanelShown,"Hidden panel remains reachable through fixed entry","Shown="+panel.PanelShown);
             yield return Click(entry,"hide before guard fixtures");
+            foreach(float pitch in new[]{-20f,20f,30f})
+            {
+                QueueHead(Vector3.zero,Quaternion.Euler(pitch,0,0));yield return Wait(.25f);
+                yield return Click(entry,"pitched-eye summon "+pitch);
+                CheckResult(panel.PanelShown && Mathf.Abs(Mathf.DeltaAngle(settings.eulerAngles.x,0))<.01f,"Pitched eye can summon a yaw-only panel: "+pitch,"Shown="+panel.PanelShown+" PanelEuler="+settings.eulerAngles);
+                CheckEnvelope(settings,"eye pitch "+pitch);CaptureEye("pitch-"+pitch);
+                if(panel.PanelShown)yield return Click(entry,"pitched-eye hide "+pitch);
+            }
+            QueueHead();yield return Wait(.2f);
             foreach(var gesture in new[]{station.RotationGesture,station.SectionGesture})
             {
                 gesture.BeginForValidation(Vector3.zero,Quaternion.identity);
@@ -231,8 +240,9 @@ namespace Museum.OperatorPanel.Editor
                 CheckResult(gesture.IsDragging && !panel.PanelShown && entry.ConfirmedCount==confirmations,"Dragging rejects entry through API and production ray: "+gesture.GestureMode,"Confirmations="+entry.ConfirmedCount);
                 gesture.EndForValidation(); ParkHands(); yield return Wait(.2f);
             }
-            var equipmentGesture=UnityEngine.Object.FindObjectsOfType<HelmetGestureInteractable>().First(g=>g!=station.RotationGesture&&g!=station.SectionGesture);
+            var equipmentGesture=UnityEngine.Object.FindObjectsOfType<HelmetGestureInteractable>().First(g=>g!=station.RotationGesture&&g!=station.SectionGesture&&g.isActiveAndEnabled);
             equipmentGesture.BeginForValidation(Vector3.zero,Quaternion.identity);
+            CheckResult(equipmentGesture.IsDragging,"Equipment drag fixture begins on active demonstration","Dragging="+equipmentGesture.IsDragging);
             int equipmentCount=entry.ConfirmedCount;
             panel.Toggle(); yield return Attempt(entry,true); yield return Attempt(entry,false);
             CheckResult(equipmentGesture.IsDragging && !panel.PanelShown && entry.ConfirmedCount==equipmentCount,"Equipment drag also rejects dynamic entry through station protection","Confirmations="+entry.ConfirmedCount);
@@ -371,7 +381,7 @@ namespace Museum.OperatorPanel.Editor
         }
         static void ParkHands()
         { QueueController(rightDevice, new Vector3(2, .45f, -.5f), Quaternion.identity, false); QueueController(leftDevice, new Vector3(-2, .45f, -.5f), Quaternion.identity, false); }
-        static void QueueHead() => QueueHead(new Vector3(0, 1.65f, 0), Quaternion.identity);
+        static void QueueHead() => QueueHead(Vector3.zero, Quaternion.identity);
         static void QueueHead(Vector3 position, Quaternion rotation)
         {
             var state = new XRSimulatedHMDState { isTracked = true, trackingState = 3, devicePosition = position, centerEyePosition = position,

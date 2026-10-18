@@ -160,8 +160,7 @@ namespace Museum.OperatorPanel
             if (forward.sqrMagnitude < .0001f) forward = Vector3.forward;
             forward.Normalize();
             var right = Vector3.Cross(Vector3.up, forward).normalized;
-            var center = viewer.position + forward * summonDistance;
-            center.y = viewer.position.y - summonBelowEye;
+            var center = viewer.position + viewer.forward.normalized * summonDistance - Vector3.up * summonBelowEye;
             placementFacing = Quaternion.LookRotation(forward, Vector3.up);
             var panels = new[] { (SettingsPath, settingsOffset), (InformationPath, informationOffset) }
                 .Select(p => (panel: station.transform.Find(PedestalPath + "/" + p.Item1), offset: p.Item2))
