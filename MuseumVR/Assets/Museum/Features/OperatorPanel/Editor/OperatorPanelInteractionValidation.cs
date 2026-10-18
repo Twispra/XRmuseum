@@ -326,8 +326,12 @@ namespace Museum.OperatorPanel.Editor
             var helmet=inspection.transform.position;
             CheckResult(new Vector2(bounds.center.x-helmet.x,bounds.center.z-helmet.z).magnitude>=.55f,"Final panel centre keeps helmet clearance: "+fixture,bounds.ToString());
             var obstacles=station.Inspection.GetComponentsInChildren<Renderer>(false).Where(r=>r.enabled)
-                .Concat(station.Controls.Values.Where(c=>!c.transform.IsChildOf(panel)&&c.gameObject.activeInHierarchy).SelectMany(c=>c.GetComponentsInChildren<Renderer>(false)).Where(r=>r.enabled));
+                .Concat(station.Controls.Values.Where(c=>!c.transform.IsChildOf(panel)&&c.gameObject.activeInHierarchy).SelectMany(c=>c.GetComponentsInChildren<Renderer>(false)).Where(r=>r.enabled))
+                .Concat(UnityEngine.Object.FindObjectsOfType<Renderer>().Where(r=>r.enabled&&r.name=="Plinth")).ToArray();
             CheckResult(!obstacles.Any(r=>bounds.Intersects(r.bounds)),"Final envelope avoids specimen and fixed controls: "+fixture,bounds.ToString());
+            var worldPoints=Enumerable.Range(0,8).Select(i=>bounds.center+Vector3.Scale(bounds.extents,new Vector3((i&1)==0?-1:1,(i&2)==0?-1:1,(i&4)==0?-1:1))).Concat(new[]{bounds.center});
+            CheckResult(worldPoints.All(point=>{var direction=point-Camera.main.transform.position;var ray=new Ray(Camera.main.transform.position,direction.normalized);return !obstacles.Any(r=>r.bounds.IntersectRay(ray,out var distance)&&distance<direction.magnitude-.02f);}),
+                "Eye sees entire panel without plinth or specimen occlusion: "+fixture,"Eye="+Camera.main.transform.position+"; "+bounds);
         }
         static void CaptureEye(string name)
         {

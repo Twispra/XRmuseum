@@ -226,6 +226,7 @@ namespace Museum.OperatorPanel
         List<Bounds> ObstacleBounds(Transform[] panels)
         {
             var renderers = new List<Renderer>();
+            renderers.AddRange(FindObjectsOfType<Renderer>().Where(r => r.name == "Plinth"));
             if (station.Inspection) renderers.AddRange(station.Inspection.GetComponentsInChildren<Renderer>(false));
             if (station.Demonstration)
                 foreach (var equipment in station.Demonstration.EquipmentExhibits)
@@ -247,6 +248,14 @@ namespace Museum.OperatorPanel
                     if (viewport.z <= camera.nearClipPlane || viewport.x < .03f || viewport.x > .97f || viewport.y < .03f || viewport.y > .97f) return false;
                 }
             if (obstacles.Any(bounds.Intersects)) return false;
+            // World-space non-overlap alone can still put the panel behind the solid plinth
+            // or the specimen. Keep the complete panel visible from the actual eye.
+            foreach (var point in Corners(bounds).Concat(new[] { bounds.center }))
+            {
+                var direction = point - viewer.position;
+                var ray = new Ray(viewer.position, direction.normalized);
+                if (obstacles.Any(obstacle => obstacle.IntersectRay(ray, out var distance) && distance < direction.magnitude - .02f)) return false;
+            }
             if (!station.Inspection) return true;
             var helmet = station.Inspection.transform.position;
             return new Vector2(bounds.center.x - helmet.x, bounds.center.z - helmet.z).sqrMagnitude >= minimumHelmetClearance * minimumHelmetClearance;
