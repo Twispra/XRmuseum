@@ -186,6 +186,7 @@ namespace Museum.PhotoHelmetTrial.EditorTools
             var bounds = ModelBounds(); visitorPosition = new Vector3(bounds.center.x, 1.45f, bounds.min.z - 2.0f);
             visitorRotation = Quaternion.LookRotation(new Vector3(bounds.center.x, 1.10f, bounds.center.z) - visitorPosition, Vector3.up);
             CheckModel();
+            yield return Obstruction();
             yield return DistantRayClick();
             yield return Click(Button(PhotoHelmetGalleryButton.Action.Reset), false);
             foreach (var action in new[] { PhotoHelmetGalleryButton.Action.TurnLeft, PhotoHelmetGalleryButton.Action.Reset, PhotoHelmetGalleryButton.Action.TurnRight, PhotoHelmetGalleryButton.Action.Reset })
@@ -196,7 +197,6 @@ namespace Museum.PhotoHelmetTrial.EditorTools
             yield return AbandonAndCrossTarget();
             yield return RecoveryAndLifecycle();
             yield return GestureProtection();
-            yield return Obstruction();
             SetRays(false);
             try
             {
@@ -453,20 +453,31 @@ namespace Museum.PhotoHelmetTrial.EditorTools
         static IEnumerator Obstruction()
         {
             var button = Button(PhotoHelmetGalleryButton.Action.TurnLeft); yield return AimRay(button, true);
-            var rotation = display.Model.localRotation; int count = button.PhysicalControl.ConfirmedCount;
+            var target = button.PhysicalControl.Target;
+            var rotation = display.Model.localRotation; int count = button.PhysicalControl.ConfirmedCount, enters = 0; string selector = "none";
+            UnityEngine.Events.UnityAction<SelectEnterEventArgs> listener = a => { enters++; selector = a.interactorObject.GetType().Name; };
+            target.selectEntered.AddListener(listener);
             var blocker = GameObject.CreatePrimitive(PrimitiveType.Cube); blocker.name = "Temporary gallery QA solid blocker";
             blocker.transform.position = Vector3.Lerp(rayPosition, button.PhysicalControl.Target.colliders.Single().bounds.center, .55f);
             blocker.transform.localScale = new Vector3(.22f, .22f, .10f); Physics.SyncTransforms();
             try
             {
                 QueueController(rightDevice, rayPosition, rayRotation, false); yield return Wait(.25f);
-                Require(rightRay.TryGetCurrent3DRaycastHit(out var hit) && hit.collider == blocker.GetComponent<Collider>(), "Authored production ray detects a real intervening solid", InputDetail(button.PhysicalControl.Target), "production-input");
+                var origin = rightRay.rayOriginTransform;
+                var physicalHits = Physics.RaycastAll(origin.position, origin.forward, rightRay.maxRaycastDistance, rightRay.raycastMask, rightRay.raycastTriggerInteraction)
+                    .Where(h => SceneSolid(h.collider)).OrderBy(h => h.distance).ToArray();
+                Require(physicalHits.Length > 0 && physicalHits[0].collider == blocker.GetComponent<Collider>(),
+                    "Nearest physical surface is the real intervening solid", "physical=" + string.Join(",", physicalHits.Select(h => h.collider.name + ":" + h.distance.ToString("F6"))) + "; production=" + InputDetail(target), "production-input");
                 QueueController(rightDevice, rayPosition, rayRotation, true); yield return Wait(.2f);
+                bool pressClear = enters == 0 && !target.isSelected && !button.PhysicalControl.IsPressed && button.PhysicalControl.ConfirmedCount == count && Quaternion.Angle(rotation, display.Model.localRotation) < .01f;
+                string press = "press enters=" + enters + "; selector=" + selector + "; confirmedDelta=" + (button.PhysicalControl.ConfirmedCount - count) + "; angle=" + Quaternion.Angle(rotation, display.Model.localRotation) + "; " + InputDetail(target);
+                // Complete normal release even if selection was wrong, so the failure
+                // distinguishes an unwanted hover/selection from a real action through a solid.
                 QueueController(rightDevice, rayPosition, rayRotation, false); yield return Wait(.2f);
-                Require(!button.PhysicalControl.Target.isSelected && button.PhysicalControl.ConfirmedCount == count && Quaternion.Angle(rotation, display.Model.localRotation) < .01f,
-                    "Solid obstruction prevents gallery action", "No collider or filter is disabled.", "production-input");
+                Require(pressClear && enters == 0 && !target.isSelected && button.PhysicalControl.ConfirmedCount == count && Quaternion.Angle(rotation, display.Model.localRotation) < .01f,
+                    "Real solid obstruction prevents selection and release action", press + " | release enters=" + enters + "; confirmedDelta=" + (button.PhysicalControl.ConfirmedCount - count) + "; angle=" + Quaternion.Angle(rotation, display.Model.localRotation) + "; " + InputDetail(target), "production-input");
             }
-            finally { UnityEngine.Object.Destroy(blocker); }
+            finally { target.selectEntered.RemoveListener(listener); UnityEngine.Object.Destroy(blocker); }
             ParkHands(); yield return Wait(.25f);
         }
 
