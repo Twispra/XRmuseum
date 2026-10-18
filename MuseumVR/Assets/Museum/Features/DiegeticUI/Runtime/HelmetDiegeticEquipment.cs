@@ -27,7 +27,7 @@ namespace Museum.Diegetic
         readonly List<EquipmentControl> equipmentControls = new List<EquipmentControl>();
 
         bool IsStationTarget(XRBaseInteractable target) => target &&
-            (controls.Values.Any(c=>c.Target==target) || equipmentControls.Any(c=>c.Gesture==target));
+            (AllControls.Any(c=>c.Target==target) || equipmentControls.Any(c=>c.Gesture==target));
 
         void RefreshEquipmentInteractions()
         {

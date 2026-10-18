@@ -1,0 +1,101 @@
+[
+  {
+    "round": 1,
+    "run": "20261018T103328300Z-operator-panel-20261018-92a89f989b4d4143ab5d436bf38e8b91",
+    "source": "816c2d57ce1c31c6650ab40fca7953c7afee18e8",
+    "checks": 203,
+    "failed": 9,
+    "errors": 0,
+    "exitCode": null,
+    "accepted": false,
+    "notes": "Negative; first process monitor did not capture exit code; no forced stop."
+  },
+  {
+    "round": 2,
+    "run": "20261018T103607462Z-operator-panel-20261018-04d86875728547b79d452ba3a5653251",
+    "source": "8985bb733f2603bb39c43494656ddcf41c7f1bb2",
+    "checks": 225,
+    "failed": 9,
+    "errors": 0,
+    "exitCode": 1,
+    "accepted": false,
+    "notes": "Negative preserved; see report and activity."
+  },
+  {
+    "round": 3,
+    "run": "20261018T103753696Z-operator-panel-20261018-e1e712f74bc04d34844944010f18c701",
+    "source": "92a542c3023ab27aea7fc450431a1a5d31ca1862",
+    "checks": 228,
+    "failed": 4,
+    "errors": 0,
+    "exitCode": 1,
+    "accepted": false,
+    "notes": "Negative preserved; see report and activity."
+  },
+  {
+    "round": 4,
+    "run": "20261018T103937526Z-operator-panel-20261018-c0280e7f5538484d93994deafc021661",
+    "source": "6e1bb0943eea32c77839e2c6ae3b82c8e42fb2c2",
+    "checks": 234,
+    "failed": 0,
+    "errors": 0,
+    "exitCode": 0,
+    "accepted": false,
+    "notes": "Numeric pass rejected after image QA: panel hidden by plinth."
+  },
+  {
+    "round": 5,
+    "run": "20261018T104135745Z-operator-panel-20261018-3808e8c9f9af461aa8d3edefd6df06e4",
+    "source": "5fc5c6f4d6d7c350092f1d5bf2facfb0de18ce6d",
+    "checks": 234,
+    "failed": 4,
+    "errors": 0,
+    "exitCode": 1,
+    "accepted": false,
+    "notes": "Negative preserved; see report and activity."
+  },
+  {
+    "round": 6,
+    "run": "20261018T104426098Z-operator-panel-20261018-3b443488eaa84843ab74795eb8cae2bb",
+    "source": "1c1121f444fb983d4c6f0c09a8e702476030121e",
+    "checks": 234,
+    "failed": 4,
+    "errors": 0,
+    "exitCode": 1,
+    "accepted": false,
+    "notes": "Negative preserved; see report and activity."
+  },
+  {
+    "round": 7,
+    "run": "20261018T104715504Z-operator-panel-20261018-634545ee29b94c6da522d6c09f8a0955",
+    "source": "81301472a8413239d2447b9586286a20badd779a",
+    "checks": 234,
+    "failed": 4,
+    "errors": 0,
+    "exitCode": 1,
+    "accepted": false,
+    "notes": "Negative preserved; see report and activity."
+  },
+  {
+    "round": 8,
+    "run": "20261018T105553992Z-operator-panel-20261018-3278c767858d4528acd8cdb2362fe039",
+    "source": "3af4ee2356e6112941e1f4eb8739181244735bbc",
+    "checks": 236,
+    "failed": 6,
+    "errors": 0,
+    "exitCode": 1,
+    "accepted": false,
+    "notes": "Diagnostic negative: complete-current-viewport assumption has zero clear candidates at 20/30 degrees; centre-only alternatives retain all other constraints."
+  },
+  {
+    "round": 9,
+    "run": "20261018T110217093Z-operator-panel-20261018-b9931dae97db41da8050c7ff5b8ebf61",
+    "source": "a719492336cda0efd7bf878e78705cfb90753371",
+    "checks": 255,
+    "failed": 0,
+    "errors": 0,
+    "exitCode": 0,
+    "accepted": true,
+    "notes": "255/255 and visual review accepted; source frozen; DI/Direct still run separately by root."
+  }
+]
