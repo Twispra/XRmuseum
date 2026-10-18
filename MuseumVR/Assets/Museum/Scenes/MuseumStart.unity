@@ -11676,15 +11676,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
       propertyPath: attachments.Array.data[2].localPoint.x
-      value: 1.2779928e-19
+      value: -1.1419615e-12
       objectReference: {fileID: 0}
     - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
       propertyPath: attachments.Array.data[2].localPoint.y
-      value: -0.00083330687
+      value: 0.0013711446
       objectReference: {fileID: 0}
     - target: {fileID: 6887944843734790652, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
       propertyPath: attachments.Array.data[2].localPoint.z
-      value: 0.00029928202
+      value: 0.00142229
       objectReference: {fileID: 0}
     - target: {fileID: 8355059867001364887, guid: 7eef595f081bc0a4fabb2153e06a553d, type: 3}
       propertyPath: m_LocalPosition.y
