@@ -227,6 +227,7 @@ namespace Museum.OperatorPanel.Editor
                 QueueHead(Vector3.zero,Quaternion.Euler(pitch,0,0));yield return Wait(.25f);
                 yield return Click(entry,"pitched-eye summon "+pitch);
                 CheckResult(panel.PanelShown && Mathf.Abs(Mathf.DeltaAngle(settings.eulerAngles.x,0))<.01f,"Pitched eye can summon a yaw-only panel: "+pitch,"Shown="+panel.PanelShown+" PanelEuler="+settings.eulerAngles);
+                if(!panel.PanelShown) DumpRejectedPlacement(panel,settings,pitch);
                 CheckEnvelope(settings,"eye pitch "+pitch);CaptureEye("pitch-"+pitch);
                 if(panel.PanelShown)yield return Click(entry,"pitched-eye hide "+pitch);
             }
@@ -296,6 +297,64 @@ namespace Museum.OperatorPanel.Editor
             var tour=inspection.GetComponentInChildren<HelmetHotspotTour>(true);
             var info=(TMP_Text)new SerializedObject(tour).FindProperty("informationText").objectReferenceValue;
             return inspection.transform.position+"|"+inspection.transform.rotation+"|"+inspection.WindowTargetOpen+"|"+inspection.IsCutaway+"|"+eras.CurrentIndex+"|"+demo.IsVisible+"|"+demo.CurrentClue+"|"+MuseumText.Channel.Current+"|"+inspection.SoundEnabled+"|"+inspection.ReduceMotion+"|"+station.AlwaysShowHints+"|"+station.ViewHeight.OffsetMetres+"|"+info.gameObject.activeInHierarchy+"|"+string.Join(",",inspection.GetComponentsInChildren<HelmetHotspot>(true).Select(h=>tour.HasVisited(h.Identifier)));
+        }
+        [Serializable] sealed class ProbeObstacle { public string name; public Bounds bounds; }
+        [Serializable] sealed class ProbeCandidate
+        {
+            public Vector3 groupPosition; public Bounds envelope; public float cost, eyeDistance;
+            public string[] intersections, occluders; public bool helmetCentreClear;
+        }
+        [Serializable] sealed class PlacementProbe
+        {
+            public Vector3 eye, eyeEuler, preferredGroup; public Bounds panelLocal;
+            public int candidates, rejectedDistance, rejectedViewport, rejectedOverlap, rejectedSight, rejectedCentre, clear;
+            public List<ProbeObstacle> obstacles=new List<ProbeObstacle>();
+            public List<ProbeCandidate> closestInViewport=new List<ProbeCandidate>();
+            public List<ProbeCandidate> closestWithoutOverlap=new List<ProbeCandidate>();
+        }
+        static IEnumerable<Vector3> ProbeCorners(Bounds bounds)
+        {
+            for(int i=0;i<8;i++)yield return bounds.center+Vector3.Scale(bounds.extents,new Vector3((i&1)==0?-1:1,(i&2)==0?-1:1,(i&4)==0?-1:1));
+        }
+        static void DumpRejectedPlacement(OperatorPanelController controller,Transform panel,float pitch)
+        {
+            var view=Camera.main;var so=new SerializedObject(controller);
+            var flags=System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Static;
+            var local=(Bounds)typeof(OperatorPanelController).GetMethod("LocalEnvelope",flags).Invoke(null,new object[]{panel});
+            var worldMethod=typeof(OperatorPanelController).GetMethod("WorldEnvelope",flags);
+            var forward=Vector3.ProjectOnPlane(view.transform.forward,Vector3.up).normalized;var right=Vector3.Cross(Vector3.up,forward);
+            var facing=Quaternion.LookRotation(forward,Vector3.up);var offset=so.FindProperty("settingsOffset").vector3Value;
+            var center=view.transform.position+view.transform.forward*so.FindProperty("summonDistance").floatValue-Vector3.up*so.FindProperty("summonBelowEye").floatValue-facing*(offset+local.center);
+            var probe=new PlacementProbe{eye=view.transform.position,eyeEuler=view.transform.eulerAngles,preferredGroup=center,panelLocal=local};
+            var surfaces=UnityEngine.Object.FindObjectsOfType<Renderer>().Where(r=>r.name=="Plinth")
+                .Concat(inspection.GetComponentsInChildren<Renderer>(false))
+                .Concat(demo.EquipmentExhibits.Where(e=>e.IsVisible).SelectMany(e=>e.Renderers))
+                .Concat(station.transform.Find("Pedestal edge controls").GetComponentsInChildren<Renderer>(false).Where(r=>!r.transform.IsChildOf(panel)));
+            foreach(var surface in surfaces.Where(r=>r&&r.enabled&&r.gameObject.activeInHierarchy).Distinct())
+            {var bounds=surface.bounds;bounds.Expand(.06f);probe.obstacles.Add(new ProbeObstacle{name=surface.transform.parent.name+"/"+surface.name,bounds=bounds});}
+            var candidates=new List<Vector3>{center};
+            for(int depth=-2;depth<=12;depth++)for(int side=-8;side<=8;side++)for(int height=-4;height<=4;height++)candidates.Add(center+forward*(depth*.10f)+right*(side*.15f)+Vector3.up*(height*.10f));
+            for(int depth=-5;depth<=4;depth++)for(int side=-4;side<=4;side++)for(int height=-4;height<=4;height++)candidates.Add(center+forward*(depth*.05f)+right*(side*.05f)+Vector3.up*(height*.05f));
+            foreach(var candidate in candidates.OrderBy(p=>(p-center).sqrMagnitude))
+            {
+                probe.candidates++;var bounds=(Bounds)worldMethod.Invoke(null,new object[]{local,candidate+facing*offset,facing});
+                float distance=Vector3.Distance(view.transform.position,bounds.center);
+                if(distance<.35f||distance>1.6f){probe.rejectedDistance++;continue;}
+                if(ProbeCorners(bounds).Select(p=>view.WorldToViewportPoint(p,Camera.MonoOrStereoscopicEye.Mono)).Any(p=>p.z<=view.nearClipPlane||p.x<.03f||p.x>.97f||p.y<.03f||p.y>.97f)){probe.rejectedViewport++;continue;}
+                var intersections=probe.obstacles.Where(o=>bounds.Intersects(o.bounds)).Select(o=>o.name).ToArray();
+                var occluders=new List<string>();
+                foreach(var point in ProbeCorners(bounds).Concat(new[]{bounds.center}))
+                {var direction=point-view.transform.position;var ray=new Ray(view.transform.position,direction.normalized);foreach(var obstacle in probe.obstacles)if(obstacle.bounds.IntersectRay(ray,out var hitDistance)&&hitDistance<direction.magnitude-.02f)occluders.Add(obstacle.name+"; point="+point.ToString("F3")+"; hit="+hitDistance.ToString("F3"));}
+                var helmet=inspection.transform.position;bool centreClear=new Vector2(bounds.center.x-helmet.x,bounds.center.z-helmet.z).magnitude>=so.FindProperty("minimumHelmetClearance").floatValue;
+                var record=new ProbeCandidate{groupPosition=candidate,envelope=bounds,cost=(candidate-center).magnitude,eyeDistance=distance,intersections=intersections,occluders=occluders.Distinct().Take(12).ToArray(),helmetCentreClear=centreClear};
+                if(probe.closestInViewport.Count<30)probe.closestInViewport.Add(record);
+                if(intersections.Length>0){probe.rejectedOverlap++;continue;}
+                if(probe.closestWithoutOverlap.Count<30)probe.closestWithoutOverlap.Add(record);
+                if(occluders.Count>0){probe.rejectedSight++;continue;}
+                if(!centreClear){probe.rejectedCentre++;continue;}probe.clear++;
+            }
+            Directory.CreateDirectory(Output);var name="placement-probe-"+pitch+".json";File.WriteAllText(Path.Combine(Output,name),JsonUtility.ToJson(probe,true));
+            CheckResult(false,"Rejected-placement diagnostic "+pitch,"File="+name+"; eye="+probe.eye+"; distance="+probe.rejectedDistance+" viewport="+probe.rejectedViewport+" overlap="+probe.rejectedOverlap+" sight="+probe.rejectedSight+" centre="+probe.rejectedCentre+" clear="+probe.clear);
         }
         static IEnumerator Attempt(HelmetPhysicalControl control,bool grip)
         {
