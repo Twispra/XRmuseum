@@ -565,12 +565,13 @@ namespace Museum.Localization.EditorTools
             foreach (var surface in binding.AdditionalVisual.renderers.Where(r => r.name.Contains("Neck") || r.name.Contains("Clamp")))
                 report.geometryDiagnostics.Add("mesh=" + surface.name + "; bounds=" + surface.bounds + "; transform=" + surface.transform.position.ToString("F6"));
             foreach (var hit in UnityEngine.Object.FindObjectsOfType<Collider>().Where(c => c.name == "Breastplate Base" || c.name == "Bonnet Capsule" || c.name == "Plinth" || c.name == "Display Top"))
-                report.geometryDiagnostics.Add("solid=" + hit.name + "; type=" + hit.GetType().Name + "; bounds=" + hit.bounds + "; closestMarker=" + hit.ClosestPoint(marker.bounds.center).ToString("F6"));
+                report.geometryDiagnostics.Add("solid=" + hit.name + "; type=" + hit.GetType().Name + "; min=" + hit.bounds.min.ToString("F6") +
+                    "; max=" + hit.bounds.max.ToString("F6") + "; closestMarker=" + hit.ClosestPoint(marker.bounds.center).ToString("F6"));
             CaptureModel("superlite-neck-seal-diagnostic.png");
             int valid = 0;
-            foreach (float distance in new[] { .25f, .30f, .45f, .65f, .75f })
-                foreach (float slope in new[] { .05f, .10f, .12f, .14f, .16f, .20f })
-                    foreach (int angle in new[] { 0, 45, 315 })
+            foreach (float distance in new[] { .45f, .65f, .30f })
+                foreach (float slope in new[] { .35f, .10f, 0f })
+                    foreach (int angle in new[] { 180, 135, 225 })
                     {
                         float radians = angle * Mathf.Deg2Rad;
                         var direction = inspection.transform.TransformDirection(new Vector3(Mathf.Sin(radians), slope, -Mathf.Cos(radians)).normalized);
@@ -590,7 +591,26 @@ namespace Museum.Localization.EditorTools
                         QueueController(rightDevice, position, rotation, false); yield return Wait(.3f);
                         bool actual = target.isHovered && ProductionRayFirstHits(target);
                         report.geometryDiagnostics.Add(detail + "; actualFirstTarget=" + actual + "; " + RayDetail());
-                        if (actual) valid++;
+                        if (actual)
+                        {
+                            valid++;
+                            if (valid == 1)
+                            {
+                                int presses = 0, releases = 0;
+                                UnityEngine.Events.UnityAction<SelectEnterEventArgs> press = args => { if (args.interactorObject is XRRayInteractor) presses++; };
+                                UnityEngine.Events.UnityAction<SelectExitEventArgs> release = args => { if (args.interactorObject is XRRayInteractor) releases++; };
+                                target.selectEntered.AddListener(press); target.selectExited.AddListener(release);
+                                try
+                                {
+                                    QueueController(rightDevice, position, rotation, true); yield return Wait(.2f);
+                                    Require(presses == 1 && tour.HasVisited(point.Identifier) && !station.RotationGesture.IsDragging,
+                                        "Diagnostic only: actual neck-seal ray selects once", "presses=" + presses + "; " + RayDetail());
+                                    QueueController(rightDevice, position, rotation, false); yield return Wait(.2f);
+                                    Require(releases == 1 && !target.isSelected, "Diagnostic only: actual neck-seal ray releases once", "releases=" + releases);
+                                }
+                                finally { target.selectEntered.RemoveListener(press); target.selectExited.RemoveListener(release); }
+                            }
+                        }
                     }
             report.geometryDiagnostics.Add("Legal actual production first-target candidates=" + valid);
             ParkHands(); yield return Wait(.2f);
