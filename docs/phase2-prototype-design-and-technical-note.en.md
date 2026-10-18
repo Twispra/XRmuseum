@@ -43,29 +43,25 @@ The language channel is the single source of language state. Static labels bind 
 
 The early model references Science Museum Group object 1881-47; the 1988 photo study is a separate object. Unseen geometry, some dimensions and material choices are estimates. The early moving panel and SuperLite side-opening window are teaching aids, while air routes, signal timing and synthetic sounds include interpretation. The left gallery offers only 30-degree rotation, reset and qualified labels; section preview belongs to an isolated comparison scene. Editable sources, exports and Unity copies retain their provenance and GUIDs. [5,6,11]
 
-## 3 Implementation and verification
+## 3 Prototype checks and Windows build
 
-The prototype and ZIP use repository revision 6088c736, including the left exhibit. Its committed MuseumVR tree is identical to frozen Editor validation source 024d039 (tree eaa3237d). The table retains archived suite results; those suites were not rerun for this update. The new build used a clean worktree, excluding the pre-existing local ProjectSettings change. [3,6,7,9]
+During integration, we used the saved MuseumStart scene to check that the features still worked together. We concentrated on actions a visitor would take: changing an era, inspecting a component, recalling the settings panel and recovering the exhibit or viewpoint. The linked reports retain the detailed checks and their versions. [6,7,8]
 
-| Latest Editor suite at 024d039 | Passed | Recorded result |
-| --- | --- | --- |
-| Left-plinth ray/direct interaction and trilingual labels | 801 | 0 failed; natural exit 0 |
-| Operator panel, including left-plinth placement | 271 | 0 failed; natural exit 0 |
-| Localisation module integrity | 11 | 0 failed; natural exit 0 |
-| Main-scene localisation integration | 128,389 | 0 failed; natural exit 0 |
-| Central era and hotspot behaviour | 989 | 0 failed; natural exit 0 |
+| Area | What we checked and changed |
+| --- | --- |
+| Central exhibit | Era changes kept the visible helmet, captions and hotspots aligned. Editor interaction checks also covered fixed-centre rotation, the window, section controls and reset. Direct-contact coverage was narrower and focused on the default helmet. [7,8] |
+| Left display and settings | We checked button selection, cancellation and panel placement. Integration repairs blocked selection through solid objects and kept the panel clear of the added model. [6,7] |
+| Language | Saved translations and glyphs were checked against runtime text as the language changed. This checks whether text is present; translation quality and headset readability remain evaluation tasks. [7,12] |
 
-Each Editor process exited naturally with code 0 and left 1,299 project files unchanged. Synthetic devices exercised production Input Actions in saved scenes. Counts include repeated text, glyph and fingerprint assertions; they are not participants or independent usability tasks and must not be summed. Monocular captures do not establish binocular readability or physical reach. [7]
+These checks helped us find integration faults before packaging. They used simulated inputs and project data, so they do not show whether visitors can find the controls unaided or understand the content.
 
-Historical runs at 7e5b539 include 31 direct-contact checks for the default era and specified surfaces, and 318 isolated-comparison checks. Comparison inputs are unchanged, but that suite was not rerun after left-plinth integration; coverage remains version-specific. [8]
+### The submitted Windows build
 
-### Build and real-device evidence
+We built revision 6088c736 for Windows x64 using the agreed Unity version. The build completed without errors, with two existing optional OpenXR migration warnings. We included the runtime dependencies and startup instructions, then extracted the ZIP and verified that the packaged files matched the build output. [9]
 
-A clean 6088c736 Windows x64 Development/Mono build on 18 October succeeded with zero errors and two existing optional OpenXR warnings; the Editor exited naturally with code 0. All 1,299 project files remained unchanged. The ZIP contains 272 Unity outputs plus instructions and a manifest: 274 files, 74,726,292 bytes. CRC and extracted-file SHA-256 checks passed. [9]
+The extracted application stayed responsive during a 40-second desktop startup check and reached scene initialization. No headset was available, so OpenXR did not establish a headset session. We actively stopped the test process afterward; normal shutdown and VR operation were not verified. A full walkthrough on PQ604A/B/C with a headset and controllers is still required. [9]
 
-The extracted Player completed a 40-second local startup observation: Mono, D3D11, input and scene scripts initialized without unexpected managed exceptions. No headset was available; OpenXR reported XR_ERROR_FORM_FACTOR_UNAVAILABLE. The hidden-window probe ended by terminating its own Player process (exit -1). Natural Player shutdown, stereo rendering and VR interaction were not verified. PQ604 acceptance remains pending. [9]
-
-Earlier Quest 3/Virtual Desktop feedback reported improved head rotation/viewing height and, in an earlier hand build, grabbing, hand-gap and joystick problems. Later repairs still need a complete headset retest. This is formative developer feedback, not participant research or approval of compatibility with the course’s SteamVR/Meta Quest Link lab environment. [2,10]
+Earlier Quest 3 development feedback helped us identify viewing-height, hand-control and joystick problems. Those findings concern earlier builds; the current combined prototype still needs a complete headset retest for navigation, reach and comfort. [10]
 
 ## 4 Limitations and evaluation priorities
 
