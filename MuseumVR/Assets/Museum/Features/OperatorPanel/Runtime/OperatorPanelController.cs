@@ -166,6 +166,13 @@ namespace Museum.OperatorPanel
                 .Select(p => (panel: station.transform.Find(PedestalPath + "/" + p.Item1), offset: p.Item2))
                 .Where(p => p.panel && p.panel.gameObject.activeSelf)
                 .Select(p => (p.panel, p.offset, bounds: LocalEnvelope(p.panel))).ToArray();
+            // Aim the visible content's centre at the gaze point. The saved layout origin
+            // is offset from its text/buttons and is not the centre visitors actually see.
+            if (panels.Length > 0)
+            {
+                var contentCenter = panels.Aggregate(Vector3.zero, (sum, p) => sum + p.offset + p.bounds.center) / panels.Length;
+                center -= placementFacing * contentCenter;
+            }
             var obstacles = ObstacleBounds(panels.Select(p => p.panel).ToArray());
             // Validate FINAL panel envelopes, including offsets, before moving anything.
             // A small vertical adjustment keeps a horizontal panel inside pitched-eye views.
@@ -175,6 +182,11 @@ namespace Museum.OperatorPanel
                 for (int side = -8; side <= 8; side++)
                     for (int height = -4; height <= 4; height++)
                         candidates.Add(center + forward * (depth * .10f) + right * (side * .15f) + Vector3.up * (height * .10f));
+            // Sample narrow clear space in front of the plinth without moving the panel far away.
+            for (int depth = -5; depth <= 4; depth++)
+                for (int side = -4; side <= 4; side++)
+                    for (int height = -4; height <= 4; height++)
+                        candidates.Add(center + forward * (depth * .05f) + right * (side * .05f) + Vector3.up * (height * .05f));
             bool clear = false;
             foreach (var candidate in candidates.OrderBy(p => (p - center).sqrMagnitude))
             {
