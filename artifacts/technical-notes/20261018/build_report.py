@@ -155,7 +155,7 @@ md+=['## References','']
 for ref in DATA['references']:
     links='; '.join('['+label+']('+url+')' for label,url in ref.get('links',[]))
     md+=['['+str(ref['id'])+'] '+ref['text']+(' '+links if links else ''),'']
-SOURCE_MD.write_text('\n'.join(md),encoding='utf-8')
+SOURCE_MD.write_text('\n'.join(md),encoding='utf-8',newline='\n')
 audit={'docx':str(OUT),'docxSha256':hashlib.sha256(OUT.read_bytes()).hexdigest(),'manuscript':str(SOURCE_MD),'manuscriptSha256':hashlib.sha256(SOURCE_MD.read_bytes()).hexdigest(),'bodyWords':len(' '.join(b.get('text','')+' '+' '.join(' '.join(r) for r in b.get('rows',[])) for page in DATA['pages'] for b in page['blocks']).split()),'sourceCommit':'6088c736e89d05101e09645c1796556012a6fd5d','validationCommit':'024d03942cc93d90453583e1c7e33e4eac96ecf2','font':'Times New Roman','minimumVisibleFontPt':12,'bodyPageBudget':4,'referencePagesExcluded':True,'marginsCm':[2.5,2.5,2.5,2.5]}
 (WORK/'authoring-audit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(audit,ensure_ascii=False,indent=2))
