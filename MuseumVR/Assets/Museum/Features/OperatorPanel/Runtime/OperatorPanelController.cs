@@ -171,10 +171,10 @@ namespace Museum.OperatorPanel
             // A small vertical adjustment keeps a horizontal panel inside pitched-eye views.
             // The nearest clear candidate wins, within the same view and distance limits.
             var candidates = new List<Vector3> { center };
-            for (int depth = 0; depth <= 6; depth++)
+            for (int depth = -2; depth <= 12; depth++)
                 for (int side = -8; side <= 8; side++)
                     for (int height = -4; height <= 4; height++)
-                        candidates.Add(center + forward * (depth * .20f) + right * (side * .15f) + Vector3.up * (height * .10f));
+                        candidates.Add(center + forward * (depth * .10f) + right * (side * .15f) + Vector3.up * (height * .10f));
             bool clear = false;
             foreach (var candidate in candidates.OrderBy(p => (p - center).sqrMagnitude))
             {
@@ -239,7 +239,8 @@ namespace Museum.OperatorPanel
         }
         bool IsClear(Bounds bounds, List<Bounds> obstacles)
         {
-            if (Vector3.Distance(viewer.position, bounds.center) > 1.6f) return false;
+            float eyeDistance = Vector3.Distance(viewer.position, bounds.center);
+            if (eyeDistance < .35f || eyeDistance > 1.6f) return false;
             var camera = viewer.GetComponent<Camera>();
             if (camera)
                 foreach (var corner in Corners(bounds))
