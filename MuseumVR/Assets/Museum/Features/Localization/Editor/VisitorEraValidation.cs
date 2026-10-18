@@ -83,6 +83,8 @@ namespace Museum.Localization.EditorTools
         [Serializable] sealed class Report
         {
             public string utc, finishedUtc, commit, dirty, unity, status = "running", failure;
+            public bool diagnosticOnly;
+            public List<string> geometryDiagnostics = new List<string>();
             public string method = "Saved MuseumStart scene; public API fixtures seed completed hotspot visits and request era/language changes. Queued synthetic controller/HMD states flow through normal Dynamic Input Actions and existing XR ray interactors to current diegetic era/window/section controls, model rotation and all knowledge hotspots. The original held-window deferral runs separately with the optional diegetic presentation disabled. No manual SelectEnter/SelectExit, HoverEnter, TriggerProgrammatically, private-field writes or InputSystem.Update. The official simulator state writer is disabled; physical hands, production colliders and select filters remain enabled.";
             public string limits = "Desktop synthetic XR and explicit API fixtures, not real headset/controller, historical authentication, stereo readability, user study, performance or executable build. Captures use temporary diagnostic monocular cameras; no production camera or product asset is saved. explanationElapsed is read only to detect timer restarts. Parent process must additionally verify source fingerprints after natural Editor exit.";
             public float batchExitSettleSeconds = 20;
@@ -98,7 +100,11 @@ namespace Museum.Localization.EditorTools
         { EditorApplication.playModeStateChanged += OnPlayMode; EditorApplication.update += Tick; }
 
         [MenuItem("Museum/Localization/Validate visitor era content")]
-        public static void RunBatch()
+        public static void RunBatch() => Begin(false);
+
+        public static void RunGeometryDiagnosticBatch() => Begin(true);
+
+        static void Begin(bool diagnosticOnly)
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Exit Play Mode first.");
             for (int i = 0; i < EditorSceneManager.sceneCount; i++)
@@ -110,7 +116,8 @@ namespace Museum.Localization.EditorTools
             string output = Path.GetFullPath(Path.Combine(outputBase, run));
             if (Directory.Exists(output)) throw new InvalidOperationException("Evidence already exists: " + output);
             Directory.CreateDirectory(output); SessionState.SetString(Prefix + "Output", output);
-            report = new Report { utc = DateTime.UtcNow.ToString("o"), commit = Git("rev-parse HEAD"), dirty = Git("status --porcelain=v1 --untracked-files=all"), unity = Application.unityVersion };
+            report = new Report { utc = DateTime.UtcNow.ToString("o"), commit = Git("rev-parse HEAD"), dirty = Git("status --porcelain=v1 --untracked-files=all"), unity = Application.unityVersion, diagnosticOnly = diagnosticOnly };
+            if (diagnosticOnly) report.method = "DIAGNOSTIC ONLY: public API switches to SuperLite, records actual marker/mesh/collider bounds and outside-solid candidate poses through normal input and the authored ray. This is not full visitor-era acceptance.";
             foreach (string path in AssetDatabase.GetDependencies(ScenePath, true).Concat(new[] {
                 "Assets/Museum/Features/Localization/Editor/VisitorEraValidation.cs",
                 "Assets/Museum/Features/Localization/Runtime/HelmetEraVisitorContent.cs",
@@ -223,6 +230,7 @@ namespace Museum.Localization.EditorTools
                 "; table=" + (bool)table + "; language=" + (bool)language + "; information=" + (bool)information +
                 "; current era controls=" + eraControls.Length);
             SetupInput(); yield return Wait(.4f);
+            if (report.diagnosticOnly) { yield return DiagnoseSuperLiteObservation(); yield break; }
             era.ShowEra(1); yield return Wait(.35f);
             foreach (var point in hotspots) point.Activate();
             var selected = hotspots.Single(h => h.Identifier == "front-window"); selected.Activate();
@@ -543,6 +551,46 @@ namespace Museum.Localization.EditorTools
                     break;
                 }
             }
+        }
+
+        static IEnumerator DiagnoseSuperLiteObservation()
+        {
+            era.ShowEra(2); yield return Wait(.5f); Physics.SyncTransforms();
+            var point = hotspots.Single(h => h.Identifier == "breastplate");
+            var target = point.GetComponent<XRSimpleInteractable>();
+            var marker = target.colliders.First(c => c && c.enabled && c.gameObject.activeInHierarchy);
+            report.geometryDiagnostics.Add("marker=" + point.transform.position.ToString("F6") + "; bounds=" + marker.bounds + "; localScale=" + point.transform.lossyScale);
+            foreach (var surface in binding.AdditionalVisual.renderers.Where(r => r.name.Contains("Neck") || r.name.Contains("Clamp")))
+                report.geometryDiagnostics.Add("mesh=" + surface.name + "; bounds=" + surface.bounds + "; transform=" + surface.transform.position.ToString("F6"));
+            foreach (var hit in UnityEngine.Object.FindObjectsOfType<Collider>().Where(c => c.name == "Breastplate Base" || c.name == "Bonnet Capsule" || c.name == "Plinth"))
+                report.geometryDiagnostics.Add("solid=" + hit.name + "; type=" + hit.GetType().Name + "; bounds=" + hit.bounds + "; closestMarker=" + hit.ClosestPoint(marker.bounds.center).ToString("F6"));
+            CaptureModel("superlite-neck-seal-diagnostic.png");
+            int valid = 0;
+            foreach (float distance in new[] { .25f, .30f, .45f, .65f })
+                foreach (float slope in new[] { .9f, .4f, 0f, -.3f })
+                    for (int angle = 0; angle < 360; angle += 45)
+                    {
+                        float radians = angle * Mathf.Deg2Rad;
+                        var direction = inspection.transform.TransformDirection(new Vector3(Mathf.Sin(radians), slope, -Mathf.Cos(radians)).normalized);
+                        Vector3 position = marker.bounds.center + direction * distance;
+                        var solids = Physics.OverlapSphere(position, .08f, ~0, QueryTriggerInteraction.Ignore)
+                            .Where(c => c && !c.GetComponentInParent<XRBaseInteractor>()).ToArray();
+                        string detail = "distance=" + distance + "; slope=" + slope + "; angle=" + angle + "; origin=" + position.ToString("F6");
+                        if (solids.Length > 0)
+                        { report.geometryDiagnostics.Add(detail + "; rejected solid origin=" + string.Join(",", solids.Select(c => c.name))); continue; }
+                        var ray = new Ray(position, -direction);
+                        var first = Physics.RaycastAll(ray, distance + .05f, ~0, QueryTriggerInteraction.Collide).OrderBy(h => h.distance)
+                            .FirstOrDefault(h => h.collider && !h.collider.GetComponentInParent<XRBaseInteractor>());
+                        detail += "; thinFirst=" + (first.collider ? first.collider.name : "none");
+                        if (!target.colliders.Contains(first.collider)) { report.geometryDiagnostics.Add(detail); continue; }
+                        Quaternion rotation = Quaternion.LookRotation(-direction, Vector3.up);
+                        QueueController(rightDevice, position, rotation, false); yield return Wait(.3f);
+                        bool actual = target.isHovered && ProductionRayFirstHits(target);
+                        report.geometryDiagnostics.Add(detail + "; actualFirstTarget=" + actual + "; " + RayDetail());
+                        if (actual) valid++;
+                    }
+            report.geometryDiagnostics.Add("Legal actual production first-target candidates=" + valid);
+            ParkHands(); yield return Wait(.2f);
         }
 
         static void BodyRayPose(out Vector3 pose, out Quaternion rotation)
