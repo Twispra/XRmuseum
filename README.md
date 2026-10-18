@@ -33,6 +33,8 @@ COMP5424 Extended Reality 博物馆**group2**小组作业的 Unity 工程与协�
 
 较早的 [Issue #57](https://github.com/Twispra/XRmuseum/issues/57) 修复 NEW VISIT 对探索与观察发现的完整清理，并补齐年代按钮 / 当前展签的三语说明；当轮被测版本与检查结果见[技术说明](docs/phase2-technical-note.zh-CN.md)。NEW VISIT 保留语言、年代、声音 / 动画偏好、展品位姿及视角；头盔 RESET 与 RESET VIEW 分别恢复展品和观看位置，保留本轮发现。NEW VISIT 等旧探索入口属于保留流程，当前实体 UI 默认界面不再显示它们。
 
+[PR #67](https://github.com/Twispra/XRmuseum/pull/67) 接入左展台的 1988 照片外形研究：三语展签与左转／复位／右转按钮，原位松手确认、移开取消，独立于中央三年代。模型身份、尺寸及细节仍未核实，没有开窗、剖切或供气／通话动作；[使用说明](docs/photo-helmet-unity-study.zh-CN.md)与[复审证据](docs/activity/2026-10-18-pr67-review-and-merge.md)。右展台及 #64 的完整双台方案仍待后续评审。
+
 快速操作见[实体 UI](docs/diegetic-ui.zh-CN.md)、[操作面板](docs/operator-panel.zh-CN.md)和[年代切换](docs/helmet-eras.zh-CN.md)；旧流程与设备反馈见[自由探索与复位](docs/helmet-exploration.zh-CN.md)、[物理手及设备反馈](docs/physical-hands.zh-CN.md)。2026-10-16 的 `806993a` 已生成完整 Windows64 Development 构建并核对 272 个产物，目录、指纹和程序未启动边界见[修订与构建记录](docs/activity/2026-10-16-visitor-flow.md)。该构建早于 #59、#65 与 #69，不包含这些后续变更；最新组合版本的编辑器验证见[联合修复与验证](docs/activity/2026-10-18-pr65-66-69-fix-and-validation.md)。已有有限头显反馈；最新修订的完整头显流程、新构建、性能和用户研究仍需验证。
 
 已配置 URP 14.0.12、OpenXR 1.14.3、XR Interaction Toolkit 2.6.4、Input System 1.14.0。模拟器仅供 Editor 预览；真实头显与模拟输入的操作边界见[协作指南](docs/getting-started.zh-CN.md)。

@@ -1,0 +1,67 @@
+{
+  "source": "024d03942cc93d90453583e1c7e33e4eac96ecf2",
+  "museumVRTree": "eaa3237d73d386dc7b64bfc6c1994078ff2f958d",
+  "suites": [
+    {
+      "suite": "positive-gallery",
+      "checks": 801,
+      "failed": 0,
+      "errors": 0,
+      "naturalExit": 0,
+      "forced": false,
+      "unchangedTrackedMuseumVRFiles": 1299,
+      "evidence": "positive-gallery/report.json"
+    },
+    {
+      "suite": "positive-panel",
+      "checks": 271,
+      "failed": 0,
+      "errors": 0,
+      "naturalExit": 0,
+      "forced": false,
+      "unchangedTrackedMuseumVRFiles": 1299,
+      "evidence": "positive-panel/report.json"
+    },
+    {
+      "suite": "positive-localization",
+      "checks": 11,
+      "failed": 0,
+      "errors": 0,
+      "naturalExit": 0,
+      "forced": false,
+      "unchangedTrackedMuseumVRFiles": 1299,
+      "evidence": "positive-localization/report.json"
+    },
+    {
+      "suite": "positive-integration",
+      "checks": 128389,
+      "failed": 0,
+      "errors": 0,
+      "naturalExit": 0,
+      "forced": false,
+      "unchangedTrackedMuseumVRFiles": 1299,
+      "evidence": "positive-integration/report.json"
+    },
+    {
+      "suite": "positive-visitor",
+      "checks": 989,
+      "failed": 0,
+      "errors": 0,
+      "naturalExit": 0,
+      "forced": false,
+      "unchangedTrackedMuseumVRFiles": 1299,
+      "evidence": "positive-visitor/report.json"
+    }
+  ],
+  "staticIntegrationSource": "c07176600fcf8bed97368c2f32d3ffd118d94143",
+  "unchangedStaticInputsFromThatSource": [
+    "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+    "MuseumVR/Assets/Museum/Features/Localization/Tables",
+    "MuseumVR/Assets/Museum/Features/Localization/Fonts",
+    "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Models",
+    "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Prefabs",
+    "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Materials",
+    "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Scenes"
+  ],
+  "scope": "Queued synthetic XR/Input Actions, saved-scene geometry and monocular captures; no real HMD, reach/comfort, performance, user study or Player build claim."
+}

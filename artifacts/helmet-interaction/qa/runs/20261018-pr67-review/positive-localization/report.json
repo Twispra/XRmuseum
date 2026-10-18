@@ -1,0 +1,22 @@
+{
+  "startedUtc": "2026-10-18T12:42:07.8268894Z",
+  "finishedUtc": "2026-10-18T12:42:07.8349712Z",
+  "passed": 11,
+  "failed": 0,
+  "tableEntries": 266,
+  "initialLanguage": "English",
+  "showcasePresent": true,
+  "checks": [
+    { "ok": true, "detail": "通过  字体资产存在（图集 1 张，4096×4096，已烤 631 个字形）" },
+    { "ok": true, "detail": "通过  文案表存在（266 条）" },
+    { "ok": true, "detail": "通过  语言通道存在" },
+    { "ok": true, "detail": "通过  key 唯一性与双语完整性（266 个 key）" },
+    { "ok": true, "detail": "通过  字体字形覆盖（核对了 606 个不同字符）" },
+    { "ok": true, "detail": "通过  展示 Prefab 存在" },
+    { "ok": true, "detail": "通过  展示 Prefab 内 6 处文字的缺字检查" },
+    { "ok": true, "detail": "通过  展示 Prefab 的 3 处文字接线" },
+    { "ok": true, "detail": "通过  展示 Prefab 的 3 个语言按钮接线" },
+    { "ok": true, "detail": "通过  键盘预览组件存在" },
+    { "ok": true, "detail": "通过  两种语言的文案完整度" }
+  ]
+}

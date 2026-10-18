@@ -193,6 +193,7 @@ namespace Museum.OperatorPanel.Editor
             CheckResult(structure.FailedCount==0,"Installed scene and saved glyph validation passes in Play Mode", "Passed="+structure.PassedCount+" Failed="+structure.FailedCount);
             CheckResult(Enumerable.Range(0,entry.Target.selectFilters.count).Any(i=>ReferenceEquals(entry.Target.selectFilters.GetAt(i),station)) &&
                 Enumerable.Range(0,entry.Target.hoverFilters.count).Any(i=>ReferenceEquals(entry.Target.hoverFilters.GetAt(i),station)), "Dynamic entry inherits station select and hover protection", "Filters registered before enabling entry");
+            yield return LeftPlinthSettings(panel, settings);
             station.Execute(HelmetDiegeticStation.Command.Section);
             station.Execute(HelmetDiegeticStation.Command.Window);
             station.Execute(HelmetDiegeticStation.Command.Voice); yield return Wait(.8f);
@@ -298,6 +299,63 @@ namespace Museum.OperatorPanel.Editor
                 {text.ForceMeshUpdate(true,true);CheckResult(!text.isTextOverflowing && text.text.Where(c=>!char.IsWhiteSpace(c)&&!char.IsControl(c)).All(c=>text.font.HasCharacter(c,true,false)),language+" About fits with saved glyphs",text.text);}
             }
             yield return Click(entry,"hide about");
+        }
+        static IEnumerator LeftPlinthSettings(OperatorPanelController panel, Transform settings)
+        {
+            var gallery = UnityEngine.Object.FindObjectOfType<Museum.PhotoHelmetTrial.PhotoHelmetGalleryDisplay>();
+            CheckResult(gallery && gallery.Model, "Saved independent photo exhibit exists for left-plinth panel fixture", gallery ? gallery.name : "Missing exhibit");
+            if (!gallery || !gallery.Model) throw new InvalidOperationException("Saved photo-gallery model required for the integration fixture.");
+            var photoSurfaces = gallery.Model.GetComponentsInChildren<Renderer>(false)
+                .Where(r => r.enabled && r.gameObject.activeInHierarchy).ToArray();
+            CheckResult(photoSurfaces.Length > 0, "Left-plinth fixture uses actual runtime imported model renderers", "Renderers=" + photoSurfaces.Length);
+            if (photoSurfaces.Length == 0) throw new InvalidOperationException("No active photo model renderers.");
+            var eye = Camera.main.transform;
+            var originalEye = eye.position; var originalFacing = eye.rotation;
+            var trackingParent = eye.parent;
+            var requestedEye = new Vector3(-3.1f, 1.55f, 2.75f);
+            var before = Snapshot();
+            ParkHands();
+            if (panel.PanelShown) panel.Toggle();
+            QueueHead(trackingParent.InverseTransformPoint(requestedEye), Quaternion.Inverse(trackingParent.rotation));
+            yield return Wait(.35f);
+            CheckResult(Vector3.Distance(eye.position, requestedEye) < .005f && Quaternion.Angle(eye.rotation, Quaternion.identity) < .1f,
+                "Queued HMD reaches exact left-plinth viewing pose without double height offset", "Eye=" + eye.position.ToString("F6") + "; Euler=" + eye.eulerAngles.ToString("F4"), "synthetic-input-fixture");
+            // Explicit public-API placement fixture. The normal entry's actual ray
+            // press/release path is exercised separately below; no scene or camera is saved.
+            panel.Toggle(); yield return Wait(.3f);
+            CheckResult(panel.PanelShown && station.SettingsVisible, "Public summon opens settings at the left-plinth viewing pose", "Shown=" + panel.PanelShown, "public-api-fixture");
+            CaptureEye("03-left-plinth-photo-settings");
+            CheckEnvelope(settings, "left-plinth photo settings", false);
+            var envelope = RenderedEnvelope(settings);
+            foreach (var box in settings.GetComponentsInChildren<BoxCollider>(false))
+                if (box.enabled) envelope.Encapsulate(box.bounds);
+            envelope.Expand(.08f); // Include the same safety margin as the complete placement envelope.
+            var intersections = photoSurfaces.Where(r => envelope.Intersects(r.bounds)).Select(r => r.name).ToArray();
+            CheckResult(intersections.Length == 0, "Complete settings envelope clears actual photo-model renderer bounds",
+                "Eye=" + eye.position.ToString("F6") + "; Panel=" + envelope + "; Intersections=" + string.Join(",", intersections) +
+                "; Actual renderers=" + string.Join(" | ", photoSurfaces.Select(r => r.name + ": " + r.bounds)), "runtime-geometry");
+            var points = ProbeCorners(envelope).Concat(new[] { envelope.center }).ToArray();
+            var occlusions = new List<string>();
+            foreach (var point in points)
+            {
+                var direction = point - eye.position; var ray = new Ray(eye.position, direction.normalized);
+                foreach (var renderer in photoSurfaces)
+                    if (renderer.bounds.IntersectRay(ray, out var hitDistance) && hitDistance < direction.magnitude - .02f)
+                        occlusions.Add(renderer.name + "; panel point=" + point.ToString("F5") + "; hit=" + hitDistance.ToString("F5"));
+            }
+            CheckResult(occlusions.Count == 0, "Eye sees full settings envelope without the photo model occluding it",
+                "Eye=" + eye.position.ToString("F6") + "; Panel=" + envelope + "; Occluders=" + string.Join(" | ", occlusions.Distinct()), "runtime-geometry");
+            var fixedPosition = settings.position; var fixedFacing = settings.rotation;
+            var towardCenter = Quaternion.LookRotation(RenderedEnvelope(settings).center - eye.position, Vector3.up);
+            QueueHead(trackingParent.InverseTransformPoint(requestedEye), Quaternion.Inverse(trackingParent.rotation) * towardCenter);
+            yield return Wait(.25f);
+            CheckResult(Vector3.Distance(fixedPosition, settings.position) < .0001f && Quaternion.Angle(fixedFacing, settings.rotation) < .001f,
+                "Looking at left-plinth settings keeps its world pose fixed", settings.position.ToString("F5"));
+            CheckEnvelope(settings, "focused left-plinth photo settings"); CaptureEye("04-left-plinth-photo-focused");
+            if (panel.PanelShown) panel.Toggle();
+            QueueHead(trackingParent.InverseTransformPoint(originalEye), Quaternion.Inverse(trackingParent.rotation) * originalFacing);
+            ParkHands(); yield return Wait(.3f);
+            CheckResult(!panel.PanelShown && before == Snapshot(), "Left-plinth placement fixture preserves central exhibit and visitor state", before + " => " + Snapshot());
         }
         static string Snapshot()
         {

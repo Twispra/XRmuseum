@@ -18,6 +18,17 @@ MonoBehaviour:
     english: Accessible Museum Experience
     traditionalChinese: "\u7121\u969C\u7919\u535A\u7269\u9928\u9AD4\u9A57"
     note: Visitor-facing exhibit copy; translated from existing English.
+  - key: exhibit.photo1988.title
+    chinese: "1988 \u5E74\u6F5C\u6C34\u5934\u76D4\u5916\u5F62\u7814\u7A76"
+    english: 1988 DIVING HELMET STUDY
+    traditionalChinese: "1988 \u5E74\u6F5B\u6C34\u982D\u76D4\u5916\u5F62\u7814\u7A76"
+    note: Independent photo-referenced exhibit; 1988 comes from the photographed
+      museum label, not the early-era catalogue.
+  - key: exhibit.photo1988.boundary
+    chinese: "\u8FD9\u662F\u5916\u5F62\u7814\u7A76\uFF0C\u7EC6\u8282\u5F85\u786E\u8BA4\uFF0C\u4E0D\u662F\u5B9E\u7269\u590D\u539F\u3002"
+    english: Visual study only; details unverified, not a measured replica.
+    traditionalChinese: "\u9019\u662F\u5916\u5F62\u7814\u7A76\uFF0C\u7D30\u7BC0\u5F85\u78BA\u8A8D\uFF0C\u4E0D\u662F\u5BE6\u7269\u5FA9\u539F\u3002"
+    note: Visible uncertainty boundary for the independent 1988 photo-study model.
   - key: welcome.body
     chinese: "\u6B22\u8FCE\u3002\u8FD9\u6BB5\u4F53\u9A8C\u53EF\u4EE5\u5750\u7740\u5B8C\u6210\uFF0C\u53EA\u9700\u5355\u624B\u64CD\u4F5C\u3002\u4F60\u53EF\u4EE5\u968F\u65F6\u56DE\u5230\u8FD9\u91CC\u5207\u6362\u8BED\u8A00\u3002"
     english: Welcome. This experience works seated and one-handed. You can change

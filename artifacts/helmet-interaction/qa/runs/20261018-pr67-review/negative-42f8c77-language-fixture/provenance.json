@@ -1,0 +1,42 @@
+{
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T123048139Z-pg67-2e91324e399f43dc9e0d7419efcdddb0\\unity.log",
+  "logSha256": "ff92474919bc466970a3fb84894c391d86349470f64c39bf2412a9c93213a536",
+  "lineCount": 1557,
+  "applicationExceptionCompileAssertionShaderMatches": [
+    {
+      "line": 648,
+      "text": "System.InvalidOperationException: Production ray reaches saved language button / English: first=Welcome Panel; origin=(3.260000, 0.920000, 6.195000); direction=(0.000000, 0.000000, 1.000000); detection=ConeCast; mask=-2147483615; trigger=Collide; targetHovered=False; selected=False; selectTrigger=StateChange; isSelectActive=False; rawGrip=0; rawGripActive=False"
+    }
+  ],
+  "note": "No-HMD OpenXR/licensing/network startup messages are separately disclosed; raw log retained locally.",
+  "copied": [
+    {
+      "file": "process.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T123048139Z-pg67-2e91324e399f43dc9e0d7419efcdddb0\\process.json",
+      "originalSha256": "67f1715d71dbc6d01361d51062623d0a1c7d6c4453116642752684aeae9d11b3",
+      "storedLfSha256": "08ea044ce12780b5a9939b87d0b57adb76596d30f287f049609711ced894781b"
+    },
+    {
+      "file": "source-after.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T123048139Z-pg67-2e91324e399f43dc9e0d7419efcdddb0\\source-after.json",
+      "originalSha256": "da66b09af29ec755d71ade49febbb9ee6747cb525cdc119000fd1957d69cb1a9",
+      "storedLfSha256": "6961be4c235f8b676993349944acc8e73352f9c0e9be59933d846dce52da02f9"
+    },
+    {
+      "file": "report.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T123048139Z-pg67-2e91324e399f43dc9e0d7419efcdddb0\\qa\\20261018T123127825Z-gallery-3859a983397c4c0b950122302c02a154\\report.json",
+      "originalSha256": "f28b21c3f5e5aef124007c6d49c9670e4956b5b483b2c89105db54e0e0fe3357",
+      "storedLfSha256": "f28b21c3f5e5aef124007c6d49c9670e4956b5b483b2c89105db54e0e0fe3357"
+    },
+    {
+      "file": "turn-TurnLeft.png",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T123048139Z-pg67-2e91324e399f43dc9e0d7419efcdddb0\\qa\\20261018T123127825Z-gallery-3859a983397c4c0b950122302c02a154\\turn-TurnLeft.png",
+      "sha256": "648552ebdddf47e28d433aa2dca494b20b058966ca48cb0e355d0e7db0ec8554"
+    },
+    {
+      "file": "turn-TurnRight.png",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T123048139Z-pg67-2e91324e399f43dc9e0d7419efcdddb0\\qa\\20261018T123127825Z-gallery-3859a983397c4c0b950122302c02a154\\turn-TurnRight.png",
+      "sha256": "b0e1b461406b408f30acd66002a432856acfdc09e121098c96d8bbb692c694ca"
+    }
+  ]
+}

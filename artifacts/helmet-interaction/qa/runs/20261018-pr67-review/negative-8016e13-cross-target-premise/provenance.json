@@ -1,0 +1,32 @@
+{
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T121503673Z-pg67-a94b7233a84947f28be7cf1280a651d6\\unity.log",
+  "logSha256": "72b59876ca58d1545fa6b018ddd5c06df1d94a91a93c17cfe6d8648ec1efbcfe",
+  "lineCount": 1555,
+  "applicationExceptionCompileAssertionShaderMatches": [
+    {
+      "line": 647,
+      "text": "System.InvalidOperationException: Abandoned gallery Grip cannot transfer to actual central body surface: first=Bonnet Capsule; origin=(-0.351012, 1.634992, 2.999804); direction=(0.538064, -0.345898, 0.768662); detection=ConeCast; mask=-2147483615; trigger=Collide; targetHovered=True; selected=False"
+    }
+  ],
+  "note": "No-HMD OpenXR/licensing/network startup messages are separately disclosed; raw log retained locally.",
+  "copied": [
+    {
+      "file": "process.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T121503673Z-pg67-a94b7233a84947f28be7cf1280a651d6\\process.json",
+      "originalSha256": "bdae626fa0a578472594649d299add6c1fa8dfacb6f1fead709d107a83857934",
+      "storedLfSha256": "5c677d2671f8048aaff82a565f5ce030827bdf3fb32758d66dc7a6e52a81545a"
+    },
+    {
+      "file": "source-after.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T121503673Z-pg67-a94b7233a84947f28be7cf1280a651d6\\source-after.json",
+      "originalSha256": "b3b1a35dbf62846432dda0c363d0951d6a951ac6fbc815d24fbd3b0f022395f8",
+      "storedLfSha256": "fc735928feb631693c50c7d9badebdde82e06e32c20f04531215f90320329907"
+    },
+    {
+      "file": "report.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T121503673Z-pg67-a94b7233a84947f28be7cf1280a651d6\\qa\\20261018T121538036Z-gallery-a0f78eccf2d04669a80ddf24b834e0f2\\report.json",
+      "originalSha256": "1b7f8219920891e97f68ed9429c5ea9d15edfeea118719c51bce5ef63e08e704",
+      "storedLfSha256": "1b7f8219920891e97f68ed9429c5ea9d15edfeea118719c51bce5ef63e08e704"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T124210443Z-li67-5a0cbd053c9d4d94b3ea0aab7ae2e674\\unity.log",
+  "logSha256": "1a44f0cecdd308f5e67c80cab5a222afb8196a96a3b3c34f5e665a82b69387c2",
+  "lineCount": 1529,
+  "applicationExceptionCompileAssertionShaderMatches": [],
+  "note": "No-HMD OpenXR/licensing/network startup messages are separately disclosed; raw log retained locally.",
+  "copied": [
+    {
+      "file": "process.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T124210443Z-li67-5a0cbd053c9d4d94b3ea0aab7ae2e674\\process.json",
+      "originalSha256": "98aba43605d1913f81336b738720ca4b7ee7f86044bd5100cdb191c5203a72af",
+      "storedLfSha256": "f81c8354a63d1fd2e3ffb24e5bc47ee7994d10269f52016adafebf8e5ca2bec3"
+    },
+    {
+      "file": "source-after.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T124210443Z-li67-5a0cbd053c9d4d94b3ea0aab7ae2e674\\source-after.json",
+      "originalSha256": "ab78143da9af38aa52e7a7e2aec30cf34f8053d54096522df915af395bc8aff8",
+      "storedLfSha256": "1b4413baa26b6b0834cf3db4af1424742d0219c6afe2f0cbc06c06f997ceb9d6"
+    },
+    {
+      "file": "report.full.json.gz",
+      "source": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\artifacts\\localization\\qa\\runs\\20261018T124246120Z-integration-53788437f2c545ab9594d4de86a817ed\\report.json",
+      "originalSha256": "0ac7465a6c3d1340e9384cf7d92ffd3f78ef70bc73dc937c638183cefa8d8c63",
+      "storedLfSha256": "0ac7465a6c3d1340e9384cf7d92ffd3f78ef70bc73dc937c638183cefa8d8c63",
+      "storage": "gzip mtime=0; storedLfSha256 is decompressed hash",
+      "compressedSha256": "8f4b0262584e9fab5fe6fb2244a409ccf750a8673ed6cf46506c0d45b69e619a",
+      "summarySha256": "f8786167671a74082b0ce74428e5dcbce4f77b441b875f1492060321ed82c87c"
+    },
+    {
+      "file": "hotspot-interaction.json",
+      "source": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\artifacts\\localization\\qa\\runs\\20261018T124246120Z-integration-53788437f2c545ab9594d4de86a817ed\\hotspot-interaction.json",
+      "sha256": "16922db6a36e29e41deab21b18e0294f24e04befe5ce13d84cca724478f759d7"
+    }
+  ]
+}

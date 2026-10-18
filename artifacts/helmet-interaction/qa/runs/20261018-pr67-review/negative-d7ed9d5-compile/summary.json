@@ -1,0 +1,15 @@
+{
+  "kind": "Root-authored compilation failure summary, not a Unity behavior report",
+  "sourceCommit": "d7ed9d515e35409f5ccedbef8208c45dd955cc52",
+  "phase": "script compilation; RunBatch behavior checks were not executed",
+  "status": "failed",
+  "diagnostics": [
+    "Assets\\Museum\\Features\\PhotoHelmetTrial\\Editor\\PhotoHelmetGalleryValidation.cs(554,21): error CS0102: The type 'PhotoHelmetGalleryValidation' already contains a definition for 'Capture'",
+    "Assets\\Museum\\Features\\PhotoHelmetTrial\\Editor\\PhotoHelmetGalleryValidation.cs(554,21): error CS0102: The type 'PhotoHelmetGalleryValidation' already contains a definition for 'Capture'",
+    "Assets\\Museum\\Features\\PhotoHelmetTrial\\Editor\\PhotoHelmetGalleryValidation.cs(554,21): error CS0102: The type 'PhotoHelmetGalleryValidation' already contains a definition for 'Capture'"
+  ],
+  "cause": "New QA nested Capture record and Capture method had the same C# member name.",
+  "remedy": "Rename only the record type and its two references to CaptureRecord; do not change product or assertions.",
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T121345243Z-pg67-e64c8f735c6d4769a03b42f6f203e0e2\\unity.log",
+  "logSha256": "1abf94cfe686e6a7735f7e0a26cf8294151af72acf7028d04759e8eda5101719"
+}

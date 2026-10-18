@@ -1,0 +1,37 @@
+{
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T121834206Z-pg67-3ce3ef622c604948a097c870522d4bb2\\unity.log",
+  "logSha256": "5bb661c362f004080329f100ca608a617918ca1be2833d6786e89c86dca4d343",
+  "lineCount": 1512,
+  "applicationExceptionCompileAssertionShaderMatches": [
+    {
+      "line": 636,
+      "text": "System.InvalidOperationException: Authored production ray detects a real intervening solid: first=Turn photo helmet left; origin=(-3.520000, 1.215000, 2.485000); direction=(0.000000, 0.000000, 1.000000); detection=ConeCast; mask=-2147483615; trigger=Collide; targetHovered=True; selected=False; selectTrigger=StateChange; isSelectActive=False; rawGrip=0; rawGripActive=False"
+    }
+  ],
+  "note": "No-HMD OpenXR/licensing/network startup messages are separately disclosed; raw log retained locally.",
+  "copied": [
+    {
+      "file": "process.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T121834206Z-pg67-3ce3ef622c604948a097c870522d4bb2\\process.json",
+      "originalSha256": "a09f3c5d5365f790df4effb27d69cf37741ddb9fecb407b578a70cada06d31f8",
+      "storedLfSha256": "55bcd36660561153247982fb77a2ec13b815915037aa871d195b82be5f7c61ce"
+    },
+    {
+      "file": "source-after.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T121834206Z-pg67-3ce3ef622c604948a097c870522d4bb2\\source-after.json",
+      "originalSha256": "32dbdd13b5d9d8fa512a731d14eb3bb62460d014e4903f77f0ba9b2d04e1783a",
+      "storedLfSha256": "3bc9f59147010a58d75c8597b307fd832755a58b9adcc535f434c47b4ef7eda6"
+    },
+    {
+      "file": "report.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T121834206Z-pg67-3ce3ef622c604948a097c870522d4bb2\\qa\\20261018T121910352Z-gallery-bec3c063939349d1b07734b77f1f43ce\\report.json",
+      "originalSha256": "45f2e0b857e987d19b2481baa88508350a3246290e52419cc1c32b8ed18a155e",
+      "storedLfSha256": "45f2e0b857e987d19b2481baa88508350a3246290e52419cc1c32b8ed18a155e"
+    },
+    {
+      "file": "turn-TurnLeft.png",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T121834206Z-pg67-3ce3ef622c604948a097c870522d4bb2\\qa\\20261018T121910352Z-gallery-bec3c063939349d1b07734b77f1f43ce\\turn-TurnLeft.png",
+      "sha256": "9a24893a4287f2c049f4f793c19ad650bcf7c258bd1ebd132f563891926c92a0"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T124134526Z-lc67-7ea832ad652545acb4daeecd6a447087\\unity.log",
+  "logSha256": "e7098100f50d6467d65dc74f3dc62daa8cc3464a44de60e67bc6034377b0a46d",
+  "lineCount": 987,
+  "applicationExceptionCompileAssertionShaderMatches": [],
+  "note": "No-HMD OpenXR/licensing/network startup messages are separately disclosed; raw log retained locally.",
+  "copied": [
+    {
+      "file": "process.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T124134526Z-lc67-7ea832ad652545acb4daeecd6a447087\\process.json",
+      "originalSha256": "3ccf755b05107bd69ee59c3c15b5ea6c9ec62d9f412d10d31249cccddf9dd33c",
+      "storedLfSha256": "1a1f5793833133e2e346a5287503f23fce0c9e0121fcd52962eaea27885c58ad"
+    },
+    {
+      "file": "source-after.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T124134526Z-lc67-7ea832ad652545acb4daeecd6a447087\\source-after.json",
+      "originalSha256": "5634398c04d845294fab8eb0861b6241ad210c85d0c44428146dd3c4e0d39db1",
+      "storedLfSha256": "c9761b1d3eb1a81ed4c8eb0feee643b3e6a743bde4de5950ebc3b33ee10901f4"
+    },
+    {
+      "file": "report.json",
+      "source": "C:\\Users\\zhaoooooo\\.codex\\worktrees\\pr66-obj-fix\\XRmuseum\\artifacts\\localization\\qa\\runs\\20261018T124207834Z-validation\\report.json",
+      "originalSha256": "b8dabd36f8c49efaa216f4c50f0e249c8ecbbb54dca36e036a7368f2af6004e7",
+      "storedLfSha256": "8707ed90f08a8580890dedfcf941303706e287e75a2f3a78747ae1faf24cc565"
+    }
+  ]
+}
