@@ -183,7 +183,7 @@ namespace Museum.PhotoHelmetTrial.EditorTools
             var observed = tour.GetComponentsInChildren<HelmetHotspot>(true).First(); observed.Activate();
             Require(tour.HasVisited(observed.Identifier), "Labelled API fixture seeds a central discovered observation", observed.Identifier, "fixture-api");
             SetupInput(); yield return Wait(.6f);
-            var bounds = ModelBounds(); visitorPosition = new Vector3(bounds.center.x, 1.45f, bounds.min.z - 1.45f);
+            var bounds = ModelBounds(); visitorPosition = new Vector3(bounds.center.x, 1.45f, bounds.min.z - 2.0f);
             visitorRotation = Quaternion.LookRotation(new Vector3(bounds.center.x, 1.10f, bounds.center.z) - visitorPosition, Vector3.up);
             CheckModel();
             yield return DistantRayClick();
@@ -311,7 +311,8 @@ namespace Museum.PhotoHelmetTrial.EditorTools
             bool hit = rightRay && rightRay.TryGetCurrent3DRaycastHit(out _);
             rightRay.TryGetCurrent3DRaycastHit(out var first);
             return "first=" + (hit && first.collider ? first.collider.name : "none") + "; origin=" + rightRay.rayOriginTransform.position.ToString("F6") + "; direction=" + rightRay.rayOriginTransform.forward.ToString("F6") +
-                "; detection=" + rightRay.hitDetectionType + "; mask=" + rightRay.raycastMask.value + "; trigger=" + rightRay.raycastTriggerInteraction + "; targetHovered=" + target.isHovered + "; selected=" + target.isSelected;
+                "; detection=" + rightRay.hitDetectionType + "; mask=" + rightRay.raycastMask.value + "; trigger=" + rightRay.raycastTriggerInteraction + "; targetHovered=" + target.isHovered + "; selected=" + target.isSelected +
+                "; selectTrigger=" + rightRay.selectActionTrigger + "; isSelectActive=" + rightRay.isSelectActive + "; rawGrip=" + rightController.currentControllerState.selectInteractionState.value + "; rawGripActive=" + rightController.currentControllerState.selectInteractionState.active;
         }
         static IEnumerator AimDirect(PhotoHelmetGalleryButton button)
         {
@@ -384,19 +385,39 @@ namespace Museum.PhotoHelmetTrial.EditorTools
         static IEnumerator AimCentralWhileHeld()
         {
             var target = station.RotationGesture; var bounds = station.Inspection.GetComponent<RefinedHelmetBinding>().ActiveShell.bounds;
-            foreach (var direction in new[] { new Vector3(-.7f, .45f, -1), new Vector3(.7f, .45f, -1), new Vector3(-1, .6f, -.15f), new Vector3(1, .6f, -.15f), new Vector3(-.7f, .45f, 1), new Vector3(.7f, .45f, 1) })
-                foreach (float height in new[] { .55f, .25f, .75f, 0f })
-                {
-                    var aim = bounds.center + Vector3.up * bounds.extents.y * height;
-                    var position = aim + station.Inspection.transform.TransformDirection(direction.normalized) * (bounds.extents.magnitude + .4f);
-                    if (Physics.OverlapSphere(position, .08f, rightRay.raycastMask, QueryTriggerInteraction.Ignore).Any(SceneSolid)) continue;
-                    QueueController(rightDevice, position, Quaternion.LookRotation(aim - position, Vector3.up), true); yield return Wait(.2f);
-                    if (!FirstHit(target)) continue;
-                    Require(!target.isSelected && !target.IsDragging && !((IXRSelectFilter)station).Process(rightRay, target),
-                        "Abandoned gallery Grip cannot transfer to actual central body surface", InputDetail(target), "production-input");
-                    yield break;
-                }
-            Require(false, "Cross-target fixture reaches actual central body first surface", InputDetail(target), "production-input");
+            int enters = 0, exits = 0; bool raySelected = false;
+            UnityEngine.Events.UnityAction<SelectEnterEventArgs> enter = a => { enters++; raySelected = a.interactorObject is XRRayInteractor; };
+            UnityEngine.Events.UnityAction<SelectExitEventArgs> exit = a => exits++;
+            target.selectEntered.AddListener(enter); target.selectExited.AddListener(exit);
+            try
+            {
+                foreach (var direction in new[] { new Vector3(-.7f, .45f, -1), new Vector3(.7f, .45f, -1), new Vector3(-1, .6f, -.15f), new Vector3(1, .6f, -.15f), new Vector3(-.7f, .45f, 1), new Vector3(.7f, .45f, 1) })
+                    foreach (float height in new[] { .55f, .25f, .75f, 0f })
+                    {
+                        var aim = bounds.center + Vector3.up * bounds.extents.y * height;
+                        var position = aim + station.Inspection.transform.TransformDirection(direction.normalized) * (bounds.extents.magnitude + .4f);
+                        if (Physics.OverlapSphere(position, .08f, rightRay.raycastMask, QueryTriggerInteraction.Ignore).Any(SceneSolid)) continue;
+                        var facing = Quaternion.LookRotation(aim - position, Vector3.up);
+                        QueueController(rightDevice, position, facing, true); yield return Wait(.2f);
+                        if (!FirstHit(target)) continue;
+                        // StateChange can report isSelectActive=false after the old selection ends,
+                        // even though the controller's raw Grip remains held. Test the real behavior.
+                        Require(rightController.currentControllerState.selectInteractionState.active && rightController.currentControllerState.selectInteractionState.value > .9f &&
+                            enters == 0 && !target.isSelected && !target.IsDragging,
+                            "Abandoned gallery Grip cannot transfer to actual central body surface", InputDetail(target), "production-input");
+                        Vector3 centralPosition = station.Inspection.transform.position; Quaternion centralRotation = station.Inspection.transform.rotation;
+                        QueueController(rightDevice, position, facing, false); yield return Wait(.2f);
+                        QueueController(rightDevice, position, facing, true); yield return Wait(.25f);
+                        Require(FirstHit(target) && enters == 1 && raySelected && target.IsSelected(rightRay) && target.IsDragging,
+                            "Release then fresh Grip actually selects central body at the same pose", "enters=" + enters + "; " + InputDetail(target), "production-input");
+                        QueueController(rightDevice, position, facing, false); yield return Wait(.2f);
+                        Require(exits == 1 && !target.isSelected && !target.IsDragging && Vector3.Distance(centralPosition, station.Inspection.transform.position) < .001f && Quaternion.Angle(centralRotation, station.Inspection.transform.rotation) < .05f,
+                            "Fresh body Grip releases once without movement at a fixed controller pose", "exits=" + exits + "; " + InputDetail(target), "production-input");
+                        yield break;
+                    }
+                Require(false, "Cross-target fixture reaches actual central body first surface", InputDetail(target), "production-input");
+            }
+            finally { target.selectEntered.RemoveListener(enter); target.selectExited.RemoveListener(exit); }
         }
         static IEnumerator GestureProtection()
         {
@@ -508,6 +529,11 @@ namespace Museum.PhotoHelmetTrial.EditorTools
                     var corners = new Vector3[4]; label.rectTransform.GetWorldCorners(corners);
                     foreach (var point in corners.Concat(new[] { label.GetComponent<Renderer>().bounds.center }))
                     {
+                        var local = Quaternion.Inverse(visitorRotation) * (point - visitorPosition);
+                        float vertical = Mathf.Tan(55f * .5f * Mathf.Deg2Rad);
+                        var viewport = new Vector3(.5f + local.x / (2 * local.z * vertical * (4f / 3f)), .5f + local.y / (2 * local.z * vertical), local.z);
+                        Require(viewport.z > .02f && viewport.x >= .02f && viewport.x <= .98f && viewport.y >= .02f && viewport.y <= .98f,
+                            "Whole label rectangle fits fixed diagnostic camera / " + language.Current + "/" + pair.Key, "viewport=" + viewport.ToString("F6"));
                         var delta = point - visitorPosition;
                         var blockers = Physics.RaycastAll(visitorPosition, delta.normalized, Mathf.Max(0, delta.magnitude - .002f), ~0, QueryTriggerInteraction.Ignore).Where(h => SceneSolid(h.collider)).ToArray();
                         Require(blockers.Length == 0, "Visitor-side line of sight to label / " + language.Current + "/" + pair.Key, string.Join(",", blockers.Select(h => h.collider.name)));
