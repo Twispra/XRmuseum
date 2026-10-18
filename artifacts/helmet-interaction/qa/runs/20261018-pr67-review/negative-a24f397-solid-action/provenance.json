@@ -1,0 +1,32 @@
+{
+  "originalLog": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T122556207Z-pg67-c0c3c22a4ee94315ba9c9a54731e6055\\unity.log",
+  "logSha256": "d2e9c0afc09aac61172980aff3b153027b096ebb89685c2ddf4e8502799914ac",
+  "lineCount": 1546,
+  "applicationExceptionCompileAssertionShaderMatches": [
+    {
+      "line": 637,
+      "text": "System.InvalidOperationException: Real solid obstruction prevents selection and release action: press enters=1; selector=XRRayInteractor; confirmedDelta=0; angle=0; first=Turn photo helmet left; origin=(-3.520000, 1.215000, 2.485000); direction=(0.000000, 0.000000, 1.000000); detection=ConeCast; mask=-2147483615; trigger=Collide; targetHovered=True; selected=True; selectTrigger=StateChange; isSelectActive=True; rawGrip=1; rawGripActive=True | release enters=1; confirmedDelta=1; angle=30.00001; first=Turn photo helmet left; origin=(-3.520000, 1.215000, 2.485000); direction=(0.000000, 0.000000, 1.000000); detection=ConeCast; mask=-2147483615; trigger=Collide; targetHovered=True; selected=False; selectTrigger=StateChange; isSelectActive=False; rawGrip=0; rawGripActive=False"
+    }
+  ],
+  "note": "No-HMD OpenXR/licensing/network startup messages are separately disclosed; raw log retained locally.",
+  "copied": [
+    {
+      "file": "process.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T122556207Z-pg67-c0c3c22a4ee94315ba9c9a54731e6055\\process.json",
+      "originalSha256": "8dc08aad5f45c258fbb97b5ede1b5e6482e1d7da89ea7f18f167958f49ddcec5",
+      "storedLfSha256": "08258c10e6d9bd4275bc3f3781d2c790d5c6b246b4264ce0eeadf010c825530a"
+    },
+    {
+      "file": "source-after.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T122556207Z-pg67-c0c3c22a4ee94315ba9c9a54731e6055\\source-after.json",
+      "originalSha256": "6cd41fc185987f98c057ea14e372b5aade0580a4118e7d42c15f07b73afe4ab8",
+      "storedLfSha256": "1c06506a0e30987a5bcd57874b19e08fcc0ac7d29452f5cc714b1e9832c92de4"
+    },
+    {
+      "file": "report.json",
+      "source": "E:\\Codex\\2026-10-18\\xrmuseum-pr67-preservation\\validation\\20261018T122556207Z-pg67-c0c3c22a4ee94315ba9c9a54731e6055\\qa\\20261018T122646489Z-gallery-eb9273b3d93444a38a6f6e922b035165\\report.json",
+      "originalSha256": "4f2481a4ea015a571c56c65e7c4108f9e167b9e5a3bc7e88b7a866d7f26ef2f3",
+      "storedLfSha256": "4f2481a4ea015a571c56c65e7c4108f9e167b9e5a3bc7e88b7a866d7f26ef2f3"
+    }
+  ]
+}

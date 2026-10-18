@@ -1,0 +1,37 @@
+{
+  "base": "0109e3f75019f585454da638b56101f235d40770",
+  "source": "c07176600fcf8bed97368c2f32d3ffd118d94143",
+  "scene": {
+    "beforeDocuments": 779,
+    "afterDocuments": 834,
+    "added": 55,
+    "removed": [],
+    "changedExistingIds": [
+      "1623898759",
+      "41295228",
+      "41295229"
+    ],
+    "centralPrefabInstanceAndOperatorBlocksExact": true
+  },
+  "translations": {
+    "before": 264,
+    "after": 266,
+    "addedKeys": [
+      "exhibit.photo1988.boundary",
+      "exhibit.photo1988.title"
+    ],
+    "existingEntriesUnchanged": true
+  },
+  "font": {
+    "newCopyDistinctNonWhitespaceCharacters": 68,
+    "requiredCharacters": 613,
+    "savedSdfCharacters": 631,
+    "missing": 0,
+    "evidence": "Independent codepoint audit plus make-charlist regenerates byte-identical tracked canonical list; Unity layout still requires its own reports."
+  },
+  "lfs": {
+    "files": 82,
+    "workingCopiesExpanded": true,
+    "newOrModifiedLfsAssets": 0
+  }
+}
