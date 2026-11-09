@@ -1,0 +1,52 @@
+{
+  "testedCommit": "e7df73bf244b445be17db7f16aab6e9fc878f45c",
+  "referenceMain": "6088c736e89d05101e09645c1796556012a6fd5d",
+  "unchangedPaths": [
+    "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+    "MuseumVR/Assets/Museum/Features/HelmetInspection/Prefabs",
+    "MuseumVR/Assets/Museum/Features/EarlyHelmet",
+    "MuseumVR/Assets/Museum/Features/RefinedModels",
+    "MuseumVR/Assets/Museum/Features/SuperLiteModels"
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "file": "era-0-exterior.png",
+      "sha256": "1113dca431609b04494f26ac0fcdc654931691c1216fbd6d99bd6a4ea624f713",
+      "crop": [
+        280,
+        130,
+        1320,
+        930
+      ],
+      "archivedPath": "source-views/era-0-exterior.png"
+    },
+    {
+      "index": 1,
+      "file": "era-1-exterior.png",
+      "sha256": "184045421aa71f76b48913bead6ec5b13f2dbe36445ff5242027a41056ed6fd6",
+      "crop": [
+        280,
+        130,
+        1320,
+        930
+      ],
+      "archivedPath": "source-views/era-1-exterior.png"
+    },
+    {
+      "index": 2,
+      "file": "era-2-exterior.png",
+      "sha256": "30a707d3c27bca42a2dc1adc93b593487fb174d8aa04443522da241e410aa5a6",
+      "crop": [
+        280,
+        130,
+        1320,
+        930
+      ],
+      "archivedPath": "source-views/era-2-exterior.png"
+    }
+  ],
+  "limitations": "Single-eye diagnostic stills. Some scene text overlaps the close SuperLite view; no headsets or measurement of physical helmets.",
+  "runId": "20261109T123527896Z-visitor-era-2d34b3e9ff6b43fdbef3a5603dfebc34",
+  "publishedReport": "https://github.com/Twispra/XRmuseum/blob/cac0a2801329c061687d6c5ecd648b7e486b26d0/artifacts/helmet-interaction/qa/runs/20261109-issue61-era-gate/visitor-report.json"
+}
