@@ -28,7 +28,7 @@ namespace Museum.Diegetic
         {
             narrationControl = MakeControl(pedestalUI, Command.Narration, PlayGuide, "", teal);
             narrationControl.transform.localPosition = new Vector3(.39f, -.10f, 0);
-            narrationCaption = Label(pedestalUI, "Guide subtitle", new Vector3(0, -.245f, -.065f), new Vector2(.74f, .16f), .27f);
+            narrationCaption = Label(pedestalUI, "Guide subtitle", new Vector3(.16f, -.245f, -.065f), new Vector2(.74f, .16f), .27f);
             narrationCaption.enableAutoSizing = true;
             narrationCaption.fontSizeMin = .22f;
             narrationCaption.fontSizeMax = .27f;

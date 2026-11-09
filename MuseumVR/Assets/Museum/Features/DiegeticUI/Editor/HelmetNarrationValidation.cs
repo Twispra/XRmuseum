@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Museum.Exploration;
 using Museum.Localization;
+using Museum.OperatorPanel;
 using TMPro;
 using UnityEditor;
 using UnityEngine;
@@ -247,13 +248,46 @@ namespace Museum.Diegetic.Editor
         {
             if (!NarrationCaptionVisible(caption)) return;
             caption.ForceMeshUpdate(true, true);
-            Bounds bounds = caption.GetComponent<Renderer>().bounds;
-            float distance = Mathf.Max(.45f, (bounds.extents.magnitude + .08f) / Mathf.Tan(24f * Mathf.Deg2Rad));
-            Vector3 position = bounds.center - caption.transform.forward * distance;
-            Quaternion rotation = Quaternion.LookRotation(bounds.center - position, caption.transform.up);
+            var panel = UnityEngine.Object.FindObjectOfType<OperatorPanelController>();
+            if (!panel || !panel.EntryReady || !panel.Entry.Caption.isActiveAndEnabled)
+                throw new InvalidOperationException("The saved operator panel entry was missing from the narration view.");
+            TMP_Text entry = panel.Entry.Caption;
+            entry.ForceMeshUpdate(true, true);
+            var backing = caption.GetComponentsInChildren<MeshFilter>().Single(mesh => mesh.name == "Subtitle backing");
+            Bounds frame = backing.GetComponent<Renderer>().bounds;
+            frame.Encapsulate(entry.GetComponent<Renderer>().bounds);
+            float distance = Mathf.Max(.45f, (frame.extents.magnitude + .08f) / Mathf.Tan(24f * Mathf.Deg2Rad));
+            Vector3 position = frame.center - caption.transform.forward * distance;
+            Quaternion rotation = Quaternion.LookRotation(frame.center - position, caption.transform.up);
+            Rect entryProjection = NarrationProjection(entry.transform, entry.textBounds, position, rotation);
+            Rect backingProjection = NarrationProjection(backing.transform, backing.sharedMesh.bounds, position, rotation);
+            float halfHeight = Mathf.Tan(24f * Mathf.Deg2Rad);
+            float halfWidth = halfHeight * 4f / 3f;
+            CheckResult(!entry.isTextOverflowing && entryProjection.xMin >= -halfWidth && entryProjection.xMax <= halfWidth &&
+                entryProjection.yMin >= -halfHeight && entryProjection.yMax <= halfHeight && !entryProjection.Overlaps(backingProjection),
+                "Narration subtitle leaves the Show panel label visible " + cue + "/" + language,
+                "Entry=" + entryProjection + "; Backing=" + backingProjection, "monocular-layout");
             string file = "narration-" + cue + "-" + language + ".png";
             HelmetDiegeticPreview.CaptureView(Path.Combine(Output, file), position, rotation, 48f);
             report.diagnosticCaptures.Add(file);
+        }
+
+        static Rect NarrationProjection(Transform transform, Bounds localBounds, Vector3 position, Quaternion rotation)
+        {
+            Quaternion inverse = Quaternion.Inverse(rotation);
+            Vector2 minimum = new Vector2(float.PositiveInfinity, float.PositiveInfinity);
+            Vector2 maximum = new Vector2(float.NegativeInfinity, float.NegativeInfinity);
+            for (int i = 0; i < 8; i++)
+            {
+                var signs = new Vector3((i & 1) == 0 ? -1 : 1, (i & 2) == 0 ? -1 : 1, (i & 4) == 0 ? -1 : 1);
+                Vector3 local = localBounds.center + Vector3.Scale(localBounds.extents, signs);
+                Vector3 point = inverse * (transform.TransformPoint(local) - position);
+                if (point.z <= .02f) throw new InvalidOperationException("Narration evidence crossed the diagnostic near plane.");
+                Vector2 projection = new Vector2(point.x / point.z, point.y / point.z);
+                minimum = Vector2.Min(minimum, projection);
+                maximum = Vector2.Max(maximum, projection);
+            }
+            return Rect.MinMaxRect(minimum.x, minimum.y, maximum.x, maximum.y);
         }
     }
 }
