@@ -21,7 +21,7 @@ namespace Museum.Diegetic
     {
         public enum Command { Rotate, Window, Section, Slide, Air, Voice, Reset, PreviousEra, NextEra,
             Hints, Settings, About, Chinese, Traditional, English, Sound, Motion, AlwaysHints, ResetView, CloseDemo,
-            HeightUp, HeightDown, HeightReset }
+            HeightUp, HeightDown, HeightReset, Narration }
         [SerializeField] HelmetInspectionController inspection;
         [SerializeField] HelmetEraSwitcher eras;
         [SerializeField] HelmetExplorationController exploration;
@@ -151,7 +151,7 @@ namespace Museum.Diegetic
             pedestalUI.position=plinth?new Vector3(homePosition.x,plinth.bounds.max.y+.16f,plinth.bounds.min.z-.10f)
                 :new Vector3(homePosition.x,homePosition.y+.04f,homePosition.z-.48f);
             pedestalUI.rotation=Quaternion.Euler(20,0,0);
-            BuildPedestalControls();BuildExhibitControls();
+            BuildPedestalControls();BuildExhibitControls();BuildNarration();
             var tour=inspection.GetComponentInChildren<Museum.Hotspots.HelmetHotspotTour>(true);
             var information=tour?tour.GetComponentsInChildren<TMP_Text>(true).FirstOrDefault(t=>t.name=="Information"):null;
             if(information)
@@ -166,6 +166,7 @@ namespace Museum.Diegetic
             ViewHeight.enabled=true;ViewHeight.Configure(FindObjectOfType<XROrigin>());
             recovery=gameObject.AddComponent<VisitorViewRecovery>();recovery.Configure(FindObjectOfType<XROrigin>(),null);
             demonstration.PlaybackChanged+=RefreshEquipmentInteractions;
+            demonstration.PlaybackChanged+=CheckNarrationContext;
             gameObject.AddComponent<HelmetViewRecoveryGuard>().Configure(this);
             ready=true;observedReset=inspection.ResetCount;observedAppliedEra=AppliedEra;
             fixedCenter=inspection.transform.TransformPoint(inspection.SectionCenterLocal);
@@ -292,14 +293,18 @@ namespace Museum.Diegetic
                 case Command.Chinese: MuseumText.Channel?.SetLanguage(MuseumLanguage.Chinese);break;
                 case Command.Traditional: MuseumText.Channel?.SetLanguage(MuseumLanguage.TraditionalChinese);break;
                 case Command.English: MuseumText.Channel?.SetLanguage(MuseumLanguage.English);break;
-                case Command.Sound: inspection.SoundEnabled=!inspection.SoundEnabled;break;
+                case Command.Sound:
+                    inspection.SoundEnabled=!inspection.SoundEnabled;
+                    if(!inspection.SoundEnabled)StopNarrationAudio();
+                    break;
                 case Command.Motion: inspection.ReduceMotion=!inspection.ReduceMotion;break;
                 case Command.AlwaysHints: AlwaysShowHints=!AlwaysShowHints;HintsPinned=AlwaysShowHints;break;
-                case Command.ResetView: recovery.ResetView();break;
+                case Command.ResetView: StopNarration();recovery.ResetView();break;
                 case Command.CloseDemo: exploration.Stop();break;
                 case Command.HeightUp: ViewHeight.Raise();break;
                 case Command.HeightDown: ViewHeight.Lower();break;
                 case Command.HeightReset: ViewHeight.ResetHeight();break;
+                case Command.Narration: ToggleNarration();break;
             }
             RefreshLabels();
         }
@@ -323,6 +328,7 @@ namespace Museum.Diegetic
         }
         public void ResetHelmet()
         {
+            StopNarration();
             CancelGestures();exploration.Stop();resetFrom=inspection.transform.rotation;
             inspection.ResetInspection();observedReset=inspection.ResetCount;
             fixedCenter=inspection.transform.TransformPoint(inspection.SectionCenterLocal);
@@ -331,6 +337,7 @@ namespace Museum.Diegetic
         }
         void ChangeEra(int step)
         {
+            StopNarration();
             CancelGestures();exploration.Stop();inspection.ResetInspection();observedReset=inspection.ResetCount;
             eras.ShowEra((eras.CurrentIndex+step+eras.AvailableEraCount)%eras.AvailableEraCount);
             if(binding)binding.RefreshVisualBinding();
@@ -381,6 +388,7 @@ namespace Museum.Diegetic
             if(observedReset!=inspection.ResetCount)
             { CancelGestures();exploration.Stop();observedReset=inspection.ResetCount; }
             RefreshConnectionControls();
+            UpdateNarration();
             RefreshEquipmentInteractions();UpdateEquipmentFeedback();
             if(resetting)
             {
@@ -650,7 +658,7 @@ namespace Museum.Diegetic
         }
         void OnDisable()
         {
-            if(!ready)return;CancelGestures();demonstration.Stop();
+            if(!ready)return;StopNarration();CancelGestures();demonstration.Stop();
             UpdateEquipmentFeedback();
             RestoreShellFeedback();
             // Keep the release guard on legacy targets when this optional module is disabled.
@@ -665,7 +673,11 @@ namespace Museum.Diegetic
             {knowledgeCard.SetParent(originalCardParent,false);knowledgeCard.localPosition=originalCardPosition;knowledgeCard.localRotation=originalCardRotation;}
         }
         void OnDestroy()
-        { if(demonstration)demonstration.PlaybackChanged-=RefreshEquipmentInteractions;
+        { if(demonstration)
+          {
+              demonstration.PlaybackChanged-=RefreshEquipmentInteractions;
+              demonstration.PlaybackChanged-=CheckNarrationContext;
+          }
           foreach(var target in guardedTargets)if(target){target.selectFilters.Remove(this);target.hoverFilters.Remove(this);} }
         void OnEnable()
         {

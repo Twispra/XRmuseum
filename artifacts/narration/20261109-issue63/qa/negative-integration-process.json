@@ -1,0 +1,20 @@
+{
+  "mode": "integration",
+  "method": "Museum.Localization.EditorTools.LocalizationIntegrationValidation.RunBatch",
+  "head": "f372c77ab130dfac25415e80e76b3f870ec40571",
+  "projectTree": "970f3945905bc04adb151a5b654c3a8144211e2b",
+  "dirty": [
+    "?? artifacts/helmet-interaction/qa/runs/20261109T130448901Z-narration-5c87142c0a004397b61e0496153f23a9/",
+    "?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/",
+    "?? artifacts/localization/qa/runs/20261109T130642874Z-validation/",
+    "?? docs/activity/2026-11-09-issue-63-narration.md"
+  ],
+  "pid": 30644,
+  "started": "2026-11-09T13:12:51.1592201Z",
+  "ended": "2026-11-09T13:14:46.8003051Z",
+  "exitCode": 1,
+  "forced": false,
+  "fingerprints": 1317,
+  "changed": [],
+  "logSha256": "80BCF2F8FA56F14DBBE2EEF114BA7D721D7E0A7CF056111572237388062BC04D"
+}

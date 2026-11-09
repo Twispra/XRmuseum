@@ -1861,6 +1861,41 @@
       "chinese": "打开或收起面板",
       "traditionalChinese": "打開或收起面板",
       "note": "Operator panel entry secondary hint."
+    },
+    {
+      "key": "narration.orientation",
+      "english": "Aim at the shell. Hold Grip and move the controller to turn the helmet. Release to stop. Aim at the front window, then press and release Grip to open it.",
+      "chinese": "对准外壳，按住握持键并移动手柄来旋转，松手停止。对准前窗，按下并松开握持键可打开前窗。",
+      "traditionalChinese": "對準外殼，按住握持鍵並移動手柄來旋轉，鬆手停止。對準前窗，按下並鬆開握持鍵可打開前窗。",
+      "note": "First-operation narration and caption. Product controls follow docs/diegetic-ui.zh-CN.md and the physical station's Grip behavior."
+    },
+    {
+      "key": "narration.air",
+      "english": "In this demo, the team at the surface pumps air through a hose to the helmet.",
+      "chinese": "这个演示中，水面团队用泵通过软管为头盔供气。",
+      "traditionalChinese": "這個演示中，水面團隊用泵通過軟管為頭盔供氣。",
+      "note": "Mark V air narration and caption for the teaching demonstration. The U.S. Naval Undersea Museum's MK V Diving Rig page describes the air supply hose. U.S. Navy Diving Manual (1916), pp. 37 and 39 and plates XII–XVI, is the pump reference."
+    },
+    {
+      "key": "narration.voice",
+      "english": "In this demo, a cable lets the diver and the team at the surface talk to each other.",
+      "chinese": "这个演示中，潜水员通过电缆和水面团队双向通话。",
+      "traditionalChinese": "這個演示中，潛水員通過電纜和水面團隊雙向通話。",
+      "note": "Mark V voice narration and caption for the teaching demonstration. The U.S. Naval Undersea Museum's MK V Diving Rig page describes the telephone connection. U.S. Navy Diving Manual (1916), p. 41 and plates XIX and L, is the telephone and wiring reference."
+    },
+    {
+      "key": "narration.play",
+      "english": "Play narration",
+      "chinese": "播放语音",
+      "traditionalChinese": "播放語音",
+      "note": "Visitor control for starting or replaying the narration for the current exhibit state."
+    },
+    {
+      "key": "narration.stop",
+      "english": "Stop narration",
+      "chinese": "停止语音",
+      "traditionalChinese": "停止語音",
+      "note": "Visitor control title while narration is active."
     }
   ]
 }

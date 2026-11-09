@@ -28,7 +28,7 @@ namespace Museum.Diegetic.Editor
 {
     /// <summary>Tests the saved product scene. Never installs, generates or saves product assets.</summary>
     [InitializeOnLoad]
-    public static class HelmetDiegeticValidation
+    public static partial class HelmetDiegeticValidation
     {
         const string Prefix = "Museum.DiegeticQA.";
         const string ScenePath = "Assets/Museum/Scenes/MuseumStart.unity";
@@ -83,11 +83,13 @@ namespace Museum.Diegetic.Editor
             mouse = Mouse.current; addedMouse = mouse == null;
             if (addedMouse) mouse = InputSystem.AddDevice<Mouse>("Diegetic QA mouse");
         }
-        static void Begin()
+        static void Begin(bool narrationOnly = false)
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Exit Play Mode before validation.");
             EditorSceneManager.OpenScene(ScenePath);
-            SessionState.SetString(Prefix + "Run", DateTime.UtcNow.ToString("yyyyMMddTHHmmssfffZ") + "-precision-close-hints-20261017-" + Guid.NewGuid().ToString("N"));
+            SessionState.SetBool(Prefix + "NarrationOnly", narrationOnly);
+            string runKind = narrationOnly ? "-narration-" : "-precision-close-hints-20261017-";
+            SessionState.SetString(Prefix + "Run", DateTime.UtcNow.ToString("yyyyMMddTHHmmssfffZ") + runKind + Guid.NewGuid().ToString("N"));
             report = new Report { utc = DateTime.UtcNow.ToString("o"), commit = Git("rev-parse HEAD"), dirty = Git("status --porcelain=v1 --untracked-files=all"), unity = Application.unityVersion };
             foreach (string path in new[] { ScenePath, "Packages/manifest.json", "Packages/packages-lock.json" }
                 .Concat(Directory.GetFiles("Assets/Museum/Features/DiegeticUI", "*", SearchOption.AllDirectories))
@@ -177,6 +179,11 @@ namespace Museum.Diegetic.Editor
             inspection.ReduceMotion = false;
             if (station.AlwaysShowHints) station.Execute(HelmetDiegeticStation.Command.Hints);
             yield return Wait(1.1f);
+            if (SessionState.GetBool(Prefix + "NarrationOnly", false))
+            {
+                yield return NarrationFixtures();
+                yield break;
+            }
             Capture("01-main-view", new Vector3(0, .15f, -1.55f));
             Capture("02-close-observation", new Vector3(-.44f, .24f, -.83f));
             yield return BasicCommands();
@@ -200,6 +207,7 @@ namespace Museum.Diegetic.Editor
             yield return ModuleLifecycle();
             yield return FadeAndLanguage();
             yield return ViewRecovery();
+            yield return NarrationFixtures();
         }
 
         static IEnumerator BasicCommands()
