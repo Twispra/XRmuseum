@@ -757,10 +757,16 @@ namespace Museum.Diegetic.Editor
         static IEnumerator EquipmentCancellationFixtures()
         {
             int initialEra = eras.CurrentIndex;
-            foreach (var command in new[] { HelmetDiegeticStation.Command.CloseDemo, HelmetDiegeticStation.Command.Reset,
-                HelmetDiegeticStation.Command.NextEra, HelmetDiegeticStation.Command.HeightUp })
+            foreach (var (command, entry) in new[]
             {
-                station.Execute(HelmetDiegeticStation.Command.Air); yield return Wait(.2f);
+                (HelmetDiegeticStation.Command.CloseDemo, HelmetDiegeticStation.Command.Air),
+                (HelmetDiegeticStation.Command.Reset, HelmetDiegeticStation.Command.Air),
+                (HelmetDiegeticStation.Command.NextEra, HelmetDiegeticStation.Command.Air),
+                (HelmetDiegeticStation.Command.PreviousEra, HelmetDiegeticStation.Command.Voice),
+                (HelmetDiegeticStation.Command.HeightUp, HelmetDiegeticStation.Command.Air)
+            })
+            {
+                station.Execute(entry); yield return Wait(.2f);
                 var equipment = demo.EquipmentExhibits.First(e => e.IsVisible);
                 var target = equipment.Root.GetComponentsInChildren<XRBaseInteractable>(true).FirstOrDefault(t => t.enabled);
                 if (!target) { CheckResult(false, "Cancellation fixture has equipment interaction target", equipment.Id); continue; }
@@ -768,8 +774,13 @@ namespace Museum.Diegetic.Editor
                 QueueController(rightDevice, pose, rotation, false); yield return Wait(.2f);
                 QueueController(rightDevice, pose, rotation, true); yield return Wait(.15f);
                 CheckResult(target.isSelected, "Cancellation fixture holds physical equipment before " + command, "Selected=" + target.isSelected, "production-input");
+                bool changesEra = command == HelmetDiegeticStation.Command.NextEra || command == HelmetDiegeticStation.Command.PreviousEra;
+                if (changesEra) CheckConnectionPlaying(entry);
+                // The station prevents a second control selection during equipment dragging.
+                // Issue the same production command directly while the production XR grip stays held.
                 station.Execute(command); yield return Wait(.45f);
                 CheckResult(!target.isSelected, "Command cancels an active equipment grab: " + command, "Selected=" + target.isSelected, "production-input");
+                if (changesEra) CheckConnectionStopped(command.ToString());
                 BodyRayPose(out pose, out rotation);
                 QueueController(rightDevice, pose, rotation, true); yield return Wait(.2f);
                 CheckResult(!station.RotationGesture.isSelected && !station.RotationGesture.IsDragging,
@@ -782,7 +793,19 @@ namespace Museum.Diegetic.Editor
                 QueueController(rightDevice, pose, rotation, false); ParkHands(); yield return Wait(.15f);
                 if (demo.IsVisible) station.Execute(HelmetDiegeticStation.Command.CloseDemo);
                 station.ViewHeight.ResetHeight();
-                if (eras.CurrentIndex != initialEra) station.Execute(HelmetDiegeticStation.Command.PreviousEra);
+                if (changesEra)
+                {
+                    var returnCommand = command == HelmetDiegeticStation.Command.NextEra
+                        ? HelmetDiegeticStation.Command.PreviousEra : HelmetDiegeticStation.Command.NextEra;
+                    station.Execute(returnCommand); yield return Wait(.4f);
+                    CheckResult(binding.AppliedEraIndex == initialEra, "Return restores displayed Mark V after " + command,
+                        "Displayed=" + binding.AppliedEraIndex);
+                    AimRearConnectors(); yield return Wait(.2f);
+                    yield return RayClick(entry);
+                    CheckConnectionPlaying(entry);
+                    yield return RayClick(entry);
+                    CheckConnectionStopped("Mark V reopened then closed " + entry);
+                }
                 station.Execute(HelmetDiegeticStation.Command.Reset); yield return Wait(.4f);
             }
             station.Execute(HelmetDiegeticStation.Command.Air); yield return Wait(.2f);
@@ -827,6 +850,78 @@ namespace Museum.Diegetic.Editor
             renderer.GetPropertyBlock(block);
             return block.GetFloat("_Hover");
         }
+        static void CheckConnectionPlaying(HelmetDiegeticStation.Command entry)
+        {
+            var route = demo.GetComponentsInChildren<LineRenderer>(true).Single(line => line.name == "Connection route");
+            var audio = demo.RefinedEquipment.GetComponentInChildren<AudioSource>(true);
+            var clue = entry == HelmetDiegeticStation.Command.Air
+                ? HelmetExplorationController.Clue.Air : HelmetExplorationController.Clue.Voice;
+            CheckResult(demo.IsVisible && demo.IsPlaying && demo.CurrentClue == clue &&
+                route.enabled && route.gameObject.activeInHierarchy && audio && audio.gameObject.activeInHierarchy && audio.clip &&
+                station.Controls[entry].IsEmphasized && station.Controls[HelmetDiegeticStation.Command.CloseDemo].isActiveAndEnabled,
+                "Mark V connection has active route, audio clip and controls / " + entry,
+                "Clue=" + demo.CurrentClue + "; playing=" + demo.IsPlaying + "; clip=" + (audio ? audio.clip : null));
+        }
+
+        static void CheckConnectionStopped(string context)
+        {
+            var route = demo.GetComponentsInChildren<LineRenderer>(true).Single(line => line.name == "Connection route");
+            var audio = demo.RefinedEquipment.GetComponentInChildren<AudioSource>(true);
+            CheckResult(!demo.IsVisible && !demo.IsPlaying && (!route.enabled || !route.gameObject.activeInHierarchy) &&
+                audio && !audio.isPlaying && !audio.clip && demo.EquipmentExhibits.All(exhibit => !exhibit.IsVisible),
+                "Connection route, equipment and audio stop / " + context,
+                "Visible=" + demo.IsVisible + "; route=" + (route.enabled && route.gameObject.activeInHierarchy) + "; audio playing=" + (audio && audio.isPlaying));
+            var close = station.Controls[HelmetDiegeticStation.Command.CloseDemo];
+            CheckResult(!close.gameObject.activeInHierarchy && !close.Target.isActiveAndEnabled &&
+                !station.Controls[HelmetDiegeticStation.Command.Air].IsEmphasized &&
+                !station.Controls[HelmetDiegeticStation.Command.Voice].IsEmphasized &&
+                demo.SourceEmphasis == 0 && demo.DestinationEmphasis == 0 && !demo.HasReachedDestination,
+                "Connection emphasis and close control clear / " + context, "Close active=" + close.gameObject.activeInHierarchy);
+        }
+
+        static IEnumerator CheckEraConnectionControls()
+        {
+            int index = binding.AppliedEraIndex;
+            bool available = index == 1;
+            foreach (var command in new[] { HelmetDiegeticStation.Command.Air, HelmetDiegeticStation.Command.Voice })
+            {
+                var control = station.Controls[command];
+                var target = control.Target;
+                var anchor = command == HelmetDiegeticStation.Command.Air ? binding.AirOutlet : binding.TelephoneOutlet;
+                CheckResult(control.gameObject.activeInHierarchy == available && target.isActiveAndEnabled == available &&
+                    target.interactionManager.IsRegistered((IXRInteractable)target) == available &&
+                    target.colliders.Any(collider => collider && collider.enabled && collider.gameObject.activeInHierarchy) == available &&
+                    control.GetComponentsInChildren<Renderer>(true).Any(renderer => renderer.enabled && renderer.gameObject.activeInHierarchy) == available,
+                    "Connection display, colliders and XRI registration follow actual era / " + index + "/" + command,
+                    "Active=" + target.isActiveAndEnabled + "; registered=" + target.interactionManager.IsRegistered((IXRInteractable)target));
+                if (available)
+                {
+                    CheckResult(Vector3.Distance(control.transform.position, anchor.position) < .2f,
+                        "Mark V marker follows its actual connector / " + command,
+                        "Distance=" + Vector3.Distance(control.transform.position, anchor.position));
+                    continue;
+                }
+
+                Vector3 point = anchor.position + inspection.transform.up * .08f;
+                Vector3 pose = Vector3.MoveTowards(point, Camera.main.transform.position, .48f);
+                Quaternion rotation = Quaternion.LookRotation(point - pose, Vector3.up);
+                int confirmed = control.ConfirmedCount;
+                QueueController(rightDevice, pose, rotation, false); yield return Wait(.2f);
+                QueueController(rightDevice, pose, rotation, true); yield return Wait(.2f);
+                bool inactive = !target.isHovered && !target.isSelected && !control.IsPressed &&
+                    !rightController.GetComponentsInChildren<XRRayInteractor>(true).Any(ray => ray.isActiveAndEnabled &&
+                        ray.TryGetCurrent3DRaycastHit(out var hit) && target.colliders.Contains(hit.collider));
+                QueueController(rightDevice, pose, rotation, false); yield return Wait(.2f);
+                CheckResult(inactive && control.ConfirmedCount == confirmed && !demo.IsVisible,
+                    "Production ray cannot hit, press or confirm hidden connection / " + index + "/" + command,
+                    "Confirmation change=" + (control.ConfirmedCount - confirmed) + "; " + DescribeRightRayHit(), "production-input");
+                station.Execute(command); yield return Wait(.1f);
+                CheckResult(!demo.IsVisible, "Hidden connection also rejects direct command / " + index + "/" + command,
+                    "Visible=" + demo.IsVisible);
+                ParkHands(); yield return Wait(.15f);
+            }
+        }
+
         static IEnumerator EraFixtures()
         {
             int original = eras.CurrentIndex;
@@ -839,9 +934,7 @@ namespace Museum.Diegetic.Editor
                 CheckResult(eras.CurrentIndex == (before + 1) % eras.AvailableEraCount, "Next era command advances " + i, "Current=" + eras.CurrentIndex);
                 CheckResult(!inspection.IsCutaway && inspection.WindowAngle < .1f && !demo.IsVisible, "Era starts with complete quiet exterior " + eras.CurrentIndex, "Window=" + inspection.WindowAngle);
                 CheckResult(binding.AirOutlet && binding.TelephoneOutlet && binding.ActiveShell && binding.ActiveGlass, "Era visual and connector bindings remain valid " + eras.CurrentIndex, "Air=" + binding.AirOutlet.name + "; Voice=" + binding.TelephoneOutlet.name);
-                var control = station.Controls[HelmetDiegeticStation.Command.Air];
-                CheckResult(Vector3.Distance(control.transform.position, binding.AirOutlet.position) < .2f, "Air marker follows active connector " + eras.CurrentIndex, "Distance=" + Vector3.Distance(control.transform.position, binding.AirOutlet.position));
-                CheckResult(Vector3.Distance(station.Controls[HelmetDiegeticStation.Command.Voice].transform.position, binding.TelephoneOutlet.position) < .2f, "Voice marker follows active connector " + eras.CurrentIndex, "Distance=" + Vector3.Distance(station.Controls[HelmetDiegeticStation.Command.Voice].transform.position, binding.TelephoneOutlet.position));
+                yield return CheckEraConnectionControls();
                 var visor = station.Controls[HelmetDiegeticStation.Command.Window];
                 var visorCollider = visor.Target.colliders.First(c => c && c.enabled && c.gameObject.activeInHierarchy);
                 CheckResult(binding.ActiveGlass && Vector3.Distance(visorCollider.bounds.ClosestPoint(binding.ActiveGlass.bounds.center), binding.ActiveGlass.bounds.center) < .06f,
@@ -882,10 +975,7 @@ namespace Museum.Diegetic.Editor
             // Rotate using the same production calculation before the rear
             // connector checks. The marker pose fixture then approaches its own
             // visible face; it does not assume a fixed Euler angle from the drag.
-            var hand = inspection.transform.TransformPoint(inspection.SectionCenterLocal) + Vector3.back * .4f;
-            station.RotationGesture.BeginForValidation(hand, Quaternion.identity);
-            station.RotationGesture.ApplyForValidation(hand + Vector3.right * .6f);
-            station.RotationGesture.EndForValidation(); yield return Wait(.2f);
+            AimRearConnectors(); yield return Wait(.2f);
             yield return RayClick(HelmetDiegeticStation.Command.Air);
             CheckResult(demo.IsVisible && demo.CurrentClue == HelmetExplorationController.Clue.Air, "Production ray click opens air demo", "Visible=" + demo.IsVisible, "production-input");
             yield return RayClick(HelmetDiegeticStation.Command.Voice);
@@ -902,6 +992,14 @@ namespace Museum.Diegetic.Editor
             CheckResult(eras.CurrentIndex == (original + 1) % eras.AvailableEraCount, "Production ray click changes era", "Era=" + eras.CurrentIndex, "production-input");
             yield return RayClick(HelmetDiegeticStation.Command.PreviousEra);
         }
+        static void AimRearConnectors()
+        {
+            var hand = inspection.transform.TransformPoint(inspection.SectionCenterLocal) + Vector3.back * .4f;
+            station.RotationGesture.BeginForValidation(hand, Quaternion.identity);
+            station.RotationGesture.ApplyForValidation(hand + Vector3.right * .6f);
+            station.RotationGesture.EndForValidation();
+        }
+
         static IEnumerator RayClick(HelmetDiegeticStation.Command command)
         {
             var target = station.Controls[command].Target; int events = 0; string kind = "";

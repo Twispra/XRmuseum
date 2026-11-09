@@ -167,6 +167,7 @@ namespace Museum.Diegetic.Editor
             yield return Button(true);
             yield return ReachAndObstruction();
             yield return HotspotPriority();
+            yield return ConnectionControlsFollowEra();
             Require(report.errors.Count == 0, "No Unity errors or exceptions", string.Join("\n", report.errors));
         }
 
@@ -245,6 +246,59 @@ namespace Museum.Diegetic.Editor
             Require(control.ConfirmedCount == confirmed && control.CancelledCount > cancelled &&
                 (window ? !station.Inspection.WindowTargetOpen : !station.AboutVisible),
                 (window ? "Window" : "Ordinary button") + " moving away cancels release", Diagnostics(pose, target));
+        }
+
+        static IEnumerator ConnectionControlsFollowEra()
+        {
+            ParkHands(); station.Inspection.ResetInspection(); yield return Wait(.4f);
+            var binding = station.Inspection.GetComponent<RefinedHelmetBinding>();
+            Require(binding.AppliedEraIndex == 1, "Connection Direct fixture begins in Mark V");
+            var entries = new[] { HelmetDiegeticStation.Command.Air, HelmetDiegeticStation.Command.Voice };
+            var markVPoses = new List<Pose>();
+            foreach (var entry in entries)
+            {
+                var control = station.Controls[entry];
+                var target = control.Target;
+                var collider = target.colliders.First(c => c && c.enabled && c.gameObject.activeInHierarchy);
+                Vector3 outward = (collider.bounds.center - station.Inspection.transform.TransformPoint(station.Inspection.SectionCenterLocal)).normalized;
+                var pose = NewPose(rightController, rightDevice, outward);
+                pose.controllerPosition = MuseumPhysicalHandsTestPose.ControlTouch(collider, rightController,
+                    pose.rotation, outward, collider.bounds.center, station.Inspection.GetComponent<XRGrabInteractable>());
+                markVPoses.Add(pose);
+            }
+
+            station.Execute(HelmetDiegeticStation.Command.NextEra); yield return Wait(.5f);
+            foreach (int era in new[] { 2, 0 })
+            {
+                Require(binding.AppliedEraIndex == era, "Hidden connection Direct fixture uses displayed era " + era);
+                for (int i = 0; i < entries.Length; i++)
+                {
+                    var control = station.Controls[entries[i]];
+                    var target = control.Target;
+                    var pose = markVPoses[i];
+                    int confirmed = control.ConfirmedCount;
+                    yield return Reach(pose, "hidden connection / " + era + "/" + entries[i]);
+                    Queue(pose, true); yield return Wait(.2f);
+                    bool registered = target.interactionManager.IsRegistered((IXRInteractable)target);
+                    bool colliderActive = target.colliders.Any(c => c && c.enabled && c.gameObject.activeInHierarchy);
+                    bool hovered = target.IsHovered(pose.direct);
+                    bool selected = target.IsSelected(pose.direct);
+                    Require(pose.hand.IsTrackingValid && pose.direct.isSelectActive && !target.isActiveAndEnabled &&
+                        !colliderActive && !hovered && !selected && !registered,
+                        "Direct Grip cannot hover or select hidden connection / " + era + "/" + entries[i],
+                        "tracked=" + pose.hand.IsTrackingValid + "; grip=" + pose.direct.isSelectActive +
+                        "; target active=" + target.isActiveAndEnabled + "; collider active=" + colliderActive +
+                        "; registered=" + registered + "; hovered=" + hovered + "; selected=" + selected +
+                        "; commanded pose=" + pose.controllerPosition + "; actual palm=" + pose.hand.Body.position);
+                    Queue(pose, false); yield return Wait(.2f);
+                    Require(control.ConfirmedCount == confirmed && !station.Demonstration.IsVisible,
+                        "Direct release cannot confirm hidden connection / " + era + "/" + entries[i]);
+                    ParkHands(); yield return Wait(.1f);
+                }
+                station.Execute(HelmetDiegeticStation.Command.NextEra); yield return Wait(.5f);
+            }
+            Require(binding.AppliedEraIndex == 1 && entries.All(entry => station.Controls[entry].Target.isActiveAndEnabled),
+                "Mark V connection targets restore after both hidden eras");
         }
 
         static IEnumerator ReachAndObstruction()

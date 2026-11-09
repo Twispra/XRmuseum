@@ -75,6 +75,7 @@ namespace Museum.Diegetic
         Quaternion bodyGripStart;
         bool bodyWasSelected;
         const float RailHalfTravel=.15f;
+        const int MarkVEraIndex=1;
         GameObject options, about;
         TextMeshPro aboutText, eraTitle, instruction;
         XRBaseController[] hands;
@@ -89,7 +90,9 @@ namespace Museum.Diegetic
         Quaternion homeRotation, resetFrom;
         Vector3 homePosition, fixedCenter;
         bool ready, resetting, oldKinematic, oldGravity, wasCut;
-        int observedEra=-1, observedReset;
+        int observedAppliedEra=-1, observedReset;
+        int AppliedEra => binding ? binding.AppliedEraIndex : eras.CurrentIndex;
+        bool ConnectionDemosAvailable => AppliedEra==MarkVEraIndex;
         float resetStarted, pulseUntil;
         MeshRenderer[] capRenderers=Array.Empty<MeshRenderer>();
         MaterialPropertyBlock capBlock;
@@ -164,9 +167,10 @@ namespace Museum.Diegetic
             recovery=gameObject.AddComponent<VisitorViewRecovery>();recovery.Configure(FindObjectOfType<XROrigin>(),null);
             demonstration.PlaybackChanged+=RefreshEquipmentInteractions;
             gameObject.AddComponent<HelmetViewRecoveryGuard>().Configure(this);
-            ready=true;observedReset=inspection.ResetCount;observedEra=eras.CurrentIndex;
+            ready=true;observedReset=inspection.ResetCount;observedAppliedEra=AppliedEra;
             fixedCenter=inspection.transform.TransformPoint(inspection.SectionCenterLocal);
             RefreshLabels();PositionExhibitControls();
+            RefreshConnectionControls();
         }
         void PlaceKnowledgeCard()
         { if(knowledgeCard){knowledgeCard.SetParent(pedestalUI,false);knowledgeCard.localPosition=new Vector3(.64f,.015f,-.03f);knowledgeCard.localRotation=Quaternion.identity;} }
@@ -301,8 +305,21 @@ namespace Museum.Diegetic
         }
         void ToggleDemo(HelmetExplorationController.Clue clue)
         {
+            if(!isActiveAndEnabled || !ConnectionDemosAvailable)return;
             if(demonstration.IsVisible && demonstration.CurrentClue==clue)exploration.Stop();
             else { exploration.SelectClue(clue);if(!demonstration.IsVisible || demonstration.CurrentClue!=clue)exploration.Replay(); }
+        }
+        void RefreshConnectionControls()
+        {
+            bool available=ConnectionDemosAvailable;
+            if(!available && demonstration.IsVisible)
+            {
+                CancelGestures();
+                exploration.Stop();
+            }
+            controls[Command.Air].gameObject.SetActive(available);
+            controls[Command.Voice].gameObject.SetActive(available);
+            controls[Command.CloseDemo].gameObject.SetActive(available && demonstration.IsVisible);
         }
         public void ResetHelmet()
         {
@@ -317,8 +334,9 @@ namespace Museum.Diegetic
             CancelGestures();exploration.Stop();inspection.ResetInspection();observedReset=inspection.ResetCount;
             eras.ShowEra((eras.CurrentIndex+step+eras.AvailableEraCount)%eras.AvailableEraCount);
             if(binding)binding.RefreshVisualBinding();
-            observedEra=eras.CurrentIndex;
+            observedAppliedEra=AppliedEra;
             fixedCenter=inspection.transform.TransformPoint(inspection.SectionCenterLocal);
+            PositionExhibitControls();RefreshConnectionControls();
             RefreshLabels();
         }
         void CancelGestures()
@@ -351,14 +369,19 @@ namespace Museum.Diegetic
         {
             if(!ready)return;
             PruneReleasedHands();
-            RefreshEquipmentInteractions();UpdateEquipmentFeedback();
-            if(eras.CurrentIndex!=observedEra)
+            // A legacy hold can delay the model swap after the catalogue request.
+            if(AppliedEra!=observedAppliedEra)
             {
-                CancelGestures();exploration.Stop();inspection.ResetInspection();observedReset=inspection.ResetCount;
-                observedEra=eras.CurrentIndex;fixedCenter=inspection.transform.TransformPoint(inspection.SectionCenterLocal);RefreshLabels();
+                if(observedAppliedEra>=0)
+                {
+                    CancelGestures();exploration.Stop();inspection.ResetInspection();observedReset=inspection.ResetCount;
+                }
+                observedAppliedEra=AppliedEra;fixedCenter=inspection.transform.TransformPoint(inspection.SectionCenterLocal);RefreshLabels();
             }
             if(observedReset!=inspection.ResetCount)
             { CancelGestures();exploration.Stop();observedReset=inspection.ResetCount; }
+            RefreshConnectionControls();
+            RefreshEquipmentInteractions();UpdateEquipmentFeedback();
             if(resetting)
             {
                 float t=Mathf.Clamp01((Time.unscaledTime-resetStarted)/.3f);
@@ -375,7 +398,6 @@ namespace Museum.Diegetic
             controls[Command.Slide].gameObject.SetActive(cut);
             sectionRail.gameObject.SetActive(cut);
             sectionDock.gameObject.SetActive(!SettingsVisible);
-            controls[Command.CloseDemo].gameObject.SetActive(demonstration.IsVisible);
             controls[Command.Air].SetEmphasis(demonstration.IsVisible && demonstration.CurrentClue==HelmetExplorationController.Clue.Air);
             controls[Command.Voice].SetEmphasis(demonstration.IsVisible && demonstration.CurrentClue==HelmetExplorationController.Clue.Voice);
             controls[Command.Slide].SetEmphasis(SectionGesture.IsDragging || Time.unscaledTime<pulseUntil);
@@ -488,7 +510,8 @@ namespace Museum.Diegetic
             controls[Command.Motion].SetTitle(inspection.ReduceMotion?"Motion: off":"Motion: on");
             controls[Command.HeightUp].SetTitle(ViewHeight!=null && !ViewHeight.CanRaise?"Height limit":"View higher");
             controls[Command.HeightDown].SetTitle(ViewHeight!=null && !ViewHeight.CanLower?"Height limit":"View lower");
-            string era=eras.CurrentIndex==0?"1839 / Closed helmet":eras.CurrentIndex==2?"SuperLite 17B":"Mark V";
+            int eraIndex=AppliedEra;
+            string era=eraIndex==0?"1839 / Closed helmet":eraIndex==2?"SuperLite 17B":"Mark V";
             if(eraTitle.GetComponent<LocalizedSourceText>()?.SourceEnglish!=era)MuseumText.Set(eraTitle,era);
         }
         string RotationHintText(bool selected,bool manipulating) => selected
@@ -652,6 +675,7 @@ namespace Museum.Diegetic
             foreach(var item in previousEnabled)if(item.Key)item.Key.enabled=false;
             foreach(var target in inspection.GetComponentsInChildren<XRBaseInteractable>(true))Guard(target);
             foreach(var control in controls.Values)Guard(control.Target);
+            PositionExhibitControls();RefreshConnectionControls();
             exhibitUI.gameObject.SetActive(true);pedestalUI.gameObject.SetActive(true);
             PlaceKnowledgeCard();
             body.isKinematic=true;body.useGravity=false;if(recovery)recovery.enabled=true;
