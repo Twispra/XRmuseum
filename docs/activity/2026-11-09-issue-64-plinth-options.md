@@ -20,7 +20,7 @@
 [保存场景透视图](../../artifacts/gallery-layout/20261109-issue64/visitor-overview.png) · [布局测量与截图来源](../../artifacts/gallery-layout/20261109-issue64/layout-evidence.json) · [保存场景](../../MuseumVR/Assets/Museum/Scenes/MuseumStart.unity)
 
 - **P0，体验起点。** XR Origin 在地面 XZ 约 `(0, 2.20)`，面向展品 `+Z`。后侧 Welcome 说明所在区域和实际起点是两个标记。从 P0 到中央台面前缘的 XZ 差约 0.575 m，到台基前缘约 0.625 m。两项均是平面几何距离。
-- **C，中央主要观看位。** 首个候选观看位与 P0 同点。三年代头盔保持主展品。外壳、实际玻璃、固定剖切轨道及年代按钮是既有入口。供气／通话设备在中央附近展开，图中的位置表示展开状态。主线基线与候选 [#61／PR #72](https://github.com/Twispra/XRmuseum/pull/72) 要分别核对。后者通过实施复审、待合并，规定只有实际显示 Mark V 时开放这两项演示。
+- **C，中央主要观看位。** 首个候选观看位与 P0 同点。三年代头盔保持主展品。外壳、实际玻璃、固定剖切轨道及年代按钮是既有入口。供气／通话设备在中央附近展开，图中的位置表示展开状态。主线取证基线与 [#61／PR #72](https://github.com/Twispra/XRmuseum/pull/72) 的实现分别记录。#72 在取证时尚未合并，规定只有实际显示 Mark V 时开放这两项演示。
 - **L，左台可选观看位。** 左台 `Exhibit 01 - 1988 Photo Helmet Study` 已有三语展签和左转、复位、右转三个按钮。按住 Grip 后原位松开确认，移开取消。1988 取自原照片标签，馆藏身份、年代说明与尺寸仍待核实。只比较外形可见特征，例如前窗与轮廓；该展台未开放前窗、剖切、供气或通话。 [左台功能说明](../photo-helmet-unity-study.zh-CN.md) · [#67 验证与限制](2026-10-18-pr67-review-and-merge.md)
 - **R，右台候选观看位。** `Exhibit 03 - Placeholder` 保留台体，旧 `Replace With Museum Exhibit` 对象停用。现有静态布置已有 “STAY CONNECTED”／“AIR / VOICE” 展示和两条造型管线。场景装饰和台体可以用于定向，目前没有独立可交互展品。 [保存场景透视图](../../artifacts/gallery-layout/20261109-issue64/visitor-overview.png)
 
@@ -46,7 +46,7 @@
 
 首轮测量得到运行时包络，同时发现顶视相机被顶棚遮挡，诊断场景的模拟器界面启动也需要键盘设备。复跑让诊断顶视从世界 `y=3.0 m` 以下截取，并补临时键盘和两档眼位的视线采样。布局标注、诊断相机和用于展开设备的调用只用于评估，既有场景资产保留。
 
-复跑命令使用 Unity `-batchmode -projectPath <worktree>/MuseumVR -logFile <独立日志> -executeMethod Issue64LayoutCapture.RunBatch`。额外工程文件仅为临时 Editor 诊断脚本及其 meta，退出后两项均移出工程。20 份 Unity LFS 工作副本已核对展开哈希。进程自然退出 0，1,299 个 tracked 工程文件前后零差，无应用异常。 [诊断脚本存档](../../artifacts/gallery-layout/20261109-issue64/capture-script.cs.txt) · [退出与指纹](../../artifacts/gallery-layout/20261109-issue64/process.json)
+复跑命令使用 Unity `-batchmode -projectPath <worktree>/MuseumVR -logFile <独立日志> -executeMethod Issue64LayoutCapture.RunBatch`。额外工程文件仅为临时 Editor 诊断脚本及其 meta，退出后两项均移出工程。20 份 Unity LFS 工作副本已核对展开哈希。无头显时 OpenXR 记录了 `XR_ERROR_FORM_FACTOR_UNAVAILABLE`。单眼诊断完成，进程自然退出 0，1,299 个 tracked 工程文件前后零差。 [诊断脚本存档](../../artifacts/gallery-layout/20261109-issue64/capture-script.cs.txt) · [退出与指纹](../../artifacts/gallery-layout/20261109-issue64/process.json)
 
 ## 方案对比
 
