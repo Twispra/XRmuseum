@@ -278,25 +278,37 @@ namespace Museum.Diegetic.Editor
                     var pose = markVPoses[i];
                     int confirmed = control.ConfirmedCount;
                     yield return Reach(pose, "hidden connection / " + era + "/" + entries[i]);
-                    Queue(pose, true); yield return Wait(.2f);
-                    bool registered = target.interactionManager.IsRegistered((IXRInteractable)target);
-                    bool colliderActive = target.colliders.Any(c => c && c.enabled && c.gameObject.activeInHierarchy);
-                    bool hovered = target.IsHovered(pose.direct);
-                    bool selected = target.IsSelected(pose.direct);
-                    // The physical hand may suppress Direct select when nothing
-                    // is reachable. Verify the actual device input separately.
-                    bool gripReceived = pose.device.grip.ReadValue() > .95f && pose.device.gripButton.isPressed;
-                    Require(pose.hand.IsTrackingValid && gripReceived && !target.isActiveAndEnabled &&
-                        !colliderActive && !hovered && !selected && !registered,
-                        "Direct Grip cannot hover or select hidden connection / " + era + "/" + entries[i],
-                        "tracked=" + pose.hand.IsTrackingValid + "; raw grip=" + gripReceived + "; filtered select=" + pose.direct.isSelectActive +
-                        "; target active=" + target.isActiveAndEnabled + "; collider active=" + colliderActive +
-                        "; registered=" + registered + "; hovered=" + hovered + "; selected=" + selected +
-                        "; commanded pose=" + pose.controllerPosition + "; actual palm=" + pose.hand.Body.position);
-                    Queue(pose, false); yield return Wait(.2f);
-                    Require(pose.device.grip.ReadValue() < .05f && !pose.device.gripButton.isPressed &&
-                        control.ConfirmedCount == confirmed && !station.Demonstration.IsVisible,
-                        "Direct release cannot confirm hidden connection / " + era + "/" + entries[i]);
+                    bool gripReceived = false, releaseReceived = false;
+                    // Sample the player input buffer, before returning to the
+                    // Editor coroutine or interpreting Direct selection filters.
+                    Action observeGrip = () =>
+                    {
+                        if (InputState.currentUpdateType != InputUpdateType.Dynamic) return;
+                        float grip = pose.device.grip.ReadValue();
+                        gripReceived |= grip > .95f;
+                        releaseReceived |= gripReceived && grip < .05f;
+                    };
+                    InputSystem.onAfterUpdate += observeGrip;
+                    try
+                    {
+                        Queue(pose, true); yield return Wait(.2f);
+                        bool registered = target.interactionManager.IsRegistered((IXRInteractable)target);
+                        bool colliderActive = target.colliders.Any(c => c && c.enabled && c.gameObject.activeInHierarchy);
+                        bool hovered = target.IsHovered(pose.direct);
+                        bool selected = target.IsSelected(pose.direct);
+                        Require(pose.hand.IsTrackingValid && gripReceived && !target.isActiveAndEnabled &&
+                            !colliderActive && !hovered && !selected && !registered,
+                            "Direct Grip cannot hover or select hidden connection / " + era + "/" + entries[i],
+                            "tracked=" + pose.hand.IsTrackingValid + "; Dynamic raw grip=" + gripReceived + "; filtered select=" + pose.direct.isSelectActive +
+                            "; target active=" + target.isActiveAndEnabled + "; collider active=" + colliderActive +
+                            "; registered=" + registered + "; hovered=" + hovered + "; selected=" + selected +
+                            "; commanded pose=" + pose.controllerPosition + "; actual palm=" + pose.hand.Body.position);
+                        Queue(pose, false); yield return Wait(.2f);
+                        Require(releaseReceived && control.ConfirmedCount == confirmed && !station.Demonstration.IsVisible,
+                            "Direct release cannot confirm hidden connection / " + era + "/" + entries[i],
+                            "Dynamic raw release=" + releaseReceived);
+                    }
+                    finally { InputSystem.onAfterUpdate -= observeGrip; }
                     ParkHands(); yield return Wait(.1f);
                 }
                 station.Execute(HelmetDiegeticStation.Command.NextEra); yield return Wait(.5f);
