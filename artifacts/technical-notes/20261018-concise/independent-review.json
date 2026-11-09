@@ -1,0 +1,267 @@
+{
+  "reviewUtc": "2026-10-18T13:59:02.646388+00:00",
+  "scope": "Independent read-only review of concise page3; writes only this new QA JSON. No ZIP or essay revalidation.",
+  "pdf": "E:\\XRmuseum\\phase2小组和个人作业\\COMP5424-Group2-Phase2-PrototypeDesignTechnicalNote.pdf",
+  "sha256": "941b4baaf771ceecb4412681b08472ed87b0f36de3ac8e2512f34fb0c71f40d0",
+  "backupPdf": "E:\\XRmuseum\\phase2小组和个人作业\\原稿备份\\20261018-2156-page3-concise\\COMP5424-Group2-Phase2-PrototypeDesignTechnicalNote.pdf",
+  "backupSha256": "a0f1da738bd8f77ab452612f24113f4fc0f3d137bf0d2653a75245ac826c7a2d",
+  "pages": [
+    {
+      "page": 1,
+      "sizePt": [
+        595.32,
+        841.92
+      ],
+      "a4Within0point1Pt": true,
+      "visibleFontSizesPt": [
+        12.0,
+        14.04,
+        15.96
+      ],
+      "minimumFontAtLeast12Pt": true,
+      "fonts": [
+        "BCDEEE+TimesNewRomanPSMT",
+        "BCDFEE+TimesNewRomanPS-BoldMT",
+        "BCDGEE+TimesNewRomanPS-BoldMT"
+      ],
+      "allFontsTimesNewRoman": true,
+      "bodyBoundsPt": {
+        "left": 70.824,
+        "rightInset": 76.71800000000007,
+        "top": 73.1873599999999,
+        "bottomInset": 73.63199999999995
+      },
+      "bodyWithin2point5CmMarginsWithRoundingTolerance": true,
+      "footerExcluded": "page number with top>790pt",
+      "heading": "XRmuseum Prototype Design and Technical Note",
+      "textIdenticalToBackup": true
+    },
+    {
+      "page": 2,
+      "sizePt": [
+        595.32,
+        841.92
+      ],
+      "a4Within0point1Pt": true,
+      "visibleFontSizesPt": [
+        12.0,
+        14.04
+      ],
+      "minimumFontAtLeast12Pt": true,
+      "fonts": [
+        "BCDEEE+TimesNewRomanPSMT",
+        "BCDGEE+TimesNewRomanPS-BoldMT"
+      ],
+      "allFontsTimesNewRoman": true,
+      "bodyBoundsPt": {
+        "left": 70.824,
+        "rightInset": 80.12400000000002,
+        "top": 72.89264000000003,
+        "bottomInset": 160.98799999999994
+      },
+      "bodyWithin2point5CmMarginsWithRoundingTolerance": true,
+      "footerExcluded": "page number with top>790pt",
+      "heading": "2 Design and technical decisions",
+      "textIdenticalToBackup": true
+    },
+    {
+      "page": 3,
+      "sizePt": [
+        595.32,
+        841.92
+      ],
+      "a4Within0point1Pt": true,
+      "visibleFontSizesPt": [
+        12.0,
+        14.04
+      ],
+      "minimumFontAtLeast12Pt": true,
+      "fonts": [
+        "BCDEEE+TimesNewRomanPSMT",
+        "BCDGEE+TimesNewRomanPS-BoldMT"
+      ],
+      "allFontsTimesNewRoman": true,
+      "bodyBoundsPt": {
+        "left": 70.824,
+        "rightInset": 75.06399999999996,
+        "top": 72.89264000000003,
+        "bottomInset": 239.97799999999995
+      },
+      "bodyWithin2point5CmMarginsWithRoundingTolerance": true,
+      "footerExcluded": "page number with top>790pt",
+      "heading": "3 Prototype checks and Windows build",
+      "textIdenticalToBackup": false
+    },
+    {
+      "page": 4,
+      "sizePt": [
+        595.32,
+        841.92
+      ],
+      "a4Within0point1Pt": true,
+      "visibleFontSizesPt": [
+        12.0,
+        14.04
+      ],
+      "minimumFontAtLeast12Pt": true,
+      "fonts": [
+        "BCDEEE+TimesNewRomanPSMT",
+        "BCDGEE+TimesNewRomanPS-BoldMT"
+      ],
+      "allFontsTimesNewRoman": true,
+      "bodyBoundsPt": {
+        "left": 70.824,
+        "rightInset": 74.8080000000001,
+        "top": 72.89264000000003,
+        "bottomInset": 103.02800000000002
+      },
+      "bodyWithin2point5CmMarginsWithRoundingTolerance": true,
+      "footerExcluded": "page number with top>790pt",
+      "heading": "4 Limitations and evaluation priorities",
+      "textIdenticalToBackup": true
+    },
+    {
+      "page": 5,
+      "sizePt": [
+        595.32,
+        841.92
+      ],
+      "a4Within0point1Pt": true,
+      "visibleFontSizesPt": [
+        12.0,
+        14.04
+      ],
+      "minimumFontAtLeast12Pt": true,
+      "fonts": [
+        "BCDEEE+TimesNewRomanPSMT",
+        "BCDGEE+TimesNewRomanPS-BoldMT",
+        "BCDHEE+TimesNewRomanPSMT"
+      ],
+      "allFontsTimesNewRoman": true,
+      "bodyBoundsPt": {
+        "left": 70.824,
+        "rightInset": 74.85800000000006,
+        "top": 72.89264000000003,
+        "bottomInset": 325.178
+      },
+      "bodyWithin2point5CmMarginsWithRoundingTolerance": true,
+      "footerExcluded": "page number with top>790pt",
+      "heading": "References",
+      "textIdenticalToBackup": true
+    }
+  ],
+  "renderComparisons": [
+    {
+      "page": 1,
+      "new": "E:\\XRmuseum\\artifacts\\technical-notes\\20261018-concise\\render-01\\page-1.png",
+      "old": "E:\\XRmuseum\\artifacts\\technical-notes\\20261018-build-update\\render-01\\page-1.png",
+      "newSizePx": [
+        1241,
+        1754
+      ],
+      "oldSizePx": [
+        1241,
+        1754
+      ],
+      "pixelIdentical": true,
+      "differenceBoundingBox": null
+    },
+    {
+      "page": 2,
+      "new": "E:\\XRmuseum\\artifacts\\technical-notes\\20261018-concise\\render-01\\page-2.png",
+      "old": "E:\\XRmuseum\\artifacts\\technical-notes\\20261018-build-update\\render-01\\page-2.png",
+      "newSizePx": [
+        1241,
+        1754
+      ],
+      "oldSizePx": [
+        1241,
+        1754
+      ],
+      "pixelIdentical": true,
+      "differenceBoundingBox": null
+    },
+    {
+      "page": 3,
+      "new": "E:\\XRmuseum\\artifacts\\technical-notes\\20261018-concise\\render-01\\page-3.png",
+      "old": "E:\\XRmuseum\\artifacts\\technical-notes\\20261018-build-update\\render-01\\page-3.png",
+      "newSizePx": [
+        1241,
+        1754
+      ],
+      "oldSizePx": [
+        1241,
+        1754
+      ],
+      "pixelIdentical": false,
+      "differenceBoundingBox": [
+        145,
+        154,
+        1093,
+        1479
+      ]
+    },
+    {
+      "page": 4,
+      "new": "E:\\XRmuseum\\artifacts\\technical-notes\\20261018-concise\\render-01\\page-4.png",
+      "old": "E:\\XRmuseum\\artifacts\\technical-notes\\20261018-build-update\\render-01\\page-4.png",
+      "newSizePx": [
+        1241,
+        1754
+      ],
+      "oldSizePx": [
+        1241,
+        1754
+      ],
+      "pixelIdentical": true,
+      "differenceBoundingBox": null
+    },
+    {
+      "page": 5,
+      "new": "E:\\XRmuseum\\artifacts\\technical-notes\\20261018-concise\\render-01\\page-5.png",
+      "old": "E:\\XRmuseum\\artifacts\\technical-notes\\20261018-build-update\\render-01\\page-5.png",
+      "newSizePx": [
+        1241,
+        1754
+      ],
+      "oldSizePx": [
+        1241,
+        1754
+      ],
+      "pixelIdentical": true,
+      "differenceBoundingBox": null
+    }
+  ],
+  "visualReview": {
+    "allPagesViewed": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "result": "No clipping, overlap, missing glyphs, or content overflow observed. Page3 is shorter and readable; tables retain clear boundaries."
+  },
+  "pageCount": 5,
+  "bodyPages": 4,
+  "referencesPages": 1,
+  "page3WordCounts": {
+    "beforeWhitespaceWords": 376,
+    "afterWhitespaceWords": 333
+  },
+  "docxSectionMarginsTwips": [
+    {
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}top": "1417",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}right": "1417",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}bottom": "1417",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}left": "1417",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}header": "680",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}footer": "680",
+      "{http://schemas.openxmlformats.org/wordprocessingml/2006/main}gutter": "0"
+    }
+  ],
+  "unchangedPagesPixelIdentical": true,
+  "onlyPage3TextChanged": true,
+  "formatPassed": true,
+  "result": "passed"
+}
