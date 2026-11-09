@@ -182,7 +182,7 @@ namespace Museum.RefinedModels
             }
             else if (Mathf.Abs(soundSource.time - sampleTime) > .15f) soundSource.time = sampleTime;
         }
-        void StopAudio()
+        internal void StopAudio()
         {
             if (!soundSource) return;
             soundSource.Stop(); soundSource.clip = null;

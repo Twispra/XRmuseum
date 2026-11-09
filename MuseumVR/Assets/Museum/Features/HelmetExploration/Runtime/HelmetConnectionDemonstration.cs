@@ -88,6 +88,7 @@ namespace Museum.Exploration
         float startedAt;
         Transform viewer;
         bool anchorReady;
+        bool narrationAudioSuppressed;
         MaterialPropertyBlock attentionBlock;
         static readonly int FocusId=Shader.PropertyToID("_Focus");
         public float SourceEmphasis { get; private set; }
@@ -104,6 +105,11 @@ namespace Museum.Exploration
         public bool IsUsingRefinedEquipment => refinedEquipment && refinedEquipment.IsReady;
         public RefinedConnectionEquipment RefinedEquipment => refinedEquipment;
         public IReadOnlyList<EquipmentExhibit> EquipmentExhibits => equipmentExhibits;
+        internal void SetNarrationAudioSuppressed(bool suppressed)
+        {
+            narrationAudioSuppressed = suppressed;
+            if (suppressed && refinedEquipment) refinedEquipment.StopAudio();
+        }
         public Vector3 LayoutCenterWorld => diagramCentre;
         public Quaternion LayoutRotationWorld => Quaternion.LookRotation(diagramForward, Vector3.up);
         public Vector3 AirSourceWorld => IsUsingRefinedEquipment ? refinedEquipment.AirOutlet.position : models != null ? models.AirOutlet.position : Vector3.zero;
@@ -330,7 +336,7 @@ namespace Museum.Exploration
             {
                 refinedEquipment.Evaluate(elapsed, airFlow, sending && elapsed - 2f < 1.8f,
                     replying && elapsed - 9f < 1.8f, replying && HasReachedDestination,
-                    sending && HasReachedDestination, !staticDiagram, inspection.SoundEnabled);
+                    sending && HasReachedDestination, !staticDiagram, inspection.SoundEnabled && !narrationAudioSuppressed);
             }
             pulse.gameObject.SetActive(airFlow || sending || replying);
             if (air) UpdateAirPackets(elapsed - 2f, airFlow);

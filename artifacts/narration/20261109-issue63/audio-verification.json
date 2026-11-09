@@ -1,0 +1,81 @@
+{
+  "engine": "eSpeak NG 1.52.0",
+  "executableSha256": "3080ec3822c1b266ef557c710bc79a97d20a7ab133a34bac308b81ab0afc733e",
+  "sourceScriptsSha256": "6ce312dff046c37617d02b842ac05bf86e3c45f380f8ca26b8d4c00013c13888",
+  "amplitude": 82,
+  "inputEncoding": "UTF-8",
+  "tracks": {
+    "intro-zh": {
+      "voice": "sit/cmn",
+      "speed": 150,
+      "sha256": "f5e4558931e62a67d09050832ab33de2d79ad3fba6242798902911653f2848fb",
+      "durationSeconds": 14.12458,
+      "sampleRateHz": 22050,
+      "channels": 1,
+      "pcmBits": 16,
+      "frames": 311447,
+      "peakSample": 31836,
+      "rmsFullScale": 0.096207
+    },
+    "intro-en": {
+      "voice": "gmw/en-US",
+      "speed": 155,
+      "sha256": "8ed1dd8677254e9a912deec3fdf7b33745ebd940c6528d997ba8ffa1f0b998aa",
+      "durationSeconds": 10.598685,
+      "sampleRateHz": 22050,
+      "channels": 1,
+      "pcmBits": 16,
+      "frames": 233701,
+      "peakSample": 20546,
+      "rmsFullScale": 0.067255
+    },
+    "air-zh": {
+      "voice": "sit/cmn",
+      "speed": 150,
+      "sha256": "4a03cd9c4d8080917c21a6912d6588b093aad5279b2ed4445c3b496cc9fc0a55",
+      "durationSeconds": 7.21941,
+      "sampleRateHz": 22050,
+      "channels": 1,
+      "pcmBits": 16,
+      "frames": 159188,
+      "peakSample": 32119,
+      "rmsFullScale": 0.106135
+    },
+    "air-en": {
+      "voice": "gmw/en-US",
+      "speed": 155,
+      "sha256": "44e668daa17736df18fa6b8e6de36fdd628518c67ecdf9257a520a8e31687b78",
+      "durationSeconds": 4.548526,
+      "sampleRateHz": 22050,
+      "channels": 1,
+      "pcmBits": 16,
+      "frames": 100295,
+      "peakSample": 20778,
+      "rmsFullScale": 0.064686
+    },
+    "voice-zh": {
+      "voice": "sit/cmn",
+      "speed": 150,
+      "sha256": "0034c8fc6a775413c16293e59f9a67a244f6982be98917d83b6f5427d2dac371",
+      "durationSeconds": 7.846576,
+      "sampleRateHz": 22050,
+      "channels": 1,
+      "pcmBits": 16,
+      "frames": 173017,
+      "peakSample": 32573,
+      "rmsFullScale": 0.098349
+    },
+    "voice-en": {
+      "voice": "gmw/en-US",
+      "speed": 155,
+      "sha256": "84e7af5b4ab67cb92b5f43d5e47a181b89f3d9e7c69147ca7c2a0a9ff2a00162",
+      "durationSeconds": 5.2439,
+      "sampleRateHz": 22050,
+      "channels": 1,
+      "pcmBits": 16,
+      "frames": 115628,
+      "peakSample": 19731,
+      "rmsFullScale": 0.070452
+    }
+  }
+}
