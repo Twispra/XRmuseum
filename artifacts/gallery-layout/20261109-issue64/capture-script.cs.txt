@@ -1,0 +1,247 @@
+#if UNITY_EDITOR
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Museum.Diegetic;
+using Museum.Diegetic.Editor;
+using Museum.OperatorPanel;
+using Unity.XR.CoreUtils;
+using UnityEditor;
+using UnityEditor.SceneManagement;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.Rendering.Universal;
+
+[InitializeOnLoad]
+public static class Issue64LayoutCapture
+{
+    const string Key = "Museum.Issue64LayoutCapture";
+    const string Plinths = "Exhibit Placeholders/";
+    const string Left = Plinths + "Exhibit 01 - 1988 Photo Helmet Study/";
+    const string Center = Plinths + "Exhibit 02 - Placeholder/";
+    const string Right = Plinths + "Exhibit 03 - Placeholder/";
+    const float MapHalfExtent = 7.25f;
+    static readonly Vector3 MapOrigin = new Vector3(0f, 8f, 2f);
+    static int step, result;
+    static double next, exit;
+    static Evidence evidence;
+    static HelmetDiegeticStation station;
+
+    [Serializable] sealed class Measure
+    {
+        public string id, state, objectName;
+        public Vector3 center, min, max;
+    }
+    [Serializable] sealed class Evidence
+    {
+        public string source = "6088c736e89d05101e09645c1796556012a6fd5d";
+        public string scene = "Assets/Museum/Scenes/MuseumStart.unity";
+        public string method = "Saved main scene; mono diagnostic camera with ceiling clipped at y=3.0 m; station API establishes expanded states; no scene asset saved.";
+        public string unity;
+        public Vector3 mapOrigin = MapOrigin;
+        public float mapHalfExtent = MapHalfExtent;
+        public Vector3 sampledSettingsEye;
+        public bool settingsShown;
+        public List<Measure> measurements = new List<Measure>();
+        public List<SightSample> sightSamples = new List<SightSample>();
+    }
+
+    [Serializable] sealed class SightSample
+    {
+        public string target, firstSolid;
+        public Vector3 eye, aim;
+        public float distance, firstSolidDistance;
+    }
+
+    static Issue64LayoutCapture()
+    {
+        EditorApplication.update += Tick;
+        EditorApplication.playModeStateChanged += OnPlayMode;
+    }
+
+    static string Folder => Environment.GetEnvironmentVariable("MUSEUM_LAYOUT_OUTPUT");
+
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+    static void PrepareBatchInput()
+    {
+        if (!SessionState.GetBool(Key, false)) return;
+        if (Keyboard.current == null) InputSystem.AddDevice<Keyboard>();
+        if (Mouse.current == null) InputSystem.AddDevice<Mouse>();
+    }
+
+    public static void RunBatch()
+    {
+        Directory.CreateDirectory(Folder);
+        EditorSceneManager.OpenScene("Assets/Museum/Scenes/MuseumStart.unity");
+        SessionState.SetBool(Key, true);
+        SessionState.SetInt(Key + "Exit", 1);
+        EditorApplication.EnterPlaymode();
+    }
+
+    static void OnPlayMode(PlayModeStateChange change)
+    {
+        if (!SessionState.GetBool(Key, false)) return;
+        if (change == PlayModeStateChange.EnteredPlayMode)
+        {
+            step = 0;
+            next = EditorApplication.timeSinceStartup + 3;
+            evidence = new Evidence { unity = Application.unityVersion };
+        }
+        if (change == PlayModeStateChange.EnteredEditMode)
+        {
+            SessionState.SetBool(Key, false);
+            result = SessionState.GetInt(Key + "Exit", 1);
+            exit = EditorApplication.timeSinceStartup + 20;
+        }
+    }
+
+    static void Tick()
+    {
+        if (exit > 0 && EditorApplication.timeSinceStartup >= exit)
+        {
+            exit = 0;
+            EditorApplication.Exit(result);
+            return;
+        }
+        if (!SessionState.GetBool(Key, false) || !EditorApplication.isPlaying || EditorApplication.timeSinceStartup < next) return;
+        next = EditorApplication.timeSinceStartup + 1.0;
+        try
+        {
+            if (!station) station = UnityEngine.Object.FindObjectOfType<HelmetDiegeticStation>();
+            if (!station || !station.IsReady) throw new InvalidOperationException("Saved station did not initialize.");
+            switch (step++)
+            {
+                case 0:
+                    Add("left-plinth", "saved", Find(Left + "Plinth").GetComponent<Renderer>().bounds, Left + "Plinth");
+                    Add("central-plinth", "saved", Find(Center + "Plinth").GetComponent<Renderer>().bounds, Center + "Plinth");
+                    Add("right-plinth", "saved", Find(Right + "Plinth").GetComponent<Renderer>().bounds, Right + "Plinth");
+                    Add("left-exhibit", "saved", VisibleBounds(Find(Left + "1988 Photo Helmet Display")), "1988 Photo Helmet Display");
+                    Add("central-exhibit", "saved", VisibleBounds(station.Inspection.gameObject), station.Inspection.name);
+                    var rig = UnityEngine.Object.FindObjectOfType<XROrigin>();
+                    Add("arrival", "saved", new Bounds(rig.transform.position, Vector3.zero), rig.name);
+                    Add("floor", "saved", Find("Gallery Blockout/Floor - Teleport Area").GetComponent<Renderer>().bounds, "Floor - Teleport Area");
+                    foreach (float height in new[] { 1.20f, 1.55f })
+                    {
+                        SampleSight("central-exhibit", new Vector3(0f, height, 2.20f), VisibleBounds(station.Inspection.gameObject).center);
+                        SampleSight("left-reset", new Vector3(-3.1f, height, 2.20f), Find("Reset photo helmet").transform.position);
+                        SampleSight("right-plinth", new Vector3(3.1f, height, 2.20f), new Vector3(3.1f, 1.16f, 3.5f));
+                    }
+                    CaptureMap("saved");
+                    var perspective = new Vector3(0, 2.85f, -.55f);
+                    HelmetDiegeticPreview.CaptureView(Path.Combine(Folder, "visitor-overview.png"), perspective,
+                        Quaternion.LookRotation(new Vector3(0, 1.15f, 3.6f) - perspective, Vector3.up), 68f, 1.65f);
+                    station.Execute(HelmetDiegeticStation.Command.Section);
+                    station.Execute(HelmetDiegeticStation.Command.Air);
+                    break;
+                case 1:
+                    Add("section-rail", "air", VisibleBounds(station.SectionRail.gameObject), station.SectionRail.name);
+                    foreach (float height in new[] { 1.20f, 1.55f })
+                        SampleSight("section-rail", new Vector3(0f, height, 2.20f), VisibleBounds(station.SectionRail.gameObject).center);
+                    MeasureEquipment("air");
+                    CaptureMap("air");
+                    station.Execute(HelmetDiegeticStation.Command.Voice);
+                    break;
+                case 2:
+                    MeasureEquipment("voice");
+                    CaptureMap("voice");
+                    station.Execute(HelmetDiegeticStation.Command.CloseDemo);
+                    station.Execute(HelmetDiegeticStation.Command.Section);
+                    var eye = Camera.main.transform;
+                    evidence.sampledSettingsEye = new Vector3(0, 1.55f, 2.15f);
+                    eye.SetPositionAndRotation(evidence.sampledSettingsEye,
+                        Quaternion.LookRotation(new Vector3(0, 1.3f, 3.25f) - evidence.sampledSettingsEye, Vector3.up));
+                    UnityEngine.Object.FindObjectOfType<OperatorPanelController>().Toggle();
+                    break;
+                case 3:
+                    var panel = UnityEngine.Object.FindObjectOfType<OperatorPanelController>();
+                    evidence.settingsShown = panel.PanelShown;
+                    var options = station.Controls[HelmetDiegeticStation.Command.Sound].transform.parent;
+                    if (panel.PanelShown)
+                    {
+                        Add("settings-panel", "settings-sample", VisibleBounds(options.gameObject), options.name);
+                        SampleSight("settings-panel", evidence.sampledSettingsEye, VisibleBounds(options.gameObject).center);
+                    }
+                    Add("settings-entry", "saved", VisibleBounds(panel.Entry.gameObject), panel.Entry.name);
+                    CaptureMap("settings");
+                    File.WriteAllText(Path.Combine(Folder, "layout-evidence.json"), JsonUtility.ToJson(evidence, true));
+                    SessionState.SetInt(Key + "Exit", 0);
+                    EditorApplication.ExitPlaymode();
+                    break;
+            }
+        }
+        catch (Exception failure)
+        {
+            Debug.LogException(failure);
+            EditorApplication.ExitPlaymode();
+        }
+    }
+
+    static GameObject Find(string path) => GameObject.Find(path) ?? throw new InvalidOperationException("Saved object not found: " + path);
+
+    static Bounds VisibleBounds(GameObject root)
+    {
+        var renderers = root.GetComponentsInChildren<Renderer>().Where(r => r.enabled).ToArray();
+        if (renderers.Length == 0) return new Bounds(root.transform.position, Vector3.zero);
+        var bounds = renderers[0].bounds;
+        foreach (var renderer in renderers.Skip(1)) bounds.Encapsulate(renderer.bounds);
+        return bounds;
+    }
+
+    static void Add(string id, string state, Bounds bounds, string objectName) =>
+        evidence.measurements.Add(new Measure { id = id, state = state, objectName = objectName, center = bounds.center, min = bounds.min, max = bounds.max });
+
+    static void SampleSight(string target, Vector3 eye, Vector3 aim)
+    {
+        Vector3 direction = aim - eye;
+        float distance = direction.magnitude;
+        Physics.SyncTransforms();
+        bool hit = Physics.Raycast(eye, direction / distance, out var first, distance, ~0, QueryTriggerInteraction.Ignore);
+        evidence.sightSamples.Add(new SightSample { target = target, eye = eye, aim = aim,
+            distance = distance, firstSolid = hit ? first.collider.name : "", firstSolidDistance = hit ? first.distance : -1f });
+    }
+
+    static void MeasureEquipment(string state)
+    {
+        foreach (var item in station.Demonstration.EquipmentExhibits.Where(e => e.IsVisible))
+            Add(item.Id, state, VisibleBounds(item.Root.gameObject), item.Root.name);
+        foreach (var line in station.Demonstration.GetComponentsInChildren<LineRenderer>().Where(line => line.enabled))
+            Add(line.name, state, line.bounds, line.name);
+    }
+
+    static void CaptureMap(string name)
+    {
+        const int size = 1500;
+        var go = new GameObject("Transient layout camera");
+        var camera = go.AddComponent<Camera>();
+        var data = go.AddComponent<UniversalAdditionalCameraData>();
+        data.allowXRRendering = false;
+        camera.stereoTargetEye = StereoTargetEyeMask.None;
+        camera.orthographic = true;
+        camera.orthographicSize = MapHalfExtent;
+        camera.nearClipPlane = 5f;
+        camera.farClipPlane = 35;
+        camera.transform.SetPositionAndRotation(MapOrigin, Quaternion.LookRotation(Vector3.down, Vector3.forward));
+        var target = new RenderTexture(size, size, 24);
+        var image = new Texture2D(size, size, TextureFormat.RGB24, false);
+        var previous = RenderTexture.active;
+        try
+        {
+            camera.targetTexture = target;
+            camera.Render();
+            RenderTexture.active = target;
+            image.ReadPixels(new Rect(0, 0, size, size), 0, 0);
+            image.Apply();
+            File.WriteAllBytes(Path.Combine(Folder, name + "-top.png"), image.EncodeToPNG());
+        }
+        finally
+        {
+            RenderTexture.active = previous;
+            camera.targetTexture = null;
+            UnityEngine.Object.DestroyImmediate(image);
+            UnityEngine.Object.DestroyImmediate(target);
+            UnityEngine.Object.DestroyImmediate(go);
+        }
+    }
+}
+#endif
