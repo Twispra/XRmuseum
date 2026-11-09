@@ -1,0 +1,1407 @@
+{
+    "utc": "2026-11-09T13:19:55.8964308Z",
+    "finishedUtc": "2026-11-09T13:21:15.4785317Z",
+    "commit": "e800b789f33d873c6d7ae519d7178efc09f1b3a1",
+    "dirty": "?? artifacts/helmet-interaction/qa/runs/20261109T130448901Z-narration-5c87142c0a004397b61e0496153f23a9/narration-air-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130448901Z-narration-5c87142c0a004397b61e0496153f23a9/narration-air-English.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130448901Z-narration-5c87142c0a004397b61e0496153f23a9/narration-air-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130448901Z-narration-5c87142c0a004397b61e0496153f23a9/narration-orientation-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130448901Z-narration-5c87142c0a004397b61e0496153f23a9/narration-orientation-English.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130448901Z-narration-5c87142c0a004397b61e0496153f23a9/narration-orientation-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130448901Z-narration-5c87142c0a004397b61e0496153f23a9/narration-voice-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130448901Z-narration-5c87142c0a004397b61e0496153f23a9/narration-voice-English.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130448901Z-narration-5c87142c0a004397b61e0496153f23a9/narration-voice-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130448901Z-narration-5c87142c0a004397b61e0496153f23a9/report.json\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/01-main-view.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/02-close-observation.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/03-section.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/04-air-demo.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/05-voice-demo.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/06-fixed-about.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/era-0.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/era-1.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/era-2.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/language-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/language-English.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/language-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/narration-air-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/narration-air-English.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/narration-air-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/narration-orientation-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/narration-orientation-English.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/narration-orientation-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/narration-voice-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/narration-voice-English.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/narration-voice-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/near-air-pump-hold.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/near-air-pump-hover-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/near-air-pump-hover-English.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/near-air-pump-hover-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/near-helmet-hold.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/near-helmet-hover-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/near-helmet-hover-English.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/near-helmet-hover-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/report.json\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/viewport-fallback-air-pump-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/viewport-fallback-air-pump-English.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/viewport-fallback-air-pump-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/viewport-fallback-helmet-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/viewport-fallback-helmet-English.png\n?? artifacts/helmet-interaction/qa/runs/20261109T130918064Z-precision-close-hints-20261017-cd0c943163674d0ebb5e643b3d0524b0/viewport-fallback-helmet-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T131511077Z-operator-panel-20261018-68ad3304071249c1aee810c6e751adb7/01-settings.png\n?? artifacts/helmet-interaction/qa/runs/20261109T131511077Z-operator-panel-20261018-68ad3304071249c1aee810c6e751adb7/02-side-clearance.png\n?? artifacts/helmet-interaction/qa/runs/20261109T131511077Z-operator-panel-20261018-68ad3304071249c1aee810c6e751adb7/03-left-plinth-photo-settings.png\n?? artifacts/helmet-interaction/qa/runs/20261109T131511077Z-operator-panel-20261018-68ad3304071249c1aee810c6e751adb7/04-left-plinth-photo-focused.png\n?? artifacts/helmet-interaction/qa/runs/20261109T131511077Z-operator-panel-20261018-68ad3304071249c1aee810c6e751adb7/language-Chinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T131511077Z-operator-panel-20261018-68ad3304071249c1aee810c6e751adb7/language-English.png\n?? artifacts/helmet-interaction/qa/runs/20261109T131511077Z-operator-panel-20261018-68ad3304071249c1aee810c6e751adb7/language-TraditionalChinese.png\n?? artifacts/helmet-interaction/qa/runs/20261109T131511077Z-operator-panel-20261018-68ad3304071249c1aee810c6e751adb7/pitch-focused--20.png\n?? artifacts/helmet-interaction/qa/runs/20261109T131511077Z-operator-panel-20261018-68ad3304071249c1aee810c6e751adb7/pitch-focused-20.png\n?? artifacts/helmet-interaction/qa/runs/20261109T131511077Z-operator-panel-20261018-68ad3304071249c1aee810c6e751adb7/pitch-focused-30.png\n?? artifacts/helmet-interaction/qa/runs/20261109T131511077Z-operator-panel-20261018-68ad3304071249c1aee810c6e751adb7/pitch-initial--20.png\n?? artifacts/helmet-interaction/qa/runs/20261109T131511077Z-operator-panel-20261018-68ad3304071249c1aee810c6e751adb7/pitch-initial-20.png\n?? artifacts/helmet-interaction/qa/runs/20261109T131511077Z-operator-panel-20261018-68ad3304071249c1aee810c6e751adb7/pitch-initial-30.png\n?? artifacts/helmet-interaction/qa/runs/20261109T131511077Z-operator-panel-20261018-68ad3304071249c1aee810c6e751adb7/report.json\n?? artifacts/localization/qa/runs/20261109T130642874Z-validation/report.json\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/diagram-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/diagram-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/diagram-zh-production.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/hotspot-interaction.json\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/hotspots-direct-progress-0-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/hotspots-direct-progress-0-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/hotspots-direct-progress-0-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/hotspots-direct-progress-3-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/hotspots-direct-progress-3-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/hotspots-direct-progress-3-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/initial-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/initial-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/initial-en-production.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/report.json\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/restored-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/restored-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/restored-en-production.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/restored-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/restored-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/restored-zh-production.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/selected-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/selected-zh-hant-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/selected-zh-hant-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/selected-zh-hant-production.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/selected-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261109T131313561Z-integration-c5978c56433141a18a53a48ae250b20f/selected-zh-production.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/diagram-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/diagram-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/diagram-zh-production.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/hotspot-interaction.json\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/hotspots-direct-progress-0-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/hotspots-direct-progress-0-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/hotspots-direct-progress-0-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/hotspots-direct-progress-3-Chinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/hotspots-direct-progress-3-English-diagnostic.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/hotspots-direct-progress-3-TraditionalChinese-diagnostic.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/initial-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/initial-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/initial-en-production.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/report.json\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/restored-en-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/restored-en-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/restored-en-production.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/restored-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/restored-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/restored-zh-production.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/selected-zh-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/selected-zh-hant-arrival-closeup.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/selected-zh-hant-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/selected-zh-hant-production.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/selected-zh-masthead-closeup.png\n?? artifacts/localization/qa/runs/20261109T131711865Z-integration-d6ca469f72854d6ea3fbfbe2e619e8ca/selected-zh-production.png\n?? artifacts/narration/20261109-issue63/qa/diegetic-process.json\n?? artifacts/narration/20261109-issue63/qa/diegetic-report.json\n?? artifacts/narration/20261109-issue63/qa/localization-process.json\n?? artifacts/narration/20261109-issue63/qa/negative-integration-process.json\n?? artifacts/narration/20261109-issue63/qa/operator-process.json\n?? artifacts/narration/20261109-issue63/qa/operator-report.json\n?? artifacts/narration/20261109-issue63/qa/orientation-english.png\n?? artifacts/narration/20261109-issue63/qa/table-sync-process.json\n?? artifacts/narration/20261109-issue63/qa/trilingual-narration.png\n?? docs/activity/2026-11-09-issue-63-narration.md",
+    "unity": "2022.3.62f3c1",
+    "failure": "",
+    "method": "Saved MuseumStart Play Mode: public command and gesture-calculation fixtures, plus queued synthetic right controller/HMD states in ordinary Dynamic Input System updates through production Input Actions and XR ray interactions. Production-ray checks are explicitly separate from public-API fixtures. No direct SelectEnter/SelectExit, InputSystem.Update, scene saves or prototype generator.",
+    "limitations": "No real headset/controller, comfort, reachability study, user test or executable build validation. RenderTexture images are diagnostic views of the product scene, not headset screenshots. Direct physical hand interaction is not independently validated by this runner. Narration audio assertions inspect Unity AudioSource and AudioClip state. Actual listening, headset intelligibility and binocular layout remain unverified.",
+    "checks": [
+        {
+            "name": "Saved scene starts installed diegetic station",
+            "detail": "Ready=True",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "New visitor starts with complete rotation guidance",
+            "detail": "Learned=False; Condensed=False",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "All commands retain registered interaction metadata",
+            "detail": "Count=24",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "No old following palette remains active",
+            "detail": "Retired presentation, existing content engines retained.",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Three original knowledge hotspots remain enabled",
+            "detail": "front-window,bonnet,breastplate",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Knowledge hotspot position preserved: front-window",
+            "detail": "(-0.1100, 0.3000, -0.2400)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Knowledge hotspot position preserved: bonnet",
+            "detail": "(0.1700, 0.3400, 0.0000)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Knowledge hotspot position preserved: breastplate",
+            "detail": "(0.0000, 0.0750, -0.1800)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Exhibit cannot be freely translated or dropped",
+            "detail": "Legacy grab disabled; rigidbody pinned.",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Six distinct narration recordings import in the saved scene",
+            "detail": "intro-en=10.60s, intro-zh=14.12s, air-en=4.55s, air-zh=7.22s, voice-en=5.24s, voice-zh=7.85s",
+            "layer": "saved-assets",
+            "passed": true
+        },
+        {
+            "name": "Saved narrator starts idle with the play label",
+            "detail": "Era=1; Playing=False; Label=Play narration",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Hovering narration never starts a clip",
+            "detail": "Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3938, 0.9720, 2.6866); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Grip press waits for a deliberate release",
+            "detail": "Pressed=True",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Grip release starts exactly one narration",
+            "detail": "Confirmations=1",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Saved exact narration caption orientation/English",
+            "detail": "Aim at the shell. Hold Grip and move the controller to turn the helmet. Release to stop. Aim at the front window, then press and release Grip to open it.",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration AudioSource matches cue, language and sound setting orientation/English",
+            "detail": "Audible=True; Clip=intro-en",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Saved glyphs and subtitle geometry fit orientation/English",
+            "detail": "Missing=; Overflow=False; Font=0.27",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Active narration exposes a stop label",
+            "detail": "Stop narration",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Turning away leaves narration playing without restarting it",
+            "detail": "Samples=7996->14582; Confirmations=1",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3934, 0.9714, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Stop click clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3939, 0.9710, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Replay click restarts orientation from the beginning",
+            "detail": "Samples=14582",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Natural end clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Natural end restores the play label",
+            "detail": "Play narration",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3934, 0.9715, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Saved exact narration caption orientation/English",
+            "detail": "Aim at the shell. Hold Grip and move the controller to turn the helmet. Release to stop. Aim at the front window, then press and release Grip to open it.",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration AudioSource matches cue, language and sound setting orientation/English",
+            "detail": "Audible=True; Clip=intro-en",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Saved glyphs and subtitle geometry fit orientation/English",
+            "detail": "Missing=; Overflow=False; Font=0.27",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration subtitle leaves the Show panel label visible orientation/English",
+            "detail": "Entry=(x:-0.37, y:0.01, width:0.10, height:0.02); Backing=(x:-0.17, y:-0.07, width:0.56, height:0.13)",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3937, 0.9709, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Stop orientation/English clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3935, 0.9714, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Saved exact narration caption air/English",
+            "detail": "In this demo, the team at the surface pumps air through a hose to the helmet.",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration AudioSource matches cue, language and sound setting air/English",
+            "detail": "Audible=True; Clip=air-en",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Saved glyphs and subtitle geometry fit air/English",
+            "detail": "Missing=; Overflow=False; Font=0.27",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration subtitle leaves the Show panel label visible air/English",
+            "detail": "Entry=(x:-0.37, y:0.01, width:0.10, height:0.02); Backing=(x:-0.17, y:-0.07, width:0.56, height:0.13)",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3936, 0.9710, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Stop air/English clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3934, 0.9714, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Saved exact narration caption voice/English",
+            "detail": "In this demo, a cable lets the diver and the team at the surface talk to each other.",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration AudioSource matches cue, language and sound setting voice/English",
+            "detail": "Audible=True; Clip=voice-en",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Saved glyphs and subtitle geometry fit voice/English",
+            "detail": "Missing=; Overflow=False; Font=0.27",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration subtitle leaves the Show panel label visible voice/English",
+            "detail": "Entry=(x:-0.37, y:0.01, width:0.10, height:0.02); Backing=(x:-0.17, y:-0.07, width:0.56, height:0.13)",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3936, 0.9710, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Stop voice/English clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3935, 0.9714, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Saved exact narration caption orientation/Chinese",
+            "detail": "对准外壳，按住握持键并移动手柄来旋转，松手停止。对准前窗，按下并松开握持键可打开前窗。",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration AudioSource matches cue, language and sound setting orientation/Chinese",
+            "detail": "Audible=True; Clip=intro-zh",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Saved glyphs and subtitle geometry fit orientation/Chinese",
+            "detail": "Missing=; Overflow=False; Font=0.27",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration subtitle leaves the Show panel label visible orientation/Chinese",
+            "detail": "Entry=(x:-0.37, y:0.01, width:0.07, height:0.02); Backing=(x:-0.18, y:-0.07, width:0.56, height:0.13)",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3937, 0.9709, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Stop orientation/Chinese clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3935, 0.9714, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Saved exact narration caption air/Chinese",
+            "detail": "这个演示中，水面团队用泵通过软管为头盔供气。",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration AudioSource matches cue, language and sound setting air/Chinese",
+            "detail": "Audible=True; Clip=air-zh",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Saved glyphs and subtitle geometry fit air/Chinese",
+            "detail": "Missing=; Overflow=False; Font=0.27",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration subtitle leaves the Show panel label visible air/Chinese",
+            "detail": "Entry=(x:-0.37, y:0.01, width:0.07, height:0.02); Backing=(x:-0.18, y:-0.07, width:0.56, height:0.13)",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3936, 0.9710, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Stop air/Chinese clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3934, 0.9714, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Saved exact narration caption voice/Chinese",
+            "detail": "这个演示中，潜水员通过电缆和水面团队双向通话。",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration AudioSource matches cue, language and sound setting voice/Chinese",
+            "detail": "Audible=True; Clip=voice-zh",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Saved glyphs and subtitle geometry fit voice/Chinese",
+            "detail": "Missing=; Overflow=False; Font=0.27",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration subtitle leaves the Show panel label visible voice/Chinese",
+            "detail": "Entry=(x:-0.37, y:0.01, width:0.07, height:0.02); Backing=(x:-0.18, y:-0.07, width:0.56, height:0.13)",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3936, 0.9710, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Stop voice/Chinese clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3935, 0.9714, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Saved exact narration caption orientation/TraditionalChinese",
+            "detail": "對準外殼，按住握持鍵並移動手柄來旋轉，鬆手停止。對準前窗，按下並鬆開握持鍵可打開前窗。",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration AudioSource matches cue, language and sound setting orientation/TraditionalChinese",
+            "detail": "Audible=True; Clip=intro-zh",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Saved glyphs and subtitle geometry fit orientation/TraditionalChinese",
+            "detail": "Missing=; Overflow=False; Font=0.27",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration subtitle leaves the Show panel label visible orientation/TraditionalChinese",
+            "detail": "Entry=(x:-0.37, y:0.01, width:0.07, height:0.02); Backing=(x:-0.18, y:-0.07, width:0.56, height:0.13)",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3937, 0.9709, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Stop orientation/TraditionalChinese clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3935, 0.9714, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Saved exact narration caption air/TraditionalChinese",
+            "detail": "這個演示中，水面團隊用泵通過軟管為頭盔供氣。",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration AudioSource matches cue, language and sound setting air/TraditionalChinese",
+            "detail": "Audible=True; Clip=air-zh",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Saved glyphs and subtitle geometry fit air/TraditionalChinese",
+            "detail": "Missing=; Overflow=False; Font=0.27",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration subtitle leaves the Show panel label visible air/TraditionalChinese",
+            "detail": "Entry=(x:-0.37, y:0.01, width:0.07, height:0.02); Backing=(x:-0.18, y:-0.07, width:0.56, height:0.13)",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3936, 0.9710, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Stop air/TraditionalChinese clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3934, 0.9714, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Saved exact narration caption voice/TraditionalChinese",
+            "detail": "這個演示中，潛水員通過電纜和水面團隊雙向通話。",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration AudioSource matches cue, language and sound setting voice/TraditionalChinese",
+            "detail": "Audible=True; Clip=voice-zh",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Saved glyphs and subtitle geometry fit voice/TraditionalChinese",
+            "detail": "Missing=; Overflow=False; Font=0.27",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration subtitle leaves the Show panel label visible voice/TraditionalChinese",
+            "detail": "Entry=(x:-0.37, y:0.01, width:0.07, height:0.02); Backing=(x:-0.18, y:-0.07, width:0.56, height:0.13)",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3936, 0.9710, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Stop voice/TraditionalChinese clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Voice demonstration plays its own audio before narration",
+            "detail": "gentle-voice",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3934, 0.9714, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Narration and equipment voice do not overlap while the demonstration advances through phases",
+            "detail": "Narration=True; Equipment=False; Phase=1; Demo progress=0.1629939",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover CloseDemo",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.4700, 1.4634, 2.3184); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - CloseDemo/Inset target; HitPoint=(0.4737, 1.3111, 2.8047); Collider=-10372; Owner=Physical UI - CloseDemo; Valid=Physical UI - CloseDemo; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.4700, 1.4634, 2.3184); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once CloseDemo",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Close equipment demonstration clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3932, 0.9716, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Changing the visible demonstration opens the new connection",
+            "detail": "Air",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Change connection demonstration clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3935, 0.9715, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Chinese",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(-0.1900, 3.0693, 2.3375); Hit=Helmet physical UI station/Pedestal edge controls/Fixed settings/Physical UI - Chinese/Inset target; HitPoint=(-0.1900, 3.0871, 2.8465); Collider=-10470; Owner=Physical UI - Chinese; Valid=Physical UI - Chinese; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(-0.1900, 3.0693, 2.3375); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Chinese",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Physical language switch clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Language switch waits for a new click",
+            "detail": "Language=Chinese",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3934, 0.9715, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Saved exact narration caption orientation/Chinese",
+            "detail": "对准外壳，按住握持键并移动手柄来旋转，松手停止。对准前窗，按下并松开握持键可打开前窗。",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration AudioSource matches cue, language and sound setting orientation/Chinese",
+            "detail": "Audible=True; Clip=intro-zh",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Saved glyphs and subtitle geometry fit orientation/Chinese",
+            "detail": "Missing=; Overflow=False; Font=0.27",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Sound",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(-0.1900, 2.8693, 2.3375); Hit=Helmet physical UI station/Pedestal edge controls/Fixed settings/Physical UI - Sound/Inset target; HitPoint=(-0.1900, 2.8868, 2.8465); Collider=-10854; Owner=Physical UI - Sound; Valid=Physical UI - Sound; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(-0.1900, 2.8693, 2.3375); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Sound",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Physical sound toggle stops current narration audio and keeps its subtitle",
+            "detail": "Sound=False; Subtitle=对准外壳，按住握持键并移动手柄来旋转，松手停止。对准前窗，按下并松开握持键可打开前窗。",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Sound",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(-0.1900, 2.8693, 2.3375); Hit=Helmet physical UI station/Pedestal edge controls/Fixed settings/Physical UI - Sound/Inset target; HitPoint=(-0.1900, 2.8880, 2.8465); Collider=-10854; Owner=Physical UI - Sound; Valid=Physical UI - Sound; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(-0.1900, 2.8693, 2.3375); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Sound",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Unmuting does not resume old narration audio",
+            "detail": "Sound=True; Playing=False",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3934, 0.9715, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Stop after unmute clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3939, 0.9710, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Saved exact narration caption orientation/Chinese",
+            "detail": "对准外壳，按住握持键并移动手柄来旋转，松手停止。对准前窗，按下并松开握持键可打开前窗。",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration AudioSource matches cue, language and sound setting orientation/Chinese",
+            "detail": "Audible=False; Clip=none",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Saved glyphs and subtitle geometry fit orientation/Chinese",
+            "detail": "Missing=; Overflow=False; Font=0.27",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3939, 0.9710, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Stop silent subtitle clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3935, 0.9714, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Reduced-motion diagram still supports narration",
+            "detail": "Diagram visible=True; Narration=True",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover NextEra",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.0000, 1.2173, 2.2342); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - NextEra/Inset target; HitPoint=(0.0041, 1.0646, 2.7203); Collider=-10052; Owner=Physical UI - NextEra; Valid=Physical UI - NextEra; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.0000, 1.2173, 2.2342); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once NextEra",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Change era with an active connection narration clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Connection cannot open in non-Mark-V era 2",
+            "detail": "Actual era=2",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3939, 0.9710, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Saved exact narration caption orientation/Chinese",
+            "detail": "对准外壳，按住握持键并移动手柄来旋转，松手停止。对准前窗，按下并松开握持键可打开前窗。",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration AudioSource matches cue, language and sound setting orientation/Chinese",
+            "detail": "Audible=True; Clip=intro-zh",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Saved glyphs and subtitle geometry fit orientation/Chinese",
+            "detail": "Missing=; Overflow=False; Font=0.27",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover NextEra",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.0000, 1.2173, 2.2342); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - NextEra/Inset target; HitPoint=(0.0042, 1.0645, 2.7202); Collider=-10052; Owner=Physical UI - NextEra; Valid=Physical UI - NextEra; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.0000, 1.2173, 2.2342); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once NextEra",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Change era from 2 clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Connection cannot open in non-Mark-V era 0",
+            "detail": "Actual era=0",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3939, 0.9710, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Saved exact narration caption orientation/Chinese",
+            "detail": "对准外壳，按住握持键并移动手柄来旋转，松手停止。对准前窗，按下并松开握持键可打开前窗。",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Narration AudioSource matches cue, language and sound setting orientation/Chinese",
+            "detail": "Audible=True; Clip=intro-zh",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Saved glyphs and subtitle geometry fit orientation/Chinese",
+            "detail": "Missing=; Overflow=False; Font=0.27",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover NextEra",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.0000, 1.2173, 2.2342); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - NextEra/Inset target; HitPoint=(0.0042, 1.0645, 2.7202); Collider=-10052; Owner=Physical UI - NextEra; Valid=Physical UI - NextEra; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.0000, 1.2173, 2.2342); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once NextEra",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Change era from 0 clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3939, 0.9710, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Reset",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.1900, 1.2173, 2.2342); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Reset/Inset target; HitPoint=(0.1941, 1.0646, 2.7203); Collider=-10116; Owner=Physical UI - Reset; Valid=Physical UI - Reset; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.1900, 1.2173, 2.2342); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Reset",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Reset exhibit clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3939, 0.9710, 2.6862); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Disable station clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Re-enable station without autoplay clears narration audio and subtitle",
+            "detail": "Playing=False; Subtitle visible=False",
+            "layer": "narration-lifecycle",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover Narration",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.3900, 1.1234, 2.2000); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - Narration/Inset target; HitPoint=(0.3935, 0.9715, 2.6864); Collider=-11666; Owner=Physical UI - Narration; Valid=Physical UI - Narration; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.3900, 1.1234, 2.2000); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once Narration",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Narration is live immediately before scene exit",
+            "detail": "Playing=True",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Exiting the scene removes narration audio and subtitle",
+            "detail": "Museum loaded=False",
+            "layer": "scene-lifecycle",
+            "passed": true
+        }
+    ],
+    "files": [
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor.meta",
+            "sha256": "8d026974eb1140fc726e489d8feef337096650823dce74468013590d311b5d15"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticDirectValidation.cs",
+            "sha256": "a8a9274afaa89efcd3e52c0e1714a6effebf6a7555a8f532556e62e85ad635b1"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticDirectValidation.cs.meta",
+            "sha256": "c4ffa42d9a67e96f5bb1e395c840ce2dc06e171512b3bcf3b377e0cc8539d00c"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs",
+            "sha256": "530db047c79d2e3e39efcdfac927867fe40f6ef9ce8e44c427ed960d8b83710d"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs.meta",
+            "sha256": "ec6c7bbcc2065ab1f82386cfa0f7c64e043173b3225c2c3fa04a8412b2898dd9"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs",
+            "sha256": "3700df31f36fa6c188174d86bfa85d732831ed40d9108c2364e7a56bd014ef87"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs.meta",
+            "sha256": "c822bc2c4574400c367a2023daa88ec9657e833f4bd48519e502dca35ee1ac9e"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs",
+            "sha256": "f60d2e13a8dd3b68723c9e7f1f6fc1d11ab31da1d4f45494ac7ee77d8ef699f7"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs.meta",
+            "sha256": "9629da0099cb309c00bc0456c29a0a6f0de41d3d7488e4c7977732a56e9d5aa8"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetNarrationValidation.cs",
+            "sha256": "665d041ad74db3bd984879e8a0e0b687cbd07985b4539d1079f8819ca43b00da"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetNarrationValidation.cs.meta",
+            "sha256": "d902a384b8c8dae2a63335d1edaf26adb3761e7afd74ae0e80b7007c90cd36d1"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Materials.meta",
+            "sha256": "52a91259552604a9ef7d80d72b4dbc1c245ea571c5e15ef6206904c132e7c6ea"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat",
+            "sha256": "363f879b055303aa62da00cbd6bb241656ed216f439048f272c595e95fdcf422"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat.meta",
+            "sha256": "512c82d030ad3991f16a034be196c13dd3fe717c83e20819925c3bf508e183b3"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources.meta",
+            "sha256": "b0c18cc05d1aaee9fc67d16d6df50a10d1b7ddfce130fbfe9a3694ebf81a11b2"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration.meta",
+            "sha256": "138e78fe4329d1a18df7459ba5538ff7b5c31e31d10a160ec53ec08d6a3d88a6"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/air-en.wav",
+            "sha256": "44e668daa17736df18fa6b8e6de36fdd628518c67ecdf9257a520a8e31687b78"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/air-en.wav.meta",
+            "sha256": "c3e27adda31ec028db7c6034ed891d1643d4fbbb075948bf52aeb795d9a59239"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/air-zh.wav",
+            "sha256": "4a03cd9c4d8080917c21a6912d6588b093aad5279b2ed4445c3b496cc9fc0a55"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/air-zh.wav.meta",
+            "sha256": "21ac1f739f886aadc82834a964dc65df445d2eb34cf0c3c6ef982cdb89f69bdf"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/intro-en.wav",
+            "sha256": "8ed1dd8677254e9a912deec3fdf7b33745ebd940c6528d997ba8ffa1f0b998aa"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/intro-en.wav.meta",
+            "sha256": "75c6b215828fe362a45cd574bb1e0ac294bbce3ac23f757513cecc01ce49afa9"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/intro-zh.wav",
+            "sha256": "f5e4558931e62a67d09050832ab33de2d79ad3fba6242798902911653f2848fb"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/intro-zh.wav.meta",
+            "sha256": "c235aefd504f204a839334e9e90d8b0eef8d75bead60ee3cff6c323a9e0b86f6"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/voice-en.wav",
+            "sha256": "84e7af5b4ab67cb92b5f43d5e47a181b89f3d9e7c69147ca7c2a0a9ff2a00162"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/voice-en.wav.meta",
+            "sha256": "9cc8fa6f3e0179c7e9f86c7f85a8b15b6b9ab9df96f3133e6cc49c157f0a8b83"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/voice-zh.wav",
+            "sha256": "0034c8fc6a775413c16293e59f9a67a244f6982be98917d83b6f5427d2dac371"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/voice-zh.wav.meta",
+            "sha256": "2a39b9b4c8f1e55b281c50bd984f4e67a26e7c0ec9e5b9d8dcfed00649b2374c"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime.meta",
+            "sha256": "b733f29c063a6af24e32cac94990df45f8c7f8c6cd52a659d534f1d5b6151a54"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs",
+            "sha256": "dfbfdd9ef30c3e872eb2b28cd0b63d415eed00dbbfca93043bf133f15e4a7ba5"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs.meta",
+            "sha256": "e45c13a3f038251bd6594341e2f8b05f5a97a2eec7af4c678dd150b17821b0a6"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs",
+            "sha256": "f8aeeff94ad9326ffe1775076e168150a62958003974bbeb46e35798cb14910c"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs.meta",
+            "sha256": "203a496e55bb9060bcb0cf4756b1fe3ced2cb1726aab820d8f8ad0204897c65d"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticNarration.cs",
+            "sha256": "ec239b8e6ed06afcf31ac8543aa55c72d597423be1ad5b7d70db5e2a7c495ed3"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticNarration.cs.meta",
+            "sha256": "87a536bb2a48b09943b33714ae65ea5e784afc9360fc347aeccb8834fe0d06cc"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs",
+            "sha256": "1fe94cee66e06276dcc99d8a6786bfa86eb3779bac4289204955cd2fa13b24ab"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs.meta",
+            "sha256": "29c6a424af966488904f074bd6239e215b09d62b545960454058913849312ae6"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDirectContact.cs",
+            "sha256": "be1d5a8b608aa59ddf417f9cc460330681397d86a35b732d0cded7b829d45d1d"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDirectContact.cs.meta",
+            "sha256": "1f4f1786bfa8728e34374ed9473536d1c4cf0ed755bb7b9a496d8b6c1ff16723"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs",
+            "sha256": "25d48d191e088bf5d713781edd7df7dc2c04b111b8f9cd94a2a4acea69b2ea28"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs.meta",
+            "sha256": "f2dc40e4624cc55e832eb90a8cd1298ed4c05d05cf7e5e1a1a699ef601d8e0fd"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs",
+            "sha256": "5f66d59671132eb2ac029936db1cf2733bd856a9a0bc055dc7c9e5cbb78f9eba"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs.meta",
+            "sha256": "08be069d714e297c43ad91d070b559b1da5139a83fd0dbbdabfc5f9e4897854f"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetRotationHint.cs",
+            "sha256": "2d5dfa8da33a181b081009334b8b9bb7f793e598503f787dae898859bdab5fb9"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetRotationHint.cs.meta",
+            "sha256": "4ad9367dd3a9985a07b3e3ac234ae61c2239d7ffedcc6e237841c0e20a243d24"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs",
+            "sha256": "f145f8fe499c38b4105a994a620eaa531f21d18b00f6cae9fd74da43b827bdf6"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs.meta",
+            "sha256": "bed431957ffcd6add58d8ef344549ae40ed19b39c48049fbc68951bec4151509"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs",
+            "sha256": "a2199f940955756b452b3143afe4a0ae3f59a307307664d771ebefda32bec6c4"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs.meta",
+            "sha256": "d91ab53d38e0ec1bd599599823b5ce1ee377ae033b9cd6877576022baa4e5997"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Shaders.meta",
+            "sha256": "e00a8cae84d37a9fb4b34c47917e592bfd32dee82afce20bd03dfd9cbb4f3957"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader",
+            "sha256": "4a571f1114f7d292b3891e2a4abf12e32e2e2c36f4573e24476db1462eab36d3"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader.meta",
+            "sha256": "b3bdf2954bc13e106789e0b4081600a1524f5c5bdcff56e156a6465b1b9cc31f"
+        },
+        {
+            "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs",
+            "sha256": "e1dd4047c12ae660338414fac20a5d68e0e059d026e11bc5c7009ae241403df1"
+        },
+        {
+            "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+            "sha256": "0a126639b3511a75510f0e5f4de1438b7fe79aa22a40b884acbc5cf5fad248bc"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Fonts/characters-required.txt",
+            "sha256": "4fb6686388f4919bdcdde9249b5790c788230ce807190e732dea9aada900c6ce"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset",
+            "sha256": "ea619f682bc7c9c5c8d130824c12f6b151f65e68ef8e97380c371e88fd2cc74f"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Tables/LocalizationTable.asset",
+            "sha256": "0b3803173b0bf61b13d62c79a4b1ef006848a5d8de1314aca5b9ce0ea2586587"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Tables/MuseumTranslations.json",
+            "sha256": "f1c29ded7d75d926ca7c7ef35c5f49b42523d42c9370c0818b8bad4fc5b998f5"
+        },
+        {
+            "path": "Assets/Museum/Features/RefinedModels/Runtime/RefinedConnectionEquipment.cs",
+            "sha256": "8197b06158e215b88d7c69711ed237c6d0686ba1d9bd378921ae695caad794b8"
+        },
+        {
+            "path": "Assets/Museum/Scenes/MuseumStart.unity",
+            "sha256": "615953d2fb1b9574c07c3e79840a77e26d4c1bb571a4fc74be089d0c7f5b830b"
+        },
+        {
+            "path": "Packages/manifest.json",
+            "sha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7"
+        },
+        {
+            "path": "Packages/packages-lock.json",
+            "sha256": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03"
+        }
+    ],
+    "originalHotspots": [
+        {
+            "id": "front-window",
+            "position": {
+                "x": -0.10999999940395355,
+                "y": 0.2999999523162842,
+                "z": -0.24000000953674317
+            },
+            "enabled": true
+        },
+        {
+            "id": "bonnet",
+            "position": {
+                "x": 0.17000000178813935,
+                "y": 0.3400000333786011,
+                "z": 0.0
+            },
+            "enabled": true
+        },
+        {
+            "id": "breastplate",
+            "position": {
+                "x": 0.0,
+                "y": 0.07500004768371582,
+                "z": -0.18000006675720216
+            },
+            "enabled": true
+        }
+    ],
+    "errors": [],
+    "diagnosticCaptures": [
+        "narration-orientation-English.png",
+        "narration-air-English.png",
+        "narration-voice-English.png",
+        "narration-orientation-Chinese.png",
+        "narration-air-Chinese.png",
+        "narration-voice-Chinese.png",
+        "narration-orientation-TraditionalChinese.png",
+        "narration-air-TraditionalChinese.png",
+        "narration-voice-TraditionalChinese.png"
+    ]
+}
