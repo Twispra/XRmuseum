@@ -246,26 +246,33 @@ namespace Museum.Localization.EditorTools
                 Require(demo, "Connection demonstration exists", "Existing production component.");
                 foreach (var nextLanguage in new[] { MuseumLanguage.English, MuseumLanguage.Chinese, MuseumLanguage.TraditionalChinese })
                 {
-                    // Each language has its own explicit playback fixture. Diagnostic
-                    // screenshot rendering may outlast a complete demonstration.
-                    demo.Play(HelmetExplorationController.Clue.Air); yield return Wait(.25f);
+                    // Playback continuity applies to Mark V. Captures can outlast
+                    // a demonstration, so start a fresh one for each language.
+                    if (index == 1)
+                    {
+                        demo.Play(HelmetExplorationController.Clue.Air); yield return Wait(.25f);
+                    }
                     float playback = demo.NormalizedProgress, timer = ExplanationElapsed();
                     language.SetLanguage(nextLanguage); yield return Wait(.15f);
-                    Require(demo.IsPlaying && demo.NormalizedProgress + .001f >= playback,
-                        "Language does not restart connection animation / " + index + "/" + nextLanguage,
-                        "progress before=" + playback + "; after=" + demo.NormalizedProgress);
+                    if (index == 1)
+                        Require(demo.IsPlaying && demo.NormalizedProgress + .001f >= playback,
+                            "Language does not restart Mark V connection animation / " + nextLanguage,
+                            "progress before=" + playback + "; after=" + demo.NormalizedProgress);
+                    else
+                        Require(!demo.IsVisible, "Language does not expose a connection demo outside Mark V / " + index + "/" + nextLanguage,
+                            "applied=" + binding.AppliedEraIndex);
                     Require(ExplanationElapsed() + .005f >= timer, "Language does not restart observation timer / " + index + "/" + nextLanguage,
                         "before=" + timer + "; after=" + ExplanationElapsed());
                     CheckEra(index, nextLanguage, selected);
-                    if (index == 0)
+                    if (index != 1)
                     {
-                        // Explicit API fixtures also render every full early card, rather than
+                        // Explicit API fixtures also render every full non-Mark-V card, rather than
                         // accepting a translated caption beside an English-fallback detail.
                         foreach (var point in hotspots)
                         {
                             point.Activate();
-                            CheckText(information, point.Title + "\n" + point.Description, "All early selected cards / " + nextLanguage + "/" + point.Identifier);
-                            CaptureLabels("early-" + nextLanguage + "-" + point.Identifier + "-card.png", new[] { information }, "Full current early observation card; diagnostic view.");
+                            CheckText(information, point.Title + "\n" + point.Description, "Observation card / " + index + "/" + nextLanguage + "/" + point.Identifier);
+                            CaptureLabels("card-" + index + "-" + nextLanguage + "-" + point.Identifier + ".png", new[] { information }, "Full current observation card; diagnostic view.");
                         }
                         selected.Activate();
                     }
@@ -289,10 +296,14 @@ namespace Museum.Localization.EditorTools
             CheckEra(0, language.Current, selected);
             yield return PressEra(HelmetDiegeticStation.Command.NextEra);
             CheckEra(1, language.Current, selected);
-            // The optional legacy interaction remains supported by the saved prefab.
-            // Preserve its original held-window deferral assertions independently.
+            // Isolate the optional legacy window target while keeping the station
+            // active to observe both sides of the delayed visual swap.
+            var currentWindow = station.Controls[HelmetDiegeticStation.Command.Window].Target;
+            currentWindow.enabled = false;
+            window.enabled = true;
+            try { yield return HeldWindowDefersCaption(selected); }
+            finally { window.enabled = false; currentWindow.enabled = true; }
             station.enabled = false; yield return Wait(.3f);
-            yield return HeldWindowDefersCaption(selected);
             yield return LegacyEarlySurfaceContacts();
             station.enabled = true; yield return Wait(.3f);
             Require(station.Controls[HelmetDiegeticStation.Command.Window].Target.isActiveAndEnabled && !window.enabled,
@@ -439,47 +450,33 @@ namespace Museum.Localization.EditorTools
                 Require(Vector3.Dot(front.transform.position - binding.ActiveGlass.bounds.center, outward) > .03f,
                     "Early front hotspot is outside the visitor-facing glass", "offset=" + (front.transform.position - binding.ActiveGlass.bounds.center));
             }
+            var surfaces = index == 1 ? null : hotspots.Select(point => ObservationSurface(index, point)).ToArray();
+            var localPoints = surfaces?.Select((surface, i) => surface.transform.InverseTransformPoint(hotspots[i].transform.position)).ToArray();
+            if (surfaces != null)
+                for (int i = 0; i < surfaces.Length; i++)
+                {
+                    var surface = surfaces[i];
+                    Vector3 marker = hotspots[i].transform.position;
+                    float nearest = surface.GetComponent<MeshFilter>().sharedMesh.vertices
+                        .Min(vertex => Vector3.Distance(surface.transform.TransformPoint(vertex), marker));
+                    Require(nearest < .065f, "Observation is near a vertex of its actual imported mesh / " + index + "/" + hotspots[i].Identifier,
+                        "mesh=" + surface.name + "; nearest vertex distance=" + nearest);
+                }
+            var frontPoint = hotspots.Single(point => point.Identifier == "front-window");
+            Vector3 closedPoint = frontPoint.transform.position;
             yield return RayClick(HelmetDiegeticStation.Command.Window);
             Require(inspection.WindowAngle > 90f, "Current ray opens the actual window / " + index, "angle=" + inspection.WindowAngle);
+            if (surfaces != null)
+            {
+                CheckObservationAttachments(surfaces, localPoints, index + "/window open");
+                Require(Vector3.Distance(frontPoint.transform.position, closedPoint) > .03f,
+                    "Front observation moves with the opened viewport / " + index, frontPoint.transform.position.ToString("F6"));
+                yield return SelectObservation(frontPoint, index + "/window open");
+            }
             yield return RayClick(HelmetDiegeticStation.Command.Window);
             Require(inspection.WindowAngle < .1f, "Current ray closes the actual window / " + index, "angle=" + inspection.WindowAngle);
             foreach (var point in hotspots)
-            {
-                var target = point.GetComponent<XRSimpleInteractable>();
-                Vector3 position = Vector3.zero; Quaternion rotation = Quaternion.identity;
-                int selections = 0, releases = 0; string kind = "";
-                UnityEngine.Events.UnityAction<SelectEnterEventArgs> listener = args => { selections++; kind = args.interactorObject.GetType().Name; };
-                UnityEngine.Events.UnityAction<SelectExitEventArgs> release = args => { if (args.interactorObject is XRRayInteractor) releases++; };
-                target.selectEntered.AddListener(listener);
-                target.selectExited.AddListener(release);
-                try
-                {
-                    int attempts = 0; bool acquired = false;
-                    foreach (var approach in ObservationRays(target))
-                    {
-                        position = approach.origin;
-                        rotation = Quaternion.LookRotation(approach.direction,
-                            Mathf.Abs(Vector3.Dot(approach.direction, Vector3.up)) > .98f ? Vector3.forward : Vector3.up);
-                        QueueController(rightDevice, position, rotation, false); yield return Wait(.3f); attempts++;
-                        // Authored cone casting and ray-origin transforms are retained.
-                        // A thin Physics ray is only a candidate prefilter; the actual
-                        // production ray must report this marker as its first hit.
-                        if (target.isHovered && ProductionRayFirstHits(target)) { acquired = true; break; }
-                    }
-                    Require(acquired, "Current production ray hovers observation as first surface / " + index + "/" + point.Identifier,
-                        "candidate poses=" + attempts + "; " + RayDetail());
-                    QueueController(rightDevice, position, rotation, true); yield return Wait(.2f);
-                    Require(selections == 1 && kind == nameof(XRRayInteractor) && tour.HasVisited(point.Identifier) && !station.RotationGesture.IsDragging,
-                        "Current production ray selects observation / " + index + "/" + point.Identifier,
-                        "selections=" + selections + "; kind=" + kind + "; origin=" + position + "; marker=" + point.transform.position + "; " + RayDetail());
-                    CheckText(information, point.Title + "\n" + point.Description, "Ray-selected observation / " + index + "/" + point.Identifier);
-                    QueueController(rightDevice, position, rotation, false); yield return Wait(.2f);
-                    Require(releases == 1 && !target.isSelected,
-                        "Current production ray releases observation once / " + index + "/" + point.Identifier, "releases=" + releases);
-                    ParkHands(); yield return Wait(.15f);
-                }
-                finally { target.selectEntered.RemoveListener(listener); target.selectExited.RemoveListener(release); }
-            }
+                yield return SelectObservation(point, index + "/closed");
             yield return RayClick(HelmetDiegeticStation.Command.Section);
             var section = binding.GetComponent<Museum.Experience.HelmetSectionSurface>(); section.Refresh();
             Require(inspection.IsCutaway && section.TriangleCount > 0, "Current ray produces a visible section cap / " + index, "triangles=" + section.TriangleCount);
@@ -496,6 +493,27 @@ namespace Museum.Localization.EditorTools
             Require(Mathf.Abs(inspection.SectionOffset - before - .04f * inspection.SectionRange / station.SectionRailHalfTravel) < .001f &&
                 Vector3.Distance(normal, inspection.SectionNormalLocal) < .001f, "Current rail moves only cut depth / " + index, "offset=" + inspection.SectionOffset);
             QueueController(rightDevice, sliderPosition + movement, sliderRotation, false); yield return Wait(.2f); ParkHands(); yield return Wait(.15f);
+            if (surfaces != null)
+            {
+                CheckObservationAttachments(surfaces, localPoints, index + "/section");
+                // Preserve the production slider check above. Choose the kept
+                // half explicitly for the separate visible-marker ray fixture.
+                Vector4 plane = inspection.WorldSectionPlane;
+                var visible = hotspots.OrderBy(point => DistanceFromSection(plane, point)).First();
+                if (DistanceFromSection(plane, visible) >= -.02f)
+                {
+                    inspection.FlipSection();
+                    yield return Wait(.15f);
+                    plane = inspection.WorldSectionPlane;
+                    visible = hotspots.OrderBy(point => DistanceFromSection(plane, point)).First();
+                }
+                section.Refresh();
+                Require(section.TriangleCount > 0 && DistanceFromSection(plane, visible) < -.02f,
+                    "Section fixture retains an exposed observation point / " + index,
+                    "plane=" + plane + "; distances=" + string.Join(", ", hotspots.Select(point =>
+                        point.Identifier + "=" + DistanceFromSection(plane, point).ToString("F4"))));
+                yield return SelectObservation(visible, index + "/section");
+            }
             CaptureModel("era-" + index + "-section.png");
             yield return RayClick(HelmetDiegeticStation.Command.Section);
             Require(!inspection.IsCutaway, "Current ray restores the full exterior / " + index, "cut=" + inspection.IsCutaway);
@@ -510,13 +528,87 @@ namespace Museum.Localization.EditorTools
                 Vector3.Distance(fixedCentre, inspection.transform.TransformPoint(inspection.SectionCenterLocal)) < .001f,
                 "Current shell rotation retains its visible centre / " + index, "angle=" + Quaternion.Angle(beforeRotation, inspection.transform.rotation));
             QueueController(rightDevice, pose, rotationBody, false); yield return Wait(.2f); ParkHands(); yield return Wait(.15f);
+            if (surfaces != null)
+            {
+                CheckObservationAttachments(surfaces, localPoints, index + "/rotated");
+                foreach (var point in hotspots)
+                    yield return SelectObservation(point, index + "/rotated");
+            }
             var currentLanguage = language.Current; int count = inspection.ResetCount;
             yield return RayClick(HelmetDiegeticStation.Command.Reset);
             Require(inspection.ResetCount == count + 1 && Quaternion.Angle(beforeRotation, inspection.transform.rotation) < .1f &&
                 era.CurrentIndex == index && language.Current == currentLanguage && tour.VisitedCount == 3,
                 "Current ray reset preserves era, language and discoveries / " + index,
                 "resets=" + inspection.ResetCount + "; era=" + era.CurrentIndex + "; visited=" + tour.VisitedCount);
+            if (surfaces != null)
+                CheckObservationAttachments(surfaces, localPoints, index + "/reset");
             CaptureModel("era-" + index + "-exterior.png");
+            if (surfaces != null)
+            {
+                CaptureModel("era-" + index + "-front.png", new Vector3(0f, .20f, -1f));
+                CaptureModel("era-" + index + "-side.png", new Vector3(-.90f, .20f, -.12f));
+                CaptureModel("era-" + index + "-rear.png", new Vector3(.08f, .26f, .87f));
+            }
+        }
+
+        static float DistanceFromSection(Vector4 plane, HelmetHotspot point)
+        {
+            Vector3 position = point.transform.position;
+            return Vector4.Dot(plane, new Vector4(position.x, position.y, position.z, 1f));
+        }
+
+        static Renderer ObservationSurface(int index, HelmetHotspot point)
+        {
+            if (index == 2) return content.Attachments.Single(attachment => attachment.hotspot == point).surface;
+            if (point.Identifier == "front-window") return binding.EarlyVisual.glass;
+            if (point.Identifier == "bonnet") return binding.EarlyVisual.shell;
+            return binding.EarlyVisual.renderers.Single(renderer => renderer.name == "Breastplate_DishedCopper");
+        }
+
+        static void CheckObservationAttachments(Renderer[] surfaces, Vector3[] localPoints, string stage)
+        {
+            for (int i = 0; i < hotspots.Length; i++)
+            {
+                float offset = Vector3.Distance(hotspots[i].transform.position, surfaces[i].transform.TransformPoint(localPoints[i]));
+                Require(offset < .0002f, "Observation retains its exact mesh-local anchor / " + stage + "/" + hotspots[i].Identifier,
+                    "mesh=" + surfaces[i].name + "; drift=" + offset);
+            }
+        }
+
+        static IEnumerator SelectObservation(HelmetHotspot point, string stage)
+        {
+            var target = point.GetComponent<XRSimpleInteractable>();
+            string suffix = stage + "/" + point.Identifier;
+            Vector3 position = Vector3.zero; Quaternion rotation = Quaternion.identity;
+            int selections = 0, releases = 0; string kind = "";
+            UnityEngine.Events.UnityAction<SelectEnterEventArgs> listener = args => { selections++; kind = args.interactorObject.GetType().Name; };
+            UnityEngine.Events.UnityAction<SelectExitEventArgs> release = args => { if (args.interactorObject is XRRayInteractor) releases++; };
+            target.selectEntered.AddListener(listener);
+            target.selectExited.AddListener(release);
+            try
+            {
+                int attempts = 0; bool acquired = false;
+                foreach (var approach in ObservationRays(target))
+                {
+                    position = approach.origin;
+                    rotation = Quaternion.LookRotation(approach.direction,
+                        Mathf.Abs(Vector3.Dot(approach.direction, Vector3.up)) > .98f ? Vector3.forward : Vector3.up);
+                    QueueController(rightDevice, position, rotation, false); yield return Wait(.3f); attempts++;
+                    if (target.isHovered && ProductionRayFirstHits(target)) { acquired = true; break; }
+                }
+                Require(acquired, "Current production ray hovers observation as first surface / " + suffix,
+                    "candidate poses=" + attempts + "; " + RayDetail());
+                QueueController(rightDevice, position, rotation, true); yield return Wait(.2f);
+                Require(selections == 1 && kind == nameof(XRRayInteractor) && tour.HasVisited(point.Identifier) && !station.RotationGesture.IsDragging,
+                    "Current production ray selects observation / " + suffix,
+                    "selections=" + selections + "; kind=" + kind + "; origin=" + position + "; marker=" + point.transform.position + "; " + RayDetail());
+                CheckText(information, point.Title + "\n" + point.Description, "Ray-selected observation / " + suffix);
+                QueueController(rightDevice, position, rotation, false); yield return Wait(.2f);
+                Require(releases == 1 && !target.isSelected,
+                    "Current production ray releases observation once / " + suffix, "releases=" + releases);
+                ParkHands(); yield return Wait(.15f);
+            }
+            finally { target.selectEntered.RemoveListener(listener); target.selectExited.RemoveListener(release); }
         }
 
         static IEnumerable<Ray> ObservationRays(XRBaseInteractable target)
@@ -666,10 +758,10 @@ namespace Museum.Localization.EditorTools
             inspection.SetWindowAngle(0f); yield return Wait(.15f);
         }
 
-        static void CaptureModel(string file)
+        static void CaptureModel(string file, Vector3? localOffset = null)
         {
             Vector3 centre = inspection.transform.TransformPoint(inspection.SectionCenterLocal);
-            Vector3 position = centre + inspection.transform.TransformDirection(new Vector3(-.38f, .18f, -1.0f));
+            Vector3 position = centre + inspection.transform.TransformDirection(localOffset ?? new Vector3(-.38f, .18f, -1.0f));
             Quaternion rotation = Quaternion.LookRotation(centre - position, Vector3.up);
             Museum.Diegetic.Editor.HelmetDiegeticPreview.CaptureView(Path.Combine(Output, file), position, rotation, 45f, 4f / 3f, .01f);
             report.captures.Add(new Capture { file = file, purpose = "Diagnostic monocular model view; not headset readability.", position = position, rotation = rotation, fieldOfView = 45f });
@@ -688,6 +780,9 @@ namespace Museum.Localization.EditorTools
             era.ShowEra(2); yield return Wait(.35f);
             Require(era.CurrentIndex == 2 && binding.AppliedEraIndex == 1 && !binding.IsAdditionalVisualActive && inspection.IsWindowHeld,
                 "Held window defers actual geometry while accepting era request", "requested=" + era.CurrentIndex + "; applied=" + binding.AppliedEraIndex);
+            Require(ConnectionTargets().All(control => control.gameObject.activeInHierarchy && control.Target.isActiveAndEnabled),
+                "Deferred request leaves Mark V connection targets active", "requested=2; applied=1");
+            CheckStationEraCaption("Mark V");
             CheckText(content.Instructions, MarkVCaption, "Deferred request retains Mark V caption");
             language.SetLanguage(MuseumLanguage.Chinese); yield return Wait(.25f);
             CheckText(content.Instructions, MarkVCaption, "Language switch while held follows actual Mark V geometry");
@@ -695,8 +790,24 @@ namespace Museum.Localization.EditorTools
             yield return Wait(.3f); // A long hold avoids treating the release as a short window click.
             QueueController(rightDevice, position, rotation, false); yield return Wait(.4f); ParkHands(); yield return Wait(.2f);
             Require(!inspection.IsWindowHeld && binding.AppliedEraIndex == 2, "Window release applies pending era", "applied=" + binding.AppliedEraIndex);
+            Require(ConnectionTargets().All(control => !control.gameObject.activeInHierarchy && !control.Target.isActiveAndEnabled),
+                "Applying the pending era disables both connection targets", "applied=2");
+            CheckStationEraCaption("SuperLite 17B");
             CheckEra(2, language.Current, selected);
             CaptureLabels("deferred-release-Chinese-caption.png", new[] { content.Instructions }, "Caption after releasing pending era request.");
+        }
+
+        static IEnumerable<HelmetPhysicalControl> ConnectionTargets()
+        {
+            yield return station.Controls[HelmetDiegeticStation.Command.Air];
+            yield return station.Controls[HelmetDiegeticStation.Command.Voice];
+        }
+
+        static void CheckStationEraCaption(string expected)
+        {
+            var label = station.GetComponentsInChildren<TMP_Text>(true).Single(text => text.name == "Era caption");
+            var source = label.GetComponent<LocalizedSourceText>();
+            Require(source && source.SourceEnglish == expected, "Station caption follows displayed model / " + expected, label.text);
         }
 
         static string Caption(int index) => index == 0 ? EarlyCaption : index == 1 ? MarkVCaption : SuperLiteCaption;
