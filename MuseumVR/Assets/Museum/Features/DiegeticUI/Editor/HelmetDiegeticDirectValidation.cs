@@ -283,15 +283,19 @@ namespace Museum.Diegetic.Editor
                     bool colliderActive = target.colliders.Any(c => c && c.enabled && c.gameObject.activeInHierarchy);
                     bool hovered = target.IsHovered(pose.direct);
                     bool selected = target.IsSelected(pose.direct);
-                    Require(pose.hand.IsTrackingValid && pose.direct.isSelectActive && !target.isActiveAndEnabled &&
+                    // The physical hand may suppress Direct select when nothing
+                    // is reachable. Verify the actual device input separately.
+                    bool gripReceived = pose.device.grip.ReadValue() > .95f && pose.device.gripButton.isPressed;
+                    Require(pose.hand.IsTrackingValid && gripReceived && !target.isActiveAndEnabled &&
                         !colliderActive && !hovered && !selected && !registered,
                         "Direct Grip cannot hover or select hidden connection / " + era + "/" + entries[i],
-                        "tracked=" + pose.hand.IsTrackingValid + "; grip=" + pose.direct.isSelectActive +
+                        "tracked=" + pose.hand.IsTrackingValid + "; raw grip=" + gripReceived + "; filtered select=" + pose.direct.isSelectActive +
                         "; target active=" + target.isActiveAndEnabled + "; collider active=" + colliderActive +
                         "; registered=" + registered + "; hovered=" + hovered + "; selected=" + selected +
                         "; commanded pose=" + pose.controllerPosition + "; actual palm=" + pose.hand.Body.position);
                     Queue(pose, false); yield return Wait(.2f);
-                    Require(control.ConfirmedCount == confirmed && !station.Demonstration.IsVisible,
+                    Require(pose.device.grip.ReadValue() < .05f && !pose.device.gripButton.isPressed &&
+                        control.ConfirmedCount == confirmed && !station.Demonstration.IsVisible,
                         "Direct release cannot confirm hidden connection / " + era + "/" + entries[i]);
                     ParkHands(); yield return Wait(.1f);
                 }
