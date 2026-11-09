@@ -44,6 +44,7 @@ namespace Museum.Diegetic
             var properties = new MaterialPropertyBlock();
             properties.SetColor("_BaseColor", new Color(.025f, .045f, .055f, 1f));
             renderer.SetPropertyBlock(properties);
+            MuseumText.Set(narrationCaption, OrientationGuide);
             narrationCaption.gameObject.SetActive(false);
 
             var player = new GameObject("Helmet narration playback");
