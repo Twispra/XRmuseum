@@ -1896,6 +1896,41 @@
       "chinese": "停止语音",
       "traditionalChinese": "停止語音",
       "note": "Visitor control title while narration is active."
+    },
+    {
+      "key": "visit.finish",
+      "english": "Finish visit",
+      "chinese": "结束参观",
+      "traditionalChinese": "結束參觀",
+      "note": "Fixed exhibit action. Opens the handoff confirmation without clearing this visit."
+    },
+    {
+      "key": "visit.continue",
+      "english": "Continue visit",
+      "chinese": "继续参观",
+      "traditionalChinese": "繼續參觀",
+      "note": "Dismisses the handoff and returns to the current visit."
+    },
+    {
+      "key": "visit.next",
+      "english": "Start next visit",
+      "chinese": "开始新参观",
+      "traditionalChinese": "開始新參觀",
+      "note": "Confirms clearing discoveries and returning to the starting view and default exhibit."
+    },
+    {
+      "key": "visit.confirm",
+      "english": "Starting the next visit clears this visit's discoveries.",
+      "chinese": "开始新参观将清除本次探索记录。",
+      "traditionalChinese": "開始新參觀將清除本次探索記錄。",
+      "note": "Handoff confirmation shown before any discoveries are cleared."
+    },
+    {
+      "key": "visit.stick.help",
+      "english": "Left stick moves. Center and hold its click, then tilt to turn.\nRight stick: up to teleport, sideways to turn.",
+      "chinese": "左摇杆移动，回中按住再左右拨动转向。\n右摇杆前拨，松手移动。左右转向。",
+      "traditionalChinese": "左搖桿移動，回中按住再左右撥動轉向。\n右搖桿前撥，放開移動。左右轉向。",
+      "note": "Single-controller movement and snap turn help for either hand."
     }
   ]
 }

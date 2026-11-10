@@ -99,7 +99,7 @@ namespace Museum.OperatorPanel
             text.fontSizeMax = .26f;
             var detail = MakeLabel(go.transform, "Action hint", new Vector3(0, .062f, -.015f), new Vector2(.29f, .035f));
             entry = go.AddComponent<HelmetPhysicalControl>();
-            entry.Configure(station, target, renderer, rim, text, detail, ShowTitle, EntryHint, Teal, Toggle);
+            entry.Configure(station, target, renderer, rim, text, detail, ShowTitle, EntryHint, Teal, Toggle, requireFrontView: true);
             entry.ConfigureVisibility(IdleOpacity, HandRevealDistance, FadeOutDelay);
             station.RegisterControl(entry);
             go.SetActive(true);

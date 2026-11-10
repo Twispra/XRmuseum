@@ -1596,4 +1596,29 @@ MonoBehaviour:
     english: Stop narration
     traditionalChinese: "\u505C\u6B62\u8A9E\u97F3"
     note: Visitor control title while narration is active.
+  - key: visit.finish
+    chinese: "\u7ed3\u675f\u53c2\u89c2"
+    english: "Finish visit"
+    traditionalChinese: "\u7d50\u675f\u53c3\u89c0"
+    note: "Fixed exhibit action. Opens the handoff confirmation without clearing this visit."
+  - key: visit.continue
+    chinese: "\u7ee7\u7eed\u53c2\u89c2"
+    english: "Continue visit"
+    traditionalChinese: "\u7e7c\u7e8c\u53c3\u89c0"
+    note: "Dismisses the handoff and returns to the current visit."
+  - key: visit.next
+    chinese: "\u5f00\u59cb\u65b0\u53c2\u89c2"
+    english: "Start next visit"
+    traditionalChinese: "\u958b\u59cb\u65b0\u53c3\u89c0"
+    note: "Confirms clearing discoveries and returning to the starting view and default exhibit."
+  - key: visit.confirm
+    chinese: "\u5f00\u59cb\u65b0\u53c2\u89c2\u5c06\u6e05\u9664\u672c\u6b21\u63a2\u7d22\u8bb0\u5f55\u3002"
+    english: "Starting the next visit clears this visit's discoveries."
+    traditionalChinese: "\u958b\u59cb\u65b0\u53c3\u89c0\u5c07\u6e05\u9664\u672c\u6b21\u63a2\u7d22\u8a18\u9304\u3002"
+    note: "Handoff confirmation shown before any discoveries are cleared."
+  - key: visit.stick.help
+    chinese: "\u5de6\u6447\u6746\u79fb\u52a8\uff0c\u56de\u4e2d\u6309\u4f4f\u518d\u5de6\u53f3\u62e8\u52a8\u8f6c\u5411\u3002\n\u53f3\u6447\u6746\u524d\u62e8\uff0c\u677e\u624b\u79fb\u52a8\u3002\u5de6\u53f3\u8f6c\u5411\u3002"
+    english: "Left stick moves. Center and hold its click, then tilt to turn.\nRight stick: up to teleport, sideways to turn."
+    traditionalChinese: "\u5de6\u6416\u687f\u79fb\u52d5\uff0c\u56de\u4e2d\u6309\u4f4f\u518d\u5de6\u53f3\u64a5\u52d5\u8f49\u5411\u3002\n\u53f3\u6416\u687f\u524d\u64a5\uff0c\u653e\u958b\u79fb\u52d5\u3002\u5de6\u53f3\u8f49\u5411\u3002"
+    note: "Single-controller movement and snap turn help for either hand."
   fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}

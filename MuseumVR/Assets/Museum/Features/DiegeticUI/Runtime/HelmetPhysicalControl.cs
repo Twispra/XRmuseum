@@ -9,7 +9,7 @@ using UnityEngine.XR.Interaction.Toolkit.Filtering;
 namespace Museum.Diegetic
 {
     /// <summary>Visual intent feedback never changes the target's hit area.</summary>
-    public sealed class HelmetPhysicalControl : MonoBehaviour, IXRSelectFilter
+    public sealed class HelmetPhysicalControl : MonoBehaviour, IXRSelectFilter, IXRHoverFilter
     {
         public enum FeedbackState { Resting, Hovered, Pressed, Confirmed }
         [SerializeField, Range(0, 1)] float restingOpacity = .22f;
@@ -30,7 +30,8 @@ namespace Museum.Diegetic
         IXRSelectInteractor pressInteractor;
         readonly List<IXRSelectInteractor> blockedHands = new List<IXRSelectInteractor>();
         Color tint;
-        bool contextualOnly, symbol, externalCaptionPlacement;
+        bool contextualOnly, symbol, externalCaptionPlacement, frontViewOnly;
+        bool InFrontView => !frontViewOnly || !station || station.IsViewingControlFront(transform);
         public float Opacity => opacity;
         public XRBaseInteractable Target => target;
         public TMP_Text Caption => caption;
@@ -47,21 +48,28 @@ namespace Museum.Diegetic
         public bool HasVisualIntent { get; private set; }
         public event Action<IXRSelectInteractor> PressAbandonedWhileHeld;
         bool IXRSelectFilter.canProcess => true;
+        bool IXRHoverFilter.canProcess => true;
         public void ConfigureVisibility(float idle,float radius,float delay)
         {restingOpacity=Mathf.Clamp(idle,.05f,.5f);proximity=Mathf.Clamp(radius,.05f,.5f);fadeDelay=Mathf.Clamp(delay,0,3);opacity=restingOpacity;}
         public void Configure(HelmetDiegeticStation owner, XRBaseInteractable interaction, Renderer surface,
-            LineRenderer outline, TextMeshPro label, TextMeshPro explanation, string title, string help, Color color, Action action)
+            LineRenderer outline, TextMeshPro label, TextMeshPro explanation, string title, string help, Color color, Action action,
+            bool requireFrontView = false)
         {
             if(target)
             {
                 target.selectEntered.RemoveListener(OnSelected);target.selectExited.RemoveListener(OnReleased);
                 target.selectFilters.Remove(this);
+                if(frontViewOnly)target.hoverFilters.Remove(this);
             }
             station=owner; target=interaction; originalFace=surface; rim=outline; caption=label; hint=explanation;
             source=title; description=help; tint=color; pressed=action; block=new MaterialPropertyBlock();
+            frontViewOnly = requireFrontView;
             BuildVisualFace();rimWidth=rim?rim.widthMultiplier:.0015f;
+            HelmetDiegeticStation.SetFrontSurface(face);
+            HelmetDiegeticStation.SetFrontSurface(rim);
             MuseumText.Set(caption, source); MuseumText.Set(hint, description);
             target.selectEntered.AddListener(OnSelected);target.selectExited.AddListener(OnReleased);target.selectFilters.Add(this);
+            if(frontViewOnly)target.hoverFilters.Add(this);
             opacity=restingOpacity; ApplyVisuals();
             target.getDistanceOverride=TargetDistance;
         }
@@ -81,7 +89,12 @@ namespace Museum.Diegetic
         public void SetTitle(string value) { if(source==value)return; source=value; MuseumText.Set(caption,value); }
         public void SetHint(string value) { if(description==value)return; description=value; MuseumText.Set(hint,value); }
         public void ConfigureSymbol(LineRenderer[] lines)
-        { symbol=true;symbolLines=lines??Array.Empty<LineRenderer>();ApplyVisuals(); }
+        {
+            symbol = true;
+            symbolLines = lines ?? Array.Empty<LineRenderer>();
+            foreach (var line in symbolLines) HelmetDiegeticStation.SetFrontSurface(line);
+            ApplyVisuals();
+        }
         public void ConfigureContextualOnly()
         {
             contextualOnly=true;opacity=0;restingOpacity=0;
@@ -131,7 +144,7 @@ namespace Museum.Diegetic
         }
         bool ReleasedOnThisTarget(IXRSelectInteractor hand)
         {
-            if(!IsHandAlive(hand) || !target)return false;
+            if(!IsHandAlive(hand) || !target || !InFrontView)return false;
             if(hand is XRRayInteractor ray)
             {
                 if(!ray.TryGetCurrent3DRaycastHit(out var hit))return false;
@@ -163,7 +176,8 @@ namespace Museum.Diegetic
             return a && a==b;
         }
         bool IXRSelectFilter.Process(IXRSelectInteractor interactor,IXRSelectInteractable interactable)
-        {PruneReleasedHands();return !IsBlocked(interactor);}
+        {PruneReleasedHands();return InFrontView && !IsBlocked(interactor);}
+        bool IXRHoverFilter.Process(IXRHoverInteractor interactor, IXRHoverInteractable interactable) => InFrontView;
         void LateUpdate()
         {
             if (!station || !target) return;
@@ -206,13 +220,15 @@ namespace Museum.Diegetic
             if(rim)
             {
                 var c=feedback;c.a=opacity;rim.startColor=rim.endColor=Color.white;
-                rim.GetPropertyBlock(block);block.SetColor("_BaseColor",c);rim.SetPropertyBlock(block);
+                rim.GetPropertyBlock(block);block.SetColor("_BaseColor",c);
+                HelmetDiegeticStation.SetFrontLineNormal(rim, block);rim.SetPropertyBlock(block);
             }
             foreach(var line in symbolLines)
             {
                 if(!line)continue;
                 var color=feedback;color.a=opacity;
-                line.GetPropertyBlock(block);block.SetColor("_BaseColor",color);line.SetPropertyBlock(block);
+                line.GetPropertyBlock(block);block.SetColor("_BaseColor",color);
+                HelmetDiegeticStation.SetFrontLineNormal(line, block);line.SetPropertyBlock(block);
             }
             float textOpacity=symbol?Mathf.InverseLerp(restingOpacity,.85f,opacity):opacity;
             if(caption)caption.color=new Color(feedback.r,feedback.g,feedback.b,textOpacity);
@@ -243,6 +259,7 @@ namespace Museum.Diegetic
             {
                 target.selectEntered.RemoveListener(OnSelected);target.selectExited.RemoveListener(OnReleased);
                 target.selectFilters.Remove(this);
+                if(frontViewOnly)target.hoverFilters.Remove(this);
             }
         }
     }
