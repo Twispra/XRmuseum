@@ -1,0 +1,271 @@
+{
+  "baseline_sha256": "6e85f7f048b3a6b8706428854ab8934099da25ff21d427e87fde9de930b1c8a2",
+  "study_sha256": "f4c3241da1bd541d723d5dcf9cdc9be6a144ca3acdca1911b73002838840ce92",
+  "preserved_original_part_count": 141,
+  "all_preserved_fingerprints_identical": true,
+  "preserved_material_node_defaults_identical": true,
+  "fingerprint_includes": [
+    "raw vertices",
+    "topology",
+    "matrix_world",
+    "UV coordinates"
+  ],
+  "new_parts": {
+    "AlignmentScrew_530-090_VISUAL_ESTIMATED": {
+      "vertices": 64,
+      "triangles": 124,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "nonadjacent_self_overlap_pairs": 0,
+      "zero_area_triangles": 0,
+      "uv_layers": 1,
+      "finite_coordinates": true
+    },
+    "RearHingeTab_540-157_SINGLE_PIECE_ESTIMATED": {
+      "vertices": 350,
+      "triangles": 708,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "nonadjacent_self_overlap_pairs": 0,
+      "zero_area_triangles": 0,
+      "uv_layers": 1,
+      "finite_coordinates": true
+    },
+    "AlignmentScrew_530-090_Head_ESTIMATED": {
+      "vertices": 64,
+      "triangles": 124,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "nonadjacent_self_overlap_pairs": 0,
+      "zero_area_triangles": 0,
+      "uv_layers": 1,
+      "finite_coordinates": true
+    },
+    "AlignmentSleeve_550-339_FLANGED_ESTIMATED": {
+      "vertices": 384,
+      "triangles": 768,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "nonadjacent_self_overlap_pairs": 0,
+      "zero_area_triangles": 0,
+      "uv_layers": 1,
+      "finite_coordinates": true
+    },
+    "RearWeight_560-005_Continuous_RESEARCH": {
+      "vertices": 3764,
+      "triangles": 7528,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "nonadjacent_self_overlap_pairs": 0,
+      "zero_area_triangles": 0,
+      "uv_layers": 1,
+      "finite_coordinates": true
+    }
+  },
+  "protected_surface_intersections": [
+    {
+      "new_part": "AlignmentScrew_530-090_VISUAL_ESTIMATED",
+      "fixed_part": "Shell_Yellow_520-065_ESTIMATED",
+      "surface_triangle_overlap_pairs": 0
+    },
+    {
+      "new_part": "AlignmentScrew_530-090_VISUAL_ESTIMATED",
+      "fixed_part": "NeckDam_Neoprene_510-533",
+      "surface_triangle_overlap_pairs": 0
+    },
+    {
+      "new_part": "AlignmentScrew_530-090_VISUAL_ESTIMATED",
+      "fixed_part": "Neck_Yoke_520-117",
+      "surface_triangle_overlap_pairs": 0
+    },
+    {
+      "new_part": "RearHingeTab_540-157_SINGLE_PIECE_ESTIMATED",
+      "fixed_part": "Shell_Yellow_520-065_ESTIMATED",
+      "surface_triangle_overlap_pairs": 0
+    },
+    {
+      "new_part": "RearHingeTab_540-157_SINGLE_PIECE_ESTIMATED",
+      "fixed_part": "NeckDam_Neoprene_510-533",
+      "surface_triangle_overlap_pairs": 0
+    },
+    {
+      "new_part": "RearHingeTab_540-157_SINGLE_PIECE_ESTIMATED",
+      "fixed_part": "Neck_Yoke_520-117",
+      "surface_triangle_overlap_pairs": 0
+    },
+    {
+      "new_part": "AlignmentScrew_530-090_Head_ESTIMATED",
+      "fixed_part": "Shell_Yellow_520-065_ESTIMATED",
+      "surface_triangle_overlap_pairs": 0
+    },
+    {
+      "new_part": "AlignmentScrew_530-090_Head_ESTIMATED",
+      "fixed_part": "NeckDam_Neoprene_510-533",
+      "surface_triangle_overlap_pairs": 0
+    },
+    {
+      "new_part": "AlignmentScrew_530-090_Head_ESTIMATED",
+      "fixed_part": "Neck_Yoke_520-117",
+      "surface_triangle_overlap_pairs": 0
+    },
+    {
+      "new_part": "AlignmentSleeve_550-339_FLANGED_ESTIMATED",
+      "fixed_part": "Shell_Yellow_520-065_ESTIMATED",
+      "surface_triangle_overlap_pairs": 0
+    },
+    {
+      "new_part": "AlignmentSleeve_550-339_FLANGED_ESTIMATED",
+      "fixed_part": "NeckDam_Neoprene_510-533",
+      "surface_triangle_overlap_pairs": 0
+    },
+    {
+      "new_part": "AlignmentSleeve_550-339_FLANGED_ESTIMATED",
+      "fixed_part": "Neck_Yoke_520-117",
+      "surface_triangle_overlap_pairs": 0
+    },
+    {
+      "new_part": "RearWeight_560-005_Continuous_RESEARCH",
+      "fixed_part": "Shell_Yellow_520-065_ESTIMATED",
+      "surface_triangle_overlap_pairs": 0
+    },
+    {
+      "new_part": "RearWeight_560-005_Continuous_RESEARCH",
+      "fixed_part": "NeckDam_Neoprene_510-533",
+      "surface_triangle_overlap_pairs": 0
+    },
+    {
+      "new_part": "RearWeight_560-005_Continuous_RESEARCH",
+      "fixed_part": "Neck_Yoke_520-117",
+      "surface_triangle_overlap_pairs": 0
+    }
+  ],
+  "mount_background_contacts": [
+    {
+      "new_part": "AlignmentScrew_530-090_VISUAL_ESTIMATED",
+      "background_mount": "Hinge_Pin",
+      "surface_overlap_pairs": 0,
+      "contact_status": "Research mounting contacts need visual review; not claimed manufacturing fit."
+    },
+    {
+      "new_part": "AlignmentScrew_530-090_VISUAL_ESTIMATED",
+      "background_mount": "NeckClamp_505-055",
+      "surface_overlap_pairs": 0,
+      "contact_status": "Research mounting contacts need visual review; not claimed manufacturing fit."
+    },
+    {
+      "new_part": "RearHingeTab_540-157_SINGLE_PIECE_ESTIMATED",
+      "background_mount": "Hinge_Pin",
+      "surface_overlap_pairs": 0,
+      "contact_status": "Research mounting contacts need visual review; not claimed manufacturing fit."
+    },
+    {
+      "new_part": "RearHingeTab_540-157_SINGLE_PIECE_ESTIMATED",
+      "background_mount": "NeckClamp_505-055",
+      "surface_overlap_pairs": 0,
+      "contact_status": "Research mounting contacts need visual review; not claimed manufacturing fit."
+    },
+    {
+      "new_part": "AlignmentScrew_530-090_Head_ESTIMATED",
+      "background_mount": "Hinge_Pin",
+      "surface_overlap_pairs": 0,
+      "contact_status": "Research mounting contacts need visual review; not claimed manufacturing fit."
+    },
+    {
+      "new_part": "AlignmentScrew_530-090_Head_ESTIMATED",
+      "background_mount": "NeckClamp_505-055",
+      "surface_overlap_pairs": 0,
+      "contact_status": "Research mounting contacts need visual review; not claimed manufacturing fit."
+    },
+    {
+      "new_part": "AlignmentSleeve_550-339_FLANGED_ESTIMATED",
+      "background_mount": "Hinge_Pin",
+      "surface_overlap_pairs": 0,
+      "contact_status": "Research mounting contacts need visual review; not claimed manufacturing fit."
+    },
+    {
+      "new_part": "AlignmentSleeve_550-339_FLANGED_ESTIMATED",
+      "background_mount": "NeckClamp_505-055",
+      "surface_overlap_pairs": 0,
+      "contact_status": "Research mounting contacts need visual review; not claimed manufacturing fit."
+    },
+    {
+      "new_part": "RearWeight_560-005_Continuous_RESEARCH",
+      "background_mount": "Hinge_Pin",
+      "surface_overlap_pairs": 0,
+      "contact_status": "Research mounting contacts need visual review; not claimed manufacturing fit."
+    },
+    {
+      "new_part": "RearWeight_560-005_Continuous_RESEARCH",
+      "background_mount": "NeckClamp_505-055",
+      "surface_overlap_pairs": 0,
+      "contact_status": "Research mounting contacts need visual review; not claimed manufacturing fit."
+    }
+  ],
+  "all_141_retained_parts_surface_overlap_scan": [],
+  "new_vs_retained_checks": 705,
+  "new_pair_surface_scan": [
+    {
+      "a": "AlignmentScrew_530-090_Head_ESTIMATED",
+      "b": "AlignmentScrew_530-090_VISUAL_ESTIMATED",
+      "surface_overlap_pairs": 64,
+      "allowed_same_visual_fastener_head_shaft_join": true
+    },
+    {
+      "a": "AlignmentScrew_530-090_Head_ESTIMATED",
+      "b": "AlignmentSleeve_550-339_FLANGED_ESTIMATED",
+      "surface_overlap_pairs": 0,
+      "allowed_same_visual_fastener_head_shaft_join": false
+    },
+    {
+      "a": "AlignmentScrew_530-090_Head_ESTIMATED",
+      "b": "RearHingeTab_540-157_SINGLE_PIECE_ESTIMATED",
+      "surface_overlap_pairs": 0,
+      "allowed_same_visual_fastener_head_shaft_join": false
+    },
+    {
+      "a": "AlignmentScrew_530-090_Head_ESTIMATED",
+      "b": "RearWeight_560-005_Continuous_RESEARCH",
+      "surface_overlap_pairs": 0,
+      "allowed_same_visual_fastener_head_shaft_join": false
+    },
+    {
+      "a": "AlignmentScrew_530-090_VISUAL_ESTIMATED",
+      "b": "AlignmentSleeve_550-339_FLANGED_ESTIMATED",
+      "surface_overlap_pairs": 0,
+      "allowed_same_visual_fastener_head_shaft_join": false
+    },
+    {
+      "a": "AlignmentScrew_530-090_VISUAL_ESTIMATED",
+      "b": "RearHingeTab_540-157_SINGLE_PIECE_ESTIMATED",
+      "surface_overlap_pairs": 0,
+      "allowed_same_visual_fastener_head_shaft_join": false
+    },
+    {
+      "a": "AlignmentScrew_530-090_VISUAL_ESTIMATED",
+      "b": "RearWeight_560-005_Continuous_RESEARCH",
+      "surface_overlap_pairs": 0,
+      "allowed_same_visual_fastener_head_shaft_join": false
+    },
+    {
+      "a": "AlignmentSleeve_550-339_FLANGED_ESTIMATED",
+      "b": "RearHingeTab_540-157_SINGLE_PIECE_ESTIMATED",
+      "surface_overlap_pairs": 0,
+      "allowed_same_visual_fastener_head_shaft_join": false
+    },
+    {
+      "a": "AlignmentSleeve_550-339_FLANGED_ESTIMATED",
+      "b": "RearWeight_560-005_Continuous_RESEARCH",
+      "surface_overlap_pairs": 0,
+      "allowed_same_visual_fastener_head_shaft_join": false
+    },
+    {
+      "a": "RearHingeTab_540-157_SINGLE_PIECE_ESTIMATED",
+      "b": "RearWeight_560-005_Continuous_RESEARCH",
+      "surface_overlap_pairs": 0,
+      "allowed_same_visual_fastener_head_shaft_join": false
+    }
+  ],
+  "uncompleted_lower_tab_pin_y_gap_model_m": 0.008782893419265747,
+  "source_files_unchanged": true,
+  "limits": "Triangle-level model checks, not CAD fit, containment/real load/seal validation or photo accuracy improvement. No contact is not proof of correct attachment."
+}

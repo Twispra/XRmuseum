@@ -1,0 +1,5774 @@
+{
+  "blender": "4.5.14 LTS",
+  "source_sha256": "6e85f7f048b3a6b8706428854ab8934099da25ff21d427e87fde9de930b1c8a2",
+  "read_only": true,
+  "meshes": 144,
+  "triangles": 61400,
+  "evaluated_triangles": 61400,
+  "frame": 1,
+  "geometry_modified": false,
+  "objects": [
+    {
+      "name": "Shell_Yellow_520-065_ESTIMATED",
+      "vertices": 5880,
+      "triangles": 11760,
+      "mesh_coordinates_topology_sha256": "5e3331ef0ff7dd7262c391190049123b5e623b859a603cecff672e6f9cd57ee3",
+      "evaluated_coordinates_topology_sha256": "5e3331ef0ff7dd7262c391190049123b5e623b859a603cecff672e6f9cd57ee3",
+      "evaluated_triangles": 11760,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Shell_Gelcoat_Yellow"
+      ]
+    },
+    {
+      "name": "Ring_PortChrome_560-070",
+      "vertices": 960,
+      "triangles": 1920,
+      "mesh_coordinates_topology_sha256": "2288a51db89ac6943e5e9d10174c2cda709c81e493afafdebb6d3ef213f07d26",
+      "evaluated_coordinates_topology_sha256": "2288a51db89ac6943e5e9d10174c2cda709c81e493afafdebb6d3ef213f07d26",
+      "evaluated_triangles": 1920,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "ViewPort_Seal_510-260",
+      "vertices": 960,
+      "triangles": 1920,
+      "mesh_coordinates_topology_sha256": "8080dc0609247478ce659c1534620b68f458513d0811116bf495178031cdd31a",
+      "evaluated_coordinates_topology_sha256": "8080dc0609247478ce659c1534620b68f458513d0811116bf495178031cdd31a",
+      "evaluated_triangles": 1920,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Glass_Port_520-004",
+      "vertices": 162,
+      "triangles": 320,
+      "mesh_coordinates_topology_sha256": "80551f4cfe074a81d54ec80e6c966d9104f5955c704443bf86a5bebc24edc0ed",
+      "evaluated_coordinates_topology_sha256": "80551f4cfe074a81d54ec80e6c966d9104f5955c704443bf86a5bebc24edc0ed",
+      "evaluated_triangles": 320,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polycarbonate_Clear"
+      ]
+    },
+    {
+      "name": "Bottom_O_Ring_510-446_ESTIMATED",
+      "vertices": 2352,
+      "triangles": 4704,
+      "mesh_coordinates_topology_sha256": "a8bf2a4d99435a65a937aa86ac24c8c6e2d36efb204bc2690ba648f021399ccf",
+      "evaluated_coordinates_topology_sha256": "a8bf2a4d99435a65a937aa86ac24c8c6e2d36efb204bc2690ba648f021399ccf",
+      "evaluated_triangles": 4704,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Handle_Brass_560-014",
+      "vertices": 290,
+      "triangles": 576,
+      "mesh_coordinates_topology_sha256": "26a063b9f863bc6c2f29d7f95e7e4ef7f6a115e56fdd419dd65c5e515d4590c5",
+      "evaluated_coordinates_topology_sha256": "26a063b9f863bc6c2f29d7f95e7e4ef7f6a115e56fdd419dd65c5e515d4590c5",
+      "evaluated_triangles": 576,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Handle_Brass_Warm"
+      ]
+    },
+    {
+      "name": "Handle_FrontFoot",
+      "vertices": 56,
+      "triangles": 108,
+      "mesh_coordinates_topology_sha256": "26fc077e75ffb125ad3adbc9a3529d9175917760ea9d5b53d959928c476e511e",
+      "evaluated_coordinates_topology_sha256": "26fc077e75ffb125ad3adbc9a3529d9175917760ea9d5b53d959928c476e511e",
+      "evaluated_triangles": 108,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Handle_Brass_Warm"
+      ]
+    },
+    {
+      "name": "Handle_RearFoot",
+      "vertices": 56,
+      "triangles": 108,
+      "mesh_coordinates_topology_sha256": "e4179421de4126b40828b72989799a00232da11022b73154ed143d9e2b22d998",
+      "evaluated_coordinates_topology_sha256": "e4179421de4126b40828b72989799a00232da11022b73154ed143d9e2b22d998",
+      "evaluated_triangles": 108,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Handle_Brass_Warm"
+      ]
+    },
+    {
+      "name": "Regulator_SuperFlow_505-027_Body",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "f412fb4240a65194ab5c3bf4e8c06974523d22a2bcf1b1e7b497b1f1e573c5a5",
+      "evaluated_coordinates_topology_sha256": "f412fb4240a65194ab5c3bf4e8c06974523d22a2bcf1b1e7b497b1f1e573c5a5",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Regulator_ConvexCover",
+      "vertices": 482,
+      "triangles": 960,
+      "mesh_coordinates_topology_sha256": "53c65d1d57cc4d4ecb2b43ae58d36a76332d22f3ae6474aa842714ec304b5538",
+      "evaluated_coordinates_topology_sha256": "53c65d1d57cc4d4ecb2b43ae58d36a76332d22f3ae6474aa842714ec304b5538",
+      "evaluated_triangles": 960,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Regulator_PurgeButton",
+      "vertices": 288,
+      "triangles": 572,
+      "mesh_coordinates_topology_sha256": "b62447e716aef374be7de682077dc7d9f4b48c591b2e9dd0a812775abd05f107",
+      "evaluated_coordinates_topology_sha256": "b62447e716aef374be7de682077dc7d9f4b48c591b2e9dd0a812775abd05f107",
+      "evaluated_triangles": 572,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Regulator_AdjustmentStem",
+      "vertices": 84,
+      "triangles": 164,
+      "mesh_coordinates_topology_sha256": "700f4462ee0d569247552ba589f82f39b3df6a4e8c6acbca52e925415ba48019",
+      "evaluated_coordinates_topology_sha256": "700f4462ee0d569247552ba589f82f39b3df6a4e8c6acbca52e925415ba48019",
+      "evaluated_triangles": 164,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Regulator_AdjustmentKnob",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "4df60725bac5540eb94a46eb812cf08d2d41d5f4d549e729613110eccbc3f6c4",
+      "evaluated_coordinates_topology_sha256": "4df60725bac5540eb94a46eb812cf08d2d41d5f4d549e729613110eccbc3f6c4",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Regulator_InletNipple",
+      "vertices": 84,
+      "triangles": 164,
+      "mesh_coordinates_topology_sha256": "db34cf9a82d9539908cc00ae1ddf74537ad3e336cd2d16cd05ca2b2b3079d751",
+      "evaluated_coordinates_topology_sha256": "db34cf9a82d9539908cc00ae1ddf74537ad3e336cd2d16cd05ca2b2b3079d751",
+      "evaluated_triangles": 164,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Regulator_InletCap",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "0f528d082a33ddc97b5ead3c017b2d26091aaea9e95bd3be7563422388d3b60c",
+      "evaluated_coordinates_topology_sha256": "0f528d082a33ddc97b5ead3c017b2d26091aaea9e95bd3be7563422388d3b60c",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "SideBlock_Chrome_505-024",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "9161bf49f824c0958d5cc4eed8a04e1db47436b2116185901969ba8348acbb02",
+      "evaluated_coordinates_topology_sha256": "9161bf49f824c0958d5cc4eed8a04e1db47436b2116185901969ba8348acbb02",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "SideBlock_MountingFoot",
+      "vertices": 56,
+      "triangles": 108,
+      "mesh_coordinates_topology_sha256": "b422f78d4b07c24ec542b0a512c08865c5d1959feb8f1dd8550ce690660660e7",
+      "evaluated_coordinates_topology_sha256": "b422f78d4b07c24ec542b0a512c08865c5d1959feb8f1dd8550ce690660660e7",
+      "evaluated_triangles": 108,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Handle_Brass_Warm"
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Stem",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "f2213cc0196b9f901f7d2808d6459fdd540980f4cfde91591db022e284971c88",
+      "evaluated_coordinates_topology_sha256": "f2213cc0196b9f901f7d2808d6459fdd540980f4cfde91591db022e284971c88",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524",
+      "vertices": 288,
+      "triangles": 572,
+      "mesh_coordinates_topology_sha256": "00f5d22390230e5ffcc8948ea8493e005ba709e6019e8b6d69884b71aef84e4d",
+      "evaluated_coordinates_topology_sha256": "00f5d22390230e5ffcc8948ea8493e005ba709e6019e8b6d69884b71aef84e4d",
+      "evaluated_triangles": 572,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_CentreCap",
+      "vertices": 144,
+      "triangles": 284,
+      "mesh_coordinates_topology_sha256": "a61c3f27fe104438dbb3a80721e8ec29da610b63e1f611f257ad11acd17c3daa",
+      "evaluated_coordinates_topology_sha256": "a61c3f27fe104438dbb3a80721e8ec29da610b63e1f611f257ad11acd17c3daa",
+      "evaluated_triangles": 284,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_00",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "f2aec7c24ff7f1ccaa0a94909c9265ad8f2f851ed1cc6836f82b9db9bcf68d6f",
+      "evaluated_coordinates_topology_sha256": "f2aec7c24ff7f1ccaa0a94909c9265ad8f2f851ed1cc6836f82b9db9bcf68d6f",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_01",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "7320fb4b9a32bf09a2080dbe84191c8a9fbe0771b128a5703cd8c006588fc67a",
+      "evaluated_coordinates_topology_sha256": "7320fb4b9a32bf09a2080dbe84191c8a9fbe0771b128a5703cd8c006588fc67a",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_02",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "751bb09b65eb5f19cf0f714ef52b26a8c9406615f3bb3b4583efde8e0874077d",
+      "evaluated_coordinates_topology_sha256": "751bb09b65eb5f19cf0f714ef52b26a8c9406615f3bb3b4583efde8e0874077d",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_03",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "9cc4f33cae34dc910642a3b23af21fae605a1e06a606567715a7340613fdb016",
+      "evaluated_coordinates_topology_sha256": "9cc4f33cae34dc910642a3b23af21fae605a1e06a606567715a7340613fdb016",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_04",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "602bd2aee30b69b3e1430fc919c9d49969c8e7b83ae4f915ee069adc58253d3d",
+      "evaluated_coordinates_topology_sha256": "602bd2aee30b69b3e1430fc919c9d49969c8e7b83ae4f915ee069adc58253d3d",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_05",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "bdb4149d45228bf17f9663a7c9684f95741bb5ebe546d4364414ab84b54a751d",
+      "evaluated_coordinates_topology_sha256": "bdb4149d45228bf17f9663a7c9684f95741bb5ebe546d4364414ab84b54a751d",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_06",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "a91919cf82ae7cc8180b758b338304442e9f8abfb7dd05ec7289b009a8f89c13",
+      "evaluated_coordinates_topology_sha256": "a91919cf82ae7cc8180b758b338304442e9f8abfb7dd05ec7289b009a8f89c13",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_07",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "64aa2f2570c006adbda5054e90e66eadee9360c6fca005d7f02e76ad96710866",
+      "evaluated_coordinates_topology_sha256": "64aa2f2570c006adbda5054e90e66eadee9360c6fca005d7f02e76ad96710866",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_08",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "6d88dd63e3a528b9dec4501233d423af8be284ce8af07246d4c9c6c5e8c37171",
+      "evaluated_coordinates_topology_sha256": "6d88dd63e3a528b9dec4501233d423af8be284ce8af07246d4c9c6c5e8c37171",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_09",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "536661e8e806f8c72494942b00a8b3c0ecadf11f38f9e12ca8780c32ef161ad2",
+      "evaluated_coordinates_topology_sha256": "536661e8e806f8c72494942b00a8b3c0ecadf11f38f9e12ca8780c32ef161ad2",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_10",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "0c35274e24aca93110dcf1063bf8e8f8fd0c000ed7f9134679e1e2db586c4f30",
+      "evaluated_coordinates_topology_sha256": "0c35274e24aca93110dcf1063bf8e8f8fd0c000ed7f9134679e1e2db586c4f30",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_11",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "706510448549da570b3297ffd1e9f783afffccc43dbd33c29d592fca03315537",
+      "evaluated_coordinates_topology_sha256": "706510448549da570b3297ffd1e9f783afffccc43dbd33c29d592fca03315537",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Stem",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "e23fbc0de5503c6182cf5a5f5aca2d7b1f9e146ab85af3626116f654d9801853",
+      "evaluated_coordinates_topology_sha256": "e23fbc0de5503c6182cf5a5f5aca2d7b1f9e146ab85af3626116f654d9801853",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525",
+      "vertices": 288,
+      "triangles": 572,
+      "mesh_coordinates_topology_sha256": "aff18713693e55db1532ba195387850b7a2c8d3c7d09b480abcad8b956e41581",
+      "evaluated_coordinates_topology_sha256": "aff18713693e55db1532ba195387850b7a2c8d3c7d09b480abcad8b956e41581",
+      "evaluated_triangles": 572,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_CentreCap",
+      "vertices": 144,
+      "triangles": 284,
+      "mesh_coordinates_topology_sha256": "e90a47fc93a0026f00fcfb7cf563dd2a99efaef9964b8721c718a38e5cd59f23",
+      "evaluated_coordinates_topology_sha256": "e90a47fc93a0026f00fcfb7cf563dd2a99efaef9964b8721c718a38e5cd59f23",
+      "evaluated_triangles": 284,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_00",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "26c0e336479766e5ead72d69c3f36c9f543b81690e15f4761059439f568df11b",
+      "evaluated_coordinates_topology_sha256": "26c0e336479766e5ead72d69c3f36c9f543b81690e15f4761059439f568df11b",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_01",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "26b8f4edeec53d3e2c1661ec0f6d9449c11d723c1143f48655e83811333fa6cc",
+      "evaluated_coordinates_topology_sha256": "26b8f4edeec53d3e2c1661ec0f6d9449c11d723c1143f48655e83811333fa6cc",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_02",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "02a4fd7fe2782858f0c1731fbb89e293cf30f20a8350eb94cebb1d58d47d0745",
+      "evaluated_coordinates_topology_sha256": "02a4fd7fe2782858f0c1731fbb89e293cf30f20a8350eb94cebb1d58d47d0745",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_03",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "9fd0bd3780475a61aaaaad350453cf5e4713a3ed93f288d57261e2ccb45639c4",
+      "evaluated_coordinates_topology_sha256": "9fd0bd3780475a61aaaaad350453cf5e4713a3ed93f288d57261e2ccb45639c4",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_04",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "650a3932ed25f6a8fbb7130a0f2e5eb661b85d726f06183f315a43337ca4f489",
+      "evaluated_coordinates_topology_sha256": "650a3932ed25f6a8fbb7130a0f2e5eb661b85d726f06183f315a43337ca4f489",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_05",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "f1b2505e1cb924d439f80e5d53295d579bdee4b3349416108821f941f01840e4",
+      "evaluated_coordinates_topology_sha256": "f1b2505e1cb924d439f80e5d53295d579bdee4b3349416108821f941f01840e4",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_06",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "f7f7612f13076e36fe2f32e9428537e64d8ba939a399204a0e8ad584912dd653",
+      "evaluated_coordinates_topology_sha256": "f7f7612f13076e36fe2f32e9428537e64d8ba939a399204a0e8ad584912dd653",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_07",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "7b0f8126e326b5ddf41116c7e6d417605f4a8c9324e3dd3448e6490e2ed55269",
+      "evaluated_coordinates_topology_sha256": "7b0f8126e326b5ddf41116c7e6d417605f4a8c9324e3dd3448e6490e2ed55269",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_08",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "4cd23d87780145b5ca45ddf909c45bd3c2ac0f53406218e1c0d9e0af1e77f7d8",
+      "evaluated_coordinates_topology_sha256": "4cd23d87780145b5ca45ddf909c45bd3c2ac0f53406218e1c0d9e0af1e77f7d8",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_09",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "f516b48cadfe358b9a1473fc340810d858d03f157cecc5a9736f6237473b4578",
+      "evaluated_coordinates_topology_sha256": "f516b48cadfe358b9a1473fc340810d858d03f157cecc5a9736f6237473b4578",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_10",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "65e7dc9232bf05d040c65395be3924691d0f5e748255925580e98fd8f9684092",
+      "evaluated_coordinates_topology_sha256": "65e7dc9232bf05d040c65395be3924691d0f5e748255925580e98fd8f9684092",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_11",
+      "vertices": 16,
+      "triangles": 28,
+      "mesh_coordinates_topology_sha256": "d66b84ab24142db2f6d47e1a008db5668e2d9866c758c9ebcfbe2a52ff606517",
+      "evaluated_coordinates_topology_sha256": "d66b84ab24142db2f6d47e1a008db5668e2d9866c758c9ebcfbe2a52ff606517",
+      "evaluated_triangles": 28,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "CheckValve_Brass_555-195",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "ee921fa65f863bbc1a7b0e8b26e8b77ab207e59faf723247fe9504c68601e75c",
+      "evaluated_coordinates_topology_sha256": "ee921fa65f863bbc1a7b0e8b26e8b77ab207e59faf723247fe9504c68601e75c",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Valve_Brass"
+      ]
+    },
+    {
+      "name": "CheckValve_Hex",
+      "vertices": 84,
+      "triangles": 164,
+      "mesh_coordinates_topology_sha256": "73fa21ba3f4bc28aaa462dbb8af9707d8d86a11ae3bfaef87bfb2141a79be1e4",
+      "evaluated_coordinates_topology_sha256": "73fa21ba3f4bc28aaa462dbb8af9707d8d86a11ae3bfaef87bfb2141a79be1e4",
+      "evaluated_triangles": 164,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Valve_Brass"
+      ]
+    },
+    {
+      "name": "CheckValve_DustCap",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "a4576a74764af8f62daf593f35467fce3482c840d17fa599431125801235b19f",
+      "evaluated_coordinates_topology_sha256": "a4576a74764af8f62daf593f35467fce3482c840d17fa599431125801235b19f",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_DustCap_Blue"
+      ]
+    },
+    {
+      "name": "Emergency_Inlet_DustCap",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "1fc69eea4cf0db0778c75d638cfa1e6fb91e6a8964b8d1739090c7ee1f1b199e",
+      "evaluated_coordinates_topology_sha256": "1fc69eea4cf0db0778c75d638cfa1e6fb91e6a8964b8d1739090c7ee1f1b199e",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_DustCap_Blue"
+      ]
+    },
+    {
+      "name": "Emergency_InletStem",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "1472f83f56066bcd5c3be8c606442fb87b7d2a05142129a083f3ca72943bdf96",
+      "evaluated_coordinates_topology_sha256": "1472f83f56066bcd5c3be8c606442fb87b7d2a05142129a083f3ca72943bdf96",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Valve_Brass"
+      ]
+    },
+    {
+      "name": "CheckValve_SideBlock_Adapter",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "4c4cf663fcb3d44d50e6c23ef973ac06dab45064eff0f3865e04be724c957320",
+      "evaluated_coordinates_topology_sha256": "4c4cf663fcb3d44d50e6c23ef973ac06dab45064eff0f3865e04be724c957320",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Valve_Brass"
+      ]
+    },
+    {
+      "name": "BentTube_UpperCoupling",
+      "vertices": 84,
+      "triangles": 164,
+      "mesh_coordinates_topology_sha256": "59e3bef733432b255a025505d85394bd6013ce15fb3dcb78584cbce36e3de112",
+      "evaluated_coordinates_topology_sha256": "59e3bef733432b255a025505d85394bd6013ce15fb3dcb78584cbce36e3de112",
+      "evaluated_triangles": 164,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "BentTube_Chrome_555-155",
+      "vertices": 430,
+      "triangles": 816,
+      "mesh_coordinates_topology_sha256": "0dcbcc8d2f254f86f7d78b1039deac957c03ee897d4da6252e1897768f9adf6d",
+      "evaluated_coordinates_topology_sha256": "0dcbcc8d2f254f86f7d78b1039deac957c03ee897d4da6252e1897768f9adf6d",
+      "evaluated_triangles": 816,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "BentTube_LowerCoupling",
+      "vertices": 84,
+      "triangles": 164,
+      "mesh_coordinates_topology_sha256": "b38084136ace515f9ceb9c5aa2b58ff36d764804cd47a3ee52aec3d13e7a680d",
+      "evaluated_coordinates_topology_sha256": "b38084136ace515f9ceb9c5aa2b58ff36d764804cd47a3ee52aec3d13e7a680d",
+      "evaluated_triangles": 164,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseBlock_Hex",
+      "vertices": 84,
+      "triangles": 164,
+      "mesh_coordinates_topology_sha256": "f4da33be7ffd79dc44ca87fa332426869bbac3e4c2ae154e9fcc35f86ad3241b",
+      "evaluated_coordinates_topology_sha256": "f4da33be7ffd79dc44ca87fa332426869bbac3e4c2ae154e9fcc35f86ad3241b",
+      "evaluated_triangles": 164,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseBlock_Knob_550-062",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "58c9c06b640757c972c2a86bacc4bfc73b131b43c4a38e32f19d63f776443be9",
+      "evaluated_coordinates_topology_sha256": "58c9c06b640757c972c2a86bacc4bfc73b131b43c4a38e32f19d63f776443be9",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NeckClamp_505-055",
+      "vertices": 764,
+      "triangles": 1524,
+      "mesh_coordinates_topology_sha256": "52f472614e37aeec0eb2490e3b9686f3ca73b22aa10f1d98cd8e441e44cbe8be",
+      "evaluated_coordinates_topology_sha256": "52f472614e37aeec0eb2490e3b9686f3ca73b22aa10f1d98cd8e441e44cbe8be",
+      "evaluated_triangles": 1524,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_NeckClamp_Stainless_ESTIMATED"
+      ]
+    },
+    {
+      "name": "Neck_Yoke_520-117",
+      "vertices": 604,
+      "triangles": 1204,
+      "mesh_coordinates_topology_sha256": "9cac4bc08590da572b423145e460274f6794a153fabe47773bc65339702b2101",
+      "evaluated_coordinates_topology_sha256": "9cac4bc08590da572b423145e460274f6794a153fabe47773bc65339702b2101",
+      "evaluated_triangles": 1204,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "NeckDam_Neoprene_510-533",
+      "vertices": 3136,
+      "triangles": 6272,
+      "mesh_coordinates_topology_sha256": "a57f4a3c5a8cb7ff8fa9872ef294a3fd80370452531dd800d93826f6eb517129",
+      "evaluated_coordinates_topology_sha256": "a57f4a3c5a8cb7ff8fa9872ef294a3fd80370452531dd800d93826f6eb517129",
+      "evaluated_triangles": 6272,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black",
+        "M_NeckDam_InnerBlue_ESTIMATED"
+      ]
+    },
+    {
+      "name": "NeckCushion_VisibleBlue",
+      "vertices": 1188,
+      "triangles": 2372,
+      "mesh_coordinates_topology_sha256": "0fe52f593a32799dde7b8cefbb53d446012cd7a10f50168f9107de3274375776",
+      "evaluated_coordinates_topology_sha256": "0fe52f593a32799dde7b8cefbb53d446012cd7a10f50168f9107de3274375776",
+      "evaluated_triangles": 2372,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_HeadCushion_Nylon_Blue"
+      ]
+    },
+    {
+      "name": "Exhaust_Black_Wing_-1",
+      "vertices": 74,
+      "triangles": 144,
+      "mesh_coordinates_topology_sha256": "e256180a177d1594130839c0d58b39ca0eb70763564cd7d4ad66113825842cd7",
+      "evaluated_coordinates_topology_sha256": "e256180a177d1594130839c0d58b39ca0eb70763564cd7d4ad66113825842cd7",
+      "evaluated_triangles": 144,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Exhaust_Outlet_Rim_-1",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "6d18958110a15caa6219b37302342a9fdc144c5306ac40d7a045033536d9e843",
+      "evaluated_coordinates_topology_sha256": "6d18958110a15caa6219b37302342a9fdc144c5306ac40d7a045033536d9e843",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Exhaust_Outlet_Recess_-1",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "59d3aecf18a1975a877bc98a6a9dfb4274695956ae8ee3235ec482f397f1a3ea",
+      "evaluated_coordinates_topology_sha256": "59d3aecf18a1975a877bc98a6a9dfb4274695956ae8ee3235ec482f397f1a3ea",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Nylon_Strap"
+      ]
+    },
+    {
+      "name": "Whisker_Clamp_-1",
+      "vertices": 56,
+      "triangles": 108,
+      "mesh_coordinates_topology_sha256": "3b88c644698f63f8914f7bc7c04ca94892eeff6f74fb89448d1d844e16188256",
+      "evaluated_coordinates_topology_sha256": "3b88c644698f63f8914f7bc7c04ca94892eeff6f74fb89448d1d844e16188256",
+      "evaluated_triangles": 108,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Whisker_Clamp_BrassScrew_-1",
+      "vertices": 24,
+      "triangles": 44,
+      "mesh_coordinates_topology_sha256": "76cd70b74801eeba59360f7840926e7ee462e71a4659ca331e1dd3b8dc857088",
+      "evaluated_coordinates_topology_sha256": "76cd70b74801eeba59360f7840926e7ee462e71a4659ca331e1dd3b8dc857088",
+      "evaluated_triangles": 44,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Valve_Brass"
+      ]
+    },
+    {
+      "name": "Exhaust_Black_Wing_1",
+      "vertices": 74,
+      "triangles": 144,
+      "mesh_coordinates_topology_sha256": "732a72a3b41c5efc0b2a8ab4991c160daeb5b20a3b90e25bcf7d786e1e38888b",
+      "evaluated_coordinates_topology_sha256": "732a72a3b41c5efc0b2a8ab4991c160daeb5b20a3b90e25bcf7d786e1e38888b",
+      "evaluated_triangles": 144,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Exhaust_Outlet_Rim_1",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "abc28491222cd5ef4c9725f99b43b493592564da0caed0b3d9b9e0653fe802e2",
+      "evaluated_coordinates_topology_sha256": "abc28491222cd5ef4c9725f99b43b493592564da0caed0b3d9b9e0653fe802e2",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Exhaust_Outlet_Recess_1",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "a830e789100c193f3b6dd9ee0ecb39bd8b5ce30d225793b9425388d04227d01a",
+      "evaluated_coordinates_topology_sha256": "a830e789100c193f3b6dd9ee0ecb39bd8b5ce30d225793b9425388d04227d01a",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Nylon_Strap"
+      ]
+    },
+    {
+      "name": "Whisker_Clamp_1",
+      "vertices": 56,
+      "triangles": 108,
+      "mesh_coordinates_topology_sha256": "9e560ba94b8428f2dc28dccecbc4133f679891c083df5ef3a6890913f402a398",
+      "evaluated_coordinates_topology_sha256": "9e560ba94b8428f2dc28dccecbc4133f679891c083df5ef3a6890913f402a398",
+      "evaluated_triangles": 108,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Whisker_Clamp_BrassScrew_1",
+      "vertices": 24,
+      "triangles": 44,
+      "mesh_coordinates_topology_sha256": "f31eb10c3bb83aa367ce7d725fad65da2d66dea91069748ce78212b69ef71175",
+      "evaluated_coordinates_topology_sha256": "f31eb10c3bb83aa367ce7d725fad65da2d66dea91069748ce78212b69ef71175",
+      "evaluated_triangles": 44,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Valve_Brass"
+      ]
+    },
+    {
+      "name": "Weights_Brass_Rear_560-005_-1",
+      "vertices": 374,
+      "triangles": 744,
+      "mesh_coordinates_topology_sha256": "2bc77b65535e8a5902053bcd4b4c906c8d16bda3648f5e9fb920459ac7a8cef3",
+      "evaluated_coordinates_topology_sha256": "2bc77b65535e8a5902053bcd4b4c906c8d16bda3648f5e9fb920459ac7a8cef3",
+      "evaluated_triangles": 744,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Handle_Brass_Warm"
+      ]
+    },
+    {
+      "name": "Weights_Brass_Side_-1",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "47331a5ca85e66f8553b734d3b295c845353a4c7f5800698897328fa55be45d8",
+      "evaluated_coordinates_topology_sha256": "47331a5ca85e66f8553b734d3b295c845353a4c7f5800698897328fa55be45d8",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Handle_Brass_Warm"
+      ]
+    },
+    {
+      "name": "Strap_Black_Diagonal_-1",
+      "vertices": 250,
+      "triangles": 496,
+      "mesh_coordinates_topology_sha256": "1dccb2030034e21bd06f3b3887f21f39a6c04b18a406969bc3c4b5cf9a94e889",
+      "evaluated_coordinates_topology_sha256": "1dccb2030034e21bd06f3b3887f21f39a6c04b18a406969bc3c4b5cf9a94e889",
+      "evaluated_triangles": 496,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Nylon_Strap"
+      ]
+    },
+    {
+      "name": "Strap_Adjuster_-1",
+      "vertices": 56,
+      "triangles": 108,
+      "mesh_coordinates_topology_sha256": "edc8203897d7e6e583327280b9daca76e8413098dde497901e9187f82f145a8d",
+      "evaluated_coordinates_topology_sha256": "edc8203897d7e6e583327280b9daca76e8413098dde497901e9187f82f145a8d",
+      "evaluated_triangles": 108,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Strap_YokeRetainer_-1",
+      "vertices": 28,
+      "triangles": 52,
+      "mesh_coordinates_topology_sha256": "51df67060c235a2ccb1d6e1c230f822c276b184232f6bc47212e903b75029a9b",
+      "evaluated_coordinates_topology_sha256": "51df67060c235a2ccb1d6e1c230f822c276b184232f6bc47212e903b75029a9b",
+      "evaluated_triangles": 52,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Nylon_Strap"
+      ]
+    },
+    {
+      "name": "Weights_Brass_Rear_560-005_1",
+      "vertices": 374,
+      "triangles": 744,
+      "mesh_coordinates_topology_sha256": "8253522250bc2a90892a3aaf42ce02814160f5c82e4fffed286e54448f7306dc",
+      "evaluated_coordinates_topology_sha256": "8253522250bc2a90892a3aaf42ce02814160f5c82e4fffed286e54448f7306dc",
+      "evaluated_triangles": 744,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Handle_Brass_Warm"
+      ]
+    },
+    {
+      "name": "Weights_Brass_Side_1",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "10545e52b51826179346c55266735d05d4d506cb97fef9d6f4c2a6011a68e2f9",
+      "evaluated_coordinates_topology_sha256": "10545e52b51826179346c55266735d05d4d506cb97fef9d6f4c2a6011a68e2f9",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Handle_Brass_Warm"
+      ]
+    },
+    {
+      "name": "Strap_Black_Diagonal_1",
+      "vertices": 250,
+      "triangles": 496,
+      "mesh_coordinates_topology_sha256": "13e55ab3664711d3ffd643e276d23df3170100c9ae6065e0d9b8fb30fe5f4b04",
+      "evaluated_coordinates_topology_sha256": "13e55ab3664711d3ffd643e276d23df3170100c9ae6065e0d9b8fb30fe5f4b04",
+      "evaluated_triangles": 496,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Nylon_Strap"
+      ]
+    },
+    {
+      "name": "Strap_Adjuster_1",
+      "vertices": 56,
+      "triangles": 108,
+      "mesh_coordinates_topology_sha256": "0442d434a919060137a749e607c4d80bc02097327e073c72a1ad2e3e180e0717",
+      "evaluated_coordinates_topology_sha256": "0442d434a919060137a749e607c4d80bc02097327e073c72a1ad2e3e180e0717",
+      "evaluated_triangles": 108,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Strap_YokeRetainer_1",
+      "vertices": 28,
+      "triangles": 52,
+      "mesh_coordinates_topology_sha256": "2b40b17a6691d5e8638d341ebf60a0134898be5d5e41f04903aa36942a92bb52",
+      "evaluated_coordinates_topology_sha256": "2b40b17a6691d5e8638d341ebf60a0134898be5d5e41f04903aa36942a92bb52",
+      "evaluated_triangles": 52,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Nylon_Strap"
+      ]
+    },
+    {
+      "name": "Hinge_NeckClamp_Rear",
+      "vertices": 56,
+      "triangles": 108,
+      "mesh_coordinates_topology_sha256": "11f0d04fef4245cd1230177e27a3551db2c80360ce90c0c62474736093aebdb3",
+      "evaluated_coordinates_topology_sha256": "11f0d04fef4245cd1230177e27a3551db2c80360ce90c0c62474736093aebdb3",
+      "evaluated_triangles": 108,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Hinge_Pin",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "1478ce3e039ed9ef85e9d77d6d122bb621d75fa4f029ebc2571a03fed2dbbc3a",
+      "evaluated_coordinates_topology_sha256": "1478ce3e039ed9ef85e9d77d6d122bb621d75fa4f029ebc2571a03fed2dbbc3a",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Neck_Latch_-1",
+      "vertices": 56,
+      "triangles": 108,
+      "mesh_coordinates_topology_sha256": "ae38d99270b15b5c72a06661cefa300aec145ed276d027f7ba0b08d04b2820c8",
+      "evaluated_coordinates_topology_sha256": "ae38d99270b15b5c72a06661cefa300aec145ed276d027f7ba0b08d04b2820c8",
+      "evaluated_triangles": 108,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Neck_PullPin_-1",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "665d7c14a4851c54451c85a3af87166d67e743fca06546aeccc4c3038563a9d5",
+      "evaluated_coordinates_topology_sha256": "665d7c14a4851c54451c85a3af87166d67e743fca06546aeccc4c3038563a9d5",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Neck_Latch_1",
+      "vertices": 56,
+      "triangles": 108,
+      "mesh_coordinates_topology_sha256": "64e73ed6646b50a86d905333d6699e13bfbca3bcb04a80692ed8d6ae66119ea8",
+      "evaluated_coordinates_topology_sha256": "64e73ed6646b50a86d905333d6699e13bfbca3bcb04a80692ed8d6ae66119ea8",
+      "evaluated_triangles": 108,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Neck_PullPin_1",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "3b5998e7c051d34c751be2c239492a3d6acb8a13e1d6037d38bb0153ee03a20f",
+      "evaluated_coordinates_topology_sha256": "3b5998e7c051d34c751be2c239492a3d6acb8a13e1d6037d38bb0153ee03a20f",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Interior_Cushion_-1",
+      "vertices": 482,
+      "triangles": 960,
+      "mesh_coordinates_topology_sha256": "4b0eb656fa74f91a7a0b20d92f45281a1152f114ce0dbe4b69732520be76a0b3",
+      "evaluated_coordinates_topology_sha256": "4b0eb656fa74f91a7a0b20d92f45281a1152f114ce0dbe4b69732520be76a0b3",
+      "evaluated_triangles": 960,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_HeadCushion_Nylon_Blue"
+      ]
+    },
+    {
+      "name": "Earphone_VisualOnly_-1",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "369bde57062f1f1a1052ed377924e20a41893a021f74041b3fb6ab7968008c03",
+      "evaluated_coordinates_topology_sha256": "369bde57062f1f1a1052ed377924e20a41893a021f74041b3fb6ab7968008c03",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Interior_Cushion_1",
+      "vertices": 482,
+      "triangles": 960,
+      "mesh_coordinates_topology_sha256": "29ade22ffd870d9deaf01990728f54a55053f661ed4163e2b8c4cad0ec03fc35",
+      "evaluated_coordinates_topology_sha256": "29ade22ffd870d9deaf01990728f54a55053f661ed4163e2b8c4cad0ec03fc35",
+      "evaluated_triangles": 960,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_HeadCushion_Nylon_Blue"
+      ]
+    },
+    {
+      "name": "Earphone_VisualOnly_1",
+      "vertices": 192,
+      "triangles": 380,
+      "mesh_coordinates_topology_sha256": "f9c0a10ee5034c146fad05aa5a51591a53b2a557bf5c3b2cca6eae615ea6f7f2",
+      "evaluated_coordinates_topology_sha256": "f9c0a10ee5034c146fad05aa5a51591a53b2a557bf5c3b2cca6eae615ea6f7f2",
+      "evaluated_triangles": 380,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Interior_Cushion_Crown",
+      "vertices": 482,
+      "triangles": 960,
+      "mesh_coordinates_topology_sha256": "f9f3b6266a46fd3f80959350d4390b2269cba97b9e1f6165bc6fe28269c003a4",
+      "evaluated_coordinates_topology_sha256": "f9f3b6266a46fd3f80959350d4390b2269cba97b9e1f6165bc6fe28269c003a4",
+      "evaluated_triangles": 960,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_HeadCushion_Nylon_Blue"
+      ]
+    },
+    {
+      "name": "OralNasal_Mask_510-747",
+      "vertices": 482,
+      "triangles": 960,
+      "mesh_coordinates_topology_sha256": "d784a2868627468b5f2af47df2bb900840a2c2cdaaea60a25a707e267dda220b",
+      "evaluated_coordinates_topology_sha256": "d784a2868627468b5f2af47df2bb900840a2c2cdaaea60a25a707e267dda220b",
+      "evaluated_triangles": 960,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "AirTrain_Defog_545-016",
+      "vertices": 1230,
+      "triangles": 2416,
+      "mesh_coordinates_topology_sha256": "6c58c166e692728a9117d59a5ceed442b50a614c653a60fecbd062ec1e5d3ce8",
+      "evaluated_coordinates_topology_sha256": "6c58c166e692728a9117d59a5ceed442b50a614c653a60fecbd062ec1e5d3ce8",
+      "evaluated_triangles": 2416,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Screws_Port_01",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "a18aa560b6df6a1402a4f1ae313a36423a6a35e38588a02004273aac39e604b5",
+      "evaluated_coordinates_topology_sha256": "a18aa560b6df6a1402a4f1ae313a36423a6a35e38588a02004273aac39e604b5",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Screw_Slot_01",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "7421d0de630e7cf7baf03ce544e87e19f4d2b540c015efb2bbe627fe7d1123c8",
+      "evaluated_coordinates_topology_sha256": "7421d0de630e7cf7baf03ce544e87e19f4d2b540c015efb2bbe627fe7d1123c8",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Screws_Port_02",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "c4bf535e4f50600e0e718cf47e7326dd989d153456e9bd2c06af1d54e18a1d5b",
+      "evaluated_coordinates_topology_sha256": "c4bf535e4f50600e0e718cf47e7326dd989d153456e9bd2c06af1d54e18a1d5b",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Screw_Slot_02",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "577c35fc2ce6eb40c36709631c0ae00627985d5470c8a05f0f4c49d7f28ec927",
+      "evaluated_coordinates_topology_sha256": "577c35fc2ce6eb40c36709631c0ae00627985d5470c8a05f0f4c49d7f28ec927",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Screws_Port_03",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "fc33e70efe89d794d0dea3228b2d5444eadc2745e6fca19b2d8a30399b10c547",
+      "evaluated_coordinates_topology_sha256": "fc33e70efe89d794d0dea3228b2d5444eadc2745e6fca19b2d8a30399b10c547",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Screw_Slot_03",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "4c6870a68caeed35485afeae5a008c623be179a075e0bf89d51305e529dca1cf",
+      "evaluated_coordinates_topology_sha256": "4c6870a68caeed35485afeae5a008c623be179a075e0bf89d51305e529dca1cf",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Screws_Port_04",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "f9b15b8f087f0d53db12485a3a33233c3808cc6ee1f2270c766e952902b0a43d",
+      "evaluated_coordinates_topology_sha256": "f9b15b8f087f0d53db12485a3a33233c3808cc6ee1f2270c766e952902b0a43d",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Screw_Slot_04",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "06a857900cc2a4acb4895eb2b6842521582dd3072916974b2a9479cceeb5d230",
+      "evaluated_coordinates_topology_sha256": "06a857900cc2a4acb4895eb2b6842521582dd3072916974b2a9479cceeb5d230",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Screws_Port_05",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "305a182886677296a5642a37881fa67a907ea31ae58f9648c67537c79e448e01",
+      "evaluated_coordinates_topology_sha256": "305a182886677296a5642a37881fa67a907ea31ae58f9648c67537c79e448e01",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Screw_Slot_05",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "b237680b1ab36a056481e6b3f1ccac27ba25401d08e4b229c8101cef467b4604",
+      "evaluated_coordinates_topology_sha256": "b237680b1ab36a056481e6b3f1ccac27ba25401d08e4b229c8101cef467b4604",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Screws_Port_06",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "42bda1db6487f4d0ecafebb8b0ca974edcda5fb53e3c3126b0d616e7ba767714",
+      "evaluated_coordinates_topology_sha256": "42bda1db6487f4d0ecafebb8b0ca974edcda5fb53e3c3126b0d616e7ba767714",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Screw_Slot_06",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "99d446866a092c4a25d433bd4ba1c63eb41d451295e3ee93ee193d8a59326e66",
+      "evaluated_coordinates_topology_sha256": "99d446866a092c4a25d433bd4ba1c63eb41d451295e3ee93ee193d8a59326e66",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Screws_Port_07",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "1caca9d5dee5cefa1be16f46f8bb8d72c7b43032f1a2cc7117d2aebae701974c",
+      "evaluated_coordinates_topology_sha256": "1caca9d5dee5cefa1be16f46f8bb8d72c7b43032f1a2cc7117d2aebae701974c",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Screw_Slot_07",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "6292552d155b8b0cb39c5aca0a4220d16d6cd48dac1910589b54ebc5c00f41ad",
+      "evaluated_coordinates_topology_sha256": "6292552d155b8b0cb39c5aca0a4220d16d6cd48dac1910589b54ebc5c00f41ad",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Screws_Port_08",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "2f7fe0367dee06aaf4d6c9fdf775b9e72efc2f4e32cf155aeef1b7421c52ec9c",
+      "evaluated_coordinates_topology_sha256": "2f7fe0367dee06aaf4d6c9fdf775b9e72efc2f4e32cf155aeef1b7421c52ec9c",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Screw_Slot_08",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "a4d2edc28cefd1743059da09912d5feb6459e5352e5f7a8da2c687cfe7ea0c53",
+      "evaluated_coordinates_topology_sha256": "a4d2edc28cefd1743059da09912d5feb6459e5352e5f7a8da2c687cfe7ea0c53",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Screws_Port_09",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "36f99f49e43c07e2cb3656d0885c0b1ae306c53294a66aad0737c55ae3d15dea",
+      "evaluated_coordinates_topology_sha256": "36f99f49e43c07e2cb3656d0885c0b1ae306c53294a66aad0737c55ae3d15dea",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Screw_Slot_09",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "fbdd819801812d28b716cbe994865d3d6d1cf720c0ef383ee204c07c2d2005bc",
+      "evaluated_coordinates_topology_sha256": "fbdd819801812d28b716cbe994865d3d6d1cf720c0ef383ee204c07c2d2005bc",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Screws_Port_10",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "92d37de0ede42e3585ea930c4bb404b906b26cbd5cad3056971b62dbb57df565",
+      "evaluated_coordinates_topology_sha256": "92d37de0ede42e3585ea930c4bb404b906b26cbd5cad3056971b62dbb57df565",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Screw_Slot_10",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "d3a34952c35d08f47974791a97633e8cb899561fd5d21aa1fa9bf839d592bc5b",
+      "evaluated_coordinates_topology_sha256": "d3a34952c35d08f47974791a97633e8cb899561fd5d21aa1fa9bf839d592bc5b",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Screws_Port_11",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "fa8287dd50132480bab05b9f5576b6f7feb38f6d934f8e0ef36b23a5a3723ffc",
+      "evaluated_coordinates_topology_sha256": "fa8287dd50132480bab05b9f5576b6f7feb38f6d934f8e0ef36b23a5a3723ffc",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Screw_Slot_11",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "bd193040a7f92e00d33081fb547ba9cbbc161c827ae983cf213e551101995221",
+      "evaluated_coordinates_topology_sha256": "bd193040a7f92e00d33081fb547ba9cbbc161c827ae983cf213e551101995221",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Handle_Fastener_0",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "85c64a4382be358926a7bc5d7fae0c0614d0e89c15c16a179209af960daf29d4",
+      "evaluated_coordinates_topology_sha256": "85c64a4382be358926a7bc5d7fae0c0614d0e89c15c16a179209af960daf29d4",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Handle_Fastener_1",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "efca82a00e80b45a56acd377871ffb2ff6d0bdfb8abea8400cc2e90dc5025cb0",
+      "evaluated_coordinates_topology_sha256": "efca82a00e80b45a56acd377871ffb2ff6d0bdfb8abea8400cc2e90dc5025cb0",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Handle_Fastener_2",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "9271ad378d1c3ff353a51e4e415b5b922ee8d8e575d89960adb2ba3960e6a33a",
+      "evaluated_coordinates_topology_sha256": "9271ad378d1c3ff353a51e4e415b5b922ee8d8e575d89960adb2ba3960e6a33a",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Whisker_Fastener_-1_0",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "330edc2d5ad228088d0c789c167bc4e262eb5e7247d816451f152aaf18f6f25c",
+      "evaluated_coordinates_topology_sha256": "330edc2d5ad228088d0c789c167bc4e262eb5e7247d816451f152aaf18f6f25c",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Whisker_Fastener_-1_1",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "aa8f8705f965658e0a4f44f3b9fab927500590dd8d7db1f18e21c8bf8d083fae",
+      "evaluated_coordinates_topology_sha256": "aa8f8705f965658e0a4f44f3b9fab927500590dd8d7db1f18e21c8bf8d083fae",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Whisker_Fastener_1_0",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "5c27fd6b8a28e5b16b814b8bd1b06ce6464c9a7d550586e160658d222207504c",
+      "evaluated_coordinates_topology_sha256": "5c27fd6b8a28e5b16b814b8bd1b06ce6464c9a7d550586e160658d222207504c",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Whisker_Fastener_1_1",
+      "vertices": 32,
+      "triangles": 60,
+      "mesh_coordinates_topology_sha256": "adbbe7216299fbfb7832b7724ae424a3418d881c9753c2d06c13a2bbc01cda95",
+      "evaluated_coordinates_topology_sha256": "adbbe7216299fbfb7832b7724ae424a3418d881c9753c2d06c13a2bbc01cda95",
+      "evaluated_triangles": 60,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "SideBlock_Label_Blank",
+      "vertices": 56,
+      "triangles": 108,
+      "mesh_coordinates_topology_sha256": "42f50b9a6c99430a93c56889aae6fff7d40601cf4798eae92df8bdae43aefdbc",
+      "evaluated_coordinates_topology_sha256": "42f50b9a6c99430a93c56889aae6fff7d40601cf4798eae92df8bdae43aefdbc",
+      "evaluated_triangles": 108,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Elastomer_Black"
+      ]
+    },
+    {
+      "name": "Label_Layout_Line_0",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "d4d2c14939cb01e71a8db49eff84884b99061a8f9b8256ebba24beab6e55584e",
+      "evaluated_coordinates_topology_sha256": "d4d2c14939cb01e71a8db49eff84884b99061a8f9b8256ebba24beab6e55584e",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Label_Layout_Line_1",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "89c6ec094718de60836952f742b94b397b11f71bee873bdb32da34de4a70d38f",
+      "evaluated_coordinates_topology_sha256": "89c6ec094718de60836952f742b94b397b11f71bee873bdb32da34de4a70d38f",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "Label_Layout_Line_2",
+      "vertices": 8,
+      "triangles": 12,
+      "mesh_coordinates_topology_sha256": "9272b8644c270fd4179e701226738c78435a8419db805d76416079908274b69b",
+      "evaluated_coordinates_topology_sha256": "9272b8644c270fd4179e701226738c78435a8419db805d76416079908274b69b",
+      "evaluated_triangles": 12,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_00",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "5f380d6c7b9324413f7cb31eee114a38e377cb39a14b1ec52d733b43ce964ad0",
+      "evaluated_coordinates_topology_sha256": "5f380d6c7b9324413f7cb31eee114a38e377cb39a14b1ec52d733b43ce964ad0",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_01",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "2aa2d6b9ffaedcf62420b75fc984b63dfaeb7166519aa4ff047f6b9626a6cc73",
+      "evaluated_coordinates_topology_sha256": "2aa2d6b9ffaedcf62420b75fc984b63dfaeb7166519aa4ff047f6b9626a6cc73",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_02",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "cf52543ef01db40575d1a7bafce4d999fb8edc4aa3b9d1d61117429fca60f4c0",
+      "evaluated_coordinates_topology_sha256": "cf52543ef01db40575d1a7bafce4d999fb8edc4aa3b9d1d61117429fca60f4c0",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_03",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "824338b37dde8fc40623c3806da2033c92fab4914f601a43ea7675d014f6cb46",
+      "evaluated_coordinates_topology_sha256": "824338b37dde8fc40623c3806da2033c92fab4914f601a43ea7675d014f6cb46",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_04",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "1295f0a9e0afeafb68f75c38dd52cce1bbef47658a2fb9ccbda73d0398fb309a",
+      "evaluated_coordinates_topology_sha256": "1295f0a9e0afeafb68f75c38dd52cce1bbef47658a2fb9ccbda73d0398fb309a",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_05",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "a5c09e202e57510585ff20f26385524450313d26d0e179ef7eb41be7d8570f62",
+      "evaluated_coordinates_topology_sha256": "a5c09e202e57510585ff20f26385524450313d26d0e179ef7eb41be7d8570f62",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_06",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "e0377a5c5029a6c8fa8ffc3f1f52899aa575ae9d4ca93e3a4eeca07cbf4ce074",
+      "evaluated_coordinates_topology_sha256": "e0377a5c5029a6c8fa8ffc3f1f52899aa575ae9d4ca93e3a4eeca07cbf4ce074",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_07",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "9b517e67d04ac760a8105414c6032bca487a39023acbeea1560ba292eae07294",
+      "evaluated_coordinates_topology_sha256": "9b517e67d04ac760a8105414c6032bca487a39023acbeea1560ba292eae07294",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_08",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "7bdd64895061a3a8dc9fa7475ebdc20379fc1af946192e27dc63d2694a93f834",
+      "evaluated_coordinates_topology_sha256": "7bdd64895061a3a8dc9fa7475ebdc20379fc1af946192e27dc63d2694a93f834",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_09",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "6970cbda3bda39562d12a2e0bd8acc37afd0f0cf9729a5ba962796aa528259c6",
+      "evaluated_coordinates_topology_sha256": "6970cbda3bda39562d12a2e0bd8acc37afd0f0cf9729a5ba962796aa528259c6",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_10",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "0fc75e82f33bfc9d3a5bfed21537a38d4f13c51d84fd67c24f57334294ef2bb9",
+      "evaluated_coordinates_topology_sha256": "0fc75e82f33bfc9d3a5bfed21537a38d4f13c51d84fd67c24f57334294ef2bb9",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_11",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "b211943efe0aaa6a9150949086e082e60f737b0b5882b14062042a13dc25cb20",
+      "evaluated_coordinates_topology_sha256": "b211943efe0aaa6a9150949086e082e60f737b0b5882b14062042a13dc25cb20",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_12",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "52c81c3a5fc80f0b3400e7647c878f5efb54d8fed99c78e03cfbfca7a2899676",
+      "evaluated_coordinates_topology_sha256": "52c81c3a5fc80f0b3400e7647c878f5efb54d8fed99c78e03cfbfca7a2899676",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_13",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "d3972d44e515449ef63c8e5995f4cb0f4aae80b7d57ca5eeaf892380b31e016f",
+      "evaluated_coordinates_topology_sha256": "d3972d44e515449ef63c8e5995f4cb0f4aae80b7d57ca5eeaf892380b31e016f",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_14",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "09a45bd4ed682115a698bb9ccde7832d465476246c3469425d776ee6b43686f7",
+      "evaluated_coordinates_topology_sha256": "09a45bd4ed682115a698bb9ccde7832d465476246c3469425d776ee6b43686f7",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_15",
+      "vertices": 130,
+      "triangles": 216,
+      "mesh_coordinates_topology_sha256": "00a384451c2e46bfbd19123397d63d03152f6389ea4af6a4adc47425dddc1cf3",
+      "evaluated_coordinates_topology_sha256": "00a384451c2e46bfbd19123397d63d03152f6389ea4af6a4adc47425dddc1cf3",
+      "evaluated_triangles": 216,
+      "modifiers": [],
+      "shape_keys": [],
+      "hide_render": false,
+      "matrix_world": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "material_names": [
+        "M_Polished_Metal"
+      ]
+    }
+  ],
+  "limits": "Raw/evaluated geometry at the saved frame, modifier visibility and shape-key values are recorded. Material names do not prove unchanged material parameters. Not a rerun of the historical 178 checks or measured-object accuracy / Unity/device validation."
+}

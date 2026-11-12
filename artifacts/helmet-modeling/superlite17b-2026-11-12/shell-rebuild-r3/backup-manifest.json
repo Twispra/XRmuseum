@@ -1,0 +1,12 @@
+{
+  "requested_backup_name": "backup_r1_current",
+  "actual_input_version": "Current full r2 derived from retained r1; name follows user request, not a relabel of older r1 geometry.",
+  "source": "artifacts/helmet-modeling/superlite17b-2026-11-12/sources/superlite17b-shell-study-r2.blend",
+  "backup": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/backups/backup_r1_current.blend",
+  "work": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/work/work_r3.blend",
+  "all_initial_sha256": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+  "backup_operation": "Byte-for-byte full .blend copy; no datablock filtering or reconstruction. Read-only filesystem attribute applied.",
+  "backup_must_not_be_modified": true,
+  "work_geometry_modified": false,
+  "confirmation_gate": "User explicitly requested confirmation of the 16 normalized profile points and window inclination before Step 4 loft reconstruction."
+}

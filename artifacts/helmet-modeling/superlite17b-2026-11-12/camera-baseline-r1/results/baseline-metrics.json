@@ -1,0 +1,508 @@
+{
+  "source_sha256": "6e85f7f048b3a6b8706428854ab8934099da25ff21d427e87fde9de930b1c8a2",
+  "geometry_edited": false,
+  "normalization": "Percent of reference image width, not millimetres or surveyed object width.",
+  "views": {
+    "front": {
+      "image": "01_overview_front34.png",
+      "image_size": [
+        2000,
+        1497
+      ],
+      "visible_boundary_metrics": [
+        {
+          "id": "C01",
+          "model_group": "frame",
+          "passes": [
+            {
+              "pass": "a",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 72,
+              "median_px": 7.615773105863909,
+              "rms_px": 7.732507139774697,
+              "p95_px": 12.060247706453321,
+              "median_percent_image_width": 0.38078865529319544,
+              "annotation_allowance_px": 7.0,
+              "fraction_within_annotation_allowance": 0.4166666666666667
+            },
+            {
+              "pass": "b",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 72,
+              "median_px": 7.9362537121026016,
+              "rms_px": 8.020806277010642,
+              "p95_px": 12.44160812103289,
+              "median_percent_image_width": 0.39681268560513006,
+              "annotation_allowance_px": 7.0,
+              "fraction_within_annotation_allowance": 0.4027777777777778
+            }
+          ]
+        },
+        {
+          "id": "C02",
+          "model_group": "frame",
+          "passes": [
+            {
+              "pass": "a",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 269,
+              "median_px": 5.830951894845301,
+              "rms_px": 7.6282102145960105,
+              "p95_px": 14.0,
+              "median_percent_image_width": 0.29154759474226505,
+              "annotation_allowance_px": 8.0,
+              "fraction_within_annotation_allowance": 0.7100371747211895
+            },
+            {
+              "pass": "b",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 268,
+              "median_px": 5.830951894845301,
+              "rms_px": 7.590252979875405,
+              "p95_px": 15.02164264594239,
+              "median_percent_image_width": 0.29154759474226505,
+              "annotation_allowance_px": 8.0,
+              "fraction_within_annotation_allowance": 0.6865671641791045
+            }
+          ]
+        },
+        {
+          "id": "C03",
+          "model_group": "glass",
+          "passes": [
+            {
+              "pass": "a",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 56,
+              "median_px": 5.32842712474619,
+              "rms_px": 5.846244215611543,
+              "p95_px": 10.5,
+              "median_percent_image_width": 0.2664213562373095,
+              "annotation_allowance_px": 6.0,
+              "fraction_within_annotation_allowance": 0.6071428571428571
+            },
+            {
+              "pass": "b",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 57,
+              "median_px": 5.385164807134504,
+              "rms_px": 5.736922581119113,
+              "p95_px": 9.399999999999991,
+              "median_percent_image_width": 0.2692582403567252,
+              "annotation_allowance_px": 6.0,
+              "fraction_within_annotation_allowance": 0.6491228070175439
+            }
+          ]
+        },
+        {
+          "id": "C04",
+          "model_group": "glass",
+          "passes": [
+            {
+              "pass": "a",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 251,
+              "median_px": 26.570660511172846,
+              "rms_px": 39.31520391609515,
+              "p95_px": 70.03570517957252,
+              "median_percent_image_width": 1.3285330255586423,
+              "annotation_allowance_px": 6.0,
+              "fraction_within_annotation_allowance": 0.0199203187250996
+            },
+            {
+              "pass": "b",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 250,
+              "median_px": 26.570660511172846,
+              "rms_px": 39.14276433774191,
+              "p95_px": 69.44601989486458,
+              "median_percent_image_width": 1.3285330255586423,
+              "annotation_allowance_px": 6.0,
+              "fraction_within_annotation_allowance": 0.02
+            }
+          ]
+        },
+        {
+          "id": "C05",
+          "model_group": "shell_outer",
+          "passes": [
+            {
+              "pass": "a",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 58,
+              "median_px": 71.92096858359132,
+              "rms_px": 62.21708380534545,
+              "p95_px": 94.1301783844667,
+              "median_percent_image_width": 3.596048429179566,
+              "annotation_allowance_px": 25.0,
+              "fraction_within_annotation_allowance": 0.25862068965517243
+            },
+            {
+              "pass": "b",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 60,
+              "median_px": 74.19778352591064,
+              "rms_px": 65.85754828921789,
+              "p95_px": 97.56916257501982,
+              "median_percent_image_width": 3.709889176295532,
+              "annotation_allowance_px": 25.0,
+              "fraction_within_annotation_allowance": 0.11666666666666667
+            }
+          ]
+        }
+      ],
+      "cap_fit_residuals": [],
+      "camera_profile_sensitivity": [
+        {
+          "part": "Shell_Yellow_520-065_ESTIMATED",
+          "profile_count": 5,
+          "max_median_shift_px": 151.36101061535356,
+          "max_point_shift_px": 299.35183717920216
+        },
+        {
+          "part": "Ring_PortChrome_560-070",
+          "profile_count": 5,
+          "max_median_shift_px": 30.618573746569144,
+          "max_point_shift_px": 70.93826144481613
+        },
+        {
+          "part": "Handle_Brass_560-014",
+          "profile_count": 5,
+          "max_median_shift_px": 143.51272694304302,
+          "max_point_shift_px": 258.052423335494
+        },
+        {
+          "part": "Weights_Brass_Rear_560-005_-1",
+          "profile_count": 5,
+          "max_median_shift_px": 227.8285759287086,
+          "max_point_shift_px": 294.1999349675801
+        },
+        {
+          "part": "Weights_Brass_Rear_560-005_1",
+          "profile_count": 5,
+          "max_median_shift_px": 103.29034062701594,
+          "max_point_shift_px": 253.38888625710035
+        },
+        {
+          "part": "Hinge_NeckClamp_Rear",
+          "profile_count": 5,
+          "max_median_shift_px": 289.09306796252395,
+          "max_point_shift_px": 320.787327231739
+        }
+      ],
+      "profile_selection_rule": "pass A, cost <= 1.25 times primary; diagnostic heuristic",
+      "manufacturer_pixels_in_published_diagnostic": false
+    },
+    "side": {
+      "image": "04_side_rear_view.png",
+      "image_size": [
+        1600,
+        873
+      ],
+      "visible_boundary_metrics": [
+        {
+          "id": "rear_weight_top_visible_edge",
+          "model_group": "rear_weight",
+          "passes": [
+            {
+              "pass": "a",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 48,
+              "median_px": 48.2706116852612,
+              "rms_px": 55.11389721900155,
+              "p95_px": 90.34138097097308,
+              "median_percent_image_width": 3.016913230328825,
+              "annotation_allowance_px": 5,
+              "fraction_within_annotation_allowance": 0.08333333333333333
+            },
+            {
+              "pass": "b",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 49,
+              "median_px": 47.67598976424087,
+              "rms_px": 54.6149788827877,
+              "p95_px": 90.2116802028419,
+              "median_percent_image_width": 2.979749360265054,
+              "annotation_allowance_px": 5,
+              "fraction_within_annotation_allowance": 0.08163265306122448
+            }
+          ]
+        },
+        {
+          "id": "rear_weight_left_lower_visible_edge",
+          "model_group": "rear_weight",
+          "passes": [
+            {
+              "pass": "a",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 78,
+              "median_px": 68.0183789752285,
+              "rms_px": 63.87236872998752,
+              "p95_px": 88.20586198989038,
+              "median_percent_image_width": 4.251148685951781,
+              "annotation_allowance_px": 6,
+              "fraction_within_annotation_allowance": 0.038461538461538464
+            },
+            {
+              "pass": "b",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 78,
+              "median_px": 68.5455624658429,
+              "rms_px": 64.20559924460619,
+              "p95_px": 87.88550563354173,
+              "median_percent_image_width": 4.284097654115182,
+              "annotation_allowance_px": 6,
+              "fraction_within_annotation_allowance": 0.0
+            }
+          ]
+        },
+        {
+          "id": "yellow_shell_crown_visible_silhouette",
+          "model_group": "shell_outer",
+          "passes": [
+            {
+              "pass": "a",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 84,
+              "median_px": 22.257763372728554,
+              "rms_px": 49.141317113189466,
+              "p95_px": 99.54882351778781,
+              "median_percent_image_width": 1.3911102107955347,
+              "annotation_allowance_px": 7,
+              "fraction_within_annotation_allowance": 0.13095238095238096
+            },
+            {
+              "pass": "b",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 84,
+              "median_px": 22.5974135047432,
+              "rms_px": 48.16464816993199,
+              "p95_px": 98.37351222004476,
+              "median_percent_image_width": 1.41233834404645,
+              "annotation_allowance_px": 7,
+              "fraction_within_annotation_allowance": 0.14285714285714285
+            }
+          ]
+        },
+        {
+          "id": "yellow_shell_front_shoulder_silhouette",
+          "model_group": "shell_outer",
+          "passes": [
+            {
+              "pass": "a",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 47,
+              "median_px": 133.9589489358587,
+              "rms_px": 154.32791835237953,
+              "p95_px": 243.393344533374,
+              "median_percent_image_width": 8.372434308491169,
+              "annotation_allowance_px": 8,
+              "fraction_within_annotation_allowance": 0.0
+            },
+            {
+              "pass": "b",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 46,
+              "median_px": 133.91332006755226,
+              "rms_px": 155.78678294107763,
+              "p95_px": 245.2603647274205,
+              "median_percent_image_width": 8.369582504222016,
+              "annotation_allowance_px": 8,
+              "fraction_within_annotation_allowance": 0.0
+            }
+          ]
+        },
+        {
+          "id": "yellow_shell_lower_neck_interface_visible_edge",
+          "model_group": "shell",
+          "passes": [
+            {
+              "pass": "a",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 69,
+              "median_px": 102.35721762533407,
+              "rms_px": 109.84969968888913,
+              "p95_px": 166.36029897520035,
+              "median_percent_image_width": 6.3973261015833796,
+              "annotation_allowance_px": 8,
+              "fraction_within_annotation_allowance": 0.0
+            },
+            {
+              "pass": "b",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 69,
+              "median_px": 104.546640309481,
+              "rms_px": 110.9738185600419,
+              "p95_px": 167.297937817106,
+              "median_percent_image_width": 6.534165019342562,
+              "annotation_allowance_px": 8,
+              "fraction_within_annotation_allowance": 0.0
+            }
+          ]
+        },
+        {
+          "id": "neck_ring_lower_visible_outer_edge",
+          "model_group": "neck",
+          "passes": [
+            {
+              "pass": "a",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 62,
+              "median_px": 157.53251035083937,
+              "rms_px": 152.93831773711278,
+              "p95_px": 169.48376156634973,
+              "median_percent_image_width": 9.84578189692746,
+              "annotation_allowance_px": 9,
+              "fraction_within_annotation_allowance": 0.0
+            },
+            {
+              "pass": "b",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 62,
+              "median_px": 158.33823936608138,
+              "rms_px": 153.7405648822801,
+              "p95_px": 169.13781080198464,
+              "median_percent_image_width": 9.896139960380086,
+              "annotation_allowance_px": 9,
+              "fraction_within_annotation_allowance": 0.0
+            }
+          ]
+        },
+        {
+          "id": "handle_outer_visible_arch",
+          "model_group": "handle",
+          "passes": [
+            {
+              "pass": "a",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 100,
+              "median_px": 6.2429433838655335,
+              "rms_px": 11.355175031676087,
+              "p95_px": 18.299999999999983,
+              "median_percent_image_width": 0.39018396149159584,
+              "annotation_allowance_px": 6,
+              "fraction_within_annotation_allowance": 0.49
+            },
+            {
+              "pass": "b",
+              "sample_spacing_px": 6,
+              "samples_not_independent_cases": 100,
+              "median_px": 6.16227766016838,
+              "rms_px": 11.484337159801605,
+              "p95_px": 20.249999999999986,
+              "median_percent_image_width": 0.38514235376052375,
+              "annotation_allowance_px": 6,
+              "fraction_within_annotation_allowance": 0.5
+            }
+          ]
+        }
+      ],
+      "cap_fit_residuals": [
+        {
+          "annotation_id": "emergency_knob_silver_end_face_center",
+          "model_part": "Knob_Black_Emergency_520-525_CentreCap",
+          "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+          "model_point_world": [
+            -0.16156909801065922,
+            -0.018367410482217867,
+            0.17716000974178314
+          ],
+          "observed_px": [
+            1021,
+            405
+          ],
+          "projected_px": [
+            1037.5194727219784,
+            411.61831166042157
+          ],
+          "error_px": 17.79592729381254
+        },
+        {
+          "annotation_id": "upper_blue_dust_cap_visible_end_center",
+          "model_part": "Emergency_Inlet_DustCap",
+          "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+          "model_point_world": [
+            -0.13004296994768083,
+            0.04553775116801262,
+            0.18231999827548862
+          ],
+          "observed_px": [
+            905,
+            430
+          ],
+          "projected_px": [
+            842.9780838665764,
+            422.82293332078075
+          ],
+          "error_px": 62.43579395650694
+        },
+        {
+          "annotation_id": "lower_blue_dust_cap_visible_end_center",
+          "model_part": "CheckValve_DustCap",
+          "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+          "model_point_world": [
+            -0.13692297087982297,
+            0.043387752026319504,
+            0.14620000030845404
+          ],
+          "observed_px": [
+            874,
+            531
+          ],
+          "projected_px": [
+            868.0256491339343,
+            520.5050438853768
+          ],
+          "error_px": 12.07629794758006
+        }
+      ],
+      "camera_profile_sensitivity": [
+        {
+          "part": "Shell_Yellow_520-065_ESTIMATED",
+          "profile_count": 4,
+          "max_median_shift_px": 45.67833267644373,
+          "max_point_shift_px": 109.32295150039774
+        },
+        {
+          "part": "Ring_PortChrome_560-070",
+          "profile_count": 4,
+          "max_median_shift_px": 44.11995315819761,
+          "max_point_shift_px": 90.47060090631842
+        },
+        {
+          "part": "Handle_Brass_560-014",
+          "profile_count": 4,
+          "max_median_shift_px": 22.868117335854308,
+          "max_point_shift_px": 38.66489126387822
+        },
+        {
+          "part": "Weights_Brass_Rear_560-005_-1",
+          "profile_count": 4,
+          "max_median_shift_px": 11.60257352580333,
+          "max_point_shift_px": 33.42797590334583
+        },
+        {
+          "part": "Weights_Brass_Rear_560-005_1",
+          "profile_count": 4,
+          "max_median_shift_px": 72.58946893231736,
+          "max_point_shift_px": 92.03890184329278
+        },
+        {
+          "part": "Hinge_NeckClamp_Rear",
+          "profile_count": 4,
+          "max_median_shift_px": 51.4776351320361,
+          "max_point_shift_px": 64.27104752561115
+        }
+      ],
+      "profile_selection_rule": "pass A, cost <= 1.25 times primary; diagnostic heuristic",
+      "manufacturer_pixels_in_published_diagnostic": false
+    }
+  },
+  "limits": [
+    "Closest visible rendered boundary is a 2-D diagnostic, not a fixed 3-D correspondence.",
+    "Flat masks show opaque geometric coverage; transparent glass is temporarily opaque.",
+    "Only annotated visible segments are sampled; curves are not closed across occlusions.",
+    "Sequential AI retracing is not independent human annotation.",
+    "Focal-profile envelope is an analyst-selected sensitivity range, not a confidence interval."
+  ]
+}

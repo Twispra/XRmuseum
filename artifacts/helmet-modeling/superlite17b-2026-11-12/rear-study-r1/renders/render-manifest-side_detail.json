@@ -1,0 +1,38 @@
+{
+  "views": [
+    {
+      "version": "before",
+      "view": "side_detail",
+      "source_sha256": "6e85f7f048b3a6b8706428854ab8934099da25ff21d427e87fde9de930b1c8a2",
+      "camera_position": [
+        0.65,
+        0.4,
+        0.26
+      ],
+      "target": [
+        0,
+        0.15,
+        0.205
+      ],
+      "ortho_scale": 0.12
+    },
+    {
+      "version": "after",
+      "view": "side_detail",
+      "source_sha256": "f4c3241da1bd541d723d5dcf9cdc9be6a144ca3acdca1911b73002838840ce92",
+      "camera_position": [
+        0.65,
+        0.4,
+        0.26
+      ],
+      "target": [
+        0,
+        0.15,
+        0.205
+      ],
+      "ortho_scale": 0.12
+    }
+  ],
+  "geometry_saved_during_render": false,
+  "limits": "Matched source renders only, not real-object photographic alignment or Unity/device evidence."
+}
