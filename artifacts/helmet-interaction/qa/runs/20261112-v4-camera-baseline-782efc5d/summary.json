@@ -110,87 +110,121 @@
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/.gitignore",
       "bytes": 19,
-      "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793"
+      "sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+      "git_blob_sha256": "862263fa1f46c20f0d1e4dac5ffcc75abd55c08211b2c3864c5f8764b9d87793",
+      "text_normalization_changed_bytes": false
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/analyze_baseline.py",
       "bytes": 8922,
-      "sha256": "d9e0c48529e8826392d35e03cdca9f71f1ed76b1a77a8f270ec215b122089dbd"
+      "sha256": "d9e0c48529e8826392d35e03cdca9f71f1ed76b1a77a8f270ec215b122089dbd",
+      "git_blob_sha256": "d9e0c48529e8826392d35e03cdca9f71f1ed76b1a77a8f270ec215b122089dbd",
+      "text_normalization_changed_bytes": false
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/annotations-front.json",
       "bytes": 25659,
-      "sha256": "444c933e2f0f1255f1a60112e15d196921d124a48470f3c6fe3fc9d7de9bd077"
+      "sha256": "444c933e2f0f1255f1a60112e15d196921d124a48470f3c6fe3fc9d7de9bd077",
+      "git_blob_sha256": "79b88c60facb72390bf50ecb1b32b5545dd1ff266634fccceef15edd94768900",
+      "text_normalization_changed_bytes": true
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/annotations-side.json",
       "bytes": 28865,
-      "sha256": "192e5feeeccd17f54108c8c0acbee012ffbcdb5beb2a995986959bfb1961e522"
+      "sha256": "192e5feeeccd17f54108c8c0acbee012ffbcdb5beb2a995986959bfb1961e522",
+      "git_blob_sha256": "ab811304cb62e0098cb08072d16aaae680fd5908f53ab3421dc97c05a006046d",
+      "text_normalization_changed_bytes": true
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/check_shell_support.py",
       "bytes": 2968,
-      "sha256": "f941715a5fa6a7afe607d58a0888118b86b5ef6606a1ad0b1342f272d8d26c10"
+      "sha256": "f941715a5fa6a7afe607d58a0888118b86b5ef6606a1ad0b1342f272d8d26c10",
+      "git_blob_sha256": "f941715a5fa6a7afe607d58a0888118b86b5ef6606a1ad0b1342f272d8d26c10",
+      "text_normalization_changed_bytes": false
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/export_projection_geometry.py",
       "bytes": 2314,
-      "sha256": "a86dc33025e5d19eaf88becfa33304a78ee1c7fd16ddc156e9670263fa51ad7a"
+      "sha256": "a86dc33025e5d19eaf88becfa33304a78ee1c7fd16ddc156e9670263fa51ad7a",
+      "git_blob_sha256": "a86dc33025e5d19eaf88becfa33304a78ee1c7fd16ddc156e9670263fa51ad7a",
+      "text_normalization_changed_bytes": false
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/fit_projection.py",
       "bytes": 9725,
-      "sha256": "7048cd9d52841db645f982d83d214b18647ff3bf3da63c5274f6db72e58c4ca8"
+      "sha256": "7048cd9d52841db645f982d83d214b18647ff3bf3da63c5274f6db72e58c4ca8",
+      "git_blob_sha256": "7048cd9d52841db645f982d83d214b18647ff3bf3da63c5274f6db72e58c4ca8",
+      "text_normalization_changed_bytes": false
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/README.md",
       "bytes": 5937,
-      "sha256": "d497716b19c5d6a693c25bde643b5fad8d45df3caf9cc9f8bd695b4202144aef"
+      "sha256": "d497716b19c5d6a693c25bde643b5fad8d45df3caf9cc9f8bd695b4202144aef",
+      "git_blob_sha256": "50bd6d310ecedeace86dcd16fc538dd769206e8fced7085fa2c57d9fe5d37129",
+      "text_normalization_changed_bytes": true
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/render_projection_masks.py",
       "bytes": 4846,
-      "sha256": "14a9f93125cc9062bcafe4f52b87349f289446c8e040ec6f21b6af9b5acf13bd"
+      "sha256": "14a9f93125cc9062bcafe4f52b87349f289446c8e040ec6f21b6af9b5acf13bd",
+      "git_blob_sha256": "14a9f93125cc9062bcafe4f52b87349f289446c8e040ec6f21b6af9b5acf13bd",
+      "text_normalization_changed_bytes": false
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/results/baseline-metrics.json",
       "bytes": 18636,
-      "sha256": "75db8733fe3272615b8e1a08de64aec4792ab0cb175088519d2f246ea1b29a71"
+      "sha256": "75db8733fe3272615b8e1a08de64aec4792ab0cb175088519d2f246ea1b29a71",
+      "git_blob_sha256": "5b2ae73de6a55afabe27b6deab0a77630be056cf08bece122bf5e39102112710",
+      "text_normalization_changed_bytes": true
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/results/camera-fit.json",
       "bytes": 59027,
-      "sha256": "18a38b6587be589ab30bf0c8db7a9730335fe49ef201e4ad3cb006a98ea43f1e"
+      "sha256": "18a38b6587be589ab30bf0c8db7a9730335fe49ef201e4ad3cb006a98ea43f1e",
+      "git_blob_sha256": "f97f88b9c985d0bbdcb303fcf6c28463410133ff5b7f2327df75a2d3da3a24c8",
+      "text_normalization_changed_bytes": true
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/results/front-contour-diagnostic.png",
       "bytes": 242990,
-      "sha256": "2e56cfe4bf66e26ff57a349bc4599ed8092c7f6078f1e4d159c63b33e848cbf5"
+      "sha256": "2e56cfe4bf66e26ff57a349bc4599ed8092c7f6078f1e4d159c63b33e848cbf5",
+      "git_blob_sha256": "2e56cfe4bf66e26ff57a349bc4599ed8092c7f6078f1e4d159c63b33e848cbf5",
+      "text_normalization_changed_bytes": false
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/results/front-coverage.png",
       "bytes": 1145189,
-      "sha256": "673fb3f9c0abf1225233a289da0e6362d6f1dab3eac31dac970a78f964055e35"
+      "sha256": "673fb3f9c0abf1225233a289da0e6362d6f1dab3eac31dac970a78f964055e35",
+      "git_blob_sha256": "673fb3f9c0abf1225233a289da0e6362d6f1dab3eac31dac970a78f964055e35",
+      "text_normalization_changed_bytes": false
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/results/render-checks.json",
       "bytes": 1456,
-      "sha256": "05b6a65daab27d9fc0a6ccf04df334502457aba6d76e84a5d3059e2bcf440c8f"
+      "sha256": "05b6a65daab27d9fc0a6ccf04df334502457aba6d76e84a5d3059e2bcf440c8f",
+      "git_blob_sha256": "e5ab51e580142a9b66f3f4e4e4e42d2f08fb4cced02dafdebbcbb03132f8cb26",
+      "text_normalization_changed_bytes": true
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/results/shell-support.json",
       "bytes": 22286,
-      "sha256": "5fc3cba5c6823634986e4ddc9c6c6a280d3e0121a3932619dea7e2da1f06f22e"
+      "sha256": "5fc3cba5c6823634986e4ddc9c6c6a280d3e0121a3932619dea7e2da1f06f22e",
+      "git_blob_sha256": "a6620f8961dc8f12485115eeece52b1a4985972c983cb8ce0c3250e721bd3e67",
+      "text_normalization_changed_bytes": true
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/results/side-contour-diagnostic.png",
       "bytes": 72949,
-      "sha256": "f04e85b3ca568d442ee925415ff95ef85404e901461f5330fa1467d15b733b17"
+      "sha256": "f04e85b3ca568d442ee925415ff95ef85404e901461f5330fa1467d15b733b17",
+      "git_blob_sha256": "f04e85b3ca568d442ee925415ff95ef85404e901461f5330fa1467d15b733b17",
+      "text_normalization_changed_bytes": false
     },
     {
       "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/results/side-coverage.png",
       "bytes": 498519,
-      "sha256": "32e0ebe79756f952ff502be5edc62f1d022df7eaea34f289fcb1fd7ce5722801"
+      "sha256": "32e0ebe79756f952ff502be5edc62f1d022df7eaea34f289fcb1fd7ce5722801",
+      "git_blob_sha256": "32e0ebe79756f952ff502be5edc62f1d022df7eaea34f289fcb1fd7ce5722801",
+      "text_normalization_changed_bytes": false
     }
   ],
   "not_verified": [
@@ -202,5 +236,7 @@
     "performance",
     "new Windows build",
     "human participants"
-  ]
+  ],
+  "manifest_hash_policy": "sha256 is the exact working-file bytes used in this run. git_blob_sha256 is the committed Git blob bytes after repository line-ending normalization. These may differ for text on Windows, not binary images or the source blend.",
+  "result_commit": "6ef842457bde9bee3067699f4c8f54d614ea9b15"
 }
