@@ -222,3 +222,8 @@ Codex 辅助编写独立对比场景、预制件、剖切预览和编辑器验�
 ## 2026-11-09 展览旁白与合成音轨
 
 Codex 辅助编写 #63 的原创三语短讲解、音轨制作脚本、实体站与声音互斥实现、验证及独立复审。供气／通话沿用现有设备史料和示意边界。六条 WAV 由 eSpeak NG 1.52.0 的原生普通话与英语语音合成，音轨按 Git LFS 交付。软件许可、输出边界、来源哈希、精确台词与再生成方法记录在音轨证据目录。合成音轨没有使用馆藏媒体、外部录音或模仿成员声音。人工试听、头显可懂度及课程提交许可需按各自流程核对。 [音轨证据](../artifacts/narration/20261109-issue63/) · [旁白实现与验收](activity/2026-11-09-issue-63-narration.md)
+
+
+## 2026-11-12：SuperLite通信配置与后部附件首轮复核
+
+Ereshkigal1224按用户授权认领#25子范围；Codex辅助厂家查源、实际Blender源/FBX只读回读、模型三视与标注、证据对照和文档。新增核对Kirby Morgan通信手册#250114001与Bulletin #06/2006，复核#241108001、#260319004及产品页。[可定位的来源与哈希](../artifacts/helmet-refinement/qa/20261112-superlite-config-review/sources.json)；[事实/模型差异/待证边界](../artifacts/helmet-refinement/eras/superlite-17b/references/config-review-2026-11-12.zh-CN.md)。厂家照片/PDF仅链接，临时原件和页图未提交、未作贴图；新三视来自既有项目模型，不新增第三方媒体、模型、字体、音频或package。未改模型/Unity，不把AI审阅视为成员人工批准或实机结果。

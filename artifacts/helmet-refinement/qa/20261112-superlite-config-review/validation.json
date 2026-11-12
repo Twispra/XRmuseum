@@ -1,0 +1,175 @@
+{
+  "base_commit": "adc06875103cc47a555dd251e3cf80d836a09558",
+  "branch": "codex/issue25-superlite-config-review-2026-11-12",
+  "scope": "Research documents, original source-model renders and read-only readback; no product modifications",
+  "relative_links": [
+    {
+      "from": "artifacts/helmet-refinement/eras/superlite-17b/references/config-review-2026-11-12.zh-CN.md",
+      "target": "../../../../../docs/activity/2026-11-09-issue-25-era-review.md",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-refinement/eras/superlite-17b/references/config-review-2026-11-12.zh-CN.md",
+      "target": "../../../qa/20261112-superlite-config-review/review-sheet.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-refinement/eras/superlite-17b/references/config-review-2026-11-12.zh-CN.md",
+      "target": "../../../qa/20261112-superlite-config-review/rear.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-refinement/eras/superlite-17b/references/config-review-2026-11-12.zh-CN.md",
+      "target": "../../../qa/20261112-superlite-config-review/side.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-refinement/eras/superlite-17b/references/config-review-2026-11-12.zh-CN.md",
+      "target": "../../../qa/20261112-superlite-config-review/rear_threequarter.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-refinement/eras/superlite-17b/references/config-review-2026-11-12.zh-CN.md",
+      "target": "../../../qa/20261112-superlite-config-review/sources.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-refinement/eras/superlite-17b/references/config-review-2026-11-12.zh-CN.md",
+      "target": "../../../qa/20261112-superlite-config-review/model-readback.json",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-config-review.md",
+      "target": "../../artifacts/helmet-refinement/eras/superlite-17b/references/config-review-2026-11-12.zh-CN.md",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-config-review.md",
+      "target": "../../artifacts/helmet-refinement/qa/20261112-superlite-config-review/model-readback.json",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-config-review.md",
+      "target": "../../artifacts/helmet-refinement/qa/20261112-superlite-config-review/sources.json",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-config-review.md",
+      "target": "../external-resources.md",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-config-review.md",
+      "target": "../../artifacts/helmet-refinement/qa/20261112-superlite-config-review/validation.json",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-config-review.md",
+      "target": "../../artifacts/helmet-refinement/qa/20261112-superlite-config-review/independent-review.md",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-refinement/qa/20261112-superlite-config-review/README.md",
+      "target": "../../eras/superlite-17b/references/config-review-2026-11-12.zh-CN.md",
+      "exists": true
+    }
+  ],
+  "lfs_assets": [
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-10-11/revision-side-profile-v2/delivery/superlite17b.blend",
+      "bytes": 4133939,
+      "sha256": "54a21895b807a19ccc0345a25101cb5369c0a9c976d175a40a58a528a5b8b905",
+      "matches_base_lfs_oid": true
+    },
+    {
+      "path": "artifacts/superlite17b-unity-integration/exports/superlite17b-v2-runtime.fbx",
+      "bytes": 1556476,
+      "sha256": "febfddaf522c50b0044237998c7a661b1bbb1d1220fb07588cfc3e23f5718fda",
+      "matches_base_lfs_oid": true
+    },
+    {
+      "path": "MuseumVR/Assets/Museum/Features/SuperLiteModels/Models/superlite17b-v2-runtime.fbx",
+      "bytes": 1556476,
+      "sha256": "febfddaf522c50b0044237998c7a661b1bbb1d1220fb07588cfc3e23f5718fda",
+      "matches_base_lfs_oid": true
+    }
+  ],
+  "blender_readback": {
+    "exit_code": 0,
+    "source_meshes": 143,
+    "source_triangles": 50268,
+    "runtime_fbx_meshes": 143,
+    "warning": "No Blender exit status alone is used; completion report and sentinel were observed."
+  },
+  "images": [
+    {
+      "path": "rear.png",
+      "size": [
+        1100,
+        900
+      ],
+      "bytes": 1135534,
+      "sha256": "eabcc34c9ea6c3f14aa90cc147dfcb58c9184af77f52949deeb78a617bb4ce01"
+    },
+    {
+      "path": "side.png",
+      "size": [
+        1100,
+        900
+      ],
+      "bytes": 1163934,
+      "sha256": "bffa9fb86d0057989fd49f5d9896c53e3f2f6b216bc6e74138ade0aeea4168ac"
+    },
+    {
+      "path": "rear_threequarter.png",
+      "size": [
+        1100,
+        900
+      ],
+      "bytes": 1175990,
+      "sha256": "cb0bb7b948102b2f58cf5a81826286d2cdf1729f16e7f63978dba425cd128330"
+    },
+    {
+      "path": "review-sheet.png",
+      "size": [
+        1600,
+        1260
+      ],
+      "bytes": 758017,
+      "sha256": "dbb3bc3346abc596f7d025ee5c780c3577a3046e8f809872466732f29c4b70cd"
+    }
+  ],
+  "product_diff_vs_base_empty": true,
+  "original_checkout": {
+    "head": "86715c941875c851e5f7768acc6bc08cf62dd68d",
+    "status": [
+      " M docs/external-resources.md",
+      "?? XRmuseum/",
+      "?? artifacts/helmet-interaction/qa/runs/20261011T114748121120Z-neck-v3-local-0e08c9394cfa4a4a80e37fdd1557ee9d/",
+      "?? artifacts/helmet-interaction/qa/runs/20261011T121400608260Z-shell-v4-local-e4017d7a2b4b4d20b557720823bd29b6/",
+      "?? artifacts/helmet-interaction/qa/runs/20261011T121810243893Z-shell-v4-local-ef7b22d3dd934027ad40a2cfead83640/",
+      "?? artifacts/helmet-interaction/qa/runs/20261011T121913691081Z-shell-v4-local-a507e5e7601f48c78538e9d33b923ec9/",
+      "?? artifacts/helmet-interaction/qa/runs/20261015T074556162704Z-yellow-shell-only-3eb24a61825745fab47579485e9b2260/",
+      "?? artifacts/helmet-modeling/superlite17b-2026-10-11/neck-interface-review-2026-10-11/",
+      "?? artifacts/helmet-modeling/superlite17b-2026-10-11/revision-neck-interface-v3/",
+      "?? artifacts/helmet-modeling/superlite17b-2026-10-11/revision-shell-profile-v4/",
+      "?? artifacts/helmet-modeling/superlite17b-2026-10-15/",
+      "?? docs/activity/2026-10-11-superlite17b-neck-interface-review.md",
+      "?? docs/activity/2026-10-11-superlite17b-neck-v3-local.md",
+      "?? docs/activity/2026-10-11-superlite17b-shell-v4-local.md",
+      "?? output/"
+    ],
+    "external_resources_sha256_current": "df608541ecec12f1514a76c903ab707f6c979aa5afd14275b7483575e972cb71",
+    "note": "Original status paths and HEAD retained; no baseline content hash was recorded before this task."
+  },
+  "not_validated": [
+    "Unity runtime",
+    "real headset and controls",
+    "performance",
+    "current executable build",
+    "human participant feedback",
+    "measured real-object dimensions"
+  ],
+  "review": "Codex visual review of all four generated images; independent AI review is separate from human approval.",
+  "independent_ai_review": "independent-review.md; no technical blockers; not human approval"
+}

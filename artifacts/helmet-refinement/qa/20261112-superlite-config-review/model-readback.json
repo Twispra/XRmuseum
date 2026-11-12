@@ -1,0 +1,2254 @@
+{
+  "base_commit": "adc06875103cc47a555dd251e3cf80d836a09558",
+  "blender": "4.5.14 LTS",
+  "operation": "Read saved v2, render temporary cameras, import delivered FBX; never save source",
+  "asset_sha256_before_after": {
+    "artifacts/helmet-modeling/superlite17b-2026-10-11/revision-side-profile-v2/delivery/superlite17b.blend": "54a21895b807a19ccc0345a25101cb5369c0a9c976d175a40a58a528a5b8b905",
+    "artifacts/superlite17b-unity-integration/exports/superlite17b-v2-runtime.fbx": "febfddaf522c50b0044237998c7a661b1bbb1d1220fb07588cfc3e23f5718fda",
+    "MuseumVR/Assets/Museum/Features/SuperLiteModels/Models/superlite17b-v2-runtime.fbx": "febfddaf522c50b0044237998c7a661b1bbb1d1220fb07588cfc3e23f5718fda"
+  },
+  "fbx_export_equals_unity": true,
+  "mesh_count": 143,
+  "triangles": 50268,
+  "runtime_fbx_meshes": 143,
+  "runtime_named_part_matches": {
+    "515-035": [],
+    "505-047": [],
+    "550-339": [],
+    "530-090": [],
+    "540-157": [],
+    "Hinge": [
+      "Hinge_NeckClamp_Rear",
+      "Hinge_Pin"
+    ],
+    "560-005": [
+      "Weights_Brass_Rear_560-005_-1",
+      "Weights_Brass_Rear_560-005_1"
+    ],
+    "Neck": [
+      "Hinge_NeckClamp_Rear",
+      "NeckClamp_505-055",
+      "NeckCushion_VisibleBlue",
+      "NeckDam_Neoprene_510-533",
+      "Neck_Latch_-1",
+      "Neck_Latch_1",
+      "Neck_PullPin_-1",
+      "Neck_PullPin_1",
+      "Neck_Yoke_520-117"
+    ]
+  },
+  "source_inventory": [
+    {
+      "name": "Shell_Yellow_520-065_ESTIMATED",
+      "vertices": 4508,
+      "triangles": 9016,
+      "world_min_m": [
+        -0.12101,
+        -0.11782,
+        0.040093
+      ],
+      "world_max_m": [
+        0.12101,
+        0.157309,
+        0.294093
+      ]
+    },
+    {
+      "name": "Ring_PortChrome_560-070",
+      "vertices": 960,
+      "triangles": 1920,
+      "world_min_m": [
+        -0.11352,
+        -0.129,
+        0.12728
+      ],
+      "world_max_m": [
+        0.11352,
+        -0.11868,
+        0.2666
+      ]
+    },
+    {
+      "name": "ViewPort_Seal_510-260",
+      "vertices": 960,
+      "triangles": 1920,
+      "world_min_m": [
+        -0.10062,
+        -0.1247,
+        0.136224
+      ],
+      "world_max_m": [
+        0.10062,
+        -0.11696,
+        0.25542
+      ]
+    },
+    {
+      "name": "Glass_Port_520-004",
+      "vertices": 162,
+      "triangles": 320,
+      "world_min_m": [
+        -0.09804,
+        -0.12642,
+        0.138288
+      ],
+      "world_max_m": [
+        0.09804,
+        -0.12384,
+        0.25284
+      ]
+    },
+    {
+      "name": "Handle_Brass_560-014",
+      "vertices": 290,
+      "triangles": 576,
+      "world_min_m": [
+        -0.034774,
+        -0.122837,
+        0.255993
+      ],
+      "world_max_m": [
+        0.034774,
+        0.110689,
+        0.310778
+      ]
+    },
+    {
+      "name": "Handle_FrontFoot",
+      "vertices": 56,
+      "triangles": 108,
+      "world_min_m": [
+        -0.03612,
+        -0.12943,
+        0.26574
+      ],
+      "world_max_m": [
+        0.03612,
+        -0.11309,
+        0.27434
+      ]
+    },
+    {
+      "name": "Handle_RearFoot",
+      "vertices": 56,
+      "triangles": 108,
+      "world_min_m": [
+        -0.01978,
+        0.10277,
+        0.25456
+      ],
+      "world_max_m": [
+        0.01978,
+        0.11911,
+        0.26316
+      ]
+    },
+    {
+      "name": "Regulator_SuperFlow_505-027_Body",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.0387,
+        -0.14878,
+        0.03698
+      ],
+      "world_max_m": [
+        0.0387,
+        -0.11782,
+        0.11438
+      ]
+    },
+    {
+      "name": "Regulator_ConvexCover",
+      "vertices": 482,
+      "triangles": 960,
+      "world_min_m": [
+        -0.04128,
+        -0.16512,
+        0.0344
+      ],
+      "world_max_m": [
+        0.04128,
+        -0.14448,
+        0.11696
+      ]
+    },
+    {
+      "name": "Regulator_PurgeButton",
+      "vertices": 288,
+      "triangles": 572,
+      "world_min_m": [
+        -0.0172,
+        -0.1677,
+        0.05848
+      ],
+      "world_max_m": [
+        0.0172,
+        -0.16426,
+        0.09288
+      ]
+    },
+    {
+      "name": "Regulator_AdjustmentStem",
+      "vertices": 84,
+      "triangles": 164,
+      "world_min_m": [
+        0.03526,
+        -0.141377,
+        0.067259
+      ],
+      "world_max_m": [
+        0.06106,
+        -0.123503,
+        0.087541
+      ]
+    },
+    {
+      "name": "Regulator_AdjustmentKnob",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        0.05977,
+        -0.14534,
+        0.0645
+      ],
+      "world_max_m": [
+        0.08127,
+        -0.11954,
+        0.0903
+      ]
+    },
+    {
+      "name": "Regulator_InletNipple",
+      "vertices": 84,
+      "triangles": 164,
+      "world_min_m": [
+        -0.0688,
+        -0.140517,
+        0.065539
+      ],
+      "world_max_m": [
+        -0.03784,
+        -0.122643,
+        0.085821
+      ]
+    },
+    {
+      "name": "Regulator_InletCap",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.07912,
+        -0.14276,
+        0.0645
+      ],
+      "world_max_m": [
+        -0.06364,
+        -0.1204,
+        0.08686
+      ]
+    },
+    {
+      "name": "SideBlock_Chrome_505-024",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.13588,
+        -0.095195,
+        0.16252
+      ],
+      "world_max_m": [
+        -0.1032,
+        -0.016605,
+        0.19868
+      ]
+    },
+    {
+      "name": "SideBlock_MountingFoot",
+      "vertices": 56,
+      "triangles": 108,
+      "world_min_m": [
+        -0.11954,
+        -0.08299,
+        0.16125
+      ],
+      "world_max_m": [
+        -0.10062,
+        -0.02881,
+        0.17931
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Stem",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.136555,
+        -0.110256,
+        0.180798
+      ],
+      "world_max_m": [
+        -0.116285,
+        -0.090984,
+        0.199322
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524",
+      "vertices": 288,
+      "triangles": 572,
+      "world_min_m": [
+        -0.152447,
+        -0.132318,
+        0.170809
+      ],
+      "world_max_m": [
+        -0.108446,
+        -0.098656,
+        0.212408
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_CentreCap",
+      "vertices": 144,
+      "triangles": 284,
+      "world_min_m": [
+        -0.142438,
+        -0.130979,
+        0.184026
+      ],
+      "world_max_m": [
+        -0.125166,
+        -0.124772,
+        0.201773
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_00",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.153165,
+        -0.121315,
+        0.188822
+      ],
+      "world_max_m": [
+        -0.144252,
+        -0.099767,
+        0.194395
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_01",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.150471,
+        -0.121064,
+        0.198234
+      ],
+      "world_max_m": [
+        -0.141558,
+        -0.099516,
+        0.203808
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_02",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.143605,
+        -0.122205,
+        0.205125
+      ],
+      "world_max_m": [
+        -0.134693,
+        -0.100658,
+        0.210698
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_03",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.134408,
+        -0.124434,
+        0.207647
+      ],
+      "world_max_m": [
+        -0.125495,
+        -0.102886,
+        0.213221
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_04",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.125343,
+        -0.127151,
+        0.205125
+      ],
+      "world_max_m": [
+        -0.116431,
+        -0.105604,
+        0.210698
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_05",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.11884,
+        -0.12963,
+        0.198234
+      ],
+      "world_max_m": [
+        -0.109927,
+        -0.108083,
+        0.203808
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_06",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.116641,
+        -0.131206,
+        0.188822
+      ],
+      "world_max_m": [
+        -0.107728,
+        -0.109659,
+        0.194395
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_07",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.119335,
+        -0.131457,
+        0.179409
+      ],
+      "world_max_m": [
+        -0.110422,
+        -0.10991,
+        0.184983
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_08",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.1262,
+        -0.130316,
+        0.172519
+      ],
+      "world_max_m": [
+        -0.117288,
+        -0.108768,
+        0.178092
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_09",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.135398,
+        -0.128087,
+        0.169997
+      ],
+      "world_max_m": [
+        -0.126485,
+        -0.10654,
+        0.17557
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_10",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.144462,
+        -0.12537,
+        0.172519
+      ],
+      "world_max_m": [
+        -0.13555,
+        -0.103822,
+        0.178092
+      ]
+    },
+    {
+      "name": "Knob_Black_SteadyFlow_520-524_Grip_11",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.150966,
+        -0.122891,
+        0.179409
+      ],
+      "world_max_m": [
+        -0.142053,
+        -0.101343,
+        0.184983
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Stem",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.136061,
+        -0.022411,
+        0.16856
+      ],
+      "world_max_m": [
+        -0.118499,
+        -0.003389,
+        0.18576
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525",
+      "vertices": 288,
+      "triangles": 572,
+      "world_min_m": [
+        -0.156834,
+        -0.033697,
+        0.15996
+      ],
+      "world_max_m": [
+        -0.128375,
+        0.003519,
+        0.19436
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_CentreCap",
+      "vertices": 144,
+      "triangles": 284,
+      "world_min_m": [
+        -0.157223,
+        -0.0246,
+        0.16942
+      ],
+      "world_max_m": [
+        -0.153527,
+        -0.009227,
+        0.1849
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_00",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.1558,
+        -0.002136,
+        0.17544
+      ],
+      "world_max_m": [
+        -0.13403,
+        0.00431,
+        0.17888
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_01",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.155491,
+        -0.004304,
+        0.18361
+      ],
+      "world_max_m": [
+        -0.13372,
+        0.002142,
+        0.18705
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_02",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.154645,
+        -0.010224,
+        0.189591
+      ],
+      "world_max_m": [
+        -0.132875,
+        -0.003778,
+        0.193031
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_03",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.15349,
+        -0.018312,
+        0.19178
+      ],
+      "world_max_m": [
+        -0.131719,
+        -0.011866,
+        0.19522
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_04",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.152334,
+        -0.0264,
+        0.189591
+      ],
+      "world_max_m": [
+        -0.130564,
+        -0.019954,
+        0.193031
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_05",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.151488,
+        -0.032321,
+        0.18361
+      ],
+      "world_max_m": [
+        -0.129718,
+        -0.025875,
+        0.18705
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_06",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.151179,
+        -0.034488,
+        0.17544
+      ],
+      "world_max_m": [
+        -0.129408,
+        -0.028042,
+        0.17888
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_07",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.151488,
+        -0.032321,
+        0.16727
+      ],
+      "world_max_m": [
+        -0.129718,
+        -0.025875,
+        0.17071
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_08",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.152334,
+        -0.0264,
+        0.161289
+      ],
+      "world_max_m": [
+        -0.130564,
+        -0.019954,
+        0.164729
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_09",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.15349,
+        -0.018312,
+        0.1591
+      ],
+      "world_max_m": [
+        -0.131719,
+        -0.011866,
+        0.16254
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_10",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.154645,
+        -0.010224,
+        0.161289
+      ],
+      "world_max_m": [
+        -0.132875,
+        -0.003778,
+        0.164729
+      ]
+    },
+    {
+      "name": "Knob_Black_Emergency_520-525_Grip_11",
+      "vertices": 16,
+      "triangles": 28,
+      "world_min_m": [
+        -0.155491,
+        -0.004304,
+        0.16727
+      ],
+      "world_max_m": [
+        -0.13372,
+        0.002142,
+        0.17071
+      ]
+    },
+    {
+      "name": "CheckValve_Brass_555-195",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.14362,
+        -0.03483,
+        0.13416
+      ],
+      "world_max_m": [
+        -0.11954,
+        0.01763,
+        0.15824
+      ]
+    },
+    {
+      "name": "CheckValve_Hex",
+      "vertices": 84,
+      "triangles": 164,
+      "world_min_m": [
+        -0.143497,
+        0.01677,
+        0.132619
+      ],
+      "world_max_m": [
+        -0.119663,
+        0.02795,
+        0.159781
+      ]
+    },
+    {
+      "name": "CheckValve_DustCap",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.14104,
+        0.02752,
+        0.13674
+      ],
+      "world_max_m": [
+        -0.12212,
+        0.04472,
+        0.15566
+      ]
+    },
+    {
+      "name": "Emergency_Inlet_DustCap",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.13244,
+        0.03397,
+        0.17458
+      ],
+      "world_max_m": [
+        -0.11696,
+        0.04687,
+        0.19006
+      ]
+    },
+    {
+      "name": "Emergency_InletStem",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.13244,
+        -0.01806,
+        0.17458
+      ],
+      "world_max_m": [
+        -0.11696,
+        0.03698,
+        0.19006
+      ]
+    },
+    {
+      "name": "CheckValve_SideBlock_Adapter",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.13244,
+        -0.02064,
+        0.15136
+      ],
+      "world_max_m": [
+        -0.11696,
+        -0.00516,
+        0.1806
+      ]
+    },
+    {
+      "name": "BentTube_UpperCoupling",
+      "vertices": 84,
+      "triangles": 164,
+      "world_min_m": [
+        -0.131057,
+        -0.099819,
+        0.14344
+      ],
+      "world_max_m": [
+        -0.113183,
+        -0.073901,
+        0.17132
+      ]
+    },
+    {
+      "name": "BentTube_Chrome_555-155",
+      "vertices": 430,
+      "triangles": 816,
+      "world_min_m": [
+        -0.130598,
+        -0.138809,
+        0.053497
+      ],
+      "world_max_m": [
+        -0.055115,
+        -0.084123,
+        0.155441
+      ]
+    },
+    {
+      "name": "BentTube_LowerCoupling",
+      "vertices": 84,
+      "triangles": 164,
+      "world_min_m": [
+        -0.08577,
+        -0.142237,
+        0.055971
+      ],
+      "world_max_m": [
+        -0.058711,
+        -0.124363,
+        0.081629
+      ]
+    },
+    {
+      "name": "NoseBlock_Hex",
+      "vertices": 84,
+      "triangles": 164,
+      "world_min_m": [
+        -0.005958,
+        -0.14276,
+        0.119719
+      ],
+      "world_max_m": [
+        0.005958,
+        -0.13072,
+        0.133121
+      ]
+    },
+    {
+      "name": "NoseBlock_Knob_550-062",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.00688,
+        -0.15652,
+        0.11954
+      ],
+      "world_max_m": [
+        0.00688,
+        -0.14276,
+        0.1333
+      ]
+    },
+    {
+      "name": "NeckClamp_505-055",
+      "vertices": 960,
+      "triangles": 1920,
+      "world_min_m": [
+        -0.11008,
+        -0.1247,
+        0.010622
+      ],
+      "world_max_m": [
+        0.11008,
+        0.1247,
+        0.164818
+      ]
+    },
+    {
+      "name": "Neck_Yoke_520-117",
+      "vertices": 960,
+      "triangles": 1920,
+      "world_min_m": [
+        -0.11524,
+        -0.12986,
+        -0.000111
+      ],
+      "world_max_m": [
+        0.11524,
+        0.12986,
+        0.156631
+      ]
+    },
+    {
+      "name": "NeckDam_Neoprene_510-533",
+      "vertices": 960,
+      "triangles": 1920,
+      "world_min_m": [
+        -0.08858,
+        -0.10234,
+        -0.003069
+      ],
+      "world_max_m": [
+        0.08858,
+        0.10234,
+        0.137229
+      ]
+    },
+    {
+      "name": "NeckCushion_VisibleBlue",
+      "vertices": 1280,
+      "triangles": 2560,
+      "world_min_m": [
+        -0.080853,
+        -0.07429,
+        0.002547
+      ],
+      "world_max_m": [
+        0.080853,
+        0.11729,
+        0.13101
+      ]
+    },
+    {
+      "name": "Exhaust_Black_Wing_-1",
+      "vertices": 74,
+      "triangles": 144,
+      "world_min_m": [
+        -0.120671,
+        -0.154532,
+        0.032682
+      ],
+      "world_max_m": [
+        -0.052441,
+        -0.072893,
+        0.134124
+      ]
+    },
+    {
+      "name": "Exhaust_Outlet_Rim_-1",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.0344,
+        -0.14663,
+        0.02064
+      ],
+      "world_max_m": [
+        -0.01376,
+        -0.12513,
+        0.04128
+      ]
+    },
+    {
+      "name": "Exhaust_Outlet_Recess_-1",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.03096,
+        -0.14878,
+        0.02408
+      ],
+      "world_max_m": [
+        -0.0172,
+        -0.14706,
+        0.03784
+      ]
+    },
+    {
+      "name": "Whisker_Clamp_-1",
+      "vertices": 56,
+      "triangles": 108,
+      "world_min_m": [
+        -0.04601,
+        -0.14878,
+        0.0258
+      ],
+      "world_max_m": [
+        -0.03827,
+        -0.1419,
+        0.04128
+      ]
+    },
+    {
+      "name": "Whisker_Clamp_BrassScrew_-1",
+      "vertices": 24,
+      "triangles": 44,
+      "world_min_m": [
+        -0.04386,
+        -0.15093,
+        0.03526
+      ],
+      "world_max_m": [
+        -0.04042,
+        -0.14835,
+        0.0387
+      ]
+    },
+    {
+      "name": "Exhaust_Black_Wing_1",
+      "vertices": 74,
+      "triangles": 144,
+      "world_min_m": [
+        0.052441,
+        -0.154532,
+        0.032682
+      ],
+      "world_max_m": [
+        0.120671,
+        -0.072893,
+        0.134124
+      ]
+    },
+    {
+      "name": "Exhaust_Outlet_Rim_1",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        0.01376,
+        -0.14663,
+        0.02064
+      ],
+      "world_max_m": [
+        0.0344,
+        -0.12513,
+        0.04128
+      ]
+    },
+    {
+      "name": "Exhaust_Outlet_Recess_1",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        0.0172,
+        -0.14878,
+        0.02408
+      ],
+      "world_max_m": [
+        0.03096,
+        -0.14706,
+        0.03784
+      ]
+    },
+    {
+      "name": "Whisker_Clamp_1",
+      "vertices": 56,
+      "triangles": 108,
+      "world_min_m": [
+        0.03827,
+        -0.14878,
+        0.0258
+      ],
+      "world_max_m": [
+        0.04601,
+        -0.1419,
+        0.04128
+      ]
+    },
+    {
+      "name": "Whisker_Clamp_BrassScrew_1",
+      "vertices": 24,
+      "triangles": 44,
+      "world_min_m": [
+        0.04042,
+        -0.15093,
+        0.03526
+      ],
+      "world_max_m": [
+        0.04386,
+        -0.14835,
+        0.0387
+      ]
+    },
+    {
+      "name": "Weights_Brass_Rear_560-005_-1",
+      "vertices": 374,
+      "triangles": 744,
+      "world_min_m": [
+        -0.120895,
+        0.01274,
+        0.114412
+      ],
+      "world_max_m": [
+        -0.019783,
+        0.125144,
+        0.246553
+      ]
+    },
+    {
+      "name": "Weights_Brass_Side_-1",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        -0.124433,
+        -0.048177,
+        0.118262
+      ],
+      "world_max_m": [
+        -0.115364,
+        0.023471,
+        0.145022
+      ]
+    },
+    {
+      "name": "Strap_Black_Diagonal_-1",
+      "vertices": 100,
+      "triangles": 196,
+      "world_min_m": [
+        -0.122511,
+        -0.074282,
+        0.154051
+      ],
+      "world_max_m": [
+        -0.061302,
+        0.100839,
+        0.274014
+      ]
+    },
+    {
+      "name": "Strap_Adjuster_-1",
+      "vertices": 56,
+      "triangles": 108,
+      "world_min_m": [
+        -0.086619,
+        -0.084134,
+        0.253027
+      ],
+      "world_max_m": [
+        -0.078019,
+        -0.051719,
+        0.282889
+      ]
+    },
+    {
+      "name": "Strap_YokeRetainer_-1",
+      "vertices": 20,
+      "triangles": 36,
+      "world_min_m": [
+        -0.122919,
+        0.027876,
+        0.102602
+      ],
+      "world_max_m": [
+        -0.074163,
+        0.133653,
+        0.185479
+      ]
+    },
+    {
+      "name": "Weights_Brass_Rear_560-005_1",
+      "vertices": 374,
+      "triangles": 744,
+      "world_min_m": [
+        0.01976,
+        0.012741,
+        0.114412
+      ],
+      "world_max_m": [
+        0.120897,
+        0.125144,
+        0.246557
+      ]
+    },
+    {
+      "name": "Weights_Brass_Side_1",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        0.115364,
+        -0.048177,
+        0.118264
+      ],
+      "world_max_m": [
+        0.124443,
+        0.02345,
+        0.145022
+      ]
+    },
+    {
+      "name": "Strap_Black_Diagonal_1",
+      "vertices": 100,
+      "triangles": 196,
+      "world_min_m": [
+        0.061307,
+        -0.074308,
+        0.154819
+      ],
+      "world_max_m": [
+        0.122511,
+        0.100848,
+        0.274013
+      ]
+    },
+    {
+      "name": "Strap_Adjuster_1",
+      "vertices": 56,
+      "triangles": 108,
+      "world_min_m": [
+        0.078093,
+        -0.084043,
+        0.25304
+      ],
+      "world_max_m": [
+        0.086693,
+        -0.051629,
+        0.282902
+      ]
+    },
+    {
+      "name": "Strap_YokeRetainer_1",
+      "vertices": 20,
+      "triangles": 36,
+      "world_min_m": [
+        0.074163,
+        0.027874,
+        0.102602
+      ],
+      "world_max_m": [
+        0.122919,
+        0.133653,
+        0.185479
+      ]
+    },
+    {
+      "name": "Hinge_NeckClamp_Rear",
+      "vertices": 56,
+      "triangles": 108,
+      "world_min_m": [
+        -0.02064,
+        0.11567,
+        0.15394
+      ],
+      "world_max_m": [
+        0.02064,
+        0.13717,
+        0.17802
+      ]
+    },
+    {
+      "name": "Hinge_Pin",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.02709,
+        0.1247,
+        0.16168
+      ],
+      "world_max_m": [
+        0.02709,
+        0.13502,
+        0.172
+      ]
+    },
+    {
+      "name": "Neck_Latch_-1",
+      "vertices": 56,
+      "triangles": 108,
+      "world_min_m": [
+        -0.07009,
+        -0.11911,
+        0.01419
+      ],
+      "world_max_m": [
+        -0.04515,
+        -0.09073,
+        0.03397
+      ]
+    },
+    {
+      "name": "Neck_PullPin_-1",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.08342,
+        -0.11008,
+        0.02064
+      ],
+      "world_max_m": [
+        -0.0645,
+        -0.1032,
+        0.02752
+      ]
+    },
+    {
+      "name": "Neck_Latch_1",
+      "vertices": 56,
+      "triangles": 108,
+      "world_min_m": [
+        0.04515,
+        -0.11911,
+        0.01419
+      ],
+      "world_max_m": [
+        0.07009,
+        -0.09073,
+        0.03397
+      ]
+    },
+    {
+      "name": "Neck_PullPin_1",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        0.0645,
+        -0.11008,
+        0.02064
+      ],
+      "world_max_m": [
+        0.08342,
+        -0.1032,
+        0.02752
+      ]
+    },
+    {
+      "name": "Interior_Cushion_-1",
+      "vertices": 482,
+      "triangles": 960,
+      "world_min_m": [
+        -0.0946,
+        -0.0559,
+        0.1204
+      ],
+      "world_max_m": [
+        -0.0602,
+        0.0645,
+        0.2494
+      ]
+    },
+    {
+      "name": "Earphone_VisualOnly_-1",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        -0.09632,
+        -0.07052,
+        0.16856
+      ],
+      "world_max_m": [
+        -0.08772,
+        -0.03268,
+        0.2064
+      ]
+    },
+    {
+      "name": "Interior_Cushion_1",
+      "vertices": 482,
+      "triangles": 960,
+      "world_min_m": [
+        0.0602,
+        -0.0559,
+        0.1204
+      ],
+      "world_max_m": [
+        0.0946,
+        0.0645,
+        0.2494
+      ]
+    },
+    {
+      "name": "Earphone_VisualOnly_1",
+      "vertices": 192,
+      "triangles": 380,
+      "world_min_m": [
+        0.08772,
+        -0.07052,
+        0.16856
+      ],
+      "world_max_m": [
+        0.09632,
+        -0.03268,
+        0.2064
+      ]
+    },
+    {
+      "name": "Interior_Cushion_Crown",
+      "vertices": 482,
+      "triangles": 960,
+      "world_min_m": [
+        -0.0559,
+        -0.04042,
+        0.23478
+      ],
+      "world_max_m": [
+        0.0559,
+        0.06966,
+        0.25542
+      ]
+    },
+    {
+      "name": "OralNasal_Mask_510-747",
+      "vertices": 482,
+      "triangles": 960,
+      "world_min_m": [
+        -0.04472,
+        -0.08858,
+        0.09202
+      ],
+      "world_max_m": [
+        0.04472,
+        -0.02838,
+        0.1763
+      ]
+    },
+    {
+      "name": "AirTrain_Defog_545-016",
+      "vertices": 1230,
+      "triangles": 2416,
+      "world_min_m": [
+        -0.091805,
+        -0.11352,
+        0.210814
+      ],
+      "world_max_m": [
+        0.091805,
+        -0.10664,
+        0.252672
+      ]
+    },
+    {
+      "name": "Screws_Port_01",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        0.101249,
+        -0.131924,
+        0.203656
+      ],
+      "world_max_m": [
+        0.107097,
+        -0.129516,
+        0.209504
+      ]
+    },
+    {
+      "name": "Screw_Slot_01",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        0.102527,
+        -0.132225,
+        0.205136
+      ],
+      "world_max_m": [
+        0.105819,
+        -0.131967,
+        0.208024
+      ]
+    },
+    {
+      "name": "Screws_Port_02",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        0.083726,
+        -0.131924,
+        0.231481
+      ],
+      "world_max_m": [
+        0.089574,
+        -0.129516,
+        0.237329
+      ]
+    },
+    {
+      "name": "Screw_Slot_02",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        0.084995,
+        -0.132225,
+        0.232972
+      ],
+      "world_max_m": [
+        0.088305,
+        -0.131967,
+        0.235838
+      ]
+    },
+    {
+      "name": "Screws_Port_03",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        0.041781,
+        -0.131924,
+        0.251459
+      ],
+      "world_max_m": [
+        0.047629,
+        -0.129516,
+        0.257307
+      ]
+    },
+    {
+      "name": "Screw_Slot_03",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        0.044137,
+        -0.132225,
+        0.252432
+      ],
+      "world_max_m": [
+        0.045272,
+        -0.131967,
+        0.256334
+      ]
+    },
+    {
+      "name": "Screws_Port_04",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        -0.047629,
+        -0.131924,
+        0.251459
+      ],
+      "world_max_m": [
+        -0.041781,
+        -0.129516,
+        0.257307
+      ]
+    },
+    {
+      "name": "Screw_Slot_04",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        -0.045334,
+        -0.132225,
+        0.252435
+      ],
+      "world_max_m": [
+        -0.044075,
+        -0.131967,
+        0.256331
+      ]
+    },
+    {
+      "name": "Screws_Port_05",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        -0.089574,
+        -0.131924,
+        0.231481
+      ],
+      "world_max_m": [
+        -0.083726,
+        -0.129516,
+        0.237329
+      ]
+    },
+    {
+      "name": "Screw_Slot_05",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        -0.088269,
+        -0.132225,
+        0.232928
+      ],
+      "world_max_m": [
+        -0.085031,
+        -0.131967,
+        0.235881
+      ]
+    },
+    {
+      "name": "Screws_Port_06",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        -0.107097,
+        -0.131924,
+        0.203656
+      ],
+      "world_max_m": [
+        -0.101249,
+        -0.129516,
+        0.209504
+      ]
+    },
+    {
+      "name": "Screw_Slot_06",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        -0.105853,
+        -0.132225,
+        0.205181
+      ],
+      "world_max_m": [
+        -0.102492,
+        -0.131967,
+        0.207979
+      ]
+    },
+    {
+      "name": "Screws_Port_07",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        -0.107097,
+        -0.131924,
+        0.173281
+      ],
+      "world_max_m": [
+        -0.101249,
+        -0.129516,
+        0.179129
+      ]
+    },
+    {
+      "name": "Screw_Slot_07",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        -0.105783,
+        -0.132225,
+        0.174718
+      ],
+      "world_max_m": [
+        -0.102563,
+        -0.131967,
+        0.177693
+      ]
+    },
+    {
+      "name": "Screws_Port_08",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        -0.089574,
+        -0.131924,
+        0.144944
+      ],
+      "world_max_m": [
+        -0.083726,
+        -0.129516,
+        0.150792
+      ]
+    },
+    {
+      "name": "Screw_Slot_08",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        -0.088339,
+        -0.132225,
+        0.146481
+      ],
+      "world_max_m": [
+        -0.084961,
+        -0.131967,
+        0.149255
+      ]
+    },
+    {
+      "name": "Screws_Port_09",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        -0.047629,
+        -0.131924,
+        0.130803
+      ],
+      "world_max_m": [
+        -0.041781,
+        -0.129516,
+        0.136651
+      ]
+    },
+    {
+      "name": "Screw_Slot_09",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        -0.045209,
+        -0.132225,
+        0.131775
+      ],
+      "world_max_m": [
+        -0.0442,
+        -0.131967,
+        0.135679
+      ]
+    },
+    {
+      "name": "Screws_Port_10",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        0.083726,
+        -0.131924,
+        0.144944
+      ],
+      "world_max_m": [
+        0.089574,
+        -0.129516,
+        0.150792
+      ]
+    },
+    {
+      "name": "Screw_Slot_10",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        0.085068,
+        -0.132225,
+        0.146349
+      ],
+      "world_max_m": [
+        0.088232,
+        -0.131967,
+        0.149387
+      ]
+    },
+    {
+      "name": "Screws_Port_11",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        0.101249,
+        -0.131924,
+        0.173281
+      ],
+      "world_max_m": [
+        0.107097,
+        -0.129516,
+        0.179129
+      ]
+    },
+    {
+      "name": "Screw_Slot_11",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        0.10246,
+        -0.132225,
+        0.174853
+      ],
+      "world_max_m": [
+        0.105886,
+        -0.131967,
+        0.177558
+      ]
+    },
+    {
+      "name": "Handle_Fastener_0",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        -0.0258,
+        -0.12298,
+        0.27434
+      ],
+      "world_max_m": [
+        -0.02064,
+        -0.11954,
+        0.2795
+      ]
+    },
+    {
+      "name": "Handle_Fastener_1",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        -0.00258,
+        -0.12298,
+        0.27434
+      ],
+      "world_max_m": [
+        0.00258,
+        -0.11954,
+        0.2795
+      ]
+    },
+    {
+      "name": "Handle_Fastener_2",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        0.02064,
+        -0.12298,
+        0.27434
+      ],
+      "world_max_m": [
+        0.0258,
+        -0.11954,
+        0.2795
+      ]
+    },
+    {
+      "name": "Whisker_Fastener_-1_0",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        -0.0946,
+        -0.13545,
+        0.11696
+      ],
+      "world_max_m": [
+        -0.08944,
+        -0.13287,
+        0.12212
+      ]
+    },
+    {
+      "name": "Whisker_Fastener_-1_1",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        -0.07224,
+        -0.13545,
+        0.11008
+      ],
+      "world_max_m": [
+        -0.06708,
+        -0.13287,
+        0.11524
+      ]
+    },
+    {
+      "name": "Whisker_Fastener_1_0",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        0.08944,
+        -0.13545,
+        0.11696
+      ],
+      "world_max_m": [
+        0.0946,
+        -0.13287,
+        0.12212
+      ]
+    },
+    {
+      "name": "Whisker_Fastener_1_1",
+      "vertices": 32,
+      "triangles": 60,
+      "world_min_m": [
+        0.06708,
+        -0.13545,
+        0.11008
+      ],
+      "world_max_m": [
+        0.07224,
+        -0.13287,
+        0.11524
+      ]
+    },
+    {
+      "name": "SideBlock_Label_Blank",
+      "vertices": 56,
+      "triangles": 108,
+      "world_min_m": [
+        -0.13416,
+        -0.07826,
+        0.14577
+      ],
+      "world_max_m": [
+        -0.13244,
+        -0.04214,
+        0.17931
+      ]
+    },
+    {
+      "name": "Label_Layout_Line_0",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        -0.134676,
+        -0.07138,
+        0.164776
+      ],
+      "world_max_m": [
+        -0.134332,
+        -0.04902,
+        0.165464
+      ]
+    },
+    {
+      "name": "Label_Layout_Line_1",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        -0.134676,
+        -0.07009,
+        0.159616
+      ],
+      "world_max_m": [
+        -0.134332,
+        -0.05031,
+        0.160304
+      ]
+    },
+    {
+      "name": "Label_Layout_Line_2",
+      "vertices": 8,
+      "triangles": 12,
+      "world_min_m": [
+        -0.134676,
+        -0.0688,
+        0.154456
+      ],
+      "world_max_m": [
+        -0.134332,
+        -0.0516,
+        0.155144
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_00",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        0.006665,
+        -0.1548,
+        0.126216
+      ],
+      "world_max_m": [
+        0.007095,
+        -0.14448,
+        0.126624
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_01",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        0.006141,
+        -0.1548,
+        0.128848
+      ],
+      "world_max_m": [
+        0.006571,
+        -0.14448,
+        0.129257
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_02",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        0.00465,
+        -0.1548,
+        0.13108
+      ],
+      "world_max_m": [
+        0.00508,
+        -0.14448,
+        0.131489
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_03",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        0.002418,
+        -0.1548,
+        0.132572
+      ],
+      "world_max_m": [
+        0.002848,
+        -0.14448,
+        0.132981
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_04",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        -0.000215,
+        -0.1548,
+        0.133096
+      ],
+      "world_max_m": [
+        0.000215,
+        -0.14448,
+        0.133504
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_05",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        -0.002848,
+        -0.1548,
+        0.132572
+      ],
+      "world_max_m": [
+        -0.002418,
+        -0.14448,
+        0.132981
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_06",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        -0.00508,
+        -0.1548,
+        0.13108
+      ],
+      "world_max_m": [
+        -0.00465,
+        -0.14448,
+        0.131489
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_07",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        -0.006571,
+        -0.1548,
+        0.128848
+      ],
+      "world_max_m": [
+        -0.006141,
+        -0.14448,
+        0.129257
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_08",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        -0.007095,
+        -0.1548,
+        0.126216
+      ],
+      "world_max_m": [
+        -0.006665,
+        -0.14448,
+        0.126624
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_09",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        -0.006571,
+        -0.1548,
+        0.123583
+      ],
+      "world_max_m": [
+        -0.006141,
+        -0.14448,
+        0.123992
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_10",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        -0.00508,
+        -0.1548,
+        0.121351
+      ],
+      "world_max_m": [
+        -0.00465,
+        -0.14448,
+        0.12176
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_11",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        -0.002848,
+        -0.1548,
+        0.119859
+      ],
+      "world_max_m": [
+        -0.002418,
+        -0.14448,
+        0.120268
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_12",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        -0.000215,
+        -0.1548,
+        0.119336
+      ],
+      "world_max_m": [
+        0.000215,
+        -0.14448,
+        0.119744
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_13",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        0.002418,
+        -0.1548,
+        0.119859
+      ],
+      "world_max_m": [
+        0.002848,
+        -0.14448,
+        0.120268
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_14",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        0.00465,
+        -0.1548,
+        0.121351
+      ],
+      "world_max_m": [
+        0.00508,
+        -0.14448,
+        0.12176
+      ]
+    },
+    {
+      "name": "NoseKnob_Knurl_15",
+      "vertices": 130,
+      "triangles": 216,
+      "world_min_m": [
+        0.006141,
+        -0.1548,
+        0.123583
+      ],
+      "world_max_m": [
+        0.006571,
+        -0.14448,
+        0.123992
+      ]
+    }
+  ],
+  "annotation_projections": {
+    "rear": {
+      "A_hinge": {
+        "object": "Hinge_NeckClamp_Rear",
+        "x_px": 550.0,
+        "y_px": 487.7,
+        "note": "Projected bounding-box center, not a physical attachment measurement."
+      },
+      "B_rear_weight": {
+        "object": "Weights_Brass_Rear_560-005_-1",
+        "x_px": 729.9,
+        "y_px": 428.3,
+        "note": "Projected bounding-box center, not a physical attachment measurement."
+      },
+      "C_neck_yoke": {
+        "object": "Neck_Yoke_520-117",
+        "x_px": 550.0,
+        "y_px": 659.3,
+        "note": "Projected bounding-box center, not a physical attachment measurement."
+      }
+    },
+    "side": {
+      "A_hinge": {
+        "object": "Hinge_NeckClamp_Rear",
+        "x_px": 860.6,
+        "y_px": 435.5,
+        "note": "Projected bounding-box center, not a physical attachment measurement."
+      },
+      "B_rear_weight": {
+        "object": "Weights_Brass_Rear_560-005_-1",
+        "x_px": 716.4,
+        "y_px": 374.0,
+        "note": "Projected bounding-box center, not a physical attachment measurement."
+      },
+      "C_neck_yoke": {
+        "object": "Neck_Yoke_520-117",
+        "x_px": 537.2,
+        "y_px": 657.1,
+        "note": "Projected bounding-box center, not a physical attachment measurement."
+      }
+    },
+    "rear_threequarter": {
+      "A_hinge": {
+        "object": "Hinge_NeckClamp_Rear",
+        "x_px": 370.9,
+        "y_px": 493.8,
+        "note": "Projected bounding-box center, not a physical attachment measurement."
+      },
+      "B_rear_weight": {
+        "object": "Weights_Brass_Rear_560-005_-1",
+        "x_px": 602.6,
+        "y_px": 462.2,
+        "note": "Projected bounding-box center, not a physical attachment measurement."
+      },
+      "C_neck_yoke": {
+        "object": "Neck_Yoke_520-117",
+        "x_px": 594.1,
+        "y_px": 653.7,
+        "note": "Projected bounding-box center, not a physical attachment measurement."
+      }
+    }
+  },
+  "limits": [
+    "Blender source renders are not Unity screenshots or device evidence.",
+    "Names identify explicitly modeled parts; unmatched names alone do not prove geometric absence.",
+    "No historical dimensions, actual configuration or installation coordinates established."
+  ]
+}
