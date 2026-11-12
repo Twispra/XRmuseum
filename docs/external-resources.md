@@ -232,3 +232,8 @@ Ereshkigal1224按用户授权认领#25子范围；Codex辅助厂家查源、实�
 ## 2026-11-12：v4基准与精度改进计划
 
 用户选择以现有本地v4继续SuperLite #25后续工作，Codex辅助核对原12张参考图、v4来源链和历史弱透视拟合，制定照片视角匹配、投影误差和局部结构验收流程。[计划与事实边界](activity/2026-11-12-superlite-v4-accuracy-plan.md)；[原图指纹清单](../artifacts/helmet-modeling/superlite17b-2026-11-12/reference-inventory.json)。将Ereshkigal1224此前的本地v4逐字节归档为只读基准，没有生成新几何或采用v5候选。原图/PDF及旧任务书不复制入库、不作纹理；补核厂家修订索引、260519005/260519003/250918001及OpenCV官方标定/PnP文档的适用边界，未向Unity新增依赖。AI计划和源文件回读不代表人工外观批准、毫米测量或实机验收。
+
+
+## 2026-11-12：v4照片视角匹配与误差基线
+
+继续用户授权的#25后部附件任务。Codex两子代理分别标注前/侧图，各自做两遍同AI重读；根代理只读导出冻结v4、用任务本地SciPy1.18.1有界鲁棒最小二乘建立透视候选，再用Blender真实可见覆盖、原像素曲线距离与壳面射线核对。算法边界与复跑见[阶段说明](../artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/README.md)；方法参考[SciPy官方least_squares](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html)。原厂家照片只作本地分析，含照片的网格/叠图留tmp；提交图只有本项目模型与数值描线，没有嵌入厂家像素或新第三方素材。未改变模型几何、Unity或公共依赖；AI标注/审阅不是人类参与者研究，也未验证实物尺寸或实机。

@@ -1,0 +1,72 @@
+{
+  "source_sha256": "6e85f7f048b3a6b8706428854ab8934099da25ff21d427e87fde9de930b1c8a2",
+  "palette_linear_rgb": {
+    "shell": [
+      0.0,
+      1.0,
+      0.0
+    ],
+    "frame": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "glass": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "rear_weight": [
+      1.0,
+      0.0,
+      0.0
+    ],
+    "handle": [
+      1.0,
+      1.0,
+      0.0
+    ],
+    "neck": [
+      0.0,
+      1.0,
+      1.0
+    ],
+    "other": [
+      0.05,
+      0.05,
+      0.05
+    ]
+  },
+  "views": [
+    {
+      "view": "front",
+      "projection_check_errors_px": [
+        0.0006664584441345271,
+        0.0007320343059639578,
+        0.0006612382906485909
+      ],
+      "virtual_lens_mm_36mm_sensor": 136.8000030517578,
+      "image_size": [
+        2000,
+        1497
+      ],
+      "camera_is_not_recovered_physical_intrinsics": true
+    },
+    {
+      "view": "side",
+      "projection_check_errors_px": [
+        0.00013224708524070043,
+        9.705310992969857e-05,
+        0.00010266931530588469
+      ],
+      "virtual_lens_mm_36mm_sensor": 216.0,
+      "image_size": [
+        1600,
+        873
+      ],
+      "camera_is_not_recovered_physical_intrinsics": true
+    }
+  ],
+  "semantics": "Opaque geometry coverage: glass temporarily opaque, flat emission IDs, no photometric or transparency comparison. Source not saved.",
+  "source_unchanged": true
+}
