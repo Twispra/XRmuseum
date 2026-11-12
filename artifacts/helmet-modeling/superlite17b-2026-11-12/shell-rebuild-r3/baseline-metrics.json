@@ -1,0 +1,70 @@
+{
+  "backup_sha256": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+  "reference_mask_sha256": "81bf0b3e6377a7e5e5f430f11040505347ef173568749b5ae70fd205453cb950",
+  "metric_definition_frozen_before_reconstruction": true,
+  "visible_yellow_baseline": {
+    "iou": 0.37025276260637624,
+    "intersection_px": 99110,
+    "union_px": 267682,
+    "symmetric_mean_boundary_distance_px": 30.64300964219275,
+    "symmetric_mean_boundary_distance_over_L": 0.03825594212508458,
+    "directional_boundary_means_px": {
+      "reference_to_model": 31.31920733200121,
+      "model_to_reference": 29.966811952384298
+    },
+    "boundary_definition": "All visible-yellow component boundaries, including hardware occlusion edges; no hidden completion.",
+    "xor_over_union": 0.6297472373936238
+  },
+  "normalization": {
+    "L_px": 801,
+    "origin_px": [
+      436,
+      786
+    ],
+    "visible_mask_bbox_xyxy": [
+      436,
+      68,
+      1237,
+      785
+    ],
+    "formula": "x=(u-x0)/L; y=(y_bottom-v)/L; x right, y up",
+    "limitation": "L is the observed visible-yellow projected x-span, including small exposed yellow regions. Hidden full-shell fore-aft length is not observed. This normalization definition must be confirmed; not physical length."
+  },
+  "requested_gates": {
+    "side_iou_min": 0.93,
+    "symmetric_mean_boundary_over_L_max": 0.015,
+    "shell_silhouette_change_xor_over_union_min": 0.05,
+    "window_projected_tilt_difference_deg_max": 3.0,
+    "pixel_change_definition": "Full shell geometry projection with all accessories hidden; XOR/union on same pixel grid. Do not count material/light changes or accessory refitting toward the5% shell-shape gate.",
+    "mask_and_L_scope_status": "Provisional visible-mask reference and visible x-span; user confirmation required before treating as final acceptance definition."
+  },
+  "backup_vs_unmodified_work_pixel_change": null,
+  "byte_identical_work_inferred_change": 0.0,
+  "work_rendered_as_new_version": false,
+  "new_shell_built": false,
+  "comparison_stage": "baseline only, not an iteration passed",
+  "window_tilt": {
+    "reference_local_edge_deg_from_image_vertical": 13.95,
+    "reference_conservative_uncertainty_deg": 5,
+    "backup_projected_vertical_line_in_frame_plane_deg": 7.856297196490006,
+    "true_reference_3d_plane_angle_deg": null,
+    "limitation": "Curved short visible seat edge versus model in-plane vertical direction are not a uniquely identified real plane. ±5° observation uncertainty exceeds requested3° gate; user must confirm target definition before claiming a pass.",
+    "numeric_difference_between_different_features_deg": 6.093702803509993,
+    "comparable_plane_angle_error_deg": null
+  },
+  "full_hidden_shell_iou": null,
+  "front_photo_metrics": null,
+  "limits": [
+    "Visible-mask IoU includes differences from accessories and occlusion, not only shell shape.",
+    "No hidden shell silhouette is invented from metal/strap edges.",
+    "No true front photograph supplied, so front view is diagnostic only.",
+    "Existing estimated camera retained; not a uniquely recovered camera.",
+    "Step4 reconstruction and Step5 refitting await explicit point/angle confirmation."
+  ],
+  "current_occlusion_diagnostic": {
+    "reference_yellow_behind_current_model_occluder_px": 66301,
+    "fraction_of_reference_yellow": 0.3467208442499072,
+    "conditional_iou_ceiling": 0.6532791557500928,
+    "conditions": "Only if current camera, current opaque accessory coverage and shell-behind-accessories order are all fixed. Not a bound after authorized contact-part refitting or different cameras. Not a reason to lower the user acceptance gate."
+  }
+}

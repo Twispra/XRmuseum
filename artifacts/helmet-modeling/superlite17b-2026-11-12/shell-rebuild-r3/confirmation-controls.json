@@ -1,0 +1,519 @@
+{
+  "reference_image_sha256": "990eddafee9e25a3d16d46ae009cf9ca8f5e49e94cea7bdd3ac2831efbb8c0cd",
+  "reference_mask_sha256": "81bf0b3e6377a7e5e5f430f11040505347ef173568749b5ae70fd205453cb950",
+  "status": "PROVISIONAL; user confirmation required before Step 4",
+  "normalization": {
+    "L_px": 801,
+    "origin_px": [
+      436,
+      786
+    ],
+    "visible_mask_bbox_xyxy": [
+      436,
+      68,
+      1237,
+      785
+    ],
+    "formula": "x=(u-x0)/L; y=(y_bottom-v)/L; x right, y up",
+    "limitation": "L is the observed visible-yellow projected x-span, including small exposed yellow regions. Hidden full-shell fore-aft length is not observed. This normalization definition must be confirmed; not physical length."
+  },
+  "keypoints_16": [
+    {
+      "id": "P01",
+      "feature": "Most-posterior visible yellow shell sliver below the rear metal weight",
+      "original_xy_px": [
+        437,
+        374
+      ],
+      "uncertainty_radius_px": 10,
+      "confidence": 0.68,
+      "observation_status": "visible_occlusion_boundary",
+      "boundary_definition": "shell_against_occluding_black_pad",
+      "occlusion_or_inference_note": "The yellow/black boundary is visible, but the shell surface continues behind the rear weight and black pad. This is not the full-shell posterior extremum.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        438,
+        374
+      ],
+      "mask_boundary_alignment_adjustment_px": 1.0,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.0012484394506866417,
+        0.5143570536828964
+      ],
+      "uncertainty_radius_over_L": 0.012484394506866416
+    },
+    {
+      "id": "P02",
+      "feature": "Rear end of visible crown arc above the rear weight",
+      "original_xy_px": [
+        528,
+        168
+      ],
+      "uncertainty_radius_px": 7,
+      "confidence": 0.86,
+      "observation_status": "visible_outer_silhouette_endpoint",
+      "boundary_definition": "shell_against_background_near_rear_weight",
+      "occlusion_or_inference_note": "Rear continuation is covered by metal weight; do not connect P01 to P02 as a measured yellow outline.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        530,
+        168
+      ],
+      "mask_boundary_alignment_adjustment_px": 2.0,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.11485642946317104,
+        0.7715355805243446
+      ],
+      "uncertainty_radius_over_L": 0.008739076154806492
+    },
+    {
+      "id": "P03",
+      "feature": "Rear-upper crown arc",
+      "original_xy_px": [
+        579,
+        122
+      ],
+      "uncertainty_radius_px": 9.810249675906654,
+      "confidence": 0.9,
+      "observation_status": "visible_outer_silhouette",
+      "boundary_definition": "shell_against_background",
+      "occlusion_or_inference_note": "Visible exposed crown edge.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        585,
+        127
+      ],
+      "mask_boundary_alignment_adjustment_px": 7.810249675906654,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.17852684144818975,
+        0.8289637952559301
+      ],
+      "uncertainty_radius_over_L": 0.012247502716487708
+    },
+    {
+      "id": "P04",
+      "feature": "Rear-upper crown arc toward the broad shoulder",
+      "original_xy_px": [
+        655,
+        89
+      ],
+      "uncertainty_radius_px": 7.385164807134504,
+      "confidence": 0.9,
+      "observation_status": "visible_outer_silhouette",
+      "boundary_definition": "shell_against_background",
+      "occlusion_or_inference_note": "Visible exposed crown edge.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        657,
+        94
+      ],
+      "mask_boundary_alignment_adjustment_px": 5.385164807134504,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.27340823970037453,
+        0.8701622971285893
+      ],
+      "uncertainty_radius_over_L": 0.009219931095049318
+    },
+    {
+      "id": "P05",
+      "feature": "Broad crown high region, rear side of the projected maximum",
+      "original_xy_px": [
+        735,
+        71
+      ],
+      "uncertainty_radius_px": 7,
+      "confidence": 0.85,
+      "observation_status": "visible_outer_silhouette",
+      "boundary_definition": "shell_against_background_and_handle_overlap",
+      "occlusion_or_inference_note": "The crown/handle overlap and highlights make the exact maximum uncertain. This is a 2D observation, not a fixed 3D crown vertex.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        735,
+        70
+      ],
+      "mask_boundary_alignment_adjustment_px": 1.0,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.3732833957553059,
+        0.8926342072409488
+      ],
+      "uncertainty_radius_over_L": 0.008739076154806492
+    },
+    {
+      "id": "P06",
+      "feature": "Broad crown high region, front side",
+      "original_xy_px": [
+        810,
+        72
+      ],
+      "uncertainty_radius_px": 7,
+      "confidence": 0.85,
+      "observation_status": "visible_outer_silhouette",
+      "boundary_definition": "shell_against_background",
+      "occlusion_or_inference_note": "Visible exposed crown edge; it defines a broad region, not a spherical-arc assumption.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        810,
+        73
+      ],
+      "mask_boundary_alignment_adjustment_px": 1.0,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.46691635455680397,
+        0.8913857677902621
+      ],
+      "uncertainty_radius_over_L": 0.008739076154806492
+    },
+    {
+      "id": "P07",
+      "feature": "Crown arc descending toward strap buckle",
+      "original_xy_px": [
+        885,
+        93
+      ],
+      "uncertainty_radius_px": 7,
+      "confidence": 0.85,
+      "observation_status": "visible_outer_silhouette",
+      "boundary_definition": "shell_against_background",
+      "occlusion_or_inference_note": "Visible crown edge, before buckle occlusion.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        884,
+        97
+      ],
+      "mask_boundary_alignment_adjustment_px": 4.123105625617661,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.5605493133583022,
+        0.8651685393258427
+      ],
+      "uncertainty_radius_over_L": 0.008739076154806492
+    },
+    {
+      "id": "P08",
+      "feature": "Visible crown arc endpoint at strap buckle",
+      "original_xy_px": [
+        953,
+        131
+      ],
+      "uncertainty_radius_px": 9,
+      "confidence": 0.76,
+      "observation_status": "visible_occlusion_endpoint",
+      "boundary_definition": "shell_against_black_buckle",
+      "occlusion_or_inference_note": "Shell edge disappears beneath buckle/webbing. Hidden continuation is not annotated.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        949,
+        135
+      ],
+      "mask_boundary_alignment_adjustment_px": 5.656854249492381,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.6454431960049938,
+        0.8177278401997503
+      ],
+      "uncertainty_radius_over_L": 0.011235955056179775
+    },
+    {
+      "id": "P09",
+      "feature": "Yellow front shoulder first visible beyond buckle",
+      "original_xy_px": [
+        1043,
+        206
+      ],
+      "uncertainty_radius_px": 15.038404810405298,
+      "confidence": 0.7,
+      "observation_status": "visible_occlusion_endpoint",
+      "boundary_definition": "shell_against_buckle_and_background",
+      "occlusion_or_inference_note": "Buckle covers the crown-to-shoulder transition. Do not turn this into a sharp physical notch under the buckle.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        1042,
+        193
+      ],
+      "mask_boundary_alignment_adjustment_px": 13.038404810405298,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.7578027465667915,
+        0.7240948813982522
+      ],
+      "uncertainty_radius_over_L": 0.018774537840705742
+    },
+    {
+      "id": "P10",
+      "feature": "Visible front shoulder crest",
+      "original_xy_px": [
+        1098,
+        178
+      ],
+      "uncertainty_radius_px": 7,
+      "confidence": 0.85,
+      "observation_status": "visible_outer_silhouette",
+      "boundary_definition": "shell_against_background",
+      "occlusion_or_inference_note": "Visible local crest behind the front handle/port seat; true 3D extremum not established.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        1097,
+        177
+      ],
+      "mask_boundary_alignment_adjustment_px": 1.4142135623730951,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.8264669163545568,
+        0.7590511860174781
+      ],
+      "uncertainty_radius_over_L": 0.008739076154806492
+    },
+    {
+      "id": "P11",
+      "feature": "Upper yellow shell to dark port-seat junction",
+      "original_xy_px": [
+        1135,
+        210
+      ],
+      "uncertainty_radius_px": 9,
+      "confidence": 0.78,
+      "observation_status": "visible_shell_hardware_junction",
+      "boundary_definition": "shell_to_dark_window_seat",
+      "occlusion_or_inference_note": "Front window-seat attachment is an interface, not the outer metal window-ring silhouette.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        1135,
+        210
+      ],
+      "mask_boundary_alignment_adjustment_px": 0.0,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.8726591760299626,
+        0.7191011235955056
+      ],
+      "uncertainty_radius_over_L": 0.011235955056179775
+    },
+    {
+      "id": "P12",
+      "feature": "Lower visible upper-port-seat junction before sideblock occlusion",
+      "original_xy_px": [
+        1171,
+        327
+      ],
+      "uncertainty_radius_px": 12.770329614269007,
+      "confidence": 0.76,
+      "observation_status": "visible_shell_hardware_junction",
+      "boundary_definition": "shell_to_dark_window_seat_and_sideblock",
+      "occlusion_or_inference_note": "Main yellow shell continues behind front hardware. This is only the chosen main-shell visible x extent, not complete shell forward extremum.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        1175,
+        337
+      ],
+      "mask_boundary_alignment_adjustment_px": 10.770329614269007,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.9176029962546817,
+        0.5730337078651685
+      ],
+      "uncertainty_radius_over_L": 0.015942983288725354
+    },
+    {
+      "id": "P13",
+      "feature": "First visible lower yellow/black skirt interface after diagonal webbing",
+      "original_xy_px": [
+        701,
+        595
+      ],
+      "uncertainty_radius_px": 10,
+      "confidence": 0.73,
+      "observation_status": "visible_interface_endpoint",
+      "boundary_definition": "shell_to_black_neck_skirt",
+      "occlusion_or_inference_note": "Rear continuation is obscured by webbing; no completed hidden skirt line is inferred.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        699,
+        600
+      ],
+      "mask_boundary_alignment_adjustment_px": 5.385164807134504,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.33083645443196,
+        0.23845193508114856
+      ],
+      "uncertainty_radius_over_L": 0.012484394506866416
+    },
+    {
+      "id": "P14",
+      "feature": "Middle lower yellow/black skirt interface",
+      "original_xy_px": [
+        822,
+        681
+      ],
+      "uncertainty_radius_px": 9.071067811865476,
+      "confidence": 0.86,
+      "observation_status": "visible_shell_skirt_junction",
+      "boundary_definition": "shell_to_black_neck_skirt",
+      "occlusion_or_inference_note": "Visible interface edge, not free-space outer silhouette.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        817,
+        686
+      ],
+      "mask_boundary_alignment_adjustment_px": 7.0710678118654755,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.4818976279650437,
+        0.13108614232209737
+      ],
+      "uncertainty_radius_over_L": 0.01132467891618661
+    },
+    {
+      "id": "P15",
+      "feature": "Forward lower yellow/black skirt interface",
+      "original_xy_px": [
+        954,
+        763
+      ],
+      "uncertainty_radius_px": 9.810249675906654,
+      "confidence": 0.85,
+      "observation_status": "visible_shell_skirt_junction",
+      "boundary_definition": "shell_to_black_neck_skirt",
+      "occlusion_or_inference_note": "Visible interface edge; separate from black yoke outer silhouette.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        949,
+        769
+      ],
+      "mask_boundary_alignment_adjustment_px": 7.810249675906654,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.6466916354556804,
+        0.02871410736579276
+      ],
+      "uncertainty_radius_over_L": 0.012247502716487708
+    },
+    {
+      "id": "P16",
+      "feature": "Lowest visible yellow-shell corner before front latch",
+      "original_xy_px": [
+        1009,
+        785
+      ],
+      "uncertainty_radius_px": 9,
+      "confidence": 0.83,
+      "observation_status": "visible_interface_endpoint",
+      "boundary_definition": "shell_to_front_latch_and_black_skirt",
+      "occlusion_or_inference_note": "Local visible corner is near latch hardware. Hidden continuation toward the window/lower chin is not annotated.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false,
+      "initial_manual_xy_px": [
+        1009,
+        786
+      ],
+      "mask_boundary_alignment_adjustment_px": 1.0,
+      "alignment_status": "Proposed visible-mask boundary anchor, not automatic 3D correspondence; confirm visually.",
+      "normalized_xy_up": [
+        0.7153558052434457,
+        0.0012484394506866417
+      ],
+      "uncertainty_radius_over_L": 0.011235955056179775
+    }
+  ],
+  "window_edge_projected_angle": {
+    "status": "LOCAL_PROJECTED_EDGE_DIRECTION_ONLY; not a recovered 3D plane",
+    "edge_identity": "Visible upper dark port-seat boundary next to yellow shell, above the sideblock occlusion; selected near-straight local segment. The circular/curved window-ring boundary does not itself define a unique plane direction.",
+    "original_xy_px": [
+      [
+        1144,
+        221
+      ],
+      [
+        1149,
+        241
+      ],
+      [
+        1154,
+        265
+      ],
+      [
+        1160,
+        288
+      ],
+      [
+        1166,
+        311
+      ],
+      [
+        1172,
+        333
+      ]
+    ],
+    "per_point_uncertainty_radius_px": 5,
+    "span_start_px": [
+      1144,
+      221
+    ],
+    "span_end_px": [
+      1172,
+      333
+    ],
+    "span_length_px": 115.447,
+    "fit_model": "x_px = a*y_px + b; least-squares over six manual local-edge marks",
+    "fit_a": 0.24840056,
+    "fit_b_px": 1088.81725,
+    "fit_rms_x_px": 0.397,
+    "angle_from_image_vertical_deg": 13.95,
+    "angle_direction": "Positive means the observed edge moves to image right as image y increases downward.",
+    "conservative_angle_uncertainty_deg": 5,
+    "uncertainty_basis": "Manual marking uncertainty, short visible span, local ring curvature, reflections and ambiguous exact seat/ring boundary; not a statistical confidence interval.",
+    "true_3d_window_plane_angle_deg": null,
+    "do_not_use_as": [
+      "A known physical side-elevation window tilt",
+      "A 3D plane normal",
+      "An inferred millimetre adjustment",
+      "A user-approved reconstruction angle"
+    ]
+  },
+  "closed_full_shell_profile_available": false,
+  "do_not_close_across_occlusion": true,
+  "section_positions_not_final_3d_planes": {
+    "S1": 500,
+    "S2": 640,
+    "S3": 800,
+    "S4": 960,
+    "S5": 1110
+  },
+  "sections_note": "Original user sketch image x positions retained for discussion only; converting image columns into 3D section planes needs the confirmed reconstruction camera and profile."
+}

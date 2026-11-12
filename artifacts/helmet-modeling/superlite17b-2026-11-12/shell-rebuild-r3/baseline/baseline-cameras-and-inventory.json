@@ -1,0 +1,241 @@
+{
+  "backup_sha256": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+  "backup_unchanged": true,
+  "work_unchanged": true,
+  "complete_backup_inventory": {
+    "model_mesh_objects": 146,
+    "all_objects": 152,
+    "materials": 12,
+    "cameras": [
+      "STUDIO_Camera"
+    ],
+    "lights": [
+      {
+        "name": "STUDIO_Key",
+        "type": "AREA",
+        "energy": 5.0
+      },
+      {
+        "name": "STUDIO_Fill",
+        "type": "AREA",
+        "energy": 3.0
+      },
+      {
+        "name": "STUDIO_Rim",
+        "type": "AREA",
+        "energy": 8.0
+      },
+      {
+        "name": "STUDIO_Front",
+        "type": "AREA",
+        "energy": 1.0
+      }
+    ],
+    "scene_render_engine_saved": "CYCLES",
+    "camera_saved": "STUDIO_Camera"
+  },
+  "fixed_views": {
+    "side": {
+      "camera_kind": "Existing fixed virtual pose matched to unchanged accessories/frame; uncertain physical camera.",
+      "configuration": {
+        "pass": "a",
+        "focal_width_factor": 6.0,
+        "focal_px": 9600.0,
+        "parameters": [
+          -1.868753440720578,
+          0.05488567405502778,
+          -0.13920575552323405,
+          1.2874023093023639,
+          820.4061169165147,
+          439.84743012328244
+        ],
+        "parameter_order": [
+          "yaw_rad",
+          "elevation_rad",
+          "roll_rad",
+          "log_model_distance",
+          "crop_cx_px",
+          "crop_cy_px"
+        ],
+        "image_size": [
+          1600,
+          873
+        ],
+        "target_world": [
+          0.0,
+          0.015,
+          0.17
+        ],
+        "objective_cost": 35.88503682700761,
+        "solver_success": true,
+        "open_curve_rms_px": 15.801489101047771,
+        "open_curve_p95_px": 30.340728783950226,
+        "cap_errors": [
+          {
+            "annotation_id": "emergency_knob_silver_end_face_center",
+            "model_part": "Knob_Black_Emergency_520-525_CentreCap",
+            "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+            "model_point_world": [
+              -0.16156909801065922,
+              -0.018367410482217867,
+              0.17716000974178314
+            ],
+            "observed_px": [
+              1021,
+              405
+            ],
+            "projected_px": [
+              1037.5194727219784,
+              411.61831166042157
+            ],
+            "error_px": 17.79592729381254
+          },
+          {
+            "annotation_id": "upper_blue_dust_cap_visible_end_center",
+            "model_part": "Emergency_Inlet_DustCap",
+            "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+            "model_point_world": [
+              -0.13004296994768083,
+              0.04553775116801262,
+              0.18231999827548862
+            ],
+            "observed_px": [
+              905,
+              430
+            ],
+            "projected_px": [
+              842.9780838665764,
+              422.82293332078075
+            ],
+            "error_px": 62.43579395650694
+          },
+          {
+            "annotation_id": "lower_blue_dust_cap_visible_end_center",
+            "model_part": "CheckValve_DustCap",
+            "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+            "model_point_world": [
+              -0.13692297087982297,
+              0.043387752026319504,
+              0.14620000030845404
+            ],
+            "observed_px": [
+              874,
+              531
+            ],
+            "projected_px": [
+              868.0256491339343,
+              520.5050438853768
+            ],
+            "error_px": 12.07629794758006
+          }
+        ],
+        "camera_basis_right_up_back": [
+          [
+            -0.29800465385137553,
+            -0.9444563380369497,
+            -0.1385476518197138
+          ],
+          [
+            0.011199198102809713,
+            -0.1485915316961779,
+            0.9888352414179209
+          ],
+          [
+            -0.9544987188282528,
+            0.2931258812353808,
+            0.0548581215974952
+          ]
+        ],
+        "bounds_active": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "reference": "B"
+    },
+    "34": {
+      "camera_kind": "Existing fixed virtual pose matched to unchanged accessories/frame; uncertain physical camera.",
+      "configuration": {
+        "pass": "a",
+        "focal_width_factor": 3.8,
+        "focal_px": 7600.0,
+        "parameters": [
+          -0.6885622318390868,
+          -0.025961682843037848,
+          -0.170125145209993,
+          0.5458779623540294,
+          853.2400285916756,
+          837.4356118906261
+        ],
+        "parameter_order": [
+          "yaw_rad",
+          "elevation_rad",
+          "roll_rad",
+          "log_model_distance",
+          "crop_cx_px",
+          "crop_cy_px"
+        ],
+        "image_size": [
+          2000,
+          1497
+        ],
+        "target_world": [
+          0.0,
+          0.015,
+          0.17
+        ],
+        "objective_cost": 22.60321367789238,
+        "solver_success": true,
+        "open_curve_rms_px": 8.807362745812199,
+        "open_curve_p95_px": 17.663086057022284,
+        "cap_errors": [],
+        "camera_basis_right_up_back": [
+          [
+            0.763805867174297,
+            -0.6228607361934211,
+            -0.16924863538211957
+          ],
+          [
+            0.11447435965850342,
+            -0.12733647992531102,
+            0.9852314661342311
+          ],
+          [
+            -0.6352135217790124,
+            -0.771900203516504,
+            -0.025958766540108737
+          ]
+        ],
+        "bounds_active": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "reference": "A"
+    },
+    "front": {
+      "camera_kind": "Orthographic model diagnostic front, no real front photograph supplied.",
+      "position": [
+        0.0,
+        -1.0,
+        0.1899999976158142
+      ],
+      "target": [
+        0.0,
+        0.014999999664723873,
+        0.18000000715255737
+      ],
+      "ortho_scale": 0.39,
+      "reference": null
+    }
+  },
+  "limits": "Baseline poses are estimates; no true front photo supplied. Full shell mask includes model-hidden surfaces while reference visible mask does not; they must not be compared as identical definitions."
+}
