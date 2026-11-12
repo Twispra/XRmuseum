@@ -237,3 +237,8 @@ Ereshkigal1224按用户授权认领#25子范围；Codex辅助厂家查源、实�
 ## 2026-11-12：v4照片视角匹配与误差基线
 
 继续用户授权的#25后部附件任务。Codex两子代理分别标注前/侧图，各自做两遍同AI重读；根代理只读导出冻结v4、用任务本地SciPy1.18.1有界鲁棒最小二乘建立透视候选，再用Blender真实可见覆盖、原像素曲线距离与壳面射线核对。算法边界与复跑见[阶段说明](../artifacts/helmet-modeling/superlite17b-2026-11-12/camera-baseline-r1/README.md)；方法参考[SciPy官方least_squares](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.least_squares.html)。原厂家照片只作本地分析，含照片的网格/叠图留tmp；提交图只有本项目模型与数值描线，没有嵌入厂家像素或新第三方素材。未改变模型几何、Unity或公共依赖；AI标注/审阅不是人类参与者研究，也未验证实物尺寸或实机。
+
+
+## 2026-11-12：v4后部连接独立研究r1
+
+Codex继续用户授权的#25子范围，从冻结v4保存源增量派生后部结构样件，保留141个原件，研究连续后配重、550-339带凸缘套筒、530-090示意固定件和540-157单片挂片。[来源、估算与未闭合接口](../artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/README.md)；[活动与实际检查](activity/2026-11-12-superlite-rear-structure-r1.md)。使用前轮已核厂家手册/公告作为部件连接依据，不新增厂家媒体/照片贴图或外部模型；新增源/渲染为本项目几何。脚本、布尔/放样、UV、三角面自交/交叠、保存源回读与匹配渲染由Codex辅助完成，独立AI复核不代表成员人工批准。新几何尺寸/位置仍为估算，下端挂接待对齐，未声明照片或毫米精度提高；无Unity、实机或安全/承压验证。
