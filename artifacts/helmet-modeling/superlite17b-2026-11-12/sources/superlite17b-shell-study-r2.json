@@ -6,5 +6,7 @@
   "max_displacement_model_m": 0.008872908455406477,
   "changed_outer_vertices": 331,
   "parameters_file_sha256": "ed06a1ed8ca8fe7179ec5a9aa6c431a53e36024ed524f9bd1dfe4f336b2948c4",
-  "limits": "Visual shell candidate only. No physical scale/camera uniqueness or unchanged-part/geometry acceptance implied until independent saved-file checks."
+  "limits": "Visual shell candidate only. No physical scale/camera uniqueness or unchanged-part/geometry acceptance implied until independent saved-file checks.",
+  "parameters_text_lf_sha256": "4a5f04ed956990f37366ac6c5dcb45d163d9afff992f18f8d3d61218a60a2a6c",
+  "parameters_hash_policy": "file hash uses runtime working bytes; LF text hash is portable across repository line-ending normalization."
 }
