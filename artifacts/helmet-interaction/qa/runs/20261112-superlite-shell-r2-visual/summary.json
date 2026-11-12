@@ -1,0 +1,259 @@
+{
+  "base_commit": "b4eac5d8f7b83e8a9c88f952e23bfd8763f177c9",
+  "scope": "Shell-only visual candidate; retained r1 and 145 other parts untouched",
+  "source_sha256": "f4c3241da1bd541d723d5dcf9cdc9be6a144ca3acdca1911b73002838840ce92",
+  "candidate_sha256": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+  "changed_object": "Shell_Yellow_520-065_ESTIMATED",
+  "protected_outer_count": 1834,
+  "changed_outer_vertices": 331,
+  "max_displacement_model_mm": 8.872918869249729,
+  "only_object_scope_independently_checked": true,
+  "independent_ai_review": "Independent actual Blender reread: same 146 objects, only shell evaluated geometry changed; other 145 geometry/UV/transforms/material nodes/links identical. Post-change highlight bend remains, so this is a reversible visual candidate, not a fully fair or physically accurate surface.",
+  "visible_metrics_report": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/diagnostics/rendered-boundary-change.json",
+  "numeric_limits": [
+    "Two fitting crown arcs are not held-out views.",
+    "Median side crown error became slightly worse even though RMS improved.",
+    "The side front-shoulder curve did not improve.",
+    "Existing 22 nonadjacent BVH candidates and attachment overlaps preserved; not proven harmless.",
+    "Vertex-to-inner-distance samples are not full minimum thickness proof.",
+    "No physical measurements, Unity/device/build validation."
+  ],
+  "actual_render_triangulation_matches_baseline": true,
+  "natural_exit_codes": {
+    "constraint_export": 0,
+    "solve_03": 0,
+    "saved_candidate": 0,
+    "saved_source_geometry_gate": 0,
+    "beauty_render": 0,
+    "coverage_render": 0,
+    "rendered_contour_measurement": 0
+  },
+  "links": [
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/README.md",
+      "target": "../sources/superlite17b-shell-study-r2.blend",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/README.md",
+      "target": "../sources/superlite17b-rear-study-r1.blend",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/README.md",
+      "target": "comparison.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/README.md",
+      "target": "../camera-baseline-r1/results/camera-fit.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/README.md",
+      "target": "diagnostics/rendered-boundary-change.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/README.md",
+      "target": "diagnostics/front-shell-contours.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/README.md",
+      "target": "diagnostics/side-shell-contours.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/README.md",
+      "target": "../../../helmet-interaction/qa/runs/20261112-superlite-shell-r2-visual/report.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/README.md",
+      "target": "constraints-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/README.md",
+      "target": "candidate-parameters.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/README.md",
+      "target": "../sources/superlite17b-shell-study-r2.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "../../../docs/activity/2026-11-12-superlite-v4-accuracy-plan.md",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "baseline-v4/superlite17b-shell-v4.blend",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "baseline-v4/baseline-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "baseline-v4/readback.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "reference-inventory.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "camera-baseline-r1/README.md",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "rear-study-r1/README.md",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "sources/superlite17b-rear-study-r1.blend",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "shell-study-r2/README.md",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "sources/superlite17b-shell-study-r2.blend",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-shell-r2.md",
+      "target": "../../artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-shell-r2.md",
+      "target": "../../artifacts/helmet-interaction/qa/runs/20261112-superlite-shell-r2-visual/report.json",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-shell-r2.md",
+      "target": "../external-resources.md",
+      "exists": true
+    }
+  ],
+  "images": [
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/comparison.png",
+      "pixels": [
+        1840,
+        1620
+      ],
+      "sha256": "c8fabad91b1f14969cf8876bc5e88a7e180948b0f8ade90a09554654f9463fdf"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/diagnostics/front-shell-contours.png",
+      "pixels": [
+        2000,
+        1497
+      ],
+      "sha256": "e49f65eebd7c6c95bb19794e2d2f1bad1f2cf616c8b87f1f21cf9b1b88d9c305"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/diagnostics/side-shell-contours.png",
+      "pixels": [
+        1600,
+        873
+      ],
+      "sha256": "80e005f5539e8b21de648838d207b8398c0089a4f18c3beaa40b360460f8a519"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/renders/after-front-beauty.png",
+      "pixels": [
+        1200,
+        898
+      ],
+      "sha256": "6eef9e4e3b214d424b95e14ee89e6bd9a6455e6cb236bda25c4bbcd8a44ab9fd"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/renders/after-front-masks.png",
+      "pixels": [
+        2000,
+        1497
+      ],
+      "sha256": "b0ea8479ded084335be6af46f84f1684d393d7f7f0f81f6eb2e45b94bf9029f4"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/renders/after-side-beauty.png",
+      "pixels": [
+        960,
+        524
+      ],
+      "sha256": "3a808a9ba59091c6a76db172083b883f5a1aa5cb1bafe1b9ee6b23af22bc5e9d"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/renders/after-side-masks.png",
+      "pixels": [
+        1600,
+        873
+      ],
+      "sha256": "5257e57b32154651b2ee50844c467f16e27d2a7002545b5aa0dde8ce7ef40c4f"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/renders/after-side-ortho.png",
+      "pixels": [
+        1100,
+        900
+      ],
+      "sha256": "27e5e47f385df678d699c736903ef2dde6e5cb0626f3784ae1b373ddfd5d35be"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/renders/before-front-beauty.png",
+      "pixels": [
+        1200,
+        898
+      ],
+      "sha256": "7102f7647c99daa21b0abb4781ca094071efade3fbbc54916ef1dd7b532a8f5d"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/renders/before-front-masks.png",
+      "pixels": [
+        2000,
+        1497
+      ],
+      "sha256": "31c25493a25cd6f6004474ee096852494e85b3385097b9aaf5e552f22629faa3"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/renders/before-side-beauty.png",
+      "pixels": [
+        960,
+        524
+      ],
+      "sha256": "c2b7b23c78d6144d267ce0eb45625de212442e0d92326ff65e64b6ade4dfb035"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/renders/before-side-masks.png",
+      "pixels": [
+        1600,
+        873
+      ],
+      "sha256": "9b0a35e88ae7562eb5ce6b07f9d104dbdc115b64fef316a0a26c78ecc99b8d8c"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-study-r2/renders/before-side-ortho.png",
+      "pixels": [
+        1100,
+        900
+      ],
+      "sha256": "4bc404c4fd7a659bc877ccb75dbe6fa19a9b75506fc1f42642f2a3ff7c0717c9"
+    }
+  ]
+}

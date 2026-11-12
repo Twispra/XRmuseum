@@ -1,0 +1,147 @@
+{
+  "camera_policy": "Same frozen camera before/after, never refit to new geometry.",
+  "distance_unit": "pixels and reference image width fraction, not millimetres.",
+  "fit_not_holdout": "These two crown arcs contributed to shape fitting. A second sequential AI trace is an annotation sensitivity check, not independent validation.",
+  "views": {
+    "front": {
+      "measurements": [
+        {
+          "version": "before",
+          "curve": "C05",
+          "pass": "a",
+          "median_px": 71.92096858359132,
+          "rms_px": 62.21708380534545,
+          "p95_px": 94.1301783844667,
+          "sample_count_not_independent_cases": 58,
+          "uncertainty_allowance_px": 25.0
+        },
+        {
+          "version": "before",
+          "curve": "C05",
+          "pass": "b",
+          "median_px": 74.19778352591064,
+          "rms_px": 65.85754828921789,
+          "p95_px": 97.56916257501982,
+          "sample_count_not_independent_cases": 60,
+          "uncertainty_allowance_px": 25.0
+        },
+        {
+          "version": "after",
+          "curve": "C05",
+          "pass": "a",
+          "median_px": 28.238751677039893,
+          "rms_px": 48.31131087665382,
+          "p95_px": 78.64488296997791,
+          "sample_count_not_independent_cases": 58,
+          "uncertainty_allowance_px": 25.0
+        },
+        {
+          "version": "after",
+          "curve": "C05",
+          "pass": "b",
+          "median_px": 31.804632559997533,
+          "rms_px": 49.797590303146194,
+          "p95_px": 80.74809791221756,
+          "sample_count_not_independent_cases": 60,
+          "uncertainty_allowance_px": 25.0
+        }
+      ],
+      "changed_visible_shell_pixels": 12699,
+      "image_size": [
+        2000,
+        1497
+      ],
+      "published_image_contains_manufacturer_pixels": false
+    },
+    "side": {
+      "measurements": [
+        {
+          "version": "before",
+          "curve": "yellow_shell_crown_visible_silhouette",
+          "pass": "a",
+          "median_px": 22.257763372728554,
+          "rms_px": 49.141317113189466,
+          "p95_px": 99.54882351778781,
+          "sample_count_not_independent_cases": 84,
+          "uncertainty_allowance_px": 7
+        },
+        {
+          "version": "before",
+          "curve": "yellow_shell_crown_visible_silhouette",
+          "pass": "b",
+          "median_px": 22.5974135047432,
+          "rms_px": 48.16464816993199,
+          "p95_px": 98.37351222004476,
+          "sample_count_not_independent_cases": 84,
+          "uncertainty_allowance_px": 7
+        },
+        {
+          "version": "before",
+          "curve": "yellow_shell_front_shoulder_silhouette",
+          "pass": "a",
+          "median_px": 133.9589489358587,
+          "rms_px": 154.32791835237953,
+          "p95_px": 243.393344533374,
+          "sample_count_not_independent_cases": 47,
+          "uncertainty_allowance_px": 8
+        },
+        {
+          "version": "before",
+          "curve": "yellow_shell_front_shoulder_silhouette",
+          "pass": "b",
+          "median_px": 133.91332006755226,
+          "rms_px": 155.78678294107763,
+          "p95_px": 245.2603647274205,
+          "sample_count_not_independent_cases": 46,
+          "uncertainty_allowance_px": 8
+        },
+        {
+          "version": "after",
+          "curve": "yellow_shell_crown_visible_silhouette",
+          "pass": "a",
+          "median_px": 25.661208607048138,
+          "rms_px": 30.1340260139518,
+          "p95_px": 51.88856031938104,
+          "sample_count_not_independent_cases": 84,
+          "uncertainty_allowance_px": 7
+        },
+        {
+          "version": "after",
+          "curve": "yellow_shell_crown_visible_silhouette",
+          "pass": "b",
+          "median_px": 26.056434338529847,
+          "rms_px": 30.363668766346088,
+          "p95_px": 52.229494742989196,
+          "sample_count_not_independent_cases": 84,
+          "uncertainty_allowance_px": 7
+        },
+        {
+          "version": "after",
+          "curve": "yellow_shell_front_shoulder_silhouette",
+          "pass": "a",
+          "median_px": 133.9589489358587,
+          "rms_px": 154.32791835237953,
+          "p95_px": 243.393344533374,
+          "sample_count_not_independent_cases": 47,
+          "uncertainty_allowance_px": 8
+        },
+        {
+          "version": "after",
+          "curve": "yellow_shell_front_shoulder_silhouette",
+          "pass": "b",
+          "median_px": 133.91332006755226,
+          "rms_px": 155.78678294107763,
+          "p95_px": 245.2603647274205,
+          "sample_count_not_independent_cases": 46,
+          "uncertainty_allowance_px": 8
+        }
+      ],
+      "changed_visible_shell_pixels": 919,
+      "image_size": [
+        1600,
+        873
+      ],
+      "published_image_contains_manufacturer_pixels": false
+    }
+  }
+}

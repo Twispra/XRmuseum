@@ -13,6 +13,8 @@
 
 已交[相机匹配与误差基线](camera-baseline-r1/README.md)，发现视角仍有歧义，保留全壳不作照片形变。随后从 v4 派生了[后部连接研究首版](rear-study-r1/README.md)：[可编辑源](sources/superlite17b-rear-study-r1.blend)集中修改 #25 的后配重、定位套筒和后铰片。其余141个原部件受指纹保护。新样件下端与原横销接口仍有间隔，尺寸和位置为研究估算；未证明照片精度提升，也未接入Unity。
 
+用户随后要求保留r1、仅尝试外壳形状，已另存[外壳视觉候选r2](shell-study-r2/README.md)：[可编辑源](sources/superlite17b-shell-study-r2.blend)。其他145件保持一致，r1不覆盖；同机位实际轮廓有改善和未改善区域，高光折转仍待外观反馈，不把候选称最终精准复原。
+
 基准文件保持只读使用，后续修改必须另存。复核可用：
 
 ```text
