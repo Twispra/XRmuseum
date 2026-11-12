@@ -1,0 +1,95 @@
+{
+  "worktree_base": "e34bdf67815ba569bbfefa8eed99556eca02a327",
+  "product_base": "adc06875103cc47a555dd251e3cf80d836a09558",
+  "selected_baseline": "v4, original local file copied byte-for-byte",
+  "baseline_sha256": "6e85f7f048b3a6b8706428854ab8934099da25ff21d427e87fde9de930b1c8a2",
+  "original_source_matches_copy": true,
+  "blender_readback_exit_code": 0,
+  "meshes": 144,
+  "triangles": 61400,
+  "geometry_modified": false,
+  "reference_images_hash_matched": 12,
+  "relative_links": [
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "../../../docs/activity/2026-11-12-superlite-v4-accuracy-plan.md",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "baseline-v4/superlite17b-shell-v4.blend",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "baseline-v4/baseline-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "baseline-v4/readback.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "reference-inventory.json",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-v4-accuracy-plan.md",
+      "target": "../../artifacts/helmet-modeling/superlite17b-2026-11-12/reference-inventory.json",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-v4-accuracy-plan.md",
+      "target": "../../artifacts/helmet-modeling/superlite17b-2026-11-12/baseline-v4/baseline-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-v4-accuracy-plan.md",
+      "target": "../../artifacts/helmet-modeling/superlite17b-2026-11-12/baseline-v4/readback.json",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-v4-accuracy-plan.md",
+      "target": "../external-resources.md",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-v4-accuracy-plan.md",
+      "target": "../../artifacts/helmet-modeling/superlite17b-2026-11-12/planning-validation.json",
+      "exists": true
+    }
+  ],
+  "product_paths_unchanged": true,
+  "stages_complete": [
+    "0: fixed baseline, readback and reference inventory",
+    "planning only"
+  ],
+  "stages_not_executed": [
+    "landmark annotations",
+    "new perspective fitting",
+    "new projection error measurement",
+    "new geometry/refinement",
+    "Unity import or runtime",
+    "headset/performance/build"
+  ],
+  "historical_weak_perspective_fit": {
+    "front_rms_px": 44.99130742810654,
+    "side_rms_px": 59.870993888461484,
+    "new_run": false,
+    "note": "Historical approximate photo/model fit, not calibrated physical dimensions."
+  },
+  "evaluated_triangles": 61400,
+  "saved_frame": 1,
+  "modifier_records": 0,
+  "shape_key_records": 0,
+  "independent_ai_review": {
+    "result": "No technical blocker in planning; not human approval",
+    "closing_changes": [
+      "Reference-root resolution documented",
+      "Evaluated meshes/modifier visibility/shape keys recorded; material-name limitation explicit",
+      "Ambiguous camera/configuration stop conditions added"
+    ]
+  }
+}

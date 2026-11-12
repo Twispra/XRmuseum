@@ -1,0 +1,22 @@
+# SuperLite 17B：以 v4 为基准的精度改进工作
+
+用户于 2026-11-12 明确选择本地 v4，并要求先规划提高精准度的方法，再按 #25 认领范围逐步修改。[执行计划](../../../docs/activity/2026-11-12-superlite-v4-accuracy-plan.md)
+
+## 已完成的准备
+
+- [基准模型](baseline-v4/superlite17b-shell-v4.blend)是原本地 v4 的逐字节副本，SHA256 为 `6e85f7f048b3a6b8706428854ab8934099da25ff21d427e87fde9de930b1c8a2`。原件保留；v5 临时候选未混入。
+- [来源清单](baseline-v4/baseline-manifest.json)记录 v2 → v3 → v4 的指纹；[实际回读](baseline-v4/readback.json)由 Blender 4.5.14 LTS 重新打开该副本产生，144 个模型网格、61,400 个三角面。
+- [参考图清单](reference-inventory.json)核对本机 12 张原图哈希，全部与原交付清单一致。图片本体、厂家页面和旧原始任务书不复制入库；原始任务书中的猜测不作为新增事实。
+- 本步骤没有改变模型几何、材质或运行时，未重跑旧生成器，未改 Unity。v4 旧报告的 178 项仍属于历史运行，本次只做保存源清单与指纹回读。
+
+## 下一份成果
+
+先交相机匹配和误差基线：两张整盔参考各自的相机候选、可见关键点定义、局部轮廓及误差图。证据与参数放在本目录的独立阶段文件中。之后从 v4 派生 `sources/superlite17b-rear-study-r1.blend`，集中修改 #25 的后配重、定位套筒和后铰片；该文件目前尚未生成。
+
+基准文件保持只读使用，后续修改必须另存。复核可用：
+
+```text
+<Blender4.5.14> --background --disable-autoexec --python-exit-code 1 --python artifacts/helmet-modeling/superlite17b-2026-11-12/audit_v4_baseline.py
+```
+
+脚本只读取基准，输出逐对象顶点/拓扑指纹、世界变换和材质名称，供后续限定修改范围。它不验证工厂尺寸、水密性或设备体验。

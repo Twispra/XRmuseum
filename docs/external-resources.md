@@ -227,3 +227,8 @@ Codex 辅助编写 #63 的原创三语短讲解、音轨制作脚本、实体站
 ## 2026-11-12：SuperLite通信配置与后部附件首轮复核
 
 Ereshkigal1224按用户授权认领#25子范围；Codex辅助厂家查源、实际Blender源/FBX只读回读、模型三视与标注、证据对照和文档。新增核对Kirby Morgan通信手册#250114001与Bulletin #06/2006，复核#241108001、#260319004及产品页。[可定位的来源与哈希](../artifacts/helmet-refinement/qa/20261112-superlite-config-review/sources.json)；[事实/模型差异/待证边界](../artifacts/helmet-refinement/eras/superlite-17b/references/config-review-2026-11-12.zh-CN.md)。厂家照片/PDF仅链接，临时原件和页图未提交、未作贴图；新三视来自既有项目模型，不新增第三方媒体、模型、字体、音频或package。未改模型/Unity，不把AI审阅视为成员人工批准或实机结果。
+
+
+## 2026-11-12：v4基准与精度改进计划
+
+用户选择以现有本地v4继续SuperLite #25后续工作，Codex辅助核对原12张参考图、v4来源链和历史弱透视拟合，制定照片视角匹配、投影误差和局部结构验收流程。[计划与事实边界](activity/2026-11-12-superlite-v4-accuracy-plan.md)；[原图指纹清单](../artifacts/helmet-modeling/superlite17b-2026-11-12/reference-inventory.json)。将Ereshkigal1224此前的本地v4逐字节归档为只读基准，没有生成新几何或采用v5候选。原图/PDF及旧任务书不复制入库、不作纹理；补核厂家修订索引、260519005/260519003/250918001及OpenCV官方标定/PnP文档的适用边界，未向Unity新增依赖。AI计划和源文件回读不代表人工外观批准、毫米测量或实机验收。
