@@ -1,0 +1,285 @@
+{
+  "base_commit": "25b01a2e6d31b8b80c72071904a85377baf911e8",
+  "scope": "User-defined r3 steps0-3 only; explicit confirmation gate before new loft/part refit",
+  "backup_sha256": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+  "backup_readonly_locally": true,
+  "current_source_backup_work_all_byte_identical": true,
+  "complete_backup_inventory": {
+    "model_mesh_objects": 146,
+    "all_objects": 152,
+    "materials": 12,
+    "cameras": [
+      "STUDIO_Camera"
+    ],
+    "lights": [
+      {
+        "name": "STUDIO_Key",
+        "type": "AREA",
+        "energy": 5.0
+      },
+      {
+        "name": "STUDIO_Fill",
+        "type": "AREA",
+        "energy": 3.0
+      },
+      {
+        "name": "STUDIO_Rim",
+        "type": "AREA",
+        "energy": 8.0
+      },
+      {
+        "name": "STUDIO_Front",
+        "type": "AREA",
+        "energy": 1.0
+      }
+    ],
+    "scene_render_engine_saved": "CYCLES",
+    "camera_saved": "STUDIO_Camera"
+  },
+  "keypoints_count": 16,
+  "keypoints_on_visible_mask_boundary": true,
+  "normalization_L_px": 801,
+  "normalization_scope": "Visible yellow projection only; not complete hidden physical shell. Awaiting confirmation.",
+  "reference_mask_area_px": 191223,
+  "segmentation_recipe_replay_sha_verified": true,
+  "baseline_visible_iou": 0.37025276260637624,
+  "baseline_mean_boundary_px": 30.64300964219275,
+  "baseline_mean_boundary_over_L": 0.03825594212508458,
+  "reference_local_edge_angle_deg": 13.95,
+  "true_reference_plane_angle_deg": null,
+  "new_shell_built": false,
+  "part_refitting_performed": false,
+  "work_rendered_as_new_version": false,
+  "blender_baseline_render_exit": 0,
+  "independent_ai_review": "Backup/work SHA and inventory, mask recipe and metrics independently recomputed; final16 points on mask edge, single L801 normalization. Ready for user confirmation only; not Step4 or physical precision approval.",
+  "not_available": [
+    "complete unoccluded real shell silhouette",
+    "true3D window plane inclination",
+    "real frontal photograph",
+    "new model metric results",
+    "Unity/device/performance/build results"
+  ],
+  "links": [
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+      "target": "backups/backup_r1_current.blend",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+      "target": "work/work_r3.blend",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+      "target": "backup-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+      "target": "baseline/baseline-cameras-and-inventory.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+      "target": "baseline/base_side.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+      "target": "baseline/base_34.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+      "target": "baseline/base_front.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+      "target": "reference-side-visible-mask.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+      "target": "segmentation-side-r3.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+      "target": "baseline-metrics.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+      "target": "keypoints-confirmation.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+      "target": "confirmation-controls.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+      "target": "annotations-side-r3.json",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-r3-preflight.md",
+      "target": "../../artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-r3-preflight.md",
+      "target": "../external-resources.md",
+      "exists": true
+    }
+  ],
+  "files": [
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/annotations-side-r3.json",
+      "bytes": 17342,
+      "runtime_sha256": "638ab580b5eb95b6ba1a70f9afc673473fb9f36e7653e26378991881ea83314f",
+      "portable_lf_sha256": "5b54099780f929e3b7f8b5618652b907c869c7062f07f499badc2b7581a58b8d"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/backup-manifest.json",
+      "bytes": 981,
+      "runtime_sha256": "6c8fb17f2687f98327142cdb4396ba51817915c541b8c855a278085bb7ef897b",
+      "portable_lf_sha256": "5952a50040aff7317a019f4ce3272f23c510ac8c91d82b571ff151827c6e4d07"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/backups/backup_r1_current.blend",
+      "bytes": 5347215,
+      "runtime_sha256": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+      "portable_lf_sha256": null
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/baseline/base_34.png",
+      "bytes": 3393938,
+      "runtime_sha256": "e89f2d50c85080713f8249f6de6199e9f3d6e784392dc99147f9266e23cc75a8",
+      "portable_lf_sha256": null
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/baseline/base_34_shell_full.png",
+      "bytes": 789537,
+      "runtime_sha256": "cb857e2413b98e99960d36e4cd8a0f50d7f24a1bc99f3f07b8b82d21b581bcc6",
+      "portable_lf_sha256": null
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/baseline/base_34_shell_visible.png",
+      "bytes": 796404,
+      "runtime_sha256": "35d35e48c53e8d1b994c850a2723b97e6efe9c1af7596f3c0bfa62ddafd9e2e8",
+      "portable_lf_sha256": null
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/baseline/base_front.png",
+      "bytes": 1678607,
+      "runtime_sha256": "3278b3e6ef5d5e3b193b2ea931095fb9cc2152f233c2605ba3a987f30138de4d",
+      "portable_lf_sha256": null
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/baseline/base_front_shell_full.png",
+      "bytes": 374707,
+      "runtime_sha256": "f236dff243b8eaa489465009f2fae5cdcb284d83639834f7f009f5d6b51146f4",
+      "portable_lf_sha256": null
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/baseline/base_front_shell_visible.png",
+      "bytes": 384497,
+      "runtime_sha256": "9a0767f8d21dd54eff707f324305b8ff574a3d759cb52f0d2177ed788fe7715e",
+      "portable_lf_sha256": null
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/baseline/base_side.png",
+      "bytes": 1538586,
+      "runtime_sha256": "9eb9fbbb7a09e4d2e043d93dd49b3c6af518ee64774599809a4db572a87ada93",
+      "portable_lf_sha256": null
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/baseline/base_side_shell_full.png",
+      "bytes": 368787,
+      "runtime_sha256": "3fd8708709feecc39f4f6d72c81cb04fe7259b84ee3791e8afd1dd6d0d7d2b13",
+      "portable_lf_sha256": null
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/baseline/base_side_shell_visible.png",
+      "bytes": 369263,
+      "runtime_sha256": "c3ba5de1c52bca5ddb0d19afe6b78a224e47c61babe8c524f9caf86dbc210438",
+      "portable_lf_sha256": null
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/baseline/base_side_visible_binary_mask.png",
+      "bytes": 7782,
+      "runtime_sha256": "4dbe65a631743042321da41475690147eaa7205c27b7e3b648304f86f14e5d7b",
+      "portable_lf_sha256": null
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/baseline/baseline-cameras-and-inventory.json",
+      "bytes": 6659,
+      "runtime_sha256": "9d5e28a7348af1b6bf03c435d4516db19ec9e7a039b404bc0a0f813f890701bb",
+      "portable_lf_sha256": "ee104215416f04db3af09b1115f865264f2ce8350197693473633560a4cc5a19"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/baseline-metrics.json",
+      "bytes": 3741,
+      "runtime_sha256": "071bf8bafc8d5b8feb69b09b9fbc565a207248d4a7d06e2a4a5066dd22419751",
+      "portable_lf_sha256": "7e29fd3bb5a01c91465e5df55f7850030efa2c2991c2d600dc17b2439b005ad0"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/confirmation-controls.json",
+      "bytes": 19356,
+      "runtime_sha256": "902e7ca7d28d34e15b969adda9c8f7d074cc9995d210433f793f686bb4e7c154",
+      "portable_lf_sha256": "77ab9120263d06b880e2ce75a71466d68366bbe3cae7ef406a5a24965e50df14"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/keypoints-confirmation.png",
+      "bytes": 29364,
+      "runtime_sha256": "b70d4d9052711570597fd24fb7bf693e3ddeb7d0b21ee0191b42c5b61f52c47d",
+      "portable_lf_sha256": null
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/measure_r3_baseline.py",
+      "bytes": 10551,
+      "runtime_sha256": "4d0eeb3783beb44247f80b1486ce6fde5eda0657a1911c404a2335b12dd4b0b2",
+      "portable_lf_sha256": "780ffb07a704e74386dd6d10587679daf544bf364869ebff1a50a414bbe6d1cf"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+      "bytes": 8790,
+      "runtime_sha256": "77855ac4c057acd2b98990cc6d62e2f8b9a25eeecf47aa8264f9381bfe65d4cc",
+      "portable_lf_sha256": "0ece1890027b592108178c087fb2c4d3ad5711af110762cda6e99de66405cc8d"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/reference-side-visible-mask.png",
+      "bytes": 8334,
+      "runtime_sha256": "81bf0b3e6377a7e5e5f430f11040505347ef173568749b5ae70fd205453cb950",
+      "portable_lf_sha256": null
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/render_backup_baseline.py",
+      "bytes": 5346,
+      "runtime_sha256": "b5ec0cf22c9d22112731dafdfcbc13e8da562e046fb0565ecba73bac3bff1f5c",
+      "portable_lf_sha256": "b5ec0cf22c9d22112731dafdfcbc13e8da562e046fb0565ecba73bac3bff1f5c"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/segmentation-side-r3.json",
+      "bytes": 24967,
+      "runtime_sha256": "8817f4dc4f0acd6407358287b640c037495fbedd2b0e6ad66c4a78abf62e78fe",
+      "portable_lf_sha256": "dfee04e36d9df91ba4ff867a02eab4a6a11a3bfec1ec1ea3be844796c746365a"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/user-reference-manifest.json",
+      "bytes": 1093,
+      "runtime_sha256": "ff9fec9a611bcc2ab4352f0a039acb0ee6fe2c222461828653347320692cf20d",
+      "portable_lf_sha256": "b9fecc8bc69b3429c42fd42fa48dbb78bb50af0fa3733d08ad4ddb23a9b8f49e"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/work/work_r3.blend",
+      "bytes": 5347215,
+      "runtime_sha256": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+      "portable_lf_sha256": null
+    }
+  ]
+}

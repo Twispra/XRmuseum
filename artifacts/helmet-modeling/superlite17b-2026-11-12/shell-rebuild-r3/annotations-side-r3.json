@@ -1,0 +1,436 @@
+{
+  "schema_version": "1.0",
+  "annotation_id": "shell-rebuild-r3-side-visible-evidence",
+  "scope": "16 provisional image-space shell observations and a local projected window-seat edge direction, before user confirmation and any shell reconstruction.",
+  "image": {
+    "path": "D:\\XR_documents\\helmet\\SuperLite17B\\refs\\04_side_rear_view.png",
+    "sha256": "990eddafee9e25a3d16d46ae009cf9ca8f5e49e94cea7bdd3ac2831efbb8c0cd",
+    "width_px": 1600,
+    "height_px": 873,
+    "camera_type": "Perspective side-rear product photograph; not an orthographic side elevation.",
+    "scale_or_focal_metadata": "No visible scale marker; original PNG has no EXIF/focal metadata.",
+    "same_specimen_as_front_photo": "Unverified"
+  },
+  "user_sketch": {
+    "path": "C:\\Users\\16924\\AppData\\Local\\Temp\\codex-clipboard-612d449b-b31f-4b9a-a806-325a548bfab8.png",
+    "sha256": "9b37e1846e4f16ab73b707576f719340e31cb77c120c0c3454dffba5cc8bbbbb",
+    "role": "Approximate requested shape/section explanation only. Red/green/blue strokes are instructions/sketches, not measured image evidence.",
+    "specific_misinterpretations_to_avoid": [
+      "The red rear-left arc passes over a metal rear-weight boundary; it is not the visible yellow shell boundary.",
+      "The green lower line continues behind diagonal webbing; that segment is not an observed yellow/black skirt junction.",
+      "The blue window direction is a hand-drawn guide; it does not determine the true 3D window plane angle."
+    ]
+  },
+  "annotation_method": {
+    "annotator": "One AI assistant using visual inspection of original and local grid/crop helpers.",
+    "repeat_policy": "New r3 image observations; previous r1 coordinate traces were not automatically used as ground truth.",
+    "confidence": "Relative visual marking confidence, not calibrated probabilities or human study results.",
+    "pixel_uncertainty": "Conservative marking/edge ambiguity radius; not physical dimensions or manufacturing tolerance."
+  },
+  "coordinate_convention": {
+    "original": "Top-left image pixels, x right and y down.",
+    "normalization_status": "RAW_ANNOTATIONS_ONLY. Earlier L737 working normalization removed; only confirmation-controls.json contains the unified L801 proposal.",
+    "no_3d_interpretation": "Visible image anchors, not a closed hidden shell profile."
+  },
+  "keypoints_16": [
+    {
+      "id": "P01",
+      "feature": "Most-posterior visible yellow shell sliver below the rear metal weight",
+      "original_xy_px": [
+        438,
+        374
+      ],
+      "uncertainty_radius_px": 10,
+      "confidence": 0.68,
+      "observation_status": "visible_occlusion_boundary",
+      "boundary_definition": "shell_against_occluding_black_pad",
+      "occlusion_or_inference_note": "The yellow/black boundary is visible, but the shell surface continues behind the rear weight and black pad. This is not the full-shell posterior extremum.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    },
+    {
+      "id": "P02",
+      "feature": "Rear end of visible crown arc above the rear weight",
+      "original_xy_px": [
+        530,
+        168
+      ],
+      "uncertainty_radius_px": 7,
+      "confidence": 0.86,
+      "observation_status": "visible_outer_silhouette_endpoint",
+      "boundary_definition": "shell_against_background_near_rear_weight",
+      "occlusion_or_inference_note": "Rear continuation is covered by metal weight; do not connect P01 to P02 as a measured yellow outline.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    },
+    {
+      "id": "P03",
+      "feature": "Rear-upper crown arc",
+      "original_xy_px": [
+        585,
+        127
+      ],
+      "uncertainty_radius_px": 6,
+      "confidence": 0.9,
+      "observation_status": "visible_outer_silhouette",
+      "boundary_definition": "shell_against_background",
+      "occlusion_or_inference_note": "Visible exposed crown edge.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    },
+    {
+      "id": "P04",
+      "feature": "Rear-upper crown arc toward the broad shoulder",
+      "original_xy_px": [
+        657,
+        94
+      ],
+      "uncertainty_radius_px": 6,
+      "confidence": 0.9,
+      "observation_status": "visible_outer_silhouette",
+      "boundary_definition": "shell_against_background",
+      "occlusion_or_inference_note": "Visible exposed crown edge.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    },
+    {
+      "id": "P05",
+      "feature": "Broad crown high region, rear side of the projected maximum",
+      "original_xy_px": [
+        735,
+        70
+      ],
+      "uncertainty_radius_px": 7,
+      "confidence": 0.85,
+      "observation_status": "visible_outer_silhouette",
+      "boundary_definition": "shell_against_background_and_handle_overlap",
+      "occlusion_or_inference_note": "The crown/handle overlap and highlights make the exact maximum uncertain. This is a 2D observation, not a fixed 3D crown vertex.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    },
+    {
+      "id": "P06",
+      "feature": "Broad crown high region, front side",
+      "original_xy_px": [
+        810,
+        73
+      ],
+      "uncertainty_radius_px": 7,
+      "confidence": 0.85,
+      "observation_status": "visible_outer_silhouette",
+      "boundary_definition": "shell_against_background",
+      "occlusion_or_inference_note": "Visible exposed crown edge; it defines a broad region, not a spherical-arc assumption.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    },
+    {
+      "id": "P07",
+      "feature": "Crown arc descending toward strap buckle",
+      "original_xy_px": [
+        884,
+        97
+      ],
+      "uncertainty_radius_px": 7,
+      "confidence": 0.85,
+      "observation_status": "visible_outer_silhouette",
+      "boundary_definition": "shell_against_background",
+      "occlusion_or_inference_note": "Visible crown edge, before buckle occlusion.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    },
+    {
+      "id": "P08",
+      "feature": "Visible crown arc endpoint at strap buckle",
+      "original_xy_px": [
+        949,
+        135
+      ],
+      "uncertainty_radius_px": 9,
+      "confidence": 0.76,
+      "observation_status": "visible_occlusion_endpoint",
+      "boundary_definition": "shell_against_black_buckle",
+      "occlusion_or_inference_note": "Shell edge disappears beneath buckle/webbing. Hidden continuation is not annotated.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    },
+    {
+      "id": "P09",
+      "feature": "Yellow front shoulder first visible beyond buckle",
+      "original_xy_px": [
+        1042,
+        193
+      ],
+      "uncertainty_radius_px": 10,
+      "confidence": 0.7,
+      "observation_status": "visible_occlusion_endpoint",
+      "boundary_definition": "shell_against_buckle_and_background",
+      "occlusion_or_inference_note": "Buckle covers the crown-to-shoulder transition. Do not turn this into a sharp physical notch under the buckle.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    },
+    {
+      "id": "P10",
+      "feature": "Visible front shoulder crest",
+      "original_xy_px": [
+        1097,
+        177
+      ],
+      "uncertainty_radius_px": 7,
+      "confidence": 0.85,
+      "observation_status": "visible_outer_silhouette",
+      "boundary_definition": "shell_against_background",
+      "occlusion_or_inference_note": "Visible local crest behind the front handle/port seat; true 3D extremum not established.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    },
+    {
+      "id": "P11",
+      "feature": "Upper yellow shell to dark port-seat junction",
+      "original_xy_px": [
+        1135,
+        210
+      ],
+      "uncertainty_radius_px": 9,
+      "confidence": 0.78,
+      "observation_status": "visible_shell_hardware_junction",
+      "boundary_definition": "shell_to_dark_window_seat",
+      "occlusion_or_inference_note": "Front window-seat attachment is an interface, not the outer metal window-ring silhouette.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    },
+    {
+      "id": "P12",
+      "feature": "Lower visible upper-port-seat junction before sideblock occlusion",
+      "original_xy_px": [
+        1175,
+        337
+      ],
+      "uncertainty_radius_px": 9,
+      "confidence": 0.76,
+      "observation_status": "visible_shell_hardware_junction",
+      "boundary_definition": "shell_to_dark_window_seat_and_sideblock",
+      "occlusion_or_inference_note": "Main yellow shell continues behind front hardware. This is only the chosen main-shell visible x extent, not complete shell forward extremum.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    },
+    {
+      "id": "P13",
+      "feature": "First visible lower yellow/black skirt interface after diagonal webbing",
+      "original_xy_px": [
+        699,
+        600
+      ],
+      "uncertainty_radius_px": 10,
+      "confidence": 0.73,
+      "observation_status": "visible_interface_endpoint",
+      "boundary_definition": "shell_to_black_neck_skirt",
+      "occlusion_or_inference_note": "Rear continuation is obscured by webbing; no completed hidden skirt line is inferred.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    },
+    {
+      "id": "P14",
+      "feature": "Middle lower yellow/black skirt interface",
+      "original_xy_px": [
+        817,
+        686
+      ],
+      "uncertainty_radius_px": 8,
+      "confidence": 0.86,
+      "observation_status": "visible_shell_skirt_junction",
+      "boundary_definition": "shell_to_black_neck_skirt",
+      "occlusion_or_inference_note": "Visible interface edge, not free-space outer silhouette.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    },
+    {
+      "id": "P15",
+      "feature": "Forward lower yellow/black skirt interface",
+      "original_xy_px": [
+        949,
+        769
+      ],
+      "uncertainty_radius_px": 8,
+      "confidence": 0.85,
+      "observation_status": "visible_shell_skirt_junction",
+      "boundary_definition": "shell_to_black_neck_skirt",
+      "occlusion_or_inference_note": "Visible interface edge; separate from black yoke outer silhouette.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    },
+    {
+      "id": "P16",
+      "feature": "Lowest visible yellow-shell corner before front latch",
+      "original_xy_px": [
+        1009,
+        786
+      ],
+      "uncertainty_radius_px": 9,
+      "confidence": 0.83,
+      "observation_status": "visible_interface_endpoint",
+      "boundary_definition": "shell_to_front_latch_and_black_skirt",
+      "occlusion_or_inference_note": "Local visible corner is near latch hardware. Hidden continuation toward the window/lower chin is not annotated.",
+      "is_inferred_coordinate": false,
+      "fixed_3d_correspondence": false,
+      "approved_reconstruction_control_point": false
+    }
+  ],
+  "ordered_visible_paths": [
+    {
+      "id": "crown_visible_arc",
+      "point_ids": [
+        "P02",
+        "P03",
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "closed": false,
+      "interpretation": "Exposed upper yellow shell arc; stop at buckle and weight occlusion."
+    },
+    {
+      "id": "front_shoulder_and_port_seat",
+      "point_ids": [
+        "P09",
+        "P10",
+        "P11",
+        "P12"
+      ],
+      "closed": false,
+      "interpretation": "Exposed shoulder plus shell/hardware junction, not a complete window plane."
+    },
+    {
+      "id": "lower_shell_skirt_junction",
+      "point_ids": [
+        "P13",
+        "P14",
+        "P15",
+        "P16"
+      ],
+      "closed": false,
+      "interpretation": "Exposed yellow-to-black skirt junction only."
+    },
+    {
+      "id": "rear_visible_sliver",
+      "point_ids": [
+        "P01"
+      ],
+      "closed": false,
+      "interpretation": "Visible local shell/occluder boundary; isolated observation, no inferred connection to crown."
+    }
+  ],
+  "unobservable_or_not_annotated": [
+    {
+      "region": "P01 to P02 rear-left bridge",
+      "reason": "Covered by rear metal weight and surrounding hardware; user red line here follows metal edge.",
+      "coordinates": null
+    },
+    {
+      "region": "P08 to P09 crown under buckle",
+      "reason": "Black buckle/webbing occludes the transition.",
+      "coordinates": null
+    },
+    {
+      "region": "Lower rear shell/skirt junction behind diagonal webbing",
+      "reason": "User green guide crosses occluder; not a visible material junction.",
+      "coordinates": null
+    },
+    {
+      "region": "Front/lower yellow shell behind sideblock, exhaust and window assembly",
+      "reason": "Hardware covers actual shell contour; no complete front silhouette is observed.",
+      "coordinates": null
+    },
+    {
+      "region": "True shell depth, hidden rear extent and true window-plane angle",
+      "reason": "Not uniquely recoverable from this single perspective photograph.",
+      "coordinates": null
+    }
+  ],
+  "projected_window_edge_direction": {
+    "status": "LOCAL_PROJECTED_EDGE_DIRECTION_ONLY; not a recovered 3D plane",
+    "edge_identity": "Visible upper dark port-seat boundary next to yellow shell, above the sideblock occlusion; selected near-straight local segment. The circular/curved window-ring boundary does not itself define a unique plane direction.",
+    "original_xy_px": [
+      [
+        1144,
+        221
+      ],
+      [
+        1149,
+        241
+      ],
+      [
+        1154,
+        265
+      ],
+      [
+        1160,
+        288
+      ],
+      [
+        1166,
+        311
+      ],
+      [
+        1172,
+        333
+      ]
+    ],
+    "per_point_uncertainty_radius_px": 5,
+    "span_start_px": [
+      1144,
+      221
+    ],
+    "span_end_px": [
+      1172,
+      333
+    ],
+    "span_length_px": 115.447,
+    "fit_model": "x_px = a*y_px + b; least-squares over six manual local-edge marks",
+    "fit_a": 0.24840056,
+    "fit_b_px": 1088.81725,
+    "fit_rms_x_px": 0.397,
+    "angle_from_image_vertical_deg": 13.95,
+    "angle_direction": "Positive means the observed edge moves to image right as image y increases downward.",
+    "conservative_angle_uncertainty_deg": 5,
+    "uncertainty_basis": "Manual marking uncertainty, short visible span, local ring curvature, reflections and ambiguous exact seat/ring boundary; not a statistical confidence interval.",
+    "true_3d_window_plane_angle_deg": null,
+    "do_not_use_as": [
+      "A known physical side-elevation window tilt",
+      "A 3D plane normal",
+      "An inferred millimetre adjustment",
+      "A user-approved reconstruction angle"
+    ]
+  },
+  "metric_use_limits": {
+    "IoU": "These 16 points/open paths do not define a closed complete-shell mask. Do not compute full-shell silhouette IoU by connecting across hardware occlusion. A visible-yellow-region mask can support a separately labelled visible-region IoU if model rendering uses exactly the same visibility/occluder definition.",
+    "boundary_error_over_L": "Average nearest-boundary deviations may be normalized by the coordinated L, but visible outer arcs and shell/hardware junctions must be reported separately and occluded spans excluded.",
+    "camera": "Camera/geometry ambiguity remains. Do not convert observed 2D residuals directly into true 3D shell displacement.",
+    "approval_gate": "All 16 observations and projected edge angle are provisional pending root/user review; no geometry is authorized by this JSON alone."
+  },
+  "validation": {
+    "source_read_with_view_image": true,
+    "sketch_read_with_view_image": true,
+    "source_sha256_matches_prior_input_manifest": true,
+    "point_count": 16,
+    "all_points_inside_original_image": true,
+    "no_model_or_previous_annotation_modified": true,
+    "no_reference_pixels_in_json": true
+  }
+}

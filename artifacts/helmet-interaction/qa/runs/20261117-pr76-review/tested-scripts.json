@@ -1,0 +1,15 @@
+{
+  "assets_source_commit": "797984ede023e803b641fd46a558baa51e02bb80",
+  "execution_base_commit": "52ae591706128734cf21a0d5ce08deab58e9f074",
+  "scripts_sha256": {
+    "artifacts/helmet-modeling/superlite17b-2026-11-12/audit_v4_baseline.py": "129dac2b579cc6e1ce5957efd52ff3a0f8bb45532098d5859c37360e37eb0e79",
+    "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/measure_r3_baseline.py": "7be070b19d934e7432fd4f5e60a82159af848e5349b47c74de8161011eb8b679",
+    "artifacts/helmet-interaction/qa/runs/20261117-pr76-review/check_output_routing.py": "fa08a16a973ee19843a28864ee88e3327218dbf0dac8f5bf1ce0aea9cb8d3ff4",
+    "artifacts/helmet-interaction/qa/runs/20261117-pr76-review/independent_metrics.py": "5be2ce0979dbf9ef65fc2ad3613debd15780e69506d5703e74a1425fe7a78947",
+    "artifacts/helmet-interaction/qa/runs/20261117-pr76-review/read_r3_inventory.py": "2f86a7b8a4ec4604775a22784b9e40d85f778bc8a98dc5a0d6b65cf7cab53be4",
+    "artifacts/helmet-interaction/qa/runs/20261117-pr76-review/run_saved_checks.py": "aba610ad4b7f2e6e6db76e9cabe316bbbf780ff174872a52cf8abeb97e70557f",
+    "artifacts/helmet-interaction/qa/runs/20261117-pr76-review/verify_assets.py": "035db65a35b97b3b6f82f5dedd011e5acea9e5d97116fc2593a2293776a04e67"
+  },
+  "new_untracked_qa_scripts_used": true,
+  "note": "Execution had four tracked documentation/tool edits plus these new QA scripts. Activity/project-state/resource prose was added after verification. No product or saved-model edit."
+}

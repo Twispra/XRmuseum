@@ -1,0 +1,856 @@
+{
+  "source_sha256": "6e85f7f048b3a6b8706428854ab8934099da25ff21d427e87fde9de930b1c8a2",
+  "profile_selection": "pass A, cost <=1.25 primary; non-probabilistic sensitivity set",
+  "profiles": [
+    {
+      "focal_width_factor": 1.3,
+      "curves": [
+        {
+          "id": "rear_weight_top_visible_edge",
+          "hits": 4,
+          "samples": [
+            {
+              "pixel": [
+                512,
+                171
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                541,
+                181
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                580,
+                201
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                620,
+                224
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.038302600383758545,
+                0.09934101998806,
+                0.25683867931365967
+              ]
+            },
+            {
+              "pixel": [
+                660,
+                249
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.06123727560043335,
+                0.08980850875377655,
+                0.24692952632904053
+              ]
+            },
+            {
+              "pixel": [
+                703,
+                276
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.07864421606063843,
+                0.07859157025814056,
+                0.23606307804584503
+              ]
+            },
+            {
+              "pixel": [
+                740,
+                301
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.09124630689620972,
+                0.0687989890575409,
+                0.22608347237110138
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rear_weight_left_lower_visible_edge",
+          "hits": 4,
+          "samples": [
+            {
+              "pixel": [
+                512,
+                171
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                489,
+                182
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                470,
+                207
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                454,
+                237
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                442,
+                267
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                434,
+                298
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                437,
+                327
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                453,
+                351
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                481,
+                378
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                515,
+                405
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.00601726770401001,
+                0.14576350152492523,
+                0.1884799599647522
+              ]
+            },
+            {
+              "pixel": [
+                551,
+                431
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.03285646438598633,
+                0.13681620359420776,
+                0.18002630770206451
+              ]
+            },
+            {
+              "pixel": [
+                589,
+                449
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.05141633749008179,
+                0.1259898543357849,
+                0.173689067363739
+              ]
+            },
+            {
+              "pixel": [
+                626,
+                461
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.06740051507949829,
+                0.1152239739894867,
+                0.16953955590724945
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "focal_width_factor": 2.2,
+      "curves": [
+        {
+          "id": "rear_weight_top_visible_edge",
+          "hits": 5,
+          "samples": [
+            {
+              "pixel": [
+                512,
+                171
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                541,
+                181
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                580,
+                201
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                0.0033696889877319336,
+                0.10054543614387512,
+                0.2684533894062042
+              ]
+            },
+            {
+              "pixel": [
+                620,
+                224
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.039649128913879395,
+                0.09637150168418884,
+                0.2596169114112854
+              ]
+            },
+            {
+              "pixel": [
+                660,
+                249
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.061275482177734375,
+                0.0876544713973999,
+                0.2493474781513214
+              ]
+            },
+            {
+              "pixel": [
+                703,
+                276
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.078621506690979,
+                0.07711368799209595,
+                0.23816698789596558
+              ]
+            },
+            {
+              "pixel": [
+                740,
+                301
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.09089648723602295,
+                0.0676209032535553,
+                0.22787129878997803
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rear_weight_left_lower_visible_edge",
+          "hits": 4,
+          "samples": [
+            {
+              "pixel": [
+                512,
+                171
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                489,
+                182
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                470,
+                207
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                454,
+                237
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                442,
+                267
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                434,
+                298
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                437,
+                327
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                453,
+                351
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                481,
+                378
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                515,
+                405
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.019097328186035156,
+                0.14195191860198975,
+                0.1955018788576126
+              ]
+            },
+            {
+              "pixel": [
+                551,
+                431
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.03780043125152588,
+                0.13341084122657776,
+                0.1854381561279297
+              ]
+            },
+            {
+              "pixel": [
+                589,
+                449
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.054267168045043945,
+                0.12345096468925476,
+                0.178236186504364
+              ]
+            },
+            {
+              "pixel": [
+                626,
+                461
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.06794083118438721,
+                0.11314743757247925,
+                0.17314396798610687
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "focal_width_factor": 3.8,
+      "curves": [
+        {
+          "id": "rear_weight_top_visible_edge",
+          "hits": 5,
+          "samples": [
+            {
+              "pixel": [
+                512,
+                171
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                541,
+                181
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                580,
+                201
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                0.02030158042907715,
+                0.09376859664916992,
+                0.27254432439804077
+              ]
+            },
+            {
+              "pixel": [
+                620,
+                224
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.0374293327331543,
+                0.09342193603515625,
+                0.26480942964553833
+              ]
+            },
+            {
+              "pixel": [
+                660,
+                249
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.05961799621582031,
+                0.08510720729827881,
+                0.2541923522949219
+              ]
+            },
+            {
+              "pixel": [
+                703,
+                276
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.07770633697509766,
+                0.07495832443237305,
+                0.24247565865516663
+              ]
+            },
+            {
+              "pixel": [
+                740,
+                301
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.08989763259887695,
+                0.06560933589935303,
+                0.2315724641084671
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rear_weight_left_lower_visible_edge",
+          "hits": 4,
+          "samples": [
+            {
+              "pixel": [
+                512,
+                171
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                489,
+                182
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                470,
+                207
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                454,
+                237
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                442,
+                267
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                434,
+                298
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                437,
+                327
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                453,
+                351
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                481,
+                378
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                515,
+                405
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.01660466194152832,
+                0.1416420340538025,
+                0.202604278922081
+              ]
+            },
+            {
+              "pixel": [
+                551,
+                431
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.03596925735473633,
+                0.13381105661392212,
+                0.19201548397541046
+              ]
+            },
+            {
+              "pixel": [
+                589,
+                449
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.0522761344909668,
+                0.12413567304611206,
+                0.18410366773605347
+              ]
+            },
+            {
+              "pixel": [
+                626,
+                461
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.06571292877197266,
+                0.11390721797943115,
+                0.17828646302223206
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "focal_width_factor": 6.0,
+      "curves": [
+        {
+          "id": "rear_weight_top_visible_edge",
+          "hits": 5,
+          "samples": [
+            {
+              "pixel": [
+                512,
+                171
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                541,
+                181
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                580,
+                201
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.004424095153808594,
+                0.09652101993560791,
+                0.27261796593666077
+              ]
+            },
+            {
+              "pixel": [
+                620,
+                224
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.04099416732788086,
+                0.09289342164993286,
+                0.2630322575569153
+              ]
+            },
+            {
+              "pixel": [
+                660,
+                249
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.061388492584228516,
+                0.08491140604019165,
+                0.25236544013023376
+              ]
+            },
+            {
+              "pixel": [
+                703,
+                276
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.07866215705871582,
+                0.0751032829284668,
+                0.2407952845096588
+              ]
+            },
+            {
+              "pixel": [
+                740,
+                301
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.09050965309143066,
+                0.065940260887146,
+                0.23014694452285767
+              ]
+            }
+          ]
+        },
+        {
+          "id": "rear_weight_left_lower_visible_edge",
+          "hits": 4,
+          "samples": [
+            {
+              "pixel": [
+                512,
+                171
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                489,
+                182
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                470,
+                207
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                454,
+                237
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                442,
+                267
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                434,
+                298
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                437,
+                327
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                453,
+                351
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                481,
+                378
+              ],
+              "intersects_saved_shell": false,
+              "hit_world": null
+            },
+            {
+              "pixel": [
+                515,
+                405
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.02464604377746582,
+                0.13808703422546387,
+                0.2018512338399887
+              ]
+            },
+            {
+              "pixel": [
+                551,
+                431
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.041455745697021484,
+                0.130429208278656,
+                0.19112250208854675
+              ]
+            },
+            {
+              "pixel": [
+                589,
+                449
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.05634713172912598,
+                0.12113815546035767,
+                0.18317651748657227
+              ]
+            },
+            {
+              "pixel": [
+                626,
+                461
+              ],
+              "intersects_saved_shell": true,
+              "hit_world": [
+                -0.06892108917236328,
+                0.11132818460464478,
+                0.17739233374595642
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meaning": "Failure to hit the existing shell shows that a simple surface-projected weight edit cannot reproduce that observed boundary under that candidate camera. It does not prove the true shell is wrong or require the real weight to contact shell at every outline pixel. Camera/configuration/overhang remain possible explanations.",
+  "geometry_modified": false
+}

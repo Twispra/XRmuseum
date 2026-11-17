@@ -1,0 +1,221 @@
+{
+  "baseline_sha256": "f4c3241da1bd541d723d5dcf9cdc9be6a144ca3acdca1911b73002838840ce92",
+  "candidate_sha256": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+  "choice": "moderate",
+  "fixed_other_parts": 145,
+  "fixed_fingerprints_geometry_transform_uv_materials_identical": true,
+  "shell_topology_uv_transform_materials_unchanged": true,
+  "vertices": 5880,
+  "same_baseline_triangle_list_used": true,
+  "triangles": 11760,
+  "actual_render_triangulation_different_entries": 0,
+  "actual_render_self_pairs": 22,
+  "actual_render_new_canonical_self_pairs": 0,
+  "exact_protected_outer_count": 1834,
+  "protected_vertex_max_error_model_m": 0.0,
+  "max_displacement_model_m": 0.008872918869249728,
+  "paired_wall_vector_max_change_model_m": 7.450580596923828e-09,
+  "outer_vertex_to_inner_surface_minimum_before_after_model_m": [
+    0.0026171826757490635,
+    0.0021869188640266657
+  ],
+  "new_vertex_samples_below_half_mm_clearance": [],
+  "nonmanifold_edges": 0,
+  "zero_area_triangles": 0,
+  "reversed_triangle_normal_indices": [],
+  "area_ratio_range": [
+    0.8568687216856058,
+    2.075200361518369
+  ],
+  "baseline_nonadjacent_self_overlap_pairs": 22,
+  "candidate_nonadjacent_self_overlap_pairs": 22,
+  "baseline_specific_self_pairs": [
+    [
+      7422,
+      7892
+    ],
+    [
+      7422,
+      7893
+    ],
+    [
+      7432,
+      7804
+    ],
+    [
+      7433,
+      7441
+    ],
+    [
+      7433,
+      7804
+    ],
+    [
+      7433,
+      7805
+    ],
+    [
+      7434,
+      7441
+    ],
+    [
+      7434,
+      7805
+    ],
+    [
+      7435,
+      7805
+    ],
+    [
+      7440,
+      7805
+    ],
+    [
+      7441,
+      7805
+    ],
+    [
+      7690,
+      7733
+    ],
+    [
+      7691,
+      7699
+    ],
+    [
+      7691,
+      7733
+    ],
+    [
+      7696,
+      7733
+    ],
+    [
+      7697,
+      7733
+    ],
+    [
+      7698,
+      7732
+    ],
+    [
+      7699,
+      7732
+    ],
+    [
+      7699,
+      7733
+    ],
+    [
+      7704,
+      7732
+    ],
+    [
+      7733,
+      7736
+    ],
+    [
+      7800,
+      7805
+    ]
+  ],
+  "added_specific_self_pairs": [],
+  "fixed_parts_surface_intersection_deltas": [
+    {
+      "fixed_part": "BentTube_UpperCoupling",
+      "before_pairs": 58,
+      "after_pairs": 58,
+      "new_specific_pairs": 0
+    },
+    {
+      "fixed_part": "Exhaust_Black_Wing_-1",
+      "before_pairs": 152,
+      "after_pairs": 152,
+      "new_specific_pairs": 0
+    },
+    {
+      "fixed_part": "Exhaust_Black_Wing_1",
+      "before_pairs": 134,
+      "after_pairs": 134,
+      "new_specific_pairs": 0
+    },
+    {
+      "fixed_part": "Handle_Brass_560-014",
+      "before_pairs": 174,
+      "after_pairs": 174,
+      "new_specific_pairs": 0
+    },
+    {
+      "fixed_part": "Handle_RearFoot",
+      "before_pairs": 154,
+      "after_pairs": 154,
+      "new_specific_pairs": 0
+    },
+    {
+      "fixed_part": "Hinge_Pin",
+      "before_pairs": 214,
+      "after_pairs": 214,
+      "new_specific_pairs": 0
+    },
+    {
+      "fixed_part": "NeckDam_Neoprene_510-533",
+      "before_pairs": 3140,
+      "after_pairs": 3140,
+      "new_specific_pairs": 0
+    },
+    {
+      "fixed_part": "Neck_Latch_-1",
+      "before_pairs": 52,
+      "after_pairs": 52,
+      "new_specific_pairs": 0
+    },
+    {
+      "fixed_part": "Neck_Latch_1",
+      "before_pairs": 54,
+      "after_pairs": 54,
+      "new_specific_pairs": 0
+    },
+    {
+      "fixed_part": "SideBlock_Chrome_505-024",
+      "before_pairs": 193,
+      "after_pairs": 193,
+      "new_specific_pairs": 0
+    },
+    {
+      "fixed_part": "SideBlock_MountingFoot",
+      "before_pairs": 122,
+      "after_pairs": 122,
+      "new_specific_pairs": 0
+    },
+    {
+      "fixed_part": "Strap_Adjuster_-1",
+      "before_pairs": 53,
+      "after_pairs": 53,
+      "new_specific_pairs": 0
+    },
+    {
+      "fixed_part": "Strap_Adjuster_1",
+      "before_pairs": 49,
+      "after_pairs": 49,
+      "new_specific_pairs": 0
+    },
+    {
+      "fixed_part": "Strap_YokeRetainer_-1",
+      "before_pairs": 104,
+      "after_pairs": 104,
+      "new_specific_pairs": 0
+    },
+    {
+      "fixed_part": "Strap_YokeRetainer_1",
+      "before_pairs": 87,
+      "after_pairs": 87,
+      "new_specific_pairs": 0
+    }
+  ],
+  "new_specific_contact_pairs": [],
+  "source_files_unchanged": true,
+  "limits": "BVH pairs are geometric candidates, not physical fit, thickness or safety acceptance. Existing baseline overlaps are not proven harmless. Vertex-to-inner distances are samples, not a full minimum-thickness proof. Photo cameras/scale remain uncertain.",
+  "geometry_gate_passed": true,
+  "changed_outer_vertices_exact_nonzero": 331,
+  "changed_outer_vertices_above_1e8_model_m": 331
+}

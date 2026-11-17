@@ -1,0 +1,49 @@
+{
+  "baseline_sha256": "6e85f7f048b3a6b8706428854ab8934099da25ff21d427e87fde9de930b1c8a2",
+  "output_sha256": "f4c3241da1bd541d723d5dcf9cdc9be6a144ca3acdca1911b73002838840ce92",
+  "removed_original_objects": [
+    "Hinge_NeckClamp_Rear",
+    "Weights_Brass_Rear_560-005_-1",
+    "Weights_Brass_Rear_560-005_1"
+  ],
+  "added_objects": [
+    "RearWeight_560-005_Continuous_RESEARCH",
+    "AlignmentSleeve_550-339_FLANGED_ESTIMATED",
+    "RearHingeTab_540-157_SINGLE_PIECE_ESTIMATED",
+    "AlignmentScrew_530-090_VISUAL_ESTIMATED",
+    "AlignmentScrew_530-090_Head_ESTIMATED"
+  ],
+  "preserved_original_names": 141,
+  "estimated_parameters_m": {
+    "mount_z": 0.2187,
+    "mount_base_y": 0.14588695764541626,
+    "original_center_surface_y": 0.14299077916145325,
+    "seat_sampled_weight_max_y": 0.14588695764541626,
+    "weight_outer_offset": 0.0055,
+    "weight_inner_offset": 0.002,
+    "band_angle_degrees": [
+      -65,
+      65
+    ],
+    "band_height_estimate_trimmed_for_preserved_component_clearance": true,
+    "sleeve_body_radius": 0.0047,
+    "sleeve_flange_radius": 0.0083,
+    "sleeve_hole_radius": 0.00315,
+    "tab_thickness": 0.0022,
+    "tab_hole_radius": 0.0055,
+    "sleeve_body_extent_from_base_y": [
+      0.0004,
+      0.024
+    ],
+    "sleeve_flange_extent_from_base_y": [
+      0.024,
+      0.026
+    ],
+    "tab_center_y_from_base": 0.0205,
+    "sleeve_seat_clearance_estimated": 0.0004,
+    "tab_lower_pin_interface": "Not aligned or mechanically completed; independent structure study."
+  },
+  "photo_metrics_not_optimized": true,
+  "shell_unchanged": true,
+  "limits": "Interpretive connection study only. No factory dimensions, real load/seal validation, final photogrammetry, Unity export or device result."
+}
