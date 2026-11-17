@@ -18,8 +18,17 @@ def compare(a,b,L):
             'xor_over_union':float(np.count_nonzero(a^b)/union) if union else 0.}
 
 def main():
-    ap=argparse.ArgumentParser();ap.add_argument('--reference-root',required=True);ap.add_argument('--local-previews',required=True);args=ap.parse_args()
-    here=Path(__file__).resolve().parent;private=Path(args.local_previews);private.mkdir(parents=True,exist_ok=True)
+    ap=argparse.ArgumentParser();ap.add_argument('--reference-root',required=True);ap.add_argument('--local-previews',required=True);ap.add_argument('--output-root',required=True,help='New output directory; existing evidence is never overwritten.');args=ap.parse_args()
+    here=Path(__file__).resolve().parent;private=Path(args.local_previews).resolve();output=Path(args.output_root).resolve()
+    reference_image=Path(args.reference_root)/'04_side_rear_view.png'
+    if not reference_image.is_file():raise FileNotFoundError(reference_image)
+    if output.exists() or private.exists():raise FileExistsError('Use new output-root and local-previews directories.')
+    if output==private or output in private.parents or private in output.parents:raise ValueError('Output and private previews must be separate directories.')
+    annotations=json.loads((here/'annotations-side-r3.json').read_text(encoding='utf-8'))
+    if hashlib.sha256(reference_image.read_bytes()).hexdigest()!=annotations['image']['sha256']:raise ValueError('Reference image SHA-256 differs from the frozen annotation source.')
+    with Image.open(reference_image) as image:
+        if image.size!=(annotations['image']['width_px'],annotations['image']['height_px']):raise ValueError('Reference image dimensions differ from the frozen annotation source.')
+    output.mkdir(parents=True,exist_ok=False);(output/'baseline').mkdir();private.mkdir(parents=True,exist_ok=False)
     ref=np.asarray(Image.open(here/'reference-side-visible-mask.png').convert('L'))>127
     rgba=np.asarray(Image.open(here/'baseline/base_side_shell_visible.png').convert('RGBA'))
     model=(rgba[:,:,0]>220)&(rgba[:,:,1]>220)&(rgba[:,:,2]>220)&(rgba[:,:,3]>220)
@@ -28,8 +37,7 @@ def main():
     # Sanity checks define formula behaviour, not tests of implementation truth.
     identical=compare(ref,ref,L);assert identical['iou']==1 and identical['symmetric_mean_boundary_distance_px']==0
     metrics=compare(ref,model,L)
-    Image.fromarray(model.astype(np.uint8)*255).save(here/'baseline/base_side_visible_binary_mask.png')
-    annotations=json.loads((here/'annotations-side-r3.json').read_text(encoding='utf-8'))
+    Image.fromarray(model.astype(np.uint8)*255).save(output/'baseline/base_side_visible_binary_mask.png')
     y_origin=max(y1,max(row['original_xy_px'][1] for row in annotations['keypoints_16']))
     keypoints=[]
     _,nearest=distance_transform_edt(~boundary(ref),return_indices=True)
@@ -48,7 +56,7 @@ def main():
         'keypoints_16':keypoints,'window_edge_projected_angle':angle,'closed_full_shell_profile_available':False,
         'do_not_close_across_occlusion':True,'section_positions_not_final_3d_planes':{'S1':500,'S2':640,'S3':800,'S4':960,'S5':1110},
         'sections_note':'Original user sketch image x positions retained for discussion only; converting image columns into 3D section planes needs the confirmed reconstruction camera and profile.'}
-    (here/'confirmation-controls.json').write_text(json.dumps(controls,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (output/'confirmation-controls.json').write_text(json.dumps(controls,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     frozen=json.loads((here/'baseline/baseline-cameras-and-inventory.json').read_text(encoding='utf-8'))
     sidecam=frozen['fixed_views']['side']['configuration'];up=np.asarray(sidecam['camera_basis_right_up_back'][1]);right=np.asarray(sidecam['camera_basis_right_up_back'][0]);view=np.asarray(sidecam['camera_basis_right_up_back'][2]);p=np.asarray(sidecam['parameters']);f=sidecam['focal_px'];target=np.asarray(sidecam['target_world']);distance=np.exp(p[3])
     def project(q):
@@ -65,24 +73,23 @@ def main():
         'window_tilt':{'reference_local_edge_deg_from_image_vertical':angle['angle_from_image_vertical_deg'],'reference_conservative_uncertainty_deg':angle['conservative_angle_uncertainty_deg'],'backup_projected_vertical_line_in_frame_plane_deg':apparent,'numeric_difference_between_different_features_deg':abs(apparent-angle['angle_from_image_vertical_deg']),'comparable_plane_angle_error_deg':None,'true_reference_3d_plane_angle_deg':None,'limitation':'Curved short visible seat edge versus model in-plane vertical direction are not a uniquely identified real plane. ±5° observation uncertainty exceeds requested3° gate; user must confirm target definition before claiming a pass.'},
         'full_hidden_shell_iou':None,'front_photo_metrics':None,
         'limits':['Visible-mask IoU includes differences from accessories and occlusion, not only shell shape.','No hidden shell silhouette is invented from metal/strap edges.','No true front photograph supplied, so front view is diagnostic only.','Existing estimated camera retained; not a uniquely recovered camera.','Step4 reconstruction and Step5 refitting await explicit point/angle confirmation.']}
-    (here/'baseline-metrics.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     occluder=(rgba[:,:,3]>220)&~model
     occluded_reference=int(np.count_nonzero(ref&occluder))
     report['current_occlusion_diagnostic']={'reference_yellow_behind_current_model_occluder_px':occluded_reference,
         'fraction_of_reference_yellow':occluded_reference/int(np.count_nonzero(ref)),
         'conditional_iou_ceiling':1-occluded_reference/int(np.count_nonzero(ref)),
         'conditions':'Only if current camera, current opaque accessory coverage and shell-behind-accessories order are all fixed. Not a bound after authorized contact-part refitting or different cameras. Not a reason to lower the user acceptance gate.'}
-    (here/'baseline-metrics.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (output/'baseline-metrics.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     font=ImageFont.truetype('C:/Windows/Fonts/msyh.ttc',20)
     annotated=Image.new('RGB',ref.shape[::-1],'#f3f6f9');arr=np.array(annotated);arr[ref]=[245,208,77];arr[boundary(ref)]=[30,125,155];annotated=Image.fromarray(arr);draw=ImageDraw.Draw(annotated)
-    clean=Image.open(Path(args.reference_root)/'04_side_rear_view.png').convert('RGB');private_image=clean.copy();pdraw=ImageDraw.Draw(private_image)
+    clean=Image.open(reference_image).convert('RGB');private_image=clean.copy();pdraw=ImageDraw.Draw(private_image)
     for row in keypoints:
         x,y=row['original_xy_px']
         for dr in [draw,pdraw]:
             dr.ellipse((x-5,y-5,x+5,y+5),fill='#b0004b');dr.text((x+8,y-20),row['id'],font=font,fill='#9a0044')
     for x in controls['section_positions_not_final_3d_planes'].values():draw.line([(x,100),(x,790)],fill='#a86ec1',width=1)
     line=angle['original_xy_px'];draw.line([tuple(q) for q in line],fill='#0066dd',width=4);pdraw.line([tuple(q) for q in line],fill='#0066dd',width=4)
-    annotated.save(here/'keypoints-confirmation.png');private_image.save(private/'reference-B-keypoints.png')
+    annotated.save(output/'keypoints-confirmation.png');private_image.save(private/'reference-B-keypoints.png')
     overlay=clean.copy();pixels=np.array(overlay);pixels[boundary(ref)]=[0,170,200];pixels[boundary(model)]=[225,40,70];overlay=Image.fromarray(pixels);overlay.save(private/'baseline-reference-B-overlay.png')
     # No fake third-column model: work_r3 is still an identical backup copy.
     base=Image.open(here/'baseline/base_side.png').convert('RGB');base.thumbnail((800,600));clean.thumbnail((800,600))

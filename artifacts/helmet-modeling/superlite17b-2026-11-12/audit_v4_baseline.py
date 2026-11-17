@@ -1,5 +1,11 @@
+import argparse,sys
 import bpy,json,hashlib,struct
 from pathlib import Path
+parser=argparse.ArgumentParser()
+parser.add_argument('--output',required=True,help='New report path; existing evidence is never overwritten.')
+args=parser.parse_args(sys.argv[sys.argv.index('--')+1:])
+output=Path(args.output).resolve()
+if output.exists():raise FileExistsError('Refusing to overwrite report: '+str(output))
 ROOT=Path(__file__).resolve().parents[3]
 BASE=Path(__file__).resolve().parent/'baseline-v4'
 FILE=BASE/'superlite17b-shell-v4.blend'
@@ -24,5 +30,7 @@ assert len(rows)==144,len(rows)
 assert sum(r['triangles'] for r in rows)==61400
 assert hashlib.sha256(FILE.read_bytes()).hexdigest()==EXPECTED
 result={'blender':bpy.app.version_string,'source_sha256':EXPECTED,'read_only':True,'meshes':len(rows),'triangles':sum(r['triangles'] for r in rows),'evaluated_triangles':sum(r['evaluated_triangles'] for r in rows),'frame':bpy.context.scene.frame_current,'geometry_modified':False,'objects':rows,'limits':'Raw/evaluated geometry at the saved frame, modifier visibility and shape-key values are recorded. Material names do not prove unchanged material parameters. Not a rerun of the historical 178 checks or measured-object accuracy / Unity/device validation.'}
-(BASE/'readback.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+output.parent.mkdir(parents=True,exist_ok=True)
+with output.open('x',encoding='utf-8') as stream:
+ stream.write(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
 print('V4_BASELINE_READBACK_OK 144 meshes / 61400 triangles; saved source unchanged')

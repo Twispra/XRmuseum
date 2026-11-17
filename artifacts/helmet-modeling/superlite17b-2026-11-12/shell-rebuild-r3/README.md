@@ -4,7 +4,7 @@
 
 ## 0．已先备份
 
-- [backup_r1_current.blend](backups/backup_r1_current.blend)：按用户指定文件名保存的**当前完整r2模型**，不是把旧r1重新标成当前。逐字节复制，SHA256 `a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894`，已设只读。源r1/r2均保留。
+- [backup_r1_current.blend](backups/backup_r1_current.blend)：按用户指定文件名保存的**当前完整r2模型**，不是把旧r1重新标成当前。逐字节复制，SHA256 `a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894`，原作者本机已设只读；Git/LFS 不传递此文件属性，新 clone/worktree 仍须校验哈希并自行保护。源r1/r2均保留。
 - [work_r3.blend](work/work_r3.blend)：单独可写副本，当前与备份完全相同。确认前未改变任何零件或外壳形状。
 - 真实重开备份确认146个模型网格、12个材质、1台相机和4盏灯。完整blend含152个场景对象（另含摄影棚背景等），不是只导出头盔网格。[备份来源](backup-manifest.json) · [库存及固定相机](baseline/baseline-cameras-and-inventory.json)
 
@@ -75,7 +75,7 @@ mask白色191,223像素。主/宽阈值mask相互IoU约0.985、相差2912像素�
 
 ```text
 <Blender4.5.14> --background --disable-autoexec --python-exit-code 1 --python <本目录>/render_backup_baseline.py -- --output <新基准渲染目录>
-<Python3.12+NumPy+Pillow+SciPy> <本目录>/measure_r3_baseline.py --reference-root <原refs目录> --local-previews <本地新叠图目录>
+<Python3.12+NumPy+Pillow+SciPy> <本目录>/measure_r3_baseline.py --reference-root <原refs目录> --local-previews <本地新叠图目录> --output-root <全新数值输出目录>
 ```
 
-第二条目前按本目录固定`baseline/`读取已生成的首轮基准，请在独立工作副本复跑或先明确新目录，不自动覆盖已确认参数。未运行Unity、未导出模型、未验证头显/性能/新构建或用户研究。旧r1下端未装配限制仍保留，当前也没有修复它。
+第二条从本目录固定`baseline/`读取已生成的首轮基准，所有数值和确认图写入必须全新的`--output-root`，叠图写入另一个全新的本地目录；不再固定写回首轮证据。缺少原B图、原图哈希/尺寸与标注来源不符或输出目录已存在时拒绝运行。2026-11-17本次合并归档只接收步骤0–3，后续16点/L/图像方向的技术确认门仍保留。未运行Unity、未导出模型、未验证头显/性能/新构建或用户研究。旧r1下端未装配限制仍保留，当前也没有修复它。
