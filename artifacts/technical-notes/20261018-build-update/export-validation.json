@@ -1,0 +1,30 @@
+{
+  "sourceCommit": "6088c736e89d05101e09645c1796556012a6fd5d",
+  "validationCommit": "024d03942cc93d90453583e1c7e33e4eac96ecf2",
+  "identicalCommittedUnityTree": "eaa3237d73d386dc7b64bfc6c1994078ff2f958d",
+  "bodyPages": 4,
+  "referencesPages": 1,
+  "totalPages": 5,
+  "font": "Times New Roman",
+  "minimumVisibleFontPt": 12,
+  "marginsCm": [
+    2.5,
+    2.5,
+    2.5,
+    2.5
+  ],
+  "pdf": "artifacts\\technical-notes\\20261018-build-update\\phase2-prototype-design-and-technical-note.en.pdf",
+  "submissionCopy": "phase2小组和个人作业/COMP5424-Group2-Phase2-PrototypeDesignTechnicalNote.pdf",
+  "pdfSha256": "a0f1da738bd8f77ab452612f24113f4fc0f3d137bf0d2653a75245ac826c7a2d",
+  "pdfBytes": 150449,
+  "docxSha256": "a3714f9ba14632d11f4ebebc0c032c6ceb3db4049f821700f1020c1acb9ac7e9",
+  "englishManuscriptSha256": "df9c0c0b892b5e96220949abd1af019f37ebb6d6aa4c968593bb659bd0f2cd7b",
+  "references": 12,
+  "versionBoundBuildEvidenceCommit": "d05def503ad286815575ed7038c1f50ddc21dd9c",
+  "fixedGitTargetsInReportAndEssays": 43,
+  "renderMethod": "Native Microsoft Word ExportAsFixedFormat, packaged render_docx.py rasterization with bundled Poppler",
+  "visualReview": "All five technical-note pages and the one activity-record page inspected by root and independently reviewed; no layout defects.",
+  "formattingAudit": "artifacts/phase2-submission/20261018-final-review/final-format-audit.json",
+  "verificationScope": "Existing Editor suite evidence retained at 024d039. New Windows build and limited 40-second extracted Player observation at 6088c736; no new Unity execution during the document update. Physical PQ604/headset acceptance remains pending.",
+  "oldCanonicalPdfPreserved": true
+}
