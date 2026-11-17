@@ -1,0 +1,51 @@
+# 2026-11-17：可读性下限修正（两个开发/演示场景）
+
+用户明确授权按"方案 A"执行：先覆盖两个**开发/演示场景**，主场景留给组内协调。
+本轮改了 26 个 `m_fontSizeMin` 字段，**未改任何文案、字号上限、Prefab、字体或组件引用**。
+
+## 依据
+
+2026-10-11 合入的[无障碍与舒适性走查](../accessibility.zh-CN.md)记录了「自动缩放下限形同虚设」：
+`m_fontSizeMin` 被大量设为 `0.02`。2026-11-17 在 `main@9e9f989` 上复测为 **34 个组件 ≤ 0.05**
+（32 个 `0.02`、2 个 `0.03`），最坏压缩比 **72.5×**。
+
+该发现已转为 Phase 3 评价方案的 **EQ1**（`docs/evaluation/README.md`，由 PR #78 引入；
+该 PR 合入前此路径在 main 上尚不存在）——但本轮改动**依据的是资产层读数，
+不是用户证据**；真人会话尚未执行，不得把"已修好可读性"写成已验证。
+
+## 规则
+
+`m_fontSizeMin := max(原值, 0.35 × m_fontSizeMax)`，即自动缩放最多压到设计尺寸的 35%，
+最坏压缩比收到 `1 / 0.35 ≈ 2.86×`。理由与参数取法见[可读性下限](../accessibility-readability.zh-CN.md)。
+
+## 本轮实际改动
+
+| 文件 | 改动 | 压缩比 |
+| --- | --- | --- |
+| `MuseumVR/Assets/Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity` | 8 处 | 15.0–72.5× → 2.86× |
+| `MuseumVR/Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity` | 18 处 | 4.5–42.5× → 2.86× |
+
+- diff 共 **26 行增 / 26 行删**，逐行核对后确认**只动 `m_fontSizeMin`**，无其它字段变化。
+- 两个文件保持 **LF** 换行（符合 `.gitattributes` 的 `*.unity text eol=lf`）。
+- 用同一套审计脚本复测：`m_fontSizeMin ≤ 0.05` 的组件 **34 → 13**。
+
+## 未覆盖
+
+剩余 13 处**全部在 `MuseumVR/Assets/Museum/Scenes/MuseumStart.unity`**（`SHALLOWER` / `TILT DOWN` /
+`TURN RIGHT` / `EDIT CUT` 等移动提示标签）。该文件属共享场景，按 `AGENTS.md` 需先协调单一写入者，
+本轮**有意不改**。协调后用同一脚本、把该文件加入 `TARGETS` 即可，规则完全一致。
+
+## 验证与限制
+
+- **未在本环境运行 Unity**（执行环境跑不起编辑器）。因此：
+  - **未目视确认**改后是否出现裁切/溢出——需要有人打开两个场景逐屏检查；
+  - 未验证真实头显可读性、繁体/英文最长文案的排版表现；
+  - 未构建 Player。
+- 已做：diff 范围核对（只 26 行、只一个字段）、复测审计数值、换行与链接检查、脚本干跑/实跑一致。
+- 改前/改后逐条明细见 `artifacts/accessibility/qa/runs/20261117-readability-floor/readability-floor-report.json`。
+
+## 下一步
+
+1. 有人在 Unity 里过一遍两个场景，确认无裁切；若有，调 `--ratio`（如 0.45）重跑即可。
+2. 与组内协调后，把 `MuseumStart.unity` 的 13 处按同一规则处理。
+3. 真人评价（EQ1）若显示问题仍未解决，应换方向（固定字号 + 分页/滚动），而不是继续下调下限。

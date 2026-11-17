@@ -1,0 +1,265 @@
+{
+  "generatedFrom": "main@9e9f989 + 本轮修改",
+  "rule": "m_fontSizeMin := max(原值, 0.35 x m_fontSizeMax)",
+  "scenesChanged": [
+    "HelmetInspectionDemo.unity",
+    "PhysicalHandsLab.unity"
+  ],
+  "scope": "只覆盖两个开发/演示场景；主场景 MuseumStart.unity 未纳入（共享文件，待协调）",
+  "before": {
+    "componentsWithMinLe005": 34,
+    "distribution": {
+      "0.02": 32,
+      "0.03": 2
+    },
+    "worstShrinkRatio": 72.5
+  },
+  "after": {
+    "componentsWithMinLe005": 13,
+    "distribution": {
+      "0.02": 12,
+      "0.03": 1
+    },
+    "worstShrinkRatio": 2.86
+  },
+  "remaining": {
+    "count": 13,
+    "note": "全部位于 MuseumStart.unity，需在协调后单独处理"
+  },
+  "changes": [
+    {
+      "file": "Assets/Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity",
+      "object": "Note",
+      "fontSizeMax": 0.3,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.105,
+      "shrinkRatio_before": 15.0,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity",
+      "object": "WINDOW label",
+      "fontSizeMax": 0.55,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.1925,
+      "shrinkRatio_before": 27.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity",
+      "object": "SECTION label",
+      "fontSizeMax": 0.55,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.1925,
+      "shrinkRatio_before": 27.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity",
+      "object": "TURN LEFT label",
+      "fontSizeMax": 0.45,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.1575,
+      "shrinkRatio_before": 22.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity",
+      "object": "Task",
+      "fontSizeMax": 0.9,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.315,
+      "shrinkRatio_before": 45.0,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity",
+      "object": "Title",
+      "fontSizeMax": 1.45,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.5075,
+      "shrinkRatio_before": 72.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity",
+      "object": "TURN RIGHT label",
+      "fontSizeMax": 0.4,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.14,
+      "shrinkRatio_before": 20.0,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/HelmetInspection/Scenes/HelmetInspectionDemo.unity",
+      "object": "RESET label",
+      "fontSizeMax": 0.75,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.2625,
+      "shrinkRatio_before": 37.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "Exploration CLOSE label",
+      "fontSizeMax": 0.45,
+      "fontSizeMin_before": 0.1,
+      "fontSizeMin_after": 0.1575,
+      "shrinkRatio_before": 4.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "SHALLOWER label",
+      "fontSizeMax": 0.85,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.2975,
+      "shrinkRatio_before": 42.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "Reset Button Label",
+      "fontSizeMax": 0.32,
+      "fontSizeMin_before": 0.03,
+      "fontSizeMin_after": 0.112,
+      "shrinkRatio_before": 10.67,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "Exploration SOUND label",
+      "fontSizeMax": 0.45,
+      "fontSizeMin_before": 0.1,
+      "fontSizeMin_after": 0.1575,
+      "shrinkRatio_before": 4.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "Exploration DETAILS label",
+      "fontSizeMax": 0.45,
+      "fontSizeMin_before": 0.1,
+      "fontSizeMin_after": 0.1575,
+      "shrinkRatio_before": 4.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "Exploration MORE label",
+      "fontSizeMax": 0.45,
+      "fontSizeMin_before": 0.1,
+      "fontSizeMin_after": 0.1575,
+      "shrinkRatio_before": 4.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "Exploration REDUCE MOTION label",
+      "fontSizeMax": 0.45,
+      "fontSizeMin_before": 0.1,
+      "fontSizeMin_after": 0.1575,
+      "shrinkRatio_before": 4.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "TILT DOWN label",
+      "fontSizeMax": 0.85,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.2975,
+      "shrinkRatio_before": 42.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "TURN RIGHT label",
+      "fontSizeMax": 0.85,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.2975,
+      "shrinkRatio_before": 42.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "EDIT CUT label",
+      "fontSizeMax": 0.85,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.2975,
+      "shrinkRatio_before": 42.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "TURN LEFT label",
+      "fontSizeMax": 0.85,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.2975,
+      "shrinkRatio_before": 42.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "DEEPER label",
+      "fontSizeMax": 0.85,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.2975,
+      "shrinkRatio_before": 42.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "FLIP CUT label",
+      "fontSizeMax": 0.85,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.2975,
+      "shrinkRatio_before": 42.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "TILT UP label",
+      "fontSizeMax": 0.85,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.2975,
+      "shrinkRatio_before": 42.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "TOP CUT label",
+      "fontSizeMax": 0.85,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.2975,
+      "shrinkRatio_before": 42.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "ALIGN VIEW label",
+      "fontSizeMax": 0.85,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.2975,
+      "shrinkRatio_before": 42.5,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "Follows your position / stays still while aiming label",
+      "fontSizeMax": 0.48,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.168,
+      "shrinkRatio_before": 24.0,
+      "shrinkRatio_after": 2.86
+    },
+    {
+      "file": "Assets/Museum/Features/PhysicalHands/Scenes/PhysicalHandsLab.unity",
+      "object": "Helmet Instructions",
+      "fontSizeMax": 0.4,
+      "fontSizeMin_before": 0.02,
+      "fontSizeMin_after": 0.14,
+      "shrinkRatio_before": 20.0,
+      "shrinkRatio_after": 2.86
+    }
+  ]
+}
