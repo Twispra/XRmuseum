@@ -1596,4 +1596,39 @@ MonoBehaviour:
     english: Stop narration
     traditionalChinese: "\u505C\u6B62\u8A9E\u97F3"
     note: Visitor control title while narration is active.
+  - key: exhibit.right_connection.eyebrow
+    chinese: "\u6559\u5B66\u793A\u610F"
+    english: "Teaching diagram"
+    traditionalChinese: "\u6559\u5B78\u793A\u610F"
+    note: "Right exhibit teaching diagram."
+  - key: exhibit.right_connection.air
+    chinese: "\u4F9B\u6C14"
+    english: "Air supply"
+    traditionalChinese: "\u4F9B\u6C23"
+    note: "Right exhibit teaching diagram."
+  - key: exhibit.right_connection.voice
+    chinese: "\u53CC\u5411\u901A\u8BDD"
+    english: "Two-way communication"
+    traditionalChinese: "\u96D9\u5411\u901A\u8A71"
+    note: "Right exhibit teaching diagram."
+  - key: exhibit.right_connection.surface.air
+    chinese: "\u6C34\u9762\u4F9B\u6C14\u6CF5"
+    english: "Surface pump"
+    traditionalChinese: "\u6C34\u9762\u4F9B\u6C23\u6CF5"
+    note: "Right exhibit teaching diagram."
+  - key: exhibit.right_connection.surface.voice
+    chinese: "\u6C34\u9762\u56E2\u961F"
+    english: "Surface team"
+    traditionalChinese: "\u6C34\u9762\u5718\u968A"
+    note: "Right exhibit teaching diagram."
+  - key: exhibit.right_connection.diver
+    chinese: "\u6F5C\u6C34\u5458"
+    english: "Diver"
+    traditionalChinese: "\u6F5B\u6C34\u54E1"
+    note: "Right exhibit teaching diagram."
+  - key: exhibit.right_connection.demo
+    chinese: "\u5411\u5DE6\u67E5\u770B Mark V \u6F14\u793A"
+    english: "See the Mark V demo"
+    traditionalChinese: "\u5411\u5DE6\u67E5\u770B Mark V \u6F14\u793A"
+    note: "Right exhibit teaching diagram."
   fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
