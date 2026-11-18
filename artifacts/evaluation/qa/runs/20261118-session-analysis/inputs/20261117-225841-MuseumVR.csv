@@ -1,0 +1,10 @@
+﻿t_seconds,event,target,detail,page,clue,hints,air_seen,voice_seen,era_index,era_name,language,cutaway,floating,window_open,resets
+0.000,session_start,MuseumVR,scene=MuseumStart;interactables=49;exploration=1;eras=1;inspection=1;unity=2022.3.62f3c1,Welcome,-,0,0,0,-1,-,English,0,0,0,0
+0.000,state,,era,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+3.453,hover,HelmetExhibit/HelmetHotspotTour/Front window Hotspot,n=1,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+6.123,hover,HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot,n=2,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+7.920,hover,HelmetExhibit/HelmetHotspotTour/Front window Hotspot,n=3,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+8.863,activate,HelmetExhibit/HelmetHotspotTour/Front window Hotspot,gap=1008.86;n=1,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+9.555,hover,HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot,n=4,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+10.465,activate,HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot,rapid_reselect;gap=1.60;n=2,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+13.548,session_end,,duration=13.548;selects=0;activates=2;hovers=4,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0

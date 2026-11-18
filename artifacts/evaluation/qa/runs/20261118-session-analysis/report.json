@@ -1,0 +1,364 @@
+{
+  "generated_at": "2026-11-18T14:09:41+08:00",
+  "input_dir": "inputs",
+  "scope_note": "**本轮输入是 2026-11-17 晚组员自测的 7 场会话（验证记录器用），不是评价参与者数据，不得作为评价结论引用。**",
+  "aggregate": {
+    "sessions": 7,
+    "total_duration_s": 226.544,
+    "median_duration_s": 24.308,
+    "sessions_with_interaction": 6,
+    "hover_total": 30,
+    "activate_total": 4,
+    "select_total": 0,
+    "activate_per_hover": 0.133,
+    "median_first_interaction_s": 3.5,
+    "sessions_reaching_non_welcome": 0
+  },
+  "sessions": [
+    {
+      "file": "20261117-220903-MuseumVR.csv",
+      "scene": "MuseumStart",
+      "duration": 59.425,
+      "interactables": "",
+      "hovers": 0,
+      "activates": 0,
+      "selects": 0,
+      "first_interaction_t": null,
+      "unique_targets": 0,
+      "per_target": {},
+      "start_page": "Welcome",
+      "end_page": "",
+      "hints_max": 0,
+      "page_history": [
+        "Welcome"
+      ],
+      "reached_non_welcome": false,
+      "page_actions": [],
+      "sequence": []
+    },
+    {
+      "file": "20261117-222652-MuseumVR.csv",
+      "scene": "MuseumStart",
+      "duration": 26.353,
+      "interactables": "49",
+      "hovers": 4,
+      "activates": 0,
+      "selects": 0,
+      "first_interaction_t": 3.825,
+      "unique_targets": 2,
+      "per_target": {
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot": {
+          "hover": 2,
+          "activate": 0,
+          "select": 0
+        },
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot": {
+          "hover": 2,
+          "activate": 0,
+          "select": 0
+        }
+      },
+      "start_page": "Welcome",
+      "end_page": "Welcome",
+      "hints_max": 0,
+      "page_history": [
+        "Welcome"
+      ],
+      "reached_non_welcome": false,
+      "page_actions": [],
+      "sequence": [
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot"
+      ]
+    },
+    {
+      "file": "20261117-222809-MuseumVR.csv",
+      "scene": "MuseumStart",
+      "duration": 21.732,
+      "interactables": "49",
+      "hovers": 3,
+      "activates": 0,
+      "selects": 0,
+      "first_interaction_t": 3.384,
+      "unique_targets": 3,
+      "per_target": {
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot": {
+          "hover": 1,
+          "activate": 0,
+          "select": 0
+        },
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot": {
+          "hover": 1,
+          "activate": 0,
+          "select": 0
+        },
+        "Language Selection/Language Button - Chinese": {
+          "hover": 1,
+          "activate": 0,
+          "select": 0
+        }
+      },
+      "start_page": "Welcome",
+      "end_page": "Welcome",
+      "hints_max": 0,
+      "page_history": [
+        "Welcome"
+      ],
+      "reached_non_welcome": false,
+      "page_actions": [],
+      "sequence": [
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot",
+        "Language Selection/Language Button - Chinese"
+      ]
+    },
+    {
+      "file": "20261117-224532-MuseumVR.csv",
+      "scene": "MuseumStart",
+      "duration": 24.308,
+      "interactables": "49",
+      "hovers": 7,
+      "activates": 0,
+      "selects": 0,
+      "first_interaction_t": 3.496,
+      "unique_targets": 2,
+      "per_target": {
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot": {
+          "hover": 4,
+          "activate": 0,
+          "select": 0
+        },
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot": {
+          "hover": 3,
+          "activate": 0,
+          "select": 0
+        }
+      },
+      "start_page": "Welcome",
+      "end_page": "Welcome",
+      "hints_max": 0,
+      "page_history": [
+        "Welcome"
+      ],
+      "reached_non_welcome": false,
+      "page_actions": [],
+      "sequence": [
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot"
+      ]
+    },
+    {
+      "file": "20261117-225004-MuseumVR.csv",
+      "scene": "MuseumStart",
+      "duration": 74.86,
+      "interactables": "49",
+      "hovers": 11,
+      "activates": 2,
+      "selects": 0,
+      "first_interaction_t": 3.535,
+      "unique_targets": 6,
+      "per_target": {
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot": {
+          "hover": 4,
+          "activate": 1,
+          "select": 0
+        },
+        "Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left": {
+          "hover": 3,
+          "activate": 0,
+          "select": 0
+        },
+        "Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Reset photo helmet": {
+          "hover": 1,
+          "activate": 0,
+          "select": 0
+        },
+        "Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet right": {
+          "hover": 1,
+          "activate": 0,
+          "select": 0
+        },
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot": {
+          "hover": 2,
+          "activate": 0,
+          "select": 0
+        },
+        "HelmetExhibit/HelmetHotspotTour/Breastplate Hotspot": {
+          "hover": 0,
+          "activate": 1,
+          "select": 0
+        }
+      },
+      "start_page": "Welcome",
+      "end_page": "Welcome",
+      "hints_max": 0,
+      "page_history": [
+        "Welcome"
+      ],
+      "reached_non_welcome": false,
+      "page_actions": [],
+      "sequence": [
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
+        "Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left",
+        "Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Reset photo helmet",
+        "Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet right",
+        "Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left",
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
+        "Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left",
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Breastplate Hotspot"
+      ]
+    },
+    {
+      "file": "20261117-225841-MuseumVR.csv",
+      "scene": "MuseumStart",
+      "duration": 13.548,
+      "interactables": "49",
+      "hovers": 4,
+      "activates": 2,
+      "selects": 0,
+      "first_interaction_t": 3.453,
+      "unique_targets": 2,
+      "per_target": {
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot": {
+          "hover": 2,
+          "activate": 1,
+          "select": 0
+        },
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot": {
+          "hover": 2,
+          "activate": 1,
+          "select": 0
+        }
+      },
+      "start_page": "Welcome",
+      "end_page": "Welcome",
+      "hints_max": 0,
+      "page_history": [
+        "Welcome"
+      ],
+      "reached_non_welcome": false,
+      "page_actions": [],
+      "sequence": [
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot",
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot"
+      ]
+    },
+    {
+      "file": "20261117-230611-MuseumVR.csv",
+      "scene": "MuseumStart",
+      "duration": 6.318,
+      "interactables": "49",
+      "hovers": 1,
+      "activates": 0,
+      "selects": 0,
+      "first_interaction_t": 3.505,
+      "unique_targets": 1,
+      "per_target": {
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot": {
+          "hover": 1,
+          "activate": 0,
+          "select": 0
+        }
+      },
+      "start_page": "Welcome",
+      "end_page": "Welcome",
+      "hints_max": 0,
+      "page_history": [
+        "Welcome"
+      ],
+      "reached_non_welcome": false,
+      "page_actions": [],
+      "sequence": [
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "B3",
+      "code": "",
+      "title": "在目标之间反复折返",
+      "source": "telemetry",
+      "severity": 2,
+      "cost": "S",
+      "requirement": "EQ5 流程可理解",
+      "affected_sessions": 4,
+      "affected_ratio": 0.571,
+      "sessions": [
+        "20261117-222652-MuseumVR.csv",
+        "20261117-224532-MuseumVR.csv",
+        "20261117-225004-MuseumVR.csv",
+        "20261117-225841-MuseumVR.csv"
+      ],
+      "evidence": [
+        "20261117-222652-MuseumVR.csv: 折返 2 次，合并同目标后的序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot']",
+        "20261117-224532-MuseumVR.csv: 折返 5 次，合并同目标后的序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot']",
+        "20261117-225004-MuseumVR.csv: 折返 4 次，合并同目标后的序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Reset photo helmet', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet right', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot']",
+        "20261117-225841-MuseumVR.csv: 折返 2 次，合并同目标后的序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot']"
+      ],
+      "note": "回看场次以区分正常比较与操作困难。",
+      "priority": 1.143,
+      "decision": ""
+    },
+    {
+      "id": "B2",
+      "code": "",
+      "title": "反复悬停且未记录选择或激活",
+      "source": "telemetry",
+      "severity": 3,
+      "cost": "S",
+      "requirement": "EQ2 状态可辨 / EQ4 可发现性",
+      "affected_sessions": 2,
+      "affected_ratio": 0.286,
+      "sessions": [
+        "20261117-224532-MuseumVR.csv",
+        "20261117-225004-MuseumVR.csv"
+      ],
+      "evidence": [
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot：1 场会话命中，单场最高 hover 4 次，累计 4 次，未记录 activate 或 select",
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot：1 场会话命中，单场最高 hover 3 次，累计 3 次，未记录 activate 或 select",
+        "Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left：1 场会话命中，单场最高 hover 3 次，累计 3 次，未记录 activate 或 select"
+      ],
+      "note": "请结合观察记录确认是否尝试操作，以及使用的输入是否触发了 XRI 事件。",
+      "priority": 0.857,
+      "decision": ""
+    },
+    {
+      "id": "B1",
+      "code": "",
+      "title": "会话未记录交互事件",
+      "source": "telemetry",
+      "severity": 3,
+      "cost": "S",
+      "requirement": "EQ4 可发现性",
+      "affected_sessions": 1,
+      "affected_ratio": 0.143,
+      "sessions": [
+        "20261117-220903-MuseumVR.csv"
+      ],
+      "evidence": [
+        "20261117-220903-MuseumVR.csv: 时长 59.425s，无任何交互事件"
+      ],
+      "note": "可能是不知道从哪开始，也可能是测试环境问题；必须回看录像或访谈再定性。",
+      "priority": 0.429,
+      "decision": ""
+    }
+  ],
+  "coded_observations": []
+}

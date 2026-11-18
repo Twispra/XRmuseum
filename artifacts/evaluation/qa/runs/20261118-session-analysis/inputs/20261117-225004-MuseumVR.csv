@@ -1,0 +1,17 @@
+﻿t_seconds,event,target,detail,page,clue,hints,air_seen,voice_seen,era_index,era_name,language,cutaway,floating,window_open,resets
+0.000,session_start,MuseumVR,scene=MuseumStart;interactables=49;exploration=1;eras=1;inspection=1;unity=2022.3.62f3c1,Welcome,-,0,0,0,-1,-,English,0,0,0,0
+0.000,state,,era,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+3.535,hover,HelmetExhibit/HelmetHotspotTour/Front window Hotspot,n=1,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+12.132,hover,Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left,n=2,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+15.494,hover,Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Reset photo helmet,n=3,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+16.882,hover,Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet right,n=4,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+18.757,hover,Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left,n=5,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+19.993,hover,HelmetExhibit/HelmetHotspotTour/Front window Hotspot,n=6,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+21.183,hover,Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left,n=7,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+22.890,hover,HelmetExhibit/HelmetHotspotTour/Front window Hotspot,n=8,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+68.083,hover,HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot,n=9,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+69.690,hover,HelmetExhibit/HelmetHotspotTour/Front window Hotspot,n=10,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+70.122,activate,HelmetExhibit/HelmetHotspotTour/Front window Hotspot,gap=1070.12;n=1,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+71.091,hover,HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot,n=11,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+72.181,activate,HelmetExhibit/HelmetHotspotTour/Breastplate Hotspot,gap=2.06;n=2,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
+74.860,session_end,,duration=74.860;selects=0;activates=2;hovers=11,Welcome,-,0,0,0,1,Mark V 标准空气头盔,English,0,0,0,0
