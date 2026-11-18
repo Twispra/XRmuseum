@@ -21,7 +21,7 @@ namespace Museum.Telemetry.EditorTools
         {
             string path = SessionTelemetry.CurrentSessionFile;
             Debug.Log(string.IsNullOrEmpty(path)
-                ? "[Telemetry] 当前没有正在记录的会话（未进入 Play，或已用 -museumTelemetryOff 关闭）。"
+                ? "[Telemetry] 当前没有正在记录的会话。日志故障见控制台警告。"
                 : "[Telemetry] " + path);
         }
 

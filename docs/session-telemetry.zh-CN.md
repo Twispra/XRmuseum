@@ -22,6 +22,7 @@
 ```
 
 一次 Play 一个文件，命名 `yyyyMMdd-HHmmss-MuseumVR.csv`（UTF-8 带 BOM，Excel 可直接打开）。
+同一秒开始的新会话会用 `-2` 等数字后缀，保留原记录。
 **该目录在用户目录下，不进 Git。**
 
 ## 2. 字段
@@ -44,22 +45,24 @@
 
 | `event` | 何时写入 | 用途 |
 | --- | --- | --- |
-| `session_start` | 进入 Play | 记录场景名与**挂接自检**（`interactables=` 数字、三个状态源是否解析到） |
-| `hover` | 射线指到可交互物 | 瞄准行为；"指到了但没按"是瞄准困难的信号 |
-| `activate` | 按**扳机** | 访客习惯用扳机 |
-| `select` | 按**抓握** | 访客习惯用抓握 |
-| `state` | 任一状态字段变化 | 流程推进的精确时刻 |
+| `session_start` | 进入 Play | 记录场景名、启动时已订阅的目标数和三个状态源的解析结果 |
+| `hover` | XRI 进入可交互目标的悬停范围 | 同一已注册目标的悬停进入间隔至少 1 秒才会再次记录，其他目标独立计时 |
+| `activate` | XRI 向目标派发 `activated` | 记录该目标收到的激活事件 |
+| `select` | XRI 向目标派发 `selectEntered` | 记录对该目标的选择开始事件 |
+| `state` | 订阅回调或定时采样检测到状态变化 | 记录观察到的流程状态 |
 | `scene_loaded` | 场景切换 | 边界 |
 | `session_end` | 退出 Play | 时长 + 各类计数，附最后一次快照 |
 
 `activate` 与 `select` **分开记**，因为本工程两条路径都存在：`HelmetHotspot` 同时监听
 `selectEntered` 与 `activated`，而 `HelmetExplorationButton` 只监听 `selectEntered`。
+XRI 事件的目标依赖当前交互条件，物理按钮还会在释放时检查是否确认。分析时应结合后续状态
+或观察记录确认结果。启动时的目标计数只反映当时已注册的对象，随后注册的物理控件由 XRI 事件补订阅。
 
 需要说明的是：产品本身**已经教了**用法——`HelmetExplorationPanel` 在编辑器里显示
 `Point + G to select`、构建里显示 `Point + grip to select`，Help 面板还有一整套按键说明
 （`Click Game to focus. / T / Y: choose a controller. / Point + G: select a button. / Hold G: grab…`）。
-所以这不是隐性陷阱。分开记的价值是：**能看出有多少访客走了提示之外的那条路**（扳机），
-以及走那条路时在按钮上是否卡住。
+分开记能看出哪些目标收到了提示之外的激活事件。要判断按钮操作遇到了什么困难，需要结合
+操作时的页面、输入条件和观察记录。
 
 ## 4. 能算出什么
 
@@ -68,9 +71,9 @@
 | 首次交互耗时 | 第一条 `hover`/`activate`/`select` 的 `t_seconds` |
 | 每步耗时 | 相邻 `state` 的 `t_seconds` 差 |
 | 求助次数 | `hints` 列的最大值 |
-| 误触 | `detail` 含 `rapid_reselect` 的行数（2 秒内换目标） |
+| 短间隔换目标 | `detail` 含 `rapid_reselect` 的行数（2 秒内换目标），具体原因由观察确认 |
 | 犹豫 / 徘徊 | 同一 `target` 的 `hover` 重复次数与来回轮数 |
-| 中途放弃 | `session_end` 时 `page` 仍为 `Welcome`、`hints=0` |
+| 结束时的页和求助次数 | 读取 `session_end` 的 `page` 和 `hints`，其中 `page=-` 表示页面未知。是否中途放弃需核对完整轨迹和观察记录 |
 
 **一个真实例子**（2026-11-17 22:45 那一次，测试者=组员，**不是评价参与者**）：
 24 秒内 7 次 `hover` 只在两个热点之间来回（Front window ↔ Bonnet shell），
@@ -98,7 +101,7 @@
 ## 6. 边界
 
 - **它不能替代真人评价。** 记录的是行为，不是原因；为什么犹豫必须靠 think-aloud 与访谈。
-- **它不改交互。** 只订阅 `XRBaseInteractable` 的公开事件、只读公开属性，不会影响体验。
+- 记录器订阅公开事件和读取状态。若日志无法创建、写入或关闭，会结束本次记录、释放订阅并在 Unity 控制台写警告。写入中断的 CSV 可能缺少 `session_end`，分析前请核对是否完整。
 - **未验证**：以上结论均来自编辑器内模拟器会话；真实头显下的按键路径**未经实机确认**。
 - 编辑器退出 Play 时若出现 `Some objects were not cleaned up…XRInteractionManager`，
   与记录器无关：该对象由 XRI 的 `XRDeviceSimulatorLoader` 通过 `DontDestroyOnLoad` 留在跨场景层级，

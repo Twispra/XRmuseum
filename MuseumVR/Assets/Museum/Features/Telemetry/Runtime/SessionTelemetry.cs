@@ -15,8 +15,8 @@ namespace Museum.Telemetry
 {
     /// <summary>
     /// 会话记录器：旁听访客在场景里的状态变化与选择事件，逐行写成 CSV。
-    /// 它只读不写：不改变任何交互行为，也不碰工程文件；日志落在 Application.persistentDataPath。
-    /// 用于 Phase 3 的定量证据（每次选择、求助次数、误触、各阶段耗时）。
+    /// 仅读取交互与状态，日志落在 Application.persistentDataPath。
+    /// 用于 Phase 3 的定量证据（选择、求助次数、短间隔换目标和各阶段耗时）。
     /// </summary>
     [DisallowMultipleComponent]
     [AddComponentMenu("Museum/Session Telemetry")]
@@ -29,6 +29,8 @@ namespace Museum.Telemetry
             "era_index,era_name,language,cutaway,floating,window_open,resets";
 
         const string OffSwitch = "-museumTelemetryOff";
+        const float SourceRefreshInterval = 2f;
+        const float HoverDebounce = 1f;
 
         /// <summary>状态差分采样间隔（秒）。事件本身由回调即时记录，不受此值影响。</summary>
         [SerializeField] float sampleInterval = 0.2f;
@@ -43,15 +45,15 @@ namespace Museum.Telemetry
         float nextSampleAt;
         float nextResolveAt;
         Snapshot previous;
-        float lastSelectAt = -1000f;
-        string lastSelectTarget = string.Empty;
+        float lastSelectAt;
+        string lastSelectTarget;
         int selectCount;
         int activateCount;
         int hoverCount;
-        float lastHoverAt = -1000f;
-        string lastHoverTarget = string.Empty;
 
-        readonly List<XRBaseInteractable> subscribed = new List<XRBaseInteractable>();
+        readonly HashSet<XRInteractionManager> managers = new HashSet<XRInteractionManager>();
+        readonly List<IXRInteractable> registered = new List<IXRInteractable>();
+        readonly Dictionary<XRBaseInteractable, float> lastHoverTimes = new Dictionary<XRBaseInteractable, float>();
         HelmetInspectionController inspection;
         HelmetExplorationController exploration;
         HelmetEraSwitcher eras;
@@ -85,31 +87,38 @@ namespace Museum.Telemetry
             if (instance && instance != this) { Destroy(this); return; }
             instance = this;
 
-            OpenLog();
+            elapsed = 0f;
+            nextSampleAt = 0f;
+            nextResolveAt = SourceRefreshInterval;
+            lastSelectAt = 0f;
+            lastSelectTarget = string.Empty;
+            selectCount = 0;
+            activateCount = 0;
+            hoverCount = 0;
+
+            if (!TryOpenLog()) return;
             SceneManager.sceneLoaded += HandleSceneLoaded;
-            ResolveSources();
-            SubscribeInteractables();
+            RefreshSources();
 
             previous = Capture();
-            nextResolveAt = elapsed + 2f;
             Write("session_start", Application.productName,
                 "scene=" + SceneManager.GetActiveScene().name
-                + ";interactables=" + subscribed.Count.ToString(CultureInfo.InvariantCulture)
+                + ";interactables=" + lastHoverTimes.Count.ToString(CultureInfo.InvariantCulture)
                 + ";exploration=" + (exploration ? "1" : "0")
                 + ";eras=" + (eras ? "1" : "0")
                 + ";inspection=" + (inspection ? "1" : "0")
                 + ";unity=" + Application.unityVersion, previous);
         }
 
+        void Start()
+        {
+            if (writer != null) RefreshSources();
+        }
+
         void OnDisable()
         {
-            if (instance == this) instance = null;
-
-            SceneManager.sceneLoaded -= HandleSceneLoaded;
-            UnsubscribeInteractables();
-            if (hookedExploration) hookedExploration.Changed -= HandleExplorationChanged;
-            if (hookedChannel) hookedChannel.LanguageChanged -= HandleLanguageChanged;
-
+            if (instance != this) return;
+            instance = null;
             if (writer == null) return;
             // 退出时场景对象可能已被销毁，用最后一次采到的快照，避免把终态记成空值。
             Write("session_end", string.Empty,
@@ -117,9 +126,7 @@ namespace Museum.Telemetry
                 + ";selects=" + selectCount.ToString(CultureInfo.InvariantCulture)
                 + ";activates=" + activateCount.ToString(CultureInfo.InvariantCulture)
                 + ";hovers=" + hoverCount.ToString(CultureInfo.InvariantCulture), previous);
-            writer.Flush();
-            writer.Dispose();
-            writer = null;
+            StopRecording();
         }
 
         void Update()
@@ -130,8 +137,8 @@ namespace Museum.Telemetry
 
             if (elapsed >= nextResolveAt)
             {
-                nextResolveAt = elapsed + 2f;
-                if (subscribed.Count == 0) { ResolveSources(); SubscribeInteractables(); }
+                nextResolveAt = elapsed + SourceRefreshInterval;
+                RefreshSources();
             }
 
             if (elapsed < nextSampleAt) return;
@@ -151,17 +158,18 @@ namespace Museum.Telemetry
 
         void HandleSceneLoaded(Scene scene, LoadSceneMode mode)
         {
+            if (writer == null) return;
             inspection = null;
             exploration = null;
             eras = null;
             channel = null;
-            ResolveSources();
-            SubscribeInteractables();
+            RefreshSources();
             Write("scene_loaded", scene.name, "mode=" + mode, Capture());
         }
 
         void HandleSelectEntered(SelectEnterEventArgs args)
         {
+            if (writer == null) return;
             var component = args.interactableObject as Component;
             string target = component ? DescribePath(component.transform) : "unknown";
             bool first = selectCount == 0 && activateCount == 0;
@@ -184,6 +192,7 @@ namespace Museum.Telemetry
         /// </summary>
         void HandleActivated(ActivateEventArgs args)
         {
+            if (writer == null) return;
             var component = args.interactableObject as Component;
             string target = component ? DescribePath(component.transform) : "unknown";
             bool first = selectCount == 0 && activateCount == 0;
@@ -203,41 +212,63 @@ namespace Museum.Telemetry
         /// <summary>只记录“指着了但没按下去”的线索，用于发现瞄准困难；同一目标 1 秒内只记一次。</summary>
         void HandleHoverEntered(HoverEnterEventArgs args)
         {
-            var component = args.interactableObject as Component;
-            string target = component ? DescribePath(component.transform) : "unknown";
-            if (string.Equals(target, lastHoverTarget, StringComparison.Ordinal)) return;
-            if (elapsed - lastHoverAt < 1f) return;
+            if (writer == null || !(args.interactableObject is XRBaseInteractable target) ||
+                !lastHoverTimes.TryGetValue(target, out var lastHoverAt) || elapsed - lastHoverAt < HoverDebounce)
+                return;
 
-            lastHoverAt = elapsed;
-            lastHoverTarget = target;
+            lastHoverTimes[target] = elapsed;
             hoverCount++;
-            Write("hover", target, "n=" + hoverCount.ToString(CultureInfo.InvariantCulture), Capture());
+            Write("hover", DescribePath(target.transform), "n=" + hoverCount.ToString(CultureInfo.InvariantCulture), Capture());
         }
 
         void HandleExplorationChanged() => Sample();
 
         void HandleLanguageChanged(MuseumLanguage language) => Sample();
 
-        void OpenLog()
+        bool TryOpenLog()
         {
-            Directory.CreateDirectory(LogDirectory);
-            string product = string.IsNullOrEmpty(Application.productName) ? "museum" : Application.productName;
-            product = product.Replace(' ', '-');
-            sessionFile = Path.Combine(LogDirectory,
-                DateTime.Now.ToString("yyyyMMdd-HHmmss", CultureInfo.InvariantCulture) + "-" + product + ".csv");
+            try
+            {
+                Directory.CreateDirectory(LogDirectory);
+                string product = string.IsNullOrEmpty(Application.productName) ? "museum" : Application.productName;
+                foreach (char invalid in Path.GetInvalidFileNameChars()) product = product.Replace(invalid, '-');
+                string stem = DateTime.Now.ToString("yyyyMMdd-HHmmss", CultureInfo.InvariantCulture) + "-" + product.Replace(' ', '-');
+                for (int suffix = 1; ; suffix++)
+                {
+                    string name = suffix == 1 ? stem : stem + "-" + suffix.ToString(CultureInfo.InvariantCulture);
+                    string path = Path.Combine(LogDirectory, name + ".csv");
+                    FileStream stream;
+                    try
+                    {
+                        stream = new FileStream(path, FileMode.CreateNew, FileAccess.Write, FileShare.Read);
+                    }
+                    catch (IOException) when (File.Exists(path))
+                    {
+                        continue;
+                    }
 
-            writer = new StreamWriter(sessionFile, false, new UTF8Encoding(true));
-            writer.WriteLine(ColumnHeader);
-            writer.Flush();
+                    writer = new StreamWriter(stream, new UTF8Encoding(true));
+                    writer.WriteLine(ColumnHeader);
+                    writer.Flush();
+                    sessionFile = path;
+                    return true;
+                }
+            }
+            catch (Exception error) when (IsLogFailure(error))
+            {
+                StopRecording(error);
+                return false;
+            }
         }
 
-        void ResolveSources()
+        void RefreshSources()
         {
             if (!inspection) inspection = FindFirst<HelmetInspectionController>();
             if (!exploration) exploration = FindFirst<HelmetExplorationController>();
             if (!eras) eras = FindFirst<HelmetEraSwitcher>();
             channel = MuseumText.Channel;
             Hook();
+            RefreshInteractionManagers();
         }
 
         void Hook()
@@ -257,31 +288,83 @@ namespace Museum.Telemetry
             }
         }
 
-        void SubscribeInteractables()
+        void RefreshInteractionManagers()
         {
-            UnsubscribeInteractables();
-            var all = FindObjectsOfType<XRBaseInteractable>(true);
-            for (int i = 0; i < all.Length; i++)
+            managers.RemoveWhere(manager => !manager);
+            var all = FindObjectsByType<XRInteractionManager>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+            foreach (var manager in all)
             {
-                if (!all[i]) continue;
-                all[i].selectEntered.AddListener(HandleSelectEntered);
-                all[i].activated.AddListener(HandleActivated);
-                all[i].hoverEntered.AddListener(HandleHoverEntered);
-                subscribed.Add(all[i]);
+                if (!managers.Add(manager)) continue;
+                // Controls born in Start and at run time register with XRI as soon as they enable.
+                manager.interactableRegistered += HandleInteractableRegistered;
+                manager.interactableUnregistered += HandleInteractableUnregistered;
+                manager.GetRegisteredInteractables(registered);
+                foreach (var item in registered) SubscribeInteractable(item as XRBaseInteractable);
+                registered.Clear();
             }
         }
 
-        void UnsubscribeInteractables()
+        void HandleInteractableRegistered(InteractableRegisteredEventArgs args) =>
+            SubscribeInteractable(args.interactableObject as XRBaseInteractable);
+
+        void HandleInteractableUnregistered(InteractableUnregisteredEventArgs args)
         {
-            for (int i = 0; i < subscribed.Count; i++)
-                if (subscribed[i])
-                {
-                    subscribed[i].selectEntered.RemoveListener(HandleSelectEntered);
-                    subscribed[i].activated.RemoveListener(HandleActivated);
-                    subscribed[i].hoverEntered.RemoveListener(HandleHoverEntered);
-                }
-            subscribed.Clear();
+            var interactable = args.interactableObject as XRBaseInteractable;
+            if (interactable && lastHoverTimes.Remove(interactable)) UnsubscribeInteractable(interactable);
         }
+
+        void SubscribeInteractable(XRBaseInteractable interactable)
+        {
+            if (!interactable || !lastHoverTimes.TryAdd(interactable, float.NegativeInfinity)) return;
+            interactable.selectEntered.AddListener(HandleSelectEntered);
+            interactable.activated.AddListener(HandleActivated);
+            interactable.hoverEntered.AddListener(HandleHoverEntered);
+        }
+
+        void UnsubscribeInteractable(XRBaseInteractable interactable)
+        {
+            interactable.selectEntered.RemoveListener(HandleSelectEntered);
+            interactable.activated.RemoveListener(HandleActivated);
+            interactable.hoverEntered.RemoveListener(HandleHoverEntered);
+        }
+
+        void StopRecording(Exception error = null)
+        {
+            var log = writer;
+            writer = null;
+            sessionFile = string.Empty;
+
+            SceneManager.sceneLoaded -= HandleSceneLoaded;
+            foreach (var manager in managers)
+            {
+                if (!manager) continue;
+                manager.interactableRegistered -= HandleInteractableRegistered;
+                manager.interactableUnregistered -= HandleInteractableUnregistered;
+            }
+            managers.Clear();
+            foreach (var interactable in lastHoverTimes.Keys)
+                if (interactable) UnsubscribeInteractable(interactable);
+            lastHoverTimes.Clear();
+
+            if (hookedExploration) hookedExploration.Changed -= HandleExplorationChanged;
+            if (hookedChannel) hookedChannel.LanguageChanged -= HandleLanguageChanged;
+            hookedExploration = null;
+            hookedChannel = null;
+
+            try
+            {
+                log?.Dispose();
+            }
+            catch (Exception closeError) when (IsLogFailure(closeError))
+            {
+                if (error == null) error = closeError;
+            }
+
+            if (error != null) Debug.LogWarning("[Telemetry] Recording stopped: " + error.Message);
+        }
+
+        static bool IsLogFailure(Exception error) =>
+            error is IOException || error is UnauthorizedAccessException || error is System.Security.SecurityException;
 
         Snapshot Capture()
         {
@@ -297,7 +380,8 @@ namespace Museum.Telemetry
             if (!inspection) inspection = FindFirst<HelmetInspectionController>();
             if (!exploration) exploration = FindFirst<HelmetExplorationController>();
             if (!eras) eras = FindFirst<HelmetEraSwitcher>();
-            if (!channel) { channel = MuseumText.Channel; Hook(); }
+            if (!channel) channel = MuseumText.Channel;
+            Hook();
 
             if (exploration)
             {
@@ -366,8 +450,15 @@ namespace Museum.Telemetry
             sb.Append(s.windowOpen ? "1" : "0").Append(',');
             sb.Append(s.resets.ToString(CultureInfo.InvariantCulture));
 
-            writer.WriteLine(sb.ToString());
-            writer.Flush();
+            try
+            {
+                writer.WriteLine(sb.ToString());
+                writer.Flush();
+            }
+            catch (Exception error) when (IsLogFailure(error))
+            {
+                StopRecording(error);
+            }
         }
 
         static void Append(StringBuilder sb, string value)
