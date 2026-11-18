@@ -39,7 +39,7 @@ namespace Museum.SurfaceLine.Editor
         static SurfaceCall call;
         static HelmetDiegeticStation station;
         static string movieFrames;
-        static bool recording;
+        static bool recording, sentGripButton;
         static int recorded;
         static float nextCapture;
         static readonly List<string> movieTimes = new List<string>();
@@ -190,6 +190,8 @@ namespace Museum.SurfaceLine.Editor
             var bounds=renderers[0].bounds;foreach(var surface in renderers) bounds.Encapsulate(surface.bounds);
             log.Add("Resting phone "+bounds.ToString("F4"));
             PhonePose(call.restingTelephone.transform);
+            call.key.selectEntered.AddListener(e=>log.Add("XRI selectEntered | "+e.interactorObject.GetType().Name+" | "+e.interactorObject.transform.name));
+            call.key.selectExited.AddListener(e=>log.Add("XRI selectExited | "+e.interactorObject.GetType().Name+" | canceled="+e.isCanceled));
             int confirms=call.Control.ConfirmedCount;
             var point=call.key.colliders[0].bounds.center;
             Vector3 wrist=new Vector3(.28f,1.13f,2.54f);
@@ -218,7 +220,7 @@ namespace Museum.SurfaceLine.Editor
             Assert(call.key.isHovered,"hover from saved ray; hit="+Hit());
             Shot("07-aim");
             Hand(wrist,aim,true);pause=Time.unscaledTime+.75f;while(Time.unscaledTime<pause)yield return null;
-            Assert(call.Control.IsPressed && !station.Demonstration.IsVisible && call.Control.ConfirmedCount==confirms,"grip held; no call yet");
+            Assert(sentGripButton && call.Control.IsPressed && call.key.isSelected && call.key.GetOldestInteractorSelecting() is XRRayInteractor && !station.Demonstration.IsVisible && call.Control.ConfirmedCount==confirms,"grip held; no call yet");
             Shot("08-hold");
             Hand(wrist,aim,false);for(int i=0;i<5;i++)yield return null;
             var demo=station.Demonstration;
@@ -271,7 +273,13 @@ namespace Museum.SurfaceLine.Editor
             var parent=controller.transform.parent;
             var state=new XRSimulatedControllerState {isTracked=true,trackingState=3,batteryLevel=1,devicePosition=parent.InverseTransformPoint(world),
                 deviceRotation=Quaternion.Inverse(parent.rotation)*rot,grip=grip?1:0}.WithButton(ControllerButton.GripButton,grip);
-            input.Enqueue(()=>InputSystem.QueueStateEvent(hand,state));
+            input.Enqueue(()=>
+            {
+                InputSystem.QueueStateEvent(hand,state);
+                sentGripButton=grip;
+                log.Add("InputSystem.QueueStateEvent on dynamic update | device="+hand.deviceId+" | right gripButton="+grip+
+                    " | world wrist="+world.ToString("F3")+" | rotation="+rot.ToString("F4"));
+            });
         }
         static string Hit()=>ray.TryGetCurrent3DRaycastHit(out var hit)?hit.collider.transform.parent.name+"/"+hit.collider.name+" @"+hit.point.ToString("F3"):"none";
         static void Assert(bool ok,string fact)
@@ -314,7 +322,7 @@ namespace Museum.SurfaceLine.Editor
         {
             var eye=Camera.main.transform;
             HelmetDiegeticPreview.CaptureView(Path.Combine(folder,name+".png"),eye.position,eye.rotation,55,1.6f);
-            string extra=call ? " grip="+hand.grip.ReadValue()+" pressed="+call.Control.IsPressed+" confirmed="+call.Control.ConfirmedCount+
+            string extra=call ? " sentGripButton="+sentGripButton+" xriSelected="+call.key.isSelected+" pressed="+call.Control.IsPressed+" confirmed="+call.Control.ConfirmedCount+
                 " ray="+Hit()+" demo="+station.Demonstration.IsVisible+" phase="+station.Demonstration.PhaseIndex+
                 " progress="+station.Demonstration.NormalizedProgress.ToString("F3")+" speaker="+call.speaker.text+" words="+call.words.text.Replace("\n"," / "):"";
             log.Add(name+" frame="+Time.frameCount+" time="+Time.unscaledTime.ToString("F3")+" eye="+eye.position.ToString("F4")+" rot="+eye.rotation.ToString("F4")+extra);
