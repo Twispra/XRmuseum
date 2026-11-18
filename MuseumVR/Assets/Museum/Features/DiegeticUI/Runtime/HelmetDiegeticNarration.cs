@@ -27,7 +27,7 @@ namespace Museum.Diegetic
         void BuildNarration()
         {
             narrationControl = MakeControl(pedestalUI, Command.Narration, PlayGuide, "", teal);
-            narrationControl.transform.localPosition = new Vector3(.39f, -.10f, 0);
+            narrationControl.transform.localPosition = new Vector3(RightButtonColumn, -.10f, 0);
             narrationCaption = Label(pedestalUI, "Guide subtitle", new Vector3(.16f, -.245f, -.065f), new Vector2(.74f, .16f), .27f);
             narrationCaption.enableAutoSizing = true;
             narrationCaption.fontSizeMin = .22f;
@@ -44,6 +44,7 @@ namespace Museum.Diegetic
             var properties = new MaterialPropertyBlock();
             properties.SetColor("_BaseColor", new Color(.025f, .045f, .055f, 1f));
             renderer.SetPropertyBlock(properties);
+            SetFrontSurface(renderer);
             MuseumText.Set(narrationCaption, OrientationGuide);
             narrationCaption.gameObject.SetActive(false);
 

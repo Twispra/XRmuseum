@@ -1,0 +1,70 @@
+2022.3.62f3c1  Assets/Museum/Features/SurfaceCall/SurfaceCall.unity  NVIDIA GeForce RTX 3070 Laptop GPU
+Mono 1600x1000, FOV 55 vertical; tracked HMD and right grip; sound disabled; fixed eye positions in world metres.
+InputSystem.QueueStateEvent on dynamic update | device=6 | right gripButton=False | world wrist=(0.380, 0.840, 2.430) | rotation=(0.7071, 0.0000, 0.0000, 0.7071)
+01-spawn frame=817 time=9.190 eye=(0.0000, 1.3600, 2.2000) rot=(0.0000, 0.0000, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=0 ray=Gallery Blockout/Floor - Teleport Area @(0.380, 0.000, 2.430) demo=False phase=0 progress=0.000 speaker=Mark V  /  Surface telephone words=Could you work alone / in this helmet?
+02-spawn-zh frame=821 time=9.284 eye=(0.0000, 1.3600, 2.2000) rot=(0.0000, 0.0000, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=0 ray=Gallery Blockout/Floor - Teleport Area @(0.380, 0.000, 2.430) demo=False phase=0 progress=0.000 speaker=Mark V  /  水面电话 words=戴上这顶头盔， / 就能独自工作了吗？
+03-center-seated frame=827 time=9.367 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=0 ray=Gallery Blockout/Floor - Teleport Area @(0.380, 0.000, 2.430) demo=False phase=0 progress=0.000 speaker=Mark V  /  水面电话 words=戴上这顶头盔， / 就能独自工作了吗？
+04-left-exhibit frame=833 time=9.459 eye=(-3.0000, 1.3600, 2.3300) rot=(-0.0083, -0.0416, -0.0003, 0.9991) sentGripButton=False xriSelected=False pressed=False confirmed=0 ray=Gallery Blockout/Floor - Teleport Area @(0.380, 0.000, 2.430) demo=False phase=0 progress=0.000 speaker=Mark V  /  水面电话 words=戴上这顶头盔， / 就能独自工作了吗？
+04-right-exhibit frame=839 time=9.557 eye=(3.0000, 1.3600, 2.3300) rot=(-0.0083, 0.0416, 0.0003, 0.9991) sentGripButton=False xriSelected=False pressed=False confirmed=0 ray=Gallery Blockout/Floor - Teleport Area @(0.380, 0.000, 2.430) demo=False phase=0 progress=0.000 speaker=Mark V  /  水面电话 words=戴上这顶头盔， / 就能独自工作了吗？
+OK saved sample and registered calling key exist
+OK one opening question; old back-wall question is inactive
+OK silent inspection
+05-idle-zh-Hant frame=847 time=9.640 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=0 ray=Gallery Blockout/Floor - Teleport Area @(0.380, 0.000, 2.430) demo=False phase=0 progress=0.000 speaker=Mark V  /  水面電話 words=戴上這頂頭盔， / 就能獨自工作了嗎？
+Resting phone Center: (0.4888, 1.2213, 3.6128), Extents: (0.1648, 0.1131, 0.1088)
+OK battery upright and telephone face towards visitor: up (0.000, 1.000, 0.000) face (-0.215, 0.000, -0.977)
+InputSystem.QueueStateEvent on dynamic update | device=6 | right gripButton=False | world wrist=(0.280, 1.130, 2.540) | rotation=(0.0319, 0.1176, -0.0038, 0.9925)
+InputSystem.QueueStateEvent on dynamic update | device=6 | right gripButton=True | world wrist=(0.280, 1.130, 2.540) | rotation=(0.0319, 0.1176, -0.0038, 0.9925)
+XRI selectEntered | XRRayInteractor | Ray Interactor
+OK cancel fixture reached key; Surface line installation/Surface telephone key @(0.432, 1.088, 3.172)
+InputSystem.QueueStateEvent on dynamic update | device=6 | right gripButton=True | world wrist=(0.280, 1.130, 2.540) | rotation=(-0.7071, 0.0000, 0.0000, 0.7071)
+XRI selectExited | XRRayInteractor | canceled=False
+InputSystem.QueueStateEvent on dynamic update | device=6 | right gripButton=False | world wrist=(0.280, 1.130, 2.540) | rotation=(-0.7071, 0.0000, 0.0000, 0.7071)
+OK moving off while held cancels without a call
+06-before frame=883 time=11.095 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=0 ray=Maritime Gallery Environment/Ceiling @(0.280, 4.050, 2.540) demo=False phase=0 progress=0.000 speaker=Mark V  /  水面电话 words=戴上这顶头盔， / 就能独自工作了吗？
+InputSystem.QueueStateEvent on dynamic update | device=6 | right gripButton=False | world wrist=(0.280, 1.130, 2.540) | rotation=(0.0319, 0.1176, -0.0038, 0.9925)
+OK hover from saved ray; hit=Surface line installation/Surface telephone key @(0.432, 1.088, 3.172)
+07-aim frame=886 time=11.945 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=0 ray=Surface line installation/Surface telephone key @(0.432, 1.088, 3.172) demo=False phase=0 progress=0.000 speaker=Mark V  /  水面电话 words=戴上这顶头盔， / 就能独自工作了吗？
+InputSystem.QueueStateEvent on dynamic update | device=6 | right gripButton=True | world wrist=(0.280, 1.130, 2.540) | rotation=(0.0319, 0.1176, -0.0038, 0.9925)
+XRI selectEntered | XRRayInteractor | Ray Interactor
+OK grip held; no call yet
+08-hold frame=890 time=12.811 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=True xriSelected=True pressed=True confirmed=0 ray=Surface line installation/Surface telephone key @(0.432, 1.088, 3.172) demo=False phase=0 progress=0.000 speaker=Mark V  /  水面电话 words=戴上这顶头盔， / 就能独自工作了吗？
+InputSystem.QueueStateEvent on dynamic update | device=6 | right gripButton=False | world wrist=(0.280, 1.130, 2.540) | rotation=(0.0319, 0.1176, -0.0038, 0.9925)
+XRI selectExited | XRRayInteractor | canceled=False
+OK grip released exactly once; telephone active
+09-release frame=895 time=14.218 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=1 ray=Surface line installation/Surface telephone key @(0.432, 1.088, 3.172) demo=True phase=0 progress=0.066 speaker=Mark V  /  水面电话 words=戴上这顶头盔， / 就能独自工作了吗？
+OK surface sending; Message: surface > diver
+OK battery upright and telephone face towards visitor: up (0.000, 1.000, 0.000) face (-0.215, 0.000, -0.977)
+OK visual call while equipment audio remains silent
+Surface cable socket (0.5699, 1.1532, 3.5025); helmet socket (0.0650, 1.2360, 3.6740); drawn endpoint (0.0650, 1.2360, 3.6740)
+OK drawn route meets helmet fitting
+10-surface-Chinese frame=914 time=16.680 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=1 ray=Surface line installation/Surface telephone key @(0.432, 1.088, 3.172) demo=True phase=1 progress=0.220 speaker=Mark V  /  水面电话 words=戴上这顶头盔， / 就能独自工作了吗？
+Chinese | Mark V  /  水面电话 | 戴上这顶头盔， / 就能独自工作了吗？ | 通话中
+10-surface-TraditionalChinese frame=914 time=16.680 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=1 ray=Surface line installation/Surface telephone key @(0.432, 1.088, 3.172) demo=True phase=1 progress=0.220 speaker=Mark V  /  水面電話 words=戴上這頂頭盔， / 就能獨自工作了嗎？
+TraditionalChinese | Mark V  /  水面電話 | 戴上這頂頭盔， / 就能獨自工作了嗎？ | 通話中
+10-surface-English frame=914 time=16.680 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=1 ray=Surface line installation/Surface telephone key @(0.432, 1.088, 3.172) demo=True phase=1 progress=0.220 speaker=Mark V  /  Surface telephone words=Could you work alone / in this helmet?
+English | Mark V  /  Surface telephone | Could you work alone / in this helmet? | On the line
+11-wait frame=946 time=20.178 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=1 ray=Surface line installation/Surface telephone key @(0.432, 1.088, 3.172) demo=True phase=2 progress=0.438 speaker=Mark V  /  水面电话 words=等待潜水员回话。
+OK diver replying; Reply: diver > surface
+12-diver-Chinese frame=1015 time=23.485 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=1 ray=Surface line installation/Surface telephone key @(0.432, 1.088, 3.172) demo=True phase=3 progress=0.645 speaker=潜水员  /  本展模拟对话 words=收到，水面。
+Chinese | 潜水员  /  本展模拟对话 | 收到，水面。 | 通话中
+12-diver-TraditionalChinese frame=1015 time=23.485 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=1 ray=Surface line installation/Surface telephone key @(0.432, 1.088, 3.172) demo=True phase=3 progress=0.645 speaker=潛水員  /  本展模擬對話 words=收到，水面。
+TraditionalChinese | 潛水員  /  本展模擬對話 | 收到，水面。 | 通話中
+12-diver-English frame=1015 time=23.485 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=1 ray=Surface line installation/Surface telephone key @(0.432, 1.088, 3.172) demo=True phase=3 progress=0.645 speaker=Diver  /  Staged conversation words=Loud and clear, surface.
+English | Diver  /  Staged conversation | Loud and clear, surface. | On the line
+OK line remains for inspection
+13-discovery-Chinese frame=1739 time=29.260 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=1 ray=Surface line installation/Surface telephone key @(0.432, 1.088, 3.172) demo=True phase=4 progress=1.000 speaker=双向通话 words=潜水员通过电缆与水面团队通话。
+Chinese | 双向通话 | 潜水员通过电缆与水面团队通话。 | 再次通话
+13-discovery-TraditionalChinese frame=1739 time=29.260 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=1 ray=Surface line installation/Surface telephone key @(0.432, 1.088, 3.172) demo=True phase=4 progress=1.000 speaker=雙向通話 words=潛水員通過電纜與水面團隊通話。
+TraditionalChinese | 雙向通話 | 潛水員通過電纜與水面團隊通話。 | 再次通話
+13-discovery-English frame=1739 time=29.260 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=1 ray=Surface line installation/Surface telephone key @(0.432, 1.088, 3.172) demo=True phase=4 progress=1.000 speaker=Two-way voice words=Diver and surface team exchange messages through a cable.
+English | Two-way voice | Diver and surface team exchange messages through a cable. | Call again
+InputSystem.QueueStateEvent on dynamic update | device=6 | right gripButton=True | world wrist=(0.280, 1.130, 2.540) | rotation=(0.0319, 0.1176, -0.0038, 0.9925)
+XRI selectEntered | XRRayInteractor | Ray Interactor
+InputSystem.QueueStateEvent on dynamic update | device=6 | right gripButton=False | world wrist=(0.280, 1.130, 2.540) | rotation=(0.0319, 0.1176, -0.0038, 0.9925)
+XRI selectExited | XRRayInteractor | canceled=False
+OK replay by grip, static mode
+14-static-Chinese frame=1760 time=30.653 eye=(0.0100, 1.2500, 2.2500) rot=(0.0038, -0.0038, 0.0000, 1.0000) sentGripButton=False xriSelected=False pressed=False confirmed=2 ray=Surface line installation/Surface telephone key @(0.432, 1.088, 3.172) demo=True phase=4 progress=0.002 speaker=潜水员  /  本展模拟对话 words=收到。你的声音从电缆传来了。
+Chinese | 潜水员  /  本展模拟对话 | 收到。你的声音从电缆传来了。 | 再次通话
+TraditionalChinese | 潛水員  /  本展模擬對話 | 收到。你的聲音從電纜傳來了。 | 再次通話
+English | Diver  /  Staged conversation | I hear you through the cable. | Call again
+PASS

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.XR.Interaction.Toolkit.UI;
 
 namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
@@ -127,6 +128,20 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         bool m_PostponedDeactivateTeleport;
         bool m_HoveringScrollableUI;
 
+        enum LeftStickMode
+        {
+            Move,
+            SnapTurn,
+            WaitForCenter,
+        }
+
+        LeftStickMode m_LeftStickMode;
+        global::UnityEngine.InputSystem.InputDevice m_LeftTurnDevice;
+        ActionBasedSnapTurnProvider m_LeftSnapProvider;
+        InputActionProperty m_AuthoredLeftSnap;
+        InputAction m_LeftSnapInput;
+
+        const string k_LeftPrimaryStick = "<XRController>{LeftHand}/{Primary2DAxis}";
         const int k_InteractorNotInGroup = -1;
 
         IEnumerator m_AfterInteractionEventsRoutine;
@@ -339,11 +354,131 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             TeardownInteractorEvents();
 
             StopCoroutine(m_AfterInteractionEventsRoutine);
+            ClearLeftSnapInput();
+            m_LeftStickMode = LeftStickMode.Move;
+            m_LeftTurnDevice = null;
+        }
+
+        protected void Update()
+        {
+            var mode = m_LeftStickMode;
+            var device = ReadLeftStick(out var centered, out var clicked);
+            if (device != m_LeftTurnDevice)
+            {
+                ClearLeftSnapInput();
+                m_LeftTurnDevice = device;
+                mode = LeftStickMode.Move;
+            }
+
+            bool blocked = (m_RayInteractor != null && m_RayInteractor.hasSelection) ||
+                (m_HoveringScrollableUI && m_LocomotionUsers.Count == 0);
+            if (!blocked && device != null)
+            {
+                if (centered)
+                    mode = clicked ? LeftStickMode.SnapTurn : LeftStickMode.Move;
+                else if (mode == LeftStickMode.SnapTurn && !clicked)
+                    mode = LeftStickMode.WaitForCenter;
+            }
+
+            if (mode == m_LeftStickMode)
+                return;
+
+            m_LeftStickMode = mode;
+            if (!blocked)
+                UpdateLocomotionActions();
+        }
+
+        global::UnityEngine.InputSystem.InputDevice ReadLeftStick(out bool centered, out bool clicked)
+        {
+            centered = false;
+            clicked = false;
+            if (!m_SmoothMotionEnabled || m_SmoothTurnEnabled || m_LeftSnapProvider == null)
+                return null;
+
+            var moveAction = GetInputAction(m_Move);
+            if (moveAction == null)
+                return null;
+
+            // A controller without a stick click retains ordinary movement.
+            foreach (var control in moveAction.controls)
+            {
+                if (control is Vector2Control stick && InputControlPath.Matches(k_LeftPrimaryStick, stick) &&
+                    stick.device.TryGetChildControl("{Primary2DAxisClick}") is ButtonControl click)
+                {
+                    // The XR stick control may expose small raw drift at rest;
+                    // match the movement binding's default StickDeadzone.
+                    float deadzone = global::UnityEngine.InputSystem.InputSystem.settings.defaultDeadzoneMin;
+                    centered = stick.ReadValue().sqrMagnitude <= deadzone * deadzone;
+                    clicked = click.isPressed;
+                    return stick.device;
+                }
+            }
+
+            return null;
+        }
+
+        void FindLeftSnapProvider()
+        {
+            var action = GetInputAction(m_SnapTurn);
+            var origin = GetComponentInParent<Unity.XR.CoreUtils.XROrigin>();
+            if (action == null || origin == null)
+                return;
+
+            foreach (var provider in origin.GetComponentsInChildren<ActionBasedSnapTurnProvider>(true))
+            {
+                if (provider.leftHandSnapTurnAction.action != action)
+                    continue;
+
+                m_LeftSnapProvider = provider;
+                m_AuthoredLeftSnap = provider.leftHandSnapTurnAction;
+                return;
+            }
+        }
+
+        void UpdateLeftSnapInput()
+        {
+            if (m_LeftSnapProvider == null)
+                return;
+
+            if (m_SmoothMotionEnabled && !m_SmoothTurnEnabled && m_LeftStickMode == LeftStickMode.SnapTurn)
+            {
+                // Keep Sector state local to this manager so losing the device or
+                // disabling this component can discard an unfinished gesture.
+                m_LeftSnapInput ??= m_AuthoredLeftSnap.action.Clone();
+                if (m_LeftSnapProvider.leftHandSnapTurnAction.action != m_LeftSnapInput)
+                    m_LeftSnapProvider.leftHandSnapTurnAction = new InputActionProperty(m_LeftSnapInput);
+                return;
+            }
+
+            if (m_LeftSnapInput == null)
+                return;
+
+            if (m_LeftSnapProvider.leftHandSnapTurnAction.action == m_LeftSnapInput)
+                m_LeftSnapProvider.leftHandSnapTurnAction = m_AuthoredLeftSnap;
+
+            // The provider is muted immediately. The private input still needs
+            // the neutral event: XRI SectorInteraction.Reset does not clear it.
+            if (m_LeftStickMode == LeftStickMode.WaitForCenter)
+                m_LeftSnapInput.Enable();
+            else
+                m_LeftSnapInput.Disable();
+        }
+
+        void ClearLeftSnapInput()
+        {
+            if (m_LeftSnapInput == null)
+                return;
+
+            if (m_LeftSnapProvider != null && m_LeftSnapProvider.leftHandSnapTurnAction.action == m_LeftSnapInput)
+                m_LeftSnapProvider.leftHandSnapTurnAction = m_AuthoredLeftSnap;
+            m_LeftSnapInput.Dispose();
+            m_LeftSnapInput = null;
         }
 
         protected void Start()
         {
             m_StartCalled = true;
+            FindLeftSnapProvider();
 
             // Ensure the enabled state of locomotion and turn actions are properly set up.
             // Called in Start so it is done after the InputActionManager enables all input actions earlier in OnEnable.
@@ -426,14 +561,13 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 
         void UpdateLocomotionActions()
         {
-            // Disable/enable Teleport and Turn when Move is enabled/disabled.
-            SetEnabled(m_Move, m_SmoothMotionEnabled);
+            SetEnabled(m_Move, m_SmoothMotionEnabled && m_LeftStickMode == LeftStickMode.Move);
             SetEnabled(m_TeleportModeActivate, !m_SmoothMotionEnabled);
             SetEnabled(m_TeleportModeCancel, !m_SmoothMotionEnabled);
 
-            // Disable ability to turn when using continuous movement
             SetEnabled(m_Turn, !m_SmoothMotionEnabled && m_SmoothTurnEnabled);
             SetEnabled(m_SnapTurn, !m_SmoothMotionEnabled && !m_SmoothTurnEnabled);
+            UpdateLeftSnapInput();
         }
 
         void DisableLocomotionActions()
@@ -443,6 +577,11 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             DisableAction(m_TeleportModeCancel);
             DisableAction(m_Turn);
             DisableAction(m_SnapTurn);
+            if (m_LeftStickMode == LeftStickMode.SnapTurn)
+            {
+                m_LeftStickMode = LeftStickMode.WaitForCenter;
+                UpdateLeftSnapInput();
+            }
         }
 
         void UpdateUIActions()

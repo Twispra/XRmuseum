@@ -72,6 +72,8 @@ namespace Museum.Exploration
         [SerializeField] Material airMaterial;
         [SerializeField] Material voiceMaterial;
         [SerializeField] Material inkMaterial;
+        [Tooltip("The scene supplies its own endpoint captions for VOICE. AIR retains the standard labels.")]
+        [SerializeField] bool sceneSuppliesVoiceLabels;
         [SerializeField] RefinedConnectionEquipment refinedEquipmentPrefab;
         RefinedConnectionEquipment refinedEquipment;
         GameObject visuals;
@@ -164,6 +166,10 @@ namespace Museum.Exploration
             CaptureAnchor();
             if (clue == HelmetExplorationController.Clue.Air && !anchorReady) return;
             EnsureVisuals();
+            bool standardLabels = clue != HelmetExplorationController.Clue.Voice || !sceneSuppliesVoiceLabels;
+            sourceText.gameObject.SetActive(standardLabels);
+            destinationText.gameObject.SetActive(standardLabels);
+            caption.gameObject.SetActive(standardLabels);
             CurrentClue = clue; startedAt = Time.unscaledTime;
             IsPlaying = !inspection.ReduceMotion; IsVisible = true;
             visuals.SetActive(true); models.SetMode(clue == HelmetExplorationController.Clue.Air);

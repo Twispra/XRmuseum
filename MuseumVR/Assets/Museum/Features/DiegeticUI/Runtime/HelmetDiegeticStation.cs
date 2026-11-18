@@ -21,7 +21,7 @@ namespace Museum.Diegetic
     {
         public enum Command { Rotate, Window, Section, Slide, Air, Voice, Reset, PreviousEra, NextEra,
             Hints, Settings, About, Chinese, Traditional, English, Sound, Motion, AlwaysHints, ResetView, CloseDemo,
-            HeightUp, HeightDown, HeightReset, Narration }
+            HeightUp, HeightDown, HeightReset, Narration, FinishVisit, ContinueVisit, StartNextVisit }
         [SerializeField] HelmetInspectionController inspection;
         [SerializeField] HelmetEraSwitcher eras;
         [SerializeField] HelmetExplorationController exploration;
@@ -47,6 +47,8 @@ namespace Museum.Diegetic
         public void RegisterControl(HelmetPhysicalControl control)
         {
             if (!control || controls.Values.Contains(control) || !additionalControls.Add(control)) return;
+            SetFrontText(control.Caption);
+            SetFrontText(control.Hint);
             control.PressAbandonedWhileHeld += GuardAbandonedPress;
             Guard(control.Target);
         }
@@ -151,7 +153,7 @@ namespace Museum.Diegetic
             pedestalUI.position=plinth?new Vector3(homePosition.x,plinth.bounds.max.y+.16f,plinth.bounds.min.z-.10f)
                 :new Vector3(homePosition.x,homePosition.y+.04f,homePosition.z-.48f);
             pedestalUI.rotation=Quaternion.Euler(20,0,0);
-            BuildPedestalControls();BuildExhibitControls();BuildNarration();
+            BuildPedestalControls(plinth);BuildExhibitControls();BuildNarration();BuildVisitControls();
             var tour=inspection.GetComponentInChildren<Museum.Hotspots.HelmetHotspotTour>(true);
             var information=tour?tour.GetComponentsInChildren<TMP_Text>(true).FirstOrDefault(t=>t.name=="Information"):null;
             if(information)
@@ -174,7 +176,13 @@ namespace Museum.Diegetic
             RefreshConnectionControls();
         }
         void PlaceKnowledgeCard()
-        { if(knowledgeCard){knowledgeCard.SetParent(pedestalUI,false);knowledgeCard.localPosition=new Vector3(.64f,.015f,-.03f);knowledgeCard.localRotation=Quaternion.identity;} }
+        {
+            if (!knowledgeCard) return;
+            knowledgeCard.SetParent(pedestalUI, false);
+            knowledgeCard.localPosition = new Vector3(.64f, .015f, -.03f);
+            knowledgeCard.localRotation = Quaternion.identity;
+            ApplyKnowledgeCardMaterials();
+        }
         void HideLegacy(GameObject obj)
         { if(!previousVisibility.ContainsKey(obj))previousVisibility[obj]=obj.activeSelf;obj.SetActive(false); }
         void SetLegacyEnabled(Behaviour obj,bool value)
@@ -191,6 +199,7 @@ namespace Museum.Diegetic
         bool IXRHoverFilter.Process(IXRHoverInteractor interactor,IXRHoverInteractable target)
         {
             if(!isActiveAndEnabled)return true;
+            if(IsVisitHandoffOpen && !IsVisitChoiceTarget(target))return false;
             if(interactor is XRDirectInteractor && !DirectContact(interactor,target as XRBaseInteractable))return false;
             if(interactor is XRRayInteractor ray)
             {
@@ -218,6 +227,7 @@ namespace Museum.Diegetic
             PruneReleasedHands();
             foreach(var previous in cancelledHands)if(SameHand(previous,interactor))return false;
             if(!isActiveAndEnabled)return true;
+            if(IsVisitHandoffOpen && !IsVisitChoiceTarget(target))return false;
             if(interactor is XRDirectInteractor && IsStationTarget(target as XRBaseInteractable) &&
                !DirectContact(interactor,target as XRBaseInteractable))return false;
             if(resetting || inspection.IsReturning)return false;
@@ -271,6 +281,7 @@ namespace Museum.Diegetic
         public void Execute(Command command)
         {
             if(!ready || resetting || inspection.IsReturning)return;
+            if(IsVisitHandoffOpen && !IsVisitChoice(command))return;
             bool cancels=command==Command.Reset || command==Command.NextEra || command==Command.PreviousEra ||
                 command==Command.ResetView || command==Command.CloseDemo || command==Command.HeightUp ||
                 command==Command.HeightDown || command==Command.HeightReset;
@@ -305,6 +316,9 @@ namespace Museum.Diegetic
                 case Command.HeightDown: ViewHeight.Lower();break;
                 case Command.HeightReset: ViewHeight.ResetHeight();break;
                 case Command.Narration: ToggleNarration();break;
+                case Command.FinishVisit: FinishVisit();break;
+                case Command.ContinueVisit: ContinueVisit();break;
+                case Command.StartNextVisit: StartNextVisit();break;
             }
             RefreshLabels();
         }
@@ -316,7 +330,7 @@ namespace Museum.Diegetic
         }
         void RefreshConnectionControls()
         {
-            bool available=ConnectionDemosAvailable;
+            bool available=ConnectionDemosAvailable && !IsVisitHandoffOpen;
             if(!available && demonstration.IsVisible)
             {
                 CancelGestures();
@@ -335,11 +349,12 @@ namespace Museum.Diegetic
             resetting=!inspection.ReduceMotion;resetStarted=Time.unscaledTime;
             if(resetting)SetRootRotation(resetFrom);
         }
-        void ChangeEra(int step)
+        void ChangeEra(int step) => ApplyEra((eras.CurrentIndex+step+eras.AvailableEraCount)%eras.AvailableEraCount);
+        void ApplyEra(int index)
         {
             StopNarration();
             CancelGestures();exploration.Stop();inspection.ResetInspection();observedReset=inspection.ResetCount;
-            eras.ShowEra((eras.CurrentIndex+step+eras.AvailableEraCount)%eras.AvailableEraCount);
+            eras.ShowEra(index);
             if(binding)binding.RefreshVisualBinding();
             observedAppliedEra=AppliedEra;
             fixedCenter=inspection.transform.TransformPoint(inspection.SectionCenterLocal);
@@ -405,7 +420,7 @@ namespace Museum.Diegetic
             wasCut=cut;
             controls[Command.Slide].gameObject.SetActive(cut);
             sectionRail.gameObject.SetActive(cut);
-            sectionDock.gameObject.SetActive(!SettingsVisible);
+            sectionDock.gameObject.SetActive(!IsVisitHandoffOpen && !SettingsVisible);
             controls[Command.Air].SetEmphasis(demonstration.IsVisible && demonstration.CurrentClue==HelmetExplorationController.Clue.Air);
             controls[Command.Voice].SetEmphasis(demonstration.IsVisible && demonstration.CurrentClue==HelmetExplorationController.Clue.Voice);
             controls[Command.Slide].SetEmphasis(SectionGesture.IsDragging || Time.unscaledTime<pulseUntil);
@@ -513,6 +528,7 @@ namespace Museum.Diegetic
             controls[Command.Air].SetTitle(demonstration.IsVisible && demonstration.CurrentClue==HelmetExplorationController.Clue.Air?"Close air demo":"Air");
             controls[Command.Voice].SetTitle(demonstration.IsVisible && demonstration.CurrentClue==HelmetExplorationController.Clue.Voice?"Close voice demo":"Voice");
             controls[Command.Hints].SetTitle(AlwaysShowHints?"Hide hints":"Show hints");
+            RefreshVisitMovementHelp();
             controls[Command.AlwaysHints].SetTitle(AlwaysShowHints?"Hints: on":"Hints: off");
             controls[Command.Sound].SetTitle(inspection.SoundEnabled?"Sound: on":"Sound: off");
             controls[Command.Motion].SetTitle(inspection.ReduceMotion?"Motion: off":"Motion: on");
@@ -568,11 +584,11 @@ namespace Museum.Diegetic
         void BuildSectionRail()
         {
             sectionRail=new GameObject("Fixed section slide rail").transform;sectionRail.SetParent(sectionDock,false);sectionRail.localPosition=new Vector3(0,-.10f,0);
-            railLine=MakeLine(sectionRail,"Section travel axis",.002f);railLine.positionCount=2;
+            railLine=MakeLine(sectionRail,"Section travel axis",.002f);SetFrontSurface(railLine);railLine.positionCount=2;
             railLine.SetPositions(new[]{new Vector3(-RailHalfTravel,0,-.012f),new Vector3(RailHalfTravel,0,-.012f)});
             railStops=new LineRenderer[2];
-            for(int i=0;i<2;i++){float x=(i==0?-1:1)*RailHalfTravel;var stop=MakeLine(sectionRail,"Section rail end "+i,.003f);stop.positionCount=2;stop.SetPositions(new[]{new Vector3(x,-.018f,-.012f),new Vector3(x,.018f,-.012f)});railStops[i]=stop;}
-            var zero=MakeLine(sectionRail,"Section rail centre",.001f);zero.positionCount=2;zero.SetPositions(new[]{new Vector3(0,-.012f,-.012f),new Vector3(0,.012f,-.012f)});
+            for(int i=0;i<2;i++){float x=(i==0?-1:1)*RailHalfTravel;var stop=MakeLine(sectionRail,"Section rail end "+i,.003f);stop.positionCount=2;stop.SetPositions(new[]{new Vector3(x,-.018f,-.012f),new Vector3(x,.018f,-.012f)});SetFrontSurface(stop);railStops[i]=stop;}
+            var zero=MakeLine(sectionRail,"Section rail centre",.001f);zero.positionCount=2;zero.SetPositions(new[]{new Vector3(0,-.012f,-.012f),new Vector3(0,.012f,-.012f)});SetFrontSurface(zero);
         }
         LineRenderer MakeLine(Transform parent,string name,float width)
         {
@@ -597,16 +613,14 @@ namespace Museum.Diegetic
             control.Caption.rectTransform.sizeDelta=new Vector2(.36f,.045f);
             control.ConfigureContextualOnly();
         }
-        void BuildPedestalControls()
+        void BuildPedestalControls(Renderer plinth)
         {
             Command[] row={Command.PreviousEra,Command.NextEra,Command.Reset,Command.Hints,Command.Settings,Command.About};
             string[] titles={"Previous era","Next era","Reset","Show hints","Settings","About"};
             for(int i=0;i<row.Length;i++)
-            { var c=MakeControl(pedestalUI,row[i],titles[i],"Click to select",teal);c.transform.localPosition=new Vector3((i%3-1)*.19f,-(i/3)*.10f,0); }
-            var close=MakeControl(pedestalUI,Command.CloseDemo,"Close demo","",teal);close.transform.localPosition=new Vector3(.47f,.26f,-.005f);close.gameObject.SetActive(false);
-            eraTitle=Label(pedestalUI,"Era caption",new Vector3(0,.10f,-.025f),new Vector2(.65f,.065f),.35f);
-            instruction=Label(pedestalUI,"Station invitation",new Vector3(0,.17f,-.025f),new Vector2(.72f,.075f),.31f);
-            MuseumText.Set(instruction,"Could a diver work alone in this helmet?");
+            { var c=MakeControl(pedestalUI,row[i],titles[i],"",teal);c.transform.localPosition=new Vector3(i%3*.19f-RightButtonColumn,-(i/3)*.10f,0); }
+            var close=MakeControl(pedestalUI,Command.CloseDemo,"Close demo","",teal);close.transform.localPosition=new Vector3(-.19f,.10f,-.005f);close.gameObject.SetActive(false);
+            BuildFasciaLabels(plinth);
             options=new GameObject("Fixed settings");options.transform.SetParent(pedestalUI,false);options.transform.localPosition=new Vector3(-.64f,.07f,-.015f);
             Command[] settings={Command.Chinese,Command.Traditional,Command.English,Command.HeightDown,Command.HeightReset,Command.HeightUp,Command.Sound,Command.Motion,Command.AlwaysHints,Command.ResetView};
             string[] labels={"简体中文","繁體中文","English","View lower","Reset height","View higher","Sound: on","Motion: on","Hints: off","Reset View"};
@@ -634,7 +648,9 @@ namespace Museum.Diegetic
             var text=Label(go.transform,"Action",new Vector3(0,0,-.015f),new Vector2(.156f,.071f),.26f);
             text.enableAutoSizing=true;text.fontSizeMin=.23f;text.fontSizeMax=.26f;
             var detail=Label(go.transform,"Action hint",new Vector3(0,.062f,-.015f),new Vector2(.29f,.035f),.24f);
-            var control=go.AddComponent<HelmetPhysicalControl>();control.Configure(this,target,renderer,rim,text,detail,title,hint,color,gesture?null:(Action)(()=>Execute(command)));
+            var control=go.AddComponent<HelmetPhysicalControl>();
+            control.Configure(this,target,renderer,rim,text,detail,title,hint,color,gesture?null:(Action)(()=>Execute(command)),
+                requireFrontView: parent!=exhibitUI);
             control.ConfigureVisibility(idleOpacity,handRevealDistance,fadeOutDelay);
             control.PressAbandonedWhileHeld+=GuardAbandonedPress;
             if(command==Command.Section || command==Command.Slide)
@@ -649,18 +665,22 @@ namespace Museum.Diegetic
             }
             controls.Add(command,control);go.SetActive(true);return control;
         }
-        static TextMeshPro Label(Transform parent,string name,Vector3 position,Vector2 size,float font)
+        TextMeshPro Label(Transform parent,string name,Vector3 position,Vector2 size,float font)
         {
             var label=new GameObject(name).AddComponent<TextMeshPro>();label.transform.SetParent(parent,false);label.transform.localPosition=position;
             label.font=MuseumText.Table?MuseumText.Table.FontAsset:TMP_Settings.defaultFontAsset;
             label.alignment=TextAlignmentOptions.Center;label.rectTransform.sizeDelta=size;label.fontSize=font;
-            label.enableAutoSizing=false;label.enableWordWrapping=true;label.color=Color.white;return label;
+            label.enableAutoSizing=false;label.enableWordWrapping=true;label.color=Color.white;
+            SetFrontText(label);
+            return label;
         }
         void OnDisable()
         {
             if(!ready)return;StopNarration();CancelGestures();demonstration.Stop();
+            if(IsVisitHandoffOpen)SetVisitHandoff(false);
             UpdateEquipmentFeedback();
             RestoreShellFeedback();
+            ShowSavedCaption(true);
             // Keep the release guard on legacy targets when this optional module is disabled.
             // The inactive filter passes all other input and can be removed on destruction.
             if(exhibitUI)exhibitUI.gameObject.SetActive(false);if(pedestalUI)pedestalUI.gameObject.SetActive(false);
@@ -670,10 +690,17 @@ namespace Museum.Diegetic
             if(recovery)recovery.enabled=false;
             if(ViewHeight)ViewHeight.enabled=false;
             if(knowledgeCard)
-            {knowledgeCard.SetParent(originalCardParent,false);knowledgeCard.localPosition=originalCardPosition;knowledgeCard.localRotation=originalCardRotation;}
+            {
+                RestoreKnowledgeCardMaterials();
+                knowledgeCard.SetParent(originalCardParent, false);
+                knowledgeCard.localPosition = originalCardPosition;
+                knowledgeCard.localRotation = originalCardRotation;
+            }
         }
         void OnDestroy()
-        { if(demonstration)
+        {
+          foreach (var material in frontTextMaterials.Values) if (material) Destroy(material);
+          if(demonstration)
           {
               demonstration.PlaybackChanged-=RefreshEquipmentInteractions;
               demonstration.PlaybackChanged-=CheckNarrationContext;
@@ -683,6 +710,7 @@ namespace Museum.Diegetic
         {
             if(!ready)return;
             PruneReleasedHands();
+            ShowSavedCaption(false);
             foreach(var item in previousVisibility)if(item.Key)item.Key.SetActive(false);
             foreach(var item in previousEnabled)if(item.Key)item.Key.enabled=false;
             foreach(var target in inspection.GetComponentsInChildren<XRBaseInteractable>(true))Guard(target);

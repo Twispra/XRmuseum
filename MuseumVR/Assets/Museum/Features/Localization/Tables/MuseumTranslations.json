@@ -1898,6 +1898,41 @@
       "note": "Visitor control title while narration is active."
     },
     {
+      "key": "visit.finish",
+      "english": "Finish visit",
+      "chinese": "结束参观",
+      "traditionalChinese": "結束參觀",
+      "note": "Fixed exhibit action. Opens the handoff confirmation without clearing this visit."
+    },
+    {
+      "key": "visit.continue",
+      "english": "Continue visit",
+      "chinese": "继续参观",
+      "traditionalChinese": "繼續參觀",
+      "note": "Dismisses the handoff and returns to the current visit."
+    },
+    {
+      "key": "visit.next",
+      "english": "Start next visit",
+      "chinese": "开始新参观",
+      "traditionalChinese": "開始新參觀",
+      "note": "Confirms clearing discoveries and returning to the starting view and default exhibit."
+    },
+    {
+      "key": "visit.confirm",
+      "english": "Starting the next visit clears this visit's discoveries.",
+      "chinese": "开始新参观将清除本次探索记录。",
+      "traditionalChinese": "開始新參觀將清除本次探索記錄。",
+      "note": "Handoff confirmation shown before any discoveries are cleared."
+    },
+    {
+      "key": "visit.stick.help",
+      "english": "Left stick moves. Center and hold its click, then tilt to turn.\nRight stick: up to teleport, sideways to turn.",
+      "chinese": "左摇杆移动，回中按住再左右拨动转向。\n右摇杆前拨，松手移动。左右转向。",
+      "traditionalChinese": "左搖桿移動，回中按住再左右撥動轉向。\n右搖桿前撥，放開移動。左右轉向。",
+      "note": "Single-controller movement and snap turn help for either hand."
+    },
+    {
       "key": "exhibit.right_connection.eyebrow",
       "english": "Teaching diagram",
       "chinese": "教学示意",
@@ -1945,6 +1980,90 @@
       "chinese": "向左查看 Mark V 演示",
       "traditionalChinese": "向左查看 Mark V 演示",
       "note": "Right exhibit teaching diagram."
+    },
+    {
+      "key": "surface.call.telephone",
+      "english": "Mark V  /  Surface telephone",
+      "chinese": "Mark V  /  水面电话",
+      "traditionalChinese": "Mark V  /  水面電話",
+      "note": "Surface telephone interpretive scene."
+    },
+    {
+      "key": "surface.call.send",
+      "english": "Surface  /  Staged conversation",
+      "chinese": "水面  /  本展模拟对话",
+      "traditionalChinese": "水面  /  本展模擬對話",
+      "note": "Surface telephone interpretive scene."
+    },
+    {
+      "key": "surface.call.receive",
+      "english": "Diver  /  Staged conversation",
+      "chinese": "潜水员  /  本展模拟对话",
+      "traditionalChinese": "潛水員  /  本展模擬對話",
+      "note": "Surface telephone interpretive scene."
+    },
+    {
+      "key": "surface.call.outgoing",
+      "english": "Diver, do you read me?",
+      "chinese": "潜水员，收到吗？",
+      "traditionalChinese": "潛水員，收到嗎？",
+      "note": "Surface telephone interpretive scene."
+    },
+    {
+      "key": "surface.call.incoming",
+      "english": "Loud and clear, surface.",
+      "chinese": "收到，水面。",
+      "traditionalChinese": "收到，水面。",
+      "note": "Surface telephone interpretive scene."
+    },
+    {
+      "key": "surface.call.wait",
+      "english": "Waiting for the diver...",
+      "chinese": "等待潜水员回话。",
+      "traditionalChinese": "等待潛水員回話。",
+      "note": "Surface telephone interpretive scene."
+    },
+    {
+      "key": "surface.call.action",
+      "english": "Call the diver",
+      "chinese": "与潜水员通话",
+      "traditionalChinese": "與潛水員通話",
+      "note": "Surface telephone interpretive scene."
+    },
+    {
+      "key": "surface.call.hold",
+      "english": "Release to call",
+      "chinese": "松开通话",
+      "traditionalChinese": "鬆開通話",
+      "note": "Surface telephone interpretive scene."
+    },
+    {
+      "key": "surface.call.again",
+      "english": "Call again",
+      "chinese": "再次通话",
+      "traditionalChinese": "再次通話",
+      "note": "Surface telephone interpretive scene."
+    },
+    {
+      "key": "surface.call.connected",
+      "english": "On the line",
+      "chinese": "通话中",
+      "traditionalChinese": "通話中",
+      "note": "Surface telephone interpretive scene."
+    },
+    {
+      "key": "surface.call.cable",
+      "english": "Two-way voice",
+      "chinese": "双向通话",
+      "traditionalChinese": "雙向通話",
+      "note": "Surface telephone interpretive scene."
+    },
+    {
+      "key": "surface.call.static",
+      "english": "I hear you through the cable.",
+      "chinese": "收到。你的声音从电缆传来了。",
+      "traditionalChinese": "收到。你的聲音從電纜傳來了。",
+      "note": "Static exchange when the visitor reduces motion."
     }
   ]
 }

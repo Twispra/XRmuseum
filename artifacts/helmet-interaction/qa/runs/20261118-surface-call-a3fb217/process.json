@@ -1,0 +1,48 @@
+[
+  {
+    "mode": "Sample",
+    "head": "a3fb217a434937aedd202fc28d7acf2b81e9fa3c",
+    "start": "2026-11-18T20:28:47.1927816+08:00",
+    "end": "2026-11-18T20:30:07.0496615+08:00",
+    "pid": 9032,
+    "exit": 0,
+    "before": [],
+    "after": [],
+    "arguments": [
+      "-batchmode",
+      "-force-d3d11",
+      "-projectPath",
+      "E:\\Codex\\worktrees\\xrmuseum-creative-opening-20261118\\XRmuseum\\MuseumVR",
+      "-logFile",
+      "E:\\Codex\\worktrees\\xrmuseum-creative-opening-20261118\\XRmuseum\\tmp\\creative-opening\\delivery-sample.log",
+      "-executeMethod",
+      "Museum.SurfaceLine.Editor.SurfaceCallEvidence.CaptureSample",
+      "-surfaceOutput",
+      "E:\\Codex\\worktrees\\xrmuseum-creative-opening-20261118\\XRmuseum\\tmp\\creative-opening\\delivery-sample",
+      "-surfaceFrames",
+      "E:\\Codex\\worktrees\\xrmuseum-creative-opening-20261118\\XRmuseum\\tmp\\creative-opening\\delivery-frames"
+    ]
+  },
+  {
+    "mode": "Baseline",
+    "head": "a3fb217a434937aedd202fc28d7acf2b81e9fa3c",
+    "start": "2026-11-18T20:30:07.8410909+08:00",
+    "end": "2026-11-18T20:31:01.7025331+08:00",
+    "pid": 6636,
+    "exit": 0,
+    "before": [],
+    "after": [],
+    "arguments": [
+      "-batchmode",
+      "-force-d3d11",
+      "-projectPath",
+      "E:\\Codex\\worktrees\\xrmuseum-creative-opening-20261118\\XRmuseum\\MuseumVR",
+      "-logFile",
+      "E:\\Codex\\worktrees\\xrmuseum-creative-opening-20261118\\XRmuseum\\tmp\\creative-opening\\delivery-baseline.log",
+      "-executeMethod",
+      "Museum.SurfaceLine.Editor.SurfaceCallEvidence.CaptureBaseline",
+      "-surfaceOutput",
+      "E:\\Codex\\worktrees\\xrmuseum-creative-opening-20261118\\XRmuseum\\tmp\\creative-opening\\delivery-baseline"
+    ]
+  }
+]

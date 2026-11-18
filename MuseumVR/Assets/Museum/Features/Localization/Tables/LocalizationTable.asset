@@ -1596,6 +1596,31 @@ MonoBehaviour:
     english: Stop narration
     traditionalChinese: "\u505C\u6B62\u8A9E\u97F3"
     note: Visitor control title while narration is active.
+  - key: visit.finish
+    chinese: "\u7ed3\u675f\u53c2\u89c2"
+    english: "Finish visit"
+    traditionalChinese: "\u7d50\u675f\u53c3\u89c0"
+    note: "Fixed exhibit action. Opens the handoff confirmation without clearing this visit."
+  - key: visit.continue
+    chinese: "\u7ee7\u7eed\u53c2\u89c2"
+    english: "Continue visit"
+    traditionalChinese: "\u7e7c\u7e8c\u53c3\u89c0"
+    note: "Dismisses the handoff and returns to the current visit."
+  - key: visit.next
+    chinese: "\u5f00\u59cb\u65b0\u53c2\u89c2"
+    english: "Start next visit"
+    traditionalChinese: "\u958b\u59cb\u65b0\u53c3\u89c0"
+    note: "Confirms clearing discoveries and returning to the starting view and default exhibit."
+  - key: visit.confirm
+    chinese: "\u5f00\u59cb\u65b0\u53c2\u89c2\u5c06\u6e05\u9664\u672c\u6b21\u63a2\u7d22\u8bb0\u5f55\u3002"
+    english: "Starting the next visit clears this visit's discoveries."
+    traditionalChinese: "\u958b\u59cb\u65b0\u53c3\u89c0\u5c07\u6e05\u9664\u672c\u6b21\u63a2\u7d22\u8a18\u9304\u3002"
+    note: "Handoff confirmation shown before any discoveries are cleared."
+  - key: visit.stick.help
+    chinese: "\u5de6\u6447\u6746\u79fb\u52a8\uff0c\u56de\u4e2d\u6309\u4f4f\u518d\u5de6\u53f3\u62e8\u52a8\u8f6c\u5411\u3002\n\u53f3\u6447\u6746\u524d\u62e8\uff0c\u677e\u624b\u79fb\u52a8\u3002\u5de6\u53f3\u8f6c\u5411\u3002"
+    english: "Left stick moves. Center and hold its click, then tilt to turn.\nRight stick: up to teleport, sideways to turn."
+    traditionalChinese: "\u5de6\u6416\u687f\u79fb\u52d5\uff0c\u56de\u4e2d\u6309\u4f4f\u518d\u5de6\u53f3\u64a5\u52d5\u8f49\u5411\u3002\n\u53f3\u6416\u687f\u524d\u64a5\uff0c\u653e\u958b\u79fb\u52d5\u3002\u5de6\u53f3\u8f49\u5411\u3002"
+    note: "Single-controller movement and snap turn help for either hand."
   - key: exhibit.right_connection.eyebrow
     chinese: "\u6559\u5B66\u793A\u610F"
     english: "Teaching diagram"
@@ -1631,4 +1656,64 @@ MonoBehaviour:
     english: "See the Mark V demo"
     traditionalChinese: "\u5411\u5DE6\u67E5\u770B Mark V \u6F14\u793A"
     note: "Right exhibit teaching diagram."
+  - key: surface.call.telephone
+    chinese: "Mark V  /  \u6C34\u9762\u7535\u8BDD"
+    english: Mark V  /  Surface telephone
+    traditionalChinese: "Mark V  /  \u6C34\u9762\u96FB\u8A71"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.send
+    chinese: "\u6C34\u9762  /  \u672C\u5C55\u6A21\u62DF\u5BF9\u8BDD"
+    english: Surface  /  Staged conversation
+    traditionalChinese: "\u6C34\u9762  /  \u672C\u5C55\u6A21\u64EC\u5C0D\u8A71"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.receive
+    chinese: "\u6F5C\u6C34\u5458  /  \u672C\u5C55\u6A21\u62DF\u5BF9\u8BDD"
+    english: Diver  /  Staged conversation
+    traditionalChinese: "\u6F5B\u6C34\u54E1  /  \u672C\u5C55\u6A21\u64EC\u5C0D\u8A71"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.outgoing
+    chinese: "\u6F5C\u6C34\u5458\uFF0C\u6536\u5230\u5417\uFF1F"
+    english: Diver, do you read me?
+    traditionalChinese: "\u6F5B\u6C34\u54E1\uFF0C\u6536\u5230\u55CE\uFF1F"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.incoming
+    chinese: "\u6536\u5230\uFF0C\u6C34\u9762\u3002"
+    english: Loud and clear, surface.
+    traditionalChinese: "\u6536\u5230\uFF0C\u6C34\u9762\u3002"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.wait
+    chinese: "\u7B49\u5F85\u6F5C\u6C34\u5458\u56DE\u8BDD\u3002"
+    english: Waiting for the diver...
+    traditionalChinese: "\u7B49\u5F85\u6F5B\u6C34\u54E1\u56DE\u8A71\u3002"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.action
+    chinese: "\u4E0E\u6F5C\u6C34\u5458\u901A\u8BDD"
+    english: Call the diver
+    traditionalChinese: "\u8207\u6F5B\u6C34\u54E1\u901A\u8A71"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.hold
+    chinese: "\u677E\u5F00\u901A\u8BDD"
+    english: Release to call
+    traditionalChinese: "\u9B06\u958B\u901A\u8A71"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.again
+    chinese: "\u518D\u6B21\u901A\u8BDD"
+    english: Call again
+    traditionalChinese: "\u518D\u6B21\u901A\u8A71"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.connected
+    chinese: "\u901A\u8BDD\u4E2D"
+    english: On the line
+    traditionalChinese: "\u901A\u8A71\u4E2D"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.cable
+    chinese: "\u53CC\u5411\u901A\u8BDD"
+    english: Two-way voice
+    traditionalChinese: "\u96D9\u5411\u901A\u8A71"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.static
+    chinese: "\u6536\u5230\u3002\u4f60\u7684\u58f0\u97f3\u4ece\u7535\u7f06\u4f20\u6765\u4e86\u3002"
+    english: "I hear you through the cable."
+    traditionalChinese: "\u6536\u5230\u3002\u4f60\u7684\u8072\u97f3\u5f9e\u96fb\u7e9c\u50b3\u4f86\u4e86\u3002"
+    note: "Static exchange when the visitor reduces motion."
   fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
