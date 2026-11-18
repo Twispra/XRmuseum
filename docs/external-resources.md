@@ -1,5 +1,9 @@
 # 外部资源与辅助工具记录
 
+2026-11-18 黄昏潜水工房独立样板采用 Poly Haven 的四项 CC0 资源。Dimitrios Savva 的 [Wood Floor Worn](https://polyhaven.com/a/wood_floor_worn) 和 [Smooth Concrete Floor](https://polyhaven.com/a/smooth_concrete_floor) 用于旧木饰面和错缝地坪。Amal Kumar 的 [Plastered Wall](https://polyhaven.com/a/plastered_wall) 用于刷灰墙面。Greg Zaal 摄影、Jarod Guest 处理的 [Qwantani Sunset Pure Sky](https://polyhaven.com/a/qwantani_sunset_puresky) 用作环境天空。木、地和墙的色彩与粗糙度按室内尺度调整，地面加了接缝。[Poly Haven 资产许可](https://polyhaven.com/license)
+
+两扇窗及展台外壳由 Codex 辅助在 Blender 中建模。窗外贴图由 ImageGen 参考该天空生成的港口构图稿绘制，画面中的船厂是艺术设定。Codex 辅助 Unity 布光、材质接入、烘焙和截图评审。实际效果见[黄昏潜水工房首版](activity/2026-11-18-dusk-workshop.md)。
+
 2026-11-18 中央开场独立样板使用仓库已有 Mark V、电话箱、环境和字体。Codex 参与策展取舍、场景摆位、情境对白及三语文案、Unity 实现、模拟输入验收和单眼录像整理。器材依据和现有外部素材沿用原记录。见[设计取舍与验证](activity/2026-11-18-creative-opening.md)。
 
 2026-11-17 PR #76合并审查：Codex按用户明确授权核对配置资料、研究源和r3基线，独立复算已提交mask／标注，修复复跑工具的输出保护及原图身份检查，并整理审查交接。使用Python标准库、bundled NumPy／Pillow及独立目录SciPy；Blender4.5.14 LTS portable从[官方ZIP](https://download.blender.org/release/Blender4.5/blender-4.5.14-windows-x64.zip)与[官方SHA256清单](https://download.blender.org/release/Blender4.5/blender-4.5.14.sha256)取得，二者匹配，GPL软件只作本地工具、不提交或新增运行时依赖。厂家既有来源本轮作文本复核，未复制原图／手册入库；没有新增模型形状、产品素材、实机结果或成员个人反思。新证据与未验证范围见[本轮活动](activity/2026-11-17-pr76-review-and-merge.md)及[独立QA](../artifacts/helmet-interaction/qa/runs/20261117-pr76-review/README.md)。AI审查不等于另一位成员人工批准，归档合并不等于几何确认或Unity接入。
