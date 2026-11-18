@@ -1,0 +1,70 @@
+{
+  "views": [
+    {
+      "version": "before",
+      "view": "rear",
+      "source_sha256": "6e85f7f048b3a6b8706428854ab8934099da25ff21d427e87fde9de930b1c8a2",
+      "camera_position": [
+        0.43,
+        0.9,
+        0.38
+      ],
+      "target": [
+        0,
+        0.04,
+        0.18
+      ],
+      "ortho_scale": 0.4
+    },
+    {
+      "version": "before",
+      "view": "rear_detail",
+      "source_sha256": "6e85f7f048b3a6b8706428854ab8934099da25ff21d427e87fde9de930b1c8a2",
+      "camera_position": [
+        0.14,
+        0.7,
+        0.28
+      ],
+      "target": [
+        0,
+        0.145,
+        0.209
+      ],
+      "ortho_scale": 0.145
+    },
+    {
+      "version": "after",
+      "view": "rear",
+      "source_sha256": "f4c3241da1bd541d723d5dcf9cdc9be6a144ca3acdca1911b73002838840ce92",
+      "camera_position": [
+        0.43,
+        0.9,
+        0.38
+      ],
+      "target": [
+        0,
+        0.04,
+        0.18
+      ],
+      "ortho_scale": 0.4
+    },
+    {
+      "version": "after",
+      "view": "rear_detail",
+      "source_sha256": "f4c3241da1bd541d723d5dcf9cdc9be6a144ca3acdca1911b73002838840ce92",
+      "camera_position": [
+        0.14,
+        0.7,
+        0.28
+      ],
+      "target": [
+        0,
+        0.145,
+        0.209
+      ],
+      "ortho_scale": 0.145
+    }
+  ],
+  "geometry_saved_during_render": false,
+  "limits": "Matched source renders only, not real-object photographic alignment or Unity/device evidence."
+}

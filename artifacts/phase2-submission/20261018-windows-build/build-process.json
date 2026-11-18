@@ -1,0 +1,33 @@
+{
+  "state": "exited",
+  "commit": "6088c736e89d05101e09645c1796556012a6fd5d",
+  "checkout": "E:\\Codex\\worktrees\\phase2-windows-build-20261018\\XRmuseum",
+  "unity": "E:\\unity\\36version\\2022.3.62f3c1\\Editor\\Unity.exe",
+  "arguments": [
+    "-batchmode",
+    "-buildTarget",
+    "Win64",
+    "-projectPath",
+    "\"E:\\Codex\\worktrees\\phase2-windows-build-20261018\\XRmuseum\\MuseumVR\"",
+    "-logFile",
+    "\"E:\\Codex\\Temp\\phase2-windows-20261018\\evidence\\unity-build.log\"",
+    "-executeMethod",
+    "Museum.PhysicalHands.EditorTools.MuseumPhysicalHandsBuild.RunBatch"
+  ],
+  "buildOutput": "E:\\Codex\\Builds\\XRmuseum\\phase2-20261018-6088c73\\MuseumVR.exe",
+  "qaOutput": "E:\\Codex\\Temp\\phase2-windows-20261018\\evidence\\qa",
+  "startedUtc": "2026-10-18T13:22:15.1585572Z",
+  "finishedUtc": "2026-10-18T13:29:48.0310522Z",
+  "pid": 43856,
+  "exitCode": 0,
+  "forced": false,
+  "timeoutSeconds": 1800,
+  "dirtyBefore": [],
+  "originalSettingsBeforeSha256": "81c0eb3103e303a2567619e388c45709e89fa1940353cdfe4a163bbe402c5587",
+  "sourceBeforeCount": 1299,
+  "lfsCount": 82,
+  "sourceAfterCount": 1299,
+  "sourceDifferenceCount": 0,
+  "dirtyAfter": [],
+  "originalSettingsAfterSha256": "81c0eb3103e303a2567619e388c45709e89fa1940353cdfe4a163bbe402c5587"
+}

@@ -1,0 +1,37 @@
+{
+  "reviewed_commit": "797984ede023e803b641fd46a558baa51e02bb80",
+  "files": [
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/baseline-v4/superlite17b-shell-v4.blend",
+      "bytes": 4800923,
+      "sha256": "6e85f7f048b3a6b8706428854ab8934099da25ff21d427e87fde9de930b1c8a2",
+      "expanded_and_matches_pointer": true
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/sources/superlite17b-rear-study-r1.blend",
+      "bytes": 5346951,
+      "sha256": "f4c3241da1bd541d723d5dcf9cdc9be6a144ca3acdca1911b73002838840ce92",
+      "expanded_and_matches_pointer": true
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/sources/superlite17b-shell-study-r2.blend",
+      "bytes": 5347215,
+      "sha256": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+      "expanded_and_matches_pointer": true
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/backups/backup_r1_current.blend",
+      "bytes": 5347215,
+      "sha256": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+      "expanded_and_matches_pointer": true
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/work/work_r3.blend",
+      "bytes": 5347215,
+      "sha256": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+      "expanded_and_matches_pointer": true
+    }
+  ],
+  "r2_backup_work_byte_identical": true,
+  "scope": "Exact saved sources and LFS expansion only; does not prove geometry accuracy or Unity integration."
+}

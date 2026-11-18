@@ -1621,4 +1621,39 @@ MonoBehaviour:
     english: "Left stick moves. Center and hold its click, then tilt to turn.\nRight stick: up to teleport, sideways to turn."
     traditionalChinese: "\u5de6\u6416\u687f\u79fb\u52d5\uff0c\u56de\u4e2d\u6309\u4f4f\u518d\u5de6\u53f3\u64a5\u52d5\u8f49\u5411\u3002\n\u53f3\u6416\u687f\u524d\u64a5\uff0c\u653e\u958b\u79fb\u52d5\u3002\u5de6\u53f3\u8f49\u5411\u3002"
     note: "Single-controller movement and snap turn help for either hand."
+  - key: exhibit.right_connection.eyebrow
+    chinese: "\u6559\u5B66\u793A\u610F"
+    english: "Teaching diagram"
+    traditionalChinese: "\u6559\u5B78\u793A\u610F"
+    note: "Right exhibit teaching diagram."
+  - key: exhibit.right_connection.air
+    chinese: "\u4F9B\u6C14"
+    english: "Air supply"
+    traditionalChinese: "\u4F9B\u6C23"
+    note: "Right exhibit teaching diagram."
+  - key: exhibit.right_connection.voice
+    chinese: "\u53CC\u5411\u901A\u8BDD"
+    english: "Two-way communication"
+    traditionalChinese: "\u96D9\u5411\u901A\u8A71"
+    note: "Right exhibit teaching diagram."
+  - key: exhibit.right_connection.surface.air
+    chinese: "\u6C34\u9762\u4F9B\u6C14\u6CF5"
+    english: "Surface pump"
+    traditionalChinese: "\u6C34\u9762\u4F9B\u6C23\u6CF5"
+    note: "Right exhibit teaching diagram."
+  - key: exhibit.right_connection.surface.voice
+    chinese: "\u6C34\u9762\u56E2\u961F"
+    english: "Surface team"
+    traditionalChinese: "\u6C34\u9762\u5718\u968A"
+    note: "Right exhibit teaching diagram."
+  - key: exhibit.right_connection.diver
+    chinese: "\u6F5C\u6C34\u5458"
+    english: "Diver"
+    traditionalChinese: "\u6F5B\u6C34\u54E1"
+    note: "Right exhibit teaching diagram."
+  - key: exhibit.right_connection.demo
+    chinese: "\u5411\u5DE6\u67E5\u770B Mark V \u6F14\u793A"
+    english: "See the Mark V demo"
+    traditionalChinese: "\u5411\u5DE6\u67E5\u770B Mark V \u6F14\u793A"
+    note: "Right exhibit teaching diagram."
   fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}

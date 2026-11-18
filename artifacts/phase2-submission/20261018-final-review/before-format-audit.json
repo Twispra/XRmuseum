@@ -1,0 +1,427 @@
+{
+  "auditUtc": "2026-10-18T13:43:32.285488+00:00",
+  "phase": "before final report/activity refresh",
+  "mode": "read-only submission files; only this new QA JSON written",
+  "submissionDirectory": "E:\\XRmuseum\\phase2小组和个人作业",
+  "requirements": {
+    "group": [
+      "repository URL public or teaching-team access; root README six identities",
+      "working Windows runtime ZIP targeting PQ604A/B/C",
+      "prototype note single PDF, no more than four A4 body pages excluding references/cover/appendix, Times New Roman >=12pt, 2.5cm margins",
+      "single PDF activity record"
+    ],
+    "individual": "six separate Canvas text entries, each <=750 words and direct traceable repository evidence"
+  },
+  "inventory": [
+    {
+      "name": "COMP5424-Group-Project-Phase2-ActivityRecord-template.docx",
+      "kind": "file",
+      "bytes": 21917,
+      "role": "unfilled course template original; do not submit",
+      "descendants": []
+    },
+    {
+      "name": "COMP5424-Group2-Phase2-ActivityRecord.docx",
+      "kind": "file",
+      "bytes": 20392,
+      "role": "editable document source; do not submit",
+      "descendants": []
+    },
+    {
+      "name": "COMP5424-Group2-Phase2-ActivityRecord.pdf",
+      "kind": "file",
+      "bytes": 151559,
+      "role": "group PDF submission",
+      "descendants": []
+    },
+    {
+      "name": "COMP5424-Group2-Phase2-PrototypeDesignTechnicalNote.docx",
+      "kind": "file",
+      "bytes": 44592,
+      "role": "editable document source; do not submit",
+      "descendants": []
+    },
+    {
+      "name": "COMP5424-Group2-Phase2-PrototypeDesignTechnicalNote.pdf",
+      "kind": "file",
+      "bytes": 147561,
+      "role": "group PDF submission",
+      "descendants": []
+    },
+    {
+      "name": "COMP5424-Group2-Phase2-Windows-x64-6088c73.zip",
+      "kind": "file",
+      "bytes": 74726292,
+      "role": "group executable submission",
+      "descendants": []
+    },
+    {
+      "name": "何梓绎26069396g-Aragorn-cyber&heziyi-aragon.txt",
+      "kind": "file",
+      "bytes": 4187,
+      "role": "individual Canvas text-entry source; paste text, do not upload as group artifact",
+      "descendants": []
+    },
+    {
+      "name": "原稿备份",
+      "kind": "directory",
+      "bytes": null,
+      "role": "backup original; do not submit",
+      "descendants": [
+        "原稿备份\\20261018-203717",
+        "原稿备份\\20261018-2145-final-review",
+        "原稿备份\\20261018-203717\\backup-manifest.json",
+        "原稿备份\\20261018-203717\\revision-validation.json",
+        "原稿备份\\20261018-203717\\何梓绎26069396g-Aragorn-cyber&heziyi-aragon.txt",
+        "原稿备份\\20261018-203717\\叶福涛26053268g-Fttt1003.txt",
+        "原稿备份\\20261018-203717\\张非凡26108425g-nikoyeah830-wq.txt",
+        "原稿备份\\20261018-203717\\蔡子申26134128g-r2kh8sck4y-bot.txt",
+        "原稿备份\\20261018-203717\\赵基蘅26071012g-Twispra.txt",
+        "原稿备份\\20261018-203717\\赵祥睿26044846g-Ereshkigal1224.txt",
+        "原稿备份\\20261018-2145-final-review\\backup-manifest.json",
+        "原稿备份\\20261018-2145-final-review\\COMP5424-Group-Project-Phase2-ActivityRecord-template.docx",
+        "原稿备份\\20261018-2145-final-review\\COMP5424-Group2-Phase2-ActivityRecord.docx",
+        "原稿备份\\20261018-2145-final-review\\COMP5424-Group2-Phase2-ActivityRecord.pdf",
+        "原稿备份\\20261018-2145-final-review\\COMP5424-Group2-Phase2-PrototypeDesignTechnicalNote.docx",
+        "原稿备份\\20261018-2145-final-review\\COMP5424-Group2-Phase2-PrototypeDesignTechnicalNote.pdf",
+        "原稿备份\\20261018-2145-final-review\\COMP5424-Group2-Phase2-Windows-x64-6088c73.zip",
+        "原稿备份\\20261018-2145-final-review\\何梓绎26069396g-Aragorn-cyber&heziyi-aragon.txt",
+        "原稿备份\\20261018-2145-final-review\\叶福涛26053268g-Fttt1003.txt",
+        "原稿备份\\20261018-2145-final-review\\张非凡26108425g-nikoyeah830-wq.txt",
+        "原稿备份\\20261018-2145-final-review\\蔡子申26134128g-r2kh8sck4y-bot.txt",
+        "原稿备份\\20261018-2145-final-review\\赵基蘅26071012g-Twispra.txt",
+        "原稿备份\\20261018-2145-final-review\\赵祥睿26044846g-Ereshkigal1224.txt"
+      ]
+    },
+    {
+      "name": "叶福涛26053268g-Fttt1003.txt",
+      "kind": "file",
+      "bytes": 5531,
+      "role": "individual Canvas text-entry source; paste text, do not upload as group artifact",
+      "descendants": []
+    },
+    {
+      "name": "张非凡26108425g-nikoyeah830-wq.txt",
+      "kind": "file",
+      "bytes": 5930,
+      "role": "individual Canvas text-entry source; paste text, do not upload as group artifact",
+      "descendants": []
+    },
+    {
+      "name": "蔡子申26134128g-r2kh8sck4y-bot.txt",
+      "kind": "file",
+      "bytes": 5404,
+      "role": "individual Canvas text-entry source; paste text, do not upload as group artifact",
+      "descendants": []
+    },
+    {
+      "name": "赵基蘅26071012g-Twispra.txt",
+      "kind": "file",
+      "bytes": 5347,
+      "role": "individual Canvas text-entry source; paste text, do not upload as group artifact",
+      "descendants": []
+    },
+    {
+      "name": "赵祥睿26044846g-Ereshkigal1224.txt",
+      "kind": "file",
+      "bytes": 5161,
+      "role": "individual Canvas text-entry source; paste text, do not upload as group artifact",
+      "descendants": []
+    }
+  ],
+  "essays": [
+    {
+      "file": "何梓绎26069396g-Aragorn-cyber&heziyi-aragon.txt",
+      "sha256": "ee4ef509ab1376bdab56824ac06fe2d67cd158a0e250cc4a8d3e2a2b58576ee8",
+      "whitespaceWordsIncludingHeadingsAndUrls": 507,
+      "conservativeWordTokensUrlsCountAsOne": 519,
+      "urlCount": 12,
+      "within750": true
+    },
+    {
+      "file": "叶福涛26053268g-Fttt1003.txt",
+      "sha256": "b0a1cedba991dc1291d089d5e1726b128eec9116cf79cf19f820a72b1e2ac869",
+      "whitespaceWordsIncludingHeadingsAndUrls": 651,
+      "conservativeWordTokensUrlsCountAsOne": 663,
+      "urlCount": 12,
+      "within750": true
+    },
+    {
+      "file": "张非凡26108425g-nikoyeah830-wq.txt",
+      "sha256": "6d027eca11ec62e738fb574ac67fd8be5378087834eb9802dee0f809af725438",
+      "whitespaceWordsIncludingHeadingsAndUrls": 536,
+      "conservativeWordTokensUrlsCountAsOne": 570,
+      "urlCount": 29,
+      "within750": true
+    },
+    {
+      "file": "蔡子申26134128g-r2kh8sck4y-bot.txt",
+      "sha256": "3f902304bf356aeb489a09a49b13da0fd3cfa5eee0c5f8633d657ddfddd7d8ae",
+      "whitespaceWordsIncludingHeadingsAndUrls": 640,
+      "conservativeWordTokensUrlsCountAsOne": 656,
+      "urlCount": 14,
+      "within750": true
+    },
+    {
+      "file": "赵基蘅26071012g-Twispra.txt",
+      "sha256": "0816d813244dfc7c52c01759f101d2deb7662a913429c76549bfa7b3f871185d",
+      "whitespaceWordsIncludingHeadingsAndUrls": 643,
+      "conservativeWordTokensUrlsCountAsOne": 656,
+      "urlCount": 10,
+      "within750": true
+    },
+    {
+      "file": "赵祥睿26044846g-Ereshkigal1224.txt",
+      "sha256": "e1e1928907a3f75503ec01a03f833fe7f026cb3177a8826260cabdfe340135bc",
+      "whitespaceWordsIncludingHeadingsAndUrls": 652,
+      "conservativeWordTokensUrlsCountAsOne": 661,
+      "urlCount": 7,
+      "within750": true
+    }
+  ],
+  "pdfs": [
+    {
+      "file": "COMP5424-Group2-Phase2-ActivityRecord.pdf",
+      "sha256": "28a90f1ecd0f8974af8f3667159d6861a168a4d6e5a3726715daf08a04091d92",
+      "pages": [
+        {
+          "page": 1,
+          "sizePt": [
+            595.32,
+            841.92
+          ],
+          "visibleFontSizesPt": [
+            12.0
+          ],
+          "fonts": [
+            "BCDEEE+TimesNewRomanPS-BoldMT",
+            "BCDGEE+TimesNewRomanPSMT",
+            "BCDIEE+MicrosoftYaHei"
+          ],
+          "bodyBoundsPt": {
+            "left": 72.024,
+            "rightInset": 79.92200000000003,
+            "top": 73.75199999999995,
+            "bottomInset": 86.11199999999997
+          },
+          "heading": "COMP5424 Group Project - Weekly Team Activity Record (Phase 2)"
+        }
+      ],
+      "pageCount": 1
+    },
+    {
+      "file": "COMP5424-Group2-Phase2-PrototypeDesignTechnicalNote.pdf",
+      "sha256": "ec22b0effe718f049863894bc5f56470e8029aaf28337c0d5e5646a34f769b80",
+      "pages": [
+        {
+          "page": 1,
+          "sizePt": [
+            595.32,
+            841.92
+          ],
+          "visibleFontSizesPt": [
+            12.0,
+            14.04,
+            15.96
+          ],
+          "fonts": [
+            "BCDEEE+TimesNewRomanPSMT",
+            "BCDFEE+TimesNewRomanPS-BoldMT",
+            "BCDGEE+TimesNewRomanPS-BoldMT"
+          ],
+          "bodyBoundsPt": {
+            "left": 70.824,
+            "rightInset": 73.36800000000005,
+            "top": 73.1873599999999,
+            "bottomInset": 87.43200000000002
+          },
+          "heading": "XRmuseum Prototype Design and Technical Note"
+        },
+        {
+          "page": 2,
+          "sizePt": [
+            595.32,
+            841.92
+          ],
+          "visibleFontSizesPt": [
+            12.0,
+            14.04
+          ],
+          "fonts": [
+            "BCDEEE+TimesNewRomanPSMT",
+            "BCDGEE+TimesNewRomanPS-BoldMT"
+          ],
+          "bodyBoundsPt": {
+            "left": 70.824,
+            "rightInset": 71.63600000000008,
+            "top": 72.89264000000003,
+            "bottomInset": 175.38800000000003
+          },
+          "heading": "2 Design and technical decisions"
+        },
+        {
+          "page": 3,
+          "sizePt": [
+            595.32,
+            841.92
+          ],
+          "visibleFontSizesPt": [
+            12.0,
+            14.04
+          ],
+          "fonts": [
+            "BCDEEE+TimesNewRomanPSMT",
+            "BCDGEE+TimesNewRomanPS-BoldMT"
+          ],
+          "bodyBoundsPt": {
+            "left": 70.824,
+            "rightInset": 68.10000000000014,
+            "top": 72.89264000000003,
+            "bottomInset": 194.82799999999997
+          },
+          "heading": "3 Implementation and verification"
+        },
+        {
+          "page": 4,
+          "sizePt": [
+            595.32,
+            841.92
+          ],
+          "visibleFontSizesPt": [
+            12.0,
+            14.04
+          ],
+          "fonts": [
+            "BCDEEE+TimesNewRomanPSMT",
+            "BCDGEE+TimesNewRomanPS-BoldMT"
+          ],
+          "bodyBoundsPt": {
+            "left": 70.824,
+            "rightInset": 74.06600000000003,
+            "top": 72.89264000000003,
+            "bottomInset": 117.428
+          },
+          "heading": "4 Limitations and evaluation priorities"
+        },
+        {
+          "page": 5,
+          "sizePt": [
+            595.32,
+            841.92
+          ],
+          "visibleFontSizesPt": [
+            12.0,
+            14.04
+          ],
+          "fonts": [
+            "BCDEEE+TimesNewRomanPSMT",
+            "BCDGEE+TimesNewRomanPS-BoldMT"
+          ],
+          "bodyBoundsPt": {
+            "left": 70.824,
+            "rightInset": 74.85800000000006,
+            "top": 72.89264000000003,
+            "bottomInset": 339.57800000000003
+          },
+          "heading": "References"
+        }
+      ],
+      "pageCount": 5
+    }
+  ],
+  "findings": [
+    {
+      "severity": "needs update",
+      "item": "prototype PDF p3",
+      "detail": "Old paragraph says latest complete build source 806993a, Player not launched, fresh build/ZIP needed; replace with actual source6088c73 build, complete package and limited40second launch evidence."
+    },
+    {
+      "severity": "needs update",
+      "item": "activity PDF",
+      "detail": "Title source0109e3f, #67 unmerged, photo study pending#64/#67 and finalbuild unfinished are stale for final delivery6088c73; keep historical originals backed up then update currentsubmission activity."
+    },
+    {
+      "severity": "format repair",
+      "item": "prototype PDF p3",
+      "detail": "Word runs. bbox x0=503.556,x1=527.220,top=417.362pt; rightInset68.10pt, approximately2.75pt outside1417twip right margin. Plain historical validation paragraph, not hyperlink. Footer bottomInset34.01pt is page number, not body margin violation."
+    },
+    {
+      "severity": "submission routing",
+      "item": "mixed source and submission files",
+      "detail": "Only executableZIP plus twoPDFs are group upload files; originaltemplate, DOCX and backups are supporting files. SixTXT are individual Canvas text-entry sources."
+    },
+    {
+      "severity": "unverified course environment",
+      "item": "PQ604 and VR",
+      "detail": "Package integrity and limitedlocalstartup established. No compatibleheadset for currentrun; OpenXR XR_ERROR_FORM_FACTOR_UNAVAILABLE. PhysicalPQ604 hardware/software, headset/controllers, stereo, interaction, performance, comfort/accessibility remain unverified. Player was actively terminated after observation, not successfulnaturalexit. BuildEditor naturallyexit0."
+    }
+  ],
+  "package": {
+    "file": "COMP5424-Group2-Phase2-Windows-x64-6088c73.zip",
+    "sha256": "3914fb87cb3e19742fc8f46b46747fcb7154478be56bb18b096b1cdbdfd4f102",
+    "compressedBytes": 74726292,
+    "files": 274,
+    "uncompressedBytes": 221178824,
+    "crcError": null,
+    "manifestListedOtherFiles": 273,
+    "manifestHashMismatches": [],
+    "sourceCommit": "6088c736e89d05101e09645c1796556012a6fd5d",
+    "unity": "2022.3.62f3c1",
+    "buildOptions": "Development",
+    "buildResult": "Succeeded",
+    "buildErrors": 0,
+    "buildWarnings": 2,
+    "peMachine": "0x8664",
+    "isWindows64": true,
+    "topLevelDirectories": [
+      "XRmuseum-Phase2-Windows-x64"
+    ],
+    "duplicatePaths": false,
+    "unsafePaths": []
+  },
+  "latestBuildEvidence": {
+    "status": "passed-build-and-package; limited-desktop-startup-observed",
+    "checkedUtc": "2026-10-18T13:32:04.846676+00:00",
+    "sourceCommit": "6088c736e89d05101e09645c1796556012a6fd5d",
+    "unity": "2022.3.62f3c1",
+    "target": "StandaloneWindows64",
+    "buildConfiguration": "Development",
+    "buildResult": "Succeeded",
+    "buildErrors": 0,
+    "buildWarnings": 2,
+    "buildProcessNaturalExitCode": 0,
+    "sourceFilesBeforeImport": 1299,
+    "sourceFilesAfterExit": 1299,
+    "sourceDifferences": 0,
+    "expandedLfsAssetsVerified": 82,
+    "originalWorkspaceSettingsPreserved": true,
+    "previousSubmissionFilesPreserved": 11,
+    "zip": "E:\\XRmuseum\\phase2小组和个人作业\\COMP5424-Group2-Phase2-Windows-x64-6088c73.zip",
+    "zipBytes": 74726292,
+    "zipSha256": "3914fb87cb3e19742fc8f46b46747fcb7154478be56bb18b096b1cdbdfd4f102",
+    "zipFiles": 274,
+    "uncompressedBytes": 221178824,
+    "zipCrcPassed": true,
+    "extractedHashesAllMatched": true,
+    "extractedFilesUnchangedAfterLaunch": true,
+    "playerStartupObservedSeconds": 40,
+    "playerResponded": true,
+    "engineInitialized": true,
+    "direct3D11Initialized": true,
+    "savedSceneHandRigStartObserved": true,
+    "unexpectedManagedExceptionLines": [],
+    "headsetUnavailableDiagnostic": true,
+    "playerObservationStoppedByForce": true,
+    "playerObservationExitCode": -1,
+    "playerShutdownNote": "Hidden launch returned no MainWindowHandle; CloseMainWindow returned false. Only the test-owned player PID was terminated after the 40-second responsive observation. This is not a successful natural-exit test.",
+    "limits": [
+      "No available headset: OpenXR reports XR_ERROR_FORM_FACTOR_UNAVAILABLE under the existing VirtualDesktopXR runtime.",
+      "PQ604A/B/C PCs, headset/controller tracking, stereo rendering, interaction, performance, comfort and accessibility remain unverified."
+    ],
+    "localEvidenceDirectory": "E:\\Codex\\Temp\\phase2-windows-20261018\\evidence",
+    "buildLogSha256": "fec060c9718e0385f5480fc444be494e2c1ac2edd6ba04ea0c6dc6cda4b3abbd",
+    "playerLogSha256": "350681a816466d43f469324e32ea783df2c82e0237c672af1c7602dcf84d21d6",
+    "sourceBeforeManifestSha256": "4f9b61faf296e62a4ee33fde8ae051cca66c16922464b891800db51158aec013",
+    "sourceAfterManifestSha256": "4f9b61faf296e62a4ee33fde8ae051cca66c16922464b891800db51158aec013"
+  }
+}

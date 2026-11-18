@@ -1,0 +1,1186 @@
+{
+  "schema_version": 1,
+  "reference_id": "KM-SL17B-SIDE-04",
+  "source_image": {
+    "filename": "04_side_rear_view.png",
+    "size_px": [
+      1600,
+      873
+    ],
+    "sha256": "990eddafee9e25a3d16d46ae009cf9ca8f5e49e94cea7bdd3ac2831efbb8c0cd",
+    "copyright_pixels_storage": "external source and ignored tmp only; binary foreground mask contains no photo pixels"
+  },
+  "mask_filename": "reference-side-visible-mask.png",
+  "mask_values": {
+    "255": "only photograph-visible yellow shell surface. Printed dark decal on that surface may be retained via small hole fill.",
+    "0": "background, all non-shell accessories, and shell occluded by accessories. Zero is not evidence that hidden shell is absent."
+  },
+  "coordinates": "original pixel x-right y-down; polygon boundary rasterized by PIL.ImageDraw",
+  "parameters": {
+    "support_polygons": [
+      {
+        "id": "shell_envelope_visible_support",
+        "points": [
+          [
+            523,
+            169
+          ],
+          [
+            550,
+            142
+          ],
+          [
+            588,
+            115
+          ],
+          [
+            634,
+            94
+          ],
+          [
+            692,
+            78
+          ],
+          [
+            750,
+            68
+          ],
+          [
+            808,
+            70
+          ],
+          [
+            860,
+            82
+          ],
+          [
+            907,
+            100
+          ],
+          [
+            949,
+            126
+          ],
+          [
+            974,
+            155
+          ],
+          [
+            998,
+            184
+          ],
+          [
+            1042,
+            207
+          ],
+          [
+            1069,
+            185
+          ],
+          [
+            1098,
+            177
+          ],
+          [
+            1128,
+            176
+          ],
+          [
+            1146,
+            210
+          ],
+          [
+            1156,
+            250
+          ],
+          [
+            1167,
+            297
+          ],
+          [
+            1176,
+            341
+          ],
+          [
+            1189,
+            395
+          ],
+          [
+            1204,
+            455
+          ],
+          [
+            1211,
+            512
+          ],
+          [
+            1232,
+            556
+          ],
+          [
+            1243,
+            605
+          ],
+          [
+            1225,
+            645
+          ],
+          [
+            1168,
+            694
+          ],
+          [
+            1104,
+            733
+          ],
+          [
+            1066,
+            755
+          ],
+          [
+            1035,
+            773
+          ],
+          [
+            1014,
+            787
+          ],
+          [
+            992,
+            782
+          ],
+          [
+            952,
+            766
+          ],
+          [
+            906,
+            742
+          ],
+          [
+            858,
+            711
+          ],
+          [
+            810,
+            678
+          ],
+          [
+            762,
+            644
+          ],
+          [
+            721,
+            613
+          ],
+          [
+            696,
+            590
+          ],
+          [
+            680,
+            568
+          ],
+          [
+            614,
+            519
+          ],
+          [
+            573,
+            501
+          ],
+          [
+            542,
+            482
+          ],
+          [
+            502,
+            454
+          ],
+          [
+            470,
+            429
+          ],
+          [
+            441,
+            403
+          ],
+          [
+            434,
+            382
+          ],
+          [
+            437,
+            364
+          ],
+          [
+            446,
+            347
+          ],
+          [
+            445,
+            320
+          ],
+          [
+            462,
+            274
+          ],
+          [
+            485,
+            226
+          ]
+        ]
+      }
+    ],
+    "exclusion_polygons": [
+      {
+        "id": "brass_rear_weight",
+        "reason": "rear brass weight is not yellow shell, despite overlapping yellow hue",
+        "points": [
+          [
+            512,
+            166
+          ],
+          [
+            538,
+            177
+          ],
+          [
+            582,
+            204
+          ],
+          [
+            628,
+            233
+          ],
+          [
+            679,
+            264
+          ],
+          [
+            726,
+            294
+          ],
+          [
+            749,
+            310
+          ],
+          [
+            712,
+            345
+          ],
+          [
+            676,
+            385
+          ],
+          [
+            649,
+            424
+          ],
+          [
+            630,
+            455
+          ],
+          [
+            616,
+            467
+          ],
+          [
+            585,
+            455
+          ],
+          [
+            547,
+            431
+          ],
+          [
+            505,
+            403
+          ],
+          [
+            463,
+            372
+          ],
+          [
+            438,
+            350
+          ],
+          [
+            430,
+            331
+          ],
+          [
+            437,
+            298
+          ],
+          [
+            457,
+            254
+          ],
+          [
+            482,
+            211
+          ],
+          [
+            500,
+            182
+          ]
+        ]
+      },
+      {
+        "id": "sideblock_below_valves_brass_mount",
+        "reason": "brass mounting/supply fitting surface must not be yellow shell",
+        "points": [
+          [
+            903,
+            411
+          ],
+          [
+            921,
+            418
+          ],
+          [
+            935,
+            438
+          ],
+          [
+            938,
+            464
+          ],
+          [
+            950,
+            495
+          ],
+          [
+            949,
+            539
+          ],
+          [
+            936,
+            566
+          ],
+          [
+            919,
+            598
+          ],
+          [
+            902,
+            627
+          ],
+          [
+            889,
+            644
+          ],
+          [
+            870,
+            649
+          ],
+          [
+            850,
+            643
+          ],
+          [
+            832,
+            631
+          ],
+          [
+            819,
+            617
+          ],
+          [
+            814,
+            603
+          ],
+          [
+            818,
+            587
+          ],
+          [
+            841,
+            563
+          ],
+          [
+            870,
+            533
+          ],
+          [
+            889,
+            501
+          ],
+          [
+            898,
+            463
+          ],
+          [
+            896,
+            433
+          ]
+        ]
+      },
+      {
+        "id": "upper_valve_sideblock_and_label",
+        "reason": "control knobs, sideblock, label and hardware excluding their warm reflections",
+        "points": [
+          [
+            1026,
+            349
+          ],
+          [
+            1060,
+            350
+          ],
+          [
+            1178,
+            326
+          ],
+          [
+            1203,
+            328
+          ],
+          [
+            1218,
+            354
+          ],
+          [
+            1220,
+            401
+          ],
+          [
+            1215,
+            447
+          ],
+          [
+            1218,
+            476
+          ],
+          [
+            1207,
+            496
+          ],
+          [
+            1189,
+            511
+          ],
+          [
+            1163,
+            522
+          ],
+          [
+            1095,
+            528
+          ],
+          [
+            1090,
+            478
+          ],
+          [
+            1054,
+            469
+          ],
+          [
+            1032,
+            472
+          ],
+          [
+            1004,
+            466
+          ],
+          [
+            975,
+            452
+          ],
+          [
+            954,
+            435
+          ],
+          [
+            945,
+            407
+          ],
+          [
+            951,
+            379
+          ],
+          [
+            971,
+            359
+          ],
+          [
+            1000,
+            351
+          ]
+        ]
+      },
+      {
+        "id": "lower_inlet_brass_tube",
+        "reason": "blue-capped supply valve including gold tube",
+        "points": [
+          [
+            860,
+            501
+          ],
+          [
+            881,
+            489
+          ],
+          [
+            914,
+            487
+          ],
+          [
+            938,
+            476
+          ],
+          [
+            1067,
+            453
+          ],
+          [
+            1083,
+            464
+          ],
+          [
+            1092,
+            510
+          ],
+          [
+            1082,
+            531
+          ],
+          [
+            946,
+            553
+          ],
+          [
+            918,
+            552
+          ],
+          [
+            889,
+            556
+          ],
+          [
+            869,
+            549
+          ],
+          [
+            859,
+            532
+          ]
+        ]
+      },
+      {
+        "id": "diagonal_black_webbing",
+        "reason": "dark warm webbing must remain unknown occluded shell even if broad hue thresholds pass",
+        "points": [
+          [
+            953,
+            157
+          ],
+          [
+            913,
+            180
+          ],
+          [
+            866,
+            214
+          ],
+          [
+            821,
+            250
+          ],
+          [
+            774,
+            290
+          ],
+          [
+            727,
+            332
+          ],
+          [
+            682,
+            375
+          ],
+          [
+            642,
+            416
+          ],
+          [
+            617,
+            438
+          ],
+          [
+            624,
+            451
+          ],
+          [
+            635,
+            462
+          ],
+          [
+            613,
+            495
+          ],
+          [
+            599,
+            510
+          ],
+          [
+            631,
+            533
+          ],
+          [
+            666,
+            520
+          ],
+          [
+            695,
+            489
+          ],
+          [
+            723,
+            453
+          ],
+          [
+            761,
+            414
+          ],
+          [
+            801,
+            375
+          ],
+          [
+            844,
+            336
+          ],
+          [
+            887,
+            297
+          ],
+          [
+            931,
+            257
+          ],
+          [
+            974,
+            219
+          ],
+          [
+            1001,
+            201
+          ],
+          [
+            977,
+            178
+          ]
+        ]
+      },
+      {
+        "id": "horizontal_black_webbing",
+        "reason": "retainer webbing is an accessory and is not visible shell",
+        "points": [
+          [
+            400,
+            528
+          ],
+          [
+            435,
+            537
+          ],
+          [
+            511,
+            530
+          ],
+          [
+            583,
+            514
+          ],
+          [
+            642,
+            502
+          ],
+          [
+            685,
+            505
+          ],
+          [
+            697,
+            537
+          ],
+          [
+            701,
+            574
+          ],
+          [
+            686,
+            591
+          ],
+          [
+            628,
+            606
+          ],
+          [
+            566,
+            618
+          ],
+          [
+            508,
+            625
+          ],
+          [
+            451,
+            622
+          ],
+          [
+            424,
+            607
+          ]
+        ]
+      },
+      {
+        "id": "front_lower_ambiguous_gold_reflections",
+        "reason": "uncertain small yellow/gold reflections on forward hardware; exclude conservatively instead of claiming visible shell",
+        "points": [
+          [
+            1193,
+            630
+          ],
+          [
+            1239,
+            622
+          ],
+          [
+            1246,
+            650
+          ],
+          [
+            1230,
+            665
+          ],
+          [
+            1190,
+            665
+          ]
+        ]
+      },
+      {
+        "id": "top_buckle",
+        "reason": "strap adjuster; no hidden shell fill",
+        "points": [
+          [
+            953,
+            140
+          ],
+          [
+            970,
+            125
+          ],
+          [
+            984,
+            128
+          ],
+          [
+            1004,
+            153
+          ],
+          [
+            1028,
+            181
+          ],
+          [
+            1043,
+            204
+          ],
+          [
+            1029,
+            214
+          ],
+          [
+            1009,
+            211
+          ],
+          [
+            991,
+            196
+          ],
+          [
+            972,
+            176
+          ],
+          [
+            961,
+            158
+          ]
+        ]
+      }
+    ],
+    "surface_restore_polygons": [
+      {
+        "id": "printed_decal_on_shell",
+        "reason": "black manufacturer decal is printed on visible yellow shell and is not an occluding separate accessory",
+        "points": [
+          [
+            727,
+            426
+          ],
+          [
+            781,
+            442
+          ],
+          [
+            844,
+            501
+          ],
+          [
+            797,
+            493
+          ],
+          [
+            753,
+            478
+          ],
+          [
+            726,
+            449
+          ]
+        ]
+      }
+    ],
+    "seed_points_px": [
+      [
+        650,
+        150
+      ],
+      [
+        800,
+        110
+      ],
+      [
+        760,
+        200
+      ],
+      [
+        900,
+        170
+      ],
+      [
+        1080,
+        245
+      ],
+      [
+        1110,
+        320
+      ],
+      [
+        850,
+        400
+      ],
+      [
+        785,
+        500
+      ],
+      [
+        760,
+        570
+      ],
+      [
+        780,
+        620
+      ],
+      [
+        980,
+        680
+      ],
+      [
+        1010,
+        735
+      ],
+      [
+        460,
+        380
+      ],
+      [
+        550,
+        450
+      ],
+      [
+        1219,
+        591
+      ]
+    ],
+    "primary_hsv": {
+      "hue_min_deg": 38,
+      "hue_max_deg": 62,
+      "saturation_min": 0.19,
+      "value_min": 0.22
+    },
+    "sensitivity_hsv": {
+      "hue_min_deg": 34,
+      "hue_max_deg": 66,
+      "saturation_min": 0.13,
+      "value_min": 0.18
+    },
+    "small_hole_fill_max_px": 500,
+    "connectivity": 8,
+    "minimum_seeded_component_area_px": 12,
+    "uncertainty_edge_radius_px": 4,
+    "semantics": {
+      "foreground": "only photograph-visible yellow shell surface. Printed dark decal on that surface may be retained via small hole fill.",
+      "zero": "background, all non-shell accessories, and shell occluded by accessories. Zero is not evidence that hidden shell is absent.",
+      "no_hidden_completion": true
+    }
+  },
+  "algorithm": [
+    "Rasterize union of support polygons and union of explicitly excluded accessory polygons.",
+    "Convert RGB to HSV in degrees/value0..1 with max-channel RGB formula. Threshold by stored HSV ranges.",
+    "After thresholding, restore only the stored small printed-decal surface polygon (inside support and outside accessory exclusions), then retain 8-connected components reached by seeds; radius8 search for a seed on dark printing.",
+    "Fill only fully enclosed holes no larger than500px; then reapply support/exclusions. No opening/closing or unseen-shell interpolation.",
+    "Generate separate broad-threshold sensitivity mask with same support/exclusions/seeds; do not call it independent human annotation."
+  ],
+  "statistics": {
+    "primary_area_px": 191223,
+    "bounding_box_xyxy_exclusive": [
+      436,
+      68,
+      1238,
+      786
+    ],
+    "primary": {
+      "selected_seeded_components": 4,
+      "initial_color_candidate_area_px": 192019,
+      "small_enclosed_holes_filled_px": 377
+    },
+    "sensitivity_area_px": 194135,
+    "sensitivity": {
+      "selected_seeded_components": 4,
+      "initial_color_candidate_area_px": 195348,
+      "small_enclosed_holes_filled_px": 325
+    },
+    "primary_vs_sensitivity_xor_px": 2912,
+    "primary_vs_sensitivity_iou": 0.985,
+    "uncertainty_band_area_px": 40070
+  },
+  "review": {
+    "annotator": "Codex AI manual source-image/crop inspection",
+    "independent_human_ground_truth": false,
+    "status": "AI reviewed original, coordinate crops, primary and sensitivity overlays; still draft for root/user review",
+    "replay_verified": true,
+    "replay_sha256": "81bf0b3e6377a7e5e5f430f11040505347ef173568749b5ae70fd205453cb950"
+  },
+  "limitations": [
+    "Single perspective image; no absolute millimetre geometry.",
+    "Near-white highlights and low-light shell boundary may be ambiguous; polygon traces carry several pixels uncertainty.",
+    "Brass may share yellow hue; manual accessory exclusions are essential.",
+    "Some tiny yellow slivers may not connect to any seed; they must be manually reviewed.",
+    "Zero under straps/weights/sideblock/handle is unknown occluded shell, never a shell silhouette target.",
+    "Sensitivity result varies color thresholds only and is not a calibrated probability/independent annotation."
+  ],
+  "fit_usage": "Use foreground as visible-shell surface support and evaluate real visible shell boundary classes separately. Never force the hidden shell to stop at accessory masks.",
+  "mask_sha256": "81bf0b3e6377a7e5e5f430f11040505347ef173568749b5ae70fd205453cb950",
+  "boundary_classes": [
+    {
+      "id": "shell_dome_background",
+      "polyline_px": [
+        [
+          529,
+          169
+        ],
+        [
+          551,
+          145
+        ],
+        [
+          588,
+          117
+        ],
+        [
+          635,
+          95
+        ],
+        [
+          694,
+          80
+        ],
+        [
+          751,
+          70
+        ],
+        [
+          807,
+          72
+        ],
+        [
+          860,
+          84
+        ],
+        [
+          907,
+          102
+        ],
+        [
+          949,
+          128
+        ]
+      ],
+      "class": "visible_shell_vs_background",
+      "uncertainty_px": 5,
+      "fit_use": "high priority geometry silhouette; stop at rear weight and buckle occlusion"
+    },
+    {
+      "id": "front_upper_shell_background",
+      "polyline_px": [
+        [
+          1043,
+          207
+        ],
+        [
+          1070,
+          187
+        ],
+        [
+          1098,
+          179
+        ],
+        [
+          1127,
+          178
+        ],
+        [
+          1144,
+          210
+        ],
+        [
+          1156,
+          251
+        ],
+        [
+          1165,
+          297
+        ],
+        [
+          1172,
+          338
+        ]
+      ],
+      "class": "visible_shell_vs_background_or_faceport_hardware",
+      "uncertainty_px": 6,
+      "fit_use": "diagnostic; right boundary transitions to faceport hardware, inspect endpoint"
+    },
+    {
+      "id": "lower_shell_neck_material_transition",
+      "polyline_px": [
+        [
+          697,
+          588
+        ],
+        [
+          722,
+          611
+        ],
+        [
+          764,
+          644
+        ],
+        [
+          810,
+          677
+        ],
+        [
+          858,
+          710
+        ],
+        [
+          906,
+          740
+        ],
+        [
+          953,
+          764
+        ],
+        [
+          992,
+          781
+        ],
+        [
+          1014,
+          785
+        ]
+      ],
+      "class": "visible_shell_to_neck_rubber_material_boundary",
+      "uncertainty_px": 5,
+      "fit_use": "contact/material transition only; not external whole-model silhouette"
+    },
+    {
+      "id": "all_accessory_exclusion_edges",
+      "class": "occlusion_not_shell_termination",
+      "fit_use": "do not use as a full shell silhouette; hidden shell remains unknown"
+    }
+  ],
+  "uncertainty_regions": [
+    {
+      "id": "strap_edges",
+      "reason": "manual polygon near dark woven fibers; primary/broad hue thresholds differ at fringes",
+      "approx_bbox_xyxy": [
+        590,
+        145,
+        1010,
+        610
+      ],
+      "allowance_px": 5
+    },
+    {
+      "id": "rear_weight_boundary",
+      "reason": "warm brass and yellow highlights overlap in hue; manual exclusion edge",
+      "approx_bbox_xyxy": [
+        425,
+        160,
+        755,
+        470
+      ],
+      "allowance_px": 5
+    },
+    {
+      "id": "sideblock_and_lower_foot",
+      "reason": "brass/bright metal share hue with shell; occlusion edge is manual",
+      "approx_bbox_xyxy": [
+        810,
+        325,
+        1225,
+        650
+      ],
+      "allowance_px": 6
+    },
+    {
+      "id": "small_front_visible_sliver",
+      "reason": "narrow yellow area near reflecting chrome; ambiguous lower gold pixels intentionally excluded",
+      "approx_bbox_xyxy": [
+        1190,
+        540,
+        1246,
+        665
+      ],
+      "allowance_px": 7
+    },
+    {
+      "id": "lower_shell_tip",
+      "reason": "white specular highlight and dark seam create an uncertain few-pixel edge",
+      "approx_bbox_xyxy": [
+        995,
+        742,
+        1045,
+        790
+      ],
+      "allowance_px": 6
+    }
+  ],
+  "replay": {
+    "dependencies": [
+      "Python 3",
+      "Pillow",
+      "NumPy",
+      "SciPy"
+    ],
+    "usage": "Load this JSON as d, provide original source path, then execute replay_python with source_path and output_path defined. It writes only the primary binary mask; compare SHA256 to mask_sha256.",
+    "python": "import numpy as np\nfrom PIL import Image, ImageDraw\nfrom scipy import ndimage as ndi\np=d['parameters']; a=np.asarray(Image.open(source_path).convert('RGB')); h,w=a.shape[:2]\ndef poly(points):\n    im=Image.new('1',(w,h)); ImageDraw.Draw(im).polygon([tuple(v) for v in points],fill=1)\n    return np.asarray(im,dtype=bool)\nsupport=np.zeros((h,w),bool); excluded=support.copy()\nfor r in p['support_polygons']: support|=poly(r['points'])\nfor r in p['exclusion_polygons']: excluded|=poly(r['points'])\nrgb=a.astype(float)/255; mx=rgb.max(2); mn=rgb.min(2); delta=mx-mn\nsat=np.divide(delta,mx,out=np.zeros_like(mx),where=mx>0); hue=np.zeros_like(mx)\nr,g,b=rgb[:,:,0],rgb[:,:,1],rgb[:,:,2]\nrr=(mx==r)&(delta>0); gg=(mx==g)&~rr&(delta>0); bb=~rr&~gg&(delta>0)\nhue[rr]=np.mod((g[rr]-b[rr])/delta[rr],6)\nhue[gg]=(b[gg]-r[gg])/delta[gg]+2; hue[bb]=(r[bb]-g[bb])/delta[bb]+4; hue*=60\nt=p['primary_hsv']; candidate=(hue>=t['hue_min_deg'])&(hue<=t['hue_max_deg'])&(sat>=t['saturation_min'])&(mx>=t['value_min'])&support&~excluded\nfor r in p.get('surface_restore_polygons',[]): candidate|=poly(r['points'])&support&~excluded\nst=ndi.generate_binary_structure(2,2); lab,n=ndi.label(candidate,st); sizes=np.bincount(lab.ravel()); wanted=set()\nfor x,y in p['seed_points_px']:\n    if lab[y,x]>0: wanted.add(int(lab[y,x]))\n    else:\n        choices=np.unique(lab[max(0,y-8):min(h,y+9),max(0,x-8):min(w,x+9)]); choices=choices[choices>0]\n        if len(choices): wanted.add(int(max(choices,key=lambda z:sizes[z])))\nkeep=np.isin(lab,list(wanted))&np.isin(lab,np.flatnonzero(sizes>=p['minimum_seeded_component_area_px']))\nholes=ndi.binary_fill_holes(keep)&~keep; hl,n=ndi.label(holes,st); hs=np.bincount(hl.ravel())\nsmall=np.isin(hl,np.flatnonzero((hs<=p['small_hole_fill_max_px'])&(np.arange(len(hs))>0)))\nkeep=(keep|small)&support&~excluded\nImage.fromarray((keep*255).astype(np.uint8),'L').save(output_path)\n"
+  }
+}

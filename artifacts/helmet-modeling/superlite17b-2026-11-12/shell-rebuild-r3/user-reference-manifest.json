@@ -1,0 +1,28 @@
+{
+  "local_attachments": [
+    {
+      "name": "codex-clipboard-58fe95bb-80e9-41f1-8259-2d110a451ae1.png",
+      "sha256": "71259fea628e61c2772796fab3e30615e12ca4907d679d4524c72635ecaf9e7a",
+      "usage": "User supplied annotations; not ground-truth outline or source of measurement pixels.",
+      "committed": false
+    },
+    {
+      "name": "codex-clipboard-612d449b-b31f-4b9a-a806-325a548bfab8.png",
+      "sha256": "9b37e1846e4f16ab73b707576f719340e31cb77c120c0c3454dffba5cc8bbbbb",
+      "usage": "User supplied annotations; not ground-truth outline or source of measurement pixels.",
+      "committed": false
+    }
+  ],
+  "measurement_images": [
+    {
+      "path": "SuperLite17B/refs/01_overview_front34.png",
+      "role": "clean A from previously supplied user reference root"
+    },
+    {
+      "path": "SuperLite17B/refs/04_side_rear_view.png",
+      "role": "clean B from previously supplied user reference root"
+    }
+  ],
+  "path_resolution": "relative to local user-reference root D:/XR_documents/helmet",
+  "third_front_photo_available": false
+}

@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "check": "fresh-output",
+      "exit_code": 0,
+      "expected_failure": false,
+      "passed": true
+    },
+    {
+      "check": "existing-output",
+      "exit_code": 1,
+      "expected_failure": true,
+      "passed": true
+    },
+    {
+      "check": "nested-private",
+      "exit_code": 1,
+      "expected_failure": true,
+      "passed": true
+    },
+    {
+      "check": "wrong-reference-hash",
+      "exit_code": 1,
+      "expected_failure": true,
+      "passed": true
+    },
+    {
+      "check": "missing-reference",
+      "exit_code": 1,
+      "expected_failure": true,
+      "passed": true
+    },
+    {
+      "check": "existing-v4-report",
+      "exit_code": 1,
+      "expected_failure": true,
+      "passed": true
+    }
+  ],
+  "fresh_metrics_equal_archived": true,
+  "source_files_unchanged": true,
+  "fixture": "Private preview image is an existing own-model render; only the isolated fixture annotation hash is changed. Numeric masks/camera data remain the archived inputs.",
+  "limits": "Tests output routing and input-identity guards. Not a replay of source B segmentation, nor a new physical-accuracy acceptance."
+}

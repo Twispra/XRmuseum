@@ -1,0 +1,2007 @@
+{
+  "source_sha256": "6e85f7f048b3a6b8706428854ab8934099da25ff21d427e87fde9de930b1c8a2",
+  "geometry_edited": false,
+  "method": "Fixed-focal profiles, bounded perspective pose/crop; robust soft-L1; two sequential AI annotation passes.",
+  "limits": [
+    "Model geometry is estimated, not a real-world calibration target.",
+    "No metric scale, lens metadata or same-specimen identity.",
+    "Open-curve registration uses projected convex envelopes as an initial camera-matching approximation; final diagnostics require rendered visible masks.",
+    "Side view has only three confidently visible cap faces; handle outline adds estimated model geometry and is not independent ground truth.",
+    "The old 44.99/59.87 px values used different correspondences and cannot be called a directly comparable accuracy improvement."
+  ],
+  "annotations_sha256": {
+    "front": "444c933e2f0f1255f1a60112e15d196921d124a48470f3c6fe3fc9d7de9bd077",
+    "side": "192e5feeeccd17f54108c8c0acbee012ffbcdb5beb2a995986959bfb1961e522"
+  },
+  "views": {
+    "front": {
+      "annotation_file": "annotations-front.json",
+      "primary": {
+        "pass": "a",
+        "focal_width_factor": 3.8,
+        "focal_px": 7600.0,
+        "parameters": [
+          -0.6885622318390868,
+          -0.025961682843037848,
+          -0.170125145209993,
+          0.5458779623540294,
+          853.2400285916756,
+          837.4356118906261
+        ],
+        "parameter_order": [
+          "yaw_rad",
+          "elevation_rad",
+          "roll_rad",
+          "log_model_distance",
+          "crop_cx_px",
+          "crop_cy_px"
+        ],
+        "image_size": [
+          2000,
+          1497
+        ],
+        "target_world": [
+          0.0,
+          0.015,
+          0.17
+        ],
+        "objective_cost": 22.60321367789238,
+        "solver_success": true,
+        "open_curve_rms_px": 8.807362745812199,
+        "open_curve_p95_px": 17.663086057022284,
+        "cap_errors": [],
+        "camera_basis_right_up_back": [
+          [
+            0.763805867174297,
+            -0.6228607361934211,
+            -0.16924863538211957
+          ],
+          [
+            0.11447435965850342,
+            -0.12733647992531102,
+            0.9852314661342311
+          ],
+          [
+            -0.6352135217790124,
+            -0.771900203516504,
+            -0.025958766540108737
+          ]
+        ],
+        "bounds_active": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "candidates": [
+        {
+          "pass": "a",
+          "focal_width_factor": 0.8,
+          "focal_px": 1600.0,
+          "parameters": [
+            -0.5527085224804529,
+            0.01113233746246172,
+            -0.11351948102963302,
+            -0.758686852447057,
+            970.2334955039365,
+            782.7071599802102
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            2000,
+            1497
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 26.87060400415792,
+          "solver_success": true,
+          "open_curve_rms_px": 9.791471259821407,
+          "open_curve_p95_px": 22.46952458867196,
+          "cap_errors": [],
+          "camera_basis_right_up_back": [
+            [
+              0.8449655958501622,
+              -0.5226885495127738,
+              -0.11326880434529729
+            ],
+            [
+              0.10221637508340603,
+              -0.05005555434338837,
+              0.9935020151686582
+            ],
+            [
+              -0.5249618600378403,
+              -0.8510529488155298,
+              0.011132107527427796
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "a",
+          "focal_width_factor": 1.3,
+          "focal_px": 2600.0,
+          "parameters": [
+            -0.6094677913176031,
+            -0.005869930172915807,
+            -0.13923588232796452,
+            -0.3951833587275911,
+            918.8530410396145,
+            806.0010488797772
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            2000,
+            1497
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 24.52384805965566,
+          "solver_success": true,
+          "open_curve_rms_px": 9.263955998770378,
+          "open_curve_p95_px": 20.487030705420093,
+          "cap_errors": [],
+          "camera_basis_right_up_back": [
+            [
+              0.8124838958774134,
+              -0.5662233735771773,
+              -0.13878404142674552
+            ],
+            [
+              0.11047072846834928,
+              -0.08421213683851694,
+              0.9903052732166798
+            ],
+            [
+              -0.5724212933596483,
+              -0.8199386606472286,
+              -0.005869896463843046
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "a",
+          "focal_width_factor": 2.2,
+          "focal_px": 4400.0,
+          "parameters": [
+            -0.6548952341187537,
+            -0.015950909321791377,
+            -0.1485172104831358,
+            0.04929692044689903,
+            878.4843989859128,
+            820.2434232091067
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            2000,
+            1497
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 22.996473726260444,
+          "solver_success": true,
+          "open_curve_rms_px": 8.924772506874417,
+          "open_curve_p95_px": 18.402238594204892,
+          "cap_errors": [],
+          "camera_basis_right_up_back": [
+            [
+              0.785818365133559,
+              -0.6004992965979068,
+              -0.14795300539103595
+            ],
+            [
+              0.1077502347167714,
+              -0.10263716993945465,
+              0.9888657635216724
+            ],
+            [
+              -0.6089986731818892,
+              -0.793010848685085,
+              -0.015950232928076933
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "a",
+          "focal_width_factor": 3.8,
+          "focal_px": 7600.0,
+          "parameters": [
+            -0.6885622318390868,
+            -0.025961682843037848,
+            -0.170125145209993,
+            0.5458779623540294,
+            853.2400285916756,
+            837.4356118906261
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            2000,
+            1497
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 22.60321367789238,
+          "solver_success": true,
+          "open_curve_rms_px": 8.807362745812199,
+          "open_curve_p95_px": 17.663086057022284,
+          "cap_errors": [],
+          "camera_basis_right_up_back": [
+            [
+              0.763805867174297,
+              -0.6228607361934211,
+              -0.16924863538211957
+            ],
+            [
+              0.11447435965850342,
+              -0.12733647992531102,
+              0.9852314661342311
+            ],
+            [
+              -0.6352135217790124,
+              -0.771900203516504,
+              -0.025958766540108737
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "a",
+          "focal_width_factor": 6.0,
+          "focal_px": 12000.0,
+          "parameters": [
+            -0.7066613783564099,
+            -0.027971097203651367,
+            -0.17025145932126773,
+            0.9782144478592445,
+            838.0401495700899,
+            840.8503469275331
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            2000,
+            1497
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 22.826187201013695,
+          "solver_success": true,
+          "open_curve_rms_px": 8.882400565548291,
+          "open_curve_p95_px": 17.52190902891611,
+          "cap_errors": [],
+          "camera_basis_right_up_back": [
+            [
+              0.752614939363925,
+              -0.6363070182160081,
+              -0.16936390292883632
+            ],
+            [
+              0.11096071525420448,
+              -0.13097339250758874,
+              0.9851566830333784
+            ],
+            [
+              -0.6490442763914577,
+              -0.7602363770723589,
+              -0.02796744999786807
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "b",
+          "focal_width_factor": 0.8,
+          "focal_px": 1600.0,
+          "parameters": [
+            -0.5545767699032425,
+            0.012994014005476206,
+            -0.11326717151809461,
+            -0.7592954586200924,
+            969.5053303362832,
+            782.1566344004557
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            2000,
+            1497
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 25.80268844943065,
+          "solver_success": true,
+          "open_curve_rms_px": 9.579975720866027,
+          "open_curve_p95_px": 21.099286134771468,
+          "cap_errors": [],
+          "camera_basis_right_up_back": [
+            [
+              0.8439025562768625,
+              -0.5244577688998222,
+              -0.11301559250828039
+            ],
+            [
+              0.10288370665594258,
+              -0.048541754728373944,
+              0.9935082490611864
+            ],
+            [
+              -0.5265390948582175,
+              -0.8500516141320543,
+              0.012993648347480182
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "b",
+          "focal_width_factor": 1.3,
+          "focal_px": 2600.0,
+          "parameters": [
+            -0.6110585131670958,
+            -0.004006276563118481,
+            -0.1389822165306534,
+            -0.3956130903685951,
+            918.2022507998623,
+            805.4702949661582
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            2000,
+            1497
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 23.44343494700371,
+          "solver_success": true,
+          "open_curve_rms_px": 9.033584398309896,
+          "open_curve_p95_px": 20.975642123899966,
+          "cap_errors": [],
+          "camera_basis_right_up_back": [
+            [
+              0.811462000969902,
+              -0.5677479393603241,
+              -0.13853410530995122
+            ],
+            [
+              0.11118967609005079,
+              -0.08273212454088454,
+              0.9903495602563477
+            ],
+            [
+              -0.5737301429356073,
+              -0.8190345981221168,
+              -0.0040062658461690786
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "b",
+          "focal_width_factor": 2.2,
+          "focal_px": 4400.0,
+          "parameters": [
+            -0.6564485603769543,
+            -0.013799579795321603,
+            -0.14792811920796012,
+            0.048937598112279976,
+            877.7605776607414,
+            819.4745869500342
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            2000,
+            1497
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 21.893551652628762,
+          "solver_success": true,
+          "open_curve_rms_px": 8.677388125249427,
+          "open_curve_p95_px": 18.937846402366368,
+          "cap_errors": [],
+          "camera_basis_right_up_back": [
+            [
+              0.7847543942143522,
+              -0.6020308146410314,
+              -0.1473751640674955
+            ],
+            [
+              0.10842677727586687,
+              -0.10076452385967151,
+              0.9889844006357751
+            ],
+            [
+              -0.6102492726180299,
+              -0.7920892682987126,
+              -0.013799141827502371
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "b",
+          "focal_width_factor": 3.8,
+          "focal_px": 7600.0,
+          "parameters": [
+            -0.6904313224169469,
+            -0.024677744414479313,
+            -0.16891292372325123,
+            0.5453449653794319,
+            852.3237173474586,
+            836.9101374949107
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            2000,
+            1497
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 21.451426934777437,
+          "solver_success": true,
+          "open_curve_rms_px": 8.544159351008696,
+          "open_curve_p95_px": 18.039450293608976,
+          "cap_errors": [],
+          "camera_basis_right_up_back": [
+            [
+              0.7626408492559366,
+              -0.6246077862983259,
+              -0.168059657091429
+            ],
+            [
+              0.11411738941121113,
+              -0.12581787326015528,
+              0.985467951889995
+            ],
+            [
+              -0.6366758645340295,
+              -0.7707366450765115,
+              -0.024675239736420024
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "b",
+          "focal_width_factor": 6.0,
+          "focal_px": 12000.0,
+          "parameters": [
+            -0.7081358037978572,
+            -0.026867702475453285,
+            -0.17173189207036627,
+            0.9779373770040991,
+            837.796572467847,
+            841.4238991243586
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            2000,
+            1497
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 21.671492960929953,
+          "solver_success": true,
+          "open_curve_rms_px": 8.608569716542645,
+          "open_curve_p95_px": 17.9642380846922,
+          "cap_errors": [],
+          "camera_basis_right_up_back": [
+            [
+              0.7513885313024141,
+              -0.6373643333231048,
+              -0.1708273445171913
+            ],
+            [
+              0.11258701434589012,
+              -0.1312548878635817,
+              0.9849346773327645
+            ],
+            [
+              -0.6501841579336421,
+              -0.7593015613177104,
+              -0.026864470078672608
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "fit_inputs": [
+        "C01/C02 visible outer frame curves; fastener IDs excluded"
+      ],
+      "excluded_from_fit": [
+        "rear weight",
+        "rear hinge",
+        "shell",
+        "neck",
+        "unknown fastener roles"
+      ]
+    },
+    "side": {
+      "annotation_file": "annotations-side.json",
+      "primary": {
+        "pass": "a",
+        "focal_width_factor": 6.0,
+        "focal_px": 9600.0,
+        "parameters": [
+          -1.868753440720578,
+          0.05488567405502778,
+          -0.13920575552323405,
+          1.2874023093023639,
+          820.4061169165147,
+          439.84743012328244
+        ],
+        "parameter_order": [
+          "yaw_rad",
+          "elevation_rad",
+          "roll_rad",
+          "log_model_distance",
+          "crop_cx_px",
+          "crop_cy_px"
+        ],
+        "image_size": [
+          1600,
+          873
+        ],
+        "target_world": [
+          0.0,
+          0.015,
+          0.17
+        ],
+        "objective_cost": 35.88503682700761,
+        "solver_success": true,
+        "open_curve_rms_px": 15.801489101047771,
+        "open_curve_p95_px": 30.340728783950226,
+        "cap_errors": [
+          {
+            "annotation_id": "emergency_knob_silver_end_face_center",
+            "model_part": "Knob_Black_Emergency_520-525_CentreCap",
+            "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+            "model_point_world": [
+              -0.16156909801065922,
+              -0.018367410482217867,
+              0.17716000974178314
+            ],
+            "observed_px": [
+              1021,
+              405
+            ],
+            "projected_px": [
+              1037.5194727219784,
+              411.61831166042157
+            ],
+            "error_px": 17.79592729381254
+          },
+          {
+            "annotation_id": "upper_blue_dust_cap_visible_end_center",
+            "model_part": "Emergency_Inlet_DustCap",
+            "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+            "model_point_world": [
+              -0.13004296994768083,
+              0.04553775116801262,
+              0.18231999827548862
+            ],
+            "observed_px": [
+              905,
+              430
+            ],
+            "projected_px": [
+              842.9780838665764,
+              422.82293332078075
+            ],
+            "error_px": 62.43579395650694
+          },
+          {
+            "annotation_id": "lower_blue_dust_cap_visible_end_center",
+            "model_part": "CheckValve_DustCap",
+            "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+            "model_point_world": [
+              -0.13692297087982297,
+              0.043387752026319504,
+              0.14620000030845404
+            ],
+            "observed_px": [
+              874,
+              531
+            ],
+            "projected_px": [
+              868.0256491339343,
+              520.5050438853768
+            ],
+            "error_px": 12.07629794758006
+          }
+        ],
+        "camera_basis_right_up_back": [
+          [
+            -0.29800465385137553,
+            -0.9444563380369497,
+            -0.1385476518197138
+          ],
+          [
+            0.011199198102809713,
+            -0.1485915316961779,
+            0.9888352414179209
+          ],
+          [
+            -0.9544987188282528,
+            0.2931258812353808,
+            0.0548581215974952
+          ]
+        ],
+        "bounds_active": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "candidates": [
+        {
+          "pass": "a",
+          "focal_width_factor": 0.8,
+          "focal_px": 1280.0,
+          "parameters": [
+            -1.8082494806516944,
+            0.2224913627984221,
+            -0.15014863482066937,
+            -0.5326083070754387,
+            832.9838947455996,
+            372.1252390623306
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            1600,
+            873
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 49.50987228011015,
+          "solver_success": true,
+          "open_curve_rms_px": 24.584255460178717,
+          "open_curve_p95_px": 54.405388470060444,
+          "cap_errors": [
+            {
+              "annotation_id": "emergency_knob_silver_end_face_center",
+              "model_part": "Knob_Black_Emergency_520-525_CentreCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.16156909801065922,
+                -0.018367410482217867,
+                0.17716000974178314
+              ],
+              "observed_px": [
+                1021,
+                405
+              ],
+              "projected_px": [
+                1046.8799479207682,
+                416.07732702139026
+              ],
+              "error_px": 28.15100137331707
+            },
+            {
+              "annotation_id": "upper_blue_dust_cap_visible_end_center",
+              "model_part": "Emergency_Inlet_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13004296994768083,
+                0.04553775116801262,
+                0.18231999827548862
+              ],
+              "observed_px": [
+                905,
+                430
+              ],
+              "projected_px": [
+                842.8791265793105,
+                420.4041311142223
+              ],
+              "error_px": 62.85764563060216
+            },
+            {
+              "annotation_id": "lower_blue_dust_cap_visible_end_center",
+              "model_part": "CheckValve_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13692297087982297,
+                0.043387752026319504,
+                0.14620000030845404
+              ],
+              "observed_px": [
+                874,
+                531
+              ],
+              "projected_px": [
+                868.4930889653887,
+                520.2026833324767
+              ],
+              "error_px": 12.120565843305375
+            }
+          ],
+          "camera_basis_right_up_back": [
+            [
+              -0.26466272850476075,
+              -0.9532404907144414,
+              -0.1458979335114319
+            ],
+            [
+              0.17686895713023643,
+              -0.1967092484464211,
+              0.9643769198707043
+            ],
+            [
+              -0.9479826011821514,
+              0.2294298115723741,
+              0.22066025790292879
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "a",
+          "focal_width_factor": 1.3,
+          "focal_px": 2080.0,
+          "parameters": [
+            -1.849072915487177,
+            0.16438736419564204,
+            -0.12321062542014159,
+            -0.12516913671312405,
+            824.0577405854903,
+            395.24705329176203
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            1600,
+            873
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 43.07277872287358,
+          "solver_success": true,
+          "open_curve_rms_px": 19.11688647308254,
+          "open_curve_p95_px": 37.89112728698206,
+          "cap_errors": [
+            {
+              "annotation_id": "emergency_knob_silver_end_face_center",
+              "model_part": "Knob_Black_Emergency_520-525_CentreCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.16156909801065922,
+                -0.018367410482217867,
+                0.17716000974178314
+              ],
+              "observed_px": [
+                1021,
+                405
+              ],
+              "projected_px": [
+                1044.089952389456,
+                415.9475207712315
+              ],
+              "error_px": 25.55374947799022
+            },
+            {
+              "annotation_id": "upper_blue_dust_cap_visible_end_center",
+              "model_part": "Emergency_Inlet_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13004296994768083,
+                0.04553775116801262,
+                0.18231999827548862
+              ],
+              "observed_px": [
+                905,
+                430
+              ],
+              "projected_px": [
+                844.8975032442828,
+                419.7682650153105
+              ],
+              "error_px": 60.96719213698394
+            },
+            {
+              "annotation_id": "lower_blue_dust_cap_visible_end_center",
+              "model_part": "CheckValve_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13692297087982297,
+                0.043387752026319504,
+                0.14620000030845404
+              ],
+              "observed_px": [
+                874,
+                531
+              ],
+              "projected_px": [
+                868.312681125676,
+                519.3841454284673
+              ],
+              "error_px": 12.933432390716693
+            }
+          ],
+          "camera_basis_right_up_back": [
+            [
+              -0.2919549819760255,
+              -0.9487162878206473,
+              -0.12124229345896381
+            ],
+            [
+              0.12239937193490841,
+              -0.1627843680096967,
+              0.9790401642841949
+            ],
+            [
+              -0.9485677004037816,
+              0.27099567294607213,
+              0.16364798500191474
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "a",
+          "focal_width_factor": 2.2,
+          "focal_px": 3520.0000000000005,
+          "parameters": [
+            -1.8608077630195012,
+            0.11312181144999785,
+            -0.1279007876709102,
+            0.3429058609634972,
+            821.423790996105,
+            415.9314648938492
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            1600,
+            873
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 39.07368494240852,
+          "solver_success": true,
+          "open_curve_rms_px": 17.080370871206142,
+          "open_curve_p95_px": 30.445471533013205,
+          "cap_errors": [
+            {
+              "annotation_id": "emergency_knob_silver_end_face_center",
+              "model_part": "Knob_Black_Emergency_520-525_CentreCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.16156909801065922,
+                -0.018367410482217867,
+                0.17716000974178314
+              ],
+              "observed_px": [
+                1021,
+                405
+              ],
+              "projected_px": [
+                1040.672742144375,
+                413.8081358230478
+              ],
+              "error_px": 21.55458281100159
+            },
+            {
+              "annotation_id": "upper_blue_dust_cap_visible_end_center",
+              "model_part": "Emergency_Inlet_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13004296994768083,
+                0.04553775116801262,
+                0.18231999827548862
+              ],
+              "observed_px": [
+                905,
+                430
+              ],
+              "projected_px": [
+                844.1113683143036,
+                420.8368631215511
+              ],
+              "error_px": 61.57425229760879
+            },
+            {
+              "annotation_id": "lower_blue_dust_cap_visible_end_center",
+              "model_part": "CheckValve_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13692297087982297,
+                0.043387752026319504,
+                0.14620000030845404
+              ],
+              "observed_px": [
+                874,
+                531
+              ],
+              "projected_px": [
+                868.0810699662998,
+                519.6788452376438
+              ],
+              "error_px": 12.775064692480367
+            }
+          ],
+          "camera_basis_right_up_back": [
+            [
+              -0.29742433033677945,
+              -0.9462961859065988,
+              -0.12673711477835561
+            ],
+            [
+              0.07080807113934313,
+              -0.15424190982921115,
+              0.9854925927239451
+            ],
+            [
+              -0.9521160563635318,
+              0.284135463803555,
+              0.11288070439138256
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "a",
+          "focal_width_factor": 3.8,
+          "focal_px": 6080.0,
+          "parameters": [
+            -1.8349853195658838,
+            0.10626168717563604,
+            -0.17153837251696677,
+            0.869900639921669,
+            829.6971923693019,
+            422.4141530595249
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            1600,
+            873
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 36.32854297925293,
+          "solver_success": true,
+          "open_curve_rms_px": 20.22117659718459,
+          "open_curve_p95_px": 41.43190281539245,
+          "cap_errors": [
+            {
+              "annotation_id": "emergency_knob_silver_end_face_center",
+              "model_part": "Knob_Black_Emergency_520-525_CentreCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.16156909801065922,
+                -0.018367410482217867,
+                0.17716000974178314
+              ],
+              "observed_px": [
+                1021,
+                405
+              ],
+              "projected_px": [
+                1032.6584874033676,
+                410.66782923317254
+              ],
+              "error_px": 12.96320241108991
+            },
+            {
+              "annotation_id": "upper_blue_dust_cap_visible_end_center",
+              "model_part": "Emergency_Inlet_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13004296994768083,
+                0.04553775116801262,
+                0.18231999827548862
+              ],
+              "observed_px": [
+                905,
+                430
+              ],
+              "projected_px": [
+                842.4897907082902,
+                425.42809511066804
+              ],
+              "error_px": 62.67717750513704
+            },
+            {
+              "annotation_id": "lower_blue_dust_cap_visible_end_center",
+              "model_part": "CheckValve_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13692297087982297,
+                0.043387752026319504,
+                0.14620000030845404
+              ],
+              "observed_px": [
+                874,
+                531
+              ],
+              "projected_px": [
+                869.6712236314805,
+                520.9743103267472
+              ],
+              "error_px": 10.920291125836389
+            }
+          ],
+          "camera_basis_right_up_back": [
+            [
+              -0.2747704512946261,
+              -0.9464095571762258,
+              -0.16973552716166374
+            ],
+            [
+              0.05630548096651005,
+              -0.19206496926085231,
+              0.9797656558565206
+            ],
+            [
+              -0.9598598293024235,
+              0.25965361092872985,
+              0.10606182358980205
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "a",
+          "focal_width_factor": 6.0,
+          "focal_px": 9600.0,
+          "parameters": [
+            -1.868753440720578,
+            0.05488567405502778,
+            -0.13920575552323405,
+            1.2874023093023639,
+            820.4061169165147,
+            439.84743012328244
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            1600,
+            873
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 35.88503682700761,
+          "solver_success": true,
+          "open_curve_rms_px": 15.801489101047771,
+          "open_curve_p95_px": 30.340728783950226,
+          "cap_errors": [
+            {
+              "annotation_id": "emergency_knob_silver_end_face_center",
+              "model_part": "Knob_Black_Emergency_520-525_CentreCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.16156909801065922,
+                -0.018367410482217867,
+                0.17716000974178314
+              ],
+              "observed_px": [
+                1021,
+                405
+              ],
+              "projected_px": [
+                1037.5194727219784,
+                411.61831166042157
+              ],
+              "error_px": 17.79592729381254
+            },
+            {
+              "annotation_id": "upper_blue_dust_cap_visible_end_center",
+              "model_part": "Emergency_Inlet_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13004296994768083,
+                0.04553775116801262,
+                0.18231999827548862
+              ],
+              "observed_px": [
+                905,
+                430
+              ],
+              "projected_px": [
+                842.9780838665764,
+                422.82293332078075
+              ],
+              "error_px": 62.43579395650694
+            },
+            {
+              "annotation_id": "lower_blue_dust_cap_visible_end_center",
+              "model_part": "CheckValve_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13692297087982297,
+                0.043387752026319504,
+                0.14620000030845404
+              ],
+              "observed_px": [
+                874,
+                531
+              ],
+              "projected_px": [
+                868.0256491339343,
+                520.5050438853768
+              ],
+              "error_px": 12.07629794758006
+            }
+          ],
+          "camera_basis_right_up_back": [
+            [
+              -0.29800465385137553,
+              -0.9444563380369497,
+              -0.1385476518197138
+            ],
+            [
+              0.011199198102809713,
+              -0.1485915316961779,
+              0.9888352414179209
+            ],
+            [
+              -0.9544987188282528,
+              0.2931258812353808,
+              0.0548581215974952
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "b",
+          "focal_width_factor": 0.8,
+          "focal_px": 1280.0,
+          "parameters": [
+            -1.813645386683093,
+            0.21927287134364587,
+            -0.1422561253034479,
+            -0.5329456423607855,
+            832.2726039223361,
+            372.0339075645317
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            1600,
+            873
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 49.31496937253146,
+          "solver_success": true,
+          "open_curve_rms_px": 24.26004771237231,
+          "open_curve_p95_px": 54.01332494788466,
+          "cap_errors": [
+            {
+              "annotation_id": "emergency_knob_silver_end_face_center",
+              "model_part": "Knob_Black_Emergency_520-525_CentreCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.16156909801065922,
+                -0.018367410482217867,
+                0.17716000974178314
+              ],
+              "observed_px": [
+                1022,
+                404
+              ],
+              "projected_px": [
+                1047.8555200371732,
+                415.7288620876377
+              ],
+              "error_px": 28.391444525833624
+            },
+            {
+              "annotation_id": "upper_blue_dust_cap_visible_end_center",
+              "model_part": "Emergency_Inlet_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13004296994768083,
+                0.04553775116801262,
+                0.18231999827548862
+              ],
+              "observed_px": [
+                905,
+                429
+              ],
+              "projected_px": [
+                843.632201646407,
+                418.92789625089574
+              ],
+              "error_px": 62.18885711041788
+            },
+            {
+              "annotation_id": "lower_blue_dust_cap_visible_end_center",
+              "model_part": "CheckValve_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13692297087982297,
+                0.043387752026319504,
+                0.14620000030845404
+              ],
+              "observed_px": [
+                874,
+                530
+              ],
+              "projected_px": [
+                868.5643597341818,
+                519.0089660722864
+              ],
+              "error_px": 12.261688786604202
+            }
+          ],
+          "camera_basis_right_up_back": [
+            [
+              -0.2679743587534017,
+              -0.9534359658939531,
+              -0.1383820869569754
+            ],
+            [
+              0.17491152480497288,
+              -0.18939507529474392,
+              0.9661963899459042
+            ],
+            [
+              -0.9474152740699838,
+              0.23471123619026643,
+              0.21751996245157468
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "b",
+          "focal_width_factor": 1.3,
+          "focal_px": 2080.0,
+          "parameters": [
+            -1.8261628795637344,
+            0.1732307900722775,
+            -0.14719046938501498,
+            -0.11809446929523122,
+            830.0507525425953,
+            392.2349800392474
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            1600,
+            873
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 42.28112493668459,
+          "solver_success": true,
+          "open_curve_rms_px": 21.794054484495618,
+          "open_curve_p95_px": 47.26693931876879,
+          "cap_errors": [
+            {
+              "annotation_id": "emergency_knob_silver_end_face_center",
+              "model_part": "Knob_Black_Emergency_520-525_CentreCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.16156909801065922,
+                -0.018367410482217867,
+                0.17716000974178314
+              ],
+              "observed_px": [
+                1022,
+                404
+              ],
+              "projected_px": [
+                1040.413914638138,
+                413.32501260049344
+              ],
+              "error_px": 20.640448452007934
+            },
+            {
+              "annotation_id": "upper_blue_dust_cap_visible_end_center",
+              "model_part": "Emergency_Inlet_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13004296994768083,
+                0.04553775116801262,
+                0.18231999827548862
+              ],
+              "observed_px": [
+                905,
+                429
+              ],
+              "projected_px": [
+                843.4454706613063,
+                420.55852091643277
+              ],
+              "error_px": 62.1306579011232
+            },
+            {
+              "annotation_id": "lower_blue_dust_cap_visible_end_center",
+              "model_part": "CheckValve_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13692297087982297,
+                0.043387752026319504,
+                0.14620000030845404
+              ],
+              "observed_px": [
+                874,
+                530
+              ],
+              "projected_px": [
+                868.6433518420166,
+                518.8204811977234
+              ],
+              "error_px": 12.396585019225334
+            }
+          ],
+          "camera_basis_right_up_back": [
+            [
+              -0.27432802730228245,
+              -0.9507229551480463,
+              -0.14446451464288365
+            ],
+            [
+              0.1279264280720641,
+              -0.18497230052045138,
+              0.9743818948650957
+            ],
+            [
+              -0.9530891681459616,
+              0.24881943371597323,
+              0.1723656780455472
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "b",
+          "focal_width_factor": 2.2,
+          "focal_px": 3520.0000000000005,
+          "parameters": [
+            -1.865393924750628,
+            0.11028815267514773,
+            -0.12084253829959629,
+            0.34344167360567684,
+            820.6815264361961,
+            415.5098811172802
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            1600,
+            873
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 38.88934483938615,
+          "solver_success": true,
+          "open_curve_rms_px": 16.78129741306578,
+          "open_curve_p95_px": 30.106320855307693,
+          "cap_errors": [
+            {
+              "annotation_id": "emergency_knob_silver_end_face_center",
+              "model_part": "Knob_Black_Emergency_520-525_CentreCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.16156909801065922,
+                -0.018367410482217867,
+                0.17716000974178314
+              ],
+              "observed_px": [
+                1022,
+                404
+              ],
+              "projected_px": [
+                1041.4384951981306,
+                413.46553397749227
+              ],
+              "error_px": 21.62062508455308
+            },
+            {
+              "annotation_id": "upper_blue_dust_cap_visible_end_center",
+              "model_part": "Emergency_Inlet_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13004296994768083,
+                0.04553775116801262,
+                0.18231999827548862
+              ],
+              "observed_px": [
+                905,
+                429
+              ],
+              "projected_px": [
+                844.8669785527862,
+                419.318431870275
+              ],
+              "error_px": 60.90741358670205
+            },
+            {
+              "annotation_id": "lower_blue_dust_cap_visible_end_center",
+              "model_part": "CheckValve_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13692297087982297,
+                0.043387752026319504,
+                0.14620000030845404
+              ],
+              "observed_px": [
+                874,
+                530
+              ],
+              "projected_px": [
+                868.2021008162832,
+                518.2415537273056
+              ],
+              "error_px": 13.110175196860848
+            }
+          ],
+          "camera_basis_right_up_back": [
+            [
+              -0.3009339189800534,
+              -0.9460881801788484,
+              -0.11981624152501792
+            ],
+            [
+              0.06955306154119087,
+              -0.14708005702681848,
+              0.9866761517616787
+            ],
+            [
+              -0.9511052244823145,
+              0.28859073469337615,
+              0.11006470738426294
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "b",
+          "focal_width_factor": 3.8,
+          "focal_px": 6080.0,
+          "parameters": [
+            -1.8738051330847247,
+            0.08310363132402444,
+            -0.12883382778447217,
+            0.8600181896101423,
+            818.9147204556444,
+            427.3907780117231
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            1600,
+            873
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 36.73576477722089,
+          "solver_success": true,
+          "open_curve_rms_px": 16.482497265578868,
+          "open_curve_p95_px": 30.11514289398021,
+          "cap_errors": [
+            {
+              "annotation_id": "emergency_knob_silver_end_face_center",
+              "model_part": "Knob_Black_Emergency_520-525_CentreCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.16156909801065922,
+                -0.018367410482217867,
+                0.17716000974178314
+              ],
+              "observed_px": [
+                1022,
+                404
+              ],
+              "projected_px": [
+                1038.1723568927482,
+                412.3553905444828
+              ],
+              "error_px": 18.203232641958227
+            },
+            {
+              "annotation_id": "upper_blue_dust_cap_visible_end_center",
+              "model_part": "Emergency_Inlet_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13004296994768083,
+                0.04553775116801262,
+                0.18231999827548862
+              ],
+              "observed_px": [
+                905,
+                429
+              ],
+              "projected_px": [
+                844.6070683800692,
+                420.71214300058887
+              ],
+              "error_px": 60.95895966379612
+            },
+            {
+              "annotation_id": "lower_blue_dust_cap_visible_end_center",
+              "model_part": "CheckValve_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13692297087982297,
+                0.043387752026319504,
+                0.14620000030845404
+              ],
+              "observed_px": [
+                874,
+                530
+              ],
+              "projected_px": [
+                868.5585064990274,
+                518.0744076468243
+              ],
+              "error_px": 13.108379171173292
+            }
+          ],
+          "camera_basis_right_up_back": [
+            [
+              -0.3060991506494077,
+              -0.9433506877690169,
+              -0.12803433077668686
+            ],
+            [
+              0.04023292626676391,
+              -0.14718842032645146,
+              0.988289876790113
+            ],
+            [
+              -0.951149105879685,
+              0.29736349609110846,
+              0.08300800911206668
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "pass": "b",
+          "focal_width_factor": 6.0,
+          "focal_px": 9600.0,
+          "parameters": [
+            -1.873089439571576,
+            0.05100842414696038,
+            -0.13351007534985251,
+            1.2871190475536456,
+            819.5172032917665,
+            439.87942505549825
+          ],
+          "parameter_order": [
+            "yaw_rad",
+            "elevation_rad",
+            "roll_rad",
+            "log_model_distance",
+            "crop_cx_px",
+            "crop_cy_px"
+          ],
+          "image_size": [
+            1600,
+            873
+          ],
+          "target_world": [
+            0.0,
+            0.015,
+            0.17
+          ],
+          "objective_cost": 35.718958149945266,
+          "solver_success": true,
+          "open_curve_rms_px": 15.572847702744362,
+          "open_curve_p95_px": 30.086515031805373,
+          "cap_errors": [
+            {
+              "annotation_id": "emergency_knob_silver_end_face_center",
+              "model_part": "Knob_Black_Emergency_520-525_CentreCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.16156909801065922,
+                -0.018367410482217867,
+                0.17716000974178314
+              ],
+              "observed_px": [
+                1022,
+                404
+              ],
+              "projected_px": [
+                1038.331589462067,
+                411.06745253521166
+              ],
+              "error_px": 17.795215640586385
+            },
+            {
+              "annotation_id": "upper_blue_dust_cap_visible_end_center",
+              "model_part": "Emergency_Inlet_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13004296994768083,
+                0.04553775116801262,
+                0.18231999827548862
+              ],
+              "observed_px": [
+                905,
+                429
+              ],
+              "projected_px": [
+                843.5771973868215,
+                421.3475924436558
+              ],
+              "error_px": 61.89765764765162
+            },
+            {
+              "annotation_id": "lower_blue_dust_cap_visible_end_center",
+              "model_part": "CheckValve_DustCap",
+              "definition": "Outward end-face center of thin cap mesh, not whole-object mean.",
+              "model_point_world": [
+                -0.13692297087982297,
+                0.043387752026319504,
+                0.14620000030845404
+              ],
+              "observed_px": [
+                874,
+                530
+              ],
+              "projected_px": [
+                868.142311741276,
+                519.1443130043833
+              ],
+              "error_px": 12.3352524045191
+            }
+          ],
+          "camera_basis_right_up_back": [
+            [
+              -0.3015399625857195,
+              -0.944140048912328,
+              -0.1329406597081183
+            ],
+            [
+              0.008611911635256812,
+              -0.14212198120251623,
+              0.9898116878664638
+            ],
+            [
+              -0.9534146453363245,
+              0.29732290611202233,
+              0.050986307566955096
+            ]
+          ],
+          "bounds_active": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "fit_inputs": [
+        "three verified cap end faces",
+        "visible handle outer arch, downweighted"
+      ],
+      "excluded_from_fit": [
+        "rear weight",
+        "rear hinge",
+        "shell",
+        "neck",
+        "unknown fastener roles"
+      ]
+    }
+  }
+}

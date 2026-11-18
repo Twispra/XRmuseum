@@ -1,0 +1,1135 @@
+{
+  "schema_version": 1,
+  "reference_id": "KM-SL17B-FRONT34-01",
+  "image": {
+    "filename": "01_overview_front34.png",
+    "width_px": 2000,
+    "height_px": 1497,
+    "sha256": "803d629eb3f35dae96f1feedaeb7b08cb739e7f052b5c864b9a1ec5ec19afe8e",
+    "reference_storage": "external_local_reference_only; manufacturer pixels are not included in this annotation artifact"
+  },
+  "coordinates": {
+    "origin": "top_left",
+    "x_direction": "right",
+    "y_direction": "down",
+    "units": "original_image_pixels",
+    "display_resizing_applied_to_coordinates": false
+  },
+  "annotation_method": {
+    "annotator": "Codex AI, one annotator",
+    "passes": 2,
+    "pass_1": "Manual visual inspection of original image and original-pixel 100px-grid crops.",
+    "pass_2": "Second manual inspection of changed crops with 50px grid; not blinded to the first pass.",
+    "independence": "Not two humans or two independent observers. Repeat displacement is only same-AI annotation variability, not accuracy against ground truth.",
+    "point_id_order": "F01–F12 ordered by image-space y, then x; no 3D model screw IDs assigned.",
+    "uncertainty_meaning": "Conservative visual localization allowance in original pixels; not a confidence interval or millimetre error.",
+    "curve_sampling": "Polyline samples are image boundaries. Repeat vertices are approximate region samples, not exact physical points. Use curve-to-curve distances rather than treating every vertex as a stable point.",
+    "geometry_prior": "None of these annotations certifies focal length, lens distortion, absolute scale, historic identity, or part dimensions."
+  },
+  "landmarks": [
+    {
+      "id": "F01",
+      "feature": "图像右上方压圈区域的十字紧固头",
+      "feature_type": "visible_fastener_head_center",
+      "pass_1_px": [
+        1460,
+        378
+      ],
+      "pass_2_px": [
+        1461,
+        377
+      ],
+      "mean_px": [
+        1460.5,
+        377.5
+      ],
+      "repeat_displacement_px": 1.414,
+      "uncertainty_px": 4.0,
+      "confidence": "high",
+      "visibility": "visible",
+      "occluded": false,
+      "fit_role": "diagnostic_only_after_manual_3d_correspondence",
+      "model_object_id": null,
+      "semantic_caution": "仅标可见紧固头的图像椭圆中心；不由头部/位置判定是11枚压圈螺钉或4枚排气翼螺钉中的哪一枚。"
+    },
+    {
+      "id": "F02",
+      "feature": "图像左上方压圈区域的十字紧固头",
+      "feature_type": "visible_fastener_head_center",
+      "pass_1_px": [
+        962,
+        407
+      ],
+      "pass_2_px": [
+        963,
+        406
+      ],
+      "mean_px": [
+        962.5,
+        406.5
+      ],
+      "repeat_displacement_px": 1.414,
+      "uncertainty_px": 4.0,
+      "confidence": "high",
+      "visibility": "visible",
+      "occluded": false,
+      "fit_role": "diagnostic_only_after_manual_3d_correspondence",
+      "model_object_id": null,
+      "semantic_caution": "仅标可见紧固头的图像椭圆中心；不由头部/位置判定是11枚压圈螺钉或4枚排气翼螺钉中的哪一枚。"
+    },
+    {
+      "id": "F03",
+      "feature": "图像右上侧压圈区域的宽槽紧固头",
+      "feature_type": "visible_fastener_head_center",
+      "pass_1_px": [
+        1516,
+        444
+      ],
+      "pass_2_px": [
+        1518,
+        444
+      ],
+      "mean_px": [
+        1517.0,
+        444.0
+      ],
+      "repeat_displacement_px": 2.0,
+      "uncertainty_px": 6.0,
+      "confidence": "medium",
+      "visibility": "visible_with_strong_reflection",
+      "occluded": false,
+      "fit_role": "diagnostic_only_after_manual_3d_correspondence",
+      "model_object_id": null,
+      "semantic_caution": "仅标可见紧固头的图像椭圆中心；不由头部/位置判定是11枚压圈螺钉或4枚排气翼螺钉中的哪一枚。"
+    },
+    {
+      "id": "F04",
+      "feature": "图像左上侧压圈区域的宽槽紧固头",
+      "feature_type": "visible_fastener_head_center",
+      "pass_1_px": [
+        918,
+        480
+      ],
+      "pass_2_px": [
+        918,
+        479
+      ],
+      "mean_px": [
+        918.0,
+        479.5
+      ],
+      "repeat_displacement_px": 1.0,
+      "uncertainty_px": 6.0,
+      "confidence": "medium",
+      "visibility": "visible_with_strong_reflection",
+      "occluded": false,
+      "fit_role": "diagnostic_only_after_manual_3d_correspondence",
+      "model_object_id": null,
+      "semantic_caution": "仅标可见紧固头的图像椭圆中心；不由头部/位置判定是11枚压圈螺钉或4枚排气翼螺钉中的哪一枚。"
+    },
+    {
+      "id": "F05",
+      "feature": "图像右上中侧压圈区域的十字紧固头",
+      "feature_type": "visible_fastener_head_center",
+      "pass_1_px": [
+        1559,
+        485
+      ],
+      "pass_2_px": [
+        1559,
+        484
+      ],
+      "mean_px": [
+        1559.0,
+        484.5
+      ],
+      "repeat_displacement_px": 1.0,
+      "uncertainty_px": 4.0,
+      "confidence": "high",
+      "visibility": "visible",
+      "occluded": false,
+      "fit_role": "diagnostic_only_after_manual_3d_correspondence",
+      "model_object_id": null,
+      "semantic_caution": "仅标可见紧固头的图像椭圆中心；不由头部/位置判定是11枚压圈螺钉或4枚排气翼螺钉中的哪一枚。"
+    },
+    {
+      "id": "F06",
+      "feature": "图像左中上侧压圈区域的十字紧固头",
+      "feature_type": "visible_fastener_head_center",
+      "pass_1_px": [
+        875,
+        543
+      ],
+      "pass_2_px": [
+        875,
+        542
+      ],
+      "mean_px": [
+        875.0,
+        542.5
+      ],
+      "repeat_displacement_px": 1.0,
+      "uncertainty_px": 4.0,
+      "confidence": "high",
+      "visibility": "visible",
+      "occluded": false,
+      "fit_role": "diagnostic_only_after_manual_3d_correspondence",
+      "model_object_id": null,
+      "semantic_caution": "仅标可见紧固头的图像椭圆中心；不由头部/位置判定是11枚压圈螺钉或4枚排气翼螺钉中的哪一枚。"
+    },
+    {
+      "id": "F07",
+      "feature": "图像最右中侧压圈区域的十字紧固头",
+      "feature_type": "visible_fastener_head_center",
+      "pass_1_px": [
+        1615,
+        639
+      ],
+      "pass_2_px": [
+        1616,
+        640
+      ],
+      "mean_px": [
+        1615.5,
+        639.5
+      ],
+      "repeat_displacement_px": 1.414,
+      "uncertainty_px": 4.0,
+      "confidence": "high",
+      "visibility": "visible",
+      "occluded": false,
+      "fit_role": "diagnostic_only_after_manual_3d_correspondence",
+      "model_object_id": null,
+      "semantic_caution": "仅标可见紧固头的图像椭圆中心；不由头部/位置判定是11枚压圈螺钉或4枚排气翼螺钉中的哪一枚。"
+    },
+    {
+      "id": "F08",
+      "feature": "图像右下侧压圈区域的十字紧固头",
+      "feature_type": "visible_fastener_head_center",
+      "pass_1_px": [
+        1619,
+        789
+      ],
+      "pass_2_px": [
+        1619,
+        788
+      ],
+      "mean_px": [
+        1619.0,
+        788.5
+      ],
+      "repeat_displacement_px": 1.0,
+      "uncertainty_px": 4.0,
+      "confidence": "high",
+      "visibility": "visible",
+      "occluded": false,
+      "fit_role": "diagnostic_only_after_manual_3d_correspondence",
+      "model_object_id": null,
+      "semantic_caution": "仅标可见紧固头的图像椭圆中心；不由头部/位置判定是11枚压圈螺钉或4枚排气翼螺钉中的哪一枚。"
+    },
+    {
+      "id": "F09",
+      "feature": "图像右下角压圈/排气翼安装区域的十字紧固头",
+      "feature_type": "visible_fastener_head_center",
+      "pass_1_px": [
+        1545,
+        875
+      ],
+      "pass_2_px": [
+        1546,
+        875
+      ],
+      "mean_px": [
+        1545.5,
+        875.0
+      ],
+      "repeat_displacement_px": 1.0,
+      "uncertainty_px": 5.0,
+      "confidence": "high",
+      "visibility": "visible",
+      "occluded": false,
+      "fit_role": "diagnostic_only_after_manual_3d_correspondence",
+      "model_object_id": null,
+      "semantic_caution": "仅标可见紧固头的图像椭圆中心；不由头部/位置判定是11枚压圈螺钉或4枚排气翼螺钉中的哪一枚。"
+    },
+    {
+      "id": "F10",
+      "feature": "图像左下角压圈/排气翼安装区域的十字紧固头",
+      "feature_type": "visible_fastener_head_center",
+      "pass_1_px": [
+        938,
+        888
+      ],
+      "pass_2_px": [
+        939,
+        886
+      ],
+      "mean_px": [
+        938.5,
+        887.0
+      ],
+      "repeat_displacement_px": 2.236,
+      "uncertainty_px": 5.0,
+      "confidence": "high",
+      "visibility": "visible",
+      "occluded": false,
+      "fit_role": "diagnostic_only_after_manual_3d_correspondence",
+      "model_object_id": null,
+      "semantic_caution": "仅标可见紧固头的图像椭圆中心；不由头部/位置判定是11枚压圈螺钉或4枚排气翼螺钉中的哪一枚。"
+    },
+    {
+      "id": "F11",
+      "feature": "图像下缘中部鼻夹装置左侧的十字紧固头",
+      "feature_type": "visible_fastener_head_center",
+      "pass_1_px": [
+        1182,
+        919
+      ],
+      "pass_2_px": [
+        1183,
+        920
+      ],
+      "mean_px": [
+        1182.5,
+        919.5
+      ],
+      "repeat_displacement_px": 1.414,
+      "uncertainty_px": 5.0,
+      "confidence": "high",
+      "visibility": "visible",
+      "occluded": false,
+      "fit_role": "diagnostic_only_after_manual_3d_correspondence",
+      "model_object_id": null,
+      "semantic_caution": "仅标可见紧固头的图像椭圆中心；不由头部/位置判定是11枚压圈螺钉或4枚排气翼螺钉中的哪一枚。"
+    },
+    {
+      "id": "F12",
+      "feature": "图像下缘偏左压圈/排气翼安装区域的十字紧固头",
+      "feature_type": "visible_fastener_head_center",
+      "pass_1_px": [
+        1053,
+        954
+      ],
+      "pass_2_px": [
+        1054,
+        953
+      ],
+      "mean_px": [
+        1053.5,
+        953.5
+      ],
+      "repeat_displacement_px": 1.414,
+      "uncertainty_px": 5.0,
+      "confidence": "high",
+      "visibility": "visible",
+      "occluded": false,
+      "fit_role": "diagnostic_only_after_manual_3d_correspondence",
+      "model_object_id": null,
+      "semantic_caution": "仅标可见紧固头的图像椭圆中心；不由头部/位置判定是11枚压圈螺钉或4枚排气翼螺钉中的哪一枚。"
+    }
+  ],
+  "polylines": [
+    {
+      "id": "C01",
+      "feature": "面窗金属压圈外缘，左上可见段",
+      "boundary_type": "retainer_outer_boundary",
+      "closed": false,
+      "confidence": "medium",
+      "uncertainty_px": 7.0,
+      "pass_1_px": [
+        [
+          1044,
+          330
+        ],
+        [
+          1010,
+          342
+        ],
+        [
+          970,
+          365
+        ],
+        [
+          938,
+          393
+        ],
+        [
+          908,
+          424
+        ],
+        [
+          880,
+          460
+        ],
+        [
+          857,
+          501
+        ],
+        [
+          835,
+          548
+        ],
+        [
+          819,
+          589
+        ],
+        [
+          810,
+          625
+        ]
+      ],
+      "pass_2_px": [
+        [
+          1045,
+          330
+        ],
+        [
+          1009,
+          343
+        ],
+        [
+          971,
+          365
+        ],
+        [
+          938,
+          394
+        ],
+        [
+          908,
+          426
+        ],
+        [
+          879,
+          462
+        ],
+        [
+          856,
+          503
+        ],
+        [
+          836,
+          548
+        ],
+        [
+          820,
+          590
+        ],
+        [
+          811,
+          626
+        ]
+      ],
+      "start_end_reason": "起点在提手前脚遮挡边缘附近；终点在侧阀大旋钮开始遮挡压圈处。两端间以外的遮挡弧不补造。",
+      "occlusion_handling": "only_visible_segments_no_hidden_interpolation",
+      "vertex_correspondence": "image_curve_samples_only_not_cross_view_3d_landmarks",
+      "max_repeat_displacement_px": 2.236,
+      "mean_repeat_displacement_px": 1.471,
+      "fit_role": "open_curve_registration_with_occlusion_masks"
+    },
+    {
+      "id": "C02",
+      "feature": "面窗金属压圈外缘，从左下可见段经底部、右侧到右上",
+      "boundary_type": "retainer_outer_boundary",
+      "closed": false,
+      "confidence": "medium",
+      "uncertainty_px": 8.0,
+      "pass_1_px": [
+        [
+          855,
+          826
+        ],
+        [
+          861,
+          850
+        ],
+        [
+          879,
+          881
+        ],
+        [
+          912,
+          920
+        ],
+        [
+          951,
+          949
+        ],
+        [
+          999,
+          973
+        ],
+        [
+          1042,
+          985
+        ],
+        [
+          1080,
+          984
+        ],
+        [
+          1126,
+          971
+        ],
+        [
+          1175,
+          959
+        ],
+        [
+          1230,
+          945
+        ],
+        [
+          1290,
+          932
+        ],
+        [
+          1350,
+          920
+        ],
+        [
+          1410,
+          919
+        ],
+        [
+          1475,
+          916
+        ],
+        [
+          1526,
+          908
+        ],
+        [
+          1574,
+          874
+        ],
+        [
+          1608,
+          832
+        ],
+        [
+          1630,
+          789
+        ],
+        [
+          1638,
+          738
+        ],
+        [
+          1640,
+          690
+        ],
+        [
+          1635,
+          640
+        ],
+        [
+          1625,
+          588
+        ],
+        [
+          1610,
+          538
+        ],
+        [
+          1590,
+          489
+        ],
+        [
+          1560,
+          445
+        ],
+        [
+          1524,
+          405
+        ],
+        [
+          1486,
+          371
+        ],
+        [
+          1440,
+          344
+        ],
+        [
+          1396,
+          322
+        ],
+        [
+          1361,
+          312
+        ]
+      ],
+      "pass_2_px": [
+        [
+          856,
+          826
+        ],
+        [
+          862,
+          851
+        ],
+        [
+          880,
+          881
+        ],
+        [
+          913,
+          921
+        ],
+        [
+          952,
+          950
+        ],
+        [
+          1000,
+          974
+        ],
+        [
+          1042,
+          986
+        ],
+        [
+          1081,
+          985
+        ],
+        [
+          1127,
+          972
+        ],
+        [
+          1176,
+          959
+        ],
+        [
+          1231,
+          945
+        ],
+        [
+          1291,
+          933
+        ],
+        [
+          1350,
+          922
+        ],
+        [
+          1411,
+          920
+        ],
+        [
+          1474,
+          917
+        ],
+        [
+          1527,
+          907
+        ],
+        [
+          1574,
+          874
+        ],
+        [
+          1607,
+          831
+        ],
+        [
+          1629,
+          789
+        ],
+        [
+          1638,
+          739
+        ],
+        [
+          1639,
+          690
+        ],
+        [
+          1635,
+          639
+        ],
+        [
+          1626,
+          588
+        ],
+        [
+          1611,
+          538
+        ],
+        [
+          1590,
+          490
+        ],
+        [
+          1559,
+          444
+        ],
+        [
+          1524,
+          404
+        ],
+        [
+          1486,
+          370
+        ],
+        [
+          1439,
+          344
+        ],
+        [
+          1397,
+          323
+        ],
+        [
+          1362,
+          313
+        ]
+      ],
+      "start_end_reason": "左下起点为大旋钮遮挡后的重新可见处；右上终点受提手遮挡。白底上白色金属外缘较弱，保守不确定性8px。",
+      "occlusion_handling": "only_visible_segments_no_hidden_interpolation",
+      "vertex_correspondence": "image_curve_samples_only_not_cross_view_3d_landmarks",
+      "max_repeat_displacement_px": 2.0,
+      "mean_repeat_displacement_px": 1.187,
+      "fit_role": "open_curve_registration_with_occlusion_masks"
+    },
+    {
+      "id": "C03",
+      "feature": "镜片与内侧金属压圈的交界，左上可见段",
+      "boundary_type": "glass_aperture_material_boundary",
+      "closed": false,
+      "confidence": "medium",
+      "uncertainty_px": 6.0,
+      "pass_1_px": [
+        [
+          1080,
+          406
+        ],
+        [
+          1048,
+          418
+        ],
+        [
+          1002,
+          445
+        ],
+        [
+          968,
+          471
+        ],
+        [
+          939,
+          505
+        ],
+        [
+          916,
+          543
+        ],
+        [
+          897,
+          585
+        ],
+        [
+          884,
+          627
+        ]
+      ],
+      "pass_2_px": [
+        [
+          1082,
+          405
+        ],
+        [
+          1047,
+          419
+        ],
+        [
+          1003,
+          444
+        ],
+        [
+          969,
+          471
+        ],
+        [
+          940,
+          506
+        ],
+        [
+          917,
+          542
+        ],
+        [
+          898,
+          585
+        ],
+        [
+          885,
+          626
+        ]
+      ],
+      "start_end_reason": "仅描镜片实体边缘；靠旋钮的终点之后被挡。不沿镜面反光走线。",
+      "occlusion_handling": "only_visible_segments_no_hidden_interpolation",
+      "vertex_correspondence": "image_curve_samples_only_not_cross_view_3d_landmarks",
+      "max_repeat_displacement_px": 2.236,
+      "mean_repeat_displacement_px": 1.413,
+      "fit_role": "open_curve_registration_with_occlusion_masks"
+    },
+    {
+      "id": "C04",
+      "feature": "镜片与内侧金属压圈的交界，从左下经底部、右侧到顶部",
+      "boundary_type": "glass_aperture_material_boundary",
+      "closed": false,
+      "confidence": "medium",
+      "uncertainty_px": 6.0,
+      "pass_1_px": [
+        [
+          906,
+          810
+        ],
+        [
+          924,
+          838
+        ],
+        [
+          958,
+          862
+        ],
+        [
+          994,
+          878
+        ],
+        [
+          1045,
+          877
+        ],
+        [
+          1090,
+          865
+        ],
+        [
+          1150,
+          850
+        ],
+        [
+          1214,
+          840
+        ],
+        [
+          1280,
+          829
+        ],
+        [
+          1350,
+          822
+        ],
+        [
+          1420,
+          815
+        ],
+        [
+          1477,
+          808
+        ],
+        [
+          1513,
+          786
+        ],
+        [
+          1538,
+          757
+        ],
+        [
+          1554,
+          721
+        ],
+        [
+          1557,
+          682
+        ],
+        [
+          1555,
+          640
+        ],
+        [
+          1546,
+          594
+        ],
+        [
+          1531,
+          552
+        ],
+        [
+          1511,
+          515
+        ],
+        [
+          1483,
+          479
+        ],
+        [
+          1449,
+          451
+        ],
+        [
+          1412,
+          427
+        ],
+        [
+          1370,
+          409
+        ],
+        [
+          1316,
+          391
+        ],
+        [
+          1256,
+          384
+        ],
+        [
+          1192,
+          386
+        ],
+        [
+          1135,
+          393
+        ],
+        [
+          1080,
+          406
+        ]
+      ],
+      "pass_2_px": [
+        [
+          907,
+          811
+        ],
+        [
+          925,
+          839
+        ],
+        [
+          959,
+          863
+        ],
+        [
+          995,
+          879
+        ],
+        [
+          1046,
+          878
+        ],
+        [
+          1091,
+          865
+        ],
+        [
+          1151,
+          851
+        ],
+        [
+          1214,
+          840
+        ],
+        [
+          1281,
+          830
+        ],
+        [
+          1351,
+          823
+        ],
+        [
+          1420,
+          816
+        ],
+        [
+          1476,
+          807
+        ],
+        [
+          1513,
+          787
+        ],
+        [
+          1538,
+          758
+        ],
+        [
+          1553,
+          722
+        ],
+        [
+          1557,
+          683
+        ],
+        [
+          1554,
+          641
+        ],
+        [
+          1546,
+          595
+        ],
+        [
+          1532,
+          552
+        ],
+        [
+          1512,
+          516
+        ],
+        [
+          1484,
+          479
+        ],
+        [
+          1448,
+          451
+        ],
+        [
+          1412,
+          428
+        ],
+        [
+          1370,
+          410
+        ],
+        [
+          1317,
+          392
+        ],
+        [
+          1256,
+          385
+        ],
+        [
+          1192,
+          387
+        ],
+        [
+          1135,
+          394
+        ],
+        [
+          1082,
+          405
+        ]
+      ],
+      "start_end_reason": "左下起点在旋钮遮挡后；顶部轮廓连续可见。节点只用于图像曲线采样，不是永久3D对应点。",
+      "occlusion_handling": "only_visible_segments_no_hidden_interpolation",
+      "vertex_correspondence": "image_curve_samples_only_not_cross_view_3d_landmarks",
+      "max_repeat_displacement_px": 2.236,
+      "mean_repeat_displacement_px": 1.194,
+      "fit_role": "open_curve_registration_with_occlusion_masks"
+    },
+    {
+      "id": "C05",
+      "feature": "黄色壳体左上外廓与白背景的可见交界",
+      "boundary_type": "shell_visible_silhouette",
+      "closed": false,
+      "confidence": "medium",
+      "uncertainty_px": 25.0,
+      "pass_1_px": [
+        [
+          754,
+          154
+        ],
+        [
+          700,
+          172
+        ],
+        [
+          650,
+          200
+        ],
+        [
+          604,
+          233
+        ],
+        [
+          564,
+          274
+        ],
+        [
+          531,
+          312
+        ],
+        [
+          509,
+          348
+        ]
+      ],
+      "pass_2_px": [
+        [
+          754,
+          153
+        ],
+        [
+          701,
+          169
+        ],
+        [
+          651,
+          193
+        ],
+        [
+          602,
+          225
+        ],
+        [
+          553,
+          267
+        ],
+        [
+          518,
+          308
+        ],
+        [
+          490,
+          349
+        ]
+      ],
+      "start_end_reason": "上端受提手后脚遮挡；下端附近转为金属后配重遮挡，停止追踪。不补黄色壳体被附件遮住的背/下轮廓。两遍壳体描线波动较大，不能据单条折线强制拟合。",
+      "occlusion_handling": "only_visible_segments_no_hidden_interpolation",
+      "vertex_correspondence": "image_curve_samples_only_not_cross_view_3d_landmarks",
+      "max_repeat_displacement_px": 19.026,
+      "mean_repeat_displacement_px": 9.307,
+      "fit_role": "low_weight_diagnostic_due_to_boundary_and_sampling_uncertainty"
+    }
+  ],
+  "occlusion_notes": [
+    "提手前脚遮挡金属压圈顶部，未补这段轮廓。",
+    "大侧阀旋钮遮挡面窗左中/左下边界，分段保存并保持开曲线。",
+    "壳体底部、后侧及附件下方不可见，未当作完整壳体mask。",
+    "反光、文字、商标和镜片高光均未用作几何特征。"
+  ],
+  "excluded_observations": [
+    {
+      "feature": "提手后脚接触面",
+      "reason": "轮廓和接触区受遮挡且反光，未给可靠单点。"
+    },
+    {
+      "feature": "提手前脚的三枚可见紧固头",
+      "reason": "本轮按父任务要求优先窗口外缘和12个清晰周边中心，未进一步分配3D对应。"
+    },
+    {
+      "feature": "侧阀旋钮和调节器盖中心",
+      "reason": "可见但受不同零件装配/相机深度影响，本轮窗口基线不纳入。"
+    }
+  ],
+  "limitations": [
+    "Original photograph is perspective and uncalibrated.",
+    "Hardware roles require primary-source and model review before any 3D matching.",
+    "12 visible peripheral fastener heads do not establish 12 retainer screws; some lower heads may attach whiskers.",
+    "No completed camera fit or geometry accuracy is claimed."
+  ],
+  "summary": {
+    "landmark_count": 12,
+    "polyline_count": 5,
+    "largest_landmark_repeat_displacement_px": 2.236,
+    "manufacturer_pixels_committed": false
+  }
+}

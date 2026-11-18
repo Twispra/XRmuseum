@@ -1,0 +1,160 @@
+{
+  "run_id": "20261112-superlite-rear-r1-structural",
+  "base_commit": "e03f3a2d0a6801265b307a6de5ffb06b66d2afd6",
+  "research_baseline_sha256": "6e85f7f048b3a6b8706428854ab8934099da25ff21d427e87fde9de930b1c8a2",
+  "study_sha256": "f4c3241da1bd541d723d5dcf9cdc9be6a144ca3acdca1911b73002838840ce92",
+  "study_meshes": 146,
+  "study_triangles": 69056,
+  "preserved_original_parts": 141,
+  "new_vs_retained_surface_checks": 705,
+  "new_pair_surface_checks": 10,
+  "explicit_same_visual_fastener_join_pairs": 64,
+  "uncompleted_tab_to_pin_gap_model_m": 0.008782893419265747,
+  "product_unity_diff_empty": true,
+  "study_file_and_baseline_unchanged_during_readback_render": true,
+  "links": [
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "../../../docs/activity/2026-11-12-superlite-v4-accuracy-plan.md",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "baseline-v4/superlite17b-shell-v4.blend",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "baseline-v4/baseline-manifest.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "baseline-v4/readback.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "reference-inventory.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "camera-baseline-r1/README.md",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "rear-study-r1/README.md",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+      "target": "sources/superlite17b-rear-study-r1.blend",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/README.md",
+      "target": "../camera-baseline-r1/README.md",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/README.md",
+      "target": "../sources/superlite17b-rear-study-r1.blend",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/README.md",
+      "target": "../sources/superlite17b-rear-study-r1.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/README.md",
+      "target": "../../../helmet-interaction/qa/runs/20261112-superlite-rear-r1-structural/report.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/README.md",
+      "target": "renders/before-rear.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/README.md",
+      "target": "renders/after-rear.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/README.md",
+      "target": "renders/before-rear_detail.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/README.md",
+      "target": "renders/after-rear_detail.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/README.md",
+      "target": "renders/before-side_detail.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/README.md",
+      "target": "renders/after-side_detail.png",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-rear-structure-r1.md",
+      "target": "../../artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-rear-structure-r1.md",
+      "target": "../../artifacts/helmet-interaction/qa/runs/20261112-superlite-rear-r1-structural/report.json",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-12-superlite-rear-structure-r1.md",
+      "target": "../external-resources.md",
+      "exists": true
+    }
+  ],
+  "images": [
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/renders/after-rear.png",
+      "sha256": "1e8f6278996a0372c9c2944bd54ccbe3524c3ea62324452c5210e4b46b606a53"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/renders/after-rear_detail.png",
+      "sha256": "14b68c6d8a004330ea2c1f21ea7576b8ddf36a9e104dc57ec2700e329751535d"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/renders/after-side_detail.png",
+      "sha256": "f4e1b9dc2ff98385e06e3b19c52a312e8ee4d9288a002205d29c1b37655ad3ac"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/renders/before-rear.png",
+      "sha256": "8288bedd898613bd21e41860b4b2866d5df2170d97de4026fa27bd2c8e51d511"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/renders/before-rear_detail.png",
+      "sha256": "b9ecf20716ecf6a1fba518cd947b5880b7892a9e232976a1c2e5f34ce4323994"
+    },
+    {
+      "path": "artifacts/helmet-modeling/superlite17b-2026-11-12/rear-study-r1/renders/before-side_detail.png",
+      "sha256": "eb4db52bad87339f49bcb6d3a8b386da4e82765361a73ad32113628b931d3758"
+    }
+  ],
+  "natural_exit_codes": {
+    "saved_source_geometric_check": 0,
+    "matched_before_after_renders": 0,
+    "side_detail_renders": 0
+  },
+  "independent_ai_review": "Final source reread independently; sleeve/weight self-pair issue fixed to zero, same-fastener exception explicit; suitable only as independent structure study, not assembled product or photo accuracy improvement.",
+  "limits": [
+    "all newly selected geometry parameters estimated",
+    "lower pin interface not assembled",
+    "no real dimensions or photographic accuracy improvement established",
+    "no Unity export/import, headset, performance, build, load or seal validation"
+  ]
+}

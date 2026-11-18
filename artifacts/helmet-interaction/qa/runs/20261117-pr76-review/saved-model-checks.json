@@ -1,0 +1,66 @@
+{
+  "reviewed_assets_commit": "797984ede023e803b641fd46a558baa51e02bb80",
+  "execution_head": "52ae591706128734cf21a0d5ce08deab58e9f074",
+  "extra_tracked_modifications": [
+    "artifacts/helmet-modeling/superlite17b-2026-11-12/README.md",
+    "artifacts/helmet-modeling/superlite17b-2026-11-12/audit_v4_baseline.py",
+    "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md",
+    "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/measure_r3_baseline.py"
+  ],
+  "runs": [
+    {
+      "check": "v4",
+      "exit_code": 0,
+      "natural_exit": true
+    },
+    {
+      "check": "rear",
+      "exit_code": 0,
+      "natural_exit": true
+    },
+    {
+      "check": "shell",
+      "exit_code": 0,
+      "natural_exit": true
+    },
+    {
+      "check": "r3",
+      "exit_code": 0,
+      "natural_exit": true
+    }
+  ],
+  "historical_input_files_hashed": 116,
+  "historical_input_changes": [],
+  "scope": "Saved-model inventory, preserved objects and model triangle checks; no new shape, rendering, Unity, physical fit or device acceptance.",
+  "blender": "4.5.14 LTS",
+  "v4_objects_match_archived_readback": true,
+  "v4_meshes": 144,
+  "v4_triangles": 61400,
+  "rear_preserved_parts": 141,
+  "rear_new_parts": 5,
+  "rear_new_vs_retained_checks": 705,
+  "rear_tab_pin_gap_model_m": 0.008782893419265747,
+  "shell_fixed_parts": 145,
+  "shell_geometry_gate_passed": true,
+  "shell_existing_overlap_candidates": 22,
+  "r3_inventory": {
+    "blender": "4.5.14 LTS",
+    "model_meshes": 146,
+    "scene_objects": 152,
+    "model_triangles": 69056,
+    "materials": 12,
+    "cameras": [
+      "STUDIO_Camera"
+    ],
+    "lights": [
+      "STUDIO_Key",
+      "STUDIO_Fill",
+      "STUDIO_Rim",
+      "STUDIO_Front"
+    ],
+    "source_backup_work_sha256": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+    "saved_files_unchanged": true,
+    "scope": "Saved-file inventory; no render, reconstruction, physical accuracy or equipment acceptance."
+  },
+  "passed": true
+}
