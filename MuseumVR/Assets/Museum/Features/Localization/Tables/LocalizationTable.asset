@@ -1656,4 +1656,64 @@ MonoBehaviour:
     english: "See the Mark V demo"
     traditionalChinese: "\u5411\u5DE6\u67E5\u770B Mark V \u6F14\u793A"
     note: "Right exhibit teaching diagram."
+  - key: surface.call.telephone
+    chinese: "Mark V  /  \u6C34\u9762\u7535\u8BDD"
+    english: Mark V  /  Surface telephone
+    traditionalChinese: "Mark V  /  \u6C34\u9762\u96FB\u8A71"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.send
+    chinese: "\u6C34\u9762  /  \u672C\u5C55\u6A21\u62DF\u5BF9\u8BDD"
+    english: Surface  /  Staged conversation
+    traditionalChinese: "\u6C34\u9762  /  \u672C\u5C55\u6A21\u64EC\u5C0D\u8A71"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.receive
+    chinese: "\u6F5C\u6C34\u5458  /  \u672C\u5C55\u6A21\u62DF\u5BF9\u8BDD"
+    english: Diver  /  Staged conversation
+    traditionalChinese: "\u6F5B\u6C34\u54E1  /  \u672C\u5C55\u6A21\u64EC\u5C0D\u8A71"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.outgoing
+    chinese: "\u6F5C\u6C34\u5458\uFF0C\u6536\u5230\u5417\uFF1F"
+    english: Diver, do you read me?
+    traditionalChinese: "\u6F5B\u6C34\u54E1\uFF0C\u6536\u5230\u55CE\uFF1F"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.incoming
+    chinese: "\u6536\u5230\uFF0C\u6C34\u9762\u3002"
+    english: Loud and clear, surface.
+    traditionalChinese: "\u6536\u5230\uFF0C\u6C34\u9762\u3002"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.wait
+    chinese: "\u7B49\u5F85\u6F5C\u6C34\u5458\u56DE\u8BDD\u3002"
+    english: Waiting for the diver...
+    traditionalChinese: "\u7B49\u5F85\u6F5B\u6C34\u54E1\u56DE\u8A71\u3002"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.action
+    chinese: "\u4E0E\u6F5C\u6C34\u5458\u901A\u8BDD"
+    english: Call the diver
+    traditionalChinese: "\u8207\u6F5B\u6C34\u54E1\u901A\u8A71"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.hold
+    chinese: "\u677E\u5F00\u901A\u8BDD"
+    english: Release to call
+    traditionalChinese: "\u9B06\u958B\u901A\u8A71"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.again
+    chinese: "\u518D\u6B21\u901A\u8BDD"
+    english: Call again
+    traditionalChinese: "\u518D\u6B21\u901A\u8A71"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.connected
+    chinese: "\u901A\u8BDD\u4E2D"
+    english: On the line
+    traditionalChinese: "\u901A\u8A71\u4E2D"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.cable
+    chinese: "\u53CC\u5411\u901A\u8BDD"
+    english: Two-way voice
+    traditionalChinese: "\u96D9\u5411\u901A\u8A71"
+    note: Surface telephone interpretive scene.
+  - key: surface.call.static
+    chinese: "\u6536\u5230\u3002\u4f60\u7684\u58f0\u97f3\u4ece\u7535\u7f06\u4f20\u6765\u4e86\u3002"
+    english: "I hear you through the cable."
+    traditionalChinese: "\u6536\u5230\u3002\u4f60\u7684\u8072\u97f3\u5f9e\u96fb\u7e9c\u50b3\u4f86\u4e86\u3002"
+    note: "Static exchange when the visitor reduces motion."
   fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
