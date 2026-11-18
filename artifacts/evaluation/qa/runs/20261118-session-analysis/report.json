@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T10:45:30+08:00",
+  "generated_at": "2026-11-18T14:09:41+08:00",
   "input_dir": "inputs",
   "scope_note": "**本轮输入是 2026-11-17 晚组员自测的 7 场会话（验证记录器用），不是评价参与者数据，不得作为评价结论引用。**",
   "aggregate": {
@@ -12,7 +12,7 @@
     "select_total": 0,
     "activate_per_hover": 0.133,
     "median_first_interaction_s": 3.5,
-    "sessions_reaching_non_welcome": 1
+    "sessions_reaching_non_welcome": 0
   },
   "sessions": [
     {
@@ -27,9 +27,13 @@
       "unique_targets": 0,
       "per_target": {},
       "start_page": "Welcome",
-      "end_page": "-",
+      "end_page": "",
       "hints_max": 0,
-      "button_actions": 0,
+      "page_history": [
+        "Welcome"
+      ],
+      "reached_non_welcome": false,
+      "page_actions": [],
       "sequence": []
     },
     {
@@ -57,7 +61,11 @@
       "start_page": "Welcome",
       "end_page": "Welcome",
       "hints_max": 0,
-      "button_actions": 0,
+      "page_history": [
+        "Welcome"
+      ],
+      "reached_non_welcome": false,
+      "page_actions": [],
       "sequence": [
         "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
         "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot",
@@ -95,7 +103,11 @@
       "start_page": "Welcome",
       "end_page": "Welcome",
       "hints_max": 0,
-      "button_actions": 0,
+      "page_history": [
+        "Welcome"
+      ],
+      "reached_non_welcome": false,
+      "page_actions": [],
       "sequence": [
         "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
         "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot",
@@ -127,7 +139,11 @@
       "start_page": "Welcome",
       "end_page": "Welcome",
       "hints_max": 0,
-      "button_actions": 0,
+      "page_history": [
+        "Welcome"
+      ],
+      "reached_non_welcome": false,
+      "page_actions": [],
       "sequence": [
         "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
         "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot",
@@ -183,7 +199,11 @@
       "start_page": "Welcome",
       "end_page": "Welcome",
       "hints_max": 0,
-      "button_actions": 0,
+      "page_history": [
+        "Welcome"
+      ],
+      "reached_non_welcome": false,
+      "page_actions": [],
       "sequence": [
         "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
         "Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left",
@@ -225,7 +245,11 @@
       "start_page": "Welcome",
       "end_page": "Welcome",
       "hints_max": 0,
-      "button_actions": 0,
+      "page_history": [
+        "Welcome"
+      ],
+      "reached_non_welcome": false,
+      "page_actions": [],
       "sequence": [
         "HelmetExhibit/HelmetHotspotTour/Front window Hotspot",
         "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot",
@@ -255,7 +279,11 @@
       "start_page": "Welcome",
       "end_page": "Welcome",
       "hints_max": 0,
-      "button_actions": 0,
+      "page_history": [
+        "Welcome"
+      ],
+      "reached_non_welcome": false,
+      "page_actions": [],
       "sequence": [
         "HelmetExhibit/HelmetHotspotTour/Front window Hotspot"
       ]
@@ -263,9 +291,35 @@
   ],
   "findings": [
     {
+      "id": "B3",
+      "code": "",
+      "title": "在目标之间反复折返",
+      "source": "telemetry",
+      "severity": 2,
+      "cost": "S",
+      "requirement": "EQ5 流程可理解",
+      "affected_sessions": 4,
+      "affected_ratio": 0.571,
+      "sessions": [
+        "20261117-222652-MuseumVR.csv",
+        "20261117-224532-MuseumVR.csv",
+        "20261117-225004-MuseumVR.csv",
+        "20261117-225841-MuseumVR.csv"
+      ],
+      "evidence": [
+        "20261117-222652-MuseumVR.csv: 折返 2 次，合并同目标后的序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot']",
+        "20261117-224532-MuseumVR.csv: 折返 5 次，合并同目标后的序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot']",
+        "20261117-225004-MuseumVR.csv: 折返 4 次，合并同目标后的序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Reset photo helmet', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet right', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot']",
+        "20261117-225841-MuseumVR.csv: 折返 2 次，合并同目标后的序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot']"
+      ],
+      "note": "回看场次以区分正常比较与操作困难。",
+      "priority": 1.143,
+      "decision": ""
+    },
+    {
       "id": "B2",
       "code": "",
-      "title": "指得到但按不下去",
+      "title": "反复悬停且未记录选择或激活",
       "source": "telemetry",
       "severity": 3,
       "cost": "S",
@@ -277,42 +331,18 @@
         "20261117-225004-MuseumVR.csv"
       ],
       "evidence": [
-        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot：1 场会话命中，单场最高 hover 4 次，累计 4 次，从未按下",
-        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot：1 场会话命中，单场最高 hover 3 次，累计 3 次，从未按下",
-        "Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left：1 场会话命中，单场最高 hover 3 次，累计 3 次，从未按下"
+        "HelmetExhibit/HelmetHotspotTour/Front window Hotspot：1 场会话命中，单场最高 hover 4 次，累计 4 次，未记录 activate 或 select",
+        "HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot：1 场会话命中，单场最高 hover 3 次，累计 3 次，未记录 activate 或 select",
+        "Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left：1 场会话命中，单场最高 hover 3 次，累计 3 次，未记录 activate 或 select"
       ],
-      "note": "行为层只能证明“指了没按”，原因（不知道要按、按错键、以为悬停即选中）需人工编码。",
-      "priority": 0.858,
-      "decision": ""
-    },
-    {
-      "id": "B3",
-      "code": "",
-      "title": "在目标之间反复折返",
-      "source": "telemetry",
-      "severity": 2,
-      "cost": "S",
-      "requirement": "EQ5 流程可理解",
-      "affected_sessions": 3,
-      "affected_ratio": 0.429,
-      "sessions": [
-        "20261117-222652-MuseumVR.csv",
-        "20261117-224532-MuseumVR.csv",
-        "20261117-225004-MuseumVR.csv"
-      ],
-      "evidence": [
-        "20261117-222652-MuseumVR.csv: 折返 2 次，序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot']",
-        "20261117-224532-MuseumVR.csv: 折返 5 次，序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot']",
-        "20261117-225004-MuseumVR.csv: 折返 3 次，序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Reset photo helmet', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet right', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot']"
-      ],
-      "note": "折返本身不是缺陷，可能是在比较；但它标记了“决策成本最高的位置”。",
-      "priority": 0.858,
+      "note": "请结合观察记录确认是否尝试操作，以及使用的输入是否触发了 XRI 事件。",
+      "priority": 0.857,
       "decision": ""
     },
     {
       "id": "B1",
       "code": "",
-      "title": "整场没有任何交互",
+      "title": "会话未记录交互事件",
       "source": "telemetry",
       "severity": 3,
       "cost": "S",

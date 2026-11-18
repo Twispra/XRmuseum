@@ -1,6 +1,6 @@
 # 会话指标与优先级（自动生成）
 
-> 生成时间：2026-11-18T10:45:30+08:00　输入：`inputs`　会话数：**7**
+> 生成时间：2026-11-18T14:09:41+08:00　输入：`inputs`　会话数：**7**
 
 > **本轮输入是 2026-11-17 晚组员自测的 7 场会话（验证记录器用），不是评价参与者数据，不得作为评价结论引用。**
 
@@ -15,13 +15,15 @@
 | 时长中位数（秒） | 24.308 |
 | 有交互的会话数 | 6 |
 | hover 总数 | 30 |
-| activate（扳机）总数 | 4 |
-| select（抓握）总数 | 0 |
+| activate 总数 | 4 |
+| select 总数 | 0 |
 | 每次 hover 对应的 activate 数 | 0.133 |
 | 首次交互中位数（秒） | 3.5 |
-| 推进到 Welcome 以外页面的会话数 | 1 |
+| 曾观测到有效非 Welcome 页的会话数 | 0 |
 
 ## 2. 逐场会话
+
+结束页以末条快照为准，`-` 表示未知。曾到达的页面按整场有效快照统计。
 
 | 文件 | 时长(s) | hover | activate | select | 首交互(s) | 唯一目标 | 结束页 | hints |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -40,25 +42,26 @@
 
 | 编号 | 指标 | 来源 | 严重度 | 成本 | 影响会话 | 占比 | 优先级 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| B2 | 指得到但按不下去 | telemetry | 3 | S | 2 | 0.286 | 0.858 |
-| B3 | 在目标之间反复折返 | telemetry | 2 | S | 3 | 0.429 | 0.858 |
-| B1 | 整场没有任何交互 | telemetry | 3 | S | 1 | 0.143 | 0.429 |
+| B3 | 在目标之间反复折返 | telemetry | 2 | S | 4 | 0.571 | 1.143 |
+| B2 | 反复悬停且未记录选择或激活 | telemetry | 3 | S | 2 | 0.286 | 0.857 |
+| B1 | 会话未记录交互事件 | telemetry | 3 | S | 1 | 0.143 | 0.429 |
 
 ### 证据
 
-**B2　指得到但按不下去**（关联 `EQ2 状态可辨 / EQ4 可发现性`）
-- HelmetExhibit/HelmetHotspotTour/Front window Hotspot：1 场会话命中，单场最高 hover 4 次，累计 4 次，从未按下
-- HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot：1 场会话命中，单场最高 hover 3 次，累计 3 次，从未按下
-- Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left：1 场会话命中，单场最高 hover 3 次，累计 3 次，从未按下
-- 备注：行为层只能证明“指了没按”，原因（不知道要按、按错键、以为悬停即选中）需人工编码。
-
 **B3　在目标之间反复折返**（关联 `EQ5 流程可理解`）
-- 20261117-222652-MuseumVR.csv: 折返 2 次，序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot']
-- 20261117-224532-MuseumVR.csv: 折返 5 次，序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot']
-- 20261117-225004-MuseumVR.csv: 折返 3 次，序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Reset photo helmet', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet right', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot']
-- 备注：折返本身不是缺陷，可能是在比较；但它标记了“决策成本最高的位置”。
+- 20261117-222652-MuseumVR.csv: 折返 2 次，合并同目标后的序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot']
+- 20261117-224532-MuseumVR.csv: 折返 5 次，合并同目标后的序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot']
+- 20261117-225004-MuseumVR.csv: 折返 4 次，合并同目标后的序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Reset photo helmet', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet right', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot']
+- 20261117-225841-MuseumVR.csv: 折返 2 次，合并同目标后的序列 ['HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot', 'HelmetExhibit/HelmetHotspotTour/Front window Hotspot', 'HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot']
+- 备注：回看场次以区分正常比较与操作困难。
 
-**B1　整场没有任何交互**（关联 `EQ4 可发现性`）
+**B2　反复悬停且未记录选择或激活**（关联 `EQ2 状态可辨 / EQ4 可发现性`）
+- HelmetExhibit/HelmetHotspotTour/Front window Hotspot：1 场会话命中，单场最高 hover 4 次，累计 4 次，未记录 activate 或 select
+- HelmetExhibit/HelmetHotspotTour/Bonnet shell Hotspot：1 场会话命中，单场最高 hover 3 次，累计 3 次，未记录 activate 或 select
+- Exhibit 01 - 1988 Photo Helmet Study/1988 Photo Helmet Display/Turn photo helmet left：1 场会话命中，单场最高 hover 3 次，累计 3 次，未记录 activate 或 select
+- 备注：请结合观察记录确认是否尝试操作，以及使用的输入是否触发了 XRI 事件。
+
+**B1　会话未记录交互事件**（关联 `EQ4 可发现性`）
 - 20261117-220903-MuseumVR.csv: 时长 59.425s，无任何交互事件
 - 备注：可能是不知道从哪开始，也可能是测试环境问题；必须回看录像或访谈再定性。
 
