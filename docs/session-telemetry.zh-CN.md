@@ -100,8 +100,9 @@ XRI 事件的目标依赖当前交互条件，物理按钮还会在释放时检�
 
 ## 6. 边界
 
-- **它不能替代真人评价。** 记录的是行为，不是原因；为什么犹豫必须靠 think-aloud 与访谈。
+- 与现场观察和访谈结合使用，以解释行为及其原因。
 - 记录器订阅公开事件和读取状态。若日志无法创建、写入或关闭，会结束本次记录、释放订阅并在 Unity 控制台写警告。写入中断的 CSV 可能缺少 `session_end`，分析前请核对是否完整。
+- `-museumTelemetryOff` 停止该记录器自动启动。编辑器及开发构建中的头手诊断 JSONL 由另一组件生成。组织参与者会话前按[同意书](evaluation/consent-and-information.md)检查构建及两类日志。
 - **未验证**：以上结论均来自编辑器内模拟器会话；真实头显下的按键路径**未经实机确认**。
 - 编辑器退出 Play 时若出现 `Some objects were not cleaned up…XRInteractionManager`，
   与记录器无关：该对象由 XRI 的 `XRDeviceSimulatorLoader` 通过 `DontDestroyOnLoad` 留在跨场景层级，
@@ -123,6 +124,6 @@ XRI 事件的目标依赖当前交互条件，物理按钮还会在释放时检�
 
 ## 8. 与评价方案的关系
 
-本记录器服务于 `docs/evaluation/` 里的评价方案（该目录见同批提交的另一条分支），
+本记录器服务于[评价方案](evaluation/README.md)，
 定位是**客观行为日志**，与 think-aloud 的主观陈述互补：
 主观说"我觉得挺清楚"，客观能看到"他在这一步来回试了 7 次"。

@@ -61,3 +61,20 @@ as one evidence-to-action cycle」，组内 2 分给"分析与证据质量"。
 - 真实头显下的按键路径未确认（本机无头显，OpenXR 会话报 `XR_RUNTIME_UNAVAILABLE`）。
 - 记录器在长时间会话（>10 分钟）下的文件体积与刷新开销未测。
 - 上述"按压语义不一致"是否影响真实访客，需要真人会话才能判断；本轮只有组员自测的间接证据。
+
+## 2026-11-18 复审验证
+
+在隔离工作树验证代码 `70973b0`。记录器监听 XRI 管理器的控件登记，按目标做一秒悬停防抖。
+日志 I/O 出错时，停止当前记录并释放文件及订阅。CSV 字段、事件名与目标路径保持兼容。
+
+- Unity 2022.3.62f3c1 加载保存的 `MuseumStart`。运行 `Museum.Diegetic.Editor.HelmetDiegeticValidation.RunBatch`，
+  用模拟头显和控制器经过生产 Input Actions 与 XRI 射线。**1,043/1,043**，报告 0 错误，进程自然退出 0。
+  26 项工程 LFS 资产的实体哈希一致，1,324 个工程追踪文件的 SHA-256 前后零差。
+- 同场 CSV 含完整开始及结束行，记录 106 次 select、151 次 hover。17 个运行时创建的实体控件贡献 94 次 select，
+  包含供气、通话、前窗、剖面、设置和年代入口。日志来自模拟回归。
+- .NET 源码夹具 18 项通过。覆盖后续登记、去抖、同秒重开、启动／写入／刷新／关闭日志故障，且写入及刷新故障后仍执行后续监听。
+  另在独立夹具进程验证 `-museumTelemetryOff` 阻止 Bootstrap 创建记录器。
+- 使用同一提交和 `-museumTelemetryOff` 重跑 Unity 的 `HelmetNarrationValidation.RunNarrationBatch`，**184/184**，自然退出 0。
+  启动前后会话 CSV 的文件清单及哈希一致。编辑器仍生成独立的头手诊断 JSONL，已在参与者同意书说明运行条件。
+
+真实头显、长会话性能、Player 构建和参与者数据待验证。
