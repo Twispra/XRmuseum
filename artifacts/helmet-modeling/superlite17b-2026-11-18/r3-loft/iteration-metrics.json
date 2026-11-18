@@ -1,0 +1,736 @@
+{
+  "reference_mask_sha256": "81bf0b3e6377a7e5e5f430f11040505347ef173568749b5ae70fd205453cb950",
+  "L_px": 801,
+  "frozen_camera": true,
+  "original_user_thresholds_unchanged": true,
+  "iterations": [
+    {
+      "id": "01",
+      "sections": "tmp/sl17b-r3-loft/profile01/sections.json",
+      "renders": "tmp/sl17b-r3-loft/render01-masks",
+      "actual_model": "tmp/sl17b-r3-loft/iteration01/work_r3.blend",
+      "visible_iou": 0.4277904697732409,
+      "symmetric_boundary_deviation_over_L": 0.0469023747834743,
+      "full_shell_geometry_xor_over_union_vs_backup": 0.25750582110558845,
+      "new_window_plane_in_plane_vertical_projection_deg": 7.861751353250513,
+      "image_direction_difference_to_confirmed_target_deg": 6.088248646749486,
+      "frame_plane_in_plane_vertical_projection_deg": 7.861751353250514,
+      "frame_direction_difference_to_confirmed_target_deg": 6.088248646749485,
+      "frame_measurement_policy": "Frame unchanged in non-refit iterations; explicit rigid rotation only in rejected contact-refit trials. Shell front plane is not substituted for actual frame angle.",
+      "gates": {
+        "iou": false,
+        "boundary": false,
+        "shell_difference": true,
+        "projected_frame_direction": false
+      },
+      "all_image_gates_passed": false,
+      "moved_new_controls_from_previous": [
+        {
+          "section": "S0-S6",
+          "control_point_ids_0_to15": "all112 newly constructed, no old shell correspondence"
+        }
+      ],
+      "control_points_source": "Actual saved build manifest, not later regenerated trial parameter arrays.",
+      "limits": "Direction is a model-plane in-plane vector projected into the frozen virtual camera, not an independently observed physical plane. VisibleIoU includes accessory effects; no occluded shape is invented."
+    },
+    {
+      "id": "01b",
+      "sections": "tmp/sl17b-r3-loft/profile01b/sections.json",
+      "renders": "tmp/sl17b-r3-loft/render01b-masks",
+      "actual_model": "tmp/sl17b-r3-loft/iteration01b/work_r3.blend",
+      "visible_iou": 0.3320875390257949,
+      "symmetric_boundary_deviation_over_L": 0.04633155504190132,
+      "full_shell_geometry_xor_over_union_vs_backup": 0.21202223903028397,
+      "new_window_plane_in_plane_vertical_projection_deg": 7.861751353250513,
+      "image_direction_difference_to_confirmed_target_deg": 6.088248646749486,
+      "frame_plane_in_plane_vertical_projection_deg": 7.861751353250514,
+      "frame_direction_difference_to_confirmed_target_deg": 6.088248646749485,
+      "frame_measurement_policy": "Frame unchanged in non-refit iterations; explicit rigid rotation only in rejected contact-refit trials. Shell front plane is not substituted for actual frame angle.",
+      "gates": {
+        "iou": false,
+        "boundary": false,
+        "shell_difference": true,
+        "projected_frame_direction": false
+      },
+      "all_image_gates_passed": false,
+      "moved_new_controls_from_previous": [
+        {
+          "section": "S0",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.009112582832498689
+        },
+        {
+          "section": "S1",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.009723194411200231
+        },
+        {
+          "section": "S2",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.014412377667860674
+        },
+        {
+          "section": "S3",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.023407197406771177
+        },
+        {
+          "section": "S4",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.02846819719004802
+        },
+        {
+          "section": "S5",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.020965881645967924
+        }
+      ],
+      "control_points_source": "Actual saved build manifest, not later regenerated trial parameter arrays.",
+      "limits": "Direction is a model-plane in-plane vector projected into the frozen virtual camera, not an independently observed physical plane. VisibleIoU includes accessory effects; no occluded shape is invented."
+    },
+    {
+      "id": "01c",
+      "sections": "tmp/sl17b-r3-loft/profile01c/sections.json",
+      "renders": "tmp/sl17b-r3-loft/render01c-masks",
+      "actual_model": "tmp/sl17b-r3-loft/iteration01c/work_r3.blend",
+      "visible_iou": 0.37275344042984815,
+      "symmetric_boundary_deviation_over_L": 0.03647025589939089,
+      "full_shell_geometry_xor_over_union_vs_backup": 0.2646534277356535,
+      "new_window_plane_in_plane_vertical_projection_deg": 7.861751353250513,
+      "image_direction_difference_to_confirmed_target_deg": 6.088248646749486,
+      "frame_plane_in_plane_vertical_projection_deg": 7.861751353250514,
+      "frame_direction_difference_to_confirmed_target_deg": 6.088248646749485,
+      "frame_measurement_policy": "Frame unchanged in non-refit iterations; explicit rigid rotation only in rejected contact-refit trials. Shell front plane is not substituted for actual frame angle.",
+      "gates": {
+        "iou": false,
+        "boundary": false,
+        "shell_difference": true,
+        "projected_frame_direction": false
+      },
+      "all_image_gates_passed": false,
+      "moved_new_controls_from_previous": [],
+      "control_points_source": "Actual saved build manifest, not later regenerated trial parameter arrays.",
+      "limits": "Direction is a model-plane in-plane vector projected into the frozen virtual camera, not an independently observed physical plane. VisibleIoU includes accessory effects; no occluded shape is invented."
+    },
+    {
+      "id": "02",
+      "sections": "tmp/sl17b-r3-loft/profile02/sections.json",
+      "renders": "tmp/sl17b-r3-loft/render02-masks",
+      "actual_model": "tmp/sl17b-r3-loft/iteration02/work_r3.blend",
+      "visible_iou": 0.3661464812092427,
+      "symmetric_boundary_deviation_over_L": 0.037850776753292556,
+      "full_shell_geometry_xor_over_union_vs_backup": 0.27271591395207984,
+      "new_window_plane_in_plane_vertical_projection_deg": 13.95000000000006,
+      "image_direction_difference_to_confirmed_target_deg": 6.039613253960852e-14,
+      "frame_plane_in_plane_vertical_projection_deg": 7.861751353250514,
+      "frame_direction_difference_to_confirmed_target_deg": 6.088248646749485,
+      "frame_measurement_policy": "Frame unchanged in non-refit iterations; explicit rigid rotation only in rejected contact-refit trials. Shell front plane is not substituted for actual frame angle.",
+      "gates": {
+        "iou": false,
+        "boundary": false,
+        "shell_difference": true,
+        "projected_frame_direction": false
+      },
+      "all_image_gates_passed": false,
+      "moved_new_controls_from_previous": [
+        {
+          "section": "S6",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.017776092669354204
+        }
+      ],
+      "control_points_source": "Actual saved build manifest, not later regenerated trial parameter arrays.",
+      "limits": "Direction is a model-plane in-plane vector projected into the frozen virtual camera, not an independently observed physical plane. VisibleIoU includes accessory effects; no occluded shape is invented."
+    },
+    {
+      "id": "03",
+      "sections": "tmp/sl17b-r3-loft/profile03/sections.json",
+      "renders": "tmp/sl17b-r3-loft/render03-masks",
+      "actual_model": "tmp/sl17b-r3-loft/iteration03/work_r3.blend",
+      "visible_iou": 0.3642737263818959,
+      "symmetric_boundary_deviation_over_L": 0.03717298225508168,
+      "full_shell_geometry_xor_over_union_vs_backup": 0.2717807568502882,
+      "new_window_plane_in_plane_vertical_projection_deg": 13.95000000000006,
+      "image_direction_difference_to_confirmed_target_deg": 6.039613253960852e-14,
+      "frame_plane_in_plane_vertical_projection_deg": 7.861751353250514,
+      "frame_direction_difference_to_confirmed_target_deg": 6.088248646749485,
+      "frame_measurement_policy": "Frame unchanged in non-refit iterations; explicit rigid rotation only in rejected contact-refit trials. Shell front plane is not substituted for actual frame angle.",
+      "gates": {
+        "iou": false,
+        "boundary": false,
+        "shell_difference": true,
+        "projected_frame_direction": false
+      },
+      "all_image_gates_passed": false,
+      "moved_new_controls_from_previous": [
+        {
+          "section": "S0",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 3.0492060177408215e-06
+        },
+        {
+          "section": "S1",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 3.7807879517952336e-05
+        },
+        {
+          "section": "S2",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.0005805570287754358
+        },
+        {
+          "section": "S3",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.004629465177691902
+        },
+        {
+          "section": "S4",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.010093120304495287
+        },
+        {
+          "section": "S5",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.005532752793646845
+        },
+        {
+          "section": "S6",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.003301377128634639
+        }
+      ],
+      "control_points_source": "Actual saved build manifest, not later regenerated trial parameter arrays.",
+      "limits": "Direction is a model-plane in-plane vector projected into the frozen virtual camera, not an independently observed physical plane. VisibleIoU includes accessory effects; no occluded shape is invented."
+    },
+    {
+      "id": "04",
+      "sections": "tmp/sl17b-r3-loft/profile04/sections.json",
+      "renders": "tmp/sl17b-r3-loft/render04-masks",
+      "actual_model": "tmp/sl17b-r3-loft/iteration04/work_r3.blend",
+      "visible_iou": 0.35892416103444413,
+      "symmetric_boundary_deviation_over_L": 0.037717210255048074,
+      "full_shell_geometry_xor_over_union_vs_backup": 0.27806344468035904,
+      "new_window_plane_in_plane_vertical_projection_deg": 13.95000000000006,
+      "image_direction_difference_to_confirmed_target_deg": 6.039613253960852e-14,
+      "frame_plane_in_plane_vertical_projection_deg": 7.861751353250514,
+      "frame_direction_difference_to_confirmed_target_deg": 6.088248646749485,
+      "frame_measurement_policy": "Frame unchanged in non-refit iterations; explicit rigid rotation only in rejected contact-refit trials. Shell front plane is not substituted for actual frame angle.",
+      "gates": {
+        "iou": false,
+        "boundary": false,
+        "shell_difference": true,
+        "projected_frame_direction": false
+      },
+      "all_image_gates_passed": false,
+      "moved_new_controls_from_previous": [],
+      "control_points_source": "Actual saved build manifest, not later regenerated trial parameter arrays.",
+      "limits": "Direction is a model-plane in-plane vector projected into the frozen virtual camera, not an independently observed physical plane. VisibleIoU includes accessory effects; no occluded shape is invented."
+    },
+    {
+      "id": "05",
+      "sections": "tmp/sl17b-r3-loft/profile05/sections.json",
+      "renders": "tmp/sl17b-r3-loft/render05-masks",
+      "actual_model": "tmp/sl17b-r3-loft/iteration05/work_r3.blend",
+      "visible_iou": 0.3564225505012878,
+      "symmetric_boundary_deviation_over_L": 0.03822957791731877,
+      "full_shell_geometry_xor_over_union_vs_backup": 0.2825889150725829,
+      "new_window_plane_in_plane_vertical_projection_deg": 13.95000000000006,
+      "image_direction_difference_to_confirmed_target_deg": 6.039613253960852e-14,
+      "frame_plane_in_plane_vertical_projection_deg": 7.861751353250514,
+      "frame_direction_difference_to_confirmed_target_deg": 6.088248646749485,
+      "frame_measurement_policy": "Frame unchanged in non-refit iterations; explicit rigid rotation only in rejected contact-refit trials. Shell front plane is not substituted for actual frame angle.",
+      "gates": {
+        "iou": false,
+        "boundary": false,
+        "shell_difference": true,
+        "projected_frame_direction": false
+      },
+      "all_image_gates_passed": false,
+      "moved_new_controls_from_previous": [
+        {
+          "section": "S2",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.005565811006339794
+        },
+        {
+          "section": "S3",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.004477344157955254
+        }
+      ],
+      "control_points_source": "Actual saved build manifest, not later regenerated trial parameter arrays.",
+      "limits": "Direction is a model-plane in-plane vector projected into the frozen virtual camera, not an independently observed physical plane. VisibleIoU includes accessory effects; no occluded shape is invented."
+    },
+    {
+      "id": "05-contact-refit",
+      "sections": "tmp/sl17b-r3-loft/profile05/sections.json",
+      "renders": "tmp/sl17b-r3-loft/refit05-masks",
+      "actual_model": "tmp/sl17b-r3-loft/refit05/work_r3.blend",
+      "shell_build_manifest": "tmp/sl17b-r3-loft/iteration05/work_r3.json",
+      "visible_iou": 0.3908515429500307,
+      "symmetric_boundary_deviation_over_L": 0.036673203470232944,
+      "full_shell_geometry_xor_over_union_vs_backup": 0.2825889150725829,
+      "new_window_plane_in_plane_vertical_projection_deg": 13.95000000000006,
+      "image_direction_difference_to_confirmed_target_deg": 6.039613253960852e-14,
+      "frame_plane_in_plane_vertical_projection_deg": 13.95000000000006,
+      "frame_direction_difference_to_confirmed_target_deg": 6.039613253960852e-14,
+      "frame_measurement_policy": "Frame unchanged in non-refit iterations; explicit rigid rotation only in rejected contact-refit trials. Shell front plane is not substituted for actual frame angle.",
+      "gates": {
+        "iou": false,
+        "boundary": false,
+        "shell_difference": true,
+        "projected_frame_direction": true
+      },
+      "all_image_gates_passed": false,
+      "moved_new_controls_from_previous": [],
+      "control_points_source": "Actual saved build manifest, not later regenerated trial parameter arrays.",
+      "limits": "Direction is a model-plane in-plane vector projected into the frozen virtual camera, not an independently observed physical plane. VisibleIoU includes accessory effects; no occluded shape is invented."
+    },
+    {
+      "id": "06d-contact-refit",
+      "sections": "tmp/sl17b-r3-loft/profile06d/sections.json",
+      "renders": "tmp/sl17b-r3-loft/refit06d-masks",
+      "actual_model": "tmp/sl17b-r3-loft/refit06d/work_r3.blend",
+      "shell_build_manifest": "tmp/sl17b-r3-loft/iteration06d/work_r3.json",
+      "visible_iou": 0.418059814274741,
+      "symmetric_boundary_deviation_over_L": 0.034932493869490606,
+      "full_shell_geometry_xor_over_union_vs_backup": 0.21508758194637545,
+      "new_window_plane_in_plane_vertical_projection_deg": 13.95000000000006,
+      "image_direction_difference_to_confirmed_target_deg": 6.039613253960852e-14,
+      "frame_plane_in_plane_vertical_projection_deg": 13.95000000000006,
+      "frame_direction_difference_to_confirmed_target_deg": 6.039613253960852e-14,
+      "frame_measurement_policy": "Frame unchanged in non-refit iterations; explicit rigid rotation only in rejected contact-refit trials. Shell front plane is not substituted for actual frame angle.",
+      "gates": {
+        "iou": false,
+        "boundary": false,
+        "shell_difference": true,
+        "projected_frame_direction": true
+      },
+      "all_image_gates_passed": false,
+      "moved_new_controls_from_previous": [
+        {
+          "section": "S0",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.03414126573902114
+        },
+        {
+          "section": "S1",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.029970335815321117
+        },
+        {
+          "section": "S2",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.022590511672773903
+        },
+        {
+          "section": "S3",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.017862189586245424
+        },
+        {
+          "section": "S4",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.01081956856090309
+        },
+        {
+          "section": "S5",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.0502880280696321
+        },
+        {
+          "section": "S6",
+          "control_point_ids_0_to15": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            13,
+            14,
+            15
+          ],
+          "max_control_displacement_model_m": 0.04082738319013996
+        }
+      ],
+      "control_points_source": "Actual saved build manifest, not later regenerated trial parameter arrays.",
+      "limits": "Direction is a model-plane in-plane vector projected into the frozen virtual camera, not an independently observed physical plane. VisibleIoU includes accessory effects; no occluded shape is invented."
+    },
+    {
+      "id": "06d-clean-shell-contact-trial-rejected",
+      "sections": "tmp/sl17b-r3-loft/profile06d/sections.json",
+      "renders": "tmp/sl17b-r3-loft/render06d-masks",
+      "actual_model": "tmp/sl17b-r3-loft/iteration06d/work_r3.blend",
+      "visible_iou": 0.39387440973064974,
+      "symmetric_boundary_deviation_over_L": 0.03310960740515899,
+      "full_shell_geometry_xor_over_union_vs_backup": 0.21508758194637545,
+      "new_window_plane_in_plane_vertical_projection_deg": 13.95000000000006,
+      "image_direction_difference_to_confirmed_target_deg": 6.039613253960852e-14,
+      "frame_plane_in_plane_vertical_projection_deg": 7.861751353250514,
+      "frame_direction_difference_to_confirmed_target_deg": 6.088248646749485,
+      "frame_measurement_policy": "Frame unchanged in non-refit iterations; explicit rigid rotation only in rejected contact-refit trials. Shell front plane is not substituted for actual frame angle.",
+      "gates": {
+        "iou": false,
+        "boundary": false,
+        "shell_difference": true,
+        "projected_frame_direction": false
+      },
+      "all_image_gates_passed": false,
+      "moved_new_controls_from_previous": [],
+      "control_points_source": "Actual saved build manifest, not later regenerated trial parameter arrays.",
+      "limits": "Direction is a model-plane in-plane vector projected into the frozen virtual camera, not an independently observed physical plane. VisibleIoU includes accessory effects; no occluded shape is invented."
+    }
+  ]
+}
