@@ -1,30 +1,55 @@
 {
-  "generatedFrom": "main@9e9f989 + 本轮修改",
+  "generatedFrom": {
+    "before": "9e9f9893341f8caca3080fc3cb48218b92c786d1",
+    "after": "d11462480c051084aab5c999ab57857549585504"
+  },
   "rule": "m_fontSizeMin := max(原值, 0.35 x m_fontSizeMax)",
   "scenesChanged": [
     "HelmetInspectionDemo.unity",
     "PhysicalHandsLab.unity"
   ],
-  "scope": "只覆盖两个开发/演示场景；主场景 MuseumStart.unity 未纳入（共享文件，待协调）",
-  "before": {
-    "componentsWithMinLe005": 34,
-    "distribution": {
-      "0.02": 32,
-      "0.03": 2
+  "scope": "统计启用自动缩放的序列化 TMP 组件。产品资产扫描覆盖 MuseumVR/Assets/Museum 下的 .unity 和 .prefab。",
+  "productAssets": {
+    "before": {
+      "autoSizingComponents": 146,
+      "componentsWithMinLe005": 34,
+      "distribution": {
+        "0.02": 32,
+        "0.03": 2
+      },
+      "worstShrinkRatio": 72.5
     },
-    "worstShrinkRatio": 72.5
+    "after": {
+      "autoSizingComponents": 146,
+      "componentsWithMinLe005": 13,
+      "distribution": {
+        "0.02": 12,
+        "0.03": 1
+      },
+      "worstShrinkRatio": 42.5
+    }
   },
-  "after": {
-    "componentsWithMinLe005": 13,
-    "distribution": {
-      "0.02": 12,
-      "0.03": 1
+  "targetScenes": {
+    "before": {
+      "autoSizingComponents": 55,
+      "componentsWithMinLe005": 21,
+      "distribution": {
+        "0.02": 20,
+        "0.03": 1
+      },
+      "worstShrinkRatio": 72.5
     },
-    "worstShrinkRatio": 2.86
+    "after": {
+      "autoSizingComponents": 55,
+      "componentsWithMinLe005": 0,
+      "distribution": {},
+      "worstShrinkRatio": 2.86
+    }
   },
   "remaining": {
     "count": 13,
-    "note": "全部位于 MuseumStart.unity，需在协调后单独处理"
+    "file": "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity",
+    "note": "共享主场景待协调后单独处理"
   },
   "changes": [
     {
