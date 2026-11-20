@@ -20,6 +20,7 @@ namespace Museum.Diegetic
         };
 
         GameObject visitRecap;
+        HelmetHotspotTour recapTour;
         TextMeshPro recapProgress, recapConnections;
         readonly TextMeshPro[] recapParts = new TextMeshPro[3];
         bool showingMovementHelp;
@@ -89,18 +90,26 @@ namespace Museum.Diegetic
             visitRecap.SetActive(false);
         }
 
+        void SetVisitRecapOpen(bool open)
+        {
+            if (recapTour) recapTour.ObservationsChanged -= RefreshVisitRecap;
+            recapTour = open ? exploration.VisitTour : null;
+            if (recapTour) recapTour.ObservationsChanged += RefreshVisitRecap;
+            if (open) RefreshVisitRecap();
+            visitRecap.SetActive(open);
+        }
+
         void RefreshVisitRecap()
         {
-            var tour = exploration.VisitTour;
-            recapProgress.gameObject.SetActive(tour != null);
-            if (tour) MuseumText.Set(recapProgress, tour.ProgressEnglish);
+            recapProgress.gameObject.SetActive(recapTour != null);
+            if (recapTour) MuseumText.Set(recapProgress, recapTour.ProgressEnglish);
             MuseumText.Set(recapConnections, exploration.ConnectionRecap);
 
             int shown = 0;
-            if (tour)
-                foreach (var hotspot in tour.GetComponentsInChildren<HelmetHotspot>(true))
+            if (recapTour)
+                foreach (var hotspot in recapTour.GetComponentsInChildren<HelmetHotspot>(true))
                 {
-                    if (!tour.TryGetFirstObservation(hotspot.Identifier, out var source)) continue;
+                    if (!recapTour.TryGetFirstObservation(hotspot.Identifier, out var source)) continue;
                     var row = recapParts[shown++];
                     MuseumText.Set(row, source, headingOnly: true);
                     row.gameObject.SetActive(true);
@@ -162,8 +171,7 @@ namespace Museum.Diegetic
                 controls[command].gameObject.SetActive(!open);
             controls[Command.ContinueVisit].gameObject.SetActive(open);
             controls[Command.StartNextVisit].gameObject.SetActive(open);
-            if (open) RefreshVisitRecap();
-            visitRecap.SetActive(open);
+            SetVisitRecapOpen(open);
             eraTitle.gameObject.SetActive(!open);
             instruction.gameObject.SetActive(!open);
             sectionDock.gameObject.SetActive(!open && !SettingsVisible);

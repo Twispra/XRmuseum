@@ -1633,11 +1633,13 @@ namespace Museum.Diegetic.Editor
             }
             finally { RenderTexture.active = previous; RenderTexture.ReleaseTemporary(target); if (pixels) UnityEngine.Object.DestroyImmediate(pixels); UnityEngine.Object.DestroyImmediate(go); }
         }
-        static void QueueController(XRSimulatedController device, Vector3 world, Quaternion rotation, bool grip)
+        static void QueueController(XRSimulatedController device, Vector3 world, Quaternion rotation, bool grip, bool trigger = false)
         {
             var parent = (device == leftDevice ? leftController : rightController).transform.parent;
             var state = new XRSimulatedControllerState { isTracked = true, trackingState = 3, batteryLevel = 1,
-                devicePosition = parent.InverseTransformPoint(world), deviceRotation = Quaternion.Inverse(parent.rotation) * rotation, grip = grip ? 1 : 0 }.WithButton(ControllerButton.GripButton, grip);
+                devicePosition = parent.InverseTransformPoint(world), deviceRotation = Quaternion.Inverse(parent.rotation) * rotation,
+                grip = grip ? 1 : 0, trigger = trigger ? 1 : 0 }
+                .WithButton(ControllerButton.GripButton, grip).WithButton(ControllerButton.TriggerButton, trigger);
             PendingInput.Enqueue(() => InputSystem.QueueStateEvent(device, state));
         }
         static void ParkHands()

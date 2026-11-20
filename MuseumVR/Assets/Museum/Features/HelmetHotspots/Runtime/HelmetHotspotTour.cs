@@ -25,6 +25,7 @@ namespace Museum.Hotspots
 
         public event Action Completed;
         public event Action ResetPerformed;
+        public event Action ObservationsChanged;
         // Optional adapters can translate the original English without coupling this
         // standalone assembly to the museum's localization implementation.
         public event Action<TMP_Text, string> TextChanged;
@@ -82,6 +83,8 @@ namespace Museum.Hotspots
 
             if (!wasComplete && IsComplete)
                 Completed?.Invoke();
+            if (added)
+                ObservationsChanged?.Invoke();
 
             return added;
         }
@@ -97,6 +100,7 @@ namespace Museum.Hotspots
 
         public void ResetTour()
         {
+            bool hadObservations = visited.Count > 0;
             visited.Clear();
             selectedIdentifier = null;
             informationEnglish = Prompt;
@@ -106,6 +110,8 @@ namespace Museum.Hotspots
             SetExplanationOpacity(1f);
             RefreshText();
             ResetPerformed?.Invoke();
+            if (hadObservations)
+                ObservationsChanged?.Invoke();
         }
 
         void OnEnable()

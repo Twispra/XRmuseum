@@ -7,6 +7,7 @@ using Museum.Hotspots;
 using Museum.Localization;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 using Command = Museum.Diegetic.HelmetDiegeticStation.Command;
 
 namespace Museum.Diegetic.Editor
@@ -33,6 +34,10 @@ namespace Museum.Diegetic.Editor
             CheckResult(!panel.gameObject.activeInHierarchy && binding.AppliedEraIndex == 1,
                 "The recap begins closed at the default exhibit", panel.name);
             yield return RayClick(Command.FinishVisit);
+            CheckRecap(panel, progress, connections, parts, 0, none);
+            yield return ActivateRecapHotspot(shell);
+            CheckRecap(panel, progress, connections, parts, 1, none, shell.Title + "\n" + shell.Description);
+            tour.ResetTour();
             CheckRecap(panel, progress, connections, parts, 0, none);
             yield return RayClick(Command.ContinueVisit);
             CheckResult(!panel.gameObject.activeInHierarchy && !station.IsVisitHandoffOpen && tour.VisitedCount == 0,
@@ -85,6 +90,39 @@ namespace Museum.Diegetic.Editor
             yield return RayClick(Command.FinishVisit);
             CheckRecap(panel, progress, connections, parts, 0, none);
             yield return RayClick(Command.ContinueVisit);
+        }
+
+        static IEnumerator ActivateRecapHotspot(HelmetHotspot hotspot)
+        {
+            var target = hotspot.GetComponent<XRSimpleInteractable>();
+            var point = target.colliders.First(collider => collider && collider.enabled).bounds.center;
+            var center = inspection.transform.TransformPoint(inspection.SectionCenterLocal);
+            var pose = point + (point - center).normalized * .35f;
+            var rotation = Quaternion.LookRotation(point - pose, Vector3.up);
+            int activations = 0;
+            UnityEngine.Events.UnityAction<ActivateEventArgs> listener = args =>
+            {
+                if (args.interactorObject is XRRayInteractor) activations++;
+            };
+            target.activated.AddListener(listener);
+            try
+            {
+                QueueController(rightDevice, pose, rotation, false);
+                yield return Wait(.3f);
+                CheckResult(target.isHovered && station.IsVisitHandoffOpen,
+                    "An unvisited knowledge hotspot remains hoverable during recap", DescribeRightRayHit(), "production-input");
+                QueueController(rightDevice, pose, rotation, false, trigger: true);
+                yield return Wait(.25f);
+                CheckResult(activations == 1 && !target.isSelected && hotspot.IsVisited,
+                    "Trigger-only activation records the hotspot during recap",
+                    "Ray activations=" + activations + "; Selected=" + target.isSelected + "; Visited=" + hotspot.IsVisited,
+                    "production-input");
+                QueueController(rightDevice, pose, rotation, false);
+                yield return Wait(.2f);
+                ParkHands();
+                yield return Wait(.2f);
+            }
+            finally { target.activated.RemoveListener(listener); }
         }
 
         static void CheckRecapLayout(TMP_Text[] labels, string state)
