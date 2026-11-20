@@ -7,7 +7,7 @@ namespace Museum.Navigation
 {
     /// <summary>Confirm on release while still pointing; a combined grip/trigger press is one intent.</summary>
     [RequireComponent(typeof(XRSimpleInteractable))]
-    public sealed class GalleryNavigationButton : MonoBehaviour, IXRSelectFilter
+    public sealed class GalleryNavigationButton : MonoBehaviour, IXRSelectFilter, IXRHoverFilter
     {
         GalleryNavigator navigator;
         XRSimpleInteractable target;
@@ -17,8 +17,10 @@ namespace Museum.Navigation
         public int Confirmations { get; private set; }
         public XRSimpleInteractable Target => target;
         bool IXRSelectFilter.canProcess => true;
-        bool IXRSelectFilter.Process(IXRSelectInteractor _, IXRSelectInteractable __) =>
-            navigator && navigator.IsReady && !navigator.IsTransitioning && !cancelled;
+        bool IXRHoverFilter.canProcess => true;
+        bool IXRHoverFilter.Process(IXRHoverInteractor interactor, IXRHoverInteractable _) => interactor is XRRayInteractor;
+        bool IXRSelectFilter.Process(IXRSelectInteractor interactor, IXRSelectInteractable _) =>
+            interactor is XRRayInteractor && navigator && navigator.IsReady && !navigator.IsTransitioning && !cancelled;
 
         public void Configure(GalleryNavigator owner, GalleryNavigator.Exhibit destination)
         { navigator = owner; Destination = destination; }
@@ -32,6 +34,7 @@ namespace Museum.Navigation
             target.deactivated.AddListener(OnDeactivated);
             target.hoverExited.AddListener(OnHoverExited);
             target.selectFilters.Add(this);
+            target.hoverFilters.Add(this);
         }
         void OnDisable()
         {
@@ -41,6 +44,7 @@ namespace Museum.Navigation
             target.deactivated.RemoveListener(OnDeactivated);
             target.hoverExited.RemoveListener(OnHoverExited);
             target.selectFilters.Remove(this);
+            target.hoverFilters.Remove(this);
             ResetPress(); pending = false;
         }
 
