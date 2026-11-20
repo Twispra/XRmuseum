@@ -167,7 +167,7 @@ namespace Museum.Navigation.Editor
             Check(nav && nav.IsReady, "Saved scene automatically installs a ready navigator");
             Check(UnityEngine.Object.FindObjectsOfType<GalleryNavigator>().Length == 1 && nav.Buttons.Count == 3, "Exactly one panel with three destinations");
             inspection = UnityEngine.Object.FindObjectOfType<HelmetInspectionController>();
-            exploration = inspection.GetComponent<HelmetExplorationController>();
+            exploration = UnityEngine.Object.FindObjectOfType<HelmetExplorationController>();
             leftController = UnityEngine.Object.FindObjectsOfType<ActionBasedController>(true).Single(c => c.name == "Left Controller");
             rightController = UnityEngine.Object.FindObjectsOfType<ActionBasedController>(true).Single(c => c.name == "Right Controller");
             left = InputSystem.AddDevice<XRSimulatedController>(); InputSystem.SetDeviceUsage(left, UnityEngine.InputSystem.CommonUsages.LeftHand);
@@ -182,7 +182,7 @@ namespace Museum.Navigation.Editor
             station.ViewHeight.Raise(); station.ViewHeight.Raise(); yield return Wait(.1f);
             exploration.SelectClue(HelmetExplorationController.Clue.Air); exploration.Stop();
             exploration.SelectClue(HelmetExplorationController.Clue.Voice); exploration.Stop(); exploration.RequestHint();
-            var era = inspection.GetComponent<HelmetEraSwitcher>(); era.ShowEra(2); yield return Wait(.3f);
+            var era = UnityEngine.Object.FindObjectOfType<HelmetEraSwitcher>(); era.ShowEra(2); yield return Wait(.3f);
             MuseumText.Channel.SetLanguage(MuseumLanguage.TraditionalChinese);
             string discoveries = Discoveries();
             int resetCount = inspection.ResetCount, eraIndex = era.CurrentIndex;

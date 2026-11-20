@@ -169,7 +169,8 @@ namespace Museum.Navigation
             if (station && station.isActiveAndEnabled) station.PrepareForGalleryNavigation();
             else
             {
-                var clues = inspection.GetComponent<HelmetExplorationController>();
+                var clues = gameObject.scene.GetRootGameObjects()
+                    .SelectMany(r => r.GetComponentsInChildren<HelmetExplorationController>(true)).FirstOrDefault();
                 if (clues) clues.Stop();
             }
             status.SetKey("navigation.moving");
