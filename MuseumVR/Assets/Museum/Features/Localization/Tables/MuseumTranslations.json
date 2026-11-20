@@ -2064,6 +2064,62 @@
       "chinese": "收到。你的声音从电缆传来了。",
       "traditionalChinese": "收到。你的聲音從電纜傳來了。",
       "note": "Static exchange when the visitor reduces motion."
+    },
+    {
+      "key": "navigation.title",
+      "english": "Visit an exhibit",
+      "chinese": "参观展台",
+      "traditionalChinese": "參觀展台",
+      "note": "Gallery quick navigation; visitor controls and state feedback."
+    },
+    {
+      "key": "navigation.left",
+      "english": "Left\nexhibit",
+      "chinese": "左侧展台",
+      "traditionalChinese": "左側展台",
+      "note": "Gallery quick navigation; visitor controls and state feedback."
+    },
+    {
+      "key": "navigation.main",
+      "english": "Main\nexhibit",
+      "chinese": "中央展台",
+      "traditionalChinese": "中央展台",
+      "note": "Gallery quick navigation; visitor controls and state feedback."
+    },
+    {
+      "key": "navigation.right",
+      "english": "Right\nexhibit",
+      "chinese": "右侧展台",
+      "traditionalChinese": "右側展台",
+      "note": "Gallery quick navigation; visitor controls and state feedback."
+    },
+    {
+      "key": "navigation.hint",
+      "english": "Point, press and release",
+      "chinese": "指向后按下并松开",
+      "traditionalChinese": "指向後按下並鬆開",
+      "note": "Gallery quick navigation; visitor controls and state feedback."
+    },
+    {
+      "key": "navigation.moving",
+      "english": "Moving to the exhibit",
+      "chinese": "前往展台",
+      "traditionalChinese": "前往展台",
+      "note": "Gallery quick navigation; visitor controls and state feedback."
+    },
+    {
+      "key": "navigation.finish_action",
+      "english": "Finish this action first",
+      "chinese": "请先结束操作",
+      "traditionalChinese": "請先結束操作",
+      "note": "Gallery quick navigation; visitor controls and state feedback."
+    },
+    {
+      "key": "navigation.blocked",
+      "english": "Viewing position unavailable",
+      "chinese": "观看位置不可用",
+      "traditionalChinese": "觀看位置不可用",
+      "note": "Gallery quick navigation; visitor controls and state feedback."
     }
   ]
 }

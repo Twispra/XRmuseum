@@ -38,6 +38,15 @@ namespace Museum.Inspection
         public bool IsFrozen { get; private set; }
         public HelmetInspectionController Controller => controller;
 
+        public void ConfigureViewerOffset(Vector3 offset)
+        {
+            if (float.IsNaN(offset.x) || float.IsInfinity(offset.x) ||
+                float.IsNaN(offset.y) || float.IsInfinity(offset.y) ||
+                float.IsNaN(offset.z) || float.IsInfinity(offset.z)) return;
+            viewerOffset = offset;
+            placed = false;
+        }
+
         // Optional presentation owns only the visible content bounds, never XR placement/input.
         public void ConfigureContentBounds(float bottom, float top)
         {

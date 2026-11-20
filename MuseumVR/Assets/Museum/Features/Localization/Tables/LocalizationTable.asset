@@ -1716,4 +1716,50 @@ MonoBehaviour:
     english: "I hear you through the cable."
     traditionalChinese: "\u6536\u5230\u3002\u4f60\u7684\u8072\u97f3\u5f9e\u96fb\u7e9c\u50b3\u4f86\u4e86\u3002"
     note: "Static exchange when the visitor reduces motion."
+  - key: navigation.title
+    chinese: "\u53C2\u89C2\u5C55\u53F0"
+    english: Visit an exhibit
+    traditionalChinese: "\u53C3\u89C0\u5C55\u53F0"
+    note: Gallery quick navigation; visitor controls and state feedback.
+  - key: navigation.left
+    chinese: "\u5DE6\u4FA7\u5C55\u53F0"
+    english: 'Left
+
+      exhibit'
+    traditionalChinese: "\u5DE6\u5074\u5C55\u53F0"
+    note: Gallery quick navigation; visitor controls and state feedback.
+  - key: navigation.main
+    chinese: "\u4E2D\u592E\u5C55\u53F0"
+    english: 'Main
+
+      exhibit'
+    traditionalChinese: "\u4E2D\u592E\u5C55\u53F0"
+    note: Gallery quick navigation; visitor controls and state feedback.
+  - key: navigation.right
+    chinese: "\u53F3\u4FA7\u5C55\u53F0"
+    english: 'Right
+
+      exhibit'
+    traditionalChinese: "\u53F3\u5074\u5C55\u53F0"
+    note: Gallery quick navigation; visitor controls and state feedback.
+  - key: navigation.hint
+    chinese: "\u6307\u5411\u540E\u6309\u4E0B\u5E76\u677E\u5F00"
+    english: Point, press and release
+    traditionalChinese: "\u6307\u5411\u5F8C\u6309\u4E0B\u4E26\u9B06\u958B"
+    note: Gallery quick navigation; visitor controls and state feedback.
+  - key: navigation.moving
+    chinese: "\u524D\u5F80\u5C55\u53F0"
+    english: Moving to the exhibit
+    traditionalChinese: "\u524D\u5F80\u5C55\u53F0"
+    note: Gallery quick navigation; visitor controls and state feedback.
+  - key: navigation.finish_action
+    chinese: "\u8BF7\u5148\u7ED3\u675F\u64CD\u4F5C"
+    english: Finish this action first
+    traditionalChinese: "\u8ACB\u5148\u7D50\u675F\u64CD\u4F5C"
+    note: Gallery quick navigation; visitor controls and state feedback.
+  - key: navigation.blocked
+    chinese: "\u89C2\u770B\u4F4D\u7F6E\u4E0D\u53EF\u7528"
+    english: Viewing position unavailable
+    traditionalChinese: "\u89C0\u770B\u4F4D\u7F6E\u4E0D\u53EF\u7528"
+    note: Gallery quick navigation; visitor controls and state feedback.
   fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
