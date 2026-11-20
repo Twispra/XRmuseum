@@ -104,7 +104,7 @@ namespace Museum.Navigation
             for (int i = 0; i < 3; i++)
             {
                 var button = Plate(panel.transform, "Navigate " + (Exhibit)i, new Vector3((i - 1) * .153f, 0, -.015f),
-                    new Vector3(.143f, .065f, .012f), template.sharedMaterial, new Color(.13f, .30f, .34f), true);
+                    new Vector3(.143f, .085f, .012f), template.sharedMaterial, new Color(.13f, .30f, .34f), true);
                 var interaction = button.gameObject.AddComponent<XRSimpleInteractable>();
                 interaction.interactionLayers = template.GetComponent<XRSimpleInteractable>().interactionLayers;
                 interaction.selectMode = InteractableSelectMode.Single;
@@ -112,7 +112,7 @@ namespace Museum.Navigation
                 control.Configure(this, (Exhibit)i);
                 buttons.Add(control);
                 Label("Navigate " + (Exhibit)i + " label", ButtonKeys[i], new Vector3((i - 1) * .153f, 0, -.026f),
-                    new Vector2(.132f, .057f), .31f);
+                    new Vector2(.132f, .079f), .29f);
             }
             palette = panel.AddComponent<HelmetInspectionPalette>();
             palette.Configure(inspection, origin.Camera.transform, null, null);

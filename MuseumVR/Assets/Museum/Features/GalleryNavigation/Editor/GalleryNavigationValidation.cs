@@ -51,6 +51,8 @@ namespace Museum.Navigation.Editor
             public string commit, dirty, unity, scene, status, failure, method =
                 "Saved scene runtime bootstrap; public pose fixtures plus queued synthetic HMD and left/right controller states through production Input Actions and XR rays. No manual HoverEnter/SelectEnter, TriggerProgrammatically or InputSystem.Update. Diagnostic monocular captures.";
             public string limits = "No real headset/controller, stereo readability, comfort, performance, Player build or user study validation.";
+            public Vector3 initialCameraPosition;
+            public float syntheticTrackedHeight;
             public List<CheckResult> checks = new List<CheckResult>();
             public List<string> errors = new List<string>();
         }
@@ -173,11 +175,16 @@ namespace Museum.Navigation.Editor
             left = InputSystem.AddDevice<XRSimulatedController>(); InputSystem.SetDeviceUsage(left, UnityEngine.InputSystem.CommonUsages.LeftHand);
             right = InputSystem.AddDevice<XRSimulatedController>(); InputSystem.SetDeviceUsage(right, UnityEngine.InputSystem.CommonUsages.RightHand);
             hmd = InputSystem.AddDevice<XRSimulatedHMD>();
+            // The saved Device-origin camera already has a floor offset. Do not add a second adult eye height.
+            float trackedHeight = 1.2f - (nav.Origin.Camera.transform.parent.position.y - nav.Origin.Origin.transform.position.y);
+            report.syntheticTrackedHeight = trackedHeight;
             input.Enqueue(() => InputSystem.QueueStateEvent(hmd, new XRSimulatedHMDState {
-                isTracked = true, trackingState = 3, devicePosition = new Vector3(.12f, 1.2f, -.08f), centerEyePosition = new Vector3(.12f, 1.2f, -.08f),
-                leftEyePosition = new Vector3(.088f, 1.2f, -.08f), rightEyePosition = new Vector3(.152f, 1.2f, -.08f),
+                isTracked = true, trackingState = 3, devicePosition = new Vector3(.12f, trackedHeight, -.08f), centerEyePosition = new Vector3(.12f, trackedHeight, -.08f),
+                leftEyePosition = new Vector3(.088f, trackedHeight, -.08f), rightEyePosition = new Vector3(.152f, trackedHeight, -.08f),
                 deviceRotation = Quaternion.identity, centerEyeRotation = Quaternion.identity, leftEyeRotation = Quaternion.identity, rightEyeRotation = Quaternion.identity }));
             ParkHands(); yield return Wait(.5f);
+            report.initialCameraPosition = nav.Origin.Camera.transform.position;
+            Check(Mathf.Abs(report.initialCameraPosition.y - nav.Origin.Origin.transform.position.y - 1.2f) < .001f, "Synthetic seated eye height is 1.2m above the saved floor");
             var station = UnityEngine.Object.FindObjectOfType<HelmetDiegeticStation>();
             station.ViewHeight.Raise(); station.ViewHeight.Raise(); yield return Wait(.1f);
             exploration.SelectClue(HelmetExplorationController.Clue.Air); exploration.Stop();
