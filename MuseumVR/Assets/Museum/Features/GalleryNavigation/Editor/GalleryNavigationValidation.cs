@@ -9,6 +9,7 @@ using Museum.Exploration;
 using Museum.Hotspots;
 using Museum.Inspection;
 using Museum.Localization;
+using Museum.PhysicalHands;
 using TMPro;
 using Unity.XR.CoreUtils;
 using UnityEditor;
@@ -273,6 +274,16 @@ namespace Museum.Navigation.Editor
             Check(nav.FadeOpacity == 0 && locomotion.All(p => p.Key.enabled == p.Value), "Disabling during a fade restores vision and locomotion");
             nav.enabled = true; yield return Wait(.2f);
             Check(nav.Buttons.Count == 3 && nav.Palette.gameObject.activeInHierarchy, "Re-enable restores one existing navigation panel");
+            Check(nav.TryGetDestination(GalleryNavigator.Exhibit.Main, out var mainFloor, out _), "Main exhibit still has an authored destination");
+            var rightPalm = UnityEngine.Object.FindObjectsOfType<MuseumPhysicalHand>().Single(hand => hand.InputController == rightController);
+            var palmTarget = mainFloor + Vector3.up * .7f;
+            QueueController(right, palmTarget, Quaternion.LookRotation(Vector3.down), false, false);
+            yield return Wait(.3f);
+            Physics.SyncTransforms();
+            var palmCollider = rightPalm.CollisionCollider;
+            Check(!rightPalm.transform.IsChildOf(nav.Origin.transform) && palmCollider.enabled && !palmCollider.isTrigger &&
+                Vector3.Distance(palmCollider.ClosestPoint(palmTarget), palmTarget) < .15f,
+                "The visitor's independently rooted physical palm occupies the main destination capsule");
             bool finalReturnAccepted = nav.Request(GalleryNavigator.Exhibit.Main);
             Check(finalReturnAccepted, finalReturnAccepted ? "Final return to the main exhibit accepted"
                 : "Final return to the main exhibit rejected: " + DescribeFinalRouteRejection(station));
@@ -309,7 +320,7 @@ namespace Museum.Navigation.Editor
             return $"status={status}, ready={nav.IsReady}, transitioning={nav.IsTransitioning}, pose={pose}/{floor:F3}, eye={eyeHeight:F3}, " +
                 $"holding={inspection.IsHeld}/{inspection.IsWindowHeld}/{inspection.IsSectionHeld}, returning={inspection.IsReturning}, " +
                 $"handoff={station.IsVisitHandoffOpen}, gesture={station.HasActiveGesture}, " +
-                $"capsule=[{string.Join(", ", hits)}], floor=[{string.Join("; ", ground)}]";
+                $"raw capsule hits=[{string.Join(", ", hits)}], floor=[{string.Join("; ", ground)}]";
         }
 
         static string HierarchyName(Transform node) => node.parent ? HierarchyName(node.parent) + "/" + node.name : node.name;

@@ -5,6 +5,7 @@ using Museum.Diegetic;
 using Museum.Exploration;
 using Museum.Inspection;
 using Museum.Localization;
+using Museum.PhysicalHands;
 using TMPro;
 using Unity.XR.CoreUtils;
 using UnityEngine;
@@ -231,10 +232,18 @@ namespace Museum.Navigation
             float height = Mathf.Max(1.1f, origin.Camera.transform.position.y - BaseTransform(origin).position.y);
             foreach (var hit in Physics.OverlapCapsule(floor + Vector3.up * (radius + .04f),
                 floor + Vector3.up * Mathf.Max(radius + .04f, height - radius), radius, ~0, QueryTriggerInteraction.Ignore))
-                if (!hit.transform.IsChildOf(origin.transform) && !hit.transform.IsChildOf(transform)) return false;
+                if (!IsVisitorCollider(hit)) return false;
             return Physics.RaycastAll(floor + Vector3.up * .25f, Vector3.down, .5f, ~0, QueryTriggerInteraction.Ignore)
-                .Any(h => !h.transform.IsChildOf(origin.transform) && !h.transform.IsChildOf(transform) &&
+                .Any(h => !IsVisitorCollider(h.collider) &&
                     h.normal.y > .75f && Mathf.Abs(h.point.y - floor.y) < .12f);
+        }
+
+        bool IsVisitorCollider(Collider collider)
+        {
+            if (collider.transform.IsChildOf(origin.transform) || collider.transform.IsChildOf(transform)) return true;
+            // The physical hands may have their own scene root outside the tracked rig hierarchy.
+            var hand = collider.GetComponentInParent<MuseumPhysicalHand>();
+            return hand && hand.InputController && hand.InputController.transform.IsChildOf(origin.transform);
         }
 
         void OnViewReset(XROrigin target)
