@@ -1,0 +1,125 @@
+{
+  "base_commit": "9e9f9893341f8caca3080fc3cb48218b92c786d1",
+  "branch": "codex/issue25-superlite-shell-r3-2026-11-18",
+  "user_confirmation_date": "2026-11-18",
+  "immutable_backup_sha256": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+  "retained_work_sha256": "6f769498b5bae4144af1b44561e767a579a0108163108e4a1fc1c8d348c41de2",
+  "backup_unchanged": true,
+  "old_initial_work_unchanged": true,
+  "new_control_sections": 7,
+  "new_control_points_each": 16,
+  "retained_control_arrays_match_actual_build_manifest": true,
+  "old_shell_shape_input": false,
+  "retained_changed_object": "Shell_Yellow_520-065_ESTIMATED",
+  "retained_other_model_objects_unchanged": 145,
+  "shell_mesh": {
+    "vertices": 4774,
+    "triangles": 9548,
+    "nonmanifold_edges": 0,
+    "connected_components": 1,
+    "zero_area_triangles": 0,
+    "nonadjacent_surface_overlap_candidates": 0,
+    "finite_coordinates": true,
+    "uv_layers": 1
+  },
+  "retained_metrics": {
+    "id": "06d-clean-shell-contact-trial-rejected",
+    "sections": "tmp/sl17b-r3-loft/profile06d/sections.json",
+    "renders": "tmp/sl17b-r3-loft/render06d-masks",
+    "actual_model": "tmp/sl17b-r3-loft/iteration06d/work_r3.blend",
+    "visible_iou": 0.39387440973064974,
+    "symmetric_boundary_deviation_over_L": 0.03310960740515899,
+    "full_shell_geometry_xor_over_union_vs_backup": 0.21508758194637545,
+    "new_window_plane_in_plane_vertical_projection_deg": 13.95000000000006,
+    "image_direction_difference_to_confirmed_target_deg": 6.039613253960852e-14,
+    "frame_plane_in_plane_vertical_projection_deg": 7.861751353250514,
+    "frame_direction_difference_to_confirmed_target_deg": 6.088248646749485,
+    "frame_measurement_policy": "Frame unchanged in non-refit iterations; explicit rigid rotation only in rejected contact-refit trials. Shell front plane is not substituted for actual frame angle.",
+    "gates": {
+      "iou": false,
+      "boundary": false,
+      "shell_difference": true,
+      "projected_frame_direction": false
+    },
+    "all_image_gates_passed": false,
+    "moved_new_controls_from_previous": [],
+    "control_points_source": "Actual saved build manifest, not later regenerated trial parameter arrays.",
+    "limits": "Direction is a model-plane in-plane vector projected into the frozen virtual camera, not an independently observed physical plane. VisibleIoU includes accessory effects; no occluded shape is invented."
+  },
+  "contact_refit_adopted": false,
+  "all_requested_acceptance_gates_passed": false,
+  "complete_assembly_validated": false,
+  "run_execution_status": "Readback/measurement/render scripts finished; this is NOT geometry/assembly/image acceptance.",
+  "independent_ai_review": "New112 parameter controls and actual saved-only-shell changes checked. Stale trial arrays corrected from actual build manifests. Rejected contact trial defects retained, actual frame angle not replaced by shell plane target. Not human approval.",
+  "fixed_three_view_comparison_sheets": 30,
+  "original_photograph_comparison_location": "Author local tmp/sl17b-r3-loft/private-iteration-sheets; not redistributed",
+  "method_limits": [
+    "L801 is confirmed visible projection, not full hidden physical shell length",
+    "14degree is image-direction target, not real3D measurement",
+    "0.8mm display wall is an estimated geometry parameter, not factory composite thickness",
+    "No real frontal photograph",
+    "No Unity/export/device/performance/build/human study results"
+  ],
+  "links": [
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-18/r3-loft/README.md",
+      "target": "work/work_r3.blend",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-18/r3-loft/README.md",
+      "target": "sections-final.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-18/r3-loft/README.md",
+      "target": "iteration-metrics.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-18/r3-loft/README.md",
+      "target": "../../../helmet-interaction/qa/runs/20261118-superlite-r3-loft-attempt/report.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-18/r3-loft/README.md",
+      "target": "../../superlite17b-2026-11-12/shell-rebuild-r3/backups/backup_r1_current.blend",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-18/r3-loft/README.md",
+      "target": "rejected-contact-trials/changes-06d.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-18/r3-loft/README.md",
+      "target": "rejected-contact-trials/geometry-06d.json",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-18/r3-loft/README.md",
+      "target": "iteration-sheets/06d-clean-shell-contact-trial-rejected/side-three-columns.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-18/r3-loft/README.md",
+      "target": "iteration-sheets/06d-clean-shell-contact-trial-rejected/34-three-columns.png",
+      "exists": true
+    },
+    {
+      "from": "artifacts/helmet-modeling/superlite17b-2026-11-18/r3-loft/README.md",
+      "target": "iteration-sheets/06d-clean-shell-contact-trial-rejected/front-three-columns.png",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-18-superlite-r3-loft-attempt.md",
+      "target": "../../artifacts/helmet-modeling/superlite17b-2026-11-18/r3-loft/README.md",
+      "exists": true
+    },
+    {
+      "from": "docs/activity/2026-11-18-superlite-r3-loft-attempt.md",
+      "target": "../external-resources.md",
+      "exists": true
+    }
+  ]
+}

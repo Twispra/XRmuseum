@@ -1,0 +1,36 @@
+{
+  "renders": [
+    {
+      "view": "side",
+      "coverage": "beauty",
+      "model_sha256": "6f769498b5bae4144af1b44561e767a579a0108163108e4a1fc1c8d348c41de2",
+      "same_baseline_camera": true,
+      "pixels": [
+        1600,
+        873
+      ]
+    },
+    {
+      "view": "34",
+      "coverage": "beauty",
+      "model_sha256": "6f769498b5bae4144af1b44561e767a579a0108163108e4a1fc1c8d348c41de2",
+      "same_baseline_camera": true,
+      "pixels": [
+        2000,
+        1497
+      ]
+    },
+    {
+      "view": "front",
+      "coverage": "beauty",
+      "model_sha256": "6f769498b5bae4144af1b44561e767a579a0108163108e4a1fc1c8d348c41de2",
+      "same_baseline_camera": true,
+      "pixels": [
+        1200,
+        1200
+      ]
+    }
+  ],
+  "source_unchanged": true,
+  "no_real_frontal_reference": true
+}

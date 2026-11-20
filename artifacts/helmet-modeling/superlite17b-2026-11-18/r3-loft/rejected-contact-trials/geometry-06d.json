@@ -1,0 +1,336 @@
+{
+  "backup_sha256": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+  "model_sha256": "dcaf6cf5665f83ab6835ea68bd3ad98e359308757f41dd9f40d61d1f2886bd06",
+  "model_objects": 146,
+  "model_triangles": 66844,
+  "changed_objects": [
+    "Bottom_O_Ring_510-446_ESTIMATED",
+    "Glass_Port_520-004",
+    "Handle_Brass_560-014",
+    "Handle_FrontFoot",
+    "Handle_RearFoot",
+    "NeckClamp_505-055",
+    "NeckDam_Neoprene_510-533",
+    "Neck_Yoke_520-117",
+    "RearWeight_560-005_Continuous_RESEARCH",
+    "Ring_PortChrome_560-070",
+    "Shell_Yellow_520-065_ESTIMATED",
+    "SideBlock_MountingFoot",
+    "ViewPort_Seal_510-260"
+  ],
+  "explicit_allowed_contact_meshes": [
+    "Ring_PortChrome_560-070",
+    "Glass_Port_520-004",
+    "ViewPort_Seal_510-260",
+    "Handle_Brass_560-014",
+    "Handle_FrontFoot",
+    "Handle_RearFoot",
+    "Bottom_O_Ring_510-446_ESTIMATED",
+    "NeckClamp_505-055",
+    "NeckDam_Neoprene_510-533",
+    "Neck_Yoke_520-117",
+    "SideBlock_MountingFoot",
+    "RearWeight_560-005_Continuous_RESEARCH"
+  ],
+  "locked_other_meshes": 133,
+  "locked_fingerprints_unchanged": true,
+  "unexpected_changes": [],
+  "changed_mesh_checks": {
+    "Bottom_O_Ring_510-446_ESTIMATED": {
+      "vertices": 2352,
+      "triangles": 4704,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "zero_area_triangles": 0,
+      "nonadjacent_surface_overlap_candidates": 116,
+      "finite_coordinates": true,
+      "uv_layers": 1
+    },
+    "Glass_Port_520-004": {
+      "vertices": 162,
+      "triangles": 320,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "zero_area_triangles": 0,
+      "nonadjacent_surface_overlap_candidates": 0,
+      "finite_coordinates": true,
+      "uv_layers": 1
+    },
+    "Handle_Brass_560-014": {
+      "vertices": 290,
+      "triangles": 576,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "zero_area_triangles": 0,
+      "nonadjacent_surface_overlap_candidates": 0,
+      "finite_coordinates": true,
+      "uv_layers": 1
+    },
+    "Handle_FrontFoot": {
+      "vertices": 56,
+      "triangles": 108,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "zero_area_triangles": 0,
+      "nonadjacent_surface_overlap_candidates": 0,
+      "finite_coordinates": true,
+      "uv_layers": 1
+    },
+    "Handle_RearFoot": {
+      "vertices": 56,
+      "triangles": 108,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "zero_area_triangles": 0,
+      "nonadjacent_surface_overlap_candidates": 0,
+      "finite_coordinates": true,
+      "uv_layers": 1
+    },
+    "NeckClamp_505-055": {
+      "vertices": 764,
+      "triangles": 1524,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "zero_area_triangles": 0,
+      "nonadjacent_surface_overlap_candidates": 19,
+      "finite_coordinates": true,
+      "uv_layers": 1
+    },
+    "NeckDam_Neoprene_510-533": {
+      "vertices": 3136,
+      "triangles": 6272,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "zero_area_triangles": 0,
+      "nonadjacent_surface_overlap_candidates": 2152,
+      "finite_coordinates": true,
+      "uv_layers": 1
+    },
+    "Neck_Yoke_520-117": {
+      "vertices": 604,
+      "triangles": 1204,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "zero_area_triangles": 0,
+      "nonadjacent_surface_overlap_candidates": 84,
+      "finite_coordinates": true,
+      "uv_layers": 1
+    },
+    "RearWeight_560-005_Continuous_RESEARCH": {
+      "vertices": 3764,
+      "triangles": 7528,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "zero_area_triangles": 110,
+      "nonadjacent_surface_overlap_candidates": 1131,
+      "finite_coordinates": true,
+      "uv_layers": 1
+    },
+    "Ring_PortChrome_560-070": {
+      "vertices": 960,
+      "triangles": 1920,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "zero_area_triangles": 0,
+      "nonadjacent_surface_overlap_candidates": 0,
+      "finite_coordinates": true,
+      "uv_layers": 1
+    },
+    "Shell_Yellow_520-065_ESTIMATED": {
+      "vertices": 4774,
+      "triangles": 9548,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "zero_area_triangles": 0,
+      "nonadjacent_surface_overlap_candidates": 0,
+      "finite_coordinates": true,
+      "uv_layers": 1
+    },
+    "SideBlock_MountingFoot": {
+      "vertices": 56,
+      "triangles": 108,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "zero_area_triangles": 0,
+      "nonadjacent_surface_overlap_candidates": 0,
+      "finite_coordinates": true,
+      "uv_layers": 1
+    },
+    "ViewPort_Seal_510-260": {
+      "vertices": 960,
+      "triangles": 1920,
+      "nonmanifold_edges": 0,
+      "connected_components": 1,
+      "zero_area_triangles": 0,
+      "nonadjacent_surface_overlap_candidates": 0,
+      "finite_coordinates": true,
+      "uv_layers": 1
+    }
+  },
+  "shell_surface_contact_pairs": [
+    {
+      "part": "BentTube_Chrome_555-155",
+      "triangle_surface_pairs": 168,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "BentTube_LowerCoupling",
+      "triangle_surface_pairs": 109,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "Bottom_O_Ring_510-446_ESTIMATED",
+      "triangle_surface_pairs": 108,
+      "part_authorized_for_refit": true
+    },
+    {
+      "part": "Exhaust_Black_Wing_-1",
+      "triangle_surface_pairs": 220,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "Exhaust_Black_Wing_1",
+      "triangle_surface_pairs": 258,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "Exhaust_Outlet_Rim_-1",
+      "triangle_surface_pairs": 136,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "Exhaust_Outlet_Rim_1",
+      "triangle_surface_pairs": 140,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "Glass_Port_520-004",
+      "triangle_surface_pairs": 315,
+      "part_authorized_for_refit": true
+    },
+    {
+      "part": "Handle_Brass_560-014",
+      "triangle_surface_pairs": 165,
+      "part_authorized_for_refit": true
+    },
+    {
+      "part": "Handle_FrontFoot",
+      "triangle_surface_pairs": 146,
+      "part_authorized_for_refit": true
+    },
+    {
+      "part": "Handle_RearFoot",
+      "triangle_surface_pairs": 86,
+      "part_authorized_for_refit": true
+    },
+    {
+      "part": "Knob_Black_SteadyFlow_520-524",
+      "triangle_surface_pairs": 70,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "Knob_Black_SteadyFlow_520-524_Grip_06",
+      "triangle_surface_pairs": 34,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "NeckClamp_505-055",
+      "triangle_surface_pairs": 40,
+      "part_authorized_for_refit": true
+    },
+    {
+      "part": "NeckCushion_VisibleBlue",
+      "triangle_surface_pairs": 146,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "NeckDam_Neoprene_510-533",
+      "triangle_surface_pairs": 2482,
+      "part_authorized_for_refit": true
+    },
+    {
+      "part": "Neck_Latch_-1",
+      "triangle_surface_pairs": 100,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "Neck_Latch_1",
+      "triangle_surface_pairs": 90,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "Neck_Yoke_520-117",
+      "triangle_surface_pairs": 54,
+      "part_authorized_for_refit": true
+    },
+    {
+      "part": "NoseBlock_Hex",
+      "triangle_surface_pairs": 71,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "RearWeight_560-005_Continuous_RESEARCH",
+      "triangle_surface_pairs": 408,
+      "part_authorized_for_refit": true
+    },
+    {
+      "part": "Regulator_AdjustmentKnob",
+      "triangle_surface_pairs": 93,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "Regulator_AdjustmentStem",
+      "triangle_surface_pairs": 76,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "Regulator_InletCap",
+      "triangle_surface_pairs": 84,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "Regulator_InletNipple",
+      "triangle_surface_pairs": 76,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "Regulator_SuperFlow_505-027_Body",
+      "triangle_surface_pairs": 176,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "Ring_PortChrome_560-070",
+      "triangle_surface_pairs": 1080,
+      "part_authorized_for_refit": true
+    },
+    {
+      "part": "Screws_Port_09",
+      "triangle_surface_pairs": 64,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "SideBlock_Chrome_505-024",
+      "triangle_surface_pairs": 128,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "ViewPort_Seal_510-260",
+      "triangle_surface_pairs": 817,
+      "part_authorized_for_refit": true
+    },
+    {
+      "part": "Whisker_Fastener_-1_1",
+      "triangle_surface_pairs": 31,
+      "part_authorized_for_refit": false
+    },
+    {
+      "part": "Whisker_Fastener_1_1",
+      "triangle_surface_pairs": 31,
+      "part_authorized_for_refit": false
+    }
+  ],
+  "backup_unchanged": true,
+  "no_old_shell_geometry_used": true,
+  "complete_assembly_validated": false,
+  "limits": "BVH overlap candidates require inspection; not manufacturing or seal acceptance. Closed thin-wall solid does not mean neck/window openings are filled. No object-scope pass implies image gates pass."
+}

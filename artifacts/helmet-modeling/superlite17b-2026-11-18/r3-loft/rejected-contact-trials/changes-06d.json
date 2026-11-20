@@ -1,0 +1,100 @@
+{
+  "input_sha256": "6f769498b5bae4144af1b44561e767a579a0108163108e4a1fc1c8d348c41de2",
+  "output_sha256": "dcaf6cf5665f83ab6835ea68bd3ad98e359308757f41dd9f40d61d1f2886bd06",
+  "unlocked_actual_meshes": [
+    "Ring_PortChrome_560-070",
+    "Glass_Port_520-004",
+    "ViewPort_Seal_510-260",
+    "Handle_Brass_560-014",
+    "Handle_FrontFoot",
+    "Handle_RearFoot",
+    "Bottom_O_Ring_510-446_ESTIMATED",
+    "NeckClamp_505-055",
+    "NeckDam_Neoprene_510-533",
+    "Neck_Yoke_520-117",
+    "SideBlock_MountingFoot",
+    "RearWeight_560-005_Continuous_RESEARCH"
+  ],
+  "locked_other_mesh_count": 133,
+  "changes": [
+    {
+      "object": "Ring_PortChrome_560-070",
+      "vertices": 960,
+      "max_vertex_displacement_model_m": 0.008259053617909967,
+      "reason": "Same rigid window-layer tilt to confirmed image-direction target. Locked screw alignment remains incomplete."
+    },
+    {
+      "object": "Glass_Port_520-004",
+      "vertices": 162,
+      "max_vertex_displacement_model_m": 0.0067061894681190995,
+      "reason": "Same rigid window-layer tilt to confirmed image-direction target. Locked screw alignment remains incomplete."
+    },
+    {
+      "object": "ViewPort_Seal_510-260",
+      "vertices": 960,
+      "max_vertex_displacement_model_m": 0.007027686297157946,
+      "reason": "Same rigid window-layer tilt to confirmed image-direction target. Locked screw alignment remains incomplete."
+    },
+    {
+      "object": "Handle_FrontFoot",
+      "vertices": 56,
+      "max_vertex_displacement_model_m": 0.0,
+      "reason": "Foot follows new outer crown; existing arch interpolates endpoint shifts."
+    },
+    {
+      "object": "Handle_RearFoot",
+      "vertices": 56,
+      "max_vertex_displacement_model_m": 0.0,
+      "reason": "Foot follows new outer crown; existing arch interpolates endpoint shifts."
+    },
+    {
+      "object": "Handle_Brass_560-014",
+      "vertices": 290,
+      "max_vertex_displacement_model_m": 0.2308881467392049,
+      "reason": "Arch endpoint interpolation, no global scale."
+    },
+    {
+      "object": "Bottom_O_Ring_510-446_ESTIMATED",
+      "vertices": 2352,
+      "max_vertex_displacement_model_m": 0.0767098375172222,
+      "reason": "Upper contact band adapt only; lower opening/retained latch background not globally moved. Mechanical fit unverified."
+    },
+    {
+      "object": "NeckClamp_505-055",
+      "vertices": 764,
+      "max_vertex_displacement_model_m": 0.08444172232152648,
+      "reason": "Upper contact band adapt only; lower opening/retained latch background not globally moved. Mechanical fit unverified."
+    },
+    {
+      "object": "NeckDam_Neoprene_510-533",
+      "vertices": 3136,
+      "max_vertex_displacement_model_m": 0.08629705789219616,
+      "reason": "Upper contact band adapt only; lower opening/retained latch background not globally moved. Mechanical fit unverified."
+    },
+    {
+      "object": "Neck_Yoke_520-117",
+      "vertices": 604,
+      "max_vertex_displacement_model_m": 0.04478953397094489,
+      "reason": "Upper contact band adapt only; lower opening/retained latch background not globally moved. Mechanical fit unverified."
+    },
+    {
+      "object": "SideBlock_MountingFoot",
+      "vertices": 56,
+      "max_vertex_displacement_model_m": 0.012482091668697175,
+      "reason": "Contact-surface adaptation to new loft; mount/valve-side anchors protected. Not physical installation dimensions."
+    },
+    {
+      "object": "RearWeight_560-005_Continuous_RESEARCH",
+      "vertices": 3764,
+      "max_vertex_displacement_model_m": 0.024120994135230084,
+      "reason": "Contact-surface adaptation to new loft; mount/valve-side anchors protected. Not physical installation dimensions."
+    }
+  ],
+  "incomplete_interfaces": [
+    "22 locked window screws/slots not refitted to tilted frame",
+    "3 locked handle fasteners not refitted",
+    "Neck joint mechanical continuity/watertightness unproved",
+    "Inherited rear tab/pin gap remains"
+  ],
+  "limits": "Independent research assembly. No gate pass from contact refitting alone; geometry/intersections and image metrics must be checked."
+}
