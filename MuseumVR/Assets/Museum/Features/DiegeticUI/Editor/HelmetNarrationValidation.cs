@@ -66,9 +66,12 @@ namespace Museum.Diegetic.Editor
             CheckResult(source.isPlaying && source.timeSamples < source.clip.frequency * 1.5f,
                 "Replay click restarts orientation from the beginning", "Samples=" + source.timeSamples, "production-input");
             if (source.isPlaying) yield return Wait(source.clip.length + .3f);
-            CheckNarrationStopped(caption, source, "Natural end");
+            CheckRetainedNarration(control.Caption, caption, source, "orientation", MuseumLanguage.English);
+            CaptureNarrationSubtitle(caption, "retained-orientation", MuseumLanguage.English);
+            yield return RayClick(HelmetDiegeticStation.Command.Narration);
+            CheckNarrationStopped(caption, source, "Close finished subtitle");
             CheckResult(NarrationLabelSource(control.Caption) == "Play narration",
-                "Natural end restores the play label", control.Caption.text);
+                "Closing the finished subtitle restores the play label", control.Caption.text);
 
             foreach (var language in new[] { MuseumLanguage.English, MuseumLanguage.Chinese, MuseumLanguage.TraditionalChinese })
             {
@@ -159,6 +162,8 @@ namespace Museum.Diegetic.Editor
                 CheckNarrationStopped(caption, source, "Change era from " + hiddenEra);
             }
 
+            yield return RetainedNarrationFixtures(control.Caption, caption, source);
+
             yield return RayClick(HelmetDiegeticStation.Command.Narration);
             yield return RayClick(HelmetDiegeticStation.Command.Reset);
             CheckNarrationStopped(caption, source, "Reset exhibit");
@@ -181,6 +186,54 @@ namespace Museum.Diegetic.Editor
             CheckResult(!exhibitScene.isLoaded && !source && !caption &&
                 !UnityEngine.Object.FindObjectsOfType<AudioSource>(true).Any(audio => audio.gameObject.name == "Helmet narration playback"),
                 "Exiting the scene removes narration audio and subtitle", "Museum loaded=" + exhibitScene.isLoaded, "scene-lifecycle");
+        }
+
+        static IEnumerator RetainedNarrationFixtures(TMP_Text button, TMP_Text caption, AudioSource source)
+        {
+            inspection.SoundEnabled = false;
+            yield return RayClick(HelmetDiegeticStation.Command.Air);
+            yield return RayClick(HelmetDiegeticStation.Command.Narration);
+            CheckRetainedNarration(button, caption, source, "air", MuseumLanguage.Chinese);
+            yield return Wait(Resources.Load<AudioClip>("HelmetNarration/air-zh").length + .5f);
+            CheckRetainedNarration(button, caption, source, "air", MuseumLanguage.Chinese);
+            CaptureNarrationSubtitle(caption, "retained-air", MuseumLanguage.Chinese);
+
+            yield return RayClick(HelmetDiegeticStation.Command.Settings);
+            yield return RayClick(HelmetDiegeticStation.Command.Traditional);
+            CheckNarrationStopped(caption, source, "Change language with a retained subtitle");
+            yield return RayClick(HelmetDiegeticStation.Command.Settings);
+
+            inspection.SoundEnabled = true;
+            yield return RayClick(HelmetDiegeticStation.Command.Voice);
+            yield return RayClick(HelmetDiegeticStation.Command.Narration);
+            if (source.isPlaying) yield return Wait(source.clip.length + .3f);
+            CheckRetainedNarration(button, caption, source, "voice", MuseumLanguage.TraditionalChinese);
+            CaptureNarrationSubtitle(caption, "retained-voice", MuseumLanguage.TraditionalChinese);
+            yield return RayClick(HelmetDiegeticStation.Command.CloseDemo);
+            CheckNarrationStopped(caption, source, "Close demo with a retained subtitle");
+
+            inspection.SoundEnabled = false;
+            yield return RayClick(HelmetDiegeticStation.Command.Narration);
+            yield return RayClick(HelmetDiegeticStation.Command.ResetView);
+            CheckNarrationStopped(caption, source, "Reset view with a retained subtitle");
+            yield return RayClick(HelmetDiegeticStation.Command.Narration);
+            yield return RayClick(HelmetDiegeticStation.Command.FinishVisit);
+            CheckNarrationStopped(caption, source, "Finish visit with a retained subtitle");
+            yield return RayClick(HelmetDiegeticStation.Command.ContinueVisit);
+            MuseumText.Channel.SetLanguage(MuseumLanguage.Chinese);
+            inspection.SoundEnabled = true;
+        }
+
+        static void CheckRetainedNarration(TMP_Text button, TMP_Text caption, AudioSource source, string cue, MuseumLanguage language)
+        {
+            CheckNarrationCaption(caption, source, cue, null, language, false);
+            button.ForceMeshUpdate(true, true);
+            bool found = MuseumText.Table.TryGet("narration.subtitles.close", language, out string expected);
+            CheckResult(!source.clip && found && button.text == expected && NarrationLabelSource(button) == "Close subtitles" &&
+                button.isActiveAndEnabled && !button.isTextOverflowing &&
+                button.text.All(character => char.IsWhiteSpace(character) || button.font.HasCharacter(character, false, false)),
+                "Reading state releases its audio and shows a readable dismissal label " + cue + "/" + language,
+                "Clip=" + (source.clip ? source.clip.name : "none") + "; Button=" + button.text, "narration-lifecycle");
         }
 
         static IEnumerator NarrationConfirmFromIdle(HelmetPhysicalControl control, AudioSource source, TMP_Text caption)

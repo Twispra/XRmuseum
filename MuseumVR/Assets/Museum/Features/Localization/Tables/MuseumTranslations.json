@@ -1895,7 +1895,14 @@
       "english": "Stop narration",
       "chinese": "停止语音",
       "traditionalChinese": "停止語音",
-      "note": "Visitor control title while narration is active."
+      "note": "Visitor control title while narration audio is playing."
+    },
+    {
+      "key": "narration.subtitles.close",
+      "english": "Close subtitles",
+      "chinese": "关闭字幕",
+      "traditionalChinese": "關閉字幕",
+      "note": "Dismiss the subtitle after the audio ends or when sound is off."
     },
     {
       "key": "visit.finish",

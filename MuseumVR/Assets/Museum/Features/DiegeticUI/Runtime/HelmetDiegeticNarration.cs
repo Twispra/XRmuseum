@@ -11,6 +11,7 @@ namespace Museum.Diegetic
 
         const string PlayGuide = "Play narration";
         const string StopGuide = "Stop narration";
+        const string CloseGuide = "Close subtitles";
         const string OrientationGuide = "Aim at the shell. Hold Grip and move the controller to turn the helmet. Release to stop. Aim at the front window, then press and release Grip to open it.";
         const string AirGuide = "In this demo, the team at the surface pumps air through a hose to the helmet.";
         const string VoiceGuide = "In this demo, a cable lets the diver and the team at the surface talk to each other.";
@@ -21,7 +22,6 @@ namespace Museum.Diegetic
         LanguageChannel narrationLanguage;
         GuideSegment activeGuide;
         int narrationEra, narrationReset;
-        float narrationEndsAt;
         bool narrationActive;
 
         void BuildNarration()
@@ -82,12 +82,16 @@ namespace Museum.Diegetic
             var clip = Resources.Load<AudioClip>("HelmetNarration/" + stem + (english ? "-en" : "-zh"));
 
             narrationActive = true;
-            narrationEndsAt = Time.unscaledTime + (clip ? Mathf.Max(6f, clip.length) : 8f);
             MuseumText.Set(narrationCaption, caption);
             narrationCaption.gameObject.SetActive(true);
-            narrationControl.SetTitle(StopGuide);
             narrationControl.SetEmphasis(true);
-            if (!inspection.SoundEnabled || !clip) return;
+            if (!inspection.SoundEnabled || !clip)
+            {
+                narrationControl.SetTitle(CloseGuide);
+                return;
+            }
+
+            narrationControl.SetTitle(StopGuide);
             demonstration.SetNarrationAudioSuppressed(true);
             narrationSource.clip = clip;
             narrationSource.Play();
@@ -105,13 +109,7 @@ namespace Museum.Diegetic
         void UpdateNarration()
         {
             CheckNarrationContext();
-            if (!narrationActive) return;
-            if (Time.unscaledTime >= narrationEndsAt)
-            {
-                StopNarration();
-                return;
-            }
-            if (!inspection.SoundEnabled || (narrationSource.clip && !narrationSource.isPlaying))
+            if (narrationActive && narrationSource.clip && (!inspection.SoundEnabled || !narrationSource.isPlaying))
                 StopNarrationAudio();
         }
 
@@ -121,6 +119,7 @@ namespace Museum.Diegetic
             narrationSource.Stop();
             narrationSource.clip = null;
             if (demonstration) demonstration.SetNarrationAudioSuppressed(false);
+            if (narrationActive) narrationControl.SetTitle(CloseGuide);
         }
 
         void StopNarration()
