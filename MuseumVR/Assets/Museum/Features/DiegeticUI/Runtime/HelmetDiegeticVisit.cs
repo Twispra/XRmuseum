@@ -61,6 +61,8 @@ namespace Museum.Diegetic
             Destroy(collider);
             var renderer = backing.GetComponent<Renderer>();
             renderer.sharedMaterial = uiMaterial;
+            // Draw behind every label, even when its center is closer to the viewer.
+            renderer.sortingOrder = -1;
             renderer.shadowCastingMode = ShadowCastingMode.Off;
             renderer.receiveShadows = false;
             var properties = new MaterialPropertyBlock();
