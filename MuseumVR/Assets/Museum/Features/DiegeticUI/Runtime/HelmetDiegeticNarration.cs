@@ -84,6 +84,7 @@ namespace Museum.Diegetic
             narrationActive = true;
             MuseumText.Set(narrationCaption, caption);
             narrationCaption.gameObject.SetActive(true);
+            narrationControl.SetTitle(StopGuide);
             narrationControl.SetEmphasis(true);
             if (!inspection.SoundEnabled || !clip)
             {
@@ -91,7 +92,6 @@ namespace Museum.Diegetic
                 return;
             }
 
-            narrationControl.SetTitle(StopGuide);
             demonstration.SetNarrationAudioSuppressed(true);
             narrationSource.clip = clip;
             narrationSource.Play();
