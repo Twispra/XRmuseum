@@ -17,7 +17,8 @@ namespace Museum.Hotspots
         [SerializeField, Min(0f)] float explanationHoldSeconds = 30f;
         [SerializeField, Min(.01f)] float explanationFadeSeconds = 1f;
 
-        readonly HashSet<string> visited = new HashSet<string>();
+        // The same hotspot identifier can describe different parts across eras.
+        readonly Dictionary<string, string> visited = new Dictionary<string, string>();
         readonly Dictionary<XRRayInteractor, QueryTriggerInteraction> rayQuerySettings = new Dictionary<XRRayInteractor, QueryTriggerInteraction>();
         readonly Dictionary<XRRayInteractor, bool> rayHoverActivationSettings = new Dictionary<XRRayInteractor, bool>();
         readonly Dictionary<XRDirectInteractor, QueryTriggerInteraction> directQuerySettings = new Dictionary<XRDirectInteractor, QueryTriggerInteraction>();
@@ -48,7 +49,10 @@ namespace Museum.Hotspots
         public int VisitedCount => visited.Count;
         public int RequiredHotspots => requiredHotspots;
         public bool IsComplete => VisitedCount >= requiredHotspots;
-        public bool HasVisited(string identifier) => identifier != null && visited.Contains(identifier);
+        public bool HasVisited(string identifier) => identifier != null && visited.ContainsKey(identifier);
+        public string ProgressEnglish => Mathf.Min(VisitedCount, requiredHotspots) + " / " + requiredHotspots + " inspected";
+        public bool TryGetFirstObservation(string identifier, out string source) =>
+            visited.TryGetValue(identifier ?? string.Empty, out source);
         public float ExplanationOpacity { get; private set; } = 1f;
         public bool HotspotsVisible { get; private set; }
 
@@ -70,10 +74,9 @@ namespace Museum.Hotspots
                 return false;
 
             bool wasComplete = IsComplete;
-            bool added = visited.Add(identifier);
-
             selectedIdentifier = identifier;
             informationEnglish = string.IsNullOrWhiteSpace(title) ? description : title + "\n" + description;
+            bool added = visited.TryAdd(identifier, informationEnglish);
             RestartExplanationLifetime();
             RefreshText();
 
@@ -331,7 +334,7 @@ namespace Museum.Hotspots
         public void RefreshText()
         {
             WriteText(informationText, informationEnglish);
-            WriteText(progressText, Mathf.Min(VisitedCount, requiredHotspots) + " / " + requiredHotspots + " inspected");
+            WriteText(progressText, ProgressEnglish);
             if (completionFeedback != null)
             {
                 WriteText(completionFeedback.GetComponentInChildren<TMP_Text>(true), "Exploration complete");

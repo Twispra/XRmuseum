@@ -83,17 +83,24 @@ namespace Museum.Diegetic.Editor
             mouse = Mouse.current; addedMouse = mouse == null;
             if (addedMouse) mouse = InputSystem.AddDevice<Mouse>("Diegetic QA mouse");
         }
-        static void Begin(bool narrationOnly = false)
+        enum Suite { Full, Narration, VisitRecap }
+
+        static void Begin(bool narrationOnly = false) => Begin(narrationOnly ? Suite.Narration : Suite.Full);
+
+        static void Begin(Suite suite)
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Exit Play Mode before validation.");
             EditorSceneManager.OpenScene(ScenePath);
-            SessionState.SetBool(Prefix + "NarrationOnly", narrationOnly);
-            string runKind = narrationOnly ? "-narration-" : "-precision-close-hints-20261017-";
+            SessionState.SetInt(Prefix + "Suite", (int)suite);
+            string runKind = suite == Suite.VisitRecap ? "-visit-recap-" :
+                suite == Suite.Narration ? "-narration-" : "-precision-close-hints-20261017-";
             SessionState.SetString(Prefix + "Run", DateTime.UtcNow.ToString("yyyyMMddTHHmmssfffZ") + runKind + Guid.NewGuid().ToString("N"));
             report = new Report { utc = DateTime.UtcNow.ToString("o"), commit = Git("rev-parse HEAD"), dirty = Git("status --porcelain=v1 --untracked-files=all"), unity = Application.unityVersion };
             foreach (string path in new[] { ScenePath, "Packages/manifest.json", "Packages/packages-lock.json" }
                 .Concat(Directory.GetFiles("Assets/Museum/Features/DiegeticUI", "*", SearchOption.AllDirectories))
                 .Concat(new[] { "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs", "Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs",
+                    "Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationController.cs", "Assets/Museum/Features/HelmetHotspots/Runtime/HelmetHotspotTour.cs",
+                    "Assets/Museum/Features/Localization/Runtime/LocalizedSourceText.cs", "Assets/Museum/Features/Localization/Runtime/MuseumText.cs",
                     "Assets/Museum/Features/RefinedModels/Runtime/RefinedConnectionEquipment.cs", "Assets/Museum/Features/VisitorFlow/Runtime/VisitorViewRecovery.cs",
                     "Assets/Museum/Features/Localization/Tables/MuseumTranslations.json", "Assets/Museum/Features/Localization/Tables/LocalizationTable.asset",
                     "Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset", "Assets/Museum/Features/Localization/Fonts/characters-required.txt" }).Where(File.Exists).OrderBy(p => p))
@@ -179,9 +186,15 @@ namespace Museum.Diegetic.Editor
             inspection.ReduceMotion = false;
             if (station.AlwaysShowHints) station.Execute(HelmetDiegeticStation.Command.Hints);
             yield return Wait(1.1f);
-            if (SessionState.GetBool(Prefix + "NarrationOnly", false))
+            var suite = (Suite)SessionState.GetInt(Prefix + "Suite", (int)Suite.Full);
+            if (suite == Suite.Narration)
             {
                 yield return NarrationFixtures();
+                yield break;
+            }
+            if (suite == Suite.VisitRecap)
+            {
+                yield return VisitRecapFixtures();
                 yield break;
             }
             Capture("01-main-view", new Vector3(0, .15f, -1.55f));
