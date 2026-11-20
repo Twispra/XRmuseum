@@ -27,15 +27,27 @@ namespace Museum.Exploration
             interactable = GetComponent<XRSimpleInteractable>();
             surface = GetComponent<Renderer>();
             block = new MaterialPropertyBlock();
-            interactable.selectEntered.AddListener(Pressed);
+            interactable.selectEntered.AddListener(Selected);
+            interactable.activated.AddListener(Activated);
         }
         void OnDisable()
         {
             pending = false;
-            if (interactable) interactable.selectEntered.RemoveListener(Pressed);
+            if (interactable)
+            {
+                interactable.selectEntered.RemoveListener(Selected);
+                interactable.activated.RemoveListener(Activated);
+            }
             if (surface) surface.SetPropertyBlock(null);
         }
-        void Pressed(SelectEnterEventArgs args) { pending = true; }
+        void Selected(SelectEnterEventArgs args) { QueuePress(); }
+        void Activated(ActivateEventArgs args) { QueuePress(); }
+        void QueuePress()
+        {
+            // Select and Activate can arrive in the same interaction update when
+            // a controller maps one control to both actions. Dispatch once in Update.
+            pending = true;
+        }
         void Update()
         {
             if (surface && surface.sharedMaterial && surface.sharedMaterial.HasProperty(BaseColor))
@@ -76,3 +88,4 @@ namespace Museum.Exploration
         }
     }
 }
+

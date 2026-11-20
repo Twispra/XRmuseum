@@ -279,8 +279,8 @@ namespace Museum.Exploration.Editor
             yield return Press("Exploration CLOSE", false);
             Require(!panel.IsReading && !panel.IsExploring && !demonstration.IsPlaying,
                 "XR input", "closing Help restores inspection without playback", Describe());
-            yield return Press("Exploration EXPLORE", false, true);
-            Require(panel.IsExploring, "XR input", "exploration tab opens the optional page", "Grip selected the shared palette tab.");
+            yield return Press("Exploration EXPLORE", false, true, true);
+            Require(panel.IsExploring, "XR input", "exploration tab opens the optional page", "Trigger activated the shared palette tab through the production ray interactor.");
             CheckWelcomeControls();
             Capture("00-welcome");
             Capture("after-welcome");
@@ -815,8 +815,10 @@ namespace Museum.Exploration.Editor
                 "button=" + activeButton + "; label=" + activeLabel + "; enabled active collider=" + selectable);
         }
 
-        static IEnumerator Press(string objectName, bool left, bool distant = false)
+        static IEnumerator Press(string objectName, bool left, bool distant = false, bool trigger = false)
         {
+            if (trigger && !distant)
+                throw new InvalidOperationException("Trigger validation requires the production ray interactor's hovered activation path.");
             if (objectName.StartsWith("Exploration ", StringComparison.Ordinal) || objectName.StartsWith("Inspection ", StringComparison.Ordinal))
                 CheckButtonVisibility(objectName, true);
             var button = GameObject.Find(objectName)?.GetComponent<XRSimpleInteractable>();
@@ -826,7 +828,9 @@ namespace Museum.Exploration.Editor
             Require(collider, "XR input", "button collider: " + objectName, "An enabled target is required.");
             int events = 0; string interactor = "none";
             UnityEngine.Events.UnityAction<SelectEnterEventArgs> listener = args => { events++; interactor = args.interactorObject.GetType().Name; };
-            button.selectEntered.AddListener(listener);
+            UnityEngine.Events.UnityAction<ActivateEventArgs> activateListener = args => { events++; interactor = args.interactorObject.GetType().Name; };
+            if (trigger) button.activated.AddListener(activateListener);
+            else button.selectEntered.AddListener(listener);
             try
             {
                 var device = left ? leftDevice : rightDevice;
@@ -846,17 +850,25 @@ namespace Museum.Exploration.Editor
                 touch = collider.bounds.center - (distant ? button.transform.forward * .55f : Vector3.zero);
                 rotation = distant ? Quaternion.LookRotation(collider.bounds.center - touch, Vector3.up) : Quaternion.identity;
                 if (!distant) touch = DirectButtonTouch(button, collider, left);
-                QueueController(device, touch, rotation, true); yield return Wait(.22f);
-                Require(events == 1, "XR input", "grip selects " + objectName, "hand=" + (left ? "left" : "right") + "; select events=" + events + "; interactor=" + interactor +
+                QueueController(device, touch, rotation, !trigger, trigger); yield return Wait(.22f);
+                string control = trigger ? "trigger activates " : "grip selects ";
+                Require(events == 1, "XR input", control + objectName, "hand=" + (left ? "left" : "right") + "; events=" + events + "; interactor=" + interactor +
                     (distant ? "" : "; " + MuseumPhysicalHandsTestPose.SelectionDiagnostics(left ? leftController : rightController, button)));
-                if (distant) Require(interactor == nameof(XRRayInteractor), "XR input", "distant ray selects " + objectName,
+                if (distant) Require(interactor == nameof(XRRayInteractor), "XR input", "distant ray interacts with " + objectName,
                     "Target is 0.55 m from the simulated hand; interactor=" + interactor);
                 if (button is HelmetExplorationHotspot)
                     Require(!inspection.GetComponent<XRGrabInteractable>().isSelected, "XR input", "hotspot selection does not grab the helmet", "The child clue wins over the whole-object grab while selected.");
-                QueueController(device, touch + Vector3.back * .30f, Quaternion.identity, false); yield return Wait(.22f);
+                QueueController(device, touch + Vector3.back * .30f, Quaternion.identity, false, false); yield return Wait(.22f);
                 ParkHands(); yield return Wait(.12f);
             }
-            finally { if (button) button.selectEntered.RemoveListener(listener); }
+            finally
+            {
+                if (button)
+                {
+                    if (trigger) button.activated.RemoveListener(activateListener);
+                    else button.selectEntered.RemoveListener(listener);
+                }
+            }
         }
 
         static Vector3 DirectButtonTouch(XRSimpleInteractable button, Collider collider, bool left)
@@ -873,11 +885,13 @@ namespace Museum.Exploration.Editor
             QueueController(rightDevice, new Vector3(.7f, .8f, 1f), Quaternion.identity, false);
             QueueController(leftDevice, new Vector3(-.7f, .8f, 1f), Quaternion.identity, false);
         }
-        static void QueueController(XRSimulatedController device, Vector3 world, Quaternion rotation, bool grip)
+        static void QueueController(XRSimulatedController device, Vector3 world, Quaternion rotation, bool grip, bool trigger = false)
         {
             var parent = (device == leftDevice ? leftController : rightController).transform.parent;
             var state = new XRSimulatedControllerState { isTracked = true, trackingState = 3, batteryLevel = 1,
-                devicePosition = parent.InverseTransformPoint(world), deviceRotation = Quaternion.Inverse(parent.rotation) * rotation, grip = grip ? 1f : 0f }.WithButton(ControllerButton.GripButton, grip);
+                devicePosition = parent.InverseTransformPoint(world), deviceRotation = Quaternion.Inverse(parent.rotation) * rotation,
+                grip = grip ? 1f : 0f, trigger = trigger ? 1f : 0f }
+                .WithButton(ControllerButton.GripButton, grip).WithButton(ControllerButton.TriggerButton, trigger);
             PendingInput.Enqueue(() => InputSystem.QueueStateEvent(device, state));
         }
         static void QueueHead()
@@ -1093,3 +1107,4 @@ namespace Museum.Exploration.Editor
     }
 }
 #endif
+
