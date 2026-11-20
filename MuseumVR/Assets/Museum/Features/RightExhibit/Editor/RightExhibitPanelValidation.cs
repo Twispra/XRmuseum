@@ -19,6 +19,7 @@ namespace Museum.RightExhibit.Editor
     {
         const string Running = "Museum.RightExhibit.Validation";
         const string ExitCode = Running + ".ExitCode";
+        const string SavedPrefabPath = Running + ".SavedPrefabPath";
         const float ReadingFov = 60f;
         const double ExitSettleSeconds = 20;
         static double exitNotBefore;
@@ -37,7 +38,12 @@ namespace Museum.RightExhibit.Editor
 
         public static void RunBatch()
         {
-            EditorSceneManager.OpenScene(RightExhibitPanelTools.ScenePath);
+            var scene = EditorSceneManager.OpenScene(RightExhibitPanelTools.ScenePath);
+            var panel = scene.GetRootGameObjects().Single(o => o.name == "Exhibit Placeholders")
+                .transform.Find("Exhibit 03 - Placeholder/Right Exhibit Panel");
+            // Prefab provenance is an Edit Mode property; runtime instances have no prefab source.
+            SessionState.SetString(SavedPrefabPath, panel
+                ? PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(panel.gameObject) : "");
             SessionState.SetBool(Running, true);
             SessionState.SetInt(ExitCode, 1);
             EditorApplication.EnterPlaymode();
@@ -70,6 +76,7 @@ namespace Museum.RightExhibit.Editor
             int code = SessionState.GetInt(ExitCode, 1);
             SessionState.EraseBool(Running);
             SessionState.EraseInt(ExitCode);
+            SessionState.EraseString(SavedPrefabPath);
             EditorApplication.Exit(code);
         }
 
@@ -85,8 +92,8 @@ namespace Museum.RightExhibit.Editor
                 var mounted = right.Find("Right Exhibit Panel");
                 Check(checks, mounted, "Panel is already present in the saved MuseumStart scene");
                 var panel = mounted.gameObject;
-                Check(checks, PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(panel) == RightExhibitPanelTools.PrefabPath,
-                    "Saved instance retains the existing RightExhibitPanel prefab reference");
+                Check(checks, SessionState.GetString(SavedPrefabPath, "") == RightExhibitPanelTools.PrefabPath,
+                    "Edit Mode: saved instance retains the existing RightExhibitPanel prefab reference");
                 Check(checks, right.Cast<Transform>().Count(t => t.name == "Right Exhibit Panel") == 1,
                     "Exactly one integrated panel");
                 Check(checks, panel.activeInHierarchy && mounted.localPosition == RightExhibitPanelTools.MountPosition &&
