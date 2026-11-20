@@ -88,7 +88,7 @@ namespace Museum.Navigation.Editor
             if (!SessionState.GetBool(Key, false)) return;
             if (state == PlayModeStateChange.EnteredPlayMode)
             {
-                report = JsonUtility.FromJson<Report>(SessionState.GetString(Key + ".Report"));
+                report = JsonUtility.FromJson<Report>(SessionState.GetString(Key + ".Report", ""));
                 finishing = false; started = EditorApplication.timeSinceStartup; lastFrame = -1;
                 Application.logMessageReceived += OnLog; InputSystem.onBeforeUpdate += FlushInput;
                 routines.Clear(); input.Clear(); routines.Push(Validate());
