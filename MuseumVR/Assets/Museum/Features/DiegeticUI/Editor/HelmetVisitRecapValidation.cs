@@ -57,12 +57,7 @@ namespace Museum.Diegetic.Editor
                 MuseumText.Channel.SetLanguage(language);
                 yield return Wait(.1f);
                 CheckRecap(panel, progress, connections, parts, 2, air, firstLower, firstShell);
-                foreach (var label in labels.Where(l => l.isActiveAndEnabled))
-                {
-                    label.ForceMeshUpdate(true, true);
-                    CheckResult(!label.isTextOverflowing && label.text.All(c => char.IsWhiteSpace(c) || label.font.HasCharacter(c, false, false)),
-                        "Recap label fits and has baked glyphs " + language + "/" + label.name, label.text, "monocular-layout");
-                }
+                CheckRecapLayout(labels, language + "/partial");
                 CaptureVisitRecap(panel, language.ToString());
             }
 
@@ -77,6 +72,12 @@ namespace Museum.Diegetic.Editor
             string firstWindow = window.Title + "\n" + window.Description;
             yield return RayClick(Command.FinishVisit);
             CheckRecap(panel, progress, connections, parts, 3, both, firstLower, firstShell, firstWindow);
+            foreach (var language in new[] { MuseumLanguage.Chinese, MuseumLanguage.TraditionalChinese, MuseumLanguage.English })
+            {
+                MuseumText.Channel.SetLanguage(language);
+                yield return Wait(.1f);
+                CheckRecapLayout(labels, language + "/complete");
+            }
             yield return RayClick(Command.StartNextVisit);
             CheckResult(!panel.gameObject.activeInHierarchy && !station.IsVisitHandoffOpen && tour.VisitedCount == 0 &&
                 !tour.TryGetFirstObservation(lower.Identifier, out _),
@@ -84,6 +85,16 @@ namespace Museum.Diegetic.Editor
             yield return RayClick(Command.FinishVisit);
             CheckRecap(panel, progress, connections, parts, 0, none);
             yield return RayClick(Command.ContinueVisit);
+        }
+
+        static void CheckRecapLayout(TMP_Text[] labels, string state)
+        {
+            foreach (var label in labels.Where(l => l.isActiveAndEnabled))
+            {
+                label.ForceMeshUpdate(true, true);
+                CheckResult(!label.isTextOverflowing && label.text.All(c => char.IsWhiteSpace(c) || label.font.HasCharacter(c, false, false)),
+                    "Recap label fits and has baked glyphs " + state + "/" + label.name, label.text, "monocular-layout");
+            }
         }
 
         static void CheckRecap(Transform panel, TMP_Text progress, TMP_Text connections, TMP_Text[] parts,

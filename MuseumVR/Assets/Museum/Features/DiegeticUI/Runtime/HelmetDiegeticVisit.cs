@@ -81,7 +81,8 @@ namespace Museum.Diegetic
                 MuseumText.Set(recapParts[i], "", headingOnly: true);
             }
 
-            recapConnections = Label(root, "Recap connections", new Vector3(.18f, -.158f, 0), new Vector2(.34f, .156f), .27f);
+            recapConnections = Label(root, "Recap connections", new Vector3(.175f, -.158f, 0), new Vector2(.39f, .156f), .26f);
+            recapConnections.alignment = TextAlignmentOptions.TopLeft;
             MuseumText.Set(recapConnections, exploration.ConnectionRecap);
             var warning = Label(root, "Visit handoff confirmation", new Vector3(0, -.283f, 0), new Vector2(.69f, .065f), .25f);
             MuseumText.Set(warning, "Starting the next visit clears this visit's discoveries.");
