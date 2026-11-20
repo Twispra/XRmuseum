@@ -273,7 +273,9 @@ namespace Museum.Navigation.Editor
             Check(nav.FadeOpacity == 0 && locomotion.All(p => p.Key.enabled == p.Value), "Disabling during a fade restores vision and locomotion");
             nav.enabled = true; yield return Wait(.2f);
             Check(nav.Buttons.Count == 3 && nav.Palette.gameObject.activeInHierarchy, "Re-enable restores one existing navigation panel");
-            Check(nav.Request(GalleryNavigator.Exhibit.Main), "Final return to the main exhibit accepted");
+            bool finalReturnAccepted = nav.Request(GalleryNavigator.Exhibit.Main);
+            Check(finalReturnAccepted, finalReturnAccepted ? "Final return to the main exhibit accepted"
+                : "Final return to the main exhibit rejected: " + DescribeFinalRouteRejection(station));
             yield return Until(() => !nav.IsTransitioning); ParkHands(); yield return Wait(.1f);
             foreach (MuseumLanguage language in Enum.GetValues(typeof(MuseumLanguage)))
             {
@@ -289,6 +291,28 @@ namespace Museum.Navigation.Editor
                 Capture("navigation-" + language);
             }
         }
+
+        static string DescribeFinalRouteRejection(HelmetDiegeticStation station)
+        {
+            var status = nav.Palette.transform.Find("Navigation status").GetComponent<LocalizedText>().Key;
+            var pose = nav.TryGetDestination(GalleryNavigator.Exhibit.Main, out var floor, out _);
+            const float radius = .22f;
+            float eyeHeight = nav.Origin.Camera.transform.position.y - nav.Origin.Origin.transform.position.y;
+            float height = Mathf.Max(1.1f, eyeHeight);
+            var hits = pose ? Physics.OverlapCapsule(floor + Vector3.up * (radius + .04f),
+                floor + Vector3.up * Mathf.Max(radius + .04f, height - radius), radius, ~0, QueryTriggerInteraction.Ignore)
+                .Where(hit => !hit.transform.IsChildOf(nav.Origin.transform) && !hit.transform.IsChildOf(nav.transform))
+                .Select(hit => HierarchyName(hit.transform)).ToArray() : Array.Empty<string>();
+            var ground = pose ? Physics.RaycastAll(floor + Vector3.up * .25f, Vector3.down, .5f, ~0, QueryTriggerInteraction.Ignore)
+                .Select(hit => HierarchyName(hit.transform) + "@" + hit.point.ToString("F3") + ", " + hit.normal.ToString("F3"))
+                .ToArray() : Array.Empty<string>();
+            return $"status={status}, ready={nav.IsReady}, transitioning={nav.IsTransitioning}, pose={pose}/{floor:F3}, eye={eyeHeight:F3}, " +
+                $"holding={inspection.IsHeld}/{inspection.IsWindowHeld}/{inspection.IsSectionHeld}, returning={inspection.IsReturning}, " +
+                $"handoff={station.IsVisitHandoffOpen}, gesture={station.HasActiveGesture}, " +
+                $"capsule=[{string.Join(", ", hits)}], floor=[{string.Join("; ", ground)}]";
+        }
+
+        static string HierarchyName(Transform node) => node.parent ? HierarchyName(node.parent) + "/" + node.name : node.name;
 
         static IEnumerator Press(GalleryNavigator.Exhibit destination, XRSimulatedController device, bool grip, bool trigger)
         {
