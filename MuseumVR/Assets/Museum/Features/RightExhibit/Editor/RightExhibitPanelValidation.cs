@@ -79,7 +79,25 @@ namespace Museum.RightExhibit.Editor
             var scene = SceneManager.GetActiveScene();
             try
             {
-                var panel = RightExhibitPanelTools.MountPreview(scene);
+                // Validate the scene as shipped. Do not mount a missing panel to make the test pass.
+                var right = scene.GetRootGameObjects().Single(o => o.name == "Exhibit Placeholders")
+                    .transform.Find("Exhibit 03 - Placeholder");
+                var mounted = right.Find("Right Exhibit Panel");
+                Check(checks, mounted, "Panel is already present in the saved MuseumStart scene");
+                var panel = mounted.gameObject;
+                Check(checks, PrefabUtility.GetPrefabAssetPathOfNearestInstanceRoot(panel) == RightExhibitPanelTools.PrefabPath,
+                    "Saved instance retains the existing RightExhibitPanel prefab reference");
+                Check(checks, right.Cast<Transform>().Count(t => t.name == "Right Exhibit Panel") == 1,
+                    "Exactly one integrated panel");
+                Check(checks, panel.activeInHierarchy && mounted.localPosition == RightExhibitPanelTools.MountPosition &&
+                    mounted.localRotation == Quaternion.identity && mounted.localScale == Vector3.one,
+                    "Saved panel is active at the authored position, rotation and scale");
+                foreach (var name in new[] { "Plinth title 3.1", "Plinth caption 3.1" })
+                {
+                    var oldLabel = scene.GetRootGameObjects().SelectMany(o => o.GetComponentsInChildren<TMP_Text>(true))
+                        .Single(t => t.name == name);
+                    Check(checks, !oldLabel.gameObject.activeSelf, "Replaced front caption is saved inactive: " + name);
+                }
                 var labels = panel.GetComponentsInChildren<TextMeshPro>();
                 var table = AssetDatabase.LoadAssetAtPath<LocalizationTable>(
                     RightExhibitPanelTools.TableFolder + "LocalizationTable.asset");
@@ -89,7 +107,9 @@ namespace Museum.RightExhibit.Editor
                 Check(checks, MuseumText.Channel == channel, "Uses the saved main scene's language channel");
                 Check(checks, labels.Length == 9, "Nine visitor labels");
                 Check(checks, panel.GetComponentsInChildren<Collider>(true).Length == 0, "No added colliders");
-                Check(checks, RightExhibitPanelTools.MountPreview(scene) == panel, "Preview reuses the mounted panel");
+                Check(checks, RightExhibitPanelTools.MountPreview(scene) == panel &&
+                    right.Cast<Transform>().Count(t => t.name == "Right Exhibit Panel") == 1,
+                    "Preview reuses the saved panel without duplicating it");
                 CheckArrow(checks, panel.transform.Find("air route"), "Right", "Air");
                 CheckArrow(checks, panel.transform.Find("voice route"), "Right", "Voice");
                 CheckArrow(checks, panel.transform.Find("voice route"), "Left", "Voice");
@@ -145,6 +165,11 @@ namespace Museum.RightExhibit.Editor
                             CheckSight(checks, camera, label, language);
                     }
                 }
+
+                channel.SetLanguage(MuseumLanguage.English);
+                camera.transform.SetPositionAndRotation(new Vector3(3.1f, 1.3f, 1.25f),
+                    Quaternion.LookRotation(new Vector3(3.1f, 1.05f, 3.1f) - new Vector3(3.1f, 1.3f, 1.25f)));
+                Capture(camera, MuseumLanguage.English, "-context");
 
                 Debug.Log("RIGHT EXHIBIT PASS: " + checks.Count + " checks");
                 WriteReport(checks);
@@ -217,7 +242,7 @@ namespace Museum.RightExhibit.Editor
             return index >= 0 && index + 1 < args.Length ? args[index + 1] : null;
         }
 
-        static void Capture(Camera camera, MuseumLanguage language)
+        static void Capture(Camera camera, MuseumLanguage language, string suffix = "")
         {
             string folder = OutputFolder();
             if (string.IsNullOrWhiteSpace(folder)) return;
@@ -231,7 +256,7 @@ namespace Museum.RightExhibit.Editor
                 camera.Render();
                 RenderTexture.active = target;
                 image.ReadPixels(new Rect(0, 0, target.width, target.height), 0, 0);
-                File.WriteAllBytes(Path.Combine(folder, language + ".png"), image.EncodeToPNG());
+                File.WriteAllBytes(Path.Combine(folder, language + suffix + ".png"), image.EncodeToPNG());
             }
             finally
             {
@@ -248,7 +273,10 @@ namespace Museum.RightExhibit.Editor
             if (string.IsNullOrWhiteSpace(folder)) return;
             Directory.CreateDirectory(folder);
             var lines = new List<string> { failure == null ? "PASS" : "FAIL: " + failure,
-                Application.unityVersion + " / " + checks.Count + " checks" };
+                Application.unityVersion + " / " + checks.Count + " checks",
+                "Scene: " + RightExhibitPanelTools.ScenePath + " (saved integration, no missing-panel injection)",
+                "Graphics: " + SystemInfo.graphicsDeviceType + " / " + SystemInfo.graphicsDeviceName,
+                "Limits: Editor automation and diagnostic monocular captures; no headset, user study, performance or Player build verification." };
             lines.AddRange(checks);
             File.WriteAllLines(Path.Combine(folder, "right-exhibit-report.txt"), lines);
         }
