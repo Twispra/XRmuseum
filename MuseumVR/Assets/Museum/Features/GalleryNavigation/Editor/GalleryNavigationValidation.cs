@@ -45,13 +45,13 @@ namespace Museum.Navigation.Editor
         static double started, exitAt;
         static string Folder => SessionState.GetString(Key + ".Output", "");
 
-        [Serializable] sealed class Check { public string name; public bool passed; }
+        [Serializable] sealed class CheckResult { public string name; public bool passed; }
         [Serializable] sealed class Report
         {
             public string commit, dirty, unity, scene, status, failure, method =
                 "Saved scene runtime bootstrap; public pose fixtures plus queued synthetic HMD and left/right controller states through production Input Actions and XR rays. No manual HoverEnter/SelectEnter, TriggerProgrammatically or InputSystem.Update. Diagnostic monocular captures.";
             public string limits = "No real headset/controller, stereo readability, comfort, performance, Player build or user study validation.";
-            public List<Check> checks = new List<Check>();
+            public List<CheckResult> checks = new List<CheckResult>();
             public List<string> errors = new List<string>();
         }
 
@@ -324,7 +324,7 @@ namespace Museum.Navigation.Editor
         static void FlushInput() { if (InputState.currentUpdateType == InputUpdateType.Dynamic) while (input.Count > 0) input.Dequeue()(); }
         static Vector2 XZ(Vector3 value) => new Vector2(value.x, value.z);
         static void Check(bool passed, string name)
-        { report.checks.Add(new Check { passed = passed, name = name }); if (!passed) throw new InvalidOperationException(name); }
+        { report.checks.Add(new CheckResult { passed = passed, name = name }); if (!passed) throw new InvalidOperationException(name); }
         static void OnLog(string text, string _, LogType type) { if (type == LogType.Error || type == LogType.Exception) report.errors.Add(text); }
         static void Finish(string failure)
         {
