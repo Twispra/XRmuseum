@@ -21,7 +21,7 @@ namespace Museum.Diegetic
     {
         public enum Command { Rotate, Window, Section, Slide, Air, Voice, Reset, PreviousEra, NextEra,
             Hints, Settings, About, Chinese, Traditional, English, Sound, Motion, AlwaysHints, ResetView, CloseDemo,
-            HeightUp, HeightDown, HeightReset, Narration, FinishVisit, ContinueVisit, StartNextVisit }
+            HeightUp, HeightDown, HeightReset, Narration, FinishVisit, ContinueVisit, StartNextVisit, SubtitleSize }
         [SerializeField] HelmetInspectionController inspection;
         [SerializeField] HelmetEraSwitcher eras;
         [SerializeField] HelmetExplorationController exploration;
@@ -316,6 +316,7 @@ namespace Museum.Diegetic
                 case Command.HeightDown: ViewHeight.Lower();break;
                 case Command.HeightReset: ViewHeight.ResetHeight();break;
                 case Command.Narration: ToggleNarration();break;
+                case Command.SubtitleSize: ToggleSubtitleSize();break;
                 case Command.FinishVisit: FinishVisit();break;
                 case Command.ContinueVisit: ContinueVisit();break;
                 case Command.StartNextVisit: StartNextVisit();break;
@@ -622,8 +623,8 @@ namespace Museum.Diegetic
             var close=MakeControl(pedestalUI,Command.CloseDemo,"Close demo","",teal);close.transform.localPosition=new Vector3(-.19f,.10f,-.005f);close.gameObject.SetActive(false);
             BuildFasciaLabels(plinth);
             options=new GameObject("Fixed settings");options.transform.SetParent(pedestalUI,false);options.transform.localPosition=new Vector3(-.64f,.07f,-.015f);
-            Command[] settings={Command.Chinese,Command.Traditional,Command.English,Command.HeightDown,Command.HeightReset,Command.HeightUp,Command.Sound,Command.Motion,Command.AlwaysHints,Command.ResetView};
-            string[] labels={"简体中文","繁體中文","English","View lower","Reset height","View higher","Sound: on","Motion: on","Hints: off","Reset View"};
+            Command[] settings={Command.Chinese,Command.Traditional,Command.English,Command.HeightDown,Command.HeightReset,Command.HeightUp,Command.Sound,Command.Motion,Command.AlwaysHints,Command.ResetView,Command.SubtitleSize};
+            string[] labels={"简体中文","繁體中文","English","View lower","Reset height","View higher","Sound: on","Motion: on","Hints: off","Reset View",StandardSubtitleSize};
             for(int i=0;i<settings.Length;i++)
             {var c=MakeControl(options.transform,settings[i],labels[i],"",teal);c.transform.localPosition=new Vector3((i%3-1)*.19f,-(i/3)*.10f,0);}
             options.SetActive(false);
