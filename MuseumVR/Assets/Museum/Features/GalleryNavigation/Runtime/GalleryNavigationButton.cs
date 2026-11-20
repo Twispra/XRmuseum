@@ -11,8 +11,8 @@ namespace Museum.Navigation
     {
         GalleryNavigator navigator;
         XRSimpleInteractable target;
-        IXRInteractor hand;
-        bool selecting, activating, cancelled, pending;
+        IXRInteractor hand, releaseCandidate;
+        bool selecting, activating, cancelled;
         public GalleryNavigator.Exhibit Destination { get; private set; }
         public int Confirmations { get; private set; }
         public XRSimpleInteractable Target => target;
@@ -45,13 +45,15 @@ namespace Museum.Navigation
             target.hoverExited.RemoveListener(OnHoverExited);
             target.selectFilters.Remove(this);
             target.hoverFilters.Remove(this);
-            ResetPress(); pending = false;
+            ResetPress();
+            releaseCandidate = null;
         }
 
         bool Begin(IXRInteractor interactor)
         {
             if (!navigator || !navigator.IsReady || navigator.IsTransitioning || cancelled) return false;
             if (hand != null && !SameHand(hand, interactor)) return false;
+            if (SameHand(releaseCandidate, interactor)) releaseCandidate = null;
             hand = interactor;
             return true;
         }
@@ -73,27 +75,36 @@ namespace Museum.Navigation
             EndIfReleased();
         }
         void OnHoverExited(HoverExitEventArgs args)
-        { if (hand != null && SameHand(hand, args.interactorObject) && (selecting || activating)) cancelled = true; }
+        {
+            if (SameHand(releaseCandidate, args.interactorObject)) releaseCandidate = null;
+            if (SameHand(hand, args.interactorObject) && (selecting || activating)) cancelled = true;
+        }
         void EndIfReleased()
         {
             if (selecting || activating) return;
-            pending = !cancelled && StillPointing();
+            // XRI can send selectExited before updating hover for the same device state.
+            // Keep the releasing interactor until Update can verify the final hover state.
+            if (!cancelled) releaseCandidate = hand;
             ResetPress();
         }
-        bool StillPointing() => hand != null && target.interactorsHovering.Any(i => SameHand(i, hand));
+        bool StillPointing(IXRInteractor interactor) =>
+            interactor != null && target.interactorsHovering.Any(i => SameHand(i, interactor));
         void ResetPress() { hand = null; selecting = activating = cancelled = false; }
 
         void Update()
         {
             if (hand != null && (selecting || activating))
             {
-                if (!StillPointing()) cancelled = true;
+                if (!StillPointing(hand)) cancelled = true;
                 if (hand is XRBaseControllerInteractor controller && controller.xrController &&
                     !controller.xrController.selectInteractionState.active && !controller.xrController.activateInteractionState.active)
                     ResetPress(); // Input disappeared without an exit event: cancel, never confirm.
             }
-            if (!pending) return;
-            pending = false;
+            var releasedHand = releaseCandidate;
+            releaseCandidate = null;
+            if (!StillPointing(releasedHand)) return;
+            if (releasedHand is XRBaseControllerInteractor source && source.xrController &&
+                (source.xrController.selectInteractionState.active || source.xrController.activateInteractionState.active)) return;
             if (navigator && navigator.Request(Destination)) Confirmations++;
         }
 

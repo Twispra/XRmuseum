@@ -227,6 +227,31 @@ namespace Museum.Navigation.Editor
             ParkHands(); yield return Wait(.4f);
             Check(nav.CompletedNavigations == completed && !nav.IsTransitioning, "Press, move off and release cancels navigation");
 
+            Aim(right, cancelButton, false, false); yield return Wait(.25f);
+            int confirmations = cancelButton.Confirmations;
+            Aim(right, cancelButton, true, false); yield return Wait(.15f);
+            Check(cancelButton.Target.isSelected && cancelButton.Target.isHovered, "Same-frame cancellation starts with ray selection and hover");
+            QueueController(right, nav.Origin.Camera.transform.position, Quaternion.LookRotation(Vector3.down), false, false);
+            yield return Wait(.45f);
+            Check(!cancelButton.Target.isSelected && !cancelButton.Target.isHovered &&
+                nav.CompletedNavigations == completed && cancelButton.Confirmations == confirmations && !nav.IsTransitioning,
+                "A single controller state that moves off and releases grip cancels navigation");
+
+            var preGesturePose = nav.Origin.Camera.transform.position;
+            Check(nav.Request(GalleryNavigator.Exhibit.Right), "Route starts before a second interaction");
+            try
+            {
+                station.RotationGesture.BeginForValidation(preGesturePose, nav.Origin.Camera.transform.rotation);
+                Check(station.HasActiveGesture, "Production rotation gesture begins after fade request");
+                yield return Until(() => !nav.IsTransitioning);
+                Check(nav.CompletedNavigations == completed && nav.FadeOpacity == 0 &&
+                    Vector3.Distance(nav.Origin.Camera.transform.position, preGesturePose) < .001f &&
+                    locomotion.All(p => p.Key.enabled == p.Value) && station.HasActiveGesture,
+                    "Gesture started during fade cancels relocation and restores locomotion");
+                Check(!nav.Request(GalleryNavigator.Exhibit.Right), "Cannot start another route while the gesture is active");
+            }
+            finally { station.RotationGesture.EndForValidation(); }
+
             nav.TryGetDestination(GalleryNavigator.Exhibit.Right, out var blockedPlace, out _);
             var obstacle = GameObject.CreatePrimitive(PrimitiveType.Cube); obstacle.name = "Navigation obstacle fixture";
             obstacle.transform.position = blockedPlace + Vector3.up * .8f; obstacle.transform.localScale = new Vector3(.6f, 1.5f, .6f);

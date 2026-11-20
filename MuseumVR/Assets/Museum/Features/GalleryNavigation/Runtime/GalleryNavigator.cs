@@ -157,8 +157,7 @@ namespace Museum.Navigation
         public bool Request(Exhibit exhibit)
         {
             if (!IsReady || IsTransitioning || !TryGetDestination(exhibit, out var floor, out _)) return false;
-            if (inspection.IsHeld || inspection.IsWindowHeld || inspection.IsSectionHeld || inspection.IsReturning ||
-                (station && station.IsVisitHandoffOpen)) return Notice("navigation.finish_action");
+            if (HasBlockingInteraction()) return Notice("navigation.finish_action");
             if (!DestinationClear(floor)) return Notice("navigation.blocked");
             requested = exhibit;
             IsTransitioning = true;
@@ -180,6 +179,10 @@ namespace Museum.Navigation
         bool Notice(string key)
         { status.SetKey(key); noticeUntil = Time.unscaledTime + 2.5f; return false; }
 
+        bool HasBlockingInteraction() =>
+            !inspection || inspection.IsHeld || inspection.IsWindowHeld || inspection.IsSectionHeld || inspection.IsReturning ||
+            (station && (station.IsVisitHandoffOpen || station.HasActiveGesture));
+
         void Update()
         {
             if (!ready) { if (origin && origin.Camera) Initialize(); return; }
@@ -194,6 +197,8 @@ namespace Museum.Navigation
             {
                 SetFade(Mathf.Clamp01(phaseTime / FadeSeconds));
                 if (phaseTime < FadeSeconds) return;
+                if (HasBlockingInteraction())
+                { CancelTransition(); Notice("navigation.finish_action"); return; }
                 if (!TryGetDestination(requested, out var floor, out var forward) || !DestinationClear(floor))
                 { CancelTransition(); Notice("navigation.blocked"); return; }
                 if (!PlaceTrackedView(origin, floor, forward)) { CancelTransition(); return; }
