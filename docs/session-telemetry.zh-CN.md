@@ -29,7 +29,7 @@
 
 | 列 | 含义 |
 | --- | --- |
-| `t_seconds` | 会话内秒数（不受 timeScale 影响） |
+| `t_seconds` | 会话内秒数，写到小数点后三位（不受 timeScale 影响） |
 | `event` | 事件类型，见第 3 节 |
 | `target` | 被操作的物体，取三层路径（如 `HelmetExhibit/HelmetHotspotTour/Front window Hotspot`） |
 | `detail` | 事件附加信息（`gap=` 距上一次交互的秒数、`n=` 计数、`first` 首次） |
@@ -53,16 +53,12 @@
 | `scene_loaded` | 场景切换 | 边界 |
 | `session_end` | 退出 Play | 时长 + 各类计数，附最后一次快照 |
 
-`activate` 与 `select` **分开记**，因为本工程两条路径都存在：`HelmetHotspot` 同时监听
-`selectEntered` 与 `activated`，而 `HelmetExplorationButton` 只监听 `selectEntered`。
-XRI 事件的目标依赖当前交互条件，物理按钮还会在释放时检查是否确认。分析时应结合后续状态
-或观察记录确认结果。启动时的目标计数只反映当时已注册的对象，随后注册的物理控件由 XRI 事件补订阅。
-
-需要说明的是：产品本身**已经教了**用法——`HelmetExplorationPanel` 在编辑器里显示
-`Point + G to select`、构建里显示 `Point + grip to select`，Help 面板还有一整套按键说明
-（`Click Game to focus. / T / Y: choose a controller. / Point + G: select a button. / Hold G: grab…`）。
-分开记能看出哪些目标收到了提示之外的激活事件。要判断按钮操作遇到了什么困难，需要结合
-操作时的页面、输入条件和观察记录。
+`activate` 与 `select` 分开记录原始 XRI 事件和计数。`session_start.detail` 中的
+`legacy_exploration_input=2` 表示本版本的旧探索面板 `HelmetExplorationButton` 接收两路输入。
+换页分析对这些已知按钮按同一目标路径、同一记录时间配对两路事件。旧日志缺少该版本时，仍只将
+旧探索按钮的 `select` 作为换页候选。原始事件及计数可用于检查当时的输入，操作结果由后续状态
+或观察记录确认。默认实体站的物理按钮继续在释放时确认。启动时的目标数反映当时已注册的对象，
+随后注册的物理控件由 XRI 事件补订阅。
 
 ## 4. 能算出什么
 

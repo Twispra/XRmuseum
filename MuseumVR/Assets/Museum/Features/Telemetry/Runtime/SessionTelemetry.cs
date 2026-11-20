@@ -107,7 +107,8 @@ namespace Museum.Telemetry
                 + ";exploration=" + (exploration ? "1" : "0")
                 + ";eras=" + (eras ? "1" : "0")
                 + ";inspection=" + (inspection ? "1" : "0")
-                + ";unity=" + Application.unityVersion, previous);
+                + ";unity=" + Application.unityVersion
+                + ";legacy_exploration_input=2", previous);
         }
 
         void Start()
@@ -187,8 +188,8 @@ namespace Museum.Telemetry
         }
 
         /// <summary>
-        /// 本工程的热点同时监听 selectEntered 与 activated：前者对应抓握（Grip），
-        /// 后者对应扳机（Trigger）。两路都要记，否则会漏掉"按了扳机但没抓握"的访客。
+        /// 单独记录 XRI 激活事件。旧探索面板和热点都可能收到该事件，
+        /// 每条事件表示目标收到了输入，操作结果由后续状态确认。
         /// </summary>
         void HandleActivated(ActivateEventArgs args)
         {
