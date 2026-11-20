@@ -1,0 +1,22 @@
+{
+  "startedUtc": "2026-11-20T07:37:52.6905170Z",
+  "finishedUtc": "2026-11-20T07:39:47.7500850Z",
+  "commit": "a34a334508b864915bd48a0dfcc9062dfe18f3b6",
+  "branch": "codex/exhibit-quick-navigation",
+  "dirty": "",
+  "unity": "2022.3.62f3c1",
+  "status": "passed",
+  "failure": "",
+  "inputMethod": "Queued synthetic XR controller/HMD states in the normal Dynamic input update; production Input Actions, ray interactors and saved LanguageButton selectEntered handlers. Current diegetic station language/diagram states run first and after restoration. The original PR9 progression, panel and inspection assertions then run separately in an explicitly enabled optional legacy fixture; station and every hierarchy/component state changed by that fixture are restored. No SelectEnter/SelectExit or TriggerProgrammatically calls. The existing simulator device writer is temporarily disabled.",
+  "limitations": "XR controller poses are automated fixtures, not physical headset/controller, reachability or OS keyboard/mouse simulator testing. Current diagram start/stop uses labelled public station commands. Legacy exploration start/stop uses its labelled public API. Hidden labels are enabled only in a temporary Play Mode lifecycle fixture, then restored. PNGs are monocular captures: production view and separately labelled fixed diagnostic close-ups. The unchanged TrilingualMuseumValidation helper still puts temporary captures under tmp/trilingual-qa; durable evidence is copied into a new QA run. No comfort, user study, historical accuracy or executable build claim.",
+  "errors": [],
+  "warnings": [],
+  "totalChecks": 138918,
+  "passedChecks": 138918,
+  "failedChecks": [],
+  "originalReportSha256": "40509cc3f0db00dbc4d254b067c9d6635f881c84be0de80c5817567d7abbcfc8",
+  "compressedReport": "localization-integration.json.gz",
+  "originalBytes": 30833152,
+  "compressedBytes": 1394850,
+  "note": "Full original report is preserved losslessly as gzip. The later c30b691 change only restricts navigation controls to ray interaction; final navigation and era runs separately test that version."
+}

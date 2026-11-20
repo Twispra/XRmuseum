@@ -1,0 +1,18 @@
+{
+  "commit": "a34a334508b864915bd48a0dfcc9062dfe18f3b6",
+  "dirty": "?? artifacts/localization/qa/runs/20261120T074127899Z-validation/report.json",
+  "unity": "2022.3.62f3c1",
+  "status": "failed",
+  "failure": "System.InvalidOperationException: Production ray hovers current control / Window: Ray Interactor: active=True; hit=Front Window Hinge; hitDistance=0.47271; origin=(0.602139, 1.141474, 3.375273); forward=(-0.996195, 0.000000, -0.087156); detection=ConeCast; mask=-2147483615; triggers=Collide; hovered= | Teleport Interactor: active=False; hit=none; hitDistance=-1; origin=(0.602139, 1.141474, 3.375273); forward=(-0.996195, 0.000000, -0.087156); detection=Raycast; mask=-2147483615; triggers=Collide; hovered=\n  at Museum.Localization.EditorTools.VisitorEraValidation.Require (System.Boolean passed, System.String name, System.String detail) [0x0003e] in /Users/cai/Documents/Codex/2026-09-22/git-clone-https-github-com-twispra/work/XRmuseum-git/MuseumVR/Assets/Museum/Features/Localization/Editor/VisitorEraValidation.cs:906 \n  at Museum.Localization.EditorTools.VisitorEraValidation+<RayClick>d__54.MoveNext () [0x00307] in /Users/cai/Documents/Codex/2026-09-22/git-clone-https-github-com-twispra/work/XRmuseum-git/MuseumVR/Assets/Museum/Features/Localization/Editor/VisitorEraValidation.cs:408 \n  at Museum.Localization.EditorTools.VisitorEraValidation.Tick () [0x000ce] in /Users/cai/Documents/Codex/2026-09-22/git-clone-https-github-com-twispra/work/XRmuseum-git/MuseumVR/Assets/Museum/Features/Localization/Editor/VisitorEraValidation.cs:203 ",
+  "method": "Saved MuseumStart scene; public API fixtures seed completed hotspot visits and request era/language changes. Queued synthetic controller/HMD states flow through normal Dynamic Input Actions and existing XR ray interactors to current diegetic era/window/section controls, model rotation and all knowledge hotspots. The original held-window deferral runs separately with the optional diegetic presentation disabled. No manual SelectEnter/SelectExit, HoverEnter, TriggerProgrammatically, private-field writes or InputSystem.Update. The official simulator state writer is disabled; physical hands, production colliders and select filters remain enabled.",
+  "limits": "Desktop synthetic XR and explicit API fixtures, not real headset/controller, historical authentication, stereo readability, user study, performance or executable build. Captures use temporary diagnostic monocular cameras; no production camera or product asset is saved. explanationElapsed is read only to detect timer restarts. Parent process must additionally verify source fingerprints after natural Editor exit.",
+  "failedChecks": [
+    {
+      "name": "Production ray hovers current control / Window",
+      "detail": "Ray Interactor: active=True; hit=Front Window Hinge; hitDistance=0.47271; origin=(0.602139, 1.141474, 3.375273); forward=(-0.996195, 0.000000, -0.087156); detection=ConeCast; mask=-2147483615; triggers=Collide; hovered= | Teleport Interactor: active=False; hit=none; hitDistance=-1; origin=(0.602139, 1.141474, 3.375273); forward=(-0.996195, 0.000000, -0.087156); detection=Raycast; mask=-2147483615; triggers=Collide; hovered=",
+      "passed": false
+    }
+  ],
+  "resolutionCommit": "c30b691f2aea081ae3498dcd8c00a1b92254057c",
+  "successfulRerun": "era-regression.json"
+}

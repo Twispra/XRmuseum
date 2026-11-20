@@ -1,0 +1,33 @@
+{
+  "baseline": "5ddaab5a101a153a0d864e7765df31098f64bc49",
+  "finalRuntimeCommit": "c30b691f2aea081ae3498dcd8c00a1b92254057c",
+  "environment": "Unity 2022.3.62f3c1; macOS 26.6.2; Apple M5; Metal; Rosetta",
+  "processes": [
+    {
+      "name": "main-navigation",
+      "exitCode": 0,
+      "report": "main-navigation.json"
+    },
+    {
+      "name": "dusk-navigation",
+      "exitCode": 0,
+      "report": "dusk-navigation.json"
+    },
+    {
+      "name": "era-regression",
+      "exitCode": 0,
+      "report": "era-regression.json"
+    },
+    {
+      "name": "localization-integration",
+      "exitCode": 0,
+      "report": "localization-integration-summary.json"
+    },
+    {
+      "name": "localization-static",
+      "exitCode": 0,
+      "report": "localization-static.json"
+    }
+  ],
+  "limits": "Synthetic XR editor input, public API fixtures and monocular diagnostic capture. No headset/controller, stereo readability, comfort, performance, Player build or user study result."
+}
