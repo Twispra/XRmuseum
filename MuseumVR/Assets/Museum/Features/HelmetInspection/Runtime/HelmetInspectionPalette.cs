@@ -19,6 +19,7 @@ namespace Museum.Inspection
         [SerializeField, Min(0f)] float additionalTopPadding;
         bool alternatePageVisible;
         bool contentBoundsOverride;
+        bool viewerOffsetOverride;
         float contentBottom, contentTop;
         XRBaseInteractable[] controls;
         Transform backPlate;
@@ -44,6 +45,7 @@ namespace Museum.Inspection
                 float.IsNaN(offset.y) || float.IsInfinity(offset.y) ||
                 float.IsNaN(offset.z) || float.IsInfinity(offset.z)) return;
             viewerOffset = offset;
+            viewerOffsetOverride = true;
             placed = false;
         }
 
@@ -187,8 +189,9 @@ namespace Museum.Inspection
             // A seated visitor or someone beside the plinth must not have controls placed inside its collider.
             // Progressive pages stay clear of the plinth and farther away, keeping their
             // header inside the forward view. Legacy pages keep their original placement.
-            var preferred = contentBoundsOverride ? new Vector3(-.42f, .08f, .99f) : viewerOffset;
-            var opposite = contentBoundsOverride ? new Vector3(.42f, .08f, .99f) : new Vector3(.38f,.02f,.78f);
+            var preferred = contentBoundsOverride && !viewerOffsetOverride ? new Vector3(-.42f, .08f, .99f) : viewerOffset;
+            var opposite = viewerOffsetOverride ? new Vector3(-viewerOffset.x, viewerOffset.y, viewerOffset.z)
+                : contentBoundsOverride ? new Vector3(.42f, .08f, .99f) : new Vector3(.38f,.02f,.78f);
             var offsets = new[] { preferred, opposite,
                 new Vector3(-.38f,.18f,.85f),new Vector3(.38f,.18f,.85f),
                 new Vector3(-.65f,-.16f,.35f),new Vector3(.65f,-.16f,.35f),

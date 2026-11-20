@@ -21,7 +21,7 @@ namespace Museum.Navigation
     {
         public enum Exhibit { Left, Main, Right }
         const float FadeSeconds = .16f;
-        static readonly string[] ExhibitNames = { "Exhibit 01 - Placeholder", "Exhibit 02 - Placeholder", "Exhibit 03 - Placeholder" };
+        static readonly string[] ExhibitPrefixes = { "Exhibit 01 - ", "Exhibit 02 - ", "Exhibit 03 - " };
         static readonly string[] ButtonKeys = { "navigation.left", "navigation.main", "navigation.right" };
         static readonly float[] ViewingDistances = { .95f, .75f, 1.45f };
         readonly Dictionary<LocomotionProvider, bool> locomotionStates = new Dictionary<LocomotionProvider, bool>();
@@ -65,7 +65,7 @@ namespace Museum.Navigation
             var roots = scene.GetRootGameObjects();
             if (roots.Any(r => r.GetComponentInChildren<GalleryNavigator>(true))) return;
             var gallery = roots.SingleOrDefault(r => r.name == "Exhibit Placeholders");
-            if (!gallery || ExhibitNames.Any(n => !gallery.transform.Find(n))) return;
+            if (!gallery || Enumerable.Range(0, 3).Any(i => !FindExhibit(gallery.transform, i))) return;
             var target = new GameObject("Gallery quick navigation");
             SceneManager.MoveGameObjectToScene(target, scene);
             target.AddComponent<GalleryNavigator>();
@@ -142,7 +142,7 @@ namespace Museum.Navigation
             floor = forward = Vector3.zero;
             int index = (int)exhibit;
             if (!exhibits || index < 0 || index >= 3) return false;
-            var root = exhibits.Find(ExhibitNames[index]);
+            var root = FindExhibit(exhibits, index);
             var plinth = root ? root.GetComponentsInChildren<Renderer>(true).FirstOrDefault(r => r.name == "Plinth") : null;
             if (!plinth) return false;
             forward = Vector3.ProjectOnPlane(exhibits.forward, Vector3.up).normalized;
@@ -302,6 +302,9 @@ namespace Museum.Navigation
             if (!collider) { obj.GetComponent<Collider>().enabled = false; Destroy(obj.GetComponent<Collider>()); }
             return obj.transform;
         }
+
+        static Transform FindExhibit(Transform gallery, int index) => gallery.Cast<Transform>()
+            .FirstOrDefault(t => t.name.StartsWith(ExhibitPrefixes[index], StringComparison.Ordinal));
 
         static Transform BaseTransform(XROrigin target) => target.Origin ? target.Origin.transform : target.transform;
         static bool Finite(Vector3 value) => !(float.IsNaN(value.x) || float.IsNaN(value.y) || float.IsNaN(value.z) ||
