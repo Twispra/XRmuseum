@@ -1,18 +1,17 @@
-# 2026-11-20 ��尴ť�������
+# 2026-11-20 面板按钮扳机输入
 
-���� `main@5ddaab5` �ڷ�֧ `unify-panel-input` ��ɡ��Ķ��� `HelmetExplorationButton` ͬʱ��Ӧ XRI �� Select �� Activate �¼������ԭ���հ�ѡ�񱣳ֲ��䣬������ͣʱҲ����ʹ�ð���������¼�����ԭ�е��ӳ��ɷ���ǣ�������ͬһ���������е���ʱֻ������һ�� `Update` �ɷ�һ�Ρ�
+基于 `main@5ddaab5` 在分支 `unify-panel-input` 完成。改动让 `HelmetExplorationButton` 同时响应 XRI 的 Select 和 Activate 事件，因此原有握把选择保持不变，射线悬停时也可以使用扳机。两个事件共用原有的延迟派发标记；它们在同一交互更新中到达时只会在下一次 `Update` 派发一次。
 
-## ��Χ
+## 范围
 
-- �޸� `MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationButton.cs`��ע����Ƴ� `activated` ���������� Select �� Activate ����һ���ɷ��߼���
-- �޸� `MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationValidation.cs`������ԭ���հѻع����̣�������ͨ���������߽�������ģ������ Explore ҳ�ļ�顣
-- δ�޸� `MuseumStart.unity`��Prefab��Input Actions��Packages �� ProjectSettings��
+- 修改 `MuseumVR/Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationButton.cs`：注册和移除 `activated` 监听，并让 Select 与 Activate 共用一次派发逻辑。
+- 修改 `MuseumVR/Assets/Museum/Features/HelmetExploration/Editor/HelmetExplorationValidation.cs`：保留原有握把回归流程，并新增通过生产射线交互器和模拟扳机打开 Explore 页的检查。
+- 未修改 `MuseumStart.unity`、Prefab、Input Actions、Packages 或 ProjectSettings。
 
-## ��֤
+## 验证
 
-- `git diff --check`��ͨ����
-- ʹ�� Unity 2022.3.62f3c1 �Դ��� Roslyn ���������±��� `Assembly-CSharp`��ͨ����0 ����
-- ʹ��ͬһ���������±��� `Assembly-CSharp-Editor`��ͨ����0 ���󣻽��вֿ�ԭ�е� 2 �� `IsSelectableBy(XRBaseInteractor)` ���þ��档
-- ���������� Unity 2022.3.62f3c1 ������ʱͣ�ڱ༭��������ڣ��� `-version` ��û����������û�������µ� Play Mode ���档��Ҫ�ڿ����������ñ༭���Ļ��������� `Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch`��
-- δ������ʵͷ����֤��
-
+- `git diff --check`：通过。
+- 使用 Unity 2022.3.62f3c1 自带的 Roslyn 编译器重新编译 `Assembly-CSharp`：通过，0 错误。
+- 使用同一编译器重新编译 `Assembly-CSharp-Editor`：通过，0 错误；仅有仓库原有的 2 条 `IsSelectableBy(XRBaseInteractor)` 弃用警告。
+- 本环境启动 Unity 2022.3.62f3c1 批处理时停在编辑器进程入口，连 `-version` 都没有输出，因此没有生成新的 Play Mode 报告。需要在可正常启动该编辑器的环境中运行 `Museum.Exploration.Editor.HelmetExplorationValidation.RunBatch`。
+- 未进行真实头显验证。
