@@ -270,7 +270,6 @@ namespace Museum.Navigation
         LocalizedText Label(string name, string key, Vector3 position, Vector2 size, float fontSize)
         {
             var obj = new GameObject(name);
-            obj.SetActive(false);
             obj.transform.SetParent(panel.transform, false);
             obj.transform.localPosition = position;
             var label = obj.AddComponent<TextMeshPro>();
@@ -281,6 +280,7 @@ namespace Museum.Navigation
             label.enableWordWrapping = true;
             label.alignment = TextAlignmentOptions.Center;
             label.overflowMode = TextOverflowModes.Overflow;
+            obj.SetActive(false);
             var localized = obj.AddComponent<LocalizedText>();
             localized.Configure(MuseumText.Table, MuseumText.Channel, key);
             obj.SetActive(true);
