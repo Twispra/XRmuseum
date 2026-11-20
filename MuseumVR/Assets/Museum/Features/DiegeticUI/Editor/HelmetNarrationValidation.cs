@@ -298,7 +298,8 @@ namespace Museum.Diegetic.Editor
         static IEnumerator RetainedNarrationFixtures(TMP_Text button, TMP_Text caption, AudioSource source)
         {
             inspection.SoundEnabled = false;
-            yield return RayClick(HelmetDiegeticStation.Command.Air);
+            station.Execute(HelmetDiegeticStation.Command.Air);
+            yield return Wait(.2f);
             yield return RayClick(HelmetDiegeticStation.Command.Narration);
             CheckRetainedNarration(button, caption, source, "air", MuseumLanguage.Chinese);
             yield return Wait(Resources.Load<AudioClip>("HelmetNarration/air-zh").length + .5f);
@@ -311,8 +312,10 @@ namespace Museum.Diegetic.Editor
             yield return RayClick(HelmetDiegeticStation.Command.Settings);
 
             inspection.SoundEnabled = true;
-            yield return RayClick(HelmetDiegeticStation.Command.Voice);
+            station.Execute(HelmetDiegeticStation.Command.Voice);
+            yield return Wait(.2f);
             yield return RayClick(HelmetDiegeticStation.Command.Narration);
+            CheckNarrationCaption(caption, source, "voice", "voice-zh", MuseumLanguage.TraditionalChinese, true);
             if (source.isPlaying) yield return Wait(source.clip.length + .3f);
             CheckRetainedNarration(button, caption, source, "voice", MuseumLanguage.TraditionalChinese);
             CaptureNarrationSubtitle(caption, "retained-voice", MuseumLanguage.TraditionalChinese);
@@ -321,8 +324,10 @@ namespace Museum.Diegetic.Editor
 
             inspection.SoundEnabled = false;
             yield return RayClick(HelmetDiegeticStation.Command.Narration);
+            yield return RayClick(HelmetDiegeticStation.Command.Settings);
             yield return RayClick(HelmetDiegeticStation.Command.ResetView);
             CheckNarrationStopped(caption, source, "Reset view with a retained subtitle");
+            yield return RayClick(HelmetDiegeticStation.Command.Settings);
             yield return RayClick(HelmetDiegeticStation.Command.Narration);
             yield return RayClick(HelmetDiegeticStation.Command.FinishVisit);
             CheckNarrationStopped(caption, source, "Finish visit with a retained subtitle");
