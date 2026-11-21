@@ -411,6 +411,49 @@ def kidney_plate(frame_tree, pads, axes, row, side, mat, rubber):
     return plate,flange,flange_front[along,ends],flange_back[along,ends]
 
 
+def visor(shell_tree):
+    """Form the separate 520-054 ABS insert against the forehead of the R2 shell."""
+    # KM drawing 241108001 and bulletin 1/1998 identify the curved insert.
+    # Its footprint, sheet thickness and concealed seating are exhibit estimates.
+    outer = []
+    across = np.linspace(-1, 1, 33)
+    stations = np.linspace(0, 1, 31)
+    for t in stations:
+        half_width = 18 + 64 * math.sin(math.pi*t/2)**1.35
+        for u in across:
+            x = u * half_width * (1 - .07*(2*t-1)**8)
+            y = (1-t)*(-34 - 7*u*u) + t*(-104 + 17*u*u)
+            roof, normal = cast(shell_tree, (x, y, 150), (0, 0, 1), 160)
+            if roof is None or normal[2] >= 0:
+                raise ValueError("Expected the inside face of the approved forehead")
+            # The rear tongue seats against the inner crown. The broad free
+            # lip sweeps below the brow fold, leaving room for the air train.
+            shell_limit = roof[2] - (.12 + .62*t*t)
+            lip_profile = 228.8 + .23*(y+104) + .012*(y+104)**2 - .0035*x*x
+            outer.append((x, y, min(shell_limit, lip_profile)))
+    outer = np.asarray(outer)
+    points = np.vstack((outer, outer - (0, 0, .92)))
+    columns = len(across)
+    skin = len(outer)
+    faces = []
+    for row in range(len(stations)-1):
+        for col in range(columns-1):
+            a = row*columns + col
+            face = (a, a+1, a+columns+1, a+columns)
+            faces.append(face)
+            faces.append(tuple(index+skin for index in reversed(face)))
+    # Trace the trimmed perimeter once to close the two sides of the sheet.
+    rim = [*range(columns), *range(2*columns-1, skin, columns),
+           *range(skin-2, skin-columns-1, -1), *range(skin-2*columns, 0, -columns)]
+    for a, b in zip(rim, rim[1:] + rim[:1]):
+        faces.append((a, b, b+skin, a+skin))
+    abs_finish = material("Visor • formed dark ABS", (.036, .039, .042), roughness=.48)
+    insert = mesh_object("Visor_520-054", points, faces, abs_finish)
+    insert["basis"] = "KM 241108001 #1; KM bulletin 1/1998, vacuum-formed ABS"
+    insert["fit"] = "Estimated internal brow placement and sheet profile; rear tongue follows the R2 inner crown"
+    return insert
+
+
 def build(shell):
     """Create the port and handle; return wing attachment sites in world metres."""
     original=set(bpy.data.objects)
@@ -427,6 +470,7 @@ def build(shell):
     lens_mat.diffuse_color=(.57,.72,.78,.24)
     rows,sites=shell_landmarks(shell)
     shell_tree=tree(shell)
+    visor(shell_tree)
     frame=window(rows,mats,shell_tree,sites)
     frame_tree=tree(frame)
     seats={n:front_hit(frame_tree,*site) for n,site in sites.items()}

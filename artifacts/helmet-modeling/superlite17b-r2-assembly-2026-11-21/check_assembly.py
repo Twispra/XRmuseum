@@ -13,15 +13,17 @@ import sys
 import bmesh
 import bpy
 import numpy as np
+from mathutils import Vector
 from mathutils.bvhtree import BVHTree
 
 
 SHELL = "SL17B_YellowShell_Study"
+VISOR = "Visor_520-054"
 APPROVED = "800f5175684cf9a31f83344bb03c16af2a079f7e77391a27ca1b17bdbccf777e"
 MARKINGS = {"SB_Model designation", "REG_Purge marking"}
 MIN_DOUBLE_AREA_M2 = 1e-12
 EXPECTED = {
-    "window_and_lifting_handle": ["FP_PortRetainer_560-070","FP_Lens_520-004","FP_PortSeal_510-260",
+    "window_and_lifting_handle": [VISOR,"FP_PortRetainer_560-070","FP_Lens_520-004","FP_PortSeal_510-260",
                                   "FP_BrassHandle_560-014","FP_NoseGuide_550-116","FP_NoseBlockKnob_550-062"],
     "regulator_and_water_dump": ["REG_Body_505-027","REG_Chrome cover","REG_Purge button","EXH_Water dump body_550-063"],
     "starboard_sideblock_and_bent_tube": ["SB_Chromed main casting_505-024","SB_Steady flow_520-524",
@@ -153,6 +155,98 @@ def object_geometry(obj, depsgraph):
         evaluated.to_mesh_clear()
 
 
+def visor_fit(objects, graph):
+    """Inspect the saved insert in world space, including the actual lens and inner shell."""
+    insert = bpy.context.scene.objects.get(VISOR)
+    if insert is None:
+        return {"passed": False, "missing": VISOR}
+
+    def world_tree(obj):
+        evaluated = obj.evaluated_get(graph)
+        mesh = evaluated.to_mesh()
+        try:
+            mesh.calc_loop_triangles()
+            points = [evaluated.matrix_world @ v.co for v in mesh.vertices]
+            triangles = [tuple(t.vertices) for t in mesh.loop_triangles]
+            return BVHTree.FromPolygons(points, triangles, all_triangles=True), np.array(points)
+        finally:
+            evaluated.to_mesh_clear()
+
+    tree, points = world_tree(insert)
+    ceiling, _ = world_tree(bpy.data.objects[SHELL])
+    low, high = points.min(axis=0), points.max(axis=0)
+    collisions = []
+    for obj in objects:
+        if obj.type != "MESH" or obj == insert:
+            continue
+        evaluated = obj.evaluated_get(graph)
+        bounds = np.array([evaluated.matrix_world @ Vector(c) for c in evaluated.bound_box])
+        if np.all(bounds.max(axis=0) >= low) and np.all(bounds.min(axis=0) <= high):
+            other = ceiling if obj.name == SHELL else world_tree(obj)[0]
+            if tree.overlap(other):
+                collisions.append(obj.name)
+    # Look up from each visor vertex to the inside ceiling. The rear bearing
+    # area must have a seat on both sides of the centreline.
+    seated = []
+    below_ceiling = True
+    for x, y, z in points:
+        hit, normal, _, distance = ceiling.ray_cast((x, y, z), (0, 0, 1), .08)
+        if hit is None or normal.z >= 0:
+            below_ceiling = False
+        elif distance <= .00025 and y > -.055:
+            seated.append(x)
+    # Sample sight lines from two nominal eye points to the central lens.
+    # These fixed display-scale positions are not a wearer field-of-view test.
+    _, glass = world_tree(bpy.data.objects["FP_Lens_520-004"])
+    targets = glass[(abs(glass[:, 0]) < .072) & (glass[:, 2] > .165) & (glass[:, 2] < .225)][::8]
+    blocked = 0
+    for eye_x in (-.032, .032):
+        eye = Vector((eye_x, -.025, .193))
+        for target in targets:
+            ray = Vector(target)-eye
+            if tree.ray_cast(eye, ray, ray.length)[0] is not None:
+                blocked += 1
+    front = points[points[:, 1] < -.080]
+    rear = points[points[:, 1] > -.050]
+    fan_shape = bool(len(front) and len(rear) and np.ptp(front[:, 0]) > .105
+                     and np.ptp(front[:, 0]) > 1.5*np.ptp(rear[:, 0]))
+    heights, thicknesses = [], []
+    for x in (-.055, 0., .055):
+        up = Vector((0, 0, 1))
+        lower = tree.ray_cast((x, -.090, .150), up, .15)[0]
+        if lower is not None:
+            upper = tree.ray_cast(lower+up*.00001, up, .01)[0]
+            if upper is not None:
+                heights.append(lower.z)
+                thicknesses.append(upper.z-lower.z)
+    curved_sheet = (len(heights) == 3 and heights[1] > max(heights[0], heights[2])+.004
+                    and all(.0003 < t < .003 for t in thicknesses))
+    seat_span = float(np.ptp(seated)) if seated else 0.
+    finish = insert.active_material
+    output = next((n for n in finish.node_tree.nodes if n.type == "OUTPUT_MATERIAL" and n.is_active_output),
+                  None) if finish and finish.use_nodes else None
+    surface = output.inputs["Surface"].links if output else []
+    shader = surface[0].from_node if surface else None
+    opaque = False
+    if shader and shader.type == "BSDF_PRINCIPLED":
+        alpha, transmission, color = [shader.inputs[k] for k in ("Alpha", "Transmission Weight", "Base Color")]
+        opaque = (not any(s.is_linked for s in (alpha, transmission, color))
+                  and alpha.default_value >= .99 and transmission.default_value <= .01
+                  and max(color.default_value[:3]) <= .15)
+    tests = {
+        "dark_opaque_finish": opaque,
+        "curved_forehead_insert": bool(fan_shape and curved_sheet and low[2] > .202 and high[2]-low[2] > .025),
+        "wholly_inside_brow": bool(below_ceiling and high[1] < 0 and low[1] > glass[:, 1].max()),
+        "rear_tongue_seated": bool(seated and min(seated) < -.008 and max(seated) > .008),
+        "no_inter_part_triangle_crossings": not collisions,
+        "clear_central_sight_lines": len(targets) >= 12 and blocked == 0,
+    }
+    return {"passed": all(tests.values()), "checks": tests, "world_bounds_m": [low.tolist(), high.tolist()],
+            "brow_section_lower_heights_m": heights, "brow_section_vertical_thicknesses_m": thicknesses,
+            "rear_seat_width_within_0_25_mm_m": seat_span, "intersecting_objects": collisions,
+            "diagnostic_eye_to_lens_rays": 2*len(targets), "rays_blocked_by_visor": blocked}
+
+
 def run():
     parser=argparse.ArgumentParser(description=__doc__)
     for flag in ("shell","model","report"):
@@ -211,7 +305,9 @@ def run():
     screw_counts={p:sum(n.startswith(p) for n in records) for p in
                   ("FP_RetainerScrew_","FP_WhiskerScrew_","FP_PortPlug_530-052_","FP_WhiskerSpacer_550-061_")}
     hidden=[o.name for o in objects if o.hide_render or o.hide_viewport]
+    visor = visor_fit(objects, graph)
     tests={
+        "opaque_visor_fitted_inside_brow":visor["passed"],
         "approved_shell_identical":not differences,
         "all_expected_subsystems_present":not any(missing.values()),
         "retainer_whisker_spacer_and_plug_counts":list(screw_counts.values())==[11,4,2,4],
@@ -231,6 +327,7 @@ def run():
                     "assigned_materials":len(set(m for r in records.values() for m in r["materials"]))},
           "shell_signature_before":original,"shell_signature_after":saved,"shell_signature_differences":differences,
           "subsystems":EXPECTED,"missing_parts":missing,"faceport_fastener_counts":screw_counts,
+          "visor_fit":visor,
           "lens_material":lens_mat.name,"lens_principled_settings":optics,"external_assets":list(assets),
           "unused_file_objects":extra_file_objects,"unexpected_scene_objects":not_model_objects,"hidden_objects":hidden,
           "per_object_problems_including_lettering":raw_problems,"physical_geometry_problems":physical_problems,
