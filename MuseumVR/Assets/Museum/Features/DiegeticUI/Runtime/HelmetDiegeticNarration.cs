@@ -14,9 +14,18 @@ namespace Museum.Diegetic
         const string OrientationGuide = "Aim at the shell. Hold Grip and move the controller to turn the helmet. Release to stop. Aim at the front window, then press and release Grip to open it.";
         const string AirGuide = "In this demo, the team at the surface pumps air through a hose to the helmet.";
         const string VoiceGuide = "In this demo, a cable lets the diver and the team at the surface talk to each other.";
+        const string StandardSubtitleSize = "Subtitles\nStandard";
+        const string LargeSubtitleSize = "Subtitles\nLarge";
+        const float SubtitleWidth = .74f;
+        const float StandardSubtitleHeight = .16f;
+        const float StandardSubtitleFont = .27f;
+        const float LargeSubtitleFont = .36f;
+        static readonly Vector3 StandardSubtitlePosition = new Vector3(.16f, -.245f, -.065f);
 
         HelmetPhysicalControl narrationControl;
         TextMeshPro narrationCaption;
+        Transform narrationBacking;
+        bool largeSubtitles;
         AudioSource narrationSource;
         LanguageChannel narrationLanguage;
         GuideSegment activeGuide;
@@ -28,15 +37,15 @@ namespace Museum.Diegetic
         {
             narrationControl = MakeControl(pedestalUI, Command.Narration, PlayGuide, "", teal);
             narrationControl.transform.localPosition = new Vector3(RightButtonColumn, -.10f, 0);
-            narrationCaption = Label(pedestalUI, "Guide subtitle", new Vector3(.16f, -.245f, -.065f), new Vector2(.74f, .16f), .27f);
-            narrationCaption.enableAutoSizing = true;
+            narrationCaption = Label(pedestalUI, "Guide subtitle", StandardSubtitlePosition,
+                new Vector2(SubtitleWidth, StandardSubtitleHeight), StandardSubtitleFont);
             narrationCaption.fontSizeMin = .22f;
-            narrationCaption.fontSizeMax = .27f;
+            narrationCaption.fontSizeMax = StandardSubtitleFont;
             var backing = GameObject.CreatePrimitive(PrimitiveType.Cube);
             backing.name = "Subtitle backing";
-            backing.transform.SetParent(narrationCaption.transform, false);
-            backing.transform.localPosition = new Vector3(0, 0, .012f);
-            backing.transform.localScale = new Vector3(.77f, .18f, .006f);
+            narrationBacking = backing.transform;
+            narrationBacking.SetParent(narrationCaption.transform, false);
+            narrationBacking.localPosition = new Vector3(0, 0, .012f);
             backing.GetComponent<Collider>().enabled = false;
             Destroy(backing.GetComponent<Collider>());
             var renderer = backing.GetComponent<Renderer>();
@@ -46,6 +55,7 @@ namespace Museum.Diegetic
             renderer.SetPropertyBlock(properties);
             SetFrontSurface(renderer);
             MuseumText.Set(narrationCaption, OrientationGuide);
+            LayoutNarrationSubtitle();
             narrationCaption.gameObject.SetActive(false);
 
             var player = new GameObject("Helmet narration playback");
@@ -54,6 +64,34 @@ namespace Museum.Diegetic
             narrationSource.playOnAwake = false;
             narrationSource.spatialBlend = 0f;
             narrationSource.volume = .75f;
+        }
+
+        void ToggleSubtitleSize()
+        {
+            largeSubtitles = !largeSubtitles;
+            var control = controls[Command.SubtitleSize];
+            control.SetTitle(largeSubtitles ? LargeSubtitleSize : StandardSubtitleSize);
+            control.SetEmphasis(largeSubtitles);
+            if (narrationActive) LayoutNarrationSubtitle();
+        }
+
+        void LayoutNarrationSubtitle()
+        {
+            narrationCaption.enableAutoSizing = !largeSubtitles;
+            narrationCaption.fontSize = largeSubtitles ? LargeSubtitleFont : StandardSubtitleFont;
+            float height = StandardSubtitleHeight;
+            if (largeSubtitles)
+            {
+                float preferredHeight = narrationCaption.GetPreferredValues(
+                    narrationCaption.text, SubtitleWidth, Mathf.Infinity).y;
+                height = Mathf.Max(height, preferredHeight + .02f);
+            }
+
+            // Keep the top edge below the controls as additional lines grow downward.
+            narrationCaption.rectTransform.sizeDelta = new Vector2(SubtitleWidth, height);
+            narrationCaption.transform.localPosition = StandardSubtitlePosition +
+                Vector3.down * ((height - StandardSubtitleHeight) * .5f);
+            narrationBacking.localScale = new Vector3(SubtitleWidth + .03f, height + .02f, .006f);
         }
 
         GuideSegment CurrentGuide()
@@ -85,6 +123,7 @@ namespace Museum.Diegetic
             narrationEndsAt = Time.unscaledTime + (clip ? Mathf.Max(6f, clip.length) : 8f);
             MuseumText.Set(narrationCaption, caption);
             narrationCaption.gameObject.SetActive(true);
+            LayoutNarrationSubtitle();
             narrationControl.SetTitle(StopGuide);
             narrationControl.SetEmphasis(true);
             if (!inspection.SoundEnabled || !clip) return;

@@ -1,0 +1,42 @@
+{
+  "processes": [
+    {
+      "name": "narration",
+      "method": "Museum.Diegetic.Editor.HelmetDiegeticValidation.RunNarrationBatch",
+      "exitCode": 0,
+      "reportFound": true
+    },
+    {
+      "name": "localization-static",
+      "method": "Museum.Localization.EditorTools.LocalizationValidation.RunBatch",
+      "exitCode": 0,
+      "reportFound": true
+    },
+    {
+      "name": "localization-integration",
+      "method": "Museum.Localization.EditorTools.LocalizationIntegrationValidation.RunBatch",
+      "exitCode": 0,
+      "reportFound": true
+    }
+  ],
+  "localizationIntegration": {
+    "startedUtc": "2026-11-20T08:02:42.1032480Z",
+    "finishedUtc": "2026-11-20T08:04:35.5197270Z",
+    "commit": "0fc979484489c4f7c2fcbc42e472f2104431feca",
+    "branch": "codex/large-narration-subtitles",
+    "dirty": "",
+    "unity": "2022.3.62f3c1",
+    "status": "passed",
+    "failure": "",
+    "inputMethod": "Queued synthetic XR controller/HMD states in the normal Dynamic input update; production Input Actions, ray interactors and saved LanguageButton selectEntered handlers. Current diegetic station language/diagram states run first and after restoration. The original PR9 progression, panel and inspection assertions then run separately in an explicitly enabled optional legacy fixture; station and every hierarchy/component state changed by that fixture are restored. No SelectEnter/SelectExit or TriggerProgrammatically calls. The existing simulator device writer is temporarily disabled.",
+    "limitations": "XR controller poses are automated fixtures, not physical headset/controller, reachability or OS keyboard/mouse simulator testing. Current diagram start/stop uses labelled public station commands. Legacy exploration start/stop uses its labelled public API. Hidden labels are enabled only in a temporary Play Mode lifecycle fixture, then restored. PNGs are monocular captures: production view and separately labelled fixed diagnostic close-ups. The unchanged TrilingualMuseumValidation helper still puts temporary captures under tmp/trilingual-qa; durable evidence is copied into a new QA run. No comfort, user study, historical accuracy or executable build claim.",
+    "errors": [],
+    "warnings": [],
+    "checks": 134337,
+    "passedChecks": 134337,
+    "reportSha256": "d853c5f4fb1f616938346021adef5a85e2b14ff10700cea6b2946ff0209cd9bc",
+    "reportBytes": 29775828
+  },
+  "trackedProjectFilesCheckedAfterExit": 1446,
+  "changedProjectFilesAfterExit": []
+}

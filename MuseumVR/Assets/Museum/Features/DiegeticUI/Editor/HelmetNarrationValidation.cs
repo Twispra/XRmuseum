@@ -60,6 +60,7 @@ namespace Museum.Diegetic.Editor
                 "Turning away leaves narration playing without restarting it",
                 "Samples=" + samples + "->" + source.timeSamples + "; Confirmations=" + control.ConfirmedCount, "production-input");
             QueueHead(); yield return Wait(.15f);
+            yield return SubtitleSizeFixture(caption, source);
             yield return RayClick(HelmetDiegeticStation.Command.Narration);
             CheckNarrationStopped(caption, source, "Stop click");
             yield return RayClick(HelmetDiegeticStation.Command.Narration);
@@ -73,6 +74,14 @@ namespace Museum.Diegetic.Editor
             foreach (var language in new[] { MuseumLanguage.English, MuseumLanguage.Chinese, MuseumLanguage.TraditionalChinese })
             {
                 MuseumText.Channel.SetLanguage(language);
+                station.Execute(HelmetDiegeticStation.Command.Settings);
+                var sizeLabel = station.Controls[HelmetDiegeticStation.Command.SubtitleSize].Caption;
+                CheckSubtitleSizeLabel(sizeLabel, "standard");
+                station.Execute(HelmetDiegeticStation.Command.SubtitleSize);
+                CheckSubtitleSizeLabel(sizeLabel, "large");
+                CheckNarrationStopped(caption, source, "Choosing large subtitles while idle");
+                station.Execute(HelmetDiegeticStation.Command.SubtitleSize);
+                station.Execute(HelmetDiegeticStation.Command.Settings);
                 string suffix = language == MuseumLanguage.English ? "-en" : "-zh";
                 foreach (var cue in new[] { "orientation", "air", "voice" })
                 {
@@ -84,6 +93,11 @@ namespace Museum.Diegetic.Editor
                     yield return RayClick(HelmetDiegeticStation.Command.Narration);
                     CheckNarrationCaption(caption, source, cue, (cue == "orientation" ? "intro" : cue) + suffix, language, true);
                     CaptureNarrationSubtitle(caption, cue, language);
+                    station.Execute(HelmetDiegeticStation.Command.SubtitleSize);
+                    CheckNarrationCaption(caption, source, cue, (cue == "orientation" ? "intro" : cue) + suffix, language, true);
+                    CheckLargeSubtitleGeometry(caption, cue, language);
+                    CaptureNarrationSubtitle(caption, cue, language, largeSize: true, saveImage: cue == "orientation");
+                    station.Execute(HelmetDiegeticStation.Command.SubtitleSize);
                     yield return RayClick(HelmetDiegeticStation.Command.Narration);
                     CheckNarrationStopped(caption, source, "Stop " + cue + "/" + language);
                     if (cue != "orientation") { station.Execute(HelmetDiegeticStation.Command.CloseDemo); yield return Wait(.15f); }
@@ -127,6 +141,10 @@ namespace Museum.Diegetic.Editor
             CheckResult(!inspection.SoundEnabled && !source.isPlaying && NarrationCaptionVisible(caption),
                 "Physical sound toggle stops current narration audio and keeps its subtitle",
                 "Sound=" + inspection.SoundEnabled + "; Subtitle=" + caption.text, "production-input");
+            yield return RayClick(HelmetDiegeticStation.Command.SubtitleSize);
+            CheckLargeSubtitleGeometry(caption, "muted orientation", MuseumLanguage.Chinese);
+            CheckResult(!source.isPlaying && NarrationCaptionVisible(caption), "Large subtitles remain available with sound off", caption.text);
+            yield return RayClick(HelmetDiegeticStation.Command.SubtitleSize);
             yield return RayClick(HelmetDiegeticStation.Command.Sound);
             CheckResult(inspection.SoundEnabled && !source.isPlaying, "Unmuting does not resume old narration audio",
                 "Sound=" + inspection.SoundEnabled + "; Playing=" + source.isPlaying, "production-input");
@@ -134,10 +152,15 @@ namespace Museum.Diegetic.Editor
             yield return RayClick(HelmetDiegeticStation.Command.Narration);
             CheckNarrationStopped(caption, source, "Stop after unmute");
             inspection.SoundEnabled = false;
+            station.Execute(HelmetDiegeticStation.Command.Settings);
+            yield return RayClick(HelmetDiegeticStation.Command.SubtitleSize);
+            station.Execute(HelmetDiegeticStation.Command.Settings);
             yield return RayClick(HelmetDiegeticStation.Command.Narration);
             CheckNarrationCaption(caption, source, "orientation", null, MuseumLanguage.Chinese, false);
+            CheckLargeSubtitleGeometry(caption, "new silent orientation", MuseumLanguage.Chinese);
             yield return RayClick(HelmetDiegeticStation.Command.Narration);
             CheckNarrationStopped(caption, source, "Stop silent subtitle");
+            station.Execute(HelmetDiegeticStation.Command.SubtitleSize);
 
             inspection.SoundEnabled = true;
             inspection.ReduceMotion = true;
@@ -181,6 +204,61 @@ namespace Museum.Diegetic.Editor
             CheckResult(!exhibitScene.isLoaded && !source && !caption &&
                 !UnityEngine.Object.FindObjectsOfType<AudioSource>(true).Any(audio => audio.gameObject.name == "Helmet narration playback"),
                 "Exiting the scene removes narration audio and subtitle", "Museum loaded=" + exhibitScene.isLoaded, "scene-lifecycle");
+        }
+
+        static IEnumerator SubtitleSizeFixture(TMP_Text caption, AudioSource source)
+        {
+            var command = HelmetDiegeticStation.Command.SubtitleSize;
+            var control = station.Controls[command];
+            CheckResult(!control.gameObject.activeInHierarchy, "Subtitle size is inside Settings", control.name);
+            yield return RayClick(HelmetDiegeticStation.Command.Settings);
+            CheckSubtitleSizeLabel(control.Caption, "standard");
+            caption.ForceMeshUpdate(true, true);
+            var standardSize = caption.rectTransform.sizeDelta;
+            var standardPosition = caption.transform.localPosition;
+            float standardFont = caption.fontSize;
+            int samples = source.timeSamples;
+            var clip = source.clip;
+            string words = caption.text;
+            yield return RayClick(command);
+            CheckSubtitleSizeLabel(control.Caption, "large");
+            CheckLargeSubtitleGeometry(caption, "playing orientation", MuseumLanguage.English);
+            CheckResult(caption.fontSize >= standardFont * 1.3f && caption.rectTransform.sizeDelta.y > standardSize.y &&
+                Mathf.Abs(caption.transform.localPosition.y + caption.rectTransform.sizeDelta.y * .5f -
+                    standardPosition.y - standardSize.y * .5f) < .001f,
+                "Large mode grows down from the original top edge", "Font=" + standardFont + " to " + caption.fontSize);
+            CheckResult(source.isPlaying && source.clip == clip && source.timeSamples > samples && caption.text == words,
+                "Changing subtitle size keeps the current narration and playback position", "Samples=" + samples + " to " + source.timeSamples, "production-input");
+            CaptureNarrationSubtitle(caption, "settings", MuseumLanguage.English, largeSize: true);
+            yield return RayClick(command);
+            CheckSubtitleSizeLabel(control.Caption, "standard");
+            CheckResult(caption.enableAutoSizing && caption.rectTransform.sizeDelta == standardSize &&
+                caption.transform.localPosition == standardPosition, "Standard size restores the original layout", caption.rectTransform.sizeDelta.ToString());
+            yield return RayClick(HelmetDiegeticStation.Command.Settings);
+        }
+
+        static void CheckSubtitleSizeLabel(TMP_Text label, string mode)
+        {
+            label.ForceMeshUpdate(true, true);
+            var language = MuseumText.Channel.Current;
+            bool found = MuseumText.Table.TryGet("narration.subtitle_size." + mode, language, out var expected);
+            CheckResult(found && label.text == expected && !label.isTextOverflowing &&
+                label.text.All(c => char.IsWhiteSpace(c) || label.font.HasCharacter(c, false, false)),
+                "Subtitle size button clearly shows " + mode + "/" + language, label.text, "localization");
+        }
+
+        static void CheckLargeSubtitleGeometry(TMP_Text caption, string cue, MuseumLanguage language)
+        {
+            caption.ForceMeshUpdate(true, true);
+            var backing = caption.transform.Find("Subtitle backing");
+            var bounds = caption.textBounds;
+            var room = caption.rectTransform.rect;
+            CheckResult(NarrationCaptionVisible(caption) && !caption.enableAutoSizing && caption.fontSize >= .35f &&
+                !caption.isTextOverflowing && bounds.min.x >= room.xMin - .002f && bounds.max.x <= room.xMax + .002f &&
+                bounds.min.y >= room.yMin - .002f && bounds.max.y <= room.yMax + .002f &&
+                backing.localScale.x > room.width && backing.localScale.y > room.height,
+                "Large subtitle and backing fit " + cue + "/" + language,
+                "Font=" + caption.fontSize + "; Lines=" + caption.textInfo.lineCount + "; Text=" + bounds + "; Rect=" + room, "monocular-layout");
         }
 
         static IEnumerator NarrationConfirmFromIdle(HelmetPhysicalControl control, AudioSource source, TMP_Text caption)
@@ -244,7 +322,7 @@ namespace Museum.Diegetic.Editor
                 "Playing=" + playing + "; Subtitle visible=" + NarrationCaptionVisible(caption), "narration-lifecycle");
         }
 
-        static void CaptureNarrationSubtitle(TMP_Text caption, string cue, MuseumLanguage language)
+        static void CaptureNarrationSubtitle(TMP_Text caption, string cue, MuseumLanguage language, bool largeSize = false, bool saveImage = true)
         {
             if (!NarrationCaptionVisible(caption)) return;
             caption.ForceMeshUpdate(true, true);
@@ -265,9 +343,24 @@ namespace Museum.Diegetic.Editor
             float halfWidth = halfHeight * 4f / 3f;
             CheckResult(!entry.isTextOverflowing && entryProjection.xMin >= -halfWidth && entryProjection.xMax <= halfWidth &&
                 entryProjection.yMin >= -halfHeight && entryProjection.yMax <= halfHeight && !entryProjection.Overlaps(backingProjection),
-                "Narration subtitle leaves the Show panel label visible " + cue + "/" + language,
+                "Narration subtitle leaves the Show panel label visible " + cue + "/" + language + (largeSize ? "/large" : "/standard"),
                 "Entry=" + entryProjection + "; Backing=" + backingProjection, "monocular-layout");
-            string file = "narration-" + cue + "-" + language + ".png";
+            if (largeSize)
+            {
+                var buttons = new[] { HelmetDiegeticStation.Command.Narration, HelmetDiegeticStation.Command.Settings,
+                    HelmetDiegeticStation.Command.About, HelmetDiegeticStation.Command.SubtitleSize, HelmetDiegeticStation.Command.ResetView };
+                var overlapped = buttons.Where(command => station.Controls[command].isActiveAndEnabled)
+                    .Where(command =>
+                    {
+                        var target = station.Controls[command].Target.colliders[0] as BoxCollider;
+                        return target && backingProjection.Overlaps(NarrationProjection(target.transform,
+                            new Bounds(target.center, target.size), position, rotation));
+                    }).ToArray();
+                CheckResult(overlapped.Length == 0, "Large subtitle clears the preset and nearby controls " + cue + "/" + language,
+                    string.Join(", ", overlapped), "monocular-layout");
+            }
+            if (!saveImage) return;
+            string file = "narration-" + cue + "-" + language + (largeSize ? "-large" : "") + ".png";
             HelmetDiegeticPreview.CaptureView(Path.Combine(Output, file), position, rotation, 48f);
             report.diagnosticCaptures.Add(file);
         }
