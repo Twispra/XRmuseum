@@ -80,8 +80,8 @@ INDICATOR_DEFS = {
         "note": "仅对走探索流程的会话有意义；未进入该流程的会话不参与判定。",
     },
     "B5": {
-        "title": "选择探索按钮后未观测到预期换页",
-        "rule": "选择明确换页的探索按钮后，在下一次按键或会话边界前至少观测 1 秒，页面仍未改变",
+        "title": "操作探索按钮后未观测到预期换页",
+        "rule": "操作明确换页的探索按钮后，在下一次按键或会话边界前至少观测 1 秒，页面仍未改变",
         "severity": 4,
         "cost": "M",
         "requirement": "EQ5 流程可理解",
@@ -103,6 +103,8 @@ HOVER_STUCK_MIN = 3
 OSCILLATION_MIN = 2
 HINTS_HIGH = 2
 PAGE_OBSERVATION_SECONDS = 1.0
+LEGACY_INPUT_KEY = "legacy_exploration_input"
+LEGACY_INPUT_SELECT_ACTIVATE = "2"
 
 # Match the saved HelmetExplorationButton names and the station's runtime controls.
 EXPLORATION_BUTTON_PAGES = {
@@ -200,11 +202,38 @@ def observed_page_actions(events):
     """用同一次操作后的有效快照，检查已知控件的目标页面。"""
     attempts = []
     pending = None
+    accepts_activation = False
+    previous_press = None
+    previous_legacy_attempt = None
     for event in events:
         kind, page, time = event["event"], event["page"], event["t"]
+        if kind == "session_start":
+            accepts_activation = _extract_kv([event], LEGACY_INPUT_KEY) == LEGACY_INPUT_SELECT_ACTIVATE
+        if kind in ("session_start", "scene_loaded", "session_end"):
+            previous_press = None
+            previous_legacy_attempt = None
+
+        is_press = kind in ("select", "activate")
+        paired = False
+        if is_press:
+            target = event["target"]
+            target_parts = target.split("/")
+            legacy_page = EXPLORATION_BUTTON_PAGES.get(target_parts[-1])
+            if accepts_activation and legacy_page:
+                # The recorder prints three decimals. Pair the two routes only at the same
+                # recorded timestamp and target, without crossing another press or scene boundary.
+                other_kind = "select" if kind == "activate" else "activate"
+                paired = previous_press == (target, time, other_kind)
+                previous_press = None if paired else (target, time, kind)
+            else:
+                previous_press = None
+            if paired and previous_legacy_attempt is not None:
+                previous_legacy_attempt["input"] = "select+activate"
+            previous_legacy_attempt = None
+
         if pending:
             before = pending["from_page"]
-            boundary = kind in ("select", "activate", "session_start", "scene_loaded")
+            boundary = (is_press and not paired) or kind in ("session_start", "scene_loaded")
             if boundary or not page or time < pending["t"]:
                 pending = None
             elif page != before:
@@ -218,14 +247,10 @@ def observed_page_actions(events):
                 if kind == "session_end":
                     pending = None
 
-        if kind != "select":
+        if not is_press or paired or (kind == "activate" and not (accepts_activation and legacy_page)):
             continue
-        target = event["target"]
-        target_parts = target.split("/")
-        expected = EXPLORATION_BUTTON_PAGES.get(target_parts[-1])
-        physical = expected is None
-        if physical:
-            expected = PHYSICAL_CONTROL_PAGES.get("/".join(target_parts[-2:]))
+        physical = legacy_page is None
+        expected = legacy_page or PHYSICAL_CONTROL_PAGES.get("/".join(target_parts[-2:]))
         if not expected or page == expected:
             continue
 
@@ -233,6 +258,9 @@ def observed_page_actions(events):
             "target": target, "t": time, "from_page": page, "expected_page": expected,
             "physical": physical, "outcome": "inconclusive", "observed_at": None, "observed_page": "",
         }
+        if accepts_activation and not physical:
+            attempt["input"] = kind
+            previous_legacy_attempt = attempt
         attempts.append(attempt)
         if page:
             pending = attempt
@@ -332,8 +360,11 @@ def detect_indicators(metrics):
             lambda m: f"{m['file']}: 首次交互在 {m['first_interaction_t']}s")
 
     def page_action_evidence(m):
+        def input_label(action):
+            return f" ({action['input']})" if "input" in action else ""
+
         return "；".join(
-            f"{m['file']} {action['t']}s：{action['target']} 预期进入 {action['expected_page']}，"
+            f"{m['file']} {action['t']}s：{action['target']}{input_label(action)} 预期进入 {action['expected_page']}，"
             f"至 {action['observed_at']}s 仍为 {action['from_page']}"
             for action in m["page_actions"] if action["outcome"] == "unchanged"
         )
@@ -732,8 +763,66 @@ def run_self_test() -> int:
         check("物理探索控件按目标与快照记录，未确认的动作仍待人工核查",
               [a["outcome"] for a in page_metrics["physical"]["page_actions"]]
               == ["destination_observed", "inconclusive"])
-        check("旧探索按钮只响应 select，扳机不算换页动作", not page_metrics["wrong_input"]["page_actions"])
+        check("缺少能力版本时，扳机不算旧探索换页动作", not page_metrics["wrong_input"]["page_actions"])
         check("同目标 hover 与 activate 合并后保留折返", oscillation_count(["A", "A", "B", "B", "A", "A", "B", "B"]) == 2)
+
+        legacy_air = "Panel/Exploration AIR"
+        physical_air = "Station/Exhibit operation markers/Physical UI - Air"
+        language_button = "Language Selection/Language Button - Chinese"
+        input_cases = {
+            "activate_reaches": ("2", [(1, "activate", legacy_air, "Welcome"), (1.050, "state", "", "Air")], "Air"),
+            "activate_unchanged": ("2", [(1, "activate", legacy_air, "Welcome")], "Welcome"),
+            "select_then_activate": ("2", [(1, "select", legacy_air, "Welcome"),
+                                           (1, "activate", legacy_air, "Air")], "Air"),
+            "activate_then_select": ("2", [(1, "activate", legacy_air, "Welcome"),
+                                           (1, "hover", legacy_air, "Welcome"),
+                                           (1, "select", legacy_air, "Welcome")], "Welcome"),
+            "different_ticks": ("2", [(1, "select", legacy_air, "Welcome"),
+                                      (1.001, "activate", legacy_air, "Welcome")], "Air"),
+            "physical_and_language_activate": ("2", [(1, "activate", physical_air, "Welcome"),
+                                                      (2, "activate", language_button, "Welcome")], "Welcome"),
+            "intervening_press": ("2", [(1, "select", legacy_air, "Welcome"),
+                                         (1, "select", language_button, "Welcome"),
+                                         (1, "activate", legacy_air, "Welcome")], "Air"),
+            "intervening_scene": ("2", [(1, "select", legacy_air, "Welcome"),
+                                         (1, "scene_loaded", "MuseumStart", "Welcome"),
+                                         (1, "activate", legacy_air, "Welcome")], "Air"),
+            "legacy_pair": ("", [(1, "select", legacy_air, "Welcome"),
+                                  (1, "activate", legacy_air, "Welcome")], "Welcome"),
+            "unknown_capability": ("3", [(1, "activate", legacy_air, "Welcome")], "Welcome"),
+        }
+        input_metrics = {}
+        for name, (version, rows, end_page) in input_cases.items():
+            path = root / f"{name}.csv"
+            with path.open("w", encoding="utf-8", newline="") as fh:
+                writer = csv.writer(fh)
+                writer.writerow(("t_seconds", "event", "target", "page", "detail"))
+                detail = f"scene=MuseumStart;{LEGACY_INPUT_KEY}={version}" if version else "scene=MuseumStart"
+                writer.writerow(("0.000", "session_start", "", "Welcome", detail))
+                writer.writerows((f"{time:.3f}", event, target, page, "") for time, event, target, page in rows)
+                writer.writerow(("4.000", "session_end", "", end_page, "duration=4.000"))
+            input_metrics[name] = session_metrics(read_session(path))
+
+        def action_outcomes(name):
+            return [(action.get("input"), action["outcome"]) for action in input_metrics[name]["page_actions"]]
+
+        check("新版本扳机换页用后续快照确认", action_outcomes("activate_reaches") == [("activate", "destination_observed")])
+        check("新版本扳机留在原页可生成 B5", action_outcomes("activate_unchanged") == [("activate", "unchanged")])
+        for name, outcome in [("select_then_activate", "destination_observed"), ("activate_then_select", "unchanged")]:
+            check(f"同刻同目标两路输入合并为一个候选 ({name})",
+                  action_outcomes(name) == [("select+activate", outcome)]
+                  and input_metrics[name]["selects"] == 1 and input_metrics[name]["activates"] == 1)
+        for name in ("different_ticks", "intervening_press", "intervening_scene"):
+            check(f"保留不同时间或被中断的两路输入 ({name})",
+                  action_outcomes(name) == [("select", "inconclusive"), ("activate", "destination_observed")])
+        check("实体和语言控件的扳机维持原始事件语义", not action_outcomes("physical_and_language_activate")
+              and input_metrics["physical_and_language_activate"]["activates"] == 2)
+        check("旧日志不配对两路输入，旧选择候选结构保持", action_outcomes("legacy_pair") == [(None, "inconclusive")])
+        check("未识别的版本按旧方式处理", not action_outcomes("unknown_capability"))
+        trigger_b5 = next(f for f in detect_indicators(list(input_metrics.values())) if f["id"] == "B5")
+        check("B5 附新输入路径且只列出留在原页的可归因候选",
+              trigger_b5["sessions"] == ["activate_unchanged.csv", "activate_then_select.csv"]
+              and "(activate)" in trigger_b5["evidence"][0] and "(select+activate)" in trigger_b5["evidence"][1])
 
         coded_path = root / "coded.csv"
 

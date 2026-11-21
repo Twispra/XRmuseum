@@ -6,9 +6,11 @@
 
 ## 怎样试用
 
-打开保存好的 `MuseumVR/Assets/Museum/Scenes/MuseumStart.unity`。原观察面板新增 **INSPECT / EXPLORE** 两个页签，共用跟随位置和交互期间暂停跟随的逻辑。进入 Play 后默认保留 INSPECT；选择 EXPLORE 才显示开场问题和探索内容。
+保存的 `MuseumStart.unity` 默认使用[实体展台](diegetic-ui.zh-CN.md)。旧观察／探索面板保留在可选测试夹具中：
+进入后默认显示 **INSPECT**，选 **EXPLORE** 可打开探索页，两页继续共用原来的跟随和交互冻结逻辑。
 
-电脑模拟器仍是：点击 Game、切英文输入、T/Y 选左右手柄，射线指向后按 **G 并松开**。这是 Grip → Select；鼠标左键模拟扳机，不是这组实体按钮的选择键。实际手柄使用握持选择，实机效果仍需设备确认。
+旧面板两种按钮输入均可使用。电脑模拟器先点击 Game 并用 T／Y 接管对应手柄，射线指向后按 **G**（握把）或按**鼠标左键**（扳机）。
+实际控制器的握把和指向时扳机遵循对应的 XRI 绑定，真实设备效果待验证。默认实体展台的输入见其操作说明。
 
 | 入口 | 当前行为 |
 | --- | --- |
@@ -55,7 +57,7 @@
 | --- | --- |
 | `Runtime/HelmetExplorationController.cs` | 两条线索、按需提示、回顾、重播与参观记录 |
 | `Runtime/HelmetExplorationPanel.cs` | 同一面板的两页切换、文本刷新，以及探索模块停用时回到原观察工具 |
-| `Runtime/HelmetExplorationButton.cs` | 沿用 Select 的按钮分发和悬停反馈 |
+| `Runtime/HelmetExplorationButton.cs` | Select 和 Activate 共用延迟派发，保留悬停反馈 |
 | `Runtime/HelmetExplorationHotspot.cs` | 接头旁的可选线索入口，协调它与原模型抓取、复位的选择关系 |
 | `Runtime/HelmetConnectionDemonstration.cs` | 16 秒分段演示、软管/电缆、沿线信号与阶段文字；结束后保留静态模型，ReduceMotion 直接显示静态关系 |
 | `Runtime/HelmetDemonstrationModels.cs` | 原程序几何与回退路径；主场景的精细设备改由 `RefinedConnectionEquipment` 驱动，继续复用演示时钟 |
@@ -64,6 +66,9 @@
 原 `HelmetInspectionPalette.cs` 仅增加附加页的显示范围和布局支持；页签继续共用原面板的放置、避障与交互冻结机制。编辑器版本、Packages、共享输入和 XR Rig 不属于本轮改动目标。修改主场景仍须按仓库协作规则协调单一写入者；不要运行旧头盔 Builder 来“刷新”本功能。
 
 ## 验证与下一步
+
+通过 `Museum.Localization.EditorTools.LocalizationIntegrationValidation.RunBatch` 测试保存场景。该入口先测默认实体展台，
+在同一次 Play Mode 中启用旧面板，以生产射线分别验证扳机和握把，再还原并复测实体展台。
 
 本轮 NEW VISIT 的实际按钮入口、观察 / 探索进度清理、两种 RESET 保留发现、三语与偏好保留需要绑定 #57 的组合源码检查，结果待本页首段补齐。近期完整主场景与 Windows 构建分别有版本证据，见[2026-10-16 普通壳体修复](activity/2026-10-16-issue50-shell-grab.md)；观察入口正常退出修复见[后续记录](activity/2026-10-16-pr56-editor-exit-and-merge.md)。它们均不能代替本轮新访客专项或修订版设备验收。
 
