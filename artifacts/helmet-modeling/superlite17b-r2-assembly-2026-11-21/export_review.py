@@ -217,9 +217,55 @@ def image_signature(image):
     return {"dimensions":list(image.size),"decoded_linear_rgba_sha256_uint16":hashlib.sha256(values).hexdigest()}
 
 
+def source_texture_uv(model, material, texture):
+    """Identify the rendered UV set for this direct flat base-color texture."""
+    uv_name = ""
+    vector = texture.inputs["Vector"]
+    if texture.projection != "FLAT":
+        raise ValueError(f"Unsupported base-color projection on {material.name}")
+    if vector.is_linked:
+        link = vector.links[0]
+        node = link.from_node
+        if node.type == "UVMAP" and not node.from_instancer:
+            uv_name = node.uv_map
+        elif not (node.type == "TEX_COORD" and link.from_socket.name == "UV" and not node.from_instancer):
+            raise ValueError(f"Unsupported source base-color coordinate graph on {material.name}")
+    indices = set()
+    for obj in model:
+        if material not in obj.data.materials[:]:
+            continue
+        layers = obj.data.uv_layers
+        index = layers.find(uv_name) if uv_name else next(
+            (i for i, layer in enumerate(layers) if layer.active_render), -1)
+        if index < 0:
+            raise ValueError(f"Missing source UV set for {obj.name}/{material.name}")
+        indices.add(index)
+    if len(indices) != 1:
+        raise ValueError(f"Inconsistent source UV sets for shared material {material.name}")
+    return indices.pop()
+
+
+def check_texture_uv(info, expected_uv, material):
+    """A glTF texture can select and transform UVs after the mesh has been exported."""
+    transform = info.get("extensions", {}).get("KHR_texture_transform", {})
+    channel = transform.get("texCoord", info.get("texCoord", 0))
+    if type(channel) is not int or channel != expected_uv:
+        raise ValueError(f"Base-color texture UV mismatch on {material}: expected TEXCOORD_{expected_uv}, got {channel}")
+    offset = np.asarray(transform.get("offset", [0., 0.]))
+    scale = np.asarray(transform.get("scale", [1., 1.]))
+    rotation = transform.get("rotation", 0.)
+    if offset.shape != (2,) or scale.shape != (2,) or not np.isscalar(rotation):
+        raise ValueError(f"Invalid base-color texture transform on {material}")
+    cosine, sine = np.cos(rotation), np.sin(rotation)
+    linear = np.array([[cosine, -sine], [sine, cosine]]) * scale
+    if not np.allclose(offset, 0., rtol=0., atol=1e-8) or not np.allclose(linear, np.eye(2), rtol=0., atol=1e-8):
+        raise ValueError(f"Base-color texture transform mismatch on {material}")
+
+
 def material_values(model):
     values={}
     images={}
+    texture_uvs = {}
     omitted_bumps=[]
     for mat in {m for obj in model for m in obj.data.materials if m}:
         sockets=mat.node_tree.nodes["Principled BSDF"].inputs
@@ -233,6 +279,7 @@ def material_values(model):
             if tex.type!="TEX_IMAGE" or tex.image is None or not tex.image.packed_file:
                 raise ValueError(f"Expected a direct packed base-color texture on {mat.name}")
             images[mat.name]=image_signature(tex.image)
+            texture_uvs[mat.name] = source_texture_uv(model, mat, tex)
             rgb=[1.,1.,1.]
         values[mat.name]=[*rgb,sockets["Alpha"].default_value,
                           sockets["Roughness"].default_value,sockets["Metallic"].default_value]
@@ -241,10 +288,10 @@ def material_values(model):
                 raise ValueError(f"Unexpected normal graph on {mat.name}")
             mat.node_tree.links.remove(sockets["Normal"].links[0])
             omitted_bumps.append(mat.name)
-    return values,images,sorted(omitted_bumps)
+    return values,images,texture_uvs,sorted(omitted_bumps)
 
 
-def validate_gltf(path, before, pbr_source, images, lens_material, optics):
+def validate_gltf(path, before, pbr_source, images, texture_uvs, lens_material, optics):
     data=path.read_bytes()
     magic,version,size,n,chunk=struct.unpack_from("<4sIII4s",data)
     if (magic,version,size,chunk)!=(b"glTF",2,len(data),b"JSON"):
@@ -259,7 +306,9 @@ def validate_gltf(path, before, pbr_source, images, lens_material, optics):
         if not np.allclose(expected,actual,rtol=0,atol=1e-6):
             raise ValueError(f"PBR mismatch on {name}: {actual} versus {expected}")
         if name in images:
-            idx=pbr["baseColorTexture"]["index"]
+            info = pbr["baseColorTexture"]
+            check_texture_uv(info, texture_uvs[name], name)
+            idx=info["index"]
             texture=doc["images"][doc["textures"][idx]["source"]]
             if "bufferView" not in texture or texture.get("uri"):
                 raise ValueError(f"Unembedded texture for {name}")
@@ -303,7 +352,7 @@ def run(model_path, glb, *, verify_existing=False):
             for mod in list(obj.modifiers):
                 bpy.ops.object.modifier_apply(modifier=mod.name)
     shell_report=split_shell_finishes(bpy.data.objects[SHELL])
-    pbr_source,images,skipped=material_values(model)
+    pbr_source,images,texture_uvs,skipped=material_values(model)
     before={obj.name:geometry(obj) for obj in model}
     lens_material=bpy.data.objects[LENS].data.materials[0]
     lens_name=lens_material.name
@@ -315,7 +364,7 @@ def run(model_path, glb, *, verify_existing=False):
         bpy.ops.export_scene.gltf(filepath=str(glb),export_format="GLB",export_yup=True,
                                   export_normals=True,export_texcoords=True,export_animations=False,
                                   export_cameras=False,export_lights=False)
-    actual_optics=validate_gltf(glb,before,pbr_source,images,lens_name,optics)
+    actual_optics=validate_gltf(glb,before,pbr_source,images,texture_uvs,lens_name,optics)
     bpy.ops.wm.read_factory_settings(use_empty=True)
     bpy.ops.import_scene.gltf(filepath=str(glb))
     after={o.name:geometry(o) for o in bpy.context.scene.objects if o.type=="MESH"}
@@ -368,6 +417,7 @@ def run(model_path, glb, *, verify_existing=False):
         "lens":{"material":lens_name,"transmission":actual_optics[0],"ior":actual_optics[1]},
         "shell_finishes":shell_report,"shell_face_partition_verified_on_readback":True,
         "packed_base_color_textures_verified_after_import":images,
+        "base_color_identity_transform_verified_on_texcoord":texture_uvs,
         "bevels_applied_in_export_copy":baked,"procedural_bump_not_baked":skipped,
         "limits":"Display export; viewing software controls refraction and lighting. Procedural bump remains in .blend."
     }
