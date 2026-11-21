@@ -1,0 +1,59 @@
+{
+  "processes": [
+    {
+      "name": "narration",
+      "method": "Museum.Diegetic.Editor.HelmetDiegeticValidation.RunNarrationBatch",
+      "commit": "36b7f175c6c2f28450b55e0d82443eb2e0593c8e",
+      "exitCode": 0,
+      "reportFound": true,
+      "projectFiles": 1446,
+      "projectFilesChanged": []
+    },
+    {
+      "name": "localization-static",
+      "method": "Museum.Localization.EditorTools.LocalizationValidation.RunBatch",
+      "commit": "36b7f175c6c2f28450b55e0d82443eb2e0593c8e",
+      "exitCode": 0,
+      "reportFound": true,
+      "projectFiles": 1446,
+      "projectFilesChanged": []
+    },
+    {
+      "name": "localization-integration",
+      "method": "Museum.Localization.EditorTools.LocalizationIntegrationValidation.RunBatch",
+      "commit": "36b7f175c6c2f28450b55e0d82443eb2e0593c8e",
+      "exitCode": 0,
+      "reportFound": true,
+      "projectFiles": 1446,
+      "projectFilesChanged": []
+    }
+  ],
+  "reports": {
+    "narration": {
+      "commit": "36b7f175c6c2f28450b55e0d82443eb2e0593c8e",
+      "dirty": "",
+      "unity": "2022.3.62f3c1",
+      "checks": 238,
+      "passedChecks": 238,
+      "reportSha256": "ecb0c78d04b2dec6b3dc9c48bcc90539f1222d71d11254a6a2f7d97de3d9d3db",
+      "reportBytes": 94852
+    },
+    "localization-static": {
+      "checks": 11,
+      "passedChecks": 11,
+      "reportSha256": "da8fa8b2468d58fe1bb26cc255271177fa6c31979d9b809c00ffe444dc871e9f",
+      "reportBytes": 1106
+    },
+    "localization-integration": {
+      "commit": "36b7f175c6c2f28450b55e0d82443eb2e0593c8e",
+      "dirty": "",
+      "unity": "2022.3.62f3c1",
+      "status": "passed",
+      "warnings": [],
+      "checks": 132270,
+      "passedChecks": 132270,
+      "reportSha256": "3457037dd73209b235228bcadee7193d3bb61042f94e8885108d7c5e00e79769",
+      "reportBytes": 29335062
+    }
+  }
+}
