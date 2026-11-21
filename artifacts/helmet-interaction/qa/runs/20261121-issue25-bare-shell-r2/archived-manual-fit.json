@@ -1,0 +1,101 @@
+{
+  "model_file": "SuperLite17B-yellow-shell-R2.blend",
+  "model_sha256": "800f5175684cf9a31f83344bb03c16af2a079f7e77391a27ca1b17bdbccf777e",
+  "reference": "Kirby Morgan 17B Handle and Weights, document 260519005, 17BHDL-2, isolated CAD illustration",
+  "manufacturer_pdf_sha256": "7b07dce3f5d4746e6c93c60fde2e4bbfb60434e1fc9c91f7dbe048601a11da4a",
+  "reference_raster_sha256": "e232d6a3b1919433ed5f1b62983a748997fca39957fdee70e2f2fbc15270a6d4",
+  "reference_crop_page_xyxy": [
+    504,
+    906,
+    817,
+    1215
+  ],
+  "reference_shell_height_px": 296,
+  "reference_window_to_shell_area": 0.18168131568759588,
+  "model_window_to_shell_area": 0.21419462644562684,
+  "method": "Orthographic view fit using 32 shell outer support distances, the 2D window bounding-box center, and eight aperture support distances at double pixel weight to constrain foreshortening and roll. Mean edge, P95 and worst deviations use the whole raster including concavities; these are descriptive in-sample estimates. Silhouette fills through-holes. Aperture comes from the actual outer face-opening loop. X increases right and Y down in page pixels.",
+  "limits": "Single uncalibrated illustrated angle, roughly 300 px across the shell. Pose, scale and the mesh are not independently constrained. Raster edges are uncertain by about 1\u20132 px. No physical dimensions, unobserved rear shape, or fit approval follow from these figures.",
+  "camera_mode": "first_pass_pose_locked",
+  "first_pass_model_sha256": "7fb1e712c396845e4d8226bc5a4abc31ae848e58ba8ffc415485fb252d6fe546",
+  "camera": {
+    "azimuth_from_front_toward_minus_x_deg": 38.55892339094866,
+    "elevation_deg": 18.857120300463905,
+    "clockwise_image_roll_deg": -27.212714639289306,
+    "scale_px_per_m": 986.3496618016029,
+    "model_origin_world_m": [
+      -0.0016460791230201721,
+      -0.004371464252471924,
+      0.16005337983369827
+    ],
+    "origin_in_page_px": [
+      641.8678534023335,
+      1050.155337736541
+    ]
+  },
+  "shell_outer": {
+    "reference_area_px": 69743,
+    "model_area_px": 68223,
+    "reference_bbox_xyxy": [
+      511,
+      913,
+      811,
+      1208
+    ],
+    "model_bbox_xyxy": [
+      503,
+      919,
+      810,
+      1197
+    ],
+    "occupied_region_iou": 0.9090091461305364,
+    "symmetric_mean_edge_px": 6.66634531444423,
+    "mean_edge_fraction_of_ref_shell_height": 0.0225214368731224,
+    "pooled_edge_p95_px": 13.0,
+    "worst_pair": {
+      "direction": "model_to_reference",
+      "distance_px": 19.4164878389476,
+      "from_page_xy": [
+        774,
+        1066
+      ],
+      "to_page_xy": [
+        793,
+        1062
+      ]
+    },
+    "worst_fraction_of_ref_shell_height": 0.0655962426991473
+  },
+  "face_opening": {
+    "reference_area_px": 12671,
+    "model_area_px": 14613,
+    "reference_bbox_xyxy": [
+      643,
+      959,
+      782,
+      1100
+    ],
+    "model_bbox_xyxy": [
+      641,
+      950,
+      791,
+      1099
+    ],
+    "occupied_region_iou": 0.848384255809227,
+    "symmetric_mean_edge_px": 4.94754745815069,
+    "mean_edge_fraction_of_ref_shell_height": 0.016714687358617197,
+    "pooled_edge_p95_px": 9.848857801796104,
+    "worst_pair": {
+      "direction": "model_to_reference",
+      "distance_px": 10.816653826391969,
+      "from_page_xy": [
+        718,
+        1083
+      ],
+      "to_page_xy": [
+        712,
+        1074
+      ]
+    },
+    "worst_fraction_of_ref_shell_height": 0.03654274941348638
+  }
+}

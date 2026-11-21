@@ -1,0 +1,72 @@
+{
+  "baseline_sha256": "09766af684372e1a47bc5ecb810e2d6f9d30cc54fca3f51912768e733575ce09",
+  "revision_sha256": "800f5175684cf9a31f83344bb03c16af2a079f7e77391a27ca1b17bdbccf777e",
+  "blender": "4.5.14 LTS",
+  "neck_loops": {
+    "Neck_Opening": {
+      "vertices": [
+        160,
+        160
+      ],
+      "ring_edges": [
+        160,
+        160
+      ],
+      "single_closed_loop_in_both": true,
+      "identical_world_vertex_set": true,
+      "identical_world_edge_endpoint_set": true
+    },
+    "Neck_Groove": {
+      "vertices": [
+        160,
+        160
+      ],
+      "ring_edges": [
+        160,
+        160
+      ],
+      "single_closed_loop_in_both": true,
+      "identical_world_vertex_set": true,
+      "identical_world_edge_endpoint_set": true
+    }
+  },
+  "blind_recesses": {
+    "count": 16,
+    "vertices_compared_per_recess": 86,
+    "method": "Reopen both saved objects. Extract cutter faces from the upper strip of ShellUV, groups 5..20 in U order. Match each vertex by the complete set of its incident cutter corner UV coordinates, then fit an independent proper rigid transform. No reflection allowed.",
+    "per_recess_fit_max_mm": [
+      1.5699e-05,
+      1.5449e-05,
+      8.142e-06,
+      8.191e-06,
+      8.854e-06,
+      1.1033e-05,
+      1.0176e-05,
+      9.928e-06,
+      9.486e-06,
+      1.0624e-05,
+      1.0486e-05,
+      1.0395e-05,
+      7.853e-06,
+      8.766e-06,
+      9.261e-06,
+      1.517e-05
+    ],
+    "overall_max_mm": 1.5699e-05
+  },
+  "positive_x_land": {
+    "method": "Cast 81 rays inward from x=250 mm over a 9x9 grid spanning y=-8..32 mm and z=119..147 mm. Report centre ray at y=12,z=133 mm, least-squares X-displacement residual to a local plane, and angular RMS of the hit triangle normals about their mean.",
+    "baseline": {
+      "centre_x_mm": 136.17070019245148,
+      "fit_x_residual_rms_mm": 1.324555779733207,
+      "triangle_normal_spread_rms_degrees": 14.257336809909006
+    },
+    "revision": {
+      "centre_x_mm": 143.79680156707764,
+      "fit_x_residual_rms_mm": 0.24056274574360498,
+      "triangle_normal_spread_rms_degrees": 2.446377768034748
+    }
+  },
+  "units": "Geometry values are measurements of the display meshes in model coordinates.",
+  "saved_inputs_unchanged": true
+}
