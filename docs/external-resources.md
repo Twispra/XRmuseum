@@ -6,6 +6,8 @@
 
 2026-11-18 中央开场独立样板使用仓库已有 Mark V、电话箱、环境和字体。Codex 参与策展取舍、场景摆位、情境对白及三语文案、Unity 实现、模拟输入验收和单眼录像整理。器材依据和现有外部素材沿用原记录。见[设计取舍与验证](activity/2026-11-18-creative-opening.md)。
 
+2026-11-20 旁白字幕保留沿用 #63 的六条音轨。Codex 辅助修改关闭逻辑和三语标签，执行 Unity 模拟验收并整理诊断截图。[本轮活动记录](activity/2026-11-20-retained-subtitles.md)
+
 2026-11-17 PR #76合并审查：Codex按用户明确授权核对配置资料、研究源和r3基线，独立复算已提交mask／标注，修复复跑工具的输出保护及原图身份检查，并整理审查交接。使用Python标准库、bundled NumPy／Pillow及独立目录SciPy；Blender4.5.14 LTS portable从[官方ZIP](https://download.blender.org/release/Blender4.5/blender-4.5.14-windows-x64.zip)与[官方SHA256清单](https://download.blender.org/release/Blender4.5/blender-4.5.14.sha256)取得，二者匹配，GPL软件只作本地工具、不提交或新增运行时依赖。厂家既有来源本轮作文本复核，未复制原图／手册入库；没有新增模型形状、产品素材、实机结果或成员个人反思。新证据与未验证范围见[本轮活动](activity/2026-11-17-pr76-review-and-merge.md)及[独立QA](../artifacts/helmet-interaction/qa/runs/20261117-pr76-review/README.md)。AI审查不等于另一位成员人工批准，归档合并不等于几何确认或Unity接入。
 
 2026-10-18 最终材料更新：Codex 根据用户授权执行既有 Unity 构建入口、核对 ZIP／有限桌面启动证据，并据此更新英文技术说明、模板活动记录及两篇个人文案中的事实／范围表述，保留原有反思和贡献归属。文档使用本机 Times New Roman、python-docx／lxml、Microsoft Word PDF 导出和 Poppler；打包校验使用 Python 标准库，未新增产品素材、Unity 包或运行时依赖。旧报告与修改前原稿保留；构建、AI 辅助、观察后主动终止及未完成的 PQ604／头显边界见[构建记录](activity/2026-10-18-phase2-windows-submission.md)与[最终材料核查](activity/2026-10-18-phase2-final-submission-audit.md)。
