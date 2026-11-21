@@ -1,0 +1,37 @@
+{
+  "processes": [
+    {
+      "name": "recap",
+      "method": "Museum.Diegetic.Editor.HelmetDiegeticValidation.RunVisitRecapBatch",
+      "exitCode": 0,
+      "reportFound": true
+    },
+    {
+      "name": "localization-static",
+      "method": "Museum.Localization.EditorTools.LocalizationValidation.RunBatch",
+      "exitCode": 0,
+      "reportFound": true
+    },
+    {
+      "name": "localization-integration",
+      "method": "Museum.Localization.EditorTools.LocalizationIntegrationValidation.RunBatch",
+      "exitCode": 0,
+      "reportFound": true
+    }
+  ],
+  "localizationIntegration": {
+    "commit": "a40e369335aa19ac8008c9f11729abed402f3b46",
+    "dirty": "",
+    "unity": "2022.3.62f3c1",
+    "status": "passed",
+    "failure": "",
+    "errors": [],
+    "warnings": [],
+    "checks": 136749,
+    "passedChecks": 136749,
+    "reportSha256": "68be11bc0f828177f49c8b99459d008baf10754b3db261b371368bc98e93bd57",
+    "reportBytes": 30292027
+  },
+  "trackedProjectFilesCheckedAfterExit": 1448,
+  "changedProjectFilesAfterExit": []
+}

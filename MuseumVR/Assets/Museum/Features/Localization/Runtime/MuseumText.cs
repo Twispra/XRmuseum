@@ -14,13 +14,13 @@ namespace Museum.Localization
             if (!Table || !Channel || string.IsNullOrEmpty(english)) return english ?? "";
             return Table.TranslateEnglish(english, Channel.Current);
         }
-        public static void Set(TMP_Text label, string english)
+        public static void Set(TMP_Text label, string english, bool headingOnly = false)
         {
             if (!label) return;
-            if (!Table || !Channel) { label.text = english ?? ""; return; }
+            if (!Table || !Channel) { label.text = LocalizedSourceText.DisplayText(english, headingOnly); return; }
             var binding = label.GetComponent<LocalizedSourceText>();
             if (!binding) binding = label.gameObject.AddComponent<LocalizedSourceText>();
-            binding.Configure(Table, Channel, english ?? "");
+            binding.Configure(Table, Channel, english ?? "", headingOnly);
         }
     }
 }

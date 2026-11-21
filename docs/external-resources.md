@@ -6,6 +6,8 @@
 
 2026-11-18 中央开场独立样板使用仓库已有 Mark V、电话箱、环境和字体。Codex 参与策展取舍、场景摆位、情境对白及三语文案、Unity 实现、模拟输入验收和单眼录像整理。器材依据和现有外部素材沿用原记录。见[设计取舍与验证](activity/2026-11-18-creative-opening.md)。
 
+2026-11-20 旁白字幕保留沿用 #63 的六条音轨。Codex 辅助修改关闭逻辑和三语标签，执行 Unity 模拟验收并整理诊断截图。[本轮活动记录](activity/2026-11-20-retained-subtitles.md)
+
 2026-11-17 PR #76合并审查：Codex按用户明确授权核对配置资料、研究源和r3基线，独立复算已提交mask／标注，修复复跑工具的输出保护及原图身份检查，并整理审查交接。使用Python标准库、bundled NumPy／Pillow及独立目录SciPy；Blender4.5.14 LTS portable从[官方ZIP](https://download.blender.org/release/Blender4.5/blender-4.5.14-windows-x64.zip)与[官方SHA256清单](https://download.blender.org/release/Blender4.5/blender-4.5.14.sha256)取得，二者匹配，GPL软件只作本地工具、不提交或新增运行时依赖。厂家既有来源本轮作文本复核，未复制原图／手册入库；没有新增模型形状、产品素材、实机结果或成员个人反思。新证据与未验证范围见[本轮活动](activity/2026-11-17-pr76-review-and-merge.md)及[独立QA](../artifacts/helmet-interaction/qa/runs/20261117-pr76-review/README.md)。AI审查不等于另一位成员人工批准，归档合并不等于几何确认或Unity接入。
 
 2026-10-18 最终材料更新：Codex 根据用户授权执行既有 Unity 构建入口、核对 ZIP／有限桌面启动证据，并据此更新英文技术说明、模板活动记录及两篇个人文案中的事实／范围表述，保留原有反思和贡献归属。文档使用本机 Times New Roman、python-docx／lxml、Microsoft Word PDF 导出和 Poppler；打包校验使用 Python 标准库，未新增产品素材、Unity 包或运行时依赖。旧报告与修改前原稿保留；构建、AI 辅助、观察后主动终止及未完成的 PQ604／头显边界见[构建记录](activity/2026-10-18-phase2-windows-submission.md)与[最终材料核查](activity/2026-10-18-phase2-final-submission-audit.md)。
@@ -31,6 +33,10 @@ Codex 辅助编写可编辑的 Python 几何定义、生成 OBJ／GLB、Unity �
 ## 2026-10-16：#57 新访客、年代说明与技术文档
 
 Codex 辅助实现同一展品的新访客发现记录清理、年代展签／按钮三语说明、独立验收与证据复审，并更新当前技术文档；见[本轮活动](activity/2026-10-16-visitor-flow.md)。原模型、Unity／XRI 和运行时依赖保持；源 TTF 沿用已记录的 Noto Sans SC OFL 来源及 fontTools 4.60.1 Regular 实例化／子集流程，只补「佔」并保留原码位，保存 SDF 原身份补烤。没有新增模型、图像、录音或第三方运行时包。技术说明 PDF 使用本机已有 ReportLab／Noto 字体排版，Poppler 渲染、pypdf 计页；这些为文档工具，不进入 Unity 运行时。桌面自动输入、AI 复审和排版检查不代表成员人工批准、真实设备或用户研究通过。
+
+## 2026-11-20：结束参观小结
+
+Codex 辅助实现参观小结、跨年代部件名称保留、三语文字绑定和 Unity 编辑器验证。使用项目已有展品、旁白、文字、材质和字体。单眼预览由本项目场景渲染。[本轮活动](activity/2026-11-20-visit-recap.md)
 
 ## 2026-10-16：#56 观察验收退出修复
 
@@ -240,6 +246,11 @@ Codex 辅助编写独立对比场景、预制件、剖切预览和编辑器验�
 Codex 辅助编写 #63 的原创三语短讲解、音轨制作脚本、实体站与声音互斥实现、验证及独立复审。供气／通话沿用现有设备史料和示意边界。六条 WAV 由 eSpeak NG 1.52.0 的原生普通话与英语语音合成，音轨按 Git LFS 交付。软件许可、输出边界、来源哈希、精确台词与再生成方法记录在音轨证据目录。合成音轨没有使用馆藏媒体、外部录音或模仿成员声音。人工试听、头显可懂度及课程提交许可需按各自流程核对。 [音轨证据](../artifacts/narration/20261109-issue63/) · [旁白实现与验收](activity/2026-11-09-issue-63-narration.md)
 
 
+## 2026-11-20：旁白字幕大字模式
+
+Codex 辅助设置接入、三语字幕布局、字体烘焙与模拟输入验证。使用项目已有 Noto Sans SC 子集和 SIL OFL 声明，静态图集增加「幕」一个字形，源 TTF 保持原样。沿用现有音轨与材质，没有引入新的第三方资源或 Unity package。[活动与验证](activity/2026-11-20-large-narration-subtitles.md)
+
+
 ## 2026-11-12：SuperLite通信配置与后部附件首轮复核
 
 Ereshkigal1224按用户授权认领#25子范围；Codex辅助厂家查源、实际Blender源/FBX只读回读、模型三视与标注、证据对照和文档。新增核对Kirby Morgan通信手册#250114001与Bulletin #06/2006，复核#241108001、#260319004及产品页。[可定位的来源与哈希](../artifacts/helmet-refinement/qa/20261112-superlite-config-review/sources.json)；[事实/模型差异/待证边界](../artifacts/helmet-refinement/eras/superlite-17b/references/config-review-2026-11-12.zh-CN.md)。厂家照片/PDF仅链接，临时原件和页图未提交、未作贴图；新三视来自既有项目模型，不新增第三方媒体、模型、字体、音频或package。未改模型/Unity，不把AI审阅视为成员人工批准或实机结果。
@@ -268,6 +279,11 @@ Codex继续用户授权的#25子范围，从冻结v4保存源增量派生后部�
 ## 2026-11-12：r3重建前步骤0–3
 
 用户附带彩色标注A/B并明确要求先备份、基线mask和16点/窗角确认，再重建。Codex先逐字节备份当前完整r2并另存work，读取146件/材质/相机/灯光，固定三视生成基准。两子代理分别做可见黄壳mask配方和16点/窗座短边标注，根代理统一归一/指标/确认图；原始未标线A/B来自此前用户本地资料，附件标线只作意图说明，不当测绘。原照片及含照片对照留本地tmp，提交仅数值mask/描线与项目自有模型图。[确认前成果和口径限制](../artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/README.md)。没有执行新壳重建、接触件重新贴合或引入第三方模型/贴图/字体/音频/Unity依赖；不把AI分割/标注称人类研究或实物精度。
+
+
+## 2026-11-20：#92 六条展览旁白
+
+本次提交采用用户指定、人工验证并授权随项目提交的六条普通话和英语 MP3。Codex 辅助用 FFmpeg 7.1 解码成同名 PCM WAV，以本机 SenseVoice 核对台词并运行 Unity 旁白验收。Unity 通过既有资源路径加载六条 LFS 音轨。 [音轨来源、转换命令与哈希](../artifacts/narration/20261120-issue92/supplied-audio.md)
 
 ## 2026-11-20：展台快捷导航
 

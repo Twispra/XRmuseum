@@ -1,0 +1,23 @@
+{
+  "testedLocalCommit": "968202f9d6565cc4137e92d49cb6c0fd6a441d27",
+  "unity": "2022.3.62f3c1",
+  "command": "Unity.exe -batchmode -projectPath <worktree>/MuseumVR -logFile <log> -executeMethod Museum.Diegetic.Editor.HelmetDiegeticValidation.RunNarrationBatch",
+  "trackedChangesAtTest": [],
+  "untrackedDiagnosticFilesAtTest": 10,
+  "processExitCode": 0,
+  "checksPassed": 184,
+  "checksTotal": 184,
+  "inputFingerprintsRechecked": 66,
+  "wavSha256": {
+    "air-en": "4e60b632944d8ca275f2a6b616ae1eb0a472e663087d4393d7c8462f1caf241f",
+    "air-zh": "7a038ad66625541d70f6eddde90a072c9c7e6b655a795f90a31d174aa2e6885e",
+    "intro-en": "766f337c053d91f52ea7629e00305654d339d49f36447cfe2a36a967ce9bf228",
+    "intro-zh": "50e8d64f0bc9ae9c764d82b244c29f49bef8ac3c51682322cb6ac696fcda33d1",
+    "voice-en": "9c3dedd966b531fdfa5e0236d019a7a5c5dff99f82d15f37cb3244f1588092a7",
+    "voice-zh": "7299b5b0189a6304e75a6306fc7b0348a54df207d7c66b9518c183ec9ed94665"
+  },
+  "localReportPath": "artifacts/helmet-interaction/qa/runs/20261120T121717868Z-narration-6a9ad6ddb2f248d189786d516dc5ea64/report.json",
+  "localReportSha256": "e11a416028af6b450079fea902e5062a1c8a8b6617f3f3eb746b70e4ec8c968b",
+  "limitations": "No real headset/controller, comfort, reachability study, user test or executable build validation. RenderTexture images are diagnostic views of the product scene, not headset screenshots. Direct physical hand interaction is not independently validated by this runner. Narration audio assertions inspect Unity AudioSource and AudioClip state. Actual listening, headset intelligibility and binocular layout remain unverified.",
+  "testedMuseumVrTree": "04128ed236e20faafdbd14fa5661f9aca72db8b5"
+}

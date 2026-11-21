@@ -1595,7 +1595,12 @@ MonoBehaviour:
     chinese: "\u505C\u6B62\u8BED\u97F3"
     english: Stop narration
     traditionalChinese: "\u505C\u6B62\u8A9E\u97F3"
-    note: Visitor control title while narration is active.
+    note: Visitor control title while narration audio is playing.
+  - key: narration.subtitles.close
+    chinese: "\u6536\u8D77\u6587\u5B57"
+    english: Close subtitles
+    traditionalChinese: "\u6536\u8D77\u6587\u5B57"
+    note: Dismiss the subtitle after the audio ends or when sound is off.
   - key: visit.finish
     chinese: "\u7ed3\u675f\u53c2\u89c2"
     english: "Finish visit"
@@ -1716,6 +1721,16 @@ MonoBehaviour:
     english: "I hear you through the cable."
     traditionalChinese: "\u6536\u5230\u3002\u4f60\u7684\u8072\u97f3\u5f9e\u96fb\u7e9c\u50b3\u4f86\u4e86\u3002"
     note: "Static exchange when the visitor reduces motion."
+  - key: narration.subtitle_size.standard
+    english: "Subtitles\nStandard"
+    chinese: "\u6807\u51c6\u5b57\u5e55"
+    traditionalChinese: "\u6a19\u6e96\u5b57\u5e55"
+    note: "Current narration subtitle size in visitor settings."
+  - key: narration.subtitle_size.large
+    english: "Subtitles\nLarge"
+    chinese: "\u5927\u5b57\u5b57\u5e55"
+    traditionalChinese: "\u5927\u5b57\u5b57\u5e55"
+    note: "Current narration subtitle size in visitor settings."
   - key: navigation.title
     chinese: "\u53C2\u89C2\u5C55\u53F0"
     english: Visit an exhibit

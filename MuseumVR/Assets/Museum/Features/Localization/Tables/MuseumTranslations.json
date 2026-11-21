@@ -1895,7 +1895,14 @@
       "english": "Stop narration",
       "chinese": "停止语音",
       "traditionalChinese": "停止語音",
-      "note": "Visitor control title while narration is active."
+      "note": "Visitor control title while narration audio is playing."
+    },
+    {
+      "key": "narration.subtitles.close",
+      "english": "Close subtitles",
+      "chinese": "收起文字",
+      "traditionalChinese": "收起文字",
+      "note": "Dismiss the subtitle after the audio ends or when sound is off."
     },
     {
       "key": "visit.finish",
@@ -2064,6 +2071,20 @@
       "chinese": "收到。你的声音从电缆传来了。",
       "traditionalChinese": "收到。你的聲音從電纜傳來了。",
       "note": "Static exchange when the visitor reduces motion."
+    },
+    {
+      "key": "narration.subtitle_size.standard",
+      "english": "Subtitles\nStandard",
+      "chinese": "标准字幕",
+      "traditionalChinese": "標準字幕",
+      "note": "Current narration subtitle size in visitor settings."
+    },
+    {
+      "key": "narration.subtitle_size.large",
+      "english": "Subtitles\nLarge",
+      "chinese": "大字字幕",
+      "traditionalChinese": "大字字幕",
+      "note": "Current narration subtitle size in visitor settings."
     },
     {
       "key": "navigation.title",

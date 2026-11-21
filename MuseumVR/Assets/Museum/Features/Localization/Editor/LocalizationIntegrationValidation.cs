@@ -69,7 +69,7 @@ namespace Museum.Localization.EditorTools
         [Serializable] sealed class Report
         {
             public string startedUtc, finishedUtc, commit, branch, dirty, unity, status = "running", failure = "";
-            public string inputMethod = "Queued synthetic XR controller/HMD states in the normal Dynamic input update; production Input Actions, ray interactors and saved LanguageButton selectEntered handlers. Current diegetic station language/diagram states run first and after restoration. The original PR9 progression, panel and inspection assertions then run separately in an explicitly enabled optional legacy fixture; station and every hierarchy/component state changed by that fixture are restored. No SelectEnter/SelectExit or TriggerProgrammatically calls. The existing simulator device writer is temporarily disabled.";
+            public string inputMethod = "Queued synthetic XR controller/HMD states in the normal Dynamic input update through production Input Actions and ray interactors. The current station language/diagram checks run before and after the optional legacy fixture. That fixture exercises both Grip Select and Trigger Activate on the saved Explore button, then restores the station and all explicitly changed hierarchy/component states. No SelectEnter/SelectExit or TriggerProgrammatically calls.";
             public string limitations = "XR controller poses are automated fixtures, not physical headset/controller, reachability or OS keyboard/mouse simulator testing. Current diagram start/stop uses labelled public station commands. Legacy exploration start/stop uses its labelled public API. Hidden labels are enabled only in a temporary Play Mode lifecycle fixture, then restored. PNGs are monocular captures: production view and separately labelled fixed diagnostic close-ups. The unchanged TrilingualMuseumValidation helper still puts temporary captures under tmp/trilingual-qa; durable evidence is copied into a new QA run. No comfort, user study, historical accuracy or executable build claim.";
             public List<Check> checks = new List<Check>();
             public List<Fingerprint> files = new List<Fingerprint>();
@@ -242,6 +242,8 @@ namespace Museum.Localization.EditorTools
                 Require(progressive.isActiveAndEnabled && progressive.gameObject.activeInHierarchy && !station.enabled,
                     "optional legacy fixture", "original progression is explicitly enabled", "Current station is temporarily disabled only for the preserved original suite.");
                 exploration.RestartVisit(); progressive.ShowInspection(); yield return Wait(.15f);
+                yield return CheckLegacyExploreInput(progressive, true);
+                yield return CheckLegacyExploreInput(progressive, false);
                 yield return ValidateLegacyWorkflow(languageButtons, progressive);
             }
             finally { RestoreLegacyFixture(); }
@@ -288,7 +290,7 @@ namespace Museum.Localization.EditorTools
                 Require(source || fixedKey || native, "current text", "registered visible label / " + phase + "/" + label.name, label.text);
                 if (source) Require(string.IsNullOrEmpty(source.SourceEnglish) || source.SourceEnglish.All(char.IsDigit) || table.ContainsEnglish(source.SourceEnglish),
                     "current text", "registered dynamic source / " + phase + "/" + label.name, source.SourceEnglish);
-                string expected = source ? table.TranslateEnglish(source.SourceEnglish, channel.Current) : fixedKey ? table.Get(fixedKey.Key, channel.Current) : label.text;
+                string expected = source ? source.TextFor(channel.Current) : fixedKey ? table.Get(fixedKey.Key, channel.Current) : label.text;
                 Require(label.text == expected && label.font == table.FontAsset, "current text", "exact translation and saved font / " + phase + "/" + label.name, label.text);
                 Require(!label.isTextOverflowing, "current layout", "visible text fits / " + phase + "/" + label.name, "fontSize=" + label.fontSize + "; rect=" + label.rectTransform.sizeDelta);
                 var missing = Regex.Replace(label.text, "<[^>]*>", "").Where(c => !char.IsWhiteSpace(c)).Distinct().Where(c => !label.font.HasCharacter(c, false, false)).ToArray();
@@ -446,12 +448,58 @@ namespace Museum.Localization.EditorTools
             }
             finally { if (button) button.selectEntered.RemoveListener(listener); }
         }
-        static void QueueController(XRSimulatedController device, Vector3 world, Quaternion rotation, bool grip)
+        static IEnumerator CheckLegacyExploreInput(HelmetExplorationPanel panel, bool trigger)
+        {
+            string input = trigger ? "Trigger" : "Grip";
+            var button = Find("Exploration EXPLORE").GetComponent<XRSimpleInteractable>();
+            Require(button && button.isActiveAndEnabled, "legacy panel input", input + " Explore is available", "Saved optional presentation.");
+            var collider = button.colliders.FirstOrDefault(item => item && item.enabled);
+            Require(collider, "legacy panel input", input + " Explore has a collider", "Saved button collider.");
+
+            int selections = 0, activations = 0;
+            string interactor = "none";
+            UnityEngine.Events.UnityAction<SelectEnterEventArgs> select = args =>
+            { selections++; interactor = args.interactorObject.GetType().Name; };
+            UnityEngine.Events.UnityAction<ActivateEventArgs> activate = args =>
+            { activations++; interactor = args.interactorObject.GetType().Name; };
+            button.selectEntered.AddListener(select);
+            button.activated.AddListener(activate);
+            try
+            {
+                Vector3 position = collider.bounds.center - button.transform.forward * .55f;
+                Quaternion rotation = Quaternion.LookRotation(collider.bounds.center - position, Vector3.up);
+                QueueController(rightDevice, position, rotation, false);
+                yield return Wait(.25f);
+                Require(button.isHovered && !panel.IsExploring, "legacy panel input", input + " Explore hover is passive", "Optional panel begins in inspection.");
+                QueueController(rightDevice, position, rotation, !trigger, trigger);
+                yield return Wait(.25f);
+                Require(interactor == nameof(XRRayInteractor) && selections == (trigger ? 0 : 1) && activations == (trigger ? 1 : 0),
+                    "legacy panel input", input + " invokes one production ray event",
+                    $"Select={selections}; Activate={activations}; interactor={interactor}.");
+                Require(panel.IsExploring, "legacy panel input", input + " opens Explore", "Saw the production panel enter exploration mode.");
+                QueueController(rightDevice, position, rotation, false);
+                yield return Wait(.2f);
+                ParkHands();
+                yield return Wait(.15f);
+                panel.ShowInspection();
+            }
+            finally
+            {
+                if (button)
+                {
+                    button.selectEntered.RemoveListener(select);
+                    button.activated.RemoveListener(activate);
+                }
+            }
+        }
+
+        static void QueueController(XRSimulatedController device, Vector3 world, Quaternion rotation, bool grip, bool trigger = false)
         {
             var parent = (device == leftDevice ? leftController : rightController).transform.parent;
             var state = new XRSimulatedControllerState { isTracked = true, trackingState = 3, batteryLevel = 1,
                 devicePosition = parent.InverseTransformPoint(world), deviceRotation = Quaternion.Inverse(parent.rotation) * rotation,
-                grip = grip ? 1f : 0f }.WithButton(ControllerButton.GripButton, grip);
+                grip = grip ? 1f : 0f, trigger = trigger ? 1f : 0f }
+                .WithButton(ControllerButton.GripButton, grip).WithButton(ControllerButton.TriggerButton, trigger);
             PendingInput.Enqueue(() => InputSystem.QueueStateEvent(device, state));
         }
         static void ParkHands()
