@@ -254,12 +254,19 @@ class Interior:
         mask=self.loft("LVON_510-724_hollow_mask",rings,[self.black],closed=True)
         # Mic in the mask's side pocket, with the face toward the mouth.
         mic_axis=Vector((1,-.1,0)).normalized()
-        mike=self.turned("Microphone_515-029",(-39,-74,133),mic_axis,
+        mic_center=Vector((-39,-74,133))
+        mike=self.turned("Microphone_515-029",mic_center,mic_axis,
                          [(-1,8.0),(-.4,10.1),(1,10.4),(3.5,9.1)],self.mic,40)
-        self.perforate(mike,Vector((-39,-74,133))+mic_axis*3.4,mic_axis,.77,1.6,
+        self.perforate(mike,mic_center+mic_axis*3.4,mic_axis,.77,1.6,
                        [(u*2.7,v*2.7) for u in range(-2,3)
                         for v in range(-2,3) if u*u+v*v<=5])
-        self.anchors["Mic"]=Vector((-42,-76,129))
+        # Seat the angled cable's entire end cap inside the rear of the housing.
+        mic_tree = BVHTree.FromObject(mike, bpy.context.evaluated_depsgraph_get())
+        ray_origin = mic_center + Vector((0, -2, -4)) - 12*mic_axis
+        seat, normal, _, _ = mic_tree.ray_cast(ray_origin*.001, mic_axis, .03)
+        if seat is None or normal.dot(mic_axis) > -.95:
+            raise ValueError("Microphone rear cable seat not found")
+        self.anchors["Mic"] = seat*1000 - 1.65*normal
         self.nose_block(mask)
 
     def nose_block(self,mask):
