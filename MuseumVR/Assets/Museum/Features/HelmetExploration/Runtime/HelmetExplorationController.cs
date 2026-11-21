@@ -29,6 +29,17 @@ namespace Museum.Exploration
         public bool HasSelectedClue => hasSelectedClue;
         public bool IsPlaying => demonstration && demonstration.IsPlaying;
         public bool IsDiagramVisible => demonstration && demonstration.IsVisible;
+        public HelmetHotspotTour VisitTour => ResolveVisitTour();
+
+        public string ConnectionRecap
+        {
+            get
+            {
+                string air = AirSeen ? "Air: seen - air arrives from the surface." : "Air: not seen yet";
+                string voice = VoiceSeen ? "Voice: seen - messages travel both ways." : "Voice: not seen yet";
+                return air + "\n" + voice;
+            }
+        }
 
         public string Title
         {
@@ -59,13 +70,7 @@ namespace Museum.Exploration
                         if (!AirSeen) return "Find the rear connector. Use Back to choose Air.";
                         if (!VoiceSeen) return "How could a diver ask for help? Use Back to choose Voice.";
                         return "You have seen both connections. How does the surface team support the diver?";
-                    case Page.Review:
-                        if (!AirSeen && !VoiceSeen)
-                            return "Air: not seen yet\nVoice: not seen yet";
-                        if (AirSeen && VoiceSeen)
-                            return "Air: seen - air arrives from the surface.\nVoice: seen - messages travel both ways.";
-                        return AirSeen ? "Air: seen - air arrives from the surface.\nVoice: not seen yet"
-                            : "Air: not seen yet\nVoice: seen - messages travel both ways.";
+                    case Page.Review: return ConnectionRecap;
                     default:
                         return "";
                 }

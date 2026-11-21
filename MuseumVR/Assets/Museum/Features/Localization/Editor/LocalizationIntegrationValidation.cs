@@ -290,7 +290,7 @@ namespace Museum.Localization.EditorTools
                 Require(source || fixedKey || native, "current text", "registered visible label / " + phase + "/" + label.name, label.text);
                 if (source) Require(string.IsNullOrEmpty(source.SourceEnglish) || source.SourceEnglish.All(char.IsDigit) || table.ContainsEnglish(source.SourceEnglish),
                     "current text", "registered dynamic source / " + phase + "/" + label.name, source.SourceEnglish);
-                string expected = source ? table.TranslateEnglish(source.SourceEnglish, channel.Current) : fixedKey ? table.Get(fixedKey.Key, channel.Current) : label.text;
+                string expected = source ? source.TextFor(channel.Current) : fixedKey ? table.Get(fixedKey.Key, channel.Current) : label.text;
                 Require(label.text == expected && label.font == table.FontAsset, "current text", "exact translation and saved font / " + phase + "/" + label.name, label.text);
                 Require(!label.isTextOverflowing, "current layout", "visible text fits / " + phase + "/" + label.name, "fontSize=" + label.fontSize + "; rect=" + label.rectTransform.sizeDelta);
                 var missing = Regex.Replace(label.text, "<[^>]*>", "").Where(c => !char.IsWhiteSpace(c)).Distinct().Where(c => !label.font.HasCharacter(c, false, false)).ToArray();

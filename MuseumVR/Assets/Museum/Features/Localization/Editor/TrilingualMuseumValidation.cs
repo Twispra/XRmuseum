@@ -122,7 +122,7 @@ namespace Museum.Localization.EditorTools
                     "dynamic source in table / " + state + "/" + label.name, source.SourceEnglish);
                 if (!label.gameObject.activeInHierarchy || !label.GetComponent<Renderer>().enabled) continue;
                 visible++; label.ForceMeshUpdate(true, true);
-                string expected = source ? table.TranslateEnglish(source.SourceEnglish, channel.Current) : fixedKey ? table.Get(fixedKey.Key, channel.Current) : label.text;
+                string expected = source ? source.TextFor(channel.Current) : fixedKey ? table.Get(fixedKey.Key, channel.Current) : label.text;
                 Check(label.text == expected && label.font == table.FontAsset, "translated label / " + state + "/" + label.name, label.text);
                 Check(!label.isTextOverflowing, "layout containment / " + state + "/" + label.name,
                     label.text + "; fontSize=" + label.fontSize + "; rect=" + label.rectTransform.sizeDelta);

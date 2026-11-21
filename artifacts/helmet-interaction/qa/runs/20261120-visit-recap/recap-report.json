@@ -1,0 +1,865 @@
+{
+    "utc": "2026-11-20T08:22:57.7646040Z",
+    "finishedUtc": "2026-11-20T08:23:18.4657530Z",
+    "commit": "a40e369335aa19ac8008c9f11729abed402f3b46",
+    "dirty": "",
+    "unity": "2022.3.62f3c1",
+    "failure": "",
+    "method": "Saved MuseumStart Play Mode: public command and gesture-calculation fixtures, plus queued synthetic right controller/HMD states in ordinary Dynamic Input System updates through production Input Actions and XR ray interactions. Production-ray checks are explicitly separate from public-API fixtures. No direct SelectEnter/SelectExit, InputSystem.Update, scene saves or prototype generator.",
+    "limitations": "No real headset/controller, comfort, reachability study, user test or executable build validation. RenderTexture images are diagnostic views of the product scene, not headset screenshots. Direct physical hand interaction is not independently validated by this runner.",
+    "checks": [
+        {
+            "name": "Saved scene starts installed diegetic station",
+            "detail": "Ready=True",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "New visitor starts with complete rotation guidance",
+            "detail": "Learned=False; Condensed=False",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "All commands retain registered interaction metadata",
+            "detail": "Count=27",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "No old following palette remains active",
+            "detail": "Retired presentation, existing content engines retained.",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Three original knowledge hotspots remain enabled",
+            "detail": "front-window,bonnet,breastplate",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Knowledge hotspot position preserved: front-window",
+            "detail": "(-0.1100, 0.3000, -0.2400)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Knowledge hotspot position preserved: bonnet",
+            "detail": "(0.1700, 0.3400, 0.0000)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Knowledge hotspot position preserved: breastplate",
+            "detail": "(0.0000, 0.0750, -0.1800)",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Exhibit cannot be freely translated or dropped",
+            "detail": "Legacy grab disabled; rigidbody pinned.",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "The recap begins closed at the default exhibit",
+            "detail": "Visit recap",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover FinishVisit",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.2850, 1.2173, 2.2342); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - FinishVisit/Inset target; HitPoint=(0.2884, 1.0651, 2.7205); Collider=-11794; Owner=Physical UI - FinishVisit; Valid=Physical UI - FinishVisit; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.2850, 1.2173, 2.2342); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once FinishVisit",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Finish visit opens recap with choices",
+            "detail": "English",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Recap reflects current observation count and connections",
+            "detail": "0 / 3 inspected | Air: not seen yet\nVoice: not seen yet",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Recap shows the names recorded at first inspection English",
+            "detail": "",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover ContinueVisit",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(-0.1050, 1.2173, 2.2342); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - ContinueVisit/Inset target; HitPoint=(-0.1007, 1.0644, 2.7202); Collider=-11858; Owner=Physical UI - ContinueVisit; Valid=Physical UI - ContinueVisit; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(-0.1050, 1.2173, 2.2342); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once ContinueVisit",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Continuing an empty visit closes the recap",
+            "detail": "0 / 3 inspected",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "The same saved lower hotspot now refers to a different part",
+            "detail": "Neck seal",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover FinishVisit",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.2850, 1.2173, 2.2342); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - FinishVisit/Inset target; HitPoint=(0.2887, 1.0652, 2.7205); Collider=-11794; Owner=Physical UI - FinishVisit; Valid=Physical UI - FinishVisit; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.2850, 1.2173, 2.2342); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once FinishVisit",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Revisiting a shared hotspot in another era keeps the first observation",
+            "detail": "Breastplate\nInspect the broad lower section around the shoulders.",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Finish visit opens recap with choices",
+            "detail": "Chinese",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Recap reflects current observation count and connections",
+            "detail": "已观察 2 / 3 个部位 | 供气：已查看，空气来自水面。\n通话：尚未查看",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Recap shows the names recorded at first inspection Chinese",
+            "detail": "头盔外壳 | 胸甲",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs Chinese/partial/Recap title",
+            "detail": "参观回顾",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs Chinese/partial/Recap inspected count",
+            "detail": "已观察 2 / 3 个部位",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs Chinese/partial/Recap part 1",
+            "detail": "头盔外壳",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs Chinese/partial/Recap part 2",
+            "detail": "胸甲",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs Chinese/partial/Recap connections",
+            "detail": "供气：已查看，空气来自水面。\n通话：尚未查看",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs Chinese/partial/Visit handoff confirmation",
+            "detail": "开始新参观将清除本次探索记录。",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Finish visit opens recap with choices",
+            "detail": "TraditionalChinese",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Recap reflects current observation count and connections",
+            "detail": "已觀察 2 / 3 個部位 | 供氣：已查看，空氣來自水面。\n通話：尚未查看",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Recap shows the names recorded at first inspection TraditionalChinese",
+            "detail": "胸甲 | 頭盔外殼",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs TraditionalChinese/partial/Recap title",
+            "detail": "參觀回顧",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs TraditionalChinese/partial/Recap inspected count",
+            "detail": "已觀察 2 / 3 個部位",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs TraditionalChinese/partial/Recap part 1",
+            "detail": "頭盔外殼",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs TraditionalChinese/partial/Recap part 2",
+            "detail": "胸甲",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs TraditionalChinese/partial/Recap connections",
+            "detail": "供氣：已查看，空氣來自水面。\n通話：尚未查看",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs TraditionalChinese/partial/Visit handoff confirmation",
+            "detail": "開始新參觀將清除本次探索記錄。",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Finish visit opens recap with choices",
+            "detail": "English",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Recap reflects current observation count and connections",
+            "detail": "2 / 3 inspected | Air: seen - air arrives from the surface.\nVoice: not seen yet",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Recap shows the names recorded at first inspection English",
+            "detail": "Breastplate | Helmet shell",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs English/partial/Recap title",
+            "detail": "Your visit",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs English/partial/Recap inspected count",
+            "detail": "2 / 3 inspected",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs English/partial/Recap part 1",
+            "detail": "Helmet shell",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs English/partial/Recap part 2",
+            "detail": "Breastplate",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs English/partial/Recap connections",
+            "detail": "Air: seen - air arrives from the surface.\nVoice: not seen yet",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs English/partial/Visit handoff confirmation",
+            "detail": "Starting the next visit clears this visit's discoveries.",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover ContinueVisit",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(-0.1050, 1.2173, 2.2342); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - ContinueVisit/Inset target; HitPoint=(-0.1012, 1.0647, 2.7203); Collider=-11858; Owner=Physical UI - ContinueVisit; Valid=Physical UI - ContinueVisit; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(-0.1050, 1.2173, 2.2342); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once ContinueVisit",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Continuing preserves the current era and observations",
+            "detail": "2 / 3 inspected",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover FinishVisit",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.2850, 1.2173, 2.2342); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - FinishVisit/Inset target; HitPoint=(0.2885, 1.0651, 2.7205); Collider=-11794; Owner=Physical UI - FinishVisit; Valid=Physical UI - FinishVisit; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.2850, 1.2173, 2.2342); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once FinishVisit",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Finish visit opens recap with choices",
+            "detail": "English",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Recap reflects current observation count and connections",
+            "detail": "3 / 3 inspected | Air: seen - air arrives from the surface.\nVoice: seen - messages travel both ways.",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Recap shows the names recorded at first inspection English",
+            "detail": "Breastplate | Front window | Helmet shell",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs Chinese/complete/Recap title",
+            "detail": "参观回顾",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs Chinese/complete/Recap inspected count",
+            "detail": "已观察 3 / 3 个部位",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs Chinese/complete/Recap part 1",
+            "detail": "前窗",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs Chinese/complete/Recap part 2",
+            "detail": "头盔外壳",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs Chinese/complete/Recap part 3",
+            "detail": "胸甲",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs Chinese/complete/Recap connections",
+            "detail": "供气：已查看，空气来自水面。\n通话：已查看，信息双向传递。",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs Chinese/complete/Visit handoff confirmation",
+            "detail": "开始新参观将清除本次探索记录。",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs TraditionalChinese/complete/Recap title",
+            "detail": "參觀回顧",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs TraditionalChinese/complete/Recap inspected count",
+            "detail": "已觀察 3 / 3 個部位",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs TraditionalChinese/complete/Recap part 1",
+            "detail": "前窗",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs TraditionalChinese/complete/Recap part 2",
+            "detail": "頭盔外殼",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs TraditionalChinese/complete/Recap part 3",
+            "detail": "胸甲",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs TraditionalChinese/complete/Recap connections",
+            "detail": "供氣：已查看，空氣來自水面。\n通話：已查看，信息雙向傳遞。",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs TraditionalChinese/complete/Visit handoff confirmation",
+            "detail": "開始新參觀將清除本次探索記錄。",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs English/complete/Recap title",
+            "detail": "Your visit",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs English/complete/Recap inspected count",
+            "detail": "3 / 3 inspected",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs English/complete/Recap part 1",
+            "detail": "Front window",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs English/complete/Recap part 2",
+            "detail": "Helmet shell",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs English/complete/Recap part 3",
+            "detail": "Breastplate",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs English/complete/Recap connections",
+            "detail": "Air: seen - air arrives from the surface.\nVoice: seen - messages travel both ways.",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Recap label fits and has baked glyphs English/complete/Visit handoff confirmation",
+            "detail": "Starting the next visit clears this visit's discoveries.",
+            "layer": "monocular-layout",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover StartNextVisit",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.1050, 1.2173, 2.2342); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - StartNextVisit/Inset target; HitPoint=(0.1088, 1.0650, 2.7204); Collider=-11922; Owner=Physical UI - StartNextVisit; Valid=Physical UI - StartNextVisit; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.1050, 1.2173, 2.2342); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once StartNextVisit",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Next visit clears discoveries and closes the recap",
+            "detail": "0 / 3 inspected",
+            "layer": "public-api",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover FinishVisit",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(0.2850, 1.2173, 2.2342); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - FinishVisit/Inset target; HitPoint=(0.2891, 1.0647, 2.7203); Collider=-11794; Owner=Physical UI - FinishVisit; Valid=Physical UI - FinishVisit; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(0.2850, 1.2173, 2.2342); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once FinishVisit",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Finish visit opens recap with choices",
+            "detail": "English",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Recap reflects current observation count and connections",
+            "detail": "0 / 3 inspected | Air: not seen yet\nVoice: not seen yet",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Recap shows the names recorded at first inspection English",
+            "detail": "",
+            "layer": "localization",
+            "passed": true
+        },
+        {
+            "name": "Production ray hover ContinueVisit",
+            "detail": "Hovered=True; Ray=Ray Interactor: Active=True; Pose=(-0.1050, 1.2173, 2.2342); Hit=Helmet physical UI station/Pedestal edge controls/Physical UI - ContinueVisit/Inset target; HitPoint=(-0.1007, 1.0644, 2.7202); Collider=-11858; Owner=Physical UI - ContinueVisit; Valid=Physical UI - ContinueVisit; Window hoverable=True; Direct hovered= | Teleport Interactor: Active=False; Pose=(-0.1050, 1.2173, 2.2342); Hit=none; HitPoint=none; Collider=0; Owner=; Valid=; Window hoverable=True; Direct hovered=",
+            "layer": "production-input",
+            "passed": true
+        },
+        {
+            "name": "Production ray selects once ContinueVisit",
+            "detail": "Events=1; Type=XRRayInteractor",
+            "layer": "production-input",
+            "passed": true
+        }
+    ],
+    "files": [
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor.meta",
+            "sha256": "8d026974eb1140fc726e489d8feef337096650823dce74468013590d311b5d15"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticDirectValidation.cs",
+            "sha256": "a8a9274afaa89efcd3e52c0e1714a6effebf6a7555a8f532556e62e85ad635b1"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticDirectValidation.cs.meta",
+            "sha256": "c4ffa42d9a67e96f5bb1e395c840ce2dc06e171512b3bcf3b377e0cc8539d00c"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs",
+            "sha256": "530db047c79d2e3e39efcdfac927867fe40f6ef9ce8e44c427ed960d8b83710d"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticPreview.cs.meta",
+            "sha256": "ec6c7bbcc2065ab1f82386cfa0f7c64e043173b3225c2c3fa04a8412b2898dd9"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs",
+            "sha256": "3700df31f36fa6c188174d86bfa85d732831ed40d9108c2364e7a56bd014ef87"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticSetup.cs.meta",
+            "sha256": "c822bc2c4574400c367a2023daa88ec9657e833f4bd48519e502dca35ee1ac9e"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs",
+            "sha256": "3be39d8713592773cff8e187e5649398c6d85850a526ea0f9b1b095b3b7c27e1"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetDiegeticValidation.cs.meta",
+            "sha256": "9629da0099cb309c00bc0456c29a0a6f0de41d3d7488e4c7977732a56e9d5aa8"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetNarrationValidation.cs",
+            "sha256": "665d041ad74db3bd984879e8a0e0b687cbd07985b4539d1079f8819ca43b00da"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetNarrationValidation.cs.meta",
+            "sha256": "d902a384b8c8dae2a63335d1edaf26adb3761e7afd74ae0e80b7007c90cd36d1"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetVisitRecapValidation.cs",
+            "sha256": "d815943817f02b992df647a5321a3f173883fb02cbc0bff20e98b87cabbce32b"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Editor/HelmetVisitRecapValidation.cs.meta",
+            "sha256": "80963051a4ce5ef47f88cf488bf92fab705d212f824a556261fd736036e5c7c6"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Materials.meta",
+            "sha256": "52a91259552604a9ef7d80d72b4dbc1c245ea571c5e15ef6206904c132e7c6ea"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat",
+            "sha256": "363f879b055303aa62da00cbd6bb241656ed216f439048f272c595e95fdcf422"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Materials/ExhibitUI.mat.meta",
+            "sha256": "512c82d030ad3991f16a034be196c13dd3fe717c83e20819925c3bf508e183b3"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources.meta",
+            "sha256": "b0c18cc05d1aaee9fc67d16d6df50a10d1b7ddfce130fbfe9a3694ebf81a11b2"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration.meta",
+            "sha256": "138e78fe4329d1a18df7459ba5538ff7b5c31e31d10a160ec53ec08d6a3d88a6"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/air-en.wav",
+            "sha256": "44e668daa17736df18fa6b8e6de36fdd628518c67ecdf9257a520a8e31687b78"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/air-en.wav.meta",
+            "sha256": "c3e27adda31ec028db7c6034ed891d1643d4fbbb075948bf52aeb795d9a59239"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/air-zh.wav",
+            "sha256": "4a03cd9c4d8080917c21a6912d6588b093aad5279b2ed4445c3b496cc9fc0a55"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/air-zh.wav.meta",
+            "sha256": "21ac1f739f886aadc82834a964dc65df445d2eb34cf0c3c6ef982cdb89f69bdf"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/intro-en.wav",
+            "sha256": "8ed1dd8677254e9a912deec3fdf7b33745ebd940c6528d997ba8ffa1f0b998aa"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/intro-en.wav.meta",
+            "sha256": "75c6b215828fe362a45cd574bb1e0ac294bbce3ac23f757513cecc01ce49afa9"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/intro-zh.wav",
+            "sha256": "f5e4558931e62a67d09050832ab33de2d79ad3fba6242798902911653f2848fb"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/intro-zh.wav.meta",
+            "sha256": "c235aefd504f204a839334e9e90d8b0eef8d75bead60ee3cff6c323a9e0b86f6"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/voice-en.wav",
+            "sha256": "84e7af5b4ab67cb92b5f43d5e47a181b89f3d9e7c69147ca7c2a0a9ff2a00162"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/voice-en.wav.meta",
+            "sha256": "9cc8fa6f3e0179c7e9f86c7f85a8b15b6b9ab9df96f3133e6cc49c157f0a8b83"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/voice-zh.wav",
+            "sha256": "0034c8fc6a775413c16293e59f9a67a244f6982be98917d83b6f5427d2dac371"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/voice-zh.wav.meta",
+            "sha256": "2a39b9b4c8f1e55b281c50bd984f4e67a26e7c0ec9e5b9d8dcfed00649b2374c"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime.meta",
+            "sha256": "b733f29c063a6af24e32cac94990df45f8c7f8c6cd52a659d534f1d5b6151a54"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs",
+            "sha256": "dfbfdd9ef30c3e872eb2b28cd0b63d415eed00dbbfca93043bf133f15e4a7ba5"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetControlSymbol.cs.meta",
+            "sha256": "e45c13a3f038251bd6594341e2f8b05f5a97a2eec7af4c678dd150b17821b0a6"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs",
+            "sha256": "f8aeeff94ad9326ffe1775076e168150a62958003974bbeb46e35798cb14910c"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticEquipment.cs.meta",
+            "sha256": "203a496e55bb9060bcb0cf4756b1fe3ced2cb1726aab820d8f8ad0204897c65d"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticNarration.cs",
+            "sha256": "f3832fa9b7349adf0a7716b10d862aaa3d6593fda38e84d7bc9f95aa88c205a1"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticNarration.cs.meta",
+            "sha256": "87a536bb2a48b09943b33714ae65ea5e784afc9360fc347aeccb8834fe0d06cc"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticPresentation.cs",
+            "sha256": "97fa0b96c7c7fadd90bb56c6331436fd6aa22d65128496a090a6a160b87665ca"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticPresentation.cs.meta",
+            "sha256": "ffd72f35d8458dec3a4b06e3ccabaa6f6bb6779d4a9748edae37a8be02ad147c"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs",
+            "sha256": "51ccd737aeed93e530edb76baa4be28757a2444a077fa1ccacdf503d6324e08b"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticStation.cs.meta",
+            "sha256": "29c6a424af966488904f074bd6239e215b09d62b545960454058913849312ae6"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticVisit.cs",
+            "sha256": "869b420a682a9333a1d8edd9d9ed8331350fb676e1725cedf1ce317dc34759fb"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDiegeticVisit.cs.meta",
+            "sha256": "5b302da75d43c5131466345e56beb9bf0ea5679426639a5efcbe35f6243d8e2e"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDirectContact.cs",
+            "sha256": "be1d5a8b608aa59ddf417f9cc460330681397d86a35b732d0cded7b829d45d1d"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetDirectContact.cs.meta",
+            "sha256": "1f4f1786bfa8728e34374ed9473536d1c4cf0ed755bb7b9a496d8b6c1ff16723"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs",
+            "sha256": "25d48d191e088bf5d713781edd7df7dc2c04b111b8f9cd94a2a4acea69b2ea28"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetGestureInteractable.cs.meta",
+            "sha256": "f2dc40e4624cc55e832eb90a8cd1298ed4c05d05cf7e5e1a1a699ef601d8e0fd"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs",
+            "sha256": "933865fb546353ddc5025f67b660ae6f37042ab876e09b32b102ada5054fa621"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetPhysicalControl.cs.meta",
+            "sha256": "08be069d714e297c43ad91d070b559b1da5139a83fd0dbbdabfc5f9e4897854f"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetRotationHint.cs",
+            "sha256": "2d5dfa8da33a181b081009334b8b9bb7f793e598503f787dae898859bdab5fb9"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetRotationHint.cs.meta",
+            "sha256": "4ad9367dd3a9985a07b3e3ac234ae61c2239d7ffedcc6e237841c0e20a243d24"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs",
+            "sha256": "f145f8fe499c38b4105a994a620eaa531f21d18b00f6cae9fd74da43b827bdf6"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/HelmetViewRecoveryGuard.cs.meta",
+            "sha256": "bed431957ffcd6add58d8ef344549ae40ed19b39c48049fbc68951bec4151509"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs",
+            "sha256": "a2199f940955756b452b3143afe4a0ae3f59a307307664d771ebefda32bec6c4"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Runtime/VisitorViewHeight.cs.meta",
+            "sha256": "d91ab53d38e0ec1bd599599823b5ce1ee377ae033b9cd6877576022baa4e5997"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Shaders.meta",
+            "sha256": "e00a8cae84d37a9fb4b34c47917e592bfd32dee82afce20bd03dfd9cbb4f3957"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader",
+            "sha256": "ba9d6da9030b8978afa2dd3e6795dcde2faa21bf374ccfc5a8d7676705172551"
+        },
+        {
+            "path": "Assets/Museum/Features/DiegeticUI/Shaders/ExhibitUI.shader.meta",
+            "sha256": "b3bdf2954bc13e106789e0b4081600a1524f5c5bdcff56e156a6465b1b9cc31f"
+        },
+        {
+            "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetConnectionDemonstration.cs",
+            "sha256": "c9044aa4c52ee5c744c8f8df73320a93599e1944de3f412a293764c498c05cec"
+        },
+        {
+            "path": "Assets/Museum/Features/HelmetExploration/Runtime/HelmetExplorationController.cs",
+            "sha256": "f0a72c6da8e95f2a18989da196a797a15c3da26db66257f01707b277dc676a4b"
+        },
+        {
+            "path": "Assets/Museum/Features/HelmetHotspots/Runtime/HelmetHotspotTour.cs",
+            "sha256": "59b29ca9bb4b2cf7af1a8629c2ab32280c03a62b7391c7a48524e2278bc196d9"
+        },
+        {
+            "path": "Assets/Museum/Features/HelmetInspection/Runtime/HelmetInspectionController.cs",
+            "sha256": "0a126639b3511a75510f0e5f4de1438b7fe79aa22a40b884acbc5cf5fad248bc"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Fonts/characters-required.txt",
+            "sha256": "15de0af4e74954131e6250bfebf5d16a4a28cfbe7fb2fa7284ad7cafc653f235"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Fonts/NotoSansSC-MuseumSubset SDF.asset",
+            "sha256": "ee8fd104732ce14b39766fd5905b06491682a54b93b95d012a7147fc5da7a0db"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Runtime/LocalizedSourceText.cs",
+            "sha256": "35d12cdcf08f85bb05f2483115f5ce937a24211487ec5672e3a32ed827a40655"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Runtime/MuseumText.cs",
+            "sha256": "d9d72687f476b4d7ee02a5990064b703cd0e8766df545234b2c13674b2b380c6"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Tables/LocalizationTable.asset",
+            "sha256": "5d8308c63806c05c5707ca58e669fc446a596a91932e2448f1482fcdc45d1deb"
+        },
+        {
+            "path": "Assets/Museum/Features/Localization/Tables/MuseumTranslations.json",
+            "sha256": "36b1c62028f15321f8e16483870389e9eebfbe729a95a5e2d896d423d8849de3"
+        },
+        {
+            "path": "Assets/Museum/Features/RefinedModels/Runtime/RefinedConnectionEquipment.cs",
+            "sha256": "8197b06158e215b88d7c69711ed237c6d0686ba1d9bd378921ae695caad794b8"
+        },
+        {
+            "path": "Assets/Museum/Scenes/MuseumStart.unity",
+            "sha256": "615953d2fb1b9574c07c3e79840a77e26d4c1bb571a4fc74be089d0c7f5b830b"
+        },
+        {
+            "path": "Packages/manifest.json",
+            "sha256": "b6ace359f89bdd03c1e5bcfffb80724576f110e7004c0bbcc487a2df073345e7"
+        },
+        {
+            "path": "Packages/packages-lock.json",
+            "sha256": "3501bab36c8e230a90b1a82227d5569dbda9bf98ca5dcff2fa02b59f456f9c03"
+        }
+    ],
+    "originalHotspots": [
+        {
+            "id": "front-window",
+            "position": {
+                "x": -0.10999999940395355,
+                "y": 0.2999999523162842,
+                "z": -0.24000000953674317
+            },
+            "enabled": true
+        },
+        {
+            "id": "bonnet",
+            "position": {
+                "x": 0.17000000178813935,
+                "y": 0.3400000333786011,
+                "z": 0.0
+            },
+            "enabled": true
+        },
+        {
+            "id": "breastplate",
+            "position": {
+                "x": 0.0,
+                "y": 0.07500004768371582,
+                "z": -0.18000006675720216
+            },
+            "enabled": true
+        }
+    ],
+    "errors": [],
+    "diagnosticCaptures": [
+        "visit-recap-Chinese.png",
+        "visit-recap-TraditionalChinese.png",
+        "visit-recap-English.png"
+    ]
+}
