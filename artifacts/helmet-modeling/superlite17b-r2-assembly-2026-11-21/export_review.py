@@ -2,6 +2,7 @@
 
 blender -b --python-exit-code 1 -P export_review.py -- --model in.blend
         --output review.glb --report glb-readback.json
+Use --verify existing.glb in place of --output to check a published file in place.
 """
 import argparse
 import hashlib
@@ -10,6 +11,7 @@ import shutil
 import struct
 import sys
 import tempfile
+from collections import deque
 from pathlib import Path
 
 import bpy
@@ -20,6 +22,7 @@ from mathutils.kdtree import KDTree
 SHELL = "SL17B_YellowShell_Study"
 LENS = "FP_Lens_520-004"
 GEOMETRY_TOLERANCE_M = 1e-6
+UV_TOLERANCE = 1e-6
 
 
 def digest(path):
@@ -45,9 +48,20 @@ def geometry(obj, groups=None):
     if groups is not None:
         slots=groups[[tri.polygon_index for tri in mesh.loop_triangles]]
     materials={m.name for m in mesh.materials if m}
+    loops = np.asarray([tri.loops[:] for tri in mesh.loop_triangles], dtype=np.int32)
+    channels = [points[indices]]
+    for layer in mesh.uv_layers:
+        uv = np.empty((len(mesh.loops), 2), dtype=np.float32)
+        layer.uv.foreach_get("vector", uv.ravel())
+        if not np.isfinite(uv).all():
+            raise ValueError(f"Nonfinite UVs in {obj.name}/{layer.name}")
+        channels.append(uv[loops])
+    corners = np.concatenate(channels, axis=2)
     out={"points": points,"ntri": len(indices),"materials": materials,
          "bounds": np.stack((points.min(axis=0),points.max(axis=0))),
-         "uv": bool(mesh.uv_layers)}
+         "uv": len(mesh.uv_layers),
+         "triangles_by_material": {
+             mesh.materials[int(slot)].name: corners[slots == slot] for slot in np.unique(slots)}}
     if obj.name==SHELL:
         out["shell_groups"]={mesh.materials[int(slot)].name:{
             "triangles": int(np.count_nonzero(slots==slot)),
@@ -62,6 +76,83 @@ def nearest_max(points, other):
         tree.insert(p,i)
     tree.balance()
     return max(tree.find(p)[2] for p in points)
+
+
+def match_candidates(options):
+    """Match each source face to a distinct output face, including coincident faces."""
+    owners, assignment = {}, {}
+    for root in range(len(options)):
+        queue = deque([root])
+        parent = {root: None}
+        while queue:
+            face = queue.popleft()
+            for candidate in options[face]:
+                owner = owners.get(candidate)
+                if owner is None:
+                    while face is not None:
+                        previous = assignment.get(face)
+                        owners[candidate] = face
+                        assignment[face] = candidate
+                        face, candidate = parent[face], previous
+                    break
+                if owner not in parent:
+                    parent[owner] = face
+                    queue.append(owner)
+            else:
+                continue
+            break
+        else:
+            return None
+    return assignment
+
+
+def compare_triangles(source, actual, label):
+    """Match oriented faces by their three world positions and every corresponding UV."""
+    if source.shape != actual.shape:
+        raise ValueError(f"Triangle or UV channel count changed on {label}")
+    positions = actual[:, :, :3]
+    tree = KDTree(len(actual))
+    for index, center in enumerate(positions.mean(axis=1)):
+        tree.insert(center, index)
+    tree.balance()
+    source_ids, actual_ids = [], []
+    for index, center in enumerate(source[:, :, :3].mean(axis=1)):
+        # Allow for the KDTree's float32 rounding only in this broad-phase query.
+        nearby = tree.find_range(center, 2 * GEOMETRY_TOLERANCE_M)
+        source_ids.extend([index] * len(nearby))
+        actual_ids.extend(item[1] for item in nearby)
+    if not actual_ids:
+        raise ValueError(f"No corresponding triangle positions on {label}")
+    left = source[source_ids]
+    right = actual[actual_ids]
+    def normals(faces):
+        xyz = faces[:, :, :3]
+        return np.cross(xyz[:, 1] - xyz[:, 0], xyz[:, 2] - xyz[:, 0])
+    same_winding = np.einsum("ij,ij->i", normals(left), normals(right)) > 0
+    best = np.full(len(left), np.inf)
+    for offset in range(3):
+        # Changing the starting corner preserves winding. Reversing two corners does not.
+        delta = left - np.roll(right, offset, axis=1)
+        distances = np.linalg.norm(delta[:, :, :3], axis=2)
+        same_positions = np.all(distances <= GEOMETRY_TOLERANCE_M, axis=1)
+        uv_error = np.abs(delta[:, :, 3:]).max(axis=(1, 2), initial=0.)
+        best = np.minimum(best, np.where(same_positions & same_winding, uv_error, np.inf))
+    valid = best <= UV_TOLERANCE
+    rows = np.asarray(source_ids)[valid]
+    cols = np.asarray(actual_ids)[valid]
+    errors = best[valid]
+    if len(np.unique(rows)) != len(source) or len(np.unique(cols)) != len(actual):
+        raise ValueError(f"Oriented triangle or corner UV mismatch on {label}")
+    if len(rows) == len(source):
+        return float(errors.max())
+    # Close or duplicate triangles can have several valid partners. Require a bijection.
+    options = [{} for _ in source]
+    for row, col, error in zip(rows, cols, errors):
+        options[row][col] = error
+    matches = match_candidates(options)
+    if matches is None:
+        raise ValueError(f"Oriented triangle multiplicity changed on {label}")
+    return float(max(options[row][col] for row, col in matches.items()))
 
 
 def split_shell_finishes(obj):
@@ -183,8 +274,7 @@ def validate_gltf(path, before, pbr_source, images, lens_material, optics):
         for primitive in mesh["primitives"]:
             channels=set(primitive["attributes"])
             required={"POSITION","NORMAL"}
-            if before[node["name"]]["uv"]:
-                required.add("TEXCOORD_0")
+            required.update(f"TEXCOORD_{i}" for i in range(before[node["name"]]["uv"]))
             if not required.issubset(channels):
                 raise ValueError(f"Lost vertex channel on {node['name']}")
             if node["name"]==SHELL and "COLOR_0" in channels:
@@ -192,8 +282,9 @@ def validate_gltf(path, before, pbr_source, images, lens_material, optics):
     return lens_output
 
 
-def run(model_path, glb):
+def run(model_path, glb, *, verify_existing=False):
     original_sha=digest(model_path)
+    input_glb_sha = digest(glb) if verify_existing else None
     bpy.ops.wm.open_mainfile(filepath=str(model_path))
     model=list(bpy.context.scene.objects)
     if any(o.type!="MESH" for o in model):
@@ -220,9 +311,10 @@ def run(model_path, glb):
     optics=[lens_bsdf[k].default_value for k in ("Transmission Weight","IOR")]
     if optics[0]<=0 or optics[1]<=1:
         raise ValueError("The source lens must be transmissive")
-    bpy.ops.export_scene.gltf(filepath=str(glb),export_format="GLB",export_yup=True,
-                              export_normals=True,export_texcoords=True,export_animations=False,
-                              export_cameras=False,export_lights=False)
+    if not verify_existing:
+        bpy.ops.export_scene.gltf(filepath=str(glb),export_format="GLB",export_yup=True,
+                                  export_normals=True,export_texcoords=True,export_animations=False,
+                                  export_cameras=False,export_lights=False)
     actual_optics=validate_gltf(glb,before,pbr_source,images,lens_name,optics)
     bpy.ops.wm.read_factory_settings(use_empty=True)
     bpy.ops.import_scene.gltf(filepath=str(glb))
@@ -235,13 +327,21 @@ def run(model_path, glb):
         if not tex or tex.type!="TEX_IMAGE" or image_signature(tex.image)!=expected:
             raise ValueError(f"Texture pixels changed in {material}")
     maximum_bounds=maximum_position=0.0
+    maximum_uv = 0.0
+    uv_corners = 0
     triangles=0
     for name,old in before.items():
         new=after[name]
         if old["ntri"]!=new["ntri"] or old["materials"]!=new["materials"]:
             raise ValueError(f"Changed triangle count or material assignments on {name}")
-        if old["uv"] and not new["uv"]:
-            raise ValueError(f"Missing source UV channel on {name}")
+        expected_groups = old["triangles_by_material"]
+        actual_groups = new["triangles_by_material"]
+        if old["uv"] != new["uv"] or expected_groups.keys() != actual_groups.keys():
+            raise ValueError(f"UV channel count or face material groups changed on {name}")
+        for material, expected in expected_groups.items():
+            error = compare_triangles(expected, actual_groups[material], f"{name}/{material}")
+            maximum_uv = max(maximum_uv, error)
+        uv_corners += 3 * old["ntri"] * old["uv"]
         bounds_error=float(np.max(np.abs(old["bounds"]-new["bounds"])))
         spacing=max(nearest_max(old["points"],new["points"]),nearest_max(new["points"],old["points"]))
         if max(bounds_error,spacing)>GEOMETRY_TOLERANCE_M:
@@ -251,13 +351,17 @@ def run(model_path, glb):
         triangles+=new["ntri"]
     if after[SHELL]["shell_groups"]!=shell_report["expected_triangle_partition"]:
         raise ValueError("Painted exterior and inside-wall triangle partitions differ")
-    if original_sha!=digest(model_path):
-        raise ValueError("Editable source changed during export")
+    glb_sha = digest(glb)
+    if original_sha != digest(model_path) or (verify_existing and input_glb_sha != glb_sha):
+        raise ValueError("An input file changed during verification")
     return {
         "source_file":model_path.name,"source_sha256":original_sha,
-        "glb_sha256":digest(glb),"glb_bytes":glb.stat().st_size,"blender":bpy.app.version_string,
+        "glb_sha256":glb_sha,"glb_bytes":glb.stat().st_size,"blender":bpy.app.version_string,
+        "readback_mode":"existing_file" if verify_existing else "new_export",
         "empty_scene_import":True,"mesh_names_verified":len(after),"triangles_verified":triangles,
         "all_source_meshes_recovered":True,"all_source_uv_channels_recovered":True,
+        "oriented_triangles_verified_by_material":triangles,"corner_uv_pairs_verified":uv_corners,
+        "max_matched_corner_uv_component_error":maximum_uv,"corner_uv_tolerance":UV_TOLERANCE,
         "source_meshes_without_uv":sorted(n for n,obs in before.items() if not obs["uv"]),
         "bounds_max_axis_difference_m":maximum_bounds,"max_bidirectional_position_distance_m":maximum_position,
         "geometry_tolerance_m":GEOMETRY_TOLERANCE_M,"materials_verified":sorted(pbr_source),
@@ -271,25 +375,29 @@ def run(model_path, glb):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    for flag in ("model","output","report"):
+    for flag in ("model","report"):
         parser.add_argument("--"+flag,required=True,type=Path)
+    mode = parser.add_mutually_exclusive_group(required=True)
+    mode.add_argument("--output", type=Path, help="Create and verify a new GLB.")
+    mode.add_argument("--verify", type=Path, help="Verify an existing GLB without exporting.")
     a=parser.parse_args(sys.argv[sys.argv.index("--")+1:])
-    source,dest,report=(p.resolve() for p in (a.model,a.output,a.report))
+    source,dest,report=(p.resolve() for p in (a.model,a.output or a.verify,a.report))
     if (source.suffix.lower(),dest.suffix.lower(),report.suffix.lower())!=(".blend",".glb",".json"):
         raise ValueError("Expected .blend, .glb and .json paths")
-    if dest.exists() or report.exists():
+    if (a.output and dest.exists()) or report.exists():
         raise FileExistsError("Select fresh GLB and QA paths")
     with tempfile.TemporaryDirectory(prefix="sl17b-r2-export-") as temp:
-        glb=Path(temp)/"local.glb"
-        result=run(source,glb)
+        glb = Path(temp)/"local.glb" if a.output else dest
+        result=run(source,glb,verify_existing=a.verify is not None)
         result["glb_file"]=dest.name
         dest.parent.mkdir(parents=True,exist_ok=True)
         report.parent.mkdir(parents=True,exist_ok=True)
         written=[]
         try:
-            with dest.open("xb") as target, glb.open("rb") as data:
-                written.append(dest)
-                shutil.copyfileobj(data,target)
+            if a.output:
+                with dest.open("xb") as target, glb.open("rb") as data:
+                    written.append(dest)
+                    shutil.copyfileobj(data,target)
             with report.open("x",encoding="utf-8") as handle:
                 written.append(report)
                 print(json.dumps(result,indent=2,ensure_ascii=False),file=handle)
