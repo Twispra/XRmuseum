@@ -284,3 +284,7 @@ Codex继续用户授权的#25子范围，从冻结v4保存源增量派生后部�
 ## 2026-11-20：#92 六条展览旁白
 
 本次提交采用用户指定、人工验证并授权随项目提交的六条普通话和英语 MP3。Codex 辅助用 FFmpeg 7.1 解码成同名 PCM WAV，以本机 SenseVoice 核对台词并运行 Unity 旁白验收。Unity 通过既有资源路径加载六条 LFS 音轨。 [音轨来源、转换命令与哈希](../artifacts/narration/20261120-issue92/supplied-audio.md)
+
+## 2026-11-20：展台快捷导航
+
+Codex 辅助实现三展台导航、按下／松开与取消输入、XR Origin 定位、过渡遮罩 shader、现有站点的交接与视角复位通知、三语文字、静态字体烘焙、合成 XR 验证和交接记录。几何面板由运行时代码创建，沿用现有材质与 XRI/URP；没有新增下载模型、贴图、音频、字体来源或 package。既有 Noto Sans SC 源 TTF 和 OFL 声明保持，静态图集仅新增“台、央、往”。具体版本、检查边界与人工接手项见 [活动记录](activity/2026-11-20-exhibit-quick-navigation.md)及 [独立 QA](../artifacts/helmet-interaction/qa/runs/20261120-exhibit-quick-navigation/README.md)。自动检查不替代真实头显或另一位成员审核。

@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Museum.Diegetic;
 using Museum.Exploration;
+using Museum.Navigation;
 using TMPro;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -310,6 +311,12 @@ namespace Museum.Localization.EditorTools
             station.enabled = false;
             foreach (var item in LegacyActive.Reverse()) item.Key.SetActive(true);
             foreach (var item in LegacyEnabled) item.Key.enabled = true;
+            // Isolate the archived input path from the separate runtime navigation palette.
+            foreach (var navigator in UnityEngine.Object.FindObjectsOfType<GalleryNavigator>())
+            {
+                LegacyEnabled.Add(navigator, navigator.enabled);
+                navigator.enabled = false;
+            }
         }
 
         static void RestoreLegacyFixture()

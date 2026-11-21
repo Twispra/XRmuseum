@@ -1,0 +1,531 @@
+{
+    "commit": "c30b691f2aea081ae3498dcd8c00a1b92254057c",
+    "dirty": "?? docs/exhibit-navigation.zh-CN.md",
+    "unity": "2022.3.62f3c1",
+    "scene": "Assets/Museum/Features/DuskWorkshop/DuskWorkshop.unity",
+    "status": "passed",
+    "failure": "",
+    "method": "Saved scene runtime bootstrap; public pose fixtures plus queued synthetic HMD and left/right controller states through production Input Actions and XR rays. No manual HoverEnter/SelectEnter, TriggerProgrammatically or InputSystem.Update. Diagnostic monocular captures.",
+    "limits": "No real headset/controller, stereo readability, comfort, performance, Player build or user study validation.",
+    "initialCameraPosition": {
+        "x": 0.11999999731779099,
+        "y": 1.2000000476837159,
+        "z": 2.120000123977661
+    },
+    "syntheticTrackedHeight": -0.1614398956298828,
+    "checks": [
+        {
+            "name": "Pose scale=1 eye=0.85: move accepted",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=0.85: floor and tracked height retained",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=0.85: camera reaches horizontal destination",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=0.85: tracked local pose untouched",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=0.85: horizontal heading aligned",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=0.85: repeat has no drift",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=0.85: invalid position rejected",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=1.2: move accepted",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=1.2: floor and tracked height retained",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=1.2: camera reaches horizontal destination",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=1.2: tracked local pose untouched",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=1.2: horizontal heading aligned",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=1.2: repeat has no drift",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=1.2: invalid position rejected",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=1.65: move accepted",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=1.65: floor and tracked height retained",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=1.65: camera reaches horizontal destination",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=1.65: tracked local pose untouched",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=1.65: horizontal heading aligned",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=1.65: repeat has no drift",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=1 eye=1.65: invalid position rejected",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=0.85: move accepted",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=0.85: floor and tracked height retained",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=0.85: camera reaches horizontal destination",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=0.85: tracked local pose untouched",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=0.85: horizontal heading aligned",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=0.85: repeat has no drift",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=0.85: invalid position rejected",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=1.2: move accepted",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=1.2: floor and tracked height retained",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=1.2: camera reaches horizontal destination",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=1.2: tracked local pose untouched",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=1.2: horizontal heading aligned",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=1.2: repeat has no drift",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=1.2: invalid position rejected",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=1.65: move accepted",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=1.65: floor and tracked height retained",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=1.65: camera reaches horizontal destination",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=1.65: tracked local pose untouched",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=1.65: horizontal heading aligned",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=1.65: repeat has no drift",
+            "passed": true
+        },
+        {
+            "name": "Pose scale=2 eye=1.65: invalid position rejected",
+            "passed": true
+        },
+        {
+            "name": "Saved scene automatically installs a ready navigator",
+            "passed": true
+        },
+        {
+            "name": "Exactly one panel with three destinations",
+            "passed": true
+        },
+        {
+            "name": "Synthetic seated eye height is 1.2m above the saved floor",
+            "passed": true
+        },
+        {
+            "name": "Public API starts the left route",
+            "passed": true
+        },
+        {
+            "name": "Second request during transition is rejected",
+            "passed": true
+        },
+        {
+            "name": "No jump at request time",
+            "passed": true
+        },
+        {
+            "name": "Locomotion is suspended during fade",
+            "passed": true
+        },
+        {
+            "name": "Transition completes within three seconds",
+            "passed": true
+        },
+        {
+            "name": "Position changes only under full black",
+            "passed": true
+        },
+        {
+            "name": "Opaque fade covers the whole monocular render",
+            "passed": true
+        },
+        {
+            "name": "Transition completes within three seconds",
+            "passed": true
+        },
+        {
+            "name": "Original locomotion states restored",
+            "passed": true
+        },
+        {
+            "name": "Left: camera reaches the authored place",
+            "passed": true
+        },
+        {
+            "name": "Left: floor and current eye height unchanged",
+            "passed": true
+        },
+        {
+            "name": "Left: tracked local pose unchanged",
+            "passed": true
+        },
+        {
+            "name": "Left: faces the exhibit",
+            "passed": true
+        },
+        {
+            "name": "Right: production ray hover freezes panel",
+            "passed": true
+        },
+        {
+            "name": "Right: holding does not navigate",
+            "passed": true
+        },
+        {
+            "name": "Right: one release produces exactly one navigation (grip=True, trigger=False)",
+            "passed": true
+        },
+        {
+            "name": "Right: camera reaches the authored place",
+            "passed": true
+        },
+        {
+            "name": "Right: floor and current eye height unchanged",
+            "passed": true
+        },
+        {
+            "name": "Right: tracked local pose unchanged",
+            "passed": true
+        },
+        {
+            "name": "Right: faces the exhibit",
+            "passed": true
+        },
+        {
+            "name": "Main: production ray hover freezes panel",
+            "passed": true
+        },
+        {
+            "name": "Main: holding does not navigate",
+            "passed": true
+        },
+        {
+            "name": "Main: one release produces exactly one navigation (grip=False, trigger=True)",
+            "passed": true
+        },
+        {
+            "name": "Left: production ray hover freezes panel",
+            "passed": true
+        },
+        {
+            "name": "Left: holding does not navigate",
+            "passed": true
+        },
+        {
+            "name": "Left: one release produces exactly one navigation (grip=True, trigger=True)",
+            "passed": true
+        },
+        {
+            "name": "Navigation preserves discoveries, hint count, era, helmet pose and reset count",
+            "passed": true
+        },
+        {
+            "name": "Language and viewing-height preference retained",
+            "passed": true
+        },
+        {
+            "name": "Press, move off and release cancels navigation",
+            "passed": true
+        },
+        {
+            "name": "Occupied destination rejected without a fade or jump",
+            "passed": true
+        },
+        {
+            "name": "Unknown destination rejected",
+            "passed": true
+        },
+        {
+            "name": "Route available after removing temporary obstruction",
+            "passed": true
+        },
+        {
+            "name": "Reset View cancels an in-flight route without a later jump",
+            "passed": true
+        },
+        {
+            "name": "Can navigate again after view recovery",
+            "passed": true
+        },
+        {
+            "name": "Disabling during a fade restores vision and locomotion",
+            "passed": true
+        },
+        {
+            "name": "Re-enable restores one existing navigation panel",
+            "passed": true
+        },
+        {
+            "name": "Final return to the main exhibit accepted",
+            "passed": true
+        },
+        {
+            "name": "Transition completes within three seconds",
+            "passed": true
+        },
+        {
+            "name": "Chinese: localized navigation.title",
+            "passed": true
+        },
+        {
+            "name": "Chinese: readable bounds navigation.title",
+            "passed": true
+        },
+        {
+            "name": "Chinese: baked glyphs navigation.title",
+            "passed": true
+        },
+        {
+            "name": "Chinese: localized navigation.hint",
+            "passed": true
+        },
+        {
+            "name": "Chinese: readable bounds navigation.hint",
+            "passed": true
+        },
+        {
+            "name": "Chinese: baked glyphs navigation.hint",
+            "passed": true
+        },
+        {
+            "name": "Chinese: localized navigation.left",
+            "passed": true
+        },
+        {
+            "name": "Chinese: readable bounds navigation.left",
+            "passed": true
+        },
+        {
+            "name": "Chinese: baked glyphs navigation.left",
+            "passed": true
+        },
+        {
+            "name": "Chinese: localized navigation.main",
+            "passed": true
+        },
+        {
+            "name": "Chinese: readable bounds navigation.main",
+            "passed": true
+        },
+        {
+            "name": "Chinese: baked glyphs navigation.main",
+            "passed": true
+        },
+        {
+            "name": "Chinese: localized navigation.right",
+            "passed": true
+        },
+        {
+            "name": "Chinese: readable bounds navigation.right",
+            "passed": true
+        },
+        {
+            "name": "Chinese: baked glyphs navigation.right",
+            "passed": true
+        },
+        {
+            "name": "English: localized navigation.title",
+            "passed": true
+        },
+        {
+            "name": "English: readable bounds navigation.title",
+            "passed": true
+        },
+        {
+            "name": "English: baked glyphs navigation.title",
+            "passed": true
+        },
+        {
+            "name": "English: localized navigation.hint",
+            "passed": true
+        },
+        {
+            "name": "English: readable bounds navigation.hint",
+            "passed": true
+        },
+        {
+            "name": "English: baked glyphs navigation.hint",
+            "passed": true
+        },
+        {
+            "name": "English: localized navigation.left",
+            "passed": true
+        },
+        {
+            "name": "English: readable bounds navigation.left",
+            "passed": true
+        },
+        {
+            "name": "English: baked glyphs navigation.left",
+            "passed": true
+        },
+        {
+            "name": "English: localized navigation.main",
+            "passed": true
+        },
+        {
+            "name": "English: readable bounds navigation.main",
+            "passed": true
+        },
+        {
+            "name": "English: baked glyphs navigation.main",
+            "passed": true
+        },
+        {
+            "name": "English: localized navigation.right",
+            "passed": true
+        },
+        {
+            "name": "English: readable bounds navigation.right",
+            "passed": true
+        },
+        {
+            "name": "English: baked glyphs navigation.right",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese: localized navigation.title",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese: readable bounds navigation.title",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese: baked glyphs navigation.title",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese: localized navigation.hint",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese: readable bounds navigation.hint",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese: baked glyphs navigation.hint",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese: localized navigation.left",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese: readable bounds navigation.left",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese: baked glyphs navigation.left",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese: localized navigation.main",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese: readable bounds navigation.main",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese: baked glyphs navigation.main",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese: localized navigation.right",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese: readable bounds navigation.right",
+            "passed": true
+        },
+        {
+            "name": "TraditionalChinese: baked glyphs navigation.right",
+            "passed": true
+        }
+    ],
+    "errors": []
+}

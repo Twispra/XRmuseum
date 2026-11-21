@@ -1,3 +1,4 @@
+using System;
 using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,6 +8,11 @@ namespace Museum.Exploration
     /// <summary>Returns the tracked camera to the saved gallery start without changing exhibit state.</summary>
     public sealed class VisitorViewRecovery : MonoBehaviour
     {
+        public static event Action<XROrigin> ViewResetRequested;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void ClearResetObservers() => ViewResetRequested = null;
+
         XROrigin origin;
         Museum.Inspection.HelmetInspectionPalette palette;
         Vector3 homeOriginPosition;
@@ -33,6 +39,7 @@ namespace Museum.Exploration
         public bool ResetView()
         {
             if (!IsReady) return false;
+            ViewResetRequested?.Invoke(origin);
             if (!origin.MatchOriginUpCameraForward(Vector3.up, homeForward)) return false;
             var baseTransform = origin.Origin ? origin.Origin.transform : origin.transform;
             // Restore the original floor while retaining the current tracked eye height,

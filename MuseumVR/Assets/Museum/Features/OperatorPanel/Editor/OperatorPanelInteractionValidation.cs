@@ -11,6 +11,7 @@ using Museum.Diegetic.Editor;
 using Museum.Exploration;
 using Museum.Hotspots;
 using Museum.Inspection;
+using Museum.Inspection.Editor;
 using Museum.Localization;
 using Museum.Refined;
 using TMPro;
@@ -160,7 +161,7 @@ namespace Museum.OperatorPanel.Editor
             inspection = station.Inspection; demo = station.Demonstration;
             eras = inspection.GetComponent<HelmetEraSwitcher>(); binding = inspection.GetComponent<RefinedHelmetBinding>();
             CheckResult(station.Controls.Count == Enum.GetValues(typeof(HelmetDiegeticStation.Command)).Length, "All commands retain registered interaction metadata", "Count=" + station.Controls.Count);
-            CheckResult(!UnityEngine.Object.FindObjectsOfType<HelmetInspectionPalette>(true).Any(p => p.gameObject.activeInHierarchy), "No old following palette remains active", "Retired presentation, existing content engines retained.");
+            CheckResult(!HelmetInspectionValidation.FindActiveLegacyPalette(), "No old following palette remains active", "Retired presentation, existing content engines retained.");
             var hotspots = inspection.GetComponentsInChildren<HelmetHotspot>(true);
             CheckResult(hotspots.Length == 3 && hotspots.All(h => h.enabled), "Three original knowledge hotspots remain enabled", string.Join(",", hotspots.Select(h => h.Identifier)));
             foreach (var original in report.originalHotspots)

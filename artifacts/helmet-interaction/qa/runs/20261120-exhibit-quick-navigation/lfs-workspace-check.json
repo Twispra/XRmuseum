@@ -1,0 +1,561 @@
+{
+  "count": 111,
+  "mismatches": [],
+  "files": [
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/air-en.wav",
+      "oid": "44e668daa17736df18fa6b8e6de36fdd628518c67ecdf9257a520a8e31687b78",
+      "size": 200634
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/air-zh.wav",
+      "oid": "4a03cd9c4d8080917c21a6912d6588b093aad5279b2ed4445c3b496cc9fc0a55",
+      "size": 318420
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/intro-en.wav",
+      "oid": "8ed1dd8677254e9a912deec3fdf7b33745ebd940c6528d997ba8ffa1f0b998aa",
+      "size": 467446
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/intro-zh.wav",
+      "oid": "f5e4558931e62a67d09050832ab33de2d79ad3fba6242798902911653f2848fb",
+      "size": 622938
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/voice-en.wav",
+      "oid": "84e7af5b4ab67cb92b5f43d5e47a181b89f3d9e7c69147ca7c2a0a9ff2a00162",
+      "size": 231300
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DiegeticUI/Resources/HelmetNarration/voice-zh.wav",
+      "oid": "0034c8fc6a775413c16293e59f9a67a244f6982be98917d83b6f5427d2dac371",
+      "size": 346078
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/DuskWorkshop/LightingData.asset",
+      "oid": "8a914421c5384bc37a57dbeaa04b0806493f9b740509f14a428cf7aa0c39b1e2",
+      "size": 76992
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/DuskWorkshop/Lightmap-0_comp_dir.png",
+      "oid": "9cad1c69eabd08f656be2be4572ec4e91fda028e2a38713e05c1127b7d39e0ad",
+      "size": 366788
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/DuskWorkshop/Lightmap-0_comp_light.exr",
+      "oid": "c508285b525add7eb76602824b108480a4c8320214ee2f22075717a0d302eddc",
+      "size": 1265983
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/DuskWorkshop/ReflectionProbe-0.exr",
+      "oid": "1d7d2e1a8ac444b7d550e3c2adedf109730e3656b1040693cf6342319bf0b240",
+      "size": 251697
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/Materials/WorkshopReflection.exr",
+      "oid": "e3a6accf51fd74ba0a5632c2987d96fa5d25614c1fc120bc0b7146b265ef43b0",
+      "size": 1172001
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/Models/BenchCasing.fbx",
+      "oid": "57f3c3b686db8bbefafa868c33f24a03f64c34dc39ed4d763d2938f2b89b411e",
+      "size": 318236
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/Models/Fenestration.fbx",
+      "oid": "7f06dab8a25062f73b5199f1b5a39f2e286d82d52e728b6ffc79a60b56494842",
+      "size": 443932
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/Textures/DuskSky.hdr",
+      "oid": "d66e08231e9c09ca40c6d035214ae8efb638782745c82addbb2a063fa32cabef",
+      "size": 4171959
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/Textures/Floor_BaseColor.jpg",
+      "oid": "01ab5974964db4eaf9c4d8b9e149c68c05c19feafa164a2baf81d7c776eb4b69",
+      "size": 1182898
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/Textures/Floor_MetalSmooth.png",
+      "oid": "e51632627b9569973cc17a85883f477ef6a0c2295d15c9d14714d28c4cd6b649",
+      "size": 712342
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/Textures/Floor_Normal.png",
+      "oid": "8dc91424d6fa7430efb502b27665fe175281d87310eba4a559c27045b0c3f80f",
+      "size": 1354224
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/Textures/HarbourBeyond.jpg",
+      "oid": "61157f133544a1d8b27da70436259b1e2710b2df8f1109b2911b59b934aecb76",
+      "size": 456552
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/Textures/Plaster_BaseColor.jpg",
+      "oid": "cd8ea9cd8a0b91a7c324ae8becbb0201e4b01839e92e7cae8f9ede393fe56c3b",
+      "size": 229710
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/Textures/Plaster_Normal.png",
+      "oid": "c537645ed12e16194303339d4389f3881d70c57a45ea92a1ca50084f6cbe2555",
+      "size": 2191228
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/Textures/Wood_BaseColor.jpg",
+      "oid": "79ec4bfdaf9afbe33929fa7ae6d9145d43c9430fff71f46ce9adfd3b74aecee5",
+      "size": 1166046
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/Textures/Wood_MetalSmooth.png",
+      "oid": "f0682c88279f28a247cda3539eddaa8233c93216aade2820f39eee69bf41a3db",
+      "size": 443068
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/DuskWorkshop/Textures/Wood_Normal.png",
+      "oid": "cec9c2390476939a3d3547fe3a7690bf5f901ab92e840e882b761119b223c385",
+      "size": 1370184
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Models/photo-helmet-refined-v2-details.obj",
+      "oid": "1b6cfb0cd7d4e2d21cd9f8cc5cd1305dcb0f5325b49bbb92ec1769e15eec3380",
+      "size": 12805530
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/PhotoHelmetTrial/Models/photo-helmet-refined-v2-shell.obj",
+      "oid": "719d3081cbef651bcece56ffa228e578bafa0a957c5e3a7e1dbb1758e993ab9a",
+      "size": 962154
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-air.wav",
+      "oid": "3727d64d31e910b4f7a43429afadf9ea2e59a3a6bbdcc3d148b57f892950f036",
+      "size": 1536044
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/RefinedModels/Audio/gentle-voice.wav",
+      "oid": "033fb478255ee12e4ad0991559d6c318e12d8ffbbe5cda4eea2d3f1545488ab3",
+      "size": 1536044
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/diver-telephone-runtime.fbx",
+      "oid": "42f9f969a9f16a585ea5c8456759b93a7414412cf4ade922d17bfc64ff3ddb6f",
+      "size": 4228748
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-iii-pump-runtime.fbx",
+      "oid": "df89d323ad8c9e0b3c851391316efe7cc149ae1892fa5cdf842568b0f1cfc8b4",
+      "size": 12072316
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/mark-v-runtime.fbx",
+      "oid": "7c8633d7e90b21eaa15e57d7fe90c7d16a0315bcac443c716f18376bc511c83a",
+      "size": 28257852
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/RefinedModels/Models/surface-telephone-runtime.fbx",
+      "oid": "a8bec0a694084cd2759603ab4c5a8676af1db338b26f66d817532dfb13ef309f",
+      "size": 9391468
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Features/SuperLiteModels/Models/superlite17b-v2-runtime.fbx",
+      "oid": "febfddaf522c50b0044237998c7a661b1bbb1d1220fb07588cfc3e23f5718fda",
+      "size": 1556476
+    },
+    {
+      "name": "MuseumVR/Assets/Museum/Models/Helmet/helmet-graybox-v02.fbx",
+      "oid": "c0cefcc0fd5acc1fac0ec1ee5ed212a4813606b57e984767afc55d34080322ab",
+      "size": 1551292
+    },
+    {
+      "name": "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/DemoSceneAssets/Audio/Button Pop.wav",
+      "oid": "4a1b9aa5525b2c782068ef44fb1722d6b3b1f834d1dd350b173967152fb9f0c0",
+      "size": 51580
+    },
+    {
+      "name": "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/DemoSceneAssets/Models/Primitive_Pyramid.fbx",
+      "oid": "8bbafbfad94a491cfe517742aecb6c7dec21d80c4973a111be3f69b475b54e6f",
+      "size": 21632
+    },
+    {
+      "name": "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/DemoSceneAssets/Models/Primitive_Torus.fbx",
+      "oid": "48b086a822980ec261f87c76baa42f0b2440747d3f85d62e9486abe6280ee2b5",
+      "size": 33056
+    },
+    {
+      "name": "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/DemoSceneAssets/Models/PushButton.fbx",
+      "oid": "cb32c83c2657b4b764ce4e1180b4eb3b4b58646215f044c013a5c361484bc1d8",
+      "size": 47120
+    },
+    {
+      "name": "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/Primitive_Cylinder.fbx",
+      "oid": "20915d8a19b7a3449bc67d0a013e7ac745fd0aeb4a0c8d602cdfa9389853e33a",
+      "size": 24656
+    },
+    {
+      "name": "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/Primitive_Wedge.fbx",
+      "oid": "524ea23f5c92790b604b0cacd1ae4bffabf2711ed69c9accedd52d619e87dac2",
+      "size": 21728
+    },
+    {
+      "name": "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/Reticle_Torus.fbx",
+      "oid": "48b086a822980ec261f87c76baa42f0b2440747d3f85d62e9486abe6280ee2b5",
+      "size": 33056
+    },
+    {
+      "name": "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/XRControllerLeft.fbx",
+      "oid": "15a3a6081895394ba55b5564a8c96e0d6134c9d57e030ef24acd7d5ec2e215fc",
+      "size": 214016
+    },
+    {
+      "name": "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Models/XRControllerRight.fbx",
+      "oid": "ad3f6aa2f60a8ba72d2d5d3ced96399922da6fe7c65c31acb374ae9e2acabaed",
+      "size": 422656
+    },
+    {
+      "name": "MuseumVR/Assets/Samples/XR Interaction Toolkit/2.6.4/Starter Assets/Tunneling Vignette/TunnelingVignetteHemisphere.fbx",
+      "oid": "2b309d5a6d6887a72f1c3ab555b89c71cf32812a36fb99d5c21af128939b2445",
+      "size": 55932
+    },
+    {
+      "name": "artifacts/connection-demo-refinement/audio/clear-air.wav",
+      "oid": "85279317bced4c7bd56675004ffa5f1e35080240f299339a716def7e4b2f01f6",
+      "size": 1536044
+    },
+    {
+      "name": "artifacts/connection-demo-refinement/audio/clear-voice.wav",
+      "oid": "e678b9b641cc5747acfc654dce95d5a1e0022735825762ed57427410df9c5ff9",
+      "size": 1536044
+    },
+    {
+      "name": "artifacts/connection-demo-refinement/audio/gentle-air.wav",
+      "oid": "3727d64d31e910b4f7a43429afadf9ea2e59a3a6bbdcc3d148b57f892950f036",
+      "size": 1536044
+    },
+    {
+      "name": "artifacts/connection-demo-refinement/audio/gentle-voice.wav",
+      "oid": "033fb478255ee12e4ad0991559d6c318e12d8ffbbe5cda4eea2d3f1545488ab3",
+      "size": 1536044
+    },
+    {
+      "name": "artifacts/connection-demo-refinement/audio/mechanical-air.wav",
+      "oid": "ac4bd53b5e507ba4a863adc12b741e1e8be29b5a097bb82eec47b130ecc9e488",
+      "size": 1536044
+    },
+    {
+      "name": "artifacts/connection-demo-refinement/audio/mechanical-voice.wav",
+      "oid": "8659e9cd168f16594a48d3942edaec69da3ce7100c87f57b0e33005c47583214",
+      "size": 1536044
+    },
+    {
+      "name": "artifacts/connection-demo-refinement/exports/diver-telephone.fbx",
+      "oid": "252e10f4bd1c765070332194b0b7256834f6e1bc23f5bc2051b98ee0314200fb",
+      "size": 4225756
+    },
+    {
+      "name": "artifacts/connection-demo-refinement/exports/mark-iii-pump.fbx",
+      "oid": "a31dc61a65cdcbd308379bf18012bfa9a4fa4db463950e16e57f1159ddbf16cb",
+      "size": 12024828
+    },
+    {
+      "name": "artifacts/connection-demo-refinement/exports/surface-telephone.fbx",
+      "oid": "9d460ec5ba53f8cc564386b9a0c1b3dc2e44875b94e772f04a37133c60756ce2",
+      "size": 9373996
+    },
+    {
+      "name": "artifacts/connection-demo-refinement/sources/equipment.blend",
+      "oid": "37eee802fc0b1c5fa724bbb39e4da82f87fd207150a5752c0bae2fe2b81d7719",
+      "size": 15335325
+    },
+    {
+      "name": "artifacts/connection-demo-refinement/sources/parts/DiverTelephone_ROOT.blend",
+      "oid": "a0d20cbc16f35fcc5c51cadb56823e7d03cd1f4bfdf8e1cda6154a2885f4157c",
+      "size": 4650464
+    },
+    {
+      "name": "artifacts/connection-demo-refinement/sources/parts/Pump_ROOT.blend",
+      "oid": "caac80aa6ea20363d237cc70b63756fc86fbf848f3e359d53b6e72ebcbfce784",
+      "size": 12372788
+    },
+    {
+      "name": "artifacts/connection-demo-refinement/sources/parts/SurfaceTelephone_ROOT.blend",
+      "oid": "615fe2fc80fc9a76e4380c1383d04095795e096e340c3ef6f1dbcccdcba40bc6",
+      "size": 9952210
+    },
+    {
+      "name": "artifacts/helmet-interaction/qa/runs/20261118-surface-call-a3fb217/surface-call.mp4",
+      "oid": "6ee7945b3a2ab37d761c168702e6bb09e0976452e5e35864dc972ba517712504",
+      "size": 11095878
+    },
+    {
+      "name": "artifacts/helmet-modeling/superlite17b-2026-10-11/delivery/superlite17b.blend",
+      "oid": "5bf1c30e1f8b848745e76e95111d407da110a80936484e920ee248d0154ca841",
+      "size": 4317936
+    },
+    {
+      "name": "artifacts/helmet-modeling/superlite17b-2026-10-11/revision-side-profile-v2/delivery/superlite17b.blend",
+      "oid": "54a21895b807a19ccc0345a25101cb5369c0a9c976d175a40a58a528a5b8b905",
+      "size": 4133939
+    },
+    {
+      "name": "artifacts/helmet-modeling/superlite17b-2026-11-12/baseline-v4/superlite17b-shell-v4.blend",
+      "oid": "6e85f7f048b3a6b8706428854ab8934099da25ff21d427e87fde9de930b1c8a2",
+      "size": 4800923
+    },
+    {
+      "name": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/backups/backup_r1_current.blend",
+      "oid": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+      "size": 5347215
+    },
+    {
+      "name": "artifacts/helmet-modeling/superlite17b-2026-11-12/shell-rebuild-r3/work/work_r3.blend",
+      "oid": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+      "size": 5347215
+    },
+    {
+      "name": "artifacts/helmet-modeling/superlite17b-2026-11-12/sources/superlite17b-rear-study-r1.blend",
+      "oid": "f4c3241da1bd541d723d5dcf9cdc9be6a144ca3acdca1911b73002838840ce92",
+      "size": 5346951
+    },
+    {
+      "name": "artifacts/helmet-modeling/superlite17b-2026-11-12/sources/superlite17b-shell-study-r2.blend",
+      "oid": "a595dc7f9979d21c95419fcc80fb2619099afcaf2e9735e8676c47037d1aa894",
+      "size": 5347215
+    },
+    {
+      "name": "artifacts/helmet-prototype/exports/helmet-graybox-v02.fbx",
+      "oid": "c0cefcc0fd5acc1fac0ec1ee5ed212a4813606b57e984767afc55d34080322ab",
+      "size": 1551292
+    },
+    {
+      "name": "artifacts/helmet-prototype/exports/porthole-sample-v02.fbx",
+      "oid": "a9790dbbe4807b2d73eed64f305593984fe71b3c1e96ba5a5fcb4f94d539dba0",
+      "size": 2513964
+    },
+    {
+      "name": "artifacts/helmet-prototype/helmet-study-v01.blend",
+      "oid": "5ffe8b632c66079600f7fc3586e0eae83d642d03a7179ef3a5c13b1e79b9353c",
+      "size": 728152
+    },
+    {
+      "name": "artifacts/helmet-prototype/helmet-study-v02.blend",
+      "oid": "293f7f64625206937f8d5d3f6448452cfcf69249fa83517dbea2b5474895d284",
+      "size": 829511
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/exports/mark-v-front-window.fbx",
+      "oid": "3ff69635d123358992cc8bea0b7e32ade8db81351f053d8567951cb6ea11af51",
+      "size": 12443852
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/exports/mark-v-front-window.glb",
+      "oid": "e2f186e16ff7410506cd0dbf2ba8daaac2fe4c4503e87ba0fe44d380b2356c67",
+      "size": 12481872
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/exports/mark-v-mod1.fbx",
+      "oid": "aa3eabd7d25eb4224a97f98265ca51a5df6a29b3ec1be71b8b2b1a897cb9feeb",
+      "size": 34043724
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/exports/mark-v-mod1.glb",
+      "oid": "630fcd394b115ca9e4f6e41e373adc69e6e7096e3e1eb22122888d883738d64e",
+      "size": 34930820
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/sources/mark-v-mod1.blend",
+      "oid": "45343307e9990b2e023cd5a6be43772f48aefa2c00b8b09d56387845c8905721",
+      "size": 40318889
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/sources/parts/AirConnectionAssembly.blend",
+      "oid": "6b3cd44887ed3dc4b09eaca0893185418078006939b59c25e22c3c93036e6d2f",
+      "size": 420224
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/sources/parts/CorseletAssembly.blend",
+      "oid": "b9286304deb6813cbd1b776d66be0e5237c2c1e7452499407d28f8405f899f39",
+      "size": 1445785
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/sources/parts/ExhaustAssembly.blend",
+      "oid": "0a7522f3f8c512e9c2a4c006eb8c12a13a32c3b150666b0b24803ea5434add00",
+      "size": 374081
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/sources/parts/FrontSeatAssembly.blend",
+      "oid": "f94d9d55b1553c6247fcd82afff2c5677afe7117af142642801cf71c94fcf172",
+      "size": 430892
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/sources/parts/FrontWindowPivot.blend",
+      "oid": "df2bc073f70ccce888dfc1f8d0387bbdc859116e5d3f519178aa54e97c4e67bb",
+      "size": 230563
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/sources/parts/InteriorInterpretiveAssembly.blend",
+      "oid": "285cc73cbf8af3bffee9ab11f38f9afa0d395cd6dfbf5542809334a07ec42815",
+      "size": 136442
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/sources/parts/NeckLockAssembly.blend",
+      "oid": "341d2c5bdbcd118f0e5701976edc0fd3e7254ce56b344bf2989f58240139b3db",
+      "size": 260708
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/sources/parts/ShellAssembly.blend",
+      "oid": "8f81a10e463359aebd9cb930f8f23f8fcf655b44ea3680a4f8797eea8ecd5186",
+      "size": 753013
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/sources/parts/SideWindowsAssembly.blend",
+      "oid": "b40d87a0ed90f33bff93f966cbb217e8ab2896392eb39104c21b8aa78d1b0297",
+      "size": 130743
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/sources/parts/SpitcockAssembly.blend",
+      "oid": "af162d20e8c4d69e84644ae934c4b23394230f0fa9e7c1307b9e5efa87a02875",
+      "size": 141500
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/sources/parts/TelephoneAssembly.blend",
+      "oid": "665e6b7f652ff08f8ea635b87cd89d6e2ba4afc7982b19405b4f646f16e6ab2c",
+      "size": 347564
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/sources/parts/TopWindowAssembly.blend",
+      "oid": "d62352a22fe9343b5cb1c3396bdc826e8f27c3826bbaad411c1fbda907af5a80",
+      "size": 130405
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/textures/AgedTin_OriginalInterpretation_BaseColor.png",
+      "oid": "9d8d16471fc87de516c7a92dd61ee882f0b98d58e042929fdfa16362ce09df13",
+      "size": 4078408
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/textures/AgedTin_OriginalInterpretation_Normal.png",
+      "oid": "eba4c3f5eef0e26d220c74ff762346c0316944a190215f6103c84704d2dcbdd5",
+      "size": 4756112
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/textures/AgedTin_OriginalInterpretation_Roughness.png",
+      "oid": "3a94ac88eb1f8fb3edc15e7b5a5044c39e3e5fd2cf4405ad78ab7b3b8655103d",
+      "size": 3323962
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/textures/CastBronze_OriginalInterpretation_BaseColor.png",
+      "oid": "5b91461e84dba015e1ebcf93414681b32fc9b8bea315154e3374f7a1bf91cbae",
+      "size": 3938609
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/textures/CastBronze_OriginalInterpretation_Normal.png",
+      "oid": "9c362ef0a3e146c28863b655584312c889d8f11679df4a2cd113a65a3345bc78",
+      "size": 4755187
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/mark-v/textures/CastBronze_OriginalInterpretation_Roughness.png",
+      "oid": "bd569fc35ad7963057411c26287775d4359b21bfe339cc4e5cf3d37e6361f894",
+      "size": 3324111
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_FacePortAssembly_v1.glb",
+      "oid": "390890d0727fa041528f364242d55c8f2c3050a476cc9a1c3feb9f663f02b74a",
+      "size": 2205676
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_FacePortAssembly_v2.glb",
+      "oid": "fe24964d0b11204db83610eac7d4419e58297629c2663c2412df2907413aea44",
+      "size": 2086280
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_FacePortAssembly_v3.glb",
+      "oid": "5a03b63a42d42efc86ecf672dc137516019de4982dda0f151e5df0ae08ca65dc",
+      "size": 1438388
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_SideBlockControls_v1.glb",
+      "oid": "c0907508668f899b0246f3c5983f761c6c3bfd1257e4d42614ce153e2c817098",
+      "size": 1973440
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_SideBlockControls_v2.glb",
+      "oid": "539df34fdcf79e45342fd6b91624260e59d108846c4150f42c8ca4759b9e63ba",
+      "size": 1967320
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_SideBlockControls_v3.glb",
+      "oid": "f8923771140705c5c296b568e595ded78411cf4f48447bae752d546eb5e1baf2",
+      "size": 1408376
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/superlite-17b/exports/SL17B_SideBlockControls_v4.glb",
+      "oid": "875a9777b989bd0a5763d91d53e2b6721c166c90accc18fd0ef86bbbdb9c1b70",
+      "size": 1408380
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_FacePortAssembly_v1.blend",
+      "oid": "c85147b79e5eff6cc53d100b4d718138d5861fb9d692496e967ff007ce74138f",
+      "size": 2092345
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_FacePortAssembly_v2.blend",
+      "oid": "ba07da426963155e4c2b1f8344133822dc84b923a26eef20b49271e6c1ba6c66",
+      "size": 2018097
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_FacePortAssembly_v3.blend",
+      "oid": "5db1e7bfe21552e82f54ab6ce2ddb196ba9ef7615b16056b8cf706c8790510e0",
+      "size": 1361940
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_SideBlockControls_v1.blend",
+      "oid": "2497fc04e210cd126ee78d002523f19c3b8eb9a031d231aa27542ddf27f03c30",
+      "size": 2014935
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_SideBlockControls_v2.blend",
+      "oid": "776cc3b13214a7cf0681f3cd68865fc2484dabab3e3e3e3c7ee08c0b14601bdb",
+      "size": 1994141
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_SideBlockControls_v3.blend",
+      "oid": "d5f91ffdf25dd15b69bd87297ff8e5996c3ea39d7a37934de6d38c78c491cf4a",
+      "size": 1379796
+    },
+    {
+      "name": "artifacts/helmet-refinement/eras/superlite-17b/sources/parts/SL17B_SideBlockControls_v4.blend",
+      "oid": "f51857de252d384d49b071d3ac718d5367d9ca7a522d27f51e9a30283a35ca42",
+      "size": 1379796
+    },
+    {
+      "name": "artifacts/helmet-refinement/photo-study-v2/exports/photo-helmet-refined-v2.glb",
+      "oid": "ccbb2087bb2d860fa7297700159d7e767a870c787644177de4be1c7f5dc9a499",
+      "size": 11227352
+    },
+    {
+      "name": "artifacts/refined-model-integration/exports/diver-telephone-runtime.fbx",
+      "oid": "42f9f969a9f16a585ea5c8456759b93a7414412cf4ade922d17bfc64ff3ddb6f",
+      "size": 4228748
+    },
+    {
+      "name": "artifacts/refined-model-integration/exports/mark-iii-pump-runtime.fbx",
+      "oid": "df89d323ad8c9e0b3c851391316efe7cc149ae1892fa5cdf842568b0f1cfc8b4",
+      "size": 12072316
+    },
+    {
+      "name": "artifacts/refined-model-integration/exports/mark-v-runtime.fbx",
+      "oid": "7c8633d7e90b21eaa15e57d7fe90c7d16a0315bcac443c716f18376bc511c83a",
+      "size": 28257852
+    },
+    {
+      "name": "artifacts/refined-model-integration/exports/surface-telephone-runtime.fbx",
+      "oid": "a8bec0a694084cd2759603ab4c5a8676af1db338b26f66d817532dfb13ef309f",
+      "size": 9391468
+    },
+    {
+      "name": "artifacts/superlite17b-unity-integration/exports/superlite17b-v2-runtime.fbx",
+      "oid": "febfddaf522c50b0044237998c7a661b1bbb1d1220fb07588cfc3e23f5718fda",
+      "size": 1556476
+    }
+  ]
+}
