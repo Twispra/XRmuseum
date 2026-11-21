@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using Museum.Navigation;
 using Museum.PhysicalHands.EditorTools;
 using UnityEditor;
 using UnityEditor.SceneManagement;
@@ -526,7 +527,7 @@ namespace Museum.Inspection.Editor
             leftDevice = InputSystem.AddDevice<XRSimulatedController>();
             InputSystem.SetDeviceUsage(leftDevice, UnityEngine.InputSystem.CommonUsages.LeftHand);
             hmd = InputSystem.AddDevice<XRSimulatedHMD>();
-            if (IsMainSceneRun && UnityEngine.Object.FindObjectOfType<HelmetInspectionPalette>())
+            if (IsMainSceneRun && FindActiveLegacyPalette())
             {
                 // Inspect the official simulator's actual startup pose before the test writer changes it.
                 bool concise = GameObject.Find("Exploration MORE TOOLS") != null;
@@ -777,15 +778,23 @@ namespace Museum.Inspection.Editor
             inspection.enabled=true;
             inspection.ReduceMotion=false;
             yield return Wait(.3f);
-            if (IsMainSceneRun && UnityEngine.Object.FindObjectOfType<HelmetInspectionPalette>())
+            if (IsMainSceneRun && FindActiveLegacyPalette())
                 yield return ValidateAdvancedInspection();
             Require(report.errors.Count==0,"no runtime errors",string.Join("\n",report.errors));
         }
 
+        // The gallery navigator shares the placement component but owns no legacy inspection tools.
+        internal static HelmetInspectionPalette FindActiveLegacyPalette() =>
+            UnityEngine.Object.FindObjectsOfType<HelmetInspectionPalette>().FirstOrDefault(palette =>
+            {
+                var navigator = palette.GetComponentInParent<GalleryNavigator>();
+                return !navigator || navigator.Palette != palette;
+            });
+
         static IEnumerator ValidateAdvancedInspection()
         {
             phase = "advanced section and portable controls";
-            var palette = UnityEngine.Object.FindObjectOfType<HelmetInspectionPalette>();
+            var palette = FindActiveLegacyPalette();
             var tool = inspection.GetComponentInChildren<HelmetSectionInteractable>(true);
             Require(palette && tool, "advanced tools integrated", "Saved main scene includes the portable controls and section handle.");
             palette.FollowEnabled = false;

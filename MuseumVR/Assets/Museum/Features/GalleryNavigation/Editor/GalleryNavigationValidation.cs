@@ -200,7 +200,26 @@ namespace Museum.Navigation.Editor
             var localRotation = nav.Origin.Camera.transform.localRotation;
             var locomotion = nav.Origin.GetComponentsInChildren<LocomotionProvider>(true).ToDictionary(p => p, p => p.enabled);
 
+            station.Execute(HelmetDiegeticStation.Command.FinishVisit);
+            Check(station.IsVisitHandoffOpen, "Public API: The station opens visit handoff before navigation");
+            Check(!nav.Request(GalleryNavigator.Exhibit.Left) && !nav.IsTransitioning && nav.CompletedNavigations == 0,
+                "Public API: An open visit handoff rejects a route before fading");
+            station.Execute(HelmetDiegeticStation.Command.ContinueVisit);
+
+            Check(nav.Request(GalleryNavigator.Exhibit.Left), "Public API: Route can start when visit handoff closes");
+            station.Execute(HelmetDiegeticStation.Command.FinishVisit);
+            Check(station.IsVisitHandoffOpen, "Public API: The station can open visit handoff during fade-out");
+            yield return Until(() => !nav.IsTransitioning);
+            Check(nav.CompletedNavigations == 0 && nav.FadeOpacity == 0 &&
+                locomotion.All(p => p.Key.enabled == p.Value) && Discoveries() == discoveries,
+                "Public API: Opening visit handoff during fade prevents relocation and preserves discoveries");
+            station.Execute(HelmetDiegeticStation.Command.ContinueVisit);
+
+            var subtitle = station.GetComponentsInChildren<TMP_Text>(true).Single(label => label.name == "Guide subtitle");
+            station.Execute(HelmetDiegeticStation.Command.Narration);
+            Check(subtitle.gameObject.activeInHierarchy, "Public API: A guide subtitle is active before navigating away");
             Check(nav.Request(GalleryNavigator.Exhibit.Left), "Public API starts the left route");
+            Check(!subtitle.gameObject.activeInHierarchy, "Public API: Starting a route dismisses the guide subtitle");
             Check(!nav.Request(GalleryNavigator.Exhibit.Right), "Second request during transition is rejected");
             Check(nav.CompletedNavigations == 0 && nav.FadeOpacity == 0, "No jump at request time");
             Check(locomotion.Keys.All(p => !p.enabled), "Locomotion is suspended during fade");

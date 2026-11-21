@@ -9,6 +9,7 @@ using Museum.Eras;
 using Museum.Exploration;
 using Museum.Hotspots;
 using Museum.Inspection;
+using Museum.Inspection.Editor;
 using Museum.Localization;
 using Museum.Refined;
 using TMPro;
@@ -165,7 +166,7 @@ namespace Museum.Diegetic.Editor
             inspection = station.Inspection; demo = station.Demonstration;
             eras = inspection.GetComponent<HelmetEraSwitcher>(); binding = inspection.GetComponent<RefinedHelmetBinding>();
             CheckResult(station.Controls.Count == Enum.GetValues(typeof(HelmetDiegeticStation.Command)).Length, "All commands retain registered interaction metadata", "Count=" + station.Controls.Count);
-            CheckResult(!UnityEngine.Object.FindObjectsOfType<HelmetInspectionPalette>(true).Any(p => p.gameObject.activeInHierarchy), "No old following palette remains active", "Retired presentation, existing content engines retained.");
+            CheckResult(!HelmetInspectionValidation.FindActiveLegacyPalette(), "No old following palette remains active", "Retired presentation, existing content engines retained.");
             var hotspots = inspection.GetComponentsInChildren<HelmetHotspot>(true);
             CheckResult(hotspots.Length == 3 && hotspots.All(h => h.enabled), "Three original knowledge hotspots remain enabled", string.Join(",", hotspots.Select(h => h.Identifier)));
             foreach (var original in report.originalHotspots)
@@ -1526,11 +1527,11 @@ namespace Museum.Diegetic.Editor
             int count = station.Controls.Count;
             station.enabled = false; yield return Wait(.2f);
             CheckResult(station.Controls.Values.All(c => !c.gameObject.activeInHierarchy), "Disabled module hides all new controls", "Count=" + count, "module-lifecycle");
-            CheckResult(inspection.GetComponent<XRGrabInteractable>().enabled && UnityEngine.Object.FindObjectsOfType<HelmetInspectionPalette>(true).Any(p => p.gameObject.activeInHierarchy),
+            CheckResult(inspection.GetComponent<XRGrabInteractable>().enabled && HelmetInspectionValidation.FindActiveLegacyPalette(),
                 "Disabled module restores original controls", "Legacy grab and palette active.", "module-lifecycle");
             station.enabled = true; yield return Wait(.3f);
             CheckResult(station.Controls.Count == count && station.IsReady, "Reenabled module reuses original generated controls", "Count=" + station.Controls.Count, "module-lifecycle");
-            CheckResult(!inspection.GetComponent<XRGrabInteractable>().enabled && !UnityEngine.Object.FindObjectsOfType<HelmetInspectionPalette>(true).Any(p => p.gameObject.activeInHierarchy),
+            CheckResult(!inspection.GetComponent<XRGrabInteractable>().enabled && !HelmetInspectionValidation.FindActiveLegacyPalette(),
                 "Reenabled module retires legacy controls without overlap", "Legacy grab and palette inactive.", "module-lifecycle");
             CheckResult(station.Controls[HelmetDiegeticStation.Command.Window].gameObject.activeInHierarchy && inspection.GetComponentsInChildren<HelmetHotspot>(true).All(h => h.enabled),
                 "Reenabled module restores new controls and knowledge hotspots", "Window marker active; hotspots enabled.", "module-lifecycle");
