@@ -1,0 +1,166 @@
+{
+  "checks": {
+    "only_one_object_in_file_and_scene": true,
+    "no_linked_libraries_or_reference_images": true,
+    "ShellUV_finite_in_unit_square_on_all_corners": true,
+    "one_yellow_material_on_shell": true,
+    "solid_connected_surface": true,
+    "consistent_outward_winding": true,
+    "finite_nondegenerate_triangles": true,
+    "no_nonadjacent_triangle_intersections": true,
+    "faceport_and_neck_open_to_common_cavity": true
+  },
+  "passed": true,
+  "file_objects": {
+    "SL17B_YellowShell_Study": "MESH"
+  },
+  "materials": [
+    "17B • Yellow gelcoat"
+  ],
+  "image_assets": [],
+  "linked_libraries": [],
+  "ShellUV": {
+    "corner_count": 85726,
+    "mesh_loop_count": 85726,
+    "uv_min": [
+      0.0019047618843615055,
+      0.006000000052154064
+    ],
+    "uv_max": [
+      0.9980952143669128,
+      0.9879999756813049
+    ]
+  },
+  "material_display_rgb": [
+    0.9900000095367432,
+    0.6200000047683716,
+    0.00800000037997961
+  ],
+  "unlinked_shader_base_rgb": null,
+  "base_color_driven_by": "Mix (Legacy)",
+  "surface_attributes": {
+    "material_index": {
+      "domain": "FACE",
+      "data_type": "INT",
+      "values_and_counts_top4": [
+        [
+          0.0,
+          21307
+        ]
+      ]
+    },
+    "Inside_wall": {
+      "domain": "CORNER",
+      "data_type": "BYTE_COLOR",
+      "values_and_counts_top4": [
+        [
+          [
+            0.0,
+            0.0,
+            0.0
+          ],
+          45380
+        ],
+        [
+          [
+            1.0,
+            1.0,
+            1.0
+          ],
+          40346
+        ]
+      ]
+    }
+  },
+  "blender": "4.5.14 LTS",
+  "units": "METRIC",
+  "base_vertices": 21546,
+  "base_polygons": 21307,
+  "modifier_stack": [],
+  "evaluated_vertices": 21546,
+  "evaluated_polygons": 21307,
+  "evaluated_edges": 42863,
+  "evaluated_triangles": 43112,
+  "dimensions_xyz_m": [
+    0.28117114305496216,
+    0.2860143184661865,
+    0.27137699723243713
+  ],
+  "bounds_min_xyz_m": [
+    -0.14275802671909332,
+    -0.14657911658287048,
+    0.019070999696850777
+  ],
+  "bounds_max_xyz_m": [
+    0.13841310143470764,
+    0.13943520188331604,
+    0.29044800996780396
+  ],
+  "connected_components": 1,
+  "nonmanifold_edges": 0,
+  "nonmanifold_vertex_fans": 0,
+  "inconsistent_winding_edges": 0,
+  "signed_wall_volume_m3": 0.000776765606097958,
+  "degenerate_triangles": 0,
+  "euler_characteristic": -10,
+  "genus_of_closed_wall_surface": 6,
+  "named_vertex_groups": {
+    "Face_Opening": {
+      "vertices": 160,
+      "mean_xyz_m": [
+        1.7898856008446984e-10,
+        -0.12552888691425323,
+        0.1852937638759613
+      ]
+    },
+    "Neck_Opening": {
+      "vertices": 160,
+      "mean_xyz_m": [
+        -1.5163096334092074e-09,
+        0.02708595059812069,
+        0.07947608828544617
+      ]
+    },
+    "Window_Moulding": {
+      "vertices": 224,
+      "mean_xyz_m": [
+        0.0087370490655303,
+        -0.12954309582710266,
+        0.16994710266590118
+      ]
+    },
+    "Neck_Groove": {
+      "vertices": 160,
+      "mean_xyz_m": [
+        -1.673470251262188e-09,
+        0.027522927150130272,
+        0.08275961130857468
+      ]
+    }
+  },
+  "nonadjacent_intersecting_polygon_pairs": 0,
+  "first_intersection_pairs": [],
+  "cavity_witness_points_xyz_m": [
+    [
+      -0.03028957,
+      -0.01215239,
+      0.16290081
+    ],
+    [
+      -0.00217246,
+      -0.01215239,
+      0.16290081
+    ],
+    [
+      0.02594467,
+      -0.01215239,
+      0.16290081
+    ]
+  ],
+  "cavity_test": "Each witness has clear paths out toward -Y and -Z and hits the wall toward +Y, +Z and both sides.",
+  "topology_note": "Genus counts surface handles. The front and neck openings together already create one handle.",
+  "source_file": "SuperLite17B-yellow-shell.blend",
+  "source_sha256": "09766af684372e1a47bc5ecb810e2d6f9d30cc54fca3f51912768e733575ce09",
+  "preview_sha256": "9e9f408a940f96180ff200dfd6bccb8f7ce025901011a08918773a2a3b7c6674",
+  "input_unchanged_after_readback": true
+}

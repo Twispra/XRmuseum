@@ -1,0 +1,703 @@
+{
+  "reference_sha256": "b441c347cba5c6fbf2d77a14324aea20937d9bf9078aa117ad292b4fec3a75cd",
+  "base_sha256": "09766af684372e1a47bc5ecb810e2d6f9d30cc54fca3f51912768e733575ce09",
+  "candidate_sha256": "800f5175684cf9a31f83344bb03c16af2a079f7e77391a27ca1b17bdbccf777e",
+  "image_size_px": [
+    1209,
+    963
+  ],
+  "pose_azimuth_from_front_towards_positive_X_elevation_roll_scale_px_per_m_tx_ty": [
+    97.64,
+    8.93,
+    8.53,
+    2426.42,
+    680.9,
+    524.02
+  ],
+  "pose_world_origin_m": [
+    0.0,
+    0.0,
+    0.15
+  ],
+  "measurements": {
+    "base": {
+      "brow": {
+        "reference_xy_px": [
+          [
+            477,
+            188
+          ],
+          [
+            480,
+            192
+          ],
+          [
+            485,
+            196
+          ],
+          [
+            490,
+            201
+          ],
+          [
+            495,
+            212
+          ],
+          [
+            500,
+            226
+          ],
+          [
+            505,
+            236
+          ],
+          [
+            510,
+            248
+          ],
+          [
+            515,
+            257
+          ],
+          [
+            520,
+            263
+          ],
+          [
+            525,
+            267
+          ],
+          [
+            530,
+            267
+          ],
+          [
+            535,
+            264
+          ],
+          [
+            540,
+            261
+          ]
+        ],
+        "model_y_at_same_x_px": [
+          237.2215479318221,
+          239.70966144287559,
+          243.65818174245263,
+          247.3221847104622,
+          249.94045323004963,
+          247.46516981502376,
+          244.34658046407668,
+          240.97344370017078,
+          237.40147212633786,
+          233.82950055250492,
+          230.51863935309828,
+          227.338595573389,
+          224.15855179367972,
+          221.36599426269882
+        ],
+        "mean_signed_model_minus_reference_y_px": 3.374998335617284,
+        "mean_absolute_vertical_distance_px": 33.57697014106309,
+        "max_absolute_vertical_distance_px": 49.2215479318221
+      },
+      "crown": {
+        "reference_xy_px": [
+          [
+            550,
+            253
+          ],
+          [
+            560,
+            244
+          ],
+          [
+            570,
+            234
+          ],
+          [
+            585,
+            223
+          ],
+          [
+            600,
+            216
+          ],
+          [
+            615,
+            211
+          ],
+          [
+            635,
+            205
+          ],
+          [
+            650,
+            202
+          ],
+          [
+            670,
+            198
+          ],
+          [
+            690,
+            197
+          ],
+          [
+            710,
+            196
+          ],
+          [
+            730,
+            196
+          ],
+          [
+            750,
+            197
+          ],
+          [
+            770,
+            200
+          ],
+          [
+            790,
+            203
+          ],
+          [
+            810,
+            207
+          ],
+          [
+            825,
+            212
+          ],
+          [
+            840,
+            218
+          ]
+        ],
+        "model_y_at_same_x_px": [
+          216.93857743846357,
+          212.7932345194073,
+          209.87741572727154,
+          205.76796404090635,
+          202.16008370933488,
+          199.04080208216405,
+          195.22354752995915,
+          192.96749349459523,
+          190.66830558785045,
+          189.22222162144212,
+          188.71109430994397,
+          189.23581790647313,
+          190.8144277825371,
+          193.4512701538283,
+          197.26609158386017,
+          202.4016244696135,
+          207.0701574402907,
+          212.73818603987772
+        ],
+        "mean_signed_model_minus_reference_y_px": -11.980649142343376,
+        "mean_absolute_vertical_distance_px": 11.980649142343376,
+        "max_absolute_vertical_distance_px": 36.06142256153643
+      },
+      "registration_neck_arc": {
+        "mean_nearest_distance_px": 3.579240108903912,
+        "max_nearest_distance_px": 10.239898215485207
+      },
+      "front_oblique_edge": {
+        "observed_outer_trim_direction_deg_from_vertical": 31.853521786691562,
+        "aperture_foremost_edge_direction_deg_from_vertical": 14.078681371974808,
+        "image_y_interval_px": [
+          286,
+          450
+        ],
+        "limit": "The visible yellow/metal boundary and the modeled aperture are adjacent features. Their projected directions provide an approximate comparison, not a measured plane angle."
+      },
+      "landmarks": {
+        "brow_peak": [
+          442,
+          216.95398340999748
+        ],
+        "saddle": [
+          495,
+          249.94045323004963
+        ],
+        "crown_peak": [
+          709,
+          188.6848581301175
+        ],
+        "saddle_depth_below_brow_px": 32.98646982005215,
+        "brow_minus_crown_image_y_px": 28.269125279879972
+      }
+    },
+    "candidate": {
+      "brow": {
+        "reference_xy_px": [
+          [
+            477,
+            188
+          ],
+          [
+            480,
+            192
+          ],
+          [
+            485,
+            196
+          ],
+          [
+            490,
+            201
+          ],
+          [
+            495,
+            212
+          ],
+          [
+            500,
+            226
+          ],
+          [
+            505,
+            236
+          ],
+          [
+            510,
+            248
+          ],
+          [
+            515,
+            257
+          ],
+          [
+            520,
+            263
+          ],
+          [
+            525,
+            267
+          ],
+          [
+            530,
+            267
+          ],
+          [
+            535,
+            264
+          ],
+          [
+            540,
+            261
+          ]
+        ],
+        "model_y_at_same_x_px": [
+          189.19465784309236,
+          189.9023444878675,
+          191.84329424640197,
+          195.04088016183292,
+          202.11502653527205,
+          209.36690505554634,
+          217.51295683200826,
+          228.70327229901616,
+          240.29132439964894,
+          251.54404658695952,
+          262.62829047461577,
+          270.3276755509426,
+          267.0858630010362,
+          263.8440504511299
+        ],
+        "mean_signed_model_minus_reference_y_px": -7.042815148187821,
+        "mean_absolute_vertical_distance_px": 8.535993269073687,
+        "max_absolute_vertical_distance_px": 19.296727700983837
+      },
+      "crown": {
+        "reference_xy_px": [
+          [
+            550,
+            253
+          ],
+          [
+            560,
+            244
+          ],
+          [
+            570,
+            234
+          ],
+          [
+            585,
+            223
+          ],
+          [
+            600,
+            216
+          ],
+          [
+            615,
+            211
+          ],
+          [
+            635,
+            205
+          ],
+          [
+            650,
+            202
+          ],
+          [
+            670,
+            198
+          ],
+          [
+            690,
+            197
+          ],
+          [
+            710,
+            196
+          ],
+          [
+            730,
+            196
+          ],
+          [
+            750,
+            197
+          ],
+          [
+            770,
+            200
+          ],
+          [
+            790,
+            203
+          ],
+          [
+            810,
+            207
+          ],
+          [
+            825,
+            212
+          ],
+          [
+            840,
+            218
+          ]
+        ],
+        "model_y_at_same_x_px": [
+          256.59977835003616,
+          249.01409101931674,
+          241.4233404301602,
+          231.02967037592066,
+          222.25876532911988,
+          215.46113944476502,
+          207.9705020090138,
+          203.29269017747518,
+          198.20551220366733,
+          195.1527893577968,
+          194.23515105514923,
+          195.0831318394603,
+          197.37734119083848,
+          200.91734415328565,
+          205.67359150710632,
+          211.68073074544083,
+          217.02726917815386,
+          223.15005658695702
+        ],
+        "mean_signed_model_minus_reference_y_px": 2.9751608307590818,
+        "mean_absolute_vertical_distance_px": 3.478375024936158,
+        "max_absolute_vertical_distance_px": 8.02967037592066
+      },
+      "registration_neck_arc": {
+        "mean_nearest_distance_px": 3.579240108903912,
+        "max_nearest_distance_px": 10.239898215485207
+      },
+      "front_oblique_edge": {
+        "observed_outer_trim_direction_deg_from_vertical": 31.853521786691562,
+        "aperture_foremost_edge_direction_deg_from_vertical": 22.21049544918436,
+        "image_y_interval_px": [
+          286,
+          450
+        ],
+        "limit": "The visible yellow/metal boundary and the modeled aperture are adjacent features. Their projected directions provide an approximate comparison, not a measured plane angle."
+      },
+      "landmarks": {
+        "brow_peak": [
+          476,
+          189.188359512696
+        ],
+        "saddle": [
+          530,
+          270.3276755509426
+        ],
+        "crown_peak": [
+          702,
+          194.19496562883774
+        ],
+        "saddle_depth_below_brow_px": 81.13931603824662,
+        "brow_minus_crown_image_y_px": -5.0066061161417394
+      }
+    }
+  },
+  "registration": "Fixed from the previous bare shell before candidate scoring. Approximate orthographic registration uses the visible positive-X neck groove near arc, rough front/rear neck extents (partly hidden), crown-apex location and weak side/rear-view prior. The crown apex was a registration anchor. The brow and saddle were not fit targets. Remaining camera and type/configuration uncertainty can shift all distances.",
+  "registration_neck_trace_xy_px": [
+    [
+      380,
+      782
+    ],
+    [
+      400,
+      782
+    ],
+    [
+      425,
+      780
+    ],
+    [
+      450,
+      778
+    ],
+    [
+      475,
+      775
+    ],
+    [
+      500,
+      772
+    ],
+    [
+      525,
+      768
+    ],
+    [
+      550,
+      763
+    ],
+    [
+      575,
+      758
+    ],
+    [
+      600,
+      753
+    ],
+    [
+      625,
+      747
+    ],
+    [
+      650,
+      742
+    ],
+    [
+      675,
+      736
+    ],
+    [
+      700,
+      730
+    ],
+    [
+      725,
+      724
+    ],
+    [
+      750,
+      717
+    ],
+    [
+      775,
+      709
+    ],
+    [
+      800,
+      702
+    ],
+    [
+      825,
+      694
+    ],
+    [
+      850,
+      685
+    ],
+    [
+      875,
+      675
+    ],
+    [
+      900,
+      666
+    ],
+    [
+      925,
+      656
+    ],
+    [
+      950,
+      647
+    ],
+    [
+      975,
+      637
+    ],
+    [
+      1000,
+      623
+    ]
+  ],
+  "reference_landmarks_approx_xy_px": {
+    "brow_peak": [
+      475,
+      188
+    ],
+    "saddle": [
+      527,
+      267
+    ],
+    "crown_peak": [
+      707,
+      196
+    ]
+  },
+  "visible_side_moulding_trace_xy_px": [
+    [
+      297,
+      450
+    ],
+    [
+      325,
+      402
+    ],
+    [
+      349,
+      365
+    ],
+    [
+      373,
+      328
+    ],
+    [
+      398,
+      286
+    ],
+    [
+      422,
+      250
+    ],
+    [
+      444,
+      216
+    ],
+    [
+      462,
+      194
+    ]
+  ],
+  "cowl_return_highlight_trace_approx_xy_px": [
+    [
+      523,
+      265
+    ],
+    [
+      516,
+      299
+    ],
+    [
+      509,
+      337
+    ],
+    [
+      502,
+      370
+    ],
+    [
+      494,
+      400
+    ],
+    [
+      484,
+      438
+    ],
+    [
+      471,
+      475
+    ],
+    [
+      460,
+      512
+    ],
+    [
+      446,
+      552
+    ]
+  ],
+  "visible_pad_trace_approx_xy_px": [
+    [
+      569,
+      529
+    ],
+    [
+      587,
+      496
+    ],
+    [
+      612,
+      477
+    ],
+    [
+      648,
+      464
+    ],
+    [
+      697,
+      463
+    ],
+    [
+      743,
+      482
+    ],
+    [
+      765,
+      517
+    ],
+    [
+      777,
+      558
+    ],
+    [
+      784,
+      612
+    ],
+    [
+      781,
+      653
+    ],
+    [
+      772,
+      678
+    ],
+    [
+      751,
+      693
+    ],
+    [
+      718,
+      703
+    ],
+    [
+      681,
+      710
+    ],
+    [
+      644,
+      714
+    ],
+    [
+      619,
+      714
+    ]
+  ],
+  "scope": "Source shows assembled hardware; only the upper unobstructed shell segments are scored. Internal moulding and pad lines are descriptive. Distances are signed vertically with image Y increasing down, under one approximate uncalibrated orthographic pose.",
+  "diagram_sha256": "f61be51b808438558b223b531f9891a7a8a3137a7c666d7942063da488ea770f"
+}
