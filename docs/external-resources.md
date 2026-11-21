@@ -108,3 +108,17 @@ Ereshkigal1224 负责，Codex 辅助核查 [Kirby Morgan 产品页](https://www.
 我根据组员建议确定早期头盔资料整理范围，并借助 Codex 检索、分类和撰写 [Science Museum Group 馆藏 1881-47](https://collection.sciencemuseumgroup.org.uk/objects/co40614/first-closed-diving-helmet-and-breastplate) 的整件尺寸、重量、材料及未核实局部参数；分类和来源见[独立资料](../artifacts/helmet-refinement/eras/early-standard/references/research-v1.zh-CN.md)。馆藏数据只作有来源的研究候选，不声称小组已采用同一实物或精细模型已完成。馆藏图片标注 CC BY-NC-SA 4.0，本仓库仅保留链接，没有复制照片、下载模型或制作贴图。Codex 辅助不能代替成员的人工历史核对、建模或课程 AI 许可确认。
 
 2026-10-13 补充外形灵感：我提供香港海事博物馆一顶 1988 年在中国制造、借自 Macalister Collection 的四张近照，另附展厅背景照；[馆方展厅页](https://www.hkmaritimemuseum.org/permanent-b-deck/details?lang=zh)仅用于核对博物馆背景。四张近照由组员拍摄，我确认该组员同意上传至小组 GitHub 项目；这四张原始 JPEG 已按[照片索引](../artifacts/helmet-refinement/eras/early-standard/references/photos/README.md)提交，第五张不提交。拍摄者姓名及小组项目外再利用许可未提供。Codex 辅助区分可见外形与历史事实；1988 年照片不作为 1839 年藏品的尺寸、零件功能、材料或来源证据，详见[研究说明](../artifacts/helmet-refinement/eras/early-standard/references/research-v1.zh-CN.md)。
+
+## 2026-11-21 · SuperLite 17B 黄色裸壳
+
+本轮由 Codex 辅助查阅 Kirby Morgan 520-065 裸壳分解图、拆下配重的实拍、颈口手册，以及 Bonds Nautical 自摄 Mk17 裸壳多视图。从空场景原创截面网格、胶衣材质、四视渲染及轮廓测量。厂家插图和藏品照片用于观察与对照，交付文件只含原创壳体。来源、页码、照片配置边界、运行命令与独立回读见[裸壳研究记录](activity/2026-11-21-superlite-bare-shell.md)。
+
+## 2026-11-21 · SuperLite 裸壳 R2 参考渲染
+
+用户提供四张装配状态的渲染截图，以及 3DModels org 的 [SuperLite 17 转台视频](https://www.youtube.com/watch?v=3Obmic7dRyk)。Codex 对照截图和 YouTube 的逐秒故事板，修订既有壳体的窗肩、冠弧和两侧圆角凸台，再从保存源生成渲染并测量图 1 中可见的黄壳轮廓。参考模型标为 SuperLite 17，具体子配置及尺寸未确认。图片、视频分镜和第三方模型未随资产分发。[各视角用途、模型与核对结果](activity/2026-11-21-superlite-shell-render-review.md)
+
+## 2026-11-21 · SuperLite 17B R2 整盔装配
+
+Codex 在用户认可的 R2 裸壳上制作独立展品，按 Kirby Morgan 的 500-010 产品页、整盔分解图 #241108001 和面窗、提手、SuperFlow、弯管、颈夹、通信及头垫手册核对部件身份与连接。铭牌和按钮纹理由本项目自行排版并打包，参考照片、视频分镜和第三方模型未纳入资产。具体资料、版本选择、展示估算和几何／GLB 回读见[整盔装配记录](activity/2026-11-21-superlite-r2-assembly.md)。
+
+本次 PR #94 复审中，Codex 依据第 1 项 520-054 和厂家的 1998 年材料变更公告补建深色 ABS 内眉遮片，修正麦克风引线，并从保存网格生成原创装配剖面。材质与部件号可追溯，厚度、曲率及内部座面为展示估算。[厂家分解图](https://www.kirbymorgan.com/sites/default/files/2025-01/sl-17b-blowapart-241108001.pdf) · [材料公告 1/1998](https://www.kirbymorgan.com/sites/default/files/Change_Product_01_98.pdf) · [本轮修复及核查范围](activity/2026-11-21-pr94-superlite-assembly-review-fixes.md)

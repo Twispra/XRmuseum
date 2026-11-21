@@ -1,0 +1,38 @@
+{
+  "source_sha256": "336486c96cc3accf37770a47a77b651462706258592aeb77fc5ea1ca4e74ce99",
+  "glb_sha256": "82de680095b45aa24b45b523510c244488394d7f84c6f32b9674a6295885e4bb",
+  "blender": "4.5.14 LTS",
+  "published_file_accepted": true,
+  "cases": {
+    "reordered_lens": {
+      "accepted": true,
+      "reordered_triangles": 11520,
+      "verified_triangles": 265244
+    },
+    "mirrored_marking": {
+      "rejected": true,
+      "changed_uvs": 288,
+      "reason": "Oriented triangle or corner UV mismatch on REG_Purge marking/Air • purge printed marking"
+    },
+    "flipped_lens": {
+      "rejected": true,
+      "reversed_triangles": 11520,
+      "reason": "Oriented triangle or corner UV mismatch on FP_Lens_520-004/Port • clear polycarbonate"
+    },
+    "identity_texture_transform": {
+      "accepted": true,
+      "material": "Air • purge printed marking",
+      "verified_triangles": 265244
+    },
+    "mirrored_texture_transform": {
+      "rejected": true,
+      "material": "Air • purge printed marking",
+      "reason": "Base-color texture transform mismatch on Air • purge printed marking"
+    },
+    "wrong_texture_channel": {
+      "rejected": true,
+      "material": "Air • purge printed marking",
+      "reason": "Base-color texture UV mismatch on Air • purge printed marking: expected TEXCOORD_0, got 1"
+    }
+  }
+}

@@ -1,0 +1,259 @@
+{
+  "tested_commit": "842c862fe8139ed8e69da0bed55e1c3fc9d50ed4",
+  "original_reviewed_commit": "edfd536688fd97501010eb657ab04db1aad7a065",
+  "base_branch": "codex/helmet-refinement-assets",
+  "base_sha": "39e895f9c5bd449cccd8c02c41fdb4f2c2eb423b",
+  "environment": "Windows; Blender 4.5.14 LTS (62c1db4208e8); isolated local worktree; no tracked edits at launch; closing documentation edits had no effect on the inspected inputs",
+  "asset_sha256": {
+    "SuperLite17B-assembly-views.png": "1f8e5e0da92292a4becde0a7e28a9fe5a853dd1e5389640d587d9585578b6259",
+    "SuperLite17B-R2-assembled.blend": "336486c96cc3accf37770a47a77b651462706258592aeb77fc5ea1ca4e74ce99",
+    "SuperLite17B-R2-assembled.glb": "82de680095b45aa24b45b523510c244488394d7f84c6f32b9674a6295885e4bb"
+  },
+  "blender_processes": {
+    "geometry": {
+      "exit": 0,
+      "elapsed_s": 4.19,
+      "natural_exit": true
+    },
+    "interfaces": {
+      "exit": 0,
+      "elapsed_s": 2.3,
+      "natural_exit": true
+    },
+    "verify": {
+      "exit": 0,
+      "elapsed_s": 8.41,
+      "natural_exit": true
+    },
+    "regression": {
+      "exit": 0,
+      "elapsed_s": 31.1,
+      "natural_exit": true
+    }
+  },
+  "model_rebuild_from_original_r2": "Passed; 173 meshes. Applied the resulting lead coordinates and the same visor generator to the original published assembly to preserve unrelated geometry and shading.",
+  "source_delta_method": "Compare stored per-material oriented triangles, vertex positions (metres), face-corner UVs and normals after rounding values to six decimals. Face order and cyclic corner reindexing ignored. Also compare packed image bytes.",
+  "editable_source_delta": {
+    "before": 172,
+    "after": 173,
+    "added": [
+      "Visor_520-054"
+    ],
+    "removed": [],
+    "different_triangle_fingerprints": [
+      "Comms_microphone_internal_lead"
+    ],
+    "same_fingerprint": 171,
+    "packed_images_identical": true,
+    "packed_images_before": {
+      "SL17B original print • purge": "86e4b7719f09352b53bd189374dd747140c5a7cbb45856ba63e6ad22934009b4",
+      "SL17B original print • sideblock": "00f194aeb81d3f2241fd830ee639f0e1cfc5645bbc70f7807141bee5b6d4cca8"
+    },
+    "packed_images_after": {
+      "SL17B original print • purge": "86e4b7719f09352b53bd189374dd747140c5a7cbb45856ba63e6ad22934009b4",
+      "SL17B original print • sideblock": "00f194aeb81d3f2241fd830ee639f0e1cfc5645bbc70f7807141bee5b6d4cca8"
+    }
+  },
+  "external_dependencies": {
+    "source_sha256": "336486c96cc3accf37770a47a77b651462706258592aeb77fc5ea1ca4e74ce99",
+    "external_unpacked_paths": [],
+    "linked_libraries": [],
+    "weak_references": [],
+    "images": {
+      "SL17B original print • purge": {
+        "size": [
+          512,
+          512
+        ],
+        "packed": true,
+        "sha256": "86e4b7719f09352b53bd189374dd747140c5a7cbb45856ba63e6ad22934009b4"
+      },
+      "SL17B original print • sideblock": {
+        "size": [
+          768,
+          320
+        ],
+        "packed": true,
+        "sha256": "00f194aeb81d3f2241fd830ee639f0e1cfc5645bbc70f7807141bee5b6d4cca8"
+      }
+    }
+  },
+  "khronos_validator": {
+    "version": "2.0.0-dev.3.10",
+    "sha256": "82de680095b45aa24b45b523510c244488394d7f84c6f32b9674a6295885e4bb",
+    "errors": 0,
+    "warnings": 0,
+    "infos": 177,
+    "hints": 0,
+    "codes": {
+      "UNUSED_OBJECT": 176,
+      "IMAGE_NPOT_DIMENSIONS": 1
+    }
+  },
+  "original_source_negative_checks": {
+    "missing_visor": {
+      "process_exit": 2,
+      "failed_checks": [
+        "opaque_visor_fitted_inside_brow",
+        "all_expected_subsystems_present"
+      ]
+    },
+    "open_microphone_lead": {
+      "process_exit": 2,
+      "failed_checks": [
+        "microphone_lead_end_seated_in_housing"
+      ],
+      "measurement": {
+        "pair": [
+          "Comms_microphone_internal_lead",
+          "Microphone_515-029"
+        ],
+        "intersecting_triangle_pairs": 0,
+        "minimum_sampled_spacing_mm": 0.6152417045086622,
+        "end_cap_depth_ranges_mm_positive_inside": [
+          [
+            -36.014087233118495,
+            -17.17524728801434
+          ],
+          [
+            -2.9569688875825118,
+            -0.6152417129752785
+          ]
+        ],
+        "one_end_seated": false
+      }
+    }
+  },
+  "negative_geometry_probes": {
+    "source_sha256": "336486c96cc3accf37770a47a77b651462706258592aeb77fc5ea1ca4e74ce99",
+    "temporary_blender_memory_only": true,
+    "shifted_visor": {
+      "failed_checks": [
+        "curved_forehead_insert",
+        "wholly_inside_brow",
+        "rear_tongue_seated",
+        "no_inter_part_triangle_crossings",
+        "clear_central_sight_lines"
+      ],
+      "blocked_rays": 252,
+      "rays_tested": 1014,
+      "passed": false
+    },
+    "transparent_visor": {
+      "failed_checks": [
+        "dark_opaque_finish"
+      ],
+      "blocked_rays": 0,
+      "rays_tested": 1014,
+      "passed": false
+    },
+    "cable_crossing_midspan_without_seated_endpoint": {
+      "pair": [
+        "Comms_microphone_internal_lead",
+        "Microphone_515-029"
+      ],
+      "intersecting_triangle_pairs": 105,
+      "minimum_sampled_spacing_mm": 0.0,
+      "end_cap_depth_ranges_mm_positive_inside": [
+        [
+          -19.017873228323946,
+          -17.5160070749511
+        ],
+        [
+          -13.147634289663827,
+          -11.31787306684415
+        ]
+      ],
+      "one_end_seated": false
+    }
+  },
+  "independent_visor_and_lead_checks": {
+    "model": "SuperLite17B-R2-assembled.blend",
+    "sha256": "336486c96cc3accf37770a47a77b651462706258592aeb77fc5ea1ca4e74ce99",
+    "count": 173,
+    "visor": {
+      "world_min_mm": [
+        -79.9880251288414,
+        -104.00000214576721,
+        214.65200185775757
+      ],
+      "world_max_mm": [
+        79.9880251288414,
+        -34.00000184774399,
+        274.9335467815399
+      ],
+      "collision_pairs": {},
+      "entirely_enclosed_pairs": [],
+      "vertex_to_surface_min_mm": {
+        "SL17B_YellowShell_Study": 0.1044529490172863,
+        "FP_Lens_520-004": 14.97205626219511,
+        "Cushion_Right_ear_pocket": 36.85368597507477,
+        "Cushion_Left_ear_pocket": 36.83837503194809,
+        "Cushion_center_top": 1.0826129000633955,
+        "Cushion_rear_neck_roll": 140.58595895767212,
+        "AirTrain_545-016_perforated_arc": 10.714869014918804,
+        "AirTrain_starboard_feed_shoulder": 63.23748826980591
+      },
+      "eye_ray_check": {
+        "(-0.032, 0.184)": {
+          "central": 1346,
+          "central_blocked": 0,
+          "outside_central": 575,
+          "outside_central_blocked": 53
+        },
+        "(-0.032, 0.193)": {
+          "central": 1346,
+          "central_blocked": 0,
+          "outside_central": 575,
+          "outside_central_blocked": 67
+        },
+        "(-0.032, 0.204)": {
+          "central": 1346,
+          "central_blocked": 1,
+          "outside_central": 575,
+          "outside_central_blocked": 89
+        },
+        "(0.032, 0.184)": {
+          "central": 1346,
+          "central_blocked": 0,
+          "outside_central": 575,
+          "outside_central_blocked": 54
+        },
+        "(0.032, 0.193)": {
+          "central": 1346,
+          "central_blocked": 0,
+          "outside_central": 575,
+          "outside_central_blocked": 71
+        },
+        "(0.032, 0.204)": {
+          "central": 1346,
+          "central_blocked": 1,
+          "outside_central": 575,
+          "outside_central_blocked": 89
+        }
+      }
+    },
+    "microphone": {
+      "caps": [
+        {
+          "vertices": 12,
+          "inside": 12,
+          "nearest_unsigned_range_mm": [
+            0.5935836234129965,
+            1.733640325255692
+          ]
+        },
+        {
+          "vertices": 12,
+          "inside": 0,
+          "nearest_unsigned_range_mm": [
+            34.942276775836945,
+            36.08868643641472
+          ]
+        }
+      ],
+      "surface_crossings": 28
+    },
+    "source_unchanged": true
+  }
+}
