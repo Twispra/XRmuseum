@@ -1716,4 +1716,14 @@ MonoBehaviour:
     english: "I hear you through the cable."
     traditionalChinese: "\u6536\u5230\u3002\u4f60\u7684\u8072\u97f3\u5f9e\u96fb\u7e9c\u50b3\u4f86\u4e86\u3002"
     note: "Static exchange when the visitor reduces motion."
+  - key: narration.subtitle_size.standard
+    english: "Subtitles\nStandard"
+    chinese: "\u6807\u51c6\u5b57\u5e55"
+    traditionalChinese: "\u6a19\u6e96\u5b57\u5e55"
+    note: "Current narration subtitle size in visitor settings."
+  - key: narration.subtitle_size.large
+    english: "Subtitles\nLarge"
+    chinese: "\u5927\u5b57\u5b57\u5e55"
+    traditionalChinese: "\u5927\u5b57\u5b57\u5e55"
+    note: "Current narration subtitle size in visitor settings."
   fontAsset: {fileID: 11400000, guid: 73d312c39c8c91948afde3c8604a6c94, type: 2}
