@@ -1,5 +1,7 @@
 # SuperLite 17B · R2 黄壳整盔装配
 
+本文记录首版装配 `edfd5366`。查阅该版 172 件模型、四视图与原始报告，请使用[冻结的交付版本](https://github.com/Twispra/XRmuseum/tree/edfd536688fd97501010eb657ab04db1aad7a065/artifacts/helmet-modeling/superlite17b-r2-assembly-2026-11-21)。本分支同名 Blender 与 GLB 已更新，新增遮片、麦克风线端修复和逐面角导出复核见[修复后的模型、剖面与验收](./2026-11-21-pr94-superlite-assembly-review-fixes.md)。
+
 2026-11-21，关联 [Issue #25 三个时代精细模型合作](https://github.com/Twispra/XRmuseum/issues/25)。用户在[黄壳 R2 审阅](2026-11-21-superlite-shell-render-review.md)后认可右列新版，并授权组装完整头盔。本次交付供外观审阅的 500-010 双通信柱配置。可直接打开[完整 Blender 源文件](../../artifacts/helmet-modeling/superlite17b-r2-assembly-2026-11-21/SuperLite17B-R2-assembled.blend)、[独立 GLB](../../artifacts/helmet-modeling/superlite17b-r2-assembly-2026-11-21/SuperLite17B-R2-assembled.glb)或[四视图](../../artifacts/helmet-modeling/superlite17b-r2-assembly-2026-11-21/SuperLite17B-assembly-views.png)。
 
 ## 配置与资料

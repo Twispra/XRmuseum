@@ -1,0 +1,264 @@
+{
+  "blender": "4.5.14 LTS",
+  "input_sha256": "336486c96cc3accf37770a47a77b651462706258592aeb77fc5ea1ca4e74ce99",
+  "checks": {
+    "no_unexpected_breathing_window_lower_or_communications_intersections": true,
+    "bent_tube_connected_to_both_separate_ferrules": true,
+    "bent_tube_clear_of_both_whiskers": true,
+    "tube_cross_sections_exposed_to_observer_beyond_wings": true,
+    "both_rubber_wings_meet_corresponding_bolted_flange": true,
+    "each_flange_behind_its_plate": true,
+    "air_train_and_feed_clear_of_lens_seal_and_retainer": true,
+    "communications_post_bases_and_alternative_port_plug_at_shell": true,
+    "microphone_lead_end_seated_in_housing": true,
+    "source_bytes_unchanged": true
+  },
+  "passed": true,
+  "scope_unique_object_pairs": 8281,
+  "inspected_pairing": "All REG/SB/TUBE/EXH meshes versus approved shell, FP meshes, neck/yoke/weight collections and Comms meshes; Comms versus FP and lower hardware; microphone lead versus microphone housing; defog tube/feed versus FP; bent tube versus all other breathing hardware; lateral regulator controls and lower tube connector versus Quad exhaust parts; side block versus all regulators and exhaust parts.",
+  "surface_contacts": [
+    {
+      "pair": [
+        "Comms_microphone_internal_lead",
+        "Microphone_515-029"
+      ],
+      "intersecting_triangle_pairs": 28,
+      "expected_reason": "microphone lead seated in the microphone housing"
+    },
+    {
+      "pair": [
+        "EXH_Water dump body_550-063",
+        "SL17B_YellowShell_Study"
+      ],
+      "intersecting_triangle_pairs": 154,
+      "expected_reason": "water dump body through lower service bore"
+    },
+    {
+      "pair": [
+        "EXH_Whisker_510-786",
+        "FP_WhiskerMountFlange_Starboard"
+      ],
+      "intersecting_triangle_pairs": 52,
+      "expected_reason": "junction between the two meshes of the same rubber wing"
+    },
+    {
+      "pair": [
+        "EXH_Whisker_510-787",
+        "FP_WhiskerMountFlange_Port"
+      ],
+      "intersecting_triangle_pairs": 54,
+      "expected_reason": "junction between the two meshes of the same rubber wing"
+    },
+    {
+      "pair": [
+        "REG_Body_505-027",
+        "SL17B_YellowShell_Study"
+      ],
+      "intersecting_triangle_pairs": 429,
+      "expected_reason": "lower inlet collar at regulator service bore"
+    },
+    {
+      "pair": [
+        "REG_Mount_550-038",
+        "SL17B_YellowShell_Study"
+      ],
+      "intersecting_triangle_pairs": 556,
+      "expected_reason": "regulator mounting shoulder at existing service bore"
+    },
+    {
+      "pair": [
+        "REG_Shell gasket",
+        "SL17B_YellowShell_Study"
+      ],
+      "intersecting_triangle_pairs": 402,
+      "expected_reason": "regulator gasket at forward shell seat"
+    },
+    {
+      "pair": [
+        "SB_Mounting boss",
+        "SL17B_YellowShell_Study"
+      ],
+      "intersecting_triangle_pairs": 173,
+      "expected_reason": "side-block boss on shell mounting surface"
+    },
+    {
+      "pair": [
+        "TUBE_Bent supply_555-155",
+        "TUBE_Regulator ferrule"
+      ],
+      "intersecting_triangle_pairs": 92,
+      "expected_reason": "supply tube seated inside its terminal ferrule"
+    },
+    {
+      "pair": [
+        "TUBE_Bent supply_555-155",
+        "TUBE_Side block ferrule"
+      ],
+      "intersecting_triangle_pairs": 112,
+      "expected_reason": "supply tube seated inside its terminal ferrule"
+    }
+  ],
+  "unexpected_contacts": [],
+  "tube": {
+    "cross_sections": 57,
+    "station_centres_hidden_behind_wing_beyond_tube_radius": 0,
+    "observer_unit_vector": [
+      -0.6595727569099021,
+      -0.7080707537415125,
+      0.2521895835243743
+    ],
+    "end_cap_centres_world_m": [
+      [
+        -0.1484432250726968,
+        -0.10616556101012975,
+        0.1479713600128889
+      ],
+      [
+        -0.06100000347942114,
+        -0.1726112473406829,
+        0.08526026213075966
+      ]
+    ],
+    "minimum_centre_distance_to_wing_less_tube_radius_mm": 13.00954241757204
+  },
+  "ferrule_joints": [
+    {
+      "pair": [
+        "TUBE_Bent supply_555-155",
+        "TUBE_Side block ferrule"
+      ],
+      "intersecting_triangle_pairs": 112,
+      "minimum_sampled_spacing_mm": 0.0
+    },
+    {
+      "pair": [
+        "TUBE_Bent supply_555-155",
+        "TUBE_Regulator ferrule"
+      ],
+      "intersecting_triangle_pairs": 92,
+      "minimum_sampled_spacing_mm": 0.0
+    }
+  ],
+  "wing_interfaces": {
+    "Port": {
+      "plate_view": {
+        "outward_face_samples": 420,
+        "covered_outward_area_fraction": 0.0,
+        "max_wing_overhang_mm": 0.0
+      },
+      "rubber_joint": {
+        "pair": [
+          "EXH_Whisker_510-787",
+          "FP_WhiskerMountFlange_Port"
+        ],
+        "intersecting_triangle_pairs": 54,
+        "minimum_sampled_spacing_mm": 0.0
+      },
+      "metal_to_rubber": {
+        "pair": [
+          "FP_KidneyPlate_540-015_Port",
+          "FP_WhiskerMountFlange_Port"
+        ],
+        "intersecting_triangle_pairs": 0,
+        "minimum_sampled_spacing_mm": 0.03261605525040068
+      },
+      "wing_to_tube": {
+        "pair": [
+          "EXH_Whisker_510-787",
+          "TUBE_Bent supply_555-155"
+        ],
+        "intersecting_triangle_pairs": 0,
+        "minimum_sampled_spacing_mm": 91.04939550161362
+      }
+    },
+    "Starboard": {
+      "plate_view": {
+        "outward_face_samples": 420,
+        "covered_outward_area_fraction": 0.0,
+        "max_wing_overhang_mm": 0.0
+      },
+      "rubber_joint": {
+        "pair": [
+          "EXH_Whisker_510-786",
+          "FP_WhiskerMountFlange_Starboard"
+        ],
+        "intersecting_triangle_pairs": 52,
+        "minimum_sampled_spacing_mm": 0.0
+      },
+      "metal_to_rubber": {
+        "pair": [
+          "FP_KidneyPlate_540-015_Starboard",
+          "FP_WhiskerMountFlange_Starboard"
+        ],
+        "intersecting_triangle_pairs": 0,
+        "minimum_sampled_spacing_mm": 0.03261967867729254
+      },
+      "wing_to_tube": {
+        "pair": [
+          "EXH_Whisker_510-786",
+          "TUBE_Bent supply_555-155"
+        ],
+        "intersecting_triangle_pairs": 0,
+        "minimum_sampled_spacing_mm": 13.248640112578869
+      }
+    }
+  },
+  "air_train_contacts": {
+    "AirTrain_545-016_perforated_arc": {
+      "lens": 0,
+      "gasket": 0,
+      "retainer": 0
+    },
+    "AirTrain_starboard_feed_shoulder": {
+      "lens": 0,
+      "gasket": 0,
+      "retainer": 0
+    }
+  },
+  "comms_mount_seats": [
+    {
+      "pair": [
+        "CommsPost_1_base",
+        "SL17B_YellowShell_Study"
+      ],
+      "intersecting_triangle_pairs": 101,
+      "minimum_sampled_spacing_mm": 0.0
+    },
+    {
+      "pair": [
+        "CommsPost_2_base",
+        "SL17B_YellowShell_Study"
+      ],
+      "intersecting_triangle_pairs": 120,
+      "minimum_sampled_spacing_mm": 0.0
+    },
+    {
+      "pair": [
+        "Comms_unused_MWPC_550-043_plug",
+        "SL17B_YellowShell_Study"
+      ],
+      "intersecting_triangle_pairs": 159,
+      "minimum_sampled_spacing_mm": 0.0
+    }
+  ],
+  "microphone_lead_joint": {
+    "pair": [
+      "Comms_microphone_internal_lead",
+      "Microphone_515-029"
+    ],
+    "intersecting_triangle_pairs": 28,
+    "minimum_sampled_spacing_mm": 0.0,
+    "end_cap_depth_ranges_mm_positive_inside": [
+      [
+        -36.0092579077671,
+        -17.14294179003617
+      ],
+      [
+        0.12850304424150139,
+        1.7336403315671434
+      ]
+    ],
+    "one_end_seated": true
+  },
+  "notes": "World-space evaluated triangle BVH. Counts are triangle pairs, not distinct defects. A crossing gives zero surface distance; otherwise distance is the smaller sampled vertex-to-opposing-surface distance. A fully enclosed smaller component does not need to produce surface crossings. Kidney coverage uses an orthographic front ray at each outward triangle centroid, area weighted, with 0.05 mm tolerance. Tube visibility is specific to the reported front-starboard direction. These are display assembly measurements."
+}

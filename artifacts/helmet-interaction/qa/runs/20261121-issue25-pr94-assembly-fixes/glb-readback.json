@@ -1,0 +1,134 @@
+{
+  "source_file": "SuperLite17B-R2-assembled.blend",
+  "source_sha256": "336486c96cc3accf37770a47a77b651462706258592aeb77fc5ea1ca4e74ce99",
+  "glb_sha256": "82de680095b45aa24b45b523510c244488394d7f84c6f32b9674a6295885e4bb",
+  "glb_bytes": 7640732,
+  "blender": "4.5.14 LTS",
+  "readback_mode": "existing_file",
+  "empty_scene_import": true,
+  "mesh_names_verified": 173,
+  "triangles_verified": 265244,
+  "all_source_meshes_recovered": true,
+  "all_source_uv_channels_recovered": true,
+  "oriented_triangles_verified_by_material": 265244,
+  "corner_uv_pairs_verified": 795732,
+  "max_matched_corner_uv_component_error": 1.7881393432617188e-07,
+  "corner_uv_tolerance": 1e-06,
+  "source_meshes_without_uv": [],
+  "bounds_max_axis_difference_m": 0.0,
+  "max_bidirectional_position_distance_m": 0.0,
+  "geometry_tolerance_m": 1e-06,
+  "materials_verified": [
+    "17B | Black neoprene",
+    "17B | Blue inner neck fabric",
+    "17B | Charcoal moulded urethane",
+    "17B | Neck hardware, satin stainless",
+    "17B | Polished cast brass",
+    "17B | Woven restraint tape",
+    "17B • Comms brass",
+    "17B • Comms cable jacket",
+    "17B • Cushion binding",
+    "17B • Earphone face",
+    "17B • Head cushion blue nylon",
+    "17B • Inner rubber",
+    "17B • Inside shell finish",
+    "17B • Microphone rubber",
+    "17B • Post insulation",
+    "17B • Red terminal sleeve",
+    "17B • White terminal sleeve",
+    "17B • Yellow gelcoat",
+    "Air • black handwheel",
+    "Air • blue transport caps",
+    "Air • brass",
+    "Air • dark recess",
+    "Air • machined steel",
+    "Air • moulded rubber",
+    "Air • polished chrome",
+    "Air • purge printed marking",
+    "Air • sideblock printed marking",
+    "Handle • polished warm brass",
+    "Port • clear polycarbonate",
+    "Port • graphite elastomer",
+    "Port • machined fasteners",
+    "Port • polished chrome",
+    "Visor • formed dark ABS"
+  ],
+  "lens": {
+    "material": "Port • clear polycarbonate",
+    "transmission": 1,
+    "ior": 1.5859999656677246
+  },
+  "shell_finishes": {
+    "basis": "Saved Inside_wall face-corner attribute: 0 exterior, 1 interior",
+    "source_polygon_counts": {
+      "17B • Yellow gelcoat": 19409,
+      "17B • Inside shell finish": 18118
+    },
+    "expected_triangle_partition": {
+      "17B • Yellow gelcoat": {
+        "triangles": 37938,
+        "triangle_world_sha256_1e_7m": "efe5282fbc016abaa6e7b93562f48dc2e76ade570287f10224753296b9d2fa76"
+      },
+      "17B • Inside shell finish": {
+        "triangles": 35556,
+        "triangle_world_sha256_1e_7m": "78fc38e0453141e04448d1eff48a513ff466d083f53b3024fd7681c3d6fdefa0"
+      }
+    },
+    "exterior_and_interior_pbr": [
+      {
+        "material": "17B • Yellow gelcoat",
+        "linear_rgb": [
+          0.9900000095367432,
+          0.6200000047683716,
+          0.00800000037997961
+        ],
+        "roughness": 0.28999999165534973
+      },
+      {
+        "material": "17B • Inside shell finish",
+        "linear_rgb": [
+          0.09399999678134918,
+          0.07800000160932541,
+          0.05900000035762787
+        ],
+        "roughness": 0.6200000047683716
+      }
+    ]
+  },
+  "shell_face_partition_verified_on_readback": true,
+  "packed_base_color_textures_verified_after_import": {
+    "Air • purge printed marking": {
+      "dimensions": [
+        512,
+        512
+      ],
+      "decoded_linear_rgba_sha256_uint16": "45b253a47d2d61f2e35b233476a82b2f04a2d5b06b1ade9bbab4aa9dc993ab65"
+    },
+    "Air • sideblock printed marking": {
+      "dimensions": [
+        768,
+        320
+      ],
+      "decoded_linear_rgba_sha256_uint16": "35d2692153f4857921a8bd302ecef3153a170bea6e97ea052a62e4aef4401076"
+    }
+  },
+  "base_color_identity_transform_verified_on_texcoord": {
+    "Air • purge printed marking": 0,
+    "Air • sideblock printed marking": 0
+  },
+  "bevels_applied_in_export_copy": {
+    "SB_Emergency valve body": [
+      "Cast edge radius"
+    ],
+    "SB_Identification plate": [
+      "Cast edge radius"
+    ]
+  },
+  "procedural_bump_not_baked": [
+    "17B | Black neoprene",
+    "17B | Blue inner neck fabric",
+    "17B | Woven restraint tape"
+  ],
+  "limits": "Display export; viewing software controls refraction and lighting. Procedural bump remains in .blend.",
+  "glb_file": "SuperLite17B-R2-assembled.glb"
+}

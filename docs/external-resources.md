@@ -120,3 +120,5 @@ Ereshkigal1224 负责，Codex 辅助核查 [Kirby Morgan 产品页](https://www.
 ## 2026-11-21 · SuperLite 17B R2 整盔装配
 
 Codex 在用户认可的 R2 裸壳上制作独立展品，按 Kirby Morgan 的 500-010 产品页、整盔分解图 #241108001 和面窗、提手、SuperFlow、弯管、颈夹、通信及头垫手册核对部件身份与连接。铭牌和按钮纹理由本项目自行排版并打包，参考照片、视频分镜和第三方模型未纳入资产。具体资料、版本选择、展示估算和几何／GLB 回读见[整盔装配记录](activity/2026-11-21-superlite-r2-assembly.md)。
+
+本次 PR #94 复审中，Codex 依据第 1 项 520-054 和厂家的 1998 年材料变更公告补建深色 ABS 内眉遮片，修正麦克风引线，并从保存网格生成原创装配剖面。材质与部件号可追溯，厚度、曲率及内部座面为展示估算。[厂家分解图](https://www.kirbymorgan.com/sites/default/files/2025-01/sl-17b-blowapart-241108001.pdf) · [材料公告 1/1998](https://www.kirbymorgan.com/sites/default/files/Change_Product_01_98.pdf) · [本轮修复及核查范围](activity/2026-11-21-pr94-superlite-assembly-review-fixes.md)

@@ -1,0 +1,5314 @@
+{
+  "blender": "4.5.14 LTS",
+  "shell_file": "SuperLite17B-yellow-shell-R2.blend",
+  "shell_sha256": "800f5175684cf9a31f83344bb03c16af2a079f7e77391a27ca1b17bdbccf777e",
+  "assembly_file": "SuperLite17B-R2-assembled.blend",
+  "assembly_sha256": "336486c96cc3accf37770a47a77b651462706258592aeb77fc5ea1ca4e74ce99",
+  "passed": true,
+  "checks": {
+    "opaque_visor_fitted_inside_brow": true,
+    "approved_shell_identical": true,
+    "all_expected_subsystems_present": true,
+    "retainer_whisker_spacer_and_plug_counts": true,
+    "positive_lens_transmission_and_polycarbonate_ior": true,
+    "all_physical_parts_have_finite_closed_consistent_geometry": true,
+    "marking_carriers_closed_with_embedded_prints": true,
+    "only_display_model_objects_in_file": true,
+    "no_external_libraries_or_unpacked_assets": true,
+    "saved_source_files_unchanged": true
+  },
+  "counts": {
+    "objects": 173,
+    "evaluated_geometry_objects": 173,
+    "native_types": {
+      "MESH": 173
+    },
+    "collections": {
+      "17B | Neck, restraint and ballast": 44,
+      "17B • Cushion, airway and communications": 34,
+      "05  •  Quad exhaust and whiskers": 9,
+      "03  •  SuperFlow B and water dump": 17,
+      "Scene Collection": 37,
+      "04  •  Side block and supply": 32
+    },
+    "evaluated_world_triangles": 265244,
+    "assigned_materials": 32
+  },
+  "shell_signature_before": {
+    "local_vertices": "58b4cab56d4ea7cc14dacd266bee2fc4047b93339e378e462018c096bb2679c9",
+    "world_vertices": "fcbf19ea2067b24bf67f52593b9155c64278c12b9bce0310470b632039906b17",
+    "matrix_world": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertex_count": 36737,
+    "edges": "6c8e9322f54b813c3541e7bd7c4bd2c90327d2f90ce752bce3907b377914a72e",
+    "corner_vertices": "47547ea06c8f2a6abccd6fa4f437142a18443cd15ed9fba7ee87ac4f9d286901",
+    "corner_edges": "e59c6eaa1c5ee5a1bc0d5c1271a8e896c8f9ce046537c858f802320ddd8a18b8",
+    "face_sizes": "89eaddf5136a4f81a27131bf517cc079feefd706a9c93cabbb0f9648ee8e7fcf",
+    "uv": {
+      "ShellUV": "e1e2968f2af52e9e2835dd1b1c3a3c33473a321b203daf6ef55cc4a2f859930f"
+    },
+    "inner_outer_finish": [
+      "CORNER",
+      "BYTE_COLOR",
+      "75c49146e40bfc46e7d10e86a160617428fa0d4b7e6f77d90a841013de20f80b"
+    ],
+    "face_smoothing": "bdd2b28fb80f4bd449cd10818175658f227f06ff77a3cfd93f0f1b1ebe3ecd2a",
+    "sharp_edges": "33a04933e4ce767feb6d5adf4541837c2aff0d2fc0527c2003ff3f6c19afb8ac",
+    "face_materials": "7578e78a152e656f954b61a9480b425e4220819c19824b416d16d13041dffa80",
+    "shader_graphs": "ff752180bf4e9850de908df92746de1527b6dcddf93e083f815af50231368d21",
+    "named_landmarks_and_weights": "ea3dcebded395a2cd32cc170291f27bd7fbf8cf489716b33d23820acacb87b7f",
+    "modifier_stack": []
+  },
+  "shell_signature_after": {
+    "local_vertices": "58b4cab56d4ea7cc14dacd266bee2fc4047b93339e378e462018c096bb2679c9",
+    "world_vertices": "fcbf19ea2067b24bf67f52593b9155c64278c12b9bce0310470b632039906b17",
+    "matrix_world": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "vertex_count": 36737,
+    "edges": "6c8e9322f54b813c3541e7bd7c4bd2c90327d2f90ce752bce3907b377914a72e",
+    "corner_vertices": "47547ea06c8f2a6abccd6fa4f437142a18443cd15ed9fba7ee87ac4f9d286901",
+    "corner_edges": "e59c6eaa1c5ee5a1bc0d5c1271a8e896c8f9ce046537c858f802320ddd8a18b8",
+    "face_sizes": "89eaddf5136a4f81a27131bf517cc079feefd706a9c93cabbb0f9648ee8e7fcf",
+    "uv": {
+      "ShellUV": "e1e2968f2af52e9e2835dd1b1c3a3c33473a321b203daf6ef55cc4a2f859930f"
+    },
+    "inner_outer_finish": [
+      "CORNER",
+      "BYTE_COLOR",
+      "75c49146e40bfc46e7d10e86a160617428fa0d4b7e6f77d90a841013de20f80b"
+    ],
+    "face_smoothing": "bdd2b28fb80f4bd449cd10818175658f227f06ff77a3cfd93f0f1b1ebe3ecd2a",
+    "sharp_edges": "33a04933e4ce767feb6d5adf4541837c2aff0d2fc0527c2003ff3f6c19afb8ac",
+    "face_materials": "7578e78a152e656f954b61a9480b425e4220819c19824b416d16d13041dffa80",
+    "shader_graphs": "ff752180bf4e9850de908df92746de1527b6dcddf93e083f815af50231368d21",
+    "named_landmarks_and_weights": "ea3dcebded395a2cd32cc170291f27bd7fbf8cf489716b33d23820acacb87b7f",
+    "modifier_stack": []
+  },
+  "shell_signature_differences": [],
+  "subsystems": {
+    "window_and_lifting_handle": [
+      "Visor_520-054",
+      "FP_PortRetainer_560-070",
+      "FP_Lens_520-004",
+      "FP_PortSeal_510-260",
+      "FP_BrassHandle_560-014",
+      "FP_NoseGuide_550-116",
+      "FP_NoseBlockKnob_550-062"
+    ],
+    "regulator_and_water_dump": [
+      "REG_Body_505-027",
+      "REG_Chrome cover",
+      "REG_Purge button",
+      "EXH_Water dump body_550-063"
+    ],
+    "starboard_sideblock_and_bent_tube": [
+      "SB_Chromed main casting_505-024",
+      "SB_Steady flow_520-524",
+      "SB_Emergency valve_520-525",
+      "SB_Nonreturn_555-195.valve",
+      "TUBE_Bent supply_555-155",
+      "TUBE_Regulator end nut",
+      "TUBE_Side block end nut"
+    ],
+    "quad_exhaust": [
+      "EXH_Quad main body_510-760",
+      "EXH_Whisker_510-786",
+      "EXH_Whisker_510-787",
+      "FP_KidneyPlate_540-015_Port",
+      "FP_KidneyPlate_540-015_Starboard"
+    ],
+    "weights_and_neck": [
+      "Continuous rear weight | 560-005",
+      "Port cast weight | 560-019",
+      "Starboard cast weight | 560-023",
+      "Bottom O-ring | 510-446",
+      "Stainless split neck clamp | 505-055",
+      "Drawstring neck dam | 510-533",
+      "Urethane yoke | 520-117",
+      "Rear hinge mounting tab | 540-157",
+      "Flanged alignment sleeve | 550-339",
+      "Rear yoke transverse hinge bolt | 530-034",
+      "Pull-pin latch catch | 560-051",
+      "Yoke strap | 505-134",
+      "Internal chin strap | 505-130"
+    ],
+    "cushion_air_train_and_oral_nasal": [
+      "Cushion_Right_ear_pocket",
+      "Cushion_Left_ear_pocket",
+      "Cushion_center_top",
+      "Cushion_rear_neck_roll",
+      "LVON_510-724_hollow_mask",
+      "AirTrain_545-016_perforated_arc"
+    ],
+    "two_post_communications": [
+      "CommsPost_1_515-035",
+      "CommsPost_2_515-035",
+      "Comms_unused_MWPC_550-043_plug",
+      "Microphone_515-029",
+      "Earphone_Left_speaker_face",
+      "Earphone_Right_speaker_face"
+    ]
+  },
+  "missing_parts": {
+    "window_and_lifting_handle": [],
+    "regulator_and_water_dump": [],
+    "starboard_sideblock_and_bent_tube": [],
+    "quad_exhaust": [],
+    "weights_and_neck": [],
+    "cushion_air_train_and_oral_nasal": [],
+    "two_post_communications": []
+  },
+  "faceport_fastener_counts": {
+    "FP_RetainerScrew_": 11,
+    "FP_WhiskerScrew_": 4,
+    "FP_PortPlug_530-052_": 2,
+    "FP_WhiskerSpacer_550-061_": 4
+  },
+  "visor_fit": {
+    "passed": true,
+    "checks": {
+      "dark_opaque_finish": true,
+      "curved_forehead_insert": true,
+      "wholly_inside_brow": true,
+      "rear_tongue_seated": true,
+      "no_inter_part_triangle_crossings": true,
+      "clear_central_sight_lines": true
+    },
+    "world_bounds_m": [
+      [
+        -0.0799880251288414,
+        -0.10400000214576721,
+        0.21465200185775757
+      ],
+      [
+        0.0799880251288414,
+        -0.03400000184774399,
+        0.2749335467815399
+      ]
+    ],
+    "brow_section_lower_heights_m": [
+      0.22286631166934967,
+      0.2334519922733307,
+      0.22286656498908997
+    ],
+    "brow_section_vertical_thicknesses_m": [
+      0.0009202659130096436,
+      0.0009200125932693481,
+      0.0009197592735290527
+    ],
+    "rear_seat_width_within_0_25_mm_m": 0.08007445186376572,
+    "intersecting_objects": [],
+    "diagnostic_eye_to_lens_rays": 1014,
+    "rays_blocked_by_visor": 0
+  },
+  "lens_material": "Port • clear polycarbonate",
+  "lens_principled_settings": {
+    "Transmission Weight": 1.0,
+    "IOR": 1.5859999656677246,
+    "Roughness": 0.0729999989271164
+  },
+  "external_assets": [],
+  "unused_file_objects": [],
+  "unexpected_scene_objects": [],
+  "hidden_objects": [],
+  "per_object_problems_including_lettering": {},
+  "physical_geometry_problems": {},
+  "marking_problems": {},
+  "marking_images": {
+    "REG_Purge marking": [
+      {
+        "image": "SL17B original print • purge",
+        "size": [
+          512,
+          512
+        ],
+        "packed": true,
+        "sha256": "86e4b7719f09352b53bd189374dd747140c5a7cbb45856ba63e6ad22934009b4"
+      }
+    ],
+    "SB_Model designation": [
+      {
+        "image": "SL17B original print • sideblock",
+        "size": [
+          768,
+          320
+        ],
+        "packed": true,
+        "sha256": "00f194aeb81d3f2241fd830ee639f0e1cfc5645bbc70f7807141bee5b6d4cca8"
+      }
+    ]
+  },
+  "per_object_geometry": {
+    "Adjustable clamp clevis | 505-055": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 222,
+      "edges": 438,
+      "polygons": 218,
+      "triangles": 440,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.5120772782383924e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "AirTrain_545-016_perforated_arc": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 1660,
+      "edges": 3097,
+      "polygons": 1439,
+      "triangles": 3316,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 7.635986396984975e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Inner rubber"
+      ]
+    },
+    "AirTrain_starboard_feed_shoulder": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 128,
+      "edges": 224,
+      "polygons": 98,
+      "triangles": 252,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 6.065131606566444e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Post insulation"
+      ]
+    },
+    "Alignment screw | 530-090": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 200,
+      "edges": 360,
+      "polygons": 162,
+      "triangles": 396,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.166482653650279e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Bail engaging yoke catch": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 112,
+      "edges": 196,
+      "polygons": 86,
+      "triangles": 220,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.7641104337558653e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Bottom O-ring | 510-446": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 1920,
+      "edges": 3840,
+      "polygons": 1920,
+      "triangles": 3840,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.454862287704864e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Black neoprene"
+      ]
+    },
+    "Chin adjuster centre bar": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 80,
+      "edges": 140,
+      "polygons": 62,
+      "triangles": 156,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 6.206468133458926e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Charcoal moulded urethane"
+      ]
+    },
+    "Clamp lever pivot 149": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 120,
+      "edges": 200,
+      "polygons": 82,
+      "triangles": 236,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 6.227351149179042e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Clamp lever pivot 186": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 120,
+      "edges": 200,
+      "polygons": 82,
+      "triangles": 236,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 6.227342806293141e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Clamp lever pivot 204": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 120,
+      "edges": 200,
+      "polygons": 82,
+      "triangles": 236,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 6.227345605602597e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "CommsPost_1_515-035": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 274,
+      "edges": 486,
+      "polygons": 212,
+      "triangles": 548,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 8.737485994574534e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Post insulation"
+      ]
+    },
+    "CommsPost_1_base": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 128,
+      "edges": 224,
+      "polygons": 98,
+      "triangles": 252,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.5670567645385847e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Post insulation"
+      ]
+    },
+    "CommsPost_1_inner_nut": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 18,
+      "edges": 30,
+      "polygons": 14,
+      "triangles": 32,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.1174564636851083e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Comms brass"
+      ]
+    },
+    "CommsPost_1_inner_washer": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 64,
+      "edges": 96,
+      "polygons": 34,
+      "triangles": 124,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 8.25622686768727e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Comms brass"
+      ]
+    },
+    "CommsPost_2_515-035": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 272,
+      "edges": 484,
+      "polygons": 212,
+      "triangles": 544,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 8.737556840419798e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Post insulation"
+      ]
+    },
+    "CommsPost_2_base": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 128,
+      "edges": 224,
+      "polygons": 98,
+      "triangles": 252,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.567058390106631e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Post insulation"
+      ]
+    },
+    "CommsPost_2_inner_nut": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 18,
+      "edges": 30,
+      "polygons": 14,
+      "triangles": 32,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.1174527322206873e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Comms brass"
+      ]
+    },
+    "CommsPost_2_inner_washer": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 64,
+      "edges": 96,
+      "polygons": 34,
+      "triangles": 124,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 8.256263312599355e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Comms brass"
+      ]
+    },
+    "Comms_Left_conductor_1": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 156,
+      "edges": 300,
+      "polygons": 146,
+      "triangles": 308,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 6.023630121778148e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Red terminal sleeve"
+      ]
+    },
+    "Comms_Left_conductor_2": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 156,
+      "edges": 300,
+      "polygons": 146,
+      "triangles": 308,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.725262929647371e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Inner rubber"
+      ]
+    },
+    "Comms_Microphone_conductor_1": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 156,
+      "edges": 300,
+      "polygons": 146,
+      "triangles": 308,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.220742565798022e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Red terminal sleeve"
+      ]
+    },
+    "Comms_Microphone_conductor_2": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 156,
+      "edges": 300,
+      "polygons": 146,
+      "triangles": 308,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.7249789763402776e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • White terminal sleeve"
+      ]
+    },
+    "Comms_Right_conductor_1": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 156,
+      "edges": 300,
+      "polygons": 146,
+      "triangles": 308,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.962203561350392e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Red terminal sleeve"
+      ]
+    },
+    "Comms_Right_conductor_2": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 156,
+      "edges": 300,
+      "polygons": 146,
+      "triangles": 308,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.5721309190668273e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Inner rubber"
+      ]
+    },
+    "Comms_left_ear_internal_lead": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 660,
+      "edges": 1308,
+      "polygons": 650,
+      "triangles": 1316,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.9274785757516513e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Comms cable jacket"
+      ]
+    },
+    "Comms_microphone_internal_lead": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 156,
+      "edges": 300,
+      "polygons": 146,
+      "triangles": 308,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.594809646194733e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Comms cable jacket"
+      ]
+    },
+    "Comms_right_ear_internal_lead": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 228,
+      "edges": 444,
+      "polygons": 218,
+      "triangles": 452,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 5.208327910613978e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Comms cable jacket"
+      ]
+    },
+    "Comms_terminal_lug_1": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 96,
+      "edges": 192,
+      "polygons": 96,
+      "triangles": 192,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.6082510600720357e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Comms brass"
+      ]
+    },
+    "Comms_terminal_lug_2": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 96,
+      "edges": 192,
+      "polygons": 96,
+      "triangles": 192,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.6082872628635135e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Comms brass"
+      ]
+    },
+    "Comms_unused_MWPC_550-043_plug": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 24,
+      "edges": 42,
+      "polygons": 20,
+      "triangles": 44,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.3842739787269553e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Post insulation"
+      ]
+    },
+    "Continuous rear weight | 560-005": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 2754,
+      "edges": 5504,
+      "polygons": 2752,
+      "triangles": 5504,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 0.00010220157682931154,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Polished cast brass"
+      ]
+    },
+    "Cushion_Left_ear_pocket": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 1520,
+      "edges": 3040,
+      "polygons": 1520,
+      "triangles": 3040,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 0.0002342819662666227,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Head cushion blue nylon",
+        "17B • Cushion binding"
+      ]
+    },
+    "Cushion_Right_ear_pocket": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 1520,
+      "edges": 3040,
+      "polygons": 1520,
+      "triangles": 3040,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 0.0002230191190068979,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Head cushion blue nylon",
+        "17B • Cushion binding"
+      ]
+    },
+    "Cushion_center_top": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 576,
+      "edges": 1080,
+      "polygons": 506,
+      "triangles": 1148,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 0.00023494393228603745,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Head cushion blue nylon",
+        "17B • Cushion binding"
+      ]
+    },
+    "Cushion_rear_neck_roll": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 1696,
+      "edges": 3360,
+      "polygons": 1666,
+      "triangles": 3388,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 0.00010319067968507867,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Head cushion blue nylon"
+      ]
+    },
+    "Drawstring neck dam | 510-533": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 3680,
+      "edges": 7360,
+      "polygons": 3680,
+      "triangles": 7360,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 9.159561631986616e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Black neoprene",
+        "17B | Blue inner neck fabric"
+      ]
+    },
+    "EXH_Clamp screw 510-786": {
+      "type": "MESH",
+      "collections": [
+        "05  •  Quad exhaust and whiskers"
+      ],
+      "role": "physical geometry",
+      "vertices": 72,
+      "edges": 120,
+      "polygons": 50,
+      "triangles": 140,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.7719801345178714e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • brass"
+      ]
+    },
+    "EXH_Clamp screw 510-787": {
+      "type": "MESH",
+      "collections": [
+        "05  •  Quad exhaust and whiskers"
+      ],
+      "role": "physical geometry",
+      "vertices": 72,
+      "edges": 120,
+      "polygons": 50,
+      "triangles": 140,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.7719801345178722e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • brass"
+      ]
+    },
+    "EXH_Dump to plenum": {
+      "type": "MESH",
+      "collections": [
+        "05  •  Quad exhaust and whiskers"
+      ],
+      "role": "physical geometry",
+      "vertices": 288,
+      "edges": 544,
+      "polygons": 258,
+      "triangles": 572,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.331043247424029e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • moulded rubber"
+      ]
+    },
+    "EXH_Quad main body_510-760": {
+      "type": "MESH",
+      "collections": [
+        "05  •  Quad exhaust and whiskers"
+      ],
+      "role": "physical geometry",
+      "vertices": 448,
+      "edges": 832,
+      "polygons": 386,
+      "triangles": 892,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 6.131920761541068e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • moulded rubber"
+      ]
+    },
+    "EXH_Regulator exhaust neck": {
+      "type": "MESH",
+      "collections": [
+        "05  •  Quad exhaust and whiskers"
+      ],
+      "role": "physical geometry",
+      "vertices": 544,
+      "edges": 1056,
+      "polygons": 514,
+      "triangles": 1084,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.1375239162434352e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • moulded rubber"
+      ]
+    },
+    "EXH_Water dump adapter_560-530": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 256,
+      "edges": 448,
+      "polygons": 194,
+      "triangles": 508,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 5.9149813709294155e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "EXH_Water dump body_550-063": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 256,
+      "edges": 448,
+      "polygons": 194,
+      "triangles": 508,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 6.781110521095251e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • moulded rubber"
+      ]
+    },
+    "EXH_Whisker clamp 510-786": {
+      "type": "MESH",
+      "collections": [
+        "05  •  Quad exhaust and whiskers"
+      ],
+      "role": "physical geometry",
+      "vertices": 208,
+      "edges": 364,
+      "polygons": 158,
+      "triangles": 412,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.859367752874802e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • black handwheel"
+      ]
+    },
+    "EXH_Whisker clamp 510-787": {
+      "type": "MESH",
+      "collections": [
+        "05  •  Quad exhaust and whiskers"
+      ],
+      "role": "physical geometry",
+      "vertices": 208,
+      "edges": 364,
+      "polygons": 158,
+      "triangles": 412,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.859367752874801e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • black handwheel"
+      ]
+    },
+    "EXH_Whisker_510-786": {
+      "type": "MESH",
+      "collections": [
+        "05  •  Quad exhaust and whiskers"
+      ],
+      "role": "physical geometry",
+      "vertices": 2552,
+      "edges": 5104,
+      "polygons": 2552,
+      "triangles": 5104,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.6505268777969076e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • moulded rubber"
+      ]
+    },
+    "EXH_Whisker_510-787": {
+      "type": "MESH",
+      "collections": [
+        "05  •  Quad exhaust and whiskers"
+      ],
+      "role": "physical geometry",
+      "vertices": 2552,
+      "edges": 5104,
+      "polygons": 2552,
+      "triangles": 5104,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.660785944948333e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • moulded rubber"
+      ]
+    },
+    "Earphone_Left_covered_housing": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 336,
+      "edges": 616,
+      "polygons": 282,
+      "triangles": 668,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 6.158046661716145e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Inner rubber"
+      ]
+    },
+    "Earphone_Left_speaker_face": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 1069,
+      "edges": 1714,
+      "polygons": 573,
+      "triangles": 2282,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.3836178710794323e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Earphone face"
+      ]
+    },
+    "Earphone_Right_covered_housing": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 336,
+      "edges": 616,
+      "polygons": 282,
+      "triangles": 668,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 6.158046661716176e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Inner rubber"
+      ]
+    },
+    "Earphone_Right_speaker_face": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 1069,
+      "edges": 1713,
+      "polygons": 572,
+      "triangles": 2282,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.3836178774911638e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Earphone face"
+      ]
+    },
+    "FP_BrassHandle_560-014": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 6460,
+      "edges": 18871,
+      "polygons": 12407,
+      "triangles": 12928,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 5.1526381236406004e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Handle • polished warm brass"
+      ]
+    },
+    "FP_HandleRearScrew_530-070": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 5.221761032319148e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_HandleRearWasher_530-540": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 160,
+      "edges": 320,
+      "polygons": 160,
+      "triangles": 320,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.99401971840591e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_KidneyPlate_540-015_Port": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 607,
+      "edges": 1827,
+      "polygons": 1218,
+      "triangles": 1218,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 9.698908224490551e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • polished chrome"
+      ]
+    },
+    "FP_KidneyPlate_540-015_Starboard": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 607,
+      "edges": 1827,
+      "polygons": 1218,
+      "triangles": 1218,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 9.89185107172764e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • polished chrome"
+      ]
+    },
+    "FP_Lens_520-004": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 5762,
+      "edges": 11680,
+      "polygons": 5920,
+      "triangles": 11520,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.842699834088924e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • clear polycarbonate"
+      ]
+    },
+    "FP_NoseBlockKnob_550-062": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 1010,
+      "edges": 2160,
+      "polygons": 1152,
+      "triangles": 2016,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 7.63253133140963e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_NoseBlockStem_545-015": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 98,
+      "edges": 240,
+      "polygons": 144,
+      "triangles": 192,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.3154736400688352e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • polished chrome"
+      ]
+    },
+    "FP_NoseGuide_550-116": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 194,
+      "edges": 432,
+      "polygons": 240,
+      "triangles": 384,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.0304242844367036e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • polished chrome"
+      ]
+    },
+    "FP_NosePackingNut_555-180": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 26,
+      "edges": 54,
+      "polygons": 30,
+      "triangles": 48,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.753389667186102e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_PortPlug_530-052_1": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 5.6419177235775324e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_PortPlug_530-052_2": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 5.6419166879399264e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_PortRetainer_560-070": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 6023,
+      "edges": 15430,
+      "polygons": 9371,
+      "triangles": 12118,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.901075291752614e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • polished chrome"
+      ]
+    },
+    "FP_PortSeal_510-260": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 1920,
+      "edges": 3840,
+      "polygons": 1920,
+      "triangles": 3840,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.4080387869349424e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • graphite elastomer"
+      ]
+    },
+    "FP_RetainerScrew_05": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.2162349786169692e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_RetainerScrew_06": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.196800733885058e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_RetainerScrew_07": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 8.93147172130228e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_RetainerScrew_08": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 9.154224873221582e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_RetainerScrew_09": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 9.250160118161268e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_RetainerScrew_12": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 7.975400423506696e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_RetainerScrew_14": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 7.972251765063185e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_RetainerScrew_17": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 9.242087451467626e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_RetainerScrew_18": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 9.152200358524188e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_RetainerScrew_19": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 8.930461807921372e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_RetainerScrew_20": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.196809705826702e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_WhiskerMountFlange_Port": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 608,
+      "edges": 1830,
+      "polygons": 1220,
+      "triangles": 1220,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.2587039537433415e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • graphite elastomer"
+      ]
+    },
+    "FP_WhiskerMountFlange_Starboard": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 608,
+      "edges": 1830,
+      "polygons": 1220,
+      "triangles": 1220,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.285814055399399e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • graphite elastomer"
+      ]
+    },
+    "FP_WhiskerScrew_530-045_10": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.2099297373637065e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_WhiskerScrew_530-045_11": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.141387513577736e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_WhiskerScrew_530-045_15": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.1415214214238762e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_WhiskerScrew_530-045_16": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 578,
+      "edges": 1216,
+      "polygons": 640,
+      "triangles": 1152,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.1924035790651134e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_WhiskerSpacer_550-061_10": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 216,
+      "edges": 432,
+      "polygons": 216,
+      "triangles": 432,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.4619456917294135e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_WhiskerSpacer_550-061_11": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 216,
+      "edges": 432,
+      "polygons": 216,
+      "triangles": 432,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.461933570302135e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_WhiskerSpacer_550-061_15": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 216,
+      "edges": 432,
+      "polygons": 216,
+      "triangles": 432,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.461941270005734e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "FP_WhiskerSpacer_550-061_16": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 216,
+      "edges": 432,
+      "polygons": 216,
+      "triangles": 432,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.4619269942008085e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Port • machined fasteners"
+      ]
+    },
+    "Flanged alignment sleeve | 550-339": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 320,
+      "edges": 640,
+      "polygons": 320,
+      "triangles": 640,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 7.254158098724175e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Hinge bolt lock nut | 530-028": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 18,
+      "edges": 30,
+      "polygons": 14,
+      "triangles": 32,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.388484604935068e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Hinge bolt retaining head": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 120,
+      "edges": 200,
+      "polygons": 82,
+      "triangles": 236,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.0380703110797272e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Internal chin strap length adjuster": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 144,
+      "edges": 288,
+      "polygons": 144,
+      "triangles": 288,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.859787818273658e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Charcoal moulded urethane"
+      ]
+    },
+    "Internal chin strap | 505-130": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 584,
+      "edges": 1160,
+      "polygons": 578,
+      "triangles": 1164,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.5379336234200578e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Woven restraint tape"
+      ]
+    },
+    "LVON_510-724_hollow_mask": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 2779,
+      "edges": 5527,
+      "polygons": 2746,
+      "triangles": 5562,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.2316998453884004e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Inner rubber"
+      ]
+    },
+    "Microphone_515-029": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 666,
+      "edges": 1063,
+      "polygons": 399,
+      "triangles": 1328,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.3256993883911363e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Microphone rubber"
+      ]
+    },
+    "NoseBlock_inner_545-015": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 444,
+      "edges": 876,
+      "polygons": 434,
+      "triangles": 884,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.1169139165766677e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Comms brass"
+      ]
+    },
+    "NoseBlock_inner_pad_510-575": {
+      "type": "MESH",
+      "collections": [
+        "17B • Cushion, airway and communications"
+      ],
+      "role": "physical geometry",
+      "vertices": 240,
+      "edges": 432,
+      "polygons": 194,
+      "triangles": 476,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.0270581784707458e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "17B • Inner rubber"
+      ]
+    },
+    "Over-centre clamp lever | 505-055": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 222,
+      "edges": 438,
+      "polygons": 218,
+      "triangles": 440,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.610671793061498e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Port cast weight | 560-019": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 1427,
+      "edges": 2925,
+      "polygons": 1500,
+      "triangles": 2850,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.0596825323302512e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Polished cast brass"
+      ]
+    },
+    "Port chin strap snap": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 144,
+      "edges": 252,
+      "polygons": 110,
+      "triangles": 284,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.356211526594127e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Port inner chin strap snap tab | 545-027": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 200,
+      "edges": 390,
+      "polygons": 192,
+      "triangles": 396,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.7396124691457136e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Port weight and chin-tab retaining screw": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 160,
+      "edges": 288,
+      "polygons": 130,
+      "triangles": 316,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.4272671128127088e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Pull-pin latch catch | 560-051": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 200,
+      "edges": 360,
+      "polygons": 162,
+      "triangles": 396,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.2060672471579624e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Polished cast brass"
+      ]
+    },
+    "REG_Adjustment barrel": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 256,
+      "edges": 448,
+      "polygons": 194,
+      "triangles": 508,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.1776692337204423e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "REG_Adjustment packing": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 24,
+      "edges": 42,
+      "polygons": 20,
+      "triangles": 44,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.685607480438117e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • machined steel"
+      ]
+    },
+    "REG_Body_505-027": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 864,
+      "edges": 1632,
+      "polygons": 770,
+      "triangles": 1724,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 9.623387870375674e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "REG_Chrome cover": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 768,
+      "edges": 1440,
+      "polygons": 674,
+      "triangles": 1532,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.986375483292562e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "REG_Diaphragm band": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 480,
+      "edges": 864,
+      "polygons": 386,
+      "triangles": 956,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.9027315287670366e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • machined steel"
+      ]
+    },
+    "REG_Inlet jam nut": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 24,
+      "edges": 42,
+      "polygons": 20,
+      "triangles": 44,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.3578353406533686e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • machined steel"
+      ]
+    },
+    "REG_Inlet nipple": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 256,
+      "edges": 448,
+      "polygons": 194,
+      "triangles": 508,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 7.138783839352063e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "REG_Knurled adjustment wheel": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 1848,
+      "edges": 3612,
+      "polygons": 1766,
+      "triangles": 3692,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 8.881574682414012e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • machined steel"
+      ]
+    },
+    "REG_Mount_550-038": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 256,
+      "edges": 448,
+      "polygons": 194,
+      "triangles": 508,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 7.296329375953953e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • machined steel"
+      ]
+    },
+    "REG_Purge button": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 320,
+      "edges": 560,
+      "polygons": 242,
+      "triangles": 636,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.025143597671662e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • black handwheel"
+      ]
+    },
+    "REG_Purge marking": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "printed marking carrier",
+      "vertices": 144,
+      "edges": 216,
+      "polygons": 74,
+      "triangles": 284,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 7.916721355202957e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • purge printed marking"
+      ]
+    },
+    "REG_Purge trim": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 320,
+      "edges": 560,
+      "polygons": 242,
+      "triangles": 636,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 6.635506047624913e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • machined steel"
+      ]
+    },
+    "REG_Shell gasket": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 192,
+      "edges": 320,
+      "polygons": 130,
+      "triangles": 380,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.2924916560725686e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • moulded rubber"
+      ]
+    },
+    "Rear clamp hinge barrel": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 112,
+      "edges": 196,
+      "polygons": 86,
+      "triangles": 220,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.3172002329960862e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Rear hinge mounting tab | 540-157": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 320,
+      "edges": 640,
+      "polygons": 320,
+      "triangles": 640,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.6456898793231617e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Rear tab fastener -1 | 530-025": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 84,
+      "edges": 140,
+      "polygons": 58,
+      "triangles": 164,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.911880467943223e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Rear tab fastener 1 | 530-025": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 84,
+      "edges": 140,
+      "polygons": 58,
+      "triangles": 164,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.9118804679430536e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Rear weight interior screw 1 | 530-032": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 240,
+      "edges": 440,
+      "polygons": 202,
+      "triangles": 476,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.882360926347268e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Rear weight interior screw 2 | 530-032": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 240,
+      "edges": 440,
+      "polygons": 202,
+      "triangles": 476,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.8823585425453498e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Rear yoke hinge arm -1 | 560-026": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 320,
+      "edges": 640,
+      "polygons": 320,
+      "triangles": 640,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.1165022580594079e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Polished cast brass"
+      ]
+    },
+    "Rear yoke hinge arm 1 | 560-026": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 320,
+      "edges": 640,
+      "polygons": 320,
+      "triangles": 640,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.1165022580594096e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Polished cast brass"
+      ]
+    },
+    "Rear yoke hinge crossfoot | 560-026": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 112,
+      "edges": 196,
+      "polygons": 86,
+      "triangles": 220,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.8599211946989891e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Polished cast brass"
+      ]
+    },
+    "Rear yoke transverse hinge bolt | 530-034": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 160,
+      "edges": 280,
+      "polygons": 122,
+      "triangles": 316,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.2265417262032782e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "SB_Bent tube socket": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 256,
+      "edges": 448,
+      "polygons": 194,
+      "triangles": 508,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 5.153476000722382e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "SB_Chromed main casting_505-024": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 448,
+      "edges": 832,
+      "polygons": 386,
+      "triangles": 892,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.530399563394566e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "SB_EGS.display dust cap": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 224,
+      "edges": 392,
+      "polygons": 170,
+      "triangles": 444,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.4915335409993645e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • blue transport caps"
+      ]
+    },
+    "SB_EGS.flats": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 24,
+      "edges": 42,
+      "polygons": 20,
+      "triangles": 44,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.144126945891094e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • machined steel"
+      ]
+    },
+    "SB_EGS.seat": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 24,
+      "edges": 42,
+      "polygons": 20,
+      "triangles": 44,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.462829009556043e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • brass"
+      ]
+    },
+    "SB_EGS.thread relief": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 192,
+      "edges": 320,
+      "polygons": 130,
+      "triangles": 380,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.1494302165224163e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • brass"
+      ]
+    },
+    "SB_EGS.valve": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 320,
+      "edges": 576,
+      "polygons": 258,
+      "triangles": 636,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.651852689596688e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • brass"
+      ]
+    },
+    "SB_Emergency valve body": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 152,
+      "edges": 300,
+      "polygons": 150,
+      "triangles": 300,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.07109735445139e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • brass"
+      ]
+    },
+    "SB_Emergency valve_520-525": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 672,
+      "edges": 1248,
+      "polygons": 578,
+      "triangles": 1340,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.1961674583232223e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • black handwheel"
+      ]
+    },
+    "SB_Emergency valve_520-525.hub": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 128,
+      "edges": 192,
+      "polygons": 66,
+      "triangles": 252,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.5336461103851685e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • dark recess"
+      ]
+    },
+    "SB_Emergency valve_520-525.packing": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 24,
+      "edges": 42,
+      "polygons": 20,
+      "triangles": 44,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.392731285644554e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • machined steel"
+      ]
+    },
+    "SB_Emergency valve_520-525.slotted keeper": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 100,
+      "edges": 150,
+      "polygons": 54,
+      "triangles": 192,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.964688268009984e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • machined steel"
+      ]
+    },
+    "SB_Emergency valve_520-525.stem": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 192,
+      "edges": 320,
+      "polygons": 130,
+      "triangles": 380,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.9112039520775886e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "SB_Identification plate": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 152,
+      "edges": 300,
+      "polygons": 150,
+      "triangles": 300,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.1912980053434163e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • machined steel"
+      ]
+    },
+    "SB_Model designation": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "printed marking carrier",
+      "vertices": 8,
+      "edges": 12,
+      "polygons": 6,
+      "triangles": 12,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 7.488789783311064e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • sideblock printed marking"
+      ]
+    },
+    "SB_Mounting boss": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 288,
+      "edges": 544,
+      "polygons": 258,
+      "triangles": 572,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.2384229556965657e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "SB_Nonreturn adapter": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 192,
+      "edges": 320,
+      "polygons": 130,
+      "triangles": 380,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 6.974418915050287e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • brass"
+      ]
+    },
+    "SB_Nonreturn_555-195.display dust cap": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 224,
+      "edges": 392,
+      "polygons": 170,
+      "triangles": 444,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.4915343082226305e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • blue transport caps"
+      ]
+    },
+    "SB_Nonreturn_555-195.flats": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 24,
+      "edges": 42,
+      "polygons": 20,
+      "triangles": 44,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.1441272693344527e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • brass"
+      ]
+    },
+    "SB_Nonreturn_555-195.seat": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 24,
+      "edges": 42,
+      "polygons": 20,
+      "triangles": 44,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.462828312250461e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • brass"
+      ]
+    },
+    "SB_Nonreturn_555-195.thread relief": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 192,
+      "edges": 320,
+      "polygons": 130,
+      "triangles": 380,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.1494305679958742e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • brass"
+      ]
+    },
+    "SB_Nonreturn_555-195.valve": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 320,
+      "edges": 576,
+      "polygons": 258,
+      "triangles": 636,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 3.651853265806137e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • brass"
+      ]
+    },
+    "SB_Plate rivet -18.4": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 72,
+      "edges": 120,
+      "polygons": 50,
+      "triangles": 140,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.8549449312944165e-09,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "SB_Plate rivet 18.4": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 72,
+      "edges": 120,
+      "polygons": 50,
+      "triangles": 140,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.854956135287545e-09,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "SB_Steady flow_520-524": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 672,
+      "edges": 1248,
+      "polygons": 578,
+      "triangles": 1340,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.0048292798888862e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • black handwheel"
+      ]
+    },
+    "SB_Steady flow_520-524.hub": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 128,
+      "edges": 192,
+      "polygons": 66,
+      "triangles": 252,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.0097332158345277e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • dark recess"
+      ]
+    },
+    "SB_Steady flow_520-524.packing": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 24,
+      "edges": 42,
+      "polygons": 20,
+      "triangles": 44,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.3927320991828048e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • machined steel"
+      ]
+    },
+    "SB_Steady flow_520-524.slotted keeper": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 100,
+      "edges": 150,
+      "polygons": 54,
+      "triangles": 192,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 6.505927571997609e-08,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • machined steel"
+      ]
+    },
+    "SB_Steady flow_520-524.stem": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 192,
+      "edges": 320,
+      "polygons": 130,
+      "triangles": 380,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.911205098973185e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "SL17B_YellowShell_Study": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 36737,
+      "edges": 74274,
+      "polygons": 37527,
+      "triangles": 73494,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 0.0007926427156519205,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "ShellUV"
+      ],
+      "materials": [
+        "17B • Yellow gelcoat"
+      ]
+    },
+    "Stainless split neck clamp | 505-055": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 1183,
+      "edges": 2359,
+      "polygons": 1178,
+      "triangles": 2362,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.2678955633706817e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Starboard cast weight | 560-023": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 1142,
+      "edges": 2340,
+      "polygons": 1200,
+      "triangles": 2280,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.0501190419874877e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Polished cast brass"
+      ]
+    },
+    "Starboard chin strap snap": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 144,
+      "edges": 252,
+      "polygons": 110,
+      "triangles": 284,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.3562151220155374e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Starboard inner chin strap snap tab | 545-027": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 200,
+      "edges": 390,
+      "polygons": 192,
+      "triangles": 396,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.749874544254342e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "Starboard weight and chin-tab retaining screw": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 160,
+      "edges": 288,
+      "polygons": 130,
+      "triangles": 316,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.427266013811382e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Neck hardware, satin stainless"
+      ]
+    },
+    "TUBE_Bent supply_555-155": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 1824,
+      "edges": 3616,
+      "polygons": 1794,
+      "triangles": 3644,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.3561381151098375e-05,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "TUBE_Regulator end nut": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 24,
+      "edges": 42,
+      "polygons": 20,
+      "triangles": 44,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 5.186178947933124e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "TUBE_Regulator ferrule": {
+      "type": "MESH",
+      "collections": [
+        "03  •  SuperFlow B and water dump"
+      ],
+      "role": "physical geometry",
+      "vertices": 256,
+      "edges": 448,
+      "polygons": 194,
+      "triangles": 508,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.8132597036264271e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "TUBE_Side block end nut": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 24,
+      "edges": 42,
+      "polygons": 20,
+      "triangles": 44,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.1470113403052795e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "TUBE_Side block ferrule": {
+      "type": "MESH",
+      "collections": [
+        "04  •  Side block and supply"
+      ],
+      "role": "physical geometry",
+      "vertices": 192,
+      "edges": 320,
+      "polygons": 130,
+      "triangles": 380,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.264002157386151e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "materials": [
+        "Air • polished chrome"
+      ]
+    },
+    "Urethane yoke | 520-117": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 1639,
+      "edges": 3267,
+      "polygons": 1630,
+      "triangles": 3274,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 0.0001321649208912563,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Charcoal moulded urethane"
+      ]
+    },
+    "Visor_520-054": {
+      "type": "MESH",
+      "collections": [
+        "Scene Collection"
+      ],
+      "role": "physical geometry",
+      "vertices": 2046,
+      "edges": 4088,
+      "polygons": 2044,
+      "triangles": 4088,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 6.348699853065326e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "DisplayUV"
+      ],
+      "materials": [
+        "Visor • formed dark ABS"
+      ]
+    },
+    "Yoke pull pin and knob | 550-255": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 200,
+      "edges": 360,
+      "polygons": 162,
+      "triangles": 396,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.582486611952499e-07,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Polished cast brass"
+      ]
+    },
+    "Yoke strap guide | 505-138": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 318,
+      "edges": 630,
+      "polygons": 314,
+      "triangles": 632,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 1.6652922600751634e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Woven restraint tape"
+      ]
+    },
+    "Yoke strap guide | 505-138 | keeper 1": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 60,
+      "edges": 110,
+      "polygons": 52,
+      "triangles": 116,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.8357406859994166e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Woven restraint tape"
+      ]
+    },
+    "Yoke strap guide | 505-138 | keeper 2": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 60,
+      "edges": 110,
+      "polygons": 52,
+      "triangles": 116,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.704133387537177e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Woven restraint tape"
+      ]
+    },
+    "Yoke strap | 505-134": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 318,
+      "edges": 630,
+      "polygons": 314,
+      "triangles": 632,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 4.50675088131021e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Woven restraint tape"
+      ]
+    },
+    "Yoke strap | 505-134 | keeper 1": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 60,
+      "edges": 110,
+      "polygons": 52,
+      "triangles": 116,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.7298242062236883e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Woven restraint tape"
+      ]
+    },
+    "Yoke strap | 505-134 | keeper 2": {
+      "type": "MESH",
+      "collections": [
+        "17B | Neck, restraint and ballast"
+      ],
+      "role": "physical geometry",
+      "vertices": 60,
+      "edges": 110,
+      "polygons": 52,
+      "triangles": 116,
+      "finite_world_vertices": true,
+      "zero_length_edges": 0,
+      "degenerate_triangles": 0,
+      "sample_degenerate_triangle_indices": [],
+      "nonmanifold_edges": 0,
+      "boundary_edges": 0,
+      "signed_volume_m3": 2.810435742160587e-06,
+      "nonmanifold_vertex_fans": 0,
+      "inconsistent_winding_edges": 0,
+      "self_intersecting_polygon_pairs": 0,
+      "sample_intersecting_polygon_pairs": [],
+      "finite_uvs": true,
+      "uv_layers": [
+        "PartsUV"
+      ],
+      "materials": [
+        "17B | Woven restraint tape"
+      ]
+    }
+  },
+  "method": "Per object: evaluated mesh in saved world coordinates; Blender triangle BVH compares distinct polygons with no shared triangle vertex. Winding and edge/manifold tests use BMesh. Degenerate testing uses double-area < 1e-12 square metres. Surface lettering is reported with its exact native type and counts. The shell is fingerprinted twice, using saved topology, world/local positions, all UVs, inside/outside colour, sharpness/smoothing, landmark groups, material indices and shader graph.",
+  "scope": "Geometry, presence and material readback. This does not measure mechanical tolerances or gas/seal performance, prove all inter-part contacts, or test Unity/VR."
+}
