@@ -1004,10 +1004,14 @@ namespace Museum.PhysicalHands.EditorTools
             Require(helmet.IsSelected(leftHand.DirectInteractor), "production input", "left hand holds the helmet for window manipulation");
             Vector3 windowTouch = WindowTouch(rightHand);
             QueueController(rightDevice, windowTouch, Quaternion.identity, false); yield return Wait(.5f);
+            yield return MuseumPhysicalHandsTestPose.Approach(rightController, helmet,
+                (pos, rot, grip) => QueueController(rightDevice, pos, rot, grip), "held window outside its hotspot");
             Require(NearCandidate(rightHand, window), "production input", "free right palm can select the window while the other hand holds the helmet", HandDetail(rightHand));
             QueueController(rightDevice, windowTouch, Quaternion.identity, true); yield return Wait(.12f);
             Require(window.IsSelected(rightHand.DirectInteractor) && helmet.IsSelected(leftHand.DirectInteractor) && helmet.interactorsSelecting.Count == 1 && !helmet.GetComponent<Rigidbody>().isKinematic,
-                "production input", "held window uses the free hand without stealing the helmet or pinning its rigidbody");
+                "production input", "held window uses the free hand without stealing the helmet or pinning its rigidbody",
+                MuseumPhysicalHandsTestPose.SelectionDiagnostics(rightController, window) + "; root selectors=" + helmet.interactorsSelecting.Count +
+                "; selected=" + string.Join(",", rightHand.DirectInteractor.interactablesSelected.Select(i => i.transform.name)));
             QueueController(rightDevice, windowTouch, Quaternion.identity, false); yield return Wait(.8f);
             Require(!window.isSelected && helmet.IsSelected(leftHand.DirectInteractor) && Mathf.Abs(inspection.WindowAngle - HelmetInspectionController.MaximumWindowAngle) < .5f,
                 "production input", "short window grip and release opens the window while the left grip stays held", "angle=" + inspection.WindowAngle);
@@ -1092,7 +1096,10 @@ namespace Museum.PhysicalHands.EditorTools
         {
             var collider = window.colliders.First(c => c && c.enabled);
             Vector3 front = helmet.transform.rotation * Vector3.back;
-            return collider.ClosestPoint(collider.bounds.center + front) + front * (EnvelopeSupport(hand, -front) + .004f);
+            // The discovery hotspot overlaps the middle of the window. Exercise the
+            // saved hinge using its exposed edge, just as the inspection runner does.
+            return MuseumPhysicalHandsTestPose.WindowTouch(collider, hand.InputController, Quaternion.identity,
+                front, collider.bounds.center + front * .009f);
         }
         static float EnvelopeSupport(MuseumPhysicalHand hand, Vector3 worldDirection)
         {
