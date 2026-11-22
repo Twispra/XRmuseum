@@ -19,7 +19,7 @@ using Object = UnityEngine.Object;
 
 namespace Museum.SurfaceLine.Editor
 {
-    /// <summary>Read-only Play Mode observation with tracked Input System devices. All exhibit actions use the saved XRI ray.</summary>
+    /// <summary>Read-only Play Mode observation with tracked Input System devices. Calling uses the scene XRI ray. Station commands exercise era changes, reset and navigation cleanup.</summary>
     [InitializeOnLoad]
     public static class SurfaceCallEvidence
     {
@@ -269,6 +269,44 @@ namespace Museum.SurfaceLine.Editor
                 "reset clears the transcript and restores the calling key");
         }
 
+        static void CheckNavigationSightlines()
+        {
+            var navigation = Object.FindObjectOfType<Museum.Navigation.GalleryNavigator>();
+            var panel = navigation.Palette.transform;
+            var eye = Camera.main.transform;
+            float halfView = Mathf.Tan(55f * .5f * Mathf.Deg2Rad);
+            var plate = panel.Find("Palette back").GetComponent<MeshFilter>();
+            var bounds = plate.sharedMesh.bounds;
+            foreach (float x in new[] { bounds.min.x, bounds.max.x })
+            foreach (float y in new[] { bounds.min.y, bounds.max.y })
+            {
+                var corner = plate.transform.TransformPoint(new Vector3(x, y, bounds.min.z));
+                var view = eye.InverseTransformPoint(corner);
+                if (view.z <= 0 || Mathf.Abs(view.x) >= view.z * halfView * 1.6f || Mathf.Abs(view.y) >= view.z * halfView)
+                    throw new InvalidOperationException("Cropped navigation panel: " + view);
+            }
+            var localEye = plate.transform.InverseTransformPoint(eye.position);
+            void CheckUncovered(Vector3 target, string name)
+            {
+                var toTarget = plate.transform.InverseTransformPoint(target) - localEye;
+                if (bounds.IntersectRay(new Ray(localEye, toTarget.normalized), out float hit) && hit < toTarget.magnitude)
+                    throw new InvalidOperationException("Navigation covers " + name);
+            }
+            CheckUncovered(call.key.colliders[0].bounds.center, call.key.name);
+            var close = station.Controls[HelmetDiegeticStation.Command.CloseDemo];
+            if (close.gameObject.activeInHierarchy) CheckUncovered(close.Target.colliders[0].bounds.center, close.name);
+            foreach (var label in call.surfaceFlag.GetComponentsInChildren<TMP_Text>().Concat(new TMP_Text[] {call.speaker, call.words, call.keyLegend}))
+            {
+                if (!label.gameObject.activeInHierarchy) continue;
+                label.ForceMeshUpdate();
+                for (int i = 0; i < label.textInfo.characterCount; i++)
+                {
+                    var glyph = label.textInfo.characterInfo[i];
+                    if (glyph.isVisible) CheckUncovered(label.transform.TransformPoint((glyph.bottomLeft + glyph.topRight) * .5f), label.name);
+                }
+            }
+        }
+
         static void PhonePose(Transform model)
         {
             var parts=model.GetComponentsInChildren<Renderer>();
@@ -307,6 +345,7 @@ namespace Museum.SurfaceLine.Editor
         }
         static void CheckText()
         {
+            if (call.gameObject.scene.path != Sample) CheckNavigationSightlines();
             foreach(var text in call.surfaceFlag.GetComponentsInChildren<LocalizedText>(true))
             {
                 if(!call.surfaceFlag.activeInHierarchy) continue;
