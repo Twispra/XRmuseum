@@ -1011,10 +1011,25 @@ namespace Museum.PhysicalHands.EditorTools
                 "production input", "Home clears held object/window ownership and restores the display", "reset delta=" + (reset.ResetCount - resetsBefore));
             yield return Wait(.2f);
             Require(!helmet.isSelected && !window.isSelected, "production input", "a still-held grip cannot regrab immediately after Home");
-            QueueController(leftDevice, touch, Quaternion.identity, false); QueueController(rightDevice, windowTouch, Quaternion.identity, false); yield return Wait(.2f);
-            touch = RootTouch(leftHand, Vector3.left); QueueController(leftDevice, touch, Quaternion.identity, false); yield return Wait(.4f);
+            // Withdraw from the shell and window on their respective sides before approaching
+            // the reset exhibit again. The open palm has a different reach from the held pose.
+            Vector3 outward = -helmet.transform.right;
+            QueueController(leftDevice, leftController.transform.position + outward * .35f, Quaternion.identity, false);
+            QueueController(rightDevice, rightController.transform.position - helmet.transform.forward * .35f, Quaternion.identity, false);
+            yield return Wait(.35f);
+            Require(!leftController.currentControllerState.selectInteractionState.active && !leftHand.DirectInteractor.hasSelection,
+                "production input", "the left controller releases its saved Grip action after Home");
+            var shell = helmet.colliders.Where(c => c && c.enabled && !c.isTrigger).OrderByDescending(c => c.bounds.size.sqrMagnitude).First();
+            touch = MuseumPhysicalHandsTestPose.OutsideTouch(shell, leftController, Quaternion.identity, outward, shell.bounds.center);
+            QueueController(leftDevice, touch, Quaternion.identity, false);
+            yield return Wait(.25f);
+            yield return MuseumPhysicalHandsTestPose.Approach(leftController, helmet,
+                (pos, rot, grip) => QueueController(leftDevice, pos, rot, grip), "post-Home shell regrip");
+            Require(NearCandidate(leftHand, helmet), "production input", "the open palm can select the shell after Home and Grip release",
+                MuseumPhysicalHandsTestPose.SelectionDiagnostics(leftController, helmet));
             QueueController(leftDevice, touch, Quaternion.identity, true); yield return Wait(.2f);
-            Require(helmet.IsSelected(leftHand.DirectInteractor), "production input", "release and new grip restore grabbing after reset");
+            Require(helmet.IsSelected(leftHand.DirectInteractor), "production input", "release and new grip restore grabbing after reset",
+                MuseumPhysicalHandsTestPose.SelectionDiagnostics(leftController, helmet));
             QueueController(leftDevice, touch, Quaternion.identity, false); yield return Wait(.2f);
             Record("saved integration after reset and regrab", leftHand, helmet);
         }
