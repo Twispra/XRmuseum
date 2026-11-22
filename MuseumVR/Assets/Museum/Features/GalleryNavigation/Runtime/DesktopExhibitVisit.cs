@@ -36,6 +36,9 @@ namespace Museum.Navigation
             }
             if (!Application.isFocused) { CancelKey(); return; }
             var keyboard = Keyboard.current;
+            if (keyboard.escapeKey.wasPressedThisFrame ||
+                (desktopView && !gallery.IsTransitioning && !gallery.CurrentExhibit.HasValue))
+            { RestoreView(); return; }
             if (keyboard.digit2Key.wasPressedThisFrame) Travel(GalleryNavigator.Exhibit.Main);
             else if (keyboard.digit3Key.wasPressedThisFrame) Travel(GalleryNavigator.Exhibit.Right);
             if (!desktopView) return;
