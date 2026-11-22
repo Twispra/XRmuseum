@@ -33,3 +33,4 @@ MuseumVR/Assets/Museum/Features/DuskWorkshop/Textures/*.jpg filter=lfs diff=lfs 
 MuseumVR/Assets/Museum/Features/DuskWorkshop/Textures/*.hdr filter=lfs diff=lfs merge=lfs -text
 MuseumVR/Assets/Museum/Features/DuskWorkshop/DuskWorkshop/*.png filter=lfs diff=lfs merge=lfs -text
 MuseumVR/Assets/Museum/Features/DuskWorkshop/DuskWorkshop/LightingData.asset filter=lfs diff=lfs merge=lfs -text
+MuseumVR/Assets/Museum/Scenes/MuseumStart/LightingData.asset filter=lfs diff=lfs merge=lfs -text

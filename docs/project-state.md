@@ -1,5 +1,7 @@
 # 项目状态与下一步
 
+2026-11-22 黄昏潜水工房已接入正式启动场景 `MuseumStart`。Unity 编辑器和 Windows 程序均以此为入口，新增构建的识别特征是左侧两扇高窗和黄昏港景。见[入口调整与旧包说明](activity/2026-11-22-dusk-entry.md)。
+
 2026-11-17 #76 研究资产审查：用户明确要求完善审查后合并。本轮接收范围为SuperLite配置资料、独立v4／r1／r2研究源与r3步骤0–3，未替换Unity现用模型。已同步实际main `62e6cb5`，修复复跑覆盖历史报告和错图来源风险；Blender4.5.14四组保存资产检查自然退出0，5个LFS实体匹配，116个历史输入哈希零差，独立数值复算一致。原r1接口间隔、r2既有交叠、IoU0.370253及未达门槛限制保留，16点／L／图像方向仍待技术确认，Step4／5未执行，#25继续开放。候选版本、运行dirty与范围见[审查证据和交接](activity/2026-11-17-pr76-review-and-merge.md)；实际审批／merge SHA以[PR #76回读](https://github.com/Twispra/XRmuseum/pull/76)为准。未进行Unity／实机／性能／新构建／用户研究验收；以下是各日期历史快照。
 
 2026-10-18 最终提交材料核对：原型源码保持 main `6088c736`（已含 #67）；已在干净副本以 Unity 2022.3.62f3c1 生成 Windows x64 Development/Mono，0 errors／2 条既有 OpenXR 可选 warnings，Editor 自然退出 0，1,299 个源文件前后零差。完整 ZIP 为 274 文件，CRC／解压 SHA-256 一致；解压版完成 40 秒本机启动观察，但无可用头显，观察后仅主动终止自有 Player，不能称 Player 自然退出或 VR／PQ604 验收通过。[构建证据](activity/2026-10-18-phase2-windows-submission.md)。技术说明、单页活动记录、六篇个人文案的分工和历史版本按[最终材料核查](activity/2026-10-18-phase2-final-submission-audit.md)同步；未重跑 Editor 功能套件，真实头显、PQ604、性能和用户研究仍待验证。以下均保留为对应时刻快照。
