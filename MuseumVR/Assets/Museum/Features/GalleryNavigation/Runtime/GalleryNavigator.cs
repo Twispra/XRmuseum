@@ -117,7 +117,9 @@ namespace Museum.Navigation
             }
             palette = panel.AddComponent<HelmetInspectionPalette>();
             palette.Configure(inspection, origin.Camera.transform, null, null);
-            palette.ConfigureViewerOffset(new Vector3(.35f, -.23f, .88f));
+            // The Mark V telephone and its calling key occupy the visitor's lower-right sightline.
+            bool hasSurfaceCall = roots.Any(root => root.GetComponentInChildren<Museum.SurfaceLine.SurfaceCall>(true));
+            palette.ConfigureViewerOffset(hasSurfaceCall ? new Vector3(-.45f, -.27f, .88f) : new Vector3(.35f, -.23f, .88f));
             palette.ConfigureContentBounds(-.11f, .11f);
             palette.RecenterNow();
 
