@@ -1,0 +1,62 @@
+{
+  "platform": "Windows 11, Unity 2022.3.62f3c1, Editor target Win64, D3D11",
+  "runs": [
+    {
+      "report": "hands.json",
+      "commit": "9a8965717c5276be51ddd171161f242a1846c33d",
+      "method": "Museum.PhysicalHands.EditorTools.MuseumPhysicalHandsValidation.RunBatch",
+      "exitCode": 0,
+      "trackedProjectFiles": 1464,
+      "changedTrackedSources": [],
+      "expandedLfs": 43,
+      "lfsMatched": true,
+      "reports": 1,
+      "reportSha256": "01945fa2d5f86b762e8e4085f4da4664e4e94c96efe4ccf0e75033d8187447bb",
+      "status": "passed",
+      "reportedCommit": "9a8965717c5276be51ddd171161f242a1846c33d",
+      "checks": 216,
+      "passed": 216,
+      "failure": "",
+      "errors": [],
+      "failed": []
+    },
+    {
+      "report": "direct.json",
+      "commit": "9a8965717c5276be51ddd171161f242a1846c33d",
+      "method": "Museum.Diegetic.Editor.HelmetDiegeticDirectValidation.RunBatch",
+      "exitCode": 0,
+      "trackedProjectFiles": 1464,
+      "changedTrackedSources": [],
+      "expandedLfs": 43,
+      "lfsMatched": true,
+      "reports": 1,
+      "reportSha256": "77a1736e174b21e118599a307197fa64dcc57dd9399a1438e095872bf8db93c4",
+      "status": null,
+      "reportedCommit": "9a8965717c5276be51ddd171161f242a1846c33d",
+      "checks": 43,
+      "passed": 43,
+      "failure": "",
+      "errors": [],
+      "failed": []
+    },
+    {
+      "report": "collision.json",
+      "commit": "9a8965717c5276be51ddd171161f242a1846c33d",
+      "method": "Museum.PhysicalHands.EditorTools.MuseumHandSelfCollisionValidation.RunBatch",
+      "exitCode": 0,
+      "trackedProjectFiles": 1464,
+      "changedTrackedSources": [],
+      "expandedLfs": 43,
+      "lfsMatched": true,
+      "reports": 1,
+      "reportSha256": "c7e1910cbc6f8c27ce876d613ce93144bbc5e3cdd08a65526f3319f098d6db6f",
+      "status": "passed",
+      "reportedCommit": null,
+      "checks": 19,
+      "passed": 19,
+      "failure": "",
+      "errors": [],
+      "failed": []
+    }
+  ]
+}

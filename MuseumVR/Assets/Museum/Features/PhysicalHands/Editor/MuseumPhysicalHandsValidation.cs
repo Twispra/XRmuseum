@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using Museum.Diegetic;
 using Museum.Inspection;
+using Unity.XR.CoreUtils;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -189,8 +191,20 @@ namespace Museum.PhysicalHands.EditorTools
             yield return CollisionFixtures();
             yield return CollaborationApiFixtures();
             yield return PrepareProductionInputs();
+            yield return ProductionLowViewOcclusion();
+            var station = UnityEngine.Object.FindObjectOfType<HelmetDiegeticStation>();
+            Require(station && station.IsReady && !helmet.enabled, "mode",
+                "low-view checks ran in the saved fixed-station mode");
+            station.enabled = false;
+            yield return Wait(.3f);
+            Require(helmet.isActiveAndEnabled && window.isActiveAndEnabled, "mode",
+                "the explicit legacy mode restores the original grab and window interactables");
             yield return ProductionGrabAndTwoHands();
             yield return ProductionHeldWindowAndReset();
+            station.enabled = true;
+            yield return Wait(.3f);
+            Require(station.Controls[HelmetDiegeticStation.Command.Window].Target.isActiveAndEnabled &&
+                !helmet.enabled && !window.enabled, "mode", "the default fixed station is restored after the legacy checks");
         }
 
         static IEnumerator InspectSavedIntegration()
@@ -212,9 +226,25 @@ namespace Museum.PhysicalHands.EditorTools
                     "saved integration", controller.name + " separates tracked target from collision proxy");
                 Require(direct.transform.IsChildOf(controller.transform), "saved integration", controller.name + " retains the saved direct-interactor controller hierarchy");
                 var visual = hand.GetComponentInChildren<MuseumHandVisual>(true);
-                Require(visual && visual.JointCount == 15 && visual.FingerCount == 5 && visual.GetComponentsInChildren<Renderer>(true).Any(r => r.enabled),
+                var renderers = visual ? visual.GetComponentsInChildren<Renderer>(true) : new Renderer[0];
+                Require(visual && visual.JointCount == 15 && visual.FingerCount == 5 && renderers.Any(r => r.enabled),
                     "saved integration", controller.name + " has saved articulated glove geometry");
+                var originalForceOff = renderers.Select(r => r.forceRenderingOff).ToArray();
+                visual.SetViewOccluded(true);
+                Require(visual.IsViewOccluded && renderers.All(r => r.forceRenderingOff),
+                    "low-view rendering", controller.name + " can suppress only its renderers while retaining the hand object");
+                visual.SetViewOccluded(false);
+                Require(!visual.IsViewOccluded && renderers.Select(r => r.forceRenderingOff).SequenceEqual(originalForceOff),
+                    "low-view rendering", controller.name + " restores every renderer's authored force-off state");
             }
+            Require(MuseumPhysicalHandsRig.ShouldHideIdleHand(1.2f, new Vector3(.5f, .45f, .4f), .45f, false, false),
+                "low-view policy", "a nearby idle hand in the centre of a seated view is suppressed");
+            Require(!MuseumPhysicalHandsRig.ShouldHideIdleHand(1.6f, new Vector3(.5f, .45f, .4f), .45f, false, false) &&
+                !MuseumPhysicalHandsRig.ShouldHideIdleHand(1.2f, new Vector3(.05f, .45f, .4f), .45f, false, false) &&
+                !MuseumPhysicalHandsRig.ShouldHideIdleHand(1.2f, new Vector3(.5f, .45f, .4f), .45f, true, false),
+                "low-view policy", "standing, off-centre and active hands remain visible");
+            Require(MuseumPhysicalHandsRig.ShouldHideIdleHand(1.4f, new Vector3(.15f, .45f, .4f), .68f, false, true),
+                "low-view policy", "expanded exit limits add hysteresis before a suppressed hand reappears");
             Require(leftHand.DirectInteractor.containingGroup == null || leftHand.DirectInteractor.containingGroup != rightHand.DirectInteractor.containingGroup,
                 "saved integration", "left and right direct interactors do not share an exclusive interaction group");
             foreach (var hand in new[] { leftHand, rightHand })
@@ -711,6 +741,191 @@ namespace Museum.PhysicalHands.EditorTools
             yield return null;
         }
 
+        static IEnumerator ProductionLowViewOcclusion()
+        {
+            var camera = Camera.main;
+            var xrOrigin = camera ? camera.GetComponentInParent<XROrigin>() : null;
+            Require(camera && xrOrigin, "low-view production input", "saved XR camera and origin are available");
+            Vector3 originalEye = camera.transform.position;
+            Quaternion originalRotation = camera.transform.rotation;
+            Transform floor = xrOrigin.Origin ? xrOrigin.Origin.transform : xrOrigin.transform;
+            Vector3 forward = Vector3.ProjectOnPlane(camera.transform.forward, Vector3.up).normalized;
+            if (forward.sqrMagnitude < .5f) forward = floor.forward;
+            Quaternion lowRotation = Quaternion.LookRotation(forward, Vector3.up);
+            Vector3 lowEye = originalEye + Vector3.up * (floor.position.y + 1.2f - originalEye.y);
+            Vector3 leftPose = lowEye + forward * .42f - camera.transform.right * .08f + Vector3.down * .08f;
+            Vector3 rightPose = lowEye + forward * .42f + camera.transform.right * .08f + Vector3.down * .08f;
+            QueueHead(lowEye, lowRotation);
+            QueueController(leftDevice, leftPose, lowRotation, false);
+            QueueController(rightDevice, rightPose, lowRotation, false);
+            yield return Wait(.7f);
+            var leftVisual = leftHand.GetComponentInChildren<MuseumHandVisual>(true);
+            var rightVisual = rightHand.GetComponentInChildren<MuseumHandVisual>(true);
+            Require(leftVisual.IsViewOccluded && rightVisual.IsViewOccluded,
+                "low-view production input", "nearby idle gloves no longer cover the centre of a seated view",
+                "left=" + leftVisual.IsViewOccluded + "; right=" + rightVisual.IsViewOccluded);
+            Require(leftHand.CollisionCollider.enabled && rightHand.CollisionCollider.enabled &&
+                leftHand.DirectInteractor.enabled && rightHand.DirectInteractor.enabled,
+                "low-view production input", "visual suppression leaves collision and direct interaction active");
+
+            QueueController(leftDevice, leftPose, lowRotation, true);
+            yield return Wait(.2f);
+            Require(!leftVisual.IsViewOccluded && rightVisual.IsViewOccluded,
+                "low-view production input", "grip restores the active hand while the other idle hand stays suppressed");
+            QueueController(leftDevice, leftPose, lowRotation, false);
+            yield return Wait(.2f);
+            Require(leftVisual.IsViewOccluded, "low-view production input", "releasing grip suppresses the idle glove again");
+            yield return LowViewFingerGeometry(camera, leftVisual, lowEye, lowRotation);
+
+            QueueController(leftDevice, leftPose, lowRotation, false);
+            yield return Wait(.3f);
+            yield return LowViewAnalogInput(leftVisual, rightVisual, leftPose, lowRotation);
+            // With the hand-to-eye poses fixed, approach 1.40 m from both sides of
+            // the height thresholds to exercise the previous per-hand visibility state.
+            float previousRise = 0f;
+            foreach (float rise in new[] { .20f, .35f, .20f, 0f })
+            {
+                bool wasHidden = leftVisual.IsViewOccluded;
+                int steps = Mathf.CeilToInt(Mathf.Abs(rise - previousRise) / .01f);
+                for (int i = 1; i <= steps; i++)
+                {
+                    Vector3 lift = Vector3.up * Mathf.Lerp(previousRise, rise, i / (float)steps);
+                    QueueHead(lowEye + lift, lowRotation);
+                    QueueController(leftDevice, leftPose + lift, lowRotation, false);
+                    QueueController(rightDevice, rightPose + lift, lowRotation, false);
+                    yield return FixedSteps(1);
+                    yield return null; // Give both physics proxies and their visuals a player frame.
+                }
+                yield return Wait(.12f);
+                previousRise = rise;
+                bool expectedHidden = rise == 0f || (rise == .20f && wasHidden);
+                float height = camera.transform.position.y - floor.position.y;
+                Vector3 leftViewport = camera.WorldToViewportPoint(leftHand.transform.position);
+                Vector3 rightViewport = camera.WorldToViewportPoint(rightHand.transform.position);
+                float leftDistance = Vector3.Distance(camera.transform.position, leftHand.transform.position);
+                float rightDistance = Vector3.Distance(camera.transform.position, rightHand.transform.position);
+                bool palmsCentered = new[] { leftViewport, rightViewport }.All(p =>
+                    p.z > 0f && p.x > .20f && p.x < .80f && p.y > .10f && p.y < .80f);
+                Require(Mathf.Abs(height - (1.2f + rise)) < .015f && palmsCentered &&
+                    leftDistance < MuseumPhysicalHandsRig.NearViewEnterDistance && rightDistance < MuseumPhysicalHandsRig.NearViewEnterDistance &&
+                    leftVisual.IsViewOccluded == expectedHidden && rightVisual.IsViewOccluded == expectedHidden,
+                    "low-view geometry", "stable visibility as the viewpoint crosses the height thresholds",
+                    "eye height=" + height + "; viewport=" + leftViewport + "/" + rightViewport +
+                    "; distance=" + leftDistance + "/" + rightDistance + "; hidden=" + leftVisual.IsViewOccluded + "/" + rightVisual.IsViewOccluded +
+                    "; previously hidden=" + wasHidden + "; expected hidden=" + expectedHidden);
+            }
+
+            // Release of the saved teleport action can move the origin. Restore this Play Mode
+            // fixture's starting pose before computing world-space inputs for the remaining checks.
+            Vector3 originPosition = floor.position;
+            Quaternion originRotation = floor.rotation;
+            yield return LowViewTeleportSelection(leftVisual, rightVisual, rightPose, lowRotation);
+            floor.SetPositionAndRotation(originPosition, originRotation);
+            QueueHead(originalEye, originalRotation);
+            QueueController(leftDevice, new Vector3(-.75f, 1.4f, 2f), Quaternion.identity, false);
+            QueueController(rightDevice, new Vector3(.75f, 1.4f, 2f), Quaternion.identity, false);
+            yield return Wait(.7f);
+            Require(!leftVisual.IsViewOccluded && !rightVisual.IsViewOccluded,
+                "low-view production input", "restoring the original view restores both glove visuals");
+        }
+
+        static IEnumerator LowViewFingerGeometry(Camera camera, MuseumHandVisual glove, Vector3 eye, Quaternion viewRotation)
+        {
+            // Place the saved open glove with fingers pointing up. Its middle fingertip covers
+            // the centre of the view even though the palm is below the entry rectangle.
+            var tip = glove.FingerJoints[8].Find("Middle Segment 3").GetComponent<Renderer>();
+            Quaternion palmRotation = viewRotation * Quaternion.Euler(-90f, 0f, 0f);
+            Quaternion mountRotation = Quaternion.Inverse(leftController.transform.rotation) * leftHand.TrackingTarget.rotation;
+            Quaternion inputRotation = palmRotation * Quaternion.Inverse(mountRotation);
+            Vector3 palm = eye + viewRotation * new Vector3(-.008f, -.10755f, .20f);
+            Vector3 peripheral = palm + Vector3.down * .28f;
+            QueueController(leftDevice, MuseumPhysicalHandsTestPose.ControllerPosition(leftController, peripheral, inputRotation), inputRotation, false);
+            yield return Wait(.4f);
+            Require(!glove.IsViewOccluded, "low-view geometry", "the same nearby idle glove stays visible entirely below the viewing region");
+            QueueController(leftDevice, MuseumPhysicalHandsTestPose.ControllerPosition(leftController, palm, inputRotation), inputRotation, false);
+            yield return Wait(.4f);
+            Vector3 palmView = camera.WorldToViewportPoint(leftHand.transform.position);
+            Vector3 tipView = camera.WorldToViewportPoint(tip.bounds.center);
+            Require(palmView.y < .10f && tipView.z > camera.nearClipPlane &&
+                Mathf.Abs(tipView.x - .5f) < .08f && Mathf.Abs(tipView.y - .5f) < .08f,
+                "low-view geometry", "the saved fingertip overlaps the view centre while its palm is outside",
+                "palm=" + palmView + "; fingertip=" + tipView);
+            Require(glove.IsViewOccluded && tip.forceRenderingOff, "low-view geometry",
+                "the rendered fingertip is suppressed when only the fingers cover the centre");
+
+            // Look away from the exhibit so its colliders cannot arrest the distant palm.
+            Quaternion away = viewRotation * Quaternion.Euler(0f, 180f, 0f);
+            Vector3 distantPalm = eye + away * Vector3.forward * .90f;
+            QueueHead(eye, away);
+            QueueController(leftDevice, MuseumPhysicalHandsTestPose.ControllerPosition(leftController, distantPalm, away), away, false);
+            yield return Wait(.5f);
+            Vector3 distantView = camera.WorldToViewportPoint(leftHand.transform.position);
+            float distance = Vector3.Distance(camera.transform.position, leftHand.transform.position);
+            Require(distance >= .85f && distantView.z > 0f && Mathf.Abs(distantView.x - .5f) < .08f &&
+                Mathf.Abs(distantView.y - .5f) < .08f && !glove.IsViewOccluded, "low-view geometry",
+                "a distant centered palm stays visible at the same seated eye height",
+                "distance=" + distance + "; viewport=" + distantView);
+
+            QueueHead(eye, viewRotation);
+            Vector3 behind = eye + viewRotation * Vector3.back * .35f;
+            QueueController(leftDevice, MuseumPhysicalHandsTestPose.ControllerPosition(leftController, behind, viewRotation), viewRotation, false);
+            yield return Wait(.5f);
+            Vector3 forward = camera.transform.forward;
+            Vector3 absForward = new Vector3(Mathf.Abs(forward.x), Mathf.Abs(forward.y), Mathf.Abs(forward.z));
+            float furthestDepth = glove.GetComponentsInChildren<Renderer>().Max(r =>
+                Vector3.Dot(r.bounds.center - camera.transform.position, forward) + Vector3.Dot(r.bounds.extents, absForward));
+            Require(furthestDepth < camera.nearClipPlane && !glove.IsViewOccluded, "low-view geometry",
+                "a nearby glove entirely behind the near clip plane stays unsuppressed", "furthest renderer depth=" + furthestDepth);
+        }
+
+        static IEnumerator LowViewAnalogInput(MuseumHandVisual leftGlove, MuseumHandVisual rightGlove,
+            Vector3 leftPose, Quaternion rotation)
+        {
+            Quaternion openFinger = leftGlove.FingerJoints[4].localRotation;
+            QueueController(leftDevice, leftPose, rotation, false, triggerValue: .35f);
+            yield return Wait(.25f);
+            var state = leftController.currentControllerState;
+            Require(!state.activateInteractionState.active && state.activateInteractionState.value > .30f &&
+                Quaternion.Angle(openFinger, leftGlove.FingerJoints[4].localRotation) > 5f &&
+                !leftGlove.IsViewOccluded && rightGlove.IsViewOccluded, "low-view production input",
+                "a partial analog trigger articulates and reveals only the left glove");
+            QueueController(leftDevice, leftPose, rotation, false, gripValue: .35f);
+            yield return Wait(.25f);
+            Require(!state.selectInteractionState.active && state.selectInteractionState.value > .30f &&
+                !leftGlove.IsViewOccluded && rightGlove.IsViewOccluded, "low-view production input",
+                "a partial analog grip also reveals only the left glove");
+            QueueController(leftDevice, leftPose, rotation, false, triggerValue: .01f, gripValue: .01f);
+            yield return Wait(.2f);
+            Require(leftGlove.IsViewOccluded && rightGlove.IsViewOccluded, "low-view production input",
+                "resting analog noise allows both gloves to be suppressed again");
+            QueueController(leftDevice, leftPose, rotation, false);
+        }
+
+        static IEnumerator LowViewTeleportSelection(MuseumHandVisual leftGlove, MuseumHandVisual rightGlove,
+            Vector3 rightPose, Quaternion rotation)
+        {
+            Quaternion aim = rotation * Quaternion.Euler(87f, 0f, 0f);
+            var ray = rightController.GetComponentsInChildren<XRRayInteractor>(true).Single(r => r.name == "Teleport Interactor");
+            var floor = UnityEngine.Object.FindObjectsOfType<TeleportationArea>().Single(a => a.name == "Floor - Teleport Area");
+            QueueController(rightDevice, rightPose, aim, false);
+            yield return Wait(.3f);
+            Require(leftGlove.IsViewOccluded && rightGlove.IsViewOccluded, "low-view production input",
+                "both idle gloves are suppressed before the joystick aims at the floor");
+            QueueController(rightDevice, rightPose, aim, false, stick: Vector2.up);
+            yield return Wait(.5f);
+            var state = rightController.currentControllerState;
+            Require(ray.xrController != rightController && floor.IsSelected(ray) &&
+                !rightHand.DirectInteractor.hasSelection && !state.selectInteractionState.active && !state.activateInteractionState.active,
+                "low-view production input", "the saved right joystick selects the floor solely through its nested teleport ray",
+                "target=" + ray.firstInteractableSelected?.transform.name + "; ray=" + ray.transform.position + "; direction=" + ray.transform.forward);
+            Require(leftGlove.IsViewOccluded && !rightGlove.IsViewOccluded &&
+                rightGlove.GetComponentsInChildren<Renderer>().Any(r => r.enabled && !r.forceRenderingOff),
+                "low-view production input", "the right ray selection restores the rendered right glove and leaves the idle left glove hidden");
+            QueueController(rightDevice, rightPose, aim, false);
+            yield return Wait(.6f);
+            Require(!ray.hasSelection, "low-view production input", "releasing the right joystick ends its teleport selection");
+        }
+
         static XRDirectInteractor ApiHand(string name, XRInteractionManager manager, Vector3 position, out XRRayInteractor ray)
         {
             var target = new GameObject(name); target.SetActive(false); target.transform.SetParent(fixtureRoot.transform); target.transform.position = position;
@@ -789,10 +1004,14 @@ namespace Museum.PhysicalHands.EditorTools
             Require(helmet.IsSelected(leftHand.DirectInteractor), "production input", "left hand holds the helmet for window manipulation");
             Vector3 windowTouch = WindowTouch(rightHand);
             QueueController(rightDevice, windowTouch, Quaternion.identity, false); yield return Wait(.5f);
+            yield return MuseumPhysicalHandsTestPose.Approach(rightController, helmet,
+                (pos, rot, grip) => QueueController(rightDevice, pos, rot, grip), "held window outside its hotspot");
             Require(NearCandidate(rightHand, window), "production input", "free right palm can select the window while the other hand holds the helmet", HandDetail(rightHand));
             QueueController(rightDevice, windowTouch, Quaternion.identity, true); yield return Wait(.12f);
             Require(window.IsSelected(rightHand.DirectInteractor) && helmet.IsSelected(leftHand.DirectInteractor) && helmet.interactorsSelecting.Count == 1 && !helmet.GetComponent<Rigidbody>().isKinematic,
-                "production input", "held window uses the free hand without stealing the helmet or pinning its rigidbody");
+                "production input", "held window uses the free hand without stealing the helmet or pinning its rigidbody",
+                MuseumPhysicalHandsTestPose.SelectionDiagnostics(rightController, window) + "; root selectors=" + helmet.interactorsSelecting.Count +
+                "; selected=" + string.Join(",", rightHand.DirectInteractor.interactablesSelected.Select(i => i.transform.name)));
             QueueController(rightDevice, windowTouch, Quaternion.identity, false); yield return Wait(.8f);
             Require(!window.isSelected && helmet.IsSelected(leftHand.DirectInteractor) && Mathf.Abs(inspection.WindowAngle - HelmetInspectionController.MaximumWindowAngle) < .5f,
                 "production input", "short window grip and release opens the window while the left grip stays held", "angle=" + inspection.WindowAngle);
@@ -815,10 +1034,25 @@ namespace Museum.PhysicalHands.EditorTools
                 "production input", "Home clears held object/window ownership and restores the display", "reset delta=" + (reset.ResetCount - resetsBefore));
             yield return Wait(.2f);
             Require(!helmet.isSelected && !window.isSelected, "production input", "a still-held grip cannot regrab immediately after Home");
-            QueueController(leftDevice, touch, Quaternion.identity, false); QueueController(rightDevice, windowTouch, Quaternion.identity, false); yield return Wait(.2f);
-            touch = RootTouch(leftHand, Vector3.left); QueueController(leftDevice, touch, Quaternion.identity, false); yield return Wait(.4f);
+            // Withdraw from the shell and window on their respective sides before approaching
+            // the reset exhibit again. The open palm has a different reach from the held pose.
+            Vector3 outward = -helmet.transform.right;
+            QueueController(leftDevice, leftController.transform.position + outward * .35f, Quaternion.identity, false);
+            QueueController(rightDevice, rightController.transform.position - helmet.transform.forward * .35f, Quaternion.identity, false);
+            yield return Wait(.35f);
+            Require(!leftController.currentControllerState.selectInteractionState.active && !leftHand.DirectInteractor.hasSelection,
+                "production input", "the left controller releases its saved Grip action after Home");
+            var shell = helmet.colliders.Where(c => c && c.enabled && !c.isTrigger).OrderByDescending(c => c.bounds.size.sqrMagnitude).First();
+            touch = MuseumPhysicalHandsTestPose.OutsideTouch(shell, leftController, Quaternion.identity, outward, shell.bounds.center);
+            QueueController(leftDevice, touch, Quaternion.identity, false);
+            yield return Wait(.25f);
+            yield return MuseumPhysicalHandsTestPose.Approach(leftController, helmet,
+                (pos, rot, grip) => QueueController(leftDevice, pos, rot, grip), "post-Home shell regrip");
+            Require(NearCandidate(leftHand, helmet), "production input", "the open palm can select the shell after Home and Grip release",
+                MuseumPhysicalHandsTestPose.SelectionDiagnostics(leftController, helmet));
             QueueController(leftDevice, touch, Quaternion.identity, true); yield return Wait(.2f);
-            Require(helmet.IsSelected(leftHand.DirectInteractor), "production input", "release and new grip restore grabbing after reset");
+            Require(helmet.IsSelected(leftHand.DirectInteractor), "production input", "release and new grip restore grabbing after reset",
+                MuseumPhysicalHandsTestPose.SelectionDiagnostics(leftController, helmet));
             QueueController(leftDevice, touch, Quaternion.identity, false); yield return Wait(.2f);
             Record("saved integration after reset and regrab", leftHand, helmet);
         }
@@ -862,7 +1096,10 @@ namespace Museum.PhysicalHands.EditorTools
         {
             var collider = window.colliders.First(c => c && c.enabled);
             Vector3 front = helmet.transform.rotation * Vector3.back;
-            return collider.ClosestPoint(collider.bounds.center + front) + front * (EnvelopeSupport(hand, -front) + .004f);
+            // The discovery hotspot overlaps the middle of the window. Exercise the
+            // saved hinge using its exposed edge, just as the inspection runner does.
+            return MuseumPhysicalHandsTestPose.WindowTouch(collider, hand.InputController, Quaternion.identity,
+                front, collider.bounds.center + front * .009f);
         }
         static float EnvelopeSupport(MuseumPhysicalHand hand, Vector3 worldDirection)
         {
@@ -901,21 +1138,28 @@ namespace Museum.PhysicalHands.EditorTools
                 blocked = hand.IsBlocked, tracking = hand.IsTrackingValid, maximumPenetration = penetration, selectors = grab ? grab.interactorsSelecting.Count : 0,
                 objectPosition = grab ? grab.transform.position : Vector3.zero, objectRotation = grab ? grab.transform.rotation : Quaternion.identity, objectScale = grab ? grab.transform.localScale : Vector3.one });
         }
-        static void QueueController(XRSimulatedController device, Vector3 world, Quaternion rotation, bool grip)
+        static void QueueController(XRSimulatedController device, Vector3 world, Quaternion rotation, bool grip,
+            float gripValue = 0f, float triggerValue = 0f, Vector2 stick = default)
         {
             var controller = device == leftDevice ? leftController : rightController;
             var parent = controller.transform.parent;
             var state = new XRSimulatedControllerState { isTracked = true, trackingState = 3, batteryLevel = 1,
                 devicePosition = parent ? parent.InverseTransformPoint(world) : world,
-                deviceRotation = parent ? Quaternion.Inverse(parent.rotation) * rotation : rotation, grip = grip ? 1f : 0f }.WithButton(ControllerButton.GripButton, grip);
+                deviceRotation = parent ? Quaternion.Inverse(parent.rotation) * rotation : rotation,
+                grip = grip ? 1f : gripValue, trigger = triggerValue, primary2DAxis = stick }.WithButton(ControllerButton.GripButton, grip);
             PendingInput.Enqueue(() => InputSystem.QueueStateEvent(device, state));
         }
         static void QueueHead()
         {
             var camera = Camera.main; if (!camera) return;
+            QueueHead(camera.transform.position, camera.transform.rotation);
+        }
+        static void QueueHead(Vector3 worldPosition, Quaternion worldRotation)
+        {
+            var camera = Camera.main; if (!camera) return;
             var parent = camera.transform.parent;
-            Vector3 position = parent ? parent.InverseTransformPoint(camera.transform.position) : camera.transform.position;
-            Quaternion rotation = parent ? Quaternion.Inverse(parent.rotation) * camera.transform.rotation : camera.transform.rotation;
+            Vector3 position = parent ? parent.InverseTransformPoint(worldPosition) : worldPosition;
+            Quaternion rotation = parent ? Quaternion.Inverse(parent.rotation) * worldRotation : worldRotation;
             var state = new XRSimulatedHMDState { isTracked = true, trackingState = 3, devicePosition = position, centerEyePosition = position,
                 leftEyePosition = position + Vector3.left * .032f, rightEyePosition = position + Vector3.right * .032f,
                 deviceRotation = rotation, centerEyeRotation = rotation, leftEyeRotation = rotation, rightEyeRotation = rotation };

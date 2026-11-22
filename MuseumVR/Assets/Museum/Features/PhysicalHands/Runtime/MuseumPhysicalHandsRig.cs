@@ -1,4 +1,5 @@
 using System;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -13,6 +14,8 @@ namespace Museum.PhysicalHands
         [SerializeField] MuseumPhysicalHand leftPrefab;
         [SerializeField] MuseumPhysicalHand rightPrefab;
         [NonSerialized] HandBinding left, right;
+        XROrigin origin;
+        Camera viewCamera;
         readonly System.Collections.Generic.Dictionary<XRBaseInteractable, XRBaseInteractable.DistanceCalculationMode> controlDistances =
             new System.Collections.Generic.Dictionary<XRBaseInteractable, XRBaseInteractable.DistanceCalculationMode>();
         public MuseumPhysicalHand LeftHand => left?.hand;
@@ -23,6 +26,7 @@ namespace Museum.PhysicalHands
         {
             public ActionBasedController controller;
             public MuseumPhysicalHand hand;
+            public MuseumHandVisual visual;
             public Transform target, directTransform, pokeTransform;
             public Vector3 directPosition, pokePosition;
             public Quaternion directRotation, pokeRotation;
@@ -31,6 +35,15 @@ namespace Museum.PhysicalHands
             public SphereCollider[] triggers;
             public float[] radii;
         }
+
+        // Prototype comfort thresholds, not measured accessibility standards.
+        public const float LowViewEnterHeight = 1.35f;
+        public const float LowViewExitHeight = 1.45f;
+        public const float NearViewEnterDistance = .62f;
+        public const float NearViewExitDistance = .72f;
+        const float AnalogActivityThreshold = .10f;
+        static readonly Rect EnterViewport = Rect.MinMaxRect(.20f, .10f, .80f, .80f);
+        static readonly Rect ExitViewport = Rect.MinMaxRect(.12f, .04f, .88f, .90f);
         public void Configure(ActionBasedController leftInput, ActionBasedController rightInput, MuseumPhysicalHand leftHand, MuseumPhysicalHand rightHand)
         { leftController = leftInput; rightController = rightInput; leftPrefab = leftHand; rightPrefab = rightHand; }
         void Awake()
@@ -56,6 +69,9 @@ namespace Museum.PhysicalHands
             result.hand = Instantiate(prefab, result.target.position, result.target.rotation, transform);
             result.hand.name = isLeft ? "Left Physical Hand" : "Right Physical Hand";
             var visual = result.hand.GetComponentInChildren<MuseumHandVisual>(true);
+            result.visual = visual;
+            // The hand applies its final visual pose after this rig's early LateUpdate.
+            if (visual) result.hand.VisualPoseApplied += () => UpdateLowViewOcclusion(result);
             result.hand.Configure(result.target, controller, direct, visual, isLeft);
             result.hand.ConfigurePoke(poke);
             result.hand.ConfigureRays(controller.GetComponentsInChildren<XRRayInteractor>(true));
@@ -96,9 +112,50 @@ namespace Museum.PhysicalHands
             if (leftController) leftController.hideControllerModel = true;
             if (rightController) rightController.hideControllerModel = true;
         }
+
+        void UpdateLowViewOcclusion(HandBinding binding)
+        {
+            if (!ResolveView()) { binding.visual.SetViewOccluded(false); return; }
+            Transform floor = origin && origin.Origin ? origin.Origin.transform : origin ? origin.transform : viewCamera.transform.root;
+            float eyeHeight = Vector3.Dot(viewCamera.transform.position - floor.position, Vector3.up);
+            bool hidden = binding.visual.IsViewOccluded;
+            float distance = Vector3.Distance(viewCamera.transform.position, binding.hand.transform.position);
+            var state = binding.controller ? binding.controller.currentControllerState : null;
+            bool inputActive = state != null &&
+                (state.selectInteractionState.active || state.activateInteractionState.active ||
+                 state.selectInteractionState.value >= AnalogActivityThreshold || state.activateInteractionState.value >= AnalogActivityThreshold);
+            bool occluded = IsLowAndNear(eyeHeight, distance, hidden) && !inputActive && !binding.hand.HasInteractionSelection &&
+                binding.visual.OverlapsViewport(viewCamera, hidden ? ExitViewport : EnterViewport);
+            binding.visual.SetViewOccluded(occluded);
+        }
+
+        bool ResolveView()
+        {
+            if (origin && origin.Camera)
+            { viewCamera = origin.Camera; return viewCamera; }
+            origin = leftController ? leftController.GetComponentInParent<XROrigin>() : null;
+            if (!origin && rightController) origin = rightController.GetComponentInParent<XROrigin>();
+            viewCamera = origin && origin.Camera ? origin.Camera : Camera.main;
+            return viewCamera;
+        }
+
+        static bool IsLowAndNear(float eyeHeight, float distance, bool alreadyHidden)
+        {
+            return eyeHeight <= (alreadyHidden ? LowViewExitHeight : LowViewEnterHeight) &&
+                   distance <= (alreadyHidden ? NearViewExitDistance : NearViewEnterDistance);
+        }
+
+        public static bool ShouldHideIdleHand(float eyeHeight, Vector3 viewport, float distance,
+            bool interactionActive, bool alreadyHidden)
+        {
+            Rect area = alreadyHidden ? ExitViewport : EnterViewport;
+            return !interactionActive && IsLowAndNear(eyeHeight, distance, alreadyHidden) && viewport.z > 0f &&
+                viewport.x >= area.xMin && viewport.x <= area.xMax && viewport.y >= area.yMin && viewport.y <= area.yMax;
+        }
         static void Activate(HandBinding binding, bool active)
         {
             if (binding == null) return;
+            if (!active && binding.visual) binding.visual.SetViewOccluded(false);
             if (binding.hand) binding.hand.gameObject.SetActive(active);
             if (binding.controller) binding.controller.hideControllerModel = active || binding.hiddenModel;
             if (binding.triggers != null) for (int i = 0; i < binding.triggers.Length; i++)

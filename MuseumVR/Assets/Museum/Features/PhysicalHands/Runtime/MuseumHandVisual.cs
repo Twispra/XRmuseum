@@ -23,11 +23,17 @@ namespace Museum.PhysicalHands
         float currentGrip;
         float currentTrigger;
         bool isHeld;
+        Renderer[] viewRenderers;
+        bool[] originalForceRenderingOff;
+        readonly Plane[] worldPlanes = new Plane[6];
+        readonly Plane[] localPlanes = new Plane[6];
+        bool viewOccluded;
 
         public bool IsLeft => left;
         public float GripAmount => currentGrip;
         public int FingerCount => JointCount / JointsPerFinger;
         public int JointCount => fingerJoints != null ? fingerJoints.Length : 0;
+        public bool IsViewOccluded => viewOccluded;
 
         /// <summary>Thumb, index, middle, ring, little; three joints per finger from base to tip.</summary>
         public IReadOnlyList<Transform> FingerJoints => jointView ??
@@ -71,6 +77,53 @@ namespace Museum.PhysicalHands
             ApplyCurrentPose();
         }
 
+        /// <summary>Removes only the rendered glove; tracking, collision and interaction stay active.</summary>
+        public void SetViewOccluded(bool occluded)
+        {
+            if (viewOccluded == occluded) return;
+            EnsureViewRenderers();
+            viewOccluded = occluded;
+            for (int index = 0; index < viewRenderers.Length; index++)
+            {
+                var part = viewRenderers[index];
+                if (!part) continue;
+                if (occluded) originalForceRenderingOff[index] = part.forceRenderingOff;
+                part.forceRenderingOff = occluded || originalForceRenderingOff[index];
+            }
+        }
+
+        internal bool OverlapsViewport(Camera camera, Rect viewport)
+        {
+            // Remap the chosen viewport rectangle to clip-space [-1, 1], preserving depth.
+            var crop = Matrix4x4.identity;
+            crop.m00 = 1f / viewport.width;
+            crop.m11 = 1f / viewport.height;
+            crop.m03 = (1f - 2f * viewport.center.x) * crop.m00;
+            crop.m13 = (1f - 2f * viewport.center.y) * crop.m11;
+            EnsureViewRenderers();
+            if (camera.stereoEnabled)
+                return OverlapsFrustum(crop * camera.GetStereoProjectionMatrix(Camera.StereoscopicEye.Left) * camera.GetStereoViewMatrix(Camera.StereoscopicEye.Left)) ||
+                       OverlapsFrustum(crop * camera.GetStereoProjectionMatrix(Camera.StereoscopicEye.Right) * camera.GetStereoViewMatrix(Camera.StereoscopicEye.Right));
+            return OverlapsFrustum(crop * camera.projectionMatrix * camera.worldToCameraMatrix);
+        }
+
+        bool OverlapsFrustum(Matrix4x4 viewProjection)
+        {
+            GeometryUtility.CalculateFrustumPlanes(viewProjection, worldPlanes);
+            for (int index = 0; index < viewRenderers.Length; index++)
+            {
+                var part = viewRenderers[index];
+                if (!part || !part.enabled || !part.gameObject.activeInHierarchy ||
+                    (viewOccluded ? originalForceRenderingOff[index] : part.forceRenderingOff) ||
+                    !GeometryUtility.TestPlanesAABB(worldPlanes, part.bounds)) continue;
+
+                // Check the oriented bounds of this articulated part, including both clip planes.
+                GeometryUtility.CalculateFrustumPlanes(viewProjection * part.localToWorldMatrix, localPlanes);
+                if (GeometryUtility.TestPlanesAABB(localPlanes, part.localBounds)) return true;
+            }
+            return false;
+        }
+
         // A large curved exhibit rests against a half-open supporting hand.
         // Full controller Grip is selection intent, not an instruction to fist through it.
         float EffectiveGrip => isHeld ? supportGrip : targetGrip;
@@ -78,6 +131,11 @@ namespace Museum.PhysicalHands
         void OnEnable()
         {
             ApplyCurrentPose();
+        }
+
+        void OnDisable()
+        {
+            SetViewOccluded(false);
         }
 
         void Update()
@@ -125,6 +183,13 @@ namespace Museum.PhysicalHands
         static float SafeUnitValue(float value)
         {
             return float.IsNaN(value) || float.IsInfinity(value) ? 0f : Mathf.Clamp01(value);
+        }
+
+        void EnsureViewRenderers()
+        {
+            if (viewRenderers != null) return;
+            viewRenderers = GetComponentsInChildren<Renderer>(true);
+            originalForceRenderingOff = new bool[viewRenderers.Length];
         }
     }
 }
