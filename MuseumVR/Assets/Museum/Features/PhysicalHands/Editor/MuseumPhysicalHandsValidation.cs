@@ -7,6 +7,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using Museum.Inspection;
+using Unity.XR.CoreUtils;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -189,6 +190,7 @@ namespace Museum.PhysicalHands.EditorTools
             yield return CollisionFixtures();
             yield return CollaborationApiFixtures();
             yield return PrepareProductionInputs();
+            yield return ProductionLowViewOcclusion();
             yield return ProductionGrabAndTwoHands();
             yield return ProductionHeldWindowAndReset();
         }
@@ -212,9 +214,25 @@ namespace Museum.PhysicalHands.EditorTools
                     "saved integration", controller.name + " separates tracked target from collision proxy");
                 Require(direct.transform.IsChildOf(controller.transform), "saved integration", controller.name + " retains the saved direct-interactor controller hierarchy");
                 var visual = hand.GetComponentInChildren<MuseumHandVisual>(true);
-                Require(visual && visual.JointCount == 15 && visual.FingerCount == 5 && visual.GetComponentsInChildren<Renderer>(true).Any(r => r.enabled),
+                var renderers = visual ? visual.GetComponentsInChildren<Renderer>(true) : new Renderer[0];
+                Require(visual && visual.JointCount == 15 && visual.FingerCount == 5 && renderers.Any(r => r.enabled),
                     "saved integration", controller.name + " has saved articulated glove geometry");
+                var originalForceOff = renderers.Select(r => r.forceRenderingOff).ToArray();
+                visual.SetViewOccluded(true);
+                Require(visual.IsViewOccluded && renderers.All(r => r.forceRenderingOff),
+                    "low-view rendering", controller.name + " can suppress only its renderers while retaining the hand object");
+                visual.SetViewOccluded(false);
+                Require(!visual.IsViewOccluded && renderers.Select(r => r.forceRenderingOff).SequenceEqual(originalForceOff),
+                    "low-view rendering", controller.name + " restores every renderer's authored force-off state");
             }
+            Require(MuseumPhysicalHandsRig.ShouldHideIdleHand(1.2f, new Vector3(.5f, .45f, .4f), .45f, false, false),
+                "low-view policy", "a nearby idle hand in the centre of a seated view is suppressed");
+            Require(!MuseumPhysicalHandsRig.ShouldHideIdleHand(1.6f, new Vector3(.5f, .45f, .4f), .45f, false, false) &&
+                !MuseumPhysicalHandsRig.ShouldHideIdleHand(1.2f, new Vector3(.05f, .45f, .4f), .45f, false, false) &&
+                !MuseumPhysicalHandsRig.ShouldHideIdleHand(1.2f, new Vector3(.5f, .45f, .4f), .45f, true, false),
+                "low-view policy", "standing, off-centre and active hands remain visible");
+            Require(MuseumPhysicalHandsRig.ShouldHideIdleHand(1.4f, new Vector3(.15f, .45f, .4f), .68f, false, true),
+                "low-view policy", "expanded exit limits add hysteresis before a suppressed hand reappears");
             Require(leftHand.DirectInteractor.containingGroup == null || leftHand.DirectInteractor.containingGroup != rightHand.DirectInteractor.containingGroup,
                 "saved integration", "left and right direct interactors do not share an exclusive interaction group");
             foreach (var hand in new[] { leftHand, rightHand })
@@ -711,6 +729,46 @@ namespace Museum.PhysicalHands.EditorTools
             yield return null;
         }
 
+        static IEnumerator ProductionLowViewOcclusion()
+        {
+            var camera = Camera.main;
+            var xrOrigin = camera ? camera.GetComponentInParent<XROrigin>() : null;
+            Require(camera && xrOrigin, "low-view production input", "saved XR camera and origin are available");
+            Vector3 originalEye = camera.transform.position;
+            Quaternion originalRotation = camera.transform.rotation;
+            Transform floor = xrOrigin.Origin ? xrOrigin.Origin.transform : xrOrigin.transform;
+            Vector3 forward = Vector3.ProjectOnPlane(camera.transform.forward, Vector3.up).normalized;
+            if (forward.sqrMagnitude < .5f) forward = floor.forward;
+            Quaternion lowRotation = Quaternion.LookRotation(forward, Vector3.up);
+            Vector3 lowEye = originalEye + Vector3.up * (floor.position.y + 1.2f - originalEye.y);
+            Vector3 leftPose = lowEye + forward * .42f - camera.transform.right * .08f + Vector3.down * .08f;
+            Vector3 rightPose = lowEye + forward * .42f + camera.transform.right * .08f + Vector3.down * .08f;
+            QueueHead(lowEye, lowRotation);
+            QueueController(leftDevice, leftPose, lowRotation, false);
+            QueueController(rightDevice, rightPose, lowRotation, false);
+            yield return Wait(.7f);
+            var leftVisual = leftHand.GetComponentInChildren<MuseumHandVisual>(true);
+            var rightVisual = rightHand.GetComponentInChildren<MuseumHandVisual>(true);
+            Require(leftVisual.IsViewOccluded && rightVisual.IsViewOccluded,
+                "low-view production input", "nearby idle gloves no longer cover the centre of a seated view",
+                "left=" + leftVisual.IsViewOccluded + "; right=" + rightVisual.IsViewOccluded);
+            Require(leftHand.CollisionCollider.enabled && rightHand.CollisionCollider.enabled &&
+                leftHand.DirectInteractor.enabled && rightHand.DirectInteractor.enabled,
+                "low-view production input", "visual suppression leaves collision and direct interaction active");
+
+            QueueController(leftDevice, leftPose, lowRotation, true);
+            yield return Wait(.2f);
+            Require(!leftVisual.IsViewOccluded && rightVisual.IsViewOccluded,
+                "low-view production input", "grip restores the active hand while the other idle hand stays suppressed");
+            QueueController(leftDevice, leftPose, lowRotation, false);
+            QueueHead(originalEye, originalRotation);
+            QueueController(leftDevice, new Vector3(-.75f, 1.4f, 2f), Quaternion.identity, false);
+            QueueController(rightDevice, new Vector3(.75f, 1.4f, 2f), Quaternion.identity, false);
+            yield return Wait(.7f);
+            Require(!leftVisual.IsViewOccluded && !rightVisual.IsViewOccluded,
+                "low-view production input", "restoring the original view restores both glove visuals");
+        }
+
         static XRDirectInteractor ApiHand(string name, XRInteractionManager manager, Vector3 position, out XRRayInteractor ray)
         {
             var target = new GameObject(name); target.SetActive(false); target.transform.SetParent(fixtureRoot.transform); target.transform.position = position;
@@ -913,9 +971,14 @@ namespace Museum.PhysicalHands.EditorTools
         static void QueueHead()
         {
             var camera = Camera.main; if (!camera) return;
+            QueueHead(camera.transform.position, camera.transform.rotation);
+        }
+        static void QueueHead(Vector3 worldPosition, Quaternion worldRotation)
+        {
+            var camera = Camera.main; if (!camera) return;
             var parent = camera.transform.parent;
-            Vector3 position = parent ? parent.InverseTransformPoint(camera.transform.position) : camera.transform.position;
-            Quaternion rotation = parent ? Quaternion.Inverse(parent.rotation) * camera.transform.rotation : camera.transform.rotation;
+            Vector3 position = parent ? parent.InverseTransformPoint(worldPosition) : worldPosition;
+            Quaternion rotation = parent ? Quaternion.Inverse(parent.rotation) * worldRotation : worldRotation;
             var state = new XRSimulatedHMDState { isTracked = true, trackingState = 3, devicePosition = position, centerEyePosition = position,
                 leftEyePosition = position + Vector3.left * .032f, rightEyePosition = position + Vector3.right * .032f,
                 deviceRotation = rotation, centerEyeRotation = rotation, leftEyeRotation = rotation, rightEyeRotation = rotation };

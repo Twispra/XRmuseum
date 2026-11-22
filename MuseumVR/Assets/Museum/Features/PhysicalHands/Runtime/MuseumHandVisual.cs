@@ -23,11 +23,15 @@ namespace Museum.PhysicalHands
         float currentGrip;
         float currentTrigger;
         bool isHeld;
+        Renderer[] viewRenderers = Array.Empty<Renderer>();
+        bool[] originalForceRenderingOff = Array.Empty<bool>();
+        bool viewOccluded;
 
         public bool IsLeft => left;
         public float GripAmount => currentGrip;
         public int FingerCount => JointCount / JointsPerFinger;
         public int JointCount => fingerJoints != null ? fingerJoints.Length : 0;
+        public bool IsViewOccluded => viewOccluded;
 
         /// <summary>Thumb, index, middle, ring, little; three joints per finger from base to tip.</summary>
         public IReadOnlyList<Transform> FingerJoints => jointView ??
@@ -71,6 +75,16 @@ namespace Museum.PhysicalHands
             ApplyCurrentPose();
         }
 
+        /// <summary>Removes only the rendered glove; tracking, collision and interaction stay active.</summary>
+        public void SetViewOccluded(bool occluded)
+        {
+            EnsureViewRenderers();
+            viewOccluded = occluded;
+            for (int index = 0; index < viewRenderers.Length; index++)
+                if (viewRenderers[index])
+                    viewRenderers[index].forceRenderingOff = occluded || originalForceRenderingOff[index];
+        }
+
         // A large curved exhibit rests against a half-open supporting hand.
         // Full controller Grip is selection intent, not an instruction to fist through it.
         float EffectiveGrip => isHeld ? supportGrip : targetGrip;
@@ -78,6 +92,12 @@ namespace Museum.PhysicalHands
         void OnEnable()
         {
             ApplyCurrentPose();
+            SetViewOccluded(viewOccluded);
+        }
+
+        void OnDisable()
+        {
+            SetViewOccluded(false);
         }
 
         void Update()
@@ -125,6 +145,15 @@ namespace Museum.PhysicalHands
         static float SafeUnitValue(float value)
         {
             return float.IsNaN(value) || float.IsInfinity(value) ? 0f : Mathf.Clamp01(value);
+        }
+
+        void EnsureViewRenderers()
+        {
+            if (viewRenderers.Length > 0) return;
+            viewRenderers = GetComponentsInChildren<Renderer>(true);
+            originalForceRenderingOff = new bool[viewRenderers.Length];
+            for (int index = 0; index < viewRenderers.Length; index++)
+                originalForceRenderingOff[index] = viewRenderers[index] && viewRenderers[index].forceRenderingOff;
         }
     }
 }
