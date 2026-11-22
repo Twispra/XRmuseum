@@ -53,7 +53,8 @@ namespace Museum.SurfaceLine.Editor
             EditorApplication.update += Tick;
         }
 
-        public static void CaptureBaseline() => Begin("Assets/Museum/Scenes/MuseumStart.unity");
+        public static void CaptureMuseum() => Begin("Assets/Museum/Scenes/MuseumStart.unity");
+        public static void CaptureBaseline() => CaptureMuseum();
         public static void CaptureSample() => Begin(Sample);
 
         static void Begin(string scene)
@@ -179,8 +180,7 @@ namespace Museum.SurfaceLine.Editor
             Head(starboard,Quaternion.LookRotation(new Vector3(3.1f,1.38f,3.53f)-starboard));
             for(int i=0;i<6;i++)yield return null;
             Shot("04-right-exhibit");
-            if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().path!=Sample)yield break;
-            Assert(call && call.Control && call.surfaceFlag,"saved sample and registered calling key exist");
+            Assert(call && call.Control && call.surfaceFlag,"saved exhibit and registered calling key exist");
             Assert(!GameObject.Find("Central question"), "one opening question; old back-wall question is inactive");
             Assert(!station.Inspection.SoundEnabled,"silent inspection");
             Head(seat,seatRotation);for(int i=0;i<8;i++)yield return null;
@@ -249,6 +249,24 @@ namespace Museum.SurfaceLine.Editor
             Hand(wrist,aim,false);for(int i=0;i<6;i++)yield return null;
             Assert(call.Control.ConfirmedCount==confirms+2 && demo.IsVisible && !demo.IsPlaying,"replay by grip, static mode");
             CheckLanguages("14-static",false);
+            station.PrepareForGalleryNavigation();
+            for(int i=0;i<5;i++)yield return null;
+            Assert(!demo.IsVisible && call.restingTelephone.activeInHierarchy && !call.surfaceFlag.activeSelf,
+                "navigation handoff clears the call and restores the idle telephone");
+            station.Execute(HelmetDiegeticStation.Command.NextEra);
+            for(int i=0;i<6;i++)yield return null;
+            Assert(!call.installation.activeInHierarchy && !call.key.isActiveAndEnabled, "R2 era hides the whole calling station");
+            station.Execute(HelmetDiegeticStation.Command.PreviousEra);
+            for(int i=0;i<6;i++)yield return null;
+            Assert(call.installation.activeInHierarchy && call.key.isActiveAndEnabled && call.restingTelephone.activeInHierarchy,
+                "returning to Mark V restores the idle calling key");
+            Hand(wrist,aim,true);for(int i=0;i<6;i++)yield return null;
+            Hand(wrist,aim,false);for(int i=0;i<6;i++)yield return null;
+            Assert(demo.IsVisible && call.Control.ConfirmedCount==confirms+3,"call works after returning to Mark V");
+            station.ResetHelmet();
+            for(int i=0;i<5;i++)yield return null;
+            Assert(!demo.IsVisible && call.restingTelephone.activeInHierarchy && call.key.isActiveAndEnabled,
+                "reset clears the transcript and restores the calling key");
         }
 
         static void PhonePose(Transform model)
