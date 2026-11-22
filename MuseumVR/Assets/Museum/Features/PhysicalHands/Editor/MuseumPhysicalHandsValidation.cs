@@ -833,6 +833,30 @@ namespace Museum.PhysicalHands.EditorTools
                 "palm=" + palmView + "; fingertip=" + tipView);
             Require(glove.IsViewOccluded && tip.forceRenderingOff, "low-view geometry",
                 "the rendered fingertip is suppressed when only the fingers cover the centre");
+
+            // Look away from the exhibit so its colliders cannot arrest the distant palm.
+            Quaternion away = viewRotation * Quaternion.Euler(0f, 180f, 0f);
+            Vector3 distantPalm = eye + away * Vector3.forward * .90f;
+            QueueHead(eye, away);
+            QueueController(leftDevice, MuseumPhysicalHandsTestPose.ControllerPosition(leftController, distantPalm, away), away, false);
+            yield return Wait(.5f);
+            Vector3 distantView = camera.WorldToViewportPoint(leftHand.transform.position);
+            float distance = Vector3.Distance(camera.transform.position, leftHand.transform.position);
+            Require(distance >= .85f && distantView.z > 0f && Mathf.Abs(distantView.x - .5f) < .08f &&
+                Mathf.Abs(distantView.y - .5f) < .08f && !glove.IsViewOccluded, "low-view geometry",
+                "a distant centered palm stays visible at the same seated eye height",
+                "distance=" + distance + "; viewport=" + distantView);
+
+            QueueHead(eye, viewRotation);
+            Vector3 behind = eye + viewRotation * Vector3.back * .35f;
+            QueueController(leftDevice, MuseumPhysicalHandsTestPose.ControllerPosition(leftController, behind, viewRotation), viewRotation, false);
+            yield return Wait(.5f);
+            Vector3 forward = camera.transform.forward;
+            Vector3 absForward = new Vector3(Mathf.Abs(forward.x), Mathf.Abs(forward.y), Mathf.Abs(forward.z));
+            float furthestDepth = glove.GetComponentsInChildren<Renderer>().Max(r =>
+                Vector3.Dot(r.bounds.center - camera.transform.position, forward) + Vector3.Dot(r.bounds.extents, absForward));
+            Require(furthestDepth < camera.nearClipPlane && !glove.IsViewOccluded, "low-view geometry",
+                "a nearby glove entirely behind the near clip plane stays unsuppressed", "furthest renderer depth=" + furthestDepth);
         }
 
         static IEnumerator LowViewAnalogInput(MuseumHandVisual leftGlove, MuseumHandVisual rightGlove,
