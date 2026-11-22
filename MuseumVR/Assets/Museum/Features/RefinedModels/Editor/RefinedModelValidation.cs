@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text.RegularExpressions;
+using Museum.Diegetic;
 using Museum.Eras;
 using Museum.Experience;
 using Museum.Exploration;
@@ -39,7 +40,7 @@ namespace Museum.RefinedModels.EditorTools
     {
         const string Prefix = "Museum.RefinedModelsQA.";
         const string ScenePath = "Assets/Museum/Scenes/MuseumStart.unity";
-        const string ColorSourcePath = "artifacts/superlite17b-unity-integration/exports/runtime-readback.json";
+        const string ColorSourcePath = "artifacts/superlite17b-unity-integration/exports/r2-runtime-readback.json";
         const string ColorProbeShaderPath = "Assets/Museum/Features/RefinedModels/Editor/MaterialColorProbe.shader";
         static readonly Stack<IEnumerator> Routines = new Stack<IEnumerator>();
         static readonly Queue<Action> InputQueue = new Queue<Action>();
@@ -67,8 +68,14 @@ namespace Museum.RefinedModels.EditorTools
         [Serializable] sealed class CheckRecord { public string name, method, detail; public bool passed; }
         [Serializable] sealed class FileState { public string path, sha256; }
         [Serializable] sealed class SampleRecord { public string phase; public float windowAngle, time; public Vector3 point; public Quaternion rotation; }
-        [Serializable] sealed class SourceMaterial { public string name; public float[] base_color_linear; public float transmission; }
-        [Serializable] sealed class SourceReadback { public SourceMaterial[] materials; }
+        [Serializable] sealed class SourceMaterial { public string name, texture; public float[] base_color_linear; public float transmission; }
+        [Serializable] sealed class SourcePart { public string name; public int triangles; public bool moves_with_window; public string[] materials; }
+        [Serializable] sealed class SourceReadback
+        {
+            public SourceMaterial[] materials;
+            public SourcePart[] parts;
+            public float[] size_unity_m;
+        }
         [Serializable] sealed class ColorProbeRecord { public string material, assetPath; public Color sourceLinear, savedSrgb, shaderLinear; public float maximumError; }
         [Serializable] sealed class SelectionRecord { public string hotspot, mode, selector; public int events; public Vector3 controllerWorld; public bool rootSelected; }
         [Serializable] sealed class Report
@@ -99,19 +106,26 @@ namespace Museum.RefinedModels.EditorTools
         [MenuItem("Museum/Refined Models/Validate saved main museum")]
         public static void RunInEditor() => Begin(false);
         public static void RunBatch() => Begin(true);
+        public static void RunR2Batch() => Begin(true, true);
 
-        static void Begin(bool batch)
+        static void Begin(bool batch, bool r2Only = false)
         {
             if (EditorApplication.isPlayingOrWillChangePlaymode) throw new InvalidOperationException("Run from Edit Mode.");
             if (!batch && !EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo()) return;
-            var runId = DateTime.UtcNow.ToString("yyyyMMddTHHmmssfffZ") + "-refined-integration-" + Guid.NewGuid().ToString("N");
-            output = Path.Combine(RepoRoot, "artifacts/helmet-interaction/qa/runs", runId);
+            var runId = DateTime.UtcNow.ToString("yyyyMMddTHHmmssfffZ") + (r2Only ? "-superlite-r2-" : "-refined-integration-") + Guid.NewGuid().ToString("N");
+            var outputBase = Environment.GetEnvironmentVariable("MUSEUM_QA_OUTPUT");
+            output = Path.Combine(string.IsNullOrEmpty(outputBase) ? Path.Combine(RepoRoot, "artifacts/helmet-interaction/qa/runs") : outputBase, runId);
             Directory.CreateDirectory(output);
             var snapshot = new Report
             {
                 utc = DateTime.UtcNow.ToString("o"), unity = Application.unityVersion, scene = ScenePath,
                 commit = Git("rev-parse HEAD"), branch = Git("branch --show-current"), workingTree = Git("-c core.quotepath=false status --porcelain=v1 --untracked-files=all")
             };
+            if (r2Only)
+            {
+                snapshot.inputMethod = "Saved MuseumStart in Play Mode. Calls the station's era, window, section and reset commands, the inspection controller's rotation/plane APIs and the grip-surface mesh contact query. Reads back live transforms, mesh caps, shader pixels and rendered frames.";
+                snapshot.limitations = "Editor Play Mode, desktop GPU and monocular captures. XR controller input, real headset handling and performance require separate verification. The R2 display dimensions and virtual front-panel articulation are interpretive.";
+            }
             foreach (var path in Directory.GetFiles(Path.Combine(Application.dataPath, "Museum"), "*", SearchOption.AllDirectories)
                 .Where(p => p.EndsWith(".cs") || p.EndsWith(".shader") || p.EndsWith(".asset") || p.EndsWith(".prefab") || p.EndsWith(".mat") || p.EndsWith(".unity") || p.Contains("RefinedModels")))
                 snapshot.files.Add(new FileState { path = path.Substring(RepoRoot.Length + 1).Replace('\\', '/'), sha256 = Hash(path) });
@@ -119,6 +133,7 @@ namespace Museum.RefinedModels.EditorTools
             SessionState.SetString(Prefix + "Snapshot", JsonUtility.ToJson(snapshot));
             SessionState.SetString(Prefix + "Output", output);
             SessionState.SetBool(Prefix + "Batch", batch);
+            SessionState.SetBool(Prefix + "R2Only", r2Only);
             SessionState.SetInt(Prefix + "Code", -1);
             SessionState.SetBool(Prefix + "Active", true);
             pendingExit = -1; exitAt = 0;
@@ -129,7 +144,7 @@ namespace Museum.RefinedModels.EditorTools
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
         static void PrepareInput()
         {
-            if (!SessionState.GetBool(Prefix + "Active", false)) return;
+            if (!SessionState.GetBool(Prefix + "Active", false) || SessionState.GetBool(Prefix + "R2Only", false)) return;
             keyboard = InputSystem.AddDevice<Keyboard>("Refined models QA keyboard");
             mouse = Mouse.current;
             addedMouse = mouse == null;
@@ -212,6 +227,11 @@ namespace Museum.RefinedModels.EditorTools
             var window = inspection.GetComponentInChildren<HelmetWindowInteractable>(true);
             Check(window && window.colliders.Count > 0 && window.colliders.All(c => c && c.enabled && !grab.colliders.Contains(c)), "front-window hit targets remain independent", "saved asset");
             Check(inspection.GetComponentsInChildren<MonoBehaviour>(true).All(c => c), "helmet has no missing scripts", "saved asset");
+            if (SessionState.GetBool(Prefix + "R2Only", false))
+            {
+                yield return RunR2Exhibit();
+                yield break;
+            }
             ValidateMeshes();
             ValidateModelAxes();
             ValidateSavedWindowHierarchy();
@@ -614,11 +634,79 @@ namespace Museum.RefinedModels.EditorTools
             Check(visual.eraIndex == 2, "reviewed SuperLite occupies era index 2", "saved asset");
             era.ShowEra(2); yield return Wait(.35f);
             inspection.ResetInspection(); yield return Wait(.25f);
+            yield return CheckR2ModelAndInspection(visual);
+            yield return GrabAndMove();
+            Check(binding.IsAdditionalVisualActive, "SuperLite persists through original grab/return", "InputSystem -> XRI and public return API");
+            yield return CheckSuperLiteDemoAndVisit(visual);
+        }
+
+        static IEnumerator RunR2Exhibit()
+        {
+            var station = UnityEngine.Object.FindObjectOfType<HelmetDiegeticStation>();
+            Check(station && station.IsReady && era.AvailableEraCount == 3 && binding.EarlyVisual != null && binding.AdditionalVisual != null,
+                "central station and three eras are ready", "saved MuseumStart, Play Mode");
+            R2EraVisible(1);
+            station.Execute(HelmetDiegeticStation.Command.NextEra);
+            yield return Wait(.4f);
+            R2EraVisible(2);
+            var visual = binding.AdditionalVisual;
+            yield return CheckR2ModelAndInspection(visual);
+            var grips = inspection.GetComponent<Museum.PhysicalHands.MuseumGripSurface>();
+            Check(grips && grips.Cache && grips.Cache.entries != null, "physical grip cache is assigned", "saved grip component");
+            var cached = grips.Cache.entries.ToDictionary(e => e.source);
+            var active = visual.renderers.Select(r => r.GetComponent<MeshFilter>()).ToArray();
+            Check(active.All(filter => grips.ModelFilters.Contains(filter) && cached.TryGetValue(filter.sharedMesh, out var entry) &&
+                    entry.vertices.Length == filter.sharedMesh.vertexCount && entry.triangles.Length == filter.sharedMesh.triangles.Length),
+                "grip filters and triangle cache include all 173 active R2 parts", "saved filter, mesh and cache identities");
+            var handle = visual.renderers.Single(r => r.name == "FP_BrassHandle_560-014");
+            var query = handle.bounds.center + Vector3.up * (handle.bounds.extents.y + .03f);
+            Check(grips.TryGetContact(grab, query, out var contact, out var normal) && !grips.LastContactUsedColliderFallback &&
+                  visual.renderers.Contains(grips.LastContactRenderer) && grips.LastTestedTriangleCount > 0 && Vector3.Dot(normal, query - contact) > 0,
+                "grip query finds an outward-facing point directly on the equipped R2 mesh", "MuseumGripSurface.TryGetContact",
+                "contact=" + contact + "; renderer=" + grips.LastContactRenderer + "; triangles examined=" + grips.LastTestedTriangleCount);
+            var initial = inspection.transform.rotation;
+            var originalShell = visual.shell.transform.rotation;
+            var axis = new Vector3(.35f, 1f, .2f).normalized;
+            var delta = Quaternion.AngleAxis(35f, axis);
+            inspection.RotateDisplayAround(axis, 35f);
+            Check(Quaternion.Angle(inspection.transform.rotation, delta * initial) < .1f &&
+                Quaternion.Angle(visual.shell.transform.rotation, delta * originalShell) < .1f,
+                "free-axis rotation moves the actual R2 shell by 35 degrees", "public inspection controller and observed world poses");
+            int resets = reset.ResetCount;
+            station.Execute(HelmetDiegeticStation.Command.Reset);
+            yield return Wait(1.2f);
+            Check(reset.ResetCount > resets && !inspection.IsCutaway && !inspection.WindowTargetOpen &&
+                Quaternion.Angle(inspection.transform.rotation, reset.HomePose.rotation) < 1f &&
+                Vector3.Distance(inspection.transform.position, reset.HomePose.position) < .025f,
+                "station reset returns the R2 exhibit to its display pose", "public station command, reset counter and settled transform",
+                "home=" + reset.HomePose.position + "; actual=" + inspection.transform.position);
+            R2EraVisible(2);
+            foreach (var target in new[] { 0, 1, 0, 2, 1 })
+            {
+                var next = (era.CurrentIndex + 1) % era.AvailableEraCount == target;
+                station.Execute(next ? HelmetDiegeticStation.Command.NextEra : HelmetDiegeticStation.Command.PreviousEra);
+                yield return Wait(.4f);
+                R2EraVisible(target);
+            }
+        }
+
+        static void R2EraVisible(int index)
+        {
+            var groups = new[] { binding.EarlyVisual.renderers, binding.RefinedRenderers, binding.AdditionalVisual.renderers };
+            Check(era.CurrentIndex == index && binding.AppliedEraIndex == index &&
+                groups.Select((list, i) => list.Length > 0 && list.All(r => r && (r.enabled && r.gameObject.activeInHierarchy) == (i == index))).All(ok => ok),
+                "one visible model after era selection / " + index, "station command, applied binding and all three renderer groups");
+        }
+
+        static IEnumerator CheckR2ModelAndInspection(RefinedHelmetBinding.EraVisual visual)
+        {
+            var station = UnityEngine.Object.FindObjectOfType<HelmetDiegeticStation>();
+            Check(station && station.IsReady, "current inspection commands are available", "saved central station");
             report.superLiteRenderers = visual.renderers.Length;
             report.superLiteTriangles = visual.renderers.Sum(r => r.GetComponent<MeshFilter>().sharedMesh.triangles.Length / 3);
             Check(binding.IsAdditionalVisualActive && binding.ActiveShell == visual.shell && binding.ActiveGlass == visual.glass,
                 "SuperLite resolves active surfaces", "public era API");
-            Check(visual.renderers.Length == 143 && report.superLiteTriangles == 50268,
+            Check(visual.renderers.Length == 173 && report.superLiteTriangles == 265244,
                 "actual imported SuperLite retains reviewed mesh and triangle counts", "saved imported meshes", "meshes=" + visual.renderers.Length + "; triangles=" + report.superLiteTriangles);
             Check(visual.renderers.All(r => r.enabled && r.gameObject.activeInHierarchy) && binding.RefinedRenderers.All(r => !r.enabled),
                 "SuperLite is visible with Mark V hidden", "public era API");
@@ -628,14 +716,28 @@ namespace Museum.RefinedModels.EditorTools
             Check(visual.glass.sharedMaterial.shader.name == "Museum/Inspection Glass" && visual.glass.sharedMaterial.renderQueue >= 3000 &&
                 visual.renderers.Where(r => r != visual.glass).All(r => r.sharedMaterial.shader.name == "Museum/Inspection Shell"),
                 "SuperLite uses transparent glass and compatible section/highlight materials", "saved asset");
-            CheckSuperLiteColors(visual);
-            Check(visual.window.GetComponentsInChildren<Renderer>(true).Length == 14 && visual.glass.transform.IsChildOf(inspection.WindowPivot),
+            var source = JsonUtility.FromJson<SourceReadback>(File.ReadAllText(Path.Combine(RepoRoot, ColorSourcePath)));
+            CheckSuperLiteParts(visual, source);
+            CheckSuperLiteColors(visual, source);
+            Check(visual.window.GetComponentsInChildren<Renderer>(true).Length == 16 && visual.glass.transform.IsChildOf(inspection.WindowPivot),
                 "SuperLite front panel remains in original interaction hinge", "saved asset");
-            var bounds = MeshBoundsInHelmet(visual.renderers[0]);
-            foreach (var r in visual.renderers.Skip(1)) bounds.Encapsulate(MeshBoundsInHelmet(r));
-            Check(Vector3.Distance(bounds.size, new Vector3(.2816658f, .3138472f, .3250093f)) < .0001f,
+            // The AABB of a rotated source part can extend beyond that part's actual surface.
+            // Compare world-space geometry to the original Blender vertex bounds.
+            var filters = visual.renderers.Select(r => r.GetComponent<MeshFilter>()).ToArray();
+            var bounds = new Bounds(inspection.transform.InverseTransformPoint(filters[0].transform.TransformPoint(filters[0].sharedMesh.vertices[0])), Vector3.zero);
+            float worldMin = float.PositiveInfinity;
+            foreach (var filter in filters)
+            {
+                var world = filter.transform.localToWorldMatrix;
+                var local = inspection.transform.worldToLocalMatrix * world;
+                foreach (var vertex in filter.sharedMesh.vertices)
+                {
+                    bounds.Encapsulate(local.MultiplyPoint3x4(vertex));
+                    worldMin = Mathf.Min(worldMin, world.MultiplyPoint3x4(vertex).y);
+                }
+            }
+            Check(Vector3.Distance(bounds.size, new Vector3(source.size_unity_m[0], source.size_unity_m[1], source.size_unity_m[2])) < .0001f,
                 "SuperLite axis conversion retains width/height/depth without scaling drift", "saved imported meshes", bounds.size.ToString("F6"));
-            var worldMin = visual.renderers.Select(r => r.bounds.min.y).Min();
             // The three plinths can have different heights; validate the helmet's actual central support.
             var plinth = GameObject.Find("Exhibit 02 - Placeholder")?.transform.Find("Plinth");
             Check(plinth && plinth.GetComponent<Renderer>(), "central exhibition support is resolved explicitly", "saved scene geometry");
@@ -658,32 +760,37 @@ namespace Museum.RefinedModels.EditorTools
             var markerClosed = inspection.transform.InverseTransformPoint(frontMarker.transform.position);
             var markerInGlass = visual.glass.transform.InverseTransformPoint(frontMarker.transform.position);
             CheckHotspotSurfaces(visual, "closed window");
-            yield return PressInspectionButton("WINDOW"); yield return Wait(.9f);
+            station.Execute(HelmetDiegeticStation.Command.Window); yield return Wait(.9f);
             var expected = visual.hinge + Quaternion.AngleAxis(-HelmetInspectionController.MaximumWindowAngle, Vector3.up) * (closed - visual.hinge);
             Check(inspection.WindowAngle > 94.9f && Vector3.Distance(inspection.transform.InverseTransformPoint(visual.glass.bounds.center), expected) < .004f,
-                "SuperLite virtual inspection panel opens via existing XR button", "InputSystem -> XRI");
+                "SuperLite virtual inspection panel opens via the exhibit", "public station window command");
             Check(Vector3.Distance(markerInGlass, visual.glass.transform.InverseTransformPoint(frontMarker.transform.position)) < .0001f &&
                 Vector3.Distance(markerClosed, inspection.transform.InverseTransformPoint(frontMarker.transform.position)) > .05f,
-                "SuperLite front hotspot follows actual moving glass", "InputSystem -> XRI -> observed surface-relative transform");
+                "SuperLite front hotspot follows actual moving glass", "public station command and observed surface-relative transform");
             CheckHotspotSurfaces(visual, "open window");
             CaptureHelmet("18-superlite-virtual-panel-open", new Vector3(-.38f, .13f, -.88f));
-            yield return PressInspectionButton("WINDOW"); yield return Wait(.9f);
+            station.Execute(HelmetDiegeticStation.Command.Window); yield return Wait(.9f);
             Check(inspection.WindowAngle < .05f && Vector3.Distance(inspection.transform.InverseTransformPoint(visual.glass.bounds.center), closed) < .004f,
-                "SuperLite inspection panel closes at original alignment", "InputSystem -> XRI");
+                "SuperLite inspection panel closes at original alignment", "public station window command");
             Check(Vector3.Distance(markerClosed, inspection.transform.InverseTransformPoint(frontMarker.transform.position)) < .0001f,
-                "SuperLite front hotspot returns with closed glass", "InputSystem -> XRI -> observed marker transform");
-            yield return GrabAndMove();
-            Check(binding.IsAdditionalVisualActive, "SuperLite persists through original grab/return", "InputSystem -> XRI and public return API");
+                "SuperLite front hotspot returns with closed glass", "public station command and observed marker transform");
+            station.Execute(HelmetDiegeticStation.Command.Section);
+            Check(inspection.IsCutaway, "exhibit enables R2 section inspection", "public station section command");
             foreach (var normal in new[] { Vector3.right, Vector3.up, new Vector3(.4f, .3f, -.8f).normalized })
             {
-                inspection.SetCutaway(true); inspection.SetSectionPlane(normal, 0); section.Refresh(); yield return null;
+                inspection.SetSectionPlane(normal, 0); section.Refresh(); yield return null;
                 Check(section.TriangleCount > 0, "SuperLite structural section / " + normal, "public section API", "triangles=" + section.TriangleCount);
                 var block = new MaterialPropertyBlock();
                 Check(visual.renderers.All(r => { r.GetPropertyBlock(block); return block.GetFloat("_CutEnabled") > .5f; }),
                     "SuperLite visible surfaces receive clip state / " + normal, "public section API");
             }
             CaptureHelmet("19-superlite-section", new Vector3(-.38f, .13f, -.88f));
-            inspection.SetCutaway(false);
+            station.Execute(HelmetDiegeticStation.Command.Section);
+            Check(!inspection.IsCutaway, "exhibit closes R2 section inspection", "public station section command");
+        }
+
+        static IEnumerator CheckSuperLiteDemoAndVisit(RefinedHelmetBinding.EraVisual visual)
+        {
             demo.Play(HelmetExplorationController.Clue.Air); yield return Wait(2.7f);
             Check(Vector3.Distance(demo.AirEndpointWorld, visual.airOutlet.position) < .0002f,
                 "existing AIR demonstration follows SuperLite inlet anchor", "public demonstration API");
@@ -710,20 +817,44 @@ namespace Museum.RefinedModels.EditorTools
             inspection.ResetInspection(); yield return Wait(.2f);
         }
 
-        static void CheckSuperLiteColors(RefinedHelmetBinding.EraVisual visual)
+        static void CheckSuperLiteParts(RefinedHelmetBinding.EraVisual visual, SourceReadback source)
+        {
+            var byName = visual.renderers.ToDictionary(r => r.name, StringComparer.Ordinal);
+            Check(source.parts.Length == byName.Count, "R2 FBX part inventory matches the display", "Blender round-trip and active renderer names");
+            foreach (var part in source.parts)
+            {
+                Check(byName.TryGetValue(part.name, out var renderer), "R2 part present / " + part.name, "saved scene geometry");
+                var mesh = renderer.GetComponent<MeshFilter>().sharedMesh;
+                Check(mesh.triangles.Length == 3 * part.triangles &&
+                    renderer.sharedMaterials.Select(m => m.name).SequenceEqual(part.materials) &&
+                    renderer.transform.IsChildOf(visual.window) == part.moves_with_window,
+                    "R2 mesh, material slots and articulation / " + part.name, "Blender FBX readback vs. applied era");
+            }
+            Check(visual.telephone.Select(r => r.name).OrderBy(n => n, StringComparer.Ordinal)
+                    .SequenceEqual(new[] { "CommsPost_1_515-035", "CommsPost_2_515-035" }),
+                "both 500-010 communication posts are bound", "applied third era");
+        }
+
+        static void CheckSuperLiteColors(RefinedHelmetBinding.EraVisual visual, SourceReadback source)
         {
             Check(QualitySettings.activeColorSpace == ColorSpace.Linear && SystemInfo.SupportsRenderTextureFormat(RenderTextureFormat.ARGBFloat),
                 "linear floating-point color probe is available", "project color space and graphics capability");
-            var source = JsonUtility.FromJson<SourceReadback>(File.ReadAllText(Path.Combine(RepoRoot, ColorSourcePath)));
             var shader = AssetDatabase.LoadAssetAtPath<Shader>(ColorProbeShaderPath);
-            Check(shader && shader.isSupported && source.materials.Count(m => m.transmission == 0) == 8,
-                "probe shader and eight opaque Blender source colors are available", "saved source readback and ordinary Color-property shader", ColorSourcePath);
+            Check(shader && shader.isSupported && source.materials.Count(m => m.transmission == 0) == 32,
+                "probe shader and 32 opaque R2 materials are available", "saved source readback and ordinary Color-property shader", ColorSourcePath);
             foreach (var materialSource in source.materials.Where(m => m.transmission == 0))
             {
-                string path = "Assets/Museum/Features/SuperLiteModels/Materials/" + materialSource.name + ".mat";
+                string path = "Assets/Museum/Features/SuperLiteModels/Materials/R2/" + materialSource.name + ".mat";
                 var saved = AssetDatabase.LoadAssetAtPath<Material>(path);
                 Check(saved && visual.renderers.Any(r => r.sharedMaterials.Contains(saved)) && saved.shader.name == "Museum/Inspection Shell",
                     "actual SuperLite renderer uses saved material / " + materialSource.name, "saved asset identity", path);
+                if (!string.IsNullOrEmpty(materialSource.texture))
+                {
+                    var texture = saved.GetTexture("_BaseMap");
+                    Check(texture && Path.GetFileName(AssetDatabase.GetAssetPath(texture)) == materialSource.texture &&
+                        saved.GetFloat("_TextureStrength") > .99f,
+                        "original R2 printed marking is active / " + materialSource.name, "saved texture and shader binding");
+                }
                 var values = materialSource.base_color_linear;
                 var expected = new Color(values[0], values[1], values[2], values[3]);
                 var stored = saved.GetColor("_BaseColor");
@@ -734,7 +865,7 @@ namespace Museum.RefinedModels.EditorTools
                 Check(error < .001f, "saved shader color matches Blender linear source / " + materialSource.name,
                     "ordinary Color property -> ARGBFloat linear RT pixel readback (no lighting or display transfer)",
                     "source=" + expected.ToString("F6") + "; saved=" + stored.ToString("F6") + "; shader=" + observed.ToString("F6") + "; max error=" + error);
-                if (materialSource.name == "M_Shell_Gelcoat_Yellow")
+                if (materialSource.name == "R2_17B_Yellow_gelcoat")
                 {
                     var unencoded = ProbeColor(shader, expected);
                     Check(ColorError(expected, unencoded) > .1f && unencoded.g < expected.g - .1f,
@@ -782,9 +913,9 @@ namespace Museum.RefinedModels.EditorTools
             foreach (var hotspot in hotspots)
             {
                 string id = HotspotSource(hotspot, "identifier");
-                var surfaces = visual.renderers.Where(r => id == "front-window" ? r.name == "Glass_Port_520-004" :
-                    id == "bonnet" ? r.name.StartsWith("Shell_Yellow", StringComparison.Ordinal) :
-                    id == "breastplate" && (r.name == "NeckDam_Neoprene_510-533" || r.name == "NeckClamp_505-055")).ToArray();
+                var surfaces = visual.renderers.Where(r => id == "front-window" ? r.name == "FP_Lens_520-004" :
+                    id == "bonnet" ? r.name == "SL17B_YellowShell_Study" :
+                    id == "breastplate" && (r.name == "Drawstring_neck_dam_510-533" || r.name == "Stainless_split_neck_clamp_505-055")).ToArray();
                 var collider = hotspot.GetComponent<XRSimpleInteractable>().colliders.SingleOrDefault();
                 Check(surfaces.Length > 0 && surfaces.All(r => r.enabled && r.gameObject.activeInHierarchy) && collider && collider.enabled && collider.isTrigger,
                     "observation target has its actual active surface / " + phase + "/" + id, "renderer names and live collider");
@@ -837,7 +968,7 @@ namespace Museum.RefinedModels.EditorTools
         static void CheckSuperLiteMechanicalFocus(RefinedHelmetBinding.EraVisual visual, string phase)
         {
             var mechanical = visual.renderers.Where(r => r.name.StartsWith("Hinge_", StringComparison.Ordinal) ||
-                r.name.StartsWith("NeckClamp", StringComparison.Ordinal) || r.name.StartsWith("Neck_Yoke", StringComparison.Ordinal)).ToArray();
+                r.name == "Stainless_split_neck_clamp_505-055" || r.name.StartsWith("Rear_yoke_hinge_", StringComparison.Ordinal)).ToArray();
             var block = new MaterialPropertyBlock(); var samples = new List<string>();
             bool clear = mechanical.Length >= 3;
             foreach (var renderer in mechanical)
