@@ -1,5 +1,7 @@
 # 外部资源与辅助工具记录
 
+2026-11-22 正式展厅复用 [#87 的三语展板](https://github.com/Twispra/XRmuseum/pull/87)和 [#84 的水面电话情境](https://github.com/Twispra/XRmuseum/pull/84)。铜键和两端对白沿用已标注的展览情境。Codex 辅助整合、空间排版、桌面键盘操作、Unity 与发行程序验证。[接入记录](activity/2026-11-22-harbour-routes-and-call.md)。
+
 2026-11-22 中央展台的 SuperLite 17B R2 使用项目已验收的 #94 整盔、印字贴图和 500-010 配置资料。Codex 辅助从固定版本 GLB 导出 Unity FBX、核对面角与材质，并完成展项接入与运行验证。建模来源、厂家依据及估算范围沿用原作者记录。[#94 建模与修订](https://github.com/Twispra/XRmuseum/pull/94) · [Unity 接入记录](activity/2026-11-22-superlite-r2-central.md)。
 
 ## 2026-11-20：#77 右侧展台接入
