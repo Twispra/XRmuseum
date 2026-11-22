@@ -29,7 +29,7 @@ namespace Museum.Navigation
 
         void Update()
         {
-            if (!gallery || !gallery.IsReady || !Keyboard.current || XRSettings.isDeviceActive)
+            if (!gallery || !gallery.IsReady || Keyboard.current == null || XRSettings.isDeviceActive)
             {
                 RestoreView();
                 return;
