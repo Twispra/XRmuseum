@@ -1,0 +1,1939 @@
+{
+  "passed": true,
+  "blender": "4.5.14 LTS",
+  "source_commit": "8a7d319f407fea858b1f177c00b3279954e1543d",
+  "source_sha256": "82de680095b45aa24b45b523510c244488394d7f84c6f32b9674a6295885e4bb",
+  "export_sha256": "f999c180c37653174eb484453e2611d9b8fe9f2ead7c4b740f331b9914d46ec6",
+  "meshes": 173,
+  "triangles": 265244,
+  "bounds_blender_m": [
+    [
+      -0.19645959697663784,
+      -0.19134034076705575,
+      0.01038489118218422
+    ],
+    [
+      0.14915482699871063,
+      0.15551088750362396,
+      0.3376433849334717
+    ]
+  ],
+  "size_unity_m": [
+    0.3456144239753485,
+    0.32725849375128746,
+    0.3468512282706797
+  ],
+  "window_parts": [
+    "FP_Lens_520-004",
+    "FP_PortPlug_530-052_1",
+    "FP_PortPlug_530-052_2",
+    "FP_PortRetainer_560-070",
+    "FP_PortSeal_510-260",
+    "FP_RetainerScrew_05",
+    "FP_RetainerScrew_06",
+    "FP_RetainerScrew_07",
+    "FP_RetainerScrew_08",
+    "FP_RetainerScrew_09",
+    "FP_RetainerScrew_12",
+    "FP_RetainerScrew_14",
+    "FP_RetainerScrew_17",
+    "FP_RetainerScrew_18",
+    "FP_RetainerScrew_19",
+    "FP_RetainerScrew_20"
+  ],
+  "materials": [
+    {
+      "name": "R2_17B_Yellow_gelcoat",
+      "source_name": "17B • Yellow gelcoat",
+      "base_color_linear": [
+        0.9900000095367432,
+        0.6200000047683716,
+        0.00800000037997961,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.28999999165534973,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Inside_shell_finish",
+      "source_name": "17B • Inside shell finish",
+      "base_color_linear": [
+        0.09399999678134918,
+        0.07800000160932541,
+        0.05900000035762787,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.6200000047683716,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_Port_graphite_elastomer",
+      "source_name": "Port • graphite elastomer",
+      "base_color_linear": [
+        0.013000000268220901,
+        0.017000000923871994,
+        0.01899999938905239,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.5699999928474426,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_Port_polished_chrome",
+      "source_name": "Port • polished chrome",
+      "base_color_linear": [
+        0.75,
+        0.800000011920929,
+        0.8399999737739563,
+        1
+      ],
+      "metallic": 0.9599999785423279,
+      "roughness": 0.20000000298023224,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_Port_clear_polycarbonate",
+      "source_name": "Port • clear polycarbonate",
+      "base_color_linear": [
+        0.9649999737739563,
+        0.9909999966621399,
+        1,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.0729999989271164,
+      "transmission": 1,
+      "texture": ""
+    },
+    {
+      "name": "R2_Handle_polished_warm_brass",
+      "source_name": "Handle • polished warm brass",
+      "base_color_linear": [
+        0.7799999713897705,
+        0.5149999856948853,
+        0.1899999976158142,
+        1
+      ],
+      "metallic": 0.8999999761581421,
+      "roughness": 0.23499999940395355,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_Port_machined_fasteners",
+      "source_name": "Port • machined fasteners",
+      "base_color_linear": [
+        0.5699999928474426,
+        0.6299999952316284,
+        0.6800000071525574,
+        1
+      ],
+      "metallic": 0.9399999976158142,
+      "roughness": 0.27000001072883606,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_Visor_formed_dark_ABS",
+      "source_name": "Visor • formed dark ABS",
+      "base_color_linear": [
+        0.035999998450279236,
+        0.039000000804662704,
+        0.041999999433755875,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.47999998927116394,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Black_neoprene",
+      "source_name": "17B | Black neoprene",
+      "base_color_linear": [
+        0.012000000104308128,
+        0.01600000075995922,
+        0.019999999552965164,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.5299999713897705,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Blue_inner_neck_fabric",
+      "source_name": "17B | Blue inner neck fabric",
+      "base_color_linear": [
+        0.02800000086426735,
+        0.05999999865889549,
+        0.16599999368190765,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.6200000047683716,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Neck_hardware_satin_stainless",
+      "source_name": "17B | Neck hardware, satin stainless",
+      "base_color_linear": [
+        0.6299999952316284,
+        0.6899999976158142,
+        0.7200000286102295,
+        1
+      ],
+      "metallic": 0.9200000166893005,
+      "roughness": 0.23000000417232513,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Charcoal_moulded_urethane",
+      "source_name": "17B | Charcoal moulded urethane",
+      "base_color_linear": [
+        0.01899999938905239,
+        0.02199999988079071,
+        0.024000000208616257,
+        1
+      ],
+      "metallic": 0.029999999329447746,
+      "roughness": 0.3100000023841858,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Polished_cast_brass",
+      "source_name": "17B | Polished cast brass",
+      "base_color_linear": [
+        0.7900000214576721,
+        0.49000000953674316,
+        0.1599999964237213,
+        1
+      ],
+      "metallic": 0.8999999761581421,
+      "roughness": 0.22499999403953552,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Woven_restraint_tape",
+      "source_name": "17B | Woven restraint tape",
+      "base_color_linear": [
+        0.020999999716877937,
+        0.024000000208616257,
+        0.027000000700354576,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.7699999809265137,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Head_cushion_blue_nylon",
+      "source_name": "17B • Head cushion blue nylon",
+      "base_color_linear": [
+        0.02800000086426735,
+        0.06199999898672104,
+        0.23999999463558197,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.7900000214576721,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Cushion_binding",
+      "source_name": "17B • Cushion binding",
+      "base_color_linear": [
+        0.012000000104308128,
+        0.017999999225139618,
+        0.035999998450279236,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.8100000023841858,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Inner_rubber",
+      "source_name": "17B • Inner rubber",
+      "base_color_linear": [
+        0.020999999716877937,
+        0.02500000037252903,
+        0.029999999329447746,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.5099999904632568,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Earphone_face",
+      "source_name": "17B • Earphone face",
+      "base_color_linear": [
+        0.23999999463558197,
+        0.28999999165534973,
+        0.30000001192092896,
+        1
+      ],
+      "metallic": 0.2800000011920929,
+      "roughness": 0.5199999809265137,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Microphone_rubber",
+      "source_name": "17B • Microphone rubber",
+      "base_color_linear": [
+        0.03200000151991844,
+        0.03500000014901161,
+        0.039000000804662704,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.6299999952316284,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Comms_brass",
+      "source_name": "17B • Comms brass",
+      "base_color_linear": [
+        0.49000000953674316,
+        0.3100000023841858,
+        0.10999999940395355,
+        1
+      ],
+      "metallic": 0.8299999833106995,
+      "roughness": 0.3199999928474426,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Post_insulation",
+      "source_name": "17B • Post insulation",
+      "base_color_linear": [
+        0.032999999821186066,
+        0.03500000014901161,
+        0.03799999877810478,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.3199999928474426,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Comms_cable_jacket",
+      "source_name": "17B • Comms cable jacket",
+      "base_color_linear": [
+        0.06499999761581421,
+        0.07400000095367432,
+        0.08100000023841858,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.6200000047683716,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_Red_terminal_sleeve",
+      "source_name": "17B • Red terminal sleeve",
+      "base_color_linear": [
+        0.36000001430511475,
+        0.03200000151991844,
+        0.023000000044703484,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.5600000023841858,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_17B_White_terminal_sleeve",
+      "source_name": "17B • White terminal sleeve",
+      "base_color_linear": [
+        0.4699999988079071,
+        0.47999998927116394,
+        0.46000000834465027,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.6299999952316284,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_Air_machined_steel",
+      "source_name": "Air • machined steel",
+      "base_color_linear": [
+        0.38999998569488525,
+        0.4399999976158142,
+        0.4699999988079071,
+        1
+      ],
+      "metallic": 0.9100000262260437,
+      "roughness": 0.27000001072883606,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_Air_moulded_rubber",
+      "source_name": "Air • moulded rubber",
+      "base_color_linear": [
+        0.014000000432133675,
+        0.017000000923871994,
+        0.01899999938905239,
+        1
+      ],
+      "metallic": 0.029999999329447746,
+      "roughness": 0.46000000834465027,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_Air_polished_chrome",
+      "source_name": "Air • polished chrome",
+      "base_color_linear": [
+        0.6399999856948853,
+        0.6899999976158142,
+        0.7300000190734863,
+        1
+      ],
+      "metallic": 0.949999988079071,
+      "roughness": 0.18000000715255737,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_Air_black_handwheel",
+      "source_name": "Air • black handwheel",
+      "base_color_linear": [
+        0.026000000536441803,
+        0.028999999165534973,
+        0.03099999949336052,
+        1
+      ],
+      "metallic": 0.03999999910593033,
+      "roughness": 0.3400000035762787,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_Air_purge_printed_marking",
+      "source_name": "Air • purge printed marking",
+      "base_color_linear": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0.11999999731779099,
+      "roughness": 0.33000001311302185,
+      "transmission": 0.0,
+      "texture": "r2-purge.png"
+    },
+    {
+      "name": "R2_Air_dark_recess",
+      "source_name": "Air • dark recess",
+      "base_color_linear": [
+        0.004000000189989805,
+        0.006000000052154064,
+        0.007000000216066837,
+        1
+      ],
+      "metallic": 0,
+      "roughness": 0.6399999856948853,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_Air_brass",
+      "source_name": "Air • brass",
+      "base_color_linear": [
+        0.6899999976158142,
+        0.41999998688697815,
+        0.1080000028014183,
+        1
+      ],
+      "metallic": 0.8399999737739563,
+      "roughness": 0.2800000011920929,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_Air_blue_transport_caps",
+      "source_name": "Air • blue transport caps",
+      "base_color_linear": [
+        0.023000000044703484,
+        0.2199999988079071,
+        0.5400000214576721,
+        1
+      ],
+      "metallic": 0.03999999910593033,
+      "roughness": 0.3799999952316284,
+      "transmission": 0.0,
+      "texture": ""
+    },
+    {
+      "name": "R2_Air_sideblock_printed_marking",
+      "source_name": "Air • sideblock printed marking",
+      "base_color_linear": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "metallic": 0.550000011920929,
+      "roughness": 0.33000001311302185,
+      "transmission": 0.0,
+      "texture": "r2-sideblock.png"
+    }
+  ],
+  "parts": [
+    {
+      "name": "Adjustable_clamp_clevis_505-055",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 440,
+      "moves_with_window": false
+    },
+    {
+      "name": "AirTrain_545-016_perforated_arc",
+      "materials": [
+        "R2_17B_Inner_rubber"
+      ],
+      "triangles": 3316,
+      "moves_with_window": false
+    },
+    {
+      "name": "AirTrain_starboard_feed_shoulder",
+      "materials": [
+        "R2_17B_Post_insulation"
+      ],
+      "triangles": 252,
+      "moves_with_window": false
+    },
+    {
+      "name": "Alignment_screw_530-090",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 396,
+      "moves_with_window": false
+    },
+    {
+      "name": "Bail_engaging_yoke_catch",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 220,
+      "moves_with_window": false
+    },
+    {
+      "name": "Bottom_O-ring_510-446",
+      "materials": [
+        "R2_17B_Black_neoprene"
+      ],
+      "triangles": 3840,
+      "moves_with_window": false
+    },
+    {
+      "name": "Chin_adjuster_centre_bar",
+      "materials": [
+        "R2_17B_Charcoal_moulded_urethane"
+      ],
+      "triangles": 156,
+      "moves_with_window": false
+    },
+    {
+      "name": "Clamp_lever_pivot_149",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 236,
+      "moves_with_window": false
+    },
+    {
+      "name": "Clamp_lever_pivot_186",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 236,
+      "moves_with_window": false
+    },
+    {
+      "name": "Clamp_lever_pivot_204",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 236,
+      "moves_with_window": false
+    },
+    {
+      "name": "CommsPost_1_515-035",
+      "materials": [
+        "R2_17B_Post_insulation"
+      ],
+      "triangles": 548,
+      "moves_with_window": false
+    },
+    {
+      "name": "CommsPost_1_base",
+      "materials": [
+        "R2_17B_Post_insulation"
+      ],
+      "triangles": 252,
+      "moves_with_window": false
+    },
+    {
+      "name": "CommsPost_1_inner_nut",
+      "materials": [
+        "R2_17B_Comms_brass"
+      ],
+      "triangles": 32,
+      "moves_with_window": false
+    },
+    {
+      "name": "CommsPost_1_inner_washer",
+      "materials": [
+        "R2_17B_Comms_brass"
+      ],
+      "triangles": 124,
+      "moves_with_window": false
+    },
+    {
+      "name": "CommsPost_2_515-035",
+      "materials": [
+        "R2_17B_Post_insulation"
+      ],
+      "triangles": 544,
+      "moves_with_window": false
+    },
+    {
+      "name": "CommsPost_2_base",
+      "materials": [
+        "R2_17B_Post_insulation"
+      ],
+      "triangles": 252,
+      "moves_with_window": false
+    },
+    {
+      "name": "CommsPost_2_inner_nut",
+      "materials": [
+        "R2_17B_Comms_brass"
+      ],
+      "triangles": 32,
+      "moves_with_window": false
+    },
+    {
+      "name": "CommsPost_2_inner_washer",
+      "materials": [
+        "R2_17B_Comms_brass"
+      ],
+      "triangles": 124,
+      "moves_with_window": false
+    },
+    {
+      "name": "Comms_Left_conductor_1",
+      "materials": [
+        "R2_17B_Red_terminal_sleeve"
+      ],
+      "triangles": 308,
+      "moves_with_window": false
+    },
+    {
+      "name": "Comms_Left_conductor_2",
+      "materials": [
+        "R2_17B_Inner_rubber"
+      ],
+      "triangles": 308,
+      "moves_with_window": false
+    },
+    {
+      "name": "Comms_Microphone_conductor_1",
+      "materials": [
+        "R2_17B_Red_terminal_sleeve"
+      ],
+      "triangles": 308,
+      "moves_with_window": false
+    },
+    {
+      "name": "Comms_Microphone_conductor_2",
+      "materials": [
+        "R2_17B_White_terminal_sleeve"
+      ],
+      "triangles": 308,
+      "moves_with_window": false
+    },
+    {
+      "name": "Comms_Right_conductor_1",
+      "materials": [
+        "R2_17B_Red_terminal_sleeve"
+      ],
+      "triangles": 308,
+      "moves_with_window": false
+    },
+    {
+      "name": "Comms_Right_conductor_2",
+      "materials": [
+        "R2_17B_Inner_rubber"
+      ],
+      "triangles": 308,
+      "moves_with_window": false
+    },
+    {
+      "name": "Comms_left_ear_internal_lead",
+      "materials": [
+        "R2_17B_Comms_cable_jacket"
+      ],
+      "triangles": 1316,
+      "moves_with_window": false
+    },
+    {
+      "name": "Comms_microphone_internal_lead",
+      "materials": [
+        "R2_17B_Comms_cable_jacket"
+      ],
+      "triangles": 308,
+      "moves_with_window": false
+    },
+    {
+      "name": "Comms_right_ear_internal_lead",
+      "materials": [
+        "R2_17B_Comms_cable_jacket"
+      ],
+      "triangles": 452,
+      "moves_with_window": false
+    },
+    {
+      "name": "Comms_terminal_lug_1",
+      "materials": [
+        "R2_17B_Comms_brass"
+      ],
+      "triangles": 192,
+      "moves_with_window": false
+    },
+    {
+      "name": "Comms_terminal_lug_2",
+      "materials": [
+        "R2_17B_Comms_brass"
+      ],
+      "triangles": 192,
+      "moves_with_window": false
+    },
+    {
+      "name": "Comms_unused_MWPC_550-043_plug",
+      "materials": [
+        "R2_17B_Post_insulation"
+      ],
+      "triangles": 44,
+      "moves_with_window": false
+    },
+    {
+      "name": "Continuous_rear_weight_560-005",
+      "materials": [
+        "R2_17B_Polished_cast_brass"
+      ],
+      "triangles": 5504,
+      "moves_with_window": false
+    },
+    {
+      "name": "Cushion_Left_ear_pocket",
+      "materials": [
+        "R2_17B_Head_cushion_blue_nylon",
+        "R2_17B_Cushion_binding"
+      ],
+      "triangles": 3040,
+      "moves_with_window": false
+    },
+    {
+      "name": "Cushion_Right_ear_pocket",
+      "materials": [
+        "R2_17B_Head_cushion_blue_nylon",
+        "R2_17B_Cushion_binding"
+      ],
+      "triangles": 3040,
+      "moves_with_window": false
+    },
+    {
+      "name": "Cushion_center_top",
+      "materials": [
+        "R2_17B_Head_cushion_blue_nylon",
+        "R2_17B_Cushion_binding"
+      ],
+      "triangles": 1148,
+      "moves_with_window": false
+    },
+    {
+      "name": "Cushion_rear_neck_roll",
+      "materials": [
+        "R2_17B_Head_cushion_blue_nylon"
+      ],
+      "triangles": 3388,
+      "moves_with_window": false
+    },
+    {
+      "name": "Drawstring_neck_dam_510-533",
+      "materials": [
+        "R2_17B_Black_neoprene",
+        "R2_17B_Blue_inner_neck_fabric"
+      ],
+      "triangles": 7360,
+      "moves_with_window": false
+    },
+    {
+      "name": "EXH_Clamp_screw_510-786",
+      "materials": [
+        "R2_Air_brass"
+      ],
+      "triangles": 140,
+      "moves_with_window": false
+    },
+    {
+      "name": "EXH_Clamp_screw_510-787",
+      "materials": [
+        "R2_Air_brass"
+      ],
+      "triangles": 140,
+      "moves_with_window": false
+    },
+    {
+      "name": "EXH_Dump_to_plenum",
+      "materials": [
+        "R2_Air_moulded_rubber"
+      ],
+      "triangles": 572,
+      "moves_with_window": false
+    },
+    {
+      "name": "EXH_Quad_main_body_510-760",
+      "materials": [
+        "R2_Air_moulded_rubber"
+      ],
+      "triangles": 892,
+      "moves_with_window": false
+    },
+    {
+      "name": "EXH_Regulator_exhaust_neck",
+      "materials": [
+        "R2_Air_moulded_rubber"
+      ],
+      "triangles": 1084,
+      "moves_with_window": false
+    },
+    {
+      "name": "EXH_Water_dump_adapter_560-530",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 508,
+      "moves_with_window": false
+    },
+    {
+      "name": "EXH_Water_dump_body_550-063",
+      "materials": [
+        "R2_Air_moulded_rubber"
+      ],
+      "triangles": 508,
+      "moves_with_window": false
+    },
+    {
+      "name": "EXH_Whisker_510-786",
+      "materials": [
+        "R2_Air_moulded_rubber"
+      ],
+      "triangles": 5104,
+      "moves_with_window": false
+    },
+    {
+      "name": "EXH_Whisker_510-787",
+      "materials": [
+        "R2_Air_moulded_rubber"
+      ],
+      "triangles": 5104,
+      "moves_with_window": false
+    },
+    {
+      "name": "EXH_Whisker_clamp_510-786",
+      "materials": [
+        "R2_Air_black_handwheel"
+      ],
+      "triangles": 412,
+      "moves_with_window": false
+    },
+    {
+      "name": "EXH_Whisker_clamp_510-787",
+      "materials": [
+        "R2_Air_black_handwheel"
+      ],
+      "triangles": 412,
+      "moves_with_window": false
+    },
+    {
+      "name": "Earphone_Left_covered_housing",
+      "materials": [
+        "R2_17B_Inner_rubber"
+      ],
+      "triangles": 668,
+      "moves_with_window": false
+    },
+    {
+      "name": "Earphone_Left_speaker_face",
+      "materials": [
+        "R2_17B_Earphone_face"
+      ],
+      "triangles": 2282,
+      "moves_with_window": false
+    },
+    {
+      "name": "Earphone_Right_covered_housing",
+      "materials": [
+        "R2_17B_Inner_rubber"
+      ],
+      "triangles": 668,
+      "moves_with_window": false
+    },
+    {
+      "name": "Earphone_Right_speaker_face",
+      "materials": [
+        "R2_17B_Earphone_face"
+      ],
+      "triangles": 2282,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_BrassHandle_560-014",
+      "materials": [
+        "R2_Handle_polished_warm_brass"
+      ],
+      "triangles": 12928,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_HandleRearScrew_530-070",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_HandleRearWasher_530-540",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 320,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_KidneyPlate_540-015_Port",
+      "materials": [
+        "R2_Port_polished_chrome"
+      ],
+      "triangles": 1218,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_KidneyPlate_540-015_Starboard",
+      "materials": [
+        "R2_Port_polished_chrome"
+      ],
+      "triangles": 1218,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_Lens_520-004",
+      "materials": [
+        "R2_Port_clear_polycarbonate"
+      ],
+      "triangles": 11520,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_NoseBlockKnob_550-062",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 2016,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_NoseBlockStem_545-015",
+      "materials": [
+        "R2_Port_polished_chrome"
+      ],
+      "triangles": 192,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_NoseGuide_550-116",
+      "materials": [
+        "R2_Port_polished_chrome"
+      ],
+      "triangles": 384,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_NosePackingNut_555-180",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 48,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_PortPlug_530-052_1",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_PortPlug_530-052_2",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_PortRetainer_560-070",
+      "materials": [
+        "R2_Port_polished_chrome"
+      ],
+      "triangles": 12118,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_PortSeal_510-260",
+      "materials": [
+        "R2_Port_graphite_elastomer"
+      ],
+      "triangles": 3840,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_RetainerScrew_05",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_RetainerScrew_06",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_RetainerScrew_07",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_RetainerScrew_08",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_RetainerScrew_09",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_RetainerScrew_12",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_RetainerScrew_14",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_RetainerScrew_17",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_RetainerScrew_18",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_RetainerScrew_19",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_RetainerScrew_20",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": true
+    },
+    {
+      "name": "FP_WhiskerMountFlange_Port",
+      "materials": [
+        "R2_Port_graphite_elastomer"
+      ],
+      "triangles": 1220,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_WhiskerMountFlange_Starboard",
+      "materials": [
+        "R2_Port_graphite_elastomer"
+      ],
+      "triangles": 1220,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_WhiskerScrew_530-045_10",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_WhiskerScrew_530-045_11",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_WhiskerScrew_530-045_15",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_WhiskerScrew_530-045_16",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 1152,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_WhiskerSpacer_550-061_10",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 432,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_WhiskerSpacer_550-061_11",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 432,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_WhiskerSpacer_550-061_15",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 432,
+      "moves_with_window": false
+    },
+    {
+      "name": "FP_WhiskerSpacer_550-061_16",
+      "materials": [
+        "R2_Port_machined_fasteners"
+      ],
+      "triangles": 432,
+      "moves_with_window": false
+    },
+    {
+      "name": "Flanged_alignment_sleeve_550-339",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 640,
+      "moves_with_window": false
+    },
+    {
+      "name": "Hinge_bolt_lock_nut_530-028",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 32,
+      "moves_with_window": false
+    },
+    {
+      "name": "Hinge_bolt_retaining_head",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 236,
+      "moves_with_window": false
+    },
+    {
+      "name": "Internal_chin_strap_505-130",
+      "materials": [
+        "R2_17B_Woven_restraint_tape"
+      ],
+      "triangles": 1164,
+      "moves_with_window": false
+    },
+    {
+      "name": "Internal_chin_strap_length_adjuster",
+      "materials": [
+        "R2_17B_Charcoal_moulded_urethane"
+      ],
+      "triangles": 288,
+      "moves_with_window": false
+    },
+    {
+      "name": "LVON_510-724_hollow_mask",
+      "materials": [
+        "R2_17B_Inner_rubber"
+      ],
+      "triangles": 5562,
+      "moves_with_window": false
+    },
+    {
+      "name": "Microphone_515-029",
+      "materials": [
+        "R2_17B_Microphone_rubber"
+      ],
+      "triangles": 1328,
+      "moves_with_window": false
+    },
+    {
+      "name": "NoseBlock_inner_545-015",
+      "materials": [
+        "R2_17B_Comms_brass"
+      ],
+      "triangles": 884,
+      "moves_with_window": false
+    },
+    {
+      "name": "NoseBlock_inner_pad_510-575",
+      "materials": [
+        "R2_17B_Inner_rubber"
+      ],
+      "triangles": 476,
+      "moves_with_window": false
+    },
+    {
+      "name": "Over-centre_clamp_lever_505-055",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 440,
+      "moves_with_window": false
+    },
+    {
+      "name": "Port_cast_weight_560-019",
+      "materials": [
+        "R2_17B_Polished_cast_brass"
+      ],
+      "triangles": 2850,
+      "moves_with_window": false
+    },
+    {
+      "name": "Port_chin_strap_snap",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 284,
+      "moves_with_window": false
+    },
+    {
+      "name": "Port_inner_chin_strap_snap_tab_545-027",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 396,
+      "moves_with_window": false
+    },
+    {
+      "name": "Port_weight_and_chin-tab_retaining_screw",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 316,
+      "moves_with_window": false
+    },
+    {
+      "name": "Pull-pin_latch_catch_560-051",
+      "materials": [
+        "R2_17B_Polished_cast_brass"
+      ],
+      "triangles": 396,
+      "moves_with_window": false
+    },
+    {
+      "name": "REG_Adjustment_barrel",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 508,
+      "moves_with_window": false
+    },
+    {
+      "name": "REG_Adjustment_packing",
+      "materials": [
+        "R2_Air_machined_steel"
+      ],
+      "triangles": 44,
+      "moves_with_window": false
+    },
+    {
+      "name": "REG_Body_505-027",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 1724,
+      "moves_with_window": false
+    },
+    {
+      "name": "REG_Chrome_cover",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 1532,
+      "moves_with_window": false
+    },
+    {
+      "name": "REG_Diaphragm_band",
+      "materials": [
+        "R2_Air_machined_steel"
+      ],
+      "triangles": 956,
+      "moves_with_window": false
+    },
+    {
+      "name": "REG_Inlet_jam_nut",
+      "materials": [
+        "R2_Air_machined_steel"
+      ],
+      "triangles": 44,
+      "moves_with_window": false
+    },
+    {
+      "name": "REG_Inlet_nipple",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 508,
+      "moves_with_window": false
+    },
+    {
+      "name": "REG_Knurled_adjustment_wheel",
+      "materials": [
+        "R2_Air_machined_steel"
+      ],
+      "triangles": 3692,
+      "moves_with_window": false
+    },
+    {
+      "name": "REG_Mount_550-038",
+      "materials": [
+        "R2_Air_machined_steel"
+      ],
+      "triangles": 508,
+      "moves_with_window": false
+    },
+    {
+      "name": "REG_Purge_button",
+      "materials": [
+        "R2_Air_black_handwheel"
+      ],
+      "triangles": 636,
+      "moves_with_window": false
+    },
+    {
+      "name": "REG_Purge_marking",
+      "materials": [
+        "R2_Air_purge_printed_marking"
+      ],
+      "triangles": 284,
+      "moves_with_window": false
+    },
+    {
+      "name": "REG_Purge_trim",
+      "materials": [
+        "R2_Air_machined_steel"
+      ],
+      "triangles": 636,
+      "moves_with_window": false
+    },
+    {
+      "name": "REG_Shell_gasket",
+      "materials": [
+        "R2_Air_moulded_rubber"
+      ],
+      "triangles": 380,
+      "moves_with_window": false
+    },
+    {
+      "name": "Rear_clamp_hinge_barrel",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 220,
+      "moves_with_window": false
+    },
+    {
+      "name": "Rear_hinge_mounting_tab_540-157",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 640,
+      "moves_with_window": false
+    },
+    {
+      "name": "Rear_tab_fastener_-1_530-025",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 164,
+      "moves_with_window": false
+    },
+    {
+      "name": "Rear_tab_fastener_1_530-025",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 164,
+      "moves_with_window": false
+    },
+    {
+      "name": "Rear_weight_interior_screw_1_530-032",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 476,
+      "moves_with_window": false
+    },
+    {
+      "name": "Rear_weight_interior_screw_2_530-032",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 476,
+      "moves_with_window": false
+    },
+    {
+      "name": "Rear_yoke_hinge_arm_-1_560-026",
+      "materials": [
+        "R2_17B_Polished_cast_brass"
+      ],
+      "triangles": 640,
+      "moves_with_window": false
+    },
+    {
+      "name": "Rear_yoke_hinge_arm_1_560-026",
+      "materials": [
+        "R2_17B_Polished_cast_brass"
+      ],
+      "triangles": 640,
+      "moves_with_window": false
+    },
+    {
+      "name": "Rear_yoke_hinge_crossfoot_560-026",
+      "materials": [
+        "R2_17B_Polished_cast_brass"
+      ],
+      "triangles": 220,
+      "moves_with_window": false
+    },
+    {
+      "name": "Rear_yoke_transverse_hinge_bolt_530-034",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 316,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Bent_tube_socket",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 508,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Chromed_main_casting_505-024",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 892,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_EGS_display_dust_cap",
+      "materials": [
+        "R2_Air_blue_transport_caps"
+      ],
+      "triangles": 444,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_EGS_flats",
+      "materials": [
+        "R2_Air_machined_steel"
+      ],
+      "triangles": 44,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_EGS_seat",
+      "materials": [
+        "R2_Air_brass"
+      ],
+      "triangles": 44,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_EGS_thread_relief",
+      "materials": [
+        "R2_Air_brass"
+      ],
+      "triangles": 380,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_EGS_valve",
+      "materials": [
+        "R2_Air_brass"
+      ],
+      "triangles": 636,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Emergency_valve_520-525",
+      "materials": [
+        "R2_Air_black_handwheel"
+      ],
+      "triangles": 1340,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Emergency_valve_520-525_hub",
+      "materials": [
+        "R2_Air_dark_recess"
+      ],
+      "triangles": 252,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Emergency_valve_520-525_packing",
+      "materials": [
+        "R2_Air_machined_steel"
+      ],
+      "triangles": 44,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Emergency_valve_520-525_slotted_keeper",
+      "materials": [
+        "R2_Air_machined_steel"
+      ],
+      "triangles": 192,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Emergency_valve_520-525_stem",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 380,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Emergency_valve_body",
+      "materials": [
+        "R2_Air_brass"
+      ],
+      "triangles": 300,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Identification_plate",
+      "materials": [
+        "R2_Air_machined_steel"
+      ],
+      "triangles": 300,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Model_designation",
+      "materials": [
+        "R2_Air_sideblock_printed_marking"
+      ],
+      "triangles": 12,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Mounting_boss",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 572,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Nonreturn_555-195_display_dust_cap",
+      "materials": [
+        "R2_Air_blue_transport_caps"
+      ],
+      "triangles": 444,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Nonreturn_555-195_flats",
+      "materials": [
+        "R2_Air_brass"
+      ],
+      "triangles": 44,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Nonreturn_555-195_seat",
+      "materials": [
+        "R2_Air_brass"
+      ],
+      "triangles": 44,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Nonreturn_555-195_thread_relief",
+      "materials": [
+        "R2_Air_brass"
+      ],
+      "triangles": 380,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Nonreturn_555-195_valve",
+      "materials": [
+        "R2_Air_brass"
+      ],
+      "triangles": 636,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Nonreturn_adapter",
+      "materials": [
+        "R2_Air_brass"
+      ],
+      "triangles": 380,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Plate_rivet_-18_4",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 140,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Plate_rivet_18_4",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 140,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Steady_flow_520-524",
+      "materials": [
+        "R2_Air_black_handwheel"
+      ],
+      "triangles": 1340,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Steady_flow_520-524_hub",
+      "materials": [
+        "R2_Air_dark_recess"
+      ],
+      "triangles": 252,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Steady_flow_520-524_packing",
+      "materials": [
+        "R2_Air_machined_steel"
+      ],
+      "triangles": 44,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Steady_flow_520-524_slotted_keeper",
+      "materials": [
+        "R2_Air_machined_steel"
+      ],
+      "triangles": 192,
+      "moves_with_window": false
+    },
+    {
+      "name": "SB_Steady_flow_520-524_stem",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 380,
+      "moves_with_window": false
+    },
+    {
+      "name": "SL17B_YellowShell_Study",
+      "materials": [
+        "R2_17B_Yellow_gelcoat",
+        "R2_17B_Inside_shell_finish"
+      ],
+      "triangles": 73494,
+      "moves_with_window": false
+    },
+    {
+      "name": "Stainless_split_neck_clamp_505-055",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 2362,
+      "moves_with_window": false
+    },
+    {
+      "name": "Starboard_cast_weight_560-023",
+      "materials": [
+        "R2_17B_Polished_cast_brass"
+      ],
+      "triangles": 2280,
+      "moves_with_window": false
+    },
+    {
+      "name": "Starboard_chin_strap_snap",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 284,
+      "moves_with_window": false
+    },
+    {
+      "name": "Starboard_inner_chin_strap_snap_tab_545-027",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 396,
+      "moves_with_window": false
+    },
+    {
+      "name": "Starboard_weight_and_chin-tab_retaining_screw",
+      "materials": [
+        "R2_17B_Neck_hardware_satin_stainless"
+      ],
+      "triangles": 316,
+      "moves_with_window": false
+    },
+    {
+      "name": "TUBE_Bent_supply_555-155",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 3644,
+      "moves_with_window": false
+    },
+    {
+      "name": "TUBE_Regulator_end_nut",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 44,
+      "moves_with_window": false
+    },
+    {
+      "name": "TUBE_Regulator_ferrule",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 508,
+      "moves_with_window": false
+    },
+    {
+      "name": "TUBE_Side_block_end_nut",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 44,
+      "moves_with_window": false
+    },
+    {
+      "name": "TUBE_Side_block_ferrule",
+      "materials": [
+        "R2_Air_polished_chrome"
+      ],
+      "triangles": 380,
+      "moves_with_window": false
+    },
+    {
+      "name": "Urethane_yoke_520-117",
+      "materials": [
+        "R2_17B_Charcoal_moulded_urethane"
+      ],
+      "triangles": 3274,
+      "moves_with_window": false
+    },
+    {
+      "name": "Visor_520-054",
+      "materials": [
+        "R2_Visor_formed_dark_ABS"
+      ],
+      "triangles": 4088,
+      "moves_with_window": false
+    },
+    {
+      "name": "Yoke_pull_pin_and_knob_550-255",
+      "materials": [
+        "R2_17B_Polished_cast_brass"
+      ],
+      "triangles": 396,
+      "moves_with_window": false
+    },
+    {
+      "name": "Yoke_strap_505-134",
+      "materials": [
+        "R2_17B_Woven_restraint_tape"
+      ],
+      "triangles": 632,
+      "moves_with_window": false
+    },
+    {
+      "name": "Yoke_strap_505-134_keeper_1",
+      "materials": [
+        "R2_17B_Woven_restraint_tape"
+      ],
+      "triangles": 116,
+      "moves_with_window": false
+    },
+    {
+      "name": "Yoke_strap_505-134_keeper_2",
+      "materials": [
+        "R2_17B_Woven_restraint_tape"
+      ],
+      "triangles": 116,
+      "moves_with_window": false
+    },
+    {
+      "name": "Yoke_strap_guide_505-138",
+      "materials": [
+        "R2_17B_Woven_restraint_tape"
+      ],
+      "triangles": 632,
+      "moves_with_window": false
+    },
+    {
+      "name": "Yoke_strap_guide_505-138_keeper_1",
+      "materials": [
+        "R2_17B_Woven_restraint_tape"
+      ],
+      "triangles": 116,
+      "moves_with_window": false
+    },
+    {
+      "name": "Yoke_strap_guide_505-138_keeper_2",
+      "materials": [
+        "R2_17B_Woven_restraint_tape"
+      ],
+      "triangles": 116,
+      "moves_with_window": false
+    }
+  ],
+  "triangles_by_material": {
+    "R2_17B_Yellow_gelcoat": 37938,
+    "R2_17B_Inside_shell_finish": 35556,
+    "R2_Port_graphite_elastomer": 6280,
+    "R2_Port_polished_chrome": 15130,
+    "R2_Port_clear_polycarbonate": 11520,
+    "R2_Handle_polished_warm_brass": 12928,
+    "R2_Port_machined_fasteners": 24848,
+    "R2_Visor_formed_dark_ABS": 4088,
+    "R2_17B_Black_neoprene": 8000,
+    "R2_17B_Blue_inner_neck_fabric": 3200,
+    "R2_17B_Neck_hardware_satin_stainless": 9922,
+    "R2_17B_Charcoal_moulded_urethane": 3718,
+    "R2_17B_Polished_cast_brass": 12926,
+    "R2_17B_Woven_restraint_tape": 2892,
+    "R2_17B_Head_cushion_blue_nylon": 6130,
+    "R2_17B_Cushion_binding": 4486,
+    "R2_17B_Inner_rubber": 11306,
+    "R2_17B_Earphone_face": 4564,
+    "R2_17B_Microphone_rubber": 1328,
+    "R2_17B_Comms_brass": 1580,
+    "R2_17B_Post_insulation": 1892,
+    "R2_17B_Comms_cable_jacket": 2076,
+    "R2_17B_Red_terminal_sleeve": 924,
+    "R2_17B_White_terminal_sleeve": 308,
+    "R2_Air_machined_steel": 6696,
+    "R2_Air_moulded_rubber": 13644,
+    "R2_Air_polished_chrome": 12412,
+    "R2_Air_black_handwheel": 4140,
+    "R2_Air_purge_printed_marking": 284,
+    "R2_Air_dark_recess": 504,
+    "R2_Air_brass": 3124,
+    "R2_Air_blue_transport_caps": 888,
+    "R2_Air_sideblock_printed_marking": 12
+  },
+  "verified_oriented_uv_corners": 795732,
+  "textures_sha256": {
+    "r2-purge.png": "86e4b7719f09352b53bd189374dd747140c5a7cbb45856ba63e6ad22934009b4",
+    "r2-sideblock.png": "00f194aeb81d3f2241fd830ee639f0e1cfc5645bbc70f7807141bee5b6d4cca8"
+  }
+}
