@@ -23,8 +23,10 @@ namespace Museum.PhysicalHands
         float currentGrip;
         float currentTrigger;
         bool isHeld;
-        Renderer[] viewRenderers = Array.Empty<Renderer>();
-        bool[] originalForceRenderingOff = Array.Empty<bool>();
+        Renderer[] viewRenderers;
+        bool[] originalForceRenderingOff;
+        readonly Plane[] worldPlanes = new Plane[6];
+        readonly Plane[] localPlanes = new Plane[6];
         bool viewOccluded;
 
         public bool IsLeft => left;
@@ -78,11 +80,48 @@ namespace Museum.PhysicalHands
         /// <summary>Removes only the rendered glove; tracking, collision and interaction stay active.</summary>
         public void SetViewOccluded(bool occluded)
         {
+            if (viewOccluded == occluded) return;
             EnsureViewRenderers();
             viewOccluded = occluded;
             for (int index = 0; index < viewRenderers.Length; index++)
-                if (viewRenderers[index])
-                    viewRenderers[index].forceRenderingOff = occluded || originalForceRenderingOff[index];
+            {
+                var part = viewRenderers[index];
+                if (!part) continue;
+                if (occluded) originalForceRenderingOff[index] = part.forceRenderingOff;
+                part.forceRenderingOff = occluded || originalForceRenderingOff[index];
+            }
+        }
+
+        internal bool OverlapsViewport(Camera camera, Rect viewport)
+        {
+            // Remap the chosen viewport rectangle to clip-space [-1, 1], preserving depth.
+            var crop = Matrix4x4.identity;
+            crop.m00 = 1f / viewport.width;
+            crop.m11 = 1f / viewport.height;
+            crop.m03 = (1f - 2f * viewport.center.x) * crop.m00;
+            crop.m13 = (1f - 2f * viewport.center.y) * crop.m11;
+            EnsureViewRenderers();
+            if (camera.stereoEnabled)
+                return OverlapsFrustum(crop * camera.GetStereoProjectionMatrix(Camera.StereoscopicEye.Left) * camera.GetStereoViewMatrix(Camera.StereoscopicEye.Left)) ||
+                       OverlapsFrustum(crop * camera.GetStereoProjectionMatrix(Camera.StereoscopicEye.Right) * camera.GetStereoViewMatrix(Camera.StereoscopicEye.Right));
+            return OverlapsFrustum(crop * camera.projectionMatrix * camera.worldToCameraMatrix);
+        }
+
+        bool OverlapsFrustum(Matrix4x4 viewProjection)
+        {
+            GeometryUtility.CalculateFrustumPlanes(viewProjection, worldPlanes);
+            for (int index = 0; index < viewRenderers.Length; index++)
+            {
+                var part = viewRenderers[index];
+                if (!part || !part.enabled || !part.gameObject.activeInHierarchy ||
+                    (viewOccluded ? originalForceRenderingOff[index] : part.forceRenderingOff) ||
+                    !GeometryUtility.TestPlanesAABB(worldPlanes, part.bounds)) continue;
+
+                // Check the oriented bounds of this articulated part, including both clip planes.
+                GeometryUtility.CalculateFrustumPlanes(viewProjection * part.localToWorldMatrix, localPlanes);
+                if (GeometryUtility.TestPlanesAABB(localPlanes, part.localBounds)) return true;
+            }
+            return false;
         }
 
         // A large curved exhibit rests against a half-open supporting hand.
@@ -92,7 +131,6 @@ namespace Museum.PhysicalHands
         void OnEnable()
         {
             ApplyCurrentPose();
-            SetViewOccluded(viewOccluded);
         }
 
         void OnDisable()
@@ -149,11 +187,9 @@ namespace Museum.PhysicalHands
 
         void EnsureViewRenderers()
         {
-            if (viewRenderers.Length > 0) return;
+            if (viewRenderers != null) return;
             viewRenderers = GetComponentsInChildren<Renderer>(true);
             originalForceRenderingOff = new bool[viewRenderers.Length];
-            for (int index = 0; index < viewRenderers.Length; index++)
-                originalForceRenderingOff[index] = viewRenderers[index] && viewRenderers[index].forceRenderingOff;
         }
     }
 }

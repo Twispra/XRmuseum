@@ -56,6 +56,8 @@ namespace Museum.PhysicalHands
         public Transform TrackingTarget => trackingTarget;
         public XRBaseController InputController => inputController;
         public XRDirectInteractor DirectInteractor => directInteractor;
+        internal event System.Action VisualPoseApplied;
+        internal bool HasInteractionSelection => (pokeInteractor && pokeInteractor.hasSelection) || HasOwnedSelection();
         public Rigidbody Body { get { EnsureBody(); return body; } }
         public SphereCollider PalmCollider { get { EnsureBody(); return palm; } }
         public Collider CollisionCollider { get { EnsureBody(); return envelope; } }
@@ -358,6 +360,7 @@ namespace Museum.PhysicalHands
             else visual.transform.SetPositionAndRotation(transform.position, transform.rotation);
             var state = inputController ? inputController.currentControllerState : null;
             visual.SetPose(state == null ? 0 : state.selectInteractionState.value, state == null ? 0 : state.activateInteractionState.value, held != null);
+            VisualPoseApplied?.Invoke();
         }
         void Selected(SelectEnterEventArgs args)
         {
