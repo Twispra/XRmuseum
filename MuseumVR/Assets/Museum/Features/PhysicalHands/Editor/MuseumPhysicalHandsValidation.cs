@@ -782,18 +782,37 @@ namespace Museum.PhysicalHands.EditorTools
             yield return LowViewAnalogInput(leftVisual, rightVisual, leftPose, lowRotation);
             // With the hand-to-eye poses fixed, approach 1.40 m from both sides of
             // the height thresholds to exercise the previous per-hand visibility state.
+            float previousRise = 0f;
             foreach (float rise in new[] { .20f, .35f, .20f, 0f })
             {
                 bool wasHidden = leftVisual.IsViewOccluded;
-                Vector3 lift = Vector3.up * rise;
-                QueueHead(lowEye + lift, lowRotation);
-                QueueController(leftDevice, leftPose + lift, lowRotation, false);
-                QueueController(rightDevice, rightPose + lift, lowRotation, false);
-                yield return Wait(.3f);
+                int steps = Mathf.CeilToInt(Mathf.Abs(rise - previousRise) / .01f);
+                for (int i = 1; i <= steps; i++)
+                {
+                    Vector3 lift = Vector3.up * Mathf.Lerp(previousRise, rise, i / (float)steps);
+                    QueueHead(lowEye + lift, lowRotation);
+                    QueueController(leftDevice, leftPose + lift, lowRotation, false);
+                    QueueController(rightDevice, rightPose + lift, lowRotation, false);
+                    yield return FixedSteps(1);
+                    yield return null; // Give both physics proxies and their visuals a player frame.
+                }
+                yield return Wait(.12f);
+                previousRise = rise;
                 bool expectedHidden = rise == 0f || (rise == .20f && wasHidden);
-                Require(leftVisual.IsViewOccluded == expectedHidden && rightVisual.IsViewOccluded == expectedHidden,
+                float height = camera.transform.position.y - floor.position.y;
+                Vector3 leftViewport = camera.WorldToViewportPoint(leftHand.transform.position);
+                Vector3 rightViewport = camera.WorldToViewportPoint(rightHand.transform.position);
+                float leftDistance = Vector3.Distance(camera.transform.position, leftHand.transform.position);
+                float rightDistance = Vector3.Distance(camera.transform.position, rightHand.transform.position);
+                bool palmsCentered = new[] { leftViewport, rightViewport }.All(p =>
+                    p.z > 0f && p.x > .20f && p.x < .80f && p.y > .10f && p.y < .80f);
+                Require(Mathf.Abs(height - (1.2f + rise)) < .015f && palmsCentered &&
+                    leftDistance < MuseumPhysicalHandsRig.NearViewEnterDistance && rightDistance < MuseumPhysicalHandsRig.NearViewEnterDistance &&
+                    leftVisual.IsViewOccluded == expectedHidden && rightVisual.IsViewOccluded == expectedHidden,
                     "low-view geometry", "stable visibility as the viewpoint crosses the height thresholds",
-                    "eye height=" + (1.2f + rise) + "; previously hidden=" + wasHidden + "; expected hidden=" + expectedHidden);
+                    "eye height=" + height + "; viewport=" + leftViewport + "/" + rightViewport +
+                    "; distance=" + leftDistance + "/" + rightDistance + "; hidden=" + leftVisual.IsViewOccluded + "/" + rightVisual.IsViewOccluded +
+                    "; previously hidden=" + wasHidden + "; expected hidden=" + expectedHidden);
             }
 
             // Release of the saved teleport action can move the origin. Restore this Play Mode
