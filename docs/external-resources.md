@@ -2,6 +2,10 @@
 
 2026-11-22 中央展台的 SuperLite 17B R2 使用项目已验收的 #94 整盔、印字贴图和 500-010 配置资料。Codex 辅助从固定版本 GLB 导出 Unity FBX、核对面角与材质，并完成展项接入与运行验证。建模来源、厂家依据及估算范围沿用原作者记录。[#94 建模与修订](https://github.com/Twispra/XRmuseum/pull/94) · [Unity 接入记录](activity/2026-11-22-superlite-r2-central.md)。
 
+## 2026-11-20：#77 右侧展台接入
+
+复用主线已有的右侧展板 Prefab、三语文字、字体、材质和管线。Codex 辅助场景接入、保存引用与唯一实例检查、三语诊断渲染、既有年代回归及 PR／证据整理。没有新增第三方模型、图像、录音、字体、Unity 包或运行时依赖；原展板不作为本轮新建成果。自动检查和诊断单眼图不代表组内方案批准、真实头显或用户研究。[本轮范围与验证](activity/2026-11-20-issue77-right-exhibit-integration.md)。
+
 2026-11-18 黄昏潜水工房独立样板采用 Poly Haven 的四项 CC0 资源。Dimitrios Savva 的 [Wood Floor Worn](https://polyhaven.com/a/wood_floor_worn) 和 [Smooth Concrete Floor](https://polyhaven.com/a/smooth_concrete_floor) 用于旧木饰面和错缝地坪。Amal Kumar 的 [Plastered Wall](https://polyhaven.com/a/plastered_wall) 用于刷灰墙面。Greg Zaal 摄影、Jarod Guest 处理的 [Qwantani Sunset Pure Sky](https://polyhaven.com/a/qwantani_sunset_puresky) 用作环境天空。木、地和墙的色彩与粗糙度按室内尺度调整，地面加了接缝。[Poly Haven 资产许可](https://polyhaven.com/license)
 
 两扇窗及展台外壳由 Codex 辅助在 Blender 中建模。窗外贴图由 ImageGen 参考该天空生成的港口构图稿绘制，画面中的船厂是艺术设定。Codex 辅助 Unity 布光、材质接入、烘焙和截图评审。实际效果见[黄昏潜水工房首版](activity/2026-11-18-dusk-workshop.md)。

@@ -1,0 +1,45 @@
+{
+  "base_commit": "5ddaab5a101a153a0d864e7765df31098f64bc49",
+  "tested_commit": "5c8e35e05f41332aba42695df425493d4095f6f1",
+  "dirty_at_test_start": "",
+  "unity": "2022.3.62f3c1",
+  "environment": "macOS / Apple M5 / Metal / Rosetta",
+  "panel": {
+    "checks": 1102,
+    "exit_code": 0,
+    "entry_point": "Museum.RightExhibit.Editor.RightExhibitPanelValidation.RunBatch"
+  },
+  "visitor_era": {
+    "checks": 1132,
+    "exit_code": 0,
+    "entry_point": "Museum.Localization.EditorTools.VisitorEraValidation.RunBatch",
+    "report_sha256": "73a9af08f518d09aef3a04bf4085781d45c86bc6c73cea5817c136522d396604"
+  },
+  "preservation": {
+    "checked_files": 1446,
+    "changed_files": [],
+    "all_preserved": true
+  },
+  "lfs": {
+    "expanded_hash_verified_paths": 111,
+    "new_or_modified_lfs_assets": 0
+  },
+  "source_sha256": {
+    "MuseumVR/Assets/Museum/Scenes/MuseumStart.unity": "aa2a773322997fea20a701aa6cc8c12276635ade0c74e7c56700b528e19998b3",
+    "MuseumVR/Assets/Museum/Features/RightExhibit/Editor/RightExhibitPanelTools.cs": "4ccf322807430027c04c6c1e92d4606e1cfed7834e7e903edc9777fc2995f915",
+    "MuseumVR/Assets/Museum/Features/RightExhibit/Editor/RightExhibitPanelValidation.cs": "6847f09d273fe98ebb5217feeb45e1c35d3b05c9bab2ca79ee99abec696c6c59",
+    "MuseumVR/Assets/Museum/Features/RightExhibit/RightExhibitPanel.prefab": "8f2e79f665bb68da92963126cf495d71c1f94355bc580309c34f113adf08ab2d",
+    "MuseumVR/Assets/Museum/Features/RightExhibit/RightExhibitPanel.prefab.meta": "3826f1bba7bae664b2413741563516093d5b1cbfb88a859e621fe0f712973df0",
+    "MuseumVR/Assets/Museum/Features/Localization/Tables/MuseumTranslations.json": "36b1c62028f15321f8e16483870389e9eebfbe729a95a5e2d896d423d8849de3",
+    "MuseumVR/Assets/Museum/Features/Localization/Tables/LocalizationTable.asset": "5d8308c63806c05c5707ca58e669fc446a596a91932e2448f1482fcdc45d1deb"
+  },
+  "limits": "Editor automation and diagnostic monocular screenshots. No headset, stereo readability, controller comfort/reach, performance, Windows Player build or user study validation.",
+  "evidence_sha256": {
+    "Chinese.png": "8b532a5d58ef133052095437288fffadc677ced3c9b0093fbe06e1fcdbd75c76",
+    "right-exhibit-report.txt": "1d59e32bca4163d3f7e72b1985317c251ed5cfe263a90cfdfdab8cb348b5bf23",
+    "English-context.png": "c384c89cf2615c396e0b2bb52b800ac7dbd727439b3194eed0764b6a87866ab4",
+    "visitor-era-report.json": "73a9af08f518d09aef3a04bf4085781d45c86bc6c73cea5817c136522d396604",
+    "TraditionalChinese.png": "bf52c44c035f947bd6325640a4996c53223f969a4f9b66dc5c0a78bc814d67a2",
+    "English.png": "e7ab01d3985f5a07a415861642d86178996aff878f7f0269ba09721e096ba2c9"
+  }
+}
