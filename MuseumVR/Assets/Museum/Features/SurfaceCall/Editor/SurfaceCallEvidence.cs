@@ -19,7 +19,7 @@ using Object = UnityEngine.Object;
 
 namespace Museum.SurfaceLine.Editor
 {
-    /// <summary>Read-only Play Mode observation with tracked Input System devices. All exhibit actions use the saved XRI ray.</summary>
+    /// <summary>Read-only Play Mode observation with tracked Input System devices. Calling uses the scene XRI ray. Station commands exercise era changes, reset and navigation cleanup.</summary>
     [InitializeOnLoad]
     public static class SurfaceCallEvidence
     {
@@ -53,7 +53,8 @@ namespace Museum.SurfaceLine.Editor
             EditorApplication.update += Tick;
         }
 
-        public static void CaptureBaseline() => Begin("Assets/Museum/Scenes/MuseumStart.unity");
+        public static void CaptureMuseum() => Begin("Assets/Museum/Scenes/MuseumStart.unity");
+        public static void CaptureBaseline() => CaptureMuseum();
         public static void CaptureSample() => Begin(Sample);
 
         static void Begin(string scene)
@@ -179,8 +180,7 @@ namespace Museum.SurfaceLine.Editor
             Head(starboard,Quaternion.LookRotation(new Vector3(3.1f,1.38f,3.53f)-starboard));
             for(int i=0;i<6;i++)yield return null;
             Shot("04-right-exhibit");
-            if(UnityEngine.SceneManagement.SceneManager.GetActiveScene().path!=Sample)yield break;
-            Assert(call && call.Control && call.surfaceFlag,"saved sample and registered calling key exist");
+            Assert(call && call.Control && call.surfaceFlag,"saved exhibit and registered calling key exist");
             Assert(!GameObject.Find("Central question"), "one opening question; old back-wall question is inactive");
             Assert(!station.Inspection.SoundEnabled,"silent inspection");
             Head(seat,seatRotation);for(int i=0;i<8;i++)yield return null;
@@ -249,6 +249,62 @@ namespace Museum.SurfaceLine.Editor
             Hand(wrist,aim,false);for(int i=0;i<6;i++)yield return null;
             Assert(call.Control.ConfirmedCount==confirms+2 && demo.IsVisible && !demo.IsPlaying,"replay by grip, static mode");
             CheckLanguages("14-static",false);
+            station.PrepareForGalleryNavigation();
+            for(int i=0;i<5;i++)yield return null;
+            Assert(!demo.IsVisible && call.restingTelephone.activeInHierarchy && !call.surfaceFlag.activeSelf,
+                "navigation handoff clears the call and restores the idle telephone");
+            station.Execute(HelmetDiegeticStation.Command.NextEra);
+            for(int i=0;i<6;i++)yield return null;
+            Assert(!call.installation.activeInHierarchy && !call.key.isActiveAndEnabled, "R2 era hides the whole calling station");
+            station.Execute(HelmetDiegeticStation.Command.PreviousEra);
+            for(int i=0;i<6;i++)yield return null;
+            Assert(call.installation.activeInHierarchy && call.key.isActiveAndEnabled && call.restingTelephone.activeInHierarchy,
+                "returning to Mark V restores the idle calling key");
+            Hand(wrist,aim,true);for(int i=0;i<6;i++)yield return null;
+            Hand(wrist,aim,false);for(int i=0;i<6;i++)yield return null;
+            Assert(demo.IsVisible && call.Control.ConfirmedCount==confirms+3,"call works after returning to Mark V");
+            station.ResetHelmet();
+            for(int i=0;i<5;i++)yield return null;
+            Assert(!demo.IsVisible && call.restingTelephone.activeInHierarchy && call.key.isActiveAndEnabled,
+                "reset clears the transcript and restores the calling key");
+        }
+
+        static void CheckNavigationSightlines()
+        {
+            var navigation = Object.FindObjectOfType<Museum.Navigation.GalleryNavigator>();
+            var panel = navigation.Palette.transform;
+            var eye = Camera.main.transform;
+            float halfView = Mathf.Tan(55f * .5f * Mathf.Deg2Rad);
+            var plate = panel.Find("Palette back").GetComponent<MeshFilter>();
+            var bounds = plate.sharedMesh.bounds;
+            foreach (float x in new[] { bounds.min.x, bounds.max.x })
+            foreach (float y in new[] { bounds.min.y, bounds.max.y })
+            {
+                var corner = plate.transform.TransformPoint(new Vector3(x, y, bounds.min.z));
+                var view = eye.InverseTransformPoint(corner);
+                if (view.z <= 0 || Mathf.Abs(view.x) >= view.z * halfView * 1.6f || Mathf.Abs(view.y) >= view.z * halfView)
+                    throw new InvalidOperationException("Cropped navigation panel: " + view);
+            }
+            var localEye = plate.transform.InverseTransformPoint(eye.position);
+            void CheckUncovered(Vector3 target, string name)
+            {
+                var toTarget = plate.transform.InverseTransformPoint(target) - localEye;
+                if (bounds.IntersectRay(new Ray(localEye, toTarget.normalized), out float hit) && hit < toTarget.magnitude)
+                    throw new InvalidOperationException("Navigation covers " + name);
+            }
+            CheckUncovered(call.key.colliders[0].bounds.center, call.key.name);
+            var close = station.Controls[HelmetDiegeticStation.Command.CloseDemo];
+            if (close.gameObject.activeInHierarchy) CheckUncovered(close.Target.colliders[0].bounds.center, close.name);
+            foreach (var label in call.surfaceFlag.GetComponentsInChildren<TMP_Text>().Concat(new TMP_Text[] {call.speaker, call.words, call.keyLegend}))
+            {
+                if (!label.gameObject.activeInHierarchy) continue;
+                label.ForceMeshUpdate();
+                for (int i = 0; i < label.textInfo.characterCount; i++)
+                {
+                    var glyph = label.textInfo.characterInfo[i];
+                    if (glyph.isVisible) CheckUncovered(label.transform.TransformPoint((glyph.bottomLeft + glyph.topRight) * .5f), label.name);
+                }
+            }
         }
 
         static void PhonePose(Transform model)
@@ -289,6 +345,7 @@ namespace Museum.SurfaceLine.Editor
         }
         static void CheckText()
         {
+            if (call.gameObject.scene.path != Sample) CheckNavigationSightlines();
             foreach(var text in call.surfaceFlag.GetComponentsInChildren<LocalizedText>(true))
             {
                 if(!call.surfaceFlag.activeInHierarchy) continue;

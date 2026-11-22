@@ -117,7 +117,10 @@ namespace Museum.Navigation
             }
             palette = panel.AddComponent<HelmetInspectionPalette>();
             palette.Configure(inspection, origin.Camera.transform, null, null);
-            palette.ConfigureViewerOffset(new Vector3(.35f, -.23f, .88f));
+            // Leave the exhibit controls and the two telephone captions clear beneath navigation.
+            bool hasSurfaceCall = roots.Any(root => root.GetComponentInChildren<Museum.SurfaceLine.SurfaceCall>(true));
+            if (hasSurfaceCall) panel.transform.localScale = Vector3.one * .77f;
+            palette.ConfigureViewerOffset(hasSurfaceCall ? new Vector3(.49f, .305f, 1.15f) : new Vector3(.35f, -.23f, .88f));
             palette.ConfigureContentBounds(-.11f, .11f);
             palette.RecenterNow();
 
@@ -136,6 +139,9 @@ namespace Museum.Navigation
             renderer.allowOcclusionWhenDynamic = false;
             SetFade(0);
             ready = true;
+#if UNITY_STANDALONE_WIN && !UNITY_EDITOR
+            gameObject.AddComponent<DesktopExhibitVisit>();
+#endif
         }
 
         public bool TryGetDestination(Exhibit exhibit, out Vector3 floor, out Vector3 forward)

@@ -61,7 +61,25 @@ namespace Museum.RightExhibit.Editor
             }
         }
 
-        // Use this from Play Mode to inspect the proposed placement without changing the shared scene.
+        // Save the existing prefab instance; rebuilding the prefab is a separate authoring action.
+        [MenuItem("Museum/Right Exhibit/Integrate into saved MuseumStart")]
+        public static void IntegrateSavedScene()
+        {
+            if (EditorApplication.isPlayingOrWillChangePlaymode)
+                throw new InvalidOperationException("Exit Play Mode before saving the exhibit.");
+            for (int i = 0; i < EditorSceneManager.sceneCount; i++)
+                if (EditorSceneManager.GetSceneAt(i).isDirty)
+                    throw new InvalidOperationException("Save open scene changes separately before integrating the exhibit.");
+
+            var scene = EditorSceneManager.OpenScene(ScenePath, OpenSceneMode.Single);
+            MountPreview(scene);
+            EditorSceneManager.MarkSceneDirty(scene);
+            if (!EditorSceneManager.SaveScene(scene))
+                throw new InvalidOperationException("Could not save the right exhibit integration.");
+            Debug.Log("Saved right exhibit integration in " + ScenePath);
+        }
+
+        // Reuses the saved instance, or temporarily mounts the prefab in older scene versions.
         [MenuItem("Museum/Right Exhibit/Preview in MuseumStart (Play Mode)")]
         static void Preview()
         {
@@ -77,14 +95,18 @@ namespace Museum.RightExhibit.Editor
             var right = exhibits.transform.Find("Exhibit 03 - Placeholder");
             if (!right) throw new InvalidOperationException("Could not find the right exhibit.");
             var mounted = right.Find(PanelName);
-            if (mounted) return mounted.gameObject;
-            var asset = AssetDatabase.LoadAssetAtPath<GameObject>(PrefabPath);
-            if (!asset) throw new InvalidOperationException("Could not load the right exhibit prefab.");
-            var panel = (GameObject)PrefabUtility.InstantiatePrefab(asset, right);
-            panel.name = PanelName;
-            panel.transform.localPosition = MountPosition;
+            GameObject panel;
+            if (mounted) panel = mounted.gameObject;
+            else
+            {
+                var asset = AssetDatabase.LoadAssetAtPath<GameObject>(PrefabPath);
+                if (!asset) throw new InvalidOperationException("Could not load the right exhibit prefab.");
+                panel = (GameObject)PrefabUtility.InstantiatePrefab(asset, right);
+                panel.name = PanelName;
+                panel.transform.localPosition = MountPosition;
+            }
 
-            // The new fascia replaces these two captions in the preview, while keeping the existing pipes and top sign.
+            // Replace the two old front captions, keeping the existing pipes and top sign.
             foreach (var label in scene.GetRootGameObjects().SelectMany(o => o.GetComponentsInChildren<TMP_Text>(true)))
             {
                 if (label.name == "Plinth title 3.1" || label.name == "Plinth caption 3.1")
