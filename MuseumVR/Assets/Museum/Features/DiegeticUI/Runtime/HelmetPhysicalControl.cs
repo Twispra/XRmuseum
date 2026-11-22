@@ -110,15 +110,38 @@ namespace Museum.Diegetic
             if(held || IsBlocked(args.interactorObject))return;
             pressInteractor=args.interactorObject;held=true;confirmedUntil=-100;
         }
+        // The standalone keyboard operates the same momentary key as the XR hand.
+        // A null press owner is reserved for this path and cannot release an XR selection.
+        internal bool BeginKeyboardPress()
+        {
+            if (held || pending || pressed == null || !isActiveAndEnabled || !target ||
+                !target.isActiveAndEnabled || !station || !station.isActiveAndEnabled || !InFrontView) return false;
+            pressInteractor = null;
+            held = true;
+            confirmedUntil = -100;
+            return true;
+        }
+
+        internal void EndKeyboardPress(bool confirm)
+        {
+            if (!held || pressInteractor != null) return;
+            FinishPress(confirm && isActiveAndEnabled && target && target.isActiveAndEnabled &&
+                station && station.isActiveAndEnabled && InFrontView, null, false);
+        }
+
         void OnReleased(SelectExitEventArgs args)
         {
             if(!held || !ReferenceEquals(pressInteractor,args.interactorObject))return;
             var hand=pressInteractor;
-            held=false;pressInteractor=null;
-            if(pressed==null)return; // Continuous gestures already apply while held.
             bool stillHeld=IsHandAlive(hand) && hand.isSelectActive;
             bool accepted=!args.isCanceled && isActiveAndEnabled && target && target.isActiveAndEnabled &&
                 !stillHeld && ReleasedOnThisTarget(hand);
+            FinishPress(accepted, hand, stillHeld);
+        }
+        void FinishPress(bool accepted, IXRSelectInteractor hand, bool stillHeld)
+        {
+            held=false;pressInteractor=null;
+            if(pressed==null)return; // Continuous gestures already apply while held.
             if(accepted)
             {
                 pending=true;ConfirmedCount++;confirmedUntil=Time.unscaledTime+.32f;

@@ -136,6 +136,9 @@ namespace Museum.Navigation
             renderer.allowOcclusionWhenDynamic = false;
             SetFade(0);
             ready = true;
+#if UNITY_STANDALONE_WIN && !UNITY_EDITOR
+            gameObject.AddComponent<DesktopExhibitVisit>();
+#endif
         }
 
         public bool TryGetDestination(Exhibit exhibit, out Vector3 floor, out Vector3 forward)
