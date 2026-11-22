@@ -13,3 +13,11 @@
 从干净的联合候选提交 `ad3b4978` 使用 Unity 2022.3.62f3c1 构建 Windows x64，在无头显的 2560×1440 程序窗口用键盘参观正式场景。三种语言都能读到两端名称，金色供气箭头朝头盔，青色通话箭头朝向两端。[三种语言的窗口实拍](../../artifacts/helmet-interaction/qa/runs/20261122-harbour-routes-call/right-routes-three-languages.jpg)
 
 在中央按住铜键，亮灯并出现松开提示。松开后先看到水面问话，随后看到潜水员回答。英文和简体中文都走通，同一展位可再次发话。右台按 C 或按住铜键后切换年代均未误发。程序正常退出。[铜键、发话、等待和回应实拍](../../artifacts/helmet-interaction/qa/runs/20261122-harbour-routes-call/telephone-sequence.jpg)
+
+## 修正坐姿视野后的验收
+
+在右台用控制器快捷导航抵达时，原导航浮板遮住了坐姿视角中的“水面供气泵”。调整浮板至右上并下移电话端字幕牌后，在联合提交 `970de083` 的正式场景重新验收。
+
+- 展板检查 1,102 项、展厅导航 145 项全部通过。导航保持显示，在 1.20、1.30、1.55 米眼高分别查看简中、繁中、英文。九组视角的 9 处文字及 11 个箭杆、箭头部件，在左眼、右眼和中线的模拟视线均无导航遮挡。[1.20 米右台视角](../../artifacts/helmet-interaction/qa/runs/20261122-harbour-routes-call/xr-right-seated.png)
+- 正式场景电话验收通过 21 项。模拟控制器从悬停、按住到松开走完整条通话，原位松开只发送一次，移开取消，换代、返回、重播与复位均通过。简中、繁中和英文都显示两端对白。该轮将设备音效静音。[中央展台实拍](../../artifacts/helmet-interaction/qa/runs/20261122-harbour-routes-call/xr-telephone.jpg)
+- 从同一干净提交重新构建并实际运行 Windows x64 程序。三语展板与三语发话、回应均可见，正常退出。47 个 Unity LFS 资产核过 SHA-256，构建前后 1,545 份工程文件内容一致。交付 ZIP 的主线提交、文件校验及解压运行结果见 [PR #98](https://github.com/Twispra/XRmuseum/pull/98)。本轮设备未连接实体头显。
